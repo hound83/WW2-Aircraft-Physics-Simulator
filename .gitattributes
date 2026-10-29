@@ -1,0 +1,14 @@
+* text=auto
+*.js text eol=lf
+*.cjs text eol=lf
+*.mjs text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.csv text eol=lf
+# Frozen imports retain exact original bytes for SHA256 verification.
+references/import/** -text
+releases/baseline-v2.5.html -text
+*.png binary
+*.jpg binary
+*.pdf binary
+*.xlsx binary

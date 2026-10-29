@@ -1,0 +1,2205 @@
+{
+  "version": "v1.3-Bf109-anchor-identifiability",
+  "status": "conditional model scenarios only; engine-rating label for 325 mph unresolved",
+  "methodology": "No modifications to physics.js or cases.json. Exactly one CD0 is derived from 325 mph for each rating+e hypothesis; prop candidate, geometry, mass and power curves fixed. None of the four outcomes is independently validated turn performance.",
+  "suppliedInputs": {
+    "weightLb": 6371,
+    "clMaxAssumed": 1.5,
+    "seaLevelAnchorMph": 325,
+    "emergencySeaLevelBhP": 1331.532,
+    "combatSeaLevelBhP": 1183.584,
+    "gregE": 0.5576706734059873,
+    "gregCd0": 0.02437284688790079,
+    "currentOswald": 0.78,
+    "standardTurnCondition": {
+      "altFt": 5000,
+      "easMph": 170
+    }
+  },
+  "independentEvidence": [
+    {
+      "type": "contemporary-source-index",
+      "source": "1942 Bf109 F-1 through F-4 handbook part 0, listed but not extracted",
+      "url": "https://www.museumalkmaar40-45.nl/voorschriften-manuals/d-luftt/d-luftt-2109",
+      "support": "Aircraft handbook exists; no measured low-speed polar in indexed text",
+      "independentTurnConstraint": false
+    },
+    {
+      "type": "original-1943-report",
+      "source": "Messerschmitt report 109 05 E43, F airframe with G wings, high-Mach dive trials",
+      "url": "https://www.wwiiaircraftperformance.org/me109/Diving_Test_109F_W.Nr.9228_ger_eng.pdf",
+      "support": "Source authentic but modified test wing; no steady level low-speed drag or turn curve",
+      "independentTurnConstraint": false
+    },
+    {
+      "type": "original-1943-report",
+      "source": "RAF captured Bf109G-2 tropical trial, gear/flaps-up stall 112 mph IAS",
+      "url": "https://www.wwiiaircraftperformance.org/me109/me-109g2-trop.html",
+      "support": "Different 109 variant, altered engine/weight, uncorrected IAS; not usable for F CLmax fit",
+      "independentTurnConstraint": false
+    },
+    {
+      "type": "unverified-secondary-quotation",
+      "source": "Finnish G-2 1943 Kokko report quoted as 3g sustained at 360 km/h IAS, 1000m",
+      "url": "https://www.virtualpilots.fi/feature/articles/109myths/",
+      "support": "No original report in hand; G-2 not F-4; no matched CAS/power/prop-efficiency",
+      "independentTurnConstraint": false
+    },
+    {
+      "type": "game-specification",
+      "source": "IL-2 developer Bf109F4 522 km/h TAS sea level COMBAT, 1200 PS",
+      "url": "https://il2sturmovik.com/museum/fighters/bf-109-f-4/",
+      "support": "Motivates alternate rating label, but game specification is not independent flight test",
+      "independentTurnConstraint": false
+    },
+    {
+      "type": "wartime-test-secondary-summary",
+      "source": "German F-4 performance documents transcribed as 635 km/h combat at 6000m and 670 km/h emergency at 6300m",
+      "url": "https://falkeeins.blogspot.com/2017/07/",
+      "support": "High-altitude speed; F engine map currently terminates at 15748 ft, so cannot test without new measured engine-power nodes",
+      "independentTurnConstraint": false
+    }
+  ],
+  "variants": [
+    {
+      "id": "combat_anchor_generic_e",
+      "anchorRating": "combat",
+      "oswald": 0.78,
+      "cd0": 0.022979082665474337,
+      "anchorMph": 325,
+      "anchorEfficiency": 0.8273516323219482,
+      "seaLevel": {
+        "combatMph": 324.9999999999991,
+        "emergencyMph": 338.84805729814707
+      },
+      "emergencyAt5000ftMph": 354.35123870358893,
+      "emergencyAt15000ftMph": 388.2791149678678,
+      "turnAt5000ft170mphEAS": {
+        "easMph": 170,
+        "sustainedDegSec": 18.919098427302323,
+        "sustainedG": 2.932426680576954,
+        "instantDegSec": 19.449328422209508,
+        "stallEasMph": 98.06509011620857,
+        "powerRequiredHp": 246.6077799030659,
+        "propulsiveHp": 1032.1107106563654
+      },
+      "turnCurveAt5000ft": [
+        {
+          "easMph": 95,
+          "sustainedDegSec": null,
+          "sustainedG": null,
+          "instantDegSec": null,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 209.9705501874228,
+          "propulsiveHp": 944.0633559113611
+        },
+        {
+          "easMph": 100,
+          "sustainedDegSec": 3.3264933902334493,
+          "sustainedG": 1.0398510542846873,
+          "instantDegSec": 3.3264933902334493,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 204.88015835505516,
+          "propulsiveHp": 950.8843368599275
+        },
+        {
+          "easMph": 105,
+          "sustainedDegSec": 6.229609056706806,
+          "sustainedG": 1.1464357873488678,
+          "instantDegSec": 6.229609056706806,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 201.10792290519478,
+          "propulsiveHp": 957.5829552634782
+        },
+        {
+          "easMph": 110,
+          "sustainedDegSec": 8.09939717456451,
+          "sustainedG": 1.2582197756844715,
+          "instantDegSec": 8.09939717456451,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 198.5555977030362,
+          "propulsiveHp": 964.1559396671398
+        },
+        {
+          "easMph": 115,
+          "sustainedDegSec": 9.577523333431765,
+          "sustainedG": 1.3752030192914988,
+          "instantDegSec": 9.577523333431765,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 197.14582577015977,
+          "propulsiveHp": 970.6000636466114
+        },
+        {
+          "easMph": 120,
+          "sustainedDegSec": 10.83616589155577,
+          "sustainedG": 1.4973855181699494,
+          "instantDegSec": 10.83616589155577,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 196.81778737695095,
+          "propulsiveHp": 976.9121484379745
+        },
+        {
+          "easMph": 125,
+          "sustainedDegSec": 11.952590821280749,
+          "sustainedG": 1.6247672723198243,
+          "instantDegSec": 11.952590821280749,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 197.52389259283976,
+          "propulsiveHp": 983.0890655424682
+        },
+        {
+          "easMph": 130,
+          "sustainedDegSec": 12.969338070901014,
+          "sustainedG": 1.7573482817411212,
+          "instantDegSec": 12.969338070901014,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 199.22723709417616,
+          "propulsiveHp": 989.1277393032501
+        },
+        {
+          "easMph": 135,
+          "sustainedDegSec": 13.912666969780734,
+          "sustainedG": 1.8951285464338428,
+          "instantDegSec": 13.912666969780734,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 201.8996233481345,
+          "propulsiveHp": 995.0251494511826
+        },
+        {
+          "easMph": 140,
+          "sustainedDegSec": 14.800022802555167,
+          "sustainedG": 2.038108066397987,
+          "instantDegSec": 14.800022802555167,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 205.52000582863738,
+          "propulsiveHp": 1000.778333616703
+        },
+        {
+          "easMph": 145,
+          "sustainedDegSec": 15.64360414876534,
+          "sustainedG": 2.186286841633555,
+          "instantDegSec": 15.64360414876534,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 210.0732579117437,
+          "propulsiveHp": 1006.3843898048584
+        },
+        {
+          "easMph": 150,
+          "sustainedDegSec": 16.452268878524507,
+          "sustainedG": 2.3396648721405464,
+          "instantDegSec": 16.452268878524507,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 215.5491853919595,
+          "propulsiveHp": 1011.8404788306204
+        },
+        {
+          "easMph": 155,
+          "sustainedDegSec": 17.232638257517713,
+          "sustainedG": 2.498242157918961,
+          "instantDegSec": 17.232638257517713,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 221.94173093087574,
+          "propulsiveHp": 1017.1438267116185
+        },
+        {
+          "easMph": 160,
+          "sustainedDegSec": 17.98977689719024,
+          "sustainedG": 2.6620186989687995,
+          "instantDegSec": 17.98977689719024,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 229.2483276716857,
+          "propulsiveHp": 1022.2917270154791
+        },
+        {
+          "easMph": 165,
+          "sustainedDegSec": 18.727632031126177,
+          "sustainedG": 2.830994495290061,
+          "instantDegSec": 18.727632031126177,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 237.46937037833666,
+          "propulsiveHp": 1027.2815431589909
+        },
+        {
+          "easMph": 170,
+          "sustainedDegSec": 18.919098427302323,
+          "sustainedG": 2.932426680576954,
+          "instantDegSec": 19.449328422209508,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 246.6077799030659,
+          "propulsiveHp": 1032.1107106563654
+        },
+        {
+          "easMph": 175,
+          "sustainedDegSec": 18.582723329733877,
+          "sustainedG": 2.961233548882033,
+          "instantDegSec": 20.15737267750274,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 256.668642316645,
+          "propulsiveHp": 1036.7767393139131
+        },
+        {
+          "easMph": 180,
+          "sustainedDegSec": 18.246438562925558,
+          "sustainedG": 2.987372763280404,
+          "instantDegSec": 20.853798560102867,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 267.65890818358315,
+          "propulsiveHp": 1041.2772153685057
+        },
+        {
+          "easMph": 185,
+          "sustainedDegSec": 17.909602114042862,
+          "sustainedG": 3.0107395313578773,
+          "instantDegSec": 21.54027265320977,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 279.5871406035145,
+          "propulsiveHp": 1045.60980356726
+        },
+        {
+          "easMph": 190,
+          "sustainedDegSec": 17.571576822873762,
+          "sustainedG": 3.03122047280494,
+          "instantDegSec": 22.218172665890183,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 292.4633030355235,
+          "propulsiveHp": 1049.7722491859306
+        },
+        {
+          "easMph": 195,
+          "sustainedDegSec": 17.23172555245092,
+          "sustainedG": 3.0486929171267447,
+          "instantDegSec": 22.888646425151098,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 306.29857976488177,
+          "propulsiveHp": 1053.7623799835774
+        },
+        {
+          "easMph": 200,
+          "sustainedDegSec": 16.88940599198037,
+          "sustainedG": 3.0630240547381797,
+          "instantDegSec": 23.55265696080821,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 321.10522329977516,
+          "propulsiveHp": 1057.5781080911295
+        },
+        {
+          "easMph": 205,
+          "sustainedDegSec": 16.543964999373696,
+          "sustainedG": 3.0740699174394623,
+          "instantDegSec": 24.211017401056132,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 336.89642410021673,
+          "propulsiveHp": 1061.2174318315544
+        },
+        {
+          "easMph": 210,
+          "sustainedDegSec": 16.194732356688256,
+          "sustainedG": 3.0816741573900392,
+          "instantDegSec": 24.86441828758261,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 353.6861989171143,
+          "propulsiveHp": 1064.6784374694078
+        },
+        {
+          "easMph": 215,
+          "sustainedDegSec": 15.841013771506555,
+          "sustainedG": 3.0856665849211167,
+          "instantDegSec": 25.51344917384242,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 371.4892947119344,
+          "propulsiveHp": 1067.9593008876245
+        },
+        {
+          "easMph": 220,
+          "sustainedDegSec": 15.482082906718754,
+          "sustainedG": 3.0858614141386393,
+          "instantDegSec": 26.15861585911823,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 390.3211056782297,
+          "propulsiveHp": 1071.0582891894956
+        },
+        {
+          "easMph": 225,
+          "sustainedDegSec": 15.117172155082319,
+          "sustainedG": 3.082055150268512,
+          "instantDegSec": 26.80035425422125,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 410.19760132696234,
+          "propulsiveHp": 1073.97376222386
+        },
+        {
+          "easMph": 230,
+          "sustainedDegSec": 14.74546178606597,
+          "sustainedG": 3.0740240326536217,
+          "instantDegSec": 27.439041621500937,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 431.1352639520033,
+          "propulsiveHp": 1076.7041740316354
+        },
+        {
+          "easMph": 235,
+          "sustainedDegSec": 14.366066970334163,
+          "sustainedG": 3.0615209201468154,
+          "instantDegSec": 28.07500574950308,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 453.1510340787588,
+          "propulsiveHp": 1079.2480742118976
+        },
+        {
+          "easMph": 240,
+          "sustainedDegSec": 13.978022016094958,
+          "sustainedG": 3.0442714682767282,
+          "instantDegSec": 28.70853248955236,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 476.2622627317193,
+          "propulsiveHp": 1081.6041092058247
+        },
+        {
+          "easMph": 245,
+          "sustainedDegSec": 13.580260907337186,
+          "sustainedG": 3.021969395356004,
+          "instantDegSec": 29.339871983239394,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 500.48666954679726,
+          "propulsiveHp": 1083.771023496908
+        },
+        {
+          "easMph": 250,
+          "sustainedDegSec": 13.171592878875556,
+          "sustainedG": 2.9942705605292694,
+          "instantDegSec": 29.969243836370328,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 525.8423059101849,
+          "propulsiveHp": 1085.7476607259464
+        },
+        {
+          "easMph": 255,
+          "sustainedDegSec": 12.750671236109866,
+          "sustainedG": 2.9607854694416478,
+          "instantDegSec": 30.596841439532806,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 552.3475224338172,
+          "propulsiveHp": 1087.5329647194349
+        },
+        {
+          "easMph": 260,
+          "sustainedDegSec": 12.31595282752971,
+          "sustainedG": 2.9210696647923546,
+          "instantDegSec": 31.08957600187269,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 580.0209401836661,
+          "propulsiveHp": 1089.1259804300655
+        },
+        {
+          "easMph": 265,
+          "sustainedDegSec": 11.86564433315836,
+          "sustainedG": 2.8746112199282927,
+          "instantDegSec": 30.50298022825245,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 608.8814251652085,
+          "propulsiveHp": 1090.5258547881726
+        },
+        {
+          "easMph": 270,
+          "sustainedDegSec": 11.39762953912918,
+          "sustainedG": 2.820814183625193,
+          "instantDegSec": 29.93811022402555,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 638.9480656438425,
+          "propulsiveHp": 1091.7318374630556
+        },
+        {
+          "easMph": 275,
+          "sustainedDegSec": 10.909368472958176,
+          "sustainedG": 2.758976235318481,
+          "instantDegSec": 29.393780947225085,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 670.2401519394391,
+          "propulsiveHp": 1092.7432815332295
+        },
+        {
+          "easMph": 280,
+          "sustainedDegSec": 10.397753617584758,
+          "sustainedG": 2.6882578423146035,
+          "instantDegSec": 28.868892001738924,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 702.7771583857663,
+          "propulsiveHp": 1093.5596440647669
+        },
+        {
+          "easMph": 285,
+          "sustainedDegSec": 9.858898282663207,
+          "sustainedG": 2.6076385605408308,
+          "instantDegSec": 28.362420212234735,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 736.5787271889171,
+          "propulsiveHp": 1094.1804865970053
+        },
+        {
+          "easMph": 290,
+          "sustainedDegSec": 9.287813077834233,
+          "sustainedG": 2.515853183931861,
+          "instantDegSec": 27.873412967196202,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 771.664653955559,
+          "propulsiveHp": 1094.605475535011
+        },
+        {
+          "easMph": 295,
+          "sustainedDegSec": 8.67787399538022,
+          "sustainedG": 2.411291722080185,
+          "instantDegSec": 27.40098223893864,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 808.054874692884,
+          "propulsiveHp": 1094.833455128928
+        },
+        {
+          "easMph": 300,
+          "sustainedDegSec": 8.019893330453806,
+          "sustainedG": 2.291833998197109,
+          "instantDegSec": 26.944299201622997,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 845.7694541085656,
+          "propulsiveHp": 1094.8595464727898
+        },
+        {
+          "easMph": 305,
+          "sustainedDegSec": 7.300624045604854,
+          "sustainedG": 2.154617007441918,
+          "instantDegSec": 26.502589378645574,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 884.8285750615386,
+          "propulsiveHp": 1094.6828513496125
+        },
+        {
+          "easMph": 310,
+          "sustainedDegSec": 6.4994800946856754,
+          "sustainedG": 1.9955601805571441,
+          "instantDegSec": 26.075128259635157,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 925.2525290336728,
+          "propulsiveHp": 1094.3032179580043
+        },
+        {
+          "easMph": 315,
+          "sustainedDegSec": 5.581019919119854,
+          "sustainedG": 1.8084403647604188,
+          "instantDegSec": 25.661237334879043,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 967.0617075089029,
+          "propulsiveHp": 1093.7206080952794
+        },
+        {
+          "easMph": 320,
+          "sustainedDegSec": 4.4732149953282985,
+          "sustainedG": 1.5827935654054706,
+          "instantDegSec": 25.26028050152156,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 1010.2765941605693,
+          "propulsiveHp": 1092.9350975287728
+        }
+      ],
+      "emergencySpeedCurve": [
+        {
+          "altFt": 0,
+          "vmaxMph": 338.84805729814707
+        },
+        {
+          "altFt": 1000,
+          "vmaxMph": 341.87296569906994
+        },
+        {
+          "altFt": 2000,
+          "vmaxMph": 344.93545650547367
+        },
+        {
+          "altFt": 3000,
+          "vmaxMph": 348.03580416398745
+        },
+        {
+          "altFt": 4000,
+          "vmaxMph": 351.17430517335106
+        },
+        {
+          "altFt": 5000,
+          "vmaxMph": 354.35123870358893
+        },
+        {
+          "altFt": 6000,
+          "vmaxMph": 357.5668647149241
+        },
+        {
+          "altFt": 7000,
+          "vmaxMph": 360.82142192403535
+        },
+        {
+          "altFt": 8000,
+          "vmaxMph": 364.1151256042658
+        },
+        {
+          "altFt": 9000,
+          "vmaxMph": 367.4481652049135
+        },
+        {
+          "altFt": 10000,
+          "vmaxMph": 370.8207017731829
+        },
+        {
+          "altFt": 11000,
+          "vmaxMph": 374.23286516048483
+        },
+        {
+          "altFt": 12000,
+          "vmaxMph": 377.6847509927893
+        },
+        {
+          "altFt": 13000,
+          "vmaxMph": 381.1764173823385
+        },
+        {
+          "altFt": 14000,
+          "vmaxMph": 384.70788135542443
+        },
+        {
+          "altFt": 15000,
+          "vmaxMph": 388.2791149678678
+        }
+      ]
+    },
+    {
+      "id": "combat_anchor_greg_e",
+      "anchorRating": "combat",
+      "oswald": 0.5576706734059873,
+      "cd0": 0.022484165004841287,
+      "anchorMph": 325,
+      "anchorEfficiency": 0.8273516323219482,
+      "seaLevel": {
+        "combatMph": 324.9999999999991,
+        "emergencyMph": 339.23311503891
+      },
+      "emergencyAt5000ftMph": 354.47296504368114,
+      "emergencyAt15000ftMph": 387.6153856091505,
+      "turnAt5000ft170mphEAS": {
+        "easMph": 170,
+        "sustainedDegSec": 15.604083876522996,
+        "sustainedG": 2.4838257732627365,
+        "instantDegSec": 19.449328422209508,
+        "stallEasMph": 98.06509011620857,
+        "powerRequiredHp": 284.73275350285445,
+        "propulsiveHp": 1032.1107106563654
+      },
+      "turnCurveAt5000ft": [
+        {
+          "easMph": 95,
+          "sustainedDegSec": null,
+          "sustainedG": null,
+          "instantDegSec": null,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 283.1764620149109,
+          "propulsiveHp": 944.0633559113611
+        },
+        {
+          "easMph": 100,
+          "sustainedDegSec": 3.3264933902334493,
+          "sustainedG": 1.0398510542846873,
+          "instantDegSec": 3.3264933902334493,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 274.3092955351241,
+          "propulsiveHp": 950.8843368599275
+        },
+        {
+          "easMph": 105,
+          "sustainedDegSec": 6.229609056706806,
+          "sustainedG": 1.1464357873488678,
+          "instantDegSec": 6.229609056706806,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 267.1020296260215,
+          "propulsiveHp": 957.5829552634782
+        },
+        {
+          "easMph": 110,
+          "sustainedDegSec": 8.09939717456451,
+          "sustainedG": 1.2582197756844715,
+          "instantDegSec": 8.09939717456451,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 261.4080612931967,
+          "propulsiveHp": 964.1559396671398
+        },
+        {
+          "easMph": 115,
+          "sustainedDegSec": 9.577523333431765,
+          "sustainedG": 1.3752030192914988,
+          "instantDegSec": 9.577523333431765,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 257.1100046819597,
+          "propulsiveHp": 970.6000636466114
+        },
+        {
+          "easMph": 120,
+          "sustainedDegSec": 10.83616589155577,
+          "sustainedG": 1.4973855181699494,
+          "instantDegSec": 10.83616589155577,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 254.11360417323016,
+          "propulsiveHp": 976.9121484379745
+        },
+        {
+          "easMph": 125,
+          "sustainedDegSec": 11.952590821280749,
+          "sustainedG": 1.6247672723198243,
+          "instantDegSec": 11.952590821280749,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 252.34310833641453,
+          "propulsiveHp": 983.0890655424682
+        },
+        {
+          "easMph": 130,
+          "sustainedDegSec": 12.969338070901014,
+          "sustainedG": 1.7573482817411212,
+          "instantDegSec": 12.969338070901014,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 251.73771143162068,
+          "propulsiveHp": 989.1277393032501
+        },
+        {
+          "easMph": 135,
+          "sustainedDegSec": 13.912666969780734,
+          "sustainedG": 1.8951285464338428,
+          "instantDegSec": 13.912666969780734,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 252.24878568915753,
+          "propulsiveHp": 995.0251494511826
+        },
+        {
+          "easMph": 140,
+          "sustainedDegSec": 14.800022802555167,
+          "sustainedG": 2.038108066397987,
+          "instantDegSec": 14.800022802555167,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 253.8377066719991,
+          "propulsiveHp": 1000.778333616703
+        },
+        {
+          "easMph": 145,
+          "sustainedDegSec": 15.64360414876534,
+          "sustainedG": 2.186286841633555,
+          "instantDegSec": 15.64360414876534,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 256.47412856325604,
+          "propulsiveHp": 1006.3843898048584
+        },
+        {
+          "easMph": 150,
+          "sustainedDegSec": 16.452268878524507,
+          "sustainedG": 2.3396648721405464,
+          "instantDegSec": 16.452268878524507,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 260.13460439615284,
+          "propulsiveHp": 1011.8404788306204
+        },
+        {
+          "easMph": 155,
+          "sustainedDegSec": 16.395871311066035,
+          "sustainedG": 2.396784361257818,
+          "instantDegSec": 17.232638257517713,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 264.8014733362677,
+          "propulsiveHp": 1017.1438267116185
+        },
+        {
+          "easMph": 160,
+          "sustainedDegSec": 16.132154117662182,
+          "sustainedG": 2.427815738099704,
+          "instantDegSec": 17.98977689719024,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 270.461956598352,
+          "propulsiveHp": 1022.2917270154791
+        },
+        {
+          "easMph": 165,
+          "sustainedDegSec": 15.868346042347747,
+          "sustainedG": 2.4568518487189155,
+          "instantDegSec": 18.727632031126177,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 277.1074177419104,
+          "propulsiveHp": 1027.2815431589909
+        },
+        {
+          "easMph": 170,
+          "sustainedDegSec": 15.604083876522996,
+          "sustainedG": 2.4838257732627365,
+          "instantDegSec": 19.449328422209508,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 284.73275350285445,
+          "propulsiveHp": 1032.1107106563654
+        },
+        {
+          "easMph": 175,
+          "sustainedDegSec": 15.338990570484098,
+          "sustainedG": 2.5086647122793155,
+          "instantDegSec": 20.15737267750274,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 293.33588905401626,
+          "propulsiveHp": 1036.7767393139131
+        },
+        {
+          "easMph": 180,
+          "sustainedDegSec": 15.072676587297797,
+          "sustainedG": 2.5312897136135613,
+          "instantDegSec": 20.853798560102867,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 302.9173573889092,
+          "propulsiveHp": 1041.2772153685057
+        },
+        {
+          "easMph": 185,
+          "sustainedDegSec": 14.804740151460209,
+          "sustainedG": 2.5516153164044337,
+          "instantDegSec": 21.54027265320977,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 313.479946913528,
+          "propulsiveHp": 1045.60980356726
+        },
+        {
+          "easMph": 190,
+          "sustainedDegSec": 14.534766579635741,
+          "sustainedG": 2.569549104578066,
+          "instantDegSec": 22.218172665890183,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 325.0284046815483,
+          "propulsiveHp": 1049.7722491859306
+        },
+        {
+          "easMph": 195,
+          "sustainedDegSec": 14.26232680910573,
+          "sustainedG": 2.5849911593111177,
+          "instantDegSec": 22.888646425151098,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 337.5691852856498,
+          "propulsiveHp": 1053.7623799835774
+        },
+        {
+          "easMph": 200,
+          "sustainedDegSec": 13.986975181760622,
+          "sustainedG": 2.5978333965005866,
+          "instantDegSec": 23.55265696080821,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 351.1102374151408,
+          "propulsiveHp": 1057.5781080911295
+        },
+        {
+          "easMph": 205,
+          "sustainedDegSec": 13.7082464917364,
+          "sustainedG": 2.607958771104456,
+          "instantDegSec": 24.211017401056132,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 365.6608216490521,
+          "propulsiveHp": 1061.2174318315544
+        },
+        {
+          "easMph": 210,
+          "sustainedDegSec": 13.425652258395498,
+          "sustainedG": 2.6152403250316443,
+          "instantDegSec": 24.86441828758261,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 381.23135427878907,
+          "propulsiveHp": 1064.6784374694078
+        },
+        {
+          "easMph": 215,
+          "sustainedDegSec": 13.138676139005314,
+          "sustainedG": 2.6195400486846387,
+          "instantDegSec": 25.51344917384242,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 397.8332729229722,
+          "propulsiveHp": 1067.9593008876245
+        },
+        {
+          "easMph": 220,
+          "sustainedDegSec": 12.846768342778413,
+          "sustainedG": 2.6207075177797914,
+          "instantDegSec": 26.15861585911823,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 415.4789204675256,
+          "propulsiveHp": 1071.0582891894956
+        },
+        {
+          "easMph": 225,
+          "sustainedDegSec": 12.549338844800022,
+          "sustainedG": 2.6185782559712174,
+          "instantDegSec": 26.80035425422125,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 434.18144448042176,
+          "propulsiveHp": 1073.97376222386
+        },
+        {
+          "easMph": 230,
+          "sustainedDegSec": 12.245749118203705,
+          "sustainedG": 2.612971759065646,
+          "instantDegSec": 27.439041621500937,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 453.9547097462412,
+          "propulsiveHp": 1076.7041740316354
+        },
+        {
+          "easMph": 235,
+          "sustainedDegSec": 11.935301996653294,
+          "sustainedG": 2.6036890967670803,
+          "instantDegSec": 28.07500574950308,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 474.81322196653304,
+          "propulsiveHp": 1079.2480742118976
+        },
+        {
+          "easMph": 240,
+          "sustainedDegSec": 11.61722913345731,
+          "sustainedG": 2.5905099807732865,
+          "instantDegSec": 28.70853248955236,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 496.7720609976311,
+          "propulsiveHp": 1081.6041092058247
+        },
+        {
+          "easMph": 245,
+          "sustainedDegSec": 11.290675318355023,
+          "sustainedG": 2.5731891504371998,
+          "instantDegSec": 29.339871983239394,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 519.8468222634312,
+          "propulsiveHp": 1083.771023496908
+        },
+        {
+          "easMph": 250,
+          "sustainedDegSec": 10.954678616751053,
+          "sustainedG": 2.5514518741991994,
+          "instantDegSec": 29.969243836370328,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 544.0535651986346,
+          "propulsiveHp": 1085.7476607259464
+        },
+        {
+          "easMph": 255,
+          "sustainedDegSec": 10.608144858486888,
+          "sustainedG": 2.524988288970932,
+          "instantDegSec": 30.596841439532806,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 569.4087677574921,
+          "propulsiveHp": 1087.5329647194349
+        },
+        {
+          "easMph": 260,
+          "sustainedDegSec": 10.249814340794199,
+          "sustainedG": 2.4934461885071375,
+          "instantDegSec": 31.08957600187269,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 595.9292861715408,
+          "propulsiveHp": 1089.1259804300655
+        },
+        {
+          "easMph": 265,
+          "sustainedDegSec": 9.87821758102958,
+          "sustainedG": 2.4564217058428133,
+          "instantDegSec": 30.50298022825245,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 623.632319263067,
+          "propulsiveHp": 1090.5258547881726
+        },
+        {
+          "easMph": 270,
+          "sustainedDegSec": 9.49161530952875,
+          "sustainedG": 2.413447081151835,
+          "instantDegSec": 29.93811022402555,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 652.5353767237403,
+          "propulsiveHp": 1091.7318374630556
+        },
+        {
+          "easMph": 275,
+          "sustainedDegSec": 9.08791517545274,
+          "sustainedG": 2.36397430806817,
+          "instantDegSec": 29.393780947225085,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 682.656250853761,
+          "propulsiveHp": 1092.7432815332295
+        },
+        {
+          "easMph": 280,
+          "sustainedDegSec": 8.664552979531589,
+          "sustainedG": 2.3073528071135945,
+          "instantDegSec": 28.868892001738924,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 714.0129913289555,
+          "propulsiveHp": 1093.5596440647669
+        },
+        {
+          "easMph": 285,
+          "sustainedDegSec": 8.218317906004152,
+          "sustainedG": 2.242798195852828,
+          "instantDegSec": 28.362420212234735,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 746.6238826239669,
+          "propulsiveHp": 1094.1804865970053
+        },
+        {
+          "easMph": 290,
+          "sustainedDegSec": 7.745085506241194,
+          "sustainedG": 2.16934734515904,
+          "instantDegSec": 27.873412967196202,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 780.5074237709777,
+          "propulsiveHp": 1094.605475535011
+        },
+        {
+          "easMph": 295,
+          "sustainedDegSec": 7.2393786580779755,
+          "sustainedG": 2.085788809794297,
+          "instantDegSec": 27.40098223893864,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 815.6823101768674,
+          "propulsiveHp": 1094.833455128928
+        },
+        {
+          "easMph": 300,
+          "sustainedDegSec": 6.693600878502999,
+          "sustainedG": 1.9905493287141425,
+          "instantDegSec": 26.944299201622997,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 852.1674172586547,
+          "propulsiveHp": 1094.8595464727898
+        },
+        {
+          "easMph": 305,
+          "sustainedDegSec": 6.096810920331738,
+          "sustainedG": 1.8815452829605768,
+          "instantDegSec": 26.502589378645574,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 889.9817856885676,
+          "propulsiveHp": 1094.6828513496125
+        },
+        {
+          "easMph": 310,
+          "sustainedDegSec": 5.432032465232638,
+          "sustainedG": 1.7558798457338107,
+          "instantDegSec": 26.075128259635157,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 929.144608067011,
+          "propulsiveHp": 1094.3032179580043
+        },
+        {
+          "easMph": 315,
+          "sustainedDegSec": 4.670115634802395,
+          "sustainedG": 1.6092842206791078,
+          "instantDegSec": 25.661237334879043,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 969.6752168647745,
+          "propulsiveHp": 1093.7206080952794
+        },
+        {
+          "easMph": 320,
+          "sustainedDegSec": 3.752105944359819,
+          "sustainedG": 1.434937850789386,
+          "instantDegSec": 25.26028050152156,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 1011.5930734956586,
+          "propulsiveHp": 1092.9350975287728
+        }
+      ],
+      "emergencySpeedCurve": [
+        {
+          "altFt": 0,
+          "vmaxMph": 339.23311503891
+        },
+        {
+          "altFt": 1000,
+          "vmaxMph": 342.2106688193717
+        },
+        {
+          "altFt": 2000,
+          "vmaxMph": 345.22327888700147
+        },
+        {
+          "altFt": 3000,
+          "vmaxMph": 348.27109989679684
+        },
+        {
+          "altFt": 4000,
+          "vmaxMph": 351.3542859892468
+        },
+        {
+          "altFt": 5000,
+          "vmaxMph": 354.47296504368114
+        },
+        {
+          "altFt": 6000,
+          "vmaxMph": 357.62723612119134
+        },
+        {
+          "altFt": 7000,
+          "vmaxMph": 360.8171666931639
+        },
+        {
+          "altFt": 8000,
+          "vmaxMph": 364.0427896352712
+        },
+        {
+          "altFt": 9000,
+          "vmaxMph": 367.30409996459
+        },
+        {
+          "altFt": 10000,
+          "vmaxMph": 370.60105129485146
+        },
+        {
+          "altFt": 11000,
+          "vmaxMph": 373.93355198198424
+        },
+        {
+          "altFt": 12000,
+          "vmaxMph": 377.30146092874475
+        },
+        {
+          "altFt": 13000,
+          "vmaxMph": 380.7045830134366
+        },
+        {
+          "altFt": 14000,
+          "vmaxMph": 384.1426641034277
+        },
+        {
+          "altFt": 15000,
+          "vmaxMph": 387.6153856091505
+        }
+      ]
+    },
+    {
+      "id": "emergency_anchor_generic_e",
+      "anchorRating": "emergency",
+      "oswald": 0.78,
+      "cd0": 0.026017217056890238,
+      "anchorMph": 325,
+      "anchorEfficiency": 0.8276726752904248,
+      "seaLevel": {
+        "combatMph": 311.5514424257881,
+        "emergencyMph": 324.9999999999991
+      },
+      "emergencyAt5000ftMph": 340.02217417180236,
+      "emergencyAt15000ftMph": 372.99941679990934,
+      "turnAt5000ft170mphEAS": {
+        "easMph": 170,
+        "sustainedDegSec": 18.689640191167204,
+        "sustainedG": 2.9010194231269426,
+        "instantDegSec": 19.449328422209508,
+        "stallEasMph": 98.06509011620857,
+        "powerRequiredHp": 265.5460085178842,
+        "propulsiveHp": 1032.1107106563654
+      },
+      "turnCurveAt5000ft": [
+        {
+          "easMph": 95,
+          "sustainedDegSec": null,
+          "sustainedG": null,
+          "instantDegSec": null,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 213.27548887226502,
+          "propulsiveHp": 944.0633559113611
+        },
+        {
+          "easMph": 100,
+          "sustainedDegSec": 3.3264933902334493,
+          "sustainedG": 1.0398510542846873,
+          "instantDegSec": 3.3264933902334493,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 208.7348761679634,
+          "propulsiveHp": 950.8843368599275
+        },
+        {
+          "easMph": 105,
+          "sustainedDegSec": 6.229609056706806,
+          "sustainedG": 1.1464357873488678,
+          "instantDegSec": 6.229609056706806,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 205.5702406133627,
+          "propulsiveHp": 957.5829552634782
+        },
+        {
+          "easMph": 110,
+          "sustainedDegSec": 8.09939717456451,
+          "sustainedG": 1.2582197756844715,
+          "instantDegSec": 8.09939717456451,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 203.68622711201712,
+          "propulsiveHp": 964.1559396671398
+        },
+        {
+          "easMph": 115,
+          "sustainedDegSec": 9.577523333431765,
+          "sustainedG": 1.3752030192914988,
+          "instantDegSec": 9.577523333431765,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 203.0083697238666,
+          "propulsiveHp": 970.6000636466114
+        },
+        {
+          "easMph": 120,
+          "sustainedDegSec": 10.83616589155577,
+          "sustainedG": 1.4973855181699494,
+          "instantDegSec": 10.83616589155577,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 203.47873975765646,
+          "propulsiveHp": 976.9121484379745
+        },
+        {
+          "easMph": 125,
+          "sustainedDegSec": 11.952590821280749,
+          "sustainedG": 1.6247672723198243,
+          "instantDegSec": 11.952590821280749,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 205.05263832117618,
+          "propulsiveHp": 983.0890655424682
+        },
+        {
+          "easMph": 130,
+          "sustainedDegSec": 12.969338070901014,
+          "sustainedG": 1.7573482817411212,
+          "instantDegSec": 12.969338070901014,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 207.6960521291356,
+          "propulsiveHp": 989.1277393032501
+        },
+        {
+          "easMph": 135,
+          "sustainedDegSec": 13.912666969780734,
+          "sustainedG": 1.8951285464338428,
+          "instantDegSec": 13.912666969780734,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 211.3836746870687,
+          "propulsiveHp": 995.0251494511826
+        },
+        {
+          "easMph": 140,
+          "sustainedDegSec": 14.800022802555167,
+          "sustainedG": 2.038108066397987,
+          "instantDegSec": 14.800022802555167,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 216.0973515072576,
+          "propulsiveHp": 1000.778333616703
+        },
+        {
+          "easMph": 145,
+          "sustainedDegSec": 15.64360414876534,
+          "sustainedG": 2.186286841633555,
+          "instantDegSec": 15.64360414876534,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 221.8248470041211,
+          "propulsiveHp": 1006.3843898048584
+        },
+        {
+          "easMph": 150,
+          "sustainedDegSec": 16.452268878524507,
+          "sustainedG": 2.3396648721405464,
+          "instantDegSec": 16.452268878524507,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 228.55885801052492,
+          "propulsiveHp": 1011.8404788306204
+        },
+        {
+          "easMph": 155,
+          "sustainedDegSec": 17.232638257517713,
+          "sustainedG": 2.498242157918961,
+          "instantDegSec": 17.232638257517713,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 236.29621822641948,
+          "propulsiveHp": 1017.1438267116185
+        },
+        {
+          "easMph": 160,
+          "sustainedDegSec": 17.98977689719024,
+          "sustainedG": 2.6620186989687995,
+          "instantDegSec": 17.98977689719024,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 245.03725183335794,
+          "propulsiveHp": 1022.2917270154791
+        },
+        {
+          "easMph": 165,
+          "sustainedDegSec": 18.727632031126177,
+          "sustainedG": 2.830994495290061,
+          "instantDegSec": 18.727632031126177,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 254.78524463364724,
+          "propulsiveHp": 1027.2815431589909
+        },
+        {
+          "easMph": 170,
+          "sustainedDegSec": 18.689640191167204,
+          "sustainedG": 2.9010194231269426,
+          "instantDegSec": 19.449328422209508,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 265.5460085178842,
+          "propulsiveHp": 1032.1107106563654
+        },
+        {
+          "easMph": 175,
+          "sustainedDegSec": 18.33501788553003,
+          "sustainedG": 2.926289024956949,
+          "instantDegSec": 20.15737267750274,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 277.3275205952002,
+          "propulsiveHp": 1036.7767393139131
+        },
+        {
+          "easMph": 180,
+          "sustainedDegSec": 17.97937078764879,
+          "sustainedG": 2.9485792459501403,
+          "instantDegSec": 20.853798560102867,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 290.13962246846415,
+          "propulsiveHp": 1041.2772153685057
+        },
+        {
+          "easMph": 185,
+          "sustainedDegSec": 17.621979190325966,
+          "sustainedG": 2.967760741909521,
+          "instantDegSec": 21.54027265320977,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 303.99376827566977,
+          "propulsiveHp": 1045.60980356726
+        },
+        {
+          "easMph": 190,
+          "sustainedDegSec": 17.26211845605453,
+          "sustainedG": 2.9836930202645275,
+          "instantDegSec": 22.218172665890183,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 318.90281251426126,
+          "propulsiveHp": 1049.7722491859306
+        },
+        {
+          "easMph": 195,
+          "sustainedDegSec": 16.899052510344635,
+          "sustainedG": 2.996223326433,
+          "instantDegSec": 22.888646425151098,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 334.88083050786986,
+          "propulsiveHp": 1053.7623799835774
+        },
+        {
+          "easMph": 200,
+          "sustainedDegSec": 16.5320266003285,
+          "sustainedG": 3.0051852984355087,
+          "instantDegSec": 23.55265696080821,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 351.9429658030413,
+          "propulsiveHp": 1057.5781080911295
+        },
+        {
+          "easMph": 205,
+          "sustainedDegSec": 16.160259125648317,
+          "sustainedG": 3.0103973438109635,
+          "instantDegSec": 24.211017401056132,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 370.1052998981481,
+          "propulsiveHp": 1061.2174318315544
+        },
+        {
+          "easMph": 210,
+          "sustainedDegSec": 15.782932281546255,
+          "sustainedG": 3.0116606791400606,
+          "instantDegSec": 24.86441828758261,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 389.3847405824577,
+          "propulsiveHp": 1064.6784374694078
+        },
+        {
+          "easMph": 215,
+          "sustainedDegSec": 15.399181167699183,
+          "sustainedG": 3.0087569542881507,
+          "instantDegSec": 25.51344917384242,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 409.7989258557966,
+          "propulsiveHp": 1067.9593008876245
+        },
+        {
+          "easMph": 220,
+          "sustainedDegSec": 15.008080900650329,
+          "sustainedG": 3.0014453590053587,
+          "instantDegSec": 26.15861585911823,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 431.36614095007684,
+          "propulsiveHp": 1071.0582891894956
+        },
+        {
+          "easMph": 225,
+          "sustainedDegSec": 14.60863110820723,
+          "sustainedG": 2.9894590760876887,
+          "instantDegSec": 26.80035425422125,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 454.1052464146204,
+          "propulsiveHp": 1073.97376222386
+        },
+        {
+          "easMph": 230,
+          "sustainedDegSec": 14.199736959144246,
+          "sustainedG": 2.9725008988985757,
+          "instantDegSec": 27.439041621500937,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 478.035615581658,
+          "propulsiveHp": 1076.7041740316354
+        },
+        {
+          "easMph": 235,
+          "sustainedDegSec": 13.780185557237356,
+          "sustainedG": 2.950237765561862,
+          "instantDegSec": 28.07500574950308,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 503.17708001495566,
+          "propulsiveHp": 1079.2480742118976
+        },
+        {
+          "easMph": 240,
+          "sustainedDegSec": 13.34861605131235,
+          "sustainedG": 2.9222938680473285,
+          "instantDegSec": 28.70853248955236,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 529.5498817773631,
+          "propulsiveHp": 1081.6041092058247
+        },
+        {
+          "easMph": 245,
+          "sustainedDegSec": 12.903481094548118,
+          "sustainedG": 2.888241856524038,
+          "instantDegSec": 29.339871983239394,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 557.1746315431527,
+          "propulsiveHp": 1083.771023496908
+        },
+        {
+          "easMph": 250,
+          "sustainedDegSec": 12.442996178247704,
+          "sustainedG": 2.8475914530135458,
+          "instantDegSec": 29.969243836370328,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 586.0722717368765,
+          "propulsiveHp": 1085.7476607259464
+        },
+        {
+          "easMph": 255,
+          "sustainedDegSec": 11.965071609120141,
+          "sustainedG": 2.7997744720035658,
+          "instantDegSec": 30.596841439532806,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 616.2640440088289,
+          "propulsiveHp": 1087.5329647194349
+        },
+        {
+          "easMph": 260,
+          "sustainedDegSec": 11.46721902820654,
+          "sustainedG": 2.744124747363074,
+          "instantDegSec": 31.08957600187269,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 647.7714604633417,
+          "propulsiveHp": 1089.1259804300655
+        },
+        {
+          "easMph": 265,
+          "sustainedDegSec": 10.94641950679718,
+          "sustainedG": 2.6798506556209327,
+          "instantDegSec": 30.50298022825245,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 680.6162781442514,
+          "propulsiveHp": 1090.5258547881726
+        },
+        {
+          "easMph": 270,
+          "sustainedDegSec": 10.398931671657364,
+          "sustainedG": 2.6059965645144683,
+          "instantDegSec": 29.93811022402555,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 714.8204763553158,
+          "propulsiveHp": 1091.7318374630556
+        },
+        {
+          "easMph": 275,
+          "sustainedDegSec": 9.820002410288618,
+          "sustainedG": 2.5213871514319943,
+          "instantDegSec": 29.393780947225085,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 750.4062364547655,
+          "propulsiveHp": 1092.7432815332295
+        },
+        {
+          "easMph": 280,
+          "sustainedDegSec": 9.203411489549362,
+          "sustainedG": 2.424544155857569,
+          "instantDegSec": 28.868892001738924,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 787.3959238147282,
+          "propulsiveHp": 1093.5596440647669
+        },
+        {
+          "easMph": 285,
+          "sustainedDegSec": 8.540715651073022,
+          "sustainedG": 2.313556610462168,
+          "instantDegSec": 28.362420212234735,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 825.812071679657,
+          "propulsiveHp": 1094.1804865970053
+        },
+        {
+          "easMph": 290,
+          "sustainedDegSec": 7.819906381787742,
+          "sustainedG": 2.1858678382585754,
+          "instantDegSec": 27.873412967196202,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 865.6773666945786,
+          "propulsiveHp": 1094.605475535011
+        },
+        {
+          "easMph": 295,
+          "sustainedDegSec": 7.0227876611303195,
+          "sustainedG": 2.037898332724439,
+          "instantDegSec": 27.40098223893864,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 907.0146359050448,
+          "propulsiveHp": 1094.833455128928
+        },
+        {
+          "easMph": 300,
+          "sustainedDegSec": 6.119182439175796,
+          "sustainedG": 1.864317183397154,
+          "instantDegSec": 26.944299201622997,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 949.8468350570887,
+          "propulsiveHp": 1094.8595464727898
+        },
+        {
+          "easMph": 305,
+          "sustainedDegSec": 5.051884917701096,
+          "sustainedG": 1.6565326892821213,
+          "instantDegSec": 26.502589378645574,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 994.1970380480049,
+          "propulsiveHp": 1094.6828513496125
+        },
+        {
+          "easMph": 310,
+          "sustainedDegSec": 3.6806882750321797,
+          "sustainedG": 1.3987190783976269,
+          "instantDegSec": 26.075128259635157,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 1040.0884273980225,
+          "propulsiveHp": 1094.3032179580043
+        },
+        {
+          "easMph": 315,
+          "sustainedDegSec": 1.2324255598650657,
+          "sustainedG": 1.053904763145444,
+          "instantDegSec": 25.661237334879043,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 1087.544285629437,
+          "propulsiveHp": 1093.7206080952794
+        },
+        {
+          "easMph": 320,
+          "sustainedDegSec": null,
+          "sustainedG": null,
+          "instantDegSec": 25.26028050152156,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 1136.587987453947,
+          "propulsiveHp": 1092.9350975287728
+        }
+      ],
+      "emergencySpeedCurve": [
+        {
+          "altFt": 0,
+          "vmaxMph": 324.9999999999991
+        },
+        {
+          "altFt": 1000,
+          "vmaxMph": 327.92741952913184
+        },
+        {
+          "altFt": 2000,
+          "vmaxMph": 330.8936706327886
+        },
+        {
+          "altFt": 3000,
+          "vmaxMph": 333.89834186683674
+        },
+        {
+          "altFt": 4000,
+          "vmaxMph": 336.9410694140961
+        },
+        {
+          "altFt": 5000,
+          "vmaxMph": 340.02217417180236
+        },
+        {
+          "altFt": 6000,
+          "vmaxMph": 343.141959859865
+        },
+        {
+          "altFt": 7000,
+          "vmaxMph": 346.300711037723
+        },
+        {
+          "altFt": 8000,
+          "vmaxMph": 349.49869095406484
+        },
+        {
+          "altFt": 9000,
+          "vmaxMph": 352.7361392143821
+        },
+        {
+          "altFt": 10000,
+          "vmaxMph": 356.01326924973273
+        },
+        {
+          "altFt": 11000,
+          "vmaxMph": 359.33026556825007
+        },
+        {
+          "altFt": 12000,
+          "vmaxMph": 362.68728076888056
+        },
+        {
+          "altFt": 13000,
+          "vmaxMph": 366.08443229452587
+        },
+        {
+          "altFt": 14000,
+          "vmaxMph": 369.5217988990853
+        },
+        {
+          "altFt": 15000,
+          "vmaxMph": 372.99941679990934
+        }
+      ]
+    },
+    {
+      "id": "emergency_anchor_greg_e",
+      "anchorRating": "emergency",
+      "oswald": 0.5576706734059873,
+      "cd0": 0.025522299396257185,
+      "anchorMph": 325,
+      "anchorEfficiency": 0.8276726752904248,
+      "seaLevel": {
+        "combatMph": 311.16708278633905,
+        "emergencyMph": 324.9999999999991
+      },
+      "emergencyAt5000ftMph": 339.7460738725031,
+      "emergencyAt15000ftMph": 371.91213251033423,
+      "turnAt5000ft170mphEAS": {
+        "easMph": 170,
+        "sustainedDegSec": 15.405115033105616,
+        "sustainedG": 2.4573156882484124,
+        "instantDegSec": 19.449328422209508,
+        "stallEasMph": 98.06509011620857,
+        "powerRequiredHp": 303.67098211767274,
+        "propulsiveHp": 1032.1107106563654
+      },
+      "turnCurveAt5000ft": [
+        {
+          "easMph": 95,
+          "sustainedDegSec": null,
+          "sustainedG": null,
+          "instantDegSec": null,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 286.4814006997531,
+          "propulsiveHp": 944.0633559113611
+        },
+        {
+          "easMph": 100,
+          "sustainedDegSec": 3.3264933902334493,
+          "sustainedG": 1.0398510542846873,
+          "instantDegSec": 3.3264933902334493,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 278.16401334803237,
+          "propulsiveHp": 950.8843368599275
+        },
+        {
+          "easMph": 105,
+          "sustainedDegSec": 6.229609056706806,
+          "sustainedG": 1.1464357873488678,
+          "instantDegSec": 6.229609056706806,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 271.56434733418945,
+          "propulsiveHp": 957.5829552634782
+        },
+        {
+          "easMph": 110,
+          "sustainedDegSec": 8.09939717456451,
+          "sustainedG": 1.2582197756844715,
+          "instantDegSec": 8.09939717456451,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 266.5386907021776,
+          "propulsiveHp": 964.1559396671398
+        },
+        {
+          "easMph": 115,
+          "sustainedDegSec": 9.577523333431765,
+          "sustainedG": 1.3752030192914988,
+          "instantDegSec": 9.577523333431765,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 262.97254863566656,
+          "propulsiveHp": 970.6000636466114
+        },
+        {
+          "easMph": 120,
+          "sustainedDegSec": 10.83616589155577,
+          "sustainedG": 1.4973855181699494,
+          "instantDegSec": 10.83616589155577,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 260.7745565539356,
+          "propulsiveHp": 976.9121484379745
+        },
+        {
+          "easMph": 125,
+          "sustainedDegSec": 11.952590821280749,
+          "sustainedG": 1.6247672723198243,
+          "instantDegSec": 11.952590821280749,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 259.871854064751,
+          "propulsiveHp": 983.0890655424682
+        },
+        {
+          "easMph": 130,
+          "sustainedDegSec": 12.969338070901014,
+          "sustainedG": 1.7573482817411212,
+          "instantDegSec": 12.969338070901014,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 260.2065264665801,
+          "propulsiveHp": 989.1277393032501
+        },
+        {
+          "easMph": 135,
+          "sustainedDegSec": 13.912666969780734,
+          "sustainedG": 1.8951285464338428,
+          "instantDegSec": 13.912666969780734,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 261.7328370280917,
+          "propulsiveHp": 995.0251494511826
+        },
+        {
+          "easMph": 140,
+          "sustainedDegSec": 14.800022802555167,
+          "sustainedG": 2.038108066397987,
+          "instantDegSec": 14.800022802555167,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 264.41505235061936,
+          "propulsiveHp": 1000.778333616703
+        },
+        {
+          "easMph": 145,
+          "sustainedDegSec": 15.64360414876534,
+          "sustainedG": 2.186286841633555,
+          "instantDegSec": 15.64360414876534,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 268.22571765563345,
+          "propulsiveHp": 1006.3843898048584
+        },
+        {
+          "easMph": 150,
+          "sustainedDegSec": 16.452268878524507,
+          "sustainedG": 2.3396648721405464,
+          "instantDegSec": 16.452268878524507,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 273.1442770147182,
+          "propulsiveHp": 1011.8404788306204
+        },
+        {
+          "easMph": 155,
+          "sustainedDegSec": 16.23870364091182,
+          "sustainedG": 2.3778246507532836,
+          "instantDegSec": 17.232638257517713,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 279.15596063181147,
+          "propulsiveHp": 1017.1438267116185
+        },
+        {
+          "easMph": 160,
+          "sustainedDegSec": 15.961862342055433,
+          "sustainedG": 2.4065547854652563,
+          "instantDegSec": 17.98977689719024,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 286.25088076002424,
+          "propulsiveHp": 1022.2917270154791
+        },
+        {
+          "easMph": 165,
+          "sustainedDegSec": 15.684136496054176,
+          "sustainedG": 2.433079299498706,
+          "instantDegSec": 18.727632031126177,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 294.42329199722093,
+          "propulsiveHp": 1027.2815431589909
+        },
+        {
+          "easMph": 170,
+          "sustainedDegSec": 15.405115033105616,
+          "sustainedG": 2.4573156882484124,
+          "instantDegSec": 19.449328422209508,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 303.67098211767274,
+          "propulsiveHp": 1032.1107106563654
+        },
+        {
+          "easMph": 175,
+          "sustainedDegSec": 15.124367650370804,
+          "sustainedG": 2.479174187598206,
+          "instantDegSec": 20.15737267750274,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 313.9947673325715,
+          "propulsiveHp": 1036.7767393139131
+        },
+        {
+          "easMph": 180,
+          "sustainedDegSec": 14.841445335479746,
+          "sustainedG": 2.498557304799955,
+          "instantDegSec": 20.853798560102867,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 325.3980716737902,
+          "propulsiveHp": 1041.2772153685057
+        },
+        {
+          "easMph": 185,
+          "sustainedDegSec": 14.555879623905806,
+          "sustainedG": 2.515359230811318,
+          "instantDegSec": 21.54027265320977,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 337.88657458568315,
+          "propulsiveHp": 1045.60980356726
+        },
+        {
+          "easMph": 190,
+          "sustainedDegSec": 14.267180738482937,
+          "sustainedG": 2.529465118464692,
+          "instantDegSec": 22.218172665890183,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 351.46791416028606,
+          "propulsiveHp": 1049.7722491859306
+        },
+        {
+          "easMph": 195,
+          "sustainedDegSec": 13.974834676320398,
+          "sustainedG": 2.5407502057320457,
+          "instantDegSec": 22.888646425151098,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 366.1514360286378,
+          "propulsiveHp": 1053.7623799835774
+        },
+        {
+          "easMph": 200,
+          "sustainedDegSec": 13.678299235310355,
+          "sustainedG": 2.5490787570202937,
+          "instantDegSec": 23.55265696080821,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 381.9479799184068,
+          "propulsiveHp": 1057.5781080911295
+        },
+        {
+          "easMph": 205,
+          "sustainedDegSec": 13.376998901940032,
+          "sustainedG": 2.554302787399004,
+          "instantDegSec": 24.211017401056132,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 398.86969744698337,
+          "propulsiveHp": 1061.2174318315544
+        },
+        {
+          "easMph": 210,
+          "sustainedDegSec": 13.070318447172715,
+          "sustainedG": 2.5562605242666745,
+          "instantDegSec": 24.86441828758261,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 416.92989594413245,
+          "propulsiveHp": 1064.6784374694078
+        },
+        {
+          "easMph": 215,
+          "sustainedDegSec": 12.757594990032292,
+          "sustainedG": 2.5547745472761116,
+          "instantDegSec": 25.51344917384242,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 436.14290406683426,
+          "propulsiveHp": 1067.9593008876245
+        },
+        {
+          "easMph": 220,
+          "sustainedDegSec": 12.43810817962175,
+          "sustainedG": 2.5496495290360457,
+          "instantDegSec": 26.15861585911823,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 456.5239557393727,
+          "propulsiveHp": 1071.0582891894956
+        },
+        {
+          "easMph": 225,
+          "sustainedDegSec": 12.111068002514958,
+          "sustainedG": 2.540669474248884,
+          "instantDegSec": 26.80035425422125,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 478.0890895680798,
+          "propulsiveHp": 1073.97376222386
+        },
+        {
+          "easMph": 230,
+          "sustainedDegSec": 11.775599524650158,
+          "sustainedG": 2.527594320659304,
+          "instantDegSec": 27.439041621500937,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 500.85506137589596,
+          "propulsiveHp": 1076.7041740316354
+        },
+        {
+          "easMph": 235,
+          "sustainedDegSec": 11.43072359578929,
+          "sustainedG": 2.510155717127351,
+          "instantDegSec": 28.07500574950308,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 524.8392679027297,
+          "propulsiveHp": 1079.2480742118976
+        },
+        {
+          "easMph": 240,
+          "sustainedDegSec": 11.075332133998293,
+          "sustainedG": 2.4880517255920673,
+          "instantDegSec": 28.70853248955236,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 550.0596800432749,
+          "propulsiveHp": 1081.6041092058247
+        },
+        {
+          "easMph": 245,
+          "sustainedDegSec": 10.708155991803148,
+          "sustainedG": 2.460940094071783,
+          "instantDegSec": 29.339871983239394,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 576.5347842597868,
+          "propulsiveHp": 1083.771023496908
+        },
+        {
+          "easMph": 250,
+          "sustainedDegSec": 10.327722457143102,
+          "sustainedG": 2.428429600051289,
+          "instantDegSec": 29.969243836370328,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 604.283531025326,
+          "propulsiveHp": 1085.7476607259464
+        },
+        {
+          "easMph": 255,
+          "sustainedDegSec": 9.932297938712784,
+          "sustainedG": 2.3900687392551636,
+          "instantDegSec": 30.596841439532806,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 633.3252893325038,
+          "propulsiveHp": 1087.5329647194349
+        },
+        {
+          "easMph": 260,
+          "sustainedDegSec": 9.519808925012747,
+          "sustainedG": 2.3453306853926867,
+          "instantDegSec": 31.08957600187269,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 663.6798064512162,
+          "propulsiveHp": 1089.1259804300655
+        },
+        {
+          "easMph": 265,
+          "sustainedDegSec": 9.087730132629035,
+          "sustainedG": 2.2935928862466057,
+          "instantDegSec": 30.50298022825245,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 695.3671722421099,
+          "propulsiveHp": 1090.5258547881726
+        },
+        {
+          "easMph": 270,
+          "sustainedDegSec": 8.632921376960804,
+          "sustainedG": 2.2341087330482527,
+          "instantDegSec": 29.93811022402555,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 728.4077874352135,
+          "propulsiveHp": 1091.7318374630556
+        },
+        {
+          "easMph": 275,
+          "sustainedDegSec": 8.151380985964844,
+          "sustainedG": 2.165967141493645,
+          "instantDegSec": 29.393780947225085,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 762.8223353690873,
+          "propulsiveHp": 1092.7432815332295
+        },
+        {
+          "easMph": 280,
+          "sustainedDegSec": 7.637856570838302,
+          "sustainedG": 2.0880330046843314,
+          "instantDegSec": 28.868892001738924,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 798.6317567579175,
+          "propulsiveHp": 1093.5596440647669
+        },
+        {
+          "easMph": 285,
+          "sustainedDegSec": 7.085196841248947,
+          "sustainedG": 1.9988560152802914,
+          "instantDegSec": 28.362420212234735,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 835.8572271147068,
+          "propulsiveHp": 1094.1804865970053
+        },
+        {
+          "easMph": 290,
+          "sustainedDegSec": 6.4831960082689815,
+          "sustainedG": 1.8965243015124797,
+          "instantDegSec": 27.873412967196202,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 874.5201365099972,
+          "propulsiveHp": 1094.605475535011
+        },
+        {
+          "easMph": 295,
+          "sustainedDegSec": 5.816324074471652,
+          "sustainedG": 1.7784119996351841,
+          "instantDegSec": 27.40098223893864,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 914.642071389028,
+          "propulsiveHp": 1094.833455128928
+        },
+        {
+          "easMph": 300,
+          "sustainedDegSec": 5.058673936970085,
+          "sustainedG": 1.6407083553242998,
+          "instantDegSec": 26.944299201622997,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 956.2447982071776,
+          "propulsiveHp": 1094.8595464727898
+        },
+        {
+          "easMph": 305,
+          "sustainedDegSec": 4.160671228040691,
+          "sustainedG": 1.4775040393745713,
+          "instantDegSec": 26.502589378645574,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 999.3502486750338,
+          "propulsiveHp": 1094.6828513496125
+        },
+        {
+          "easMph": 310,
+          "sustainedDegSec": 2.998428964748042,
+          "sustainedG": 1.278558077841231,
+          "instantDegSec": 26.075128259635157,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 1043.980506431361,
+          "propulsiveHp": 1094.3032179580043
+        },
+        {
+          "easMph": 315,
+          "sustainedDegSec": 0.7914688708333427,
+          "sustainedG": 1.0225760967185347,
+          "instantDegSec": 25.661237334879043,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 1090.1577949853083,
+          "propulsiveHp": 1093.7206080952794
+        },
+        {
+          "easMph": 320,
+          "sustainedDegSec": null,
+          "sustainedG": null,
+          "instantDegSec": 25.26028050152156,
+          "stallEasMph": 98.06509011620857,
+          "powerRequiredHp": 1137.9044667890362,
+          "propulsiveHp": 1092.9350975287728
+        }
+      ],
+      "emergencySpeedCurve": [
+        {
+          "altFt": 0,
+          "vmaxMph": 324.9999999999991
+        },
+        {
+          "altFt": 1000,
+          "vmaxMph": 327.87748059101887
+        },
+        {
+          "altFt": 2000,
+          "vmaxMph": 330.7912931927285
+        },
+        {
+          "altFt": 3000,
+          "vmaxMph": 333.74090154894566
+        },
+        {
+          "altFt": 4000,
+          "vmaxMph": 336.72577177398216
+        },
+        {
+          "altFt": 5000,
+          "vmaxMph": 339.7460738725031
+        },
+        {
+          "altFt": 6000,
+          "vmaxMph": 342.80195105029907
+        },
+        {
+          "altFt": 7000,
+          "vmaxMph": 345.89351698907467
+        },
+        {
+          "altFt": 8000,
+          "vmaxMph": 349.0208528849862
+        },
+        {
+          "altFt": 9000,
+          "vmaxMph": 352.184004228312
+        },
+        {
+          "altFt": 10000,
+          "vmaxMph": 355.38297729895294
+        },
+        {
+          "altFt": 11000,
+          "vmaxMph": 358.6177353496014
+        },
+        {
+          "altFt": 12000,
+          "vmaxMph": 361.8881944450068
+        },
+        {
+          "altFt": 13000,
+          "vmaxMph": 365.19421892197806
+        },
+        {
+          "altFt": 14000,
+          "vmaxMph": 368.535616430373
+        },
+        {
+          "altFt": 15000,
+          "vmaxMph": 371.91213251033423
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "samePowerAndAnchorSpeedSpreadMph": 0.38505774076293164,
+    "engineRatingAssignmentEmergencySpeedShiftMph": 13.848057298147978,
+    "gregVsGenericTurnSpreadDegSec": 3.3150145507793276,
+    "engineRatingAssignmentTurnShiftDegSec": 0.22945823613511962,
+    "modelChoice": "NONE: historical F4 low-speed polar still unidentifiable from these observations; preserve two scenarios, no new default coefficients"
+  },
+  "historicalRegression": {
+    "p47b": {
+      "aircraft": "P-47B / R-2800-21 (41-5902)",
+      "fitAltitudeFt": 5000,
+      "fitMph": 352,
+      "holdoutCount": 5,
+      "meanAbsErrorMph": 3.649356289075695,
+      "maxAbsErrorMph": 5.943747957734558,
+      "rows": [
+        {
+          "altFt": 5000,
+          "observedMph": 352,
+          "modeledMph": 352.0000000000009,
+          "residualMph": 9.094947017729282e-13
+        },
+        {
+          "altFt": 15000,
+          "observedMph": 386,
+          "modeledMph": 386.0511311975233,
+          "residualMph": 0.051131197523318406
+        },
+        {
+          "altFt": 25000,
+          "observedMph": 420,
+          "modeledMph": 423.26229896231507,
+          "residualMph": 3.2622989623150715
+        },
+        {
+          "altFt": 27800,
+          "observedMph": 429,
+          "modeledMph": 434.0999065944643,
+          "residualMph": 5.099906594464301
+        },
+        {
+          "altFt": 30000,
+          "observedMph": 426,
+          "modeledMph": 429.8896967333412,
+          "residualMph": 3.889696733341225
+        },
+        {
+          "altFt": 34000,
+          "observedMph": 412,
+          "modeledMph": 417.94374795773456,
+          "residualMph": 5.943747957734558
+        }
+      ]
+    },
+    "p51b": {
+      "aircraft": "P-51B-15 / V-1650-7 (43-24777)",
+      "fitAltitudeFt": 0,
+      "fitMph": 361.5,
+      "holdoutCount": 8,
+      "meanAbsErrorMph": 2.6099007098907805,
+      "maxAbsErrorMph": 3.8539732156414175,
+      "rows": [
+        {
+          "altFt": 0,
+          "observedMph": 361.5,
+          "modeledMph": 361.4999999999991,
+          "residualMph": -9.094947017729282e-13
+        },
+        {
+          "altFt": 4000,
+          "observedMph": 380,
+          "modeledMph": 377.98763003052863,
+          "residualMph": -2.012369969471365
+        },
+        {
+          "altFt": 7400,
+          "observedMph": 395.5,
+          "modeledMph": 392.734579732748,
+          "residualMph": -2.7654202672520114
+        },
+        {
+          "altFt": 10300,
+          "observedMph": 409,
+          "modeledMph": 405.8958576063642,
+          "residualMph": -3.1041423936358115
+        },
+        {
+          "altFt": 18000,
+          "observedMph": 408,
+          "modeledMph": 407.120145413056,
+          "residualMph": -0.8798545869440204
+        },
+        {
+          "altFt": 20800,
+          "observedMph": 417,
+          "modeledMph": 417.6059663299684,
+          "residualMph": 0.6059663299683962
+        },
+        {
+          "altFt": 24000,
+          "observedMph": 426,
+          "modeledMph": 429.83799510290646,
+          "residualMph": 3.8379951029064614
+        },
+        {
+          "altFt": 28000,
+          "observedMph": 419,
+          "modeledMph": 422.8539732156414,
+          "residualMph": 3.8539732156414175
+        },
+        {
+          "altFt": 32000,
+          "observedMph": 410,
+          "modeledMph": 413.81948381330676,
+          "residualMph": 3.8194838133067606
+        }
+      ]
+    }
+  },
+  "nextRequiredMeasurement": "One F4-specific 2nd speed point under a different weight/power condition with independently characterized propulsive power; preferably low-speed steady turn, glide polar, or calibrated stall test and a contemporaneous power-mode label. High-speed single-point Vmax alone cannot fix e."
+}

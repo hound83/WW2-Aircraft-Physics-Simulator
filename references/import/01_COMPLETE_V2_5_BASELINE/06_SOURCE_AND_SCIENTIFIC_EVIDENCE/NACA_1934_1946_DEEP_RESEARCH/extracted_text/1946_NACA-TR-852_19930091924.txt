@@ -1,0 +1,776 @@
+                                    CASE FILE
+
+
+                  NATIONAL ADVISORY COMMITTEE
+                        FOR AERONAUTICS
+
+
+                                                       REPORT No. 852
+
+
+
+           FLIGHT INVESTIGATION AT HIGH SPEEDS OF THE
+            DRAG OF THREE AIRFOILS AND A CIRCULAR
+                      CYLINDER REPRESENTING FULL-SCALE
+                                             PROPELLER SHANKS
+
+                                                     By WILLIAM H. BARLOW
+
+
+
+
+                                                                   1946
+
+For llale b,. the Superintendent of Documents, U. S. Government PrlntlDII Office, WuhlDllton 25, D. C.   • • • • - • • - _ PrIce 15 eenla
+                                             AERONAUTIC SYMBOLS
+                                      I. FUNDAMENTAL AND DERIVED UNITS
+
+                                                     Metric           ""'                            English
+                           Symbol
+                                              Unit                Abbrevia-                   Unit              Abbrevia-
+                                                                    tion                                          tion
+
+          Length ______             meter __________________                         foot (or rnile) _________ ft (or mi)
+                             l      second _________________                m
+          TiIne ________     t                                              B        second (or hour) _______ sec (or br)
+          Force ________     F      weight of 1 kilogram _____              kg       weight of 1 pound _____ lb
+
+          Power _______      P       horsepower (metric) _____ ---------- horsepower ___________ hp
+          Speed _______             {kilometers per hOuL _____    kph     miles per houL __ ~ ____ mph
+                             V       meters per second _______    mps     feet per second ________ fps
+
+
+                                                2. GENERAL SYMBOLS
+W     Weight=mg                                                  II     Kinematic viscosity
+D     Standard acceleration of gravity=9.80665 mIst              p       Density (mass per unit volume)
+        or 32.1740 ftLsec 2                                      Standard density of dry air, 0.12497 kg_m-4_s2 at 15 6 0
+                                                                   and 760 mmj or 0.002378 Ib-ft-4 sec2
+      Mass=W                                                     Specific weight of "standard" air, 1.2255 kg/m8 or
+              g
+I     Moment of inertia,=mk'. (Indicate axis of                    0.07651 lb/cu ft
+        radius of gyration k by proper subscript.)
+      Coefficient of viscosity
+                                             3. AERODYNAMIC SYMBOLS
+B     Area                                                                       Angle of setting of wings (relative to thrust line)
+Btl   Area of wing                                                               Angle of stabilizer setting (relative to thrust
+G     Gap                                                                         line)
+b     Span                                                       Q               Resultant moment
+c     Chord                                                      n               Resultant angular velocity
+                    bl
+A     Aspect ratio, B                                            R               Reynolds number, p Vi where l is a linear dimen-
+                                                                                                         JJ.
+V     True air speed                                                               sion (e.g., for an airfoil of 1.0 ft chord, 100 mph,
+      Dynamic pressure, ~P V'
+                                                                                   standard pressure at 15° C, the corresponding
+q
+                                                                                   Reynolds number is 935,400 j or for an airfoil
+L     Lift, absolute coefficient OL= q~                                            of 1.0 m chord, 100 mps, the corresponding
+                                                                                   Reynolds number is 6,865,000)
+      Drag, absolute coefficient OD= q~                                          Angle of attack
+                                                                 ex
+D
+                                                                                 Angle of downwash
+Do    Profile drag, absolute coefficient ODO=~                                   Angle of attack, infinite aspect ratio
+                                                                                 Angle of attack, induced
+Dc    Induced drag, absolute coefficient OD'=~                                   Angle of attack, absolute (measured from zero-
+                                                                                   lift position)
+      Parasite drag, absolute coefficient ODP= ~s
+                                                                                 Flight-path angle
+D.
+a     Cross-wind force, absolute coefficient Oc= ~
+               REPORT No. 852
+
+FLIGHT INVESTIGATION AT HIGH SPEEDS OF THE
+  DRAG OF THREE AIRFOILS AND A CIRCULAR
+    CYLINDER REPRESENTING FULL-SCALE
+             PROPELLER SHANKS
+
+                By WILLIAM H. BARLOW
+          Langley Memorial ~Aeronautical Laboratory
+                     Langley Field, Va.
+                       Nation al Advi sory Committee for Aeronautics
+                     H eadquarters, 1500 New H ampshire Avenue NW, W ashington 25, D. C.
+     Crea ted by act of Congress approved [arch 3, 1915, for the ll pervision and direction of th e scien tific study
+of the problems of flig ht (U.    ode, title 49, sec. 241). I ts member hip was incr eased to 15 by act approved
+March 2, 1929. The member are appointed by the P r e ident, and erve as such without compensation.
+                                      J EROME C . HUNSAKEU,      c. D. , Cambri dge, Mass ., Chairman
+
+THEODORE P . WRIGHT, C. D., Administrato r of Civil Aer o-               ARTHUR W. RADFORD, Vice Admiral, U ni ted State Navy,
+  nautics, Depar tment of Commer ce, Vice ChaiTman.                        D eputy Ch ief of aval Operation (Air) , avy Depar tment.
+Hon. WILLIAM A. if. BORDEN, Assistant Secretary of Commerce.             ARTHUH E. RAYMOND, M . S ., Vice President, Engineeri ng,
+VANNEVAR B H, Sc . D., Chairman, Joint Resear ch and DevelotJ-             Douglas Aircr aft Co.
+  ment Boar d.
+                                                                         FRANCIS W. RI, ICHELDEHFEI,            C. D .,   h ief, United States
+EDWARD U. CONDON, PEl. D ., D irector, National Bureau of                  Weather Bureau.
+  Standard.
+                                                                         LE LIE C. STEVE , s, R ear Admir al, nited States Navy, Bur eau
+R . M. HAZE , B. S., Ch ief Engineer, AlIi on Division, Genera l           of Aeronautics, Navy Depal·tment.
+   Motors Corp.
+                                                                         CARL    PAA'rz , General ,    nited States Army,         Commanding
+VVU.LIAM L IT'l'LEWOOD, 1. E., Vice P resident, Engineering,               Gene ral , A rmy Air Fo rce, War Department.
+  American Airline fly tem.
+                                                                         ALEXANDER VVETMORE,           . D .,   ecretary, Smith onian I n t itu -
+EDWARD M. POWERS, i\Iajor General, 'Cnited State Army,
+  A i tant Chief of Air I taff-4, Army Air Forces, Wa r Depart-            t ion.
+  ment.                                                                  ORVILLE WRIGHT, Sc. D. , Dayton, Ohio.
+
+
+                                      GEORGE W. LEW IS,       C. D., DiTect01' of Aeronautical Resem'ch
+                                              JOHN F . VI 1'O RY , LLM., Executive Secrctary
+         HENRY J . E. REID, Sc. D ., Engineer-in-charge, Langl y 1emorial Aeronautical Laborator y, Langley F ield, Va.
+             S1JJ TH J . DEFRAN CE, B . S., Engineer-in-char ge, Ames Aeronautical Laboratory, Moffett Field, Calif.
+       . EDWARD R. SHARP, LL . B. , Manager , Ai rcraft Engine R e ear ch Laboratory, Cleveland Airpor t, Cleveland, Oh io
+     CARLTO KEMPER, B . S., Exec u tive Engineer , Ai rcraft Engine Research Laboratory, leveland Ai rpor t, Cleveland, Ohio
+
+
+                                                   TECHNICAL COMMITTEES
+                             AERODY ANM ICS                             MATEJUA T.S RE SEARCH COOHDI ATION
+                             POWEU PLANTS FOR AIHCRAF'r                 SELF-PROPELLED GUIDED i\ [ J, SILES
+                             AmCRA PI' CONSTP CTION                       URPI.US AmCRAF'I' RE EARCH
+                             OPERATING PUOBLEMS                         I ND STRY CON LTING COMMl'lvrEE
+                                      Coordination of ReseaTc/t N eeds of J1!lilitaTY (md Civtl Aviation
+                                                    Preparation of Reseal'ch P rogram
+                                                          Allocation of Problem
+                                                        Prevention of DU1Jlication
+                                                       Consideration of I nventions
+
+
+L ANGLEY MEMORIAL AERONAUTICAL L ABORA1'ORY,                                                               AME AERONAU'fICAI. LABORATORY,
+             Langley F ield, Va.                                                                                l\loffett F iell, alif.
+                            AmCRAFT EKGT 'E RE SEA RCH LAT10RA1'OHY, Cleveland Airport, Cleveland, Ohio
+           Conduct, under unified cont"ol, for all agencies, of scientific Tesearch on th e f undamental problems of flight
+
+
+                                      OFFICE OF AERONAUTICAL I NTELLIGEKCE, 'W ru hington, D. C.
+              Collection, cla sification , compilation, and dissemination of scientific and technical information on aeronautics
+      II
+                                                      REPORT No. 852
+
+   FLIGHT INVESTIGATION AT HIGH SPEEDS OF THE DRAG OF THREE AIRFOILS AND A
+                CIRCULAR CYLINDER REPRESENTING FULL-SCALE PROPELLER SHANKS
+                                                         By WILL1 A"'.1 H . BARLOW
+
+
+
+
+                           SUMMARY                                     various hanks and shank fairing und er conditions approach-
+   Tests have been made at high p eeds to determine the drag oj        ing tho se of propeller h ank on a str eamlin e body op er ating
+models, simulating propeUer shanks, in the form of a circular          at high forward , p eeds. A preliminary phase of tills program
+cylinder and three airjoils, the NACA 16- 025, the NAr'A               consisted of te ts of tlu'eo thich airfoil models and a eircltl ar
+16- 040, and the NACA 16- 040 with th rear 25 penent chorrl            cylinder ; the e mod el wer e moun ted perpendi cular to the
+cut oJ!. A ll the model had a maximum thickness of 4H                  low er smface of th e wing of an XP- 51 ail'plane, which was
+inches to conjorm with average pr'opeller- hank dime~sions             opera ted at. uch sp eed as to give lo cal l\Iach n um b el'S at the
+and a pan oj 20X inche . For' the te'ts the model we?'e sup-           mod el tation of from 0.30 to 0.80. At th e model station
+ported perpendicular to the lower surjace of the wing oj an            th e chord wise pre sm e grad ient due to th e wing simulated
+XP- 51 airplane. A wake-survey rake mounted below ' the                in ome 1'0 peets the gr adient du e to a propeller spinner .
+wing directly behind the models was u ed to determine profil           Tip r elief condi tions at, a i>t opeller 'shank arising from rapid
+dr-ag at Jj;fach numbers oj 0.3 to 0.8 over a small range oj an,qle    s panwi e decrea e in bhtde>thickn ess weJ'e approxim ated by
+oj attack. .The dr-ag oj the cylinder was also determined fr'om        usin g models of finite a pect ratio. The resul t of test of the
+pressure-di tr'ibution and j orce measurements.                        Lhree thick airfoil mod el and the circular cylinder arc given
+   The re ult oj the tests i1uLicated that the drag of the airjoils    in the pre ent p aper. A ompari. on of the speed gain s th at
+was lower than that oj the cylinder over th e Mach number range        might, be r eal ized by u e of these thi ck airfoi ls in place of a
+inve tigated. The drag reduction obtainable through the u e oj         round propeller h anl~ i pre en ted.
+the 'e airjoil section in place oj a round hank increa eel with a                                  SYMBOLS
+decrea e in ai1:foil thickness r-atio and reached maximum value
+at a }.([ach number oj 0.63 jor the NACA 16- 0;"0 ai1joils and         q       dynamic press ure, pounds p er sq uare foot
+0.71 for th NACA 16-025 airjoil.                                       Po      free-str eam static pressure, pound pel' quar e foo t
+                                                                       6p      local static pre ure minus fr ee- tream tatic pres m e,
+                        INTRODU TIO                                               pounds pel' quar e foot
+                                                                       do      section profile drag 01' model, pound per foot of pan
+   During recent years th e National Advi ory Committee for
+                                                                       d         ection press ure drag of model, pound pel' Ioot of
+  eronau ti cs h as co nducted investigations for th e pmpose of
+                                                                                  span
+in er ea ing th e efficiency of propellers on airplane . On e of
+                                                                       D       drag of model, pound
+the factor found to iner ea e con id erably th e 10 es in pro-
+                                                                       A       frontal area, quare feet
+peller efficiency wa th hi gh drag of round shank oper ating
+                                                                               mod el thickness, feet
+in high-velocity field. Variou m eth ods for r edu cing shank
+                                                                       Celo     ection profil -drag coefficient (do/qt)
+draa were tri ed ; amo ng th e m ethod s was th e u e of cuB's or
+prop ller h ank fairing. Fligh t-te t data from cuffed pro-            Cet       ection pres Ul'e-drag coeffi cient (cl/qt)
+peller on streamline bodie arc car ce, and th e available              CL      airplan e l ift cocfftcient
+data were no t obtain ed in any y tematic maIm er 0 that the           'M o    £ligh t Mach numb er
+relative value of th e cuffs te ted could not be ascertain ed.         M       effective l\i[ach numb er at model station
+Wind-Lunn el tests of thi ck a irfoil ection and cuffed pro-                             APPARATUS AND METHODS
+pellers h ave no t been obtained with proper ealeJ ::\Iach num-
+ber, a nd h ank r elief effects. B ecause of th e eal'city of dr ag      Th e propeller-sh ank ection elected for th e te ts included
+data on thick airfo ils op rating at hi gh peed s, th erefore,         a circular cylinder to r epro ent a round sh ank and two sym-
+data for developmen t an d improvement of propeller sh anks            m etrical airfoils, th e NACA 16- 025 and th e NACA 16- 040.
+were con id er ed de irable. A fligh t-te t program wa 'on e-          The 25-percent-thick ail'foil r epresented a thin h ank section
+qu ently begun at th e L a ngley Laboratory of th e NACA in            and th e 40-p ercent-thick airfoil, a thick shank section. The
+order to d termine full- calc relative drag ch aracteri stic of         JACA 16- 040 airfoil wa also tested with the r ear 25 per-
+    795250- 4                                                                                                                      l
+2                                                     REPORT NO . 852- JATIONAL ADVI ORY                               OMMITTEE FOR AERO I AUTICS
+
+cent chord cu t off. A photograph of three of the mod el
+tested is presented as figure 1. Geometric characteristics
+of the mod el are given in figur e 2. All models were of
+r ectangular plan form and had a thi kne of 4 %inche to
+corre pond to average hank dimen ions. The mod els had
+a 20 X-inch span includ ing the rounded tip , which was ob-
+tained by rotating the airfoil ection 180 0 about the chord
+line. Th e a p ect ratio of the model were 9.2, 2.1, 3.4, and
+4.5 for th e circular cylind er, the NACA 16- 025 , NACA
+16- 040 , and modified NACA 16- 040 airfoils, resp ec tively,
+and were based on the ass umption that the wing acted a a
+r eflection plane. These values of asp ect ratio may be high
+becau e of a small gap between the model and the wing.
+   The mod els were mounted on a rod perp n licular to and
+extending from the lower urface of the left wing of an
+XP- 51 airplane (fig. 3). The average clearance between thc
+model and the wino- surface was %6 inch. (See fig. 4.)
+Provision was made to rotate the su pporting rod in order to
+obtain a change in angle of attack from - 6 0 to 6 0 for the
+
+
+
+
+                                                                                                                  FIG URE 3.- Wa ke-survey ra ke a nd support I'od for propeller-shank mod els mouoted on lower
+                                                                                                                                               surface 01 wing of XP-5J airpla ne.
+
+
+
+
+    (a) Circu la r cylind er.    (b)        10difted KACA HHl40 airfoil.              (e) N ACA 1(H)25 airfoil.
+
+                                         FIGURE I.- Propeller·shank models.
+
+                           Modified NACA 1(5-040\                                   "NACA 16-040
+          Circular cylinder ..,                        I              ';        ,           /NACA 16- 025
+
+                         ///
+                                  --- ~y'              I ,,-:'i-,. . . . " ",' . . . , .'
+                                                       I          \
+
+
+
+
+          ---~, --- + -~---~
+                        '   l --~~---
+                                ,/ "
+                        ',..... _---\_'-......'I
+                                ......
+                                                                  / i //
+                                                                 --,).. /
+
+
+
+
+      I<-----------IB.O"----------~
+
+    FlGUI1E 2.- Gcometric cha racteristics of propeller-shank models.                          Span 01 models,
+                            20~4 inches, in cluding rounded Lip .                                                                                        (a) Front view.
+
+
+airfoils and to rotate the cylinder thro ugh 200 0 for pres Ul"('-
+distribution mea urement. The support rod wa located at
+approximately 3 percent of the chord at the 40-percent-
+ emispan station and was abou t 3 feet ou tboard of the
+propeller radiu .
+   A wake- urv cy rake mounted 29 inches behind the uppor t
+rod and 9 inches below the wing urface (fig . 4 and 5) pro-
+vided data for determination of the profile-drag coefficien t
+of the model center ection. The distance of the rake behind
+the trailing edge of each mod el is shown in figur e 5. Direct
+drag mea uremen ts on the cylinder wer e obtained by mount-
+ing the cylind er on a s upport rod equipped with electri c
+ train gages. Press ure-drag data on the cylind er were ob-
+tained from pre sure-distribution mea urements made by
+means of two orifice 180 0 apart at each of six equally spaced
+spanwi e stations (fig. 6). A complete SUl"vey at each station                                                                                           (b) Side view.
+wa obtained by rotating the cylinder 200 0 during a te t run.                                                        FiGURE 4.-Circu la r cylioder mounted below 10\\'er surface of wing of XP-5J airpla ne.
+                      FLIGHT IX\" E TIGATlON AT H I GH                           PEED ' OF THE DRAG OF THHEE AIHF OIL                                          AKD A cmC"GLAR                     YLIXD8H           3
+
+                                                                                                       measu rements of the elmo' of the models. In th e pre Ul"e-
+                                                                                                       eli tJ"ibution test of lh r cylindr r the talic-p rr s ure mra ul"e-
+                                                                                                       m en t on the righ t wing were made wiLh a nlkr of ix
+                                                                                                        tatic-press uJ"e tubr , ",iUl each t ube located at a eli tancc
+                                                                                                       below the wing surfacr cor rrsponcling to an orific location in
+ CIrCUlar cylind er ....                                                                               th e cylinder (fig. 6) . For thr force tests of th e cylinde r a nd th e
+                                                                                                       wake uJ"veys, th e tati c pres lire on the rig h t wing was meas-
+                                                                                 'Survey r a k e
+                                                                                                       ured wi th one taLic-p rrs urr tubr locat d 9 inch e bdow the
+                                                                                                       wing surface (fig. 7), whi ch corresponds to tation 3 in figurc 6.
+                                                                                                       The difference brL lV rr ll 10cnJ )'lach numbrr at vari ou
+                                             1<---- 29 "----~                                          di tances below th e wing urface and free- tream ::'Iach num-
+                                                                                                       ber is pre ented in fj O" urr fo)" seyeral fli gh t ::'IIach number .
+      F"1 (; I - RE 5.-   Location of models and wukf'-survcy rake below lower surface of will l! of
+                                                XP-S l a irplane.
+
+
+
+
+                                       Or i fice
+                                                   I
+                                                       I
+                                                       3
+                                      s tation
+                                                   1 "
+
+                                                   oL
+                                                   !t
+                                             2     III
+                                                   I
+
+
+                                                       3
+                                                   1       "
+
+
+                                             3
+                                                   It
+                                                   13
+                                                           11
+                                                                          / 8"
+
+
+
+
+                                             4
+
+                                                   It                                                       FIG UHE 7.-
+
+
+                                                                                                                  . /0
+                                                                                                                                 ta tir·p ressure tube and thermometer mounted be low right wing of
+                                                                                                                                                                X P- 51 airplane.
+
+
+
+
+                                                   if
+                                                                                                                             c----
+
+                                             s
+                                                                                                                                     ----       r--- -...........
+
+                                                   !   3"                                                                - - - ----
+                                                                                                                                 r--
+                                                                                                                                                                        ---- r--- -:::--
+                                                                                                                                                                                                   --        Mo
+                                                                                                                                                                                                             .65
+                                                                                                                                                                                                              -
+                                             6         1                                                                 - -     r---
+                                                                                                                                                                        r---
+                                                                                                                                                                                    - r-         -f--        .50
+
+                                                                                                                                        ---- ---- I::::-:::                                r--
+                                                   I                                                                     r-
+                                                                                                                                 -=- --- r---                                                                .40
+
+
+                                                                                                                                        ----                --                                               .30
+                                                                                                                        o3
+                                                                                                                                            6                       9                 12                /5
+                                                                                                                                                                                                              -18
+                             FraUIlE 6.-Circula,· cylinder showing orifice stations.                                                              Distance be/ow wing surrace, in.
+
+                                                                                                       I'JO\ ' RE S.-   Variation of incrcment of loca l Mach number abo\'c fli ght M ach number with
+   The 10 'a1 dynamic pres ure q and the local ::'I I ach number                                                dis tance below right wing surface as dcl('rmined from s t a ti c ~pr ess ure surveys.
+}'1  u cd in cvaluating thc data were determinc l from free-
+ tJ"ram total pressure mea uJ"ec! with Lh e pitot t ub e mounted                                          In oreler to indi caLe Lhe magnitude o[ the chordwi e Yaria-
+ah ad of th r airplanr wing and from lo cal tatic pressure                                             tion of static pre ure in Lhe test r egion, the chorelwi e pre -
+mea ured with static-pre me t ub es located on the ri ght                                               Ul"C distributions, a determined from meas mement of
+wing at th e ame chor clwi e and panwise position as Lho e                                              tatie pre sm e on th e lower ul"face of the wing of another
+at which Lh e mod el were lo cated on th e left wing. T h e e                                          XP- 51 airplane, arc pr ented in figure 9 [or an. airplane lift
+pre ~ Ul" e m a urement were mad e simul taneously with                                                coefficien t of abouL 0.15 a ni ev eralfllghL :,[a h number.
+4                                                      REPORT XO.                 52-XATlOXAL AD YJ SORY COr-Il\llTTEE FOR AEROXAUlICS
+
+                      At wing sIJrfoce  Mo At station:3                                                                     forward parl of lile test r egio n fo ll o \\-(,d by tlw J oSltIn'
+                                       0.56     o
+                       - - -- - - .60           o                                                                           gmd ient s oyer the n'ar part (fig. 9) an' s imilar t o t h e o-racl ient
+                       - - - - - - - - ·65     o                                                                            about a sp inn ('r o n 111 " no (' of a typical in-line e ng ine in talla-
+                        - - - - - - .70
+                                                                                                                            t ion. On a pro peller the tbinn er sect ion adjacent to th c
+       -1.2                                 ~LCA 16-0?5~                                                                    shank m ay influenc c' tite fl ow ov('r till' sha nk 10 Oll1(' extent.
+                                                                                                                            In the pre' ('nt inn' ti gat ion thi co ndition \\'as co nsid ered
+                       Modified                   -NA         10 -040-
+                    NACA 16-040' ---- --                                                                                    to h e s imulated, at least approxim ately , by Ih(' us(' of mod els
+        -.8            Cylinder:--- - --- --                                                                                of nnill' a Pl' ct ratio.
+                                                                                                                                The variation of t he sect ion drag coeffi cie nt ,,-ith ~I ach
+  ~
+  q                                                                                                                         number for the eyli nd er as determined from forc e-t e t and
+        - .4                                                                                                                pressun'-d is tribu tio n 1TI('aSlll"em e nts i pre'sented in no- ure 10.
+                                                                                                                            Th e ectio n pn' s ure-drag codfi ci(' nt Yari('(1 oyel' Uw pan of
+                                                                                                                            t he' cy lin (iPr , and 1'01' t e ts in which til(' dat a an' complete
+           OL - - - -_ _ _ _-+ ____________
+                                                                                                                            no con s i (('Ilt va ri<1ti o n is noted . An ave rage minimum ec-
+                                                           --- - .-Supporf rod l
+                                                                                                                            tion press ure-drag coe fll c iC'nt of 0 .5 i found bet\\-ee n values
+F WU HE 9. ·TspiC'al chordwi se pr rss llr (l lli S lriblJti o ll ~ il l win g S Urfi] ('C in tC'S l J'r,gion at vnriOlJs   of 111 of 0 .425 a nd 0.475. ' ViLh furLllf' r in crease in l1 ach
+        lIi ~ h t M ach numbers.       Pressun' coemciclIls (OJ stalion 3 ( CL~ O.1 5) a l ~o ~ h o \\"n .                  numb ('r th e sect ion pres lII"('-drag coefficient il1 ('l"ea eel rapidly
+                                                                                                                            Lo a valu c' of ahout 1.0 at a :-lach numb e r o( 0.6.5 and thell
+Static pre s lIl"es mea ured in til(' prt'sc'nt t c's ts at tat ioll :3
+                                                                                                                            d('crC'ased at st ill higher .\Iaclt numlw rs. Th e drag ('oeffi-
+(9 in. belo\\" t he ,,-ing surface) arc inducit'd in figure 9. B e-
+                                                                                                                            ci('nt delermin('d from force lests appeared to be in rea on-
+calise o( tbe decrt'ase in induc('(1 YC' loc ity with di s tance from
+                                                                                                                            abk agreement with t he prC'SSll1'e data.
+LIlt' wing s llt'face , t h e dlOrdwi sC' gmdiC'nts a t station 3 may
+                                                                                                                                The drag ("oeffic ient of th e cylind er c/ ('(enn illed from force
+be SOJ1H'wll<lt k s than tho. (' indi("atec/ at thC' wing s urf,l(·C'.
+                                                                                                                            le' ts , wake' s urv eys , and pre un' -di tribution te tare eom-
+    The angula r po ition of the mo(kl ,yi th 1"('spect to Ul('
+                                                                                                                            pared o n tlH' base' o f :\l ac h number a nd R ey nolds number
+airplan(' longitudinal axis \\-,lS recorckd by a m('chanical
+                                                                                                                            ill figure 11 and] 2, rcsp ect i\' ely. In ge neral, r(' s ulLs of th e
+OptiCell ("entrol-position r('("ord('r. TIlt' ya\y a ngle' of t/w
+                                                                                                                            wake Sll l"\'('YS are not in ag re cment with thc n 's ult s of the
+airpl ane' \\-as measured by nH'a ns of a ya\\- ' -a lH' mount ed on
+                                                                                                                            fo rce or p)"('ss ure-ci i tl' i bll t ion tests. "W ake- uJ'vey 1'e ults
+a boom onr ('ho rd ah('ad of t h(' right wing nea r the tip. Th ('
+                                                                                                                            indicaU'd a lowe)" minimum drag ('oeffici('nt , wiLh drao- co-
+angle of attack of tIll' J1lodd s \\-as dett'rmined from the anglc>
+                                                                                                                            effi cie n t inu('a in o- rapidly at a :\lach numlH'J" of abo u t 0.425
+of the modd and of the ai q Jlant'. ~\n :v difl'Prt'nc(' th at might
+                                                                                                                            but incrl'asing to a ma x imum yalue of about 1..5 at a yaIlle
+('xist I)('t wl'l'n tilt' dirt'('[ion of f10\\- OYC'l" thl' \\-ing and till'
+                                                                                                                            o ( J[ of 0.6;3. Thi maximum YaiLl(' of drag coefficient i
+din'dion of now in tIl(' fret' st r('am ,,-as not lak('n into
+                                                                                                                            ahout 50 p('rcent h igher thall the yalue obtai n ed by Ul(' (orce
+ac('ount. Air t('mlwrntun' lIs('d in the dclU'mination of
+                                                                                                                            and pressu['('-ci i t ri but ion m eas uJ"('m(' n ts. ~ 0 exact ex-
+mo(kl R(,)Tnolds num 1)('1' wa s obta i l1l'd b)T means of a low-lag
+                                                                                                                            planation for th is d i c)"('pancy has beell as('('rtai n('(]; h o wever,
+tl1(' r111 ol11<'t(,1" (ng. 7) ("oll l1('("('d 10 a recording galv a ll olll-
+                                                                                                                            titt, osci ll atory na ture' of tllt' wakt', \\-hidli s not aecounlecl
+{'Ie]". All instruI11t'lltation \\'as s tanclllrd XACA ('q uipnwnt.
+                                                                                                                            (0), in tl1<' momentum equ a Lions u eel in ),NllIC'lion of wake-
+    '1' 11(' t('sts \\-e1"(' made at fli ght ~l ac h llumhers from 0.;1 to
+                                                                                                                            SlllT('Y da ta, may be' the cau e of th is diO·e)"(' l1 ce. Drag data
+0.7 in 0.05 inklTals . Th(' ('o IT('s pond in g range of local ~\I ac h
+                                                                                                                            [or th e a irfoi l s('C'lion s wen' obtaill('d by til(' wak ('- Ul'Yey
+number aL th e test station Wl1 0.:3 to O.               Durin g ('ach run
+tll (' flight :-lach number , til(' )'fl\\- a ngiC', a nd titt' no rmal
+                                                                                                                                  1.2
+ac('(']('rnt ion \\' (' I T hdd co nst,1 nt.                                                                                             c.' at s tarior s
+                                                                                                                                        - r -o I
+                                 RESULTS A D DIS CU SSION                                                                               -        02                                                       /.'!! ~ ~         4
+                                                                                                                                             r-03
+                                                                                                                                                                                                      j,~   ..;            '\
+    An indi('lltion of th e' ('xtt'nt to \\-hich the principal flo\\-
+("o nd i t io ns abo ut a pro l)('l1(,]" shan k \\-('re J"('proc/ uc ed in t h e'
+pr('s('nt model test may b(' oiJtain l'C1 from a n exa mination
+                                                                                                                                        -
+                                                                                                                                        -
+                                                                                                                                             f-Ll4
+
+                                                                                                                                             ~6
+                                                                                                                                                 'V
+
+
+
+                                                                                                                                                      I
+                                                                                                                                                          5
+
+                                                                                                                                                                                                h~
+                                                                                                                                                                                                    V.l /         '" l\
+                                                                                                                                                                                                                      t>
+
+
+
+of Ul(' yari atioll of :\Iach numbt' r \\' itlt di stanc(' from til('
+                                                                                                                                                                           ""-..
+                                                                                                                                                                                   "'-         r-
+wi ng s u rfaec (fi g. ) , th(' dlOrd wi s(' variation of ta t ie pn' SUI"('                                                                Cd   f)-om farce test:::: f---               -;}
+in t he ll' t reg ion (fig. 9) , and lh e method used for s im ulati ng                                                                                                   I~ ~
+  h a nk n'lid. TIH' variat ion of :\l ach numbl' r \\-ith di s tanc e
+from lll(' wing s llrfa ('e incii ea t e t h at the :-l ach numlw]"
+dNTea eel by abo ut 0 .03 in a di lance o f ahout 1 inches,
+wh('rea on an aet ual propell er ha nk of eq u ival('nt kn g th
+ the :\l ach numlw r (ba ('(Ion th e n'sliltant of tran lational and
+ rotatio nal yelocit ie ) wo uld incr('asl' by aboul 0. 1. Tlw                                                                     o              .I          .2   .3        .4           .5         .0       .7            .8
+                                                                                                                                                                        Mach number. M
+ dYed of not r eprociuein g UI (' ac-tual pan",i se gradi(' nt i not                                                        F IGURE 1O.- Yariation o[ section drag coerri eient with Mach numbcr [or the circular cylinder
+know n. Th e negat ive e hordwis(' pre's ure g rad ic' nt s ov(' r the                                                                 as det rmiu~d [rom [orco-test and pressure-di tribuLiQll measuremrnts.
+               FLIGHT I~YE TIGATION AT HIGH                                                 P EE D    OF THE DRA            OF THREE AlRF OIL                                 TD A eIRe LAR                eYLI ~ DER                          5
+                                                                                                                     Th e vari ation of se lion profile-drag coeffl cicn L wiih angle
+             _.o /-o)ceJe S ~s. ~do
+                                      Cd.J .1                                                                      of attack for eve ral ),Iach numb er is pI' nted in figure
+                                                                  C~
+               o Woke survey,
+             f-O Pressure distribution,                                                                            13, 14, and 15 for the NACA 16-025, the KA A 16-040,
+                   at station :3
+                                                                                            I/'                    and tb e modifi ed KACA 16- 040 airfoil models , 1'e pectivcly .
+                                                                                       /                                    1.0
+                                                                                   /                 ~               '-:~                                                                                                            ~
+                                                                               [7 y'P'                                                                                                                                        0.56-
+
+                                                                                                     '"   "'v,                                                                                                              0
+                                                                                                                                                                                                                            0  .63-
+
+
+                                        V
+                                            -             ~ -0- ~
+                                                                      ---at
+                                                                              J/                                                                                                                                            0 . 72
+                                                                                                                                                                                                                            6  .79-
+
+
+
+                   ./        .2        .3      .4        .5      .6         .7         .8
+                                        Mach n umber. M
+FIGURE I I.-Variation of section drag cocfficient with lIIach number for thc circu lar cy lind er
+      as det nnined from force tests, wake sun'eys, and pressure-distribution tests.                                                                                                                       .-0--
+       1.6
+                   L I test,
+                o Force     I I CdII
+                                  o                                                                                                                   [-<>---,                                          .1>- k,--
+             f- 0 Woke survey, C do
+                <> Pressure distribution, Cd                                                                                                -6            -4              -2          0             2            4          6              8
+       1.4
+                    at station 3                                                       11                                                                               Angle of attack. deq
+                                                                                                                 F,GURE 13 -        Yariation of section profile-drag coefficient (based Oll thickness) with angle of
+                                                                                                                                   attack at variolls Mach numhers for the'" ACA 16-025 airfoil model.
+
+                                                                                                                          JO                                                                                             1M
+                                                                                                                     <J
+                                                                               19                                    .....-                                                                                            00.29 f--
+                                                                                                                      ~                                                                                                0        36 f -
+                                                                                                                     ~.8                                                                                               <> .42
+                                                                                       1/ \0                         "--
+                                                                                                                      Q)
+                                                                                                                     o\)
+                                                                                                                                                                                                                       II
+
+
+                                                                                                                                                                                                                       " .56
+                                                                                                                                                                                                                                .50 f--
+                                                                                        \1                            1:J'..6                                                                                          t> .65 f--
+                                                                                                                                                                                                                                _70
+                                                                                                                      Cl
+                                                                                                                      I..                                                                                              "
+                                                                                            0                         1
+                                                                                                                     ~ 4
+                                                                                                                     ;;::.
+                                                                                                                     o
+                                                                                                                                                           <J
+
+
+
+
+                                                                                                                     b.
+                                                                                                                      §.c
+                                                                                                                     :;::
+                                                                                                                     <J
+                                                                                                                     ~                                                                                      -..,>-..
+                                                0......                                                                       o
+                                                          I"-a r----                                                          -8       -6                 -4             -2           0             2            4          6              8
+                                                                                                                                                                        Angle of attack, deq
+
+                                                                                                                   F,GUIlE 14 .-Variatioll of scclion profile-drag coefficient (based on lhicknc   ) with anglc of
+                                                          I--<>                                                                    attack at various Mach numbers for tbe NACA IC,..O·IO airfoil model.
+        .4
+                                                          i,..rt--,
+                                                  /
+                                                                                                                                                                                      v                                               1M
+                                            c                                                                                                                                                                                    0030
+                                                                                                                                                                                                                                 0 .36
+                        3         4    5     6 7 8 9 10                           20x10 '                                                                                                                                       <> .43
+                                    Reynolds number                                                                                                                                                                             6     .50
+                                                                                                                                                                                                                                   .57
+F,GURE I2.-Yariation of secLion drag coefficicnt with Reynolds number for tho circular cyl-
+    indcr as determined from force tests, wake surveys, and pressure-distribution tcsts.
+                                                                                                                                                 <I                                                                             " .66
+                                                                                                                                                                                                                                t>
+                                                                                                                                                                  .<1
+                                                                                                                                                                                          "                                        _7e
+m ethod and may therefore be ubj ec L to till sam e type of
+                                                                                                                                       <I
+                                                                                                                                                      q
+                                                                                                                                                                 ~
+                                                                                                                                                                                 <I
+                                                                                                                                                                                              ""-                               " . 79
+                                                                                                                                                                                                                                17
+
+ClTo r. Cond it ions in Lb e wake oJ Lh c airfoil at th e survey                                                                             ~                                                             r-o
+  LaLion, however, should approach more closcly th e cond i-
+                                                                                                                                                      ~
+                                                                                                                                                                 :::            :>='=
+
+
+Lion a umecl in th e wake equation s Lhan the condition for                                                                                                                                     ~
+
+
+the wake of th e circular cylinder. If Lh e UTvey had b ee n
+m ad e farLh er do\\-n trcam of Lh e model , th e efrecL of wake
+oscillaLion migh t have been r ducecl and more conservaLive
+                                                                                                                                        -6                -4             -2      0       2                       4                         8
+r e ulls obtained. B ecau e of Lh e diffi culty of upportin g a                                                                                                         Angle of attock, deg
+rake in a more r earward po ition, however, Ul'vey co uld                                                          FIGURE I5.-Variation of section profile-drag coefficient (ba cd on th ickne    ) with angle of
+noL bc mad e farth er down Lr am.                                                                                             attack at "arious Mach numbcrs for lhe modified NACA I G-O~O airfoi l model.
+                                          l{EPORT NO.           52-NATIONAL AD "] (lRY CO:\L\ [iTTEIo; FOR AEROXAGTICS
+
+
+TIl(' yariation of (,('t ion profde-drag coefficimt \\' ith :'[ach                                    On the ha i of lhe r es ults of figur e 17 an e t imate wa
+numb('[" for Z(,I"O angl(' of atlack, deLermined from t il e daLa                                 macl ro fthe incrra l'inspred of a pre ent-d ay flgh te r ai rplane
+in. figures 13 to 15 , i, pn's(' nU'd as figure 16 . Th (' edion                                  Olw rating al an altitudr of 30,000 fert thaL may br obLainecl
+profile-drag coefficient h ad a minimum yalu c of about 0.02                                      by fairing the ('XPO rd round h anks of a fOlll"-blad e proprJ-
+}1.L :'I ach Jluml){'r up lo 0.G:3 for til(' XACA 16 025 airfoil                                  IeI' b )T lI S(, of r Heb of lhe lhre(' airfoil srel ion  Th r I"rsuIt
+mo dd , a minimum valu (' of abo ut 0.04 up Lo a ..\l ac il /lum-                                 a rr pn's('ul rd in figure 1 as th r sp(,NI increasr obtainable
+ber o f 0 .50 for lh e NACA I G 040 a irfoil model, and a mini-                                   hy a fairin g of ] il1 eh OJ[ each round hank , alLh ough , of
+mum yalue of 0.22 at a :'l ac h numl)(' r of 0.65 for Uw modifled                                 ('o urse, in the aC'lual ca e mo re of tll(' propell er h ank would
+NACA ] 6- 040 airfoil mode l. The la rge valu es of se<"l ion                                     hayr Lo be fai red and lhr lolal increa e ill peed \" ould there-
+profih'-cirag coeffici('nt, at 10\\' "\1ach number , for t il (,                                  fore be g reater than i h0\\"11 in figurr 1 . The c res ult
+modiflec\ :\AC \. ]6 040 airfoil w ere probahly a soc iaL ed                                      a re intended p rimarily to show the relativ(' crl'eetivene of
+with low Reynold Jlumb('rs . Th e :'l acb numb(' r al whi ch                                      t h r yariou s fai rings . Th e maximum increa e in speed ob-
+tll e     eel ion profilC'-d rag ('oeffic ien L began Lo inc rea e                                tainable by 1I ing t h e XACA 16- 040 and lh e mod ified KACA
+rapidly \\'as 0.75 for tll('l\ACA 16- 025 ai rfoi l model and 0.60                                ] 6- 040 airfoi l sec tion a fairings wa estim aLecl to be 4.0
+for Lil e .i\ACA ] 6- 040 a irfoil model. AL :'lach numb ers                                      to 4 .5 miles prr h Ollr at a true a irs peed of 430 miles p er
+g reaLN th an 0.65 the se<"lion profilC'-drag coC'ffici C'n t o f L1w
+modified l\'ACA ] 6- 040 airfoil model \\'a slig1llly Ili gh ('J"                                          .5
+ lhan LlH' co rrespon di ng drag codficienL for til(' i\ACA l 6 04 0
+ai rfoil model.
+     Th e ya ri ation of lh C' dr ag of LlH' cy li nder and t bt, ai rfoil
+                                                                                                         .4                                                                                   ~
+model s w ilh :'lach numbe r i p resen ted in fi g ure 17 as a plot
+o f D/PoA against ..\I ach number . Oy er th e range o f .\l ach                                                                                                                        V I
+ n umbe r Le Led , t h e drag o f th e cylind er w as hi g her th an th e
+drag of any of th e ai rfo il mod els. Th e drag r('(lu ctioll ob-
+ tained lhrou gh u e of Lh e a irfoils in plac e of a cylindrical                                        .3                                                                      /
+s hank incr ease d wi th decrease in a irfoil thi ckne s raLio . A
+  mall r ed u ctio n in drag at low ..\ l ach numbers and a large
+                                                                                                                                                                             /
+r ('(luct ion in drag at hi gh ..\Iac h n umbers can be d Iected
+ lhrough Ll Sl' of th e NACA 16- 040 ai rfoil with the rea r 25 -                                        .2                                                              /                   I
+                                                                                                                                                                                         ~
+                                                                                                                                               Cylind er .....;
+ percent chord cu t of!' in pl ac(' o f th e cylindri cal hank. Th e                                                                        (for ce test) .
+mllximum drag r eduction wa obtained at a ..\Ia ch number                                                                                                                                                     I
+ of 0.63 for th e NACA ]6- 040 a irfoi ls and at a ..\[ ae11 llumbrr
+of 0.7] for th e 'l\ACA 16 02 5 a irfoi l.                                                               ./
+                                                                                                                                                                 I               g I
+    /..0                                                                                                              Modified                        /~-J                                            /
+                                                                                                                t - NAfA 16r4O ...
+                                                                                                                                        ~ NACA t -~                                      /~ACA If-025
+                                                                         I                                 0.                 .2                  .4       .6
+                                                                                                                                                 Mach number, M
+                                                                                                                                                                                                      .8                1. 0.
+
+                                                                                                  FIGcRE 17.-     Variaiion or drug or the circu lar cy lind er and the three a irroil models with Mach
+                                                                                                                                    numher aL zerO all~lc of attack.
+
+
+                                                                                                     8
+                                                                                                                             NA~A Id-02;
+                                                                                                                  I
+                                                                                                           - -     -   NACA 16-0.40.     I
+                                                                                                             - - - - - Modifi"ed NACA 16-0.40.
+                                                                    !J
+                                                                                                                                                                                     ...........
+                                                                                                                                                                                                          -
+                                                                   1/
+                                 ~                                                                                                                                           /
+                             MOdified~                                                                                                                                ;:: -- -
+                                                                                                                                                               /"
+                                                                                                                                                                      --                      -~
+                                                                                                                                                                                        ...........
+
+                            NACA 16-040....
+                                                                 R               I                                                               #
+                                                                                                                                                             /""
+                                                                                                                                                                ..-                                           ~
+                                                     ~
+                                                            ~.               I                                                                              ..-                                                   ,~
+                                                                                                                                      L     /'
+                                                                                                                                                  /
+                                                                                                                                                      ..-
+                                          NACA 16-040 ' )
+                                                                         /                                                              /
+
+
+                                                      ../
+                                                            V      VNACA 16-028                       0.
+                                                                             I       I                                30.0                                       40.0.                                            500
+     0.                .2              .4       .6                       .0              1.0                                       Airplane true airspeed, mph
+                                      Mach number, M
+                                                                                                  P,r.t·"" 18.- I'st imatcd increase in speed obtainable [or a typical fighter airplane "'itb a
+F,GURE 16.- " ariaLion or scction profilr·draJ( coefJieit'nt (based on t hickness) with ~ r aeh    rour·hlade propeller h,' rairi ng t inch or each round shank to all a irfoil seetion. Airplanc
+                 nnmber ror the three a irroillllodcls at 1.ero angle or allaek .                  op~rating at 30,000 reel.
+         FLIGHT I    ' E 'fIGATION AT r-llGH   PEEDS OF 'l'HE DRAG   OF THREE AIRFOIL     AND A CIRCULAR CYLI DER                            7
+
+houl'.  Thc increase in pecd obtainable by u ing the NA           the cylinder over the Mach number range inve tigated (0.3
+16- 025 airfoil section \Va greater over the speed range con-     to 0.). The drag reduction obtainable through the use of
+ id I.' d than that obtainable by u ing the other two airfoil     the e airfoil section in plac of a round hank increa ed
+ cction and had a maximum valu e of about 6 miles pel' houl'      wi th deCI'ease in airfoil thickn s ratio and reached maximum
+aL a Ll'u c airspeed of 4 0 mil e pel' hoUl'.                     valu s at a Mach number of 0.63 for the ACA] 6- 040 air-
+                                                                  foil and 0.71 for th e A A 16- 025 airfoil.
+                    CONCLUDI G REMARKS
+
+  Th e results of tests of models simulating propeller shank in
+the form of a cylinder and th r ee airfoils- the NACA 16- 025,
+the NA A 1'6- 040, and a modified TACA 16- 040, each              LANGLEY :MEMORIAL AERO TAUTI CAL LABORATORY,
+having a maximum thickne equal to the cylinder diameter -             ATIO TAL ADVISORY     OMMI'l'TEE FOR AERONAUTICS,
+ind icated that th drag of the airfoil wa. lower than that of         LA GLEY FIELD , VA., June 7,1946.
+
+
+
+
+                                                                                                  U. S, GOVERNMENT PRINTING OFFI CE : 1948
+                             y
+                                 ......~
+
+
+
+
+                                                                             z
+                           Positive directions of axes and angles (forces and moments) are shown by arrows
+
+
+                    Axis                                     Moment about axis                       Angle              Velocities
+                                         Force
+                                        (parallel                                                                      Linear
+           Designation             Sym- to axis)
+                                        symbol      Designation Sym-               Positive    Designa-         Sym- (compo- Angular
+                                    bol                          bol               direction     tion            bol nent along
+                                                                                                                       axis)
+
+        LongitudinaL _______        X       X       Rolling ____ ___   L           Y---+Z      RoIL _______             u            p
+        LateraL ______________
+        N ormaL __ ____ ____ ___
+                                    Y
+                                    Z
+                                            Y
+                                            Z
+                                                    Pitching ____ __
+                                                    Yawing ___ ____
+                                                                       111
+                                                                       N
+                                                                                   Z---+X
+                                                                                   X---+Y
+                                                                                               Pitch. _______
+                                                                                               Yaw ____ ____     '"
+                                                                                                                 0      v
+                                                                                                                        w
+                                                                                                                                     q
+                                                                                                                                     r
+                                                                                                                 '"
+Absolute coefficients of moment                                              Angle of set of control surface (relative to neutral
+          L              M           N                                         position), 0_ (Indicate surface by proper subscript_)
+   0,= qbS          Orn= qcS    On=qbS
+   (rolling)       (pitching)   (yawing)
+                                                         4. PROPELLER SYMBOLS
+D     Diameter
+p     Geometric pitch
+                                                                             p         Power, absolute coefficient Op=          pn-';1)6
+p/D   Pitch ratio
+V'    Inflow velocity                                                        0,        Speed-power coefficient=        !J-VS
+                                                                                                                          Pn2
+
+V,    Slipstream velocity                                                    f/        Efficiency
+T     Thrust, absolute coefficient OT=
+                                                    pn
+                                                      ;;4                    n         Revolutions per second, rps
+                                                                             <I>       Effective helix angle=tan-{2~n)
+Q     Torque, absolute coefficient OQ=
+                                                    pn
+                                                      9[)6
+                                                      5. NUMERICAL RELATIONS
+1 hp=76_04 kg-m/s=550 ft-Ib/sec                                              1 Ib=OA536 kg
+1 metric horsepower=0_9863 hp                                                1 kg=2_2046 lb
+1 mph=0.4470 mps                                                             1 mi= 1,609.35 m=5,280 ftl
+1 mps=2.23i9 mph                                                             1 m=3.2808 ft
+

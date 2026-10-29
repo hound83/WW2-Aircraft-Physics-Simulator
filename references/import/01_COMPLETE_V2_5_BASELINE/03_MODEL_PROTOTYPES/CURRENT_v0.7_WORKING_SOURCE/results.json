@@ -1,0 +1,962 @@
+{
+  "version": "v0.5",
+  "status": "Exploratory; all historical sustained-turn predictions unvalidated",
+  "conditions": {
+    "e": 0.78,
+    "propProfile": "C",
+    "cd0": "Each aircraft calibrated to exactly one historical or Greg sea-level speed, then held fixed during analysis",
+    "clmax": "assumed separately per aircraft",
+    "modelRating": "109 emergency; 47 military; 51 67 inHg",
+    "comparisonAltitudeFt": 5000,
+    "comparisonSpeedEasMph": 200
+  },
+  "aircraft": {
+    "bf109f4": {
+      "name": "Bf 109 F-4 / DB 601E",
+      "cd0Calibration": {
+        "cd0": 0.026017217056890238,
+        "etaAtAnchor": 0.8276726752904248,
+        "anchorSpeed": 325,
+        "anchorAlt": 0,
+        "origin": "calibrated from one speed anchor; NOT a measured drag polar",
+        "valid": true
+      },
+      "status": "modelled",
+      "sampleAt5000ft200EAS": {
+        "sustainedG": 3.0051852984355087,
+        "turnDegSec": 16.5320266003285,
+        "stallEasMph": 98.06509011620857,
+        "shaftHp": 1322.1372832105662
+      },
+      "holds": 0,
+      "holdoutMAEMph": null,
+      "maxAbsResidualMph": null,
+      "observations": [
+        {
+          "altFt": 0,
+          "gear": "fluid",
+          "observedMph": 325,
+          "predictedMph": 325,
+          "residualMph": 0,
+          "anchor": true
+        }
+      ]
+    },
+    "p47b": {
+      "name": "P-47B / R-2800-21 (41-5902)",
+      "cd0Calibration": {
+        "cd0": 0.01968315937146469,
+        "etaAtAnchor": 0.8230748957469042,
+        "anchorSpeed": 352,
+        "anchorAlt": 5000,
+        "origin": "calibrated from one speed anchor; NOT a measured drag polar",
+        "valid": true
+      },
+      "status": "modelled",
+      "sampleAt5000ft200EAS": {
+        "sustainedG": 2.4081973802718117,
+        "turnDegSec": 12.780023958382863,
+        "stallEasMph": 112.26070296569274,
+        "shaftHp": 2000
+      },
+      "holds": 5,
+      "holdoutMAEMph": 3.6494,
+      "maxAbsResidualMph": 5.944,
+      "observations": [
+        {
+          "altFt": 5000,
+          "gear": "turbo",
+          "observedMph": 352,
+          "predictedMph": 352,
+          "residualMph": 0,
+          "anchor": true
+        },
+        {
+          "altFt": 15000,
+          "gear": "turbo",
+          "observedMph": 386,
+          "predictedMph": 386.051,
+          "residualMph": 0.051,
+          "anchor": false
+        },
+        {
+          "altFt": 25000,
+          "gear": "turbo",
+          "observedMph": 420,
+          "predictedMph": 423.262,
+          "residualMph": 3.262,
+          "anchor": false
+        },
+        {
+          "altFt": 27800,
+          "gear": "turbo",
+          "observedMph": 429,
+          "predictedMph": 434.1,
+          "residualMph": 5.1,
+          "anchor": false
+        },
+        {
+          "altFt": 30000,
+          "gear": "turbo",
+          "observedMph": 426,
+          "predictedMph": 429.89,
+          "residualMph": 3.89,
+          "anchor": false
+        },
+        {
+          "altFt": 34000,
+          "gear": "turbo",
+          "observedMph": 412,
+          "predictedMph": 417.944,
+          "residualMph": 5.944,
+          "anchor": false
+        }
+      ]
+    },
+    "p51b": {
+      "name": "P-51B-15 / V-1650-7 (43-24777)",
+      "cd0Calibration": {
+        "cd0": 0.0162226349489314,
+        "etaAtAnchor": 0.816949929255663,
+        "anchorSpeed": 361.5,
+        "anchorAlt": 0,
+        "origin": "calibrated from one speed anchor; NOT a measured drag polar",
+        "valid": true
+      },
+      "status": "modelled",
+      "sampleAt5000ft200EAS": {
+        "sustainedG": 2.770325934878338,
+        "turnDegSec": 15.071400003262267,
+        "stallEasMph": 98.46385799361909,
+        "shaftHp": 1633.1764705882354
+      },
+      "holds": 8,
+      "holdoutMAEMph": 2.60975,
+      "maxAbsResidualMph": 3.854,
+      "observations": [
+        {
+          "altFt": 0,
+          "gear": "low",
+          "observedMph": 361.5,
+          "predictedMph": 361.5,
+          "residualMph": 0,
+          "anchor": true
+        },
+        {
+          "altFt": 4000,
+          "gear": "low",
+          "observedMph": 380,
+          "predictedMph": 377.988,
+          "residualMph": -2.012,
+          "anchor": false
+        },
+        {
+          "altFt": 7400,
+          "gear": "low",
+          "observedMph": 395.5,
+          "predictedMph": 392.735,
+          "residualMph": -2.765,
+          "anchor": false
+        },
+        {
+          "altFt": 10300,
+          "gear": "low",
+          "observedMph": 409,
+          "predictedMph": 405.896,
+          "residualMph": -3.104,
+          "anchor": false
+        },
+        {
+          "altFt": 18000,
+          "gear": "high",
+          "observedMph": 408,
+          "predictedMph": 407.12,
+          "residualMph": -0.88,
+          "anchor": false
+        },
+        {
+          "altFt": 20800,
+          "gear": "high",
+          "observedMph": 417,
+          "predictedMph": 417.606,
+          "residualMph": 0.606,
+          "anchor": false
+        },
+        {
+          "altFt": 24000,
+          "gear": "high",
+          "observedMph": 426,
+          "predictedMph": 429.838,
+          "residualMph": 3.838,
+          "anchor": false
+        },
+        {
+          "altFt": 28000,
+          "gear": "high",
+          "observedMph": 419,
+          "predictedMph": 422.854,
+          "residualMph": 3.854,
+          "anchor": false
+        },
+        {
+          "altFt": 32000,
+          "gear": "high",
+          "observedMph": 410,
+          "predictedMph": 413.819,
+          "residualMph": 3.819,
+          "anchor": false
+        }
+      ]
+    }
+  },
+  "greg": {
+    "bf109f4": {
+      "inferred": {
+        "oswald": 0.5576706734059873,
+        "cd0": 0.02437284688790079,
+        "parasiteShare": 0.9334975369458128,
+        "inducedShare": 0.0665024630541872,
+        "source": "Greg 109F4 screenshot, assumed 6,371 lb weight; inferred parameters not independently measured"
+      },
+      "recreation": [
+        {
+          "speedMph": 100,
+          "parasiteDiffLbf": -0.3550295857988033,
+          "inducedDiffLbf": -0.4375,
+          "requiredPowerDiffHp": -0.1446745562129763
+        },
+        {
+          "speedMph": 125,
+          "parasiteDiffLbf": -0.8047337278106568,
+          "inducedDiffLbf": -0.4399999999999409,
+          "requiredPowerDiffHp": -1.4149112426035515
+        },
+        {
+          "speedMph": 150,
+          "parasiteDiffLbf": -0.7988165680473003,
+          "inducedDiffLbf": 0.24999999999994316,
+          "requiredPowerDiffHp": -1.0195266272189656
+        },
+        {
+          "speedMph": 168,
+          "parasiteDiffLbf": -0.1828355029585964,
+          "inducedDiffLbf": 0.13297193877548352,
+          "requiredPowerDiffHp": -1.0863388767540414
+        },
+        {
+          "speedMph": 175,
+          "parasiteDiffLbf": -1.3372781065089043,
+          "inducedDiffLbf": -0.6326530612244596,
+          "requiredPowerDiffHp": -1.785967878275585
+        },
+        {
+          "speedMph": 200,
+          "parasiteDiffLbf": -1.4201183431952131,
+          "inducedDiffLbf": -0.109375,
+          "requiredPowerDiffHp": -1.2823964497040947
+        },
+        {
+          "speedMph": 225,
+          "parasiteDiffLbf": -2.047337278106511,
+          "inducedDiffLbf": 0,
+          "requiredPowerDiffHp": -2.628402366863895
+        },
+        {
+          "speedMph": 250,
+          "parasiteDiffLbf": -2.218934911242627,
+          "inducedDiffLbf": -0.10999999999998522,
+          "requiredPowerDiffHp": -3.219289940828503
+        },
+        {
+          "speedMph": 275,
+          "parasiteDiffLbf": -2.9349112426035617,
+          "inducedDiffLbf": 0.13223140495870211,
+          "requiredPowerDiffHp": -4.055298547606185
+        },
+        {
+          "speedMph": 300,
+          "parasiteDiffLbf": -3.195266272189201,
+          "inducedDiffLbf": -0.9375000000000142,
+          "requiredPowerDiffHp": -5.90621301775127
+        },
+        {
+          "speedMph": 325,
+          "parasiteDiffLbf": 0,
+          "inducedDiffLbf": 0,
+          "requiredPowerDiffHp": -2.400000000000091
+        }
+      ]
+    },
+    "highPowerP47": {
+      "inferred": {
+        "oswald": 0.7838029308363434,
+        "cd0": 0.0227442377745287,
+        "weightLb": 13065,
+        "source": "Greg high-power P-47 worksheet; likely D-28, not B; power output cannot be transferred to P-47B"
+      },
+      "warning": "Sea-level worksheet is 2,210 propulsive hp, consistent with a 2,600 bhp / 85% scenario; not the 2,000 bhp P-47B"
+    },
+    "p47bAt27000ft": [
+      {
+        "assumedCasMph": 125,
+        "impliedTasMph": 192.26783271542484,
+        "gregApproxG": 1.5,
+        "modelSustainedG": 1.2240562643845851,
+        "differenceG": -0.27594373561541485,
+        "note": "Greg chart speed-axis CAS assumption UNVERIFIED; values approximate readings"
+      },
+      {
+        "assumedCasMph": 150,
+        "impliedTasMph": 230.09218501413244,
+        "gregApproxG": 1.7,
+        "modelSustainedG": 1.7530401208959383,
+        "differenceG": 0.05304012089593835,
+        "note": "Greg chart speed-axis CAS assumption UNVERIFIED; values approximate readings"
+      },
+      {
+        "assumedCasMph": 175,
+        "impliedTasMph": 267.59334565538717,
+        "gregApproxG": 1.8,
+        "modelSustainedG": 1.9158027425668387,
+        "differenceG": 0.11580274256683865,
+        "note": "Greg chart speed-axis CAS assumption UNVERIFIED; values approximate readings"
+      },
+      {
+        "assumedCasMph": 200,
+        "impliedTasMph": 304.7327878660412,
+        "gregApproxG": 1.7,
+        "modelSustainedG": 1.9296071750665889,
+        "differenceG": 0.2296071750665889,
+        "note": "Greg chart speed-axis CAS assumption UNVERIFIED; values approximate readings"
+      },
+      {
+        "assumedCasMph": 225,
+        "impliedTasMph": 341.4777723628368,
+        "gregApproxG": 1.7,
+        "modelSustainedG": 1.8612166622171695,
+        "differenceG": 0.16121666221716957,
+        "note": "Greg chart speed-axis CAS assumption UNVERIFIED; values approximate readings"
+      },
+      {
+        "assumedCasMph": 250,
+        "impliedTasMph": 377.80142198387256,
+        "gregApproxG": 1.5,
+        "modelSustainedG": 1.6793780662100235,
+        "differenceG": 0.1793780662100235,
+        "note": "Greg chart speed-axis CAS assumption UNVERIFIED; values approximate readings"
+      },
+      {
+        "assumedCasMph": 275,
+        "impliedTasMph": 413.682622523574,
+        "gregApproxG": 1,
+        "modelSustainedG": 1.311853655705247,
+        "differenceG": 0.3118536557052469,
+        "note": "Greg chart speed-axis CAS assumption UNVERIFIED; values approximate readings"
+      }
+    ],
+    "powerOnlySweep": {
+      "status": "Greg arithmetic sensitivity, not true B versus D model verification",
+      "referenceWeightLb": 13065,
+      "identicalPropAndDrag": true,
+      "variants": [
+        {
+          "shaftHp": 2000,
+          "maxLevelSpeedMph": 322.84516941558104,
+          "at200Mph": {
+            "speedMph": 200,
+            "shaftHp": 2000,
+            "availableHp": 1650,
+            "propEta": 0.825,
+            "parasiteHp": 372.1291851851852,
+            "inducedHp": 217.5,
+            "requiredHp": 589.6291851851852,
+            "excessHp": 1060.3708148148148,
+            "nPower": 2.4238952357911643,
+            "provenance": "Greg D-28-style 2600 hp worksheet; 2000 hp variant is a POWER-ONLY counterfactual with IDENTICAL drag/weight/propeller, not a documented P-47B test."
+          }
+        },
+        {
+          "shaftHp": 2600,
+          "maxLevelSpeedMph": 355.3699078288628,
+          "at200Mph": {
+            "speedMph": 200,
+            "shaftHp": 2600,
+            "availableHp": 2145,
+            "propEta": 0.825,
+            "parasiteHp": 372.1291851851852,
+            "inducedHp": 217.5,
+            "requiredHp": 589.6291851851852,
+            "excessHp": 1555.3708148148148,
+            "nPower": 2.85501842079112,
+            "provenance": "Greg D-28-style 2600 hp worksheet; 2000 hp variant is a POWER-ONLY counterfactual with IDENTICAL drag/weight/propeller, not a documented P-47B test."
+          }
+        }
+      ]
+    }
+  },
+  "climbCorrection": {
+    "status": "exploratory same-test-series check, not independent cross-aircraft validation",
+    "testAircraft": "P-47B 41-5902",
+    "climbTestConfiguration": "cowl, oil/intercooler flaps fully open; engine MAP from climbing report, not high-speed MAP",
+    "enginePowerMethod": "shaft HP scaled by observed climb-vs-level MAP at same altitude and RPM, capped at authorized rating",
+    "addedDragFit": {
+      "status": "derived",
+      "addedCd0": 0.01581898059383988,
+      "calibrationAltitudeFt": 15000,
+      "note": "One-point fit of aggregate climb-vs-speed-configuration loss. Could include cooling drag, installed propeller efficiency, or remaining engine error. Not independently measured drag."
+    },
+    "holdoutUncorrectedMaeFpm": 753.3917772719719,
+    "holdoutNewMaeFpm": 56.03192645188466,
+    "observations": [
+      {
+        "altFt": 15000,
+        "observedFtMin": 2330,
+        "levelFlightPowerFtMin": 2804.2288518805904,
+        "estimatedClimbShaftHp": 2000,
+        "conditionOnlyFtMin": 2804.2288476069457,
+        "conditionAndEquivalentDragFtMin": 2330.0000000000005,
+        "heldOut": false,
+        "residualFtMin": 4.547473508864641e-13
+      },
+      {
+        "altFt": 20000,
+        "observedFtMin": 2150,
+        "levelFlightPowerFtMin": 2708.903709990384,
+        "estimatedClimbShaftHp": 2000,
+        "conditionOnlyFtMin": 2708.9037058620147,
+        "conditionAndEquivalentDragFtMin": 2136.235012718354,
+        "heldOut": true,
+        "residualFtMin": -13.764987281645972
+      },
+      {
+        "altFt": 23400,
+        "observedFtMin": 2000,
+        "levelFlightPowerFtMin": 2650.2821125492155,
+        "estimatedClimbShaftHp": 2000,
+        "conditionOnlyFtMin": 2650.282108510186,
+        "conditionAndEquivalentDragFtMin": 2057.976558280857,
+        "heldOut": true,
+        "residualFtMin": 57.97655828085681
+      },
+      {
+        "altFt": 25000,
+        "observedFtMin": 1810,
+        "levelFlightPowerFtMin": 2615.4546215802534,
+        "estimatedClimbShaftHp": 1903.2882011605416,
+        "conditionOnlyFtMin": 2406.6400935517145,
+        "conditionAndEquivalentDragFtMin": 1797.303536205323,
+        "heldOut": true,
+        "residualFtMin": -12.696463794676902
+      },
+      {
+        "altFt": 30000,
+        "observedFtMin": 1190,
+        "levelFlightPowerFtMin": 2188.926664968035,
+        "estimatedClimbShaftHp": 1592.5263157894738,
+        "conditionOnlyFtMin": 1641.9060921252978,
+        "conditionAndEquivalentDragFtMin": 1050.310303549641,
+        "heldOut": true,
+        "residualFtMin": -139.68969645035895
+      }
+    ]
+  },
+  "p51BoostClimb": {
+    "reportId": "Eng-47-1749-A",
+    "sourceUrl": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+    "observationStatus": "HTML transcription of primary wartime report; original scan figure-to-number check pending",
+    "observedAltitudeFt": 2200,
+    "reported67Fpm": 3820,
+    "reported75Fpm": 4380,
+    "observedDeltaFpm": 560,
+    "flightTestClimbSpeedTasMph": null,
+    "reportWeightLb": 9335,
+    "calibrationPolicy": "NONE; power differences predicted with fixed CD0, unchanged weight and unchanged prop category",
+    "comparisons": {
+      "A": {
+        "shaftPowerGainHp": 208,
+        "model67Fpm": 3569.4877197920414,
+        "model75Fpm": 4157.7255344744035,
+        "modelDeltaFpm": 588.2378146823621,
+        "modelDeltaResidualFpm": 28.237814682362114,
+        "absolute67ResidualFpm": -250.5122802079586,
+        "absolute75ResidualFpm": -222.2744655255965,
+        "calculatedBestClimb67TasMph": 141,
+        "calculatedBestClimb75TasMph": 141
+      },
+      "B": {
+        "shaftPowerGainHp": 208,
+        "model67Fpm": 3882.931336425328,
+        "model75Fpm": 4513.2023721345995,
+        "modelDeltaFpm": 630.2710357092715,
+        "modelDeltaResidualFpm": 70.27103570927147,
+        "absolute67ResidualFpm": 62.93133642532803,
+        "absolute75ResidualFpm": 133.2023721345995,
+        "calculatedBestClimb67TasMph": 130,
+        "calculatedBestClimb75TasMph": 129
+      },
+      "C": {
+        "shaftPowerGainHp": 208,
+        "model67Fpm": 3401.0861529653166,
+        "model75Fpm": 3978.538324234923,
+        "modelDeltaFpm": 577.4521712696064,
+        "modelDeltaResidualFpm": 17.452171269606424,
+        "absolute67ResidualFpm": -418.9138470346834,
+        "absolute75ResidualFpm": -401.46167576507696,
+        "calculatedBestClimb67TasMph": 171,
+        "calculatedBestClimb75TasMph": 175
+      }
+    }
+  },
+  "crossAircraftTransfer": {
+    "status": "diagnostic NOT adopted as universal coefficient",
+    "p47EquivalentCd0": 0.01581898059383988,
+    "sourcePlane": "P-47B",
+    "targetPlane": "P-51B-15",
+    "referenceClimbFpm": 3820,
+    "unchanged67Fpm": 3448.2818298864963,
+    "transferred67Fpm": 3141.337420496076,
+    "unchangedAbsErrorFpm": 371.7181701135037,
+    "transferredAbsErrorFpm": 678.662579503924,
+    "interpretation": "A single P-47 aggregate climb loss parameter cannot be assumed transferable; do not adopt it as universal."
+  },
+  "sourceConditionAudit": {
+    "version": "v0.5",
+    "status": "experimental predictions, no historical-turn certification",
+    "method": "same universal solver; speed-calibrated CD0 held fixed; correct report-specific takeoff mass; Greg only as arithmetic check",
+    "profiles": {
+      "A": {
+        "p47": {
+          "fittedEquivalentCd0": 0.015573144356006447,
+          "profileSpecificFit": true,
+          "observations": [
+            {
+              "altFt": 15000,
+              "reportedFpm": 2330,
+              "predictedFpm": 2330,
+              "residualFpm": 0,
+              "role": "fit"
+            },
+            {
+              "altFt": 20000,
+              "reportedFpm": 2150,
+              "predictedFpm": 2070.5001103022605,
+              "residualFpm": -79.49988969773949,
+              "role": "withheld"
+            },
+            {
+              "altFt": 23400,
+              "reportedFpm": 2000,
+              "predictedFpm": 1967.716980468133,
+              "residualFpm": -32.28301953186701,
+              "role": "withheld"
+            },
+            {
+              "altFt": 25000,
+              "reportedFpm": 1810,
+              "predictedFpm": 1700.6033769129374,
+              "residualFpm": -109.39662308706261,
+              "role": "withheld"
+            },
+            {
+              "altFt": 30000,
+              "reportedFpm": 1190,
+              "predictedFpm": 956.5098474324504,
+              "residualFpm": -233.49015256754956,
+              "role": "withheld"
+            }
+          ],
+          "holdoutMaeFpm": 113.66742122105467
+        },
+        "p51": {
+          "observations": [
+            {
+              "reportId": "wright-1944-05-20",
+              "reportDate": "1944-05-20",
+              "reportedWeightLb": 9335,
+              "altFt": 2200,
+              "rating": "67inHg",
+              "reportedFpm": 3820,
+              "modelFpm": 3569.4877197920414,
+              "residualFpm": -250.5122802079586,
+              "predictedBestTasMph": 141,
+              "status": "modeled-peak",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html"
+            },
+            {
+              "reportId": "wright-1944-05-20",
+              "reportDate": "1944-05-20",
+              "reportedWeightLb": 9335,
+              "altFt": 2200,
+              "rating": "75inHg",
+              "reportedFpm": 4380,
+              "modelFpm": 4157.7255344744035,
+              "residualFpm": -222.2744655255965,
+              "predictedBestTasMph": 141,
+              "status": "modeled-peak",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html"
+            },
+            {
+              "reportId": "wright-1944-05-15",
+              "reportDate": "1944-05-15",
+              "reportedWeightLb": 9680,
+              "altFt": 5600,
+              "rating": "67inHg",
+              "reportedFpm": 3920,
+              "modelFpm": 3439.064488976262,
+              "residualFpm": -480.93551102373794,
+              "predictedBestTasMph": 151,
+              "status": "modeled-peak",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.org/mustang/mustangtest.html"
+            },
+            {
+              "reportId": "wright-1944-05-15",
+              "reportDate": "1944-05-15",
+              "reportedWeightLb": 9680,
+              "altFt": 2300,
+              "rating": "75inHg",
+              "reportedFpm": 4380,
+              "modelFpm": 3958.933219385465,
+              "residualFpm": -421.0667806145352,
+              "predictedBestTasMph": 144,
+              "status": "modeled-peak",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.org/mustang/mustangtest.html"
+            },
+            {
+              "reportId": "wright-1944-05-15",
+              "reportDate": "1944-05-15",
+              "reportedWeightLb": 9680,
+              "altFt": 19200,
+              "rating": "67inHg",
+              "reportedFpm": 3170,
+              "modelFpm": 2506.2385580717564,
+              "residualFpm": -663.7614419282436,
+              "predictedBestTasMph": 188,
+              "status": "modeled-peak",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.org/mustang/mustangtest.html"
+            },
+            {
+              "reportId": "wright-1944-05-15",
+              "reportDate": "1944-05-15",
+              "reportedWeightLb": 9680,
+              "altFt": 15700,
+              "rating": "75inHg",
+              "reportedFpm": 3700,
+              "modelFpm": null,
+              "residualFpm": null,
+              "predictedBestTasMph": null,
+              "status": "no-engine-source",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.org/mustang/mustangtest.html"
+            }
+          ],
+          "may20MaeFpm": 236.39337286677755,
+          "may15MaeFpm": 521.9212445221723,
+          "may20ObservedClimbGainFpm": 560,
+          "may20PredictedClimbGainFpm": 588.2378146823621,
+          "may20GainResidualFpm": 28.237814682362114,
+          "warning": "20 May memo reports 9,335 lb takeoff; 15 May memo separately reports 9,680 lb; two summaries cover same airplane/test programme; climb TAS not independently known."
+        }
+      },
+      "B": {
+        "p47": {
+          "fittedEquivalentCd0": 0.0215129422121209,
+          "profileSpecificFit": true,
+          "observations": [
+            {
+              "altFt": 15000,
+              "reportedFpm": 2330,
+              "predictedFpm": 2330,
+              "residualFpm": 0,
+              "role": "fit"
+            },
+            {
+              "altFt": 20000,
+              "reportedFpm": 2150,
+              "predictedFpm": 1992.5664245118548,
+              "residualFpm": -157.43357548814515,
+              "role": "withheld"
+            },
+            {
+              "altFt": 23400,
+              "reportedFpm": 2000,
+              "predictedFpm": 1863.500269836038,
+              "residualFpm": -136.4997301639621,
+              "role": "withheld"
+            },
+            {
+              "altFt": 25000,
+              "reportedFpm": 1810,
+              "predictedFpm": 1573.7795628769989,
+              "residualFpm": -236.22043712300115,
+              "role": "withheld"
+            },
+            {
+              "altFt": 30000,
+              "reportedFpm": 1190,
+              "predictedFpm": 803.3857923441042,
+              "residualFpm": -386.6142076558958,
+              "role": "withheld"
+            }
+          ],
+          "holdoutMaeFpm": 229.19198760775106
+        },
+        "p51": {
+          "observations": [
+            {
+              "reportId": "wright-1944-05-20",
+              "reportDate": "1944-05-20",
+              "reportedWeightLb": 9335,
+              "altFt": 2200,
+              "rating": "67inHg",
+              "reportedFpm": 3820,
+              "modelFpm": 3882.931336425328,
+              "residualFpm": 62.93133642532803,
+              "predictedBestTasMph": 130,
+              "status": "modeled-peak",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html"
+            },
+            {
+              "reportId": "wright-1944-05-20",
+              "reportDate": "1944-05-20",
+              "reportedWeightLb": 9335,
+              "altFt": 2200,
+              "rating": "75inHg",
+              "reportedFpm": 4380,
+              "modelFpm": 4513.2023721345995,
+              "residualFpm": 133.2023721345995,
+              "predictedBestTasMph": 129,
+              "status": "modeled-peak",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html"
+            },
+            {
+              "reportId": "wright-1944-05-15",
+              "reportDate": "1944-05-15",
+              "reportedWeightLb": 9680,
+              "altFt": 5600,
+              "rating": "67inHg",
+              "reportedFpm": 3920,
+              "modelFpm": 3731.8198427814145,
+              "residualFpm": -188.18015721858546,
+              "predictedBestTasMph": 140,
+              "status": "modeled-peak",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.org/mustang/mustangtest.html"
+            },
+            {
+              "reportId": "wright-1944-05-15",
+              "reportDate": "1944-05-15",
+              "reportedWeightLb": 9680,
+              "altFt": 2300,
+              "rating": "75inHg",
+              "reportedFpm": 4380,
+              "modelFpm": 4296.5638718362525,
+              "residualFpm": -83.43612816374753,
+              "predictedBestTasMph": 132,
+              "status": "modeled-peak",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.org/mustang/mustangtest.html"
+            },
+            {
+              "reportId": "wright-1944-05-15",
+              "reportDate": "1944-05-15",
+              "reportedWeightLb": 9680,
+              "altFt": 19200,
+              "rating": "67inHg",
+              "reportedFpm": 3170,
+              "modelFpm": 2702.509022781608,
+              "residualFpm": -467.4909772183919,
+              "predictedBestTasMph": 176,
+              "status": "modeled-peak",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.org/mustang/mustangtest.html"
+            },
+            {
+              "reportId": "wright-1944-05-15",
+              "reportDate": "1944-05-15",
+              "reportedWeightLb": 9680,
+              "altFt": 15700,
+              "rating": "75inHg",
+              "reportedFpm": 3700,
+              "modelFpm": null,
+              "residualFpm": null,
+              "predictedBestTasMph": null,
+              "status": "no-engine-source",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.org/mustang/mustangtest.html"
+            }
+          ],
+          "may20MaeFpm": 98.06685427996376,
+          "may15MaeFpm": 246.36908753357497,
+          "may20ObservedClimbGainFpm": 560,
+          "may20PredictedClimbGainFpm": 630.2710357092715,
+          "may20GainResidualFpm": 70.27103570927147,
+          "warning": "20 May memo reports 9,335 lb takeoff; 15 May memo separately reports 9,680 lb; two summaries cover same airplane/test programme; climb TAS not independently known."
+        }
+      },
+      "C": {
+        "p47": {
+          "fittedEquivalentCd0": 0.01581898059383988,
+          "profileSpecificFit": true,
+          "observations": [
+            {
+              "altFt": 15000,
+              "reportedFpm": 2330,
+              "predictedFpm": 2330.0000000000005,
+              "residualFpm": 4.547473508864641e-13,
+              "role": "fit"
+            },
+            {
+              "altFt": 20000,
+              "reportedFpm": 2150,
+              "predictedFpm": 2136.235012718354,
+              "residualFpm": -13.764987281645972,
+              "role": "withheld"
+            },
+            {
+              "altFt": 23400,
+              "reportedFpm": 2000,
+              "predictedFpm": 2057.976558280857,
+              "residualFpm": 57.97655828085681,
+              "role": "withheld"
+            },
+            {
+              "altFt": 25000,
+              "reportedFpm": 1810,
+              "predictedFpm": 1797.303536205323,
+              "residualFpm": -12.696463794676902,
+              "role": "withheld"
+            },
+            {
+              "altFt": 30000,
+              "reportedFpm": 1190,
+              "predictedFpm": 1050.310303549641,
+              "residualFpm": -139.68969645035895,
+              "role": "withheld"
+            }
+          ],
+          "holdoutMaeFpm": 56.03192645188466
+        },
+        "p51": {
+          "observations": [
+            {
+              "reportId": "wright-1944-05-20",
+              "reportDate": "1944-05-20",
+              "reportedWeightLb": 9335,
+              "altFt": 2200,
+              "rating": "67inHg",
+              "reportedFpm": 3820,
+              "modelFpm": 3401.0861529653166,
+              "residualFpm": -418.9138470346834,
+              "predictedBestTasMph": 171,
+              "status": "modeled-peak",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html"
+            },
+            {
+              "reportId": "wright-1944-05-20",
+              "reportDate": "1944-05-20",
+              "reportedWeightLb": 9335,
+              "altFt": 2200,
+              "rating": "75inHg",
+              "reportedFpm": 4380,
+              "modelFpm": 3978.538324234923,
+              "residualFpm": -401.46167576507696,
+              "predictedBestTasMph": 175,
+              "status": "modeled-peak",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html"
+            },
+            {
+              "reportId": "wright-1944-05-15",
+              "reportDate": "1944-05-15",
+              "reportedWeightLb": 9680,
+              "altFt": 5600,
+              "rating": "67inHg",
+              "reportedFpm": 3920,
+              "modelFpm": 3317.0429148537346,
+              "residualFpm": -602.9570851462654,
+              "predictedBestTasMph": 181,
+              "status": "modeled-peak",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.org/mustang/mustangtest.html"
+            },
+            {
+              "reportId": "wright-1944-05-15",
+              "reportDate": "1944-05-15",
+              "reportedWeightLb": 9680,
+              "altFt": 2300,
+              "rating": "75inHg",
+              "reportedFpm": 4380,
+              "modelFpm": 3796.8592359744284,
+              "residualFpm": -583.1407640255716,
+              "predictedBestTasMph": 176,
+              "status": "modeled-peak",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.org/mustang/mustangtest.html"
+            },
+            {
+              "reportId": "wright-1944-05-15",
+              "reportDate": "1944-05-15",
+              "reportedWeightLb": 9680,
+              "altFt": 19200,
+              "rating": "67inHg",
+              "reportedFpm": 3170,
+              "modelFpm": 2510.2433257638895,
+              "residualFpm": -659.7566742361105,
+              "predictedBestTasMph": 211,
+              "status": "modeled-peak",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.org/mustang/mustangtest.html"
+            },
+            {
+              "reportId": "wright-1944-05-15",
+              "reportDate": "1944-05-15",
+              "reportedWeightLb": 9680,
+              "altFt": 15700,
+              "rating": "75inHg",
+              "reportedFpm": 3700,
+              "modelFpm": null,
+              "residualFpm": null,
+              "predictedBestTasMph": null,
+              "status": "no-engine-source",
+              "matchedClimbSpeed": false,
+              "independentSource": false,
+              "sourceUrl": "https://www.wwiiaircraftperformance.org/mustang/mustangtest.html"
+            }
+          ],
+          "may20MaeFpm": 410.1877613998802,
+          "may15MaeFpm": 615.2848411359824,
+          "may20ObservedClimbGainFpm": 560,
+          "may20PredictedClimbGainFpm": 577.4521712696064,
+          "may20GainResidualFpm": 17.452171269606424,
+          "warning": "20 May memo reports 9,335 lb takeoff; 15 May memo separately reports 9,680 lb; two summaries cover same airplane/test programme; climb TAS not independently known."
+        }
+      }
+    },
+    "p51Reports": []
+  }
+}

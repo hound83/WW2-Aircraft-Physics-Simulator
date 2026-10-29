@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "scope": "NEW Spitfire secondary simulation sanity tests; alongside unmodified simulator_reference_v18.json",
+  "referenceAirframe": "RAF LF Mk IXc / Merlin 66 BS.543; original A&AEE test, standard Mk Vc armament, not identical to simulator models",
+  "sources": [
+    {
+      "simulator": "IL-2 Great Battles",
+      "variant": "Spitfire Mk IXe / Merlin 66",
+      "sourceLevel": "DEVELOPER-PUBLISHED GAME specification, NOT wartime flight test",
+      "url": "https://forum.il2sturmovik.com/topic/25993-aircraft-flight-and-technical-specifications-and-operational-details/",
+      "turn": [
+        {"altMeters": 0, "iasKmh": 270, "seconds": 17.7, "setting": "3000 RPM / +18 boost", "role": "optional e conditioned ONLY at this altitude"},
+        {"altMeters": 3000, "iasKmh": 260, "seconds": 20.5, "setting": "3000 RPM / +18 boost", "role": "withheld against same e"}
+      ],
+      "speed": [
+        {"altMeters": 0, "tasKmh": 542, "setting": "3000 RPM / +18 boost"},
+        {"altMeters": 3350, "tasKmh": 610, "setting": "3000 RPM / +18 boost"},
+        {"altMeters": 6850, "tasKmh": 664, "setting": "3000 RPM / +18 boost"}
+      ],
+      "climb": [
+        {"altMeters": 0, "mps": 21.5, "setting": "2850 RPM / +12 boost, NOT same as +18 turn setting"},
+        {"altMeters": 3000, "mps": 18.6, "setting": "2850 RPM / +12 boost"},
+        {"altMeters": 6000, "mps": 15.5, "setting": "2850 RPM / +12 boost"}
+      ],
+      "warnings": ["IXe e-armament vs A&AEE standard Mk Vc wing/cannon armament", "simulator mass unspecified in extracted section", "IAS must NOT be equated to historical IAS without individual calibration", "game +12 climb cannot directly verify wartime +18 3000RPM A&AEE climb"]
+    },
+    {
+      "simulator": "DCS World",
+      "variant": "Spitfire LF Mk IX, choice of standard elliptical or clipped wingtips",
+      "sourceLevel": "OFFICIAL simulated aircraft/manual identification, not independent DCS E-M flight tests",
+      "url": "https://www.digitalcombatsimulator.com/en/downloads/documentation/dcs-spitfire_flight_manual_en/",
+      "module": "https://www.digitalcombatsimulator.com/en/products/planes/spitfire/",
+      "use": "Validate geometry and engine settings, then seek measured in-game 170-mph turn and power-v-altitude telemetry with documented fuel, load, RPM, boost, atmosphere. No DCS turn time invented."
+    }
+  ]
+}

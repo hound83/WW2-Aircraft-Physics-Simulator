@@ -1,0 +1,14 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs');
+const {results,etaFromCoefficients,researchBaseline}=require('../validation/diagnostics/p47c_source_audit_v25.cjs');
+const M=require('../src/physics.js');
+assert.equal(etaFromCoefficients(1,.132,.165),.8);
+assert.equal(etaFromCoefficients(1,.132,0),null);
+assert.equal(researchBaseline(1,.165,.793,'N'),null,'NACA 1941 Cp<.2 cannot be represented as an in-domain number');
+assert.ok(results.pointChecks.every(x=>Math.abs(x.coefficientIdentityResidual)<.008), 'ambiguous OCR points require recheck');
+assert.equal(results.pointChecks.length,3);
+assert.equal(results.operatingConditionDiagnostic.length,4);
+assert.ok(results.operatingConditionDiagnostic.every(x=>!x.modelCWithinMeasured5to8Percent),'candidate C must fail new reported efficiency-loss constraint');
+assert.equal(results.noDefaultChanges,true);
+assert.ok(fs.readFileSync('../src/physics.js','utf8').includes('function nacaMachResearch'));
+console.log('PASS: three source-OCR coefficients internally consistent; historical power loading NOT matched by unchanged candidate C; evidence stays provisional');

@@ -1,0 +1,274 @@
+{
+  "version": "v2.4/source-constrained research experiment",
+  "note": "NACA 1945 7% ratio is from SAME TEST CAMPAIGN as selected 12 P47D points; these checks are no longer a fully independent holdout for M (they remain independent for original N 1941 curves).",
+  "source1941": "https://ntrs.nasa.gov/citations/19930093644",
+  "source1938": "https://ntrs.nasa.gov/citations/19930091714",
+  "source1945": "https://ntrs.nasa.gov/citations/19930093653",
+  "candidateParameter": "Mach onset .95 is an assumption, while curvature is set to satisfy published ~7% relative gain 1.16 -> 1.06 on 1945 P-47D 3-blade at J~2.5, Cp~0.24.",
+  "holdoutStatus": "M is calibrated to the report-summary pair; not fully independent against report table rows",
+  "scores": {
+    "all": {
+      "n": 12,
+      "MAE_N": 0.036,
+      "MAE_M": 0.03,
+      "bias_N": 0.0341,
+      "bias_M": 0.0266
+    },
+    "climb": {
+      "n": 6,
+      "MAE_N": 0.0141,
+      "MAE_M": 0.0141,
+      "bias_N": 0.0108,
+      "bias_M": 0.0108
+    },
+    "highSpeed": {
+      "n": 6,
+      "MAE_N": 0.0579,
+      "MAE_M": 0.0458,
+      "bias_N": 0.0574,
+      "bias_M": 0.0424
+    },
+    "within1941Cp": {
+      "n": 6,
+      "MAE_N": 0.0257,
+      "MAE_M": 0.0189,
+      "bias_N": 0.0253,
+      "bias_M": 0.0156
+    }
+  },
+  "observations": [
+    {
+      "table": "I climb",
+      "run": "3-1",
+      "J": 0.92,
+      "Cp": 0.107,
+      "tipMach": 0.811,
+      "etaFlight": 0.778,
+      "etaNaca1941": 0.768,
+      "etaMachCandidate": 0.768,
+      "residualN": -0.010000000000000009,
+      "residualM": -0.010000000000000009,
+      "outside1941CpRange": true
+    },
+    {
+      "table": "I climb",
+      "run": "3-10",
+      "J": 1.128,
+      "Cp": 0.171,
+      "tipMach": 0.869,
+      "etaFlight": 0.795,
+      "etaNaca1941": 0.8128,
+      "etaMachCandidate": 0.8128,
+      "residualN": 0.017799999999999927,
+      "residualM": 0.017799999999999927,
+      "outside1941CpRange": true
+    },
+    {
+      "table": "I climb",
+      "run": "3-14",
+      "J": 1.239,
+      "Cp": 0.205,
+      "tipMach": 0.901,
+      "etaFlight": 0.799,
+      "etaNaca1941": 0.8217365000000001,
+      "etaMachCandidate": 0.8217365000000001,
+      "residualN": 0.02273650000000005,
+      "residualM": 0.02273650000000005,
+      "outside1941CpRange": false
+    },
+    {
+      "table": "I climb",
+      "run": "5-1",
+      "J": 0.974,
+      "Cp": 0.15,
+      "tipMach": 0.869,
+      "etaFlight": 0.786,
+      "etaNaca1941": 0.7896000000000001,
+      "etaMachCandidate": 0.7896000000000001,
+      "residualN": 0.0036000000000000476,
+      "residualM": 0.0036000000000000476,
+      "outside1941CpRange": true
+    },
+    {
+      "table": "I climb",
+      "run": "5-4",
+      "J": 1.128,
+      "Cp": 0.2,
+      "tipMach": 0.912,
+      "etaFlight": 0.791,
+      "etaNaca1941": 0.8128,
+      "etaMachCandidate": 0.8128,
+      "residualN": 0.02179999999999993,
+      "residualM": 0.02179999999999993,
+      "outside1941CpRange": false
+    },
+    {
+      "table": "I climb",
+      "run": "5-8",
+      "J": 1.273,
+      "Cp": 0.25,
+      "tipMach": 0.948,
+      "etaFlight": 0.798,
+      "etaNaca1941": 0.8068550000000001,
+      "etaMachCandidate": 0.8068550000000001,
+      "residualN": 0.008855000000000057,
+      "residualM": 0.008855000000000057,
+      "outside1941CpRange": false
+    },
+    {
+      "table": "II fast",
+      "run": "5-29",
+      "J": 1.152,
+      "Cp": 0.184,
+      "tipMach": 0.91,
+      "etaFlight": 0.761,
+      "etaNaca1941": 0.8152,
+      "etaMachCandidate": 0.8152,
+      "residualN": 0.054200000000000026,
+      "residualM": 0.054200000000000026,
+      "outside1941CpRange": true
+    },
+    {
+      "table": "II fast",
+      "run": "5-26",
+      "J": 1.945,
+      "Cp": 0.185,
+      "tipMach": 0.996,
+      "etaFlight": 0.814,
+      "etaNaca1941": 0.8589,
+      "etaMachCandidate": 0.8550659262093949,
+      "residualN": 0.04490000000000005,
+      "residualM": 0.041065926209394976,
+      "outside1941CpRange": true
+    },
+    {
+      "table": "II fast",
+      "run": "5-24",
+      "J": 2.486,
+      "Cp": 0.175,
+      "tipMach": 1.079,
+      "etaFlight": 0.664,
+      "etaNaca1941": 0.8114,
+      "etaMachCandidate": 0.7833476063944635,
+      "residualN": 0.14739999999999998,
+      "residualM": 0.11934760639446351,
+      "outside1941CpRange": true
+    },
+    {
+      "table": "II fast",
+      "run": "5-12",
+      "J": 2.252,
+      "Cp": 0.245,
+      "tipMach": 1.084,
+      "etaFlight": 0.76,
+      "etaNaca1941": 0.83255,
+      "etaMachCandidate": 0.8015347449257962,
+      "residualN": 0.07255,
+      "residualM": 0.04153474492579623,
+      "outside1941CpRange": false
+    },
+    {
+      "table": "II fast",
+      "run": "15-24",
+      "J": 1.694,
+      "Cp": 0.246,
+      "tipMach": 1.052,
+      "etaFlight": 0.819,
+      "etaNaca1941": 0.8459496,
+      "etaMachCandidate": 0.8275439894367281,
+      "residualN": 0.026949600000000018,
+      "residualM": 0.008543989436728183,
+      "outside1941CpRange": false
+    },
+    {
+      "table": "II fast",
+      "run": "17-19",
+      "J": 1.845,
+      "Cp": 0.256,
+      "tipMach": 1.02,
+      "etaFlight": 0.852,
+      "etaNaca1941": 0.850628,
+      "etaMachCandidate": 0.8418607913795122,
+      "residualN": -0.0013719999999999288,
+      "residualM": -0.010139208620487783,
+      "outside1941CpRange": false
+    }
+  ],
+  "aircraftSpeedAnchors": [
+    {
+      "id": "spitfire_lfix_bs543",
+      "aircraft": "Spitfire LF Mk IXc / Merlin 66 (BS.543)",
+      "altFt": 0,
+      "sourceSpeedMph": 336,
+      "etaN": 0.8527,
+      "etaM": 0.8527,
+      "tipMach": 0.846,
+      "speedC": 336,
+      "speedNwithFrozenDrag": 340.51,
+      "speedMwithFrozenDrag": 340.51,
+      "speedMRefitted": 336
+    },
+    {
+      "id": "bf109f4",
+      "aircraft": "Bf 109 F-4 / DB 601E",
+      "altFt": 0,
+      "sourceSpeedMph": 325,
+      "etaN": 0.8592,
+      "etaM": 0.8592,
+      "tipMach": 0.807,
+      "speedC": 325,
+      "speedNwithFrozenDrag": 330.62,
+      "speedMwithFrozenDrag": 330.62,
+      "speedMRefitted": 325
+    },
+    {
+      "id": "p47b",
+      "aircraft": "P-47B / R-2800-21 (41-5902)",
+      "altFt": 5000,
+      "sourceSpeedMph": 352,
+      "etaN": 0.8516,
+      "etaM": 0.8516,
+      "tipMach": 0.914,
+      "speedC": 352,
+      "speedNwithFrozenDrag": 356.61,
+      "speedMwithFrozenDrag": 356.61,
+      "speedMRefitted": 352
+    },
+    {
+      "id": "p51b",
+      "aircraft": "P-51B-15 / V-1650-7 (43-24777)",
+      "altFt": 0,
+      "sourceSpeedMph": 361.5,
+      "etaN": 0.8547,
+      "etaM": 0.8547,
+      "tipMach": 0.888,
+      "speedC": 361.5,
+      "speedNwithFrozenDrag": 367.3,
+      "speedMwithFrozenDrag": 367.3,
+      "speedMRefitted": 361.5
+    }
+  ],
+  "mustangClimb": [
+    {
+      "rating": "67inHg",
+      "sourceFpm": 3820,
+      "C": 3401.086,
+      "N": 3320.039,
+      "M": 3320.039,
+      "tipMach": 0.793
+    },
+    {
+      "rating": "75inHg",
+      "sourceFpm": 4380,
+      "C": 3978.538,
+      "N": 3893.722,
+      "M": 3893.722,
+      "tipMach": 0.793
+    }
+  ],
+  "scopeLimitations": [
+    "No original scan PDF embedded in handover (NASA source links preserved).",
+    "Original TR-639 curve shape not digitized; onset remains hypothesis.",
+    "TR-639 rotational tip-speed onset not directly equivalent to helical tip Mach used in 1945 aircraft flight comparison."
+  ]
+}

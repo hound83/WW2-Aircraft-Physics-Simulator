@@ -1,0 +1,967 @@
+                                               REPORT No. 719
+
+THE PROBLEM            OF COOLING AN AIR-COOLED                       CYLINDER ON AN AIRCRAFT ENGINE
+                                           By M. J.BREVOORT and U. T. JOYNER
+
+
+                        SUMMARY                                                           SYMBOLS
+
+   An analysis ‘of  the cooling problem ha~ been made to             A cross-sectional area of air passage, nornml to flow
+show by what means the cooling   .- of an air-cooled aircraft
+                                                          “
+                                                                       c velocity of sound
+engine may bt” improced. “Ezch. means of improting                   Cp specific heat at constant prcissure
+cooling i8 analyzed on the bm”s of e$ectiwmess in cool-              C* specific heat at constant volume
+ing wn”thre~ect to power for cooling.                               c,, 02,. . . 0=proportionality constants
+   T%ealtitude problem is analyzedjor both supercharged             c. ova-all drag coefficient of airplane
+and unsupercharged enp”nes. TJwcase of ground cooling                  d cylinder-wall thickness
+is also discussed.                                                   D hydraulic diameter of iir passage
+   77u heat-transfer process from the hot gases to the                         4 cross-sectional area
+cylinder wall is di.scumedon the basis of thefutndumentals                   ( wetted perimeter        )
+of heat tranefer and thermodynamics.                                                          ApD             “
+   Adiabatic air-teniperature tie at a stagnation po&t
+in conqwetwible$OW is shown to depend only on the
+                                                                    J/
+                                                                       f friction factor
+                                                                          & eflediveness
+                                                                                         ()   —
+                                                                                               q 47
+                                                                                               -
+                                                                                                                     .,.      -.
+
+relocity of$ow.                                                        h surface heat-transfer      coefficient, heat units pcr
+                                                                             unit surface per degree temperature difference
+                     INTRODUCTION
+                                                                             per unit time
+    lV’heuever the cooling of an a.ir-oooled engine cylinder         H total heat transferred per unit time
+is the factor limiting the power that may be developed             H, energy 10ss of air occurring up to a given point             ..—
+in the cylinder, any possible increase in coolhg becom&                      in a baflle
+extremely important.        It must not be assumed, how-        H,/Ap entigy loss of air occurring up tos a given point
+ever, that doubling or tripling the cooling of an air-                       ti a baffle expressed as a fraction of total
+cooled engine will in itseIf make possible doubling or                       energy loss during passage of air. through
+tripling the power developed by the engine. If such                          baffle
+an increase in power developed were possible, it could                 I indicated horsepower
+easily be obtained from liquid+ooled            enginw.  Ac-       k thermal conductivity of cookmt
+tually, there is no great difference in power developed             k. thernd        conductivity ‘of metal used in cylinder
+per cubic inch displacement between good air-cooled                          wa& or cooling fins
+and good liquid-cooled enginw                                        L length of air passage, characteristic length
+    When the cooling of a cylinder is insuilicient, wiy           m.,n mponents in the equation connecting NTueselt
+increase in cooling obtained will make poesible (1) a                        number,     Prandtl     number,     and ‘Reynolds
+reduction in the fuel consumption of the engine, (2) an                      number
+increase in the power that may be taken from the                          prcsmre
+engine, (3) an increase in the time between over-                    ; power
+hauls, or (4) a reduction of the likelihood of engine               “!l dynamic pressure (1/2 PY2)
+failure as a result of piston failure or of breakdown of the          Q volume rate of flow
+oil tllrn between the piston and the cylinder.                          r radius of curvature
+    Various means .of improving the cooling of air-cooled            ra radius from center of cylinder to fin root
+aircraft engines are known. Each method of improv-                   R Reynolds number (DPV/p); compression ratio
+ing the cooling requires an increase in the power ex-                     & spacing                 “.
+pended for cooling, greater mechanical skill in manu-                 ; surface area
+facture; or both.      The various means of improving                   t fin thidnmss                     ‘       “
+cooling are discussed in this report.                                  T absolute temperature
+                                                                                                                      267   -
+268                   REPORT    NO”. 7 19-NATIONAL      ADVISORY     COMM~EE       FOR aRoNAu~cs
+
+   T,= temperature of cooling air at inlet                   Consider first the transfer of heat from the hot
+    TO temperature of coohng air at outlet                cylinder gases to the piston and tho cylinder vd.
+    T. temperature of passage wall                        The engine cylinder contains a varying quantity                     of
+     U over-all heat-transfer                             gas moving at relatively high velocity ancl ranging in
+                                   cce.fllcient from cylinder
+            to air, based on outside area of cylinder     twnpermturc from about atmospheric tcmpcraturc                     up
+            wall, without fins                            to almut 4500° F. for engines now in use. Nusselt
+      v volume                                            (reference 3) concluded from his work aml from n
+     V velocity                                           review of the work of several other invcstiga tors that
+     w width of channel or M                              the heat transferred by radiation from the hot cylinder
+   Ap pressure difference                                 gases to the cylinder wall amounted to no more than
+    At average temperature difference between cylinder    1.0percent of the total heat transfer.             Moss (rcferenco
+            wall and cooling air                          4), however, concluded that 40 percent of the total
+   AT temperature rise of cooling air due to adiabatic    heat transfer is accomplished by radiation.                The work
+            compression at cowling entrance               on which the conclusions of rcf erencee 3 and 4 were
+     y ratio of specific heats (cP/c,)                    based was done with engines operating at fairly low
+      8 pressure ratio (p/po)                             speecl and with maximum gas tcrnpcratmes                    of about
+      u density ratio (P/Po)                              3000° F. Tho heat transferred by radiation is roughly
+     q brake-horsepower      ratio [(b h})/(b’ L&)O]      proportional      to the difference in the. fourth powers
+     ~ indicated-horsepower      ratio (1/lJ              of the temperatures of the cngino gases and the cylim!lcr
+     n’ heat-transfer   cf%ciency                         wall, but the heat transferred by conduction is pre
+      x defined by Hcc (PV)A                              port,iomd to the first power of this tmlperature               ditTcr-
+      p viscosity of coolant                              encej to the cube root of the absoluto twnpwature                   of
+      p mass density of coolant                           the engine gases (reference 3), and to the engine sped.
+   pV mass flow of coolant per unit time and open mea     Consequently,        the effect of radiation in heat transfer
+Subscripts:                                               cannot be dismiesed as being unimportant                  i~~modem
+      ~ values at datum level                             engines. The heat transferred by rndiation may bc a
+     a values in main air stream                          considerable portion of the total heat transferred.
+      t valuea in tubes                                      The second phase of the over-all heat-transfer process
+                          ANALYSIS                        is the conduction of tlm heat through the metal waH to
+   Pye (reference 1) shtes that the power which must      the outside of the cylinder.
+be dissipated from a gasoline engine through the copling     The permissible operating temperature of the ‘inside
+system is equivalent to about one-half the brake horse-   wall   of the cyIinder is limitecl by considerations of lub-
+power developed by We engine.. It is shown in reference   rication    and detonation.         In order to obtain tJwmaxi-
+2 that the power diesipatcd in cooling varied from about  mum      temperature      difference   between the outside wall
+70 percent of the indicated horsepower at low power       of   the   cylinder    ancl  the   cooling   air, hence maximum
+output to 40 percent at high power output for an air-     cooling    for any  particular     condition   of uir flow, the temp-
+cooled radial engino enclosed in am NACA cowling.         erature      drop  through     the  walhhould     be made as smti]l
+TMs e.-xccssive variation in heat dissipation was prob-   as  possible   by  keeping    d/k~small.
+ably due to the nature of the tests, in which tho heat       The third phase of the heat transfer from the mginc
+carried away by spilk+ge of heated air from tho front     gas   to t,~e cooling air is tl~e transfer of hegt by cot~vcc-
+of the cowling was not measured.      The spillage WOUM   tion   from the outside of the cylinclcr wall to the cooling
+have varied considerably over the operating range used    air.    The heat transferred from the cylinder per second
+in the tests reported in reference 2.                     is
+   The process of heat transfe.renco from tho hot gases                                H=S i7(At)                —           (1)
+in the cylinder to the cooling air is naturally .d”vided     For~ny       particular cylinder, the area availablo for
+into three Mcrent       phases, each of which may be      attaching cooling fins is fixed, so that the ordy means of
+separately   treated,   These phases are: the transfer    increasing the cooling is by increasing U or At or both.
+of heat by convection and radiation from the cylinder     These ~uantities        can be simultaneously          increased by
+gases to the piston and the cylindor wall; the conduction increasing the mass flow of cooling air through the cool-
+of heat through the piston and the cylincler wall to ing system.            The effect on At of increasing the mass flow
+the outside surfaces, which arc in contact with the       is usually small; whereas, U increases ns the 0.6 to 0.7
+cooling air; and the transfer of heat by convection       power of the mass flow. Very little can ordinarily be
+from the cylinder wall and the fiti to the cooling air.   done about increasing the v@ue of M; increasing U is
+The problem of transferring this heat from the engine     therefore the ordy means of bringing about any large
+walI to the cooling air in the most efficient manner is increase. in the heat transfer from the cylinder to the
+the main topic of this paper.                             cooling air.
+                           COOLING AN AIR-COOLED CYLINDER             ON AN AIRCRAFI’ ENGINE                                      269
+
+           MEANS     OF IMPROVING      COOLING                     W7thin small ranges of variation of~, the value ofj’
+                                                                 nay be taken to vary as pV to some power Al,
+   The amount of cooling obtained on a given cylinder
+may be increased in any of the following ways:                                               j’a(pV)”                               (7)
+   1. By increasing the mass flow of cooling air, leaving
+                                                                   This power AI varies witl~fl ancl can be shown to be
+the cykder and the fins unchanged
+   2. By using metal of higher thermal conductivity                                                      2G         ~y~
+for the construction of the cybnder and the fins                                                –0.12W   @
+                                                                               d log.~                 r
+                                                                           ~,=d log p~”=l       07_0 3W                             (8)
+   3. By changing the fin design so that the value of                                                          mi
+the over-all heat-transfer  coefficient is increased                                                    .   J /~t(pv)’”’
+   These three means of improving cooling are discussed
+                                                                   Substitution     of equations     (3) and (7) in equation       (4)
+in order.
+     INCREASINGCOOLINGRY INCREASING MASS FLOW OF                                                                                    (9)
+                     COOLINGAIR
+   The two extreme cases to be considered here are the             The power A is shown as a function              of f‘ in figure 1.
+cases most likely to occur in practical application: (1)
+The existing operating cylinder temperatures are satis-
+factory and it is desired to increase the power developed,
+thereby requiring more heat to be transferred at the
+same tern peraturee;     and (2) the existing operating
+cylinder temperature      are too high and it is desired to
+recluce cylinder temperatures      by increasing the mass
+flow of cooling air, the total heat transferred remaining
+unchanged.
+   llc.Adams   (reference 5, p. 172) gives the relation
+between Nusselt number and Reynolds number for air
+in turbulent flow as
+                       hD
+                       __=o.o~o     !22 0“8              (2)
+                                  () P
+   As k is proportional to p, from th”e kinetic theory of
+gases, ancl as only small vmiations in k and JJ will be
+experienced when the mass flow is changed, k/p0”8may
+be considered      constant.    Then, for any given air
+passage,
+                       h=cl(pT~o”8                         (3)
+                                                                 FIGUREl.–VsrIation of Awith fin eflectivenm f’. (k Is deffnedby CrCCCD~3A.)
+   The over-all heat-transfer    coefficient U of equation
+(1) may be expressed approximately “h terms of S,, the             It is shown in reference 7 that, for a given fin arrange-
+rat io of total cooling surface area to base area; h, the        mentt,
+surface heat-transfer coefficient.; amlfl, the fin effective-                                -u=z)(pl’)k
+ness, m
+                          -u=sJif                       and, for reasonable variations
+                                                           (4)                             in the mass flow of
+                                                        cooling air, A is constant.   In the same reference, x is
+   For any given lin arrangement, S, is a consta~t and
+                                                        shown experimentally     to vary between 0.6 and 0.7 for
+h is given by equation (3).
+                                                        conventional c@nder finning.
+   For values of fl between 0.50 and 0.95, which WOUICI
+                                                           In the fit   case, it can be seen from equation (1)
+include nearly all &s ordinarily      used, the exact
+                                                        that the total heat transferred varies directly as U
+expression
+             ~,_ttmh                                    ancl, since the temperatures were assumed unchanged,
+               — ~waw (from reference 6)            (5)
+                                                                                   Ha(pV)~                   (10)
+may be replnced by the simple appro.simation                        In the second case, where the total heat transferred
+                    f’=1.07–O.30aw                         (6)   is assumed constant, it is evident that
+where
+                                                                                                                                  (11)
+
+Equation   (6) gives values of j’     within   1 percent    of     This equation indicates that the temperature    ditTer-
+                                                                                                                                               .-
+correct over the range stipulated.                               ence between cylinder wall and cooling air will drop as
+270                  REPORT    NO. 71&NATIONAIJ       AD \’lSUliY
+                                                                COMMIITEE           FOR AERONAUTICS
+
+the mass Jlow of cooling air is increased,      Lower wall         1.a —   .5                                 I   I    I     2!0
+temperatures will result from this decrease in At because                                                Baffle concfucr’once
+the cooling-air temperature remains unchanged.
+                                                                                                                    ~    -
+   Baffle design .—In reference 8, the importance of good                                               ~    ~
+                                                                                                                                !.6
+                                                                    .8     .4
+baffle design in obtaining the largest possible mass flow
+between the iins for a given pressure drop was demon-                                     /                      1 ‘
+strated.    The air passage formed by the cylinder wall,
+                                                                           .3     L~       /      ‘                             /.27.
+the fins, and the baffle was shown to be simply a venturi,
+                                                                                                                                   “+
+and the same principles that control venturi design
+                                                                                                                                    $
+were employed in obtaining maximum velocity between                                                                                ..
+the h     for a given pressure drop.                                                                                             .8$
+   It was shown in reference 8 how a conventional baffle         $“4-, .2
+                                                                 &-
+then in use could be improved to obtain a 25-percent
+increase in mass flow without increasing the pressure
+                                                                    .2     ,1                                                   .4
+drop. Since P=QAp, this hitirease in mass flow was
+obtained with a corresponding increase of 25 percent
+in the cooling power, for which an increase of 20 to 25
+percent in total heat transfer was obtained.                                n                                t                   o
+                                                                     0
+   For the best arrangement      tested in reference 8, 36                                     Baffle radius; in.
+
+percent of the total pressure drop ncross the cylinder        Fmuw 2.–Effect ofbaf!leradlrrson IIr/Ap, ba!lleconductarrcqand molingat M&’
+                                                               fromfrontofoylinderat optimumaxit-duetopxdng. Domeex[topenfng,1,0Inch;
+was shown to take place in the fis, 50 percent tit the         exlt+hrctlength, 7.00inches;cylfnderdiar.utter,4.66hich~ fln spacaj H6 inch:
+baJHe exit, and 14 percent at the exit from the exit           flrrwid~ M Inch. (Reproducedfromreferanca8.)
+duct, Only the pressure drop that occurred in the fins
+was useful in cooling tho cylinder.       On many modern
+engines, the useful pressure drop is only about 20 percent
+of the tital clrop,
+   Reference 8 further showed that:
+   1.A good baffle entrance is important and can easily
+be attained.
+   2. The baflle should be close fitting.   (See table I.)
+   3, The radius of curvature .of the baffle at the baflie
+exit should be greater than the fin width.             Betz
+(reference 10) showed that the pressure 10SSwhen air
+travels around a, 90° bend is
+
+
+               ‘p~=’b’+o’w”’l                                                —
+                                                                                   Exif - duct length,      in
+This relation shows that the pressure drop for a 90°
+                                                              FIGUIZE S.—Effectofexit-ductlength on caollngand Mile crmductanmat 16CF from
+bend rises sharply as the channel width w increases            front of.cylfnderat optimum exit-ductopenfrrg. Beffleexit openin&I.&lfnehe$
+relative h the radius of curvature of the bend r. The          oylfnderdkneter, 4&9lnche&fin epacq Jfo lnomfln width, M Inch. (Data from
+                                                               refaranmQ
+results from reference 8 (fig. 22 of reference 8 h~ been
+reproduced herein as fig. 2) for a finned cylinder with       exits are given in table I. The cylinder &d tho baffie
+?i-inch iins show the importance of having a fairly large     arrangements      tested are shown in figure 4. The
+radius of curvature of the baffle exit.                       sketahes in figures 4 (a) to 4 (j) are reproduced from
+   4. The baffie exit duct should expand gradually, the       figure z of reference 8. The test data for these arrange-
+included angle being about 6°. A baffle exit duct 2 or 3      ments are reproduced in table I from the tuble in
+inches long gives a largc part of the possible kinetic-       reference 8. The arrangements showu as figures 4 (k)
+energy recovery,      Figure 3, obtained from figures 17      to 4 (m) are reproduced from figure 3 of reference 9.
+and 18 of reference 8, shows cooling and baffle conduc-          It should be noted that, although these tests were
+tance as a function of exit-duct length.                      made on a model of a cylinder barrel, the same general
+   6. The baflle-exit cxoss-sectiomd area should be           principles apply to the cooling of the head.
+approximately    1.5 times the fnw area between the fins.        Bdlks designed on the basis of the results given in
+Decreasing the area of the baffle exit was found to im-       reference 8 have improved the cooling on a completo
+prove the cooling at the rear of. the cylinder and increas-   engine 28 percent over that obtained on an engine with
+ing the area waa found to improve the cooling toward          conventional bafiles, which had about %-inch clearance
+the front of the cylinder.                                    between &s and baffle and a very short exit duct.
+   The results of cooling tests on a variety of baille           The application of the results from reference 8 to
+arrrmgementa and on finned cylinders with streamline          full-scale engines is given in reference 11.
+                          COOLING AN AIR-COOLED CYLINDER             ON AN AIRCRAFT ENGINE   271
+
+
+
+
+Fin
+
+
+
+
+      $       ~
+      <
+
+
+            L.-
+      Exif-&tcf   widfh
+
+
+
+
+                                                                                                   —
+
+
+
+
+                               .
+                                          ,
+
+
+
+                                                     \
+
+                                         (j)
+
+
+                                    FIGCBEL—Ba13earrangementstested In references8 end 9.
+272                    REPORT               NO. 7l~NATIONAL                    ADVISORY COMMITTEE                        FOR AERONAUTICS
+
+                                                                                 TABLE         1
+TEMPERATURE         DIFFERENCE BETWEEN  CYLINDER WALL AND INLET AIR AT SEVERAL POSITIONS AROUND
+                    THE CYLINDER  FOR THE DIFFERENT  BAFFLE ARRANGEMENTS    TESTED
+                           [Data forbafdes1 to 15taken fromreferencf8, and data forbadlesLOto18taken fromfigure4 ofrcfemnca9]
+
+                                            .+
+                                                             ,.                                      .=
+                                    B~~te-               EsIt-Exft-
+                                                         dact   duct Flared
+                                                                           I            1-           ~ ~ Tamrqatura dIfferericer F)
+                                                                                                      ..
+                                                                                                       ~Angularpmlt!onaround cgllnder(deg)
+                                    width                ength ‘?AAy to (h.) _                                                                               —
+                                     (fU.)               (in.)                                 -          -        .     —
+                                                                                        .0                    60   w     10b   ml     136   MI   163   lW
+                                                                                                                   —     —
+
+
+
+
+                1 T                                                                                                                   ‘1
+              .i..i---- “0.25        L 876       0.25       .------ ------- .
+                                                             0                          &a     114        110      116    124 182     139 160    100   Ma
+                           .26                    I         ------- . .. -----
+                                                             0                                 114        110      113    119 m       132        146   lM
+
+
+
+                    1                            1
+               40          .76       ;;;’         1          72.62 . . . . . . . .      z      106        ml              103 108     114 ii     136   144
+               4a          . 7b                   1      7   2.23 . . . . . . . .       ml     106        103 18          106 110     llb  122   1%    lka
+               4U          .25       1:876        1           2.62 . . . . . . . .      126    114        109 112         115 ml      w    133   141   lbl
+               4a          .26       L 250               :    2.62 --------             m      114        110 112         118 122     17A 136    140   147
+               4C          .75       L 253      . ‘m     7    $g      ;:::::::          g      110        103 108         110 114     116 lZI    120   134
+                                     1.2m 1.00           7                                     108        103 108         112 114     117        126   132
+               ; ~{        ;;        ;. ~w     1.00      7    a62 --------              132    120        117 124         127 120     m    ;:    136   142
+                                                         7    2.25 . -------            ml     117        116 EM          1.26 1233   120              m
+               4           .75       1:ml      i%        7    !A26 --i-a-.              141    128            U7          12.S 12?!   rm   :%    %     132
+               4           .76                 1.23           2.26                             116        H   120         125 1’23    m    In          164
+               4)                    ;%         .75      ;    2.02 .-...-.              %      10b            lo6         Xll  114    116, 120   L?    130
+               4             :;:     1.2/4     1.26      7    2.25 . . . . . . . .      163    la)        :E  160         1s)  147    146 149    164   led
+               4       -------         . 7SI    .62      7    1.25 --------             lk2    lx         132 130         140 133     127        m     13J
+               4)      . . . ..-.   .- . . ..- —---- .----- -----.- -------                                WJ  92          93          w -5      102
+               4)      -------      -.----- ....... ....... ---------------             %       m          w   WI          91   %     103 m      124   134
+               4 tm)   ------       -.----- .. ..... —----- . . ----- . . . . . . . .   S3     100         93  91        -----  91    102 m      106   104
+                                                                                                              —          —     —
+  1Cloea
+                                                                                                     .-
+
+   Power increase associated with increasing the mass                                        strength,    twice the thermal conductivity,   and three
+flow through a given cooling unit,—As previously                                             times the densi~y of aluminum.     The thickness of the
+pointed out, the increase in heat transferred obtained                                       wall being determined by the maximum pressure and
+from increase in mass flow as a result of improvccl                                          the tensile strength” of the wall metal, it follows that
+baffle design is attended by an increase in the power                                        the copper wall would be about one-half as thick as
+cost of cooIing proportional    to the increase in mass                                      the ahuninum wall. The weight of the copper head
+flow. Any further increase in heat transferred        ob-                                    including fins would then be between one and one-half
+tained by increasing the mass flow as a result of in-                                        and two times the weight of the aluminum head that
+creased pressure drop increases the power required for                                       it replacecl.
+cooling about as the cube of the mass flow or, as the                                           The temperature drop through the wall of the copper
+friction factor drops slightly with increasing mass flow,                                    cylinder head is only about one-fourth of the drop
+                                                                                             through the aluminum head, the same heat flow being
+              Power= QApoc(pk’)Apa (pV)ze                                       (12)
+                                                                                             assumed in each case. This reduction is the result of
+   From equation (10) and tho value of h determined                                          using a metal one-half the thickness of aluminum and
+in reference 7, it may be seen that                                                          having twice the thwmal conductivity       of aluminum.
+                                                                                                The coefficient of thermal conductivity of the mctul
+                            Ha (pV)0.65                                                      in the wall, together with the heat being conductrd
+so that the power is related to the tottil heat trans-                                       through the wall, cletermines the temperature gradient
+ferred by                                                                                    in the WUI1. The aluminum wall of the cylinder head
+                    Power aH4,4b                                                             is made relatively thick and the temperature        drop
+                                                                                             through the wail is surprisingly high. If it is assumed
+   From this relation, doubling the total heat trans-                                        that 35 horsepower must be conclucted through the
+ferred by increasing the mass flow would obviously                                           head wall and that the thermal conductivity coefficient
+require that the power used in cooling be increased                                          for aluminum is 10 Btu per hour per square inch
+about 20 times.                                                                              per d&ree Fahrenheit per inch, then, for a cylinder of
+INCREASING’ COOLING BY USING METAL OF HIGHER THERMAL                                         6-inch bore and having a hemispherical         head, the
+             CONDUCTIVITYIN CYLINDERHEAD
+                                                                                             gradient in the aluminum wail is about 157° F per
+   Current practice in engine-cylinder design is to make                                     inch. For a wall of Jf-inch thickness the temperature
+the fins and the wall of a cylinder of either steeI or                                       drop through the wall is 98° F. For a copper wall,
+aluminum, a steel barrel and an aluminum head being                                          which has been shown to havo only about on~fourth
+the usual combination.      The advamtage of using a                                         the drop of aluminum, the temperature drop thro.gh
+metal with high thermal conductivity for wall and fins                                       the waU is onIy 25° F.
+can be well brought out by considering the effect on                                            Suppose that the inner surface of the cylinder-head
+cooling of substituting   copper for aluminum in only                                        wall has a temperature of 500° F and that the coming
+the cylinder head,    Copper has about twice the tensile                                     air has a temperature of 100° F. On t,ho l.msis of the
+                                      COOLING AN AIR-COOLED CYLINDER                                ON AN AIRCRAFT ENGINE                                          273
+temperature drop through the ywll just mentioned, the                                    cooling of a cylinder could be increased as much as
+temperature difference between the cooling air and the                                   desired by sul%ciently increasing the mass flow of
+outside surface of the cylinder-head wail is 302° F for                                  coohg      air. The cooling can also be increased by
+the aluminum head and 375° F for the copper head.                                        improved finning.      Increased cooling by increased mass
+These temperature dfierances indicate that the copper                                    flow was also showm to be obtainable at a relatively
+head would obviously dissipate about 25 percent more                                     lmge increase in power for cooling. Improved finning
+heat than the aluminum head, the same fin effectiveness                                  will also require an increase in power for cooling, but
+being assumed.      The substitution of copper for alumi-                                the extra power is used for cooling with relatively high
+num in the fins, however, considerably increas~ the                                      efficiency.
+value of the h effactiveness (reference 6). On fins                                          The general principles of flow for cooling a finned
+such as are now in use, for example, about 0.050 to                                      cylinder are the same as for cooling in pip-.              (See
+0.090 inch thick and 1.5 inches wide, the substitution of                                references 9 and 12.) Figures 5 and 6 demonstrate
+copper for aluminum would increase the effectiveness                                      that this similarity extends even to the point that the
+by about 10 percent.      The total effect of substituting                               curved passages on a cylinder have a higher heat-
+copper for aluminum is, according to the preceding                                       transfer coefllcient than a straight passage.      This same
+rough calculation, to increase the cooling on the head                                   effect for pipes is show in reference 5 (pp. 117 and 159).
+by 27 percent.                                                                           The air passages formed by the iins, the cylincler wall,
+   The aluminum head, exclusive of valves and other                                      and the baffle are, in reality, only small pipes of length
+connections,   weighs approximately       5 pounds.     This                             approximately     equal to the baffle length and diameter
+weight would be increased to 8 or 10 pounds by using a                                   equal to the hydraulic diameter of the passage.         Fiiure
+copper head.      The power required to transport        this                            5 gives, as a solid curve, the friction factorj as t-tfunction
+increase in weight is small if the increase in cooIing                                   of Reynolds number for air flow within circular tubes
+obtained is considered.                                                                   (reference 5, p. 110). The broken curve in the lmni.nar
+   Application    of the foregoing considerations     would                              region was derived on the assumption of viscous laminm
+require the development        of suitable alloys or pro-                                flow and is the theoretical curve for laminar flow be-
+tective coatings.                                                                        tween parallel planes.. McAdams (reference 5, p. 117)
+      INCREASING  COOLfNG BY IMPROVING THE PIN DESIGN                                    states that, in the turbulent region, the friction factor
+   lt has been shown in a previous section that the                                      for pipes of circular cross section may be applied to
+        .100
+        .080
+
+        .060
+
+        .040
+        .030
+
+                                                                                         --------       ,=-.   -----   ~. ____
+                                                                     ‘x   I     I   I                                                1   I   I I I I I I I I I I
+        .020
+   %1                   II         llllllllllw’~                                          Illtlllllll                            1
+
+
+
+
+   1,      .–1          I    Ill            Ill
+
+
+
+
+        ----
+                                      <:           LuminOr       r
+
+                                                          I I I
+        .W2
+
+
+
+        .q&_uJMwJ
+                             z         34             6      8   103                                               8 104             2       34         6      8 105
+                                                                              R~ynol;s        n;mber~          R
+
+                 FIOURE6.-Varfat1onet frfctlonfactm AP
+                                                    —  D ~lth ~emolb ~mMr DpVIPfmfu!lydevelopedalr flowthrough~r~~
+                                                    g 4X
+                                                                                                                                         ~d r~tQ@m     ‘Ub=.
+274                      REPORT    hm.   71 *NATIONAL         ADVISORY     cOMMITTEE         FOR, AERONAUTICS
+
+tubes of any cross section, provided that the hydraulic               for comparison.     I?igu+e 7 shows, for a steel cylinder,
+diameter of the tube is used in place of the diameter of              values of U so camputed plotted against g for a comtant
+the circular pipe. Points obtained from tests (refer-                 air speed of 100 miles per hour between th~ fins. Each
+ence 12) on Wgmente of finned cylinders with various                  curve is for a particular fin width,   In all cases., tho fin
+fin spacings are also shown in figure 5. The rgmement                 thickness is optimum.
+between these points and the curve for pipes of circular
+                                                                                                                                                      -.
+cross section is good, especially in the turbulent region,
+and cooling is almost invmiably accomplished in this
+region.   It must be recognized that the pressure drop
+calculated from the curve in flgurk 5’is the drop occur-
+ring wide the air is passing between the fins. If these
+results me to be applied to an engine cylinder, the exit
+loss must be adclcd. This loss is controlled largely by
+the baffle design, which has been previously discussed.
+   Reference 13 gives tho relation for th’e over-all heat-
+t,mnsfer coefficient bnsed on cylinder-wdl nre~ M
+
+
+
+where
+              “=*[:(’+%)t”n’iaw+’l
+                          “3)
+                                                                                                                                                           .
+
+
+The coefficient U may be computed ns a function of
+fin spacing, h width, thermal conductivity of the fins,
+and surface heat-transfer  coefficient h, which may be
+calculated from the Nuwelt number.        Figure 6 gives
+                                                                                                                                                      —
+
+
+
+                                                                              o        .02      .04      .0: in    .LM       .fi7     .12:
+                                                                                                            s.
+                                                                      FIGURE7,-Vadation of ovar+ll heat-tranaferccmllcfeptwith spacing for four fin
+                                                                        widths, at lW milespar hour and optfmum13ntbfckness. Steelcyllmfer;k_=2. 17
+                                                                        Btn /(hrJ”(Win.) (“F/In.).
+                                                                              ..i
+                                                                         Figure 8 shows a similar set of cuti& for Stcrl,
+                                                                      aluminum, and copper fins. These curves Low the
+                                                                      ultimate heat transfer that can be obtained by the usc
+                                                                      of mderisl     of high thermal conductivity.      This ml-
+                                                                      vanta@ of, high thermal conductivity is in addition to
+                                                                      that previously considered where only the effect of the
+                                                                      ternpe~?ture drop through the wall upon the temper-
+                                                                      ature, difference between outer cylinder surface nnd
+                                                                      cooling ajr was considered.
+                                                                         The variation of cooling-air find cylincler-wrdl tcm-
+                                                                      peratti&     with the length of air passnge is shown iu
+                                                                      f@re”9 for the condition of constant head. transfw por ““
+                                                                      unit   ptissage length.    This condition .~. nmrly tlmt
+        ‘l@      ,?    .34                             34        6.
+                       Reynoldss nuk%,     pVD/~”                     prevdng      on an air-coolecl engine cylinder.  Note thaL,
+ FIQUEE6.—Variettonof Nnsseltnumber with Reynoldsnum~ foraevaIrJfi    for thii condition, the temperature difleronce between
+                               WdJUm                                  the cylinder wall and. the cooling air is constant along
+the  Nusselt number as a function of Reynolds number                  the passage length.      Hence, it follows tkt any increase
+for curved segments of finned cyhnders with several                   in the, temperature rise of the cooling nir in its passnge
+fin spacings.  The curve for fylly developed turbulent                around the cylinder will result in increascfl ~r~ll-tem-
+flow within tubes (from reference 5, p. 172) is inclucled             perature variation around the cylinder.
+                                CQOLING .AN AIR-COOLED CYLINDER                   ON AN. AlRCR4.l?T
+                                                                                                  .ENGINE                              275.
+                                                                              creased by increasing the mass flow of cooling air, then
+                                                                              the temperature rise of the cooling air, and hence the
+                                                                              wall-temperature    variation, will become smaller. This
+                                                                              procedure -will also reduce cylinder-walI temperature
+                                                                              in the baffle but, as has been pointed out, will require a
+                                                                              considerable increase in power consumed for coolhg.
+                                                                                 The power for any pa.rticulnr arrangement       can be
+                                                                              calculated from
+                                                                                                     POWer=A17Ap
+    k
+    “\                                                                        sinco Ap and A will be known rtnd ~7 can be cdmhated
+    ..c
+    $                                                                         from the equation relnting pressure gradient to Reynolds
+    \                                                                         number for turbulent flow (reference 5, p. 111):
+     3
+    G                                                                                                                                  (14)
+    S
+
+                                                                              Although the power increases faster than the heat
+                                                                              transfer, decreasing the spacing is still au economical
+                                                                              means of improving the cooling if mmmfticturing dii%-
+                                                                              culties me neglected.
+
+                                                                                                   FRONT COOLING
+                                                                                 Cooling on the front of the cylinder of an air-coolecl
+                                                                              radial engine is accomplished by large-scale turbulence,
+          o     .02      .04       .08        .08     ./0      .12            as first mentioned in reference 14; the subject has been
+                                      s, o-t.
+FIGWEE&-Varfatfon of ow?i+allherd-transferccellldent with S-       for thrw
+                                                                              covered in reference 15 and will not be reviewed here.
+ thermalconductiv!tfee,at 100MIIeeperhourand optbmuntin thfekness. W,1Inch.   SufEce it to say that front cookg has proved entirely
+                                                                              adequate in the past and, with some improvement         in
+   Greater temperature rise of the coobg air will resdt                       fin design, will probably be adequate for future needs.
+from a decrease in fm spacing, wiles the mass flow of                                                                            ,.
+cooling air is maintained by either reducing the baffle                                           GROUND COOLING
+length or increasing the pressure drop available for                             h airplane engine must be supplied with sufficient
+cooling. If the mass flow of cooling air is maintained
+                                                                              cooling for any required condition of operation.          The
+by either of these methods, then a change b smaller
+                                                                              definition of these conditions in flight is relatively
+fin spacing wiU reduce cylinder-wall temperatures at all                      simple because there both the cooling requirements rmd
+points in the baffle with a small increase in wall-tem-
+                                                                              the cooling available can be M.nitely         stated.    It is
+perature variation around the cylinder.
+                                                                              sometinm     dif%cult to meet certain arbitrary       cooling
+   If the heat-transfer  coefficient of a cylinder is in-
+                                                                              requirements on the ground, as, for instance, that the
+                                                                              engine cool with a c&-tain fraction of full power.
+                                                                                 Such requirements     can invariably    be met on any
+                                                                              engine type by penalizing the airplane with extra weight
+                                                                              or poor performance     in flight.    The analysis of two
+                                                                              extreme cases is enlightening:    (1) an engine required to
+                                                                              cool with reduced power, and (2) an engine —     required to
+                                                                              COOI with fll~ pOW&.       -
+                                                                                 Based on the experimental work of referenca 2, for
+                                                                              cotita.nt cylinder temperatures,
+                                                                                                                   1   1.76
+                                                                                                     AP=APl        ~                    (15)
+                                                                                                              ()
+
+                                                                              where Ap is the req+ired pressure drop “for satisfa~tolT
+                                                                              cooling for a given jndicated horsepower .1, ancl Apl-is
+                                                                              the known pressure drop for satisfacto~       cooling at
+                                                                              some other indicated horsepower Il. TV’hen the engine
+                                                                              was operating at full power, Apl was assumed to be 40
+FIOUEB9.—Varfntfonof coollng-alrand cglfnder-wdl tempemdnreaalong an-air
+   passagefor the condftionof @stant heat transfer per unft paasagelength.    pounds PW square foot and 11 to be 1100 horsepower.
+276                   REPORT    NO. 71%NATIONAL        ADVISORY COMMITTEE        FOR AERONAUTICS
+
+If the engine is operated at one-half top speed, I is           exit slot at an increased speed and thus, as the exit
+calculated to be about 150 horsepower and equation              slot is ahnost 100 percent efficient, the excess work
+(16) gives the required Ap as 1.2 pounds per square foot.       will be recovered.    The only 10SS, then, is that duo to
+This pressure drop can be obtained by proper de.+ign.           the inefficiency of the blower.
+   If the engine requires a pressure drop of 40 pounds             The main consideration in the use of blower cooling
+per square foot for cooling at full power in fllght,            concerns mechanical diflimlties, weight, and effect of
+approximately this same pressure drop will be required          blower cooling on the front oooling as gpposed to the
+on the ground.      The problem is simply one of provid-        dMculty, for ordinary cowlings, of producing sufficient
+ing a pressure drop of 40 pounds per square foot across.        pressure drop for full-power cooling on the ground with
+the engine. Two methods for the solution of this                largeAiameter propellers on normal-size cowlings.
+probkun are obvious: (1) T~ provide the required                   Two conditions of ground cooling have been discussed,
+pressure by means of the propeller and its slipstream;          namely, with the engine idling and at full power, The
+and (2) to use auxiliary means, such as a blower.               discussion has shown that certain means are available
+   The use of the propeller and the propeller slipstream        for giving cooling on the ground.     Each of these moans
+for cooling has been investigated in references 16 and          must be examined in the light of whut a particular
+] 7. In reference 17, the nature of the flow in front of        method of improving cooling does to the airplane
+the cowling was studied.      A round-edge disk was set in      performance.     When this examination is concluded, it
+the front of the cowling and it was shown that an               may very possibly be more practicnble to alter the
+annular opening bet wean the disk arid the cowling for          cooling requirement     by restricting operation on tho
+the entry of the air would ..materially increase the            ground and during take-off than to take the penalty
+pressure drop for cooIing. The amount of increase               in performance.     From considerations of economy and
+depended upon the blade-angle setting and the solidity          simplicity, every detail of cowling, flaps, and propeller
+of the portion of the propeller operating in front of this      should obviously be arranged ti give maximum oooling;
+annular opening.        Obviously, both the nose of the         only then, if the cooling is insufficient, should blower
+cowling and the disk must be .gJose to the propeller for        cooling be resorted to.
+maximum       pressure.   The thrust-distribution      curves
+                                                                         PRESSURE AVAILABLEFOR COOLING
+for various propellws give a clear picture of the function
+of tho propeIkr in providing p-esaure drop for cooling.            The pressure available for cooling with a conventional
+The maximum pressure occurs near the 0.6 radius                 cowling has been the subjeet of several studies (refer-
+point; the difficulty of yrovid~g        adequate pressure      ences 14, 16, 17, and 18). These studies, which cover
+drop for cooling at full power on the ground when the           the whole range of operation from ground h cruising
+cowling d~ameter is small @ative           to the propeller     condition, show the fundame.nhd principks involved
+diameter is obvious.       Propellers with blade sections       in the problem and give information suitable for de-
+extending to the hub markedly increase the pressure             sign purposes.
+drop available for coding provided that the blade                  The pressure on the ground being entirely dependent
+angle of the propeller is suitable for the local velocity,      on the slipstream from the propeller, the+ distribution
+Propellers having round blade shadca near the hub may           of the velocity in this slipstream determines the premure
+be equipped with sleeves having airfoiI sections to give        available for cooling. An understanding        of this fact
+the same result.     Suction at the exit slot is provided by    immediately explains the variation in pressure avrtilablo
+flaps, which operate on the propeller slipstream.         The   from propellers of various designs and diamete~.      Some
+effectiveness of flaps depends almost entirely upon             of these variations are illustrated by figure 10 whore
+their being located in a relatively high velocity.              Ap available for cooling is plotted against air speed.
+    The previously discussed conventional          means of     Dyntirnio pressure q is also shown as a function of air
+augmenting the cooling ~re usually suflic.ient to provide       speed. Curves for two engine conduckmces are given
+adequate cooling for most ordinary cooling conditions.          for two typical three-blade propellers having diameters
+In the. future, however, cams may very possibly occur           of ltiet.      Propeller F is Bureau of Aeronautics plan
+where these conventional means may fail to provide              form 4893 and prope~er C is Bureau of Aeronautics
+adequate cooling. It will then be necessary to resort           plan form 5868-9.       The nacelle was 52 inohea in diam-
+to blower cooling.                                              eter. In the computation of these curves, the engine
+    Tho efficiency of the blower will be about 70 percent       was assumed to be developing 75o horsepower,
+for a good design. For the. 1100-horsepower engine                 The curves for propeller 1?, which has airfoil sections
+assumed, approximately       11 horsepower of useful work       close to the hub, may be used almost regardless of
+will be required to cool the engine. At 70-percent              relative diametir of nacelle and propeller as long as the
+efficiency, this value amounk to a power expenditure            propeller disk loading remains the same, Propeller C,
+of about 15 horsepower” for ground cooIing, Au excess           however, which has round blade shanks near the hub,
+pressure wilI be supplied when there is any air speed.          will give a lower Ap if the propeller diameter is in-
+This. excess pressure can be used to force air out the          creased relative to the nacelle diameter or vice versa.
+                                COOLING A.N AIR-COOLED CYLINDER               ON All AIRCRAFT ENGINE                                    277
+
+                            I    I       I    I                                for eimh part according to itis needs.       Only in this way
+                            PrapeIler      Ehgi*                               can the air-cooled cylinder be made to function free from
+                                         cunduc fanee
+   300
+                  —..                F                                     /   detonation      and ~th       low fuel consumption.        The
+                  —.                 < ~           ‘%9
+                  -------                              f).
+                                                     .u/.J
+                                                           o I         /
+                                                                         /     problem    of  cooling distribution,  however,   is much  more
+                  ——
+                                     k               .!18
+                                                                        ‘q
+                                                                               critical for the air-cooled than for the liquid-cooled
+                                                    I
+                                                                               cylinder.
+                     I                                     1       /
+                                                                                  From cooling considerations, the sleeve-valve engine
+                                                                               obviously has a decided advantage over the poppet-
+                                                                               valve type.      The use of sleeve valves would eliminate
+                                                                               tie valve-cooling problem; the piston then becomes the
+                                                                               most critical point.      The critical nature of piston cool-
+                                                                               ing is demonstrate ed by the frequent failure of the oil
+          I    1     I          I     I A
+                                                                               film on the cylinder resulting in blow-by, loss of com-
+                          I
+   /09
+                              .  M’5                                           pression, and subsequent failure of the piston.
+                                                                               piston can be cooled (1)through the cylinder wall and
+                                                                                                                                          The
+
+                                                                               (2)by means of the oil. The &t method is the most
+                            / I       I I I I              I I   I    I        common       and, for low-power        and low-compression
+                                                                               engines, is adequate.       The second method, if mechani-
+                                                                             1
+                                           2LW                 3/70            cal dficulties    are neglected, is more direct, cheaper in
+                                  Air speed, mph                               poywr for cooling, and more adequate.          In spite of any
+FIGURE10.—l”erIatIonwfth slr speed of Ap avs.IIablefor mollngusing sn NAC.4 objection,       method (2) must be employed as engine
+ wwlhgwith flapsIn combinationtith two prorelleresnd engineeonductsnms.
+                                                                               power and compression increase.
+                          HOT SPOTS                                     VARIATION     OF TOTAL REQUIRED HEAT TRANSFER
+                                                                                     WITH INDICATED HORSEPOWER
+     Some of tho reasons for requiring     increased cooling
+ of an engine cylinder me: (1) to reduce detonation,                     The heat-transfer process on the inside of the cylinder,
+ (2) to maintain an oil film on the cylinder -ivdl, and (3)            neglecting radiation, follows the same general laws of
+ to maintain the volumetric efficiency of the engine.                  heat transfer as for forced convection over any body:
+ Hot spots tend to amplify any tendency to detonate.
+ The hottest points on the inside of the cylinder are the
+ exhaust va.lve, the spark plug, and the piston.         Any
+                                                                                              W)’(%7
+                                                                         For a given engine, CP, p, k, and L will be nearly
+                                                                                                                                        (16)
+
+
+ attempt to cool these points by improving the over-all                consttmt so that, for practical purposes,
+cooling is very indirect cmd consequently very expensive                                        ha(l”p)~                (17)
+m regards power for coohg.
+                                                                       The actual heat transferred is
+     The cylinder wall and the piston must have a rela-
+ t ively low temperature     to insure lubrication between                                lZCAhAtlCCiS(l’P)=Atl             (18)
+ the two surfaces.       Cooling the cylinder vvall vms                where Atl is the mean effective temperature difference
+formerly sufficient to insure proper lubrication.          As          between the cylinder wall and the gases in the cylinder.
+ the power per cylinder has been increased, however,                      Assume that., during enghfe operation, the charge has
+the problem of cooling the cylinder wall has become                    the same air-fuel ratio throughout        the. operahg
+more acute.       The piston must now be moled by more                 range.   Thus, when combustion takes place, the heat
+direct means, such as by the oil, to insure proper                     per unit weight of charge remains the same. ‘The                         .—
+lubrication    and to provide a workable temperature                   temperature   rise due to compression is a function of
+for the piston crown.                                                  only the compre+on     ratio.
+     Cooling tests of model cylinders have shown that the                 The temperature at any point is merely a function of
+rear of the cylinder is most diilicult to cool. The loca-              air-fuel ratio and of comprewion ratio; that is, the
+tion of the spark plug at this point multiplies the dii%-              temperatures are tdways the same at a given part of the
+culties.    The rear of the. head could be cooled. quite               cycle.
+satisfactorily if there were no spark plug tmd if it were                 The equation for adinbatic compression from condi-
+possible to supply the same finning that is employed                   tion 1 to condition 2 is
+elsewhere on the head.        If the exhaust valve were in
+front, it also could be better cooled and a much simpler
+baffle arrangement could be used.
+    The cooling problem foi air-cooled enginEs is to
+determine the cooling requiremem% of each part of the
+                                                                                                  T*= T, (l?)’-’                       (21)
+cylinder and of its associated parts, that is, of the piston
+and the valves, and then to provide adequate cooling                   where R is compression        ratio.
+     430134”-42—-10
+                                                                                                                                            ...
+278                    mzPoRT NO. 719-NATIONAL         ADVISORY     COW-MITTEE FOR AERONAUTICS
+
+   Equation       (21) shows that the temperature    T2 re-     THE EFFECT OF ALTITUDE ON COOLING REQUIRE.
+mains the same regardless of quantity of charge for a               MENT FOR AN UNSUPERCHARGED  ENGINE
+given compression ratio and air-fuel ratio.                        The cooling on a cylinder being dependent on the
+   The velocity of movement of the charge in the                temperature and the density of the cooling air and on
+cyliider is proportional       to the speed of the engine.      the pressure drop available for cooIin& changes in
+The density of the charge is directIy proportional to the       altitude may have a great eflect on cooling. !l%~
+charge present which, in turn, ip proportional       to the     effect of aItitude on cooling will now be considered.
+indicated horsepower.       (See reference 1.) The value of        Assume that CD is constant with changes in aItitude
+the heaMranefer exponent m for turbulent flow usually           and further assume that the engiile power P developed
+ft-ills in the. neighborhood of 0.8.                            at any altitude is defined by
+    For convenience, consider two casea: (1) an engine
+                                                                                               P=pPo                               (26)
+operating at constant speed but with variable power
+due to variation in weight of charge, and (2) an engine
+having constant charge per cycle but with varying                    1.6
+speed.
+    It is to be remembered that, in both cases, the tem-
+perature of the gases in the cylinder is fixed by the                1.5
+
+engine,
+    In case .(1), the velocity and the temperature       are                          I                           /
+                                                                     f. 4
+fixed and the heat dissipated is proportional to p“8 or
+loos. In case (2), the temperature and the density rc-
+ma.in constant and the heat dissipation depends upon
+ Vus or (rpm) &S. The             indicated  homepower     is
+proportional to the engine speed, Thus, the heat dis-
+sipated is proportional to FE.
+    It follows that, regardlew of whether the power is
+wmied by changing engine speed or charge weight, the
+heat to be dissipated is proportional to 1°.8.
+    This conclusion is in agreement with experimental
+data obtained by Pye (reference 1), which showed
+that
+                             l?ccl~                     (22)
+   I%ikel (reference 7) obtained values of 0.64 to 0.68
+for the exponent of 1 in tests on cylinder heads ancl
+0.64 to 0.85 in tests on cyli.ndar barrels.
+   As a further check on the foregoing conclusions, the
+experimental work of referuce      2 gave the empirimd
+equation for pressure needed for cooling
+
+                                                         (15)
+Reference   12 gives
+                                                        (23j
+
+where J’ ii-the air velocity between the fins.
+
+                                                        (24)
+
+
+   As the cylinder temperature= were held constant        in    FIGUREll,–-Vsrfat[onw“ttbaltknde ofss%al performtics and Molfngpsrsnwters
+the work described in reference 2, it follows that                            foran afrplanehaving an unaupmh.rged engina.
+
+                                                        (25)       In figure 11, q is shown as a function of altitude (data
+                                                                obtained from reference I.),
+  This subject has been treated in reference          19 in        These assumptions are sufficiently accurate for use
+which similar conclusions were reached.                         in calcdating cooling parameters.
+                                  COOLING AN        AIR-COOLED CYLINDER           ON AN AIRCRAFT’ 31NGINE                                      279,     .
+  Equating        engine     thrust       power    to   airplane   drag     to the ratio of brake horsepower p. These two values
+power,                                                                      d.ifler by less than 5 percent for altitudes up to 25,000
+                             P= Cllqasv                             (27)    feet.)   The cooling required then varies directly with
+from which it maybe           shown that                                    P O.s.  This  curve of coohng required is given in figure                  ____
+                           p1~P2~ 2 2~                                      11, and the curve          of ,~&        ~q~~~          is given in the
+
+and
+                        Q=T      Z5S      ()                        (28)
+                                                                            same figure.
+                           q“=a1~p21s(c&                            (29)       F~ure 11 shows that, for an unsuperchmged   engine,
+                                                                            cooIing becomes relat,ively   eaaier “with increasing”
+   Solving equation        (29) for V yieIds
+                                                                            altitude.
+                            v=p113/#q’4                             (30)
+                                                                            EFFECT     OF ALTITUDE ON COOLING REQUIREMENTS
+(See fig. 11.)                                                                           FOR A SUPERCHARGED  ENGINE
+   Fi~-re 12 gives relative density, relative pressure,
+rtnd standard temperature for standmd atmosphere for                           The cooling requirements for a supercharged engine
+nltitudes up to 35,000 feet. The data for figure 12                         can bc calculated from the foregoing analysis for mn
+were taken from reference 20,                                               unsupercharged      engine by taking p= 1 at all altitudes
+                                                                            below the critical.      The results of such a calculation
+                                                                            for a supercharged engine are shown in figure 13. Cool-
+                                                                            ing becomes more difficult with increasing altitude up
+                                                                            to the critical altitude; and, beyond the critical altitucle,
+                                                                            cooling again becomes easier with increasing altitude.
+
+
+
+
+      0             Io,cKw            .Zwo           m,m
+                                  Aliitude, ft
+FIGURE12.—Varfatfonofrefatlre densfty,reIrdIrePreamr%and temperatureofthe
+       standard atmospherewith altltnde. (Data from referenm93.)
+
+                                                                            ~GuaE lS.—Varf8t!onwfth altitude ofasmrfdperformanceand cdfng parameters
+   It can be show-n that, within close limits, 17, -rariw                                 for an alrpkmehaving a auperchammdengfne.
+directly with the flight speed T7and hence with altitude
+                                                                                TEMPERATURE RISE OF COOLING AIR DUE TO
+as (p/a) 1’8. (See fig. I I.) Since the variations of Vt,
+                                                                                  ADIABATIC COMPRESSION AT ENTRANCE
+p, T, and hence of P, with altitude are all known, the
+vnriation of the Reynolds number with altitude can be                          The temperature     rise of the cooling air due to
+calmdated.                                                                  adiabatic compression at the cowling entrance mny be
+   By the use of equations (3), (4), and (6) and on the                     calculated from the equation for stagnation pressure
+assumption that Tw= 350° F andfl= 0.77 at the ground,                       in front of a body in compressible flow (reference 21):
+the vmiation of cooling available with altitude can be
+calculated.   ‘(See fig. 11.)
+   Earlier in this paper, the total required heat transfer
+was shown to vary as the eight-tenths power of the.                         The formula for adiabatic           change of temperature          and
+indicated horsepower, so that                                               preswre of a gas is
+                           HIHO= $0.8=pox                          (31)                                                         .     .
+                                                                                                        T~_ ~ ~~                              (33)
+(The ratio of indicated         horsepower        Y is taken as equal                                   ~1— ()PI                    . .
+280                   REP6RT “NO. 719—NATIONAL       ADVISQRY       COMMI~EE-      FOR AERONAUTI@             ..
+
+where p   absolute prawure      .-                                (1) Increasing the mass flow, Doubling tho cooling
+      v airplane speed                                         requires 20 times the power for cooling,
+          c velocity of sound at altitude at which airplane       (2)””Improving the fin design. Wider fins give in-
+               is flying                                       creased cooling with a power increase for cooling pro-
+         T absolute temperature                                portional to the width,       Reducing the fin spacing by
+                                                             I one-half its value gives about a 50-percent increase in
+Subscript 1 refers to the free air stream at the flying
+                                                               cooling and t-t100-percent increase in power for cooIing
+altitude.    Subscript 2 refers to air conditions. in the
+                                                               if the length<iarneter    ratio of the air passage is kept
+cowling entrance.        Combining equations (32) and (33)
+                                                               constant and the fin thickm%s is kept optimum.
+gives
+                                                                  (3)-”TJsing a material of higher tlwrmrd conductivity.
+                                                        (34) The temperature drop through the cylinder wall may he
+from which                                                     decreased, thus giving better cooling without change of
+                                                               other conditions.
+                                                        (35)      The problem of ground cooling was reviewed from
+                                                               considerations of the cool$g requirements and of the
+    Laplace’s formula for the velocity of sound in a gas
+                                                               means by which such requirements can be met, It ww
+give9
+                                                               concluded that, for normal operation of landplancs, sat-
+                                                         (36) isfactcny cooling could be obtained by the use of pro-
+                                                               peller and cowling flaps and that seaplanes with long
+    When equation (36) is substituted in (35) am?, since       take-offs would undoubtedly require auxilimy means of
+~=cP/c,, the equation becomes                                  cooling.
+                                                                  The mechrmism of heat transfer from hot gases to
+                                                        (37)
+                                                               the cylinder wall was analyzed on the basis of thmno-
+Since pV=p/P=RT for one slug of substance                and   dynwnics, and the hcnt transferred wns shown to bc
+cp—c.=.R for one slug of substance,                            prop@tional to the cig~~t-tenths power of the indicated
+                                                               horsepower, regardless of whether the horsepower was
+                                                        (38) varied by changing the cylinder chmge or by varying
+                                                               the engine speed.
+where Al’ degrees Fahrenheit                                      The cooling problem at altitude for an unaupcr-
+          V feet per second                                    charged and a supercharged engine hns been analyzed.
+          c. Btu & slug per degree Fahrenheit (7,73 for It was shown that the cooling is:
+air)                                                              (1) Accomplishcd at altitude without change in power
+    Equation (38) shows that, for adiabatic compressible       for cding or fin design for an unsupc+rcharged eng+ne.
+flow under standard conditions, the temperature rise of           (2)More dil%cult, up to critical altitude, for a super-
+the cooling air at the entrance is a function of velocity      charged enghm. An nrra.ngement that just cools satis___
+and specific heat and is independent of altitude.       This   factoriIy on the ground would have approximately          a
+temperature rise can be calculated for the anticipated         10-~erccnt deficiency in cooling ability d 25,000 feet.
+top speed of the airplane and allowance for it can be
+made in the design calculatio~.
+    VaIues of AT have been calculated and are shown
+for several values of V in table II.                           LANGLEY hlEMORIAL AERONAUTICAL LABORATORY,
+                                                                   NATIONAL ADVISORY COMMITTIIE FOR AERONAUTICS,
+                        TABLE         II
+                                                                     ~iNGLEY FIELD, TA., April %?, 1940.
+ADIABATIC TEMPERATURE    RISE AT ANY STAGNA-
+  TION” POINT DUE TO THE FORWARD    VELOCITY
+  OF THE AIRPLANE                                                                       REFERENCES
+              I                                               1. Pye, D. R.: The Internal Combustion Engine.             VO1,11.
+                              I .@;           .
+                      1.        r
+
+
+                  I   (m~h)                                            Aero-Engine.
+                                                                     The
+
+                                                                  pp. 344-346.
+                                                                                        The Clarendon Press (dxford), 1934,
+
+                                 ‘.    1.8                    2. Brevoort, M. J., Stickle, G&ge W., and Ellerbrock, Herma~~-
+
+
+
+
+                  1-1 ...
+                       ml
+
+                       i%              1:?                           H,, Jr.: Cooling Tests of a Single-Row Radial Engine with,
+                       400            ,!af!                          several   N. A. C. A. Cowlings.   Rep.   No. 696, NACA,
+                       WI              44.e
+                       em              64.2                          1937.
+                                                              3.    Nu”&elt,Wilhelm: Transfer of Heat in tlic InternalC’Om-
+                                                                  b~tion   Engine.   English   trans. of .Diceelmaschinen,
+                      CONCLUSIONS                                 VDI Verlag, G. m. b. H., (Berlin), 1923; pp. 48-55.      -
+                                                              4. Moss, H.: Heat Transfer in Internal   Combustion Engines.
+    The problem of cooling an air-cooled cylinder of an           R. & M. No. 1129, British A. R. C., 1928.
+fiircraft engine has been analyied. The cooling maybe         5. McAdaxne,  William H.:      Heat Transrni~ion.   McGraw-
+improved by:                                                      Hill Book Co., Inc. (New York), 1933.
+                           COOLING AN AIR-COOLED CYLINDER             ON AN AIRCRAFT ENGINE                               281
+ 6. Harper, D. R., 3d, and Brown, ~. B.:         Mathematical    14. Theodorsen, Theodore, Brewort, M. J., and Stickle, George
+     Equations for Heat Conduction in the Fins of Air-Cooled          W.: Full-scale Tests of N. A. C. A. Cowlings. Rep. h’o.
+     Engines.   Rep. No. 158; ~ACA,       1923.                       592, NACA, 1937.
+ 7. Pinkel, Benjamin:   Heat-Transfer  Processes in Air-Cooled   15. Brevoort, M. J., and Joyner, U. T.: Cooling on the Front
+     Engine Cylinders.   Rep. No. 612, NACA, 1938.                    of an Air-Cooled Engine Cylinder on a Conventional
+                                                                      Engine Cowling. Rep. No. 674, NACA, 1939.
+ S. Brevoort, Maurice J.: Energy Loas, Velocity Distribution,
+                                                                 16. Theodorsen, Theodore, Brevoort, M. J., and Stickle, George
+     and Temperature Distribution for a Baffled Cylinder
+                                                                      ‘iv.: Cooling of Airplane Engines at Low Air Speeds. Rep.
+     Model. T. N. No. 620, NACA, 1937.
+                                                                      No. 593, NACA, 1937.
+ 9. Brevoort, Maurice J.: The Effect of Air-Passage Length       17. Stickle, George W., and Joyner, Upshur T.: The pressure
+     on the Optimum Fin Spacing for Maximum Cooling. T.               Available for Ground Cooling in Front of the Cowling
+     N. No. 649, NACA, 1938.                                          of Air-Cooled Airplane Engines. T. N. h~o. 673, .NACA,
+10. Betz, A.: Mechanik unelaAischer Fltliesigkeiten. I. Bd.,          1938.
+     2. Abschn., V des Ingenieura Tac.shenbuch, 26. Auftage,     18. Stickle, George W., Naiman, Irven, and Crigler, John L.:
+     hrsg. vom Akademischen Verein Hiitte. Wilhelm Ernst              Effect of Exit-Slot Position and Opening on the Available
+     & Sohn (Berlin), 1931, p. 379.                                   Cooling Pressure for N. A. C. A. Nose-Slot Cowlings
+11. Stickle, George IV.: Design of N. A. C. A. Cowlings for           Rep. No. 687, NACA, 1940.
+     Radial Air-Cooled Engines. Rep. No. 662, XACA,              19. Pinkel, Benjamin, and Ellerbrock, Herman H., Jr.: Cor-
+                                                                      relation of Cooling Data from an Air-Cooled Cylinder and
+     1939.
+                                                                      Several Multicylinder Engines. Rep. No. 683, NACA,
+12. Brevoort, M. J.: Principles Involved in the Cooling of a          1940.
+     Finned and Baffled CyIinder. T. N. h’o. 655, NACA,          20. Hartshorn,  A. S.: Note on Performance    Data for Honey-
+     193s.                                                            comb Radiators in a Duct. R. & M. No. 1740, British
+13. Biermann, Arnold E., and Pinkel, Benjamin: Heat Transfer          A. R. C!., 1936.
+     from Finned Metal Cylinders in an Air Stream. Rep.          21. Glauert, H.: The Elements of Aerofoil and AirScrew Theory.
+     h’o. 488, NACA, 1934.                                            The Uni\-ersity Preae (Cambridge), 1930, p. 15.
+

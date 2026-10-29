@@ -1,0 +1,2109 @@
+{
+  "version": "v1.4-historical-combat-rating-resolved",
+  "modelStatus": "325 mph combat-power label corrected; emergency 336 mph independent power-setting holdout; 109 low-speed polar still unvalidated",
+  "sourceNotes": [
+    {
+      "level": "published-secondary-wartime-record-transcription",
+      "url": "https://info.eduard.com/en/06-2023-1/rufe",
+      "claim": "Jan Bobek 2023 cites Baumgartl tables based on Rechlin: 523 km/h Bf109F4 combat speed, 540 km/h emergency sea-level speed; H.H. Vogt also 540. Exact source-test airframe/conditions not independently inspected."
+    },
+    {
+      "level": "contemporaneous-report-discussed-in-secondary-source",
+      "url": "https://falkeeins.blogspot.com/2017/07/fw-190-versus-bf-109-friedrich-rechlin.html",
+      "claim": "Rechlin 10 December 1941 F4 vs Fw190A2 combat-weight flight comparison, original page 2 pictured; author notes restricted DB601E emergency rating in 1941."
+    },
+    {
+      "level": "2008-forum-quotation-of-wartime-comparison-not-primary-verified",
+      "url": "https://www.whq-forum.de/invisionboard/index.php?showtopic=27166",
+      "claim": "Attribution: 109F4 climbs 1000 to 5000m in 4 min vs Fw190A2 4 min 50 sec. This datum is a provisional withheld clue, not a vetted flight-test target."
+    },
+    {
+      "level": "simulator-not-flight-test",
+      "url": "https://il2sturmovik.com/museum/fighters/bf-109-f-4/",
+      "claim": "Game designer power modes are combat 30-min and emergency 1-min, prop and engine maps heuristic; not independently measured turn performance."
+    }
+  ],
+  "calibration": {
+    "speedMph": 325,
+    "altFt": 0,
+    "rating": "combat",
+    "combatShaftBhp": 1183.584,
+    "emergencyShaftBhp": 1331.532,
+    "headlineReferenceKmH": {
+      "combat": 523,
+      "emergency": 540
+    },
+    "originalGermanReportInspected": false
+  },
+  "variants": [
+    {
+      "id": "generic_e_0p78",
+      "e": 0.78,
+      "cd0": 0.022979082665474337,
+      "seaLevel": {
+        "combatMph": 324.9999999999991,
+        "emergencyMph": 338.84805729814707,
+        "withheldEmergencyMph": 336,
+        "emergencyResidualMph": 2.8480572981470686,
+        "withheldEmergencyKmH": 540,
+        "emergencyResidualKmH": 5.32308792442916
+      },
+      "fiveThousandFt": {
+        "combatMph": 340.7938457295195,
+        "emergencyMph": 354.35123870358893,
+        "combatTurn170Eas": {
+          "easMph": 170,
+          "stallEasMph": 98.06509011620857,
+          "turnDegSec": 17.563732396630208,
+          "sustainedG": 2.747603135363441,
+          "instantaneousDegSec": 19.449328422209508
+        },
+        "emergencyTurn170Eas": {
+          "easMph": 170,
+          "stallEasMph": 98.06509011620857,
+          "turnDegSec": 18.919098427302323,
+          "sustainedG": 2.932426680576954,
+          "instantaneousDegSec": 19.449328422209508
+        }
+      },
+      "combatClimbSeaLevel": {
+        "status": "modeled-peak",
+        "altFt": 0,
+        "rating": "combat",
+        "profile": "C",
+        "best": {
+          "tasMph": 146,
+          "climbFpm": 3597.6561710545357,
+          "shaftHp": 1183.584,
+          "propEta": 0.7523902393374674,
+          "powerMethod": "rating curve, no climb MAP correction"
+        },
+        "tasMph": 146,
+        "climbFpm": 3597.6561710545357,
+        "shaftHp": 1183.584,
+        "propEta": 0.7523902393374674,
+        "powerMethod": "rating curve, no climb MAP correction",
+        "viableSpeedSamples": 191,
+        "sourceStatus": "calculated optimization; climb speed not directly reported",
+        "addedCd0": 0
+      },
+      "combatClimbTime1000to5000m": {
+        "status": "modelled-integration",
+        "startAltitudeM": 1000,
+        "endAltitudeM": 5000,
+        "integrationStepM": 250,
+        "elapsedS": 221.88316673024312,
+        "elapsedMin": 3.6980527788373854,
+        "recordedRechlinSecondaryS": 240,
+        "residualVsRechlinSecondaryS": -18.11683326975688,
+        "points": [
+          {
+            "midAltitudeM": 1125,
+            "bestClimbMps": 18.19959676768351,
+            "bestClimbTasMph": 153,
+            "segmentS": 13.73656807847071,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 1375,
+            "bestClimbMps": 18.18075465652267,
+            "bestClimbTasMph": 155,
+            "segmentS": 13.750804338053594,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 1625,
+            "bestClimbMps": 18.16107829859874,
+            "bestClimbTasMph": 157,
+            "segmentS": 13.7657024483667,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 1875,
+            "bestClimbMps": 18.14077589429555,
+            "bestClimbTasMph": 158,
+            "segmentS": 13.781108451850377,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 2125,
+            "bestClimbMps": 18.11964494279279,
+            "bestClimbTasMph": 160,
+            "segmentS": 13.79717984482026,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 2375,
+            "bestClimbMps": 18.097617384704332,
+            "bestClimbTasMph": 162,
+            "segmentS": 13.813973115118124,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 2625,
+            "bestClimbMps": 18.074674649129392,
+            "bestClimbTasMph": 164,
+            "segmentS": 13.83150761233989,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 2875,
+            "bestClimbMps": 18.050895119771344,
+            "bestClimbTasMph": 165,
+            "segmentS": 13.849728688865532,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 3125,
+            "bestClimbMps": 18.026188939103164,
+            "bestClimbTasMph": 167,
+            "segmentS": 13.868710732177533,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 3375,
+            "bestClimbMps": 18.00046075542848,
+            "bestClimbTasMph": 169,
+            "segmentS": 13.888533376825166,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 3625,
+            "bestClimbMps": 17.973675852564206,
+            "bestClimbTasMph": 171,
+            "segmentS": 13.909230479659167,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 3875,
+            "bestClimbMps": 17.94579508586186,
+            "bestClimbTasMph": 173,
+            "segmentS": 13.930839999223894,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 4125,
+            "bestClimbMps": 17.91677474777012,
+            "bestClimbTasMph": 175,
+            "segmentS": 13.953404199107567,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 4375,
+            "bestClimbMps": 17.886566424296866,
+            "bestClimbTasMph": 177,
+            "segmentS": 13.97696987055064,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 4625,
+            "bestClimbMps": 17.85511684167751,
+            "bestClimbTasMph": 179,
+            "segmentS": 14.001588576359728,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 4875,
+            "bestClimbMps": 17.822367702486364,
+            "bestClimbTasMph": 181,
+            "segmentS": 14.027316918454273,
+            "engineBhP": 1183.584
+          }
+        ],
+        "caveat": "Every slice assumes instantaneous best-climb TAS, constant 30-min combat-power map, no acceleration and no climb MAP/cooling correction. The 4:00 reference is a secondary quotation, not an inspected original scan."
+      },
+      "curves": {
+        "combatSpeed": [
+          {
+            "altFt": 0,
+            "mph": 324.9999999999991
+          },
+          {
+            "altFt": 1000,
+            "mph": 328.0771546494989
+          },
+          {
+            "altFt": 2000,
+            "mph": 331.195479880701
+          },
+          {
+            "altFt": 3000,
+            "mph": 334.3544848018928
+          },
+          {
+            "altFt": 4000,
+            "mph": 337.5538320048754
+          },
+          {
+            "altFt": 5000,
+            "mph": 340.7938457295195
+          },
+          {
+            "altFt": 6000,
+            "mph": 344.07483094246436
+          },
+          {
+            "altFt": 7000,
+            "mph": 347.3970712288492
+          },
+          {
+            "altFt": 8000,
+            "mph": 350.76082651381057
+          },
+          {
+            "altFt": 9000,
+            "mph": 354.16633059892865
+          },
+          {
+            "altFt": 10000,
+            "mph": 357.61378849720404
+          },
+          {
+            "altFt": 11000,
+            "mph": 361.103373548357
+          },
+          {
+            "altFt": 12000,
+            "mph": 364.6352242942148
+          },
+          {
+            "altFt": 13000,
+            "mph": 368.2094410916661
+          },
+          {
+            "altFt": 14000,
+            "mph": 371.8260824379895
+          },
+          {
+            "altFt": 15000,
+            "mph": 375.4851609804509
+          }
+        ],
+        "emergencySpeed": [
+          {
+            "altFt": 0,
+            "mph": 338.84805729814707
+          },
+          {
+            "altFt": 1000,
+            "mph": 341.87296569906994
+          },
+          {
+            "altFt": 2000,
+            "mph": 344.93545650547367
+          },
+          {
+            "altFt": 3000,
+            "mph": 348.03580416398745
+          },
+          {
+            "altFt": 4000,
+            "mph": 351.17430517335106
+          },
+          {
+            "altFt": 5000,
+            "mph": 354.35123870358893
+          },
+          {
+            "altFt": 6000,
+            "mph": 357.5668647149241
+          },
+          {
+            "altFt": 7000,
+            "mph": 360.82142192403535
+          },
+          {
+            "altFt": 8000,
+            "mph": 364.1151256042658
+          },
+          {
+            "altFt": 9000,
+            "mph": 367.4481652049135
+          },
+          {
+            "altFt": 10000,
+            "mph": 370.8207017731829
+          },
+          {
+            "altFt": 11000,
+            "mph": 374.23286516048483
+          },
+          {
+            "altFt": 12000,
+            "mph": 377.6847509927893
+          },
+          {
+            "altFt": 13000,
+            "mph": 381.1764173823385
+          },
+          {
+            "altFt": 14000,
+            "mph": 384.70788135542443
+          },
+          {
+            "altFt": 15000,
+            "mph": 388.2791149678678
+          }
+        ],
+        "combatTurn": [
+          {
+            "easMph": 95,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": null,
+            "sustainedG": null,
+            "instantaneousDegSec": null
+          },
+          {
+            "easMph": 100,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 3.3264933902334493,
+            "sustainedG": 1.0398510542846873,
+            "instantaneousDegSec": 3.3264933902334493
+          },
+          {
+            "easMph": 105,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 6.229609056706806,
+            "sustainedG": 1.1464357873488678,
+            "instantaneousDegSec": 6.229609056706806
+          },
+          {
+            "easMph": 110,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 8.09939717456451,
+            "sustainedG": 1.2582197756844715,
+            "instantaneousDegSec": 8.09939717456451
+          },
+          {
+            "easMph": 115,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 9.577523333431765,
+            "sustainedG": 1.3752030192914988,
+            "instantaneousDegSec": 9.577523333431765
+          },
+          {
+            "easMph": 120,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 10.83616589155577,
+            "sustainedG": 1.4973855181699494,
+            "instantaneousDegSec": 10.83616589155577
+          },
+          {
+            "easMph": 125,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 11.952590821280749,
+            "sustainedG": 1.6247672723198243,
+            "instantaneousDegSec": 11.952590821280749
+          },
+          {
+            "easMph": 130,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 12.969338070901014,
+            "sustainedG": 1.7573482817411212,
+            "instantaneousDegSec": 12.969338070901014
+          },
+          {
+            "easMph": 135,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.912666969780734,
+            "sustainedG": 1.8951285464338428,
+            "instantaneousDegSec": 13.912666969780734
+          },
+          {
+            "easMph": 140,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.800022802555167,
+            "sustainedG": 2.038108066397987,
+            "instantaneousDegSec": 14.800022802555167
+          },
+          {
+            "easMph": 145,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.64360414876534,
+            "sustainedG": 2.186286841633555,
+            "instantaneousDegSec": 15.64360414876534
+          },
+          {
+            "easMph": 150,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 16.452268878524507,
+            "sustainedG": 2.3396648721405464,
+            "instantaneousDegSec": 16.452268878524507
+          },
+          {
+            "easMph": 155,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 17.232638257517713,
+            "sustainedG": 2.498242157918961,
+            "instantaneousDegSec": 17.232638257517713
+          },
+          {
+            "easMph": 160,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 17.98977689719024,
+            "sustainedG": 2.6620186989687995,
+            "instantaneousDegSec": 17.98977689719024
+          },
+          {
+            "easMph": 165,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 17.891176501150284,
+            "sustainedG": 2.7206480357273177,
+            "instantaneousDegSec": 18.727632031126177
+          },
+          {
+            "easMph": 170,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 17.563732396630208,
+            "sustainedG": 2.747603135363441,
+            "instantaneousDegSec": 19.449328422209508
+          },
+          {
+            "easMph": 175,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 17.23559242906935,
+            "sustainedG": 2.7718836040892865,
+            "instantaneousDegSec": 20.15737267750274
+          },
+          {
+            "easMph": 180,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 16.906130748331485,
+            "sustainedG": 2.793379236699151,
+            "instantaneousDegSec": 20.853798560102867
+          },
+          {
+            "easMph": 185,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 16.574716567581543,
+            "sustainedG": 2.8119704070187015,
+            "instantaneousDegSec": 21.54027265320977
+          },
+          {
+            "easMph": 190,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 16.240709660185797,
+            "sustainedG": 2.8275272416384825,
+            "instantaneousDegSec": 22.218172665890183
+          },
+          {
+            "easMph": 195,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.903455142767116,
+            "sustainedG": 2.839908616498739,
+            "instantaneousDegSec": 22.888646425151098
+          },
+          {
+            "easMph": 200,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.562277453664175,
+            "sustainedG": 2.848960945061259,
+            "instantaneousDegSec": 23.55265696080821
+          },
+          {
+            "easMph": 205,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.216473378540922,
+            "sustainedG": 2.854516717511684,
+            "instantaneousDegSec": 24.211017401056132
+          },
+          {
+            "easMph": 210,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.865303908589658,
+            "sustainedG": 2.856392738387692,
+            "instantaneousDegSec": 24.86441828758261
+          },
+          {
+            "easMph": 215,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.507984634618838,
+            "sustainedG": 2.8543879941385075,
+            "instantaneousDegSec": 25.51344917384242
+          },
+          {
+            "easMph": 220,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.143674273049765,
+            "sustainedG": 2.848281060831298,
+            "instantaneousDegSec": 26.15861585911823
+          },
+          {
+            "easMph": 225,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.771460774374363,
+            "sustainedG": 2.837826933252656,
+            "instantaneousDegSec": 26.80035425422125
+          },
+          {
+            "easMph": 230,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.390344261534691,
+            "sustainedG": 2.822753116620287,
+            "instantaneousDegSec": 27.439041621500937
+          },
+          {
+            "easMph": 235,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 12.999215755122425,
+            "sustainedG": 2.8027547658823533,
+            "instantaneousDegSec": 28.07500574950308
+          },
+          {
+            "easMph": 240,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 12.596830216974926,
+            "sustainedG": 2.777488577187187,
+            "instantaneousDegSec": 28.70853248955236
+          },
+          {
+            "easMph": 245,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 12.181771806587175,
+            "sustainedG": 2.7465650189723925,
+            "instantaneousDegSec": 29.339871983239394
+          },
+          {
+            "easMph": 250,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 11.752408266410637,
+            "sustainedG": 2.7095383158543003,
+            "instantaneousDegSec": 29.969243836370328
+          },
+          {
+            "easMph": 255,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 11.306829808476909,
+            "sustainedG": 2.665893333131931,
+            "instantaneousDegSec": 30.596841439532806
+          },
+          {
+            "easMph": 260,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 10.842765363677293,
+            "sustainedG": 2.6150280949614206,
+            "instantaneousDegSec": 31.08957600187269
+          },
+          {
+            "easMph": 265,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 10.357464825107188,
+            "sustainedG": 2.5562300015971955,
+            "instantaneousDegSec": 30.50298022825245
+          },
+          {
+            "easMph": 270,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 9.847528498304417,
+            "sustainedG": 2.488642699475096,
+            "instantaneousDegSec": 29.93811022402555
+          },
+          {
+            "easMph": 275,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 9.30865132968879,
+            "sustainedG": 2.4112186336067456,
+            "instantaneousDegSec": 29.393780947225085
+          },
+          {
+            "easMph": 280,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 8.735222944303914,
+            "sustainedG": 2.3226488253192845,
+            "instantaneousDegSec": 28.868892001738924
+          },
+          {
+            "easMph": 285,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 8.119669224494835,
+            "sustainedG": 2.2212547504313127,
+            "instantaneousDegSec": 28.362420212234735
+          },
+          {
+            "easMph": 290,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 7.451295666005386,
+            "sustainedG": 2.1048135775252232,
+            "instantaneousDegSec": 27.873412967196202
+          },
+          {
+            "easMph": 295,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 6.714058635417418,
+            "sustainedG": 1.9702543421510665,
+            "instantaneousDegSec": 27.40098223893864
+          },
+          {
+            "easMph": 300,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 5.881738592064089,
+            "sustainedG": 1.8130851248761657,
+            "instantaneousDegSec": 26.944299201622997
+          },
+          {
+            "easMph": 305,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 4.905839961967199,
+            "sustainedG": 1.626258814839672,
+            "instantaneousDegSec": 26.502589378645574
+          },
+          {
+            "easMph": 310,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 3.6732616550550863,
+            "sustainedG": 1.3973401115030035,
+            "instantaneousDegSec": 26.075128259635157
+          },
+          {
+            "easMph": 315,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 1.6937568426613963,
+            "sustainedG": 1.099598308307535,
+            "instantaneousDegSec": 25.661237334879043
+          },
+          {
+            "easMph": 320,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": null,
+            "sustainedG": null,
+            "instantaneousDegSec": 25.26028050152156
+          }
+        ],
+        "emergencyTurn": [
+          {
+            "easMph": 95,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": null,
+            "sustainedG": null,
+            "instantaneousDegSec": null
+          },
+          {
+            "easMph": 100,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 3.3264933902334493,
+            "sustainedG": 1.0398510542846873,
+            "instantaneousDegSec": 3.3264933902334493
+          },
+          {
+            "easMph": 105,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 6.229609056706806,
+            "sustainedG": 1.1464357873488678,
+            "instantaneousDegSec": 6.229609056706806
+          },
+          {
+            "easMph": 110,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 8.09939717456451,
+            "sustainedG": 1.2582197756844715,
+            "instantaneousDegSec": 8.09939717456451
+          },
+          {
+            "easMph": 115,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 9.577523333431765,
+            "sustainedG": 1.3752030192914988,
+            "instantaneousDegSec": 9.577523333431765
+          },
+          {
+            "easMph": 120,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 10.83616589155577,
+            "sustainedG": 1.4973855181699494,
+            "instantaneousDegSec": 10.83616589155577
+          },
+          {
+            "easMph": 125,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 11.952590821280749,
+            "sustainedG": 1.6247672723198243,
+            "instantaneousDegSec": 11.952590821280749
+          },
+          {
+            "easMph": 130,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 12.969338070901014,
+            "sustainedG": 1.7573482817411212,
+            "instantaneousDegSec": 12.969338070901014
+          },
+          {
+            "easMph": 135,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.912666969780734,
+            "sustainedG": 1.8951285464338428,
+            "instantaneousDegSec": 13.912666969780734
+          },
+          {
+            "easMph": 140,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.800022802555167,
+            "sustainedG": 2.038108066397987,
+            "instantaneousDegSec": 14.800022802555167
+          },
+          {
+            "easMph": 145,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.64360414876534,
+            "sustainedG": 2.186286841633555,
+            "instantaneousDegSec": 15.64360414876534
+          },
+          {
+            "easMph": 150,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 16.452268878524507,
+            "sustainedG": 2.3396648721405464,
+            "instantaneousDegSec": 16.452268878524507
+          },
+          {
+            "easMph": 155,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 17.232638257517713,
+            "sustainedG": 2.498242157918961,
+            "instantaneousDegSec": 17.232638257517713
+          },
+          {
+            "easMph": 160,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 17.98977689719024,
+            "sustainedG": 2.6620186989687995,
+            "instantaneousDegSec": 17.98977689719024
+          },
+          {
+            "easMph": 165,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 18.727632031126177,
+            "sustainedG": 2.830994495290061,
+            "instantaneousDegSec": 18.727632031126177
+          },
+          {
+            "easMph": 170,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 18.919098427302323,
+            "sustainedG": 2.932426680576954,
+            "instantaneousDegSec": 19.449328422209508
+          },
+          {
+            "easMph": 175,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 18.582723329733877,
+            "sustainedG": 2.961233548882033,
+            "instantaneousDegSec": 20.15737267750274
+          },
+          {
+            "easMph": 180,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 18.246438562925558,
+            "sustainedG": 2.987372763280404,
+            "instantaneousDegSec": 20.853798560102867
+          },
+          {
+            "easMph": 185,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 17.909602114042862,
+            "sustainedG": 3.0107395313578773,
+            "instantaneousDegSec": 21.54027265320977
+          },
+          {
+            "easMph": 190,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 17.571576822873762,
+            "sustainedG": 3.03122047280494,
+            "instantaneousDegSec": 22.218172665890183
+          },
+          {
+            "easMph": 195,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 17.23172555245092,
+            "sustainedG": 3.0486929171267447,
+            "instantaneousDegSec": 22.888646425151098
+          },
+          {
+            "easMph": 200,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 16.88940599198037,
+            "sustainedG": 3.0630240547381797,
+            "instantaneousDegSec": 23.55265696080821
+          },
+          {
+            "easMph": 205,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 16.543964999373696,
+            "sustainedG": 3.0740699174394623,
+            "instantaneousDegSec": 24.211017401056132
+          },
+          {
+            "easMph": 210,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 16.194732356688256,
+            "sustainedG": 3.0816741573900392,
+            "instantaneousDegSec": 24.86441828758261
+          },
+          {
+            "easMph": 215,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.841013771506555,
+            "sustainedG": 3.0856665849211167,
+            "instantaneousDegSec": 25.51344917384242
+          },
+          {
+            "easMph": 220,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.482082906718754,
+            "sustainedG": 3.0858614141386393,
+            "instantaneousDegSec": 26.15861585911823
+          },
+          {
+            "easMph": 225,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.117172155082319,
+            "sustainedG": 3.082055150268512,
+            "instantaneousDegSec": 26.80035425422125
+          },
+          {
+            "easMph": 230,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.74546178606597,
+            "sustainedG": 3.0740240326536217,
+            "instantaneousDegSec": 27.439041621500937
+          },
+          {
+            "easMph": 235,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.366066970334163,
+            "sustainedG": 3.0615209201468154,
+            "instantaneousDegSec": 28.07500574950308
+          },
+          {
+            "easMph": 240,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.978022016094958,
+            "sustainedG": 3.0442714682767282,
+            "instantaneousDegSec": 28.70853248955236
+          },
+          {
+            "easMph": 245,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.580260907337186,
+            "sustainedG": 3.021969395356004,
+            "instantaneousDegSec": 29.339871983239394
+          },
+          {
+            "easMph": 250,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.171592878875556,
+            "sustainedG": 2.9942705605292694,
+            "instantaneousDegSec": 29.969243836370328
+          },
+          {
+            "easMph": 255,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 12.750671236109866,
+            "sustainedG": 2.9607854694416478,
+            "instantaneousDegSec": 30.596841439532806
+          },
+          {
+            "easMph": 260,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 12.31595282752971,
+            "sustainedG": 2.9210696647923546,
+            "instantaneousDegSec": 31.08957600187269
+          },
+          {
+            "easMph": 265,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 11.86564433315836,
+            "sustainedG": 2.8746112199282927,
+            "instantaneousDegSec": 30.50298022825245
+          },
+          {
+            "easMph": 270,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 11.39762953912918,
+            "sustainedG": 2.820814183625193,
+            "instantaneousDegSec": 29.93811022402555
+          },
+          {
+            "easMph": 275,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 10.909368472958176,
+            "sustainedG": 2.758976235318481,
+            "instantaneousDegSec": 29.393780947225085
+          },
+          {
+            "easMph": 280,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 10.397753617584758,
+            "sustainedG": 2.6882578423146035,
+            "instantaneousDegSec": 28.868892001738924
+          },
+          {
+            "easMph": 285,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 9.858898282663207,
+            "sustainedG": 2.6076385605408308,
+            "instantaneousDegSec": 28.362420212234735
+          },
+          {
+            "easMph": 290,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 9.287813077834233,
+            "sustainedG": 2.515853183931861,
+            "instantaneousDegSec": 27.873412967196202
+          },
+          {
+            "easMph": 295,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 8.67787399538022,
+            "sustainedG": 2.411291722080185,
+            "instantaneousDegSec": 27.40098223893864
+          },
+          {
+            "easMph": 300,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 8.019893330453806,
+            "sustainedG": 2.291833998197109,
+            "instantaneousDegSec": 26.944299201622997
+          },
+          {
+            "easMph": 305,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 7.300624045604854,
+            "sustainedG": 2.154617007441918,
+            "instantaneousDegSec": 26.502589378645574
+          },
+          {
+            "easMph": 310,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 6.4994800946856754,
+            "sustainedG": 1.9955601805571441,
+            "instantaneousDegSec": 26.075128259635157
+          },
+          {
+            "easMph": 315,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 5.581019919119854,
+            "sustainedG": 1.8084403647604188,
+            "instantaneousDegSec": 25.661237334879043
+          },
+          {
+            "easMph": 320,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 4.4732149953282985,
+            "sustainedG": 1.5827935654054706,
+            "instantaneousDegSec": 25.26028050152156
+          }
+        ]
+      }
+    },
+    {
+      "id": "greg_worksheet_e_0p558",
+      "e": 0.5576706734059873,
+      "cd0": 0.022484165004841287,
+      "seaLevel": {
+        "combatMph": 324.9999999999991,
+        "emergencyMph": 339.23311503891,
+        "withheldEmergencyMph": 336,
+        "emergencyResidualMph": 3.2331150389100003,
+        "withheldEmergencyKmH": 540,
+        "emergencyResidualKmH": 5.942778289179614
+      },
+      "fiveThousandFt": {
+        "combatMph": 340.50468247010485,
+        "emergencyMph": 354.47296504368114,
+        "combatTurn170Eas": {
+          "easMph": 170,
+          "stallEasMph": 98.06509011620857,
+          "turnDegSec": 14.426859193903518,
+          "sustainedG": 2.32783603818463,
+          "instantaneousDegSec": 19.449328422209508
+        },
+        "emergencyTurn170Eas": {
+          "easMph": 170,
+          "stallEasMph": 98.06509011620857,
+          "turnDegSec": 15.604083876522996,
+          "sustainedG": 2.4838257732627365,
+          "instantaneousDegSec": 19.449328422209508
+        }
+      },
+      "combatClimbSeaLevel": {
+        "status": "modeled-peak",
+        "altFt": 0,
+        "rating": "combat",
+        "profile": "C",
+        "best": {
+          "tasMph": 154,
+          "climbFpm": 3383.534589555163,
+          "shaftHp": 1183.584,
+          "propEta": 0.7587901483671967,
+          "powerMethod": "rating curve, no climb MAP correction"
+        },
+        "tasMph": 154,
+        "climbFpm": 3383.534589555163,
+        "shaftHp": 1183.584,
+        "propEta": 0.7587901483671967,
+        "powerMethod": "rating curve, no climb MAP correction",
+        "viableSpeedSamples": 191,
+        "sourceStatus": "calculated optimization; climb speed not directly reported",
+        "addedCd0": 0
+      },
+      "combatClimbTime1000to5000m": {
+        "status": "modelled-integration",
+        "startAltitudeM": 1000,
+        "endAltitudeM": 5000,
+        "integrationStepM": 250,
+        "elapsedS": 239.08229395411766,
+        "elapsedMin": 3.9847048992352945,
+        "recordedRechlinSecondaryS": 240,
+        "residualVsRechlinSecondaryS": -0.9177060458823405,
+        "points": [
+          {
+            "midAltitudeM": 1125,
+            "bestClimbMps": 17.042040959770198,
+            "bestClimbTasMph": 162,
+            "segmentS": 14.66960445583691,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 1375,
+            "bestClimbMps": 17.00666061312089,
+            "bestClimbTasMph": 164,
+            "segmentS": 14.700122833469218,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 1625,
+            "bestClimbMps": 16.97025849471006,
+            "bestClimbTasMph": 165,
+            "segmentS": 14.731655388627674,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 1875,
+            "bestClimbMps": 16.932754624385655,
+            "bestClimbTasMph": 167,
+            "segmentS": 14.764284107676328,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 2125,
+            "bestClimbMps": 16.894026914120012,
+            "bestClimbTasMph": 169,
+            "segmentS": 14.798129615328731,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 2375,
+            "bestClimbMps": 16.854041556086834,
+            "bestClimbTasMph": 171,
+            "segmentS": 14.833237426646344,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 2625,
+            "bestClimbMps": 16.812760122984006,
+            "bestClimbTasMph": 173,
+            "segmentS": 14.86965841249562,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 2875,
+            "bestClimbMps": 16.770139442280875,
+            "bestClimbTasMph": 175,
+            "segmentS": 14.907449091907965,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 3125,
+            "bestClimbMps": 16.726131462263268,
+            "bestClimbTasMph": 177,
+            "segmentS": 14.946671952449886,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 3375,
+            "bestClimbMps": 16.6806831093404,
+            "bestClimbTasMph": 179,
+            "segmentS": 14.987395801555136,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 3625,
+            "bestClimbMps": 16.633736136020634,
+            "bestClimbTasMph": 181,
+            "segmentS": 15.029696152184405,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 3875,
+            "bestClimbMps": 16.58522695890194,
+            "bestClimbTasMph": 183,
+            "segmentS": 15.07365564664855,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 4125,
+            "bestClimbMps": 16.535086485958846,
+            "bestClimbTasMph": 185,
+            "segmentS": 15.119364522967166,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 4375,
+            "bestClimbMps": 16.483239932338137,
+            "bestClimbTasMph": 187,
+            "segmentS": 15.166921128747877,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 4625,
+            "bestClimbMps": 16.4296066238027,
+            "bestClimbTasMph": 189,
+            "segmentS": 15.216432488274418,
+            "engineBhP": 1183.584
+          },
+          {
+            "midAltitudeM": 4875,
+            "bestClimbMps": 16.374099786882958,
+            "bestClimbTasMph": 191,
+            "segmentS": 15.268014929301408,
+            "engineBhP": 1183.584
+          }
+        ],
+        "caveat": "Every slice assumes instantaneous best-climb TAS, constant 30-min combat-power map, no acceleration and no climb MAP/cooling correction. The 4:00 reference is a secondary quotation, not an inspected original scan."
+      },
+      "curves": {
+        "combatSpeed": [
+          {
+            "altFt": 0,
+            "mph": 324.9999999999991
+          },
+          {
+            "altFt": 1000,
+            "mph": 328.0248635879043
+          },
+          {
+            "altFt": 2000,
+            "mph": 331.08827756106894
+          },
+          {
+            "altFt": 3000,
+            "mph": 334.1896157585752
+          },
+          {
+            "altFt": 4000,
+            "mph": 337.3283618943815
+          },
+          {
+            "altFt": 5000,
+            "mph": 340.50468247010485
+          },
+          {
+            "altFt": 6000,
+            "mph": 343.7187147337618
+          },
+          {
+            "altFt": 7000,
+            "mph": 346.9705638073474
+          },
+          {
+            "altFt": 8000,
+            "mph": 350.2602995733805
+          },
+          {
+            "altFt": 9000,
+            "mph": 353.5879532977424
+          },
+          {
+            "altFt": 10000,
+            "mph": 356.95351396359456
+          },
+          {
+            "altFt": 11000,
+            "mph": 360.35692428821403
+          },
+          {
+            "altFt": 12000,
+            "mph": 363.7980763912319
+          },
+          {
+            "altFt": 13000,
+            "mph": 367.27680707894706
+          },
+          {
+            "altFt": 14000,
+            "mph": 370.7928927049916
+          },
+          {
+            "altFt": 15000,
+            "mph": 374.3460435626521
+          }
+        ],
+        "emergencySpeed": [
+          {
+            "altFt": 0,
+            "mph": 339.23311503891
+          },
+          {
+            "altFt": 1000,
+            "mph": 342.2106688193717
+          },
+          {
+            "altFt": 2000,
+            "mph": 345.22327888700147
+          },
+          {
+            "altFt": 3000,
+            "mph": 348.27109989679684
+          },
+          {
+            "altFt": 4000,
+            "mph": 351.3542859892468
+          },
+          {
+            "altFt": 5000,
+            "mph": 354.47296504368114
+          },
+          {
+            "altFt": 6000,
+            "mph": 357.62723612119134
+          },
+          {
+            "altFt": 7000,
+            "mph": 360.8171666931639
+          },
+          {
+            "altFt": 8000,
+            "mph": 364.0427896352712
+          },
+          {
+            "altFt": 9000,
+            "mph": 367.30409996459
+          },
+          {
+            "altFt": 10000,
+            "mph": 370.60105129485146
+          },
+          {
+            "altFt": 11000,
+            "mph": 373.93355198198424
+          },
+          {
+            "altFt": 12000,
+            "mph": 377.30146092874475
+          },
+          {
+            "altFt": 13000,
+            "mph": 380.7045830134366
+          },
+          {
+            "altFt": 14000,
+            "mph": 384.1426641034277
+          },
+          {
+            "altFt": 15000,
+            "mph": 387.6153856091505
+          }
+        ],
+        "combatTurn": [
+          {
+            "easMph": 95,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": null,
+            "sustainedG": null,
+            "instantaneousDegSec": null
+          },
+          {
+            "easMph": 100,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 3.3264933902334493,
+            "sustainedG": 1.0398510542846873,
+            "instantaneousDegSec": 3.3264933902334493
+          },
+          {
+            "easMph": 105,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 6.229609056706806,
+            "sustainedG": 1.1464357873488678,
+            "instantaneousDegSec": 6.229609056706806
+          },
+          {
+            "easMph": 110,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 8.09939717456451,
+            "sustainedG": 1.2582197756844715,
+            "instantaneousDegSec": 8.09939717456451
+          },
+          {
+            "easMph": 115,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 9.577523333431765,
+            "sustainedG": 1.3752030192914988,
+            "instantaneousDegSec": 9.577523333431765
+          },
+          {
+            "easMph": 120,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 10.83616589155577,
+            "sustainedG": 1.4973855181699494,
+            "instantaneousDegSec": 10.83616589155577
+          },
+          {
+            "easMph": 125,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 11.952590821280749,
+            "sustainedG": 1.6247672723198243,
+            "instantaneousDegSec": 11.952590821280749
+          },
+          {
+            "easMph": 130,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 12.969338070901014,
+            "sustainedG": 1.7573482817411212,
+            "instantaneousDegSec": 12.969338070901014
+          },
+          {
+            "easMph": 135,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.912666969780734,
+            "sustainedG": 1.8951285464338428,
+            "instantaneousDegSec": 13.912666969780734
+          },
+          {
+            "easMph": 140,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.800022802555167,
+            "sustainedG": 2.038108066397987,
+            "instantaneousDegSec": 14.800022802555167
+          },
+          {
+            "easMph": 145,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.64360414876534,
+            "sustainedG": 2.186286841633555,
+            "instantaneousDegSec": 15.64360414876534
+          },
+          {
+            "easMph": 150,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.436009372040347,
+            "sustainedG": 2.2222464293747564,
+            "instantaneousDegSec": 16.452268878524507
+          },
+          {
+            "easMph": 155,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.185928743342961,
+            "sustainedG": 2.251700690022617,
+            "instantaneousDegSec": 17.232638257517713
+          },
+          {
+            "easMph": 160,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.934557548162745,
+            "sustainedG": 2.279164559148716,
+            "instantaneousDegSec": 17.98977689719024
+          },
+          {
+            "easMph": 165,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.681633353992723,
+            "sustainedG": 2.3045683562042107,
+            "instantaneousDegSec": 18.727632031126177
+          },
+          {
+            "easMph": 170,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.426859193903518,
+            "sustainedG": 2.32783603818463,
+            "instantaneousDegSec": 19.449328422209508
+          },
+          {
+            "easMph": 175,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.169908063593128,
+            "sustainedG": 2.348884880365239,
+            "instantaneousDegSec": 20.15737267750274
+          },
+          {
+            "easMph": 180,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.910425502418295,
+            "sustainedG": 2.367625059885088,
+            "instantaneousDegSec": 20.853798560102867
+          },
+          {
+            "easMph": 185,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.64803060538624,
+            "sustainedG": 2.383959132362243,
+            "instantaneousDegSec": 21.54027265320977
+          },
+          {
+            "easMph": 190,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.382315691278466,
+            "sustainedG": 2.3977813879664853,
+            "instantaneousDegSec": 22.218172665890183
+          },
+          {
+            "easMph": 195,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.112844755170677,
+            "sustainedG": 2.408977068886888,
+            "instantaneousDegSec": 22.888646425151098
+          },
+          {
+            "easMph": 200,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 12.839150751408484,
+            "sustainedG": 2.417421424601388,
+            "instantaneousDegSec": 23.55265696080821
+          },
+          {
+            "easMph": 205,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 12.560731677372527,
+            "sustainedG": 2.4229785743742283,
+            "instantaneousDegSec": 24.211017401056132
+          },
+          {
+            "easMph": 210,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 12.277045351694227,
+            "sustainedG": 2.425500137415925,
+            "instantaneousDegSec": 24.86441828758261
+          },
+          {
+            "easMph": 215,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 11.987502695278273,
+            "sustainedG": 2.4248235793582245,
+            "instantaneousDegSec": 25.51344917384242
+          },
+          {
+            "easMph": 220,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 11.691459220444964,
+            "sustainedG": 2.4207702080112723,
+            "instantaneousDegSec": 26.15861585911823
+          },
+          {
+            "easMph": 225,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 11.388204300687947,
+            "sustainedG": 2.413142730169273,
+            "instantaneousDegSec": 26.80035425422125
+          },
+          {
+            "easMph": 230,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 11.076947613745695,
+            "sustainedG": 2.401722252134107,
+            "instantaneousDegSec": 27.439041621500937
+          },
+          {
+            "easMph": 235,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 10.756801897947753,
+            "sustainedG": 2.386264566055492,
+            "instantaneousDegSec": 28.07500574950308
+          },
+          {
+            "easMph": 240,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 10.426760795346523,
+            "sustainedG": 2.36649550665574,
+            "instantaneousDegSec": 28.70853248955236
+          },
+          {
+            "easMph": 245,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 10.085670008753475,
+            "sustainedG": 2.3421050798276815,
+            "instantaneousDegSec": 29.339871983239394
+          },
+          {
+            "easMph": 250,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 9.732189162391357,
+            "sustainedG": 2.3127399422010404,
+            "instantaneousDegSec": 29.969243836370328
+          },
+          {
+            "easMph": 255,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 9.364740434893287,
+            "sustainedG": 2.2779936264333127,
+            "instantaneousDegSec": 30.596841439532806
+          },
+          {
+            "easMph": 260,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 8.981437882709475,
+            "sustainedG": 2.2373936224045208,
+            "instantaneousDegSec": 31.08957600187269
+          },
+          {
+            "easMph": 265,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 8.579987743689856,
+            "sustainedG": 2.1903839727786156,
+            "instantaneousDegSec": 30.50298022825245
+          },
+          {
+            "easMph": 270,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 8.157543633902863,
+            "sustainedG": 2.1363013013082064,
+            "instantaneousDegSec": 29.93811022402555
+          },
+          {
+            "easMph": 275,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 7.710488794160449,
+            "sustainedG": 2.074340934776484,
+            "instantaneousDegSec": 29.393780947225085
+          },
+          {
+            "easMph": 280,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 7.234094595207577,
+            "sustainedG": 2.003507550522168,
+            "instantaneousDegSec": 28.868892001738924
+          },
+          {
+            "easMph": 285,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 6.721956502987748,
+            "sustainedG": 1.9225406284536182,
+            "instantaneousDegSec": 28.362420212234735
+          },
+          {
+            "easMph": 290,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 6.164999196559284,
+            "sustainedG": 1.8297967714370993,
+            "instantaneousDegSec": 27.873412967196202
+          },
+          {
+            "easMph": 295,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 5.549549217981224,
+            "sustainedG": 1.723050583556392,
+            "instantaneousDegSec": 27.40098223893864
+          },
+          {
+            "easMph": 300,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 4.853129357896156,
+            "sustainedG": 1.599132375454586,
+            "instantaneousDegSec": 26.944299201622997
+          },
+          {
+            "easMph": 305,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 4.033786406239257,
+            "sustainedG": 1.453259511664784,
+            "instantaneousDegSec": 26.502589378645574
+          },
+          {
+            "easMph": 310,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 2.9919105252614755,
+            "sustainedG": 1.2774795877597223,
+            "instantaneousDegSec": 26.075128259635157
+          },
+          {
+            "easMph": 315,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 1.2615779593217014,
+            "sustainedG": 1.05641612284981,
+            "instantaneousDegSec": 25.661237334879043
+          },
+          {
+            "easMph": 320,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": null,
+            "sustainedG": null,
+            "instantaneousDegSec": 25.26028050152156
+          }
+        ],
+        "emergencyTurn": [
+          {
+            "easMph": 95,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": null,
+            "sustainedG": null,
+            "instantaneousDegSec": null
+          },
+          {
+            "easMph": 100,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 3.3264933902334493,
+            "sustainedG": 1.0398510542846873,
+            "instantaneousDegSec": 3.3264933902334493
+          },
+          {
+            "easMph": 105,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 6.229609056706806,
+            "sustainedG": 1.1464357873488678,
+            "instantaneousDegSec": 6.229609056706806
+          },
+          {
+            "easMph": 110,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 8.09939717456451,
+            "sustainedG": 1.2582197756844715,
+            "instantaneousDegSec": 8.09939717456451
+          },
+          {
+            "easMph": 115,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 9.577523333431765,
+            "sustainedG": 1.3752030192914988,
+            "instantaneousDegSec": 9.577523333431765
+          },
+          {
+            "easMph": 120,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 10.83616589155577,
+            "sustainedG": 1.4973855181699494,
+            "instantaneousDegSec": 10.83616589155577
+          },
+          {
+            "easMph": 125,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 11.952590821280749,
+            "sustainedG": 1.6247672723198243,
+            "instantaneousDegSec": 11.952590821280749
+          },
+          {
+            "easMph": 130,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 12.969338070901014,
+            "sustainedG": 1.7573482817411212,
+            "instantaneousDegSec": 12.969338070901014
+          },
+          {
+            "easMph": 135,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.912666969780734,
+            "sustainedG": 1.8951285464338428,
+            "instantaneousDegSec": 13.912666969780734
+          },
+          {
+            "easMph": 140,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.800022802555167,
+            "sustainedG": 2.038108066397987,
+            "instantaneousDegSec": 14.800022802555167
+          },
+          {
+            "easMph": 145,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.64360414876534,
+            "sustainedG": 2.186286841633555,
+            "instantaneousDegSec": 15.64360414876534
+          },
+          {
+            "easMph": 150,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 16.452268878524507,
+            "sustainedG": 2.3396648721405464,
+            "instantaneousDegSec": 16.452268878524507
+          },
+          {
+            "easMph": 155,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 16.395871311066035,
+            "sustainedG": 2.396784361257818,
+            "instantaneousDegSec": 17.232638257517713
+          },
+          {
+            "easMph": 160,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 16.132154117662182,
+            "sustainedG": 2.427815738099704,
+            "instantaneousDegSec": 17.98977689719024
+          },
+          {
+            "easMph": 165,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.868346042347747,
+            "sustainedG": 2.4568518487189155,
+            "instantaneousDegSec": 18.727632031126177
+          },
+          {
+            "easMph": 170,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.604083876522996,
+            "sustainedG": 2.4838257732627365,
+            "instantaneousDegSec": 19.449328422209508
+          },
+          {
+            "easMph": 175,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.338990570484098,
+            "sustainedG": 2.5086647122793155,
+            "instantaneousDegSec": 20.15737267750274
+          },
+          {
+            "easMph": 180,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 15.072676587297797,
+            "sustainedG": 2.5312897136135613,
+            "instantaneousDegSec": 20.853798560102867
+          },
+          {
+            "easMph": 185,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.804740151460209,
+            "sustainedG": 2.5516153164044337,
+            "instantaneousDegSec": 21.54027265320977
+          },
+          {
+            "easMph": 190,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.534766579635741,
+            "sustainedG": 2.569549104578066,
+            "instantaneousDegSec": 22.218172665890183
+          },
+          {
+            "easMph": 195,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 14.26232680910573,
+            "sustainedG": 2.5849911593111177,
+            "instantaneousDegSec": 22.888646425151098
+          },
+          {
+            "easMph": 200,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.986975181760622,
+            "sustainedG": 2.5978333965005866,
+            "instantaneousDegSec": 23.55265696080821
+          },
+          {
+            "easMph": 205,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.7082464917364,
+            "sustainedG": 2.607958771104456,
+            "instantaneousDegSec": 24.211017401056132
+          },
+          {
+            "easMph": 210,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.425652258395498,
+            "sustainedG": 2.6152403250316443,
+            "instantaneousDegSec": 24.86441828758261
+          },
+          {
+            "easMph": 215,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 13.138676139005314,
+            "sustainedG": 2.6195400486846387,
+            "instantaneousDegSec": 25.51344917384242
+          },
+          {
+            "easMph": 220,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 12.846768342778413,
+            "sustainedG": 2.6207075177797914,
+            "instantaneousDegSec": 26.15861585911823
+          },
+          {
+            "easMph": 225,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 12.549338844800022,
+            "sustainedG": 2.6185782559712174,
+            "instantaneousDegSec": 26.80035425422125
+          },
+          {
+            "easMph": 230,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 12.245749118203705,
+            "sustainedG": 2.612971759065646,
+            "instantaneousDegSec": 27.439041621500937
+          },
+          {
+            "easMph": 235,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 11.935301996653294,
+            "sustainedG": 2.6036890967670803,
+            "instantaneousDegSec": 28.07500574950308
+          },
+          {
+            "easMph": 240,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 11.61722913345731,
+            "sustainedG": 2.5905099807732865,
+            "instantaneousDegSec": 28.70853248955236
+          },
+          {
+            "easMph": 245,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 11.290675318355023,
+            "sustainedG": 2.5731891504371998,
+            "instantaneousDegSec": 29.339871983239394
+          },
+          {
+            "easMph": 250,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 10.954678616751053,
+            "sustainedG": 2.5514518741991994,
+            "instantaneousDegSec": 29.969243836370328
+          },
+          {
+            "easMph": 255,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 10.608144858486888,
+            "sustainedG": 2.524988288970932,
+            "instantaneousDegSec": 30.596841439532806
+          },
+          {
+            "easMph": 260,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 10.249814340794199,
+            "sustainedG": 2.4934461885071375,
+            "instantaneousDegSec": 31.08957600187269
+          },
+          {
+            "easMph": 265,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 9.87821758102958,
+            "sustainedG": 2.4564217058428133,
+            "instantaneousDegSec": 30.50298022825245
+          },
+          {
+            "easMph": 270,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 9.49161530952875,
+            "sustainedG": 2.413447081151835,
+            "instantaneousDegSec": 29.93811022402555
+          },
+          {
+            "easMph": 275,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 9.08791517545274,
+            "sustainedG": 2.36397430806817,
+            "instantaneousDegSec": 29.393780947225085
+          },
+          {
+            "easMph": 280,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 8.664552979531589,
+            "sustainedG": 2.3073528071135945,
+            "instantaneousDegSec": 28.868892001738924
+          },
+          {
+            "easMph": 285,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 8.218317906004152,
+            "sustainedG": 2.242798195852828,
+            "instantaneousDegSec": 28.362420212234735
+          },
+          {
+            "easMph": 290,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 7.745085506241194,
+            "sustainedG": 2.16934734515904,
+            "instantaneousDegSec": 27.873412967196202
+          },
+          {
+            "easMph": 295,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 7.2393786580779755,
+            "sustainedG": 2.085788809794297,
+            "instantaneousDegSec": 27.40098223893864
+          },
+          {
+            "easMph": 300,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 6.693600878502999,
+            "sustainedG": 1.9905493287141425,
+            "instantaneousDegSec": 26.944299201622997
+          },
+          {
+            "easMph": 305,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 6.096810920331738,
+            "sustainedG": 1.8815452829605768,
+            "instantaneousDegSec": 26.502589378645574
+          },
+          {
+            "easMph": 310,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 5.432032465232638,
+            "sustainedG": 1.7558798457338107,
+            "instantaneousDegSec": 26.075128259635157
+          },
+          {
+            "easMph": 315,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 4.670115634802395,
+            "sustainedG": 1.6092842206791078,
+            "instantaneousDegSec": 25.661237334879043
+          },
+          {
+            "easMph": 320,
+            "stallEasMph": 98.06509011620857,
+            "turnDegSec": 3.752105944359819,
+            "sustainedG": 1.434937850789386,
+            "instantaneousDegSec": 25.26028050152156
+          }
+        ]
+      }
+    }
+  ],
+  "comparative": {
+    "emergencySeaLevelSpreadMph": -0.38505774076293164,
+    "combatTurnDifferenceDegSec": 3.13687320272669,
+    "emergencyTurnDifferenceDegSec": 3.3150145507793276,
+    "climbTimeSpreadS": 17.19912722387454,
+    "provisionalFourMinClimbFit": "greg-derived e is closer, but no selection: climb source indirect and prop/engine/cooling inaccuracies confound e"
+  },
+  "otherAircraftRegression": {
+    "p47b": {
+      "aircraft": "P-47B / R-2800-21 (41-5902)",
+      "calibration": {
+        "altFt": 5000,
+        "tasMph": 352,
+        "rating": "military",
+        "gear": "turbo",
+        "source": "USAAF PHQ-M-19-1417-A, reported 5,000-ft speed"
+      },
+      "holdoutCount": 5,
+      "holdoutMeanAbsErrorMph": 3.649356289075695,
+      "holdoutMaxAbsErrorMph": 5.943747957734558,
+      "rows": [
+        {
+          "altFt": 5000,
+          "rating": "military",
+          "observedMph": 352,
+          "predictedMph": 352.0000000000009,
+          "residualMph": 9.094947017729282e-13
+        },
+        {
+          "altFt": 15000,
+          "rating": "military",
+          "observedMph": 386,
+          "predictedMph": 386.0511311975233,
+          "residualMph": 0.051131197523318406
+        },
+        {
+          "altFt": 25000,
+          "rating": "military",
+          "observedMph": 420,
+          "predictedMph": 423.26229896231507,
+          "residualMph": 3.2622989623150715
+        },
+        {
+          "altFt": 27800,
+          "rating": "military",
+          "observedMph": 429,
+          "predictedMph": 434.0999065944643,
+          "residualMph": 5.099906594464301
+        },
+        {
+          "altFt": 30000,
+          "rating": "military",
+          "observedMph": 426,
+          "predictedMph": 429.8896967333412,
+          "residualMph": 3.889696733341225
+        },
+        {
+          "altFt": 34000,
+          "rating": "military",
+          "observedMph": 412,
+          "predictedMph": 417.94374795773456,
+          "residualMph": 5.943747957734558
+        }
+      ]
+    },
+    "p51b": {
+      "aircraft": "P-51B-15 / V-1650-7 (43-24777)",
+      "calibration": {
+        "altFt": 0,
+        "tasMph": 361.5,
+        "rating": "67inHg",
+        "gear": "low",
+        "source": "USAAF Eng-47-1749-A sea level reported speed"
+      },
+      "holdoutCount": 8,
+      "holdoutMeanAbsErrorMph": 2.6099007098907805,
+      "holdoutMaxAbsErrorMph": 3.8539732156414175,
+      "rows": [
+        {
+          "altFt": 0,
+          "rating": "67inHg",
+          "observedMph": 361.5,
+          "predictedMph": 361.4999999999991,
+          "residualMph": -9.094947017729282e-13
+        },
+        {
+          "altFt": 4000,
+          "rating": "67inHg",
+          "observedMph": 380,
+          "predictedMph": 377.98763003052863,
+          "residualMph": -2.012369969471365
+        },
+        {
+          "altFt": 7400,
+          "rating": "67inHg",
+          "observedMph": 395.5,
+          "predictedMph": 392.734579732748,
+          "residualMph": -2.7654202672520114
+        },
+        {
+          "altFt": 10300,
+          "rating": "67inHg",
+          "observedMph": 409,
+          "predictedMph": 405.8958576063642,
+          "residualMph": -3.1041423936358115
+        },
+        {
+          "altFt": 18000,
+          "rating": "67inHg",
+          "observedMph": 408,
+          "predictedMph": 407.120145413056,
+          "residualMph": -0.8798545869440204
+        },
+        {
+          "altFt": 20800,
+          "rating": "67inHg",
+          "observedMph": 417,
+          "predictedMph": 417.6059663299684,
+          "residualMph": 0.6059663299683962
+        },
+        {
+          "altFt": 24000,
+          "rating": "67inHg",
+          "observedMph": 426,
+          "predictedMph": 429.83799510290646,
+          "residualMph": 3.8379951029064614
+        },
+        {
+          "altFt": 28000,
+          "rating": "67inHg",
+          "observedMph": 419,
+          "predictedMph": 422.8539732156414,
+          "residualMph": 3.8539732156414175
+        },
+        {
+          "altFt": 32000,
+          "rating": "67inHg",
+          "observedMph": 410,
+          "predictedMph": 413.81948381330676,
+          "residualMph": 3.8194838133067606
+        }
+      ]
+    }
+  },
+  "guardrails": {
+    "highAltitude": "No F4 predictions beyond the rating-specific sourced engine nodes: combat 16076 ft; emergency 15748 ft",
+    "publishedEmergencySpeed": "Held-out 540 km/h / 336 mph is a different engine rating, NOT a second independently measured drag-polar point",
+    "lowSpeed": "Do not adopt either e or CLmax based on max level speed or weakly sourced climb time",
+    "turnDuration": "Combat rating max 30 minutes; emergency rating max 1 minute. Geometric steady turn capability at emergency power cannot be maintained indefinitely.",
+    "historicBaseline": "v1.3 emergency-anchor plots and values remain in archive as superseded, not current physics model"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "node": "v24.19.0",
+  "discoveredScripts": 31,
+  "reportedScripts": 31,
+  "passed": 31,
+  "failed": 0,
+  "exitCode": 0,
+  "executionError": null,
+  "scripts": [
+    {
+      "script": "test.mjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_bf109_anchor_v13.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_bf109_rating_v14.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_clean_v08.mjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_comparison_v10.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_control_v12.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_cross_aircraft_v15.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_current_html.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_fw190.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_greg_power_budget_v22.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_greg_v11.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_html_static_v15.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_html_static_v16.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_html_static_v17.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_html_static_v19.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_html_static_v20.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_html_static_v21.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_html_static_v22.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_html_static_v23.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_installed_power_v19.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_joint_v17.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_lift_v09.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_naca_holdout_v23.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_naca_mach_v24.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_naca_v23.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_p47c_source_v25.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_p51_v16.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_prop_sim_v18.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_ram_predictive_v21.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_spitfire_v20.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_stores.cjs",
+      "status": "pass"
+    }
+  ],
+  "scope": "Node assertions and static HTML checks; not historical certification or interactive browser validation"
+}

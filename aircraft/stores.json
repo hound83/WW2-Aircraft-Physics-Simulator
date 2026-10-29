@@ -1,0 +1,208 @@
+{
+  "schema": 1,
+  "title": "External-store drag and mass change: same-aircraft benchmark",
+  "sources": {
+    "raf_mosquito_clean": {
+      "title": "A&AEE Mosquito B Mk IX LR495, no external bombs or tanks, 11 June 1943",
+      "url": "https://www.wwiiaircraftperformance.com/org/mosquito/mosquito.html",
+      "provenance": "transcription_of_period_test_report",
+      "verification": "secondary_html_of_primary_report; original_scan_not_independently_audited",
+      "testCondition": "Merlin 72 ×2, 3000 RPM, +18 lb/sq.in all-out, four internal 500-lb bombs, no external stores, takeoff 21910 lb; report gives speed at peak altitudes"
+    },
+    "raf_mosquito_loaded": {
+      "title": "A&AEE Mosquito B Mk IX LR495, 2 × external 500-lb bombs, 20 February 1944",
+      "url": "https://www.wwiiaircraftperformance.com/org/mosquito/mosquito.html",
+      "provenance": "transcription_of_period_test_report",
+      "verification": "secondary_html_of_primary_report; original_scan_not_independently_audited",
+      "testCondition": "Merlin 72 ×2, 3000 RPM, +18 lb/sq.in all-out, 2 × external 500-lb bombs on faired racks, takeoff 22850 lb; report warns aircraft deterioration between tests"
+    },
+    "usaaf_p38g_clean": {
+      "title": "Wright Field P-38G-1 42-12687, FS-M-19-1538-A, 10 February 1943",
+      "url": "https://www.wwiiaircraftperformance.com/org/p-38/p-38.html",
+      "provenance": "transcription_of_period_test_report",
+      "verification": "secondary_html_of_primary_report; original_scan_not_independently_audited",
+      "testCondition": "Level-flight speed TAS, 3000 RPM, source reports 44.7 inHg 1220/1225 bhp per engine in selected rows, cooling shutters faired. Turbo limits at height. NO sourced bomb-loaded P-38G trial imported."
+    },
+    "greg_p38_chart": {
+      "title": "User-provided Greg comparative screenshot: P-38G clean / 1100 lb bombs / Mosquito with 2×500 lb",
+      "url": null,
+      "provenance": "user_supplied_secondary_graph",
+      "verification": "visual_only_no_underlying_report_or_conditions; no_numeric_digitalization_adopted",
+      "testCondition": "Axis appears altitude (ft) versus speed (mph); no source report, engine settings, actual store drag area or airspeed convention. Graph is qualitative only, NOT independent flight-test observations."
+    },
+    "fw190a4_619_report1": {
+      "title": "Focke-Wulf Fw 190 A-4 W.Nr. 619 Flight Report No. 1 (4 November 1942)",
+      "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-619-nr1.html",
+      "provenance": "translated_transcription_of_primary_manufacturer_test",
+      "verification": "original_German_report_linked_not_independently_scan_audited",
+      "testCondition": "Same aircraft, BMW 801D2 no. 85259, sea level, combat power, successive wheel-door/rack/4x50kg bomb stages; report notes original boost control needed correction; reported IAS calibration not supplied for this run."
+    },
+    "fw190a4_619_report5": {
+      "title": "Focke-Wulf Fw 190 A-4 W.Nr. 619 Flight Report No. 5 (February 1943)",
+      "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-619-nr5.html",
+      "provenance": "translated_transcription_of_primary_manufacturer_test",
+      "verification": "original_German_report_linked_not_independently_scan_audited",
+      "testCondition": "Pitot-static ram pressure calibration with external racks / tanks; same airframe but later engine and installations. Tank increases IAS under-read by 6-7 km/h. Do NOT add this correction to already corrected true speeds."
+    },
+    "fw190a4_619_report3": {
+      "title": "Focke-Wulf Fw 190 A-4 W.Nr. 619 Flight Report No. 3 (20 January 1943)",
+      "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-619-nr3.html",
+      "provenance": "translated_transcription_of_primary_manufacturer_test",
+      "verification": "original_German_report_linked_not_independently_scan_audited",
+      "testCondition": "Sea-level combat-rating same-airframe stores sequence: 3 racks 22 km/h; racks+tanks 58 km/h; racks+tanks+250kg bomb 73 km/h. Different fit/install/engine state from report 1, not merged as same run."
+    }
+  },
+  "mosquito": {
+    "specimen": "LR495",
+    "variant": "B Mk IX",
+    "cleanTakeoffWeightLb": 21910,
+    "loadedTakeoffWeightLb": 22850,
+    "externalBombNominalWeightLb": 1000,
+    "reportedSourcePenaltyMph": [
+      15,
+      18
+    ],
+    "qualification": "Reported approximate penalty judged by authors; raw peaks occur at unequal heights and the aircraft deteriorated between tests. Takeoff gross mass difference (940 lb) is NOT equal to nominal bomb mass (1000 lb).",
+    "gears": [
+      {
+        "gear": "MS",
+        "clean": {
+          "altFt": 13800,
+          "tasMph": 393
+        },
+        "loaded": {
+          "altFt": 13000,
+          "tasMph": 373
+        },
+        "calibrationRole": "FIT",
+        "note": "Both maximum speed values; different full-throttle heights and dates"
+      },
+      {
+        "gear": "FS",
+        "clean": {
+          "altFt": 25700,
+          "tasMph": 405
+        },
+        "loaded": {
+          "altFt": 25100,
+          "tasMph": 383
+        },
+        "calibrationRole": "WITHHELD",
+        "note": "Both maximum speed values; different full-throttle heights and dates"
+      }
+    ]
+  },
+  "p38g": {
+    "specimen": "42-12687",
+    "variant": "P-38G-1",
+    "cleanLevelSpeed": [
+      {
+        "altFt": 5000,
+        "tasMph": 346.5,
+        "bhpPerEngine": 1220,
+        "mapInHg": 44.7
+      },
+      {
+        "altFt": 14700,
+        "tasMph": 378,
+        "bhpPerEngine": 1220,
+        "mapInHg": 44.7
+      },
+      {
+        "altFt": 22600,
+        "tasMph": 404,
+        "bhpPerEngine": 1225,
+        "mapInHg": 44.7
+      },
+      {
+        "altFt": 24400,
+        "tasMph": 403,
+        "bhpPerEngine": 1175,
+        "mapInHg": 43.2
+      },
+      {
+        "altFt": 30000,
+        "tasMph": 396,
+        "bhpPerEngine": 980,
+        "mapInHg": 36
+      }
+    ],
+    "bombLoadedSpeed": null,
+    "qualification": "The user-provided P-38 bomb graph is NOT a verified bomb-loaded Wright Field report. Do not infer loadout-specific test points from the clean P-38G report."
+  },
+  "fw190a4": {
+    "aircraft": "Fw 190 A-4",
+    "specimen": "619",
+    "test": "Flight Report Nr. 1, Nov 1942",
+    "baseline": {
+      "speedMph": 321,
+      "weightKg": 3670,
+      "altFt": 0,
+      "powerRating": "combat"
+    },
+    "stages": [
+      {
+        "id": "clean",
+        "name": "Clean, full wheel fairings",
+        "speedMph": 321,
+        "weightKg": 3670,
+        "reportedLossMph": 0,
+        "status": "documented"
+      },
+      {
+        "id": "wheel-doors",
+        "name": "Fixed inner wheel doors",
+        "speedMph": 318,
+        "weightKg": null,
+        "reportedLossMph": 3,
+        "status": "weight_unrecorded"
+      },
+      {
+        "id": "etc501",
+        "name": "ETC 501 intermediate rack",
+        "speedMph": 317,
+        "weightKg": 3720,
+        "reportedLossMph": 4,
+        "status": "documented"
+      },
+      {
+        "id": "bomb-locks",
+        "name": "4× locks 50, without bombs",
+        "speedMph": 310,
+        "weightKg": 3797,
+        "reportedLossMph": 11,
+        "status": "documented"
+      },
+      {
+        "id": "four-bombs",
+        "name": "Rack plus 4×50 kg bombs",
+        "speedMph": 293,
+        "weightKg": 3997,
+        "reportedLossMph": 29,
+        "status": "source_loss_rounded; 321-293=28"
+      }
+    ],
+    "furtherControl": {
+      "name": "Report Nr. 3, same airframe but later installation state",
+      "lossesKmH": [
+        22,
+        58,
+        73
+      ],
+      "configurations": [
+        "3 ETC501 racks",
+        "3 racks plus auxiliary tanks",
+        "3 racks plus tanks and 250kg bomb"
+      ]
+    },
+    "pitotCaveat": {
+      "sourceId": "fw190a4_619_report5",
+      "extraIasUnderReadKmH": [
+        6,
+        7
+      ],
+      "applicable": "racks versus tanks in Feb 1943, not automatically the 1942 report 1 TAS values"
+    },
+    "qualification": "Publisher translation of period German manufacturer report; original image available but not page-compared. Reporter states boost control was initially misadjusted; same report values treated as documented table. Wheel doors mass unspecified. Speed ratio comparison assumes same propulsive power and same-altitude standard conditions, and does not directly measure CdS."
+  }
+}

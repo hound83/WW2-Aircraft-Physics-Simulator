@@ -1,0 +1,1769 @@
+· '. J)
+                                                              AERO. & ASTRO. LIBRARY
+
+
+
+
+                  NATIONAL ADVISORY COMMITTEE
+                                        FOR AERONAUTICS
+
+
+                                                      REPORT No. 641
+
+
+
+      THE NEGATIVE THRUST AND TORQUE OF SEVERAL
+        FULL-SCALE PROPELLERS AND THEIR APPLICA-
+            TION TO VARIOUS FLIGHT PROBLEMS
+
+
+                                   By EDWIN P. HARTMAN and DAVID BIERMANN
+
+
+
+
+                                                                 1938
+
+
+ For sale bytbe Superintendent of Documents, WashIngton, D. C.     •        •      •   •   Price 10 cont.
+                                                     Subscription price, $3 ver year
+                                                AERONAUTIC SYMBOLS
+                                         1. FUNDAMENTAL AND DERIVED UNITS
+
+                                   .                     Metric                                      English
+
+                             Symbol
+                                                  Unit                Abbrevia-               Unit               Abbrevia-
+                                                                        tion                                       tion
+
+            Length ___ ___     I        meter __________________            m        foot (or mile) _________   ft. (or mi.)
+            TiIne_______ _     t        second ___ ______________            s       second (or bour) _______   sec. (or hr.)
+            Force ________     F        weigbt of 1 kilogram _____          kg       weight of 1 pOLlnd _____   lb.
+
+            Power _______      P        horsepower (metric) _____ ---------- horsepower ___ ________            hp.
+            Specd ___ ____             {kilometers per hOLlr ______ k.p.h.   miles per bour ________            m.p.h.
+                               V        meters per second _______   m.p.s.   feet per second ________           f.p .s.
+        I                                                                              -
+
+                                                    2. GENERAL SYMBOLS
+w,     Weight=mg                                                     lJ,    Kinematic viscosity
+g,     Standard acceleration of            gravity=9.80665           p,     Density (mass per unit volume)
+         m/s2 or 32.1740 ft./sec. 2                                  Standard density of 'y air, 0.12497 kg_m- 4_s 2 at
+                TV                                                     15° C . and 760 rom; or 0.002378 Ib.-ft.-4 sec. 2
+m,     Mass=-                                                        Specific weight of "stundard" air, 1.2255 kg/m3 or
+               g
+1,     Moment of inertia=mk2 • (Indicate axis of                       O.07651lb.jcu. ft.
+         radius of gyration k by proper subscript.)
+/l-,   Coefficient of viscosity
+                                                3. AERODYNAMIC SYMBOLS
+
+s,     Area                                                                      Angle of setting of wmgs (relative to thrust
+S""    Area of wing                                                                line)
+G,     Gap                                                                       Angle of stabilizer setting (relative to thrust
+b,     Span                                                                        lino)
+C,     Chord                                                         Q,          Resultant moment
+b2                                                                   n,          Resultant angular velocity
+       Aspect ratio
+S'                                                                         Vl
+                                                                                 R eynolds Number, where l is a linear dimension
+V,     True air speed
+                                                                                    (e.g., for a model airfoil 3 in. chord, 100
+q,     Dynamic pressure=~ p V2                                                     m .p.h. norm 1 pressure at 15° C., the cor-
+
+L,     Lift, absolute coefficient OL =   :s                                        responding number is 234,000; or for a model
+                                                                                   of 10 em chord, 40 m.p.s., the corresponding
+                                                                                   number is 274,000)
+D,     Drag, absolute coefficient OD=:!s                                         Center-of-pressure coefficient (ratio of distance
+                                                                                   of c.p. from leading edge to chord length)
+       Profile drag, absolute coefficient ODO= ~S                                Angle of attack
+                                                                                 Angle of downwash
+       Induced drag, absolute coefficient ODi=~S                                 Angle of attack, infinite aspect ratio
+                                                                                 Angle of attack, induced
+       Parasite drag, absolute coefficient ODP=~S                                Angle of attaek, a.b solute (measured from zero-
+                                                                                   lift position)
+0,     Cross-wind force, absolute coefficient 0 0 = q~                           Flight-path angle
+
+R,     Resultant force
+                                REPORT No. 641
+
+            THE NEGATIVE THRUST AND TORQUE OF SEVERAL
+              FULL· SCALE PROPELLERS AND THEIR APPLICA·
+                  TION TO VARIOUS FLIGHT PROBLEMS
+I
+                       By EDWIN P. HARTMAN and DAVID BIERMANN
+b                          Langley Memorial Aeronautical Laboratory
+
+
+
+
+r
+I
+    8077 - -118--- 1
+                              NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+                                            H EADQUAHTE RS . NAVY B UILDING , W ASHI ' GTO N. D. C,
+                                                        LABORATORI ES , LA NGLEY FIELD , VA .
+
+               Created by act of Congress approved March 3, 1915, f or the su pervision and direction of the scientific
+          s tudy of the problems of flight (U. S, Code, Title 50, Sec, 151) . Its membership was increas~d to 15 by
+          act approved March 2, 1929. The members are appointed by the P resident, and serve as su ch without
+          com pensation .
+ JOSEPH St. A MES, Ph. D. , Ollu il'mOil,                                      SYDNEY 111. K RAUS, Captain, Ullited States N~1YY,
+     Baltimore, 1I1el.                                                              Bu r eau of Ae ron a utics, :-\cll"Y D partm ent.
+DAVID W. TAYLOR, D . Eng., V icc O/l((il'lI1 al1,                               'E ARLES A . LINDB ERGH, LL. D .,
+     Wllsb ington , D. C.                                                           New York CitS'.
+'WILLIS RAy GREGG, Sc. D ., 0 11 a il'lII an, EXl?r llli H ' Commi ll £'£' .   DE NIS M ULLIGAN , .J. RD. ,
+     Cbief, U ni ted State!'; 'Wea th e r Bureau.                                   Di r ecto r of Ai r Comme rce, D epa r tment of Commer ce.
+ 'WILLIAM P. MACCRACKEN . .T. D., Viro Cll a.irman, E[I)r(,II(j~'c             AUGUSTINE W. R OBINS, Brigad ier Gene r a l , Uni t d States Ann .. ,
+  Committee,                                                                        Ch ief Mate riel Diyi sion, Air Corps , W rigbt Field,
+    W ash ington , D. C.                                                               DnS'ton, Ohio.
+CHARLES G. MOOT, Sc. D.                                                        E DWARD P. "\VARNJ<:R, Sc. D .,
+    Secr eta ry, Smith son inn J ni<t it l1 tion.                                   G reenwic-h . ('onn.
+LYMAN J . B llIGGS, Ph. D .,                                                   OSCAR W ESTOVER, M a j or Gener a l , Unitcd State's Army,
+    D irec tor, National Bureau of Stanclal'els.                                    Cbief of A ir Corp ', W a r D e pl1 l' tm011t.
+ARTHUR B . COOK, R ea l' Admi l'fl J, United States Na ,'Y,                    OIlVJLU: W lUORT, Sc·. n ,
+    Chief, Bu r eau of A er onnn t icl':, Nan' D e pa r tme nt.                     Dnytoll , Ohio.
+H ARRY F , GUGGEN HEIM, M. A.,
+    P o rt Wil bington, L ong r !'< lan d , :-\. 1'.
+
+
+
+                                            GEORGE W . LEWIS, Di1'ecto1' of A61"onautical R esea1'ch
+
+                                                            J OH N F , VICTORY, Sec1'etOlry
+
+          H ENRY J . E . R EID,     Enginee1'-in-ChOll'ge, L angley M emorial Aeronautical Labo1"at01'Y, L angley Field, Va,
+                                         J OHN J . IDE, T echnical Assistant in Ew'ope, PM'is, France
+
+
+
+                                                           TECHNICAL COMMITTEES
+                        AERODYNAMICS                                                                   AIRCRAF T STHUCTU RES
+                        POWER PLANTS FOR AIRCRAFT                                                      AIRCRAFT ACCID ENTS
+                        AIRCRAFT MATERIALS                                                             INVENTIO S AN D DESI GNS
+
+                                      Coordination of R esear ch Needs of Military and Civil Aviation
+                                                        Prepa1'ation of R esea1'ch Programs
+                                                                A llocation of P1'oblems
+                                                              Prevention of Duplication
+                                                             Consideration of Inventions
+
+'L AN GLEY MEMORIAL AERONAUTICAL LABORATORY                                         OFFICE OF AERONAUTICAL I NTELLIGE CE
+                           LANGLEY FIELD, VA.                                                         W ASHI NGTON, D. C,
+
+
+               Unified conduct, for all agencies , of                                      Collection , classification, compilation ,
+             scientific r esearch on the fundamental                                     and dissemination of scientific and tech-
+             problems of flight.                                                         nical infor mation on aeronautics,
+
+
+
+
+                                                                                                                                                       I
+                                                                                                                                                       I
+                                                                                                                                                       II
+                                                                                                                                                       1
+
+                                                                                                                                                       ~
+        ---------- -~~--~-~~---~--------------~------------------'~~~~-~-----~~-~---"~--~------------                          ---------.
+
+
+
+
+                                                   REPORT No. 641
+
+  THE NEGATIVE THRUST AND TORQUE OF SEVERAL FULL-SCALE PROPELLERS
+          AND THEIR APPLICATION TO VARIOUS FLIGHT PROBLEMS
+                                           By EDWIN P. HARTMAN and D AVID BIERMANN
+
+
+                           SUMMAR Y
+                                                                   operation has received an increasing share of the
+        Negative thrust and torque data j or 2-, 3-, and 4-blade   designer's  attention. It appeared desirable to make
+    metal propellers having Olark Yand R . A. F. 6 airjoil         additions  to  the meager supply of data in this field of
+    sections were obtained jrom tests in the N. A. O. A.           propeller  operation.    A study of negative tm'ust and
+    20-foot tunnel. The propellers were mounted in jront oj        torque  was  therefore  made   a part of a general full-scale
+    a radial engine nacelle and the blade-angle settings covered  propeller-re   earch   program    b ing conducted in the
+    in the tests ranged jrom 15° to 90°. One propeller was           . A. C. A.  20-foot  tunnel.
+    also tested at blade-angle settings oj 0°, 5°, and 10°.          The final data are presented in this report in a form
+       A considerable p01,tion oj the report deals with the       conveniently    applicable to the olution of design prob-
+   'V arious applications oj the negative tMust and torque to     lems.     ince  the n egative tmllst of a windmilling pro-
+  flight problems. A controllable propeller is shown to peller depend upon its rate of rotation, which in turn
+   have a number oj interesting, and perhaps valuable, uses depends upon the friction torque of the engine, it i
+  within the negative th1'ust and torque range oj operation. obvious that information with regard to engine friction
+  A mall amount oj engine-friction data i included to is neces ary for the rea ly use of the dat a. A certain
+  fa ciLitate the application oj the propelle1' daia.            amount of friction data, gleaned from various ources,
+                                                                 ha been included and should enable a reasonable esti-
+                         I TROD CTIO                             mate to be made with regard to the friction charac-
+                                                                 teristics of an engine if particular and exact data are
+       In 1932 the . A. C. A. made a series of tests of 0. not available. As a further means of increasing the
+  4-foot metal propeller covering the negative tm'ust and utility of the material, examples are included showincr
+  torque range of operation for blade ano-les from - 23° how the data may be u ed for attacking vanou
+  to 22°. These data (reference 1) have been used to a pl'oblems.
+ considerable extent though it became evident soon                               APPARATU A D METH ODS
+ after theu' publication that the tests had not been                General.- T he tests were made in the . A. C. A.
+ carried far enough into the range of po itivc blade 20-foot wind tunnel de cribed in reference 4. The air
+ angles to provide all the data required by designer.             peed at which the t sts were made varied between 100
+ Contemporarily with the te ts of reference 1, a series and 110 mile pel' bour, which is the maximum speed of
+ of dive tests was made by the . A. C. A. of an F6C- 4 the tunnel.
+ aU'plane to determine the po ibilities of u ing the pro-           The propellel's were mounted on a water-cooled
+ peller in reducing tbe terminal di\1ing speeds of military Curti s Conqueror GIV 1570- C engine, the direction of
+ nirplanes. From the e tests (reference 2) sufficient rotation of which had been reversed to accommodate the
+ propeller datiL were obtained to provide a set of nega- right-hand propellers available for the te ts. Th
+ tive tm'u t and torque curves covering a range of blade engine wa enelo ed in a dummy radial engine nacelle
+ angle from 6° to 22°. In 1936 the negative thrust having a length of about 10 feet and a maximum diam-
+ and torque characteristics of an 1 -inch propeller eter of 52 inche. The au'-cooled cylinders were
+mounted on a complete au'plane model were obtained simulated by a perforated disk who e conductivity, or
+at the California Institute of Technology (reference 3). free-air passage, approximated tbat of a moderately
+The test covered 0. blade-angle range from 12° to 50° baffled engine installation. A photograph of the et-up
+and both 2- and 3-blade propeller were tested. These is shown in figure 1.
+tm'ee source provide most of the available known data               The variations of engine speed, when the engine was
+on the negative tm'u t and torque of metal propellers. being turned by the propeller, were obtained by the use
+      As the possibilities connected with the use of con- of a hydraulic brake from an automobile truck. The
+trollable prop ell rs have become more fully r alized, brake drum was attached to the propeller shaft and the
+the negative tlu'ust and torque range of propeller               hoe mechani ill to the engine gear case.
+                                                                                                                  1
+2                 REPORT           O. 641- NATIOr AL ADVI ORY COMMITTEE FOR AERONAUTICS
+
+   Propellers.-Six different propellers of modern d(lsign,
+                                                                                                    Qc -- pVQ2D3
+compri ing two sets of propellers with 2, 3, and 4
+blades, were tested. All the pl'opellers tested had the                                                          nD                Q/n
+same diameter (10 feet), blade width, blade thickness,                                              Qn= Qc/ V = pVD4
+plan form, and pitch distribution. The propellers were       where Te= T - t"D, effective thrust, lb.
+of avy design having avy drawing numbers 5 6 -9
+and 5 6 -R6. The 5868-9 propellers had Clark Y                        T, thrust of propeller (axial force m propellcr
+airfoil sections and the 5868- R6 propellers had R. A. F.                 haft), lb.
+6 section. The blade-form curves for the propeller                    t"D, change in drag of airplanc or body due to
+are given in figure 2, which also shows the plan form and                slipstream, lb.
+airfoil sections.                                                     Q, aerodynamic torque (negative when it assi ts
+   Method.- The torque and thrust forces were meas-                      rotation), ft.-lb.
+ured by scales in the balance house on the test-chamber       ---R.A.F6                                                                            ------- C/orl< Y
+floor. The engine speed was measured by an electrical
+                                                               /~
+                                                                 -----------------~
+tachometer, the meter of which was located beside the
+engine controls in the balance house. The engine
+                                                              L-.                                   Blade cross section
+                                                                                                                                       ~
+controls were hydraulically operated.
+                                                             [[I
+                                                              .10 .40
+                                                                                                                                                                 I--
+                                                             .09 .36
+
+
+                                                             .08 .32                   1\
+                                                                                       j                       ~~
+
+
+                                                             .0 7 .28                       \           1/                   f'"'-..
+                                                                                            jl                                         1"-                       I-
+                                                                                                V                                               '« '"biD
+                                                             .06 24
+
+
+                                                             .05    20
+                                                                                       Ii
+                                                                                                \-- h / b                                          " "-             -+-
+                                                                                                                                                                     I
+                                                                                                                                                                 1---1    I .00
+                                                             biD h/ b
+                                                                                 II                 \                                                      1'\
+                                                             .04 .16
+                                                                             j                          /\                                                       ~        .80
+                                                                                                         ."\        .pl.D((3 =15 °af 0.75R)- I---
+                                                                                                                   .'                  I              I
+                                                             .03    .12                                                                                                   .60
+                                                                                 V                              1'-...I---
+                                                             .02 .DB                                                                   ---t--                             pl D
+                                                                                                                                                                          .40
+
+                                                             .01 .04                                                                                                      20
+
+
+                                                                o     0 .2            .3            .4         .5     .6                   .7       .B       .9
+                                                                                                                                                                             o
+                                                                                                                 rl R
+                FlGURE}.-The propeller test set-up.
+                                                             FIGURE 2.-BJaae-form curves for propellers 5868-9 ana 5868-RO. D, diameter;
+   D uring tests, the tunnel speed was held su bstan-          R, raaius to the tip; r, station radius; b, section chord; h, section thickness; p,
+                                                               geometric pitch; fl, blaae angle.
+tially constant and the engine throttled step by step
+to zero throttle opening; the switch was then cut and the             D, propeller diameter, ft.
+braking force applied in increments until the propeller               V, air speed, f. p. s.
+stopped. Through this proces~, readings were taken                    n, propeller speed, r. p. s.
+at frequent intervals producing a continuous curve in                 p, mass density of air, slugs per cu. ft.
+the plotted data. The foregoing method was used for            Negative thrust and torque charts.-The principal
+blade angles up to 70°, beyond which only the drag and       results of the tests are shown in figures 3 to 9. Figures
+torque of the locked propeller could be obtained.            3,4, and 5 present cross-faired curves giving the thrust
+              RESULTS AND DIS CUSSION                        and torque coefficients for the Clark Y propellers having
+   Coefficients and symbols.-The thrust and torque           2,3, and 4 blades. Figures 6,7,8, and 9 present similar
+coefficient forms used in plotting the data in this report   curves for the R. A. F. 6 propellers. In addition to the
+are as follows:                                              range covered by the other propellers, the 3-blade
+                                                             R. ,4. F. 6 propeller tests covered the blade angles 10°,
+                                                             5°, and 0° (fig. 8).
+
+
+
+
+                                                                                                                                                                                  1
+                 ------------------------------------ -                           ------------------------------------------------~
+
+
+
+
+        NEGATIVE THRUST AND TORQUE OF SEVERAL FGLL-SCALE PROPELLERS                                                 3
+
+
+
+
+                        , -4--4-+--,-+-4-+--+--I--t--t---j-t--r--I--t--t---j--j---j--j
+-. 08 f--~-r----r---+--+-
+
+
+
+
+              FIGUnE 3.-Negative thrust and torque coefficients Cor propeller 5868-9, Clark Y section, 2 bJades.
+      4                           RE P ORT N O. 641- NATIO AL ADVI SORY COMMITTEE FOR AERO AUTIC
+
+
+
+
+                                                                                                      nD/V
+                  o                                   2345                                            67                     8                         10               II       /2        /3
+
+
+
+
+                                           -I---.       ---:-----                       __ .----                     ; /                                   / ,
+               _ .04 I-----'f---l--......1 ~-......             r----l---f- - t -                             !I                          ISo B la d e ongle
+                                                                                                                                                           :r--~
+                     1--+---+---~+-           ~~    -..........
+                                                       --+--    ~ --+----+----+----+----+----+----+----+--
+                                                                                                        /  --7"I--f---+----+----+--/
+                                                                                                                                   ----rr      a t O. 75R
+
+
+                                                              """",     "'---~                         ---/                                   /
+           -. 05 WW---t-l--+--+:~~
+                                 --l--+=+==+=+--+----l--+-- - ---+-+/-I'--f--+--+--I---+--+---t-----i
+
+           -:a61--1---1---1---1---1---1---1---+-~-----f>--<--+--+--+--+--+--+--+-----¥-
+                                                           .... _ -         1     ./
+                                                                                     L--t- --+-+--+--+-+--+-+--1
+                                                                                          1 ---                       ___ /
+
+
+
+                                                                                   I +-+--+---+----t--i
+           - .0. 7f--+--+---+-+-+-+-+--l--+--+----+---'---+---+----f---+----J--+----'--
+                                                                                                                                                       I
+
+
+
+
+           -.OBf--+--+---+-+-+-+-+--l--+--+--i----+---+----,---f---+--+--+--+---+--+-+-+--t--------j
+                                                                                                      I
+
+
+          -. 00 I
+                  o -... i'
+
+
+                          II
+                               -...
+
+                                  '
+                                           170.0
+
+                                           ,       ~°'6ao 55" 5D~
+                                                 I f-I/_
+                                                 t
+                                                                 I     I
+
+                                                                       45
+                                                                            0
+                                                                                    I     II I I/
+                                                                                                      i/:V _                             I/
+                                                                                                                                       - lrl__++- _-t~ /
+                                                                                                                                                  ----,-J--
+
+                                                                                                                                                                                      -.0.0. 10.
+
+                               I I ' II' / -. . I(O~3so ,-l-:- -         ~ /1
+                                                                                                                                                       I                 /
+
+
+
+          - .002
+                             I I /
+                         1/ I I ~~ I I 'vj--i
+                                                r--""[L I     ~
+                                                              / 1 /            -+---+---1-++-/- :-::::
+                                                                                                   / 30.      25'                  /     r
+                                                                                                      V-
+          -003                                                                           V                                        )'0·                                                -0025
+
+          Qc                    1/ - L/ I ~t
+                                      II       /              tL-- __ '- V           1j~0                                                                        Blade angle           I-----
+                                          lL                          t~
+                         I /
+
+
+
+                                                                                 / J
+                         II                                                              I                                                                           at G. 75R
+          - .0.04      L 1 J-1 / / I /                   _        f- 7 ~~~-. .                                                                                                            Qn
+                                                                                y
+
+          -OO5~d~kV~ V V vi                                                                                   V                VI" 'IJ , I
+                 Il ,/ L //~~~/ / / _ /                                                                                       (I I ~",~,~[t - -
+            .006 ~r )/~pjkk~ ><~ -<::::~~
+                                                                                                                                                       j
+
+                                                                                                                            y
+                 1/ J.--r"l'Y
+                 rkV             ~                          -=r- -                                    -- "-/'il
+                                                                                                             hOVln
+                                                                                                              ____
+                                                                                                                   9Qn;1
+                                                                                                            - - r- ~-I
+                                                                                                                                             Locus of p oinfs
+                                                                                                                                                                 0. 0.050
+                                                                                                                                                                                 I -
+                                                                                                                                                                                      -750.50.
+
+
+          -.
+             OD7
+                    ~r-r---                                                             --- -                                            I        Qn   Id,r-rtr l inj-e;l-,s'!!-"'-H--i
+          -.0.08                                                                                                           .010                             - .0.0 75        v         '-----
+
+                                                   FIGURE 4.- Negative thrust and torq ue coeilicients for propeUer 5868-9, Clark Y section, 3 blad              .
+
+
+
+
+I
+1
+
+
+
+
+I
+l _
+                          JEGATIVE THRUST AN D TORQUE OF SEVERAL FULL-SCALE P ROPELLERS                                                                                                                                                                   5
+
+                                                                                                                  n D/ V
+       o                                     2             3           4                   S                  6                         7                8                                   !O                II               /2               /3
+
+                         ./~:t,1 J /                               I / [I                                         7                                                              /                                              /
+  -. 0 I
+           VVV I/60~5:i
+               --             ./                     50·
+                                                               /           I               /                                                 /                              II                                              /
+      ~VV../VV               ~s· /                                                    I                   I                             II                              /
+      ~
+ -.02 v.-
+          l..---'
+                  V
+                    V
+                    V
+                      /'
+                          / . / V 4O
+                                 -                                         lfl      35"
+                                                                                                      I
+                                                                                                                                I
+                                                                                                                                    /                               I
+                                                                                                                                                                                                                   I
+                                                                                                                                                                                                                        /
+                  V   ,-- V                                                                      /
+                                                           I---- V
+           V                                                                                   1/ 30 ·
+ - .0 31--            L--- 1----
+                                   1.----'
+                                                                                                                       /                                       I                                               I
+
+                      L--!--
+                            !-- j.---                                                 1/                          Ihs·                                    I                                                I
+                                                                                                                                                                                                      II
+ -.04
+                                                                   !----
+                                                                                                          /                                          I
+           I--                     - r----
+                                             r-
+                                                                                                 ./
+                                                                                                      V                                          I
+                                                                                                                                                 20·                                              I
+  -.05
+           I---
+                                   ~                                                  ----                                              I                                                    II
+                                   ~       ~                                                                                    /                                                       /                                                     r---
+ - .06
+                                        "~ " ~                                                                    /                                                                  II15°
+                                                           ~                    ---                   V
+                                                                                                                                                                                 /           B/ode angle at O. 75R
+                                                                                                                                                                                                                                              1--
+
+
+                                                                    ~                                                                                                       V
+ -.0 7
+                                                                           '"                                                                                      V
+ - .08                                                                                ""       ~
+                                                                                                          " t----                                V
+                                                                                                                                                          V
+      o ,                   170 ,                                                                                 }
+                  ,,
+                       ,,
+                                     65'
+                                             '60'
+                                                                                                                                             /                              II
+                                                                                                                                                                            II
+- .00 /
+                                                     55'                                                                                     /
+                            ",
+                                                           50°
+                                                                   4S0                                                                      /                                                                           /                     - .00/ a
+                                     ,
+                                                                                                                                                                        I                                          -;
+-.002                                            ,                 ,            }40'
+
+                                                                                           /35·               I                         I
+                                                                                                                                            /
+                                                                                                                                                                     I                                             II
+                                                       , /                                 I                                                                       II
+                        I -I 1 / "/ ' I
+                              }                                                                            /30·                                                                                                I
+- .003                                                                                                                                                                                                                                         -.uL2S
+                                              I                                                           I                         I                                                                      /
+- .004                  I / / / / I '~. , II                                                                                     1      25 '
+                                                                                                                                                               /                                      II
+                       / II I II 1/ II 1/ I ,                                                                                   /                              ~Oo                                /
+
+- .OOS
+                                                                                 / "              /                        II                             II
+                                                                                                                                                                                              I
+                77 I j /
+                  /                                                             /              '/ ,                   I                               /
+- .006
+               / 1/ I I /                                                  II                             ,       7                              II                                   //5     0 Blade angle
+                                                                                                                                                                                                 at 0.7SR
+                                                                                                                  ~
+              II- r/V~ II~1/I / 7 7- , , , [7/
+           ~If t;                                                            !/
+                                                                                 /
+                                                                                                         -.005a
+
+
+-.007                                                        ,,
+       I IYl Z >< V "./ Z /
+                 17
+                                   h.                      /    ,,        /
+-.008 I~
+            j '/ 1/ [> k            t> i'-.... k"    ~
+                                                     ~              1/,
+       I It; '7             --- ---V
+                                            -- r>< f-----.      / '     ,
+                                                                          , , _- -Locus of points
+-.009 V1 1/)
+                                                                                  ,I having On -0.0/0                                                                                                               =
+           I~
+                                                                                                                                                                            I'                                                          ._,
+                                                                               ,       I         I    --
+                                                                                                                                                                                 'r'J I ; I I I       1            1                1
+
+
+
+
+-.010
+           rr                                                                                                         -.0/5
+                                                                                                                                1
+                                                                                                                                                                                       - .010
+                                                                                                                                                                                             0 dt"recfor knes/--+--
+
+                                                                                                                                                                                                           ~                                  -.OOB   o
+
+                                         FIGURE 5.-Negative thr ust and torque coefficients for propeller 5868-9, Olark Y section. 4 blades.
+6                                 REPORT                        rO.641-NATIO TAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+
+
+
+                                                                                                                            nD/V
+              o                                       2              3               4                  5               6           7                8                  9                10                   1/                      12          !3
+
+                                                    ./   !40~J( 1
+                                                                /                              /            /               /                  V                                i                                                /
+                  I--       f-.--- !-----"' V
+                                      I--- ...-- V
+                                                   V~5k
+                                                   ./ 40
+                                                         I--'                              0
+                                                                                                   i/               /               /                                       V                                               V
+          - .01 f.--""
+                                                                                      V 35 ° ~o
+                  ~
+                         V
+                    I--- I--
+                               --
+                             I--
+                                 j..----"'
+                                           j..--- V
+
+                                                                         ---             _______V                               /
+                                                                                                                                                         1/
+                                                                                                                                                               V                                                  /
+                                                                                                                        ~
+                            j.-----
+
+          -.02 ~
+                            1--                                                                                                                                                                          j
+                                                                                                                V
+                  I----""
+                  f-                                     t--:--
+                                                                                                   --- V                                       V                                                     V
+                                                         t=::: t'----                                                               V20°                                                 V
+                                                                                                                -
+                                               I--                                                                              ~
+          -03
+                                                                  ""'-
+                                                                         ""'-
+                                                                                '-----                                                                                              y
+                                                                                ~
+                                                                                                                                                               ' /15 Blade angle of O.75R
+                                                                                                                                                                                    0
+
+
+          -.04
+    'Fe
+                                                                                         -----          F-===                                  l.-----
+                                                                                                                                                                                                                                      I
+          -.05
+
+
+
+          - .06
+
+
+
+          - .07
+
+
+
+          -.08
+
+
+
+             o,,
+                            ,,
+                                      ....
+                                                  7 U IT 60· 55'     I50°r7
+                                                                      /           /           V
+                              ' .. i / J                    J      II          'I
+                                                                                45'
+                                                                                            /
+                                                                                          /40·
+    - .001
+                                    . . 1
+                                / J.... /      f7
+                                                   735
+                                                       ' IZoo   /            /            /
+                                                                                                                                                                                                                                      -.0010
+
+
+    -.002
+                               / V V II ' ,7 [7 /              ~so        /           I I
+                                             V
+                             / / / I / I " , ....    V       V        / Vzo'      /
+                                                                                    V
+
+    - .003
+                           /
+                                      /
+                                         V V
+                                              / V V /v
+                                                   7 t---,.(                V                                                                                   15° Blode angle 010. 75R
+                                                                                                                                                                                                                                      -.0025
+                         V          V     ./                    V"- b<               V                  V           /
+                                                                                                                        r>< .... V
+                                                                                                                                ~
+                                                                                                                                               V
+
+
+    -.004
+                  II V                         /
+                                                      V
+                                                         ---
+                                                                V I>F t--. V V                                      --I----""           ....
+                                                                                                                                                ,
+                                                                                                                                                         .... , , '
+                                                                                                                                                                       .I           I.
+                                                                                                                                                                      -Locus aT pOlnls
+                                                                                                                                                                                         ~        I.          1
+
+                  V2 ~                V-                                                                                                                      V,
+                                                                                                                                                                        having 0" = -0.0050
+                                                                                                                                                                            ,
+                                                                                                                                                                                                 "            t             t
+                                                                                                                                                                                                                                             0"
+    -.005 ~
+                                                                                                                                                                                'r-,                   . 1 , or
+                                                                                                                                                                                               0"1-' dlrec   I
+                                                                                                                                                                                             .... ~~          ~tesI:~--
+                                                                                                                                                                                                       ....
+
+    -.006
+                                                                                                                                                                                                  I                .
+                                                                                                                                                                                                              1 .... ,"-'
+                                                                                                                                                                                                                                , ,
+                                                                                                                                                                                                                                          .0050-
+                                                                                                                -.010                          -.0075
+
+
+                                               j!'1Gl,1RE 6.-Ne!(fltive tbru~t a~d torque coetlicieots (or propeller 5868-R6, R . A. F. 6 section, 2 blades.
+                                          -----------------------
+
+
+
+               JEGATIVE THRU 'T AND TORQUE OF                             EVERAL FULL-SCALE PROPELLER                              7
+
+
+
+
+                     ~~        r---                   I      /
+   -.05~l--l--~--I-'\,J.I'~f'.-.-+-+-+-+-+--+--+-+--+--H-
+                          \.                          I   -h.L.J--t--t--+--t--l---t--
+                                  I \. I ""                                                      .-LVJ50Blode angle ot 0.75R
+
+                                      \        "I'--                                     f--r
+   -. 06f--+--+-+-++-+--+I"~---+--I---
+                                  Pf=-+-+--t==91---F-t-t-t-+--j-++-+-+-t--j--j
+                                          "~                                                :                                  I
+
+
+
+
+                  FIGURE 7.-Negative thrust and torque coeflicienis for propeller 5868-RR, R . A. F. 6 section. 3 blades.
+
+
+
+
+807 78-38--2
+                    REPORT           O.641-NATIO AL ADVISORY COMMITTEE FOR AERONAUTICS
+
+                                                                                        nD/ V
+      o                   2                 4                6                  8                /0                   /2            14                    16                            18
+
+
+                                                                                                                                                         /
+  - .02                                                                                                                                              /
+                                                                                                                                                 /
+  -.0 4
+                         -- ~                                                                                                           1/
+                                                                                                                                             /
+                    ~
+                                                                                                                                    /
+                              ~~                                                        Blode o ngle ot 0.75 R
+                                                                                                                               /
+  - .06
+
+
+                                   ~~                                                                                      /                                                -
+                                       \~
+                                                     ~                                                                 /
+
+ -.08
+                                                             I--- r--                             10°
+                                                                                                              V
+                                            \ ~~                                                                                                                                    -
+
+                                                                        b--
+                                                                                                 -
+  -.10
+
+
+                                                    "" '" "'"                           ---- ~ 5° I - -                                                  -~             ~
+
+
+
+  -./ 2
+                                                             ""         ~
+                                                                                ~
+                                                                                             ~        D·
+
+                                                                                                      -----
+  -./4
+                                                                                                              ------- L---         --r------                                    /
+
+
+
+ .006                                                                                                                                                -----hL            i-
+
+
+
+                                                                                                                                                     /
+ .004                                                                                                                                   /
+                                                                                                                               /
+ .002
+                                                                                                              V
+                                                                                                                  L
+                                                                                                                       V                LV /             ./
+
+
+                                                                                                  ::2                           L~
+                                                                                                                               (/V
+                                                                                        ,/
+                                                                                             /                             /                                         Q, , -
+                                                                                V
+                                                                        ~
+                                                                                                                  /.  V                                          -.0010
+                                                                                                                                                                        I
+
+
+
+
+                  i--"
+                                        I
+                                                -   f---"'
+                                                             ----                                VV                                                              - . 001;5
+-.002
+          -----
+          V--                   ~                                               V
+                                                                                             Y
+                                                                                                 ~
+                                                                                                                                                                 -.0020
+                                                                                                                                                                        I
+          V-             ~t"--
+                                                                         ----                /                             Qn. director line----
+                                                                                                                                                                 -.0025 -
+                                                                                                                                                                        I
+- .004                                                                              /                                                                            - .0030
+                                    ~
+                                                                                                                                                              -.003~
+                                        r-
+                                                                 ----   ----
+-.006                                                                                                                                                        I
+            FIGURE 8.- egative thrust and torque coefficients for propeller 5868-R6 at small blade-angle settings. R. A. F. 6 section, 3 blades.
+                                                                                                                                                        --~--~~~ ---~-~-~~~-- - -----~----------------- - -~ -~-~---~
+
+
+
+
+                             l!;GATIVE THRUST AND TORQ E OF SEVERAL FULL-SCALE PROPELLERS                                                                                                                                                                                        9
+                                                                                                                                        nDIV
+         o                                  2                           3                  4                   5                   6                    7                        8              9                   10                    1/               12               13
+                              l/7d~5oy                          V 1/ /                                                                      /                        1/                                     I
+     -.0 IV
+             I------   ~ y/O/5S°,Joo /                                                          /                  /                    /                        I                                      /
+                  ./
+                     V -- . / / V I~SO 1 0                                                                 I                                                 /                                      I                                                 II
+                       :..---- ~                                                     V
+                                                                                           40
+                                                                                                       : ~So                                            il
+     -. 0 2 / / "
+                                                                V                                                          /
+                                                                                                                           v
+                                                                                                                                                                                               /
+             V                ~       /V   V                                                                       / .30 0                          I                                     I                                                       /
+                       .-/'   ___ V ~    V                                                                                                      ~/
+     -.03
+             /
+                      V                                         :..----
+                                                                                ./                             /
+                                                                                                                                                so
+                                                                                                                                                                                                                                              I
+             /                  -~
+                                               ----                                                    V                                /'                                           I                                                    /
+                      e---                                                                 /'                                                                                    I
+     -.04
+             /                                                                  ~                                              /                                                                                                      I
+             V                                                                                                             V
+                                              I..............               -                                      /'                                                 /zOo
+     -.05
+             I-
+                                   :::::---                     r-----                     V V                                                               I                                                             I
+                               -- ..............K                                                                                                       V                                                             !I
+                                                                ~ l-                                                                            V                                                               / 5' Blade onq /e a f 0.7SR
+                                                                I'-. ~
+     -.06                                           """             '\ '---                                                ~
+                                                                                                                                        ./"
+                                                                                                                                                                                                            1/
+                                                                          '\
+
+     -.0 7
+                                                                                "\                                                                                                              I
+                                                                                                                                                                                          /
+     - .08
+                                                                                      "'"       "' I'---- t---
+                                                                                                                                                                     --          V
+
+        a ,
+                  ,
+                       ,,
+                              70 0 /65'
+                                                60· 5SO
+                                                                                      I        J                                   :1
+                                                                                                                                                            I                             /                                       I
+                                                                                               L                                                         I                                /                                       I
+-.001                                         -                 -         SO·
+                              ,,                                                     45·                                                                I
+                                                                                                                                                                                                                              /                                    - -.001o
+                                                                                                       0 J
+                                       ,,
+                                                                    j
+                                                                                 '-
+                                                                                               40          I                   I                                                      /                                   /                                        -
+-.002
+                                                                                                                                                                                                                      I
+                                     I          'i                  L
+                                                                                                           (50             /
+                                                                                                                                                 /                                   /
+-.003                      / I I '! I I ~I
+                        I / I I I 1, I - .-
+                                                                                                               --/:°               0
+
+
+                                                                                                                                                /
+                                                                                                                                            1/2 S"                           I
+                                                                                                                                                                                 I
+                                                                                                                                                                                                            !/
+                                                                                                                                                                                                              /1                                                        J5
+                                                                                                                                                                                                                                                                   - -.Oj2
+                                                                                                            ~/
+-.004
+
+Oc
+             r-V I -V-I/ / 1/ ' ,
+                       I / I_V,) )/ /
+                                                                                                   /                   I                I                            /20·
+                                                                                                                                                                                                :;
+                                                                                                                                                                                                        /
+                                                                                                                                                                                                                                                                   --
+              1 / !/ /                                                                                                                                                                    )     50 Blade angle of                                 0.75 R
+- .005
+
+
+                  7-7~r-- I lJr-- /+' ~ I
+             ~r~~~k
+                             e-,                                                                                                                    /                                /
+                                                                                                                                            V
+                       -K~ V I X
+-.006
+                                                                                                                                                                 L _                          - -               -         -
+                                                                                                                                            //                                                                                                                     - -.005a
+
+
+
+
+             ~~~
+- .007
+                            V:-L~~~         ~                           ><                 ~/
+                                                                                                                                                "- ,
+                                                                                                                                                        ,,
+                                                                                                                                                                                                                                          !           f--- r--
+
+
+
+
+                             ~
+                                   7
+                                   .p?                                                                                                                       ,                                                                                             I
+                                                           f--                                                 ---                                               ~-
+                                                                                                                                                                     ,                          t--                   -1--                            -
+                                                                                                                                                                         '       ,--Locus 01' poin !s
+-.008                              -                                                                                                                                                                                                                                   r - -j
+
+
+
+
+- .009
+                                                                                               -
+                                                                                                                                                                     ~ ,h,~::frr                                                                      c- _
+                                                                                                                                                                                                                                                                       -1
+                                                                                                                                                                                                    ' , On director Iln es -~;--'>
+                                                                                                       -
+
+- .010
+                                                                                                                                                I
+                                                                                                                                                                                                                ',J                                            I
+                                                                                                                                                                                                                                                                        .odea
+                                                                                                                                        -.0/5                                                                   -.010
+                                                                                                                                                                                     0"
+                                   F IOUR ( 9.-Negative thrust and torque coeffi cients for propeller 5868-R6, R . A. F. 6 section, 4 blades.
+10                               REPORT NO. 641-                          rATIO TAL ADVISORY COMMITTEE FOR AERO A T I CS
+
+   Although the original plotted curve of thru t and                                                                       Comparison of propellers having 2, 3, and 4 blades.-
+torque coefficient were, in general, fairly smooth , th e                                                                A comparison of propellers having 2, 3, and 4 blades is
+few irregularities in orne of the curvcs and their pacing                                                                shown in figure 12. The coefficients of the three pro-
+made it seem de irable to cro s-fair them. An illu -                                                                     peller were divided by the number of blades and then
+tration of the appearance of one of the typical original                                                                 multiplied by 2 to permit compari on on the basis of
+                                                   nD/ V                                                                                                                   nD/V
+      o                                       .]        4             5                6                             0                                          .]           4                    5                             6                7
+                                                                                                         0                                                                                                                                                            o
+  -.01                                                                                 ~
+                                                                                           '-   -.001             -.01
+                                                                                                                                                                                                                                                 I'p
+                                                                                                                                                                                                                                                     / If!
+                                                                                                                                                                                                                                                             -.001
+                    I
+                                                                               I                                    T"
+                                                                                                                                                                                                                                                 /j
+  -.02                                                                                          -.002            -.02
+                                                                                                                                - - Clark Y                                 --- --- R,A. F. 6                                             /AI                -.002
+                                                                      /            I                                                                                                                                                    /V
+                                         r.            ~,.-if~                 :                                                                                                                                            /) /
+  - .03                                 ..-                                                     - .0 0,]         - .03                                                                                                                                       -.003
+                                                                              II                    Qc                     - - -- -- -                     - T"                                           , ,
+                                                                                                                                                                                                                    /
+
+                                                                                                                                                                                                                        /1
+                                                                                                                                                                                                                                    I
+                                                                                                                                                                                                                                            II
+                                                                                                                                                          t-- - --- - V
+                                                                                                                                                                                          ,                                                                      Qc
+                                                                                                                                                                                                                            I
+
+  -.04                                                                                          -.00 4           -.04
+                                                                                                                                                                                                                        /
+                                                                                                                                                                                                                                        /                    -. 004
+                                                                          /                                                                                                                                 /
+                                                                                                                                                                                                                /
+                                                                                                                                                                                                                                    /
+                                                                      l!                        - . 0 05                                                                             /
+                                                                                                                                                                                          /
+                                                                                                                                                                                              /
+                                                                                                                                                                                                  /
+
+
+                                                                                                                                                                                                                                                             -.005
+                                                                                                                                                                                ,/
+                                                                                                                                                                                                                    V
+                                                                                                                           - - -- - -- -- - Q
+                                                                 /~                                                                                                         /
+
+
+
+
+                        <- 'I<
+                                        Qc I-~- V
+                                                       * v~                                     - . 0 06                   -'
+                                                                                                                                             -- --        r--
+                                                                                                                                                                            c
+
+                                                                                                                                                                                V
+                                                                                                                                                                                              /V                                                             - .006
+
+          !/                                                                                    -.007                                                                                                                                                        -.007
+  FIG URE 1O.-T ypical pair of negath 'e t hrust and torque cur yesshowing test                                  FrGliHE  Jl.-Comparison of thrust an d torque coeffi cients for propellers having Olark
+               points . Propeller 5868-9, 3 blades, set 30· at 0.75 R.                                                   Y and H. A. F . 6 sections; 3·blade, lO·foot propellers set 25· at 0.75 R .
+
+plots i given in figure 10 to how the extent of the                                                                      two blades. The CUl'ves in figure 12 show no con is tent
+di persion of the test points.                                                                                           variation, probably owing to tbe process of cros -
+   Comparison of Clark Y and R. A. F. 6 propeller char -                                                                 fairing. They do show that, compared on this basis,
+acteristics.- It will be noted that, in g neral, the values                                                              there is no great difference between the characteristics
+of thru t and torque coefficients are greater for the                                                                    of propeller with 2, 3, and 4 blade.
+Olark Y propellers than for the R. A. F. 6 propellers.                                                                      Coefficients for locked propellers.- Figure 13 shows
+                                                        nD/V                                                                                                    Bla d e angle al 0 75 R >deg.
+          o                                        3         4            5                6             7          8
+                                                                                                                                o
+                                                                                                                                                o               20      40     60      80     100
+                                                                                                                                                                                                                                                         o
+                                                                                                              I!?                   f.-,~
+                                                                                                                                                                                              y r1!
+                                                                                                                                                                                                                                                             ~
+                     - - - 2 -blad e c oefficien t s . 1 I
+     -. 0/ I - - - - 3-                   ..        x 0.666                                                  1/ -.001               ~·-.02
+                                                                                                                                                                                          ,/'   //                                                   -002?.'
+                                 "
+                     ----- - -4- ..                 x 0 500  .                                      l'i,     I
+                                                                                                                                    .(:;
+                                                                                                                                                     1\                     ,y ~     r.                                         /7                           .'!!
+                                                                                                                                    ~                                                                                                                        ~
+                                                                                            'i ',(II                                 ~-.04 r-             \~ V                                                           /f                          .004~
+                                                                                                                                                                                                                                                             <,.;
+     -. 02
+               -                 --- ..;;:... -- - To -- -~ /                                       1
+                                                                                                                         .002
+                                                                                                                                     \.J
+                                                                                                                                                            \ ,                                                         "/                                    "
+                                                                                                                                    ~
+                                                                                                                           Qc                                                                                                                                 ~tJ-
+     -.03
+                                                                                               J!                        .00,]      1::-.06                      I '\: "                                   /J                                        -.006 ~
+                                                                                       /1                                           .....                             '\ "          VQc               I                                                      .....
+                                                                                                                                     \.J                                   ~      ~ I-                                                                       .~
+
+
+                                 --- -- r:.::- - -' ----V-
+                           --- t=:::-                   Qc                 ?/ V                                                     ~                                           ~
+               ~J-'::::-
+                                                                                                                         - 004      !2. -.08
+                                                                                                                                                      - - C lark Y
+                                                                                                                                                                                                                                                     - 008~
+                                        ~                                                                                           V)                                                                - ---RAJ                              6                '0
+
+                                                                                                -            ~~
+                                                                                                                         -.005              - . 10                                                                                                   .010
+     F WURE l2.-0omparison of thrust and torque coeffi Cients for propellers having 2, 3, and                                               FI GURE       l 3.-Thrust and torque coefficients with propeller
+                                  4. bJades of Olark Y section; set 25° at 0.75 R .                                                                               locked (n D / V = O); blades.
+
+For an ea ier compari on, figure 11 was prepared to
+ how the thrust-coefficient and torque-coefficient CUl'ves
+                                                                                                                         the thrust and torque coefficient, at                                                                  nr; = 0 (propeller
+for the 3-blade Clark Y and R. A. F, 6 propellers set at                                                                 locked) and through a 90° blade-angle range, for both
+a blade angle of 25 °. At zero nDjV, the thrust coeffi-                                                                  the R. A. F . 6 and Olark Y 3-blade propeller,
+cients of the two propellers are nearly the same;                                                                          The difference in the torque curves, which is negligible
+however, the difference in the shapes of the two                                                                         at 0° and quite large at high angles, may be attributed '
+sections (see fig. 2) causes a considerable difference                                                                   to the difference in the shape of the leading eelges of
+in both thrust and torque throughout most of the                                                                         the two airfoil sections. The tatic thrust ha appar-
+nDjVrange.                                                                                                               ently not reached it peak at 0°.
+                                                                                 ----------~---            -   -----~----------------..,.
+
+
+
+
+                    JEGATIVE THRUST A JD TORQUE OF SEVERAL FULL-SCALE PROPELLERS                                       11
+  o SIDERATJO S IN APPLYING NEGATIVE THRUST                   where Q/ is engine friction torque (considered negative),
+      AND TORQUE DATA TO THE SOLUTION OF
+                  PROBLEMS
+                                                                         ft.-Ih.
+                                                                     N, propeller revolution speed, r. p. m.
+      Coefficients.-The thrust coefficient Te is especially           VI, air speed, m. p. h.
+  suited to a negative-thrust analysis becau e it does not           cr, relative density, pi Po .
+  in volve the engine speed and because of its similarity            Po, ma s den ity of the air at ea level, slugs per
+   to the u ual drag coefficient. It is not convenient to                    cu. ft.
+  u e the normal propeller thru t coefficient GT = Te/ pn 2D4    In references 3 and 5, charts are presented having
+  becau e Gr approaches infinity as nD/V approaches           thrust coefficient Te plotted against Qn. Thu , when
+  zero, and difficulty in plotting arises. ITith the diam-    the value of Q,/n is known for the engine in que tion, the
+  eter and velocity known, the thru t may be easily           value of Qn, at any given altitude and for any given
+  calculated for any value of Te.                             propeneI' diameter, will depend only on the velocity.
+      Effect of engine.-In most problem involving nega-       The plot of T e again t Q7I then becomes, for any par-
+   tive thrust, the propeller is mounted on an airplane       ticular ca e, a plot of the thrust against the inverse of
+. engine, which may be "dead" (switch off and being           the velocity. It appears likely, frem the friction data
+  turned over again t its own friction), partly throttled, or shown in reference 3 and 5, that the u efuln e s cf the
+  operating at full throttle. The main difficulty in          relation Q//N e= J{ will extend over a greater range of
+  calculating the negative thrust of a propeller operating    engine peeds than previously indicated.
+  under any given condition , especially the one where it is     The Q" mo dification to negative-thrust charts.- In
+  turning a dead engine, is found in determilling the         the pre ent report it i hown that a slight modification
+  engine speed. In the spp.cial case of the "freewheeling"    of the usual plots of T e and Qe against nD/V will pro-
+  propeller, the thrust coefficient is easily found, it being vide the equivalent of a plot of T e against Qn, such as
+  the valu e corresponding to the nDIV where the torque       given in references 3 and 5.
+  coefficient is zero. men the propeller is turning a dead      The necessary modification to the u ual charts is
+  engine, however, the revolution speed depends upon the
+  friction torque of the engine, which is itself an extremely explained as follows: mce Qn= n~;V' it is clear that
+ variable quantity.                                            the locus of all points having a single value of Qn may
+     The coefficient Q".-In reference 5 it was pointed out be represented on plots of Qe against l1DIV (figs. 3 to
+  that flight te ts indicated the rotational speeds of pro- 9) by a straight line passing through the origin. The
+ pellers turning dead engines on multiengine airplanes position of this line for any particular value of QlI i
+  to be from 35 to 50 percent of rated engine peed. It easily determined on the chart from the fact that Q,,=
+ was also pointed out that, through this range of engine
+ speeds, the friction torque of the average airplane engine Qe where n[! = 1. AlLhough the position of this line is
+ might be represent d by an equation of the following easily determined, a calc, or rather a director line, has
+  type:                                                        been placed on each chart showino- the intersections of
+                                                               the Qn lines for variou values of Q".
+                                                                  In actual u e a straightedge placed from the origin to
+ where f:. is the engine di placement, cu. in.                 the desired value of Q" on the scale ,vill permi't value of
+     N ., cmnkshaft revolution speed, r. p. m .                the coefficients to be read without drawing the line.
+     G. R., the ra tio of propeller speed to cranhh aft speed.
+                                                                  Examples of use of Q".- As an example, suppo e the
+     kl ' k2' and k3' appropriate constants.                   friction torque of the engine and the velocity are such
+     For a particular engine and at a given altitude h, the as to make the value of Qn= -0.0019 and that it is
+    quation is implified to:                                   desired to find the value of T e at a blade angle of 20°.
+                        ~:=constant (K)                        The solution of this problem is indicated in figure 7.
+                                                               The broken line O-C represents a constant value of
+                                                               Qn. Where this line intersects the 20° blade-angle
+     This approximation was used in reference 5 to develop curve at point 0, project up along the line 0-0" to
+  the following form of coefficient:                           the point 0". The Te coordinate of the point 0" i
+                            Q       17 Q/n                     the desired value.
+                     Qn= PV 2VXnD= pVD4                           The propeller speed may be calculated from the vahl('
+ 'Phi relation may be pu t in a more u efuI form:              of nD/V fit point 0 ' a follows:
+
+                                Q,/N                                                   _ n DV1L
+                   Q,,= 17,200XcrVID4                                                N - 11   D
+12                  RE PORT N O. 641- JATIO JAL ADVI ORY COMMITTEE FOR AERONA TIC
+
+           F RI CTION TORQUE OF E GI ES                                                                      been extrapolated to bring them to 1,000 r . p. m. From
+  Relation to problems.- In many cases the friction of                                                       the e CUl'ves may be judged the quality of the a sump-
+the engine has a large effect on the valll e of thru t                                                       tion that the friction torque is a linear fUllction of
+coefficient under which the propeller operate . It i                                                         which can bo repre ented by the relation Qr/ .=K for
+then obviou that, for tho ready U 0 of the data herein                                                       any particular engine. This equation indicates that
+presented, some information regarding the friction                                                           the torque for any engine may be represented by a
+torque of engines i required. As particular and exact                                                         traight line through the origin, a the ODe drl1wn in for
+engine-friction data are eldom available for the solu-                                                       engine 3 in figure 14.
+                                                                                                    Ne ,r.p.m.
+                    o                          400               800                       ,
+                                                                                           1200             /,600                         2000      ,
+                                                                                                                                                   2400      .
+                                                                                                                                                             2800
+                             '-
+                                  - r--_                   Qf         -'Ie
+
+
+                                                                                                  --
+                                           -~-             Ne :                       r-
+
+
+
+               -100
+                         f- -
+                                      -T- --
+                                           ,
+                                                         '-
+
+
+
+                                                          --0-
+                                                              ....;
+                                                                         - L---  '-
+
+                                                                                      ~
+                                                                                                             -.::::::
+                                                                                                                        ~ ~ -.....
+                                                                                                                        7-'
+                                                                                                                                                       -8
+
+                                       Cngine 4
+                                        extrapolated                                  §;;t---...~ ~ ~ ~
+                                                                                                    ~                               ~~
+                 -200                                                                                    ~                           ~ ~ r-... 5 .........
+                                                                                                                        ~~   ~
+                                                                                                                               r---;; ~
+             ~
+                 - 300
+                                                                                                                          ~~
+                                                                                                                                                   ~ .2
+                                                                                                                                                     "-
+                 - 400
+
+
+
+
+                    o             ~
+
+                                      F-==-:
+                                                ~~
+                                                                        l::::-        .   ~
+                                                                                                                                 , -Fr om reference 5 for
+                                                                                                  ~~                          ,,
+             ~ -. /0                                                                                     b~             -            s ea l evel, ungeared
+
+             <Y
+                                                                                                                          -------   K
+                  -.20
+                         o                     40D                    800                   1,200                1,600                    2,000     2,400    2 ,800
+                                                                                      Displacement, A ,cu. in.
+
+
+                                                                          Engine             £>       hp.         N.            QtfN.
+                                                                        - - - ---
+                                                                                 I         1, 23      768        1,950         - 0. 120
+                                                                                 2         I , 20     700        1,950              - .125
+                                                                                 :1        1,535      850        2, 150             -. Ol'fi
+                                                                                 .[        1, 535     750        2, 500         -. OO!i
+                                                                                 r.
+                                                                                 /j
+                                                                                           1,340
+                                                                                             985
+                                                                                                      450
+                                                                                                      300
+                                                                                                                 ~,l oo
+                                                                                                                 2, 000
+                                                                                                                                    -. 07,
+                                                                                                                                    -. 01i0
+                                                                                                                                               I
+                                                                                 7           975      330        2,000              -. 0., 0
+                                                                                 8           199      14 5       2, 050             -. 025
+
+
+                                                     J<'IGUIlE l4.- Friction-lorque cur ves for eight ty pical airplano engines.
+
+Lion of negative-thru t problem , it is con idel'cd                                                             The curves in figure 14 indicate that thi approxima-
+nece ary to include in thi report sufficient data to                                                         tion is not far " rrong fo r values of ]1, . from 1,000 to
+permit an intelligent estimate of friction torque to be                                                      2,200 and for the temperatUl'e and pressure conditions
+made.                                                                                                        under which the te ts were run . It is certain, however,
+   Engine -friction data,-Figllre 14 hows friction-                                                          that thi appro)"-1mation does not hold at low values
+torque curves, obtained from variou s sources, for eigh t                                                    of N t for it a sumes that the torqu e becomes zero at
+modern aircraft engine covering a fairly wide range of                                                       N. = O. The torque does not become zero at N .=O,
+power and displacemen t.     ome of the e curves have                                                        as i indicated by the extrapolated curve for engine 4,
+                                                                                                                                                                          I
+                                                                                                                                                                          I
+                                                                                                                                                                          ,
+                                                                                                                                                    __________________.-J
+---------~--~~~--'~----------~-   ------------------ ---------..-,-,---
+
+
+
+
+                     NEGATIVE TBR          T A JD TORQUE OF SEVERAL FULL-SCALE PROPELI,ER                                            13
+   and there is evidence to show that this deviation be-            friction torque of engines. Oonsiderable information
+   comes greater as the temperature decrea es. Fortu-               of this nature i given in reference 6.
+  nately, however, the deviation from the linear formu la
+  in the rang of low engine speeds usually occurs in a              APPLICATION OF NEGATIVE THRUST A D TORQUE
+                                                                                       DATA
+  range of blade angles where large changes in torque
+  cause but small changes in thru t coefficient and al 0               The development of the controllablc propeller J) as
+  where the values of thru t coefficients are low so that,          greatly in crea ed the opportunitie for u ing the nega-
+  al though the r elative error may be large, the absolute          tive thrust of a propeller to advantage or, in other in-
+  value of the error is small.                                       tance , for avoiding the bad effect of negativc thru t
+      It i also seen that, at high values of engine sp ed           at one blad e angle by changing to another angle where
+   (above 2,000 r. p. m.), the friction torque increa e             these effects are less severe. Some of the ways in
+  fa tel' than the traight-line assumption, 0 that, in              which negative thrust and torque data may be used to
+  problem involving high values of N. (fast dives) , it             deal with such problem are given in the following
+  will be advisable to increase Q,/ e by a mall amount.             paragraphs.
+      Estimation of a value of Q,/ e.- On the assumption               DRAG OF I'ROPELLER ON DEAD ENGINE OF A MULTIE GI E
+                                                                                            AIRPLANE
+  that the friction torque can be determined by the equa-
+  tion Q,= 6 .x, it is clear that a plot of Q,/N . again t             One problem of interest to the operators of multi-
+  displacement !:J.. for a group of engines should be a            engine airplanes concern the que tion of flying with
+ straight line like the dotted line, taken from figure 5           one or more engines dead. In this situation it is
+ of reference 3, in the lower plot in figure 14.                    necessary to reduce the drag of the airplane to a
+       traight lines were drawn through the friction torqu e       minimum so that the power of the remaining engines
+ curves, as illustrated for engine 3 (fig. 14), and the             will be sufficien t to maintain the altitude required to
+  vn,lues of Q,/N . represented by the e lines were plotted        clear all obstacle on the path to the nearest airport. It
+ against 6 in the lower chart. The solid faired line               is of con iderable interest, therefore, to know just where
+  through the e points may po ibly provide a more accu-             to set the blade angle of the dead-engine propeller to
+ rate selection of Q,r •values than the broken line from           absorb the least power.      uch problems may be readily
+ reference 3.                                                      solved by the data given in this report.
+     Where no specific friction data are available, a rea-             Example.- An example of one ueh problem is car-
+   onable estimate of the value of Q,/N ., for any engine,         ried tlu:ough to show the method of a ttack. Th e
+ may be obtained from this curve. In the case of a                 assumed conditions are as follows:
+ geared engine, Q,/N . must be converted to Q,/ when                   Airplane fl ying at 135 miles per hour with one engine
+ calculating the coefficient Q".                                     lead.
+     Applicability of friction data.- The friction torque of           Engine (2 )-750 horsepower ; 6 = 1,500 cu bic inche ;
+ engines varie with many factors; such as the mechan-                  = 1,450; N c= 2,000.
+ ical condition of the engine, the cylinder barrel and oil             Propeller - R. A. F. 6 section ; 3 blades; 11-foot
+ temperature, the barometric pres ure, the throttle open-          diameter.
+ ing, the oil vi co ity , and the gear ratio.                          AltitRde- 5,000 feet ; u= O. 52; Q,/N e= - 0.09 from
+     In the selection of a value of Q,/N. from figure 14,          figure 14 ; Q,/N = - 0.1715 and, after adding 10 percent
+some allowance should properly be made for these fac-              for gearing, becomes - 0.18 5.
+ tor.      ome of the factor, however, tend to cancel
+each other; orne, such as mechanical condition, have                                Qf/N 17,200 X- 0.1 86
+                                                                      Q,,= 17,200 X uD4V1 = 0. 52 X 1l4 X 135 = - 0.0019.
+an unpredictable effect; and others have but a small
+effect. In general, there will probably be little .ill tifi-          In figllr 7 UI O ljn e repl'('selltiJlg QIl i· drawll ill (lill C'
+c~tion for making any corrections but, uncleI' e -tr me             O- C) and iLs intersection wit.h tho Qo curvc for any
+('ondition ) these facLors should nOL b vel'looked .                blade angle repre ent. the valuc of Qc for tha L pal'Licu lar
+     The effect £ fLltitude 1. 1,0 red uce thc friction Lorq lIC    blacl angle an d the 'olTes pollding valu e of To may be
+(pumping 10 se ), but this gain is balanced b.y the in-            obtained by projecting up froUl thi inter ection to Lhe
+                                                                                                                                               [
+crea ed friction due to the lower temperatme oxi. ting             T c curve for the corre poneling blad c anO'lc (linc D- D" ).               I
+                                                                                                                                               I
+                                                                                                                                               I
+at the higher altitudes. Oorreetions for altitude are                 A previou ly pointed out, the assumption tLat the                        I
+                                                                                                                                               [
+therefore unnece sary in mo t ca es.         eal'irw an engine     friction torque approaches zero at low value of                             I
+                                                                                                                                               I
+should not alter the friction torqu e by more than 10 to           (low values of nD /V) doe not hold very well, though
+20 percent at rated engine speed. Ohanges in tempera-              the absolute value of the error resulting from this a -                 I   I
+
+ture will have a considerable effect and may change the              umption is mall. A un add ed refin ement, this error                  i
+  peeific friction torque Q,/6 by as much as 0.004 per 10°         may be reduced as follow :                                              I
+F. change in out ide-air temperatme. I t i beyond the                 E timate the value of friction torque at N .=O and                   I
+scope of this report to consider in detail the quantitative        from it calculate a value of Qc at which the propeller                  I
+aspects of the effects of the many factor that affect the          will top turning. From that point on the Qc ordinate                    ,J
+                                                                                                                                           [
+                                                                                                                                           [
+                                                                                                                                           I
+
+
+
+
+                                                                                                                                           I
+------- -- --- - - ---~~ ~-~--------'~-                                ------- ----- --- - - - - - -----~-----------~~---- -' ~---~----" -- - - - ---- ~
+
+
+
+
+  14                                        REPORT            i O. 641-NATIONAL ADVI ORY COMMITTEE YOR AERONAUTIC
+
+  scale, project horizontally along a line of constant Qc                                                             35° or 40°, which is not far above the normal operating
+  until an inter eciion is made with the previously drawn                                                             range. In case the engine fails in such a manner that it
+  radial line of con iant Q" (such a line A-8 intersecting                                                            locks or if it is desired to stop the rotation to prevent
+  line O-C at 8).      ow the locus of the desired points is                                                          damage to the airplane or the engine, it will be neces ary
+  assumed to be line A- 8- C rather ihan the radial line                                                              to feather the propeller to about 85° to 90° where it will
+  O-C u ed in the less-refined method.                                                                                stop turning and at the same time have a very low drag.
+     The value of the static friction torque will probably                                                            THE USE OF PROPELLER BRAID G EFFECT IN REDUCING DIVJ ' 0
+  lie omewhere between 20 p rcent and 60 percent of                                                                                          SPEEDS
+
+             320                                                                                                         The rapid development in the aerodynamic cleanness
+                   -                                                                            I                     of modern airplane has resulted in a large increase ill
+             2 80 -
+                               j                                                                        I         I   their terminal divi.ng speed ; in fact, ii is que tionabl
+                                                                                                                      whether some of them could 1'0 i t the destructive force
+
+       ~240 ----,-
+                   ~
+
+
+                                                                                                              j       to which such a dive would subject them. Mo t air-
+                                                                                                                      planes are not called upon to make such dives but in
+       .~                      1                                                                                      certain military maneuvers, uch as dive born bing, the
+       i5-
+       ~200
+                               \                                        . -I--          t-~                           vertical or nearly vertical dive is a routine requirement.
+       ~
+                                   \ Deod engine, propeller
+                                   ..                                                                                    The accuracy of dive bombing i adversely affected
+       ~
+       0/60
+                                   1 fdmilling                            r--- l-
+                                                                                         I      I
+                                                                                                        f---
+                                                                                                                      by the high diving speed, and various methods of slow-
+       ~                                                                                                              ing up the dive have been considered. Some of thetlc
+       "J
+       ~                       N             I                                                  I                     method lepend upon a split tructural urfac(', SUell
+     2.120 - -                          ~                                                                             a a trut or wing flap, which opens up to produce un
+     "'--                               ~          ~ -Propeller locked
+       ">
+       ::,
+                   I-                        I-                                               - - -'--'               effective air brake.
+     ,2 80                                                         ~                                                     The airplane is already equipped with a cOllvenient
+                                        I    ~        -    -~          " '-       f-                . '.' r----
+                                        ~
+                                                      -                   =::::::~              I - - r----
+                                                                                                                      and very rugged mechanism for proclucino- a large posi-
+                                                                                                                      tive or negative till·ust. The controllable propeller, if
+              40                                   ,"'-                  --I--~
+                                                           "-...                                      '~               ei at low blade angles, will provide a very effective air
+                                                                                       - -
+               o              10      20     30
+                                                  T 40      50
+                                                                                         ,
+                                                                                              60            70
+                                                                                                                                         r-.-,--.-.-,--'-.-.--r~~~ODD
+
+                                    81ade a ngle 01 0.15 R ,deg.
+ FiGURE 15.-0alculated power required to o\-ercome the drag of a dead engine. idling
+   a nd locked propeller. at 135 m. p. h. on a transport ai rplane.                          Propeller 58 -R6,
+   3 blades, lHoot diameter.
+                                                                                                                                                                                            3.000
+ ihe friction torque at rated engine speed depending
+ upon the engine temperature.
+    In this example a value of 34 percent is used which,
+ [Lt 135 mile per hoUT, gives a value of Qc= - 0.000 77
+ and the projected line on the chart in figure 7 is the
+ line A- B.                                                                                                                  W
+    The rest of the calculations may conveniently be put                                                                    ~300
+                                                                                                                             ~
+ in tabular form:                                                                                                           '-.
+                                                                                                                             <:l
+                                                                                                                            ·S200                                                            1,000
+                    (J
+                !deg.)             -Q,            nD/ Y        -T,        -T.
+                                                                          (lb.)
+                                                                                             t. bp.
+                                                                                       (-T. V ./375)                         t
+                                                                                                                            ~
+              ---                                           -----
+                                                                                                                                   100                                                        500
+                         10    0.00205            1.0         0.0772      748                   270.0
+                         15     .001 7             .9 7        .04 14     402                   145.0
+                         20     .00157             . 25        . 0250     242                     7.0
+                         25     .00132             .692        .0155      150                    54.0
+                         30     .00112             .583        .0107      104                    37.5                                                                                            0
+                         40     .000 77            . 420       .0055       53                    19.1                               0
+                         50     .000877            .292        .0037       36                    13.0
+                         60     .000877            .193        . 0046      45                    16.2
+                         70     .000877            .109        .0036       35                    12.6                 F,GURE l6.-Calculated values of terminal velOCity and engine speed ror a moderu
+                                                                                                                           pursuit ai rplane. VerticaJ descent; 8,000-(00t altitude; 3-blade propeller .
+
+    The results are plotted in figure 15 along with those                                                             brake, as is shown by the curves in figure 16. The
+ for the same propeller when locked (~~ = 0)- For this
+                                                                                                                      Clll'ves were obtained from the test data by a method
+                                                                                                                      that will shortly be explained. They represent tho
+ particular example, it is seen that, through the greater                                                             terminal velocity and engine speed for the modern
+ part of the blade-angle range, the power required to                                                                 plll'suit airplane, shown in figure 17, for various blade-
+ overcome the drag of the locked propeller is considerably                                                            angle settings of its 3-blade controllable propeller.
+ greater than for the windmilling condition. It is also                                                               The effects of compressibility on both airplane and
+ seen that most of the benefit gained from increasing ihe                                                             propeller have been neglected. In the important part
+ blade angle on the windmilling propeller is obtained at                                                              of the curves (low blade angl s), these effects are small.
+
+                                                                                                                                                                                                           I
+                                                                                                                                                       _______________________J
+                    EGATIVE THRUST A ' D TORQ E OF SEVERAL FULL-SCALE PROPELLERS                                                              15
+    This airplane with its propeller set at 35° has a            An examination of forces and moments acting on the
+terminal velocity of 565 miles per hour; whereas at 2°        airplane, the diving characteri tics of which are hown
+its velocity has droppe 1 to 277 miles per hour, or to 49     in figUTe 16, will be given a an example.
+percent of its value at 35°. It will be noticed that the         The upsetting-moment lop for a small di placement
+engine speed rises to excessive values at blade angles        is given by the relation
+around 15°. These destructive engine speeds can be
+                                                                                                dN\ T erl
+n.voided by setting the blade angle somewhere between                                         ( d--;j J"= 57.3
+.- 0 and 0° before the dive is started, indicating that a
+                                                              where
+quick-acting pitch-control mechanism would be ad-                       N, yn.wing moment, ft.-lb .
+vantageous.                                                             .p, angle of yaw, deg.
+    1£ till more bmking effect is requiTed, the propeller               1' 1, di
+                                                                           tance from center of gravity to propeller
+may be et to negative angles and engine power app lied.                   di k, 6.5 ft.
+    Method of calculating ~7t.-Although the method of            For the airplane operating with a blade f1ngle 01 5°,
+calculating terminal velocity still remains a cut-and-try
+proce s, it is made considerably easier by the use of the
+relation Q'=K and the coefficient Qn.
+           •
+formula for a vertical dive is as follows:
+                                               The oa ic                                                       I
+
+whcrc
+        V t , terminal velocity, f. p. s.
+        W, weight or f1irplane, lb.
+        K = pD2
+                 para it.e draO").             .
+         A=(         }~p 1'2 b, eqmvalent paraSIte area .
+
+   From thi formula, V t may be calculated as follows:
+   1. Knowing Q,/N e (from fig. 14), e timate a valu e of
+V t and calculate Q,..
+   2. From suitable charts (fig. 3 to 9) obtain a value
+of To for the desired blade angle.
+   3. Substitute T o in terminal-velocity formula and
+obtain V t calculated.
+   4. If V t estimated does not equal V t calculated,
+make a new estimate and repeat.                               FiGURE 17.- Airplane in vertical dive showing unstable effect caused by propeller
+   With a little experience two trial should be sufficient.     when used as a brake. Span , 35 feet; weight, 4,500 pounds; propeller diameter, 10
+The' value of engine speed is obtained in the usual way         feet; 3 blades.
+
+from the value of nD/V (such as point D', fig. 7).
+                                                              T .=2TcD 2qo, where To is -0.106, D is 10 feet, and qo
+   Stability in dive.-The destabilizing effect of a
+                                                              is the dynamic pressure.
+braking propeller is frequently brought up as an argu-
+                                                                 Therefore
+ment against the use of the propeller as a brake in
+reducing the terminal velocity of airplanes. The                          d!!\ 2 X -0.106 X 102X 6.5 - -24
+question will be briefly considered here in relation to                 ( d"""fJu      57.3         qo-  · qo
+the directional stability of the airplane. The stability
+in pitch presents a similar problem that may become              The normal stabilizing yawing moment for this
+critical if the center of gravity i displaced far from the    airplane may be taken from Diehl (reference 7) who
+                                                              gives as a reasonable valu e for directional stability:
+thTust axis.
+  In a vcr tical dive with braking propeller, the negative
+thTust of the propeller will normally act upward in the                               (~!f)T =0.00005 X Wbql
+vertical plane thTough the center of gravity. If a small      where
+displacement in yaw occurs, as shown in figure 17,                      W is the weigh t.
+the thrust and gravity forces will produce an upsetting                 b, the span.
+couple that must be balanced by a lateral aerodynamic         and    q!) the dynamic pressure.
+force on £in and fuselage. The situation is aggravated        For this example
+                                                                                             (~!f)T =7.9ql
+by the loss of energy in the slipstream, which usually
+passes over the tail surfaces.
+16                RRPORT I O. 641-NATIOI AL ADVI ORY COMMITTRE FOR AERO AUTICS
+
+   Owing to the reduced velocity in the slipstream of the transport and bombing airplanes. The landing distance
+braking propeller, qI < qO 0 that the upsetting-moment    of such airplanes i excc ive and only a certain few
+and the righting-moment slope, as expre ed in the         fields throughout the country are large enough to ac-
+foregoing formulas , cannot be directly compared.         comm date them. It i entirely po ible that their
+   The ratios of these two values of q may be obtained    landing distltnees (glide over 50-foot obstacle +ground
+from the following lip tr am-velocity formul ft:          run ) could be red uced one-trnrd to one-baH by the use
+                                                          or propeller braking power. The blade angle of the
+                   .!JJ= V
+                         w := 1+ 2.545Tc                  two outboard propeller could be set to negative value
+                    qo
+                                                          of 15° or 20° before the landing glide tarted and the
+where w is the au: velocity in the slipstream and 11 blade angles of tbe inboard propellers left in their
+i the velocity of the airplane, which in this example normal take-off po ition so that in an emergency the
+is 2 5 miles per hour.                                    airplane could fly off again on the e two engines. By
+   For this airplane, then,                               a differential u e of the throttles for the inboard
+                                                           (thrust-producing) and outboard (braking) engines a
+             ql=l + (2.545 X -0.106)=0.73                 very nice control of the glide path could be obtained,
+             qo
+                                                           thu making spot landings possible and making the
+Therefore                                                 best use of landing-field ize.
+              (~~)T = 7.9 X O.73 X qo = 5.77qo               Once on the ground the pilot could open his braking
+                                                          engines wide and reduce the ground run by a large
+and the resulting slope of the yawing-moment curve amount. The sum of both of these maneuvers would
+with the propeller operating as a brake i                 reduce the landing distance by 25 to 50 percent. There
+                                                          is a po ibility, of cour e, that the reduced velocity in
+      ~~ =(~~T +(~!f)u= 5.77qO-2.4qo=3.37qo               the slipstream of the braking propellers might have a
+                                                          bad effect on the wing lift or on tbe cooling of the
+and the airplane is found to be stable by a good margin. engmes.
+From this brief analysis, one should say that little         The following table presents the results of landing-
+trouble from directional instability will be encountered run calculations that were made to how the effect on
+in a dive where the propeller is being u ed as a brake the total distance to land over a 50-foo t obstacle of
+unless the airplane was originally ]e igned with little using the propellers as power brakes. The example
+lateral stability.                                        airplane was a fictitious 4-engine transport having a
+   This conclusion seem to agree with the evidence gross weight of 32,000 pound and a landing peed of
+obtained in the dive tests reported in reference 2, where 100 feet per second.     alculations were made for two
+no instability wa noted even when the propeller wa        conditions of landing, as follow: (1 ) where the pro-
+producing its maximum brakino- effect. This evidence, pellers were producing no thrust or drag during the
+however, mu t not be taken as entirely conclusive, for glide and ground run; and (2) where the four propellers
+it represent only two pecific example. It i con- were producing thru t as indicated in figure 1 , i. e.,
+ceivable that condition of all'plane weight, propeller- the inboard propellers producing zero thTU t and tbe
+braking effect, and tb e ba ic tability of tbe airplane outboard propeller 2,000 pounds negative thru t eacb.
+could be such that trouble from directional instability The value of L /D= wa a umed for landing, with
+might be clifIicult to avoid.                             flaps and landing gear down and no propeller tbru t.
+       GLIDE co 'fROL A D RED CTIO I LA DI G R
+                                                                       1- -                                              --
+   Tb re are a number of situations in the fligbt range                                    I,           to     I,+/,
+                                                                        Case    l'       (ft. )       (ft.)    (ft.)   Rat io
+of every airplane where an air brake could be u ed to                                             -     -      - ---
+advantage. With the great increase in functional                         I     7°
+                                                                                     ,   400          1, 900   2,300   1. 00
+flexibility given to the propeller through recen tly                                     --- -- - - -
+                                                                         2     ]4°2'     200          1,260    1,460    .63
+acquired control mechani m, the propeller now provide
+an ideal air brake; if the propeller is set at negative
+blade angles and engine power is applied, it become a           In the foregoing table 'Y is the gliding angle; II i the
+powerful, though nicely controlled, power brake,             distance from the ob tacle to the point of contact with
+which need not rely on the speed of the airplane for         the ground; and l2 i the ground run. In the last col-
+braking power.                                               umn, the ratio of the total distance to the total distance
+   One ituation in which a power brake could be u eel        for case 1 is hown. It is observed that in thi ell. e the
+to advantage on an airplane i in the glide to a landing      glide angle ha been nearly doubled and the total landing
+and al 0 during the landing ground run. In the e             distance reduce i by 37 percent by the use of propeller
+situations it is conceivable tbat the use of the propeller   a power brake . If all four propellers had been u ed
+as brakes would find its be t application in multiengine     as brake , the landing distance could have been reduced
+airplanes. Consider, for example, the new 4-engine           still more.
+1---------------------                                                -~~---                ~---          - - - -~---~ - - - - - -
+
+
+
+
+                           NEGATIVE THRUST A D TORQUE OF SEVERAL FULL- CALE PROPELLERS                                                               17
+                          LONG-R A GE OPER ATIO
+                                                                                 to be 0.56 pound per hor epower-hour. The propell er
+         A difficult problem in the de ign of efficient long-                    efficiency for cruising is 4 percent.
+      range airplanes is that of obtaining sufficient power for                       ow flR, llme that two engine are cut out and their-
+      the take-of}' and at the same time obtaining a low rate                    propeller . et flt 90 0. Thf\ torque of Lhe otber engines
+      of fuel con umptioll at the low power output neces ar.                    is raised to 0 perce n t of rated torq ue and the engine
+      for cruising at maximum L ID. Frequently the engines                      speed to 1,2701'. p. 111 ., or 7.5 percent of rated speed.
+      are throttled so much at cruising speed that high rate                    The cruising power is now 70 percent of the rated power
+      of fuel con umption re ult.      everal method of com-                    but the propeller efficiency drops to 2 percent. The
+      bating this difficulty are available, three of which                      fuel con umption, however, drop to 0.4 5 pound per
+     follow:                                                                    horsepower-hour. The two dead propellers absorb 1
+         1. By the use of catapults, which is perhap the most                   horsepower, which is equivalent to decrea ing the effi-
+     efficient method bu t require an elaborate outlay of                       ciency of the working propellers by 1.5 percent or to a
+     equipment.                                                                 value of 82-1.5= 0.5 percent. The required fuel load
+        2. By de igning for high-altitude flight , where maxi-                  for the two cases is directly proportional to their pecific
+     mum L ID occurs at higher velocities. The gain here                        fuel consumptions and inversely proportional to their
+     mu t be paid for in terms of supercharger power for
+     engines and cabin, added supercharger, propeller, and
+     structural weight.
+        3. By the u e of a controllable propeller, the blade           Propeller thr us t
+     angle for cruising may be increased and at the ame                 f or cas e c
+     time the throttle opened to maintain the desired engine
+    speed. This method i frequently used but its use is
+    lin1ited by engine-operating re trictions and by the
+     fact that it usually entails a loss in propeller efficiency,
+     which tends to offset the lower rate of fuel consumption.               o It). - -
+        As indicated, these methods have their limitations
+    and it is not the purpose of this report to take them up
+    in detail. It is not out of place, however, to sugge t                                       <
+    another, though not a new method, which ha orne
+    connection with the subject of this report.                              Olb . - -
+        This plan, applicable to multiengine airplanes, con-
+    sists merely in cutting out one or more engine after
+    the take-off has been accompli hed and feathering the              2, 0 0 0 lb.
+    dead-engine propeller to some angle around 50 to 90 0
+    where they will not turn and where the power required
+    to overcome their drag will be very small. Combining
+    this method with method 3 hould result in a worth-
+    while decrease in fuel load and a corresponding inerea e
+   in pay load over that obtained 'w ith method 3 alone.
+       Con ider, as an example, the case of a 4-engine flying FIGURE 18.-TIlustration of method of using propellers as power hrakes to reduce
+                                                                    landing distance. Gross weight, 32,000 pounds; landing speed, 100 feet per second.
+    boat having a high peed of 190 miles per hour but
+   which, in long tran oceanic flights, cruises at 35 per- propeller efficiencies, so that the required fuel load with
+   cent po" er at a speed of about 125 mile per hour.                                .      1 d· 0.485 84.0                                            f
+   Other pecification for the airplane are a follows:             th
+                                                                   . e two eno-me c eft 1 0.56 X 0.5 = 90.5 percent 0
+       Engine (4)- rated 850 hoI' epower at 1,450)'. p. m . the fuel load requiJ:ed for the normal crui ing condi-
+       Propellers- 3 blade; 11-foot diameter; contr ollable tion . The 9.5 percent aving in fu 1 load (or increa e
+   through 90 0.                                                  in pay load) would amount to about 950 pounds on a
+       In long-distance crui ing, a ume that the engine 2,000-mile flight. The re ult of such a comparison
+     peed i reduced to 9501'. p. m., or 65.5 percent of rated depend a great deal on the assumed values of engine
+   speed, and that the propeller and the throttle are a,d- torque and engine speed; however, in tIll example the
+   ju ted to give 53.4 percent of rated torque. The cru's- a. sumed values of the e variftbles are considered rea-
+   ing power is then 35 p rcent of rated power and the rate        onable. Other ca e may be found where the sftving
+   of fuel consumption (from fig. 7 of reference ) i found i either greater or les than in this example.
+    1                  REPORT NO. 641-NATJONAL ADVISORY COMMITTEE I"OR AERONAUTICS
+
+      An obvious disadvantage of tbis method is the in-                 the Drag and Torqlle of the Propeller in Terminal-Velocity
+    creased wear on the operating engines, though tbis dis-             Dives. T. R. No. 599, N. A. C. A., 1937.
+                                                                   3. Malina, F. J., _. I J enney, "V. W.: Characteristics of Braked,
+    advantage may be offset by the absence of wear on the
+                                                                        Locked, and Free-WhE'eling Two- and Three-Bladed Pro-
+    dead engines.                                                       pellers. JOllr. Ae!·o. Sci., vol. 3, no. 7, May 1936, pp. 237-
+                                                                        242.
+                                                                   4. ·Weick, Fred E ., and Wood, Donald H .: The Twenty-Foot
+                                                                        Propeller Research Tunnel of the National Advisory Com-
+                                                                        m ittee for Aeronautics. T. R. No. 300, N. A. C. A., 192 .
+    LA GLEY MEMORIAL AERONAUTICAL LABORA'l.'OlW,                   5. Douglas, Donald W .: The Developmerts and Relia bility of
+        NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS,                    the Modern Multi-Engine Air Liner with Special Reference
+         LANGLEY FIELD, VA., November 15,1,937.                         to J\lulti·Engine Airplanes after Engine Failure. Jour.
+                                                                        Aero . Sei., \"01. 2, llO. 4, July 1935, pp . 132- 152.
+                          REFERENCES                               6. Sparrow, S. "\1'. , and Thorne, 1\1. A.: Friciion of A\'iation
+                                                                        Engines. T. R. No. 262, r . A. C. A., 1927.
+    1. Hartman, Edwin P.: Tegative Thrn~t and Torque Character-    7. Diehl, \Y alter Stuart: Engineering ,\ erodn1amics. The
+        istics of an AdJu table-Pitch Metal Propeller. T. R. No.        Ronald Press Company, 1936, p. 206.
+        464, N. A. C. A., 1933.                                    8. Biermann, David.: A Study of the Factors AfIecling i he Ranp:c
+    2. Rhode, Richard V., and Pearson, Henry A.: Flight Tests of        of Airplanes. T. K. No. 592, ::-J. A. C. A. H)37.
+                                                                                                                                     ,:
+
+
+
+
+,
+
+
+
+
+                                                                                                         U. S, GOVERNMENT PRINTIN G OFFICE; 1938
+                                                         ",   ......
+                                                                       "- ........
+
+
+
+
+                         Positive directions of axes and angles (forces and moments) are shown by arrows
+
+                  Axis                                   Moment about axis                                   Angle             Velocitics
+
+                                     Force
+                                   (parallel                                                                                 Linear
+           Designation        Sym- to axis)      Designation            Sym-                Positive    Desiglla-     Sym- (compo- Angular
+                               bol  symbol                               bol                direction     tion         bol nent along
+                                                                                                                              axis)
+                                                                                                                                          -
+         LongitudinaL __ __    X       X         Rolling _____              L               Y~ Z        RolL __ __     ¢                              p
+         LateraL ____ ____     y       y         Pitching ____              Jl1             Z~X         Pitch ___ _    0                              q
+         NormaL _________      Z       Z         yawing ____                N               X~Y         yaw ____ _                                    r
+                                                                                                                       '" I                   I
+
+Absolute coefficients of moment                                                      Angle of set of control Sl                v,elative to neutral
+           L                M                        N                                 position), o. (Indicate sur            by proper subscript.)
+    G1= qbS           Gl1,= qcS                Gn=qbS
+    (roiling)         (pitching)               (yawing)
+
+                                                     4. PROPELLER SYMBOLS
+
+D,     Diameter
+p,     Geometric pitch
+                                                                                     P,         Power, absolute coeffic         JP=pnPlY'
+                                                                                                                                '                 3
+
+                                                                                                                                     :15
+p/D,   Pitch ratio                                                                   G.,        Speed-power coefficient
+VI ,   Inflow velocity
+                                                                                                                                    6...,.2
+
+       Slipstream velocity                                                           'Y],       Efficiency
+V"                                                                                   n,         Revolutions per second, "
+                                                 T                                                                            .~.
+
+
+
+
+T,     Thrust, absolute coefficient GT =pn       2D4
+                                                                                     <P,       Eff3ctive helix angle=tun      (2:n)
+Q,     Torque, absolute coefficient C = pn~D5
+                                           Q
+
+
+                                                  5. NUMERICAL RELATIONS
+
+1 hp.=76.04 kg-m/s=550 ft-lb./sec.                                                   1 lb.=0.4536 kg.
+1 metric horsepower = 1.0132 hp.                                                     1 kg=2.2046 lb.
+1 m.p.h.=0.4470 m.p.s.                                                               1 mi.=1,609.35 m=5,280 ft.
+1 m.p.s.=2.2369 m.p.h.                                                               1 m=3.2808 ft.
+

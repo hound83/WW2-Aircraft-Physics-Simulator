@@ -1,0 +1,294 @@
+{
+  "version": "v2.5 P47C source-first audit",
+  "sourceReport": "NACA 1944 ACR L4L07 (Vogeley), 19930093302",
+  "sourceAccess": "Original NACA report text indexed on Scribd with OCR; original image PDF is identified by NASA but could NOT be obtained for visual verification in this environment",
+  "interpretation": "The P-47C has the same Curtiss 714-1C2-12 blade *design* as the P-47B test specimen; not guaranteed same installed power/drag/position error. This is NOT yet a direct flight-test match.",
+  "pointChecks": [
+    {
+      "run": "20-1",
+      "figure": "7a",
+      "speedIasMph": 160,
+      "power": "normal",
+      "J": 1,
+      "Cp": 0.165,
+      "Ct": 0.132,
+      "etaReportedOCR": 0.799,
+      "tipMach": 0.793,
+      "confidence": "medium: label OCR; η=J·Ct/Cp supports 0.800; run association needs scan",
+      "etaFromReportedCoefficients": 0.8,
+      "coefficientIdentityResidual": 0.001,
+      "modelC": 0.7882,
+      "modelN": null,
+      "modelM": null,
+      "errorC": -0.0108,
+      "domainStatus": "1941 NACA chart Cp outside documented 0.2..0.6, N/M not scored"
+    },
+    {
+      "run": "24-6",
+      "figure": "11a",
+      "power": "high-speed test",
+      "J": 1.59,
+      "Cp": 0.343,
+      "Ct": 0.171,
+      "etaReportedOCR": 0.792,
+      "tipMach": 0.952,
+      "confidence": "medium: Table II OCR values; η=J·Ct/Cp supports 0.793; visually unverified",
+      "etaFromReportedCoefficients": 0.7927,
+      "coefficientIdentityResidual": 0.0007,
+      "modelC": 0.8294,
+      "modelN": 0.8115,
+      "modelM": 0.8114,
+      "errorC": 0.0374,
+      "domainStatus": "inside provisional NACA 1941 grid"
+    },
+    {
+      "run": "24-5",
+      "figure": "11b",
+      "power": "high-speed test",
+      "J": 1.84,
+      "Cp": 0.347,
+      "Ct": 0.151,
+      "etaReportedOCR": 0.801,
+      "tipMach": 0.979,
+      "confidence": "medium: Table II OCR values; η=J·Ct/Cp supports 0.801; visually unverified",
+      "etaFromReportedCoefficients": 0.8007,
+      "coefficientIdentityResidual": -0.0003,
+      "modelC": 0.8257,
+      "modelN": 0.8309,
+      "modelM": 0.8295,
+      "errorC": 0.0247,
+      "domainStatus": "inside provisional NACA 1941 grid"
+    }
+  ],
+  "operatingConditionDiagnostic": [
+    {
+      "altFt": 5000,
+      "rows": [
+        {
+          "mode": "military165",
+          "rating": "military",
+          "altFt": 5000,
+          "iasMph": 165,
+          "tasMphProxy": 177.54,
+          "bhpAssumed": 2000,
+          "etaC": 0.7824,
+          "etaNStrict": null,
+          "chartNWithinCp": false,
+          "J": 0.9512,
+          "Cp": 0.1769,
+          "tipMach": 0.819
+        },
+        {
+          "mode": "normal160",
+          "rating": "normal",
+          "altFt": 5000,
+          "iasMph": 160,
+          "tasMphProxy": 172.18,
+          "bhpAssumed": 1625,
+          "etaC": 0.7855,
+          "etaNStrict": null,
+          "chartNWithinCp": false,
+          "J": 0.9767,
+          "Cp": 0.1706,
+          "tipMach": 0.7753
+        },
+        {
+          "mode": "normal165",
+          "rating": "normal",
+          "altFt": 5000,
+          "iasMph": 165,
+          "tasMphProxy": 177.54,
+          "bhpAssumed": 1625,
+          "etaC": 0.7892,
+          "etaNStrict": null,
+          "chartNWithinCp": false,
+          "J": 1.0072,
+          "Cp": 0.1706,
+          "tipMach": 0.7775
+        }
+      ],
+      "measuredReportedLossRelativePct": [
+        5,
+        8
+      ],
+      "modeledLossRelativePctC": 0.86,
+      "modeledLossRelativePctNStrict": null,
+      "modelCWithinMeasured5to8Percent": false,
+      "note": "Source flight-test loss reported across climb altitude, not a precise pointwise bound; this scenario uses constant representative rated BHP at every altitude and IAS=CAS."
+    },
+    {
+      "altFt": 10000,
+      "rows": [
+        {
+          "mode": "military165",
+          "rating": "military",
+          "altFt": 10000,
+          "iasMph": 165,
+          "tasMphProxy": 191.5,
+          "bhpAssumed": 2000,
+          "etaC": 0.7919,
+          "etaNStrict": 0.7797,
+          "chartNWithinCp": true,
+          "J": 1.026,
+          "Cp": 0.2064,
+          "tipMach": 0.8397
+        },
+        {
+          "mode": "normal160",
+          "rating": "normal",
+          "altFt": 10000,
+          "iasMph": 160,
+          "tasMphProxy": 185.73,
+          "bhpAssumed": 1625,
+          "etaC": 0.795,
+          "etaNStrict": null,
+          "chartNWithinCp": false,
+          "J": 1.0536,
+          "Cp": 0.199,
+          "tipMach": 0.7952
+        },
+        {
+          "mode": "normal165",
+          "rating": "normal",
+          "altFt": 10000,
+          "iasMph": 165,
+          "tasMphProxy": 191.5,
+          "bhpAssumed": 1625,
+          "etaC": 0.7985,
+          "etaNStrict": null,
+          "chartNWithinCp": false,
+          "J": 1.0864,
+          "Cp": 0.199,
+          "tipMach": 0.7977
+        }
+      ],
+      "measuredReportedLossRelativePct": [
+        5,
+        8
+      ],
+      "modeledLossRelativePctC": 0.83,
+      "modeledLossRelativePctNStrict": null,
+      "modelCWithinMeasured5to8Percent": false,
+      "note": "Source flight-test loss reported across climb altitude, not a precise pointwise bound; this scenario uses constant representative rated BHP at every altitude and IAS=CAS."
+    },
+    {
+      "altFt": 15000,
+      "rows": [
+        {
+          "mode": "military165",
+          "rating": "military",
+          "altFt": 15000,
+          "iasMph": 165,
+          "tasMphProxy": 207.09,
+          "bhpAssumed": 2000,
+          "etaC": 0.8015,
+          "etaNStrict": 0.7727,
+          "chartNWithinCp": true,
+          "J": 1.1095,
+          "Cp": 0.2422,
+          "tipMach": 0.8626
+        },
+        {
+          "mode": "normal160",
+          "rating": "normal",
+          "altFt": 15000,
+          "iasMph": 160,
+          "tasMphProxy": 200.86,
+          "bhpAssumed": 1625,
+          "etaC": 0.8043,
+          "etaNStrict": 0.7811,
+          "chartNWithinCp": true,
+          "J": 1.1395,
+          "Cp": 0.2336,
+          "tipMach": 0.8172
+        },
+        {
+          "mode": "normal165",
+          "rating": "normal",
+          "altFt": 15000,
+          "iasMph": 165,
+          "tasMphProxy": 207.09,
+          "bhpAssumed": 1625,
+          "etaC": 0.8076,
+          "etaNStrict": 0.786,
+          "chartNWithinCp": true,
+          "J": 1.1748,
+          "Cp": 0.2336,
+          "tipMach": 0.8202
+        }
+      ],
+      "measuredReportedLossRelativePct": [
+        5,
+        8
+      ],
+      "modeledLossRelativePctC": 0.76,
+      "modeledLossRelativePctNStrict": 1.69,
+      "modelCWithinMeasured5to8Percent": false,
+      "note": "Source flight-test loss reported across climb altitude, not a precise pointwise bound; this scenario uses constant representative rated BHP at every altitude and IAS=CAS."
+    },
+    {
+      "altFt": 20000,
+      "rows": [
+        {
+          "mode": "military165",
+          "rating": "military",
+          "altFt": 20000,
+          "iasMph": 165,
+          "tasMphProxy": 224.53,
+          "bhpAssumed": 2000,
+          "etaC": 0.8105,
+          "etaNStrict": 0.7675,
+          "chartNWithinCp": true,
+          "J": 1.203,
+          "Cp": 0.286,
+          "tipMach": 0.8882
+        },
+        {
+          "mode": "normal160",
+          "rating": "normal",
+          "altFt": 20000,
+          "iasMph": 160,
+          "tasMphProxy": 217.82,
+          "bhpAssumed": 1625,
+          "etaC": 0.8131,
+          "etaNStrict": 0.7773,
+          "chartNWithinCp": true,
+          "J": 1.2356,
+          "Cp": 0.2759,
+          "tipMach": 0.8418
+        },
+        {
+          "mode": "normal165",
+          "rating": "normal",
+          "altFt": 20000,
+          "iasMph": 165,
+          "tasMphProxy": 224.53,
+          "bhpAssumed": 1625,
+          "etaC": 0.816,
+          "etaNStrict": 0.7836,
+          "chartNWithinCp": true,
+          "J": 1.2737,
+          "Cp": 0.2759,
+          "tipMach": 0.8453
+        }
+      ],
+      "measuredReportedLossRelativePct": [
+        5,
+        8
+      ],
+      "modeledLossRelativePctC": 0.67,
+      "modeledLossRelativePctNStrict": 2.05,
+      "modelCWithinMeasured5to8Percent": false,
+      "note": "Source flight-test loss reported across climb altitude, not a precise pointwise bound; this scenario uses constant representative rated BHP at every altitude and IAS=CAS."
+    }
+  ],
+  "highSpeedRowsScored": 2,
+  "criticalFindings": [
+    "C power/advance curve reproduces some OCR run η better than others; generic Cp mapping is not validated for 714 blade.",
+    "The measured climb efficiency loss with increased power is much larger than the difference currently produced by C in these representative power/RPM scenarios.",
+    "The provisional OCR point coefficients meet eta=J*Ct/Cp to rounding, but no original graphic/PDF scan was available to validate reading.",
+    "1946 E6K26 6507A-2 is a different propeller blade family and should NOT be pooled with Curtiss 714 as a single empirical propeller map.",
+    "NACA 1943 F2A turning report is only a method/metadata fixture until measured curves are read from the actual report images."
+  ],
+  "noDefaultChanges": true
+}

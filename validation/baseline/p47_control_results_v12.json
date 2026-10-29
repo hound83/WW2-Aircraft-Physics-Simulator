@@ -1,0 +1,239 @@
+{
+  "version": "v1.2-P47-controlled-airframe",
+  "geometry": {
+    "wingAreaM2": 27.870912,
+    "spanM": 12.426950000000001,
+    "weightLb": 13065
+  },
+  "fixedFactors": "ISA sea-level atmosphere; P-47 shared wing/weight/geometry; Greg source eta(speed) is held identical at both shaft powers and both polars",
+  "polars": {
+    "B_anchor": {
+      "cd0": 0.01968315937146469,
+      "e": 0.78,
+      "source": "P-47B 5000-ft speed-fitted candidate (not measured CD0)"
+    },
+    "Greg_D": {
+      "cd0": 0.0227442377745287,
+      "e": 0.7838029308363434,
+      "source": "Greg D-style worksheet reconstruction (not measured CD0)"
+    }
+  },
+  "scenarios": [
+    {
+      "polarName": "B_anchor",
+      "shaftHp": 2000,
+      "maxSpeedMph": 339.2047968094662,
+      "at200": {
+        "speedMph": 200,
+        "shaftHp": 2000,
+        "dragHp": 540.6058740455101,
+        "parasiteHp": 322.0454446421281,
+        "inducedHp": 218.56042940338207,
+        "eta": 0.825,
+        "availableHp": 1650,
+        "excessHp": 1109.39412595449,
+        "nPower": 2.4649370854057633,
+        "nLift": 3.052513278517677,
+        "nSust": 2.4649370854057633,
+        "turnDegSec": 14.158723193579567,
+        "clMaxStatus": "P-47B provisional CLmax=1.30: turn constraint is illustrative only"
+      },
+      "at250": {
+        "speedMph": 250,
+        "shaftHp": 2000,
+        "dragHp": 803.843352589362,
+        "parasiteHp": 628.9950090666563,
+        "inducedHp": 174.84834352270568,
+        "eta": 0.85,
+        "availableHp": 1700,
+        "excessHp": 896.156647410638,
+        "nPower": 2.474941774706608,
+        "nLift": 4.769551997683869,
+        "nSust": 2.474941774706608,
+        "turnDegSec": 11.381987886230762,
+        "clMaxStatus": "P-47B provisional CLmax=1.30: turn constraint is illustrative only"
+      }
+    },
+    {
+      "polarName": "B_anchor",
+      "shaftHp": 2600,
+      "maxSpeedMph": 373.22645625584346,
+      "at200": {
+        "speedMph": 200,
+        "shaftHp": 2600,
+        "dragHp": 540.6058740455101,
+        "parasiteHp": 322.0454446421281,
+        "inducedHp": 218.56042940338207,
+        "eta": 0.825,
+        "availableHp": 2145,
+        "excessHp": 1604.39412595449,
+        "nPower": 2.8880330139856287,
+        "nLift": 3.052513278517677,
+        "nSust": 2.8880330139856287,
+        "turnDegSec": 17.02694338106273,
+        "clMaxStatus": "P-47B provisional CLmax=1.30: turn constraint is illustrative only"
+      },
+      "at250": {
+        "speedMph": 250,
+        "shaftHp": 2600,
+        "dragHp": 803.843352589362,
+        "parasiteHp": 628.9950090666563,
+        "inducedHp": 174.84834352270568,
+        "eta": 0.85,
+        "availableHp": 2210,
+        "excessHp": 1406.156647410638,
+        "nPower": 3.0070168336129597,
+        "nLift": 4.769551997683869,
+        "nSust": 3.0070168336129597,
+        "turnDegSec": 14.257487709842943,
+        "clMaxStatus": "P-47B provisional CLmax=1.30: turn constraint is illustrative only"
+      }
+    },
+    {
+      "polarName": "Greg_D",
+      "shaftHp": 2000,
+      "maxSpeedMph": 322.8451679175255,
+      "at200": {
+        "speedMph": 200,
+        "shaftHp": 2000,
+        "dragHp": 589.6291874729761,
+        "parasiteHp": 372.12919069096205,
+        "inducedHp": 217.49999678201416,
+        "eta": 0.825,
+        "availableHp": 1650,
+        "excessHp": 1060.3708125270239,
+        "nPower": 2.4238952485005947,
+        "nLift": 3.052513278517677,
+        "nSust": 2.4238952485005947,
+        "turnDegSec": 13.87606044325495,
+        "clMaxStatus": "P-47B provisional CLmax=1.30: turn constraint is illustrative only"
+      },
+      "at250": {
+        "speedMph": 250,
+        "shaftHp": 2000,
+        "dragHp": 900.8148229938964,
+        "parasiteHp": 726.8148255682851,
+        "inducedHp": 173.9999974256114,
+        "eta": 0.85,
+        "availableHp": 1700,
+        "excessHp": 799.1851770061036,
+        "nPower": 2.364956305433785,
+        "nLift": 4.769551997683869,
+        "nSust": 2.364956305433785,
+        "turnDegSec": 10.774720271794155,
+        "clMaxStatus": "P-47B provisional CLmax=1.30: turn constraint is illustrative only"
+      }
+    },
+    {
+      "polarName": "Greg_D",
+      "shaftHp": 2600,
+      "maxSpeedMph": 355.3699061461316,
+      "at200": {
+        "speedMph": 200,
+        "shaftHp": 2600,
+        "dragHp": 589.6291874729761,
+        "parasiteHp": 372.12919069096205,
+        "inducedHp": 217.49999678201416,
+        "eta": 0.825,
+        "availableHp": 2145,
+        "excessHp": 1555.3708125270239,
+        "nPower": 2.855018437478368,
+        "nLift": 3.052513278517677,
+        "nSust": 2.855018437478368,
+        "turnDegSec": 16.805609692401774,
+        "clMaxStatus": "P-47B provisional CLmax=1.30: turn constraint is illustrative only"
+      },
+      "at250": {
+        "speedMph": 250,
+        "shaftHp": 2600,
+        "dragHp": 900.8148229938964,
+        "parasiteHp": 726.8148255682851,
+        "inducedHp": 173.9999974256114,
+        "eta": 0.85,
+        "availableHp": 2210,
+        "excessHp": 1309.1851770061035,
+        "nPower": 2.919598063558627,
+        "nLift": 4.769551997683869,
+        "nSust": 2.919598063558627,
+        "turnDegSec": 13.790589579920013,
+        "clMaxStatus": "P-47B provisional CLmax=1.30: turn constraint is illustrative only"
+      }
+    }
+  ],
+  "isolatedEffects": {
+    "plus600HpSameGregPolarMph": 32.52473822860611,
+    "plus600HpSameBPolarMph": 34.02165944637727,
+    "swapPolarAt2000HpMph": 16.3596288919407,
+    "swapPolarAt2600HpMph": 17.85655010971186
+  },
+  "historicalP47BCheck": {
+    "observations": [
+      {
+        "altFt": 5000,
+        "observedTasMph": 352,
+        "calibratedAtThisAltitude": true,
+        "baselineTasMph": 352.0000000000009,
+        "gregPolarTransferredTasMph": 335.49153363744244,
+        "baselineErrorMph": 9.094947017729282e-13,
+        "gregPolarErrorMph": -16.508466362557556,
+        "inputStatus": "P-47B sourced test, not a D-28 flight measurement"
+      },
+      {
+        "altFt": 15000,
+        "observedTasMph": 386,
+        "calibratedAtThisAltitude": false,
+        "baselineTasMph": 386.0511311975233,
+        "gregPolarTransferredTasMph": 368.46246469534253,
+        "baselineErrorMph": 0.051131197523318406,
+        "gregPolarErrorMph": -17.537535304657467,
+        "inputStatus": "P-47B sourced test, not a D-28 flight measurement"
+      },
+      {
+        "altFt": 25000,
+        "observedTasMph": 420,
+        "calibratedAtThisAltitude": false,
+        "baselineTasMph": 423.26229896231507,
+        "gregPolarTransferredTasMph": 404.7102615708254,
+        "baselineErrorMph": 3.2622989623150715,
+        "gregPolarErrorMph": -15.289738429174577,
+        "inputStatus": "P-47B sourced test, not a D-28 flight measurement"
+      },
+      {
+        "altFt": 27800,
+        "observedTasMph": 429,
+        "calibratedAtThisAltitude": false,
+        "baselineTasMph": 434.0999065944643,
+        "gregPolarTransferredTasMph": 415.31173575768753,
+        "baselineErrorMph": 5.099906594464301,
+        "gregPolarErrorMph": -13.68826424231247,
+        "inputStatus": "P-47B sourced test, not a D-28 flight measurement"
+      },
+      {
+        "altFt": 30000,
+        "observedTasMph": 426,
+        "calibratedAtThisAltitude": false,
+        "baselineTasMph": 429.8896967333412,
+        "gregPolarTransferredTasMph": 411.06880690740127,
+        "baselineErrorMph": 3.889696733341225,
+        "gregPolarErrorMph": -14.931193092598733,
+        "inputStatus": "P-47B sourced test, not a D-28 flight measurement"
+      },
+      {
+        "altFt": 34000,
+        "observedTasMph": 412,
+        "calibratedAtThisAltitude": false,
+        "baselineTasMph": 417.94374795773456,
+        "gregPolarTransferredTasMph": 398.9788553422177,
+        "baselineErrorMph": 5.943747957734558,
+        "gregPolarErrorMph": -13.021144657782315,
+        "inputStatus": "P-47B sourced test, not a D-28 flight measurement"
+      }
+    ],
+    "heldOutMeanAbsErrorMph": {
+      "B_anchor": 3.649356289075695,
+      "Greg_D_directTransfer": 14.893575145305112
+    },
+    "caveat": "Both candidates share the same P47B engine/prop assumptions. CD0 B-anchor was fitted at 5000 ft; other altitudes are withheld from that one-point fit. Source engine curves may nevertheless use the same test series."
+  },
+  "note": "This is a controlled power/drag experiment, not a claim that P-47B and D-28 installations are historically drag-identical. Canopy, propeller, cooling and test configuration can alter aircraft-level CD0 despite common wing geometry."
+}

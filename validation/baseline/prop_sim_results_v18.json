@@ -1,0 +1,826 @@
+{
+  "version": "v1.8-cross-simulator-and-actuator-disk-candidate",
+  "references": {
+    "IL2": {
+      "source": "IL-2 Sturmovik Great Battles developer aircraft specifications",
+      "url": "https://forum.il2sturmovik.com/topic/25993-aircraft-flight-and-technical-specifications-and-operational-details/",
+      "status": "developer-published flight-model statistics; game-version and difficulty/atmosphere details may have changed"
+    },
+    "DCS": {
+      "source": "Eagle Dynamics official DCS documentation and independent DCS simulator test reports",
+      "p47Manual": "https://www.digitalcombatsimulator.com/en/downloads/documentation/dcs-thunderbolt_flight_manual_en/",
+      "p51Manual": "https://www.digitalcombatsimulator.com/en/downloads/documentation/dcs-p-51d_flight_manual_en/",
+      "note": "Official manuals identify simulated variants and operations; manual historical diagrams are NOT DCS-measured flight-model outputs"
+    }
+  },
+  "simulatorPublishedAbsolute": [
+    {
+      "id": "il2_p47d28",
+      "simulator": "IL-2 Great Battles",
+      "variant": "P-47D-28",
+      "weightLb": 14337,
+      "comparisonStatus": "DO NOT compute P-47B historical/model residuals against D-28: different engine, prop and ~14,337 vs 12,565 lb test weight. Greg D-style 2600 hp worksheet is NOT a matched D-28 test.",
+      "confidence": "developer-published simulator specification",
+      "speedSL": [
+        {
+          "mphTAS": 346.103754076195,
+          "kmhTAS": 557,
+          "rating": "WEP"
+        }
+      ],
+      "turnSL": [
+        {
+          "reportedIasKmh": 322,
+          "knotsIAS": null,
+          "seconds": 27.5,
+          "degSec": 13.090909090909092,
+          "rating": "WEP"
+        }
+      ],
+      "climbSL": [
+        {
+          "ftPerMin": 3562.9921259700004,
+          "rating": "WEP",
+          "iasKnots": null
+        }
+      ]
+    },
+    {
+      "id": "il2_p51b5_v1650_7",
+      "simulator": "IL-2 Great Battles",
+      "variant": "P-51B-5",
+      "weightLb": 9676,
+      "comparisonStatus": "Same engine designation as historical P-51B-15, but DIFFERENT B block, ~9,676 versus 9,240 lb, fuel/load and engine horsepower representations (IL-2 specifies 1650 hp sea level versus 1580 hp at 0 ft in historical node model); do not fit B-15 to this benchmark.",
+      "confidence": "developer-published simulator specification",
+      "speedSL": [
+        {
+          "mphTAS": 375.3082001113497,
+          "kmhTAS": 604,
+          "rating": "WEP 67 inHg"
+        }
+      ],
+      "turnSL": [
+        {
+          "reportedIasKmh": 290,
+          "knotsIAS": null,
+          "seconds": 19,
+          "degSec": 18.94736842105263,
+          "rating": "WEP"
+        }
+      ],
+      "climbSL": [
+        {
+          "ftPerMin": 3799.2125984100003,
+          "rating": "WEP",
+          "iasKnots": null
+        }
+      ]
+    },
+    {
+      "id": "il2_p51d15",
+      "simulator": "IL-2 Great Battles",
+      "variant": "P-51D-15",
+      "weightLb": null,
+      "comparisonStatus": "D-15 is NOT B-15: different canopy and airframe drag, mass, fuel and equipment.",
+      "confidence": "developer-published simulator specification",
+      "speedSL": [
+        {
+          "mphTAS": 367.8517458045017,
+          "kmhTAS": 592,
+          "rating": "WEP"
+        }
+      ],
+      "turnSL": [
+        {
+          "reportedIasKmh": 290,
+          "knotsIAS": null,
+          "seconds": 20,
+          "degSec": 18,
+          "rating": "WEP"
+        }
+      ],
+      "climbSL": [
+        {
+          "ftPerMin": 3562.9921259700004,
+          "rating": "WEP",
+          "iasKnots": null
+        }
+      ]
+    },
+    {
+      "id": "dcs_p51d_tacview2022",
+      "simulator": "DCS World, 2022 user-measured, derivative E-M chart",
+      "variant": "P-51D",
+      "weightLb": 9548,
+      "comparisonStatus": "User-derived and author LOW confidence, historical DCS version and unknown exact engine setting; never promote to DCS official or to P-51B measured flight data.",
+      "confidence": "LOW",
+      "speedSL": [],
+      "turnSL": [
+        {
+          "reportedIasKmh": null,
+          "knotsIAS": 132,
+          "seconds": 21.176470588235293,
+          "degSec": 17,
+          "rating": "full power"
+        }
+      ],
+      "climbSL": [
+        {
+          "ftPerMin": 2820,
+          "rating": "full power",
+          "iasKnots": 132
+        }
+      ]
+    },
+    {
+      "id": "dcs_p51d_2020_user_test",
+      "simulator": "DCS World, old v2.5.6.57530, 2020 user measurement",
+      "variant": "P-51D (DCS module variant)",
+      "weightLb": null,
+      "comparisonStatus": "DCS player P-51D at 67 inHg and IL-2 developer P-51D-15 at WEP both state 592 km/h TAS sea level: notable convergence but distinct variant, temperature, fuel and historical simulator builds. Never treat matching reported numbers as proof of independent fidelity.",
+      "confidence": "UNVERIFIED USER-REPORTED; OLD BUILD",
+      "speedSL": [
+        {
+          "mphTAS": 367.8517458045017,
+          "kmhTAS": 592,
+          "rating": "67 inHg"
+        }
+      ],
+      "turnSL": [],
+      "climbSL": []
+    },
+    {
+      "id": "dcs_p47d30_2020_user_test",
+      "simulator": "DCS World, old v2.5.6.57530, 2020 user measurement",
+      "variant": "P-47D-30",
+      "weightLb": null,
+      "comparisonStatus": "DO NOT compare 71-inHg DCS D-30 615 km/h sea-level directly with 64-inHg IL-2 D-28 557 km/h; both rating AND model differ. DCS official P-47D manual confirms D-30 (not P-47B).",
+      "confidence": "UNVERIFIED USER-REPORTED; OLD BUILD",
+      "speedSL": [
+        {
+          "mphTAS": 382.1432832259604,
+          "kmhTAS": 615,
+          "rating": "71 inHg"
+        }
+      ],
+      "turnSL": [],
+      "climbSL": []
+    }
+  ],
+  "variantRules": [
+    {
+      "id": "il2_p47d28",
+      "variant": "P-47D-28",
+      "warning": "DO NOT compute P-47B historical/model residuals against D-28: different engine, prop and ~14,337 vs 12,565 lb test weight. Greg D-style 2600 hp worksheet is NOT a matched D-28 test."
+    },
+    {
+      "id": "il2_p51b5_v1650_7",
+      "variant": "P-51B-5",
+      "warning": "Same engine designation as historical P-51B-15, but DIFFERENT B block, ~9,676 versus 9,240 lb, fuel/load and engine horsepower representations (IL-2 specifies 1650 hp sea level versus 1580 hp at 0 ft in historical node model); do not fit B-15 to this benchmark."
+    },
+    {
+      "id": "il2_p51d15",
+      "variant": "P-51D-15",
+      "warning": "D-15 is NOT B-15: different canopy and airframe drag, mass, fuel and equipment."
+    },
+    {
+      "id": "dcs_p51d_tacview2022",
+      "variant": "P-51D",
+      "warning": "User-derived and author LOW confidence, historical DCS version and unknown exact engine setting; never promote to DCS official or to P-51B measured flight data."
+    },
+    {
+      "id": "dcs_p51d_2020_user_test",
+      "variant": "P-51D (DCS module variant)",
+      "warning": "DCS player P-51D at 67 inHg and IL-2 developer P-51D-15 at WEP both state 592 km/h TAS sea level: notable convergence but distinct variant, temperature, fuel and historical simulator builds. Never treat matching reported numbers as proof of independent fidelity."
+    },
+    {
+      "id": "dcs_p47d30_2020_user_test",
+      "variant": "P-47D-30",
+      "warning": "DO NOT compare 71-inHg DCS D-30 615 km/h sea-level directly with 64-inHg IL-2 D-28 557 km/h; both rating AND model differ. DCS official P-47D manual confirms D-30 (not P-47B)."
+    }
+  ],
+  "bf109ConditionalEFromV17": 0.5469811060803458,
+  "historicalScope": "ONLY P-47B 41-5902, P-51B-15 43-24777, and Bf109F4 source and provisional scenarios are represented by the working physics solver; D-28/D-30/D-15 simulator variants are registry values NOT evaluated by a fictitious model.",
+  "measuredHistorical": {
+    "p47bSpeedHoldoutC": 3.649356289075695,
+    "p51bSpeedHoldoutC": 2.6099007098907805,
+    "p51bActualClimbAt2200": {
+      "67inHg": 3820,
+      "75inHg": 4380
+    }
+  },
+  "candidates": {
+    "C": {
+      "p47bSpeed": {
+        "cd0": 0.01968315937146469,
+        "anchor": {
+          "altFt": 5000,
+          "tasMph": 352,
+          "rating": "military",
+          "gear": "turbo",
+          "source": "USAAF PHQ-M-19-1417-A, reported 5,000-ft speed"
+        },
+        "rows": [
+          {
+            "altFt": 5000,
+            "rating": "military",
+            "reportedMphTAS": 352,
+            "predictedMphTAS": 352.0000000000009,
+            "role": "calibration anchor",
+            "residualMph": 9.094947017729282e-13
+          },
+          {
+            "altFt": 15000,
+            "rating": "military",
+            "reportedMphTAS": 386,
+            "predictedMphTAS": 386.0511311975233,
+            "role": "historical same-rating holdout",
+            "residualMph": 0.051131197523318406
+          },
+          {
+            "altFt": 25000,
+            "rating": "military",
+            "reportedMphTAS": 420,
+            "predictedMphTAS": 423.26229896231507,
+            "role": "historical same-rating holdout",
+            "residualMph": 3.2622989623150715
+          },
+          {
+            "altFt": 27800,
+            "rating": "military",
+            "reportedMphTAS": 429,
+            "predictedMphTAS": 434.0999065944643,
+            "role": "historical same-rating holdout",
+            "residualMph": 5.099906594464301
+          },
+          {
+            "altFt": 30000,
+            "rating": "military",
+            "reportedMphTAS": 426,
+            "predictedMphTAS": 429.8896967333412,
+            "role": "historical same-rating holdout",
+            "residualMph": 3.889696733341225
+          },
+          {
+            "altFt": 34000,
+            "rating": "military",
+            "reportedMphTAS": 412,
+            "predictedMphTAS": 417.94374795773456,
+            "role": "historical same-rating holdout",
+            "residualMph": 5.943747957734558
+          }
+        ],
+        "withheldCount": 5,
+        "holdoutMAEMph": 3.649356289075695
+      },
+      "p51bSpeed": {
+        "cd0": 0.0162226349489314,
+        "anchor": {
+          "altFt": 0,
+          "tasMph": 361.5,
+          "rating": "67inHg",
+          "gear": "low",
+          "source": "USAAF Eng-47-1749-A sea level reported speed"
+        },
+        "rows": [
+          {
+            "altFt": 0,
+            "rating": "67inHg",
+            "reportedMphTAS": 361.5,
+            "predictedMphTAS": 361.4999999999991,
+            "role": "calibration anchor",
+            "residualMph": -9.094947017729282e-13
+          },
+          {
+            "altFt": 4000,
+            "rating": "67inHg",
+            "reportedMphTAS": 380,
+            "predictedMphTAS": 377.98763003052863,
+            "role": "historical same-rating holdout",
+            "residualMph": -2.012369969471365
+          },
+          {
+            "altFt": 7400,
+            "rating": "67inHg",
+            "reportedMphTAS": 395.5,
+            "predictedMphTAS": 392.734579732748,
+            "role": "historical same-rating holdout",
+            "residualMph": -2.7654202672520114
+          },
+          {
+            "altFt": 10300,
+            "rating": "67inHg",
+            "reportedMphTAS": 409,
+            "predictedMphTAS": 405.8958576063642,
+            "role": "historical same-rating holdout",
+            "residualMph": -3.1041423936358115
+          },
+          {
+            "altFt": 18000,
+            "rating": "67inHg",
+            "reportedMphTAS": 408,
+            "predictedMphTAS": 407.120145413056,
+            "role": "historical same-rating holdout",
+            "residualMph": -0.8798545869440204
+          },
+          {
+            "altFt": 20800,
+            "rating": "67inHg",
+            "reportedMphTAS": 417,
+            "predictedMphTAS": 417.6059663299684,
+            "role": "historical same-rating holdout",
+            "residualMph": 0.6059663299683962
+          },
+          {
+            "altFt": 24000,
+            "rating": "67inHg",
+            "reportedMphTAS": 426,
+            "predictedMphTAS": 429.83799510290646,
+            "role": "historical same-rating holdout",
+            "residualMph": 3.8379951029064614
+          },
+          {
+            "altFt": 28000,
+            "rating": "67inHg",
+            "reportedMphTAS": 419,
+            "predictedMphTAS": 422.8539732156414,
+            "role": "historical same-rating holdout",
+            "residualMph": 3.8539732156414175
+          },
+          {
+            "altFt": 32000,
+            "rating": "67inHg",
+            "reportedMphTAS": 410,
+            "predictedMphTAS": 413.81948381330676,
+            "role": "historical same-rating holdout",
+            "residualMph": 3.8194838133067606
+          },
+          {
+            "altFt": 0,
+            "rating": "75inHg",
+            "reportedMphTAS": 376.5,
+            "predictedMphTAS": 376.9190564865303,
+            "role": "different engine rating (separate audit)",
+            "residualMph": 0.4190564865302804
+          },
+          {
+            "altFt": 18000,
+            "rating": "75inHg",
+            "reportedMphTAS": 423,
+            "predictedMphTAS": 424.83596752601716,
+            "role": "different engine rating (separate audit)",
+            "residualMph": 1.835967526017157
+          },
+          {
+            "altFt": 20800,
+            "rating": "75inHg",
+            "reportedMphTAS": 431,
+            "predictedMphTAS": 435.2281032421952,
+            "role": "different engine rating (separate audit)",
+            "residualMph": 4.228103242195175
+          }
+        ],
+        "withheldCount": 8,
+        "holdoutMAEMph": 2.6099007098907805
+      },
+      "p51bClimb": [
+        {
+          "rating": "67inHg",
+          "observedFpm": 3820,
+          "altFt": 2200,
+          "modelFpm": 3401.0861529653166,
+          "residualFpm": -418.9138470346834,
+          "optimumTasMph": 171,
+          "shaftHp": 1603.1,
+          "eta": 0.7809409097141065
+        },
+        {
+          "rating": "75inHg",
+          "observedFpm": 4380,
+          "altFt": 2200,
+          "modelFpm": 3978.538324234923,
+          "residualFpm": -401.46167576507696,
+          "optimumTasMph": 175,
+          "shaftHp": 1811.1,
+          "eta": 0.7841005727757949
+        }
+      ],
+      "p51bPowerRequired": {
+        "rows": [
+          {
+            "tasMph": 270,
+            "sourceTestRpm": 2100,
+            "sourceBhp": 490,
+            "predictedRequiredShaftBhp": 555.8276814692874,
+            "residualBhp": 65.82768146928743,
+            "eta": 0.808278745094226
+          },
+          {
+            "tasMph": 318,
+            "sourceTestRpm": 2300,
+            "sourceBhp": 610,
+            "predictedRequiredShaftBhp": 728.6330118989196,
+            "residualBhp": 118.63301189891956,
+            "eta": 0.7915851867875054
+          },
+          {
+            "tasMph": 387,
+            "sourceTestRpm": 2700,
+            "sourceBhp": 1000,
+            "predictedRequiredShaftBhp": 1117.20384741811,
+            "residualBhp": 117.20384741810994,
+            "eta": 0.7811960318544628
+          },
+          {
+            "tasMph": 395,
+            "sourceTestRpm": 3000,
+            "sourceBhp": 1090,
+            "predictedRequiredShaftBhp": 1142.9063950906718,
+            "residualBhp": 52.90639509067182,
+            "eta": 0.8017509038428665
+          },
+          {
+            "tasMph": 415,
+            "sourceTestRpm": 3000,
+            "sourceBhp": 1290,
+            "predictedRequiredShaftBhp": 1309.5422563049074,
+            "residualBhp": 19.54225630490737,
+            "eta": 0.7897478971128876
+          },
+          {
+            "tasMph": 430,
+            "sourceTestRpm": 3000,
+            "sourceBhp": 1440,
+            "predictedRequiredShaftBhp": 1451.75589065585,
+            "residualBhp": 11.755890655849953,
+            "eta": 0.7792324264469968
+          }
+        ],
+        "MAEBhp": 64.31151380629102,
+        "lowMidMAEBhp": 88.64273396924719,
+        "warning": null
+      },
+      "bf109f4AtHeldE": [
+        {
+          "altFt": 0,
+          "reportedSimSeconds": 20.3,
+          "turnSeconds": 20.299999999999997,
+          "turnDegSec": 17.733990147783253,
+          "shaftHp": 1331.532,
+          "propEta": 0.7804028180605987,
+          "propulsiveHp": 1039.1313251378651,
+          "inducedHp": 138.64718908305437,
+          "parasiteHp": 123.59346636257384,
+          "speedAssumption": "simulator IAS provisionally treated as CAS, NOT matched IAS correction"
+        },
+        {
+          "altFt": 9842.51968503937,
+          "reportedSimSeconds": 26.1,
+          "turnSeconds": 25.891688221818473,
+          "turnDegSec": 13.904075968929453,
+          "shaftHp": 1313.0384630129258,
+          "propEta": 0.7986757431913056,
+          "propulsiveHp": 1048.6919702856183,
+          "inducedHp": 161.3684516872374,
+          "parasiteHp": 142.33142759229884,
+          "speedAssumption": "simulator IAS provisionally treated as CAS, NOT matched IAS correction"
+        }
+      ],
+      "bf109f4CombatAt170Eas5000ft": {
+        "sustDegSec": 14.541623444263598,
+        "propEta": 0.8006861191741667,
+        "shaftHp": 1183.584
+      },
+      "powerLoading": {
+        "p51b": {
+          "altFt": 2200,
+          "tasMph": 171,
+          "shaftHp": 1603.1,
+          "etaMinus10pct": 0.7806499297804856,
+          "etaPlus10pct": 0.7812076569692737,
+          "delta": 0.0005577271887881041,
+          "powerLoadingTrend": "efficiency rises with rising power (contrary to NACA low-speed induced loading trend)"
+        },
+        "bf109f4": {
+          "altFt": 5000,
+          "tasMph": 183.13793648731854,
+          "shaftHp": 1183.584,
+          "etaMinus10pct": 0.8003960267977513,
+          "etaPlus10pct": 0.800930387858227,
+          "delta": 0.0005343610604756632,
+          "powerLoadingTrend": "efficiency rises with rising power (contrary to NACA low-speed induced loading trend)"
+        }
+      }
+    },
+    "D": {
+      "p47bSpeed": {
+        "cd0": 0.02008097993232247,
+        "anchor": {
+          "altFt": 5000,
+          "tasMph": 352,
+          "rating": "military",
+          "gear": "turbo",
+          "source": "USAAF PHQ-M-19-1417-A, reported 5,000-ft speed"
+        },
+        "rows": [
+          {
+            "altFt": 5000,
+            "rating": "military",
+            "reportedMphTAS": 352,
+            "predictedMphTAS": 352.0000000000009,
+            "role": "calibration anchor",
+            "residualMph": 9.094947017729282e-13
+          },
+          {
+            "altFt": 15000,
+            "rating": "military",
+            "reportedMphTAS": 386,
+            "predictedMphTAS": 388.1034127182111,
+            "role": "historical same-rating holdout",
+            "residualMph": 2.103412718211075
+          },
+          {
+            "altFt": 25000,
+            "rating": "military",
+            "reportedMphTAS": 420,
+            "predictedMphTAS": 430.2555297223198,
+            "role": "historical same-rating holdout",
+            "residualMph": 10.255529722319807
+          },
+          {
+            "altFt": 27800,
+            "rating": "military",
+            "reportedMphTAS": 429,
+            "predictedMphTAS": 443.27950175213937,
+            "role": "historical same-rating holdout",
+            "residualMph": 14.279501752139367
+          },
+          {
+            "altFt": 30000,
+            "rating": "military",
+            "reportedMphTAS": 426,
+            "predictedMphTAS": 438.83906267092334,
+            "role": "historical same-rating holdout",
+            "residualMph": 12.83906267092334
+          },
+          {
+            "altFt": 34000,
+            "rating": "military",
+            "reportedMphTAS": 412,
+            "predictedMphTAS": 426.0063831205416,
+            "role": "historical same-rating holdout",
+            "residualMph": 14.006383120541614
+          }
+        ],
+        "withheldCount": 5,
+        "holdoutMAEMph": 10.696777996827041
+      },
+      "p51bSpeed": {
+        "cd0": 0.01673384295195925,
+        "anchor": {
+          "altFt": 0,
+          "tasMph": 361.5,
+          "rating": "67inHg",
+          "gear": "low",
+          "source": "USAAF Eng-47-1749-A sea level reported speed"
+        },
+        "rows": [
+          {
+            "altFt": 0,
+            "rating": "67inHg",
+            "reportedMphTAS": 361.5,
+            "predictedMphTAS": 361.4999999999991,
+            "role": "calibration anchor",
+            "residualMph": -9.094947017729282e-13
+          },
+          {
+            "altFt": 4000,
+            "rating": "67inHg",
+            "reportedMphTAS": 380,
+            "predictedMphTAS": 379.04685949113355,
+            "role": "historical same-rating holdout",
+            "residualMph": -0.9531405088664542
+          },
+          {
+            "altFt": 7400,
+            "rating": "67inHg",
+            "reportedMphTAS": 395.5,
+            "predictedMphTAS": 395.0743492804422,
+            "role": "historical same-rating holdout",
+            "residualMph": -0.42565071955777967
+          },
+          {
+            "altFt": 10300,
+            "rating": "67inHg",
+            "reportedMphTAS": 409,
+            "predictedMphTAS": 409.69875813799536,
+            "role": "historical same-rating holdout",
+            "residualMph": 0.6987581379953554
+          },
+          {
+            "altFt": 18000,
+            "rating": "67inHg",
+            "reportedMphTAS": 408,
+            "predictedMphTAS": 411.50031726371253,
+            "role": "historical same-rating holdout",
+            "residualMph": 3.5003172637125317
+          },
+          {
+            "altFt": 20800,
+            "rating": "67inHg",
+            "reportedMphTAS": 417,
+            "predictedMphTAS": 423.63335121883665,
+            "role": "historical same-rating holdout",
+            "residualMph": 6.633351218836651
+          },
+          {
+            "altFt": 24000,
+            "rating": "67inHg",
+            "reportedMphTAS": 426,
+            "predictedMphTAS": 438.1840918554926,
+            "role": "historical same-rating holdout",
+            "residualMph": 12.184091855492625
+          },
+          {
+            "altFt": 28000,
+            "rating": "67inHg",
+            "reportedMphTAS": 419,
+            "predictedMphTAS": 430.7674529704609,
+            "role": "historical same-rating holdout",
+            "residualMph": 11.767452970460909
+          },
+          {
+            "altFt": 32000,
+            "rating": "67inHg",
+            "reportedMphTAS": 410,
+            "predictedMphTAS": 421.2363230442561,
+            "role": "historical same-rating holdout",
+            "residualMph": 11.236323044256096
+          },
+          {
+            "altFt": 0,
+            "rating": "75inHg",
+            "reportedMphTAS": 376.5,
+            "predictedMphTAS": 377.8579489827089,
+            "role": "different engine rating (separate audit)",
+            "residualMph": 1.3579489827088764
+          },
+          {
+            "altFt": 18000,
+            "rating": "75inHg",
+            "reportedMphTAS": 423,
+            "predictedMphTAS": 431.6477000433015,
+            "role": "different engine rating (separate audit)",
+            "residualMph": 8.647700043301484
+          },
+          {
+            "altFt": 20800,
+            "rating": "75inHg",
+            "reportedMphTAS": 431,
+            "predictedMphTAS": 444.03933027000767,
+            "role": "different engine rating (separate audit)",
+            "residualMph": 13.039330270007667
+          }
+        ],
+        "withheldCount": 8,
+        "holdoutMAEMph": 5.9248857148973
+      },
+      "p51bClimb": [
+        {
+          "rating": "67inHg",
+          "observedFpm": 3820,
+          "altFt": 2200,
+          "modelFpm": 3379.5746260969017,
+          "residualFpm": -440.42537390309826,
+          "optimumTasMph": 177,
+          "shaftHp": 1603.1,
+          "eta": 0.7844127601972992
+        },
+        {
+          "rating": "75inHg",
+          "observedFpm": 4380,
+          "altFt": 2200,
+          "modelFpm": 3916.596370346313,
+          "residualFpm": -463.40362965368695,
+          "optimumTasMph": 182,
+          "shaftHp": 1811.1,
+          "eta": 0.7823737051336244
+        }
+      ],
+      "p51bPowerRequired": {
+        "rows": [
+          {
+            "tasMph": 270,
+            "sourceTestRpm": 2100,
+            "sourceBhp": 490,
+            "predictedRequiredShaftBhp": 546.1904808557586,
+            "residualBhp": 56.19048085575855,
+            "eta": 0.8369011857940115
+          },
+          {
+            "tasMph": 318,
+            "sourceTestRpm": 2300,
+            "sourceBhp": 610,
+            "predictedRequiredShaftBhp": 701.9672912267865,
+            "residualBhp": 91.96729122678653,
+            "eta": 0.8399108922522329
+          },
+          {
+            "tasMph": 387,
+            "sourceTestRpm": 2700,
+            "sourceBhp": 1000,
+            "predictedRequiredShaftBhp": 1065.4834563912968,
+            "residualBhp": 65.48345639129684,
+            "eta": 0.8407946240787322
+          },
+          {
+            "tasMph": 395,
+            "sourceTestRpm": 3000,
+            "sourceBhp": 1090,
+            "predictedRequiredShaftBhp": 1119.3414301652374,
+            "residualBhp": 29.341430165237398,
+            "eta": 0.840571054019961
+          },
+          {
+            "tasMph": 415,
+            "sourceTestRpm": 3000,
+            "sourceBhp": 1290,
+            "predictedRequiredShaftBhp": 1264.5295379603326,
+            "residualBhp": -25.47046203966738,
+            "eta": 0.84038423683319
+          },
+          {
+            "tasMph": 430,
+            "sourceTestRpm": 3000,
+            "sourceBhp": 1440,
+            "predictedRequiredShaftBhp": 1383.8717471211742,
+            "residualBhp": -56.12825287882583,
+            "eta": 0.8403518241222397
+          }
+        ],
+        "MAEBhp": 54.09689559292875,
+        "lowMidMAEBhp": 60.74566465976983,
+        "warning": "D momentum disk excludes RPM-sensitive blade profile losses; this is NOT a validated propeller curve"
+      },
+      "bf109f4AtHeldE": [
+        {
+          "altFt": 0,
+          "reportedSimSeconds": 20.3,
+          "turnSeconds": 20.427622745492336,
+          "turnDegSec": 17.623196026539087,
+          "shaftHp": 1331.532,
+          "propEta": 0.77544623851979,
+          "propulsiveHp": 1032.531480868733,
+          "inducedHp": 138.64718908305437,
+          "parasiteHp": 126.67063661052275,
+          "speedAssumption": "simulator IAS provisionally treated as CAS, NOT matched IAS correction"
+        },
+        {
+          "altFt": 9842.51968503937,
+          "reportedSimSeconds": 26.1,
+          "turnSeconds": 26.296999707470075,
+          "turnDegSec": 13.689774651278425,
+          "shaftHp": 1313.0384630129258,
+          "propEta": 0.7840194978573168,
+          "propulsiveHp": 1029.447756438737,
+          "inducedHp": 161.3684516872374,
+          "parasiteHp": 145.87512652093204,
+          "speedAssumption": "simulator IAS provisionally treated as CAS, NOT matched IAS correction"
+        }
+      ],
+      "bf109f4CombatAt170Eas5000ft": {
+        "sustDegSec": 14.336836470384398,
+        "propEta": 0.7879633319087674,
+        "shaftHp": 1183.584
+      },
+      "powerLoading": {
+        "p51b": {
+          "altFt": 2200,
+          "tasMph": 171,
+          "shaftHp": 1603.1,
+          "etaMinus10pct": 0.7845124307651645,
+          "etaPlus10pct": 0.773332902398118,
+          "delta": -0.011179528367046498,
+          "powerLoadingTrend": "efficiency falls with rising power (physically correct induced loading trend)"
+        },
+        "bf109f4": {
+          "altFt": 5000,
+          "tasMph": 183.13793648731854,
+          "shaftHp": 1183.584,
+          "etaMinus10pct": 0.79307363132231,
+          "etaPlus10pct": 0.78303269594834,
+          "delta": -0.010040935373969995,
+          "powerLoadingTrend": "efficiency falls with rising power (physically correct induced loading trend)"
+        }
+      }
+    }
+  },
+  "candidateD": {
+    "basis": "one-dimensional actuator-disk momentum power balance (physics) with a uniform 0.85 assumed blade/profile/installation power fraction (NOT measured NACA constant)",
+    "primarySource": "NACA ACR L4I29 (1944), Charts for Determining Propeller Efficiency; https://ntrs.nasa.gov/citations/19930093312",
+    "secondPrimarySource": "NACA TN 2022 (1950), actual 165mph IAS three-bladed P-47D trial; https://ntrs.nasa.gov/citations/19930082679",
+    "limitations": "Infinite-blade ideal momentum disk, no type-specific pitch schedule, blade section losses, prop RPM advance-ratio shape, slipstream interference, exhaust thrust or calibrated IAS. Unmeasured .85 constant is global and not allowed to silently replace validated profile C.",
+    "decision": "Evaluate against all historical holdouts and simulator plausibility. REJECT as default if it increases errors or produces unrealistic low-speed physics; no P51/F4-specific adjustable corrections."
+  },
+  "sourceCaution": "IL-2 statistics and 2020–2022 DCS user tests are neither independent wartime flight tests nor variant-matched model calibration data. Published speed values are TAS or presumed TAS; turn IAS has unknown pitot correction. DCS user chart is LOW confidence."
+}

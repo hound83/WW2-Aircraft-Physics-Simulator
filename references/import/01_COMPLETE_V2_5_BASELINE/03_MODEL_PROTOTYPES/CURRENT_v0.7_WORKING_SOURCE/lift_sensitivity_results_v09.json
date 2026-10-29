@@ -1,0 +1,595 @@
+{
+  "version": "clean-physics-v0.9-sensitivity",
+  "altFt": 5000,
+  "referenceEasMph": 170,
+  "grid": {
+    "oswald": [
+      0.6,
+      0.78,
+      0.9
+    ],
+    "clMaxMultipliers": [
+      0.85,
+      1,
+      1.15
+    ],
+    "speedSearchEasMph": [
+      90,
+      300
+    ],
+    "speedStepMph": 1
+  },
+  "warning": "Exploratory assumptions, not measured bounds or probability distributions. Different airplane test weights and power states remain source-limited. Speed-anchor CD0 stays fixed; no refit per scenario.",
+  "aircraft": {
+    "bf109f4": {
+      "name": "Bf 109 F-4 / DB 601E",
+      "weightLb": 6371,
+      "assumedClMax": 1.5,
+      "originalStatus": "Assumption only; no matched low-speed calibrated wartime flight data",
+      "baseline": {
+        "e": 0.78,
+        "clFactor": 1,
+        "clMax": 1.5,
+        "stallEasMph": 98.06509011620857,
+        "instant170DegSec": 19.449328422209508,
+        "sustained170DegSec": 18.689640191167204,
+        "peakInstant": {
+          "easMph": 259,
+          "value": 31.09775751849357
+        },
+        "peakSustained": {
+          "easMph": 167,
+          "value": 18.902221274098636
+        }
+      },
+      "sensitivity": {
+        "stallEasMph": [
+          91.44616805388416,
+          106.36652447468451
+        ],
+        "instant170DegSec": [
+          16.131768066075427,
+          22.7037624133322
+        ],
+        "sustained170DegSec": [
+          16.05692086360487,
+          20.255565795901827
+        ],
+        "peakInstantDegSec": [
+          28.67869734193325,
+          33.402023803664875
+        ],
+        "peakSustainedDegSec": [
+          16.05692086360487,
+          21.032923143326922
+        ]
+      },
+      "scenarios": [
+        {
+          "e": 0.6,
+          "clFactor": 0.85,
+          "clMax": 1.275,
+          "stallEasMph": 106.36652447468451,
+          "instant170DegSec": 16.131768066075427,
+          "sustained170DegSec": 16.05692086360487,
+          "peakInstant": {
+            "easMph": 281,
+            "value": 28.67869734193325
+          },
+          "peakSustained": {
+            "easMph": 170,
+            "value": 16.05692086360487
+          }
+        },
+        {
+          "e": 0.6,
+          "clFactor": 1,
+          "clMax": 1.5,
+          "stallEasMph": 98.06509011620857,
+          "instant170DegSec": 19.449328422209508,
+          "sustained170DegSec": 16.05692086360487,
+          "peakInstant": {
+            "easMph": 259,
+            "value": 31.09775751849357
+          },
+          "peakSustained": {
+            "easMph": 154,
+            "value": 17.003405167995485
+          }
+        },
+        {
+          "e": 0.6,
+          "clFactor": 1.15,
+          "clMax": 1.7249999999999999,
+          "stallEasMph": 91.44616805388416,
+          "instant170DegSec": 22.7037624133322,
+          "sustained170DegSec": 16.05692086360487,
+          "peakInstant": {
+            "easMph": 242,
+            "value": 33.402023803664875
+          },
+          "peakSustained": {
+            "easMph": 141,
+            "value": 17.771946872952892
+          }
+        },
+        {
+          "e": 0.78,
+          "clFactor": 0.85,
+          "clMax": 1.275,
+          "stallEasMph": 106.36652447468451,
+          "instant170DegSec": 16.131768066075427,
+          "sustained170DegSec": 16.131768066075427,
+          "peakInstant": {
+            "easMph": 281,
+            "value": 28.67869734193325
+          },
+          "peakSustained": {
+            "easMph": 183,
+            "value": 17.762032744165097
+          }
+        },
+        {
+          "e": 0.78,
+          "clFactor": 1,
+          "clMax": 1.5,
+          "stallEasMph": 98.06509011620857,
+          "instant170DegSec": 19.449328422209508,
+          "sustained170DegSec": 18.689640191167204,
+          "peakInstant": {
+            "easMph": 259,
+            "value": 31.09775751849357
+          },
+          "peakSustained": {
+            "easMph": 167,
+            "value": 18.902221274098636
+          }
+        },
+        {
+          "e": 0.78,
+          "clFactor": 1.15,
+          "clMax": 1.7249999999999999,
+          "stallEasMph": 91.44616805388416,
+          "instant170DegSec": 22.7037624133322,
+          "sustained170DegSec": 18.689640191167204,
+          "peakInstant": {
+            "easMph": 242,
+            "value": 33.402023803664875
+          },
+          "peakSustained": {
+            "easMph": 153,
+            "value": 19.897456547849288
+          }
+        },
+        {
+          "e": 0.9,
+          "clFactor": 0.85,
+          "clMax": 1.275,
+          "stallEasMph": 106.36652447468451,
+          "instant170DegSec": 16.131768066075427,
+          "sustained170DegSec": 16.131768066075427,
+          "peakInstant": {
+            "easMph": 281,
+            "value": 28.67869734193325
+          },
+          "peakSustained": {
+            "easMph": 191,
+            "value": 18.619589133781044
+          }
+        },
+        {
+          "e": 0.9,
+          "clFactor": 1,
+          "clMax": 1.5,
+          "stallEasMph": 98.06509011620857,
+          "instant170DegSec": 19.449328422209508,
+          "sustained170DegSec": 19.449328422209508,
+          "peakInstant": {
+            "easMph": 259,
+            "value": 31.09775751849357
+          },
+          "peakSustained": {
+            "easMph": 174,
+            "value": 19.94537808724546
+          }
+        },
+        {
+          "e": 0.9,
+          "clFactor": 1.15,
+          "clMax": 1.7249999999999999,
+          "stallEasMph": 91.44616805388416,
+          "instant170DegSec": 22.7037624133322,
+          "sustained170DegSec": 20.255565795901827,
+          "peakInstant": {
+            "easMph": 242,
+            "value": 33.402023803664875
+          },
+          "peakSustained": {
+            "easMph": 160,
+            "value": 21.032923143326922
+          }
+        }
+      ]
+    },
+    "p47b": {
+      "name": "P-47B / R-2800-21 (41-5902)",
+      "weightLb": 12565,
+      "assumedClMax": 1.3,
+      "originalStatus": "Assumed; P-47 B/C/D/G manual 115 mph IAS is not an independently calibrated 41-5902 EAS stall",
+      "baseline": {
+        "e": 0.78,
+        "clFactor": 1,
+        "clMax": 1.3,
+        "stallEasMph": 112.26070296569274,
+        "instant170DegSec": 14.163187219154254,
+        "sustained170DegSec": 14.163187219154254,
+        "peakInstant": {
+          "easMph": 297,
+          "value": 27.213863028126553
+        },
+        "peakSustained": {
+          "easMph": 171,
+          "value": 14.193049282322393
+        }
+      },
+      "sensitivity": {
+        "stallEasMph": [
+          104.68364529194614,
+          121.7638284469595
+        ],
+        "instant170DegSec": [
+          11.483021244057074,
+          16.74748821025886
+        ],
+        "sustained170DegSec": [
+          11.483021244057074,
+          15.531624980815144
+        ],
+        "peakInstantDegSec": [
+          23.285076561844583,
+          29.18155148190216
+        ],
+        "peakSustainedDegSec": [
+          11.894909021161027,
+          15.847339287549412
+        ]
+      },
+      "scenarios": [
+        {
+          "e": 0.6,
+          "clFactor": 0.85,
+          "clMax": 1.105,
+          "stallEasMph": 121.7638284469595,
+          "instant170DegSec": 11.483021244057074,
+          "sustained170DegSec": 11.483021244057074,
+          "peakInstant": {
+            "easMph": 300,
+            "value": 23.285076561844583
+          },
+          "peakSustained": {
+            "easMph": 174,
+            "value": 11.894909021161027
+          }
+        },
+        {
+          "e": 0.6,
+          "clFactor": 1,
+          "clMax": 1.3,
+          "stallEasMph": 112.26070296569274,
+          "instant170DegSec": 14.163187219154254,
+          "sustained170DegSec": 12.046589842847004,
+          "peakInstant": {
+            "easMph": 297,
+            "value": 27.213863028126553
+          },
+          "peakSustained": {
+            "easMph": 157,
+            "value": 12.491514830654582
+          }
+        },
+        {
+          "e": 0.6,
+          "clFactor": 1.15,
+          "clMax": 1.4949999999999999,
+          "stallEasMph": 104.68364529194614,
+          "instant170DegSec": 16.74748821025886,
+          "sustained170DegSec": 12.046589842847004,
+          "peakInstant": {
+            "easMph": 277,
+            "value": 29.18155148190216
+          },
+          "peakSustained": {
+            "easMph": 144,
+            "value": 12.979062951989633
+          }
+        },
+        {
+          "e": 0.78,
+          "clFactor": 0.85,
+          "clMax": 1.105,
+          "stallEasMph": 121.7638284469595,
+          "instant170DegSec": 11.483021244057074,
+          "sustained170DegSec": 11.483021244057074,
+          "peakInstant": {
+            "easMph": 300,
+            "value": 23.285076561844583
+          },
+          "peakSustained": {
+            "easMph": 188,
+            "value": 13.37611887230449
+          }
+        },
+        {
+          "e": 0.78,
+          "clFactor": 1,
+          "clMax": 1.3,
+          "stallEasMph": 112.26070296569274,
+          "instant170DegSec": 14.163187219154254,
+          "sustained170DegSec": 14.163187219154254,
+          "peakInstant": {
+            "easMph": 297,
+            "value": 27.213863028126553
+          },
+          "peakSustained": {
+            "easMph": 171,
+            "value": 14.193049282322393
+          }
+        },
+        {
+          "e": 0.78,
+          "clFactor": 1.15,
+          "clMax": 1.4949999999999999,
+          "stallEasMph": 104.68364529194614,
+          "instant170DegSec": 16.74748821025886,
+          "sustained170DegSec": 14.240328488610174,
+          "peakInstant": {
+            "easMph": 277,
+            "value": 29.18155148190216
+          },
+          "peakSustained": {
+            "easMph": 157,
+            "value": 14.849122487845385
+          }
+        },
+        {
+          "e": 0.9,
+          "clFactor": 0.85,
+          "clMax": 1.105,
+          "stallEasMph": 121.7638284469595,
+          "instant170DegSec": 11.483021244057074,
+          "sustained170DegSec": 11.483021244057074,
+          "peakInstant": {
+            "easMph": 300,
+            "value": 23.285076561844583
+          },
+          "peakSustained": {
+            "easMph": 196,
+            "value": 14.137833310387352
+          }
+        },
+        {
+          "e": 0.9,
+          "clFactor": 1,
+          "clMax": 1.3,
+          "stallEasMph": 112.26070296569274,
+          "instant170DegSec": 14.163187219154254,
+          "sustained170DegSec": 14.163187219154254,
+          "peakInstant": {
+            "easMph": 297,
+            "value": 27.213863028126553
+          },
+          "peakSustained": {
+            "easMph": 178,
+            "value": 15.108273408195886
+          }
+        },
+        {
+          "e": 0.9,
+          "clFactor": 1.15,
+          "clMax": 1.4949999999999999,
+          "stallEasMph": 104.68364529194614,
+          "instant170DegSec": 16.74748821025886,
+          "sustained170DegSec": 15.531624980815144,
+          "peakInstant": {
+            "easMph": 277,
+            "value": 29.18155148190216
+          },
+          "peakSustained": {
+            "easMph": 164,
+            "value": 15.847339287549412
+          }
+        }
+      ]
+    },
+    "p51b": {
+      "name": "P-51B-15 / V-1650-7 (43-24777)",
+      "weightLb": 9240,
+      "assumedClMax": 1.6,
+      "originalStatus": "Assumed; raw 86 mph IAS stall at 8,000 ft / 9,270 lb cannot be treated as EAS",
+      "baseline": {
+        "e": 0.78,
+        "clFactor": 1,
+        "clMax": 1.6,
+        "stallEasMph": 98.46385799361909,
+        "instant170DegSec": 19.27244624534484,
+        "sustained170DegSec": 16.605375938738696,
+        "peakInstant": {
+          "easMph": 261,
+          "value": 30.970458852440224
+        },
+        "peakSustained": {
+          "easMph": 157,
+          "value": 17.27278433877928
+        }
+      },
+      "sensitivity": {
+        "stallEasMph": [
+          91.81802101694124,
+          106.79904896573468
+        ],
+        "instant170DegSec": [
+          15.977653140107142,
+          22.503394667734117
+        ],
+        "sustained170DegSec": [
+          14.185799494772104,
+          18.039020074295028
+        ],
+        "peakInstantDegSec": [
+          28.562861344476673,
+          33.26456691558394
+        ],
+        "peakSustainedDegSec": [
+          14.59914047202266,
+          19.188403809067236
+        ]
+      },
+      "scenarios": [
+        {
+          "e": 0.6,
+          "clFactor": 0.85,
+          "clMax": 1.36,
+          "stallEasMph": 106.79904896573468,
+          "instant170DegSec": 15.977653140107142,
+          "sustained170DegSec": 14.185799494772104,
+          "peakInstant": {
+            "easMph": 283,
+            "value": 28.562861344476673
+          },
+          "peakSustained": {
+            "easMph": 160,
+            "value": 14.59914047202266
+          }
+        },
+        {
+          "e": 0.6,
+          "clFactor": 1,
+          "clMax": 1.6,
+          "stallEasMph": 98.46385799361909,
+          "instant170DegSec": 19.27244624534484,
+          "sustained170DegSec": 14.185799494772104,
+          "peakInstant": {
+            "easMph": 261,
+            "value": 30.970458852440224
+          },
+          "peakSustained": {
+            "easMph": 144,
+            "value": 15.255291535235804
+          }
+        },
+        {
+          "e": 0.6,
+          "clFactor": 1.15,
+          "clMax": 1.8399999999999999,
+          "stallEasMph": 91.81802101694124,
+          "instant170DegSec": 22.503394667734117,
+          "sustained170DegSec": 14.185799494772104,
+          "peakInstant": {
+            "easMph": 243,
+            "value": 33.26456691558394
+          },
+          "peakSustained": {
+            "easMph": 131,
+            "value": 15.783763186566683
+          }
+        },
+        {
+          "e": 0.78,
+          "clFactor": 0.85,
+          "clMax": 1.36,
+          "stallEasMph": 106.79904896573468,
+          "instant170DegSec": 15.977653140107142,
+          "sustained170DegSec": 15.977653140107142,
+          "peakInstant": {
+            "easMph": 283,
+            "value": 28.562861344476673
+          },
+          "peakSustained": {
+            "easMph": 174,
+            "value": 16.401201064764575
+          }
+        },
+        {
+          "e": 0.78,
+          "clFactor": 1,
+          "clMax": 1.6,
+          "stallEasMph": 98.46385799361909,
+          "instant170DegSec": 19.27244624534484,
+          "sustained170DegSec": 16.605375938738696,
+          "peakInstant": {
+            "easMph": 261,
+            "value": 30.970458852440224
+          },
+          "peakSustained": {
+            "easMph": 157,
+            "value": 17.27278433877928
+          }
+        },
+        {
+          "e": 0.78,
+          "clFactor": 1.15,
+          "clMax": 1.8399999999999999,
+          "stallEasMph": 91.81802101694124,
+          "instant170DegSec": 22.503394667734117,
+          "sustained170DegSec": 16.605375938738696,
+          "peakInstant": {
+            "easMph": 243,
+            "value": 33.26456691558394
+          },
+          "peakSustained": {
+            "easMph": 143,
+            "value": 18.003686994029408
+          }
+        },
+        {
+          "e": 0.9,
+          "clFactor": 0.85,
+          "clMax": 1.36,
+          "stallEasMph": 106.79904896573468,
+          "instant170DegSec": 15.977653140107142,
+          "sustained170DegSec": 15.977653140107142,
+          "peakInstant": {
+            "easMph": 283,
+            "value": 28.562861344476673
+          },
+          "peakSustained": {
+            "easMph": 182,
+            "value": 17.36265776237848
+          }
+        },
+        {
+          "e": 0.9,
+          "clFactor": 1,
+          "clMax": 1.6,
+          "stallEasMph": 98.46385799361909,
+          "instant170DegSec": 19.27244624534484,
+          "sustained170DegSec": 18.039020074295028,
+          "peakInstant": {
+            "easMph": 261,
+            "value": 30.970458852440224
+          },
+          "peakSustained": {
+            "easMph": 164,
+            "value": 18.379967138257932
+          }
+        },
+        {
+          "e": 0.9,
+          "clFactor": 1.15,
+          "clMax": 1.8399999999999999,
+          "stallEasMph": 91.81802101694124,
+          "instant170DegSec": 22.503394667734117,
+          "sustained170DegSec": 18.039020074295028,
+          "peakInstant": {
+            "easMph": 243,
+            "value": 33.26456691558394
+          },
+          "peakSustained": {
+            "easMph": 150,
+            "value": 19.188403809067236
+          }
+        }
+      ]
+    }
+  }
+}

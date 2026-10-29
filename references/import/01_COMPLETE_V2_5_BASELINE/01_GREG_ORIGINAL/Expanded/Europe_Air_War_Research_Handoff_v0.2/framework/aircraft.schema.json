@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:wwii-aircraft-performance:schema:0.1",
+  "title": "WWII Aircraft Variant Performance Reference v0.1",
+  "type": "object",
+  "required": ["schemaVersion", "id", "designation", "serial", "testDate", "engine", "propeller", "geometry", "referenceWeightLb", "aerodynamicModel", "supercharger", "powerRatings", "measuredLevelSpeeds", "source"],
+  "properties": {
+    "schemaVersion": {"type": "string"},
+    "id": {"type": "string", "minLength": 1},
+    "designation": {"type": "string"},
+    "serial": {"type": "string"},
+    "testDate": {"type": "string", "format": "date"},
+    "engine": {"type": "string"},
+    "propeller": {
+      "type": "object",
+      "required": ["model", "diameterFt", "etaModel"],
+      "properties": {
+        "model": {"type": "string"},
+        "diameterFt": {"type": "number", "exclusiveMinimum": 0},
+        "etaModel": {
+          "type": "object",
+          "required": ["type", "value", "quality"],
+          "properties": {
+            "type": {"enum": ["constant_provisional", "installed_map", "propeller_coefficient_map"]},
+            "value": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+            "quality": {"type": "string"},
+            "warning": {"type": "string"}
+          }
+        }
+      }
+    },
+    "geometry": {
+      "type": "object",
+      "required": ["spanFt", "wingAreaFt2"],
+      "properties": {
+        "spanFt": {"type": "number", "exclusiveMinimum": 0},
+        "wingAreaFt2": {"type": "number", "exclusiveMinimum": 0},
+        "wingSection": {"type": "string"}
+      }
+    },
+    "referenceWeightLb": {"type": "number", "exclusiveMinimum": 0},
+    "testTakeoffWeightLb": {"type": "number", "exclusiveMinimum": 0},
+    "fuelAtTakeoffUSGal": {"type": "number", "minimum": 0},
+    "configuration": {"type": "string"},
+    "aerodynamicModel": {
+      "type": "object",
+      "required": ["cd0", "oswaldEfficiency", "clMaxClean", "quality", "warning"],
+      "properties": {
+        "cd0": {"type": "number", "minimum": 0},
+        "oswaldEfficiency": {"type": "number", "exclusiveMinimum": 0},
+        "clMaxClean": {"type": "number", "exclusiveMinimum": 0},
+        "illustrativeStructuralGLimit": {"type": "number", "exclusiveMinimum": 1},
+        "waveDragModel": {"type": "string"},
+        "quality": {"type": "string"},
+        "warning": {"type": "string"}
+      }
+    },
+    "supercharger": {
+      "type": "object",
+      "required": ["gears", "illustrativeAutoShiftFt", "autoShiftQuality"],
+      "properties": {
+        "gears": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "illustrativeAutoShiftFt": {"type": "number", "minimum": 0},
+        "autoShiftQuality": {"type": "string"}
+      }
+    },
+    "powerRatings": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["rpm", "manifoldInHg", "status", "gears"],
+        "properties": {
+          "rpm": {"type": "number", "exclusiveMinimum": 0},
+          "manifoldInHg": {"type": "number", "exclusiveMinimum": 0},
+          "status": {"type": "string"},
+          "quality": {"type": "string"},
+          "powerMeaning": {"type": "string"},
+          "gears": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": "array",
+              "minItems": 2,
+              "items": {"type": "object", "required": ["altFt", "bhp"], "properties": {"altFt": {"type": "number", "minimum": 0}, "bhp": {"type": "number", "exclusiveMinimum": 0}}}
+            }
+          }
+        }
+      }
+    },
+    "measuredLevelSpeeds": {
+      "type": "array",
+      "items": {"type": "object", "required": ["rating", "gear", "altFt", "mphTas"], "properties": {
+        "rating": {"type": "string"}, "gear": {"type": "string"}, "altFt": {"type": "number", "minimum": 0}, "mphTas": {"type": "number", "exclusiveMinimum": 0}
+      }}
+    },
+    "measuredClimb": {"type": "array"},
+    "measuredStalls": {"type": "array"},
+    "source": {"type": "object", "required": ["report", "originalReportTranscription"], "properties": {
+      "report": {"type": "string"},
+      "originalReportTranscription": {"type": "string", "format": "uri"},
+      "nacaRelatedButDifferentAirframe": {"type": "string", "format": "uri"}
+    }}
+  }
+}

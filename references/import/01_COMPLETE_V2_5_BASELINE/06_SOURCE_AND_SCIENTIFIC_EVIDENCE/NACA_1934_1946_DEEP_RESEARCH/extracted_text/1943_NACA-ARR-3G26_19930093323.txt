@@ -1,0 +1,930 @@
+   \
+                                                                                   AFtRNo. 3G26
+
+
+
+
+       NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+
+
+
+                                        July 1943 as
+                        -Report                                3626
+
+
+WORKING CHARTS FOR THE COMPUTATION O F PROPELLER THRUST
+
+                     THROUGHOUT THE TAKE-OFF RANGE
+
+
+                  By Gerald L. Desmond and Robert F. Freitag
+                    Bureau of Aeronautics, Navy Department
+
+
+
+
+                                         WASHINGTON
+
+NACA WAFtTIME REPORTS are reprints of papers originally issued to provide rapid distribution of
+advance research results to %r authorized group requiring them for the war effort. They were pre-
+viously held under a security status but are now unclassified. Some of these reports were not tech-
+nically edited. All have been reproduced without change in order to expedite general distribution.
+
+
+                                            w-100
+         EiATIOhTkL A D V I S O R Y COXMITIPEE FOR A E K O G A U T I C S
+
+
+
+
+W O S K I 1 i G . CXAXTS FOB TEE COMPUTATZON OF PROPELLZR T3:ilUSF
+
+
+
+
+                                      SUMNABY
+
+
+         Tile d-ata f r o m BkCk r e p o r t s on t e s t s c o n d u c t e d o n f u l l - '
+s c a l o p r o 9 e l l e r s w i t h 3155 blacie d e z i g n h a v e b e e n u s e d t o
+Co;1sCuruCt ii s e t o f 2 r o p e i l e r t h r u s t c L a r t s f o r u s e i r A t i l e
+cal.culation o f take-off performance.
+
+         B y u s e o f t h e s e cl-.'.srts, t h e t h r u s t o f iLOdOrn single-
+a n d d - u a l - r o t a t i n g 2 r o p e l l e r s nay be e a s i l y a n d r a p i d l y
+C a l c n l a t e d t h r o u g h t h e e n t i r e t a k e - o f f range.
+
+        The t h r u s t formula 5 s r e d u c e d t o :
+
+
+
+
+where
+
+!!      thrust in ~ o u n d s
+
+'ohp    b r a k e ? o r nsnower
+
+I\;     propol!.er      i*>voiutionsp e r a i n u t e
+                                                                                                              J
+
+    2
+
+                                                                                                              I
+                                     INTROD~~CTION                       * -   ).
+
+
+
+
+              An a c c u r a t e e v a l u a t i o n of p r o ’ o e l l e r t h r u s t r e q u i r e s
+    a knclwledge of n a c y v a r i a b l e s .                E n p i r i c a l a n a l y s e s have
+    b e e n d c v c l o p e d b y The H a m i l t o n - S t a n d a r d P r o p e l l e r D i v i s i o n ,
+    U n i t e d A i r c r a f t C o r p o r a t i o n i n 1941 a n d b y The P r o p e l l e r
+    D i v i s i o n , C u r t i s s - W r i g h t C o r p o r a t i o n i n 1940 f p r d e r i v i n g
+    c o r r e c t i o n f R c t o r s t o rtccount f o r t h e s e v z r i n b l e s .            Gen-
+    e r a l l y , however, t h s s e c o r r e c t i o n f a c t o r s a r e compensat-
+    i n & a n d i t n p F e a r s t h a t t h e u s e o f t h e t h r u s t and power
+    coefficients with a correction f o r s o l i d i t y only i s suffi-
+    c i e n t f o r g e n e r a l n p ~ l i c a t i o ni n t h e c a l c u l a t i o n o f t a k e -
+    o f f t h r u s t a n d c o ~ s i s t c n tw i t h f l i g h t - t e s t a c c u r a c y ,
+
+             For t h e b a s i c p r o p e l l e r dat.t, t h e Egcilton-Standard
+    p r o p e l ? e r b l a d e d e s i g n No. 3155-6 h a s b e e n u s e d b e c a u s e
+    t k e WACA h.ts t e s t e d t h i s b l a d e i n a v i d e v a r i e t y of a s s e n -
+    b l i e s ranging f r o m three blades t o eight blades f o r single-
+    .tnd d u a l - r o t - t i n g p r o p e l l e r s .     A l s o , a d d i t i o n a l t e s t s were
+    1lade w i t h t h i s b l n d e s e c t i o n i n c r e n s e d 5 0 p e r c e n t i n w i d t h ,
+    Thus a c o n s i s t e n t s e t o f p r o p e l l e r d T t 2 c c v e r i n g .t w i d e
+    r m g e of s o l i d i t y i s - ~ v r i l a b I e , ? o r a n e a s u r e of s o l i d i t y ,
+    t h e a c t i v i t y f a c t o r of t h e b l a d e n u l t i p l i e d b y t h e number
+    of b l a d e s i s u s e d .        T h i s c o 3 b i n a t i o n p r o v i d e s .on i n t e g r a -
+    t i o n o f p o w e r - a b s o r p t i o n c a p a c i t ; l : of t h c b l a d e e l e m e n t s
+    i n addition t o the propeller solidity,
+
+              I t h a s b e e n f o u n d c o n v e n i e n t i n making t P k c - o f f c x l -
+    culn-tions t o p l o t t h e D r o p e l l e r d a t a RS a modified t h r u s t
+    c o e f f i c i e n t KT, i n v o l v i n g e n g i n e b r i n g t e r n s a,s d e f i c e d
+    b y D i e h l i n r e f e r e n c e I,
+
+         I t i s t h e p u r p o s e of          this report t o present these
+    dqta for general use,
+
+
+                                  SUMMARY OF T E S T S
+
+            The d a t a u s e d i n t h e c o n s t r u c t i o n of t h e t h r u s t c h a r t s
+    w e r e o b t a i n e d f r g m e x t e n s i v e t e s t s c o n d u c t e d at t h e NACA
+    20-foot; p r o p e l l e r - r e s e a r c h t u n n e l Rnd r e p o r t e d i n d e t a i l
+    i n r e f e r e n c e s 2 t o 5.
+
+
+                                       P r o p e l l er s
+
+           The p r o p c l l e r b1;tdes t e s t e d w e r e t h e 3155-6 ( r i g h t
+    h,q,nd), 3156.45 ( l e f t h a n d ) , 3155-6--1.5 ( r i g h t h a n d ) , a n d t h e
+    3156-5-1.5 ( l e f t h a n d ) , , Sone a d d i t i o n a l d a t a w e r 3 i n c o r -
+I
+                                                                                               3
+d
+
+    l j o r a t e d f r o m t h e t e s t s o f t h e 5868-9 p r o p e l l e ' r blacie a s
+    p r e s e n t e d i n r e f e r e n c e 6 , The d i a m e t e r s v e r e 1 G f e e t a n d
+    9 f e e t f o r t h e p r o p 2 l l z r s o f t h e 3155 b l a d e d e s i g n a n d t h e
+    5858 b l a d e d e s i c ; : , r e s p e c t i v e l y . Slark-Y b l a d e s e c t i o n s
+    w e r e erdpl-oyod t h r o u g h o u t .
+
+                                                   Body
+
+         T h e p r o p e l l e r s l.rers t e s t o d on a t e s t r i g c o n s i s t i n g
+    of a s t r e a n l i n e bo3y w i t h p r o v i s i o n s f o r mcunting t h e pro-
+    p e l l e r s i n bo;h t h e t r a c t o r a n d t h e p u s h s r p o s i t i o n s .      In
+    t h e c h a r t s p r e s e n t a d h e r e i n , only t : s d a t a f r o m t h e t e s t s
+    on t h e p r o p e l l c r s i n t h e t r a c t o r p o s i t i g n a r e u s e d . These
+    d a t a i n c l u d e tiitt e f f e c t o f a s y m m e t r i c a l w i n g m o u n t e d i n a
+    ~ i d v i n gp o s i t i o : ~ s e t a t 00 a n g l e o f a t t a c k .    S p i n n e r s were
+    usecl f o r all t e s t s .
+
+
+                                               SY ME OL S
+
+                P
+    cp =               a   yotfrcr c o e f f i c i e n t
+                 3n5
+            Pn         .
+
+                5
+    C T := *-              thrust coefficient
+            pn2D'
+
+    J    = V/;?3,          advance-diainotcr               ratio
+
+    P       cnginc power, loot-pounds p e r second
+
+
+
+    N'      r o t a 5 . i o n a l p r o p e l l e r s p e e d , rpm
+
+    n       r o t a t i o n a l p r o p e l l a r spocd-,      rg-: .
+
+    D       p r o p e l l e r diainoter, f o o t
+
+    V       a i r s p e e d , f e e t p e r second
+
+    P       inass d c n a l t y ' o f a i r , s l u g s / f t 3
+                                                                            cT
+    KT      ixodifiod t h r u s t c c c f f i c i e n t ,          33,000   -
+                                                                            CP
+    g~~     modified s t a t i c t h r u s t cocfficiont
+4
+
+
+Ai?
+
+
+b       p r o p e l l e r blade width a t r a d i u s              r
+r       r a d i u s of p r o p e l l e r b l a d e e l e m e n t
+
+R       propeller radius
+
+
+                           NETIEOD OF P,RE SENTAT 1 ON
+
+
+        Curves of          KT     against        AF      t i m e s t h e number of b l a c ? e s ,
+with v a r y i n g v a l u e s of     Cp a n d J a r e p r e s e n t e d i n f i g -
+u r e s 1 t o 5 f o r s i n g l e - r o t a t i n g p r o p e l l e r s and i n f l g u r e s
+11 t o 1 5 f c r d u a l - r o t a t i n y p r o p e l l e r s . C u r v e s of     KT
+a g a i n s t Cp w i t h v a r g i i i g v a l u e s o f      J a n d AF t i m e s t h e
+number o f b l a d e s a n d c u r v e s o f        XT a g a i n s t J wl.tl? v a r y i n g
+values of        Cp a n d AF t i m e s t h e ;lumber o f b l a d e s a r e p r e -
+sented i n f i g u r e s 6 t o 10 f o r s i n g l e - r c t a t i n g p r o p e l l e r s
+a n d i n f i g u r e s 1 6 t o 20 f o r d u a l - r o t a t i n g p r o p e l l e r s .
+
+          F r o m r e f e r e n c e s 2 t c 5 v a l u e s o f Cp a n d CT f o r t h e
+v a r i o u s b l a d e ahglss t e s t e d were o b t a i n e d f o r e a c h p r o p e l -
+l e r a n d t h o t h r u s t c o e f f i c i e n t s XT      w e r e computed.   The
+a v a i l a b l e d a t a c o n s i s t e d of c u r v e s of    CT    a n d Cp a g a i n s t
+V/nD        f o r b l a d a a n g l e s o f 10' t o ' 65'.
+                                                                                                 , .
+          The p r o p e l l e r s w e r e t e s t e d a t v a l u e s o f           Ja s l o w as'
+(2.3 and, i n a. few c a s e s , t o v a l u e s a s l o w a s J = 0 . 2 .                         The
+n e c e s s i t y t h e n a r o s e t o e x t r a p o l a t e t h e c u r v e s cp a n d
+CT t o %he v a l u e o f V / n 3 = 0 , i n o r d e r t o o b t a i n e t a t i c
+thrust coefficients.                     I n a s m a l l nurnber o f c a s e s , e x t r a p o -
+l a t i o n s made by t h o l T A i X w e r e i n c l u g - c d i n t h e o r i g i n a l
+d a t a . T h e s e e x t r a p o l a t i o n s , when a v a i l a b l e , were f o l l o w e d .
+Later, calculated curves of                             CF a n d CT a g a i n s t J w e r e
+p r e s e n t e d by t h e NkCX w i n d - t u n n e l s t a f f i n a n u n p u b l i s h e d
+report.          T h e s e c a l c u l a t e d . . c u r v e s w e r e f o u n d t o be i n e x c e l -
+l e n t agreement w i t h t h e t e s t 6 a t a t h r o u g h o u t t h e r a n g e s i n
+v h i c h t h e y c o u l d 'be coiilpared.                 I t was t h e n c o n c l u d e d t h a t
+e x t r a p o l a t i o n s o f t h o t e s t d a t a , b a s e d o n t h e s e coiflputed
+c u r v e s , c o u l d be u s e d .         T h e s e e x t r a p o l a t i o n s w e r e most a c -
+c u r z t e a t l o w - b l a d o a n g l e s a n d low-powor c o e f f i c i e n t s ,             It
+i s under t h e s e c o n d i t i o n s t h a t t h e p r o p e l l e r i s c p e r a t i n g
+n e a r t h o i:;aximuni v a l u e o f              L/D. A t t h e h i g h e r b l a d e a n g l e s
+                                                                                                5
+
+
+?-n? p o w e rc o e f f i c i e n t s , t h e v a r i a t i o n of   KT w i t h J i s
+siil9l1, a n d s m a l l e r r o r s i n t h e e x t r a p o l a t i o n s w i l l n o t
+materially offset ‘the fatrings.
+
+          Rocent unpublished d a t a p r e s e n t i n g outdoor s t a t i c -
+t h r u s t tczsts o f t h e 3155-6 a n d 3155-6-1,5 b l a d c s show ex-
+c e l l e n t aglzeezent w i t h t h o s t a t i c t h r u s t d a t a a s p r o s e n t e d
+i n t k i s report..
+
+                              Thrust Calculation
+
+          The c a l c u l n t i o n o f t h e t h r u s t f s simp1.y p e r f o r m e d .
+The a c t i v i t y f a c t o r o f thi: b l a d e i s o b t a i n e d f r o m t h e g c o -
+n e t 2 i c c h a r a c t e r i s t i c s o.€ t h e b l a d e .       Curves of a c t i v i t y
+f a c t o r o f a blade a g a i n s t p r o p e i l e r d i a m e t e r f o r a larg?
+n u n b c r o f p r o ~ e l l e rb l a d o s now i.n u s e a r o p r e s e n t e d i n
+                                   m
+f i g u r e s 2 1 t o 24.          ~ h pc o w e r c o e f f i c r e n t    Cp      i s conputcd
+f r o n t h e e r i g i n o and p r o p e l l e r c h a r a c t e r i s t i c s .     F o r R con-
+stant-sposd p r o p e l i c r , t h i s value of                      Gp ?:ill remain
+c o n s t a n t throughout; t h e take-off r a n g e .                    For a fi.xsd-pitch
+p r o p o i l e r , t h e vel,uo of          Cp 7 k i l . l v a r y w i t h a i r s l c o d w h i c h
+n e c e s s i t a t e s add:tionel         c a l c u l a t i o n s , . I n t h i s c a s 3 e.
+Eethocl. s i m i l a r t o t h a t o u t l l n e d i . n r o f e r e i i c t 6 s h o u l d be
+used.        The v e l u e o f t k e ac?vance r a t i o V/:iD                    i s computed
+a t t h e various s p e e d s d a r i n g t a ’ r c - o f f f o r !.kith t h e t h r u s t
+i s d e s i r e d . Tha v a l u e of             I(T     i s the11 r e a d f r o m t h e c h a r t s
+o r by i n t e r p o l a t 5 o n b a t w e e n t h e c h a r t s . T h i s i s East e a s i -
+3.y p e r f o r m e d by r e a d i n g f i g u r e s 1. t o 5 ( o r 11 t o 1 5 ) itnd
+using f i g u r e s 6 t o 1 C ( o r 1 6 t o 20) t o f a c i l i t a t e i n t e r p o -
+LRt ion.
+
+        ? h e t h r u s t , i s t h s n conputed. frorn t h e f o r m u l a
+
+
+
+
+        IT1
+            & h e d a t a f r o m w h i c h t h e s e c h a r t s !+:ere r l e r i v e d w e r o
+obt.f16ined. i n t e s t s a t i - e l ~ t i v e l yl o w p r o p e l l o r t i p s p e e d s .
+I n s , . s m c h 8 s t h e s e c h a r t s were designi3d. f o r n q c i c k e v e l u -
+a % i o n o f t h e t h r u s t d u r i n g t a k 2 - o f f , 2nd t h e t ; r k e - o f f d i s -
+t a n c e i r , t u r r ? i s p r i m z r i l g a f f a c t e d by a i r p l a n e d r s g ,
+l i f t c o e f f i c i e n t at t a k e - o f f , and h a n d l i n g techniqu-e i n
+nddition t o the propeller t h r u s t , i t i s assuced t h a t
+c h a n g a s o f t h r u s t , due t o p r o p e l l e r t i p s p e e d a r e o f s e c -
+o n d a r y o r d e i - i n t a k e - o f f eva.l.ui?tion               t o FL t i p s p e g d o f
+l G C 0 f e e t p e r s e c o n d a t s e a l e v e l - . I n o r d e r t o :?void ex-
+c e s s i v e l o s s e s i n p r o p c l l e r e f f i c i c n c E v 7 Cue t o c o u p r e s s i -
+    6
+
+
+I   bility a t high s p e e d s a t a l t i t u d e , t a k e - o f f t i p s p ~ e b s
+    gre,?tter t h a n l Q G G f e e t p - ? r s e c o n d are n o t g e n e r a l l y dn-
+                  .
+    c o u n t e rod
+
+
+
+           Given:      I?~opel!.er - c o n s t ~ n t - s p e e d , s i n g l e r o t a % i o n
+                                     12 f t 0 in.
+                                     thres bladas
+                                     b l a d e design 6235
+                                     AX' = 105
+                                     AF X nunbe-- c f b l a d e s = 3 0 0
+
+
+
+
+                                              .-        ---                          -*-----
+                                     kF   X    number o f b l a i t e s
+                                              -.             . .-     ---
+                                                                              :T,T    I   T
+                                                     3 oci                  40,000        4935
+
+                                                     300                    39,000        4P10
+
+                                                     300
+
+                                                     30G
+
+                                                     330
+                                                                                                    7
+3
+
+
+    To find the thrust at                  V = 25 f e e t p e r second               (J = 0.0925):
+
+         B e f c r r i n g t o f i g u r e 2, a t AF X number of b l a d e s = 3 0 0 ,
+    Cp = G.1631,          J = 0 , 3 0 0 , we f i n d KT = 3 6 , 6 0 0 .
+          E n t e r i n g f i g u r e 7 at  J = 0 . 3 0 0 a n d KT = 3 6 , 6 6 0 ,
+    we u s e t h e s l o p e o f t h e n e a r e s t Cg   l i n e t o ?ass t o
+    J = 0,0925.          Then KT = 3 9 , 0 0 0 .
+
+                                        K;;I bhp
+                          T h r u s t = --N D    = 4810 pounds
+
+
+                                         D I S CU S S I ON
+
+             The u s e o f t h e a c t i x - i t y f a c t o r a s a p a r a m e t e r f o r r e p -
+    r e s e n t i n g s o l i d i t y i s considered d e s i r a b l e a s t h i s f a c t o r
+*   i s n v e i g h t e d measure o f p r o ? e l l e r s o l i d i t y .         The E c t i v i t y
+    f a c t o r o f t h e b l a d e is a nondimensional f u n c t f o n of t h e
+    p r o p e l l e r y l a n form designed t o e x p r e s s t h e i n t e g r a t e d
+a   c a p a c i t y of t h e b l a d e elements f o r a b s o r b i n g pover.                  In a
+    p r o n e l l c r t h e v e l o c i t y o f the a i r n a s s i n g over t h e b l a d e            ,
+    e l e h e n t , and t h e r e f o r e i t s p o w e r a b s o r p t i o n , i s rrainly a
+    f u n c t i o n o f t h e d i s t a n c e o f t h e e l e n e n t f r o u t h e c e n t e r of
+    rot,zsisn.            T h i s f a c t was n o t a l l o w e c ? f o r i n t h e o l d e r f o r a
+    o f - a l a d e - a r e a T u n c t i o n , t % e r a t i o of b l a d e a r e a t o t o t a l
+    disk area.              The a c t i v i t y f a c t o r o f t h e w h o l e p r o p e l l e r i s
+    e q ~ a lt o t h e a c t i v i t 2 r f a c t o r o f t h e b l a d e r m l t i p l i e c ? b y
+    t h a n u n b e r of b l a d e s .
+
+                The h i g h a c t i v i t y f a c t o r s o f t h e p r o p e l l e r s w e r e o b -
+    t a i z i e d by i n c r e a s i n g t h o nulr;3er o f b l a d e s a n d by i n c r e a s -
+    i n g t h e ‘blade w i d t h .           Altliough t h e s a t w o methods a r e n o t
+    s t r i c t l y c o m p a r a b l e a s a means of i n c r e a s i n g t h e s o l i d i t y
+    of a progeller                e x c e l l e n t a g r e e n e n t ‘was f o u n d t h r o u g h o u t
+    t h e r e g i o n s t h a t t h o t w a methods c o i n c i d e d . T h i s i s i n
+    a g r e o m e n t w i t h r e f e r e n c e 4, which c o n c l u c l o s t h a t i n c r e a s -
+    i n g t h e s o l i d i t r by iCeEns o f i n c r e a s i n g t h e b l a d e w i d t h
+    r e s u l t s i n t h o same e f f e c t a s i n c r e a s i n g t h a number of
+    blsdes.          I n c r e a s i n g t h e b l a s e a r c a b y i . n c r e a s i n g t h e diam-
+    e t e r h a d a b o u t t h a saL?e e f f e c t a s i i i c r e a s c n g t h e s o l i d i t y ,
+    f o r equal t i p spseds.
+
+              The p l o t s r e p r e s e n t a c o q l e t e f a m i l y o f p r o p e l l e r s
+    o f t h e 3 1 5 5 3 l a d o d e s i g n , from t v o          aig’nt blar?eS. T h e
+    i n c l u s i o n o f tk-e 58SE-9 b l a d a - u e s i g p r o p e l l e r d a t a o f
+    referenca        6 a i d o d i n t h e g e n e r a l i z a t i o n of t h e c h a r t 2 and
+f n c i l i t 7 t e d t h e f a i r i n g of t h e c u r v e s i n t h e r e g i o n o f low
+solidity.
+
+          The n g r e e n e n t b e t w e e n t h e 5868-9 p r o p e l l e r d ? , t a ( r e f -
+e r e n c e 6 ) a n d t h e 3155 p r o p e l l e r d n t a ( r e f e r e n c e s 2 t o 5 )
+v a s , i n G e n e r a l , q u i t e good.        Wherever small d i s c r e p ? n c i e s
+d i d o c c u r , t h e n o r e r e c e n t 3155 p r o p e l l e r d a t a w e r e f a v o r e d
+i n view of t h e l a t e r d e s i c n o f t h i s b l a d e ,
+
+       The u s e of C l a r k - Y a i r f o i l s e c t i o n s t h r o u g h n u - t t h e
+r,n.alysis f u r t h e r s t s n d a r d i s e s t h e c u r v e s ,
+
+
+B u r e a u of A e r o n a u t i c s , Navy D e p n r t a e n t ,
+          Washington, D . C ,
+
+
+                                  REFERENCE S
+
+
+1.    D i e h l , W?,lter S . : S t a t i c T h r u s t of A i r p l a n e P r o p e l -
+           lers.     Rep. KO, 447, N A C A 5 1932.
+
+2.    B i e r m n n n , D a v i d , m d H a r t m n n , Edwir. P,:          Wind-Tunnel
+            T e s t s o f T o u r - a n d S i x - B l a d e , S i n g l e - a n d Dual-
+            Rotating Tractor Propellers.                      R e p . N o . 7 4 7 , ITICA,
+            1942-
+36> S i e r n n n n , D a v i d , and G r a y , W, H , :        Wind-Tunnel T e s t s
+            o f E i g h t - S l x d o S i n g l e - a n d Duq.l-Rotst i n c P r o p e l l e r s
+            i n t h e Trp.ctor P o s i t i o n .         NACA A e R , R a s Nov, 1941,
+
+4.    B i e r m a n n , D a v i d p G r a y , W. H., a n d M a y n a r d , J u l i a n D.:
+            Wind-Tunnel T a s t s of S i n g l e - . a n d D u a l - R o t a t i n g
+            T r a c t o r P r o p e l l e r s of Large Blade Width.           NACA
+            AoRoR., Sept, 1 9 4 ~ ~
+
+5.     Gray, W , H.:         Wind-Tunnel T e s t s of S i n g l e - 2nd Dual-
+          R o t a t i n g T r a c t o r P r o p e l l e r s a t Low Blade Angles
+          a n d of 'Ilwo-8 a n d T h r e e - S l n d e T r a c t o r P r o p e l l e r s a t
+          Blade Angles up t o 6 5 O .                  XACA A , R , B , , F e b , 1 9 4 2 .
+
+6.     Hartmyn, Edwin P.                  sild Bierr.;nnr,, D:tvid:              The A e r o d y n x n i c
+          C h q l r n c t e r i s t i c s of F u l l - S c z l e P r o p e l l e r s H-ving 2 ,
+          3, a n d 4 B l a d e s g f C l z r k - Y a n d R.A.P, 6 A i r f o i l
+          S e c t i o n s , R e p . No. 640, NACA, 1938.
+NACA                                                          Figs. 1,2
+
+
+
+
+                     Activitv factor X number of blades
+ Figure 1.- Variation of KT, with solidity. 3255 propeller I11 single     .d
+                                                                           m
+            rotation. V/nD = 0, J = 0.                                    ..4
+                                                                           t-
+                                                                          .d
+                                                                          a
+                                                                          0
+                                                                          I+
+
+                                                                           II
+
+
+
+
+ Figure 2.- Variation of KT with solidity. 3155 propeller I11 single
+            rotation. V/nD = 0.3, J = 0.3.
+    NACA
+          70
+c
+0
+0      60
+4
+2
+          50
+
+
+          40
+     KT
+          30
+
+
+          20
+
+
+          10
+
+
+
+
+                             Activity factor X number of blades
+                                                                                   h
+          Figure 3.- Variation of KT with solidity. 3155 propeller I11 single      t
+
+
+
+                                                                                   s
+                                                                                   0
+                     rotation. V/nD = 0.4, J = 0.4.
+                                                                                   rl
+
+                                                                                   II
+          60,000
+                                                                                   $
+                                                                                   0
+                                                                                   rl
+                                                                                   P
+          50,000                                                                   rl
+                                                                                   v
+
+
+
+
+          40,000
+     KT
+          30,000
+
+
+          20,000
+
+
+           10,000
+
+
+                0
+                100   200   300   400 500 600       700 800 900      1000   1100
+                              Activity factor X number of blades
+
+           Figure 4.- Variation of KT with solidity. 3155 propeller I11 single
+                      rotation. V/nD = 0.5, J = 0.5.
+      NACA                                                                            Figs. 5,6
+
+
+0.
+ '
+E:
+2
+
+
+
+
+ "
+                        Activity factor X number of bladee                                  r(
+
+                                                                                             II
+     Figure 5.- Variation of KT with solidity. 3255 propeller I11 single                    $
+                rotation. V/nD = 0.7, J = 0.7.                                               0
+                                                                                            r(
+                                                                                            P
+                                                                                            rl
+                                                                                            v
+
+
+
+
+     10,000' '   6 ' .2' ' .4 I   I    I
+                                      .6
+                                           '   " '
+                                               0
+                                                      I
+                                                     .1
+                                                          '    I
+                                                              .2
+                                                                    I    I
+                                                                        03
+                                                                             I
+                                                                                 .1   .5
+                          J                                        CP
+ d   Figure 6.- 3155 propeller 111 single rotation. AF X number of blades
+                = 200.
+          NACA                                                                 Figs. 7,8
+
+
+v'        80,000
+0
+0
+d
+          70,000
+2
+          60,000
+
+
+          504 000
+     KT
+          40,000
+
+
+          30,000
+
+
+          20,000
+c
+
+                                                                                            0
+          10,000
+                                                                                   5        q
+.'                               J                                                  '   I
+                                                                                            0
+                                                                                            +
+
+                                                                                            I1
+          Figure 7.- 3155 propeller I11 single rotation. AF X number of blades
+                     =. 350.
+                                                                               %0
+
+          80,000
+
+
+          70,000
+
+
+          60,000
+     KT
+          50 ,DO0
+
+
+          40,000
+
+
+          30,000
+
+
+t         20,000
+                      0     .2       .4   .6   r)   .1    b 2        .3   .4      .5
+                                 J                              CP
+i
+          Figure 8.- 3155 propeller 111 single rotation. AF x number of blades
+                     = 500.
+        NACA
+
+          80 000
+
+
+3         70,000
+E
+             60,000
+        KT
+          50,000
+
+
+          40 000
+
+
+          30 000
+
+             20,000
+    4
+
+
+
+
+             Figure
+
+
+
+             80,000
+
+
+             70,000
+
+
+             60 000
+
+        KT
+             50 000
+
+
+             40,000
+
+
+             30 000
+
+             20 # 000
+                                   J                            CP
+             Figure 10.- 3155 propeller 111 single rotation. AF x number of blades
+                         = 800.
+L       NACA                                                         Figs. 11,12
+
+
+
+
+    ,                                                                              n
+
+
+
+
+.          Figure 11.- Variation of K T ~with solidity. 3155 propeller I11 stati
+                       thrust dual rotation. V/nD = 0, J = 0.
+
+
+
+
+           Figure 12.- Variation of KT with solidity. 3155 propeller I11 dual
+                       rotation. V/nD = 0.3, J = 0.3.
+.         NACA                                                         Figs. 13,14
+
+8,
+      70,000
+
+
+0
+      60,000
+0
+d
+I
+t
+      50,000
+
+      40,000
+     KT
+      30,000
+
+
+      20,000
+
+
+          10,000
+
+=I
+
+
+
+                 100   200   300 400 500       600   700   800 900   1000   11.00
+                               Activity factor x number of blades
+.'   Figure 13.- Variation of KT with solidity. 3155 propeller I11 dual rotation.
+                 V/nD = 0.4, J = 0.4
+      70,000
+
+          60,000
+
+
+          50,000
+
+      40,000
+     KT
+          30,000
+
+
+          20,000
+
+
+          10,000
+*
+
+                               Activity factor X number of blades
+4
+
+      Figuro 14.- Variation of KT with solidity. 3155 propeller I11 dual rotation.
+                  V/nD = 0.5, J = 0.5.
+    .         NACA                                                              Figs. 15,16
+
+
+
+
+                                                                                  I
+    e'
+
+
+
+
+     0
+    4
+    J
+
+
+
+                                                                          -- -
+
+
+
+
+                                                                                    1100
+                                                                          1000
+                              Activity factor x number of blades
+    .'   Figure 15.- Variation of KT with solidity. 3156 propeller I11 dual rotation.
+                     V/nD = 0.7, J = 0.7.
+
+
+
+           70,000
+
+
+           60,000
+
+
+              50,000
+         KT
+           40,000
+
+
+           30,000
+
+
+           20,000
+
+
+              10,000
+                       0     .2       .4   .6   0    01    02        .3    ,4       .5
+                                  J                             CP
+         Figure 16.- Thrust coefficient against J and Cp. 3155 propallor I11 dual
+                     rotation. AF x number of blades = 200.
+~
+NACA                                                                Figs. 17,18
+
+
+
+
+                                                .2        .3   .4       .5
+                                                     CP                      r(
+
+                                                                             II
+                                               AF X number of blades
+                                                                             -2
+                                                                              0
+     90,000                                                                  rl
+                                                                             P
+                                                                             rl
+                                                                             v
+
+     80,000
+
+
+     70,000
+
+
+     60,000
+
+KT
+ 50,000
+
+
+ 40,000
+
+
+ 30,000
+
+
+ 20,000
+              0   .2       .4   .6   0    .1    .2        .3   .4       -5
+                       J                             CP
+ Figure 18.- 3155 propeller I11 dual rotation. AF X number of blades
+             = 500.
+     NACA                                                                  Figs. 19,20
+
+
+
+
+3
+3I
+E
+
+
+
+
+                                                                                   --
+                                                                                   b
+                   0    .2       .4   .6   0          e2         -3   -4      05
+                             J                             CP                      2
+                                                                                   4
+
+                                                                                   II
+       Figure 19.- 3155 propeller I11 dual rotation. AF X number of blades
+                   = 650.
+       90,000
+
+
+       80,000
+
+
+       70,000
+
+
+       60,000
+     KT
+       50,000
+
+
+       40,000
+
+
+       30,000
+
+
+       20,000
+                   0    .2       .4   .6   0    .1    .2         .3   .4      .5
+                             J                              CP
+       Figure 20.- 3155 propeller I11 dual rotation. AF X number of blades
+                   = 800.
+    HACA                                                             Figs. 21.22
+           120
+
+           110
+
+
+           100
+
+
+
+      x
+     4J
+
+
+
+
+            70
+
+           60
+                                                                                c
+
+            50
+
+
+                                                                                II
+      Figure 21.- Activity factors for variouj propellers. C = Curtiss,
+                  H = Hamilton Standard.                                        .t:
+                                                                                 0
+
+        120
+
+           110
+
+
+           100
+      k
+      0
+     4J
+      0
+     e 90
+      x
+     4J
+     .d
+
+
+
+
+            70
+
+
+            60
+
+c
+            50
+                                Propeller diameter, f t
+
+      F i g u n 22.- Aetivity factors for varioua Curtias propellers. Clark-Y
+                     except am noted.
+4
+    NACA                                                          pig8. 2S,24
+
+
+
+
+                                                                             n
+
+
+
+
+                                Propeller diameter, ft
+     Figure 23.- Activity factors for various Hamilton-Standard propellers
+                 Clark-Y sections except as noted.
+
+
+
+
+           11    12    13     14    15    16    17     18   19   20    lil
+                                Propeller diameter, ft
+
+                Figure 24.- Activity factors for varioua propellers.
+

@@ -1,0 +1,169 @@
+Baseline v2.5 re-run in this v3.0 handover: 2026-10-29
+30/30 JavaScript/Node regression scripts passed, zero failures.
+Command: cd 01_COMPLETE_V2_5_BASELINE/03_MODEL_PROTOTYPES/CURRENT_v0.7_WORKING_SOURCE && for f in test_*.cjs test.mjs test_clean_v08.mjs; do node "$f"; done
+Separate stall audit: python 02_V3_STALL_WEIGHT_AUDIT/build_audit.py => 6 evidence records, 12 hypothetical sensitivity scenarios; no derived historic corrected CLmax.
+Browser automation / interactive smoke test was NOT performed.
+Source files are frozen v2.5 + audit; not v3.0 completed physics.
+
+------ RAW TEST OUTPUT ------
+PASS Bf109 v1.3: conditional anchor/rating/e differentiation + P47/P51 held-out regression + historical evidence gates
+PASS Bf109 v1.4 compatibility: historical combat anchor, withheld emergency, explicit v1.5 gearing correction + unchanged Allied regressions
+PASS v1.0: evidence gates, nonidentifiability and honest comparative/conditional sensitivity
+PASS v1.2: shared P47 aerodynamics, frozen prop curve, 2000/2600 hp isolation, Greg exact regression and P47B held-out challenge
+PASS v1.5: authentic DB601E ratio/RPM; independent speed+climb diagnostics; Greg drag decomposition; honest P51 absolute-climb failure preserved
+PASS v0.7 Fw 190 W.Nr.619 actual stage losses + nontransfer of Mosquito single drag percentage + pitot correction evidence
+Normalized speed-shape MAE Greg109-vs-Greg47: 0.76 percentage points
+67inHg source 3820 C 3401.1 Greg transfer 3497.4 Greg refit 3475.0 required eta 0.855
+75inHg source 4380 C 3978.5 Greg transfer 4094.5 Greg refit 4070.0 required eta 0.847
+P-51 sea level speed C 361.50 G 366.70
+109 alt 0 IL2 20.3 GregPolar+G 20.14
+109 alt 3000 IL2 26.1 GregPolar+G 25.37
+PASS v2.2: original Greg row arithmetic; Mustang power residual, IAS turn and high-speed constraints, old default intact
+PASS v1.1: Greg worksheet reconstruction, parameter difference and independent-case guardrails
+PASS v1.5 inline JS syntax (4 scripts), data parse, DB601E gearing, absolute benchmark panel
+PASS v1.6 HTML: embedded graph+original scan, chart audit, source-rated gearing, inline JS syntax
+PASS v1.7 HTML: JS parsed, interactive F4 simulator-conditioned scenario, both joint charts and historical P51 source retained
+PASS v1.9 offline HTML: scripts parsed, v1.9 source audit visible, v1.8/v1.7/interactive model preserved
+PASS v2.0 offline: valid embedded cases, all JS scripts parse, live Spitfire and old panels retained
+PASS v2.1 four-plane offline UI scripts parse; all data/provenance, engine toggle and prior panels retained
+PASS v2.2: four-aircraft offline HTML script syntax and new live G/109 controls; all prior panels preserved
+PASS v2.3 offline app: NACA N selectable, scientific audit and flight holdout visible, old functionality preserved
+PASS Zero-exhaust P-51 aerodynamic anchor exactly equals existing candidate C
+PASS Zero-exhaust P-47 aerodynamic anchor exactly equals candidate C
+PASS P-51 original 67/75 climb numbers numerically reproduced
+PASS P-51 and P-47 holdouts identical to v1.8
+PASS Bf 109 emergency turn reproduces IL-2-conditioned v1.8 physics
+PASS Each nonzero exhaust coefficient reanchors rather than double counting
+PASS Physical drag accounting still works with alternate exhaust force
+PASS No hypothetical exhaust solves both boost climb measurements
+PASS Every tested positive exhaust correction worsens P-47 holdout MAE
+PASS All hypothetical weight reductions improve climb but do not erase the gap
+PASS 10/10 v1.9 installed-power tests
+PASS v1.7: independently held-out SIM turn, explicit IAS/CAS caveat, two-airframe power coupling, frozen original source benchmarks
+PASS v0.9 lift/induced-drag 3-aircraft sensitivity grid, power/stall invariants and frozen baseline
+1945 NACA P-47D direct flight propeller η checked; no fit performed.
+PASS 12/12 source-bounded Mach profile, four aircraft, unchanged Mustang miss, and offline HTML syntax
+NACA 1941 chart predicts for 1944 4-blade design case 0.844 vs 0.848
+Mustang 67inHg C 3401 N reanchored 3320 historical 3820
+Mustang 75inHg C 3979 N reanchored 3894 historical 4380
+109 0 IL2 20.3 N 20.33
+109 3000 IL2 26.1 N 26.01
+109 combat mph with Greg polar C 315.5 N 320.5 vs 325
+NACA v2.3 research transfer passes six source-traceable model guardrails
+{
+  "points": [
+    {
+      "run": "20-1",
+      "figure": "7a",
+      "speedIasMph": 160,
+      "power": "normal",
+      "J": 1,
+      "Cp": 0.165,
+      "Ct": 0.132,
+      "etaReportedOCR": 0.799,
+      "tipMach": 0.793,
+      "confidence": "medium: label OCR; η=J·Ct/Cp supports 0.800; run association needs scan",
+      "etaFromReportedCoefficients": 0.8,
+      "coefficientIdentityResidual": 0.001,
+      "modelC": 0.7882,
+      "modelN": null,
+      "modelM": null,
+      "errorC": -0.0108,
+      "domainStatus": "1941 NACA chart Cp outside documented 0.2..0.6, N/M not scored"
+    },
+    {
+      "run": "24-6",
+      "figure": "11a",
+      "power": "high-speed test",
+      "J": 1.59,
+      "Cp": 0.343,
+      "Ct": 0.171,
+      "etaReportedOCR": 0.792,
+      "tipMach": 0.952,
+      "confidence": "medium: Table II OCR values; η=J·Ct/Cp supports 0.793; visually unverified",
+      "etaFromReportedCoefficients": 0.7927,
+      "coefficientIdentityResidual": 0.0007,
+      "modelC": 0.8294,
+      "modelN": 0.8115,
+      "modelM": 0.8114,
+      "errorC": 0.0374,
+      "domainStatus": "inside provisional NACA 1941 grid"
+    },
+    {
+      "run": "24-5",
+      "figure": "11b",
+      "power": "high-speed test",
+      "J": 1.84,
+      "Cp": 0.347,
+      "Ct": 0.151,
+      "etaReportedOCR": 0.801,
+      "tipMach": 0.979,
+      "confidence": "medium: Table II OCR values; η=J·Ct/Cp supports 0.801; visually unverified",
+      "etaFromReportedCoefficients": 0.8007,
+      "coefficientIdentityResidual": -0.0003,
+      "modelC": 0.8257,
+      "modelN": 0.8309,
+      "modelM": 0.8295,
+      "errorC": 0.0247,
+      "domainStatus": "inside provisional NACA 1941 grid"
+    }
+  ],
+  "ladder": [
+    {
+      "ft": 5000,
+      "loss_C_pct": 0.86,
+      "loss_N_pct": null
+    },
+    {
+      "ft": 10000,
+      "loss_C_pct": 0.83,
+      "loss_N_pct": null
+    },
+    {
+      "ft": 15000,
+      "loss_C_pct": 0.76,
+      "loss_N_pct": 1.69
+    },
+    {
+      "ft": 20000,
+      "loss_C_pct": 0.67,
+      "loss_N_pct": 2.05
+    }
+  ]
+}
+PASS: three source-OCR coefficients internally consistent; historical power loading NOT matched by unchanged candidate C; evidence stays provisional
+v1.6 passed: unchanged three-aircraft baseline, correct original 2100-3000 RPM, source-qualified lower-speed mismatch, no stealth coefficients.
+PASS v1.8: 1940s source comparisons frozen, candidate D induced loading and failures exposed, simulator variant/rating gates, standalone HTML scripts parsed
+PASS ideal stagnation pressure equals ISA p*(1+0.2M²)^3.5
+PASS zero recovery restores static ambient pressure
+PASS critical source node gives exactly its historical MAP setpoint
+PASS maximum rated boost is held well below P-51 critical altitude
+PASS P-51 75-inHg level critical point is an explicitly flagged INFERENCE, not measured climb FTH
+PASS rated-MAP engine chart permits P-51 75-inHg predictive best-climb search at all speed samples
+PASS P-51 1944 climb holds out: full boost but about 400 fpm short at both ratings
+PASS Bf 109 low-altitude regulator cannot be the cause of a sea-level turn deficit
+PASS Spitfire ram boost predictions use NO historical climb boost as an input
+PASS Spitfire predicted power improves historical climb over original solver
+PASS Spitfire no-recovery control is worse than ideal ram in MAP check
+PASS Spitfire speed holdouts do not regress substantially
+PASS IL-2 109 F4 sea-level/3km 20.3/26.1s sanity unaffected by this engine mechanism
+PASS P-47 turbo stays unchanged; opt-in ram model fails closed without a source
+PASS do not allow the observed-pressure override and predictive model at once
+PASS ram model rejects impossible recovery, missing rating and uncalibrated speed extrapolation
+16 predictive ram tests passed
+PASS Primary BS.543 four-blade RA10061 10ft9in and 0.477 reduction, 7,110 / 7,485 lb separated
+PASS Historic level-speed anchor remains only speed fitted; Spit has 20 true unfitted speed rows
+PASS All prior aircraft data remain exactly present, v1.9 unchanged
+PASS Missing boost measurements are explicitly rejected rather than guessed
+PASS Source boost correction at same rating/gear uses ABSOLUTE manifold pressure
+PASS At +18/+18 below full-throttle: zero shift and equal historical climb prediction
+PASS MAP correction improves SOURCE-HELD climb-rate accuracy across 15 altitude points by >65%
+PASS 20-30k comparison is not a hidden radiator fit and 14k remains unavailable
+PASS Spitfire IXe IL-2 two-alt turn points are external and unconditioned baseline has no fit
+PASS Optional simulator-conditioned e only fits 0m and holds 3km out of calibration
+PASS No installed propeller curve or historical Spitfire turn test is claimed
+PASS 11/11 v2.0 Spitfire/boost tests
+PASS v0.6 RAF Mosquito stores benchmark, P-38G evidence separation, universal P-47/P-51/Bf109 drag-area and mass invariants
+PASS v0.4 3-aircraft prototype + P-47 climb MAP correction / held-out checks + Greg 2600-hp power scenario: two Greg worksheet reconstructions, sourced bounded engine envelopes, speed conversions, stall/turn constraints, power balance, baseline calibration
+PASS v0.5 independent source-weight audit and cross-aircraft no-single-winner checks
+PASS clean v0.8: sourced IAS/CAS conversion, no extrapolation/double correction, stores-mass climb consistency

@@ -1,0 +1,1108 @@
+         f:k: ~r' t                                                  '"
+
+            ·0 1-
+
+
+
+
+                 NATIONAL ADVISORY COMMITTEE
+                       FOR AERONAUTICS
+
+
+                                                   REPORT No. 678
+
+
+
+    INTERFERENCE OF TAIL SURFACES AND WING AND
+      FUSELAGE FROM TESTS OF 17 COMBINATIONS IN
+        THE N. A. C. A. VARIABLE-DENSITY TUNNEL
+
+
+                                                  By ALBERT SHERMAN
+
+
+
+
+                                                                                         NASA FILE coPY
+                                                                                             Loar cxpir"~ on last
+                                                                                         date 51"    I or t 1r" ov~r.
+                                                                                                              A
+
+
+
+
+                                                                                        PL  r/lPr:
+                                                                                            1-
+                                                                                                  RC-
+                                                                                                  L
+                                                                                                 .I0.0I
+                                                                                                           'fO
+                                                                                                     t _ n I~
+
+                                                                                  REPORT DI~T1' ..... 3E~ II .                  I
+
+
+                                                                                                _. 1\"
+                                                                                   LANG LE{ "t r.r;K~n
+                                                                                                             C I En
+                                                                                                                  1\
+                                                                                                                        I   I       "\
+                                                                                                                                    J O-d
+
+
+                                                                                   NATIOI!~,L /\EHO[' /\UTIC.) ND
+                                                             1939                     SPACE AD'n . i~""Tr1AnO J
+                                                                                             Lancley F' .Ii, Vi .. :-iJ
+
+
+
+For sale by the Superintendent of Documents, Washington, D. C.   •        •   •              •            •       •   Price 10 cents
+                                                  AERONAUTIC SYMBOLS
+                                          1. FUNDAMENTAL AND DERIVED UNITS
+
+                                                          Metr ic                                      E nglish
+
+                               Symbol
+                                                   Unit                 Abbrevia-              Unit                 Abbrevia-
+                                                                          t ion                                       tion
+
+           Length __ ____        l       meter __ ________ ________          m        foot (or mile) ___ ___ ___   ft. (or mi.)
+           Time ______ __        t       second __ _______________            s       second (or hour) _____ __    sec. (or hr.)
+           Force __ __ __ __     F       weight of 1 kilogram ___ __         kg       weight of 1 pou nd ____ _    lb.
+
+           Power ____ ___        P       horsepower (metric) ____ _ ------- --- horsep ower ___ ___ _____          hp.
+           Speed __ _____               {kilometers per hOllL ____ _ k. p.h.    miles per hO UL _______            m.p.h.
+                                 V       meters per second _____ __ m .p. s.    feet p er second ___ __ ___        f.p. s.
+
+
+                                                     2. GENERAL SYMBOLS
+
+w,     Weight=mg                                                       II,    Kinematic viscosity
+g,     Standard acceleration of             gravity=9.80665            p,     Density (mass per unit volume)
+         m/s2 or 32.1740 ft./sec. 2                                    Standard density of dry air, 0.12497 kg-m- 4_s 2 at
+               tV                                                        15° C. and 760 rom; or 0.002378 lb.-ft.-4 sec.2
+m,     Mass = -g                                                       Specific weight of " standard" air, 1.2255 kg/m a or
+I,     Moment of inertia= mk 2 • (Indicate axis of                       0.07651 lb. /cu. ft.
+         radius of gyration k by proper subscript.)
+j.L,   Coefficient of viscosity
+                                                  3. AERODYNAMIC SYMBOLS
+
+
+s,     Area                                                                       Angle of setting of wings (relative to thrust
+Sw,    Area of wing                                                                 line)
+G,     Gap                                                                        Angle of stabilizer setting (relative to thrust
+b,     Span                                                                         lino)
+e,     Chord                                                           Q,         Resul tant moment
+b2                                                                  fl,           Resultant angular velocity
+       Aspect ratio
+S'                                                                      Vl Reynolds Number, where l is a linear dimension
+V,     True air speed                                                  p-;,
+                                                                                     (e.g., for a model airfoil 3 in. chord, 100
+q,     Dynamic pressure=4p V 2                                                      m.p.h. normal pressure at 15° C., the cor-
+                                                                                    responding number is 234,000; or for a model
+L,                              OL=:S
+       Lift, absolute coefficient                                                   of 10 cm chord, 40 m .p.s., the corresponding
+                                                                                    number is 274,000)
+D,     Drag, absolute coefficient CD=:S                                           Center-of-pressure coefficient (ratio of distance
+                                                                                    of c.p. from leading edge to chord length)
+       Profile drag, absolute coefficient CDO=~S                                  Angle of attack
+                                                                                  Angle of downwash
+       Induced drag, absolute coefficient OD!=~S                                  Angle of attack, infinite aspect ratio
+                                                                                  Angle of attack, induced
+       Parasite drag, absolute coefficient CDP =~S                                Angle of attack, a.bsolute (measured from zero-
+                                                                                    lift position)
+0,     Cross-wind force, absolute coefficient 0 0 = q~                 ,¥,        Flight-path angle
+
+R,     Resultant force
+                            REPORT No. 678
+
+             INTERFERENCE OF TAIL SURFACES AND WING AND
+               FUSELAGE FROM TESTS OF 17 COMBINATIONS IN
+                 THE N. A. C. A. VARIABLE-DENSITY TUNNEL
+
+                               By ALBERT SHERMAN
+                       Langley Memorial Aeronautical Laboratory
+
+
+
+
+]()20!l!l3    I
+-~-~ .-   .   -- -
+
+
+
+
+                                              NATIONAL ADVISORY COMMITTEE FOR AERO NAUTICS
+
+                                                          lIEADQUARTERS.      AVY BUILDING. WASIDNGTON. D. C.
+                                                                   LABORATO RIES. LA GLEY FIELD. VA.
+
+                     Created by act of Congress approved March 3, 1915, for the supervision and direction of the scientific study of the problems of
+                flight (t". S . Code, Title 50, Sec. 151) . Its member hip wa illereased to 15 by act approved March 2, 1929. The members are
+                appointcd by thc President, and erve a uch without compen ation.
+                JOSEPH . A:IlE , Ph. D., Chairman,                                       ROBER'!' H. HINCKLEY, A. B.,
+                     Baltimorc, Md.                                                             hairman, Civil Aeronautics Authority.
+                VA)lNEVAR B SEI, Sc. D., Vice Chairman,                                  J EROME C. HUNSAKER, Sc. D.,
+                     Wa 'hington, D. C.                                                       Cambridge, Ma s .
+                CUARLES G. AnBoT, Sc. D.,                                                SYDNEY M. KHAUS, Captain, United Siaies Navy ,
+                     Sccrctary, Smithsonian Institution.                                      Bureau of Aeronautics, Navy D epartment.
+                                                                                         CHARLE A. LINDBERGH, LL. D.,
+                HENRY H. ARNOLD, Major Gcneral, nited tate Army,
+                                                                                               Jew York City.
+                     Chicf of Air Corp, War D epartmcnt.
+                                                                                         FHANCIS W . REICHELDEIWER, A. B .,
+                GEORGE II. BRETT, Brigadier General, United State Army,                       Chief, United States W eat her Bureau.
+                     Chicf MatCriel Division, Air Corps, Wri ght Field, Dayton,          JOH H. TOWERS, Rear Admiral, Uuited taies Navy,
+                       Ohio.                                                                  Chief, Bureau of Aeronautics, Navy Department.
+                LYiIIAN J. BRIGGS, Ph. D.,                                               EDWARD WARNER. C. D.,
+                     Director, National Bureau of tandards.                                   Greenwich, Conn.
+                CI,[NTON M. HE 'TER, A. B., LL. B.,                                      ORVILLE WRIGH'l', C. D.,
+                     Administrator, Civil Aeronautics Authority,                              Dayton, Ohio.
+
+
+
+                                                           GEORGE W. LEWIS, Director of Aerona11tical Research
+
+                                                                         JOHN F. VICTORY, SecretaTY
+
+                                HENRY J. E. REID, Engineer-in-ChaTge, Langley 1jt[emorial Aeronautical Labomtory, Langley Field, Va.
+
+                                                        J OHN J. I DE, T echnical Ass1stant in E'uTOIJe, Paris, France
+
+
+
+                                                                       TECH I CAL        OMMI TTEES
+                          AERODY AMICS                                                                                   AIRCRAFT STRUCTURES
+                          POWER PLANT ' FOR AIRCRAFT                                                                     AIRCRAFT ACCIDENTS
+                          AIRCRAFT MATE RIALS                                                                            INVENTTO SAD DESIGNS
+
+                                                       Coordination oj ReseaTch Needs of MilitaTY and Civil Aviation
+
+                                                                      Preparation of Research Programs
+
+                                                                            Allocation of Problems
+
+                                                                          Prevention of Duplication
+
+                                                                         Consideratior., of I nventions
+
+                     LA GLEY MEMORIAL AERO AUT1 CAL LABO R AT ORY                                OFFICE OF AE R ONAUTI AL I NTELLIGENCE
+                                  LA GLEY FIELD. VA.                                                        WAsm GTO . D. C.
+
+                    Unified conduct, fo r a ll agencies, of scientific research on the      Collection, classification, compilation , and dissemination of
+                 fu ndamental problems of flight.                                        scientific and technical information on aeronautics.
+
+
+
+
+                                                                                                                                                             j
+                                                   REPORT No. 678
+
+INTERFERENCE OF TAIL SURFACES AND WING AND FUSELAGE FROM TESTS OF
+      17 COMBINATIONS IN THE N. A. C. A. VARIABLE-DENSITY TUNNEL
+                                                       By ALB EHT     H ERM AN
+
+
+
+
+                          SUMMARY                                   C. A. 0009 ection at the tip. It was combined wi th
+   An investigation oj the inie1jerence associated with tail        the fu selage in the standard 101l0-i tudinal posi tion,
+sU1jaces added to wing-juselage combinations was included
+in the inte1jerence program in progn s in the N . A . O. A .
+variable-density tunnel. The results indicate thai , in
+aerodyn amically clean combinations, the increment oj the
+high-speed dmg can be e timated j1'om ection character-
+istics within u ejul limit oj accuracy. The interj erence
+appears mainly as ej)"ects on the downwash angle and a
+losses in the tail effectiveness and t'aries with the geometry oj
+the combination . An inte1jerence bUTble, which markedly
+incTease the glide-path angle and the stability in pitch
+bejore the actual tall , may be considered a means oj
+obtaining satisjactory stalling chamcteristic j or a com-
+plete combination.
+                       INTRODUCTION
+
+   The inve tigation that th e Committee has been con -
+ductino- in the variable-den ity wind tunnel of th e
+aerodynamic interference between the wing :md the
+fu selage (references 1 to 6) has been extended to include
+the interfer ence asso iated with the tail surfaces . Com-
+parable data at large cale are thu made available on
+the aerodynamic interference between the compon en t
+parts of related complete combination .
+   R epresentative wing-fuselage combination wer e tesL-
+ed, to which had been added two different type of tail
+surface: conventionally arranged tail urfaces of sem i-
+elliptical plan form and rectangular horizontal tail
+surfaces with elliptical end plate. The te ts were
+restricted to the condition s of zero elevator deflection
+and zero yaw, and the effects of the interference on the
+drag, the downwash angle, and the tail eiIectivene
+were mainly considered. Effect of the followin g
+variables were studied: wing po ition, ano-le of win g
+ etting, form of tail surface, and form of win g-root jun c-
+ture. A comparison of calculated and experimental
+data on the downwash angle at the tail is also included.
+                   MODELS AND TESTS
+
+  The wing employed is the tapered wing described in                        FIGURE l.-Combination 314 sbowing elliptical tail su rfaces.
+reference 1; it is a duralumin model havll.1 g an area of
+150 square inches, aspect ratio 6, taper ratio 2, and               d/c= O. The fu elage is the round fuselage de crib ed
+the J: . A. C. A. 001 8 ection at the root and the . A.             in r efer ence 1; it is an air hip form baving a length of
+                                                                                                                                   1
+2                             REPORT NO. 678-            NATIONAL ADVISORY COMMITTEE FOR AERONAUTI CS
+
+20.156 inches and a finenes ratio of 5. 6. Th e tap ered                            tion (reference 5) . Figme 1, 2, and 3 ar e photographs
+fillet (reference 1) were cardully con tructed of plaster                           of intere ting combinations and , how the propor tions
+                                                                                    of the tail urface and their location on the fuselage
+                                                                                    aXI S .
+                                                                                       Th e details of the tail smface are o'iven in fi O"ure 4.
+                                                                                    For the ellipLical ta il surfaces, the "ertical urface i
+                                                                                    identical with each of the horizontal urfaces. Th e
+                                                                                    tail with end plates hits approximately the ame total
+                                                                                    wetted area as the ellip tical horizontal and ver tical
+                                                                                    tail surfaces, but its calcul ated total-lift-curve slope
+                                                                                    was predicted from tIt e theory of r eference 7 to be 84
+                                                                                                             (a)     Curve of fusela9,&
+                                                                                                                        Pivot axis.                              1.
+                                                                                                              Leading i3!dge       '                             I
+                                                                                                                                                   I~\ ~A-
+                                                                                                                                                  y,     .       1.1
+                                                                                                                                                   I             ' ;,.,
+                                                                                                                                - --1---- I~I'
+                                                                                                                           ___ ,"._d_ _ _
+
+
+                                                                                                                                                   I             .
+                                                                                                                                                -""7"-----'l J..
+                                                                                                              Trailing edge                        ~-x-
+                                                                                                             d, (Line of points .45c from T.E.)
+
+                                                                                                  (bl                             Curve of fusela~e
+                                                                                                                                       Pivot axis
+                                                                                                                         Leading edg'f3
+                                                                                                                          ,I          '.      I:
+                                                                                                                                                i
+                                                                                                         ____--m-,',-.........             .628":.'
+                                                                                                         I         :'1 :                                     .
+                                                                                                        W,         ::
+                                                                                                         I         :,:         ,·d
+                                                                                                   ---~---r--L--T;P=                        '
+                                                                                                  1\        1           .' l - . . . - - ' - - f - - - - \
+                                                                                                   r-7.-~40~~ E;o plati'
+                                                                                                             d, (Line of points
+
+                                                                                                                                                                          X
+                                                                                                                                                                      (i n. )
+                                                                                                                                                                                  I (iY,n .)      y,
+                                                                                                                                                                                                (in.)
+
+                                                                                    (a) E lliptical lail surface:                                                      o              1. ·103
+                                                                                             Fin area' 11.46 sQ. in .; 0.0i6 of wing arca.                             1.0            I. 381
+F IGURE 2.-Combination 316 sbow ing rectangular tai l surfaces with end plate> ..            Area hori zonta l surfaces (jocl u din~ 4.08 sq . n .                     2.0            I. 30      I. 59S
+                                                                                               in fuselage) : 27.00 sq . in.; 0.1 of wlOg area.                        3. 0           I. 1i7     I. ·139
+                                                                                                                                                                       4.0             .965      I. 179
+                                                                                                                                                                       5.0             .588          . il8
+                                                                                                                                                                       5.51          o           o
+
+                                                                                    (b) Tai l surface with end plate:                                                 0                          0
+                                                                                             Fin (end plates) area: J 7. sq. in.; 0.119 of win~ a roa.                    .2<10        .728          .596
+                                                                                             Area horizontal surfaces (including 3.70 sQ. In. ill                     I. 240          I. ~ iS    I. 126
+                                                                                               fuselage): 21.02 sq . in .; 0.14 of wing area.                         2. 240 I. 412              I. 154
+                                                                                                                                                                      3.2401. 178                 .9(;4
+                                                                                                                                                                      4. 240  .41G                . 3~0
+                                                                                                                                                                      4.3520                     0
+
+                                                                                              FIGURE 4.-DetaUs of tbe tail surfaces-No A. C. A. 0009 sect ion ~.
+
+                                                                                    percent as large. Only very small fillets were used n.t
+                                                                                    the tail surfaces ( ee figs. 1 and 2) because fiJleting wn
+                                                                                    believed Ulmecessary for the junctur es employed. Th e
+                                                                                    te t results do not indicate that larger fillets would be
+                                                                                    an improvement. T able V contain the de cription s
+                                                                                    of the combination (3 14 to 330) that make up th is
+                                                                                    investigation.
+                                                                                        Th e combination were te ted in tbe variable-d en ity
+                     1I
+            F IGURE 3.-Comblnation 329 showing u nfilleted juncture.
+                                                                                    \,-ind tunnel (reference ) at a test R eynolds umb er of
+                                                                                    approximately 3,100,000, corresponding to an crrective
+                                                                                    Reynolds umber of 8,200 ,000 for GLmax ' (ee refer-
+of paris and were given the polisbedlacquer fmish nov.'                             ence 1.) In addition , value of the maximum lift co-
+standard for the wing-fusela,o'e-interference investiga··                           efficient were obtained at a reduced speed corresponcl -
+                                                INTERFERENCE OF TAIL                                         RFACE             A D WING AND FUSELAGE                                                                      3
+ ing to an effective R eynolds umber of 3,700,000. Th e                                                                  ba eel on the proj ected wing area of 150 quare inche
+ te tina procedme and the te t precision were about the                                                                  and on the mean chord of 5 inche. The methods for
+   ame a for an airfoil (reference ). The three-com-                                                                     analy i of the test data and for presen tation of the
+ ponent b alance of the variable-density wind tunnel                                                                     te t re ult are explained in reference 1.
+ 1'e tl'icteel th e tudy of the vertical tail ur£ace to the                                                                T ables I and II, taken from reference 1, contain the
+ zero-yaw condi tion.                                                                                                    aerodynamic characteri tics of the wing and of the
+
+      ~]=:~~~~~-~
+                I-n0=~~~~~II~~~~=C    ~U~42C5~~=~~~iS==~0+0~~I~I~~I~~~~~~~   'T~ 06
+       :%.6 C~ ~+t:C~        t- e~f- Combination 3/2'- --+     0     >  Iii III 05""
+             1 Comb. 3/4 - - -1::. is -O°Comb. 2'30--O+-"'i.I'-H
+       :::; ....                                                            ?'--- =_4°- C~m~/nlof;on joi~ -,-~~Jl-
+                                                                                                       eSC?                                ~.
+       4.J       1 "I 3/5 --- -0 __ 4°                  1 > _ .::.=:=:"                                                      V£         04 <L
+       .!l!  I I I        II         I I I I             ~       CombinatIOn 32'6- -x                                                      ~                                          Of   II                       c:.
+        a~                  ~                        AW'         C~ ?=- _ =4° -t-i--+---t---t---t-_;~~:-=-~~:
+                                                                                                            ,~~r--?,,-"-::--t---+t---+1 03 01.. .9;!
+       ?-6        C~ ~. I I                                       ~.;~                            -          ..-='          -I-+-+--+ -                   --                    ~                                ct·\'!
+       'be: .... Comb. 3/6- - x is _0°                   I " Yo                       ---      Comb/nohon 32'7- - --/:; -t--t---t--t--t-+-t-:--f.c.-'Iif'">'~-F~t-j-                                 I-          ~~
+                           7               4°      ~ V'                                 - I-++-t--t---t---t--t--!--t- I- t - . - 1-          ~ ..d: :""'-      t-I-                                        02'    0
+       LcJ      "    3/ --- ~--              ~~..C' -+--j--.j-H                            I-       - -             __          _=                ~_-- ~~~ ..-                  t--t-           1_               ~u
+                                                                                                                                                                         1-     I-t-t-               t-    O/l,.j
+                                                                                      t-t- f-                                                                            I-I-                    -I-
+       I-- g'
+     H-+-I-I--+--+r--+-'I-~-kl_ f- r"i""                                     lcs'- I- r-=- --- -:>-r-. e:I_- =,- t- ---' ''r---I__
+     HH-++--l--i-Hi- P- r-- h                       ~       I~
+                                                                  t:z,~                    t-
+                                                                                   f--t-t-f-I-f-                    I ~ _ t-
+                                                                                                                                         U
+
+
+
+
+                                                    - b;..t:                 ~~{H- f-t-
+                                                             , f\-.. 1-"<.          ~, P, t- l -
+                                             I- j- . -     1- 1-1-           t::: !.,(,t-)" I- t-
+                                                                             1/1,;'1>:"
+     H--+-~~-+---t-+-r-I-+-t--+-+-~l-
+                                    y.
+                                     _+~7~~~                                                     r--
+     u--!:_L-J,--L~-'-L......LI-1.:--'--!:--l J:-~ v                                  ~'-,--L...L......J'-
+        -.2     0      .2       .4    .6    .8    1.0          1.2     1.4           /.6      -:8       -.6    -.4        -.2        0       .2    .4    .6   .8                    1.4     /.6       /.8 -.4
+                                Lifl coefficient. G.                                                                                         Lifl coefficient. G.
+FrGU "E 5.-C haracteri ~ Licof midwing combinations with Yariolls tail surface.                                      Fr GURE 6.-Effects of tail setting on the characteristics of high-wing combinations.
+        Ta pered N. A. C. A. 001 09 airfoil and round fuselage: kjc= O; iw=Oo .                                                T apered N. A. C. A. 00!l:;-09 airfoil and round fu ~elage ; kjc=0.22; i~=Oo.
+
+
+
+
+      -.8     -.6    -.4       -.2     0      .2    .4      .6        .8            /.0    /,2         1.4    1.6        -.2         o       .2   .4       .6   .8    /.0   1.2     1.4    1.6       1.8
+                                           Lifl coefficienl. c;.                                                                                       Lifl coefficien!, G.
+
+FWURE 7.- Effects of tail setting on the characteristics of low-wing comhinations.                                  FIG URE 8.-Errects of wing '-ertical position.           T apered T. A. C. A. OOJ!Hl9 airfoil
+     Tapered N. A. C. A . 0018- 09 airfoil and round fuselage; kjc=-O.22; i. =Oo.                                                                      and ronnd fuselage; lw=Oo; 1,=0° .
+
+                                        RESULTS                                                                     fuselage, respectively. T able III, continued from refer-
+                                                                                                                    ence 6, presents the lll1S of the fuselage character-
+   The test re ults are given in tables I , II, III, IlIa,                                                          i tics and interferenc       (6 CL , 6 CDe , 6. C7nc / 4 ) for the
+and V supplemented by figure 5 to 10. D ata from                                                                    different combinations at various angle of attack.
+previous report are included for comparison. Addi-                                                                  T able IlIa, continued from reference 6, present the
+tional derived data on tail interference and downwash                                                                urns of the characteristics and interferences of the
+angle at the tail are presented in the text of the dis-                                                             tail surfaces. The characteristics of the combinations
+cussion and in fi gUTe 11. The aerodynamic character-                                                               themselves can be determined by adding the correspond-
+istics are given a tandard nondimensional coefficients                                                              ing items in tables I , III, and IlIa.
+       162099-39-~
+4                                   REPORT           O. 678-NATIONAL ADVISORY COMMITTEE FOR AERO JAUTICS
+
+   Table IV of reference 1, which presents the data for                                                               tions with tail surfaces, however, the lift at
+discoIDlected combinations (combinations for which the                                                                an arbitrary angle of trim,i. e., where OmC/4= O,
+forces on the components are measured separately), is                                                                 is given instead.
+omitted herein as it is in references 2 to 6 because no                                                               aerodynamic-center po ition, indicating ap-
+further tests of this nature were performed. The table                                                                proximately the location of the aerodynamic
+numbers are maintained as in reference 1, however, to                                                                 center ahead of the w:ing quarter-chord axis
+preserve the continuity of the published te t results of                                                              a a fraction of the mean wing chord. Nu-
+the interference investigation.                                                                                       meri cally, no equals dOmcjdOL at zero lift.
+   Tablr V, continued from reference 6, contains the
+principal geometric and aerodynamic characteristics of                                                                For the combinations with tail urfaces,
+                                                                                                                      however, no i given in tead for the arbitrary
+the combinations. The values dlc and lc lc Tepresent
+the longitudinal and the vertical displacements, respec-                                                              trim condition, i. e. , at OmC/ 4 = O.
+tively, of the wing quarter-chord axi measured (in                                                                  pitching moment at zero lift.
+mean chord lengths) positive ahead of and abo\e the                                                                 lift coefficient at th e interference burble, 1. e. ,
+quarter-length point of the fuselage axis. The value                                                                   the value of the lift coefflcient beyond which
+       ~~~~~I~~~~~~n~~~~-r~ .~~~~rT~~~~~-rTl~TI-rT 06
+         ~~ I   1                  +-+-+-1-++-+-+-++-
+                                                   ,1 -1-                                       (=~ i==:LJ=~/~==>l i",I=~o                                           1 \.
+        ~~~
+         ""
+                    ~ 1 11                                     J
+                                                                                     \1-
+                                                                                     1/         Comblnafton 230 ---0 Combination 3/9- -x                                  1 OS\?'
+                                                                                                                                                                               "
+       ~_Combinofion 328 1 1 ~                                 1                1/             r ----r-r1 l,1-r--H                                                   ~        0 4 ~ c.l
+        l~QJ I I I H-~I                                       I'           ~'                  I----±.±=t --+fl H ,4~- fl'                                                         ~~-
+                                                                                          I-
+                                                                                                                                                         1           '"
+
+        :§:::::: C:::o> ~ , I I                               1I1-1-,/l>-'-:'                   (=F~;.) -::3J =rl ,C~ =4°1--1,;;:J!.~W-+-+-+-I03e.~
+         ~-...: Combmofton 329- -0                                  V                                                                                --t:?                         Q.u
+                                                     J-RI/F'"
+                                                                           I-
+
+                                                                                          !-
+                                                                                               f---
+                                                                                                -'-
+                                                                                                             I
+                                                                                                 Comblno /ion 3/4- - ---c, ComblnO/lon 320
+                                                                                                              I- I -
+                                                                                                               - I-      -
+                                                                                                                             --   +
+                                                                                                                                      ....-: p:r-
+                                                                                                                                                  ~~                            QJ~
+                                                                                                                                                                              02~ ~
+       H-il~o.~o$*;::I;p*",;l=Fr4i..IJ~· P'~                                     I- I- +,. _ 1-.1-
+                                                                                      -                                    :_         j,,,.,.l!:;p                                 ,1! U
+        1-1-              - 1·-1-- 1---1--1--1--1-1-- --!--1---1I--1----1--I--I-+I---r- -1-1-                                                                                 0/ 'tj
+        1-1- .. - !=="r:::.~ F-"f=-::':t ~ 1- 1-1- I- - I -              - I - - - 1- 1-:-'1'- I-t> _                                   -'-I - r--   -   1- . :-1-   t --
+                                                                                                                                                                               o
+                                                                                                                                                                                   t   ~
+                                                                                                                                                                             - . / ~ cJ
+                                                                                                                                                                                    ~t~
+                                                                                                                                                                             -.2 c},.~
+                                                                                                                                                                                   . q~
+                                                                                                                                                                             - .3 -S Q3
+                                                                     /~'                       ---1-++-+-1 - -I--I--I--I--I-I-t-l--I--I -IH.-I--+-+,/j:t                           i;: 8
+       LL_.~4-L_-.2~-O·~~.2~~4-L-.6~~.8~-/~.O~-/'2~'~/'~.4-L~/6·-L-1~8L_-.6'~-~4~L_-.2~~0-L-.2~L.~4~-.~6-L~.8~-/.~.O~~/'~2-L/~.4~-/~.6~-·4
+                                   Lifl coefftCienl.    c::                                                               Liff coefftcienl. c,.
+F 1GURE     D.-EJIecls of fillets 011 the charactcrisLics of Jow-wi ng cornbiuaLiol1s .              F IGUnE 10.-
+                                                                                                                E JIeeLs of wing seLling on Lbe charactorisLics of mid wing combi na tions.
+    'l'apercd -. A. C. A. 001 8- 00 airfoil 90d rouod fu selage; k/c= - 0.22; iw= Oo; ;.=_ ]0.              Tapered N . A. C. A. 001 - 09 airfoil aod rouod fuselage; k/c=O; ;.=0°.
+
+i w is the angle 01 wing setting with re pect to the                                                             the air flow has a tendency to break away as
+fuselage axis and i s is the setting of the tail surfaces                                                       indicated by an abnormal drag increase.
+relative to the wing.                                                                                OLmax '  maximum lift coefficient given for two different
+   The la t nine colurrms of table V present the following                                                       values of the effective Reynolds r umber.
+important aerodJllamic characteri tics:                                                                          (See reference 1.) The turbulence factor
+a,       lift-cm-ve lope (in degree measure) as deter-                                                          employed in this report to obtain the e:ffective
+            mined in the range of low lift coefficient for                                                       R from the test R i 2.64.
+            an effective aspect ratio of 6.86. This value                                               As in reference 2 , the values of the effective Reynold
+            of the aspect ratio differs from the actual                                              Number differ somewhat from those given in reference
+            yalue for the models because the lift results                                            1 because of a later determination of the turbulence
+            are not otherwi e corrected for tunnel-wall                                              factor for the tunnel. The values of the effective
+            interference.                                                                            ReJllolds N umber given in reference 1 can be corrected
+                                                                                                     by multiplying by 1.l.
+e,       Oswald's airplane, or span, efficiency factor.
+            (See reference 1. )                                                                         The data thus presented for the combinations witb
+                                                                                                     tail surfaces are directly applicable to design purposes
+OD ~min ,muumum effective profile-drag coefficient                                                   only at the attitude for trim, that is, when the pitching
+                        02)
+                  ( OD- 1rA
+                        --.£                   corresponding to the test                             moment about the eenter of gravity is zero. At other
+                                       min                                                           attitudes, the conditions of the tests cannot be repro-
+                  Reynold s r umb er .                                                                lucecl in steady flight. The most important inter-
+                                                                                                     ference effects for tail smfaces, however, should be
+OL op,'        optimum lift coefficient, i. e., the lift coefficient
+                                                                                                     satisfactorily indicated over the range of lift coefficients
+                 corresponding to OD e . For the combina-                                            by these results.
+                                                      min
+                              I 'rERFEREI    E OF TAIL SURFACES AND WING A D FUSELAGE                                                                          5
+                        DISC SSIO T                                  airfoil operating  under the iniluence of an interferino-b
+                                                                                  .
+                              LIFT
+                                                                I    body, the wmg-fu elage combination. The mo t un-
+                                                                    portant interference at the tail may be eparated into
+   Th e horizontal tail smfaces at con tant settin g add to
+the liftino- area of a combination and should therefore             two effects: that on the {Jow direction, or the down-
+increase the lift-curve lope. For the combinations                  wa h; and that on the flow velocity, or the wake.
+te ted, the gain in lift-curve lope amounted, within the               Downwash and wake.- When the wing-fu selage com-
+limits of the test accuracy, practically to the value that          bination i lif tin 0-, the downflow componen t indnce 1
+would be calculated from the lift expected of tbe tail              by the vortex patiern in the au· tream reduce the
+operating alone as a wing, the dowllwash and the wake               effective ano-Ie of attacl" at the toil by an amount
+                                                                    referred to as the "clo wllwash ungle" E.
+interferences bein o- neglected. The ob erved increases
+in the ma;.."imum lift (table V) naturally cannot be                   The evaluation of E is n c s a ry in ta bility calcula-
+COIl idered real as hey were obtained with undeilected
+                                                                    tion s. A method exi ts for the prediction of the
+elevators and highly unbalanced pitching moments.                                  I  I    I I I      I r                         J J          I
+The effect on the maximum lift of the interference of                        I--- - - Va lues predicte d by me/hod or 1 -
+                                                                                        r ererence 10 I  I   I I I-
+tail surfaces with elevators deflected is outside the cop                           0-- -E xperimenlal va lues ; e l lip t i cal
+of thi inve tigation.
+                                                                             I---
+                                                                                          1011 surr oces I    I     I I I -t--
+                                                                                x- --- -Experimenlal values; fai/ sur roces
+                             DRAG
+                                                                             I-           wtlh end p l a t es                    -- t--
+
+                                                                         B
+     The experimental increment of the minimum drag                                                                                                     b:=s
+                                                                                                                                                   ~
+ coefficients of the combinations due to the semiellip-                                                                                   e-
+ tical tail surfaces at 0° setting (0.00035 to 0 .00055 per              4
+                                                                                                                  .n- ....-:::.[::::: ~
+                                                                                                 :::::=- l::--
+                                                                                                                 I--
+  urface) agree within the test accuracy with a value                                       0-
+
+ estimated from section charocteri tic and the wetted                                  r-- 0 l.----' HIgh- w ing combinalian 3 12
+ area (0.00045 per mface). Thi agreement show that                       0
+                                                                                    r--
+                                                                             ~.:;:::::
+
+ no large resultant interference effect of the tail smface               8
+ could have been present. The horizontal tail surfaces                                                                                         J...::-: ~
+  et ± 4 ° show larger contribution to the minimum drog                                                                       ~
+                                                                                                                                _x- V
+                                                                         4
+                                                                                                                 .0.;:'   ~
+ than tbo e et 0 °, but the diITerences are generally too                                              ~ -x-
+                                                                                            g% ~
+  mall to be important. (See table V. )
+                                                                                    ~; ~ Mldwmg combi nati ons 314 and 316
+     Over the range of low to moderate lift coefficient ,                    ~
+ the variation in the drag increment also was unimpor-
+ tant for two of the tail setting inve tigated (0 ° and
+ _ 4°) and , moreover, wa s often favorable (figs. 5, 6,                                                                                  V    c:::.- 1-----
+                                                                                                                                                          0
+
+
+
+                                                                                                                          L.--- C- ----
+                                                                                                                                   o-
+ and 7). l~or a tail setting of 4°, however, this varia-
+ tion was appreciable and adverse.
+    From the foregoing considerations it can be concluded
+ that, with regard to the high-speed or cruising drag,
+ cleimly con tructed tail urfa es within the normal
+                                                                        4
+
+
+
+                                                                        o L---
+                                                                             ~-
+                                                                                  v:t::-
+                                                                                            ~
+
+                                                                                                --    t:=- ----   o-
+
+                                                                                            o --Law - w ing combin a t io n 313
+
+
+
+range of tail settillg may be atisfactorily allowed for                  o         .c      .4          .6      .8      1. 0   1.2
+                                                                              Lift coerricien t , 0. (tOll sur r aces removed)
+in de ign by simple alcuJations based on section char-          FIG UR E H.-Comparison of experimental and pred icted "al ues of the dow owas b
+ acteri ('ics on 1 the wetted area, neglecting interference .                            a ngle at th e tail. A =6.86.
+Incidentally, the data indicate how Iowa drag houlel
+be expected from cleaning up the conventional airplane          downwa h angle at the tail as ociated with any type
+de ign. The value of 0.0135 (R = 3 X I0 6 ) for the effec-      of WUlO- (reference 10), but the amount that E i modi-
+ ti,-e profile-drag coefficient for combinations 314 and        fied by the interference in a wUlg-fu elage combina-
+315 (fig. 5) at a CL of about 0.3 represents the drag           tion remain to be found. Figme 11 give a compari-
+obtainable for a small airplane. In view of the tur-              on of value of th e average downwash ano-Ie over the
+buJence present in the air stream of the variable-density       tail pan a calculated by th e method of reference 10
+win 1 tunnel and the unevaluated part of the upport-            and a derived from the experimental result for tbe
+strut interference, this value is believed to be consen7 -      ellip('ical tail mface on Lbe high-wing, Lbe midwing,
+ative. Extrapolation of the drag values o-iven in this          and Lhe low-win g combinations . Experimental yulue
+l' port to higher Reynolds Nlmlber can be made by               of € for the tail with end plates on th e midwing com-
+the methods described in reference 9.                           bina(,ion are included. Th e method employed to
+                                                                obtnin Lhe experimental value wa as follow: At eac ll
+                     !'ITC HI NG MO 1" 1 T                      . pecifi ed angle of aLtack, t he ra(,e of ch ange of pitching
+   The horizontal tail urfaces are employed to provide          momen t wiLh the angle of aLtack of the tail wa deLer-
+stability in pitch. They form what is essentially an            mined from th e pitching moment for tail ettin gs of
+6                     REPORT NO. 678- ATIONAL ADVmORY COMMI TTEE FOR AERONAUTI CS
+
+_4°, 0°, and 4°. ~ext, the change produced in th e             ferent geometric characteri tic may provide a better
+pi tching moment by adding the tail urface was divided         lmderstanding of the natur e of such in terf er ence
+by the r ate ju t derived to give the effective angle of       ph enomena.
+attack of th e tail. The experimental value of the down-           Stability at the stall.- The problem of obtai nin g ut-
+wash angle e, then, was the diITerence b etween th e geo-      i factory stalling characteristics is commanding atten-
+metri angle of attacl- of th tail and it effe tive angle       tion in conn ection with th e refined pre ent-clay mono-
+of attack. Thi procedure avoided the complication              planes. An e ential feature of a ati fact ry tall is
+of tll e wake interference and th e ta il efrectivene s.       tha.t it giye ample warning, a ociated preferably with
+    IL can be seen from figure 11 th at, for the ellip tical   rapidly increa ing ~ tability in pitch. Figure 9 pre ent
+tail on the ymmetrical midwing combin ation, the               the aerodynamic characteri tic for a low-wing unfilleted
+aO"reement betw en th e predicted and the experimental         combination of moderate aspect ratio (see fig . 3) th a t
+downwasb angle is O"ood over the range of low to mod-          employ a common method of acb.ie\'ing suc h a tall, an
+er ate lif t coefi'cients.   pparently, t he interf rence of   interference burble (see reference 1); th e burble oc-
+the fn elage and the junctures wa s negligible. For th e       cmred at a lift coefflCient of about 1.0, which i above
+high-wing and tb e low-wing combination , t he agree-          th e climbing range, and resul ted in a loss of 10wnwa h
+m en t is POOl". Th e discrepancy, h owever , i prac-          a t th e tail. As the angle of attack was in crcased, th e
+ticall y constant, tllC'L"dore of little importance in , ta-   lift con tinuecl to in rea se slowly to the maximum bu t
+bili ty calculations, and i of oppo ite sign for th e hiO"h-   t he diving moment and the drag 1'0 e precipitously,
+wing and the low-wing combination. Apparently, at              in uring a teeper glide path, an appreciable incl'ea e in
+zero lift the tail surfaces haye already an initial eil"ec-      tability in pitch, and th u a warning of the approacuill O"
+tlve angle of attack of appro:\.~mately 0.8° for the low-        tall. It i under tood from flight re ult th at ome
+wing and -0.8° for the high-winO" combination. (ee             tail buffeting may occur sinlUltaneou ly; thi buffeting
+pitching-moment curves of fig. 6, 7, and .) The                i an unmi takable warning th at cannot be overlooked.
+geometrical a ymme try , th en, produce an initial d -         The interference burble can be delayed to a hiO"her lift
+viation in the flow at the t ail impossible to derive from     coefficient, if 0 de ired, and the co t in maximum lilt
+a t h eory th at con id el's only the wing. A compari on       and minimum drag can be l' duced by ma ll :fillet .
+of figure 7 and 9 hows that mo t of this interference          The use of th e interference burble is therefore not
+i chargeable to th e fillet. The sam e effect can be           necessarily a makeshift solu tion in the de ign of aIr-
+produced, however, by other SOUTces of a ymm try,              planes for acceptable taIling ch aracteristic .
+  u cb a wing etting. (f. CllTve of pitching moment                Tail factor.- The tail factor , 1/ 1, may be defined a the
+in fig. 10, and also rno for combinations 314 and 322 in       r atio of experimental to calculated change in the pitch-
+table V.)                                                      ing moment due to th e borizontal tail surface. The
+    Figme 5 shows that, for zero tail setting and at low to     calculated ch ange may be lerived from th e geometric
+moderate lift coefficients, th e tail surface wi th eud         and t he aerodynamic ch aracteristic of th e tail urface
+plates produce as large a ch ange in the pitching moment       with due allowance for th e downwa h angle and t he
+as the elliptical tail m'face, indicating th at th ey hould     flow velocity at th e tail as affected by th wake. Ordi-
+h ave as high a slop e of the total-lift curve. The lope       narily, tb e factor i df'rived from the experimental
+for the end-plate tail, however, h a been calculated to         and tbe calcul ate 1 ch anO"es in t b e pitching moment of
+be only 4 percent of that for the elliptical tail. Thi          th e combination produced by different etting of the
+calculation appears corroborated, moreover, by th c             tail surface for a O"ivcn angle of attack of th e wing.
+  h ange in the pitching moment at zero lift develope 1         This procedure avoid t he complication involvecl with
+by the end-plate tail, corresponding to a chanO"e from          the downwa h angle at tb e tail.          Llch a derivation re-
+0° to _4 ° in tail etting, which was also about 4              suIt , h owever, in a factor corre pondin g to a varying
+                                                                angle oj tail s tting rather th an one for a val'ying angle
+   ercent of th e ch ange produced by the elliptical tail
+                                                                oj attack oj the combination as a whole. The inter-
+ (fig. 5). The appar ent incon istency m ay be explained
+                                                                ferences as ociated with various tail- nrface cUin g
+by the experimental, and uneArpected, circumstan ce             migh t po ibly diO'er, find hence th e factor as ordi-
+th at the average downwa h anO"le afi'ectinO" t h e nd-         narily obtained would not strictly apply to stability
+ plate tail wa slightly Ie s than t hat affecting the           calculations for which th e tail ch anO"e angle tog ther
+ elliptical tail and balanced it lower lift-curve lope.         with the combination. As will be shown later, how-
+ ( ee fig. 11. Refer also to pitching-moment Cill'ves in        ever , t h e variation in tail factor oyer a moderate range
+ fig. 5.) Jo explanation for thi cli:fference in downwasb       of angles of tail etting i gener ally unimportant for
+i oiIered. Further inve tigation of tail surface of dif-        combina,tions uch a repo rted h erein .
+                                            INTERFERENCE OF 'fAI L S RFA ES AND WI JG AND F SELAGE                                                                            7
+CO M PARISO N                 OF TA I L FA CTO]                    FOR D I FFE RE N T                   at the lower lift coefficients wi t hin the range investigated
+                     WI NG-FU E LAGE COMBI -ATIOi\'
+                                                                                                        and wi thin the accuracy of the data. It appear , there-
+                                                                      dC .. ", )    d ue to tail        fore, that a factor d rived from a mall range of tail
+                                                                    "~
+                                                                    (                 surface,
+ Combi-           k/c                                                      I.                            ett ings is reasonably applicable to horizon tal tail
+ nation
+                                                                                                        sLUJaces that ch anO'e angle toge th er with the combina-
+                                                                                                        tion a a wh ole. Check calcula tions wi th the data
+                                    Elliptical tail surfaces                                            Llsiog factor 0 derived corrobora ted tbi conelu ion
+                                                                                                        by correct.ly predicting tbe curve of pitching momen t
+  314.
+  315_
+                          0
+                          0                             0.9 1 {-O. 128
+                                                                -, 127
+                                                                           -0. 157
+                                                                            -. I ,I f>
+                                                                                             -0.202
+                                                                                              - . 19G
+                                                                                                        produced by the tail surface .
+  327. __          .22    0                              .90    -. HH
+                                                         .90 } - 102
+                                                                            -. 198            -.22 1       Th e factor of the tail with end plates in the
+  312' _           . 22   0                                                 -. 179            -.2 19
+  326 __           .2:l
+                                                         . 90
+                                                         .90    -.167       -.180             -.2 13
+                                                                                                        symmetrical midwing combination are prac tically th e
+                          0
+  330 ._         -.22     0                              .90
+                                                         .90
+                                                               }
+                                                                -. 16
+                                                                            -.1 16       I    -. 19 1    ame a tbose of t he elliptical tail. (OL also valu es
+  313 ' ._
+  328 ._
+             -
+                 -.22
+                 -.22
+                     ---
+                          0                                 .[
+                                                            4
+                                                                -. 1 0
+                                                                -. 159
+                                                                            -. 151
+                                                                            -. 153
+                                                                                              -.15
+                                                                                              -. 15 1   of    Ll( d~O~/4 ).) Thi agreement indicate that the
+                                ~'a il surfaces with encl p lntes                                       lU1evaluated in terference i not intima tely connected
+                                                                                                        with th e geometry of the t ail urfaces th em elves.
+  316
+  3 17                                                                                                                             CONCLUSIO S
+ I FrOJTI reference G.
+                                                                                                            T he result of the pre eut test how that:
+    If tbe ta il factor i derived a de cl'i bed , i t will differ                                           1. Th e increment of the drag in th e high-speed r ange
+from uni ty by a n amoLlnt proportional to the unevalu-                                                 caused by a lcli.ng t ail urfaces in th e normal range of
+ated interference. Reference 10 con tain method of                                                      tail etting to clean combinations can be e tima ted
+obtaining the interference behil1l1 the wing. Th e                                                      wit hin u eflll limits of acc uracy from section charac-
+interference with a fll elage pr e ent r emain to be in-                                                teristic and the wetted ar ea, the interference being
+ve tigated. Th e p reeeding table presents a comp arison                                                neglected .
+of tail factors for yariou combinat:ons wi th n,llo\\-ance                                                  2. The interference of t he fll elage in ymmetrical
+made [oj' the interference of tbe wing alone n accor dance                                              miclwing combination on the uownwa h angle behind
+wi th the method of r eference 10.                                                                      t h wing is small.
+    No tice that 'T) t i practically constant for the ym-                                                   3. Th e effect of a ymmetry in th e combination i t o
+metrical mid wing combin ations over the range of ano-Ies                                               in troduce a corre ponding initial deviation in th e au
+of a,ttack investigated . F or the high-wing and the low-                                                 tream at tbe t ail.
+wing; combination, the factor how greater amoun tf,                                                         4. Th e effec tive do",rnwash angle at th e tail may vary
+of unevalua ted in terference at low angle of attac k than                                               omewh at with the O'eometry of the tail smface UDd er
+for the mid wing ombination_ l\Iost of the difl'erence                                                  C011 ider ation.
+
+i believed to 1'0 ult fr om the asymmetry intr od uceel                                                     5. An inted er nce bmble for a combination f wing,
+by the fill ets. ( otice in fig. 9 the r eduction of lope                                               fu selage, and tail uJ'faces ma,y be consider ed a sati -
+in the pitching-moment curye asso iated wi th the                                                       factory mean of prociucin O' acceptable stalling charac-
+fillets.) It appear , therefore, tha t a knowledge of the                                               teri. tics .
+interference behind a wing alone is in sufficient for cal-                                                  6. F or combination uch a were investiga ted, large
+culatin o' the effectivene of tail surfaces in combin a-                                                rill ts at the tail-surface junctur s ar e unnecessary.
+tions. Un til fur ther re earch m r e fully evalu ate the                                                   7. Kn owledge of the interfer ence behind the wing
+interference at the tail of combination, e timates                                                      alone i not suffi cien t for eyalu a tin g the effectiven es of
+based upon te t re ul t , such a in t hi repor t, m ust be                                              tail ll1Jace added to wing-fuselage combination .
+relied upon in tability alculation.
+    Th values of 'T) t o'i ven are obviou ly average for tbe
+two tail setting employed in each derivation . For any
+combination chosen, at a specified angle of attack, t he                                                L .\NGL E Y :M E MORIAL A ERONAUTI AL L AB OR A'l 'ORY,              A-
+dowD wash angle and t he wake interference may be                                                              TIONAL AD VI ORY OOMMITTEE F OR A ERO "A U TI CS ,
+a umeel unchanged for varioLls tail setting . U ncl eI'                                                        L A. "GLEY FIEJ,D, VA.,        ovember 5, 1938 .
+sLlch conditions, a varia tioD in the change prod llceci in
+                                                                                                                                    REFEREN E
+the slope of t he pitching-m oment curve by adding tail
+surface  Ll( d~O:4 )i a direct indication of a variation                                                 1. J acob, E a tman      I ., and Wa rd, K enneth E. : I ntcrfercncc of
+                                                                                                                Wing a nd Fu clagc from T cst s of 209 omb inations in
+                                                                                                                t hc I . A. C. A. Va ri able-Density Tunnel. T. R . No. 540.
+in the tail factor. From the column of Ll( d~O:4 ) in                                                           N. A. C. A., 193:- .
+                                                                                                         2.    hcrman, Albert: I nterfe ren ce of Wi ng an d Fu clage from
+the precedinO' table, i t can be conclud ed th at t be tail                                                     T csts of 2 Comb inat ions in t hc . A. C. A. Vari ab lc-
+ etting did not, in general, greatly aflec t the tail factor                                                    D cn ity Tunncl. T. R. No. 575, N_ A. C. A., ] 936.
+                                           REPOR'l' TO. 678-                A'l'IONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+3.     herman, Alb rt: I nterference of Wi ng a nd Fu elage from                                                       Dens ity Tunn 1. Combinations with Tapered Fillets and
+        Tcsts of 30 Combinations in the . A. C. A. Variable-                                                           Straight-Side Junctures. T.         o. 6-!2, N. A. C. A., 1938.
+        D ensity Tunnel. Combinations with Triangular and                                                        7. von Karman, Th., and Burger, J . M.: ingle Wing with
+        Elliptical Fu elage. T. R. (to be publi hed), N. A. C. A.,                                                       hields at Ends. Vol. II, eliv. E. sec. 19 of Aerodynamic
+          1939.                                                                                                        Theory, W. F. Durand, ed., Julius pringer (Be rlin), 193.),
+4.   herman, Albert: Interference of Wi ng and Fuselage from                                                           pp. 211- 212.
+      T sts of 1 Combination ill the N. A. C. A. Variable·                                                          J acob, Eastman N., and Abbott, Ira E .: The . A. C. A.
+      D ensity Tunnel. Combinations with Split F laps. T. N.                                                           Variabl -Den sity Wind Tunnel. T. R. r o. 416, N . A. C.
+      N . 640, . A. C. A. , 193 .                                                                                      A., 1932.
+5. Sherman, Albert: In ter ference of Wing and Fu elage from                                                     9. J acobs, Eastman ., and herman, Albert: Airfoil Section
+      Tests of 17 C mbinations in the N. A. C. . Variable··                                                            Characteri tics a Affected by Variations of the R eynolds
+      D en ity Tunnel. Combinations with Special Junctures.                                                            Number. T. R. No.5 Ii, N. A. C. A., 1937.
+      T. T. No 641, r . A. C. A., 193 .                                                                         10. Silverstein, Abe, and I<atzoff, S. : D esign Charts for Predict-
+o. f'herman, Albert: Interference of Wing and Fu elage fr ont                                                          ing Dowl1wash Angles and Wake Characteristics behind
+      Test of Eight Combinations ill the . A. C. A. Variable··                                                         Plain and Flapp d Wi ng. T. R. I 0.64 ,r . A. C. A., 1939.
+
+                                                                                                     TABLE I
+                                                                              AIRFOIL CE ARACTERISTIC
+
+
+                                                                                                                                                                                           I ('rn ,!. I:
+                                                                                                                                                                       CL           Cn.
+                                               Airfoil
+                                                                                                            C m c/"                                                            I
+                                                                                                                                                                                   «=12°
+                                                                                                                                                                                                    --
+                              Tapered:-<". A. C. A. 001 09. ___ ___ ____          0.000   I 0.0093 I~ 0.305 I 0.0099 I 0.006                                         0.910     I 0.0146 I 0.013
+                                                                                                     TA" I.E II
+                                                                            F- ELAGE CHARACTERISTICR
+
+                                                                                             IIIpl
+ Fuse-          En-
+  lage         gine
+                                                                                                                      a=    0
+
+
+
+
+R ( uud         one__       0.000   I 0.0041 I 0.000            0.001   I 0.0042 I 0.016              0. ')05   I 0.0049 I 0.028                       0. 011   I 0.0062 I 0.035            0.019    I 0.005 I O.O;!
+     • Pilcbing-moment coellicient abo ut the Quarter-chord point of the fu selage.
+
+                                            TABLE III                                                                                                             TABLE IlIa
+LIFT AKD I NTERFEI EKCB, DRAG AKD INTERFER··                                                                    LIFT AND INTERFERENCE, DRAG AKD INTERFER-
+  EKCE, AND PIT CHI XG MOM ENT AND I KTERFER·                                                                     ENCE. AND PITCHING MOM ENT AND L'\TEH-
+  EKCE OF F SELAGE IK WI N G-F - ELAGE CO MB I··                                                                  FEREN E OF TAIL URFA ES IK CO 1BINATIOX
+   -ATION
+                                                                                                                                 !!.CL        !!.Cn, I!!.Crn,!.            I. !lCD. I!!.Crn ,!.   !!.CL
+                      I!!.CD.I!!.Crn,,, 1!!.CL I !!.Cn·I!!.Cm" . . !!.CL I !!.cn·l                               Com-                                                                                          J.Cn,
+                                                                                                                  bina-                   I                        !!.CL
+                                                                                                                                                                                                           I           I ClC"' c/ l
+Com-
+bina-     I   !!.CL
+                                                                                                                  (ion                        a:=OO                          a= ll°                            a=12°
+tion                      a=O°                         a= I[O                       a=12°
+                                                                                                                      310        0.005        0.0011    0.009 0.030 0.0012 -0.050                 0. 097 1 0.0025 1-0.190
+ 230       0.003          0.0024 -0.003 0.023         0.0024     0.003 0.042       0.0040         0.012               311       -.005          .0011   -.009      .022    .0015 -.062              .078     .OOH -.166
+ 319      -.016                   -.023 -.001                                                                         312       -.003          .0007     .020     .027    .0008 -.037              .083     .0015 -.Ii2
+                           :~~~
+                                                       .0025    - .019    .030      .00·10       -.009
+ 321      -.020                   -.022 -.004          .0027    - .016    .019      .0035        -.002                313         . 003        .0007   -.020      .027    .0014 -.on               .061     .003    -. lil
+                                                                                                                      314         .015
+                                                                                                                                               :~l~
+ 306        .008           .0029 -.001     .019        .0033      .003    .044      .0059          .012                                                  .003     .033    .0015 -.043              . 09i    .0046 -.lfii
+ 307      -.008            .0029    .001   .013        . 0028     .005    .037                                        315       -.035                    .lOi -.007       .0010         .063       .046     . 0006 -.052
+                                                                                    .0044          .011               316         .015
+ 308      -.017            .0025    .009 -.011         .0027      . 017 -.004       .0052          .032                                        .0014     .003     .037    .0017 -.016              .091     .0031 -.152
+ 309        .017                                                                                                      317       -.019          .0019     .088     . 009   .0013         . o~o      .054     .0010 -.058
+                                    =:~~
+                           .0025           .036        .0027    - . 004   .0·16     .0047          .006
+ 1 i        .009           .0031           .026        .0036    -.001     .029      .0069          .010
+                                                                                                                      31        ..   -        ----- - --- -- - -- - ---- ---- - - - - -           ---- -       -
+                                                                                                                                                                                                              -- -- -
+                                                                        1                                             320         .003         .0015 - . 010      . 033   .0015 -.0.19             .075     .0033 -.151
+                      -                           -             ---                                                   322         .006         .0012 -.016        .031    .0016 -.067              .Oi4     .00·11 -.161
+                                                                                                                      323       -.03i          .0021     .091 -.017       .0017         .035       .022     .0027 -.058
+                                                                                                                      324         .004         . 0014 -.O<!~      .029    . 0015 -.060             .076     .OO~~   -.161
+                                                                                                                      325         . 019        .0010     . 006    .039    .0013 -.042              .099     .0036 -.161
+                                                                                                                      326       - . 056        .0015     .125 -.032       .OOO ~        .06~
+                                                                                                                                                                                                    :~~~
+                                                                                                                                                                                                            .0007 -.061
+                                                                                                                      327         .042         .0015 -.02         .071    .0027 -.142                       . 0058 -.283
+                                                                                                                      32        -.042          .110 15   .082 -.021       .0009         .029        . 020   .0019 -.069
+                                                                                                                      329       -.038          .0015     .lOi - . 017     .000          .0~5        .038    .0021 -.0(;5
+                                                                                                                      330         .056         .0015 -.125        .Oi5    .0033 -.IiS               .118    .OO~I   -.21
+                                                                                                                                          ---
+                                                IN'l'ERFERENCE OF 'l'AIL SURFACES AND WI                                              G AND FUSELAGE                                                                                     9
+                                                                                                     TABLE V
+                                   PRINCIPAL AERODYNAMIC                                          HARACTERISTICS OF THE COMBINATIO N
+
+                                                                                                                                                                                                      Li ft
+                                                                                                                    A ngle   LiIt-
+                                                                                                   L on·
+                                                                                                   f?;itu- Ver t i·    or   curvo    pan                                       Aero·
+                                                                                                                                                                                dy -              ci~~t' 1- - - - ; - - -
+            Diagrams represen tin g eomb ina·    Com·                                                       ca l
+                                                                                                   d inal posi· set·
+                                                                                                                    w ing   slopo   effi·                                  namic-                      at        E fTec·      EfTpc·
+                                                 bina-                   Rema rks                                            (per cie llcy                             center·                    inter-          tivc         Li \-c
+                         t ions                  tion                                              posi· t ioll      t iug  deg.) facLor
+                                                                                                    t ion                     a                                        position                   ference         R=               R=
+                                                                                                    elle     klc      I",
+                                                                                                                                                                                no                 burble         .2X          3.7X
+                                                                                                                    (deg.) A=6.86
+                                                                                                                                                                                                  t   CI~ib       10'           10'
+
+                                                                          Tapered K . A. C. A. 001 -r9 airfoil witb round fuselage
+
+
+     !_ _ _ _ _ _ _ _ _ _           ~---I-.-..-.-._I_'-' -'i-n-g-a-lo-n-e-.----.._._._. I=I~I=-= o.on I ~ I 0.0093 ~~I 0. 000 ~~I '1.23
+..                                                230
+                                                             (F rom reference 2.) '1:a·
+                                                               pered         o . 080 '. 5 .0 11 7 .00 . 026 .000 A I. 5 c I. 52 I. 27
+                                                                          fill ets. (P laster                                                                                                                                 1\
+
+                                                               fi nish .)
+                                                         - - - - - - - -- ------------ - - - - - - - - - - -
+                                                             T ape red fi llets. Ve rtical
+                                                  311          a nd hori zontal tail s ur·                                   .06          '.5      . 0 128    ' .02 1-.100               .002         AI. i       cl. 73      e l.4i
+                                                               surfaces. !'.= Oo.
+              ---------1-- ------- - - -------
+
+                                                  315        i, = _4°; otherwise saln as
+                                                               combination 314.                        o                o    .0 7         '.90     .0 133     '. 2 1-. 156               . 102        AI. 6       "1.62       " I. 3 1   I
+     ------------1-- --------- -- -- - - - - - -
+                                                             'l"apcn'<1 fill ets.
+                                                                             'r ail sur-
+                                                  316          face' with e nd p lates.                o       o             .06          '.S3     . 0132      6. 02 1-.098              .001          \ I. 6     " I. 67     "I. 40
+                                                               i.= Oo .
+
+
+
+                c~:=0-
+                                                             iJ= _,1° ; otherwi se sam& ('.... S               o        o
+                                                  31 i
+                                                               com hinati on 316.
+                                                                                                                              .0 7        '. no    .013 1      '. 75
+                                                                                                                                                                           '
+                                                                                                                                                                               - .1 22   .0Sf>         " 1.6      " 1. 62     " 1. 33
+
+                      ----
+
+                C~=.SJ-·
+                                                             \\'aslll'd·o u t fill ets . Vert i·
+                                                               cal and hori zon lal ta il                      ()            .0 (j        '.8;;    .0 112 '-. 33 1- .129 -. OIJ                        ' 1.·1     <'\. ·'2    "I
+                                                               surfaces . i.=Oo.
+
+
+                                                  3 19         l~nmel ri cal tap    red fillels                o             .080         '.85     .0 117      .02               . 027 -.021           AI. 5      el.SS       81. 25
+
+
+                                                             SaJne as cOJnhination 319
+                                                               b ut with ve rti cal a nd                       o             .0 7         '.85     .0 1 ~2   '-. 29 '-. 11 5 -. 033                    AI. 6      ' I. 66     "I. 36
+                                                  320          !1ori ontal tail surfaces .
+                                                                  lb
+                                                               1.=0.
+
+
+                                                  321                                                          o             .0 0         '. 5     . 0120      .02               . 034 -.02 1          A1.5       el.50       RI. 22
+
+                                                 - - 1 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - -
+                                                             Vcrti ca l and horizo ntal tail           o       o        4.    . 087                .0 133 ' - . 32 1-. ll f. -.03\!                    Al .6      ' I. ()7
+                                                  322         su rfaces . i, =Oo.                                                         '. 5
+
+
+
+
+                              ~-                  323
+                                                             i.,= _4°: otherwise SalTIC as
+                                                                camh i na ti on 322.
+                                                                                                                              .0 6        '. 5     .0133       6,51    ; - .1 10         .052          ,\ I. 6    ' I. 60     " I. 3 1
+
+
+
+                c~                                32 1
+                                                             'r ail   surfacos
+                                                               p lates. i. =Oo .
+                                                                                    with   end         o                      .OS6        ~.   5   .0 135 "-.28 1 -. III -.032                         ,\ I. 6    ' I. 65     " I. 3 1
+
+
+                                                  325 · T ape red fillet s. H ori zontal               o
+                                                                                                                                                                                         .OO~~~~I
+                                                                                                                              .036        '.85     .0127       ' .06 1- . 0S7
+                                                          ta il sur faces. i.= O° .
+
+
+                          o                       306
+                                                             (From r ference 6.)
+                                                               p red fi llets.
+
+                                                             (From referen ce 6.) T a·
+                                                                                           T a·        o     .22        o     .030         .85     .0 122    -.02                .032 -.001            Al.6       '1.65       " 1. 30
+
+
+                                                  312          po red fi llets. H or izontal           o     .22        o     .087                             '. 11 '-.133              .01 9         A1. 8      ' 1. 84     " 1. 50
+                                                               tail surfaces. i,=Oo.
+
+                                                             i. =- 4°; otherwise sallle as             o     .22              .035        '.85     .0137       6.77    i       -, 166    . 11 0        A1.7       (' \ . iG
+                                                  32"          comb inatio n 312.
+
+
+                                                             i. = 4°; otherwiso sarno as               0 1    22        0     .06'                  0 133 ' -.6 1 1-. 125 -. 077                       A1. 8      ' 1 81      " 1. 50
+                                                  327           combinat ion 312.
+
+                                                -3-0-1-(-F-r-t~-~1-i~-h-t-:S-~~-~-1~-.~-1~1-~-fu-,-.C-~.-.)-I'--o I .22 1 - -0- , - - - : - : - - . 0- 1-1-1 - ' 03 ~ ~ - : : - - : : - ~
+        -------------
+                          o                                  (F r o m     r ele r ence      6.) - - - 1 - - - ' - - - - - - - - - - -
+                 C~                               310           N~~i~:;l~\d~a;/u.~~~:::;~~:                  .22        0     .OS6        '.       . 012       6. 13 / - .127            .016 1 ,1 1.7            'Li5        a 1.46
+     '---                                                I     ;.= 0°.                                                                1
+             Sec foot note at end of ta bl e.
+10                                      REPOR'r NO. 678-                          NA'l' IO r AL ADV ISORY COMMITTEE FOR AERO r AUTICS
+
+                                                                                                     TABLE V- Continued
+                          PRI NCIPAL AERODY N AMI C CHARA CT ERISTI CS OF TH E CO MBI NATIONS-Co ntinued
+
+                                                                                                                                                                                                     Lift            'C,    ~ m aJl:
+
+                                                                                                           Lon- Ycrli- Angle
+                                                                                                                           of
+                                                                                                                                   Lift-
+                                                                                                                                  curve    pan                                  Aero-               cocm-
+                                                                                                           p:itu - cal                                                           dy-                cient
+                                                   Oom-                                                                   win g slope     c m-                                                        at       Efr~c-          Efroc-
+                                                   hina-                    R emarks                       dina l p;)si-  set-     ( per cicncy  CD                            namic-         Cmo
+                                                                                                                                                                                          I
+                                                                                                                                                                 CJ.Of)t
+       Diagrams representing combina-                                                                      pOF- i-
+                                                                                                                   tion   Ling     dcg.) facto r    IIImf"                     rcn ter              inlt' r-    li\'c            li\-l'
+                        tions                      tion                                                     tio n                                                                                   [erence     R=               R=
+                                                                                                                    kle    i w       a                                         position
+                                                                                                             die         (deg .) /1=6.86                                         110                burble     8.2X             3.iX
+                                                                                                                                                                                                     GLib l     10'              10'
+                                                                                                                                                                                          I
+                                                                                  T apered"N . A. C. A .. 1I0IS-{)9 airfoi l with round fu selage
+
+
+
+_____°______                                   1
+                                                    307
+
+
+                                                    313
+                                                           _(_F_;_~r_~_d_f_;i _B~_e~_r;_n_c_e_6_.)
+                                                            (F rom reference 6.) Ta -
+                                                              pered fillets. TI ori zontal
+                                                                                                 __T_a_
+                                                                                                      - __0_ -.22 _ _0___._0_1_            ~ ~ ~ ~ ~ ~!~I-=-
+                                                              ta il surfaces. i,= Oo.o -.22  o .0 7 '.85 .0129 ,-. 15 ,-. 127 -.oln                                                                            c 1.72         11 1.:37
+                                                        - - - - - - - - - - - - - --- --- ---                                                                              1
+
+
+
+                                                    328 i,.=-4°;  otberwise same as  o -.22    .086 '.85  .0133                 .077                                                                  A1. 6    (' !. (i{)
+                                                           combina tion 313.
+                                                        ----------- -- -- - - -- ----
+                                                    17 (From reference 1)._ •. _.... o -.22    .079  .85  .0 124 - .02  .039 -. DOS                                                                            ' I. 33        "I. II
+
+                                                        - - - - - - - - - - - - - --- --- --- ---
+                                                    329 H i.=-4°.
+                                                           orizontal tail surfaces.  o -. 22 o .085 '. 90 .0139 -.69 <-.137 .09"                                                                      "LO      c l. 12
+
+
+
+                                                            L.= 4° ; otherwise sa me                  8S
+                                                    330       combination 313.
+                                                                                                                 -.22        o     .0 6          '.80   .0 13i   '- . i7 '-. lGG -. 11 5              AI. 6    (' I. il       " I. 3~
+
+                                                                                                           -- ~ ---------
+
+                         o                          309     (F r om refe r e n ce G.)
+                                                               ha ight-sid e junctures.                       o -.221        0      .079         '.85   .01 18
+                                                                                                           - - --,---.---1--- ---- --- - - - --- --- - - - ---
+                                                                                                                                                                   .03           .0-11 -.010          " 1.5    ' 1..50        " 1. 23
+
+                                                            ( Fr o m reference 6.)
+                                                    311
+                                                               Straight-side junctures.
+                                                              Jl orizontal tai l surfaces.                    o -.22         0     .086          '. 5   .0 128 ,-. 131<- .1 2.5 -.0 16                Al . 6   ' I. GG      I "U C
+                                                               i,= Oo.
+
+        I   l.etlcrs refer to types of drag curves associated with the interference b urble M follows:
+
+
+
+                                                                            ~L:Z {k       CL                        CL
+                                                                                                                                  ~L        CL
+                                                                                       Type A                     Type B                   Type C
+
+        ' Leiters refpr to eondiLion at maximum lifl as follows; ". reasonably steady at C"m",; b. small loss of lift beyond C['m,,; c. large loss of Jill beyond C['ma: a nd uncertain "alue
+()   f C ["maz .
+                          3 Poor agr cC' lllC' n t in high-speed ran gc.                                          .s Poor agreem ent io high-lift raoge.
+                          'Poor agreem cn t OYCr whole ra nge.                                                    6 C[, at Cm",=O for combinations wi t h tail surfaces .
+                                                                   'lIo=dCm" .tdCL at Cm ",= O for co m binations with tai l surfaces.
+
+
+
+
+                                                                                                                                                                   U. S. GOVER NM ENT PRINTING OFFICE: 1939
+                                                                       z
+                          Positive directions of axes and angles (forces and moments) are shown by arrows
+
+                   Axis                                Moment about axis                     Angle             Velocities
+
+                                      Force
+                                    (parallel                                                               Linear
+           Designation         Sym- to axis)                    Sym-       Positive    Designa-      Sym- (compo- Angular
+                                bol  symbol     Designation      bol       direction     tion         bol nent a.long
+                                                                                                             axis)
+                                                                                                     --
+         Longitudinal ___ __    X       X       Rolling _____    L         Y---7Z      R oIL __ __           1.1            P
+         LateraL _______ __
+         NormaL ___ __ ____
+                                Y
+                                Z
+                                        Y
+                                        Z
+                                                Pitching ____
+                                                yawing ____
+                                                                 M
+                                                                 N
+                                                                           Z---7X
+                                                                           X---7Y
+                                                                                       Pitch ____
+                                                                                       yaw _____      '"
+                                                                                                      0      v
+                                                                                                             w
+                                                                                                                            q
+                                                                                                                            r
+                                                                                                      '"
+Absolute coefficients of moment                                      Angle of set of control surface (relative to neutral
+    O=~               0 =M                                            position), o. (Indicate surface by proper subscript.)
+      I   qbS           m  ~cS
+    (rolling)         (pitching)
+
+                                                  4. PROPELLER SYMBOLS
+D,     Diameter
+p,     Geometric pitch
+                                                                     P,                                          ~nil-
+                                                                               Power, absolute coefficient CP = pn~
+
+                                                                              Speed-power coefficient=-v~~:
+p/D,   Pitch ratio                                                   0.,
+V',    Infiow velocity
+V.,    Slipstream velocity                                           tI,      Efficiency
+                                                                     n,       Revolutions per second, r.p .s.
+T,     Thrust, absolute coefficient OT= pn~T)40  ~-
+                                                                     <P,      Effective helix an gle=tan-{2:n)
+Q,     Torque, absolute coefficient Ca= pn ~
+                                           nil
+                                             -
+                                                9
+                                                 5. NUMERICAL RELATIONS
+1 hp.= 76 .04 kg-m/s=550 ft-lb./sec.                                 1 Ib.=0.4536 kg.
+1 metric horsepower = 1.0132 hp.                                     1 kg=2.2046 lb.
+1 m.p.h.=0.4470 m.p.s.                                               1 mi.=1,609.35 m=5,2BO ft.
+1 m.p.s.=2.2369 m.p.h.                                               1 m=3.2BOB ft.
+

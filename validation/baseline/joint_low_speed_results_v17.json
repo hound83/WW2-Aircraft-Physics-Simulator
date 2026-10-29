@@ -1,0 +1,722 @@
+{
+  "version": "v1.7-joint-low-speed-and-IL2-conditional-holdout",
+  "f4TurnIndependentSimReference": {
+    "source": "IL-2 Great Battles in-game Bf 109 F-4 technical specification, reproduced by Open Flight School",
+    "url": "https://www.openflightschool.de/mod/book/view.php?chapterid=357&id=515",
+    "evidenceClass": "OTHER SIMULATOR OUTPUT — NOT 1941 AIRCRAFT FLIGHT TEST",
+    "conditions": "standard weight 2890 kg; emergency DB601E 1350 PS; 270 km/h IAS in both cases; standard atmosphere",
+    "unknown": "Bf 109 F-4 specimen-specific IAS-to-CAS correction and simulator modeling methodology unavailable",
+    "examples": [
+      {
+        "altFt": 0,
+        "iasKmh": 270,
+        "turnSeconds": 20.3,
+        "fitRole": "single simulation-proxy fit"
+      },
+      {
+        "altFt": 9842.51968503937,
+        "iasKmh": 270,
+        "turnSeconds": 26.1,
+        "fitRole": "withheld simulation-proxy comparison"
+      }
+    ]
+  },
+  "f4WorkingSimulatorConditionedE": 0.5469811060803458,
+  "f4HistoricalPolarMeasurement": false,
+  "sourceRows": [
+    {
+      "observed": {
+        "altFt": 0,
+        "iasKmh": 270,
+        "turnSeconds": 20.3,
+        "fitRole": "single simulation-proxy fit"
+      },
+      "referenceType": "another simulation, NOT period flight test",
+      "generic": {
+        "altFt": 0,
+        "casProxyKmh": 270,
+        "reportedIasKmh": 270,
+        "tasMph": 167.77022190407996,
+        "sourceIasNotCalibrated": true,
+        "e": 0.78,
+        "cd0": 0.02275143940480398,
+        "rating": "emergency",
+        "shaftBhp": 1331.532,
+        "propEta": 0.7804028180605987,
+        "propulsiveHp": 1039.1313251378651,
+        "requiredHp1G": 223.76215482789908,
+        "excessHp1G": 815.3691703099661,
+        "parasiteDragLbf": 282.83042427677833,
+        "inducedDragLbf": 217.32274420199275,
+        "nLift": 2.926852933277825,
+        "nPower": 3.063691465088511,
+        "nSust": 2.926852933277825,
+        "degSec": 20.607658418927386,
+        "turnSeconds": 17.46923365487042,
+        "powerFactor": 1,
+        "residualSeconds": -2.8307663451295824
+      },
+      "greg": {
+        "altFt": 0,
+        "casProxyKmh": 270,
+        "reportedIasKmh": 270,
+        "tasMph": 167.77022190407996,
+        "sourceIasNotCalibrated": true,
+        "e": 0.55767,
+        "cd0": 0.022256519647498942,
+        "rating": "emergency",
+        "shaftBhp": 1331.532,
+        "propEta": 0.7804028180605987,
+        "propulsiveHp": 1039.1313251378651,
+        "requiredHp1G": 259.7719055662049,
+        "excessHp1G": 779.3594195716603,
+        "parasiteDragLbf": 276.6779183868878,
+        "inducedDragLbf": 303.9642449433435,
+        "nLift": 2.926852933277825,
+        "nPower": 2.5944203081099877,
+        "nSust": 2.5944203081099877,
+        "degSec": 17.93485554018393,
+        "turnSeconds": 20.072645647655328,
+        "powerFactor": 1,
+        "residualSeconds": -0.2273543523446726
+      },
+      "conditioned": {
+        "altFt": 0,
+        "casProxyKmh": 270,
+        "reportedIasKmh": 270,
+        "tasMph": 167.77022190407996,
+        "sourceIasNotCalibrated": true,
+        "e": 0.5469811060803458,
+        "cd0": 0.02222258902964906,
+        "rating": "emergency",
+        "shaftBhp": 1331.532,
+        "propEta": 0.7804028180605987,
+        "propulsiveHp": 1039.1313251378651,
+        "requiredHp1G": 262.24065544562825,
+        "excessHp1G": 776.8906696922369,
+        "parasiteDragLbf": 276.25611601774057,
+        "inducedDragLbf": 309.9041970430599,
+        "nLift": 2.926852933277825,
+        "nPower": 2.5697011523013984,
+        "nSust": 2.5697011523013984,
+        "degSec": 17.733990147783253,
+        "turnSeconds": 20.299999999999997,
+        "powerFactor": 1,
+        "residualSeconds": -3.552713678800501e-15
+      }
+    },
+    {
+      "observed": {
+        "altFt": 9842.51968503937,
+        "iasKmh": 270,
+        "turnSeconds": 26.1,
+        "fitRole": "withheld simulation-proxy comparison"
+      },
+      "referenceType": "another simulation, NOT period flight test",
+      "generic": {
+        "altFt": 9842.51968503937,
+        "casProxyKmh": 270,
+        "reportedIasKmh": 270,
+        "tasMph": 194.23223459434303,
+        "sourceIasNotCalibrated": true,
+        "e": 0.78,
+        "cd0": 0.02275143940480398,
+        "rating": "emergency",
+        "shaftBhp": 1313.0384630129258,
+        "propEta": 0.7986757431913056,
+        "propulsiveHp": 1048.6919702856183,
+        "requiredHp1G": 258.8795029694567,
+        "excessHp1G": 789.8124673161615,
+        "parasiteDragLbf": 281.335793634469,
+        "inducedDragLbf": 218.47729772879032,
+        "nLift": 2.911385841677633,
+        "nPower": 2.8248103187413993,
+        "nSust": 2.8248103187413993,
+        "degSec": 17.095800143602954,
+        "turnSeconds": 21.05780349419373,
+        "powerFactor": 1,
+        "residualSeconds": -5.04219650580627
+      },
+      "greg": {
+        "altFt": 9842.51968503937,
+        "casProxyKmh": 270,
+        "reportedIasKmh": 270,
+        "tasMph": 194.23223459434303,
+        "sourceIasNotCalibrated": true,
+        "e": 0.55767,
+        "cd0": 0.022256519647498942,
+        "rating": "emergency",
+        "shaftBhp": 1313.0384630129258,
+        "propEta": 0.7986757431913056,
+        "propulsiveHp": 1048.6919702856183,
+        "requiredHp1G": 300.82423971887636,
+        "excessHp1G": 747.8677305667419,
+        "parasiteDragLbf": 275.2158009505164,
+        "inducedDragLbf": 305.5790919871186,
+        "nLift": 2.911385841677633,
+        "nPower": 2.392718381724446,
+        "nSust": 2.392718381724446,
+        "degSec": 14.066342138163128,
+        "turnSeconds": 25.59300751140489,
+        "powerFactor": 1,
+        "residualSeconds": -0.5069924885951131
+      },
+      "conditioned": {
+        "altFt": 9842.51968503937,
+        "casProxyKmh": 270,
+        "reportedIasKmh": 270,
+        "tasMph": 194.23223459434303,
+        "sourceIasNotCalibrated": true,
+        "e": 0.5469811060803458,
+        "cd0": 0.02222258902964906,
+        "rating": "emergency",
+        "shaftBhp": 1313.0384630129258,
+        "propEta": 0.7986757431913056,
+        "propulsiveHp": 1048.6919702856183,
+        "requiredHp1G": 303.6998792795362,
+        "excessHp1G": 744.9920910060821,
+        "parasiteDragLbf": 274.7962276157722,
+        "inducedDragLbf": 311.5506008052583,
+        "nLift": 2.911385841677633,
+        "nPower": 2.3699608911425902,
+        "nSust": 2.3699608911425902,
+        "degSec": 13.904075968929453,
+        "turnSeconds": 25.891688221818473,
+        "powerFactor": 1,
+        "residualSeconds": -0.20831177818152824
+      }
+    }
+  ],
+  "f4TurnCurves": [
+    {
+      "altFt": 0,
+      "reportedReferenceSeconds": 20.3,
+      "points": [
+        {
+          "kmh": 230,
+          "generic": 21.846334607096722,
+          "greg": 21.846334607096722,
+          "conditioned": 21.846334607096722
+        },
+        {
+          "kmh": 235,
+          "generic": 21.134853698346383,
+          "greg": 21.134853698346383,
+          "conditioned": 21.134853698346383
+        },
+        {
+          "kmh": 240,
+          "generic": 20.48438705877036,
+          "greg": 20.48438705877036,
+          "conditioned": 20.48438705877036
+        },
+        {
+          "kmh": 245,
+          "generic": 19.886113968531625,
+          "greg": 19.886113968531625,
+          "conditioned": 19.886113968531625
+        },
+        {
+          "kmh": 250,
+          "generic": 19.332931473897556,
+          "greg": 19.332931473897556,
+          "conditioned": 19.510791037271204
+        },
+        {
+          "kmh": 255,
+          "generic": 18.81904723475993,
+          "greg": 19.479920073807385,
+          "conditioned": 19.70282655716317
+        },
+        {
+          "kmh": 260,
+          "generic": 18.339684076984675,
+          "greg": 19.67390999794784,
+          "conditioned": 19.89823655235018
+        },
+        {
+          "kmh": 265,
+          "generic": 17.890861823791386,
+          "greg": 19.871413663638098,
+          "conditioned": 20.09722269870938
+        },
+        {
+          "kmh": 270,
+          "generic": 17.46923365487042,
+          "greg": 20.072645647655328,
+          "conditioned": 20.299999999999997
+        },
+        {
+          "kmh": 275,
+          "generic": 17.07196162603296,
+          "greg": 20.277834292325874,
+          "conditioned": 20.506797511252117
+        },
+        {
+          "kmh": 280,
+          "generic": 16.952289830374344,
+          "greg": 20.48722257808019,
+          "conditioned": 20.717859203708027
+        },
+        {
+          "kmh": 285,
+          "generic": 17.1368580316569,
+          "greg": 20.70106914046224,
+          "conditioned": 20.933444977654318
+        },
+        {
+          "kmh": 290,
+          "generic": 17.325193300089214,
+          "greg": 20.9196494409993,
+          "conditioned": 21.153831832338
+        },
+        {
+          "kmh": 295,
+          "generic": 17.51755471012587,
+          "greg": 21.14325710424065,
+          "conditioned": 21.37931520513897
+        },
+        {
+          "kmh": 300,
+          "generic": 17.714217071836877,
+          "greg": 21.37220543639545,
+          "conditioned": 21.610210495361578
+        },
+        {
+          "kmh": 305,
+          "generic": 17.915472468196956,
+          "greg": 21.606829144441054,
+          "conditioned": 21.846854791514314
+        },
+        {
+          "kmh": 310,
+          "generic": 18.12163197259081,
+          "greg": 21.847486278444368,
+          "conditioned": 22.089608824880564
+        }
+      ]
+    },
+    {
+      "altFt": 9842.51968503937,
+      "reportedReferenceSeconds": 26.1,
+      "points": [
+        {
+          "kmh": 230,
+          "generic": 25.436405689540322,
+          "greg": 25.436405689540322,
+          "conditioned": 25.436405689540322
+        },
+        {
+          "kmh": 235,
+          "generic": 24.60830493119354,
+          "greg": 24.60830493119354,
+          "conditioned": 24.60830493119354
+        },
+        {
+          "kmh": 240,
+          "generic": 23.851462551802868,
+          "greg": 24.066992835707858,
+          "conditioned": 24.354897155677104
+        },
+        {
+          "kmh": 245,
+          "generic": 23.15555779720198,
+          "greg": 24.307010452911285,
+          "conditioned": 24.596429298531252
+        },
+        {
+          "kmh": 250,
+          "generic": 22.51228293489206,
+          "greg": 24.552364989349712,
+          "conditioned": 24.843411697074664
+        },
+        {
+          "kmh": 255,
+          "generic": 21.914865419829603,
+          "greg": 24.80333079170362,
+          "conditioned": 25.096117674959867
+        },
+        {
+          "kmh": 260,
+          "generic": 21.357721341705602,
+          "greg": 25.060206330147118,
+          "conditioned": 25.35484533608001
+        },
+        {
+          "kmh": 265,
+          "generic": 20.836199639790436,
+          "greg": 25.32331521510605,
+          "conditioned": 25.619918546190465
+        },
+        {
+          "kmh": 270,
+          "generic": 21.05780349419373,
+          "greg": 25.59300751140489,
+          "conditioned": 25.891688221818473
+        },
+        {
+          "kmh": 275,
+          "generic": 21.297044708445775,
+          "greg": 25.86966135839279,
+          "conditioned": 26.170533934094692
+        },
+        {
+          "kmh": 280,
+          "generic": 21.542027375424997,
+          "greg": 26.15368491160427,
+          "conditioned": 26.45686584237376
+        },
+        {
+          "kmh": 285,
+          "generic": 21.793140451790595,
+          "greg": 26.445518628636517,
+          "conditioned": 26.751126979872513
+        },
+        {
+          "kmh": 290,
+          "generic": 22.05080001541652,
+          "greg": 26.745637929490588,
+          "conditioned": 27.05379592132806
+        },
+        {
+          "kmh": 295,
+          "generic": 22.315451994464773,
+          "greg": 27.054556269905888,
+          "conditioned": 27.365389871155394
+        },
+        {
+          "kmh": 300,
+          "generic": 22.587575255386753,
+          "greg": 27.37282867550957,
+          "conditioned": 27.68646822006375
+        },
+        {
+          "kmh": 305,
+          "generic": 22.8676851011198,
+          "greg": 27.701055795255,
+          "conditioned": 28.01763662893215
+        },
+        {
+          "kmh": 310,
+          "generic": 23.156337240523055,
+          "greg": 28.039888545047244,
+          "conditioned": 28.35955171136651
+        }
+      ]
+    }
+  ],
+  "casSensitivity": [
+    {
+      "assumedIasMinusCasKmh": 5,
+      "assumedCasMinusIasKmh": -5,
+      "conditionedE": 0.5376848426802345,
+      "withheld3000mSeconds": 25.88653270229235,
+      "withheldResidualSeconds": -0.21346729770765194
+    },
+    {
+      "assumedIasMinusCasKmh": 0,
+      "assumedCasMinusIasKmh": 0,
+      "conditionedE": 0.5469811060803458,
+      "withheld3000mSeconds": 25.891688221818473,
+      "withheldResidualSeconds": -0.20831177818152824
+    },
+    {
+      "assumedIasMinusCasKmh": -5,
+      "assumedCasMinusIasKmh": 5,
+      "conditionedE": 0.5566193826341388,
+      "withheld3000mSeconds": 25.8987753377299,
+      "withheldResidualSeconds": -0.20122466227009994
+    }
+  ],
+  "powerSensitivity": [
+    {
+      "multiplierForDiagnosticOnly": 0.95,
+      "turnAtFixedConditionedE": {
+        "seaLevelSeconds": 21.01487084737018,
+        "at3000mSeconds": 26.853956669847566,
+        "combat5000ft170EasDegSec": 14.0113363699291
+      },
+      "eIfSimulationSeaLevelReFitted": 0.5802692261859506,
+      "simWithheldTurnSecondsAfterRefit": 25.91180793531843,
+      "p51Climb": [
+        {
+          "rating": "67inHg",
+          "sourceFpm": 3820,
+          "baselineFpm": 3401.0861529653166,
+          "powerDeltaHp": -62.59631861813426,
+          "newEstimatedFpm": 3179.802969845773,
+          "residualFpm": -640.1970301542269,
+          "caveat": "Local fixed-optimal-speed sensitivity; not reoptimized climb or a physical η correction"
+        },
+        {
+          "rating": "75inHg",
+          "sourceFpm": 4380,
+          "baselineFpm": 3978.538324234923,
+          "powerDeltaHp": -71.00422736771218,
+          "newEstimatedFpm": 3727.5324856532375,
+          "residualFpm": -652.4675143467625,
+          "caveat": "Local fixed-optimal-speed sensitivity; not reoptimized climb or a physical η correction"
+        }
+      ]
+    },
+    {
+      "multiplierForDiagnosticOnly": 1,
+      "turnAtFixedConditionedE": {
+        "seaLevelSeconds": 20.299999999999997,
+        "at3000mSeconds": 25.891688221818473,
+        "combat5000ft170EasDegSec": 14.541623444263575
+      },
+      "eIfSimulationSeaLevelReFitted": 0.5469811060803458,
+      "simWithheldTurnSecondsAfterRefit": 25.891688221818473,
+      "p51Climb": [
+        {
+          "rating": "67inHg",
+          "sourceFpm": 3820,
+          "baselineFpm": 3401.0861529653166,
+          "powerDeltaHp": 0,
+          "newEstimatedFpm": 3401.0861529653166,
+          "residualFpm": -418.9138470346834,
+          "caveat": "Local fixed-optimal-speed sensitivity; not reoptimized climb or a physical η correction"
+        },
+        {
+          "rating": "75inHg",
+          "sourceFpm": 4380,
+          "baselineFpm": 3978.538324234923,
+          "powerDeltaHp": 0,
+          "newEstimatedFpm": 3978.538324234923,
+          "residualFpm": -401.46167576507696,
+          "caveat": "Local fixed-optimal-speed sensitivity; not reoptimized climb or a physical η correction"
+        }
+      ]
+    },
+    {
+      "multiplierForDiagnosticOnly": 1.05,
+      "turnAtFixedConditionedE": {
+        "seaLevelSeconds": 19.653447547312048,
+        "at3000mSeconds": 25.025964044151756,
+        "combat5000ft170EasDegSec": 15.053241442234764
+      },
+      "eIfSimulationSeaLevelReFitted": 0.5173050328253332,
+      "simWithheldTurnSecondsAfterRefit": 25.873791128950035,
+      "p51Climb": [
+        {
+          "rating": "67inHg",
+          "sourceFpm": 3820,
+          "baselineFpm": 3401.0861529653166,
+          "powerDeltaHp": 62.59631861813426,
+          "newEstimatedFpm": 3622.36933608486,
+          "residualFpm": -197.63066391513985,
+          "caveat": "Local fixed-optimal-speed sensitivity; not reoptimized climb or a physical η correction"
+        },
+        {
+          "rating": "75inHg",
+          "sourceFpm": 4380,
+          "baselineFpm": 3978.538324234923,
+          "powerDeltaHp": 71.00422736771218,
+          "newEstimatedFpm": 4229.544162816608,
+          "residualFpm": -150.45583718339185,
+          "caveat": "Local fixed-optimal-speed sensitivity; not reoptimized climb or a physical η correction"
+        }
+      ]
+    }
+  ],
+  "fixedECompare": [
+    {
+      "e": 0.55767,
+      "anchor": {
+        "cd0": 0.022256519647498942,
+        "etaAtAnchor": 0.8195755291132589,
+        "anchorSpeed": 325,
+        "anchorAlt": 0,
+        "origin": "calibrated from one speed anchor; NOT a measured drag polar",
+        "valid": true
+      },
+      "combatSpeedMph": 324.9999999999991,
+      "emergencySpeedMph": 339.76688819141145,
+      "comparison": {
+        "altFt": 5000,
+        "casProxyKmh": 273.92780665889563,
+        "reportedIasKmh": 270,
+        "tasMph": 183.137936487319,
+        "sourceIasNotCalibrated": false,
+        "e": 0.55767,
+        "cd0": 0.022256519647498942,
+        "rating": "combat",
+        "shaftBhp": 1183.584,
+        "propEta": 0.8006861191741669,
+        "propulsiveHp": 947.6792796766372,
+        "requiredHp1G": 283.31389941015294,
+        "excessHp1G": 664.3653802664842,
+        "parasiteDragLbf": 284.08125504960736,
+        "inducedDragLbf": 296.0427450247658,
+        "nLift": 3.005169546882761,
+        "nPower": 2.365419980027534,
+        "nSust": 2.365419980027534,
+        "degSec": 14.711988211799046,
+        "turnSeconds": 24.469840161459565,
+        "powerFactor": 1,
+        "easMph": 170,
+        "note": "170 mph EAS is a model-specified comparison, not IL-2 270 km/h IAS"
+      },
+      "oneToFiveKmClimb": "see unchanged v1.5 climb integration (rating combat)"
+    },
+    {
+      "e": 0.5469811060803458,
+      "anchor": {
+        "cd0": 0.02222258902964906,
+        "etaAtAnchor": 0.8195755291132589,
+        "anchorSpeed": 325,
+        "anchorAlt": 0,
+        "origin": "calibrated from one speed anchor; NOT a measured drag polar",
+        "valid": true
+      },
+      "combatSpeedMph": 324.9999999999991,
+      "emergencySpeedMph": 339.7945842185827,
+      "comparison": {
+        "altFt": 5000,
+        "casProxyKmh": 273.92780665889563,
+        "reportedIasKmh": 270,
+        "tasMph": 183.137936487319,
+        "sourceIasNotCalibrated": false,
+        "e": 0.5469811060803458,
+        "cd0": 0.02222258902964906,
+        "rating": "combat",
+        "shaftBhp": 1183.584,
+        "propEta": 0.8006861191741669,
+        "propulsiveHp": 947.6792796766372,
+        "requiredHp1G": 285.92767542310975,
+        "excessHp1G": 661.7516042535274,
+        "parasiteDragLbf": 283.6481661095544,
+        "inducedDragLbf": 301.8278982267269,
+        "nLift": 3.005169546882761,
+        "nPower": 2.342947463187168,
+        "nSust": 2.342947463187168,
+        "degSec": 14.541623444263575,
+        "turnSeconds": 24.756520575562966,
+        "powerFactor": 1,
+        "easMph": 170,
+        "note": "170 mph EAS is a model-specified comparison, not IL-2 270 km/h IAS"
+      },
+      "oneToFiveKmClimb": "see unchanged v1.5 climb integration (rating combat)"
+    },
+    {
+      "e": 0.78,
+      "anchor": {
+        "cd0": 0.02275143940480398,
+        "etaAtAnchor": 0.8195755291132589,
+        "anchorSpeed": 325,
+        "anchorAlt": 0,
+        "origin": "calibrated from one speed anchor; NOT a measured drag polar",
+        "valid": true
+      },
+      "combatSpeedMph": 324.9999999999991,
+      "emergencySpeedMph": 339.37410024487417,
+      "comparison": {
+        "altFt": 5000,
+        "casProxyKmh": 273.92780665889563,
+        "reportedIasKmh": 270,
+        "tasMph": 183.137936487319,
+        "sourceIasNotCalibrated": false,
+        "e": 0.78,
+        "cd0": 0.02275143940480398,
+        "rating": "combat",
+        "shaftBhp": 1183.584,
+        "propEta": 0.8006861191741669,
+        "propulsiveHp": 947.6792796766372,
+        "requiredHp1G": 245.18876429750992,
+        "excessHp1G": 702.4905153791273,
+        "parasiteDragLbf": 290.39838944576894,
+        "inducedDragLbf": 211.6591764332835,
+        "nLift": 3.005169546882761,
+        "nPower": 2.7921400522569364,
+        "nSust": 2.7921400522569364,
+        "degSec": 17.891500473862923,
+        "turnSeconds": 20.121286111576367,
+        "powerFactor": 1,
+        "easMph": 170,
+        "note": "170 mph EAS is a model-specified comparison, not IL-2 270 km/h IAS"
+      },
+      "oneToFiveKmClimb": "see unchanged v1.5 climb integration (rating combat)"
+    }
+  ],
+  "p51Fig5": [
+    {
+      "profile": "A",
+      "lowMidMAEBhp": 67.32091515920476,
+      "allMAEBhp": 57.49317754897063
+    },
+    {
+      "profile": "B",
+      "lowMidMAEBhp": 68.53439179941836,
+      "allMAEBhp": 49.176881111057924
+    },
+    {
+      "profile": "C",
+      "lowMidMAEBhp": 88.64273396924719,
+      "allMAEBhp": 64.31151380629102
+    }
+  ],
+  "p51Climb": [
+    {
+      "rating": "67inHg",
+      "altFt": 2200,
+      "modeledOptimumTasMph": 171,
+      "modelFpm": 3401.0861529653166,
+      "observedFpm": 3820,
+      "gapFpm": 418.9138470346834,
+      "sourceEngineRpm": 3000,
+      "modelEta": 0.7809409097141065,
+      "shaftBhp": 1603.1,
+      "extraPropulsiveHpNeeded": 118.50184127351997,
+      "etaIfExplainedSolelyByProp": 0.8548613396770033,
+      "note": "Power gap arithmetic; does NOT prove the propeller is the physical cause."
+    },
+    {
+      "rating": "75inHg",
+      "altFt": 2200,
+      "modeledOptimumTasMph": 175,
+      "modelFpm": 3978.538324234923,
+      "observedFpm": 4380,
+      "gapFpm": 401.46167576507696,
+      "sourceEngineRpm": 3000,
+      "modelEta": 0.7841005727757949,
+      "shaftBhp": 1811.1,
+      "extraPropulsiveHpNeeded": 113.5649922189745,
+      "etaIfExplainedSolelyByProp": 0.8468055543996559,
+      "note": "Power gap arithmetic; does NOT prove the propeller is the physical cause."
+    }
+  ],
+  "nacaPowerSlope": {
+    "source": "NACA TN 2022 (1950) three-bladed radial-fighter propeller flight test; qualitative mechanism only",
+    "url": "https://ntrs.nasa.gov/citations/19930082679",
+    "measuredQualitativeClimbTrend": "at 165 mph IAS, increased propeller blade power loading lowered efficiency by higher induced losses",
+    "applicability": "Different propeller/blade/airframe; cannot transfer empirical numeric η correction to P51/F4",
+    "currentHeuristicP51": {
+      "atTasMph": 171,
+      "atAltFt": 2200,
+      "bhp": 1603.1,
+      "rating": "67inHg",
+      "etaAtMinus10PercentPower": 0.7806499297804856,
+      "etaAtNominal": 0.7809409097141065,
+      "etaAtPlus10PercentPower": 0.7812076569692737,
+      "deltaEtaPlusMinus": 0.0005577271887881041,
+      "atCp": 0.16774815309242735,
+      "atJ": 0.9411684434968016,
+      "slopeSign": "increasing"
+    },
+    "currentHeuristicF4": {
+      "atTasMph": 183.13793648731854,
+      "atAltFt": 5000,
+      "bhp": 1183.584,
+      "rating": "combat",
+      "etaAtMinus10PercentPower": 0.8003960267977513,
+      "etaAtNominal": 0.8006861191741667,
+      "etaAtPlus10PercentPower": 0.800930387858227,
+      "deltaEtaPlusMinus": 0.0005343610604756632,
+      "atCp": 0.2275689588289485,
+      "atJ": 1.103607372555881,
+      "slopeSign": "increasing"
+    }
+  },
+  "interpretation": "F4 e fitted to a different modern flight simulator, NOT a historical efficiency. 3000m withheld check tests conditional reproducibility; it cannot validate flight-test accuracy. Shared heuristic incorrectly trends prop efficiency upward with power loading in low speed, unlike qualitative NACA measurements on different propellers; requires type-relevant map rather than ad hoc correction. P51 absolute power deficit remains."
+}

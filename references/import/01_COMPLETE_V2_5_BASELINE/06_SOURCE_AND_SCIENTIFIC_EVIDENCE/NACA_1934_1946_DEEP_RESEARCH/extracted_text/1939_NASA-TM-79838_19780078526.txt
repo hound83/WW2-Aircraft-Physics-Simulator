@@ -1,0 +1,731 @@
+                                                                                                  MIf               ,!. 0
+
+
+                                                                                        C SE FILE
+                                                                                          COPY
+                 NATIONAL ADVISORY COMMITTEE
+                       FOR AERONAUTICS
+
+
+                                                      REPORT No. 667
+
+
+
+              DETERMINATION OF THE PROFILE DRAG OF
+                  AN AIRPLANE WING IN FLIGHT AT
+                     HIGH REYNOLDS NUMBERS
+
+                                                      By JOSEPH BICKNELL
+
+
+  "(HASA-TH-79838) DETEBHI NATION OF THE                                                           N78-78519
+  PROFILE DRAG OF AW AIBPLABE SING-IB FLIGHT
+  AT HIGH REYNOLDS SOMBEES (National Advisory
+  Committee for Aeronautics.) . 11 F                                                               Dnclas
+                                                                                          00/02    32205
+
+
+
+
+                                                                1939
+
+
+For emle by the^Soperlntendent of Dotnmente, Waahington, D. C.    -                                     Price 10 ceDl>
+                                                    Subscription price |3.00 per remr
+                                            AERONAUTIC SYMBOLS
+                                     1. FUNDAMENTAL AND DERIVED UNITS
+
+                                                    Metric                                     English
+                         Symbol
+                                             Unit             Abbrevia-               Unit                Abbrevia-
+                                                                tion                                        tion
+
+          Length            I      meter                            m        foot, (or milfi)
+          Tiine             t      second               __           s       second (or nour)            sec (or hr.)
+          Force             F      weight of 1 kilogram             kg       weight of 1 pound           Ib.
+
+          Power             p      horsepower (metric)                       horsepower                  hn
+                                                                                                         up.
+                            \r    /kilometers per hour_            k.p.h.    miles per hour              m.p.h.
+                                  \meters per second               m.p.s.    feet per second             fps.
+
+
+                                               2. GENERAL SYMBOLS
+W,    Weight=m(7                                             v,      Kinematic viscosity
+9,    Standard     acceleration of gravity=9.80665           p,      Density (mass per unit volume)
+        m/s2 or 32.1740 ft./sec.2                            Standard density of dry air, 0.12497 kg-nv24-s* at
+m,    Mass=—
+              W                                                 15° C. and 760 mm; or 0.002378 Ib.-ft.-* sec.
+               g                                             Specific weight of "standard" air, 1.2255 kg/ms or
+I,    Moment of inertia=raP. (Indicate axis of                  0.07651 Ib./cu. ft.
+        radius of gyration k by proper subscript.)
+      Coefficient of viscosity
+                                           3. AERODYNAMIC SYMBOLS
+
+s,    Area                                                               Angle of setting of wings (relative to thrust
+      Area of wing                                                         line)
+G,'   Gap                                                    *t,         Angle of stabilizer setting (relative to thrust
+b,    Span                                                                 line)
+      Chord                                                  Q,          Resultant moment
+A2                                                           n,          Resultant angular velocity
+      Aspect ratio
+S'                                                             VI
+v,    True air speed                                                     Reynolds Number, where I is a linear dimension
+                                                                            (e.g., for a model airfoil 3 in. chord, 100
+      Dynamic pressure=^pT;r2                                              m.p.h. normal pressure at 15° C., the cor-
+                                                                           responding number is 234,000; or for a model
+L,    Lift, absolute coefficient <7z,=-«                                   of 10 cm chord, 40 m.p.s., the corresponding
+                                                                           number is 274,000)
+D,    Drag, absolute coefficient GD= -o                                  Center-of-pressure coefficient (ratio of distance
+                                                                           of c.p. from leading edge to chord length)
+                                               D
+Do,   Profile drag, absolute coefficient CDO=~&0                         Angle of attack
+                                                                         Angle of downwash
+      Induced drag, absolute coefficient CD(=—£                          Angle of attack, infinite aspect ratio
+                                                                         Angle of attack, induced
+      Parasite drag, absolute coefficient C D =—&                        Angle of attack, absolute (measured from zero-
+                                                                           lift position)
+      Cross-wind force, absolute coefficient Cc=                         Flight-path angle
+
+X,    Resultant force
+                                                              V-...-
+
+
+
+
+                        REPORT No. 667
+
+            DETERMINATION OF THE PROFILE DRAG OF
+                AN AIRPLANE WING IN FLIGHT AT
+                   HIGH REYNOLDS NUMBERS
+
+                           By JOSEPH BICKNELL
+                   Langley Memorial Aeronautical Laboratory
+
+
+
+
+147268—39
+                            NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+                                        HEADQUARTERS, NAVY BUILDING, WASHINGTON, D. C.
+                                                LABORATORIES, LANGLEY FIELD. VA.
+
+
+      Created by act of Congress approved March 3, 1915, for the supervision and direction of the scientific study of the problems of
+flight (U. S. Code, Title 50, Sec. 151). Its membership was increased to 15 by act approved March 2, 1929. The members are
+appointed by the President, and serve as such without compensation.
+JOSEPH S. AMES, Ph. D., Chairman,                                    ROBERT H. HINCKLEY, A. B.,
+    Baltimore, Md.                                                       Chairman, Civil Aeronautics Authority.
+VANNEVAK BUSH, Sc. D., Vice Chairman,                                JEROME C. HUNSAKEB, Sc. D.,
+    Washington, D. C-                                                    Cambridge, Mass.
+CHARLES G. ABBOT, Sc. D.,                                            SYDNEY M. KHAUS, Captain, United States Navy,
+                                                                         Bllreau of
+    Secretary, Smithsonian Institution.                                             Aeronautics, Navy Department.
+       TT           ,. . _        .       .„ ,    .                  CHARLES A. LINDBERGH, LL. D.,
+HENRY H.   ARNOLD, Major General, TTUnited States Army,
+    Chief cf Air Corps,
+                    l    War Department.                                     -m T>              An
+                       '        '                                    FRANCIS W. REICHELDEBFER, A. B.,
+GEORGE H. BRETT, Brigadier General, United States Army,                  Chiefj United gtates Weather Bureau .
+    Chief Materiel. Division, Air Corps, Wright Field, Dayton,       JQHN H   TowBES> Rear Admiral; United Statcs Navy>
+
+      Ohio.                                                              Chief, Bureau of Aeronautics, Navy Department.
+LYMAN J. BRIGGS, Ph. D.,                                             EDWARD WARNER, Sc. D.,
+    Director, National Bureau of Standards.                             Greenwich, Conn.
+CLINTON M. HESTER, A. B., LL. B.,                                    ORVILLE WRIGHT, Sc. D.,
+    Administrator, Civil Aeronautics Authority.                          Dayton, Ohio.
+
+
+
+                                         GEORGE W. LEWIS, Director of Aeronautical Research
+
+                                                      JOHN F. VICTORY, Secretary
+
+               HENKY J. K. Ruin, Rngineer-in-Chargc, Langley Memorial Aeronautical Laboratory, Lam/ley Field, Va.
+
+                                      JOHN J. IDE, Technical Assistant in Europe, Paris, France
+
+
+
+                                                    TECHNICAL COMMITTEES
+         AERODYNAMICS                                                                                AIRCRAFT STRUCTURES
+         POWER PLANTS FOR AIRCRAFT                                                                   AIRCRAFT ACCIDENTS
+         AIRCRAFT MATERIALS                                                                          INVENTIONS AND DESIGNS
+
+                                     Coordination of Research Needs of Military and Civil Aviation
+
+                                                   Preparation of Research Programs
+
+                                                        Allocation of Problems
+
+                                                       Prevention of Duplication                                          s
+
+                                                      Consideration of Inventions
+
+ LANGLEY MEMORIAL AERONAUTICAL LABORATORY                                     OFFICE OF AERONAUTICAL INTELLIGENCE
+                       LANGLEY FIELD. VA.                                                   WASHINGTON^ D. &
+
+
+  Unified conduct, for all agencies, of scientific research on the      Collection, classification, compilation, and dissemination of
+fundamental problems of                     flight.                  scientific and technical information on aeronautics.
+                                               REPORT No. 667
+
+   DETERMINATION             OF THE PROFILE DRAG OF AN AIRPLANE WING IN FLIGHT
+                                 AT HIGH REYNOLDS NUMBERS
+                                                   Bv   JOSKPH B l C K N K L L
+
+
+
+
+                        SUMMARY                                                  APPARATUS AND METHODS
+   Flight tests were made to determine the profile-drag
+coefficients of a portion of the original wing surface of an         The flight tests were conducted on a Northrop attack
+all-metal airplane and of a portion of the wing made             airplane (A-17A), a low-wing single-engine monoplane.
+aerodynamically smooth and more nearly fair than the             The tests were carried out on a panel of 5-foot 2-inch
+original section. The wing section was approximately             span located on the right wing. The inboard edge of
+the N. A. C. A. 2^1^.5. The tests were carried out over          this panel was at the juncture of the wing stub and the
+a range of airplane speeds giving a maximum Reynolds             main wing panel, 5 feet 6 inches from the center line of
+Number of 15,000,000. Tests were also carried out to             the airplane. The propeller, 9 feet 9/2 inches in diam-
+locate the point of transition from laminar to turbulent         eter, was located 6 feet ahead of the wing leading edge.
+boundary layer and to determine the velocity distribution        The test panel was sufficiently removed from the slip-
+along the upper surface of the wing.                             stream to avoid interference, especially in the high-
+   The profile-drag coefficients of the original and of the      speed condition in which the tests were made.
+smooth wing portions at a Reynolds Number of 15,000,000              The panel was made smooth by filling the lap joints
+were 0.0102 and 0.0068, respectively; i. e., the surface         in the metal-wing covering and then cementing pieces
+irregularities on the original wing increased the profile-       of rubber sheeting to the wing surface in the spaces
+drag coefficient 50 percent above that oj the smooth wing.       between the rows of rivets to build up the surface above
+                                                                 the level of the rivet heads. The fairness of the wing
+                     INTRODUCTION                                was improved by cementing a layer of }s2-inch-thick
+    Only comparatively recently have profile-drag deter-         hard aluminum to the rubber. This metal was applied
+ minations in the upper range of flight Reynolds Num-            in several pieces, rolled to the contour of the wing.
+ bers (10,000,000 to 30,000,000) been made, either in            Finally, another layer of rubber was applied over the
+ wind tunnels or in flight. Profile-drag coefficients up         metal. This layer was continuous from the trailing
+ to a Reynolds Number of 13,000,000 have been deter-             edge around the leading edge and back to the trailing
+ mined in the 5- by 7-meter tunnel of the DVL (reference         edge, where the two ends were sewed together. The
+ 1). In the variable-density tunnel of the N. A. C. A.,          surface of the rubber was sprayed with several coats of
+similar measurements have been made up to an effective           filler and was sanded and rubbed until it had a smooth,
+Reynolds Number of 8,000,000 (references 2 and 3).               glossy finish (fig. 1).
+An extrapolation equation is suggested in reference 2                On the lower surface of the smooth panel were three
+for extending the results to higher Reynolds Numbers.            small, irremovable obstructions. These obstructions
+    In view of the simplicity of the momentum method             were downstream of the transition point, off to one
+of determining profile drag in flight (reference 4), a           side of the survey plane, and were faired. The drag
+project was initiated to determine the profile drag of           and the interference due to these obstructions were esti-
+an airplane wing at as high Reynolds Numbers as                  mated on the assumption of a drag coefficient of 1
+possible. The project also included measurements to              based on their cross-sectional areas and a reasonable
+determine the point of transition from laminar to                spreading of their wakes. Their estimated effect on
+turbulent boundary layer on the upper surface of the             the profile-drag coefficient was an increase of 0.0003.
+wing and the distribution along the wing of the velocity         This amount has been subtracted from the profile-
+just outside the boundary layer.                                 drag coefficients found by the momentum surveys.
+                                                                                                               1
+                   REPORT NO. 667—NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+  The test panel of the smooth wing tapered in both               static tube is mounted so that it can turn about an axis
+chord and thickness ratio. The inner section was ap-              nearly parallel to the wing chord line. (See fig. 1.)
+proximately the N. A. C. A. 2415.5 with a chord of 9.46           On the inboard end of this tube is fastened a short lever,
+feet; the outer section was the N. A. C. A. 2413.5 with           the end of which is held in contact with a single-lobe
+a chord of 8.20 feet. The profile in the plane of the             plate cam by a spring. A ratchet wheel attached to
+wake surveys was approximately the N. A. C. A.                    the cam is advanced one tooth at a time by a click.
+2414.5 section with a chord of 8.86 feet. Measured                The click is actuated by a bellows expanded hydrau-
+ordinates of this profile are given in table I, together          lically by the operation of a piston in the cockpit.
+with the computed ordinates of the N. A. C. A. 2414.5                The dynamic and the static pressures of the free
+section.                                                          stream were obtained from a pitot-static tube mounted
+
+
+
+
+                                       FIGURE 1.—Finished smooth wing and survey'apparatus.
+
+   The profile drag of the wing with the original surface         on a boom near the wing tip. The static tube was
+was determined in the same plane as the smooth wing.              calibrated against the static side of a suspended air-
+The profile was approximately the N. A. C. A. 2414.5              speed head.
+section with a chord of 8.80 feet. Figure 2 shows a                  Measurements to determine the boundary-layer tran-
+photograph of the original wing, and the details of the           sition point and the pressure distribution were made
+surface irregularities on this section are given in               with three racks mounted on the upper surface, as
+figure 3.                                                         shown in figure 4. Each rack had a static tube and a
+   The profile drag was determined by the momentum                total-pressure tube. The static tube was made of
+method (reference 4). In these tests, the wake surveys            0.040-inch-diameter hypodermic tubing; the total-
+were 8.4 percent of the chord behind the trailing edge            pressure tube was of the same size flattened at the
+of the wing. A traversing mechanism to measure,                   mouth until its outside depth was 0.012 inch. The
+point by point, the total pressure and the static pres-           static tube was set about Jie inch from the wing sur-
+sure in the wake was developed suitable for attachment            face; the total-pressure tube was in contact with the
+to a metal wing. A tube supporting a pitot and a                  surface.
+DETERMINATION OF PROFILE DRAG OF AIRPLANE WING IN FLIGHT AT HIGH REYNOLDS NUMBERS                                                        3
+
+
+
+
+                                                      FIGURE 2.—Original wing.
+
+
+
+                            F , Flush rivets., 3/^2 ~ inch diameter
+                            L , Lap Joint, facing backward
+                            R , Brazier -head rivets, 3/32 ~ 'nch diameter
+                            r , Brazier- head rivets, ///g-inch diameter
+                            b , Brazier- head rivets , 3/32 -inch diameter,
+                                  not extending across wing but in survey plane
+                            D , Trailing edge of inspection door
+                            Dp, Flush inspection door
+                            P , Perforation in wing flop
+                            H .Hinge
+                              , Flush hinge
+
+
+
+
+                                                                                                                     R
+
+
+
+                                                                                LH                                   RR        R
+                                                                                                            R
+    F                                                                         ~RR0^              R
+            R
+                     DRbbbP.RP      DRR
+
+                10     20          30            4O           50                   6O                  7O       80        90       100
+                                                        Percent chord
+                                              .— Details'of surface irregularities on original wing.
+
+
+
+
+14726S—39   2
+                  REPORT NO. 667—NATIONAL ADVISORY COMMITTEE FOR AERONAUTIC?
+
+
+
+
+                                     FIGURE 4.—Boundary-layer-tube racks mounted on wing.
+
+   The ratio of the dynamic pressure in the boundary             transition point on the smooth wing were made at
+layer close to the wing surface to the dynamic pressure          Reynolds Numbers of 11,000,000 and 14,000,000, corre-
+just outside the boundary layer was computed and                 sponding to lift coefficients of 0.34 and 0.21, respec-
+plotted against distance along the surface. The point            tively.
+where this curve shows an abnormal increase in the                  Profile-drag coefficients were computed from the
+downstream direction was taken as the transition point           wake measurements by Jones' formula (reference 4)
+from laminar to turbulent boundary layer.
+                                                                                            /Hi-Pi
+             RESULTS AND DISCUSSION
+
+   Wake surveys were made over the range of Reynolds             where H is total pressure.
+Numbers from 11,000,000 to 15,000,000 (air-speed                        •p, static pressure.
+range 140 to 200 miles per hour indicated). The                         c, chord.
+corresponding lift-coefficient range was 0.35 to 0.17.                  W, wake.
+No attempt was made to vary the Reynolds Number                         y, ordinate in survey plane normal to the free
+R and the lift coefficient CL independently, since the                        stream.
+variation in profile-drag coefficient at constant lift           The subscript 0 refers to the free stream at infinity,
+coefficient over the Reynolds Number range that could            and the subscript 1 refers to the measurement plane.
+be obtained in flight was of the same magnitude as               As a check for possible errors that are a result of assum-
+that due to experimental errors. The air conditions              ing the air incompressible, Jones' equation was redevel-
+for these tests ranged from a perfect smoothness to a            oped for compressible flow by introducing the equation
+roughness sufficient to cause small variations in the            of continuity and Bernoulli's equation for compressible
+recorded air speed.                                              flow. A complete derivation of the equation is given in
+   Measurements to determine the boundary-layer                  the appendix. The final equation is
+                                              "
+                         /»         F,
+                                                   \iPifPi-~l +
+                                          -1 (Pi Pe +2T\  Pi
+                                                                         '°Y+
+                                                                         ~) • • • 1J
+                    2f
+                 '• Jw V P O                             H0-Po
+                                                     V      FQ
+   DETERMINATION OF PROFILE DRAG OF AIRPLANE WING IN FLIGHT AT HIGH REYNOLDS NUMBERS                                                                                                                                   5
+
+where, in addition to the previously defined symbols,                                             irregularities. The original wing had large circular
+        p is density.                                                                             perforations in the wing flap. This construction is not
+        7, ratio of specific heat at constant pressure to                                         a normal one and undoubtedly accounted for some of
+              specific heat at constant volume.                                                   the profile drag, although countersunk rivets had been
+        F, compressibility factor                                                                 used over the forward 23 percent of the upper surface
+                                                                                                  and 8 percent of the lower surface to keep the drag of
+                                                                                                  the original wing low. Over the range of lift coefficients
+                                                                                                  tested, the profile-drag coefficient is constant within the
+                                                                                                  experimental error and can be taken as cd^77i in . The
+       Ve, speed of sound.
+        U, velocity.                                                                              Reynolds Number range being small, variation of Cd0
+   For the position of the survey head 8.4 percent of the                                         with Reynolds Number is expected to be very small.
+chord from the trailing edge of the wing, the correction                                          From reference 2, the variation of cdo over the range of
+for compressibility at 200 miles per hour is one-tenth                                            lift coefficients tested is also expected to be small.
+percent of the profile drag. Inasmuch as the static pres-                                            It is also apparent that cdo is independent of free-air
+sure in the wake is nearly equal to free-stream static                                            roughness as no systematic variation was found for
+     .24
+
+
+
+
+                                                                                                                                                          S
+                                                                                                                                                                                   o          o   Onginal wing
+
+
+
+
+                                                                                                                Section prof He -drag coefficient, Cd0
+     .20
+
+                                                         -o- "^^n
+
+
+
+
+                                                                                                                                                          §    'N
+                                                   j
+                                                       ^/+-         \
+                                                       /
+                                               //                   \ ^
+
+
+
+
+                                                                                                                                                          8Co- 8 C$
+                                                                                                                                                                                       -~^
+                                               V                     \ \-
+                                                                                  -Original iving                                                                                "*          «0
+                                                                                                                                                                                                  Smooth wing
+
+                                       /
+                                           ^
+                                               /                      \
+                                                                          \\ ..-Smooth wing
+                                                                                                                                                                                                            7
+
+                                                                        -
+                                   /                                                                                                                           O)
+                                                                          \       \
+                                                                                                                                                                                 Aii- condit 'on
+                                f                                         \ \
+                                                                                                                                                          §A,
+
+                                                                                                                                                                                   o Smootf 7
+                                  1
+                               f 1                                         \ \                                                                                                     >t Rough
+                                                                                                                                                          P
+                                                                                                                                                          N)
+
+
+
+
+     04
+                               '   I                                                  \
+                           /                                                  \
+
+
+           Jo-i-
+                       /
+                               /
+                                                                                  v+ vv-* _«_       0—6—W-
+                   1   - 2 - 1             O         1       2                                3         4                                                              ./      .2       .3        .4               .5
+                        Distance above chord line, percent chord                                                                                                       Airplane lift coefficient, CL
+               FIGURE 5.—Typical curves of momentum loss in wake. CL, 0.23.                                                                              FiounE 6.—Profile-drag coefficients for smooth and original
+                                                                                                                                                                       N. A. C. A. 2414.5seetions.
+
+
+pressure, the density term is practically unity. The different air conditions during the tests. This result
+velocity in the wake being a large fraction of the stream has been pointed out by Jones (reference 6). Appar-
+velocity, the compressibility factors are approximately ently the type of turbulence found in the atmosphere
+equal and cancel out. For the conditions tested, the has no noticeable effect on the profile drag.
+correction applied to the profile-drag coefficient is         From drag data obtained in the variable-density
+negligible.                                                 tunnel for the N. A. C. A. 2400 series (reference 3), the
+   Typical curves of the momentum loss in the wake for interpolated
+                                                                 1         cd. for the N. A. C. A. 2414.5 section at
+                                                                          "min
+the smooth and the original wing surfaces are given in an effective Reynolds Number of 8,000,000 is 0.0067.
+figure 5. The position of the pitot tube was corrected If this value is extrapolated to 15,000,000 according to
+to its effective center by the method given in reference 5. the formula (reference 2),
+   The profile-drag coefficients for the smooth condition                                       / R V0-"
+and the original condition of the wing of N. A. C. A.                    C
+                                                                           "0min \ Ca <>mi JsxH><\8 X lO6/
+2414.5 section are plotted against the lift coefficient of
+                                                            a value of 0.0063 is obtained for ca"min
+the complete airplane CL in figure 6. A complete sum-
+mary of the test conditions and results is given in           Profile-drag tests carried out in the 5- by 7-meter
+table II.                                                   tunnel  of the DVL on the N. A. C. A. 2409 and 2421
+   The profile-drag coefficient of the smooth wing is       sections over a Reynolds Number range of 3,000,000 to
+0.0068; of the original wing, 0.0102 for Re3molds Num-      13,000,000   indicate a cinv min value of 0.0065 for the
+bers from 12,000,000 to 15,000,000. Thus a profile- N. A. C. A. 2414.5 section at a Reynolds Number of
+drag increase of 50 percent can be attributed to surface 15,000,000.
+6                             REPORT NO. 667—NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+   The cdn"min value of 0.0068 for the smooth wing . °
+                                                       is                                    between 25 and 35 percent of the chord measured along
+probably slightly higher than it would have been for a                                       the surface. The more forward position of the transi-
+true N. A. C. A. 2414.5 section in flight. This differ-                                      tion point observed in the tests could easily account for
+ence can be attributed to earlier transition, as pointed                                     the difference in profile-drag coefficient found in these
+out in the discussion of the boundary-layer tests.                                           tests as compared with the DVL and the variable-
+  The results of the boundary-layer and the pressure-                                        density-tunnel tests.
+
+
+
+
+                                                                                             dynamic pressure 0. 008 in. from surface e,
+                                                                                             dynamic pressure outside boundary layer q
+                                                                                      ^to°                                                                                                                       -            salts
+
+
+                       ^Transition point                                                                                                                      ^Transition point
+
+                                           Ex.perimen tal                                                                                                     \    Experimental                                        -1.5
+                        ^
+                       — +— H                                                                                                                                                                              o
+                                      -f- >L+- -*J_*_            _t         ij                                                                        -+- -i—lL_ -4-        -+- — i— — *—u
+                                                                                                                                                                                  1
+
+              /^
+                            —* —
+
+                                             ••
+                                                                            !**   »
+                                                                                                                                               *•"-
+                                                                                                                                                                            ^•Computed
+                                                                                                                                                                                                           Uo
+                                                                                                                                                                                                           —¥-   ==•
+                                                  Computed
+
+
+
+
+                                                                                                              b)
+               \                       o                                                                                                   \
+                                                                                                                                                                                      o
+                   \                   ff—-a_                                                                                              \                             A ~-§-
+
+
+
+
+                                                                                                        *v
+                                                  tr- -a__
+                       \
+                                      1                      -*- ~s- —o__    <7
+                                                                                                                                                 \
+                                                                                                                                                      \             °/
+                                                                                                                                                                                          ~8~
+                                                                                                                                                                                                T- •— o—   -4-
+
+
+                                                                                                    K)
+                        \         y                                                                                                                       \        '„
+                                                                                                                                                               o
+                            ^<y
+
+                                                       0                                                                                                                                                               n
+       0         10     20    30     40     50      60
+           Distance along the surface from stagnation poi'nt,                                                                    Distance along the surface from stagnation point,
+                          percent chord                                                                                                         percent chord
+FIGURE 7.—Boundary-layer surveys on upper surface of smooth wing at Ct=0.31.                 FIGURE 8.—Boundary-layer surveys on upper surface of smooth wing at Ck=0.2I.
+                R, 11,100.000; N. A. C. A. 2414.5 section.                                                   E, 14,000,000; N. A. C. A. 2414.5 section.
+
+distribution surveys are shown in figures 7 and 8 as the                           CONCLUSIONS
+velocity distribution along the surface and the ratio of       Wake surveys made of a smooth wing of approxi-
+the dynamic pressure q\ 0.008 inch from the surface to mately N. A. C. A. 2414.5 section in flight at a Reynolds
+the dynamic pressure g just outside the boundary layer. Number of 15,000,000 gave a minimum profile-drag
+   From the q\j([ curve, the transition point for both coefficient of 0.0068. Surveys made of the original
+flight conditions is 17.5 percent of the chord along wing, which represents current metal construction,
+the surface from the front stagnation point (14 percent gave a profile-drag coefficient of 0.0102. Manufactur-
+of the chord along the chord line).                         ing irregularities in rivets, lap joints, access doors, and
+   For (7z,=0.21 (fig. 8.), the curve of velocity distribu- flap ventilating holes are thus responsible for a 50-
+tion along the surface reaches a maximum at 14 percent percent increase in profile-drag coefficient, even though
+of the chord along the surface. The negative velocity flush rivets were used over the forward 23 percent of
+gradient (or positive pressure gradient) exerts there- the upper surface and 8 percent of the lower surface of
+after an unstable influence on the laminar boundary the wing.
+layer. Transition to turbulent boundary layer with             The boundary-layer surveys 011 the upper surface of
+accompanying increase in skin friction follows soon the smooth wing showed that transition from laminar to
+after the velocity maximum. The tests at (7t=0.34 turbulent boundary layer occurred at a position on the
+exhibit the same tendencies.                                section tested more forward than would be expected
+   The dip in the experimental velocity distributions on a true N. A. C. A. 2414.5 section. Differences in
+near the quarter-chord point is attributed to departures the transition-point location could easily account for
+of the section tested from the true N. A. C. A. 2414.5 the slight differences in the profile-drag coefficients of the
+section. For comparison, the velocity distributions N. A. C. A. 2414.5 section found hi flight and in the
+over the upper surface of a true N. A. C. A. 2414.5 DVL and the variable-density tunnels.
+section for the airplane lift coefficients corresponding       The boundary-layer surveys showed that transition
+to those of the boundary-layer tests have been plotted occurred a short distance downstream from the point of
+in figures 7 and 8. These distributions were obtained minimum pressure.
+by interpolating between the pressure distributions for
+the N. A. C. A. 2400 series given in reference 7. Com-
+parison of the experimental and the computed velocity
+distributions shows that the peak velocity of the com- LANGLEY MEMORIAL AERONAUTICAL LABORATORY,
+puted distributions occurs farther downstream. The             NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS,
+transition point would be expected to occur in the region        LANGLEY FIELD, VA., January 6, 19S9.
+                                                    APPENDIX
+THE DERIVATION OF JONES' EQUATION FOR PROFILE                 From Bernoulli's equation, in a compressible fluid,
+        DRAG IN A COMPRESSIBLE FLUID
+
+   Assume a two-dimensional body in a uniform stream               rr         Pr7 2 [~i , V U \* , l (   U
+                                                                                                             \_i_   1
+                                                                   V-P = 2 U *L 1 +4(vJ+w(vJ + ' ' ' J
+(fig. 9). Assume that a plane is located far enough
+ahead of the body so that the static pressure is equal to   where Vc is the local velocity of sound.
+the static pressure of the undistributed stream p0.
+The velocity, the total pressure, and the density are       Let
+given as U0, H0, and p0, respectively. Assume another
+plane far enough behind the body so that the static
+pressure is again the static pressure of the undisturbed    Then
+stream, p0. Over an elementary distance dy, normal
+to the undisturbed stream, the velocity, the total
+                                                            and
+
+
+
+                                                               Applying Bernoulli's equation for the compressible
+         Ho                        P:       Pa              flow along a stream tube,
+         Pa                        U,       U
+                                   H,       H
+                                   A        Po                                                           7 Pi
+                                                                                           Po              p,
+                            FIGURE y.
+                                                           where 7 is the ratio of the specific heat at constant
+pressure, and the density are given as U, II, and p0, pressure to the specific heat at constant volume, .
+respectively. The density here is equal to p0 since the whence
+                                                                                          2
+static pressure is equal to p0. Over an elementary .
+distance dy lt to be defined later, of the plane in which
+                                                                      u=                   y 'fa P*\
+                                                                                        7 — l\Pi Po/
+the wake surveys are made, the static pressure, the '•
+velocity, the total pressure, and the density are pt, U},    Examine now the term
+HI, and PI, respectively.
+   Since the static pressures at the forward and the rear-                          Pi Po
+ward planes are equal, the profile drag per unit span Assuming adiabatic changes of pressure and density,
+can be equated to the integral of the difference in rate
+of momentum crossing these planes, namely,
+                                                                                Po/    \Pi
+                  D 0 =S w p 0 (U 0 -U)Udy                 whence, by substitution,
+where the integral is taken only over the wake because
+there is no contribution outside the wake. Assume, as                          PI                    p
+Jones does, that the wake can be considered as made up
+                                                            Now
+of "stream tubes" which do not mix as they pass from
+the measurement plane to the rearward plane and along
+each of which the total pressure is constant. Then,                     pi/           PI
+applying the equation of continuity along the stream
+                                                            and, expanding this expression by the binomial theorem,
+tube, whose width is dyl at the measurement plane and
+dy at the downstream plane,                                   psVr = i -i_ ml ?JQ~P' + ml 1 (p<>- ,
+                    p0Udy=p1U4y1
+                                                              p                  T              '             PI
+Substituting,                                               Substituting
+
+                      w
+8                    REPORT NO. 667—NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+and, finally,
+
+                                                                                                  • •• ]
+Substituting the expressions for the velocities into the drag equation,
+
+
+Now
+                                                                             D0F0
+                                                                  PO
+
+
+where c is the airfoil chord.
+Finally
+                                            hI — Pl
+                                                                Po) H P2T\
+                                                                        i ( V \ — Po
+                                              t
+
+                                        V                 (P\                   pi J+   . - - ]
+                          w   V   PI
+                                  Po~
+                                              FI      '
+                                                                  ITT
+
+
+
+    If the velocities are so low that compressiblity can be     3. Jacobs, Eastman N., and Rhode, R. V.: Airfoil Section
+                                                  y                  Characteristics as Applied to the Prediction of Air Forces
+neglected, P O =PI; -F0= ^1= 1 ; and |^( ' ^ j is negligi-           and Their Distribution on Wings. T. R. No. 631, N. A.
+ble compared with pi— p0. The drag equation reduces 4. TheC. A.,            1938.
+                                                                         Cambridge University Aeronautics Laboratory: The
+to tlie form given by Jones                                          Measurement of Profile Drag by the Pitot-Traverse
+                                                                     Method. R. & M. No. 1688, British A. R. C., 1936.
+                                                                5. Young, A. D.,and Maas, J. N.: The Behaviour of a Pitot Tube
+                    w     0 —p 0
+                                                                     in a Transverse Total-Pressure Gradient. R. & M. No.
+                         REFERENCES                                  1770, British A. R. C., 1937.
+                                                                6. Jones, B. Melvill: Flight Experiments on the Boundary
+1. Doetsch, H.: Profilwiderstandsmessungen im grossen Wind-          Layer. Jour. Aero. Sci., vol. 5, no. 3, Jan. 1938, pp. 81-94.
+      kanalderDVL. Luftfahrtforschung, Bd. 14, Lfg. 4/5, 20. 7. Garrick, I. E.: Determination of the Theoretical Pressure
+      April 1937, S. 173-178.                                        Distribution for Twenty Airfoils. T. R. No. 465, N. A.
+2. Jacobs, Eastman N., and Sherman, Albert: Airfoil Section          C. A., 1933.
+      Characteristics as Affected by Variations of the Reynolds
+      Number. T. R. No. 586. N. A. C. A., 1937.
+DETERMINATION OF PROFILE DRAG OF AIRPLANE WING IN FLIGHT AT HIGH REYNOLDS N U M B E R S                             9
+    TABLE I.—SECTION ORDINATES OF                         TABLE II.—SUMMARY OF PROFILE-DRAG TESTS
+     THE SMOOTH WING AND THE
+     N. A. C. A. 2414.5 WING. CHORD, 8.86                                      Reynolds Section pro-
+     FEET                                                        Wing lift
+                                                                coefficient,   Number.     file-drag     Air con-
+                                                                     f.            R      coefficient,    dition
+                                                                     \JL
+               [All values in percent chord]                                   (millions)      "o
+                   Smooth wing      N. A. C. A. 2414.5                            Smooth Wing
+     Station
+               Upper     Lower      Upper      Lower               0.35          10.9       0.0068       Rough.
+                                                                    .295         11.5        .0066       Smooth.
+                                                                    .28          11.7        .0067       Rough.
+       0       0            0                    0                  .25          12.4        .0065          Do.
+        1.25   2.45       -2.07      2.63       -1.98               .25          12.5        .0068       Smooth.
+        2.5    3.42       -2.84      3.60       -2.75                23          13.0        .0068       Rough.
+        5      4.75 •     -3.74      4.92      -3. 69               .V>          13.5        .0069       Smooth.
+        7.5    5.72       -4.33      5.88      -4.30                .20          13. 9       .0068       Rough.
+       10      6.43       -4.76      6.64      -4.70                .!«          14.4        .0063       Smooth.
+       15      7.57       -5.22      7.75      -5.20                .225         13.1        .0069       Rough.
+       20      S. 34      -5.39      8.46      -5.42                . 185        14. 1       .0069       Smooth.
+       25      8.83       -5.40      8.92      -5.45                .175         14.9        .0069         Do.
+       30      9.10       -5.32      9.13      -5.37
+       40      8. 98      -4.90      9.01      -5.01
+       50      8.32       -4.31      8.35      -4.45                              Origina Wing
+       60      7.34       -3.62      7.31      -3.71
+       70      5.96       -2.87      5.95      -2.90
+       80      4.25       -2.04      4.30 '    -2.04               0.29          11.9       0. 0103      Smooth.
+       90      2.32       -1.15      2.39      -1.11                .26          12.4        .0101         Do.
+       95      1.28        -.70      1.31       -.65                .23          U. 2        .0101         Do.
+      100       .12        -.12      (.15)     (-.15)               .19          14.6        .0103         Do.
+      100                                        0                  .17          14.8        . 0100 .      Do.
+
+                                   L. E. R a d . : 2.40
+                                     Slope of radius
+                                     through end of
+                                       chord: 2/20
+                          Positive directions of axes and angles (forces and moments) are shown by arrows
+
+                  Axis                               Moment about axis                      Angle              Velocities
+
+                                     Force
+                                   (parallel                                                               Linear
+           Designation        Sym- to axis) Designation     Sym-        Positive    Designa-        Sym- (compo- Angular
+                               bol symbol                    bol        direction    tion            bol nent along
+                                                                                                            axis)
+
+         Longitudinal          X        X      Rolling        L         y— >z       Eoll             <*>       u            P
+         Lateral               Y        Y      Pitching       M         Z    )X     Pitch            9         V            g
+         Normal. ._            Z        Z      Yawing         N         X    >K     Yaw              <{>       w            r
+
+
+Absolute coefficients of moment                                   Angle of set of control surface (relative to neutral
+    s-, L              „   M                                        position), S. (Indicate surface by proper subscript.)
+     (rolhng)            (pitching)         (yawing)
+
+                                                  4. PROPELLER SYMBOLS
+D,   Diameter
+                                                                  P,        Power, absolute coefficient CP=
+p,   Geometric pitch
+y/D, Pitch ratio                                                                                           5
+                                                                  C,,       Speed-power coefficient=-
+V,   Inflow velocity
+Vt,  Slipstream velocity                                          17,       Efficiency
+                                         T                        n,        Revolutions per second, r.p.s.
+T,    Thrust, absolute coefficient GT=—27*
+                                      pfl L/                      $.        Effective helix angle=tan~1(/ ~ V \I
+                                         n                                                                     \2irrn /
+Q,    Torque, absolute coefficient Ca=-pTl
+
+                                                S. NUMERICAL RELATIONS
+1 hp.=76.04 kg-m/s=550 ft-lb./sec.                                1 Ib.=0.4536 kg.
+1 metric horsepower=1.0132 hp.                                    1 kg=2.2046lb.
+1 m.p.h.=0.4470 m.p.s.                                            1 mi. = 1,609.35 m=5,280 ft.
+1 m.p.s.=2.2369 m.p.h.                                            1 m=3.2808ft.
+

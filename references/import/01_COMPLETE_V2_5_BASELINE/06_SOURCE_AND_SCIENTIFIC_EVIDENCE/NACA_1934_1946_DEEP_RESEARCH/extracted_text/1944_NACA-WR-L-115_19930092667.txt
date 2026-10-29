@@ -1,0 +1,2958 @@
+                                                                                              ARR No. LhID.5
+
+
+CI
+
+
+
+
+            NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+
+
+
+                                                                                        f)
+                                           ORIGINALLY ISSUED
+                                         October 1941~ as
+                                 Advance Restricted Report L4Hl5
+
+
+                      FULL-SCALE vlIND-TUNNEL INVESTIGATION OF FORWARD
+                                     UNDERSLUNG COOLING-AIR OO'CTS
+
+                                ~J   W. J. Nelson, K. R. Czarnecki,
+                                       and Robert D. Harrington
+
+                          Langley Mamorial Aeronautical Laboratory
+                                    Langley Field, Va.
+
+
+
+                                                                     PROPULSION lJ\BORi>.i~
+                                                  f l\OI'ERi'I Of JET I"'SiI1U1E of lECIUi
+                                                          CALIFORNIA ,.
+
+
+
+
+                                              WASHINGTON
+
+     NACA WARTIME REPORTS are reprints of papers originally issued to provide rapid distribution of
+     advance research results to an authorized group requiring them for the war effort. They were pre-
+     viously heid under a security status but are now unclassified. Some of these reports were not tech-
+     nically edited. All have been reproduced without change in order to expedite general distribution.
+
+
+                                                 L -   ll5
+
+                                                                                                               J
+JACA A::1.R No. r.4H15
+        NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+                   ADVANCB B:SST.l.IC~~ ·.:m ~PORT
+
+    FULL- SCALE vHND - TUNNEL INvESTIGATION OF FORWARD
+                 UNDERSLUNG COOLING-AIR DUCTS
+             By W.    J.' Nelson , K. R. Czarnecki
+                     and Robert D. Harrington
+
+                             . SUMMARY
+
+       A general investigation of underslung cooling-air
+duc ts in various locations on a model of a typical single -
+engine t ractor airolane has been conducted in the NACA
+full - scale tunnel . This report contains the results of
+tests of two forward underslung ducts.     These tests
+were made to determine the effect of the inlet-velocity
+ratio , the angle of attack , the radiator resistance, and
+the propeller operation on the pressure recovery at the
+radiator , on the drag of the cooling installation, and
+on the critical speed of the ducts.     Pressure measure-
+ments were made at the duct inlets and at the face of
+the radiator to determine the diffuser losses, and at
+the duct outlets to find the volume rate of air floVi
+through the duc t. The dr ag of the various duct instal-
+lations was obtained from force tests of the model with
+the ducts installed and removed. Static-pressure
+distributions were taken at the duct lips and at the
+duc t-fuselage fillets to determine the critical speed
+of the duc ts .
+       At low values of lift coefficient, with the propeller
+remo ved , pressure recoveries greater than 90 percent of
+the free - stream dynamic pressure were obtained at values
+of inlet - velocity . ratio from 0.40 to 0.75. Propeller
+operation increased the pressure recovery 7 oercent of
+the free - stream dynamic pressure at a thrust coefficient
+of 0 . 02 and about 45 oercent of the free-stream dynamic
+pre ssure at a thrust coefficient of 0.11. Reductions
+in the outlet static pressure as large as 50 percent of
+the free-stream d~amic pressure were obtained by the
+installation of 45 0 exi t flaps with the propeller
+removed , and even greater reductions were noted with
+the propeller operating . The lowest critical speed was
+measured at the left duct - fuselage fillet with the
+propeller operating.
+2                                       l-JAC A lU1R No . r4H15                ..
+                       INTRODUCTION
+
+       A general investigation of charge-air and cooling - air
+duc ts , installed in a full-scale model of the Republic
+XP-47 airplane, has been made in the NACA full-scale
+tunnel to provide a basis for comparing several typical
+duct installations with regard to the pressure recoveries
+obtainable at the radiators , the drag of the complete
+ducting syste~ , and the critical speed of the inle t lips .
+The results of tests of the engine-charge-air ducts with
+inlets loc ated on the top of the fuselage and of the
+cooling- air ducts with inlets located in the wings and
+on the bottom of the fuselage behind the leading edge of
+the wing are given in references 1 to 3 . The results of
+the teats of the tL'1derslung ducts with inlets close to
+the propeller are presented in this report .
+       Tests were made to determine the performance of a
+large and a small forward undersllli~g duct over a range
+of airplane angles of attack , duct inlet - velocity ratios ,
+and radiator resistances . Mos t of the tests were made
+wi t h the propeller removed from the airplane . Some
+tests were made , however, with the propeller operating
+to determine the effects of the slipstream on the duc t
+charac teristics .
+
+                           SYMBOLS
+
+CL     l ift coefficient
+       thrust coefficient    (~---\
+                           \ pV 0 2 D2)
+       increment of drag coefficient due to duct
+       calculated increment of internal - drag coefficient
+       increment of drag coefficient due to external
+          drag of duct (6CD - 6CDi)
+6D     increment of drag due to duct
+T      thrust
+p      mass density of air
+
+
+
+
+                                                    - -- - -      _.   -,---
+        -   -   -- --- --- ~---~--~--------~--
+
+
+
+
+RAGA A~~ No.    L4H15                                3
+
+v      veloci ty
+
+D      propeller diameter
+
+A      cross - sectional area of duct
+
+S      wing area
+
+p      local static pressure
+q      dynamic pressure
+
+6p     pressure drop across orifice plate representing
+          radiator
+
+       pressure-drop coefficient for orifice plate
+
+
+       total p ressure
+
+       volume rate of flow
+
+       ai r-flow parameter
+
+       inlet-velocity ratio
+
+~      duc t efficiency   (Q 6p/6DVo )
+a      angle of attack of thrust axis relative to free-
+          stream direction
+
+~      propeller blade angle a t   0.75 radius
+Subs c ripts (denoting average conditions):
+
+o      in free stream
+
+I      in duct inlet
+
+2      at front face of orifice plate
+
+3      at duct outlet
+
+or     critical
+4                                         "f'.!ACA A:tR }!o . rlJ-H15
+
+
+                   APPARATUS AND METHODS
+
+      The mode l u sed in t h ese tGsts is a t yp ical low-wing
+single -engine fi ghter airplane with a wing area of
+170 square feet . The genera l 'arrangement of the model
+and the basic dimensions are gi ven in fi gure 1. For
+the tests with t he propeller operating , the model was
+equipped wi th a 10-foot - diameter Curtiss controllable-
+pi tch propeller that was driven by an electric motor .
+The propeller h ad 6l4Ccl.5-24 blades, the shanks of
+which we r e covered wi th cuffs shown in fi gure 2. The
+model is shown moun t ed in the NACA full-scale tmL~el in
+figure 3 . A descri pti on of the _JAGA full - scale tUID"lel
+and t :b.e balance equipment used in t~ese tests is give n
+in reference 4.
+        '1'he lar ge and small forward unders lung due ts are
+shown installed on the model in f i gure s 4 and 5,
+respecti vel y . Photograpl18 of the inlets and outlets
+are s hown i n fi gures 6 and 7 and t he gen~ra l dimensions
+of the ducts arG g ivon in figu:res 8 and 9. Each duct
+wa s tested wi t h three outlets in or~er to vary the volume
+r a t e of air flow. These f gures show that the outlet
+area of t he ducts was var ied by cut ting back t he duct
+exit from the original pos ition. Some additional tests
+were Made to dete r mine t he effect on the pre ssure distri -
+bution and t otal- pres sure recovery at the facG of the
+radi ator of t hree e qua ll y spaced radial vanes installed
+in the diffuser of t he l~rge duct .
+       Total - pr essure mea surements were made at the duct
+inlet and at the fro n t of t he radiator to de termine the
+pressure loss in t he diffuser . The volume rate of flow
+t hr ough each duct was calcul ated from measurements of
+total and static pressures in the duct outlets . Stati c-
+pressure distributions , fo r the purpose of estima ting
+the c:ritical speeds of the duct lips and the duct-fuselage
+fillets , were determined by use of rows of l-inch static -
+                                                  32
+pre ssure orifices moun t ed f lush with the outer s urface of
+the se ction. The ordinates of the lower li ps are give n
+in t ab le I.
+     The effect of the slipstream on the duct performance
+was obtained with the prope lle r opera ting at thrust
+coefficients s imul ating the sea - l evel high-s peed and
+
+
+
+                                                                _. _. ('-J
+NA CA AHH No. L4H15                                           5
+
+climbing-fli ght conditions for an ai r pl ane wi t h a normal
+r a ting of 1600 horsepower . For t h e h i gh-s peed condition ,
+CL = 0 . 10 , the propeller blade angle wa s 60 0 and the
+t h rust coeff icient was 0 . 02 . For the climb condition ,
+CL  =  0.47, the blade angle was 40 0 and the thr ust
+coeffi c i e n t 0 . 11 .
+       The effect of the various duct i ns t allations on the
+dr a g of t h e mode l was determined f r om t h e for ce tes t s
+with the d uct i n stalled on the a irplane and with the
+d uct r emoved . These fo r ce t es t s were made ove r a range
+of lift coeffici e nt from - 0 . 2 to 0 . 5 a t a tunnel ai r
+velo c i t y of a pproximately 96 mi l es pe r hour . The incre -
+me nt s of internal drag were calculated f rom the volume
+r a te of air flow and the exit tot a l pres sure .
+      The rel a tionship between the l ift c oefficient and
+the angle of att a c k for this a irpl ane is given in
+f igure 10 .
+
+                      RESULTS AND DISC USS I ON
+
+        Th e present a tion of t h e resul t s i s divided into
+four se c tions in wh ich the requir ement s for satisfactory
+duct performance a re di s cussed. Th e se r equirements
+incl ude (1) hi gh pr e ssure recover y at the front of the
+radiator, (2) l ow a vailable ou tle t sta ti c pre s sures for
+adequate control of flow t h ro ugh t he radiator , (3) low
+d r a g o ver t h e speed r ange from hi gh spe e d to climbing
+s pee d , and (4 ) hi gh criti cal spe e d of the duc t . In the
+f irst section the effec t s of t h e i n l e t- velocity ratio,
+the li f t coeff ici e nt , and the prope l le r thrust on the
+p r e ssur e r e cover y a t t h e radiator a r e discussed. In the
+s e cond section t he static pressure at the duct outlet is
+discus sed as a funct i on of t h e geome t ric dimensions of
+t h e out l et section of the d uc t , t he lift coefficient ,
+a nd the thrus t coefficient . In the same section the
+effe c t on the outlet static pr e s s ure of installing outlet
+flap s is de s cribe d . Th e interna l d r ag c aused by flow
+t h rough the d uct a nd t h e external dr ag c aused by flow
+d i sturb anc e s o ver the duct are di sc ussed separately in
+the third section . The effects of the inlet - velocity
+ratiO , the lift coef f ic ie nt , and t he pro peller operation
+on the critical s peed of t he ducts are discussed in the
+f ourth se c tion .
+6                                       NACA ABR No . L4H15
+
+
+             Pressure Recoveries at Radiator
+     The total - pressure recovery at the radiator is
+determined by the losses that occur at the duct inlet
+and in the duct diffuser. The pressure losses at the
+inlet are caused by separation 01' the boundary layer
+from the fuselage surfa'c e just ahead of the inlet.
+Since the boundary layer at the inlet to a forward
+underslung duct is usually very thin, there is little
+tendency toward separation and the inlet losses are very
+small (fig. 11) over the normal range of design inlet -
+velocity ratio Vl/Vo from 0 . 4 to 1.0. It is therefore
+apparent that total- pressure recoveries appreciably
+below the full free - strean dynamic pressure will occur
+in foy'ward underslun ducts only when there are large
+                     Q
+
+pressure loss e s in the dirfuser . The loss es that occur
+in the d if fuser are d _scussed in the following paragraphs
+as a fun ction of the inlet-velocity ratio, the lift
+coefficient , and the propeller thrust .
+       Effect of inlet -velocity ratio.- The variation of
+  the average total pressure at'~ef~ce of the orifice
+  plate with the inlet-veloclty r2.tio is shown in figure 12.
+ At a lift coefficient of 0.10 , vTith the propeller removed ,
+  pressure recoveries greater than 90 percent of the free -
+' stream dynamic pre ssure (0 . 90Qo) were recorded in both
+  the large and the small forward underslung ducts at
+  values of VI/Vo from 0 . 40 to 0.75 . The inlet-velocity
+  ratio at which the peak recovery was obtained and the
+  range of inlet-velocity ratios over whi ch high pressure
+  recoveries were obtained decreased with increaSing lift
+  coefficients. From the scatter of the test points, it
+  is evident that any di ffe:-ences in recovery caused by
+  changes in the resistance of the radiator are well within
+  the accuracy of the measurements.
+     The pre ssures at the faca of the orifice plate are
+presented as contour maps in figure 13 . At CL     = 0.10
+and Vl/Vo = 0.53 the tota~ - pressure recovery was high
+and uniform over the central part of the radiator and
+decreased slowly toward the edges . Increasing the inlet-
+velocity ratio to 0.74 reduced the recovery near the duct
+walls still further. At VI/Vo     =0 . 94 very low p ressures
+were measured at the bottom of the radiator, which
+indicated that separation occurred in the lower par t of
+the diffuser .
+
+
+
+                                                                 ,
+              _ . _ - -- - - - - - - - .
+
+
+
+
+,TIICA      ~ t ~L   "'f a       r)II-r H15
+N '"'\   ..fj:>j.    .'. \   .           _                           7
+
+         For corresponding inl et-ve loc i t y r atios , the pressure
+losses a t CL = 0. 8 9 were greater than the pressure
+l o s se s a t CL   0.10 .         =
+        Th e ef f ect of ch anging t h e inle t-ve loc it y ratio
+on the flow over a duct lip is ana log ou s to changing
+t h e a ngl e o f at t ack of an airfoil. At low values
+of vl 7vo ,       the streaml ine s expand a he ad of the duct
+a nd in effe ct c au se the duct li p t o operate as an airfoi l
+at a h igh ang le of a ttac k (s ketch ( a )), with the inner
+
+
+
+
+surface o f t h e li p correspondi n g t o the lower surface
+o f t h e a irf oil .    I n thi s condi tion the flow over the
+i nner surface o f the li p is smoo t h , but on the outer
+surfa ce there is a te n denc y towar d high negative pres -
+sures a nd se pa r a t i on from the li p . With increasing
+i nlet - ve loc l ty ratios , t h e a n g le of a t tack of tl1e li p
+de cre a s e s un ti l at SO'Tle inlet vel o c i t y the lip operates
+a t a ne ga tive ang l e o f a ttac k ( s ke t ch (b)) and the
+t e ndenc y towa rd se p arat l on oc curs on the inne r surface
+of t h e lip . The exact value . of           VI /Vo at which sepa -
+r a t i on , if a n y , wi l l o c cur depe nds up on the camber, t ~ e
+le a ding - edge radius , and t h e a linement of the duct lio .
+
+        Ef f ect of l if t coe f f icie n t .- In or der to determine
+t h e effect of c hanges of l ift coe ffi c ie n t on the pressure
+a t t h e f ace of t h e orifice p l a te, test s were made with
+con st a nt outlet a re a a nd fl ap pos ition at lift coeffi-
+cients r a n g i ng from 0.1 to 0 . 9 . The re s ults of these
+test s (fig s . 14 and 15) show tha t inc re asing CL
+d ecre a sed both the recovery and the inl et-velocit y ratio .
+In order to s epa r a t e t he chang es i n recovery caused b y
+va rying t he lift coeffi cient from tho se assoc i ated with
+t h e vari a tions in inle t-veloc ity r ati o, the curves of
+fi g ure 12 ha ve be e n cross - plot t e d at constant values
+of VI /Va a nd a re p resented in fi gure 16. These data
+s h ow t h a t , o ver a ra n ge of l ift c oe f fi cie nt fr om 0 . 1
+to 0 . 9 , t h e tota l- pre ssure recovery at inlet - velocity
+r a tios of about 0 . 5 v a ried less th an 0 . 05qo and that
+8
+
+the adverse effe c t of changes in                                 CL   incre ased rapidly
+with inlet-veloci ty ratio .
+
+     The effects of lift coefficient on t h e pressure
+recovery at the radiator are re adi ly explained by the
+airfoil analogy use i n the preceding section . At low
+lift coeffi cients t h e duct lip is alined wi th the
+ap roaching air stream and the flow over the lip is
+smooth (s ketch (c)) . As CL incre a ses, the stag n a tion
+                                                              -(
+
+
+
+    _   "-4L'1
+            - -'-'-41.1..1 ' , ,
+            -------=
+                                                            --~~
+                                                            -=-~~(~~
+                          ~LI-' 1 /11 /         ( { IlL L
+    -----_____                -    .-____   I
+
+
+
+
+  ------
+ .-      77;;--:-----.-.~-
+    -..~~(@;;          .                                     ~-'--~<0~
+                                                                     '>'
+           --.::.:!'~~_ .LL77ZZ                             ---           --.......:::: _///-J-....
+                                                                                      ~'/~
+                                                                                                      ~-LZzzz
+
+
+             (c) Low CL '                                           (d ) Hlgh            C rJ...J •
+
+point moves to t~e under side o f the' lip and the flow
+tends to separa t e fr om t l18 lower wa-ll of the d u.ct
+( s ke t ch (d)).
+
+       \l1fi th v ane s ins t alled in the diffuser the r e covery
+at CL = 0 . 10 wa s sl_ghtly l ower than without vanes
+( fig . 14 ); t he 'anes, r.owever , reduced t he- adverse
+effe cts of increasing lif t coefficient.
+
+       Pro pe ller 0 eration. - The effect of the propeller
+opera tion on the va r ia tion of t he total pressure at the
+face of t rie orifice p late with inlet -vel ocity ratio is
+s~own i n figure 17 for t he large forwa rd underslung
+duct .    In t he high -s pe ed a ttitude, 'CL = ' 0 .1 0 and
+Vl/Vo = 0 . 5 ,   t he p r essur e r e c overy wi th the p ropeller
+opera~ing at      Tc = 0 . 02 was about 0 . 07 Qo g reater than
+that with tbe prope ller re mo ve d .        In the climb condition ,
+CL = 0 . ~·7 ,  Tc = 0 . 11, and VI/Vo = 0 . 8 ,        the total
+pressure a t the rad iator wa s 0 . 45qo g reat er than with
+the propeller re moved . These data show that the range
+of i nlet-ve loei ty ratios .o ve r', whi ch t he p r e ssure
+recovery r emai ns substantially const ant . was much g reater
+with the prope ller operating than·with the p ropeller
+r emove d . Fo r c on veni e nce in comparis on, the inlet -
+ve locit y ratio with t he p ropell er operating has been
+based on the free - stream velocit y and not on the velocity
+in the slipstream.
+
+                                                                                                                I
+                                                                                                                ~
+    '-     ~-       - - - - - ~~-- ~-~~=- .- --       -   - --   -   -   -   -   - -- - -   l
+
+         ~TAC .'\   .RR No. r4H15                                            9
+
+               The substantial increase in the total pressure
+         obtained at the face of the radiator with the propeller
+         ope:rating , particularly at the climb thrust coefficl.ent,
+         is largely attributed to the cuffs installed on the
+         shanks of the propeller blades. Ordinarily, this
+         portion of the propeller, with its poor blade sections,
+         contributes little to the propeller thrust. With the
+         cuffE: i:l3talled , h oweve r, a more nearly uniform radial
+         propel! a r - loart distribution is possible with a resultant
+         incre&se in the total. pressure behind the inner sections
+         of the nropeller blade . This effect becomes greater for
+         the high propeller loadIngs of the climb condition. The
+         cu~fs also s e rve to increase the critical speed of the
+         propeller-blade shanks.
+               Results obtained with c onsta...'1.t outlet area show the
+         effect of the propel ler operation on both the pressure
+         recover and the inlet -velocit y ratio. (See fig. 18 .)
+         At the high-speed Tc of 0.02, a slight increase in the
+         pressure recovery and the inlet-velocity ratio was
+         c aused by propeller operation; at the climb Tc of 0.11,
+         however , the increases in the recovery and in the inlet-
+         velocity ratio were much l arger .
+                Typical pressure distributions at the radiator with
+         the propeller removed and operating are presented in
+         figure 19 . In the high-speed attitude, CL = 0.10, at
+         an inlet - velocity ratio of 0.58, the slipstream at
+         Tc = 0 . 02 increased the total pressure at the radiator
+         approximately 0 . 07Qo with no great change in the
+         distribution. In the climb attitude, CL = 0.47, with
+         the propeller operating at Tc = 0.11, the average
+         total pre ssure at the radiator was 0.40Qo greater
+         than for the propeller - removed tests. The contour TIlap
+         indicates that the core of high pressures which was
+         concentrated ~n the upper part of the radiator in the
+         propeller - removed tests has moved to the center of the
+         duct .
+               The effects of prope ller operation with the small
+         forward underslung duct are given in table II. These
+         data are insufficient to make as thorough an analysis
+         as fo r the large duct, but the effects appear to be
+         generall y similar . In the climb at t itude with Tc = 0.11 ,
+         the average total pressure at the radiator was lower, at
+         low values of VI/Va , for the small duct than for the
+         l arge duct . (See table II and fig. 17.) It is probable
+
+                                                                                                I
+L                                                                                   __ J
+10                                         NAC A AR:1 l{ o . r..4.H15
+
+
+tha t at the low values of Vl/V o a greater proportion
+of the air entering the sma ll duct inlet is affected by
+the l ess efficient inner portion of the propeller b lade .
+
+                  Pressures behind Radiator
+       The quantity of ai r flowing through a duct may be
+determined from the total- and static ~ pressure measuremenw .
+at the duct exit . The static pressure at the duct exit
+is pr "mari1y depen ent upon the convergence of the outle t
+se c tion of the duct and the angle at which the flow from
+the duct is discharg~d into the free stream . When the
+air is discharged from a rapidly contracting outle t
+section, its veloci ty continues to increasG for some
+dis t ance do\"mstream or tho exit and usually results in
+static pressures at the outle t that are higher than the
+pressure of the neighboring fre .) stream .
+       Discharging the air at too great an angle to the
+free :3trearl chan[Se s the adj&cent external static pressur e ,
+and conseque ntl y the exit ste.tic pressure , as a result-
+of an effecti va thickening of t~1e body in the reeion
+jus t behind the exit . Some of these effects and the
+effe c ts of changes in angle of attac~ of the mode l and
+propeller operation on the outlet static pressures are
+d i scussed in the following paragraphs .
+       Effect of outlet design .- Shortening the out er skirt
+of the outletfa:~ring to increase the outlet size a l so
+chang d the rate of convergence and angle of discharge
+of the outlet . (See figs . 8 and 9. ) The effect of thes e
+change s on the static pre3sure in the outle t is shown
+in figures 20 and 21 . Theso plots indicate that the
+lowest s t atic pressures will occur in s l ow·ly converoing
+out l ets discharg!ng the cool i ng - air flow parallel to
+the local external stream . The "'tatic presDure in the
+out l et will be identical with the static pressure of
+the outside flow a t the opening if the outlet duct is
+so designed that the streaml ine dividing the internal
+and exter~al field s is strai ght .
+       Effect of exi t flaps .- The effect of installing
+exit flaps was to decre~se the exit static pressure by
+approximate l y 0 . 55q o in the exi ts of both the large
+and small ducts . Average static pressures as 10Vl as
+- 0. 45Q o were obtained with t he propeller removed ,
+values whi ch are indica t ive of good exit - flap effe c tiveness.
+NAOA AR11 No . L4H15                                           11
+
+
+       Effe ct of lift coefficient.- The variation of
+average outlet static nres s ure with lift coefficient
+is shown in figu res 22 and 23.      Increasing the lift
+c oefficient o f the airolane increased the static
+oressur e a t the duct outlets. The increase was approxi-
+mate l y 0 . 15Qo wi thout exit flaps and approximately
+t wi ce tha t value wl th 45 0 exit flaps installed, when
+t he li f t c oefficient was increased from 0 . 10 to 0.89.
+The effect is attrib uted to a rearward movement of the
+stagnation region on the bot tom of the fuselage when the
+ang le of attack of the airplane is increased.
+
+      Effec t of p ro pe ller operation . - The effect of
+prope lle r operation on t he out l et static pressure may
+be ob t ained by a comparison of figures 20 and 24. At
+0L =   0 . 1 0 and wIth no exit fla p , the difference between
+the p r opelle r - operat ing      =
+                                   (Tc    0 . 02) and the propeller -
+remo ved static oressures was neg l igible . At Tc = 0.11,
+for which case 0L      =    0 . 47 ,   the static pressure increased
+sl ightlv with no out l et flaps and decreased from -0.09qo
+to ~ 0 . 2]Cio with out l et f la ps installed . With an average
+tot al ') re s sure of about 1 . 20Qo at the face of the
+radiator ( fig . 17) and an a verage outlet static pressure
+of - o . 40Q      ( fig . 24 ), a pressure difference of approxi -
+mately 1 . ~Oqo is avai lab le fo r forcing air through the
+duct in the climb attitude with the oropeller operating
+at Tc = 0 . 11 .
+
+                   Dr ag and Duct Eff iciency
+
+       A summary of the drag data for the model with the
+large and small fo rw a rd underslung ducts installed is
+pre se n t ed in tables I I I and -I V. The increment of the
+drag coeffi c ien t due to the duct 60 D is the difference
+between the drag of the mode l with the duct installed
+and with the duct removed .
+      In o r der to facilita t e analysis, the drag increment
+is d ivided into two parts :     (1) the drag caused by losses
+in the duct (in terna l d r ag ) and (2) the drag caused by
+c hanges in the external flow (external drag) . The
+incremen t of interna l drag coefficient is equal to the
+momentum los s through the d uct c alculated by the formula
+12                                        NACA ARB   TO .   L4H15
+
+'1'he external drag is the differ ence between the calculated
+6C      and the total increme nt me a sured by the force tests
+    Di
+and may be expressed a s
+
+
+
+      The increase in drag that accompanied the increase
+in the outlet area of the ducts was due mainl y t o an
+incre a se in the internal drag of t h e installations as
+a result of the larger volume "-"a te o.f air flow . The
+larger volume rate of flow caus e d an inc rease in the
+pressure drop across the orifice plate and gene rally
+incre a sed t he diffuser ressure losses . The increme n t
+of tota l drag coe ffic i ent 6Cn due to the large forward
+under s lung duct varied from 0 . 0011 to 0 . 0029 and for the
+small duct from 0 . 0013 to 0 . 0022 (tables III and IV),
+depend in,g upon t he nominal pres s ure drop of the radiator
+and t h e volume r a te of air flow.
+       ':n order to compare the internal drag of the two
+ducts, the interna l - dr a g coefficient has been pl otted
+as a function of the inlet-velocity ratio in figure 25 .
+This figure _shows that , for equa l va lues of pressure
+drop for the orifice plate and inlet- velocity ratio ,
+the interna l- dra g coe fficient of t he small duct wa s
+hi ghel' in some instances than that of the large duct .
+The internal-drag coefficient was hi gher eve n though at
+equa l values of Vl/V o the volu~e rate of ai~ flow
+through t l e smaller duct wa s l ess than that for the
+large duct . The higher interna l dra g of the smal l duct
+is caused b y the dif f erence in the expansion betwe e n
+the inlet and the radiator . The r a tio of orifi ce - plat e
+area to inlet area is 2. 5 for the large duct and 2 . 0 for
+the small duct ( see fi g s . S and 9); thus, for a given
+Vl/V o and 6p/q2 t he dynamic pres s tITe q2 and h ence
+the pressure drop 6p and t he over-al l pressure
+drop Ho ~ H3 in the small duct are greater tha n in
+t he l arge duct .
+       ~~he calcula ted incre ment of dra g coefficient due
+to the external dra g of t h e duct 6CD e varied from 0
+to 0 . 0010 with -the large duct installed and from
+o to 0 . 0004 wi t h t he small duct installed . ( See t ab les III
+and I V.) In the case of the small d uct , the increment of
+external drag gene r ally increased with 6p/q2 and
+a ppeared to be _approximate l y t he same for b oth t he
+
+
+
+                                                            -----~-----
+                                                                13
+
+m0diu.'1l and the l arge outle t s . With the large duct
+i nstalled , the value s of 6Cn              increased with the size
+                                         e
+of the out1et and appear ed to de crease with increasing
+6 p/Q2 ' A 11 1.a.jor part of the increment of external drag
+i s attrlb~t Gd t o the interference effects associated
+wi t h th0 m~~l !lg of two st reams of unequal velocity and
+wi th dlr'f6I'dn t fl ow d i r e ct i on s •
+      . Til0 efficiency of ea ch duc t 11, defined as the
+r a tio oi' the mi nimum powe r required to force the cooling
+a:" r t hyo1.1.gb the radiato r to the power needed to overcome
+t he drs. , ~ of the complete i nstallation , has been calculated
+and the; valu8 s are presented in tal,Ie s III and IV.      At
+inlet- ~~10o ity ratios below 0 . 62 the efficiency of the
+large dact wa s greater than 70 per0ent but decreased
+r apidly above an inlet - ve l oci t y ratio of about 0.70. The
+effici3nc y of the small duc t was consistently lower than
+t ha t of the la r ge duct a t t he s ame Vl/V o and 6p/Q2
+value s be c ause of the re lat ive l y higher internal drag.
+
+                        Cr i tical Speeds
+       The critica l spe ed s of the duct inlet lips ~ere
+e stimated f r om the s ur fa ce sta t ic pressures measured
+at a tunnel speed of 96 mi l es per hour by using the
+von Ka rman - Tsien pressu_e extrapolation obtained from
+reference 5. These extrapolations are shown in figure 26 .
+                                           p - p
+The minirrum pre s sure coefficients             0 were determined
+          .                                  Qo
+f rom pressure di s t rib utions measured over the lip at the
+b ott om of the duct i n let and in the duct-fuselage fillets .
+       Effe c t of inlet - ve l oc ity ratio.- The critical Mach
+numbe r lncj:;eased--llnearl y wi th the Inlet- veloci ty ratio
+as shown in fI gure 27 fo r the small duct. Typical
+pressv::'8 distribution s ove r the l ip of the small forward
+underslung duct ( fig . 28 ) show the change in distribution
+t ha t accompanied change s in inl e t -velocit v~ ratio. It is
+noted t hat t he st agnat ion p oint moves outward a s VI/Va
+incre ase s and that the pe ak nega t ive pressures are
+r educ ed .
+      Effe ct of l ift c oeffici e nt.- In figure 29 the
+cr1 tic a l Ma ci1 numbe r of the small forward underslung
+duct is shown a s a f un c tion of the lift coefficient of
+                                           NACA: ARR 1'Jo . r4H15
+
+
+the airplane with propeller removed .      Increasing the
+lift coefficient caused substantial increases in the
+critical speed of the lower part of the duct lip but
+decreased the critical speed of the sections along
+the duc t- fuselag e fillets.    The rate of ch ange of
+cri tic a l Mach nu.mber wi th lift coefficient was much
+greater at the bottom of the ducts than in the fillets .
+
+      Effect of propeller operation.- The critical Ma ch
+number of the various sections o.f the lip of the small
+duct , determined from tests with the propeller removed
+and with the propeller operating, are shown as a function
+of the inlet-velocity ratio i n fi g ure 30. At the bottom
+of the duct lip , the critical speed of the section varied
+slightly and irregularl y with propeller operation.
+Along the left fillet , Mcr was slightly lower with
+propeller opera ting ; where.a s , a long the right fillet
+the. cri tic al speed was subs.tantially g re ate r with
+propeller operating than With t~e propeller re moved .
+This effect is nrobably due to the sli.pstream rotation
+which d ecre ase s the effective angle of attack on the
+ri ght side of t~ e duct behind the downgoing propeller
+blades a nd increase s the effective angle of attack on
+the left side of the duct behind the upgoing propeller
+blades .
+
+      The critic a l speed o f the left fillet for the high -
+speed condition ,    C L = 0 . 10 , Tc = 0.02 , and Vl/V o = 0 .50,
+wa·s estL'Uated to be ab out ~.8 5 miles per hour at standard
+sea-leve l cond itions . The critical speed of both the
+lower duct l ip and the right duct -fuselage fillet were
+hi gher than the critical speed of the left fillet .
+
+       A similar b ut less t hor ough investigation was made
+of the critical speed of the inlet to the large duct
+wi t h similar results which are not presented here .
+
+
+
+
+      1'ests of forward underslung ducts on a typical
+fighter airp l ~ne in the NACA full-scale tunnel, indicated
+that:
+
+       1. Pressure recoveries at the radiator grea ter
+than   90 percent of the free:-strearn dynamic p ressure
+'0_ -   _ _ _____ .___
+
+
+
+
+   ~T A '~ A AR;=t ~;" o . r4H15                          15
+
+   were obtainable at the low lift coefficient of 0.10,
+   with the propeller renoved, for inlet-velocity ratios
+   ranging from 0.11-0 to 0.75. Beyond the inlet-velocity
+   ratio of 0.75 the pressure recoveries decreased rapidly.
+        2 . The variation of pr essur.e recovery wi th lift
+   coefficient , wi.th the propeller removed, was less than
+   5 percent of the free - stream dynamic pressure at values
+   of inlet-velocity ratio of 0.5; for inlet-velocity ratios
+   greater than 0 . 5 the pressure losses ahead of the radiator
+   increased rapidly with 11ft coefficient.
+        3. Vanes i.n the diffuser of the forward underslung
+   duct had little effect on the pressure recovery at low
+   lift coeft-icients but reduced the adverse effects of
+   increasing lift coeffici ent.
+         4 . Operation of the propeller, equipped with large-
+   chord cuffs , increased the total pressure at the radiator
+   of the large duct approximately 7 percent of the free-
+   stream dynamic pressure at the high-speed thrust coef-
+   ficient of 0.02 and approximately 45 percent of the
+   free-str e am dynamic pressure at the climb thrust coeffi-
+   ci ent of 0.11.
+        5 . The static pressure a t the outlet with no exit
+   flaps was positive and with and without exit flaps
+   increased with both the lift coefficient and the pro-
+   peller thrust.
+         6 • . With the propeller removed, the static pressure
+   at the outlet was r ed uced approximately 50 percent of
+   the free -stream dynamic pressure by installing 45 0 exit
+   flaps ; the effectiveness of the exit flaps increased
+   considerably wi th power .
+           7 . At equa l values of inlet-velocity ratio and
+   pr e ssure-dro coefficient for the orifice plate, the
+   interna l drag of the small duct was somewhat higher in
+   some instances than that of the larger duct even though
+   the air flow was considerably less. The higher drag
+   was a result of the lower diffuser expansion ratio of
+   t he small duct , which resulted in a higher dynamic
+   pre s s ure wi t hin the duct and hence greater oressure
+   losses and a greater pressure drop across the radiator.
+   No comparison was made of the ducts on the basis of
+   providing equa l cooling .
+16                                                 NACA ARR No .   L4H15
+
+     8 . In c reases in the inlet - velocity ra t io with the
+propeller removed increased the critica l Mach number of
+the duce lower lip and duct - fuselage fillets .
+
+      9. Inc r eases in the life coefficient of the airp l ane
+wI th propeller removed increa s ed the critical speed of
+the duct lip but decreased the critical speed of the
+fille ts .
+
+      10 . Prope ll er op~ration had little effect on the
+c ritical speed of the luwer lip . The c ritica l s Deed of
+the l eft fille t was on l y sli~~htly decreased by p r ope l ler
+operation; whe r eas , a substantial increase was measured
+at the right f i llet .
+
+
+Lang l ey Memoria l I\eronrmtica l Laboratory
+       National Advisory Co~~ittee for Aeronautics
+            Langley Field, V •
+
+
+
+
+1. Nelson ,     ~l .   J ., cnd Czarnecki , K. R . :Wind - Tunne l
+      ~nvestigation         of Carburetor - Air Inlets . NACA ABR,
+     Fe b .   191+.2 .
+2 . Nelson , W• .I ., and Czarnecki , K . R .:
+                                            Wind - Tunne l
+      Investigation of Wing Duct s on a Single - Engtne
+      Pursuit Ai rplane . NASA ARR No . 3J13 , 1943 . .
+
+3 . Czarnecki , K. R ., and Nelson , W•
+                                     .I .: Wind - Tunne l
+      Investication of Rear Underslung Fuselae;e Duc t s .
+      NACA ARR No . 3121, 1943 .
+
+4. DeFranc e, Smith J .:          The H. A. C. A. Full - Scale Wind
+      'runn el .       NACA Rep . No . 459 , 1933 .
+
+5. v on K~rm~n , Th .:  Compressibility ~ffects i n Aero -
+      dynamics .  Jour . Aero . Sci ., vol . 0 , no . 9,
+      July 1941 , pp . 337- 356 .
+                                                                                                           17
+
+                                                            TABLE I
+                                       ORDINATES O~ LOVVEH LIPS OF LARGE AND
+                                          SMALL FORWARD UNDERSLUNG DUCTS
+                                                 [{\ll va l ues a re in inc hes]
+                                                                     r --
+              ---        x~Large                       duct
+                                                                   --+-
+                                                                     ,
+                                                                                Smal l duct
+                         ,.                  Y                       I
+                                                                                             YL
+                                             u              YL       I        YU
+                    0                     0'2           - 0. 83
+                                                                     I
+                                                                     I      0,, 45    I   -0 · 7
+                       . 25                • ~7         - 1. 0       II       . 3~          -. 95
+                       . 50                 .40         - 1. 17      i        .2          -1. 10
+                       . 75                . 31          - 1. (~     I
+                                                                     I
+                                                                              .20         - 1. 30
+                    1. 0                   . 19         - 1 ' i-              . 10        - 1.1 5
+                    1. 25
+                    1. 5
+                                            . 08
+                                          -. 03
+                                                        - 1. 03              0
+                                                                             -. 08
+                                                                                              6
+                                                                                          -1. 2
+                                                        - 1 . ~5                          - 1· 75
+                    1. 75                 -. 10         -l. bS               - .20        -1 . 90
+                    2. 0                  -. 18         - 1 · 95     I       -. 27        -2. 0
+                    2. 5                  -. 33         - 2 . 13     I                    -2.22
+                    3. 0
+                    ;3 05
+                    4.0
+                                          -· 50
+                                          -. 63
+                                          -. 78
+                                                        -2f I
+                                                        -2. 5
+                                                        -2. 3
+                                                                     I       -· 45
+                                                                             -. bl
+                                                                             -. 78
+                                                                             -. 95
+                                                                                          -2. 39
+                                                                                          -2. 5
+                                                                                          -2 . 63
+                    4.5                   -· 93         -2 . Jo            -1. 10
+                    5. 0                - 1. 05         - 2 . 95     II    -1. 29         =~ : ~~
+                    6. 0                -1. 30          - 3 . 2~      ,I   - 1. 60        - 3. 10
+                    ~.o                 -1. 60          - 3. 5        I    - 1. 89        - 3 . ~l
+                         .0             -1 · 90         - 3. 85      I,    - 2 . 10   I
+                                                                                          - 3 . +7     I
+                                                                                               - =--
+         I
+              --1 -""" '.
+             ,r     j'        ',
+                               ,
+                                             - -- -
+     I
+.'                   .Y            \
+( R .-.J-:. u __~ --- ._ x
+                     !             I
+
+\<~-
+  ~ \YL-y /                              R   = 0. 5 i n .
+
+                         ~.--
+                         La r ge d uct  -----                                 Smal l duct
+
+
+                                                                   NATIONAL ADVI SORY
+                                                            COHM I TTEE F'OR AE]ONA UT Ie S
+                                                  TABLE II
+                                                                                                                                          ~~
+                                                                                                                                          :x=-
+             COMPARISON OF PROPELLER- REMOVED lU·m PROPELLER -O PERAT ING DATA                                                            o
+                                                                                                                                          ;t>
+
+                                                                                                                                          ~
+                               FOR m,;ALL FORWA:i.D        ~mE:tSLU"NG         D"C"CT                                                     X
+                                                                                                                                          ~Q
+
+                                                                                                                                          ;~
+                                                                                                                   - -~--- -~~---- -.,    o
+               I                      (H2 - po)/qo                Vl~~ 0                 I ___ Q/:!.0__            I(P 3 - Po ),/qo J
+C.w
+         Nomi - I    Exit
+          nal Outlet flap
+                         I           I P~opeller             pro"e~~ Propeller                                         prope~ler ·        -8-
+                                                                                                                                          :.:r:
+                                                                   10per - I
+                                                                                                                                          ~
+ T       6p/Q2
+                                     I Remove d 1 0Der   -                           Oper -          Ilope r-                             \.Jl
+
+                                                  a ~t'lng Removed la t'lng ,Removed a t"lng Removed la t'lng
+                                                                                         I
+
+0 .1 0    1 0 .~ ~ma~ l .    Off       0 . 96    1. 02      0 . 40         0 . 1.~3      I 0 . 31         0 . 33     0 . 14    0.14-
+  .1 0    10 . 1 ~',e dlum   Off         . 95   - - - - - . J.ili            .4-6 I              . 3~.      . 36       . 11     . 09
+  .1 0      6 . 0 Small      Off         . 93    1.02        .48             . 61                )7         . 47       .1 3     . l~
+  .10       6 . 0 Med ium    orf         . 95    1.01        . 54            . 54                .42        . 42       .13      .1 t)
+  .10       1.7 Sma ~l .     Of~         . 9~    1.0~        . 5~            . 66                . 45      . 4~        .21      .~ 6
+  .1 0      1.7 J.~edlU.~    Of.!.       . 9+      . 9/      . 54            .70                 . 50      .5L         .17      . -,-l,
+
+  ,47     10.1 f.ledhun      On          . 90    1.03        .5 2            .63                 .40       .48       -.29      -.49
+  . 47      6 . 0 Medium     On          . 90    1 .12       . 65            .78                 . 50      .60       -.31      -. 59
+  .47       1.7 Medhun !     On          .79     1.20        . 82            . 98                . 63      .78       -.34      -. 59
+
+                                Power cODdi tiOD. CL                 B\
+                                                                  (deg)          Tn'-'       I
+                                      High speed          0.10\      60        0.02
+                                      Climb                .47       40         .11
+
+
+
+                                                                                 NATIONAL ADVISORY                                         ~
+                                                                                                                                           CD
+                                                                             COMMITTEE FOR AERONAUTICS
+
+
+
+
+                                                                                                                                                  ~
+---~~--
+
+
+
+
+    ~TAC~
+    J ',1-1. AD
+              _'.l .'J  -,..-0
+                     \. .;.\1     .   T! IH15
+                                      uLt-.                                                                      19
+                                                        TABLE III
+
+                                      SUMMARY OF DRAG DATA FOR LARGE
+
+                                          FOR~VARD        UNDERSLUNG DUCT
+                                        fL = 0 . 10; exit flaps ofiJ
+
+  ---~Nomina~T--: -                                            I ClCD a-t-c-L-=-O-.-l-O----;'-~
+  Outlet  IIp/Q2 IQ/Vo Vl/Vo                     I                                     I           --I iJ
+  _ _ _+-_ __-+-
+        a
+                 1--..    1_         ClCD                                  ClCDt_+De                    I --
+  Small   11 . 2  0 . 5 2 1 0 . 50 ------                                      7 /;:,-----1----
+                                                                          0 0001
+  ~~~gl'~m                ii:~            .59
+                                          '. 65~ 1    : ~~
+                                                        ,
+                                                           ~~~~~~          :gg~561~~~~~: ~~~~
+  Sma ll                   3 03              /+-1     , 02      . 001 1    .0011 I , 0000 I ·73
+                                                                                       I
+
+
+
+
+  ~~~i~                    §:s            : 7~1 : ~e -~ 0020               :gg~gl-~ooo41-~64
+  Lar ge                   3.3            .7 6        . 74, , 0029         . 0019 I . 0010 ; .46
+  aVanes installed in diffuser .
+
+
+
+                                                       'I'ABLE IV
+
+                                      Sli1Vll1ARY OF DRAG DATA POR SMALL
+
+                                           FORWARD           l~~RSLUNG       DUCT
+
+
+
+  Outlet              IJOminal I
+                      1   6p/Q2
+                                                 I'
+                                       IQ/Vo IVl/Vo
+                                                         1
+                                         10L = 0 . 10; exit fl a ps OffJ
+
+
+                                                                  ClC D
+                                                                          ------
+                                                                  6CD at CL = 0.10
+
+                                                                             ClCD l·       CleDe
+                                                                                                    I
+                                                                                                    I
+                                                                                                   'I
+
+                                                                                                   1
+                                                                                                        iJ
+                                                                                                             -
+
+
+
+  Small
+  Medium
+                  11100 •.11           1 .34 .44 0 . 001 8 o : ggt~ ~:;;;; ~:~~
+                                       10 • 31  0 • Ii. 0 -------
+
+                                          . 34 1 . ~
+                                                                           I-:~~~~ I-:~~
+                                                                           :gm
+  Large                   10.1                             . 0021
+  Smal l                   6.0         1 .37 .4. ------
+  1:edi um                 6.0         1.4 i .55 . 0022 .0020 .0002
+                                             2             . 0018 . . 0016   .0002..58
+                                                                                     .4q
+  Large
+  Small                    6.0
+                           1.7
+                                       1 .45
+                                          · ~2    '. ~8 ------ .0007 ------ ----
+  Medium
+  Lai"'ge .
+                  I
+                           1.7
+                           1 .7
+                                       / ,50 . 65 . 0013 .0012 .0001 .38
+                                         . 50         . 6:;-     .0017     .0016 , .0001 ; •41 I                 J'
+
+                                                                                                    I
+
+
+
+
+                                                                 NATIO~~AL    ADVISORY
+                                                         COM:.TIT'IE:;; I"OR AERONAUTICS
+NACA ARR No. L4H15                                                        Fig.   1
+
+
+
+
+          t----++------- 29.I'----------i
+
+
+
+
+                                                                    q.
+
+                                    l - - - - - - - d~
+
+
+                                                 NATIONAL ADVISORY
+                                              COMMITTEE FOR AERONAUTICS
+
+
+       . - - - - - - - - - - -·3 1 . 1 ' - - - - - - - -- -;
+
+
+
+
+F/9u re 1,- Gen Bral arra nge men t oT win d-tu nne l
+            mod el) bas ic con dlfio r;.
+                       --- - - - - - -
+
+
+
+
+NACA ARR No. L4H15                                                                  Fig. 2
+
+
+
+
+           Secti on A
+       x     y         y
+                                         Sect i on A
+ 000
+   .116' . 28   .250
+   .2~2  .3-    .315
+   .46 .535 .405
+   .69   .645 .465
+   .925 .74-5 .510
+ 1.487 .890 .565
+ 1.850 .990 .595
+ 2.315 1.065 .600
+ 2.775 1.110 .595
+ 3.700 1.135 .575
+ 4.625 1.095 .540
+ 5.560 1.000 .465
+ 6.475 .840 .3 85
+ 7.41    .625 .280                   A
+                                      r.
+ 8.33    .360 .165
+ 9.250 0      0
+  L.E. radius : 0.335
+  T.E. radius : 0.058
+
+
+
+
+           Secti on B
+      x       YU=YL
+  0           0
+   .194-        .430
+   .,88         .625
+   ·775         .930
+ 1.163       1.160                                             ~
+ 1.550       1.340                        Secti on     B (12 from t
+ 2.33 0      1.6~           --+E --- -               -           r~·__~-+-
+ 3·100       log
+    g£10     2.000
+  4·
+  .650       2.110                                          1-4-- - 6.38,-" ~-..J
+ 6.200       2.190            ~--------------+----- 15.5"---~
+ 7·750       2.100
+ 9.3 00      1.g40
+10.g50       1.465
+12.400       1.025
+13·950         .535
+15·500       0
+L.E. radiusl 0.520                                        NATIONAL ADVISORY
+T.E. radius: 0                                         COMM1TIEE FOR AERONAUllCS
+
+                           Figur e 2.- Dimen sions of prope ller cuff.
+                                                                              z
+                                                                              »
+                                                                              o
+                                                                              »
+                                                                              »
+                                                                              ::0
+                                                                              ::0
+                                                                              z
+                                                                              o
+
+                                                                              L'
+
+                                                                              "':::r:"
+                                                                              I-'
+                                                                              (]l
+
+
+
+
+                                                                               'XJ
+                                                                               /-',
+                       (al Front view,   propeller removed.                   ClQ
+
+
+
+Figure 3.- Model in basic condition, mounted in the NACA full-scale tunnel.   CN
+                                                                               Pl
+         ~----   -- -   ----                       -- '- - 1
+
+NACA ARR No. L4H15             Fig.       3b
+
+
+
+
+                                  '0
+                                  <1>
+                                  rl
+                                  rl
+                                    cd
+                                  ~
+                                   UJ
+                                   s::     '0
+                                  • .-j     <1>
+                                           '0
+                                   ~        ::1
+                                  <1>      rl
+                                  rl        U
+                                  rl        s::
+                                   <1>      0
+                                   P.      0
+                                   0
+                                   ~
+                                   p.
+                                           t<)
+
+
+                                   ~        <1>
+                                   <1>      ~
+                                  • .-j     ::1
+                                   >        be
+                                           • .-j
+                                   <1>     IX.
+                                  '0
+                                  • .-j
+                                 (f)
+
+
+                                  .0
+                                                                     z
+                                                                     ):-
+                                                                     C)
+                                                                     ):-
+
+                                                                     ):-
+                                                                     ::0
+                                                                     ::0
+                                                                     z
+                                                                     o
+
+                                                                     r
+                                                                     ~
+                                                                     ::r::
+                                                                     ~
+                                                                     CJ1
+
+
+
+
+Figure 4.- Mode l wit h lar ge forwar d u nderslung duct installed
+
+
+
+
+                                                                     '%j
+                                                                     r-"
+                                                                     OQ
+                                                                     OJ
+
+
+                                                                     ~
+Figure 5.- Model with small forward underslung duct installed.
+                                                                     CJ1
+            ~   ~-----~------~------~--
+
+
+
+
+NACA ARR No. L4H15                                   Fig. 6a, b
+
+
+
+
+                              (al   Inlet.
+
+
+
+
+                (bl   Small outlet; exit flap off.
+
+         Figure 6.- Large forward underslung duct.
+              NACA ARR No. L4H15                                       Fig. 6c,d
+
+
+
+
+                         (el Medium outlet; 45° exit flap installed.
+
+
+
+
+                              (dl Large outlet; exit flap off.
+                                   Figure 6.- Concluded.
+
+
+
+' - -- -- - - -_.- . .
+NACA ARR No. L4 H15                                 Fig.   7a,b
+
+
+
+
+                          (al   Inlet.
+
+
+
+
+                      (b) Small outlet.
+
+        Figure 7.- Small forward underslung duct.
+---~-   ..   -   -   --
+
+
+
+
+                 NACA ARR No. L4H15                           Fig. 7c,d
+
+
+
+
+                                      (cl Mediu m ou tlet.
+
+
+
+
+                                        (dl Large out l et.
+                                      Figure 7.- Concluded.
+                                                                                                                                                                 z
+                                                                                                                                                                 ~
+                                                                                                                                                                 o
+                                                                                                                                                                 ~
+
+                                                                                                                                                                 ~
+                                                                                                                                                                 ::l:l
+                                                                                                                                                                 ::l:l
+
+                                                                                               DUCT SECTION
+                                                                                                                                                                 Z
+                                                                                                                                                                 o
+                                                                                             ON ct:
+                                                                                                  OF AIRPLANE
+
+DIrf"U5ER VANES                                                                                                                                                  l"
+                                                                                                                                                                 ,p.
+                                                                                                                                              THRUST    <to      ::r:
+                                                                                                                                                                 i-'
+                      INL E T                                                                                                                                    CJ1
+                  AREA~   1.03 SQ FT
+
+
+
+                                               SPINNER
+                                               I         40.0''----+--4;
+
+
+
+                  LARGE        OU TLET                                                                                                     ____C C ( / / y / /
+                                                                                                                                       I
+                  ARE A - 1.22 SQ FT
+
+
+                                                                                                                                   -~~
+                                                                                                                                   C§)~~'EXIT FLAP
+                                                                            I
+                                                                                LAI2GE OUTLET
+                                                                                MEDIUM oun £T
+                                                                                :;MAllOUTl£T
+                           I
+              MEDIUM      OUTLET
+
+
+
+
+                                                                           ~~~
+                  AREA - 1.06 SQ FT
+
+
+
+
+             ~i2t          I
+                  SMALL OUTLET
+                                                    Ol2lf'ICE: PLATE
+                                                    AREA - 2-"i- SQ FT
+                                                                           ~r=-~
+                                                                                                GENERAL ARRANGEMENT
+                  AREA - 0.81 SQ FT
+                                                                                                          ."IIOA ..... Mn'rSOft'
+                                         Figure 8. - Dimensions and   -ongement or                    ()DflllIilKTTUfOlAf~"UIICI
+
+
+
+                                                   lorae rorword underslung ducf.
+                                                                                                                                                                 ">:J
+                                                                                                                                                                 ......
+                                                                                                                                                                 OQ
+
+
+
+                                                                                                                                                                 OJ
+                                                                                                                                 z
+                                                                                                                                 »
+                                                                                                                                 (")
+                                                                                                                                 »
+                                                                                                                                 »
+                                                                                                                                 ::0
+                                                                                                                                 ::0
+                                                                                        DUC T SEC TIO N
+                                                                                      ON    <t
+                                                                                           OF AI I<PLANE                         z
+                                                                                                                                 o
+
+                                                                                                                    TH R UST ~   l'
+                                                                                                                                 ~
+     IN LET
+AR EA - 0 .77 50 FT
+                                                                                                                                 ::r:
+                                                                                                                                 I--'
+                                                                                                                                 ()1
+
+
+                          SPINNER
+                           I           4QO··-----+--~-
+LA R GE    OUTLE T
+AR EA-a.aa so F'T
+
+                                                                 OQIF ICE   PLA TE.
+
+
+
+
+                                                             ~
+                                                                 LAI?G£ OUTLET
+                                                                 M£DIU,'1 oun ET
+                                                                 SMALL OUTLET
+MEDIUM     OUTLET
+AREA-C.?I SO FT
+
+
+
+
+SMALL OUTLET
+AREA - 0.60 SO FT
+                                 ORIFICE PLATE
+                                AREA - 1.53 SO FT
+
+
+                                                            -t~==<D
+                                                                                   GENERA L ARRANGE.MENT
+
+                                                                                           .,,"'*AlAOYd(III'
+                      Figure 9. - DImensions lind ~rr~ngemenl of sm(J//                CfI".I11t1 1M llllOli_UIIO
+
+
+                                 Torw(Jrd underslung duct
+
+                                                                                                                                 ~
+                                                                                                                                  f-- '
+                                                                                                                                 aQ
+
+
+
+                                                                                                                                 to
+                                                ---~~---'                          ----            ---~~".' ~'----   "
+
+
+
+
+NACA ARR No. L4H15                                                                                        Fig. 10
+
+
+
+
+            1.4
+
+
+
+            /.2                                                          I ~ '"
+                                                                        :j
+
+                                                                    i
+            1.0                                             J
+                                                                I
+  cS
+                                                        /
+                                                        v
+
+    , .8
+  i-2'                                              /
+    ~
+   ......
+   .~
+  \:
+                                                V
+  ~
+    <b
+   ()
+   \J
+            .6
+                                        /
+                                            /
+  ~
+  .....                             /
+  ......J
+            4-                  I
+                          f
+                            /
+            .2        I
+
+                  /                                                              NATIO Al ADV :sORY
+                                                                                       FOR AE: ONAUTI(~
+            o                                                                C( MMlffi
+
+
+                 o                              8           16
+                                                            12                              20
+                                        Angle or qttac k, CX, deg
+
+       Figt./re 10. - Var/q!lon                     or ///"I coef'rlcienf wifh ex.
+                                Model In bO's/c cond/!Ion
+
+
+
+
+                                                                                                                     .J
+                              -------------~----~                    .._ - -- - - - ,
+                                                                                        I
+
+
+NACA ARR No. L4H15                                                 Fig. 11
+
+
+
+
+                                   'It/Vo
+                             - - 0.53
+                             - - .74
+                                    .94
+
+
+
+
+                      (a)     CL =0.10.
+                                   Vf/~
+                             - - 0.4 8
+                                    .6 6
+                                    .73
+
+
+
+
+                       (b)     Cco.89 .        NATIONAL ADVISORY
+                                            ~MMlmE FOR AERONAUncs
+
+
+
+
+   Fgure 1/ - Typlcol fotol-pressure disfriDLIhon          ot
+             Inle t to large duel; propeller removed.
+                                                                                                                                                                                                                                                              ·   .
+
+                                                                                                                                                                                                                                                                      z
+                                                                                                                                                                                                                                                                      :x:-
+                 /.0                                                                                                                            /.01                                                                                                                  C")
+                                                                   +                x x                                                                          b        .                        x                                                                  :x:-
+                                                '"                                                                                                                       A
+                                                                                                 -- r-----
+                                                         ~
+                                                                                                                                                                              +                             --"t--
+                                                                                                       '---
+                                                                                                                                                                                                                          "-                                          :x:-
+                                                                                      +                                                                                                                                                                               :::0
+
+
+
+~
+                 .8
+                                                                                                                          '-    tJ
+                                                                                                                                                .8                                                                                                                    :::0
+ I
+
+::t:Q.: .6
+            Cl               CL ) 0./0
+                                    I I
+                                                                                                                          8'"         I
+                                                                                                                                      ,
+                                                                                                                                                .6               I
+                                                                                                                                                                         Ct.-I°./ O
+                                                                                                                                                                             I I
+                                                                                                                                                                                                                                                                      z
+                                                                                                                                                                                                                                                                      o
+
+      ~                                                                                                                                                           I                                                                                                   L'
+ 't                .3   4-              .5                   B              .7                       .8              -9              1.0           .3            11-          .s                       .6        .7                .8           .9      /.0           .t>
+                                                                                                                                                                                                                                                                      ::r:
+ ~                                                                                                                                                                                                                                                                    r-'
+                                                                                                                                                                                                                                                                      (}1
+     .~ 1.0                                                                                                                                     /.0
+
+
+
+
+                                                                                                                                                     IllJ1fff
+                                            Q
+                                                     ~       +
+ '=  .~
+                                                                       :;:---,
+      C'l        B                                                               r-....... .......                                              8
+ ~
+                             CL )o.47
+      ()
+                                                                                                       ~       [;]
+
+      ~
+ ~
+
+ ~
+                 .6                                                                                           s'"                               .6
+
+
+     ~
+                   3    4-              5                    .f5            .7                       .8              .~              Lo            .3            ~            ..s                      .6            .7            .8           .9      1.0
+                                                                                                                 Exit Inler
+     ~                                                                                                    LJP/9z (,hps vane5                                                                                                             IIp/qz
+      ~          1.0.                                                                                                                           1.0
+                                                                                                                               orr
+       ~
+     .......
+     ~ .8
+                             ";;)
+                                    F   ~ t--- k2c
+                                                                                                          0112
+                                                                                                          + 3.3
+                                                                                                          x 1/'2
+                                                                                                          [;] 3.3
+                                                                                                                               Off
+                                                                                                                               On
+                                                                                                                               On
+                                                                                                                                           }out .8           ~
+                                                                                                                                                                     -
+                                                                                                                                                                     +
+                                                                                                                                                                                  ..............
+                                                                                                                                                                                                   ~
+                                                                                                                                                                                                                                          0 10./ -~
+                                                                                                                                                                                                                                          -t- 60 _ ~
+                                                                                                                                                                                                                                          x    1.7
+                                                                   +
+     ~                                                                 ~                                  e. 11.2              Ofr                                                                          "-
+
+                                                                                                          ~ 3.3                Off JIn
+      I:D
+      ~ B          ,          Cf/ O· 89                                              '\          [;]
+
+                                                                                                                                                 B;
+                                                                                                                                                                         Cu O.B9
+      ~
+      :>                       JJ
+                                        1
+                                                                                      8     '"   '\
+
+
+     ~
+                 4-                                                                                                                              -:¢.l
+                                                                                                                                                                                                                               C MMIT1 EE Fa AERO ~n~
+                                                                                                                                                                                                                                  NA IU~Al AUVI:>I.
+
+                   .3   .#              s                    .6             '7                       .B         E     1.0       '-:1
+                                                                                                                                                         ~           ~
+
+                                                                                                                                                                                  -                    ~
+
+
+                                                                                                                                                                                                                                   .8            .9     I.o
+                                                                                                              Inlet- velocity rat/a) 10-/ Vo
+           (0) Lorge dUCT.                                             (.b) Small duct.                                                                                                                                                                                "%j
+Figura /Z.-Vondtlon oravera9~ tora/ prassure at race oror/fice ,o/ata with I.'ljVo. Large and                                                                                                                                                                         f-"
+                                                                                                                                                                                                                                                                      OQ
+                        small rorword undb>rslt..l/79 ductsi jJropellerremoved.
+                                                                                                                                                                                                                                                                      r-'
+                                                                                                                                                                                                                                                                      t\:)
+                                                                              z
+     V.jv..=O.53      ~                                       V1 /Vo =O.44
+                                                                              »
+                                                                              o
+                                                                              »
+                                                                              »
+                                            .~
+                                            ~.
+                                                                              :::0
+                                                                              :::0
+
+                                            ~.                  ~~            z
+                                                                              o
+                                                ~~ ~o. .
+
+                                                        ~~75~
+                                                                              r-
+                                                                              p
+                                                                              ::r:
+                                                                              I-'
+                                                                              (]1
+
+
+
+
+     VJVo ·O.94
+
+
+
+
+                                                 ~~
+      (a.] C~aO.IO.                  NA lIUNAl AO~ISOftY       (b) C~·O.89.
+                                  COMMITlEf FOR AERONAUTICS
+
+Figure /3.- Typica.l total-pressure distributions a.t ra.ce of' orifice       '%J
+                                                                              ......
+           plate. Large rorward underslung ducfj propeller                    OQ
+
+
+             removed. (Dots represent tube locaTions)                         I-'
+                                                                              (J.l
+NACA ARR No . L4H 15                                                                                                                                       Fig. 14
+
+
+      1.0                                                                                     1.0
+            - +-            -    t--   -+j- - 1-- r---'O'
+      .8
+                                                             -- -~J In/s l .B
+                                                    C.p/9). Flop s vanes
+                                                      () 11.2 Off
+                                       t - - - - - + 3.3      Ofr Out .6 -                                  -
+      .6
+                                         - - - - - - -x /1.2
+                                       r-- - - - £ I 3.3 On
+                                                              On
+                                                                         .,,-      J
+                                                                                                                    ~
+                                                                                                                        - -0
+                                                                                                                            -
+                                                                                                                                     - '-=       c~
+                                                                                                                                                       ~ ;.::.-
+                                       t - - - - - - 11.2                                                                                   -                     -
+                                       t - - - - - - 0 ,ij.          %i                  In   11-
+                                                                                                                                                 ~
+                                                                                                                                                       -    -l
+
+
+
+
+                                               I
+      .2          hi Smal l ",,.,1"P1'.                                                       .2
+
+
+                                                                                              o
+                       .2                          .6           .a                 1.0             o            .2                     .6          .8                 1.0
+
+                                                                                              I1J
+            --J             --                                                                         --- 1""---
+                  '-    f - 1- -         -+ :--=- ~                -- 'r--
+                                                                        --                                  ---- r-o r-             -       --
+            <c'
+                  ---- --1--                                ----                              .B
+
+                                                                                                            -                                                     r---
+                                                                                                                                                           -'1:
+                                                                           r----                ::..:::. -- --
+                                       t---£
+                                                         - r- - ~ --                                             -- -
+                                                                                                                r- r-+- - --
+                                                                                                                       1-- t - - J-":.:::
+                                                                                              P                                                            :~
+
+
+
+                                                                                                                                                r--
+                                                                                              ~
+
+
+
+      .2      (fl)      UP. 7'/u. -n           Ju t/e/'.                                      .2
+
+
+                                                                                              0
+                       .2                          .6                                                           .2                    .6             .a               /{)
+
+
+
+
+                                                    -
+                                                                                              LO
+            ~
+                        --- --
+                            -- --- --
+                               --     -- - - r-
+                                       - +.
+                                                           I-
+                                                                     ~
+                                                                                                l--ip-- -
+                                                                                                                        - r-- -
+                                                                                                                            -oQ
+
+
+            -., '--
+
+                                 ---- - --
+                                       -0-
+                                           -  -                    t- ~
+                                                                                              .8
+
+
+                                                                                              f5
+                                                                                                    ~~              --- -   --)(..
+                                                                                                                                     ---
+                                                                                                                                         --
+                                                                                                                                        - r--
+                                                                                                                                                       ~
+                                                                                                                                                       r-~       I-
+                                                                   t- .~
+                                                                           r--                                                                   -- -- ... --
+                                                                                              :+
+                                                                                                                                            - r--      ~ t::::::::..
+
+
+
+      .2   - l/c) Larqe OUTler .                                                              .2
+                        I I I I I
+                                                                                                                                        ~ATlOr At Au
+      o                                                                                       0                                      COM ~m~ FOR Ar~ [TICS
+       o               .2                          .r;         .8    /.0            .2.        0                                      .6           .8                 /.0
+                                                          Ll fl eoe rT/clen ! , C,-
+     Fl9ure /4.- Variati on or over0 ge t otalp r essure 0 1 race of orlflee plate
+                 ond / n l et- ve/o c / tf/ rof/o wII!J C,-. Large rorwar d under51ung
+                 d ucl/ .£)rop ell er r emoved
+    NACA ARR No. L4H 1 5                                                                                                                                           Fig . 15
+
+        /.0
+                   --                                                                     /.0
+                   ---'   ~      - f-~ '=-1< c-- f-                  ~
+                                                                          r:..;:
+                                                         ~--
+
+
+        .8                                                                                 .8
+
+                                                                          Llp/q.
+        .6                                                                 10./            .8
+                                                         ~ -- +
+                                                                            fO                     -- - - -- ---                -.j(
+                                                                                                                                        -- t--- -
+                                                            - -- 4<
+                                                                                                                   r-- r-+ r-- t-                                  --
+        .-f                                                                                '!i                                                       t- t:::.. !:::::
+
+
+         2                ~ S m 711 a ut 1i2t:                                             .2
+
+
+         0                                                                                 0
+              'J                       A             .6         JJ            1.0              0          2               11-               .6           .8
+                                                                                                                                                                        I"
+                                                                                          1.0
+               -                                 ,
+                                            -             - -- -- -- ~
+        .8                                                                          ",.8
+                                                                                    ~.
+
+
+                                                                                    ci'           -- --
+        .6                                                                          ~ .E
+                                                                                    ~            .- - =      r--
+                                                                                                                            --x        --
+                                                                                                                                             -
+                                                                                                                                                             -- . --
+                                                                                    ~.4
+                                                                                                                                                     t-- r---I
+        .+                                                                                                                                             -
+                                                                                                                                                                   -~
+
+
+
+
+                                                                                                                                                           ~     r--
+                                        ...
+                                                                                    "~
+                                                                                    ~
+        .z            ~l     M,.",,'             (u./i/pi
+                                                                                    ~
+                                                                                          .2
+                                                                                    ~
+        C                                                                           ~ 0
+         0                             .4            i3        B             IP               0           .2              ~               ,6             .8             1.0
+
+
+
+              --                   -            ... --- -- --
+                                                     r--
+                                                                     -- -
+                                                                ==---<l
+                                                                                          /.0
+
+
+                                                                                          B
+                                                                                                  -- --
+                                                                                                                   --                  -- - - -
+                                                                                                                                                     -
+                                                                                                                            -~
+                                                                                          .6
+
+                                                                                                             --
+                                                                                                   -
+                                                                                                  - t-
+
+        .4                                                                                           >--..
+                                                                                                                   ::..
+                                                                                                                                                 - - - .-
+             r- Ife) I...cm e outlet.                                                     .z
+                                                                                                                                          H TIONA
+        o                                                                                 0                                            COMM!lEE..!   R~ PNAU*
+                                                                                                                                                        fORY
+         o                  .2         .4            E       .B    1.0                                    .2              ~               .5            .8              I,()
+                                                           Lift coeHlcienlj CL
+       Fi9ure 15,- Vor/of/on of overage 1010'1 P"8 s s ure at race or or/rlce plot~
+                   ond inlot-veloclty rotlo wllh CL' Small rorWQrct under slung
+                   dllc/; prape/le r r emoveQ.
+
+
+
+
+L
+NACA ARR No. L4H15                                                                                                                Fig.   16
+
+
+
+
+         1.0
+                                                                                                                    Vtl /o
+                   I---
+                    ~
+                            ..........   ---        - --- r-- t---- r-- I--
+                                                t:----..,
+                                                                        r---
+                                                            -............
+                                                                                  --       -l-
+
+                                                                                                              I--    S
+                                                                                                                      ~
+
+
+
+                                         ~ f'...                            ~
+                                                                                  b-...
+                                                                                                      ----- ~ ~ j
+                                                                                          .........
+
+                                                    "                                                 ~
+                                                            '"              ~7
+
+
+                                                                                                          ~
+                                                                                                                     ,8
+
+                 (Q1   Lar r              e      ual r
+
+                                                                                 IJ                    .8                  I.()
+
+
+
+                                                                                                                    v./;
+                   ,.....
+                                          -r--          ---.7                     ---             r--- ~- ~~
+                                                                                                  r--.......
+                                                                                                          ~
+                                                                                                             1--;5-
+                                                                                                                     ~
+                                                                                                                    ,p
+
+
+
+
+                 tl>i 5m,Q// filC'j                                                 NATI HAL A~ ~SORY
+                                                                                 :OMMITI tE FOR A~ONAUT cs
+        4-
+             o                .2                      11- .6        .8                                                 1.0
+                                              L/rt coeFf/cienf j G.
+
+     Fi9urB 18.- Variation                           or
+                              average fola/ prBssure of
+                race                       or
+                         or/r/ce? plate wilh ~. Lor9B and
+                       om all Tor word t../nd(!}r-s/unq ducfs;pro-
+                       peller removed.
+                                                                                                                                                                                                 I
+                                                                                                                                                                                                     !
+
+                                                                                                                                                                                                     1
+                                                                                                                                                                                                     I
+                                                                                                                                                                                                     I
+                                                                                                                                                                                                     I
+                                                                                                                                                                                                     I
+                                                                                                                                                                                        z            I
+?t 1.0                                                                        I                                                                                                         :x:-
+                                                                                                                                                                                        (")
+
+
+:i3r
+          Cl                                                   r.<            ~
+                                                                                                                                                                                        :x:-
+                                                                                                            ~
+
+
+
+
+                                                                                                        --      ~ Propeller operating
+                                                                          +                 x           x                                                                               :x:-
+                                                        '"                                                                                                                              ::0
+                                                 '"           '"
+~                                                                                                                                                                                       ::0
+
+~                                                                                               +
+                                                                                                                t---1'-----,8 ,60°; 7C, 0.02-                                           z
+                                                                                                                                                                                        0
+ ~             .8                                                                                                                r---..
+                                                                                                                                 I-Y' -......... u
+                                                                                                                                               ~
+ ~                                                                            Propeller removid ..-
+,'-3                                                                                                                                                                                    L'
+
+~
+.~
+                      L   (0')   C/. 0./.                                     I      I              I           I                       [')
+                                                                                                                                                            - -
+                                                                                                                                                                                        tI'>
+                                                                                                                                                                                        ::r:
+ ~              .3                .4            .5                 .6               .7                      .8                  .9                   /.0           1.1           I.Z    ~
+                                                                                                                                                                                        CJ1
+
+~                                                                         d
+ ~
+                                                                                                                                         r:<
+ \J            1.2.                                   r.(                           -_v
+~                                                                                                                                              ~                    It"--
+
+
+'t                                                                            Pro   )e//3)  fer 0 peroti 'l /
+                                                                                            40°;, Tc ) 0./1
+                                                                                                                      n
+ ~             1,0    I
+                                                                                                                                                           LX it         Inlet
+  ~
+ It)
+                                                 0                   ..                                                                         e:.p/ctz flops vanes
+                                                            -~
+  V')
+ ~                                                                                                                                             o 1/'2      Off
+ ~
+                                                              V'          ~           p<-
+
+
+
+,
+~              .8
+                                                                              ~
+                                                                                      I--.........
+                                                                                                            ~
+                                                                                                                                               + 3.3
+                                                                                                                                               x 11.2
+                                                                                                                                                           Off
+                                                                                                                                                           On        Jout
+                                                                                                                                               o 3.3    On
+                                                             'Prop'eller removed--- ~
+ ()
+"f.....
+
+ <U
+                             I
+                          (b j C,L, ~.47.                                                                              ~
+                                                                                                                           [J                  6 11.2 . Off
+                                                                                                                                               (>    3.3   Off
+                                                                                                                                                                     )In
+  ~ .6                       I      I       I                I I I I I                                                []
+
+
+
+ ~                .3                fI          .5              .6         .7           .8                                      .9                   1,0           /,1           1.2-
+~
+ >
+                                                              In let - vela C I Iy r 0'1/0)                         Yj-! Va             NATIONAL ADVISORY
+                                                                                                                                     COMMITTEE FOR AERONAUTICS
+                                                                                                                                                                                        ':z;J
+                                                                                                                                                                                        ......
+ h9ure 17.- Effect of propeller operql/on on fhe varia/Ion of total                                                                                                                     OQ
+            pre5sure at race or orifice plole wi/h ~/Vo. Lorge rorword
+            under..slun9 ducl (Flogged s,/l77hols ~or propeller operd/';.9.J                                                                                                            ~
+                                                                                                                                                                                        -.J
+NACA ARR No. L4H15                                                                                                                          Fig . 18
+
+
+
+
+   /.4                                                                  1,4
+
+                                                                                                                            ~P/q2
+         Propeller
+       lor. 12.             .
+                                V
+                                     ~        --I--Tc
+                                         ~ fiY"
+                                                         0./
+                                                                         I. 2
+                                                                                                           ~-+
+                                                                                                                             11.2
+                                                                                                                              3.3
+                       V
+                1/     - 'c,Q()Z                       prbpelle'r        /. (J
+         .;Z:           - / - - r-+ 1--
+                                                   ~- 1-- -
+                                                       re)?70 V€!d.
+                                                                                                                  I.'\ni nil     1111'tof
+                                                                ---       8
+
+
+                                                                          6 == ~           :j
+                                                                                                    c---         ,
+                                                                                                    ~.Propel/' roperol(ng
+
+                                                                                                                           . / ;;~o,e,~lj~
+
+                       'rsmnJJ t')ut'Jl2f                                            ,\         I
+                                                                                            lC) Oj02
+                                                                                                                  "\       '- - r-
+                                                                                                                     -...o.lC~O./(
+                                                  .6       .B                             .2                            .6            .8            1.0
+
+
+                                                                                                                 NA110NAL AOVISORY
+                                                                                                             rnM ~lmE FOR AERONAUll        cs
+                                                                                                                 IM",ld1t . 1J7l       '')(.d}k f
+
+                                                                                                                 ~ Tc,o.ll
+                                                                                                           P
+                                                                        /.0                          ./
+
+
+                                                                         .8
+                                                                                    V
+                                                                                           / /
+
+                                                                                 / ' !',];.,o/ i..?
+                                                                                                    '"II   ~,c ~ot:- ell.
+                                                                                                                                 'l'iPeltOf'ng
+
+                                                                                 - If~-L            1-
+                                                                                                      /
+                                                                                                           I--+- 1--'<::
+                                                                                                                             A
+                                                                                                                                     Propelled
+                                                                                                                                       ,..;..
+                                                                                                                                              r .~
+
+
+
+
+                                                                         .6
+                                                                                                            /'
+                                                                                                                             '- f - - 1 - -     ~
+
+
+
+                                                                                                CJ,if                            t-- 1-- .
+
+   ~                                                                     ~
+     o               .2..           4-            .6      .8     LO      0                .2-          11-              ~                           1.0
+                                                       Lift ooefflcient, C/..
+  figure 18.- Effect- of propeller operO'f/on on the VCiJ"latlon of averoqe
+              folol pre.s~ure al1'ooe of or/flee p iC/Ie, Clnd 1/118/-
+              vBlooll f/ /"0/10 with CL . J..orge f'orwo rd tlnd,,;rslt..Vlg Q'Gla/;
+              nOl'marrated power.
+                                                                                                                                         z
+                                                                                                                                         ;J>
+
+                                                                                           V1/VO= 0.69
+                                                                                                                                         o
+                        Vi/VO' 0.58                                                                                                      ;J>
+                  PROPELLER. REMOVED                                             PROPELLER REMOVE....D____________,
+.-----------,                            r-----------,        ,------~
+                                                                     ---::::=:--ll                                                       ;J>
+          ~.8Cl__o_
+                                         ~                                                                                               :::0
+
+ ~c==';.,- ~
+                                                                                                                                         :::0
+
+                                                                                                                                         z
+                                                                                                                                         o
+
+
+  \
+      ~~02·'
+      ~    .
+           ~
+             .             .~
+                                                .
+                                                                                                                                         r'
+                                                                                                                                         tI'>
+                                                                                                                                         :r:
+                           .          . 1.00/                                                                                            f-'
+                                                                                                                                         U1
+
+                               .95
+
+
+
+
+                         V1/VO· 0.58
+              PROPELLER. OPERATING
+                                            ====::::----,
+,---------------, 13' 100° j TC'; 0.02 1'-___
+
+
+
+
+                                                                                                             NAIlUNAl AUVISUK'
+                      (a.) CLaO.IO.                                                  (b)   C L " 0.47.   CIlr,lMIlTH FIlR At RONAUliCS
+
+                                                                                                                                          'XJ
+          h!u~ /9 - Erfed ofpl"Ol'e//er opera/ion on trrlrzl-pressure d,"sft-ibufions af face of orilice plafe.                           .....
+                                                                                                                                          oq
+
+                       Large lOrward u.nderslung du.ct (Dots represenT tube locaTions.)                                                    f-'
+                                                                                                                                           to
+                                                                                                                                                                                                                             z
+                                                                                                                                                                                                                             ~
+                                                                                                                                                                                                                             (')
+                                                                                                                                                                                                                             ~
+
+                                                                                                                                                                                                                             ~
+                                                                                                                                                                                      Outlet                                 ::0
+                                                                                                                                                                                                                             ::0
+                                                                                                                                                                                   ---0Smol/
+                                                                                                                                                                          --+ Medlum                                         z
+                                                                                                                                                                                                                             o
+                                                                                                                                                                              - -x Large      +
+            ~                                                                                  11                                                              11-
+                                                                                                             1 I                                                      1 I
+~t~
+                     Ex/}{Iap                            .............. 1"/
+                                                                              -
+                                                                                          I
+                                                                                                    f--   _ Ex/tf/ap
+                                                                                                              off    ..-4-- _Itd-. +- e-
+                                                                                                                                              J-                   r-Exlt non
+                                                                                                                                                                       off
+                                                                                                                                                                                       _
+                                                                                                                                                                                         [ , ,::
+                                                                                                                                                                                          <~
+                                                                                                                                                                                 ___ ~-/i" ~~ 0
+                                                                                                                                                                                                 0
+                                                                                                                                                                                                                             L'
+
+                                                                                                                                                                                                                             *"::r:
+Q.~                                                 _\                                        .2                            --   .)t"    +        "    :>--
+                                                                                                                                                                                                                             ......,
+                                                                                                                                                                                                                             (]l
+    ~....
+
+    ~
+    If)
+                                         -
+                                         _/ ~
+                                                ~-
+                                                         I~                       ,--0-
+                                                                                                                                         f---0-
+
+
+    I{)
+            (                                                                                  o                                                               0
+
+ ~
+                 0      .2                   4                  .6                   .8              0            .2         :4-              ,6      .8             k?           .2.      ;4-         .6               .8
+                                                                                                                                    H
+    c:.;,
+                                                I                                                    -    rut(et  I              1
+                                                                                                                       total pressure,¥.Q
+                                                                                                                                                  I                       - x..    I
+                                                                                                                                                                             -\~,~ ----..... -
+,-
+"
+
+
+
+
+~
+V)
+                    \ - Exit flap on
+                                                                                              -:2 --'<-
+                                                                                                           ---,--"     --
+                                                                                                                                     -
+                                                                                                                                                               :2
+                                                                                                                                                                                    '-- Exit flap on
+-\.....
+~
+                                                                                                         - or--
+                                                                                                               """
+                   -- ~
+                            ...... ><'
+
+....... -4      -"                                                                            -1'f                     1'-- Exit flop on_                      "4-
+    ~                                                                                                                                                  f--
+           t; -
+    C)
+
+
+    ~
+                      f--
+                                                                                                                                         I I I                                                       NATI ~AL AD SORY
+    ~       -p                                                                                -.6                                                                                                . ~ M~[ FOR At; ONAUTI S
+                                                                                                                                                              -:6
+    ~
+    '::i
+"C
+                                         (0) 0.,0./0.                                                                  (1;) CL , 0.47.                                                  (c) CD 0.89.
+
+
+                ,Figure l.Q - Variation 01' outlet slotlC /Jressure with outlet totol pressure . Larqe forward
+                              underslung duel)' propeller removed.
+                                                                                                                                                                                                                              'XJ
+                                                                                                                                                                                                                              1-"
+                                                                                                                                                                                                                             OQ
+
+
+
+                                                                                                                                                                                                                              (\)
+                                                                                                                                                                                                                              o
+                                                                                                                                                                                                    z
+                                                                                                                                                                                                    >
+                                                                                                                                                                                                    o
+                                                                                                                                                                                                    >
+                                                                                                                                                                                                    »
+                                                                                                                                                         outlet                                     ::0
+                                                                                                                                                                                                    ::0
+                                                                                                                                                  - - - - 0 Small
+                                                                                                                                                                                                    z
+                                                                                                                                                  --+ Med/um                                        o
+                                                                         4-,                                                         1/-,         -----   1\   Lorge      _   ~
+                                                                                     EX~WOp 1 -                                                                                                     L'
+                                                                     I                                            t\                                           _I,~I----+-                          ,j:>.
+                                                                                                                                                                                                    ::r::
+                    E~;flap -                                                                                      --   ~.
+                                                                                                          k:lS:6:: ~ -+--                                  --~J                                     f--'
+           L.                       1\          -It - -     ~
+                                                                          "                  _   -)t---       1-4- '                 .2        iExltt/op                                        ,   (J1
+
+
+
+                \
+                       __ -It   - ~~ ~ ----
+                                                          I--
+                                                                                                  ---                                            ofr
+           )                                                             0                                                           o                                                          I
+
+                0     .2            t¢          .6              .8              P      .2             11-              .6   .8             0     .2            tl-            S            .8
+                                                                                ~Ouflet total pres.5t.1re,                  tlf/:0
+ "
+.......
+........
+ ~­ 2
+-h
+                                                                         ~                                                           ~2
+ Co
+                                                                                ~~-
+~
+"~-~                                                                     -tf,       ~-==- :::;..= r-=:::: h                          -4
+  ~                                                                                      I - - f--   Exit flap on
+ ~                                                                                                            I
+
+  ~-;6
+                                                                                                                                                                        NATION L ADVl RY
+                                                                         ;6                                                          -;6                             co MITTEE OR AER NAUTlCS
+  ~
+ <::C
+                                (oJ CL, 0./0.                                                    rb) CL, 0.47.                                         (c) Qp.89.
+
+
+            A9ure2.1. - Vailolion of ovllel static pressure with outlet total pressure. Small forward
+                                  underslung ducti propeller removed.
+                                                                                                                                                                                                     ">:J
+                                                                                                                                                                                                    1-"'
+                                                                                                                                                                                                    OQ
+
+
+                                                                                                                                                                                                    [\j
+                                                                                                                                                                                                    f--'
+                                                                                                                                                       l
+  NACA ARR No. L4H15                                                                                                                        Fig . 22
+
+
+
+              -4
+                                                                                      1-
+                                                                     ---t-: ---
+                                                                                -- r----r--f.--- ;::-..-""
+              .2
+                        ..d ~;::::::::::--   ~              -
+                                                            ::.--- :.:-:-~ -
+                                                                                  "   -::: f- ::: -=-
+                                                                                      SmaIiolii/et.       (0)
+
+
+                                                                                                                 I 1
+               o
+                a                     .J?                       .4                      .6                .8           I.{I
+
+
+
+                    ~;.--
+                     ~
+                            T__              --
+                                             -  -- --               ~                      r----1 ~ ---"'
+                                                                                           ~
+                                                                                                                'W"
+
+
+
+
+               o
+                                                                                                             ~-
+                                                                                             ....                             exit In let
+                                                                                ..-:.-::
+                                                                                           ~                    Ap/q2 Flapsvones
+                                                            -:;:
+                                                                         r.1-
+                                                                    ,::"_-x                                           II. 2   orr}
+                        ---r -------
+                                                                                                        1----+        3,3
+                    ~"                                     11.2                                         f------- ~            OJ/'   Ou t
+                                                            3.3                                         ,....---El            Oh
+                                                   - -- -" 11.2
+                              Ifn) !Wediun oat/et. -        ~3
+                                                                                                                              Off
+                                                                                                                              Off
+                                                                                                                                    }In
+                                     .f!:.                       .4                      .6                .8          /.0
+                                                                                              NATIONAl ADVISORY
+                                                                                           COMMITTU FOR AEROIWJ11CS
+
+
+
+                                             --             ~
+                                                                                                        ----+ -
+                             i
+
+
+                                                                                                                -~~
+
+                                                                                  ---       ---- --- _ d- -
+                                                                                                        ~
+                                                                    ..-~"-
+                                             .......   -    ~.:--
+
+
+
+              -.4
+                            1 __ "
+                         ...-a---            /
+                                                       /
+
+
+
+
+                                                                                                            (c) Lar9 e outlet.
+                                 /
+
+
+                        /j                                                                                   I I I
+                    o                  .2                      4      .6     .8                                        1.0
+                                                           Llrt coef'//clenl) CL
+Fl9ure 22,- Varia/Ion of' overage outlet-stolle pressure
+            with CL' Large f'orward underslung dllctj
+           propeller removed.
+NACA ARR No . L4 H15                                                                        Fig.   23
+
+
+
+
+                                                                                    Af/92
+                                                                           _ -fC
+                                                                                   _-1.7 _
+                                                                        -~
+                                                                           ~6~
+                                                               ;..-.:.. ~  ~)O./
+                                          --!-      -- --::-
+                                ---- 1---- t=--- ~ ---
+          .2
+                ---~
+                .--+
+                     )(   ---   --- -----
+                                ~
+                                             ~
+
+                 (0)1     Smfll j'f/e'i
+                            .2                                                       1.0
+
+
+
+
+                                                                       --;::4 _~
+                                                                                   _f7~.O
+                                                                                       .
+                                                                                       10./
+
+                   -)1;---- f..--
+                -- 1---
+                ---.1----
+               --==- J
+                             ~
+                               V
+                                  --         ~+-
+                                             ~     -------
+                                                x -:::-
+                                       ---- I--- -
+                                                           :;:..:: p
+                                                                   ~
+                                                                     - ~
+
+
+
+
+                 (b) Medium             ouflet.
+                     I      1       I        I
+                                                     .6             .8               1.0
+
+
+
+                                                                      _g~.O
+                                                             -- .:.:~
+                                        _-x- -- --- :::---             --I{JJ-
+                                   --- ~..:::t= ;:::::::-= ~          t-
+
+
+                        -- - - - -      --
+               ::r-= rullif.
+                 (C~ iOj ge
+                             ::.:- ----
+                                                                   NA. aNAL A~V1SORY
+                                                               COMMlf lEE FOR ~ERONAU ICS
+          o
+           o                                          .6                             1.0
+                                 LiFf coef'f/ ci ent) CL
+
+   Fl9ure 23.- VQr Jq lion o T qverQqe oqf/ef sloNe pressure
+                w)fh CL . SmollforwQrd t.lnders/W179 duel; pro-
+                pBl ler r emove.d.
+                                                                                                                                                        z
+                                                                                                                                                        ;p
+                                                                                                                                                        o
+                                                                                                                                                        ;p
+                                                                                                                                                        ;p
+                                                                                                                                                        :::0
+
+~_Q                                                                                                                         Outlet                      :::0
+                                                                                                                      --0  Small                        z
+c5f4                                                                   4-
+                                                                                                                      --+!1edlum
+                                                                                                                                                        o
+
+
+~                         I I I                                                                    Piff/oP ----.. ~ 1--+ -                              L'
+                                                                                                                                                        ~
+
+
+
+~ .2
+                         Fy/t flap--..                                                                                     -L                           :r:
+                              Orr         ~       +-                                                                              v
+                                                                                                                                       ~
+                                                                                                                                                        f-'
+                                                                                                                                                        c.n
+\I)                                                                     2
+~
+                                 -~p
+                                              ~        .r.-.--
+Q..
+,\.)
+~ 0                                                                     o
+.g           0      #2          4-       .6        .8            1.0          0        .2            4-          4>   .6              .8
+, -2
+It)
+
+ ~
+                    Outlet Totol pressure}
+                     I    I     I    I   I    I        I
+                                                            ¥          -.2.
+                                                                              - Outlet totol pr8ssurB, rh'9.::Q.
+                                                                                                                  -
+~
+~
+Q)     -4-                                                             -4 Ex/tflon                                /
+~
+ ~                                                                                on                /"
+                                                                                                         ".....
+
+
+~
+                                                                                                                           NATII JNAL iDVISOF IV
+                                                                                             v+/
+~      -.6                                                             -:6             ,,-                            co ~MITT    FOR AERON unes
+
+                 fa) eLI O./OiA60 ~· ~ ,0.02.                                     (0) CL,o.47; tJ,40e; 7CJ O./I..
+
+
+       F/9ure 24;- Vor/Q/iOI7 0/ outlet static pressure with outlet total
+                  pressure. Lor9B Torwordundersltlng duclj propeller                                                                                    '">:J ,
+                                                                                                                                                        f-"
+                   operofin9-                                                                                                                           aq
+
+
+                                                                                                                                                        [\J
+                                                                                                                                                        ~
+
+
+
+
+                                                                                                                                                   . __ _         _ _ . J
+                                                                                      z
+                                                                                      >
+                                                                                      o
+                                                                                      >
+                                                                                      »
+                                                                                      ::0
+                                                                                      ::0
+                                                                                      z
+ ~                                                                                    o
+~
+                                                                                      r'
+~      .l?                                                                            H::>
+                                                                                      ::r::
+~
+~,
+                                                                                      f-'
+                                                                                      (}l
+
+.~
+~
+~ a)
+~
+
+ ~
+{ 10
+ I
+
+
+~
+~
+'U
+  o
+~ o                ./     .2        .3      -d.-    .S    .6       .7       .8
+                           In let- velocity rotlO) ~/"b
+
+     ngClre 25. - VQrlalion or il1ternCi/-c/rQg coef{jcknf wiih ~/lb. Largf!2 and
+             .sma II forward uncler..slllng d{/ots; propeller removea.
+                                                                                      'XJ
+                                                                                      1-'-
+                                                                                      aq
+
+
+                                                                                      (\)
+                                                                                      (}l
+
+
+
+
+                                                                          ._ -- - -
+NACA ARR No. L4H15                                                                                                           Fig' . 26
+
+
+
+              - 3,2.
+                            I           I           I            \
+                       Pressure                              j
+                                                             V
+                        8xtr~o/afio/
+                                                                 1
+                                    \
+
+                                        1\/ V                        V                  Mach number ror local _
+
+                       --   V
+                                        V
+                                                             V\ Vi                         spe ed or .sound
+
+                                                    /                \V
+                                   V                                     It
+
+~r-2.o                      l.----
+                                                            V
+                                                                     /!\
+
+                                                               \
+I         0
+Q.
+                                                        ./
+      -
+.......                                             V
+                                                                }
+  ~           -1.6          I---- ~
+
+                                                             / V\
+ ......
+    u
+~
+~
+
+                                                  V                               \
+                                -
+ <l>
+ 0
+ '-l          -/.2                      I.------'
+ Q)
+
+ ~
+    \..
+                                                                              /       r\
+                                         --                                             \
+ II)
+ 11)
+                                                    ~
+                                                            ~
+ \)            -.8
+~
+~                                                                                     ~
+                                                                                            rx
+ ~             -11                                      -   ~
+                                                                      ~                      \
+.~
+~                                                                                                    ~          N"TIONAL ADVISO~"
+                                                                                                             COMM TTEE FO AERON UTICS
+
+
+                o                                                                                        ~
+                 o                  2                    ~                        ~              B              m
+                                I            ,          ti-foch (Jul??pe r ,                             I
+                  o      /00                200         300 4(}0 500 600                             700
+                                         Velocity at sea levell mph (.59°F)
+
+              Figvre la. -                       Press~re                     coeTlle /en! o9Q/nsf Macl?
+                                             nUl'noer Tor determinin9 CrlfiCQI speed.
+                                            (See reference 5.)
+                                                    --            ~---------
+
+
+
+
+ NACA ARR No. L4H15                                                                                        Fig. 27
+
+
+
+
+       1.0
+                                                                                             c.(.
+                                                                                      " 0./0
+                                                                                 - - + .47
+       .8                                                                         -----~      .89
+             (c)   Righi          rl/let~
+
+
+                                                         ""
+                                                                  :.,..
+                                  ~             ~
+       .6          -
+                    -T---
+                       -*--"""l
+                                  --lJ.-       ~--
+
+
+
+
+              .3                                    .S                      .6         .7           .8
+
+
+
+
+             rb) LeT-       rl/let,
+                                                       ""\:p
+
+
+                   - ><+-;i       Lt-- ~ ~
+                                   -\If.       -/(--
+
+
+
+
+              .3                                  .05                                  7
+
+
+
+                                           f-~         -:r
+       .8
+                   -   +--f -+--
+
+
+                                           0             t:"I..   ......-
+                          - '"    Cl.                  \:J
+
+
+
+
+       .6
+             tV~ Bo1tOn?1               //4'                                                   r
+                                                                                    NATI( HAL AD SORY
+                                                                                 ~~MMlm FOR AI fRONAUT ~
+
+              .3           .4        .0       .6                                      .7            .8
+                          " .lnlel- ve/oclly rO'//o)                               y\0
+Hyvre 27. - Vor/Qlion oTcrlficoIMoc!;/it/moer wllh
+            0/'10. Smol/ rorword vnders/t/1?9 duel;;
+              propeller removed.
+NACA ARR No. L4H15                                                                               Fig.   28
+
+
+
+
+          /"-------.....
+                                                                         ViVo
+      /                        '"-----
+                 +~                                               --0.44
+  I                    1.
+                                                                  - - .54
+  \
+  \
+      "'- '-
+               -----
+
+
+
+                                                                        ~1Vo
+                                                                  - - 0.42
+                                                                             .50
+
+
+
+
+                                                                          NA lIONAl ADVlson
+                                                                     CIIMMIT1 H fOR AlRONAUTlCS
+                        ------.....
+
+                                                                        ~/Vo
+                                                                  - - 0.37
+                                                                  - - .1-6
+
+
+
+
+                                                                2Jcale ofpressures
+                                                                                    ,        I
+                                                                                  75       /0
+
+ Fi9ure 28.-Pressure dlsfrtbufions over bolfom /ljJ   or the small fOrward under.:;lunr; due!.
+<r------~~-----                                 ---
+
+
+
+      NACA ARR    ~ o.       L4H15                                                                                                  Fig.   29
+
+
+
+
+             /.0
+                                                                                                                                    I
+                                                                         - V-
+                                                                            ........
+                                                                     ...........-
+                                                                                       ...........
+                                                                                                                           \-i/\{, -
+                 .8                               _.... :::: --:.. :::.--
+                                                           =-::::-                                                         O~
+                                   ....   -.-:::::.-----                                                         --.5
+                          - ........... ~
+                          ~                                                                                                    .6
+                                                                                                                 ------
+
+
+
+
+                           tG.            Bottom lip.
+                               f           I   I   I
+                      o                      .2                                                      .fJ    .8           1.0
+                 .8
+
+                           - r---               -- r---- - 1--- ---                                        -I-
+
+
+
+
+                          fb.)            Left fillet.
+                              I               I            I         I
+                      o                      .2                                                  .6         .8           /.0
+                 .8
+
+
+
+                 .8
+                          =- -                 - .-            - -
+                                                                                                               NATI JNAL A VISORY
+                 4-
+                          (c.)        RIght f'illet.                                                         OMMITI E FOR ~ RONAU cs
+                  o                         .2.              4      .6         .B                                       1.0
+                                                         Lift coellicl e n t J CJ,
+
+       F/9ure 28. -           Variation of cr/f/cQ/ Mach nt.lm ber wlfh
+                              C~. SmQII forward t.lnderslf.lng ductj
+                              propeller ,re/noved.
+
+
+
+
+                                                                                                                                                J
+NACA ARR No. L4H15                                                                                  Fig.   30
+
+
+
+
+       /.0
+                  I       I       I
+             _ ~) £Ight Fiilet
+                                                                ___ Propeller operQl/ng
+       .8                                       ~      -e::-               Tc) Q,OZ 1         I
+                                                                v---.      ,            I      I
+                                                                        ifrape/ler ~mov(Jd_
+                                                        ~f--
+                                                                v
+                                           - - - -
+       .6                                                                  I I I I
+            3            4-                .5              .6              .7          .8            .9
+
+
+
+
+                (b) L efl TI'/et
+
+
+                                                       V lP 1 '/i l r Q"
+            I                                              ro e  r mo e
+                              -       --        -'"
+                                                         -c::
+                                                                ~rol?.e//er oPjrorn..9
+                                            ~
+                                                                    I    J;.~ 0.02
+                                           .5             .6              .7          .8             .9
+
+                                                                             NATIONAL ADVISORY
+                                                                           MMMlmr FOR AERONAUTICS
+
+                 I       I        I
+            _6J Bof fo,m 1/,,0
+
+       .8
+                                                                /o4B/Ilr rl l170jBd
+                                      --        --""    --==
+                                                               ~ 1"--, I         I      I     I
+                                             apeller operon'
+
+       .6                                    I
+                                               Tc J 0.02
+                                                    I   I r
+                                                               ,
+         .3       4-        .S      .6      .7         .8    .Q
+                        fn/er- velocity rQt/o) V;/Vo
+FiJ1ure 30. - VClr/Q!/ol7 oTCrillCQI M o en n~n1.ber wi!h
+              \tf/\0 . -Small Torw(7rd ~n der.s/t./1?9 dt/c 0'
+              propel/er ,reh/ovea' d nQ operal'l/79;
+                      CL , 0./0.
+

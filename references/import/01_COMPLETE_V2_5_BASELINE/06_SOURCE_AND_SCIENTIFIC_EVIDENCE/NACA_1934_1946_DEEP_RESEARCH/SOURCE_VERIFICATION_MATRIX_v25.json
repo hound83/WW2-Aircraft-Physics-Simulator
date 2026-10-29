@@ -1,0 +1,50 @@
+[
+  {
+    "id": "P47C_Curtiss_1944",
+    "report": "NACA-ACR-L4L07 / WR-L-177",
+    "date": "December 1944",
+    "ntrs_id": "19930093302",
+    "url": "https://ntrs.nasa.gov/citations/19930093302",
+    "original_pdf": "https://ntrs.nasa.gov/api/citations/19930093302/downloads/19930093302.pdf",
+    "local_scan_present": false,
+    "local_full_report_ocr_present": false,
+    "secondary_full_text": "https://www.scribd.com/document/187787145/NACA-ACR-L4L07-Tests-of-a-Curtiss-Propeller-on-P47C",
+    "observations": "P-47C Curtiss 714-1C2-12 4 blade; climb 165 IAS, normal vs military efficiency -5..-8%; 160 IAS normal about 80%, 165 IAS normal roughly +5 points, military about 75-76%; see source figure 4-6 and tables I-II; full scan required to digitize accurate series",
+    "application": "P-47B same blade design only; engine installations/test airspeed/calibration must be checked"
+  },
+  {
+    "id": "F2A3_1943",
+    "report": "NACA-ACR-3I30 / WR-W-6",
+    "date": "September 1943",
+    "ntrs_id": "19930092640",
+    "url": "https://ntrs.nasa.gov/citations/19930092640",
+    "original_pdf": "https://ntrs.nasa.gov/api/citations/19930092640/downloads/19930092640.pdf",
+    "local_scan_present": false,
+    "local_full_report_ocr_present": false,
+    "observations": "Sustained turning at approximately 90..160 mph, two altitudes, three flap settings; measured-versus-calculated with thrust contribution to CLmax. Numerical curves not yet digitized",
+    "application": "Independent methodology fixture; not a substitute for 109, Mustang or Spitfire turn data"
+  },
+  {
+    "id": "YP47M_6507_1946",
+    "report": "NACA-RM-E6K26",
+    "date": "December 1946",
+    "ntrs_id": "20030065899",
+    "url": "https://ntrs.nasa.gov/citations/20030065899",
+    "original_pdf": "https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20030065899.pdf",
+    "local_scan_present": false,
+    "local_full_report_ocr_present": true,
+    "observations": "6507A-2 four-blade: Cp .1..1 at Mfree .2,.3,.4; three-blade: Cp .3..1 at Mfree .4; efficiency trends and tip-section load distribution. Force efficiencies have no correction for wall constriction",
+    "application": "Alternate Hamilton prop map, not Curtiss 714 P-47B source and not direct P-51 Hamilton blade evidence"
+  },
+  {
+    "id": "P47D_1945",
+    "report": "NACA MR L5G09a",
+    "date": "1945",
+    "ntrs_id": "19930093653",
+    "url": "https://ntrs.nasa.gov/citations/19930093653",
+    "local_scan_present": false,
+    "local_full_report_ocr_present": false,
+    "observations": "Three-blade 6507A-2 P-47D 12 flight rows supplied in v2.3; source campaign also informed v2.4 M model",
+    "application": "Not independent holdout for M; distinct from four-blade Curtiss"
+  }
+]

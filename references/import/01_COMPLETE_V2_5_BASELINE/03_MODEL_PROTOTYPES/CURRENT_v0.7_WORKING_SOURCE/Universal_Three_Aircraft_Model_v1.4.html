@@ -1,0 +1,1599 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Universal Three-Aircraft Model · Clean Physics v1.4 Experimental</title>
+<style>
+:root{color-scheme:dark;--bg:#0d1720;--surface:#172732;--surface2:#20323d;--line:#3d5561;--text:#eaf1eb;--muted:#aabbb8;--gold:#f2c47c;--red:#f18e87;--green:#a6dab3;--blue:#88bcdf}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 40% -12%,#2d4242 0,transparent 50%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header,main,footer{max-width:1400px;margin:auto;padding:24px 26px}header{padding-top:40px;border-bottom:1px solid #354d53}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.22em;color:var(--gold);font-weight:700}
+h1{font:750 clamp(30px,5.1vw,56px)/1.08 Georgia,serif;letter-spacing:-.035em;margin:8px 0 14px}h2{font:750 24px/1.2 Georgia,serif;margin:0 0 12px}h3{font-size:16px;margin:0 0 8px}p{margin:8px 0;color:#ccdad6}small, .dim{color:var(--muted)}.lead{max-width:900px;font-size:17px}
+nav{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}nav a,.pill{border:1px solid #637975;background:#253942;padding:6px 12px;border-radius:99px;color:#e9efeb;text-decoration:none;font-size:13px}
+.notice{padding:14px 18px;background:#283a3e;border-left:4px solid var(--gold);border-radius:7px;margin:20px 0}.notice strong{color:#ffdb9a}.layout{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.panel{background:linear-gradient(180deg,var(--surface),#16242d);padding:22px;border-radius:12px;border:1px solid #3f535b;margin-bottom:18px;min-width:0}.controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.control{display:grid;gap:7px}.control label{font-size:13px;font-weight:700;color:#dfe8e4}.control input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer}.control select,.control input[type=number]{font:inherit;background:#0f202a;border:1px solid #688078;border-radius:7px;color:#fff;padding:9px 10px;min-width:0}.control output{color:var(--gold);font-weight:750;font-variant-numeric:tabular-nums}button{font:inherit;cursor:pointer;border:1px solid #77928d;background:#2c4a51;color:#f1f5ef;border-radius:8px;padding:10px 12px}button:hover{background:#3e6267}.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.aircard{border:1px solid #4f6569;border-top:4px solid var(--air-color);border-radius:11px;padding:17px;background:#1d3039;min-width:0}.aircard h3{font-size:19px;line-height:1.2;color:#fff}.aircard .num{font:750 31px/1.05 Georgia,serif;letter-spacing:-.04em;color:var(--air-color);margin:10px 0}.aircard .metric{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #425d61;padding:6px 0}.aircard .metric b{white-space:nowrap;font-variant-numeric:tabular-nums}.aircard p{font-size:13px}.micro{font-size:12px;color:var(--muted)}.bad{color:var(--red)}.good{color:var(--green)}.wide{grid-column:1/-1}.chart{width:100%;overflow:visible;display:block}.chart text{font:11px system-ui, sans-serif;fill:#bfcfc7}.legend{display:flex;gap:16px;flex-wrap:wrap;margin:12px 0;color:#dce6de;font-size:13px}.legend i{display:inline-block;width:18px;height:3px;vertical-align:middle;margin-right:6px}.svggrid{stroke:#344b53;stroke-width:1}.axzero{stroke:#ecd4a4;stroke-width:1.4;stroke-dasharray:5 4}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:650px}th,td{padding:8px 10px;text-align:right;border-bottom:1px solid #38515a;font-variant-numeric:tabular-nums}th:first-child,td:first-child{text-align:left}thead{position:sticky;top:0;background:#29404a}th{color:#e7ddc6}.scroll{overflow:auto;max-height:420px}.statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{background:#213741;border:1px solid #425860;border-radius:8px;padding:12px}.stat b{font:750 24px Georgia,serif;color:var(--gold);display:block}.stat span{font-size:12px;color:#aabfba}.tablehint{font-size:12px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0}.step{padding:12px;border:1px solid #405961;border-radius:8px}.step strong{color:#f6d293}.status{color:#dac3a2;font-size:12px;font-weight:700}.chip{display:inline-block;padding:3px 8px;border:1px solid #658079;border-radius:20px;font-size:12px;color:#e4d9b6}.foot{font-size:13px;color:#acbcb8}a{color:#b5dcdf}details{background:#1a2b34;border:1px solid #435c63;border-radius:8px;padding:12px 14px;margin:10px 0}summary{cursor:pointer;color:#e8e4d9;font-weight:700}code{color:#e9d7a5}#errors{display:none;background:#742c2c;padding:15px;color:#fff}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.cols3{grid-template-columns:1fr}.controls{grid-template-columns:repeat(2,minmax(0,1fr))}.steps{grid-template-columns:1fr}.statrow{grid-template-columns:1fr 1fr}}@media(max-width:580px){header,main,footer{padding:17px}.controls{grid-template-columns:1fr}.panel{padding:16px}.statrow{grid-template-columns:1fr}.aircard .num{font-size:27px}}
+</style></head><body>
+<header><div class="eyebrow">European Air War · Aircraft Research Laboratory</div>
+<h1>Three aircraft.<br/>One calculation engine.</h1>
+<p class="lead">Bf 109 F-4 • P-47B • P-51B-15. Shared physics · corrected 109F-4 combat-power speed calibration · P-47B/P-51B flight-test checks · RAF Mosquito and independent Focke-Wulf stores trials.</p>
+<div class="notice"><strong>Experimental research prototype — NOT validated sustained-turn data.</strong> All speed, load-factor and turn curves depend on assumed Oswald efficiency, installed propeller performance and clean-wing maximum lift. The 109 and P-47 historical engines do not have equal source confidence.</div>
+<nav><a href="#fwcase">Fw 190 stores check</a><a href="#compare">Common-condition comparison</a><a href="#stores">Bombs & external stores</a><a href="#crossaudit">Cross-aircraft climb audit</a><a href="#mustang">P-51 power sensitivity</a><a href="#conditioning">P-47 climb verification</a><a href="#powerSweep">Thunderbolt power comparison</a><a href="#greg">Greg worksheet reconstruction</a><a href="#validation">Wartime speed checks</a><a href="#method">Assumptions & scientific gates</a></nav></header>
+<main><section class="panel" id="compare"><h2>01 / Compare on equal conditions</h2><p>The horizontal maneuver-speed axis is <strong>EAS</strong>. The solver converts to <strong>TAS</strong> at the selected altitude, then calculates drag and power. IAS remains unknown without aircraft-specific calibration.</p>
+<div class="controls">
+<div class="control"><label for="alt">Altitude <output id="altO"></output></label><input id="alt" type="range" min="0" max="34000" step="1000" value="5000"/></div>
+<div class="control"><label for="speed">Selected maneuver speed <output id="speedO"></output></label><input id="speed" type="range" min="90" max="350" step="5" value="200"/></div>
+<div class="control"><label for="profile">Installed propeller approximation</label><select id="profile"><option value="C" selected>C · J / Cp / tip-Mach heuristic</option><option value="A">A · fixed η = 0.80</option><option value="B">B · simple speed curve</option></select></div>
+<div class="control"><label for="e">Assumed Oswald e <output id="eO"></output></label><input id="e" type="range" min="0.50" max="0.94" step="0.01" value="0.78"/></div>
+<div class="control"><label for="weight">All aircraft weights <output id="weightO"></output></label><input id="weight" type="range" min="80" max="120" step="1" value="100"/></div>
+<div class="control"><label for="calibration">Drag-anchor behavior</label><select id="calibration"><option value="fixed" selected>Fixed C/0.78 calibrated drag</option><option value="refit">Refit drag for every new assumption</option></select></div>
+<div class="control"><label for="bfmode">Bf 109 engine rating</label><select id="bfmode"><option value="combat" selected>Combat · 1,200 PS · 30 min</option><option value="emergency">Emergency · 1,350 PS · 1 min</option></select></div>
+<div class="control"><label for="p51mode">P-51 engine rating</label><select id="p51mode"><option value="67inHg" selected>67 inHg · 3,000 rpm</option><option value="75inHg">75 inHg · 3,000 rpm (sparse)</option></select></div>
+<div class="control"><label>Configuration policy</label><span class="status">Clean, flaps up; assumed structural cap 7 g</span></div>
+</div></section>
+<section class="panel"><h2>Performance at the selected speed and altitude</h2><div class="cols3" id="cards"></div><p class="micro" id="conditions"></p></section>
+<div class="layout"><section class="panel"><h2>02 / Sustainable G</h2><p>Combines the power, lift/stall and structural limits. Curves stop where 1 g level flight is not feasible.</p><div id="chartG"></div></section>
+<section class="panel"><h2>03 / Specific excess power</h2><p>At 1 g; negative values are displayed because they represent energy loss, not a feasible climb.</p><div id="chartPs"></div></section></div>
+<section class="panel" id="stores"><h2>04 / Bombs, racks and external drag — a new independent challenge</h2>
+<p>Keep the same underlying three-aircraft engine, but add <strong>store weight</strong> and <strong>external parasite drag area</strong> separately. The airspeed and engine-data gates remain unchanged. The values below are hypothetical sensitivity inputs, not a historical loadout approval.</p>
+<div class="controls">
+<div class="control"><label for="storeWeight">Additional stores weight <output id="storeWeightO"></output></label><input id="storeWeight" type="range" min="0" max="1500" step="50" value="500"></div>
+<div class="control"><label for="storeArea">Additional equivalent drag area <output id="storeAreaO"></output></label><input id="storeArea" type="range" min="0" max="5" step="0.1" value="1.5"></div>
+<div class="control"><label for="mosquitoMode">RAF Mosquito evidence interpretation</label><select id="mosquitoMode"><option value="raw">Use published raw peak-speed pairs</option><option value="raf-corrected">Use RAF 15–18 mph assessed penalty</option></select></div>
+</div>
+<h3 style="margin-top:20px">Shared solver — compare clean against stores at your selected altitude</h3>
+<div class="scroll" id="storesThreeTable"></div>
+<div class="statrow" id="storesReportStats"></div>
+<h3 style="margin-top:20px">Period test — Mosquito B Mk IX LR495, same specimen, 1943 vs 1944</h3>
+<p>Estimate the <strong>fractional additional parasite drag</strong> from the lower-altitude observation, hold the assumed physical method fixed, and check it against the higher-altitude observation. Both comparisons are at <em>different peak altitudes</em>; true paired-condition accuracy is not proven. The RAF estimated a 15–18 mph effect after warning of deterioration between flights.</p>
+<div class="scroll" id="mosquitoStoresTable"></div>
+<h3 style="margin-top:20px">P-38G — new reported clean reference, Greg bomb graphic remains qualitative</h3>
+<p>Wright Field measured the clean P-38G-1 at multiple altitudes and reported engine horsepower and manifold pressure. <strong>We have not recovered the underlying report for Greg's bomb-loaded P-38 curve</strong>, so it is not added as measured performance.</p>
+<div class="scroll" id="p38SourceTable"></div>
+<details><summary>See the user-provided P-38G and Mosquito comparative graph</summary><img src="./greg_p38_mosquito_stores_chart.png" style="max-width:100%;border-radius:8px" alt="Greg's P-38G with and without bombs versus Mosquito with two 500-pound bombs screenshot"><p class="micro">Illustrative screenshot from Greg; original report provenance, fitted configurations and speed definitions are not established. Do not digitize its curves into a primary data series.</p></details>
+<p class="micro">Sources: <a href="https://www.wwiiaircraftperformance.com/org/mosquito/mosquito.html" target="_blank" rel="noopener noreferrer">RAF A&amp;AEE Mosquito LR495 1943/1944 report transcriptions</a> · <a href="https://www.wwiiaircraftperformance.com/org/p-38/p-38.html" target="_blank" rel="noopener noreferrer">USAAF P-38G-1 42-12687 Wright Field report transcription</a>. Published HTML copies of original tests; scans not independently audited.</p></section>
+<section class="panel" id="fwcase"><h2>05 / New independent stores challenge — Fw 190 A-4, W.Nr. 619</h2>
+<p><strong>Same aircraft, same sea-level combat-power reporting:</strong> the 1942 Focke-Wulf test separately records modified wheel doors, racks without bombs and four 50 kg bombs. This is a more controlled configuration sequence than the 1943/44 Mosquito reports.</p>
+<div class="control" style="max-width:300px"><label for="fwInduced">Assumed clean induced-drag fraction at top speed: <output id="fwInducedO">7%</output></label><input id="fwInduced" type="range" min="0" max="20" step="1" value="7"/></div>
+<div class="statrow" id="fwStats"></div>
+<h3 style="margin-top:18px">Historical speed stages and an intentionally unfitted cross-aircraft transfer</h3><div class="scroll" id="fwTable"></div>
+<p class="micro">The final column transfers the Mosquito's single fitted <em>percentage</em> <strong>only to the complete Fw 190 bomb load</strong>, not to unrelated racks or the clean aircraft; this is a deliberate stress test, not a trusted forecast. Equivalent drag increases are <strong>inferred from speed</strong>, not measured airframe coefficients. Unknown stage weight stays missing.</p>
+<h3>Further controlled configurations in a later report on W.Nr. 619</h3><div class="scroll" id="fwAdditional"></div><p class="micro">These are differences versus the clean reference <strong>within Report 3</strong>, not extra penalties to add to Report 1. Later engine/installation state is not asserted identical, and the speed values are original author's rounded differences.</p>
+<div class="notice"><strong>New airspeed warning:</strong> a subsequent test of the <em>same Fw 190</em> found that external tanks increased IAS under-reading by <strong>6–7 km/h</strong>, through altered pitot/static pressure. If speed has already been corrected by the original report, this correction must NOT be applied again.</div>
+<p class="micro">Sources: <a href="https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-619-nr1.html" target="_blank" rel="noopener noreferrer">Focke-Wulf flight report 619/1 (4 Nov 1942)</a> · <a href="https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-619-nr3.html" target="_blank" rel="noopener noreferrer">619/3 (20 Jan 1943), further racks/tanks comparison</a> · <a href="https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-619-nr5.html" target="_blank" rel="noopener noreferrer">619/5 (Feb 1943), IAS-position correction</a>. Primary manufacturer reports accessible as later online translations; image scans not independently reconciled.</p></section>
+<section class="panel" id="crossaudit"><h2>04 / Cross-aircraft check — one solver, two source-reported Mustang weights</h2>
+<p><strong>This is the deciding test, not a new fitted aircraft model.</strong> At 15,000 ft, the P-47B's open-flap climb test supplies the one fitting observation for a configuration-loss term. Four other P-47B altitudes are withheld. The P-51B receives <strong>no</strong> imported P-47 loss term; its own reported automatic cooling shutters are retained. Its level-speed-calibrated polar is frozen.</p>
+<div class="statrow" id="auditStats"></div>
+<div class="scroll" id="auditTable"></div>
+<details><summary>See every report observation, source weight, predicted climb and residual</summary><div class="scroll" id="auditDetails"></div></details>
+<p class="micro"><strong>Source-weight split:</strong> the 20 May 1944 Wright Field memo reports <strong>9,335 lb at takeoff</strong>; a separate 15 May comparison memo lists <strong>9,680 lb</strong> for climb. Both concern P-51B-15 43-24777 and are <strong>not independent aircraft/test programmes</strong>. The model uses each source's stated takeoff weight as its scenario mass, without claiming that this equals exact airborne mass.</p>
+<p class="micro"><strong>Missing evidence:</strong> Figure 6 is ROC versus altitude; Figure 7 is power versus altitude for climb. Neither identified description provides a measured climb-speed schedule. The predicted optimum TAS in the table is therefore <em>a model prediction</em>, never a measured speed. A 75-inHg / 15,700-ft memo point remains unavailable because the source-bounded high-blower map does not cover that height.</p>
+<p class="micro"><strong>Result:</strong> Candidate B better matches the Mustang's absolute climb; candidate C is better on the P-47's withheld climb tests and the Mustang's rating-induced improvement. The evidence therefore does <strong>not yet justify a single winner</strong>. No numerical coefficient was changed to make either aircraft fit.</p>
+</section>
+<section class="panel" id="mustang"><h2>05 / P-51B: predict the climb improvement without tuning</h2>
+<p>Wright Field Eng-47-1749-A gives <strong>3,820 ft/min at 67 inHg</strong> and <strong>4,380 ft/min at 75 inHg</strong>, both at 2,200 ft. We hold the aircraft's existing speed-calibrated drag polar and all propeller assumptions <strong>unchanged</strong>. The common solver computes best climb at each rating using the source-reported <strong>9,335 lb takeoff weight as a scenario</strong>; speed-calibrated drag remains frozen. The instantaneous airborne mass is unknown.</p>
+<div class="statrow" id="mustangStats"></div>
+<div class="scroll" id="mustangTable"></div>
+<p class="micro">The historical report <strong>does not give climbing airspeed in its text</strong>. Model speeds are optimization outputs, not measured flight speeds. Consequently the absolute-rate check is provisional. No P-47B fitted cooling-loss coefficient was transferred to the Mustang. No model uses these climb observations to recalibrate drag or propeller efficiency.</p>
+<p class="micro">The report also states a +580 ft/min increase at 15,700 ft in high blower. Our 75-inHg high-blower power dataset does not cover that altitude. That second comparison remains <strong>unavailable</strong> until the relevant engine chart is transcribed; we do not extrapolate.</p></section>
+<section class="panel" id="conditioning"><h2>06 / P-47B: stop using high-speed horsepower for climbing</h2>
+<p>Wright Field reported different engine manifold pressures and cooling settings in level-speed and climb tests of the same P-47B. We now correct shaft power using the observed climb manifold pressure (approximate MAP-to-power scaling), then fit <strong>one</strong> aggregate climb-configuration loss at 15,000 ft. Every other altitude is held out from that correction.</p>
+<div class="statrow" id="climbStats"></div><div class="scroll" id="climbTable"></div>
+<p class="micro">The equivalent added drag coefficient is <strong>not a measured cooling-drag coefficient</strong>. It can include open-flap cooling drag, low-speed propeller inefficiency, uncorrected power or test-method differences. Its validity across different aircraft or other engine settings is unproven. No drag coefficient was refitted to the four withheld climb points.</p></section>
+<section class="panel" id="powerSweep"><h2>07 / One Thunderbolt polar, two power settings</h2><p>Same wing, 13,065-lb weight, Greg's parasite/induced drag split and his speed-dependent propulsive efficiency. Change <strong>only shaft horsepower</strong> from 2,000 to 2,600. This is a controlled sensitivity experiment using Greg's D-28-style worksheet, <strong>not</strong> a historical P-47B versus P-47D-28 flight test.</p>
+<div class="statrow" id="powerStats"></div><div class="scroll" id="powerTable"></div></section>
+<section class="panel" id="greg"><h2>08 / Reproduce Greg's worksheet</h2><p>We independently rebuild the screenshot's <strong>drag vs speed</strong> and <strong>power required</strong> from the maximum-speed row. The screenshots are treated as <em>Greg's calculated reference</em>, not historical test evidence.</p>
+<div class="statrow" id="gregStats"></div>
+<div class="steps"><div class="step"><strong>1. Max-speed boundary</strong><p>At 325 mph the 109's screenshot reports 1,218 lbf total drag and 1,058 hp propulsive power.</p></div><div class="step"><strong>2. Separate components</strong><p>Scale parasite drag as V² and induced drag as 1/V². Greg's supplied split is 1,137 / 81 lbf.</p></div><div class="step"><strong>3. Require lift and power</strong><p>Calculate required HP from drag × TAS. Then cap sustained G by provisional lift and structural limits.</p></div></div>
+<div class="controls"><div class="control"><label for="gregWhich">Worksheet benchmark</label><select id="gregWhich"><option value="bf109f4">Bf 109 F-4 · sea level</option><option value="p47d28">High-power P-47 · sea level (D-28 scenario)</option></select></div></div>
+<div class="scroll" id="gregTable"></div>
+<h3 style="margin-top:22px">Greg's separate P-47B vs Bf 109F turn chart at 27,000 ft</h3><p>These are approximate readings from the user-provided image, <strong>not</strong> historical measured turns. The original speed-axis definition is unresolved. The comparison below provisionally treats the axis as CAS and does not conflate the 2,210 hp D-28 scenario with the P-47B's 2,000 bhp engine.</p><div class="scroll" id="greg27k"></div><p class="tablehint">The F-4 result is deliberately unavailable at 27,000 ft because its present engine table ends at 15,748 ft. An attractive continuous curve would otherwise require unsupported extrapolation.</p>
+<p class="tablehint">Discrepancies of a few horsepower reflect the supplied screenshot's rounding/inconsistency. The sea-level P-47 2,210 hp plateau belongs to the high-power D-28-style scenario, <strong>not</strong> the 2,000 bhp P-47B at 27,000 ft.</p>
+<details><summary>How strongly does the Bf 109 turn depend on the induced-drag assumption?</summary><div id="gregSensitivity"></div></details>
+</section>
+<section class="panel" id="validation"><h2>09 / Compare against period flight reports</h2><p>Where the report supplies an engine curve, the model predicts maximum level TAS without reading the reported speed at that altitude. The single calibration point per aircraft is identified: it is <strong>not</strong> a validation point. The F-4 additionally shows an <strong>unfitted emergency-rating check</strong>, which comes from the same published Rechlin-based synthesis as its combat anchor.</p><div class="controls"><div class="control"><label for="validationAir">Report</label><select id="validationAir"><option value="p47b">P-47B · 41-5902 (1942)</option><option value="p51b">P-51B · 43-24777 (1944)</option><option value="bf109f4">Bf 109 F-4 · Rechlin-based published synthesis</option></select></div></div>
+<div id="validationStats" class="statrow"></div><div class="scroll" id="validationTable"></div><p class="micro">P-47B and P-51B flight-test tables are HTML transcriptions of wartime reports, not original page-by-page scan audits. P-51B power is Packard chart-derived. Sources are linked under each aircraft's details.</p></section>
+<section class="panel" id="method"><h2>10 / What is known versus assumed?</h2><div class="cols3" id="evidence"></div><details><summary>Scientific limitations and next validation work</summary><p><strong>Critical:</strong> The model fits CD₀ using one reported maximum-speed anchor for each aircraft. This exactly constrains one equation but cannot independently determine both propulsive efficiency and parasite drag. The assumed Oswald parameter determines induced drag and sustained turns. The maximum-lift coefficients are provisional and therefore the stall boundary and turn curves are illustrative.</p><p><strong>Bf 109:</strong> secondary approximate engine horsepower at 0–15,748 ft only; its sea-level 325 mph is not a matched primary test specimen, and Greg's screenshot does not provide a validated individual power-versus-altitude curve. Above this range no calculated comparison is offered.</p><p><strong>P-47:</strong> Greg's high-power P-47 spreadsheet and Greg's high-altitude P-47B graph are separate datasets. Do not transfer 2,210 propulsive hp to the P-47B. The P-47B sourced speed tests are with cooling flaps flush, while climb testing opens shutters; no configuration-specific cooling drag yet.</p><p><strong>Stall / airspeed:</strong> P-47 manual 115 mph IAS and P-51B flight-test 86 mph IAS are not calibrated EAS. We do not reverse-engineer exact CLmax from uncorrected IAS. CAS and TAS conversions are subsonic ISA theoretical; true IAS needs equipment/position calibration.</p><p><strong>Propeller:</strong> Candidate A/B/C models are exploratory. Candidate C has not reproduced the six-propeller controlled P-47B experiment; no claim of NACA-validated blade efficiency is made.</p><p><strong>Next:</strong> Validate independent climb and power-required at exact test speeds and cooling positions; seek historical low-speed CAS calibration and CLmax; test Greg's table sensitivity versus geometric e; constrain propeller class maps with P-47 propeller-swap tests; add Bf 109 source-specific test curves for higher altitudes; preserve uncertainty ranges before making ranked aircraft claims.</p></details></section>
+</main><footer class="foot">Universal Aircraft Model v0.7 · Offline research prototype · Three modelled aircraft only · Uncertainty and source limitations intentionally visible. No GitHub Atlas changes.</footer><div id="errors"></div>
+<script id="cases" type="application/json">{
+  "schema": 4,
+  "scope": "v0.5 matched-report weight and configuration audit with cross-aircraft benchmark, still no validated sustained turns",
+  "aircraft": {
+    "bf109f4": {
+      "name": "Bf 109 F-4 / DB 601E",
+      "force": "Luftwaffe",
+      "wingAreaM2": 16.05,
+      "spanM": 9.92,
+      "weightLb": 6371,
+      "weightStatus": "Illustrative 2,890 kg standard-mass reference; not the specific Greg worksheet weight",
+      "clMaxAssumed": 1.5,
+      "clStatus": "Assumption only; no matched low-speed calibrated wartime flight data",
+      "stallEvidence": {
+        "status": "secondary flight-simulation estimate only; not used as calibration",
+        "raw": "154–171 km/h IAS, IL-2 aircraft specification; do not use as a measured stall point"
+      },
+      "engine": "Daimler-Benz DB 601E",
+      "prop": "VDM 9-12010A; generic map until prop test located",
+      "powerRatings": {
+        "combat": {
+          "notes": "1200 PS at 0 m and 4900 m, secondary flight-sim compilation; interpolation only",
+          "gears": {
+            "fluid": [
+              {
+                "altFt": 0,
+                "bhp": 1183.584
+              },
+              {
+                "altFt": 16076,
+                "bhp": 1183.584
+              }
+            ]
+          }
+        },
+        "emergency": {
+          "notes": "1350 PS sea level; 1320 PS at 4,800 m; rating restrictions unresolved",
+          "gears": {
+            "fluid": [
+              {
+                "altFt": 0,
+                "bhp": 1331.532
+              },
+              {
+                "altFt": 15748,
+                "bhp": 1301.9424
+              }
+            ]
+          }
+        }
+      },
+      "defaultRating": "combat",
+      "defaultGear": "fluid",
+      "calibration": {
+        "altFt": 0,
+        "tasMph": 325,
+        "rating": "combat",
+        "gear": "fluid",
+        "source": "Jan Bobek, Info EDUARD June 2023, citing M. Baumgartl tables based on E-Stelle Rechlin: 523 km/h (~325 mph) Bf 109F-4 combat power at sea level. Original underlying test sheet not inspected.",
+        "constraintStatus": "historically attributed combat-power speed; secondary transcription of wartime Rechlin-based tables; specimen-specific test conditions unresolved",
+        "crossCheck": "Same published comparison reports 540 km/h (~336 mph) at sea level on emergency power; reserved as an unfitted check in observedSpeed"
+      },
+      "observedSpeed": [
+        {
+          "altFt": 0,
+          "mphTas": 325,
+          "rating": "combat",
+          "gear": "fluid",
+          "source": "M. Baumgartl/Rechlin tables quoted by Jan Bobek, Info EDUARD 06/2023: 523 km/h combat sea level",
+          "role": "calibration-anchor",
+          "independentFlightTest": false
+        },
+        {
+          "altFt": 0,
+          "mphTas": 336,
+          "rating": "emergency",
+          "gear": "fluid",
+          "source": "Baumgartl/Rechlin and H. H. Vogt cited by Jan Bobek, Info EDUARD 06/2023: 540 km/h emergency sea level",
+          "role": "withheld-rating-check",
+          "independentFlightTest": false
+        }
+      ],
+      "sourceLinks": [
+        "https://info.eduard.com/en/06-2023-1/rufe",
+        "https://www.yumpu.com/de/document/view/12139943/messerschmitt-bf-109-f-2-4",
+        "https://il2sturmovik.com/museum/fighters/bf-109-f-4/",
+        "https://www.wwiiaircraftperformance.com/org/me109/g/me109g-14026.html"
+      ],
+      "quality": "325 mph combat rating supported by published historical synthesis based on Rechlin records; the source is secondary and configuration not verified from original scan. Emergency 336 mph kept as an unfitted check. Greg worksheet and secondary DB601E curves; above 15,748 ft no constrained emergency engine map, and low-speed drag polar is not validated.",
+      "propGeometry": {
+        "diameterFt": 9.84251968503937,
+        "propRpm": 1741.5,
+        "note": "Gear reduction .645 assumed; verify for exact DB601E/VDM installation"
+      }
+    },
+    "p47b": {
+      "name": "P-47B / R-2800-21 (41-5902)",
+      "force": "USAAF",
+      "wingAreaM2": 27.870912,
+      "spanM": 12.426950000000001,
+      "weightLb": 12565,
+      "weightStatus": "Reported test weight of aircraft 41-5902",
+      "clMaxAssumed": 1.3,
+      "clStatus": "Assumed; P-47 B/C/D/G manual 115 mph IAS is not an independently calibrated 41-5902 EAS stall",
+      "stallEvidence": {
+        "status": "manual generalized IAS, not specimen-specific",
+        "raw": "115 mph IAS clean in T.O. 01-65BC-1; low-speed correction unknown"
+      },
+      "engine": "Pratt & Whitney R-2800-21",
+      "prop": "Curtiss 714-1C2-12; geometric default, exact blade map missing",
+      "powerRatings": {
+        "military": {
+          "notes": "2000 BHP from flight torquemeter up to critical altitude; later power fall-off in report",
+          "gears": {
+            "turbo": [
+              {
+                "altFt": 5000,
+                "bhp": 2000,
+                "mapInHg": 52.0
+              },
+              {
+                "altFt": 15000,
+                "bhp": 2000,
+                "mapInHg": 51.0
+              },
+              {
+                "altFt": 25000,
+                "bhp": 2000,
+                "mapInHg": 51.7
+              },
+              {
+                "altFt": 27800,
+                "bhp": 2000,
+                "mapInHg": 52.0
+              },
+              {
+                "altFt": 30000,
+                "bhp": 1845,
+                "mapInHg": 47.5
+              },
+              {
+                "altFt": 34000,
+                "bhp": 1575,
+                "mapInHg": 40.0
+              }
+            ]
+          }
+        }
+      },
+      "defaultRating": "military",
+      "defaultGear": "turbo",
+      "calibration": {
+        "altFt": 5000,
+        "tasMph": 352,
+        "rating": "military",
+        "gear": "turbo",
+        "source": "USAAF PHQ-M-19-1417-A, reported 5,000-ft speed"
+      },
+      "observedSpeed": [
+        {
+          "altFt": 5000,
+          "mphTas": 352,
+          "rating": "military",
+          "gear": "turbo",
+          "source": "PHQ-M-19-1417-A transcription"
+        },
+        {
+          "altFt": 15000,
+          "mphTas": 386,
+          "rating": "military",
+          "gear": "turbo",
+          "source": "PHQ-M-19-1417-A transcription"
+        },
+        {
+          "altFt": 25000,
+          "mphTas": 420,
+          "rating": "military",
+          "gear": "turbo",
+          "source": "PHQ-M-19-1417-A transcription"
+        },
+        {
+          "altFt": 27800,
+          "mphTas": 429,
+          "rating": "military",
+          "gear": "turbo",
+          "source": "PHQ-M-19-1417-A transcription"
+        },
+        {
+          "altFt": 30000,
+          "mphTas": 426,
+          "rating": "military",
+          "gear": "turbo",
+          "source": "PHQ-M-19-1417-A transcription"
+        },
+        {
+          "altFt": 34000,
+          "mphTas": 412,
+          "rating": "military",
+          "gear": "turbo",
+          "source": "PHQ-M-19-1417-A transcription"
+        }
+      ],
+      "observedClimb": [
+        {
+          "altFt": 15000,
+          "tasMph": 207,
+          "fpm": 2330,
+          "observedMapInHg": 51.8,
+          "engineRpm": 2700,
+          "rating": "military",
+          "cooling": "cowl/oil/intercooler flaps open",
+          "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription)"
+        },
+        {
+          "altFt": 20000,
+          "tasMph": 233,
+          "fpm": 2150,
+          "observedMapInHg": 52.0,
+          "engineRpm": 2700,
+          "rating": "military",
+          "cooling": "cowl/oil/intercooler flaps open",
+          "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription)"
+        },
+        {
+          "altFt": 23400,
+          "tasMph": 245,
+          "fpm": 2000,
+          "observedMapInHg": 52.2,
+          "engineRpm": 2700,
+          "rating": "military",
+          "cooling": "cowl/oil/intercooler flaps open",
+          "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription)"
+        },
+        {
+          "altFt": 25000,
+          "tasMph": 252,
+          "fpm": 1810,
+          "observedMapInHg": 49.2,
+          "engineRpm": 2700,
+          "rating": "military",
+          "cooling": "cowl/oil/intercooler flaps open",
+          "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription)"
+        },
+        {
+          "altFt": 30000,
+          "tasMph": 265,
+          "fpm": 1190,
+          "observedMapInHg": 41.0,
+          "engineRpm": 2700,
+          "rating": "military",
+          "cooling": "cowl/oil/intercooler flaps open",
+          "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription)"
+        }
+      ],
+      "sourceLinks": [
+        "https://www.wwiiaircraftperformance.com/org/p-47/p-47.html"
+      ],
+      "quality": "Wright Field period report HTML transcription; speed cooling shutters flush, climb shutters open",
+      "propGeometry": {
+        "diameterFt": 12.166666666666666,
+        "propRpm": 1350.0,
+        "note": "Reduction .5 estimated for R2800 P-47; source-to-specimen audit outstanding"
+      },
+      "climbCalibration": {
+        "altFt": 15000,
+        "provenance": "one observed climb used to infer an equivalent extra drag term, NOT measured cooling drag",
+        "enabledRangeFt": [
+          15000,
+          30000
+        ],
+        "notes": "Altitude-specific climbing MAP vs level MAP: approximate constant-RPM horsepower proportionality, with military rating power cap. Do not extrapolate to other planes."
+      }
+    },
+    "p51b": {
+      "name": "P-51B-15 / V-1650-7 (43-24777)",
+      "force": "USAAF",
+      "wingAreaM2": 21.646408320000003,
+      "spanM": 11.277600000000001,
+      "weightLb": 9240,
+      "weightStatus": "Scenario 9,240 lb approximates speed-test operating weight; actual weight varied with altitude",
+      "clMaxAssumed": 1.6,
+      "clStatus": "Assumed; raw 86 mph IAS stall at 8,000 ft / 9,270 lb cannot be treated as EAS",
+      "stallEvidence": {
+        "status": "original report IAS, conversion missing",
+        "raw": "86 mph IAS at 8,000 ft, 9,270 lb, power off, clean"
+      },
+      "engine": "Packard V-1650-7",
+      "prop": "Hamilton Standard K-6523A-24, modeled with generic installed efficiency",
+      "powerRatings": {
+        "67inHg": {
+          "notes": "67inHg; chart-derived standard BHP (not flight torquemeter)",
+          "gears": {
+            "low": [
+              {
+                "altFt": 0,
+                "bhp": 1580,
+                "mapInHg": 67
+              },
+              {
+                "altFt": 4000,
+                "bhp": 1622,
+                "mapInHg": 67
+              },
+              {
+                "altFt": 7400,
+                "bhp": 1660,
+                "mapInHg": 67
+              },
+              {
+                "altFt": 10300,
+                "bhp": 1695,
+                "mapInHg": 67
+              },
+              {
+                "altFt": 17000,
+                "bhp": 1350,
+                "mapInHg": 52.8
+              },
+              {
+                "altFt": 24000,
+                "bhp": 1037,
+                "mapInHg": 39.8
+              }
+            ],
+            "high": [
+              {
+                "altFt": 18000,
+                "bhp": 1390,
+                "mapInHg": 67
+              },
+              {
+                "altFt": 20800,
+                "bhp": 1390,
+                "mapInHg": 67
+              },
+              {
+                "altFt": 24000,
+                "bhp": 1390,
+                "mapInHg": 67
+              },
+              {
+                "altFt": 28000,
+                "bhp": 1200,
+                "mapInHg": 57.3
+              },
+              {
+                "altFt": 32000,
+                "bhp": 1038,
+                "mapInHg": 48.4
+              }
+            ]
+          }
+        },
+        "75inHg": {
+          "notes": "75inHg; chart-derived standard BHP (not flight torquemeter)",
+          "gears": {
+            "low": [
+              {
+                "altFt": 0,
+                "bhp": 1788,
+                "mapInHg": 75
+              },
+              {
+                "altFt": 4000,
+                "bhp": 1830,
+                "mapInHg": 75
+              },
+              {
+                "altFt": 7400,
+                "bhp": 1868,
+                "mapInHg": 75
+              }
+            ],
+            "high": [
+              {
+                "altFt": 18000,
+                "bhp": 1577,
+                "mapInHg": 75
+              },
+              {
+                "altFt": 20800,
+                "bhp": 1572,
+                "mapInHg": 75
+              }
+            ]
+          }
+        }
+      },
+      "defaultRating": "67inHg",
+      "defaultGear": "low",
+      "calibration": {
+        "altFt": 0,
+        "tasMph": 361.5,
+        "rating": "67inHg",
+        "gear": "low",
+        "source": "USAAF Eng-47-1749-A sea level reported speed"
+      },
+      "observedSpeed": [
+        {
+          "altFt": 0,
+          "mphTas": 361.5,
+          "rating": "67inHg",
+          "gear": "low",
+          "source": "Eng-47-1749-A"
+        },
+        {
+          "altFt": 4000,
+          "mphTas": 380,
+          "rating": "67inHg",
+          "gear": "low",
+          "source": "Eng-47-1749-A"
+        },
+        {
+          "altFt": 7400,
+          "mphTas": 395.5,
+          "rating": "67inHg",
+          "gear": "low",
+          "source": "Eng-47-1749-A"
+        },
+        {
+          "altFt": 10300,
+          "mphTas": 409,
+          "rating": "67inHg",
+          "gear": "low",
+          "source": "Eng-47-1749-A"
+        },
+        {
+          "altFt": 18000,
+          "mphTas": 408,
+          "rating": "67inHg",
+          "gear": "high",
+          "source": "Eng-47-1749-A"
+        },
+        {
+          "altFt": 20800,
+          "mphTas": 417,
+          "rating": "67inHg",
+          "gear": "high",
+          "source": "Eng-47-1749-A"
+        },
+        {
+          "altFt": 24000,
+          "mphTas": 426,
+          "rating": "67inHg",
+          "gear": "high",
+          "source": "Eng-47-1749-A"
+        },
+        {
+          "altFt": 28000,
+          "mphTas": 419,
+          "rating": "67inHg",
+          "gear": "high",
+          "source": "Eng-47-1749-A"
+        },
+        {
+          "altFt": 32000,
+          "mphTas": 410,
+          "rating": "67inHg",
+          "gear": "high",
+          "source": "Eng-47-1749-A"
+        },
+        {
+          "altFt": 0,
+          "mphTas": 376.5,
+          "rating": "75inHg",
+          "gear": "low",
+          "source": "Eng-47-1749-A"
+        },
+        {
+          "altFt": 18000,
+          "mphTas": 423,
+          "rating": "75inHg",
+          "gear": "high",
+          "source": "Eng-47-1749-A"
+        },
+        {
+          "altFt": 20800,
+          "mphTas": 431,
+          "rating": "75inHg",
+          "gear": "high",
+          "source": "Eng-47-1749-A"
+        }
+      ],
+      "observedClimb": [
+        {
+          "rating": "67inHg",
+          "altFt": 2200,
+          "ftMin": 3820
+        },
+        {
+          "rating": "75inHg",
+          "altFt": 2200,
+          "ftMin": 4380
+        }
+      ],
+      "sourceLinks": [
+        "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html"
+      ],
+      "quality": "Wright Field period report HTML transcription, source-documented carburetor anomalies; 67 inHg main validation; separate 15/20 May 1944 memo weights and climb evidence retained, with unknown climb speed",
+      "propGeometry": {
+        "diameterFt": 11.166666666666666,
+        "propRpm": 1431.8181818181818,
+        "note": "Engine reduction 21:44 from Packard manual; prop diameter from report"
+      },
+      "climbPowerComparison": {
+        "source": "USAAF Wright Field Eng-47-1749-A, 20 May 1944, P-51B-15 serial 43-24777, Summary and Conclusions B",
+        "sourceUrl": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+        "sourceQuality": "HTML transcription of primary wartime report; original scan figure-to-number check pending",
+        "aircraftCondition": "Same aircraft and 3000 RPM, 44-1 fuel, wing racks fitted; climbing airspeed not specified in textual excerpt; rates from report corrected to NACA standard conditions",
+        "altFt": 2200,
+        "engineRpm": 3000,
+        "ratingA": "67inHg",
+        "ratingB": "75inHg",
+        "reportedAClimbFpm": 3820,
+        "reportedBClimbFpm": 4380,
+        "reportedGainFpm": 560,
+        "climbSpeedTasMph": null,
+        "independentFit": true,
+        "notes": "Compare rate-sensitive increment separately from absolute climb. Do NOT calibrate a propeller/cooling coefficient from these two values, and do not reuse P-47B fitted aggregate +CD0.",
+        "reportedTakeoffWeightLb": 9335,
+        "weightNotes": "20 May 1944 detailed report: 9,335 lb at takeoff. Current top-speed CD0 fitted with the separate 9,240 lb cruise/altitude scenario; no undocumented correction to instantaneous mass is asserted.",
+        "sourceFigures": {
+          "fig6": "Rate of climb vs altitude (NO climb TAS/IAS defined in text)",
+          "fig7": "Power vs altitude for climb (NO climb TAS/IAS defined in text)",
+          "speedStatus": "unknown; no invented conversion"
+        },
+        "cooling": "Automatic coolant and oil shutters (not wide-open P-47B climb state); wing racks attached; auto-rich mixture, gear/flaps up"
+      },
+      "climbReports": [
+        {
+          "id": "wright-1944-05-20",
+          "sourceId": "Eng-47-1749-A",
+          "date": "1944-05-20",
+          "url": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+          "takeoffWeightLb": 9335,
+          "instantaneousWeightLb": null,
+          "weightInterpretation": "9,335 lb reported takeoff; instantaneous at altitude unrecorded",
+          "cooling": "automatic",
+          "racks": "on",
+          "testSpecimen": "43-24777",
+          "speedStatus": "climb airspeed unavailable in report text; Fig.6 ROC vs altitude, Fig.7 power vs altitude",
+          "observations": [
+            {
+              "altFt": 2200,
+              "rating": "67inHg",
+              "fpm": 3820,
+              "speedTasMph": null
+            },
+            {
+              "altFt": 2200,
+              "rating": "75inHg",
+              "fpm": 4380,
+              "speedTasMph": null
+            }
+          ],
+          "status": "reported flight-test summary, transcription of original",
+          "role": "secondary check against a top-speed-calibrated polar; 2 values not used for fitting"
+        },
+        {
+          "id": "wright-1944-05-15",
+          "sourceId": "May 15 1944 Wright Field multi-aircraft comparison",
+          "date": "1944-05-15",
+          "url": "https://www.wwiiaircraftperformance.org/mustang/mustangtest.html",
+          "takeoffWeightLb": 9680,
+          "instantaneousWeightLb": null,
+          "weightInterpretation": "9,680 lb reported for climb table; test summary differs from May 20 detailed report's 9,335 lb",
+          "cooling": "not separately established in this summary; same 43-24777 and racks on",
+          "racks": "on",
+          "testSpecimen": "43-24777",
+          "speedStatus": "climb airspeed not published in summary table",
+          "observations": [
+            {
+              "altFt": 5600,
+              "rating": "67inHg",
+              "fpm": 3920,
+              "speedTasMph": null
+            },
+            {
+              "altFt": 2300,
+              "rating": "75inHg",
+              "fpm": 4380,
+              "speedTasMph": null
+            },
+            {
+              "altFt": 19200,
+              "rating": "67inHg",
+              "fpm": 3170,
+              "speedTasMph": null
+            },
+            {
+              "altFt": 15700,
+              "rating": "75inHg",
+              "fpm": 3700,
+              "speedTasMph": null
+            }
+          ],
+          "status": "reported contemporaneous memo summary; values not independent new flight tests",
+          "role": "alternate weight/report consistency check, not independent new aircraft"
+        }
+      ]
+    }
+  },
+  "greg": {
+    "bf109f4": {
+      "name": "Greg Bf109F4 sea level screenshot, lbf drag and propulsive hp, not independently measured",
+      "altFt": 0,
+      "reference": [
+        [
+          100,
+          108,
+          856,
+          964,
+          257,
+          29,
+          229,
+          832
+        ],
+        [
+          125,
+          169,
+          548,
+          717,
+          240,
+          56,
+          183,
+          876
+        ],
+        [
+          150,
+          243,
+          380,
+          623,
+          250,
+          97,
+          152,
+          943
+        ],
+        [
+          168,
+          304,
+          303,
+          607,
+          273,
+          137,
+          136,
+          988
+        ],
+        [
+          175,
+          331,
+          280,
+          611,
+          286,
+          155,
+          131,
+          1000
+        ],
+        [
+          200,
+          432,
+          214,
+          646,
+          345,
+          231,
+          114,
+          1029
+        ],
+        [
+          225,
+          547,
+          169,
+          716,
+          431,
+          329,
+          102,
+          1058
+        ],
+        [
+          250,
+          675,
+          137,
+          812,
+          543,
+          451,
+          85,
+          1058
+        ],
+        [
+          275,
+          817,
+          113,
+          930,
+          684,
+          601,
+          83,
+          1058
+        ],
+        [
+          300,
+          972,
+          96,
+          1068,
+          857,
+          780,
+          77,
+          1058
+        ],
+        [
+          325,
+          1137,
+          81,
+          1218,
+          1058,
+          988,
+          70,
+          1058
+        ]
+      ],
+      "headers": [
+        "speedMph",
+        "parasiteDragLbf",
+        "inducedDragLbf",
+        "totalDragLbf",
+        "totalPowerReqHp",
+        "parasitePowerHp",
+        "inducedPowerHp",
+        "propulsivePowerAvailableHp"
+      ]
+    },
+    "p47d28": {
+      "name": "Greg sea-level P-47 power table, likely D-28 2,600bhp×0.85=2,210hp (NOT P-47B)",
+      "headers": [
+        "speedMph",
+        "powerRequiredHp",
+        "parasitePowerHp",
+        "inducedPowerHp",
+        "propulsivePowerAvailableHp"
+      ],
+      "altFt": 0,
+      "reference": [
+        [
+          100,
+          483,
+          47,
+          436,
+          1700
+        ],
+        [
+          125,
+          440,
+          91,
+          349,
+          1800
+        ],
+        [
+          150,
+          448,
+          157,
+          291,
+          1950
+        ],
+        [
+          175,
+          499,
+          250,
+          249,
+          2080
+        ],
+        [
+          200,
+          590,
+          372,
+          218,
+          2145
+        ],
+        [
+          225,
+          724,
+          530,
+          194,
+          2210
+        ],
+        [
+          250,
+          903,
+          729,
+          174,
+          2210
+        ],
+        [
+          275,
+          1126,
+          968,
+          159,
+          2210
+        ],
+        [
+          300,
+          1401,
+          1256,
+          145,
+          2210
+        ],
+        [
+          325,
+          1731,
+          1597,
+          134,
+          2210
+        ],
+        [
+          350,
+          2120,
+          1995,
+          124,
+          2210
+        ],
+        [
+          375,
+          2570,
+          2453,
+          116,
+          2210
+        ]
+      ]
+    },
+    "p47b27k": {
+      "name": "Greg 27,000ft P47B sustained g values READ APPROXIMATELY FROM SCREENSHOT (not flight measured)",
+      "altFt": 27000,
+      "axis": "Speed MPH unestablished (CAS assumed for illustration)",
+      "readings": [
+        [
+          125,
+          1.5
+        ],
+        [
+          150,
+          1.7
+        ],
+        [
+          175,
+          1.8
+        ],
+        [
+          200,
+          1.7
+        ],
+        [
+          225,
+          1.7
+        ],
+        [
+          250,
+          1.5
+        ],
+        [
+          275,
+          1.0
+        ]
+      ],
+      "bf109ApproximateGReadings": [
+        [
+          125,
+          1.2
+        ],
+        [
+          150,
+          1.3
+        ],
+        [
+          175,
+          1.3
+        ],
+        [
+          200,
+          1.2
+        ],
+        [
+          225,
+          1.0
+        ]
+      ]
+    }
+  }
+}
+</script><script id="stores-data" type="application/json">{
+  "schema": 1,
+  "title": "External-store drag and mass change: same-aircraft benchmark",
+  "sources": {
+    "raf_mosquito_clean": {
+      "title": "A&AEE Mosquito B Mk IX LR495, no external bombs or tanks, 11 June 1943",
+      "url": "https://www.wwiiaircraftperformance.com/org/mosquito/mosquito.html",
+      "provenance": "transcription_of_period_test_report",
+      "verification": "secondary_html_of_primary_report; original_scan_not_independently_audited",
+      "testCondition": "Merlin 72 ×2, 3000 RPM, +18 lb/sq.in all-out, four internal 500-lb bombs, no external stores, takeoff 21910 lb; report gives speed at peak altitudes"
+    },
+    "raf_mosquito_loaded": {
+      "title": "A&AEE Mosquito B Mk IX LR495, 2 × external 500-lb bombs, 20 February 1944",
+      "url": "https://www.wwiiaircraftperformance.com/org/mosquito/mosquito.html",
+      "provenance": "transcription_of_period_test_report",
+      "verification": "secondary_html_of_primary_report; original_scan_not_independently_audited",
+      "testCondition": "Merlin 72 ×2, 3000 RPM, +18 lb/sq.in all-out, 2 × external 500-lb bombs on faired racks, takeoff 22850 lb; report warns aircraft deterioration between tests"
+    },
+    "usaaf_p38g_clean": {
+      "title": "Wright Field P-38G-1 42-12687, FS-M-19-1538-A, 10 February 1943",
+      "url": "https://www.wwiiaircraftperformance.com/org/p-38/p-38.html",
+      "provenance": "transcription_of_period_test_report",
+      "verification": "secondary_html_of_primary_report; original_scan_not_independently_audited",
+      "testCondition": "Level-flight speed TAS, 3000 RPM, source reports 44.7 inHg 1220/1225 bhp per engine in selected rows, cooling shutters faired. Turbo limits at height. NO sourced bomb-loaded P-38G trial imported."
+    },
+    "greg_p38_chart": {
+      "title": "User-provided Greg comparative screenshot: P-38G clean / 1100 lb bombs / Mosquito with 2×500 lb",
+      "url": null,
+      "provenance": "user_supplied_secondary_graph",
+      "verification": "visual_only_no_underlying_report_or_conditions; no_numeric_digitalization_adopted",
+      "testCondition": "Axis appears altitude (ft) versus speed (mph); no source report, engine settings, actual store drag area or airspeed convention. Graph is qualitative only, NOT independent flight-test observations."
+    },
+    "fw190a4_619_report1": {
+      "title": "Focke-Wulf Fw 190 A-4 W.Nr. 619 Flight Report No. 1 (4 November 1942)",
+      "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-619-nr1.html",
+      "provenance": "translated_transcription_of_primary_manufacturer_test",
+      "verification": "original_German_report_linked_not_independently_scan_audited",
+      "testCondition": "Same aircraft, BMW 801D2 no. 85259, sea level, combat power, successive wheel-door/rack/4x50kg bomb stages; report notes original boost control needed correction; reported IAS calibration not supplied for this run."
+    },
+    "fw190a4_619_report5": {
+      "title": "Focke-Wulf Fw 190 A-4 W.Nr. 619 Flight Report No. 5 (February 1943)",
+      "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-619-nr5.html",
+      "provenance": "translated_transcription_of_primary_manufacturer_test",
+      "verification": "original_German_report_linked_not_independently_scan_audited",
+      "testCondition": "Pitot-static ram pressure calibration with external racks / tanks; same airframe but later engine and installations. Tank increases IAS under-read by 6-7 km/h. Do NOT add this correction to already corrected true speeds."
+    },
+    "fw190a4_619_report3": {
+      "title": "Focke-Wulf Fw 190 A-4 W.Nr. 619 Flight Report No. 3 (20 January 1943)",
+      "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-619-nr3.html",
+      "provenance": "translated_transcription_of_primary_manufacturer_test",
+      "verification": "original_German_report_linked_not_independently_scan_audited",
+      "testCondition": "Sea-level combat-rating same-airframe stores sequence: 3 racks 22 km/h; racks+tanks 58 km/h; racks+tanks+250kg bomb 73 km/h. Different fit/install/engine state from report 1, not merged as same run."
+    }
+  },
+  "mosquito": {
+    "specimen": "LR495",
+    "variant": "B Mk IX",
+    "cleanTakeoffWeightLb": 21910,
+    "loadedTakeoffWeightLb": 22850,
+    "externalBombNominalWeightLb": 1000,
+    "reportedSourcePenaltyMph": [
+      15,
+      18
+    ],
+    "qualification": "Reported approximate penalty judged by authors; raw peaks occur at unequal heights and the aircraft deteriorated between tests. Takeoff gross mass difference (940 lb) is NOT equal to nominal bomb mass (1000 lb).",
+    "gears": [
+      {
+        "gear": "MS",
+        "clean": {
+          "altFt": 13800,
+          "tasMph": 393
+        },
+        "loaded": {
+          "altFt": 13000,
+          "tasMph": 373
+        },
+        "calibrationRole": "FIT",
+        "note": "Both maximum speed values; different full-throttle heights and dates"
+      },
+      {
+        "gear": "FS",
+        "clean": {
+          "altFt": 25700,
+          "tasMph": 405
+        },
+        "loaded": {
+          "altFt": 25100,
+          "tasMph": 383
+        },
+        "calibrationRole": "WITHHELD",
+        "note": "Both maximum speed values; different full-throttle heights and dates"
+      }
+    ]
+  },
+  "p38g": {
+    "specimen": "42-12687",
+    "variant": "P-38G-1",
+    "cleanLevelSpeed": [
+      {
+        "altFt": 5000,
+        "tasMph": 346.5,
+        "bhpPerEngine": 1220,
+        "mapInHg": 44.7
+      },
+      {
+        "altFt": 14700,
+        "tasMph": 378,
+        "bhpPerEngine": 1220,
+        "mapInHg": 44.7
+      },
+      {
+        "altFt": 22600,
+        "tasMph": 404,
+        "bhpPerEngine": 1225,
+        "mapInHg": 44.7
+      },
+      {
+        "altFt": 24400,
+        "tasMph": 403,
+        "bhpPerEngine": 1175,
+        "mapInHg": 43.2
+      },
+      {
+        "altFt": 30000,
+        "tasMph": 396,
+        "bhpPerEngine": 980,
+        "mapInHg": 36
+      }
+    ],
+    "bombLoadedSpeed": null,
+    "qualification": "The user-provided P-38 bomb graph is NOT a verified bomb-loaded Wright Field report. Do not infer loadout-specific test points from the clean P-38G report."
+  },
+  "fw190a4": {
+    "aircraft": "Fw 190 A-4",
+    "specimen": "619",
+    "test": "Flight Report Nr. 1, Nov 1942",
+    "baseline": {
+      "speedMph": 321,
+      "weightKg": 3670,
+      "altFt": 0,
+      "powerRating": "combat"
+    },
+    "stages": [
+      {
+        "id": "clean",
+        "name": "Clean, full wheel fairings",
+        "speedMph": 321,
+        "weightKg": 3670,
+        "reportedLossMph": 0,
+        "status": "documented"
+      },
+      {
+        "id": "wheel-doors",
+        "name": "Fixed inner wheel doors",
+        "speedMph": 318,
+        "weightKg": null,
+        "reportedLossMph": 3,
+        "status": "weight_unrecorded"
+      },
+      {
+        "id": "etc501",
+        "name": "ETC 501 intermediate rack",
+        "speedMph": 317,
+        "weightKg": 3720,
+        "reportedLossMph": 4,
+        "status": "documented"
+      },
+      {
+        "id": "bomb-locks",
+        "name": "4× locks 50, without bombs",
+        "speedMph": 310,
+        "weightKg": 3797,
+        "reportedLossMph": 11,
+        "status": "documented"
+      },
+      {
+        "id": "four-bombs",
+        "name": "Rack plus 4×50 kg bombs",
+        "speedMph": 293,
+        "weightKg": 3997,
+        "reportedLossMph": 29,
+        "status": "source_loss_rounded; 321-293=28"
+      }
+    ],
+    "furtherControl": {
+      "name": "Report Nr. 3, same airframe but later installation state",
+      "lossesKmH": [
+        22,
+        58,
+        73
+      ],
+      "configurations": [
+        "3 ETC501 racks",
+        "3 racks plus auxiliary tanks",
+        "3 racks plus tanks and 250kg bomb"
+      ]
+    },
+    "pitotCaveat": {
+      "sourceId": "fw190a4_619_report5",
+      "extraIasUnderReadKmH": [
+        6,
+        7
+      ],
+      "applicable": "racks versus tanks in Feb 1943, not automatically the 1942 report 1 TAS values"
+    },
+    "qualification": "Publisher translation of period German manufacturer report; original image available but not page-compared. Reporter states boost control was initially misadjusted; same report values treated as documented table. Wheel doors mass unspecified. Speed ratio comparison assumes same propulsive power and same-altitude standard conditions, and does not directly measure CdS."
+  }
+}
+</script><script>/* Universal Model v0.2 — shared equations for three aircraft, deliberately provisional coefficients.
+   SI internal units. Greg worksheets are regression comparators, NOT measured aircraft data. */
+(function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.UniversalAirPhysics=api;})(typeof globalThis!=='undefined'?globalThis:this, function(){
+'use strict';
+const MPH=.44704,FT=.3048,HP=745.6998716,LBF=4.4482216153,RHO0=1.225,PS0=101325,T0=288.15,R=287.05287,G=9.80665,GAMMA=1.4;
+function isa(ft){if(!Number.isFinite(ft)||ft<0||ft>36089)throw Error('Atmosphere valid only for 0–36,089 ft');const h=ft*FT,T=T0-.0065*h,p=PS0*Math.pow(T/T0,5.2558797),rho=p/(R*T),a=Math.sqrt(GAMMA*R*T);return {T,p,rho,a,sigma:rho/RHO0};}
+function trueFromCAS(mph,ft){const at=isa(ft),M0=mph*MPH/Math.sqrt(GAMMA*R*T0),impact=PS0*(Math.pow(1+.2*M0*M0,3.5)-1),M=Math.sqrt(5*(Math.pow(1+impact/at.p,2/7)-1));return M*at.a/MPH;}
+function casFromTrue(mph,ft){const at=isa(ft),M=mph*MPH/at.a,impact=at.p*(Math.pow(1+.2*M*M,3.5)-1),M0=Math.sqrt(5*(Math.pow(1+impact/PS0,2/7)-1));return M0*Math.sqrt(GAMMA*R*T0)/MPH;}
+function tasFrom(mph,kind,alt){if(kind==='TAS')return mph;if(kind==='EAS')return mph/Math.sqrt(isa(alt).sigma);if(kind==='CAS')return trueFromCAS(mph,alt);throw Error('IAS needs a specimen-specific instrument/position calibration');}
+// Calibration rows must be sourced IAS/CAS pairs for one aircraft, installation,
+// and configuration. Deliberately forbid extrapolation (notably near stall).
+function casFromIAS(iasMph,calibration){
+ if(!Number.isFinite(iasMph)||iasMph<=0)throw Error('Invalid indicated airspeed');
+ if(!calibration||!Array.isArray(calibration.points)||calibration.points.length<2||!calibration.source||!calibration.configuration)
+   throw Error('IAS needs a sourced, configuration-specific calibration');
+ const p=[...calibration.points].sort((a,b)=>a.iasMph-b.iasMph);
+ for(let i=0;i<p.length;i++){
+   if(!(p[i].iasMph>0&&p[i].casMph>0)||i&&!(p[i].iasMph>p[i-1].iasMph&&p[i].casMph>p[i-1].casMph))
+     throw Error('IAS calibration nodes must be positive and strictly increasing');
+ }
+ if(iasMph<p[0].iasMph||iasMph>p.at(-1).iasMph)return null;
+ for(let i=0;i<p.length;i++){
+   if(iasMph===p[i].iasMph)return p[i].casMph;
+   if(i&&iasMph<p[i].iasMph){const t=(iasMph-p[i-1].iasMph)/(p[i].iasMph-p[i-1].iasMph);return p[i-1].casMph+t*(p[i].casMph-p[i-1].casMph);}
+ }
+ return p.at(-1).casMph;
+}
+function resolveAirspeed(valueMph,kind,altFt,calibration=null){
+ if(!(Number.isFinite(valueMph)&&valueMph>0))throw Error('Invalid airspeed');
+ let tas,cas,correction='none';
+ if(kind==='IAS'){
+   cas=casFromIAS(valueMph,calibration);
+   if(cas===null)return {status:'outside-calibration-range',input:{valueMph,kind,altFt},source:calibration.source};
+   tas=trueFromCAS(cas,altFt);correction='IAS to CAS once, sourced linear interpolation';
+ }else{tas=tasFrom(valueMph,kind,altFt);cas=casFromTrue(tas,altFt);}
+ return {status:'resolved',input:{valueMph,kind,altFt},...airspeeds(tas,altFt),cas,
+   correction,source:kind==='IAS'?calibration.source:null,configuration:kind==='IAS'?calibration.configuration:null};
+}
+function airspeeds(tas,ft){const a=isa(ft);return {tas,cas:casFromTrue(tas,ft),eas:tas*Math.sqrt(a.sigma),ias:null,mach:tas*MPH/a.a};}
+function interp(rows,alt){const p=[...rows].sort((a,b)=>a.altFt-b.altFt);if(!p.length||alt<p[0].altFt||alt>p.at(-1).altFt)return null;for(let i=0;i<p.length;i++){if(Math.abs(p[i].altFt-alt)<1e-8)return {...p[i]};if(i&&alt<p[i].altFt){const q=p[i-1],r=p[i],t=(alt-q.altFt)/(r.altFt-q.altFt);return {altFt:alt,bhp:q.bhp+t*(r.bhp-q.bhp),mapInHg:q.mapInHg!=null&&r.mapInHg!=null?q.mapInHg+t*(r.mapInHg-q.mapInHg):null,method:'linear between sourced engine nodes'};}}return {...p.at(-1)};}
+function shaftPower(ac,alt,rating,gear){const rr=ac.powerRatings[rating||ac.defaultRating];if(!rr)return null;const gg=gear||ac.defaultGear;let candidates=[];if(gg==='auto'){for(const [g,rows] of Object.entries(rr.gears)){const s=interp(rows,alt);if(s)candidates.push({gear:g,...s});}}else{const s=interp(rr.gears[gg]||[],alt);if(s)candidates.push({gear:gg,...s});}if(!candidates.length)return null;const best=candidates.sort((a,b)=>b.bhp-a.bhp)[0];return {...best,notes:rr.notes,rating:rating||ac.defaultRating};}
+function propEta(ac,alt,tasMph,bhp,profile='C'){const v=tasMph*MPH,at=isa(alt);let eta=.8,debug={};if(profile==='A'){eta=.8;}else if(profile==='B'){eta=.8-.045*(tasMph-320)/150;}else if(profile==='C'){
+  const params=ac.propGeometry||{};
+  if(!(params.diameterFt>0&&params.propRpm>0))return null;
+  const n=params.propRpm/60,D=params.diameterFt*FT,J=v/(n*D),Cp=bhp*HP/(at.rho*n**3*D**5),tipMach=Math.hypot(v,Math.PI*n*D)/at.a;
+  eta=.83*Math.exp(-.075*Math.pow((J-1.65)/.8,2)-.04*Math.pow((Cp-.36)/.85,2))*Math.exp(-.26*Math.pow(Math.max(0,tipMach-.92),2));debug={J,Cp,tipMach};
+ }else throw Error('Unknown profile');return {eta:Math.max(.05,Math.min(.91,eta)),...debug,method:'heuristic; not a NACA measured propeller map'};}
+function geometry(ac){const S=ac.wingAreaM2,b=ac.spanM;if(!(S>0&&b>0))throw Error('Geometry unavailable');return {S,b,AR:b*b/S};}
+function dragBreakdown(ac,alt,tasMph,weightLb,cd0,e,n=1){const v=tasMph*MPH,at=isa(alt),geo=geometry(ac),W=weightLb*LBF,q=.5*at.rho*v*v,CL=n*W/(q*geo.S),dParasite=q*geo.S*cd0,dInd=n*n*W*W/(q*Math.PI*e*geo.b*geo.b),drag=dParasite+dInd;return {q,CL,parasiteLbf:dParasite/LBF,inducedLbf:dInd/LBF,totalLbf:drag/LBF,dParasite,dInd,drag,requiredHp:drag*v/HP,parasiteHp:dParasite*v/HP,inducedHp:dInd*v/HP};}
+function cd0FromAnchor(ac,profile,e,sourceOnly=false){const ref=ac.calibration,at=ref.altFt,sp=ref.tasMph,sh=shaftPower(ac,at,ref.rating,ref.gear);if(!sh)return null;const prop=propEta(ac,at,sp,sh.bhp,profile);if(!prop)return null;const V=sp*MPH,q=.5*isa(at).rho*V*V,W=ac.weightLb*LBF,b=ac.spanM,S=ac.wingAreaM2;const total=prop.eta*sh.bhp*HP/V,ind=W*W/(q*Math.PI*e*b*b),cd0=(total-ind)/(q*S);return {cd0,etaAtAnchor:prop.eta,anchorSpeed:sp,anchorAlt:at,origin:'calibrated from one speed anchor; NOT a measured drag polar',valid:cd0>.005&&cd0<.085};}
+function evaluated(ac,alt,tasMph,opts={}){const profile=opts.profile||'C',polar=opts.polar,e=polar?polar.e:(opts.e??.78),storesWeightLb=opts.storesWeightLb??0,addedDragAreaM2=opts.addedDragAreaM2??0,weight=(opts.weightLb??ac.weightLb)+storesWeightLb,clMax=opts.clMax??ac.clMaxAssumed,structG=opts.structG??7,rating=opts.rating||ac.defaultRating,gear=opts.gear||'auto';if(!(weight>0&&clMax>0&&e>0&&e<=1&&Number.isFinite(storesWeightLb)&&storesWeightLb>=0&&Number.isFinite(addedDragAreaM2)&&addedDragAreaM2>=0))return {status:'invalid-input'};
+ if(polar&&(opts.e!==undefined||opts.refit||!(polar.cd0>.005&&polar.cd0<.085)||typeof polar.source!=='string'||!polar.source.trim()))return {status:'invalid-polar-input',reason:'Explicit polar requires sourced CD0 and e; do not simultaneously refit or override e'};
+ const shaft=shaftPower(ac,alt,rating,gear);if(!shaft)return {status:'no-engine-source',aircraft:ac.name,altFt:alt,reason:'No source-bounded engine power at selected altitude/rating/gear'};
+ const cdData=polar?{cd0:polar.cd0,valid:true,origin:polar.source}:cd0FromAnchor(ac,opts.refit?profile:'C',opts.refit?e:.78);
+ if(!cdData||!cdData.valid)return {status:'no-credible-drag-anchor'};
+ const prop=propEta(ac,alt,tasMph,shaft.bhp,profile);if(!prop)return {status:'no-prop-input'};
+ const effectiveCd0=cdData.cd0+addedDragAreaM2/ac.wingAreaM2;
+ const D=dragBreakdown(ac,alt,tasMph,weight,effectiveCd0,e,1),V=tasMph*MPH,W=weight*LBF,geo=geometry(ac),q=D.q;
+ const Pav=prop.eta*shaft.bhp*HP,Ps=(Pav-D.drag*V)/W,stallEas=Math.sqrt(2*W/(RHO0*geo.S*clMax))/MPH,air=airspeeds(tasMph,alt),nLift=q*geo.S*clMax/W;
+ const feasible=nLift>=1;const nPower2=(Pav/V-D.dParasite)/Math.max(1e-9,D.dInd),powerOk=feasible&&nPower2>=1;const nInst=feasible?Math.min(nLift,structG):null;
+ const nSust=powerOk?Math.min(nInst,Math.sqrt(nPower2)):null;
+ const turn=n=>n!=null&&n>=1?G*Math.sqrt(Math.max(0,n*n-1))/V*180/Math.PI:null;
+ return {status:feasible?'modelled':'below-provisional-stall',aircraft:ac.name,altFt:alt,tasMph,air,weightLb:weight,engine:shaft,prop,cd0:effectiveCd0,cleanCd0:cdData.cd0,dragPolarSource:cdData.origin,externalDragAreaM2:addedDragAreaM2,storesWeightLb,oswald:e,clMax,stallEasMph:stallEas,drag:D,
+   power:{shaftHp:shaft.bhp,propulsiveHp:Pav/HP,requiredHp:D.requiredHp,excessHp:(Pav-D.drag*V)/HP,psMps:Ps,climbFpm:feasible?Ps*196.850394:null},
+   limits:{nLift,nPower:powerOk?Math.sqrt(nPower2):null,nInst,nSust,instantDegSec:turn(nInst),sustDegSec:turn(nSust),structG},
+   provenance:polar?'scenario using an explicitly supplied drag polar plus engine/prop assumptions; polar source is not necessarily an independent measurement':'modeled from sourced geometry/engine nodes, per-aircraft CD0 anchor fit and assumed e/CLmax/prop profile; not an independently validated turn curve'};
+}
+function maxSpeed(ac,alt,opts={}){let crossing=null,last=null;for(let tas=90;tas<=590;tas+=2){const r=evaluated(ac,alt,tas,opts);if(r.status==='no-engine-source')return null;if(r.power&&last?.power&&last.power.excessHp>=0&&r.power.excessHp<0)crossing=[tas-2,tas];last=r;}if(!crossing)return null;let [lo,hi]=crossing;for(let i=0;i<40;i++){const mid=(lo+hi)/2,rr=evaluated(ac,alt,mid,opts);if(rr.power.excessHp>0)lo=mid;else hi=mid;}return (lo+hi)/2;}
+function greg109At(data,speed){const reference=data.greg.bf109f4.reference,top=reference.at(-1),v0=top[0];const paraDrag=top[1]*(speed/v0)**2,indDrag=top[2]*(v0/speed)**2,reqHp=(paraDrag+indDrag)*speed/375.0;
+ const one=reference[0],last=reference.at(-1);let av=null;for(let i=0;i<reference.length;i++){const x=reference[i];if(Math.abs(speed-x[0])<1e-6){av=x[7];break;}if(i&&speed<x[0]){const lo=reference[i-1],w=(speed-lo[0])/(x[0]-lo[0]);av=lo[7]+w*(x[7]-lo[7]);break;}}if(av==null&&speed>=last[0])av=last[7];return {paraDrag,indDrag,totalDrag:paraDrag+indDrag,reqHp,availableHp:av,powerN:av!=null&&av>=reqHp?Math.sqrt(Math.max(0,(av-paraDrag*speed/375)/(indDrag*speed/375))):null};}
+function inferredGregF4(ac,sourceGreg){const row=sourceGreg.reference.at(-1),v=row[0]*MPH,q=.5*RHO0*v*v,W=ac.weightLb*LBF,DI=row[2]*LBF,DP=row[1]*LBF;return {oswald:W*W/(q*Math.PI*ac.spanM*ac.spanM*DI),cd0:DP/(q*ac.wingAreaM2),parasiteShare:row[1]/row[3],inducedShare:row[2]/row[3],source:'Greg 109F4 screenshot, assumed 6,371 lb weight; inferred parameters not independently measured'};}
+function inferredGregP47(ac,greg){const row=greg.reference.at(-1),v=row[0]*MPH,q=.5*RHO0*v*v,W=13065*LBF,DiHp=row[3],DpHp=row[2],Di=(DiHp*HP/v),Dp=DpHp*HP/v;return {oswald:W*W/(q*Math.PI*ac.spanM**2*Di),cd0:Dp/(q*ac.wingAreaM2),weightLb:13065,source:'Greg high-power P-47 worksheet; likely D-28, not B; power output cannot be transferred to P-47B'};}
+// v0.3: use actual climb-test manifold pressure; the speed-test turbo-limited
+// shaft power is NOT automatically achievable at lower climb TAS.
+function climbConditionEngine(ac,point){
+ const level=shaftPower(ac,point.altFt,point.rating||ac.defaultRating,'auto');
+ if(!level)return {status:'no-engine-source'};
+ if(!(level.mapInHg>0&&point.observedMapInHg>0&&point.engineRpm>0))return {status:'missing-climb-map'};
+ const fraction=Math.min(1,point.observedMapInHg/level.mapInHg);
+ return {status:'estimated',levelBhP:level.bhp,levelMapInHg:level.mapInHg,climbMapInHg:point.observedMapInHg,
+    climbBhP:level.bhp*fraction,fraction,notes:'Constant-RPM MAP-proportional shaft power proxy, capped at documented military rating; not torque-meter-observed climb horsepower.'};
+}
+function climbPrediction(ac,point,opts={}){
+ if(!(point.altFt>=0&&point.tasMph>0&&Number.isFinite(point.fpm)))return {status:'invalid-climb-point'};
+ const baseline=evaluated(ac,point.altFt,point.tasMph,opts);
+ if(baseline.status!=='modelled')return {status:baseline.status,reason:baseline.reason};
+ const engine=climbConditionEngine(ac,point);
+ if(engine.status!=='estimated')return {status:engine.status};
+ const prop=propEta(ac,point.altFt,point.tasMph,engine.climbBhP,opts.profile||'C');
+ if(!prop)return {status:'no-prop-model'};
+ const weight=(opts.weightLb??ac.weightLb)+(opts.storesWeightLb??0),e=baseline.oswald,addedCd0=opts.addedCd0??0;
+ if(!Number.isFinite(addedCd0)||addedCd0<0)return {status:'invalid-added-drag'};
+ const drag=dragBreakdown(ac,point.altFt,point.tasMph,weight,baseline.cd0+addedCd0,e,1);
+ const W=weight*LBF,V=point.tasMph*MPH,power=prop.eta*engine.climbBhP*HP;
+ const fpm=(power-drag.drag*V)/W*196.8503937;
+ return {status:'estimated',altFt:point.altFt,tasMph:point.tasMph,observedFpm:point.fpm,
+    baselineFpm:baseline.power.climbFpm,predictedFpm:fpm,residualFpm:fpm-point.fpm,
+    engine,prop,addedCd0,extraDragLbf:dragBreakdown(ac,point.altFt,point.tasMph,weight,addedCd0,e,1).parasiteLbf,
+    dynamicPressure:drag.q,shaftHp:engine.climbBhP,propulsiveHp:power/HP,
+    note:'Derived using observed climb MAP, approximated climb BHP, and optional equivalent configuration drag. Not a measured cooling-drag coefficient.'};
+}
+function equivalentClimbDrag(ac,point,opts={}){
+ const base=climbPrediction(ac,point,{...opts,addedCd0:0});if(base.status!=='estimated')return {status:base.status};
+ const W=((opts.weightLb??ac.weightLb)+(opts.storesWeightLb??0))*LBF,V=point.tasMph*MPH;
+ const gapPower=(base.predictedFpm-point.fpm)/196.8503937*W;
+ const dCd0=gapPower/(V*base.dynamicPressure*ac.wingAreaM2);
+ return {status:Number.isFinite(dCd0)?'derived':'invalid',addedCd0:dCd0,calibrationAltitudeFt:point.altFt,
+   note:'One-point fit of aggregate climb-vs-speed-configuration loss. Could include cooling drag, installed propeller efficiency, or remaining engine error. Not independently measured drag.'};
+}
+// Greg's D-28-style sheet is an independent numerical POWER SCENARIO benchmark.
+// We change shaft horsepower ONLY: common weight, same prop efficiency curve and
+// same parasitic/induced power polar. This is not a historical B vs D flight trial.
+function gregP47PowerPoint(greg,speedMph,shaftHp){
+ if(!(shaftHp>0&&speedMph>0))return null;
+ const rows=greg.reference,last=rows.at(-1),first=rows[0];
+ if(speedMph<first[0]||speedMph>last[0])return null;
+ let available=null;
+ for(let i=0;i<rows.length;i++){
+  const r=rows[i];if(Math.abs(speedMph-r[0])<1e-8){available=r[4];break;}
+  if(i&&speedMph<r[0]){const prev=rows[i-1],t=(speedMph-prev[0])/(r[0]-prev[0]);available=prev[4]*(1-t)+r[4]*t;break;}
+ }
+ const parasiteHp=last[2]*(speedMph/last[0])**3,inducedHp=last[3]*last[0]/speedMph;
+ const delivered=available*shaftHp/2600,required=parasiteHp+inducedHp;
+ const nPower=delivered>=required?Math.sqrt(Math.max(0,(delivered-parasiteHp)/inducedHp)):null;
+ return {speedMph,shaftHp,availableHp:delivered,propEta:available/2600,parasiteHp,inducedHp,
+  requiredHp:required,excessHp:delivered-required,nPower,
+  provenance:'Greg D-28-style 2600 hp worksheet; 2000 hp variant is a POWER-ONLY counterfactual with IDENTICAL drag/weight/propeller, not a documented P-47B test.'};
+}
+function gregP47MaxSpeed(greg,shaftHp){
+ let earlier=null,cross=null;
+ for(let speed=greg.reference[0][0];speed<=greg.reference.at(-1)[0];speed++){
+  const r=gregP47PowerPoint(greg,speed,shaftHp);
+  if(earlier&&earlier.excessHp>=0&&r.excessHp<=0){cross=[speed-1,speed];break;}
+  earlier=r;
+ }
+ if(!cross)return null;
+ let [lo,hi]=cross;
+ for(let i=0;i<32;i++){
+  const mid=(lo+hi)/2;
+  if(gregP47PowerPoint(greg,mid,shaftHp).excessHp>=0)lo=mid;else hi=mid;
+ }
+ return (lo+hi)/2;
+}
+
+// v0.4: generic maximized steady-climb prediction, with no aircraft-specific
+// drag/power refitting to the target climb results. This is a *model* maximum,
+// not a documented climbing IAS or flight procedure.
+function bestClimb(ac,altFt,opts={}){
+ const lo=opts.minTasMph??100,hi=opts.maxTasMph??290,step=opts.stepMph??1;
+ if(!(step>0&&lo>0&&hi>lo))throw Error('Invalid climb-search speed range');
+ let best=null,viable=0;
+ for(let tas=lo;tas<=hi+1e-9;tas+=step){
+   const r=evaluated(ac,altFt,tas,opts);
+   if(r.status==='no-engine-source')return {status:'no-engine-source'};
+   if(r.status!=='modelled'||!Number.isFinite(r.power?.climbFpm))continue;
+   // If a specific report records a different climb MAP, use it explicitly.
+   let shaftHp=r.engine.bhp,prop=r.prop,engineMethod='rating curve, no climb MAP correction';
+   if(opts.climbMapInHg!=null){
+     if(!(opts.climbMapInHg>0&&r.engine.mapInHg>0))return {status:'missing-climb-map'};
+     shaftHp=Math.min(r.engine.bhp,r.engine.bhp*opts.climbMapInHg/r.engine.mapInHg);
+     prop=propEta(ac,altFt,tas,shaftHp,opts.profile||'C');
+     engineMethod='climb MAP / level MAP proxy (not measured torque)';
+   }
+   const added=opts.addedCd0??0;
+   if(!(Number.isFinite(added)&&added>=0))return {status:'invalid-added-drag'};
+   const V=tas*MPH,weightLb=(opts.weightLb??ac.weightLb)+(opts.storesWeightLb??0),W=weightLb*LBF;
+   const additionalPower=.5*isa(altFt).rho*V*V*ac.wingAreaM2*added*V;
+   const oldPropPower=r.prop.eta*r.engine.bhp*HP;
+   const newPropPower=prop.eta*shaftHp*HP;
+   const newExcess=(r.power.excessHp*HP)-(oldPropPower-newPropPower)-additionalPower;
+   const fpm=newExcess/W*196.8503937;
+   viable++;
+   if(!best||fpm>best.climbFpm)best={tasMph:tas,climbFpm:fpm,shaftHp,propEta:prop.eta,powerMethod:engineMethod};
+ }
+ if(!best)return {status:'no-valid-flight-condition'};
+ return {status:'modeled-peak',altFt,rating:opts.rating||ac.defaultRating,
+    profile:opts.profile||'C',best,...best,viableSpeedSamples:viable,
+    sourceStatus:'calculated optimization; climb speed not directly reported',
+    addedCd0:opts.addedCd0??0};
+}
+// Comparative check: at the same documented altitude, vary the engine rating,
+// holding aircraft, weight, prop category and drag polar fixed. Difference in
+// best climb rates is an independent check of power sensitivity; historical
+// report results must not be used to fit the two model outputs.
+function matchedPowerClimb(ac,altFt,ratingA,ratingB,opts={}){
+ const a=bestClimb(ac,altFt,{...opts,rating:ratingA}),
+       b=bestClimb(ac,altFt,{...opts,rating:ratingB});
+ if(a.status!=='modeled-peak'||b.status!=='modeled-peak')return {status:'missing-rating',a,b};
+ const low=shaftPower(ac,altFt,ratingA,'auto'),high=shaftPower(ac,altFt,ratingB,'auto');
+ return {status:'modeled-comparison',altFt,ratingA,ratingB,a,b,
+   deltaClimbFpm:b.climbFpm-a.climbFpm,deltaShaftHp:high.bhp-low.bhp,
+   provenance:'calculated from frozen speed-calibrated polar; NO climb-rate calibration'};
+}
+return Object.freeze({isa,airspeeds,tasFrom,trueFromCAS,casFromTrue,casFromIAS,resolveAirspeed,shaftPower,propEta,dragBreakdown,cd0FromAnchor,evaluated,maxSpeed,greg109At,inferredGregF4,inferredGregP47,climbConditionEngine,climbPrediction,equivalentClimbDrag,gregP47PowerPoint,gregP47MaxSpeed,bestClimb,matchedPowerClimb});
+});
+</script><script>/* Universal Model v0.5 — source-condition audit and cross-aircraft check.
+ * No aircraft-specific adjustment is imported into the shared physics solver.
+ * Do not treat the two May 1944 Mustang memos as independent flight tests.
+ */
+(function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.UniversalClimbAudit=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
+'use strict';
+function run(M,D){
+ const out={version:'v0.5',status:'experimental predictions, no historical-turn certification',method:'same universal solver; speed-calibrated CD0 held fixed; correct report-specific takeoff mass; Greg only as arithmetic check',profiles:{},p51Reports:[]};
+ const p47=D.aircraft.p47b,mustang=D.aircraft.p51b;
+ for(const profile of ['A','B','C']){
+  const fit=M.equivalentClimbDrag(p47,p47.observedClimb[0],{profile});
+  const r47=p47.observedClimb.map((obs,index)=>{const q=M.climbPrediction(p47,obs,{profile,addedCd0:fit.addedCd0});return {altFt:obs.altFt,reportedFpm:obs.fpm,predictedFpm:q.predictedFpm,residualFpm:q.residualFpm,role:index===0?'fit':'withheld'};});
+  const p47Hold=r47.filter(r=>r.role==='withheld');
+  const reportRows=[];
+  for(const rep of mustang.climbReports){
+   for(const obs of rep.observations){
+    const r=M.bestClimb(mustang,obs.altFt,{rating:obs.rating,profile,weightLb:rep.takeoffWeightLb,minTasMph:100,maxTasMph:280});
+    reportRows.push({reportId:rep.id,reportDate:rep.date,reportedWeightLb:rep.takeoffWeightLb,altFt:obs.altFt,rating:obs.rating,reportedFpm:obs.fpm,modelFpm:r.status==='modeled-peak'?r.climbFpm:null,
+      residualFpm:r.status==='modeled-peak'?r.climbFpm-obs.fpm:null,predictedBestTasMph:r.status==='modeled-peak'?r.tasMph:null,
+      status:r.status,matchedClimbSpeed:false,independentSource:false,sourceUrl:rep.url});
+   }
+  }
+  const m20=reportRows.filter(r=>r.reportId==='wright-1944-05-20'),m15=reportRows.filter(r=>r.reportId==='wright-1944-05-15');
+  const delta=m20.length===2&&m20.every(x=>x.modelFpm!=null)?m20[1].modelFpm-m20[0].modelFpm:null;
+  const mae=rows=>{const good=rows.filter(x=>x.residualFpm!=null);return good.length?good.reduce((s,x)=>s+Math.abs(x.residualFpm),0)/good.length:null;};
+  out.profiles[profile]={p47:{fittedEquivalentCd0:fit.addedCd0,profileSpecificFit:true,observations:r47,holdoutMaeFpm:mae(p47Hold)},
+   p51:{observations:reportRows,may20MaeFpm:mae(m20),may15MaeFpm:mae(m15),may20ObservedClimbGainFpm:560,may20PredictedClimbGainFpm:delta,may20GainResidualFpm:delta==null?null:delta-560,
+    warning:'20 May memo reports 9,335 lb takeoff; 15 May memo separately reports 9,680 lb; two summaries cover same airplane/test programme; climb TAS not independently known.'}};
+ }
+ return out;
+}
+return Object.freeze({run});
+});
+</script><script>/* Universal three-aircraft model v0.6: zero-engine-refit configuration changes.
+   Physical model: D = Dp,clean(1+delta) + Di,clean(weightRatio)^2 for level flight.
+   At fixed altitude and shaft power, relative power balance is:
+   1 = fp * (1+delta) * (Vloaded/Vclean)^3 + fi * weightRatio^2 * (Vclean/Vloaded).
+   No specific aircraft's propeller/blade geometry is implied. Shaft power and
+   propulsive efficiency are provisionally assumed equal between speed points.
+   This approximate equation must not be mistaken for a verified Mosquito polar. */
+(function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.UniversalStoresValidation=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
+'use strict';
+function requireFinite(x,label){if(!Number.isFinite(x))throw Error('Invalid '+label);}
+function fitParasiteIncrease(cleanMph,loadedMph,weightRatio,inducedShare){
+ [cleanMph,loadedMph,weightRatio,inducedShare].forEach((v,i)=>requireFinite(v,['clean','loaded','weightRatio','inducedShare'][i]));
+ if(cleanMph<=0||loadedMph<=0||loadedMph>=cleanMph||weightRatio<=0||inducedShare<0||inducedShare>=.5)throw Error('Invalid matched-condition stores fitting inputs');
+ const r=loadedMph/cleanMph,f=inducedShare;
+ const delta=(1-(1-f)*r**3-f*weightRatio**2/r)/((1-f)*r**3);
+ if(!(delta>=0))throw Error('Inputs imply negative added parasite drag; inspect test conditions');
+ return {parasiteDragIncrease:delta,speedRatio:r,inducedShare:f,weightRatio,scope:'conditional inverse fit to unequal-altitude peak speeds, NOT a direct drag measurement'};
+}
+function predictLoaded(cleanMph,weightRatio,inducedShare,delta){
+ [cleanMph,weightRatio,inducedShare,delta].forEach((v,i)=>requireFinite(v,['clean','weightRatio','inducedShare','dragIncrease'][i]));
+ if(!(cleanMph>0&&weightRatio>0&&inducedShare>=0&&inducedShare<.5&&delta>=0))throw Error('Invalid stores calculation');
+ const equation=r=>(1-inducedShare)*(1+delta)*r**3+inducedShare*weightRatio**2/r-1;
+ // Physical high-speed branch only; reject an unattainable speed balance.
+ let lo=.55,hi=1,scan=null;
+ for(let i=1;i<=450;i++){
+   const r=1-i*.001; if(r<.55)break;
+   if(equation(r)<=0){scan=[r,r+.001];break;}
+ }
+ if(!scan)return {status:'no-supported-level-speed',reason:'No valid high-speed root; stores too large for reduced model'};
+ [lo,hi]=scan;
+ for(let i=0;i<60;i++){
+   const mid=(lo+hi)/2;
+   if(equation(mid)>0)hi=mid;else lo=mid;
+ }
+ const speed=cleanMph*(lo+hi)/2;
+ return {status:'modeled',loadedMph:speed,lossMph:cleanMph-speed,deltaParasite:delta,weightRatio,inducedShare};
+}
+function audit(data,{inducedShareLow=.11,inducedShareHigh=.16,mode='raw'}={}){
+ const [low,high]=data.mosquito.gears,w=data.mosquito.loadedTakeoffWeightLb/data.mosquito.cleanTakeoffWeightLb;
+ const lowLoadedMph=mode==='raf-corrected'?low.clean.tasMph-16.5:low.loaded.tasMph;
+ const fit=fitParasiteIncrease(low.clean.tasMph,lowLoadedMph,w,inducedShareLow);
+ const hold=predictLoaded(high.clean.tasMph,w,inducedShareHigh,fit.parasiteDragIncrease);
+ return {mode,fit,hold,reference:{low,high,weightRatio:w,reportedPenaltyMph:data.mosquito.reportedSourcePenaltyMph},highResidualMph:hold.status==='modeled'?hold.loadedMph-high.loaded.tasMph:null,
+  warning:'Calibration low peak is at 13,800/13,000 ft; high holdout peaks are 25,700/25,100 ft. Constant η and same-altitude power are assumptions, and airframe deterioration confounds the paired results. Not independent aircraft-accuracy validation.'};
+}
+// Independent Focke-Wulf evidence: no coefficient is fitted to the Fw result when
+// evaluating transfer of a Mosquito-derived constant *fractional* store penalty.
+// This is a deliberately harsh/generalization test; different rack geometries
+// should NOT be assumed to have the same fitted percentage.
+function auditFw190(data,{sourceMode='raw',inducedShare=.07}={}){
+ if(!(inducedShare>=0&&inducedShare<.5))throw Error('Invalid induced share');
+ const fw=data.fw190a4,clean=fw.baseline;
+ const mosquito=audit(data,{mode:sourceMode});
+ const rows=fw.stages.map(stage=>{
+  const w=stage.weightKg!=null?stage.weightKg/clean.weightKg:null;
+  const sourcePenalty=clean.speedMph-stage.speedMph;
+  // The transferred Mosquito penalty describes a complete external bomb/rack pack.
+  // Do not pretend it also predicts a clean airframe or every partial Fw rack stage.
+  const transferable=stage.id==='four-bombs'&&w!=null?predictLoaded(clean.speedMph,w,inducedShare,mosquito.fit.parasiteDragIncrease):null;
+  const implied=w!=null&&sourcePenalty>0?fitParasiteIncrease(clean.speedMph,stage.speedMph,w,inducedShare).parasiteDragIncrease:stage.id==='clean'?0:null;
+  return {...stage,sourcePenalty,wRatio:w,impliedParasiteFraction:implied,transferMph:stage.id==='clean'?clean.speedMph:(transferable?.loadedMph??null),transferResidualMph:transferable?.status==='modeled'?transferable.loadedMph-stage.speedMph:null};
+ });
+ const bomb=rows.find(x=>x.id==='four-bombs');
+ return {fw,inducedShare,mosquitoDelta:mosquito.fit.parasiteDragIncrease,sourceMode,rows,bomb,
+  warning:'Different bomb/rack geometry: transferring one Mosquito *fractional drag penalty* to every Fw store configuration is an intentionally falsifiable baseline, NOT a recommended universal stores coefficient. Fw weight/power corrections remain uncertain. IAS correction changes with external tank installation (Report 5).'};
+}
+return Object.freeze({fitParasiteIncrease,predictLoaded,audit,auditFw190});
+});
+</script><script>
+(function(){'use strict';const D=JSON.parse(document.getElementById('cases').textContent),M=window.UniversalAirPhysics,$=id=>document.getElementById(id),colors={bf109f4:'#f2c47c',p47b:'#88bcdf',p51b:'#a6dab3'},ids=['bf109f4','p47b','p51b'];
+const n=(x,d=1)=>Number.isFinite(x)?Number(x).toLocaleString('en-US',{maximumFractionDigits:d,minimumFractionDigits:d}):'—';const key=()=>({alt:+$('alt').value,speed:+$('speed').value,profile:$('profile').value,e:+$('e').value,weight:+$('weight').value/100,refit:$('calibration').value==='refit'});
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function optFor(id,conf){const ac=D.aircraft[id];return {profile:conf.profile,e:conf.e,weightLb:ac.weightLb*conf.weight,refit:conf.refit,rating:id==='bf109f4'?$('bfmode').value:id==='p51b'?$('p51mode').value:ac.defaultRating};}
+function cards(c){$('altO').textContent=n(c.alt,0)+' ft';$('speedO').textContent=n(c.speed,0)+' mph EAS';$('eO').textContent=n(c.e,2);$('weightO').textContent=n(c.weight*100,0)+'%';
+ $('cards').innerHTML=ids.map(id=>{const ac=D.aircraft[id],tas=M.tasFrom(c.speed,'EAS',c.alt),r=M.evaluated(ac,c.alt,tas,optFor(id,c));
+ const invalid=r.status==='no-engine-source'||r.status==='no-credible-drag-anchor';if(invalid)return `<article class="aircard" style="--air-color:${colors[id]}"><h3>${esc(ac.name)}</h3><div class="num">Unavailable</div><p class="bad">${esc(r.reason||r.status)}.</p><p class="micro">Cannot derive a trusted engine curve here; missing ≠ zero.</p></article>`;
+ const missing=r.limits.nSust==null;return `<article class="aircard" style="--air-color:${colors[id]}"><h3>${esc(ac.name)}</h3><span class="chip">Experimental reconstructed flight envelope</span><div class="num">${missing?'—':n(r.limits.nSust,2)+' g'}</div><p class="micro">Provisional sustained load at ${n(c.speed,0)} mph EAS · ${n(c.alt,0)} ft</p>
+ <div class="metric"><span>Turn rate</span><b>${n(r.limits.sustDegSec,2)} °/s</b></div><div class="metric"><span>Stall speed</span><b>${n(r.stallEasMph,1)} mph EAS*</b></div><div class="metric"><span>Lift-limited g</span><b>${n(r.limits.nLift,2)}</b></div><div class="metric"><span>Power-limited g</span><b>${n(r.limits.nPower,2)}</b></div><div class="metric"><span>Level TAS / CAS</span><b>${n(tas,1)} / ${n(r.air.cas,1)}</b></div><div class="metric"><span>Shaft / propulsive</span><b>${n(r.power.shaftHp,0)} / ${n(r.power.propulsiveHp,0)} hp</b></div><div class="metric"><span>Power required</span><b>${n(r.power.requiredHp,0)} hp</b></div><div class="metric"><span>CD₀ (anchor-fit) / e</span><b>${n(r.cd0,4)} / ${n(r.oswald,2)}</b></div><div class="metric"><span>Assumed CLmax</span><b>${n(r.clMax,2)}</b></div><p class="micro">${r.status==='below-provisional-stall'?'<strong class="bad">Below provisional clean stall; turn unavailable.</strong>':'*Unvalidated stall boundary — NOT a measured CAS/EAS value.'}</p></article>`;}).join('');
+ $('conditions').textContent='All output curves use identical equations. The only differences are aircraft dimensions/weights, engine data and preliminary airframe/propeller inputs. High confidence in calculation consistency is NOT high confidence in historical turning performance.';
+}
+function linesChart(target,series,maxY,kind,alt,c){const W=780,H=315,L=55,R=18,T=20,B=47,speeds=[];for(let v=90;v<=350;v+=5)speeds.push(v);
+ const data={};for(const id of ids){const ac=D.aircraft[id];data[id]=speeds.map(eas=>{const r=M.evaluated(ac,alt,M.tasFrom(eas,'EAS',alt),optFor(id,c));return r.status==='no-engine-source'||!r.power?null:kind==='g'?r.limits.nSust:r.power.psMps;});}
+ const all=Object.values(data).flat().filter(Number.isFinite);const ymax=maxY||Math.max(2,...all)*1.14,ymin=kind==='ps'?Math.min(-18,...all)*1.1:0;const px=x=>L+(x-90)/(350-90)*(W-L-R),py=y=>T+(ymax-y)/(ymax-ymin)*(H-T-B);
+ let svg=`<svg class="chart" role="img" aria-label="Calculated ${kind==='g'?'sustained load factor':'specific excess power'} across equivalent airspeed" viewBox="0 0 ${W} ${H}">`;
+ for(let i=0;i<=5;i++){const y=ymin+(ymax-ymin)*i/5;svg+=`<line class="${Math.abs(y)<.1&&kind==='ps'?'axzero':'svggrid'}" x1="${L}" y1="${py(y)}" x2="${W-R}" y2="${py(y)}"/><text x="${L-6}" y="${py(y)+3}" text-anchor="end">${n(y,1)}</text>`;}
+ for(let v=100;v<=350;v+=50)svg+=`<text x="${px(v)}" y="${H-22}" text-anchor="middle">${v}</text>`;
+ for(const id of ids){let path='',started=false;data[id].forEach((y,i)=>{if(!Number.isFinite(y)){started=false;return;}path+=(started?'L':'M')+px(speeds[i]).toFixed(1)+' '+py(y).toFixed(1)+' ';started=true;});svg+=`<path d="${path}" fill="none" stroke="${colors[id]}" stroke-width="3"/>`;}
+ svg+=`<text x="${W/2}" y="${H-3}" text-anchor="middle">Equivalent airspeed · mph EAS</text></svg>`;
+ target.innerHTML=svg+`<div class="legend">${ids.map(id=>`<span><i style="background:${colors[id]}"></i>${esc(D.aircraft[id].name.split('/')[0])}</span>`).join('')}</div><p class="micro">The curves are model output only. Gap = missing power-data range or invalid/unsustainable condition; zero is never substituted for a gap.</p>`;
+}
+function greg(){const g=$('gregWhich').value,ac=D.aircraft.bf109f4,inf=M.inferredGregF4(ac,D.greg.bf109f4),inf47=M.inferredGregP47(D.aircraft.p47b,D.greg.p47d28);
+ $('gregStats').innerHTML=[['Bf 109 inferred CD₀',n(inf.cd0,5),'From Greg screenshot at 325 mph'],['Bf 109 inferred e',n(inf.oswald,3),'Only at assumed 6,371 lb'],['High-power P-47 inferred e',n(inf47.oswald,3),'Greg sea level · 13,065 lb · NOT P-47B']].map(([t,v,x])=>`<div class="stat"><b>${v}</b><span>${t}</span><p class="micro">${x}</p></div>`).join('');
+ let headings='',trs='';if(g==='bf109f4'){
+ headings='<tr><th>Speed, mph</th><th>Greg parasite, lbf</th><th>Recreated</th><th>Greg induced, lbf</th><th>Recreated</th><th>Greg req, hp</th><th>Recreated</th><th>Available, hp</th></tr>';
+ trs=D.greg.bf109f4.reference.map(r=>{const x=M.greg109At(D,r[0]);return `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${n(x.paraDrag,0)}</td><td>${r[2]}</td><td>${n(x.indDrag,0)}</td><td>${r[4]}</td><td>${n(x.reqHp,1)}</td><td>${r[7]}</td></tr>`;}).join('');
+ }else{
+ headings='<tr><th>Speed, mph</th><th>Greg parasite, hp</th><th>Recreated</th><th>Greg induced, hp</th><th>Recreated</th><th>Greg required, hp</th><th>Recreated</th><th>Available, hp</th></tr>';
+ const last=D.greg.p47d28.reference.at(-1);trs=D.greg.p47d28.reference.map(r=>{const dp=last[2]*Math.pow(r[0]/last[0],3),di=last[3]*last[0]/r[0];return `<tr><td>${r[0]}</td><td>${r[2]}</td><td>${n(dp,1)}</td><td>${r[3]}</td><td>${n(di,1)}</td><td>${r[1]}</td><td>${n(dp+di,1)}</td><td>${r[4]}</td></tr>`;}).join('');
+ }$('gregTable').innerHTML='<table><thead>'+headings+'</thead><tbody>'+trs+'</tbody></table>';
+ const cmp27=D.greg.p47b27k.readings.map(([cas,gg])=>{const tas=M.tasFrom(cas,'CAS',27000),p=M.evaluated(D.aircraft.p47b,27000,tas,{profile:'C',e:.78}),f=(D.greg.p47b27k.bf109ApproximateGReadings.find(r=>r[0]===cas)||[])[1];return `<tr><td>${cas}</td><td>${n(tas,1)}</td><td>${n(gg,2)}</td><td>${n(p.limits?.nSust,2)}</td><td>${n(p.limits?.nSust-gg,2)}</td><td>${n(f,2)}</td><td>Unavailable · missing DB601E power</td></tr>`;}).join('');
+ $('greg27k').innerHTML='<table><thead><tr><th>Greg chart speed, mph*</th><th>TAS if CAS</th><th>Greg P-47B g*</th><th>Our P-47B g</th><th>Difference</th><th>Greg F-4 g*</th><th>Our F-4 g</th></tr></thead><tbody>'+cmp27+'</tbody></table>';
+ const cmp=[.56,.65,.78,.9].map(e=>{const c=M.cd0FromAnchor(ac,'C',e);const r=M.evaluated(ac,0,200,{e,refit:true});return `<tr><td>${n(e,2)}</td><td>${n(c?.cd0,5)}</td><td>${n(r.limits?.nSust,2)} g</td></tr>`;}).join('');$('gregSensitivity').innerHTML='<p>Using the same universal airframe solver at sea level and 200 mph TAS, fitting CD₀ anew to 325 mph for each e. This isolates the impact of an otherwise poorly constrained induced-drag assumption.</p><div class="scroll"><table><tr><th>Assumed e</th><th>Refitted CD₀</th><th>Modeled sustained g</th></tr>'+cmp+'</table></div>';
+}
+function renderCrossAudit(){
+ const result=window.UniversalClimbAudit.run(M,D),active=$('profile').value,rows=['A','B','C'].map(profile=>({profile,...result.profiles[profile]})),selected=result.profiles[active];
+ const metrics=[['P-47 · held-out climb error',n(selected.p47.holdoutMaeFpm,0)+' ft/min','Four withheld points; 15,000 ft used to fit loss'],['P-51 · 20 May absolute error',n(selected.p51.may20MaeFpm,0)+' ft/min','9,335 lb source takeoff weight; no climb fit'],['P-51 · boost-gain error',n(selected.p51.may20GainResidualFpm,0)+' ft/min','Observed +560 ft/min; same frozen configuration']];
+ $('auditStats').innerHTML=metrics.map(([label,value,caption])=>`<div class="stat"><b>${value}</b><span>${label}</span><p class="micro">${caption}</p></div>`).join('');
+ $('auditTable').innerHTML='<table><thead><tr><th>Candidate</th><th>P-47 withheld MAE</th><th>P-51 May 20 MAE</th><th>P-51 May 15 MAE</th><th>P-51 boost gain residual</th><th>Interpretation</th></tr></thead><tbody>'+rows.map(x=>`<tr${x.profile===active?' style="background:#2d433d"':''}><th>${x.profile}</th><td>${n(x.p47.holdoutMaeFpm,0)} ft/min</td><td>${n(x.p51.may20MaeFpm,0)} ft/min</td><td>${n(x.p51.may15MaeFpm,0)} ft/min</td><td>${n(x.p51.may20GainResidualFpm,0)} ft/min</td><td>Not validated</td></tr>`).join('')+'</tbody></table>';
+ $('auditDetails').innerHTML='<table><thead><tr><th>Report / observation</th><th>Weight</th><th>Altitude</th><th>Rating</th><th>Reported climb</th><th>Model climb</th><th>Residual</th><th>Predicted best TAS</th><th>Status</th></tr></thead><tbody>'+selected.p47.observations.map(r=>`<tr><td>P-47B PHQ-M-19-1417-A</td><td>12,565</td><td>${n(r.altFt,0)}</td><td>2700 rpm</td><td>${n(r.reportedFpm,0)}</td><td>${n(r.predictedFpm,0)}</td><td>${n(r.residualFpm,0)}</td><td>Reported speed separately</td><td>${r.role}</td></tr>`).join('')+selected.p51.observations.map(r=>`<tr><td>P-51B ${esc(r.reportDate)}</td><td>${n(r.reportedWeightLb,0)}</td><td>${n(r.altFt,0)}</td><td>${esc(r.rating)}</td><td>${n(r.reportedFpm,0)}</td><td>${n(r.modelFpm,0)}</td><td>${n(r.residualFpm,0)}</td><td>${n(r.predictedBestTasMph,0)} (model)</td><td>${r.status==='modeled-peak'?'Unmatched climb speed':'Unsupported engine range'}</td></tr>`).join('')+'</tbody></table>';
+}
+function mustangExperiment(){
+ const ac=D.aircraft.p51b,src=ac.climbPowerComparison,profiles=['A','B','C'];
+ const rows=profiles.map(profile=>({profile,result:M.matchedPowerClimb(ac,src.altFt,src.ratingA,src.ratingB,{profile,weightLb:src.reportedTakeoffWeightLb,stepMph:1,minTasMph:100,maxTasMph:280})}));
+ const chosen=rows.find(x=>x.profile===$('profile').value);
+ const r=chosen.result;
+ $('mustangStats').innerHTML=[
+  ['Historical gain','+'+n(src.reportedGainFpm,0)+' ft/min','Same test aircraft; 75 minus 67 inHg'],
+  ['Model '+chosen.profile+' gain','+'+n(r.deltaClimbFpm,0)+' ft/min','Uses unchanged drag fit and prop profile'],
+  ['Difference vs source',n(r.deltaClimbFpm-src.reportedGainFpm,0)+' ft/min','Not adjusted or tuned using climb numbers']
+ ].map(([label,value,description])=>`<div class="stat"><b>${value}</b><span>${label}</span><p class="micro">${description}</p></div>`).join('');
+ $('mustangTable').innerHTML='<table><thead><tr><th>Prop model</th><th>67 inHg modeled</th><th>75 inHg modeled</th><th>Predicted gain</th><th>Reported gain</th><th>Gain residual</th><th>Optimum climb TAS (67 / 75)</th></tr></thead><tbody>'+
+  rows.map(x=>{const t=x.result;return `<tr${x.profile===$('profile').value?' style="background:#2d433d"':''}><th>${x.profile}</th><td>${n(t.a.climbFpm,0)} ft/min</td><td>${n(t.b.climbFpm,0)} ft/min</td><td>${n(t.deltaClimbFpm,0)}</td><td>${n(src.reportedGainFpm,0)}</td><td>${n(t.deltaClimbFpm-src.reportedGainFpm,0)}</td><td>${n(t.a.tasMph,0)} / ${n(t.b.tasMph,0)} mph TAS*</td></tr>`;}).join('')+'</tbody></table>'+
+  `<p class="micro">Observed absolute climb: ${n(src.reportedAClimbFpm,0)} / ${n(src.reportedBClimbFpm,0)} ft/min. Predicted absolute values remain provisional because flight-test climb speed and detailed cooling conditions are not independently matched. <a href="${esc(src.sourceUrl)}" target="_blank" rel="noopener noreferrer">Read test report transcription</a>. *Optimized speeds are calculations, not report facts.</p>`;
+}
+function testImprovements(){
+ const ac=D.aircraft.p47b,points=ac.observedClimb,fit=M.equivalentClimbDrag(ac,points[0]);
+ const rows=points.map((p,i)=>({p,i,raw:M.climbPrediction(ac,p),adjusted:M.climbPrediction(ac,p,{addedCd0:fit.addedCd0})}));
+ const mae=list=>list.reduce((s,x)=>s+Math.abs(x),0)/Math.max(1,list.length);
+ const hold=rows.slice(1),rawErr=mae(hold.map(x=>x.raw.baselineFpm-x.p.fpm)),correctedErr=mae(hold.map(x=>x.adjusted.residualFpm));
+ $('climbStats').innerHTML=[['Uncorrected climb MAE',n(rawErr,0)+' ft/min','Four withheld altitudes; model used level-speed power and drag'],['Condition-aware climb MAE',n(correctedErr,0)+' ft/min','Same four altitudes; 15,000 ft alone calibrated extra loss'],['Aggregate extra drag',n(fit.addedCd0,5)+' Cd₀','Fit to one observed climb; physical causes not identified']].map(([label,value,small])=>`<div class="stat"><b>${value}</b><span>${label}</span><p class="micro">${small}</p></div>`).join('');
+ $('climbTable').innerHTML='<table><thead><tr><th>Altitude</th><th>Reported climb</th><th>Old model</th><th>Climb bhp*</th><th>MAP-corrected only</th><th>MAP + config-loss</th><th>Residual</th><th>Role</th></tr></thead><tbody>'+rows.map(x=>`<tr><td>${n(x.p.altFt,0)} ft</td><td>${n(x.p.fpm,0)}</td><td>${n(x.raw.baselineFpm,0)}</td><td>${n(x.raw.engine.climbBhP,0)}</td><td>${n(x.raw.predictedFpm,0)}</td><td>${n(x.adjusted.predictedFpm,0)}</td><td>${n(x.adjusted.residualFpm,0)}</td><td>${x.i===0?'CALIBRATION':'HELD OUT'}</td></tr>`).join('')+'</tbody></table>';
+ const greg=D.greg.p47d28,speeds=[150,200,250,300,325,350,375];
+ const lo=M.gregP47MaxSpeed(greg,2000),hi=M.gregP47MaxSpeed(greg,2600);
+ $('powerStats').innerHTML=[['2,000 hp maximum',n(lo,1)+' mph','Hypothetical same-polar lower-power case'],['2,600 hp maximum',n(hi,1)+' mph','Greg D-28-style worksheet, not measured max speed'],['Power-only speed increase',n(hi-lo,1)+' mph','Canopy, propeller, engine and fuel unchanged by construction']].map(([label,value,small])=>`<div class="stat"><b>${value}</b><span>${label}</span><p class="micro">${small}</p></div>`).join('');
+ $('powerTable').innerHTML='<table><thead><tr><th>Speed (mph)</th><th>Power required (hp)</th><th>2,000 hp setting available</th><th>2,600 hp setting available</th><th>2000 hp power-only G</th><th>2600 hp power-only G</th></tr></thead><tbody>'+speeds.map(v=>{const low=M.gregP47PowerPoint(greg,v,2000),high=M.gregP47PowerPoint(greg,v,2600);return `<tr><td>${v}</td><td>${n(high.requiredHp,0)}</td><td>${n(low.availableHp,0)}</td><td>${n(high.availableHp,0)}</td><td>${n(low.nPower,2)}</td><td>${n(high.nPower,2)}</td></tr>`;}).join('')+'</tbody></table><p class="micro">Power-only G is not yet stall-, structure-, or pilot-limited. Both output columns share precisely the same Greg-derived drag and propeller assumptions, not a new measured P-47D-28 polar.</p>';
+}
+function validate(c){const id=$('validationAir').value,a=D.aircraft[id],source=a.observedSpeed;
+ const rows=source.filter(row=>id==='bf109f4'||row.rating===a.calibration.rating).map(row=>{const calculated=M.maxSpeed(a,row.altFt,{profile:c.profile,e:c.e,refit:c.refit,rating:row.rating,gear:row.gear,weightLb:a.weightLb*c.weight});return {...row,calculated,delta:calculated!=null?calculated-row.mphTas:null,isCalibration:row.altFt===a.calibration.altFt&&row.rating===a.calibration.rating&&row.gear===a.calibration.gear};});const hold=rows.filter(r=>!r.isCalibration&&r.delta!=null);
+ $('validationStats').innerHTML=[['Usable test points',rows.filter(r=>r.calculated!=null).length+' / '+rows.length,'Engine curve boundaries matter'],['Withheld MAE',hold.length?n(hold.reduce((s,r)=>s+Math.abs(r.delta),0)/hold.length,2)+' mph':'—','Not an independent propeller-map validation'],['Worst withheld error',hold.length?n(Math.max(...hold.map(r=>Math.abs(r.delta))),2)+' mph':'—','Systematic trends matter more than average']].map(([label,v,note])=>`<div class="stat"><b>${v}</b><span>${label}</span><p class="micro">${note}</p></div>`).join('');
+ $('validationTable').innerHTML='<table><thead><tr><th>Altitude, ft</th><th>Power rating</th><th>Gear</th><th>Reported TAS</th><th>Model TAS</th><th>Residual</th><th>Evidence role</th></tr></thead><tbody>'+rows.map(r=>`<tr><td>${n(r.altFt,0)}</td><td>${esc(r.rating)}</td><td>${esc(r.gear)}</td><td>${n(r.mphTas)} mph</td><td>${n(r.calculated,1)} mph</td><td class="${Math.abs(r.delta)>8?'bad':''}">${n(r.delta,1)}</td><td>${r.isCalibration?'CALIBRATED anchor':'unfitted / source-bounded'}</td></tr>`).join('')+'</tbody></table>';
+}
+function evidence(){const x=D.aircraft;$('evidence').innerHTML=ids.map(id=>{const a=x[id];return `<div class="aircard" style="--air-color:${colors[id]}"><h3>${esc(a.name)}</h3><div class="metric"><span>Reference mass</span><b>${n(a.weightLb,0)} lb</b></div><div class="metric"><span>Wing area</span><b>${n(a.wingAreaM2,1)} m²</b></div><div class="metric"><span>Span</span><b>${n(a.spanM,2)} m</b></div><div class="metric"><span>CLmax</span><b>${n(a.clMaxAssumed,2)} assumed</b></div><p>${esc(a.weightStatus)}.</p><p class="micro"><strong>${esc(a.clStatus)}</strong></p><p class="micro">${esc(a.quality)}</p>${a.sourceLinks.map(u=>`<p class="micro"><a href="${esc(u)}" target="_blank" rel="noopener noreferrer">Reference document</a></p>`).join('')}</div>`;}).join('');}
+function renderStores(c){
+ const source=JSON.parse(document.getElementById('stores-data').textContent),S=window.UniversalStoresValidation;
+ const storesWeightLb=+$('storeWeight').value,areaFt2=+$('storeArea').value,addedDragAreaM2=areaFt2*0.09290304;
+ $('storeWeightO').textContent=n(storesWeightLb,0)+' lb';$('storeAreaO').textContent=n(areaFt2,1)+' ft²';
+ const three=ids.map(id=>{
+  const ac=D.aircraft[id],opt=optFor(id,c);
+  const clean=M.maxSpeed(ac,c.alt,opt),loaded=M.maxSpeed(ac,c.alt,{...opt,storesWeightLb,addedDragAreaM2});
+  const cleanClimb=M.bestClimb(ac,c.alt,{...opt}),loadedClimb=M.bestClimb(ac,c.alt,{...opt,storesWeightLb,addedDragAreaM2});
+  const valid=Number.isFinite(clean)&&Number.isFinite(loaded);
+  return `<tr><td>${esc(ac.name)}</td><td>${n(clean,1)}</td><td>${n(loaded,1)}</td><td>${valid?n(clean-loaded,1)+' mph':'Unsupported source range'}</td><td>${n(cleanClimb.climbFpm,0)}</td><td>${n(loadedClimb.climbFpm,0)}</td><td>${cleanClimb.status==='modeled-peak'&&loadedClimb.status==='modeled-peak'?n(cleanClimb.climbFpm-loadedClimb.climbFpm,0):'—'}</td></tr>`;
+ }).join('');
+ $('storesThreeTable').innerHTML='<table><thead><tr><th>Aircraft</th><th>Clean Vmax TAS</th><th>Stores Vmax TAS</th><th>Speed penalty</th><th>Clean best climb, ft/min</th><th>Stores best climb</th><th>Climb loss, ft/min</th></tr></thead><tbody>'+three+'</tbody></table>';
+ const r=S.audit(source,{mode:$('mosquitoMode').value}),x=r.reference.low,y=r.reference.high;
+ $('storesReportStats').innerHTML=[
+ ['Inferred extra parasite drag',n(100*r.fit.parasiteDragIncrease,1)+'%','Conditional fit at lower-altitude peak speeds, not measured drag area'],
+ ['High-alt modeled bomb penalty',n(r.hold.lossMph,1)+' mph','Higher-altitude independent reported curve NOT used in the drag fit'],
+ ['High-alt model error',n(r.highResidualMph,1)+' mph','Model minus raw 383 mph observation; neither test is perfectly matched']
+ ].map(([label,value,sub])=>`<div class="stat"><b>${value}</b><span>${label}</span><p class="micro">${sub}</p></div>`).join('');
+ $('mosquitoStoresTable').innerHTML='<table><thead><tr><th>Comparison</th><th>Clean peak TAS</th><th>Reported loaded peak TAS</th><th>Modeled loaded TAS</th><th>Notes</th></tr></thead><tbody>'+
+ `<tr><td>MS gear · fit</td><td>${x.clean.tasMph} mph at ${n(x.clean.altFt,0)} ft</td><td>${x.loaded.tasMph} mph at ${n(x.loaded.altFt,0)} ft</td><td>${n(r.fit.speedRatio*x.clean.tasMph,1)} mph*</td><td>${r.mode==='raw'?'Fitted to raw peaks':'Author assessed 16.5 mph center of 15–18 band'}</td></tr>`+
+ `<tr><td>FS gear · withheld</td><td>${y.clean.tasMph} mph at ${n(y.clean.altFt,0)} ft</td><td>${y.loaded.tasMph} mph at ${n(y.loaded.altFt,0)} ft</td><td>${n(r.hold.loadedMph,1)} mph</td><td>Check of same drag-factor method with an illustrative higher-altitude induced-share estimate</td></tr></tbody></table>`+
+ '<p class="micro">*For the RAF assessment mode the fitted target is 376.5 mph, not the published raw 373 mph. Clean/loaded weights are 21,910/22,850 lb (source takeoff weights), not exactly 1,000 lb apart. Induced drag shares 11% at lower peak and 16% at upper peak are <strong>estimated inputs</strong>. Different temperatures, full-throttle heights, airframe condition and true comparable-height power remain unresolved.</p>';
+ $('p38SourceTable').innerHTML='<table><thead><tr><th>Altitude</th><th>Measured clean TAS</th><th>Shaft power, each engine</th><th>Manifold pressure</th><th>Bomb-loaded TAS</th></tr></thead><tbody>'+
+ source.p38g.cleanLevelSpeed.map(x=>`<tr><td>${n(x.altFt,0)} ft</td><td>${n(x.tasMph,1)} mph</td><td>${n(x.bhpPerEngine,0)} bhp</td><td>${n(x.mapInHg,1)} inHg</td><td>Not source-verified</td></tr>`).join('')+'</tbody></table>';
+}
+function renderFw(){
+ const S=window.UniversalStoresValidation,src=JSON.parse(document.getElementById('stores-data').textContent),fi=+$('fwInduced').value/100;
+ $('fwInducedO').textContent=n(fi*100,0)+'%';
+ const result=S.auditFw190(src,{sourceMode:$('mosquitoMode').value,inducedShare:fi}),b=result.bomb;
+ $('fwStats').innerHTML=[
+  ['Published total store penalty',src.fw190a4.baseline.speedMph-b.speedMph+' mph','321 − 293 mph; printed report rounds loss to 29 mph'],
+  ['Mosquito-fraction transfer penalty',n(321-b.transferMph,1)+' mph','No Fw 190 drag fitting; same formula and Mosquito-only coefficient'],
+  ['Difference from Fw report',n(b.transferResidualMph,1)+' mph','Modeled loaded speed minus reported 293 mph']
+ ].map(([label,value,sub])=>`<div class="stat"><b>${value}</b><span>${label}</span><p class="micro">${sub}</p></div>`).join('');
+ $('fwAdditional').innerHTML='<table><thead><tr><th>W.Nr. 619, Report 3</th><th>Loss from that report clean condition</th><th>Source status</th></tr></thead><tbody>'+result.fw.furtherControl.configurations.map((label,i)=>`<tr><td>${esc(label)}</td><td>${n(result.fw.furtherControl.lossesKmH[i],0)} km/h</td><td>Reported same-aircraft comparison; separate date/configuration</td></tr>`).join('')+'</tbody></table>';
+ $('fwTable').innerHTML='<table><thead><tr><th>Original test configuration</th><th>Gross test mass</th><th>Reported speed</th><th>Reported loss</th><th>Inferred extra parasite*</th><th>Unfitted transfer prediction</th></tr></thead><tbody>'+
+ result.rows.map(r=>`<tr><td>${esc(r.name)}</td><td>${r.weightKg==null?'Unknown':n(r.weightKg,0)+' kg'}</td><td>${n(r.speedMph,0)} mph</td><td>${n(r.sourcePenalty,0)} mph</td><td>${r.impliedParasiteFraction==null?'Unavailable':n(100*r.impliedParasiteFraction,1)+'%'}</td><td>${r.transferMph==null?'Not comparable':n(r.transferMph,1)+' mph'}</td></tr>`).join('')+'</tbody></table>'+
+ '<p class="micro">*Reverse-engineered equivalent extra drag relative to the same clean aircraft using a trial '+n(fi*100,0)+'% induced-drag share. The inferred fraction changes with assumed induced drag. It is not a verified aircraft-specific CD₀ or physical store drag area.</p>';
+}
+function render(){const c=key();try{cards(c);renderStores(c);renderFw();renderCrossAudit();mustangExperiment();testImprovements();linesChart($('chartG'),null,null,'g',c.alt,c);linesChart($('chartPs'),null,null,'ps',c.alt,c);greg();validate(c);$('errors').style.display='none';}catch(e){$('errors').style.display='block';$('errors').textContent='Error: '+e.message;throw e;}}
+for(const input of document.querySelectorAll('input,select'))input.addEventListener('input',render);evidence();render();window.UniversalThreeAircraftUI={render,model:M,data:D};
+})();
+</script></body></html>

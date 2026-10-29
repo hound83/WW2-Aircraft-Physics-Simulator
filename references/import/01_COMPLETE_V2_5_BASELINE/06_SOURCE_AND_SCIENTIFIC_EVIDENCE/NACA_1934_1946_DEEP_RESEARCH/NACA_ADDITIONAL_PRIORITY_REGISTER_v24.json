@@ -1,0 +1,222 @@
+[
+  {
+    "year": "1934",
+    "report": "NACA-TN-484",
+    "ntrs_id": "19930081396",
+    "domain": "propeller",
+    "evidence_type": "primary scan citation",
+    "extractable_finding": "Controllable propeller method; value is power absorbed across flight settings, not fixed eta.",
+    "model_value": "Selection of constant-speed and geared engine framework",
+    "caveat": "Original figures not locally audited",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/19930081396"
+  },
+  {
+    "year": "1936",
+    "report": "NACA-SR-55",
+    "ntrs_id": "20090015250",
+    "domain": "propeller/power",
+    "evidence_type": "primary scan citation",
+    "extractable_finding": "High pitch/low RPM/large diameter may raise take-off thrust; boosting BHP can lower propulsive efficiency.",
+    "model_value": "Propeller pitch/loading interactions",
+    "caveat": "Theory/design charts, not four-aircraft prop maps",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/20090015250"
+  },
+  {
+    "year": "1937",
+    "report": "NACA-TR-564",
+    "ntrs_id": "19930091639",
+    "domain": "propeller/installation",
+    "evidence_type": "primary scan citation",
+    "extractable_finding": "Wing-nacelle-propeller study pitch settings 17 to 42 deg; optimum 27 deg for the tested arrangement.",
+    "model_value": "Source-backed pitch dependence",
+    "caveat": "A model wing/nacelle/propeller, not wartime fighter",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/19930091639"
+  },
+  {
+    "year": "1938",
+    "report": "NACA-TR-639",
+    "ntrs_id": "19930091714",
+    "domain": "propeller/compressibility",
+    "evidence_type": "primary scan citation",
+    "extractable_finding": "Eight full-scale propellers: climbing/takeoff compressibility begins at rotational tip Mach 0.5\u20130.7; in some conditions >20% thrust-power penalty by Mach 0.8.",
+    "model_value": "Require tip Mach + blade angle regime, not eta(J,Cp) alone",
+    "caveat": "No local PDF scan. Rotational tip Mach and helical tip Mach must not be interchanged.",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/19930091714"
+  },
+  {
+    "year": "1938",
+    "report": "NACA-TR-642",
+    "ntrs_id": "19930091719",
+    "domain": "installation drag",
+    "evidence_type": "prior catalog",
+    "extractable_finding": "Five full-scale propellers + nacelles/spinners; tested arrangement shows up to 6% efficiency difference.",
+    "model_value": "Aircraft installed-map shape",
+    "caveat": "Do not transfer 6% as constant",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/19930091719"
+  },
+  {
+    "year": "1939",
+    "report": "NACA-TM-895",
+    "ntrs_id": "19930094521",
+    "domain": "engine/altitude",
+    "evidence_type": "prior catalog",
+    "extractable_finding": "Engine power-at-altitude treatments show supercharger staging and limits.",
+    "model_value": "Shaft BHP by rating/gear/altitude",
+    "caveat": "Not an R2800/DB601/Merlin engine chart",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/19930094521"
+  },
+  {
+    "year": "1941",
+    "report": "NACA-ARR Oct 1941",
+    "ntrs_id": "19930093644",
+    "domain": "propeller",
+    "evidence_type": "prior catalog numerical chart",
+    "extractable_finding": "Biermann & Conway Fig 10\u201312, pdf p27, approximate chart values for 3/4/6/8 blades at Cp 0.2,0.4,0.6.",
+    "model_value": "Existing \u03b7(J,Cp) chart transfer N",
+    "caveat": "Chart read uncertainty 0.03\u20130.05; cannot extrapolate silently below Cp0.2",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/19930093644"
+  },
+  {
+    "year": "1942",
+    "report": "NACA-SR-222",
+    "ntrs_id": "20090016589",
+    "domain": "turn/model",
+    "evidence_type": "primary report citation",
+    "extractable_finding": "Wetmore compares steady-turn speeds; increasing supercharging without suitable propeller may not improve low-speed turning.",
+    "model_value": "Power/prop coupling and speed-matched validation",
+    "caveat": "Theoretical analysis, not measured aircraft-specific turn polars",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/20090016589"
+  },
+  {
+    "year": "1942",
+    "report": "NACA-WR-L-353",
+    "ntrs_id": "19930092581",
+    "domain": "Spitfire/stall",
+    "evidence_type": "primary report citation",
+    "extractable_finding": "Spitfire Mk VA flight stall incl banked turns; text states relatively low flight CLmax.",
+    "model_value": "Challenge universal CLmax=1.6 assumption",
+    "caveat": "Spitfire VA differs from LF IXc; actual CLmax requires scan figure/weight",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/19930092581"
+  },
+  {
+    "year": "1942",
+    "report": "NACA-WR-L-334",
+    "ntrs_id": "19930092582",
+    "domain": "Spitfire/maneuver",
+    "evidence_type": "primary report citation",
+    "extractable_finding": "Spitfire VA flying qualities incl acceleration and turning.",
+    "model_value": "Supplement turn performance source",
+    "caveat": "Not identical Spitfire model IX",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/19930092582"
+  },
+  {
+    "year": "1943",
+    "report": "NACA-ACR-3I30",
+    "ntrs_id": "19930092640",
+    "domain": "measured turn",
+    "evidence_type": "primary report citation",
+    "extractable_finding": "F2A-3 actual measured turn vs speed about 90\u2013160 mph, two altitudes, 3 flap settings; 6515 lb, 208.9 sqft, 35 ft span, 1200 bhp at take-off; comparison includes prop thrust effects on CLmax.",
+    "model_value": "Independent historical benchmark for general turn engine",
+    "caveat": "F2A additional validation airframe only, not one of four calibrated fighters",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/19930092640"
+  },
+  {
+    "year": "1943",
+    "report": "NACA-ARR 3I25",
+    "ntrs_id": "19930091110",
+    "domain": "propeller",
+    "evidence_type": "prior catalog",
+    "extractable_finding": "NACA 20-foot tunnel representative performance charts for 3/4/6 blade propellers.",
+    "model_value": "Installation-dependent Cp/J/\u03b7 contours",
+    "caveat": "No full numerical prop map yet digitized",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/19930091110"
+  },
+  {
+    "year": "1944",
+    "report": "NACA-ACR-L4I29",
+    "ntrs_id": "19930093312",
+    "domain": "propeller",
+    "evidence_type": "prior catalog numerical",
+    "extractable_finding": "Crigler Talkin example 4 blades, 2000hp,25kft,425mph, J2.26,Cp.342, net \u03b70.848.",
+    "model_value": "Independent period-design reasonableness test",
+    "caveat": "May share base experimental charts with 1941 NACA",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/19930093312"
+  },
+  {
+    "year": "1945",
+    "report": "NACA-MR-L5G09a",
+    "ntrs_id": "19930093653",
+    "domain": "in-flight propeller",
+    "evidence_type": "prior catalog text and table",
+    "extractable_finding": "P-47D 3-blade 6507A-2 flight report Tables I/II: 12 rows of \u03b7, J, Cp, Mtip; ~7% improvement in \u03b7 when tip Mach 1.16->1.06 at matched J2.5 and Cp per blade0.08.",
+    "model_value": "New M-mode Mach research candidate, train only on published ratio",
+    "caveat": "Same report as 12 row checks; not independent validation for M",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/19930093653"
+  },
+  {
+    "year": "1946",
+    "report": "NACA-RM-E6K26",
+    "ntrs_id": "20030065899",
+    "domain": "propeller/altitude tunnel",
+    "evidence_type": "prior catalog OCR",
+    "extractable_finding": "YP-47M 6507A-2 3- and 4-blade, free stream M0.2/0.3/0.4, Cp 0.1\u20131.0; wall constriction uncorrected.",
+    "model_value": "Future Cp/J/M/solidity surface, direct 3v4 contrast",
+    "caveat": "YP-47M not P-47B or P-47D; original chart grids undigitized",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/20030065899"
+  },
+  {
+    "year": "1946",
+    "report": "NACA-RM-E6J14",
+    "ntrs_id": "20030063996",
+    "domain": "propeller/altitude tunnel",
+    "evidence_type": "prior catalog OCR",
+    "extractable_finding": "YP-47M Curtiss 838 prop, 0.70->0.90 Cp peak efficiency -about 5% at reported conditions, Mach effects differ by Cp,J.",
+    "model_value": "Range/shape tests for load and Mach factors",
+    "caveat": "Not a universal -5%",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/20030063996"
+  },
+  {
+    "year": "1947",
+    "report": "NACA-RM-L7D10",
+    "ntrs_id": "20050019331",
+    "domain": "in-flight propeller",
+    "evidence_type": "post-period supplemental citation",
+    "extractable_finding": "P-47D-28 Curtiss blade-extender flight test; 1475 to 2400 hp gives 3\u20134% \u03b7 loss in climbs, at Mach0.7 power coefficient per blade .06->.09 yields 9% efficiency gain.",
+    "model_value": "Additional independent prop family benchmark",
+    "caveat": "1947 supplement and different blades/config; not calibrating wartime R2800-21 P-47B",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/20050019331"
+  },
+  {
+    "year": "1944",
+    "report": "NACA-ACR-L4L07",
+    "ntrs_id": "19930093302",
+    "domain": "same-blade P-47 propeller",
+    "evidence_type": "primary NACA flight report",
+    "extractable_finding": "P-47C Curtiss 714-1C2-12 four-blade: normal->military power climb \u03b7 loss 5\u20138% at 165mph IAS; high-speed prop compressibility losses 10\u201311% by aircraft Mach .7, starting tip Mach ~.83 and ~7% \u03b7 loss per +.1 tip Mach.",
+    "model_value": "Priority A: same blade design as P47B historical flight tests; fit installed Curtiss blade family, NOT global \u03b7 correction",
+    "caveat": "P47C vs P47B installations/airframe not identical; reported percent ambiguity and matching conditions require original figure audit",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/19930093302"
+  },
+  {
+    "year": "1946",
+    "report": "NACA-WR-L-98",
+    "ntrs_id": "19930092751",
+    "domain": "measured P-47D wing profile drag",
+    "evidence_type": "primary NACA flight report",
+    "extractable_finding": "Camouflage-painted production P47D section cdmin 0.0097 at CL .16-.25, Mach below .67, versus smooth section ~.0062 in other 1945 test.",
+    "model_value": "Material difference between wing finish/profile and entire airframe; do NOT treat section drag as CD0",
+    "caveat": "Different specimens/section conditions; no whole-aircraft CD0 inference",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/19930092751"
+  },
+  {
+    "year": "1943",
+    "report": "NACA-ACR-3G12",
+    "ntrs_id": "19930093326",
+    "domain": "propeller compression in flight",
+    "evidence_type": "primary NACA flight report",
+    "extractable_finding": "P39 three-blade thin Clark Y prop flight compressibility under constant J and pitch.",
+    "model_value": "Additional prop Mach profile evidence independent of Thunderbolt family",
+    "caveat": "Different propeller and aircraft, cannot directly transfer measured loss",
+    "official_nasa_url": "https://ntrs.nasa.gov/citations/19930093326"
+  }
+]

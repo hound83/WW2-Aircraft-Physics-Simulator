@@ -1,0 +1,57 @@
+{
+  "repository": "hound83/ww2-airwar",
+  "last_repository_version_checked": "d19a1a0475c3b55001bb4c17204d05c53dcce1f5",
+  "preview": "https://hound83.github.io/ww2-airwar/?preview=7.5",
+  "default": "https://hound83.github.io/ww2-airwar/",
+  "reference_documents": [
+    {
+      "path": "research/sources/v75-aircraft-performance.md",
+      "permalink": "https://github.com/hound83/ww2-airwar/blob/d19a1a0475c3b55001bb4c17204d05c53dcce1f5/research/sources/v75-aircraft-performance.md"
+    },
+    {
+      "path": "research/transcriptions/aircraft-performance.json",
+      "permalink": "https://github.com/hound83/ww2-airwar/blob/d19a1a0475c3b55001bb4c17204d05c53dcce1f5/research/transcriptions/aircraft-performance.json"
+    },
+    {
+      "path": "research/sources/v75-research-ledger.md",
+      "permalink": "https://github.com/hound83/ww2-airwar/blob/d19a1a0475c3b55001bb4c17204d05c53dcce1f5/research/sources/v75-research-ledger.md"
+    },
+    {
+      "path": "research/sources/v75-integration-log.md",
+      "permalink": "https://github.com/hound83/ww2-airwar/blob/d19a1a0475c3b55001bb4c17204d05c53dcce1f5/research/sources/v75-integration-log.md"
+    },
+    {
+      "path": "research/sources/v75-german-production.md",
+      "permalink": "https://github.com/hound83/ww2-airwar/blob/d19a1a0475c3b55001bb4c17204d05c53dcce1f5/research/sources/v75-german-production.md"
+    },
+    {
+      "path": "dist/atlas-v75-performance-data.js",
+      "permalink": "https://github.com/hound83/ww2-airwar/blob/d19a1a0475c3b55001bb4c17204d05c53dcce1f5/dist/atlas-v75-performance-data.js"
+    },
+    {
+      "path": "dist/atlas-v75-aircraft.js",
+      "permalink": "https://github.com/hound83/ww2-airwar/blob/d19a1a0475c3b55001bb4c17204d05c53dcce1f5/dist/atlas-v75-aircraft.js"
+    },
+    {
+      "path": "dist/atlas-v75-aircraft-view.js",
+      "permalink": "https://github.com/hound83/ww2-airwar/blob/d19a1a0475c3b55001bb4c17204d05c53dcce1f5/dist/atlas-v75-aircraft-view.js"
+    },
+    {
+      "path": "dist/atlas-v75-lab.js",
+      "permalink": "https://github.com/hound83/ww2-airwar/blob/d19a1a0475c3b55001bb4c17204d05c53dcce1f5/dist/atlas-v75-lab.js"
+    },
+    {
+      "path": "tests/v75-aircraft.cjs",
+      "permalink": "https://github.com/hound83/ww2-airwar/blob/d19a1a0475c3b55001bb4c17204d05c53dcce1f5/tests/v75-aircraft.cjs"
+    },
+    {
+      "path": "tests/v75-model.cjs",
+      "permalink": "https://github.com/hound83/ww2-airwar/blob/d19a1a0475c3b55001bb4c17204d05c53dcce1f5/tests/v75-model.cjs"
+    },
+    {
+      "path": "tests/v75-browser.cjs",
+      "permalink": "https://github.com/hound83/ww2-airwar/blob/d19a1a0475c3b55001bb4c17204d05c53dcce1f5/tests/v75-browser.cjs"
+    }
+  ],
+  "note": "The GitHub documents are linked by immutable commit, NOT bundled as exact offline source files. All locally uploaded and generated model packages are bundled. GitHub v7.5 site is not changed by this handover."
+}

@@ -1,0 +1,2377 @@
+{
+  "version": "v1.5-rated-prop-RPM-and-diagnostic",
+  "changedPhysics": "DB601E rating-aware propeller rpm: combat=2500/1.685, emergency=2700/1.685. Universal prop-efficiency function receives rating. No e, CLmax, prop-profile or hidden aircraft-specific fitting adjustments.",
+  "sources": [
+    {
+      "grade": "original 1941 German Bf109F2/F4 technical manual facsimile, text indexed; scan not saved",
+      "url": "https://stephentaylorhistorian.com/wp-content/uploads/2020/04/bf109f-2-f-4wa.pdf",
+      "claim": "DB601E for Bf109F3/F4 propeller reduction 1.685:1, unlike DB601N 1.55:1"
+    },
+    {
+      "grade": "original wartime report scan, inspected",
+      "url": "https://www.wwiiaircraftperformance.org/me109/VB-109-19-L-42.pdf",
+      "claim": "Messerschmitt September 1942 DB601E installed in Bf109G1 climbed at 2500 engine RPM / 1.30 ata and 260kmh IAS; different airframe, not F4 glide/turn or direct climb-speed measurement"
+    },
+    {
+      "grade": "published source synthesis citing Rechlin",
+      "url": "https://info.eduard.com/en/06-2023-1/rufe",
+      "claim": "Bf109F4 325mph combat SL, 336mph emergency SL; second rating is withheld computationally but from same historical analysis"
+    },
+    {
+      "grade": "secondary unverified report quotation",
+      "url": "https://www.whq-forum.de/invisionboard/index.php?showtopic=27166",
+      "claim": "Rechlin F4 supposedly 1000m to 5000m in 4:00; no original numeric table inspected"
+    },
+    {
+      "grade": "engine-mode proxy, simulated specification",
+      "url": "https://il2sturmovik.com/museum/fighters/bf-109-f-4/",
+      "claim": "DB601E 2500 combat, 2700 emergency; not a measured propeller efficiency map"
+    }
+  ],
+  "f4Reduction": {
+    "oldLegacyRatio": 1.5503875968992247,
+    "correctRatio": 1.685,
+    "combatEngineRpm": 2500,
+    "combatPropRpm": 1483.6795252225518,
+    "emergencyEngineRpm": 2700,
+    "emergencyPropRpm": 1602.373887240356
+  },
+  "greg": {
+    "f4DerivedE": 0.5576706734059873,
+    "f4DerivedCd0": 0.02437284688790079,
+    "note": "Greg F4 e inferred from a drag/power spreadsheet at a nominal mass; not observed Oswald efficiency"
+  },
+  "profiles": [
+    {
+      "profile": "A",
+      "f4": {
+        "generic": {
+          "profile": "A",
+          "e": 0.78,
+          "polar": {
+            "cd0": 0.022178371229511464,
+            "e": 0.78,
+            "source": "v1.5 anchored A / e=0.78; single sea-level or 5000-ft observed speed only"
+          },
+          "anchorEta": 0.8,
+          "propAtCombatAnchor": {
+            "eta": 0.8,
+            "method": "heuristic; not a NACA measured propeller map"
+          },
+          "propAtEmergencySpeed": {
+            "eta": 0.8,
+            "method": "heuristic; not a NACA measured propeller map"
+          },
+          "speed": {
+            "calibrationCombatMph": 324.9999999999991,
+            "publishedCombatMph": 325,
+            "withheldEmergencyMph": 336,
+            "predictedEmergencyMph": 338.9424019290427,
+            "emergencyResidualMph": 2.942401929042717
+          },
+          "climb": {
+            "status": "integrated-optimistic-peak",
+            "startM": 1000,
+            "endM": 5000,
+            "seconds": 206.56526185560492,
+            "minutes": 3.442754364260082,
+            "reportedF4RechlinSecondarySeconds": 240,
+            "residualSeconds": -33.434738144395084,
+            "steps": [
+              {
+                "midAltitudeM": 1125,
+                "climbMps": 19.88256587722514,
+                "bestTasMph": 127,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.573829833822767
+              },
+              {
+                "midAltitudeM": 1375,
+                "climbMps": 19.819954761878925,
+                "bestTasMph": 128,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.613550485031485
+              },
+              {
+                "midAltitudeM": 1625,
+                "climbMps": 19.75636939907268,
+                "bestTasMph": 130,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.654146870311832
+              },
+              {
+                "midAltitudeM": 1875,
+                "climbMps": 19.691473077681366,
+                "bestTasMph": 132,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.69585058536601
+              },
+              {
+                "midAltitudeM": 2125,
+                "climbMps": 19.625404450098458,
+                "bestTasMph": 133,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.738590974554198
+              },
+              {
+                "midAltitudeM": 2375,
+                "climbMps": 19.55816466498128,
+                "bestTasMph": 135,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.782385478511834
+              },
+              {
+                "midAltitudeM": 2625,
+                "climbMps": 19.489584017289637,
+                "bestTasMph": 137,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.827364595274046
+              },
+              {
+                "midAltitudeM": 2875,
+                "climbMps": 19.419656465462328,
+                "bestTasMph": 139,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.873554197244559
+              },
+              {
+                "midAltitudeM": 3125,
+                "climbMps": 19.348514174374166,
+                "bestTasMph": 140,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.920888795228967
+              },
+              {
+                "midAltitudeM": 3375,
+                "climbMps": 19.27599846432214,
+                "bestTasMph": 142,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.969496779257577
+              },
+              {
+                "midAltitudeM": 3625,
+                "climbMps": 19.20205887096254,
+                "bestTasMph": 144,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.019437221810179
+              },
+              {
+                "midAltitudeM": 3875,
+                "climbMps": 19.12667233667074,
+                "bestTasMph": 146,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.070752486342636
+              },
+              {
+                "midAltitudeM": 4125,
+                "climbMps": 19.0498111959263,
+                "bestTasMph": 148,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.12348964663026
+              },
+              {
+                "midAltitudeM": 4375,
+                "climbMps": 18.97144308051451,
+                "bestTasMph": 150,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.177700765250375
+              },
+              {
+                "midAltitudeM": 4625,
+                "climbMps": 18.8915308148665,
+                "bestTasMph": 152,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.23344320002194
+              },
+              {
+                "midAltitudeM": 4875,
+                "climbMps": 18.81003230140013,
+                "bestTasMph": 154,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.290779940946257
+              }
+            ],
+            "note": "Optimized best TAS at every step; no acceleration, climb IAS schedule, exact cooling/prop calibration or observed climb power. Rechlin 4:00 is SECONDARY quotation."
+          },
+          "turn170EasCombat": {
+            "status": "modelled",
+            "altFt": 5000,
+            "easMph": 170,
+            "tasMph": 183.13793648731854,
+            "degSec": 17.926614619222654,
+            "g": 2.796917643864625,
+            "instantDegSec": 19.449328422209508,
+            "stallEasMph": 98.06509011620857,
+            "nLift": 3.0051695468827457,
+            "nPower": 2.796917643864625,
+            "propEta": 0.8,
+            "propRpm": null,
+            "propulsiveHp": 946.8672000000001,
+            "parasiteDragLbf": 283.0837720193012,
+            "inducedDragLbf": 211.65917643328453
+          },
+          "maxSpeedCurveCombat": [
+            {
+              "altFt": 0,
+              "mph": 324.9999999999991
+            },
+            {
+              "altFt": 1000,
+              "mph": 328.0731349818534
+            },
+            {
+              "altFt": 2000,
+              "mph": 331.1942459939064
+            },
+            {
+              "altFt": 3000,
+              "mph": 334.3643284103846
+            },
+            {
+              "altFt": 4000,
+              "mph": 337.58440094558046
+            },
+            {
+              "altFt": 5000,
+              "mph": 340.8555060924855
+            },
+            {
+              "altFt": 6000,
+              "mph": 344.1787105491576
+            },
+            {
+              "altFt": 7000,
+              "mph": 347.55510562948166
+            },
+            {
+              "altFt": 8000,
+              "mph": 350.9858076545579
+            },
+            {
+              "altFt": 9000,
+              "mph": 354.4719583204487
+            },
+            {
+              "altFt": 10000,
+              "mph": 358.01472503736386
+            },
+            {
+              "altFt": 11000,
+              "mph": 361.6153012348268
+            },
+            {
+              "altFt": 12000,
+              "mph": 365.2749066264869
+            },
+            {
+              "altFt": 13000,
+              "mph": 368.9947874275176
+            },
+            {
+              "altFt": 14000,
+              "mph": 372.7762165165195
+            },
+            {
+              "altFt": 15000,
+              "mph": 376.6204935327887
+            }
+          ]
+        },
+        "greg": {
+          "profile": "A",
+          "e": 0.5576706734059873,
+          "polar": {
+            "cd0": 0.021683453568878415,
+            "e": 0.5576706734059873,
+            "source": "v1.5 anchored A / e=0.5576706734059873; single sea-level or 5000-ft observed speed only"
+          },
+          "anchorEta": 0.8,
+          "propAtCombatAnchor": {
+            "eta": 0.8,
+            "method": "heuristic; not a NACA measured propeller map"
+          },
+          "propAtEmergencySpeed": {
+            "eta": 0.8,
+            "method": "heuristic; not a NACA measured propeller map"
+          },
+          "speed": {
+            "calibrationCombatMph": 324.9999999999991,
+            "publishedCombatMph": 325,
+            "withheldEmergencyMph": 336,
+            "predictedEmergencyMph": 339.349933472874,
+            "emergencyResidualMph": 3.3499334728739996
+          },
+          "climb": {
+            "status": "integrated-optimistic-peak",
+            "startM": 1000,
+            "endM": 5000,
+            "seconds": 224.5494610825707,
+            "minutes": 3.7424910180428452,
+            "reportedF4RechlinSecondarySeconds": 240,
+            "residualSeconds": -15.450538917429299,
+            "steps": [
+              {
+                "midAltitudeM": 1125,
+                "climbMps": 18.47901690321029,
+                "bestTasMph": 139,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.528858234691503
+              },
+              {
+                "midAltitudeM": 1375,
+                "climbMps": 18.398970252041828,
+                "bestTasMph": 140,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.587716952379779
+              },
+              {
+                "midAltitudeM": 1625,
+                "climbMps": 18.31762047207892,
+                "bestTasMph": 142,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.648060913865345
+              },
+              {
+                "midAltitudeM": 1875,
+                "climbMps": 18.234705831527872,
+                "bestTasMph": 144,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.710119719493862
+              },
+              {
+                "midAltitudeM": 2125,
+                "climbMps": 18.150211484013475,
+                "bestTasMph": 146,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.773944189035896
+              },
+              {
+                "midAltitudeM": 2375,
+                "climbMps": 18.064117838441813,
+                "bestTasMph": 148,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.839590852755679
+              },
+              {
+                "midAltitudeM": 2625,
+                "climbMps": 17.97640048200892,
+                "bestTasMph": 150,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.907122299050032
+              },
+              {
+                "midAltitudeM": 2875,
+                "climbMps": 17.887030093355495,
+                "bestTasMph": 152,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.976607558393253
+              },
+              {
+                "midAltitudeM": 3125,
+                "climbMps": 17.795995658551366,
+                "bestTasMph": 153,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.048104123911129
+              },
+              {
+                "midAltitudeM": 3375,
+                "climbMps": 17.70321047904214,
+                "bestTasMph": 155,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.121732343179293
+              },
+              {
+                "midAltitudeM": 3625,
+                "climbMps": 17.608631792816315,
+                "bestTasMph": 158,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.197582352877125
+              },
+              {
+                "midAltitudeM": 3875,
+                "climbMps": 17.512254298816767,
+                "bestTasMph": 160,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.275717776488175
+              },
+              {
+                "midAltitudeM": 4125,
+                "climbMps": 17.413999805350173,
+                "bestTasMph": 162,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.356265234549474
+              },
+              {
+                "midAltitudeM": 4375,
+                "climbMps": 17.3138071583309,
+                "bestTasMph": 164,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.439342988737591
+              },
+              {
+                "midAltitudeM": 4625,
+                "climbMps": 17.21160940439699,
+                "bestTasMph": 166,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.52507979504423
+              },
+              {
+                "midAltitudeM": 4875,
+                "climbMps": 17.107333620167942,
+                "bestTasMph": 168,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.613615748118306
+              }
+            ],
+            "note": "Optimized best TAS at every step; no acceleration, climb IAS schedule, exact cooling/prop calibration or observed climb power. Rechlin 4:00 is SECONDARY quotation."
+          },
+          "turn170EasCombat": {
+            "status": "modelled",
+            "altFt": 5000,
+            "easMph": 170,
+            "tasMph": 183.13793648731854,
+            "degSec": 14.742528121883291,
+            "g": 2.3694534057668557,
+            "instantDegSec": 19.449328422209508,
+            "stallEasMph": 98.06509011620857,
+            "nLift": 3.0051695468827457,
+            "nPower": 2.3694534057668557,
+            "propEta": 0.8,
+            "propRpm": null,
+            "propulsiveHp": 946.8672000000001,
+            "parasiteDragLbf": 276.7666643849703,
+            "inducedDragLbf": 296.0423875432526
+          },
+          "maxSpeedCurveCombat": [
+            {
+              "altFt": 0,
+              "mph": 324.9999999999991
+            },
+            {
+              "altFt": 1000,
+              "mph": 328.0184599545091
+            },
+            {
+              "altFt": 2000,
+              "mph": 331.0821067117258
+            },
+            {
+              "altFt": 3000,
+              "mph": 334.1917857247108
+            },
+            {
+              "altFt": 4000,
+              "mph": 337.34835646094234
+            },
+            {
+              "altFt": 5000,
+              "mph": 340.55269216211946
+            },
+            {
+              "altFt": 6000,
+              "mph": 343.8056795340317
+            },
+            {
+              "altFt": 7000,
+              "mph": 347.10821835751904
+            },
+            {
+              "altFt": 8000,
+              "mph": 350.4612210104069
+            },
+            {
+              "altFt": 9000,
+              "mph": 353.8656118891313
+            },
+            {
+              "altFt": 10000,
+              "mph": 357.32232671726433
+            },
+            {
+              "altFt": 11000,
+              "mph": 360.8323117266691
+            },
+            {
+              "altFt": 12000,
+              "mph": 364.39652269515227
+            },
+            {
+              "altFt": 13000,
+              "mph": 368.0159238224469
+            },
+            {
+              "altFt": 14000,
+              "mph": 371.6914864240689
+            },
+            {
+              "altFt": 15000,
+              "mph": 375.42418741992424
+            }
+          ]
+        }
+      },
+      "p47": {
+        "id": "P-47B / R-2800-21 (41-5902)",
+        "profile": "A",
+        "e": 0.78,
+        "polar": {
+          "cd0": 0.019082721350526213,
+          "e": 0.78,
+          "source": "v1.5 anchored A / e=0.78; single sea-level or 5000-ft observed speed only"
+        },
+        "anchorEta": 0.8,
+        "speed": {
+          "rows": [
+            {
+              "altFt": 5000,
+              "reportedMph": 352,
+              "modelMph": 352.0000000000009,
+              "residualMph": 9.094947017729282e-13,
+              "role": "calibration"
+            },
+            {
+              "altFt": 15000,
+              "reportedMph": 386,
+              "modelMph": 387.99618521909633,
+              "residualMph": 1.9961852190963327,
+              "role": "withheld"
+            },
+            {
+              "altFt": 25000,
+              "reportedMph": 420,
+              "modelMph": 429.96519127439296,
+              "residualMph": 9.965191274392964,
+              "role": "withheld"
+            },
+            {
+              "altFt": 27800,
+              "reportedMph": 429,
+              "modelMph": 442.916655828546,
+              "residualMph": 13.916655828546027,
+              "role": "withheld"
+            },
+            {
+              "altFt": 30000,
+              "reportedMph": 426,
+              "modelMph": 438.29907094413556,
+              "residualMph": 12.299070944135565,
+              "role": "withheld"
+            },
+            {
+              "altFt": 34000,
+              "reportedMph": 412,
+              "modelMph": 424.97902226637325,
+              "residualMph": 12.97902226637325,
+              "role": "withheld"
+            }
+          ],
+          "holdoutCount": 5,
+          "holdoutMAEMph": 10.231225106508827,
+          "holdoutMaxErrorMph": 13.916655828546027
+        },
+        "climb": {
+          "fittedConfigurationCd0": 0.01617358237694492,
+          "fitAltitudeFt": 15000,
+          "withheldCount": 4,
+          "withheldMAEFpm": 113.66742122105404,
+          "rows": [
+            {
+              "altFt": 15000,
+              "reportedFpm": 2330,
+              "modeledFpm": 2330.0000000000005,
+              "residualFpm": 4.547473508864641e-13,
+              "rating": "military",
+              "role": "one-point-cooling/configuration-fit"
+            },
+            {
+              "altFt": 20000,
+              "reportedFpm": 2150,
+              "modeledFpm": 2070.500110302261,
+              "residualFpm": -79.49988969773904,
+              "rating": "military",
+              "role": "withheld"
+            },
+            {
+              "altFt": 23400,
+              "reportedFpm": 2000,
+              "modeledFpm": 1967.716980468134,
+              "residualFpm": -32.2830195318661,
+              "rating": "military",
+              "role": "withheld"
+            },
+            {
+              "altFt": 25000,
+              "reportedFpm": 1810,
+              "modeledFpm": 1700.6033769129376,
+              "residualFpm": -109.39662308706238,
+              "rating": "military",
+              "role": "withheld"
+            },
+            {
+              "altFt": 30000,
+              "reportedFpm": 1190,
+              "modeledFpm": 956.5098474324514,
+              "residualFpm": -233.49015256754865,
+              "rating": "military",
+              "role": "withheld"
+            }
+          ],
+          "qualification": "At 15000 ft, historical P47 climb MAP is used to fit an aggregate configuration loss. Four other altitudes are withheld; this is not a test of zero unknown cooling drag."
+        }
+      },
+      "p51": {
+        "id": "P-51B-15 / V-1650-7 (43-24777)",
+        "profile": "A",
+        "e": 0.78,
+        "polar": {
+          "cd0": 0.015865746048539454,
+          "e": 0.78,
+          "source": "v1.5 anchored A / e=0.78; single sea-level or 5000-ft observed speed only"
+        },
+        "anchorEta": 0.8,
+        "speed": {
+          "rows": [
+            {
+              "altFt": 0,
+              "reportedMph": 361.5,
+              "modelMph": 361.5000000000009,
+              "residualMph": 9.094947017729282e-13,
+              "role": "calibration"
+            },
+            {
+              "altFt": 4000,
+              "reportedMph": 380,
+              "modelMph": 379.0315494703673,
+              "residualMph": -0.9684505296327188,
+              "role": "withheld"
+            },
+            {
+              "altFt": 7400,
+              "reportedMph": 395.5,
+              "modelMph": 395.0439067236284,
+              "residualMph": -0.4560932763715755,
+              "role": "withheld"
+            },
+            {
+              "altFt": 10300,
+              "reportedMph": 409,
+              "modelMph": 409.65387557822123,
+              "residualMph": 0.653875578221232,
+              "role": "withheld"
+            },
+            {
+              "altFt": 18000,
+              "reportedMph": 408,
+              "modelMph": 411.2152856901748,
+              "residualMph": 3.2152856901748237,
+              "role": "withheld"
+            },
+            {
+              "altFt": 20800,
+              "reportedMph": 417,
+              "modelMph": 423.2907249843056,
+              "residualMph": 6.290724984305598,
+              "role": "withheld"
+            },
+            {
+              "altFt": 24000,
+              "reportedMph": 426,
+              "modelMph": 437.7642532788277,
+              "residualMph": 11.76425327882771,
+              "role": "withheld"
+            },
+            {
+              "altFt": 28000,
+              "reportedMph": 419,
+              "modelMph": 430.02162948004207,
+              "residualMph": 11.021629480042066,
+              "role": "withheld"
+            },
+            {
+              "altFt": 32000,
+              "reportedMph": 410,
+              "modelMph": 419.9823750753576,
+              "residualMph": 9.982375075357595,
+              "role": "withheld"
+            }
+          ],
+          "holdoutCount": 8,
+          "holdoutMAEMph": 5.544085986616665,
+          "holdoutMaxErrorMph": 11.76425327882771
+        },
+        "climb": {
+          "reports": [
+            {
+              "id": "wright-1944-05-20",
+              "date": "1944-05-20",
+              "reportedTakeoffWeightLb": 9335,
+              "status": "same test programme, not an independent flight-test series",
+              "MAEFpm": 231.03905993101398,
+              "rows": [
+                {
+                  "altFt": 2200,
+                  "rating": "67inHg",
+                  "reportedFpm": 3820,
+                  "modeledFpm": 3574.8420327278054,
+                  "residualFpm": -245.15796727219458,
+                  "modeledOptimumTasMph": 142,
+                  "matchedHistoricalClimbAirspeed": false
+                },
+                {
+                  "altFt": 2200,
+                  "rating": "75inHg",
+                  "reportedFpm": 4380,
+                  "modeledFpm": 4163.079847410167,
+                  "residualFpm": -216.92015258983338,
+                  "modeledOptimumTasMph": 142,
+                  "matchedHistoricalClimbAirspeed": false
+                }
+              ]
+            },
+            {
+              "id": "wright-1944-05-15",
+              "date": "1944-05-15",
+              "reportedTakeoffWeightLb": 9680,
+              "status": "same test programme, not an independent flight-test series",
+              "MAEFpm": 515.8158330207353,
+              "rows": [
+                {
+                  "altFt": 5600,
+                  "rating": "67inHg",
+                  "reportedFpm": 3920,
+                  "modeledFpm": 3444.8035976663814,
+                  "residualFpm": -475.1964023336186,
+                  "modeledOptimumTasMph": 152,
+                  "matchedHistoricalClimbAirspeed": false
+                },
+                {
+                  "altFt": 2300,
+                  "rating": "75inHg",
+                  "reportedFpm": 4380,
+                  "modeledFpm": 3964.3875734045214,
+                  "residualFpm": -415.6124265954786,
+                  "modeledOptimumTasMph": 145,
+                  "matchedHistoricalClimbAirspeed": false
+                },
+                {
+                  "altFt": 19200,
+                  "rating": "67inHg",
+                  "reportedFpm": 3170,
+                  "modeledFpm": 2513.361329866891,
+                  "residualFpm": -656.6386701331089,
+                  "modeledOptimumTasMph": 189,
+                  "matchedHistoricalClimbAirspeed": false
+                },
+                {
+                  "altFt": 15700,
+                  "rating": "75inHg",
+                  "reportedFpm": 3700,
+                  "modeledFpm": null,
+                  "residualFpm": null,
+                  "modeledOptimumTasMph": null,
+                  "matchedHistoricalClimbAirspeed": false
+                }
+              ]
+            }
+          ],
+          "boostGain": {
+            "reportedFpm": 560,
+            "modeledFpm": 588.2378146823612,
+            "residualFpm": 28.237814682361204,
+            "status": "held-out same-airframe rating differential with unmatched climb IAS; no climb rating fit"
+          }
+        }
+      }
+    },
+    {
+      "profile": "B",
+      "f4": {
+        "generic": {
+          "profile": "B",
+          "e": 0.78,
+          "polar": {
+            "cd0": 0.022134459146319983,
+            "e": 0.78,
+            "source": "v1.5 anchored B / e=0.78; single sea-level or 5000-ft observed speed only"
+          },
+          "anchorEta": 0.7985000000000001,
+          "propAtCombatAnchor": {
+            "eta": 0.7985000000000001,
+            "method": "heuristic; not a NACA measured propeller map"
+          },
+          "propAtEmergencySpeed": {
+            "eta": 0.7952,
+            "method": "heuristic; not a NACA measured propeller map"
+          },
+          "speed": {
+            "calibrationCombatMph": 324.9999999999991,
+            "publishedCombatMph": 325,
+            "withheldEmergencyMph": 336,
+            "predictedEmergencyMph": 338.34051600205476,
+            "emergencyResidualMph": 2.3405160020547555
+          },
+          "climb": {
+            "status": "integrated-optimistic-peak",
+            "startM": 1000,
+            "endM": 5000,
+            "seconds": 189.59215142368132,
+            "minutes": 3.1598691903946885,
+            "reportedF4RechlinSecondarySeconds": 240,
+            "residualSeconds": -50.407848576318685,
+            "steps": [
+              {
+                "midAltitudeM": 1125,
+                "climbMps": 21.734166101901064,
+                "bestTasMph": 117,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 11.502626731933036
+              },
+              {
+                "midAltitudeM": 1375,
+                "climbMps": 21.65755562141961,
+                "bestTasMph": 119,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 11.543315615578827
+              },
+              {
+                "midAltitudeM": 1625,
+                "climbMps": 21.579441591887424,
+                "bestTasMph": 120,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 11.58510051965316
+              },
+              {
+                "midAltitudeM": 1875,
+                "climbMps": 21.4999583488188,
+                "bestTasMph": 122,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 11.627929503116219
+              },
+              {
+                "midAltitudeM": 2125,
+                "climbMps": 21.41890644529267,
+                "bestTasMph": 123,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 11.671931087543623
+              },
+              {
+                "midAltitudeM": 2375,
+                "climbMps": 21.336459367649006,
+                "bestTasMph": 125,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 11.717033069650613
+              },
+              {
+                "midAltitudeM": 2625,
+                "climbMps": 21.25229548325615,
+                "bestTasMph": 127,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 11.763435163837487
+              },
+              {
+                "midAltitudeM": 2875,
+                "climbMps": 21.16672545491432,
+                "bestTasMph": 128,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 11.810990818230554
+              },
+              {
+                "midAltitudeM": 3125,
+                "climbMps": 21.079438111614973,
+                "bestTasMph": 130,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 11.859898668847705
+              },
+              {
+                "midAltitudeM": 3375,
+                "climbMps": 20.990387385171676,
+                "bestTasMph": 132,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 11.91021372843307
+              },
+              {
+                "midAltitudeM": 3625,
+                "climbMps": 20.8997888113933,
+                "bestTasMph": 133,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 11.961843359092468
+              },
+              {
+                "midAltitudeM": 3875,
+                "climbMps": 20.807382814982766,
+                "bestTasMph": 135,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.014966140767235
+              },
+              {
+                "midAltitudeM": 4125,
+                "climbMps": 20.71312719977708,
+                "bestTasMph": 137,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.069640551557592
+              },
+              {
+                "midAltitudeM": 4375,
+                "climbMps": 20.616995867939156,
+                "bestTasMph": 139,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.125917936898224
+              },
+              {
+                "midAltitudeM": 4625,
+                "climbMps": 20.518965551699008,
+                "bestTasMph": 140,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.183850076170119
+              },
+              {
+                "midAltitudeM": 4875,
+                "climbMps": 20.419067126542036,
+                "bestTasMph": 142,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.243458452371396
+              }
+            ],
+            "note": "Optimized best TAS at every step; no acceleration, climb IAS schedule, exact cooling/prop calibration or observed climb power. Rechlin 4:00 is SECONDARY quotation."
+          },
+          "turn170EasCombat": {
+            "status": "modelled",
+            "altFt": 5000,
+            "easMph": 170,
+            "tasMph": 183.13793648731854,
+            "degSec": 18.53732079998302,
+            "g": 2.880195793627595,
+            "instantDegSec": 19.449328422209508,
+            "stallEasMph": 98.06509011620857,
+            "nLift": 3.0051695468827457,
+            "nPower": 2.880195793627595,
+            "propEta": 0.8410586190538045,
+            "propRpm": null,
+            "propulsiveHp": 995.4635245741782,
+            "parasiteDragLbf": 282.5232800869393,
+            "inducedDragLbf": 211.65917643328453
+          },
+          "maxSpeedCurveCombat": [
+            {
+              "altFt": 0,
+              "mph": 324.9999999999991
+            },
+            {
+              "altFt": 1000,
+              "mph": 327.942521550488
+            },
+            {
+              "altFt": 2000,
+              "mph": 330.9280703052418
+            },
+            {
+              "altFt": 3000,
+              "mph": 333.9574402187018
+            },
+            {
+              "altFt": 4000,
+              "mph": 337.0314389334608
+            },
+            {
+              "altFt": 5000,
+              "mph": 340.15088766843564
+            },
+            {
+              "altFt": 6000,
+              "mph": 343.3166210574409
+            },
+            {
+              "altFt": 7000,
+              "mph": 346.5294869318759
+            },
+            {
+              "altFt": 8000,
+              "mph": 349.7903460404623
+            },
+            {
+              "altFt": 9000,
+              "mph": 353.10007169815526
+            },
+            {
+              "altFt": 10000,
+              "mph": 356.45954935541613
+            },
+            {
+              "altFt": 11000,
+              "mph": 359.8696760780067
+            },
+            {
+              "altFt": 12000,
+              "mph": 363.3313599262592
+            },
+            {
+              "altFt": 13000,
+              "mph": 366.8455192214724
+            },
+            {
+              "altFt": 14000,
+              "mph": 370.41308168558953
+            },
+            {
+              "altFt": 15000,
+              "mph": 374.03498343862066
+            }
+          ]
+        },
+        "greg": {
+          "profile": "B",
+          "e": 0.5576706734059873,
+          "polar": {
+            "cd0": 0.021639541485686933,
+            "e": 0.5576706734059873,
+            "source": "v1.5 anchored B / e=0.5576706734059873; single sea-level or 5000-ft observed speed only"
+          },
+          "anchorEta": 0.7985000000000001,
+          "propAtCombatAnchor": {
+            "eta": 0.7985000000000001,
+            "method": "heuristic; not a NACA measured propeller map"
+          },
+          "propAtEmergencySpeed": {
+            "eta": 0.7952,
+            "method": "heuristic; not a NACA measured propeller map"
+          },
+          "speed": {
+            "calibrationCombatMph": 324.9999999999991,
+            "publishedCombatMph": 325,
+            "withheldEmergencyMph": 336,
+            "predictedEmergencyMph": 338.71491029041954,
+            "emergencyResidualMph": 2.714910290419539
+          },
+          "climb": {
+            "status": "integrated-optimistic-peak",
+            "startM": 1000,
+            "endM": 5000,
+            "seconds": 205.95714332782927,
+            "minutes": 3.4326190554638214,
+            "reportedF4RechlinSecondarySeconds": 240,
+            "residualSeconds": -34.04285667217073,
+            "steps": [
+              {
+                "midAltitudeM": 1125,
+                "climbMps": 20.217630918152608,
+                "bestTasMph": 130,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.365444844258924
+              },
+              {
+                "midAltitudeM": 1375,
+                "climbMps": 20.122033600639515,
+                "bestTasMph": 131,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.424191558454337
+              },
+              {
+                "midAltitudeM": 1625,
+                "climbMps": 20.024864746930582,
+                "bestTasMph": 133,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.484478829667006
+              },
+              {
+                "midAltitudeM": 1875,
+                "climbMps": 19.92577130446046,
+                "bestTasMph": 135,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.54656576049513
+              },
+              {
+                "midAltitudeM": 2125,
+                "climbMps": 19.824789893762137,
+                "bestTasMph": 136,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.610474125562481
+              },
+              {
+                "midAltitudeM": 2375,
+                "climbMps": 19.722084862733688,
+                "bestTasMph": 138,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.676144623654528
+              },
+              {
+                "midAltitudeM": 2625,
+                "climbMps": 19.61737559445796,
+                "bestTasMph": 140,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.743804531663587
+              },
+              {
+                "midAltitudeM": 2875,
+                "climbMps": 19.51063915326728,
+                "bestTasMph": 142,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.813521793730404
+              },
+              {
+                "midAltitudeM": 3125,
+                "climbMps": 19.40184721942795,
+                "bestTasMph": 144,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.885371025376577
+              },
+              {
+                "midAltitudeM": 3375,
+                "climbMps": 19.290993429050918,
+                "bestTasMph": 145,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 12.95941553862732
+              },
+              {
+                "midAltitudeM": 3625,
+                "climbMps": 19.178070972995503,
+                "bestTasMph": 147,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.035721911344636
+              },
+              {
+                "midAltitudeM": 3875,
+                "climbMps": 19.06293781615943,
+                "bestTasMph": 149,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.114452893408586
+              },
+              {
+                "midAltitudeM": 4125,
+                "climbMps": 18.94554369994611,
+                "bestTasMph": 151,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.195715254174052
+              },
+              {
+                "midAltitudeM": 4375,
+                "climbMps": 18.82583239964368,
+                "bestTasMph": 153,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.279625287895998
+              },
+              {
+                "midAltitudeM": 4625,
+                "climbMps": 18.703741577704008,
+                "bestTasMph": 155,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.36630956760091
+              },
+              {
+                "midAltitudeM": 4875,
+                "climbMps": 18.57920262313434,
+                "bestTasMph": 157,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.455905781914801
+              }
+            ],
+            "note": "Optimized best TAS at every step; no acceleration, climb IAS schedule, exact cooling/prop calibration or observed climb power. Rechlin 4:00 is SECONDARY quotation."
+          },
+          "turn170EasCombat": {
+            "status": "modelled",
+            "altFt": 5000,
+            "easMph": 170,
+            "tasMph": 183.13793648731854,
+            "degSec": 15.272964837758638,
+            "g": 2.4397395375607758,
+            "instantDegSec": 19.449328422209508,
+            "stallEasMph": 98.06509011620857,
+            "nLift": 3.0051695468827457,
+            "nPower": 2.4397395375607758,
+            "propEta": 0.8410586190538045,
+            "propRpm": null,
+            "propulsiveHp": 995.4635245741782,
+            "parasiteDragLbf": 276.2061724526083,
+            "inducedDragLbf": 296.0423875432526
+          },
+          "maxSpeedCurveCombat": [
+            {
+              "altFt": 0,
+              "mph": 324.9999999999991
+            },
+            {
+              "altFt": 1000,
+              "mph": 327.88614397307265
+            },
+            {
+              "altFt": 2000,
+              "mph": 330.81240443423576
+            },
+            {
+              "altFt": 3000,
+              "mph": 333.77941606087643
+            },
+            {
+              "altFt": 4000,
+              "mph": 336.78781708466613
+            },
+            {
+              "altFt": 5000,
+              "mph": 339.83824842223385
+            },
+            {
+              "altFt": 6000,
+              "mph": 342.93135268995593
+            },
+            {
+              "altFt": 7000,
+              "mph": 346.0677730898451
+            },
+            {
+              "altFt": 8000,
+              "mph": 349.2481521519139
+            },
+            {
+              "altFt": 9000,
+              "mph": 352.4731303167473
+            },
+            {
+              "altFt": 10000,
+              "mph": 355.743344339985
+            },
+            {
+              "altFt": 11000,
+              "mph": 359.0594254982925
+            },
+            {
+              "altFt": 12000,
+              "mph": 362.4219975738224
+            },
+            {
+              "altFt": 13000,
+              "mph": 365.8316745913844
+            },
+            {
+              "altFt": 14000,
+              "mph": 369.28905827930885
+            },
+            {
+              "altFt": 15000,
+              "mph": 372.794735221255
+            }
+          ]
+        }
+      },
+      "p47": {
+        "id": "P-47B / R-2800-21 (41-5902)",
+        "profile": "B",
+        "e": 0.78,
+        "polar": {
+          "cd0": 0.01883291718827847,
+          "e": 0.78,
+          "source": "v1.5 anchored B / e=0.78; single sea-level or 5000-ft observed speed only"
+        },
+        "anchorEta": 0.7904,
+        "speed": {
+          "rows": [
+            {
+              "altFt": 5000,
+              "reportedMph": 352,
+              "modelMph": 352.0000000000009,
+              "residualMph": 9.094947017729282e-13,
+              "role": "calibration"
+            },
+            {
+              "altFt": 15000,
+              "reportedMph": 386,
+              "modelMph": 386.0052718296238,
+              "residualMph": 0.005271829623779922,
+              "role": "withheld"
+            },
+            {
+              "altFt": 25000,
+              "reportedMph": 420,
+              "modelMph": 424.9714103213364,
+              "residualMph": 4.971410321336407,
+              "role": "withheld"
+            },
+            {
+              "altFt": 27800,
+              "reportedMph": 429,
+              "modelMph": 436.82288283536127,
+              "residualMph": 7.82288283536127,
+              "role": "withheld"
+            },
+            {
+              "altFt": 30000,
+              "reportedMph": 426,
+              "modelMph": 432.2575217903368,
+              "residualMph": 6.257521790336796,
+              "role": "withheld"
+            },
+            {
+              "altFt": 34000,
+              "reportedMph": 412,
+              "modelMph": 419.1982874295818,
+              "residualMph": 7.1982874295817965,
+              "role": "withheld"
+            }
+          ],
+          "holdoutCount": 5,
+          "holdoutMAEMph": 5.25107484124801,
+          "holdoutMaxErrorMph": 7.82288283536127
+        },
+        "climb": {
+          "fittedConfigurationCd0": 0.022363184395307125,
+          "fitAltitudeFt": 15000,
+          "withheldCount": 4,
+          "withheldMAEFpm": 229.19198760775106,
+          "rows": [
+            {
+              "altFt": 15000,
+              "reportedFpm": 2330,
+              "modeledFpm": 2330,
+              "residualFpm": 0,
+              "rating": "military",
+              "role": "one-point-cooling/configuration-fit"
+            },
+            {
+              "altFt": 20000,
+              "reportedFpm": 2150,
+              "modeledFpm": 1992.5664245118548,
+              "residualFpm": -157.43357548814515,
+              "rating": "military",
+              "role": "withheld"
+            },
+            {
+              "altFt": 23400,
+              "reportedFpm": 2000,
+              "modeledFpm": 1863.500269836038,
+              "residualFpm": -136.4997301639621,
+              "rating": "military",
+              "role": "withheld"
+            },
+            {
+              "altFt": 25000,
+              "reportedFpm": 1810,
+              "modeledFpm": 1573.7795628769989,
+              "residualFpm": -236.22043712300115,
+              "rating": "military",
+              "role": "withheld"
+            },
+            {
+              "altFt": 30000,
+              "reportedFpm": 1190,
+              "modeledFpm": 803.3857923441042,
+              "residualFpm": -386.6142076558958,
+              "rating": "military",
+              "role": "withheld"
+            }
+          ],
+          "qualification": "At 15000 ft, historical P47 climb MAP is used to fit an aggregate configuration loss. Four other altitudes are withheld; this is not a test of zero unknown cooling drag."
+        }
+      },
+      "p51": {
+        "id": "P-51B-15 / V-1650-7 (43-24777)",
+        "profile": "B",
+        "e": 0.78,
+        "polar": {
+          "cd0": 0.015603605319639653,
+          "e": 0.78,
+          "source": "v1.5 anchored B / e=0.78; single sea-level or 5000-ft observed speed only"
+        },
+        "anchorEta": 0.7875500000000001,
+        "speed": {
+          "rows": [
+            {
+              "altFt": 0,
+              "reportedMph": 361.5,
+              "modelMph": 361.4999999999991,
+              "residualMph": -9.094947017729282e-13,
+              "role": "calibration"
+            },
+            {
+              "altFt": 4000,
+              "reportedMph": 380,
+              "modelMph": 378.1500449372297,
+              "residualMph": -1.8499550627702774,
+              "role": "withheld"
+            },
+            {
+              "altFt": 7400,
+              "reportedMph": 395.5,
+              "modelMph": 393.280166679343,
+              "residualMph": -2.219833320657017,
+              "role": "withheld"
+            },
+            {
+              "altFt": 10300,
+              "reportedMph": 409,
+              "modelMph": 407.02067099112446,
+              "residualMph": -1.9793290088755384,
+              "role": "withheld"
+            },
+            {
+              "altFt": 18000,
+              "reportedMph": 408,
+              "modelMph": 408.24637786524636,
+              "residualMph": 0.24637786524635885,
+              "role": "withheld"
+            },
+            {
+              "altFt": 20800,
+              "reportedMph": 417,
+              "modelMph": 419.4626088596515,
+              "residualMph": 2.462608859651482,
+              "role": "withheld"
+            },
+            {
+              "altFt": 24000,
+              "reportedMph": 426,
+              "modelMph": 432.82147111028735,
+              "residualMph": 6.821471110287348,
+              "role": "withheld"
+            },
+            {
+              "altFt": 28000,
+              "reportedMph": 419,
+              "modelMph": 425.2189781465868,
+              "residualMph": 6.218978146586778,
+              "role": "withheld"
+            },
+            {
+              "altFt": 32000,
+              "reportedMph": 410,
+              "modelMph": 415.31771674090396,
+              "residualMph": 5.317716740903961,
+              "role": "withheld"
+            }
+          ],
+          "holdoutCount": 8,
+          "holdoutMAEMph": 3.389533764372345,
+          "holdoutMaxErrorMph": 6.821471110287348
+        },
+        "climb": {
+          "reports": [
+            {
+              "id": "wright-1944-05-20",
+              "date": "1944-05-20",
+              "reportedTakeoffWeightLb": 9335,
+              "status": "same test programme, not an independent flight-test series",
+              "MAEFpm": 105.21636301220565,
+              "rows": [
+                {
+                  "altFt": 2200,
+                  "rating": "67inHg",
+                  "reportedFpm": 3820,
+                  "modeledFpm": 3890.1945396181977,
+                  "residualFpm": 70.19453961819772,
+                  "modeledOptimumTasMph": 131,
+                  "matchedHistoricalClimbAirspeed": false
+                },
+                {
+                  "altFt": 2200,
+                  "rating": "75inHg",
+                  "reportedFpm": 4380,
+                  "modeledFpm": 4520.238186406214,
+                  "residualFpm": 140.23818640621357,
+                  "modeledOptimumTasMph": 130,
+                  "matchedHistoricalClimbAirspeed": false
+                }
+              ]
+            },
+            {
+              "id": "wright-1944-05-15",
+              "date": "1944-05-15",
+              "reportedTakeoffWeightLb": 9680,
+              "status": "same test programme, not an independent flight-test series",
+              "MAEFpm": 237.98574421320941,
+              "rows": [
+                {
+                  "altFt": 5600,
+                  "rating": "67inHg",
+                  "reportedFpm": 3920,
+                  "modeledFpm": 3739.6384584608595,
+                  "residualFpm": -180.3615415391405,
+                  "modeledOptimumTasMph": 141,
+                  "matchedHistoricalClimbAirspeed": false
+                },
+                {
+                  "altFt": 2300,
+                  "rating": "75inHg",
+                  "reportedFpm": 4380,
+                  "modeledFpm": 4303.811077166648,
+                  "residualFpm": -76.18892283335208,
+                  "modeledOptimumTasMph": 133,
+                  "matchedHistoricalClimbAirspeed": false
+                },
+                {
+                  "altFt": 19200,
+                  "rating": "67inHg",
+                  "reportedFpm": 3170,
+                  "modeledFpm": 2712.5932317328643,
+                  "residualFpm": -457.4067682671357,
+                  "modeledOptimumTasMph": 177,
+                  "matchedHistoricalClimbAirspeed": false
+                },
+                {
+                  "altFt": 15700,
+                  "rating": "75inHg",
+                  "reportedFpm": 3700,
+                  "modeledFpm": null,
+                  "residualFpm": null,
+                  "modeledOptimumTasMph": null,
+                  "matchedHistoricalClimbAirspeed": false
+                }
+              ]
+            }
+          ],
+          "boostGain": {
+            "reportedFpm": 560,
+            "modeledFpm": 630.0436467880158,
+            "residualFpm": 70.04364678801585,
+            "status": "held-out same-airframe rating differential with unmatched climb IAS; no climb rating fit"
+          }
+        }
+      }
+    },
+    {
+      "profile": "C",
+      "f4": {
+        "generic": {
+          "profile": "C",
+          "e": 0.78,
+          "polar": {
+            "cd0": 0.02275143940480398,
+            "e": 0.78,
+            "source": "v1.5 anchored C / e=0.78; single sea-level or 5000-ft observed speed only"
+          },
+          "anchorEta": 0.8195755291132589,
+          "propAtCombatAnchor": {
+            "eta": 0.8195755291132589,
+            "J": 1.9584822400000002,
+            "Cp": 0.19608944890263724,
+            "tipMach": 0.8070481096055968,
+            "propRpm": 1483.6795252225518,
+            "engineRpm": 2500,
+            "reductionRatio": 1.685,
+            "method": "heuristic; not a NACA measured propeller map"
+          },
+          "propAtEmergencySpeed": {
+            "eta": 0.8235398890081544,
+            "J": 1.8747864177777775,
+            "Cp": 0.17511989249563933,
+            "tipMach": 0.8613496925554031,
+            "propRpm": 1602.373887240356,
+            "engineRpm": 2700,
+            "reductionRatio": 1.685,
+            "method": "heuristic; not a NACA measured propeller map"
+          },
+          "speed": {
+            "calibrationCombatMph": 324.9999999999991,
+            "publishedCombatMph": 325,
+            "withheldEmergencyMph": 336,
+            "predictedEmergencyMph": 339.37410024487417,
+            "emergencyResidualMph": 3.374100244874171
+          },
+          "climb": {
+            "status": "integrated-optimistic-peak",
+            "startM": 1000,
+            "endM": 5000,
+            "seconds": 213.9355402759316,
+            "minutes": 3.5655923379321934,
+            "reportedF4RechlinSecondarySeconds": 240,
+            "residualSeconds": -26.0644597240684,
+            "steps": [
+              {
+                "midAltitudeM": 1125,
+                "climbMps": 18.873054575478577,
+                "bestTasMph": 154,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.246398403617215
+              },
+              {
+                "midAltitudeM": 1375,
+                "climbMps": 18.85481002976185,
+                "bestTasMph": 156,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.25921606239369
+              },
+              {
+                "midAltitudeM": 1625,
+                "climbMps": 18.835797321156726,
+                "bestTasMph": 157,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.272599812867771
+              },
+              {
+                "midAltitudeM": 1875,
+                "climbMps": 18.815698838807766,
+                "bestTasMph": 159,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.286777288567665
+              },
+              {
+                "midAltitudeM": 2125,
+                "climbMps": 18.794516326002743,
+                "bestTasMph": 160,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.301752259201157
+              },
+              {
+                "midAltitudeM": 2375,
+                "climbMps": 18.772386412076617,
+                "bestTasMph": 162,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.317433090934589
+              },
+              {
+                "midAltitudeM": 2625,
+                "climbMps": 18.749006675279702,
+                "bestTasMph": 164,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.334039735002145
+              },
+              {
+                "midAltitudeM": 2875,
+                "climbMps": 18.724397717713337,
+                "bestTasMph": 165,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.35156429429499
+              },
+              {
+                "midAltitudeM": 3125,
+                "climbMps": 18.69868498993951,
+                "bestTasMph": 167,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.369924148917852
+              },
+              {
+                "midAltitudeM": 3375,
+                "climbMps": 18.6715882046996,
+                "bestTasMph": 169,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.389326995604772
+              },
+              {
+                "midAltitudeM": 3625,
+                "climbMps": 18.643061942674972,
+                "bestTasMph": 171,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.409814373235362
+              },
+              {
+                "midAltitudeM": 3875,
+                "climbMps": 18.613081644867442,
+                "bestTasMph": 172,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.431413710525334
+              },
+              {
+                "midAltitudeM": 4125,
+                "climbMps": 18.581710987126673,
+                "bestTasMph": 174,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.454089355560361
+              },
+              {
+                "midAltitudeM": 4375,
+                "climbMps": 18.548718080335618,
+                "bestTasMph": 176,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.478020363306774
+              },
+              {
+                "midAltitudeM": 4625,
+                "climbMps": 18.514035958462916,
+                "bestTasMph": 178,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.503268577466653
+              },
+              {
+                "midAltitudeM": 4875,
+                "climbMps": 18.47759160513984,
+                "bestTasMph": 180,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 13.529901804435298
+              }
+            ],
+            "note": "Optimized best TAS at every step; no acceleration, climb IAS schedule, exact cooling/prop calibration or observed climb power. Rechlin 4:00 is SECONDARY quotation."
+          },
+          "turn170EasCombat": {
+            "status": "modelled",
+            "altFt": 5000,
+            "easMph": 170,
+            "tasMph": 183.13793648731854,
+            "degSec": 17.891500473862955,
+            "g": 2.7921400522569346,
+            "instantDegSec": 19.449328422209508,
+            "stallEasMph": 98.06509011620857,
+            "nLift": 3.0051695468827457,
+            "nPower": 2.7921400522569346,
+            "propEta": 0.8006861191741667,
+            "propRpm": 1483.6795252225518,
+            "propulsiveHp": 947.679279676637,
+            "parasiteDragLbf": 290.3983894457675,
+            "inducedDragLbf": 211.65917643328453
+          },
+          "maxSpeedCurveCombat": [
+            {
+              "altFt": 0,
+              "mph": 324.9999999999991
+            },
+            {
+              "altFt": 1000,
+              "mph": 327.9338972534997
+            },
+            {
+              "altFt": 2000,
+              "mph": 330.90211308078415
+            },
+            {
+              "altFt": 3000,
+              "mph": 333.9048470154912
+            },
+            {
+              "altFt": 4000,
+              "mph": 336.9422792410978
+            },
+            {
+              "altFt": 5000,
+              "mph": 340.014568629681
+            },
+            {
+              "altFt": 6000,
+              "mph": 343.12185060900356
+            },
+            {
+              "altFt": 7000,
+              "mph": 346.2642348407435
+            },
+            {
+              "altFt": 8000,
+              "mph": 349.44180269057415
+            },
+            {
+              "altFt": 9000,
+              "mph": 352.65460446852285
+            },
+            {
+              "altFt": 10000,
+              "mph": 355.9026564154219
+            },
+            {
+              "altFt": 11000,
+              "mph": 359.1859374082078
+            },
+            {
+              "altFt": 12000,
+              "mph": 362.50438535350895
+            },
+            {
+              "altFt": 13000,
+              "mph": 365.85789323498193
+            },
+            {
+              "altFt": 14000,
+              "mph": 369.24630477546
+            },
+            {
+              "altFt": 15000,
+              "mph": 372.66940966983475
+            }
+          ]
+        },
+        "greg": {
+          "profile": "C",
+          "e": 0.5576706734059873,
+          "polar": {
+            "cd0": 0.02225652174417093,
+            "e": 0.5576706734059873,
+            "source": "v1.5 anchored C / e=0.5576706734059873; single sea-level or 5000-ft observed speed only"
+          },
+          "anchorEta": 0.8195755291132589,
+          "propAtCombatAnchor": {
+            "eta": 0.8195755291132589,
+            "J": 1.9584822400000002,
+            "Cp": 0.19608944890263724,
+            "tipMach": 0.8070481096055968,
+            "propRpm": 1483.6795252225518,
+            "engineRpm": 2500,
+            "reductionRatio": 1.685,
+            "method": "heuristic; not a NACA measured propeller map"
+          },
+          "propAtEmergencySpeed": {
+            "eta": 0.8235398890081544,
+            "J": 1.8747864177777775,
+            "Cp": 0.17511989249563933,
+            "tipMach": 0.8613496925554031,
+            "propRpm": 1602.373887240356,
+            "engineRpm": 2700,
+            "reductionRatio": 1.685,
+            "method": "heuristic; not a NACA measured propeller map"
+          },
+          "speed": {
+            "calibrationCombatMph": 324.9999999999991,
+            "publishedCombatMph": 325,
+            "withheldEmergencyMph": 336,
+            "predictedEmergencyMph": 339.76688648311483,
+            "emergencyResidualMph": 3.766886483114831
+          },
+          "climb": {
+            "status": "integrated-optimistic-peak",
+            "startM": 1000,
+            "endM": 5000,
+            "seconds": 229.92142184963043,
+            "minutes": 3.8320236974938404,
+            "reportedF4RechlinSecondarySeconds": 240,
+            "residualSeconds": -10.078578150369566,
+            "steps": [
+              {
+                "midAltitudeM": 1125,
+                "climbMps": 17.7202177012599,
+                "bestTasMph": 162,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.108178816687172
+              },
+              {
+                "midAltitudeM": 1375,
+                "climbMps": 17.68476932137572,
+                "bestTasMph": 164,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.136458070607853
+              },
+              {
+                "midAltitudeM": 1625,
+                "climbMps": 17.64787671253337,
+                "bestTasMph": 165,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.166010113978876
+              },
+              {
+                "midAltitudeM": 1875,
+                "climbMps": 17.609797090655256,
+                "bestTasMph": 167,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.196642852441723
+              },
+              {
+                "midAltitudeM": 2125,
+                "climbMps": 17.570166848477022,
+                "bestTasMph": 169,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.228663970921252
+              },
+              {
+                "midAltitudeM": 2375,
+                "climbMps": 17.528944470290913,
+                "bestTasMph": 171,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.26212516239724
+              },
+              {
+                "midAltitudeM": 2625,
+                "climbMps": 17.486086721726327,
+                "bestTasMph": 172,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.297081101020558
+              },
+              {
+                "midAltitudeM": 2875,
+                "climbMps": 17.44173219037249,
+                "bestTasMph": 174,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.333438747442488
+              },
+              {
+                "midAltitudeM": 3125,
+                "climbMps": 17.395601401446555,
+                "bestTasMph": 176,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.371449093976763
+              },
+              {
+                "midAltitudeM": 3375,
+                "climbMps": 17.34763178034328,
+                "bestTasMph": 178,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.411188983344498
+              },
+              {
+                "midAltitudeM": 3625,
+                "climbMps": 17.297754909166862,
+                "bestTasMph": 180,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.45274264277578
+              },
+              {
+                "midAltitudeM": 3875,
+                "climbMps": 17.245896304952165,
+                "bestTasMph": 182,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.496202202503817
+              },
+              {
+                "midAltitudeM": 4125,
+                "climbMps": 17.191975181883382,
+                "bestTasMph": 184,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.541668269940608
+              },
+              {
+                "midAltitudeM": 4375,
+                "climbMps": 17.135904196251317,
+                "bestTasMph": 186,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.589250566345397
+              },
+              {
+                "midAltitudeM": 4625,
+                "climbMps": 17.077589172771194,
+                "bestTasMph": 188,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.639068633797818
+              },
+              {
+                "midAltitudeM": 4875,
+                "climbMps": 17.01692881075434,
+                "bestTasMph": 190,
+                "shaftBhp": 1183.584,
+                "secondsThisStep": 14.691252621448664
+              }
+            ],
+            "note": "Optimized best TAS at every step; no acceleration, climb IAS schedule, exact cooling/prop calibration or observed climb power. Rechlin 4:00 is SECONDARY quotation."
+          },
+          "turn170EasCombat": {
+            "status": "modelled",
+            "altFt": 5000,
+            "easMph": 170,
+            "tasMph": 183.13793648731854,
+            "degSec": 14.711998882721472,
+            "g": 2.3654213890823304,
+            "instantDegSec": 19.449328422209508,
+            "stallEasMph": 98.06509011620857,
+            "nLift": 3.0051695468827457,
+            "nPower": 2.3654213890823304,
+            "propEta": 0.8006861191741667,
+            "propRpm": 1483.6795252225518,
+            "propulsiveHp": 947.679279676637,
+            "parasiteDragLbf": 284.0812818114366,
+            "inducedDragLbf": 296.0423875432526
+          },
+          "maxSpeedCurveCombat": [
+            {
+              "altFt": 0,
+              "mph": 324.9999999999991
+            },
+            {
+              "altFt": 1000,
+              "mph": 327.8793956645777
+            },
+            {
+              "altFt": 2000,
+              "mph": 330.7903719050619
+            },
+            {
+              "altFt": 3000,
+              "mph": 333.73298333633375
+            },
+            {
+              "altFt": 4000,
+              "mph": 336.70725607088116
+            },
+            {
+              "altFt": 5000,
+              "mph": 339.7131850482083
+            },
+            {
+              "altFt": 6000,
+              "mph": 342.75073112567316
+            },
+            {
+              "altFt": 7000,
+              "mph": 345.8198179060191
+            },
+            {
+              "altFt": 8000,
+              "mph": 348.9203282738681
+            },
+            {
+              "altFt": 9000,
+              "mph": 352.0521006099416
+            },
+            {
+              "altFt": 10000,
+              "mph": 355.21492464791027
+            },
+            {
+              "altFt": 11000,
+              "mph": 358.4085369342383
+            },
+            {
+              "altFt": 12000,
+              "mph": 361.6326158462407
+            },
+            {
+              "altFt": 13000,
+              "mph": 364.88677611764706
+            },
+            {
+              "altFt": 14000,
+              "mph": 368.17056281416353
+            },
+            {
+              "altFt": 15000,
+              "mph": 371.4834446936429
+            }
+          ]
+        }
+      },
+      "p47": {
+        "id": "P-47B / R-2800-21 (41-5902)",
+        "profile": "C",
+        "e": 0.78,
+        "polar": {
+          "cd0": 0.01968315937146469,
+          "e": 0.78,
+          "source": "v1.5 anchored C / e=0.78; single sea-level or 5000-ft observed speed only"
+        },
+        "anchorEta": 0.8230748957469042,
+        "speed": {
+          "rows": [
+            {
+              "altFt": 5000,
+              "reportedMph": 352,
+              "modelMph": 352.0000000000009,
+              "residualMph": 9.094947017729282e-13,
+              "role": "calibration"
+            },
+            {
+              "altFt": 15000,
+              "reportedMph": 386,
+              "modelMph": 386.0511311975233,
+              "residualMph": 0.051131197523318406,
+              "role": "withheld"
+            },
+            {
+              "altFt": 25000,
+              "reportedMph": 420,
+              "modelMph": 423.26229896231507,
+              "residualMph": 3.2622989623150715,
+              "role": "withheld"
+            },
+            {
+              "altFt": 27800,
+              "reportedMph": 429,
+              "modelMph": 434.0999065944643,
+              "residualMph": 5.099906594464301,
+              "role": "withheld"
+            },
+            {
+              "altFt": 30000,
+              "reportedMph": 426,
+              "modelMph": 429.8896967333412,
+              "residualMph": 3.889696733341225,
+              "role": "withheld"
+            },
+            {
+              "altFt": 34000,
+              "reportedMph": 412,
+              "modelMph": 417.94374795773456,
+              "residualMph": 5.943747957734558,
+              "role": "withheld"
+            }
+          ],
+          "holdoutCount": 5,
+          "holdoutMAEMph": 3.649356289075695,
+          "holdoutMaxErrorMph": 5.943747957734558
+        },
+        "climb": {
+          "fittedConfigurationCd0": 0.01581898059383988,
+          "fitAltitudeFt": 15000,
+          "withheldCount": 4,
+          "withheldMAEFpm": 56.03192645188466,
+          "rows": [
+            {
+              "altFt": 15000,
+              "reportedFpm": 2330,
+              "modeledFpm": 2330.0000000000005,
+              "residualFpm": 4.547473508864641e-13,
+              "rating": "military",
+              "role": "one-point-cooling/configuration-fit"
+            },
+            {
+              "altFt": 20000,
+              "reportedFpm": 2150,
+              "modeledFpm": 2136.235012718354,
+              "residualFpm": -13.764987281645972,
+              "rating": "military",
+              "role": "withheld"
+            },
+            {
+              "altFt": 23400,
+              "reportedFpm": 2000,
+              "modeledFpm": 2057.976558280857,
+              "residualFpm": 57.97655828085681,
+              "rating": "military",
+              "role": "withheld"
+            },
+            {
+              "altFt": 25000,
+              "reportedFpm": 1810,
+              "modeledFpm": 1797.303536205323,
+              "residualFpm": -12.696463794676902,
+              "rating": "military",
+              "role": "withheld"
+            },
+            {
+              "altFt": 30000,
+              "reportedFpm": 1190,
+              "modeledFpm": 1050.310303549641,
+              "residualFpm": -139.68969645035895,
+              "rating": "military",
+              "role": "withheld"
+            }
+          ],
+          "qualification": "At 15000 ft, historical P47 climb MAP is used to fit an aggregate configuration loss. Four other altitudes are withheld; this is not a test of zero unknown cooling drag."
+        }
+      },
+      "p51": {
+        "id": "P-51B-15 / V-1650-7 (43-24777)",
+        "profile": "C",
+        "e": 0.78,
+        "polar": {
+          "cd0": 0.0162226349489314,
+          "e": 0.78,
+          "source": "v1.5 anchored C / e=0.78; single sea-level or 5000-ft observed speed only"
+        },
+        "anchorEta": 0.816949929255663,
+        "speed": {
+          "rows": [
+            {
+              "altFt": 0,
+              "reportedMph": 361.5,
+              "modelMph": 361.4999999999991,
+              "residualMph": -9.094947017729282e-13,
+              "role": "calibration"
+            },
+            {
+              "altFt": 4000,
+              "reportedMph": 380,
+              "modelMph": 377.98763003052863,
+              "residualMph": -2.012369969471365,
+              "role": "withheld"
+            },
+            {
+              "altFt": 7400,
+              "reportedMph": 395.5,
+              "modelMph": 392.734579732748,
+              "residualMph": -2.7654202672520114,
+              "role": "withheld"
+            },
+            {
+              "altFt": 10300,
+              "reportedMph": 409,
+              "modelMph": 405.8958576063642,
+              "residualMph": -3.1041423936358115,
+              "role": "withheld"
+            },
+            {
+              "altFt": 18000,
+              "reportedMph": 408,
+              "modelMph": 407.120145413056,
+              "residualMph": -0.8798545869440204,
+              "role": "withheld"
+            },
+            {
+              "altFt": 20800,
+              "reportedMph": 417,
+              "modelMph": 417.6059663299684,
+              "residualMph": 0.6059663299683962,
+              "role": "withheld"
+            },
+            {
+              "altFt": 24000,
+              "reportedMph": 426,
+              "modelMph": 429.83799510290646,
+              "residualMph": 3.8379951029064614,
+              "role": "withheld"
+            },
+            {
+              "altFt": 28000,
+              "reportedMph": 419,
+              "modelMph": 422.8539732156414,
+              "residualMph": 3.8539732156414175,
+              "role": "withheld"
+            },
+            {
+              "altFt": 32000,
+              "reportedMph": 410,
+              "modelMph": 413.81948381330676,
+              "residualMph": 3.8194838133067606,
+              "role": "withheld"
+            }
+          ],
+          "holdoutCount": 8,
+          "holdoutMAEMph": 2.6099007098907805,
+          "holdoutMaxErrorMph": 3.8539732156414175
+        },
+        "climb": {
+          "reports": [
+            {
+              "id": "wright-1944-05-20",
+              "date": "1944-05-20",
+              "reportedTakeoffWeightLb": 9335,
+              "status": "same test programme, not an independent flight-test series",
+              "MAEFpm": 410.1877613998802,
+              "rows": [
+                {
+                  "altFt": 2200,
+                  "rating": "67inHg",
+                  "reportedFpm": 3820,
+                  "modeledFpm": 3401.0861529653166,
+                  "residualFpm": -418.9138470346834,
+                  "modeledOptimumTasMph": 171,
+                  "matchedHistoricalClimbAirspeed": false
+                },
+                {
+                  "altFt": 2200,
+                  "rating": "75inHg",
+                  "reportedFpm": 4380,
+                  "modeledFpm": 3978.538324234923,
+                  "residualFpm": -401.46167576507696,
+                  "modeledOptimumTasMph": 175,
+                  "matchedHistoricalClimbAirspeed": false
+                }
+              ]
+            },
+            {
+              "id": "wright-1944-05-15",
+              "date": "1944-05-15",
+              "reportedTakeoffWeightLb": 9680,
+              "status": "same test programme, not an independent flight-test series",
+              "MAEFpm": 615.2848411359824,
+              "rows": [
+                {
+                  "altFt": 5600,
+                  "rating": "67inHg",
+                  "reportedFpm": 3920,
+                  "modeledFpm": 3317.0429148537346,
+                  "residualFpm": -602.9570851462654,
+                  "modeledOptimumTasMph": 181,
+                  "matchedHistoricalClimbAirspeed": false
+                },
+                {
+                  "altFt": 2300,
+                  "rating": "75inHg",
+                  "reportedFpm": 4380,
+                  "modeledFpm": 3796.8592359744284,
+                  "residualFpm": -583.1407640255716,
+                  "modeledOptimumTasMph": 176,
+                  "matchedHistoricalClimbAirspeed": false
+                },
+                {
+                  "altFt": 19200,
+                  "rating": "67inHg",
+                  "reportedFpm": 3170,
+                  "modeledFpm": 2510.2433257638895,
+                  "residualFpm": -659.7566742361105,
+                  "modeledOptimumTasMph": 211,
+                  "matchedHistoricalClimbAirspeed": false
+                },
+                {
+                  "altFt": 15700,
+                  "rating": "75inHg",
+                  "reportedFpm": 3700,
+                  "modeledFpm": null,
+                  "residualFpm": null,
+                  "modeledOptimumTasMph": null,
+                  "matchedHistoricalClimbAirspeed": false
+                }
+              ]
+            }
+          ],
+          "boostGain": {
+            "reportedFpm": 560,
+            "modeledFpm": 577.4521712696064,
+            "residualFpm": 17.452171269606424,
+            "status": "held-out same-airframe rating differential with unmatched climb IAS; no climb rating fit"
+          }
+        }
+      }
+    }
+  ],
+  "turnSensitivity": {
+    "condition": {
+      "altFt": 5000,
+      "easMph": 170,
+      "rating": "combat"
+    },
+    "generic": {
+      "status": "modelled",
+      "altFt": 5000,
+      "easMph": 170,
+      "tasMph": 183.13793648731854,
+      "degSec": 17.891500473862955,
+      "g": 2.7921400522569346,
+      "instantDegSec": 19.449328422209508,
+      "stallEasMph": 98.06509011620857,
+      "nLift": 3.0051695468827457,
+      "nPower": 2.7921400522569346,
+      "propEta": 0.8006861191741667,
+      "propRpm": 1483.6795252225518,
+      "propulsiveHp": 947.679279676637,
+      "parasiteDragLbf": 290.3983894457675,
+      "inducedDragLbf": 211.65917643328453
+    },
+    "greg": {
+      "status": "modelled",
+      "altFt": 5000,
+      "easMph": 170,
+      "tasMph": 183.13793648731854,
+      "degSec": 14.711998882721472,
+      "g": 2.3654213890823304,
+      "instantDegSec": 19.449328422209508,
+      "stallEasMph": 98.06509011620857,
+      "nLift": 3.0051695468827457,
+      "nPower": 2.3654213890823304,
+      "propEta": 0.8006861191741667,
+      "propRpm": 1483.6795252225518,
+      "propulsiveHp": 947.679279676637,
+      "parasiteDragLbf": 284.0812818114366,
+      "inducedDragLbf": 296.0423875432526
+    },
+    "decomposition": {
+      "eChangeAtFrozenCd0DegSec": -3.2136999267968154,
+      "followOnCd0RefitDegSec": 0.03419833565533281,
+      "totalDegSec": -3.1795015911414826,
+      "meaning": "Exact path: lower e with CD0 held, then refit CD0 once to preserve the 325-mph historical speed. Not a derivative or causal measurement."
+    },
+    "paramSensitivity": {
+      "e10pct": {
+        "minus": 16.84451386479401,
+        "base": 17.891500473862955,
+        "plus": 18.880517235267664
+      },
+      "weight5pct": {
+        "minus": 18.967772979209652,
+        "base": 17.891500473862955,
+        "plus": 16.91053846115471
+      },
+      "clMax10pct": {
+        "minus": 17.246870110068123,
+        "base": 17.891500473862955,
+        "plus": 17.891500473862955
+      },
+      "propulsivePower5pct": {
+        "minus": 17.277563709839125,
+        "base": 17.891500473862955,
+        "plus": 18.485058037910697
+      }
+    },
+    "perturbationDisclaimer": "These +/-5% or +/-10% perturbations diagnose sensitivity; they are not historical error bars or permissible aircraft-to-aircraft adjustments."
+  },
+  "decision": {
+    "propulsion": "Profile C yields the lowest held-out speed error on both Allied planes under equal single-anchor refits. This is cross-aircraft model discrimination, not a measured propeller map.",
+    "inducedDrag": "No F4-specific calibrated low-speed polar is validated. The 4-minute Rechlin clue and Greg worksheet cannot independently establish an Oswald factor; wrong gear ratio previously created a misleading 3:59 coincidence.",
+    "currentBaseline": "Keep F4 generic e=.78 provisional in interactive UI and preserve Greg-derived e=.558 as explicit sensitivity case, rather than artificially narrowing a band.",
+    "limit": "F4 emergency power documented to 15748ft, combat to 16076ft; 27000ft F4 comparisons remain unavailable."
+  },
+  "keyMetrics": {
+    "p47SpeedHoldoutMaeMph": 3.649356289075695,
+    "p51SpeedHoldoutMaeMph": 2.6099007098907805,
+    "f4GenericClimbSeconds": 213.9355402759316,
+    "f4GregClimbSeconds": 229.92142184963043,
+    "f4EmergencyGenericMph": 339.37410024487417,
+    "f4EmergencyGregMph": 339.76688648311483
+  }
+}

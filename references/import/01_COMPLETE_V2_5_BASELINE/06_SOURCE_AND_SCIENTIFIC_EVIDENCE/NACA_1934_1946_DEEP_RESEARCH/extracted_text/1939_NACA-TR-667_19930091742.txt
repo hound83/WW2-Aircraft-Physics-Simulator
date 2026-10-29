@@ -1,0 +1,759 @@
+                NATIONAL ADVISORY COMMITTEE
+                      FOR AERONAUTICS
+
+
+
+                                                    REPORT No. 667
+
+
+
+              DETERMINATION OF THE PROFILE DRAG OF
+                 AN AIRPLANE WING IN FLIGHT AT
+                    HIGH REYNOLDS NUMBERS
+
+                                                    By JOSEPH BICKNELL
+
+
+
+
+                                                                 1939
+
+
+
+For sale by the:Superintcndent of Documents, Washington. D. C.    -     -     -    -    -   Price 10 cen t.
+                                                    Subscription price $3.00 per year
+                                                AERONAUTIC SYMBOLS
+                                        1. FUNDAMENTAL AND DERIVED UNITS
+
+                                                        Metric                                          English
+
+                             Symbol
+                                                 Unit                Abbrevia-                   Unit               Abbrevia-
+                                                                       tion                                           tion
+
+           Length ___ ___      l       meter ___ _______________               m        foot (or mile) _________   ft. (or mi.)
+           Time ___ _____      t       second ___ ______________                s       second (or hour) _______   sec. Cor hr.)
+           Force ___ _____     F       weight of 1 kilogram _____              kg       weight of 1 pound _____    lb.
+
+           PoweL _____ _       P       horsepower (metric) _____              horsepower _______ ____              hp.
+           Speed _____ __             {kilometers per hOUL _____ -------
+                                                                   k .p.h.
+                                                                          --- miles per hour ____ ____             m.p.h.
+                               V       meters per second ___ ____  m.p.s.     feet per second __ ______            f.p.s.
+
+
+                                                   2. GENERAL SYMBOLS
+
+w,     Weight=mg                                                    v,     Kinematic viscosity
+g,     Standa.rd acceleration of          gravity = 9.80665         p,     Density (mass per unit volume)
+         m/s2 or 32.1740 ft./sec. 2                                 Standard density of dry air, 0.12497 kg-m-4_s Z at
+                                                                      15° C. and 760 mm; or 0.002378 Ib.-ft.-4 sec. 2
+m,     Mass=W                                                       Specific weight of "standard" air, 1.2255 kg/rna or
+               g
+I,     Moment of inertia=mk2• (Indicate axis of                       0.07651 lb ./cu. ft.
+         radius of gyration k by proper subscript.)
+Po,    Coefficient of viscosity
+                                               3. AERODYNAMIC SYMBOLS
+
+
+8,     Area                                                                         Angle of setting of wmgs (relative to thrust
+StD,   Area of wing                                                                   line)
+G,     Gap                                                                          Angle of stabilizer setting (relative to thrust
+h,     Span                                                                           line)
+C,     Chord                                                        Q,              Resul tant moment
+b2                                                                  n,              Resultant angular velocity
+       Aspect ratio
+S'                                                                       Vl
+                                                                    p -'            Reynolds Number, where l is a linear dimension
+V,     True air speed                                                     p.
+                                                                                      (e.g., for a model airfoil 3 in. chord, 100
+q,     Dynamic pressure=~p V2                                                         m .p.h. normal pressure at 15° C., the cor-
+                                                                                      responding number is 234,000; or for a model
+L,     Lift, absolute coefficient OL=:S                                               of 10 em chord, 40 m.p.s., the corresponding
+
+D,     Drag, absolute coefficient OD=     :s                                          number is 274,000)
+                                                                                    Center-of-pressure coefficient (ratio of distance
+                                                                                      of c.p . from leading edge to chord length)
+       Profile drag, absolute coefficient ODO= ~S                                   Angle of attack
+                                                                                    Angle of downwash
+       Induced drag, absolute coefficient ODt= ~s                                   Angle of attack, infinite aspect ratio
+                                                                                    Angle of attack, induced
+       Parasite drag, absolute coefficient ODP=~S                                   Angle of attack, a..b solute (measured from zero-
+                                                                                      lift position)
+0,     Cross-wind force, absolute coefficient Oc= q~                'Y,             Flight-path angle
+       Resultant foroo
+                           REPORT No. 667
+
+               DETERMINATION OF THE PROFILE DRAG OF
+                  AN AIRPLANE WING IN FLIGHT AT
+                     HIGH REYNOLDS NUMBERS
+
+                              By JOSEPH BICKNELL
+                      Langley Memorial Aeronautical Laboratory
+
+
+
+
+                                                                 I
+
+
+
+
+1-17208- ;;9
+                                  NATIO AL ADVISORY COMMITTEE FOR AERONAUTICS
+
+                                                   HEADQUAUTEUS.               AVY BU ILDING, WASHINGTON. D. C.
+                                                              LABO RATOR IES. LANG LEY FIELD. VA.
+
+
+      ('reatcd b.1' act o f Co ngrcss approved March 3, Ull.5, fo r thc su pervi s iu ll a llel directio ll of the ~(' i c lltinc "tud y uf thc pro blems of
+fli ght (U . S. Codc, Ti tle 50, Scc. 151 ) . Its members hip \Va.' increased to 15 by act approvcd M a rc lt 2 , H)2!J. Th e mcmbcrs are
+appointcd b y the Prc ident, and scr vc as such with ut compcnsation .
+
+JOSEPH S. AMES, Ph. D., Chainnan,                                                         ROBER'1' H. HI 'C KLEY, A. B.,
+     Balt imore, Md.                                                                           Chairman , C iv il Ac ro nautics Authu rity .
+VANNEVAR B US H, Sc. D., 11ice hai1'1nan,                                                 JEROME C. H NSAKER,. c. D.,
+     Was hington, D. C.                                                                        Cambridgc, Ma s.
+                                                                                          SYDNEY M. ](RAUS , Captain, Un itcd States Kavy,
+CIlARLES G. ABBOT, • c. D.,
+                                                                                              Burcau of Ac ro nautics, Kavy D cpartmcnt.
+     Sccrctary, Smithsonian Institu t ion.
+                                                                                          CHARLES A. LI NDBERGH , LL. D.,
+HENRY H. ARNOLD, Maj o r Gcncral, Un itcd tatc' Army,
+                                                                                              l\CW Y o rk C ity .
+     Ch ief c f Air Corps , W a r D c partment.
+                                                                                          FRA NC I ' W. REI C llELDJ~.u'ER, A. n.,
+GEORGE H. BUET'l', B ri gadi e r G c ncral, Un ited Statcs Arm y ,                            Ch ie f,  nitcd tatcs W cat hcr B ur eau .
+     Chicf M ateri cl Div i ion, Ail' Corp, Wri ght Fic ll, Day t Oil,                    JOH N H . TOII'ERS, R eal' Admira l, 1Jn itcd Statcs ?\avy,
+       Ohio.                                                                                  Chief, Bmcau of Ae ron a utics, Navy D cpartmc nt.
+LYMAN J. BUIGG S, Ph. D.,                                                                 ED WA RD 'vVARNEll. Sc. D.,
+     Directo r , Nat ional Bur au o f S tandards.                                             Grcenwich, Co nn.
+ 'LINTON M. HE "l'ER, A. 13., LL . 13.,                                                   ORVILIJE WRI GHT, Sc. D.,
+     Administrator, Civi l Ae ron aut ics Authority.                                          Day ton, Ohio.
+
+
+
+
+                                                    GEORG ~1 \". Ll, WI S, J) irector of .IleronautiC(ll lhsearch
+
+                                                                      JOl IN   F. VI("loORY, Sect'etf' r.l!
+
+                 FI "N It Y .1. E. R ,o: l ll, R"" inpe t'-i n-rhat'(jp, 1,(1 nalell 11 1emf/rial Aeronallt ;{,fll l,ril){))'{Itm"/, I.fl nq /PII /i'iPirl , 11ft,
+
+
+
+
+                                                                   TECH I CA L COMMITTEES
+           AERODY AM I       0                                                                                                       A!n e ll Jo"r 8TH ( " rURES
+           POWER PLANTS FOR AIR CR FT                                                                                                AlllCRAFT A 'CIDENT
+           AIRCRAFT JATER IALS                                                                                                       I:-/ VE TIO NS AND OESW NS
+
+                                              Coordtnation of R esearch Xeeds of Jl,IiWary and Cil'l'l , I datio n
+
+                                                                  1 re paration of R esearch P roal'aIlW
+
+                                                                          . Illocalion of Problems
+
+                                                                        j Jrevention of D uplication
+
+                                                                      Consideralion of f nvel1 tions
+
+ LA GLEY MEMORIAL AE RO AUTI CAL LABORATORY                                                          OFFICE OF AERO AUTI CAL I TELLIGE C E
+                           LA GLEY FIELD. VA.                                                                               \VA HI ' GTO . D. C.
+
+   Unificd conduct, [or a ll agencies , of scientific research on thc                          Collection , classification, comp ilatio n, and dissemination of
+fu ndam ental problems of flight.                                                          s cientific and t ec hnical inform ation on a eronauti cs.
+                                                                                              - - --    - --       .
+
+
+
+
+                                               REPORT No. 667
+
+   DETERMINATION OF THE PROFILE DRAG OF AN AIRPLANE WING IN FLIGHT
+                     AT HIGH REYNOLDS NUMBERS
+                                                   By JOSEPH BICKNELL
+
+
+
+                        SUMMARY                                              APPARATUS A D METH ODS
+   Flight tests were made to determine the p1'ofile-drag
+coefficients oj a portion oj the oTiginal wing sUljace oj an       The flight te ts were conducted on a NorthTop attack
+all-metal aiTplane and oj a pOTtion oj the wing made            airplane (A-17 A), a low-wing ingle-engine monoplane.
+aerodynamically mooth and mOTe nearly jail' than the            The tests were carried out on a panel of 5-foo t 2-inch
+ol'iginal section. The wing section 'lEas appToximately        span located on the righ t wing. The inboard edge of
+the N. A. O. A. 2414 .5. The tests were caTried out over        this panel was at th e j unctUl'e of the wing tub and the
+a range oj aiTplane speeds giving a maximum R ynolds           main wing panel, 5 feet 6 inche from the center lin e of
+  umb r oj 15,000,000 . T e ts weTe also carTied out to         the airplane. The propeller, 9 feet 9% inche in dianl-
+locate the point oj tran ition jrom lamina?' to turbulent      eter, wa located 6 feet ahead of the wing leading eelge.
+boundary layer and to determine the velocity di t7·ibution     The te t panel wa ufficien tly r emoved from the slip-
+along the uppeT ·urjace oj the wing.                           stream to avoid interference, e pecially in the ltigh-
+   T he profile-drag coefficients oj th original and oj the    speed condition in which the te ts were made.
+ mooth wing portion at a R eynolds Number oj 15pOOpOO              The panel wa made smooth by filling the lap joint
+weTe 0.0102 and 0.0068, 1"e pectively; i. e., the surface      in the metal-wing coverin o- and then cementing pieces
+irregularitie on the original wing increased the profile-      of rubber heeting to the wing urface in the spaces
+drag coefficient 50 percent above that oj the smooth wing.     between the row of rivets to build up the urface above
+                                                               the level of the rivet hea Is. The fairne of the win o-
+                     INTRODUCTION                              wa improved by cementing a layer of }~2 -inch- thick
+    Only comparatively recen tly have profile-drag del, r-     hard aluminum to the rubber. This metal wa applied
+ min a tion in the upper range of fligh t Reynolds N um-       in everal piece, rolled to the on tour of the win g.
+ bers (10,000,000 to 30,000,000) been made, eith er in         Fin ally, another layer of rubb er wa applied over the
+ wind tunnel or in fligh t. Profile-d rag coeffi cien ts lip   metal. This layer wa continuous from the tra iling
+ to a Reynolds N umber of J 3,000,000 Ilave been deter-        edge around the leading edge nnd back to the trailing
+ min ed in the 5- by 7-meter tunnel of the DVL (reference      edge, where the two en ds were ewed together . Th e
+ 1). In the va riable-d ensity tunnel of the . A. . A.,          urface of the rubber wa sprayed with everal coats of
+  imilar measurements have been made up to an eIl'ectivc       filler and ,va sanded and rubbed until it had a mooth,
+R eynolds Number of ,000,000 (reference 2 and 3).              glo sy fini h (fio-. 1).
+An extrapolation eq uatioll i ugge ted in reference 2              On the lower urface of the mooth panel were thJ"ec
+for extending tIt r es ul ts to higher Reynolds N limbers.     small, irremovable obstru ctions. These obstrll ction
+   In view of the implicity of the momentum method             were downstream of the tran ition point, oft' to one
+of determining profile drag in fligh t (reference 4), a          id e of the survcy plan e, a nd were faired. The drag
+project wa initiated to determine the profile drag of          and the interference due to the e obstruction were esti-
+an airplane wing at as high Reynolds J umber a                 mated on the as umption of a drag coefficien t of 1
+possible. The project al o in llid ecl measurements to         based on their cross- ectional area and a rea onabJc.
+ letermine the poin t of tran ition from laminar to              preading of their wake . Their estimated eD'ect on
+turbulent boundary layer on tll upper surface of the           the profile-drag coefficient wa an increase of 0.0003.
+wing and the di tribution along the wing of the yelocity       This amount has been ubtractecl from the profile-
+just outside the boundary layer.                               drag coefficient found by the momentum urvcys.
+                                                                                                               1
+2                   REPORT NO. 667- NATJONAL ADVr 'ORY CO MMITTEE FOR AERO                                         AUTICS
+
+    The test panel of the smooth wing tapered in both                         static tube i mounted so that it can turn about an axi
+chord and thicknes ratio, The inner ection was ap-                            n early parallel to the win g chord line . ( ee fig. l. )
+proximately the N , A. C. A. 2415.5 with a chord of 9.46                      On the inboard end of this tube is fastened a short level',
+feet; the outer ection wa t he N . A. C. A. 2413.5 with                       th e nd of which is beld in contact witll a single-lob e
+a chord of .20 feet, The profti e in t he plan e of th                        pIa,te cam by a prin g, A rat bet wheel atta hecl t
+\\'n ke Sllryey was approximately the N . A . C. A.                           the cam i ' advanced one tooth at a t im by a click .
+2414.5 ection with a chord of . 6 feet . M ea ured                            Th e click is actuated by a bellow expanded hydrau-
+ord inn te of t hi profile arc given in tubl ] , together                     lically by t he operation of a piston in the coc kpit.
+with t hE' computed onli.n ntes of t he . A. C. A . 2414. 5                      The ciyna :m.ic and t he tatic pressures of the fre e
+sec tion.                                                                     stream were obtained from n pitOt-Stllt;c t:lbe mounted
+
+
+
+
+                                          Flr. PIIF I _- F inished smooth \\ in:;.': and s l1n'e/fl ppa nd ll~ .
+
+
+    The profile drag of the wiJlg wi th the origillul s uriaco                 OJI a boom Hear t be win g tip.        Th e static tube wa
+was determined in t he ame plane as t he smooth win O'.                        cahbrated agn in st t he sta tic ide of a upended air-
+Th e profile wa approximately the N. A. C. A. 2414. 5                           peed h etle!.
+section with a chord of . 0 feet. Figure 2 show a                                 M eas Ul'ements to determine the boundary-layer traD -
+pllotogl'aph of t he origin al wing, and the details of t he                    ition p oint and the pre m e distribution were made
+Sll rface irreg ularities on thi section arc gi ven in                         with three racks mounted on the upper surface, as
+fLgul'e 3.                                                                     shown in fi gm e 4 . Ea ch l'<tc k ll ad 11 tatic tube ancl a
+    The profile drag was detennin ed by t he momentum                          total-pros ure tube. Tho static t ubc wa made o f
+m eth od (reference 4). In the e tes t , the wake urvey                        O.040-in cb-diameter hypodermic tu bing; the total-
+were .4 percen t of the cbord behind the trailing edge                         pressure tube wa of the same size Ila ttened at the
+of the win g. A traversing mechanism to measure,                               mouth until its out ide depth was 0.012 in ch. The
+point by poin t, th e total pressure and t he static pre -                     static tube wa et about ~{6 inch from the wing ur-
+ ure in tbe wake was developed suitable for attachment                         face; tbe total-pressure tnbe Wll in contact with the
+to 11 metal wing. A tube su pporting a pitot and a                             surface.
+                                                                                                                        ------ ------ - -- --             ------- , - - -- - -
+
+
+
+
+        DETERMINATION OF PROFILE DRAG OF AIRPLANE WI G IN FLIGHT AT HIGH REYNOLDS NUMBERS                                                                 3
+
+
+
+
+                                                                    FIGURE 2.-0rigin3l winl(.
+
+
+
+                                       F, Flus h rivets, 3/,]2 - inch diameter
+                                       L ,L ap joint, facing backward
+                                       R ,Braz ier -head r i vet s, 3132 - inc h diameter
+                                       r ,Brazier- head rivets, 1/l6-inch diameter
+                                       b ,Brazier- head rivets, 3/32- inch diamefer,
+                                             no! ext ending across wing but i n survey plane
+                                       0, Troiling edge o f inspection door
+                                       OF, FlUSh inspection door
+                                       P ,Perforation in wing flop
+                                       H , Hinge UU "i§/ (' " < <
+                                       HF,Flush h inge ~
+
+
+                                  F F R RR    r RR R RR R R
+                                  ~~~~~~~;-~L-~~~~R                                               R
+                            , ~-=_r   L    OF      L        L
+
+
+
+F
+                                                                                                                                                R
+                                                                                             LH                                    RR
+                   L                    LH           H          L                                                       R    R
+         F                                                                                  RR        DR       R
+                   R
+                                ORb bRRR      DR R           DR               R
+
+    n                  /0         20         30                40              50                60                70        80         90          100
+                                                                     Percent chord
+                                                  F'IOURE),-Details 'or surrace irr~gularilies on original wing.
+
+
+
+
+    11i268 3fl -
+4                  REPORT NO. 667- JATIONAL .\ D ISORY CO MiVIITTEE FOR .\ ERON.\ l.! TI S
+
+
+
+
+                                       F'GURE 4.-Bollndary·layer·tube r~rks mounted on wing.
+
+   The ratio of the dyn<lmic pres ure in the boundary              tra nsition poin t on the rnoot.h wing were made at
+layer close to the win g smfltce to the dynami c pre ure           Reynold       umber of 11 ,000,000 and 14,000,000, corre-
+just outside th e boundary layer was C0111puted and                 ponding to lift coefficients of 0 .34 and 0 .2 1, re pec-
+plotted against di tance along the surface. Th e point             tively.
+where this curve how an abnormal in crea se in the                    Profile-d rag coefficien ts were co mputed fro111 the
+downstream direction was taken a tb e transition poin t            wake measurements by Jon e ' fOl'luula (r eference 4 )
+from laminar to turbulent boundary layer .
+                                                                               Cd = 2   r      /H'-P'(l _ /H, PO)d(JL)
+              RES LTS A D DIS CUSS ION                                           o      .J IV\' H o-Po   -y I-Io- Po C
+   ,rake , urvey were made over the range of Reyno lds             where H is total pres lire.
+Kumbers from 11,000,000 to 15,000,000 (air-speed                          p, tatic pressure.
+ran ge 140 to 200 miles per hour indicated) . Tb e                        c, chord.
+correspondiJlg lif t-coefficien t ran ge was 0.35 to 0.17.                lV, wake .
+   o attempt wa made to vary the R eynolds Number                         y, ordinate Ul urvey 'plane normal to the free
+R and the lift coefficien t OL independently, sin ce the                       str eam.
+variation in profile-d rag coeffi cient at constant lift           Th e ub cl'ipt 0 refers to the free stream at infinity,
+coeffici ent over the Rcynolds Number range that could             and the ub crip t 1 refers to the mea urement plane.
+be obtained in flight wa of the arne magnitude a                   A a ch eck for po ibl e error that are a r e ult of a SUID-
+th at du e to experimental errors. Th e air conditions             ing the air in compre sible, Jones' equation wa. red evel-
+for the e tests ranged from a perfect smoothne to a                oped for compre sible flow by introducing the equation
+roughness sufficieut to cau e mall vari ations in the              of continuity an d Bernoulli ' equation for compressible
+['8corcled air speE'd.                                             flo·w. A compl ete derivation of the equa.tion i gIven 111
+   :'IIeasurement to determine th e boundary-layer                 the appendix . Th e fin al equation i
+      DETERMINATION OF PROFILE DR AG OF AIRPLANE WI TG I                                                                        FLIGHT AT HIGH REY TOLD                                    NUMBER            5
+wh ere, in addition to the previously defined symbol ,                                                               irreg ularitie . The original wing had large cir cular
+         p is density .                                                                                              perforations in the wing flap. This construction i not
+         'Y, ratio of specific heat at constant pressure to                                                          a normal one and undoubtedly accounted for some of
+                specific heat at constant volume.                                                                    the profile drag, altholwh countersunl;;: rivets had been
+         Jt', compre sibili ty factor                                                                                used o\' er the forward 23 percent of the upp er surface
+                                                                                                                     and percent of the lower surface to keep the drag o[
+                                                                                                                     the original wing low. Over the range of lift coefficients
+                                                                                                                     te ted, the profile-drag coefficient is con tant within the
+                                                                                                                     experimental en ol' and an be taken as CdO . ' The
+          V e, speed of sound.                                                                                                                                                                  11l.11t
+
+
+           U, velocity.                                                                                              R eynold Number r ange being small, variation of Cdo
+     Fo r th e position of the sur vey bead .4 percen t of tb e                                                      with R eynold        urn bel' is expected to be ve ry small.
+chord [rem the trailing edge of the win g, the cOl'l'ection                                                          From reference 2, the variation of Cdo ove r the ra nge of
+1'0 1' comp1'e sibility a.t 200 mile pel' hour is one-tenth                                                          lift coefficients tested is also expected to be small.
+percent of th e profil drag. I nasmuch as the tatic pre -                                                               It is al 0 apparent that Cdo is independent of free-air
+sllr in the wake is n early eq ual to free- tream tatic                                                              roughness as no y tematic variation wa [ound [or
+       .24                                                                                                                                  .012
+                                                                                                                                                       1
+                                                                                                                                                                        n                  Ori~/nol wing
+       .20                                                                                                                             0.010
+                                                                                                                                     (J
+                                                              ?       i-o-n                                                         ...,
+I~
+                                                       I.J'                                                                          c:
+        16
+                                                       9/ ~+ 1\                                                                    ~.008
+~                                              /                              '\ 'i                                                "ClI!J
+                                                                               \ I~'
+                                                                                                                                                                      ",<,>"
+  I                                                                                             -Origmol wing
+                                                                                                                                    "                                            •   • 0
+                                                                                                                                                                                           Smooth wing
+
+
+~"
+                                          ri       /                                                                                8'.006
+                                      j        i                                 \ \            _-Smoofh wing                      ~
+                                     II                                                                                            ..9!
+       08                                                                                                                          -g.004
+                                 I i                                                  I~        \                                   ~                                 AIr- condi t ion
+                                                                                                                                                                               Smooth
+                                                                                                                                    c:                                   0
+
+                                ! IIf                                                  \ ~\                                        .Cl
+                                                                                                                                  Q.002
+                                                                                                                                                                            x Rough
+       04
+                                                                                           -\                                     ~
+
+        0    0
+                 o.
+                 -3
+                        /: //
+
+                           -2
+                                ,/
+
+                                          -I                      0               I
+                                                                                                \~  +.   ",--"-'~L-R
+                                                                                                         2" 3                                  o           .1       .2       .3        .4                  .5
+                        Dis/once obove chord line, percent chord                                                                                           Ali-plone liff coefficient, CL
+                 FIGURE 5.-Typicall'urves of momentLUTI los~ in wake.                                    CL.O.23 .                          FIG URE fl.- Profile-drag coeilicients for smooth and original
+                                                                                                                                                             N. A. C. A. 24J4.5 sectioDs.
+
+
+ pressure, the den i ty term is practically UTIity. The                                                              differ ent air conditions during the test. This re ult
+ velocity in the wake being a large fraction of the stream                                                           has been pointed out by J ones (reference 6). Appar-
+velocity, th e compre sibility factors are approximately                                                             ently the type of turbulence found in the atmosphere
+equal and cancel out. For the conditions tested, the                                                                 ha no noticeable effect on the profile drag.
+correction applied to th e profile-drag coeffici en t is                                                                From drag data btained in the vari able-density
+negligible.                                                                                                          tunnel for the N. A. C. A. 2400 eries (reference 3), the
+   Typical curves of th e momen twn loss in the wake for                                                             interpolated Cdo Inln. [01' the . A. C. A. 2414.5 ection at
+the smooth and the original wing surfaces are given in                                                               an effective R eynold Number of ,000,000 is 0.0067.
+figure 5. The position of the pitot tube was corrected                                                               If this value is extrapolated to 15,000,000 acco rding to
+to i ts eff ective center by the method given in reference 5.                                                        the formula (reference 2),
+   Th e profile-drag coefficients for the mooth condition
+and the original condi tion of the wing of N. A. C. A.
+2414 .5 section are plotted against the lift coefficient of
+                                                                                                                     a ,alue o[ 0.0063 i obtained [or CdOmin •
+the complete airplan L in figul' 6.          compl te sum-
+mary of the te t condition and re ult is given in                                                                      Profile-drag te ts carried out in the 5- by 7-J11ete1'
+table II.                                                                                                            tunnel or the DVL on the . A. C. A. 2409 and 2421
+   The profile-drag coefficient o[ the mooth wing i                                                                  section over a R eynold     umber range o[ 3,000,000 to
+0.006 ; of the original wing, 0.0102 for R eynolds um-                                                               13,000,000 indicate a CdOmtn. value of 0.0065 for the
+ber from 12,000,000 to 15,000,000 . Thu a profile-                                                                   N. A. . A. 2414 .5 section at a Reynolds Number of
+drag incr ea e of 50 percent can be att ributed to surIac                                                            15,000,000.
+ 6                                        REPORT                0.667- ATIO              AL ADVISORY CO MMITTEE F OR AERONAUTICS
+
+  The CdO 1nTn. value of 0.006 for th e smooth wing i                                              between 25 and 35 per cent of the chord measured along
+probably sligh tly high er than it would h ave b een for a                                         the surfa.ee. The more forward po ition of t h e tran i-
+true T. A. C. A. 2414.5 e tion in fli gh t. This differ-                                           tion point observed in the te t co uld en ily account fo r
+ence can be attributed to earli er t ransiti on , as pointed                                       the differen ce in profile-drag coeffici ell t found in th ese
+out in th e di cuss ion of the bound ary-laye r tests.                                             tests a compare 1 wi th th e DVL and th e \-ari abk-
+  The ]"e ul ts of the bound ary-layer an 1 t he pressure-                                         density-tunnel te ts.
+
+ tr!Cl-
+ <ll ~
+                     I                                                                                                             -       f-
+                                                                                                                                                                                             r-n
+ "S
+ ~---
+                    1         i
+                                                                                                                                                                                                         1
+ CI)
+     ~ ;>-,
+        ~            I                                                i                   I                                                                                          -       -
+                                                                                                                                                                                                      -
+       "G                         ,Transition poinl                                                                           ,TransItion poinl
+ gS                                                                                                                           ,,                          I                    I                       ....
+ .!:, .g                      I"'-l.~                E,xperimental                                                                             Experimen t o/                  I                          >-
+                                                                                     Ur
+ t
+                         ...~+          "'-+-
+                                                      .
+                                                    L£+ - ~ • ....L,..J              D.                              J,-+- f-L ~+                         r++, _ ..- •                           U-
+
+                                        -t-
+ .      <ll
+ ~ :s!               / ...-                                           . "='=1=..     0        ._                   +   I
+                                                                                                                                                    i-
+                                                                                                                                                                        ~
+                                                                                                                                                                                         +    Do
+                                                                                                                  f7 I
+ C) ~
+                     r
+ B..!2·6 I----l-..--I--+-
+                                                                                                                                           I
+                                                                                                                                                              " Computed
+
+ ~~ 4                 \                         0
+                                                                                                    III III
+                                                                                                    ~ ~.4                1             -                            0
+
+ ~~'                                                                                                              1\'\
+ ~~.2 H                                ~                                                            ~l ~l                                           »--   -..."..   0                            q,
+                                        =. ~ ~~~~_~J, r                                                                                        0/                           0- ~ --<l....
+                                                                                                                                                                                             r-Z-
+ ~ .~
+ ...
+ ClcS>
+        "
+                     I             \
+                                       '-<Y
+                                                              _1_.
+                                                                I
+                                                                          -r
+                                                                          I
+                                                                                f-       -r
+                                                                                                    Q Q
+                                                                                                   .S> .\,! 2
+                                                                                                    gg
+                                                                                                    ~~
+                                                                                                                             ""~           /0
+
+                                                                                                                                                                                                              0
+              o           10              20           30           40         50        60 0      Cl Cl 0           10                20            30             40             50             60
+                  Oistance along the surface from stagnation p oint,                                          Oistance along the surface from stagnotian point,
+                                percent chord                                                                                percent chard
+FIGt;f< E i .-Bounda r y-Inyer s urve)'s on IIpper surface of smooth wing at CL=O.3t.              FIG URE 8.- Bounda r y-Iaye r snrveys on upper surfa re of smooth WiLlg at CL=O.2I.
+                              H,II,IOO,OOO; '. A. O. A . 2'114.5 section.                                                R, 14,ooo,ooo;}<. A. C A. 241 4.5 eClion .
+
+ di tribution sun-ey a rc h own in fig ure 7 and a th e                               CON CLUSIO
+ yelocity distribu tion aJong th e surface und t he ratio of      \!\Take urv eys made of a smooth wing of approA-i-
+ the dynamic pre sure q, 0.00 in ch from the urface to mately T A. C . A. 2414.5 ection in fligh t at a R eyn Ids
+ th e dyn ami c pre ure q ju t outside t he boundary layer . Number of ] 5,000,000 gave fl. minimum profile-drag
+    From the q, /q cun-e, tlJe t ransition point for both coefficient of 0.006.            urv ey mHcle of the original
+ fligh t condi tions i 17. 5 percent of the ch ord along wing, whicb r epresents curren t metal co nstruction,
+ the surface from th e front tagnation po int (14 percent gaye a profile-drag coefficient of 0.0102 . M anufactur-
+ of th e ch ord along the chord lin e).                       ing irreg ularities in rivets, lap joints, access cloor , and
+    For CL = 0 .21 (fIg . ), the curve of velocity di stribu- fl ap ventilating hol e ar t hus 1'e pon ible for a 50-
+ tion along the urface reaches a maximum at 14 percent percent increa.se in profile-dr ag coefficient, even though
+of th e ch ord along th e surfa ce. The negative velocity flush rivet were used over t he forward 23 percent of
+gradient (or po itive pre ure gradient) exert th ere- the upper urIace a nd percent of t be lower ul'faee of
+after an un table influence on the laminar boundary t he wing.
+layer. Transition to turbulent boundary layer with                The boundary-layer surveys on t he upper surfac e of
+accom panying m cr ea e in skin fri ction follows soon t he smooth 'wino- showed th at tran i tion from laminar to
+after the velocity m aximum. The te ts at CL = 0. 34 tu rbulent boundary layer occurred at a po ition on the
+exhibit t h e arne tendencies.                                section tested more forward th an woule! be expected
+    The dip in t he experim ental velocity di trib utions on a tru e N. A. C. A. 2414.5 eetion. Difference in
+neal' the quarter-ch ord point is attribu ted to depar tm es the tran ition-poin t location could ea ily account for
+of t h e section te ted from the true N. A . C. A . 2414.5 t he light difl'erences in t he profile-drng coefficients of the
+section . F or comp ari on , th e . velocity dis tribution s 1 . A. C. A. 2414 .5 section fOllne! in fligh t and in the
+o\-el' th e upper urI ace of a t rue N . A . C. A . 2414.5 DVL and th e variable- len i ty tunn el .
+  eetion for the airplane lift coefficients corresponding         Th e boundary-layer urvey howed t hat transi tion
+to tho e of the boun dary-layer te t have been plotted occ urrecl a hort di tance clown tream from the point f
+in figure 7 and          The e distributions were obtained minimum pre sure.
+by interpol ating b t ween the pre ure di tributions for
+the N. A . C. A. 2400 series given in reference 7. Com-
+pari on of t he experimental and the computed velocity
+d ist,ribu tion show t h at the peak velocity of the com- L ANG LEY J..I E MOIU A I. AERONA UTI CAL L ABORATORY,
+puted di tribution s occurs farther down t l'eam. The               ATIO A I. ADVI ORY COMMl'fT E8 FOR        ERONAUTI CS,
+LrnnsiLion po in Lwould be expected Lo occur in Lhe reg ion         L ANGLEY FIELD, VA., I n/Lua,ry 6, 193D.
+                                                       APPENDIX
+THE DERIVATIO OF J ONE ' EQUATION FOR PROFJLE                     From Bernoulli's equation , 111 a compr€'. ible I1l1id ,
+        DRAG IN A COMPR ES IBLE FLUID
+
+   A sume a two-dim ensional body in a uniform tream
+(fig. 9). As ume that a plane i located far enough
+                                                                                P [ 1 +-4l( -VcU)2 +-401(-VoU)4 +
+                                                                          lJ-p=-U2
+                                                                                2
+                                                                                                                        ..    ]
+ahead of the body so thai th e static pre ure is equal to       wh ere Vc is the local velocity of sound.
+the static pre ure of the ulldi tl'ibuted stream Po.
+Th e velocity, the total pres ure, and the density are          Let
+given as Uo, H o, and PJ, r espectively. Assume another
+plane far enough behind th e body 0 that the static
+                                                                                         ( U)2+-401 ( 7TUc)4+
+                                                                              F= [ 1+-41 V
+                                                                                         -c
+pres m e is again the tatic pre sure of the undisturbed         Til en
+ tream, Po. Over an elementary eli ta:r.ce dy, normal
+to the undisturbed tream, the Yelocity, th e tota l
+                                                                llnd
+
+
+          Po
+          lfo
+                ~
+                            c:::>4=====F                           Applying Bemoulli's equation for the com pres ible
+          flo                        p,         Po              flow along a tream tube,
+         Po                          U,         U
+                                     H,         /I                                                  2
+                                     p,         Po                                 U2 + _L P.2= UI +_'Y_ PI
+                                      dy,      dy                                   2   'Y - 1 Po 2   'Y- 1 PI
+                              FI VR£ 9.
+                                                                where 'Y i the ratio of the pecific heat at constn n t
+pr('ssure, find the den ity are given a C, II, find Po,         pressure to the pecific heat at con tant volume.
+l'espectiYely. Th e uensi ty h ere i equal to Po illce the      whence
+stntic pre sure i equal to Po. Over an elementary
+di tance dy" to be defined later, of the plane in which
+Ul e wake tll'veys are made, the static pres tire, the
+velocity, the total pre sm e, and the den sity are PI , U I ,     Examine now the term
+[fl, a.nd PI , respectively.
+   Si.nce the stati p res me at the forward and the r ear-                                   ('lPI!1_po)
+                                                                                                      Po
+ward planes are equal, the profile drag per unit SpflJl         A. sliming nd inhntic change of pre sme nnd den. ity,
+can be eq uated to the i.ntegral of the difference in rate
+of momentum cro sing the e planes, namely,
+
+                                                                whence, by ub titution,
+where the integral i taken only over the wake because
+there i no contribution outside the wake. Assume, as
+Jone does, that t he wake can be considered as made up
+                                                                  ow
+of " tream tubes" which do not mix a they pa from
+the measl.ll'ement plane to tJJe rearward plane and along
+each of which the total pre sure i constant. Th en ,                       (pO)'Y~
+                                                                            PI
+                                                                                   1 = (l +PO_ l)'Y~ 1 = (l +PO - PI)'Y~ 1
+                                                                                           1)1                  PI
+applying t he equation of contintlity along the tream           and, expanding this expres ion by the binomial theore m,
+tube, who e width i dYl at the mea urement plane and
+ely at the down tream plane,
+                                                                 (l!!!)'Y~1 = 1 + 'Y -'Y 1 PO-PI PI + 'Y -'Y 1 2'Y
+                                                                   7) 1
+                                                                                                               ~ (pO_PI)2 +
+                                                                                                                7}1
+                      POUdY= PIUldYI
+Su bstituting,                                                   ubstituting
+8                       REPORT NO. 667- NATIONAL ADVI ORY CO MMITTEE FOR AERO NAU TI CS
+
+and , finally,
+
+                                                                                                      ]
+I   lib tituting the expression for the velocitie into the dru.g equation ,
+
+                 Do=   r /~ Ho-FoPo_ -V/~ HI-PI+~ [ (PI_PO)+ PI (PI-PO)2
+                       Jw-V Po             PI   FI       PI        PI .
+                                                                         ~
+                                                                        2,,(
+Now
+
+
+
+where C is the airfoil chord.
+Fina.lly
+
+
+
+
+    If the velocitie are so low that compre ibli ty can be          3. J acobs, Eastman N., an d Rh od , R. V. : Airfoil ection
+                                       PI (P I-PO) 2 .        . .         Characteristics as Applied to the P rediction of Air F or ce.
+neglected, PO= PI; F o= Fl = l ; and 2,,( .----P:-   1   negligI-         and T heir D istributi on Oil Wings . T . R. Ko. 631, r. A.
+                                                                          C. A., 193 .
+ble compared with PI - PO' The dru.g equation redu ces              4. T he Cambridge l; niver ity Aeronautic J~a bo rato r y: Th e
+to the form given by Jone                                                 Meas urement of Profile Drag by the Pitot-Traverse
+
+           Cd = 2
+             o
+                    r /H.I- PI(l _ -V/HI-
+                    J IV-V Ho-Po
+                                          PO)d('!L )
+                                      Ho-Po          C
+                                                                          M ethod . R. & lVI. N o. 1688, Bri t ish A. R. C., 1936.
+                                                                    5. Y ou ng, A. D .,and Maa , J . r : Th e Behaviour of a Pi tot Tu be
+                                                                          in a Tran verse T otal-Pressu re Gradient. R . & M . No .
+                                                                          1770, British A. R. C., 1937.
+                          REFEREN CE
+                                                                    6. J ones, B. M clvi ll : Flight Exper iment ' on the Boundary
+1. D oetsch, H .: Profilwid erstandsme ungen im gros en Wind -            Layer. J ou !". Aero. Sci ., vo l. 5, no. 3, J an. 193 , pp . 1- 94 .
+      kanal der DVL. Luftfahrtforschung, Bd. 14, Lfg. 4/ 5, 20.     7. Garrick, 1. K: D etermination of tho Th eo retical Pres ure
+      April 1937, S. 173- 178.                                            Distributi on for Twe nty Airf o il ~ . T. R. No. 465,         . A.
+2. J acobs, Eastman      ., and herman, Albert: Airfoil ection            C. A .. 1933.
+      Characteri tics a Affec ted by Variations of the R eynolds
+       ' limber. T . R . 0.5 6. N . A. C . A .. 1937.
+                                       .--------------------------------.- .. -----.
+
+
+
+
+DJE'I'JERMINATIO           OF PROFILE DRAG OF A llUJL ,\NJE WING I            FLIGHT AT HlOH REYNOLD '                                     UMl3ER, '   9
+     TABLE 1.-- 'ECTION ORDI JATE OF                                  TABLE II.--SUMMARY OF PROFILE-DRAG TESTS
+      THE       MOOTl-I WIN G AND THE
+       N. A. C. A. 2414.5 WLNG. CHORD, . 6                                    I
+       FEET                                                                   I    W ing Ii fl.
+                                                                                  coe ffi cient,
+                                                                                                   Reynolds Section pro·
+                                                                                                   Number,
+                                                                                                       R
+                                                                                                               ftl e-d rag
+                                                                                                              coefl1 cient,
+                                                                                                                                 Air con-
+                                                                                                                                  diLion
+                   [All values in percent chord)                                       Ct.         (millions)       Cd o
+
+
+                    Smooth wi ng         N.A.      . A . 2414 .5                                      Smooth W ing
+      !::ilation
+                   Upper     Lower       L' ppcr      Lower                          O. :l5          10. U         n.OO68        R ough .
+     ,----- ----- -----                                                               . 2!15         II. 5          . 0066       Smooth .
+                                                                                       . 28          11. i          . 0067       Hough .
+         ((        0           0                         0                             .25           12. I          . 00ti5         Do.
+          I. 25    2.45      - 2.07      2.63          - I.U8                          · '25          1'2.5         . 0008       Smooth.
+         2. :;     :J.42     -2.84       3.60          -2. i.5                         . 2:l          \:J . O       . 0068       R ough.
+         5         4.75      -3. 74      4.92          -:J.6\1                         · '!:!.        \:J. 5        . 0069        mooth .
+          7. :)    5.72      -4.33       5.            -4.:10                          . 20           L3. !I        . 0068       Rough.
+        10         6. 43     - 4.76      fl,M          -4.70                           . I!I          14.4          . 001lS      Smooth.
+        15         7.57      -5. 22      7.75          -5.20                           . 225          1'1. 1        . 0069       R ough.
+        20         8.34      -5. 39        . 46        -5.42                           . IH:;         14. I         . 0069        mooth.
+        2':)        .83      -5.40       8.92          -5.45                           · 175          1'1. 9        . 0069          Do .
+        30         9. 10     -5. 32      9.13          -5.37
+        40          .98      - 4. 90     9.01          -5. 01
+        50         8.32      -4.31       8.35          -4.45                                           Original \Vin g
+        60         7. 34     -3.62       7.31          -3. 71
+        70         5.96      -2.87       5. 95         -2.90
+        80         4. 25     - 2.M       4.30          -2.0'1                        0. 29           II. 9         0. 0103       Smooth .
+        90         2.32      - 1.15      2.39          -1. II                          .26           12.4           . 01OL         D o.
+        95         1.2        -.70        I. :11        -.65                           . 2.1         IJ.2           . 0101         Do .
+       100          . J2      - . 12      (. 15)       (- . J5 )                       · J9          14.6           . 0103         D o.
+       100                                               0                             . 17          I·\'           . 0100         D o.
+
+                                        L. E . Rad.: 2.40
+                                          Slope of radiu s
+                                          through end of
+                                            chord : 2/20
+
+
+
+
+                                                                                                          u. s. GJVERNME~ T PRI NTING OFrlCE   1939
+                              y
+                                  ~.-----
+
+
+
+
+                                                                 "-   ,   "- "-
+                                                                                  .....
+
+
+
+                                                                                           z
+                             Positive directions of axes and angles (forces and moments) are shown by arrows
+
+                     Axis
+                                         I                       Moment about axis                           I        Angle              Velocities
+
+                                           Force
+                                         (parallel                                                                                     Linear
+              Designation         Sym-    to axis)    Designation            Sym-                Positive        Designa-     Sym-    (compo- Angular
+                                   bol    symbol                                  bol            direction         tion       bol    neutalong
+                                                                                                                                        axis)
+                                                                                                                              --
+            LongitudinaL ____      X         X        Rolling _____               L              Y----)Z         RoIL ____     4>       u             P
+            LateraL ___ ______     y         y        Pitching ____               M              Z----)X         Pitch ____    ()       v             q
+            NormaL _________       Z         Z        yawing ____                 N              X----)Y         yaw _____     if!      w             r
+
+
+
+Absolute coefficients of moment                                                           Angle of set of control surface (relative to neutral
+         L                 M                                                               position), o. (Indicate surface by proper subscript.)
+       0,= qbS              Om= qcS
+       (rolling)            (pitching)
+
+                                                           4. PROPELLER SYMBOLS
+
+D,
+p,
+         Diameter
+         Geometric pitch
+                                                                                          P,                                           ~TlIi
+                                                                                                     Power, absolute coefficient CP = pnu-
+
+                                                                                                     Speed-power coefficient=-V~~:
+p/D,     Pitch ratio
+                                                                                          0.,
+V',      Inflow velocity
+V.,      Slipstream velocity                                                              71,        Efficiency
+                                                                                          n,         Revolutions per second, r.p.s.
+T,       Thrust, absolute coefficient OT=             ~D4
+                                                     pn                                   <I>,      Effective helix an gle=tan-{2:n)
+Q,       Torque, absolute coefficient CQ =
+                                                     pn LF
+                                                          9
+                                                          TlIi
+
+
+
+                                                          5. NUMERICAL RELATIONS
+
+1 hp. =76.04 kg-m/s=550 ft-Ib./sec.                                                       1 Ib. =0.4536 kg.
+1 metric horsepower = 1.0132 hp.                                                          1 kg=2.2046 lb.
+1 m.p.h.=0.4470 m.p.s.                                                                    1 mi.=l,609.35 m=5,2BO ft.
+1 m.p.s.=2.2369 m.p.h.                                                                    1 m=3.2BOB ft.
+

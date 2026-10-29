@@ -1,0 +1,1865 @@
+       I
+
+
+
+
+                                                                                                                           ,
+
+
+                                                                                                                                     / ;•
+                 NATIONAL ADVISORY COMMITTEE
+                                       FOR AERONAUTICS
+
+
+
+                                                  REPORT No. 777
+
+
+
+              THE THEORY OF PROPELLERS
+ Ill-THE SLIPSTREAM CONTRACTION WITH NUMERICAL
+ VALUES FOR TWO-BLADE AND FOUR-BLADE PROPELLERS
+
+
+                                              By THEODORE THEODORSEN
+
+
+
+
+                                                              1944
+
+
+
+For sale by the Superintendent of Documents   -   U. S. Government Printing Office   -   Washington 20, D. C.   -   Price 20 cents
+                                                                                                                    -S.-
+
+
+
+
+                                             AERONAUTIC SYMBOLS
+                                      1. FUNDAMENTAL AND DERIVED UNITS
+
+                                                     Metric                                     English
+                           Symbol
+                                              Unit                 Abbrevia-             unit
+                                                                                         u t                Abbrevia-
+                                                                                                              tion
+
+         Length            1         meter--------------------m                foot (or mile) --------- -ft (or mi)
+         Time -------- --t           second ----------------- - -s             second (or hour) ------- --see (or hr)
+         Force----------   F         weight of 1 kilogram        kg            weight of 1 pound------- lb
+
+         Power ------- -     P       horsepower (metric) ----- --------
+                                                                  —     horsepower-------------hp
+         Speed               v      f kilometers per hour-------- kph   miles per hour ----------mph
+                                    imeters per second ------- -mps     feet per second--------- fps
+
+                                                2. GENERAL SYMBOLS
+W    Weight=mg                                                 V      Kinematic viscosity
+g    Standard acceleration of gravity=9.80665 rn/s 2           p      Density (mass per unit volume)
+       or 32.1740 ft/sec'                                      Standard density of dry air, 0.12497 kg-m-'-s' at 15° 0
+             W                                                   and 760 mm; or 0.002378 lb-ft-4 sec'
+M    Mass= —
+             g                                                 Specific weight of "standard" air, 1.2255 kg/ml or
+I    Moment of inertia=mk 2. (Indicate axis of                   0.07651 lb/cu ft
+       radius of gyration k by proper subscript.)
+     Coefficient of viscosity
+                                             3. AERODYNAMIC SYMBOLS
+S    Area                                                     ill       Angle of setting of wings (relative to thrust line)
+S.   Area of wing                                             it        Angle of stabilizer setting (relative to thrust
+6'   Gap                                                                   line)
+b    Span                                                     (7        Resultant moment
+C    Chord                                                              Resultant angular velocity
+A    Asp, ect ratio, V                                        B         Reynolds number, p—      vi
+                                                                                                      where 1 is a linear dimen-
+V    True air speed                                                        sion (e.g., for an airfoil of 1.0 ft chord, 100 mph,
+                       1                                                   standard pressure at 15° C, the corresponding
+q    Dynamic pressure, 2p
+                                                                           Reynolds number is 935,400; or for an airfoil
+L    Lift, absolute coefficient (YL= L                                     of 1.0 in chord, 100 mps, the corresponding
+                                      gS                                   Reynolds number is 6,865,000)
+D    Drag, absolute coefficient                               a         Angle of attack
+                                                                        Angle of downwash
+D0   Profillrag, absolute coefficient           D                       Angle of attack, infinite asjiect ratio
+                                                qS            at        Angle of attack, induced
+D1   Inducirag, absolute coeffi
+                           coefficient C=-                    a         Angle of attack, absolute (measured from zero-
+                                                                          lift position)
+D    Parasi   drag, absolute coefficient 0=D,,                '1        Flight-path angle
+
+0    Cross- ud force, absolute coefficient
+                                                     qS
+                            ERRATUM
+
+
+                         NACA REPORT No. 777
+
+                       THE THEORY OF PROPELlERS
+           III - THE SLIPSTREAM CONTRACTION WITH NUMERICAL
+            VALUES FOR NO-BLADE AND FOUR BLADE PROPELLERS
+                        By Theodore Theoclorsen
+                                  194
+
+
+Page 18, figure 7(a): The bottom part of the lowest curve In tIre
+  lower left-hand corner of the figure should. be    - - Instead.
+  of
+-
+
+
+
+
+                J/1
+           w1
+
+
+
+
+    vw
+                      REPORT No. 777
+
+
+                 THE THEORY OF PROPELLERS
+    Ill-THE SLIPSTREAM CONTRACTION WITH NUMERICAL
+    VALUES FOR TWO-BLADE AND FOUR-BLADE PROPELLERS
+
+
+                      By THEODORE THEODORSEN
+                Langley Memorial Aeronautical Laboratory
+                           Langley Field, Va.
+
+
+
+                                                           I
+                                                                                          t ft
+                                                                                                                                     LM
+
+
+
+
+                        National Advisory Committee or A&onauüi'
+                          IIwlpIa1trs, 1500 New Hampshire Avenue NW., Washington . P. C.
+     Created by act of Congress approved Mareli 3. 1915, for the supervision and dir'Cl ion of ti   ientific stud v
+of the problems of flight (1]. S. Code, title 49, sec. 241). Its membership \\'tis ierea'i1 to 1. v act approv'd
+March 2, 1929. The members are appointed by the President, and serve as -uch without CompisJtion.
+
+                                        JEROME C. IIcSSAKER, Sc. I)., Cambridge, Mass.. Ci',non
+LYMAN J. BRIGOS, Ph. D., Fire Chairman, Director. National                  AUIIREY W. FITCH, ViceAdiniral, United States Nav y . Deputy
+ Bureau of Standards.                                                        Chief of Operations (Air). Navy Depart iiient.
+CHARLES G. ARBOT, Sc. D., Vice Chairman, Executive Committee,
+                                                                            WILLIAM LITTLEWOOD, M. E.. Jackson IJeihts, Long Island. N.Y
+ Secretary, Smithsonian Institution.
+HENRY H. ARNOLD, General, United States Army, Commanding                    FRANCIS W. REICHELDERFER, Sc. D.. (hief, Ututel states
+ General, Arm y Air Forces, War Department.                                   Weather Bureau.
+
+WILLIAM A. M. BURDEN, Special Assistant to the Secretar y of                LAWRENCE B. RICHARDSON, Rear Admiral United States Navy,
+ Commerce.                                                                   Assistant Chief, Bureau of Aeronautic- Nav y DepartIII('nt
+VANNE VAR BUS H, Sc. D., Director, Office of Scientific Research
+                                                                            EDWARD WARNER, Sc. D., Civil Aeronain cs Board, Washing-
+  and Development, Washington, D. C.
+                                                                             ton, D. C.
+WILLIAM F. DIJRAND, Ph. D., Stanford Universit y , California.
+                                                                            ORVILLE WRIGHT, Sc. P., Dayton, Ohio.
+OLIVER P. ECH0I.S, Major General, United States Arm y , Chief
+ of Maintenance, Materiel, and Distribution, Arm y Air Forces,              THEODORE P. WRIGHT, Sc. D., Administrator of Civil Aero-
+ War Department.                                                             nautics, Department of Commerce.
+
+
+                                        GEORGE W. LEWIS, Sc. D., Director of Aeronautical Research
+                                                     JOHN F. VICTORY, LL. M., Secretary
+         HENRY J. E. REID, Sc. D., Engineer-in-Charge, Langley Memorial Aeronautical Laboratory, Langley Field, Va.
+                 SMITH J. DEFRANCE, B. S., Engineer-in-Charge, Ames Aeronautical Laboratory, Moffett Field, Calif.
+         EDWARD R. SHARP, LL. B., Manager, Aircraft Engine Research Laborator y , Cleveland Airport, Cleveland, Ohio
+    CARLTON KEMPER, B. S., Executive Engineer, Aircraft Engine Research Laborator y , Cleveland Airport, Cleveland, Ohio
+
+
+
+                                                      TECHNICAL COMMITTEES
+                                 AERODYNAMICS                                     OPERATING PROBLEMS
+                                 POWER PLANTS FOR AIRCRAFT                        MATERIALS RESEARCH COORDINATION
+                                 AIRCRAFT CONSTRUCTION
+
+                                        Coordination of Research Needs of Military and Civil Aviation
+                                                      Preparation of Research Programs
+                                                           Allocation of Problems
+                                                          Prevention of Duplication
+
+
+LANLiLY ML\IORIAL,AERONAITICAL LABORATORY                                                                  ÂMES AER0\ \ITICAL LABORATORY
+             Langley Field, Va.                                                                                  MoTh r Field. Calif.
+                                 ,('RAFT ENGINE RESEARCH LABORATORY, Cleveland Airport, Cleveland, Ohio
+                                  unified control, for all agencies, of scientific research on the fundamental problems of jug/if
+
+
+
+             I              st
+                                        IFICE OF AERONAUTICAL INTELLIGENCE, Washington, P. C.
+                                                                                                                   I
+                                          a aipilcif ion, and dissemination of scientific and technical information on aeronautics
+        II
+                                                       REPORT No. 777
+
+                                              THE THEORY OF PROPELLERS
+Ill-THE SLIPSTREAM CONTRACTION WITH NUMERICAL VALUES FOR TWO-BLADE AND
+                          FOUR-BLADE PROPELLERS
+                                                       By THEODORE THEODORSEN
+
+
+
+                           SUMMARY                                    x           ratio of radius of element to tip radius of vortex
+                                                                                    sheet (r/R)
+   As the conditions of the ultimate wake are of concern both
+theoretically and practically, the magnitude of the slipstream        yR          radial velocity
+contraction has been calculated. It will be noted that the con-       V           advance velocity of propeller
+traction in a representative case is of the order of only 1 percent   w           rearward displacement velocity of helical vortex
+                                                                                    surface
+of the propeller diameter. In consequence, all calculations
+                                                                      - w
+need involve only first-order effects. Curves and tables are given    w=V
+for the contraction coefficient of two-blade and four-blade pro-                  number of blades
+                                                                      p
+pellers for* various valves of the advance ratio; the contraction                 mass coefficient
+ coefficient is defined as the contraction in the diameter of the
+ wake helix in terms of the wake diameter at infinity. The
+ contour lines of the wake helix are also shown at four values of
+ the advance ratio in comparison with the contour lines for an         F          circulation at radius x (F7rV?KU)
+ infinite number of blades.
+                                                                                                                            fpFw-
+                          INTRODUCTION                                 K (x) circulation function for single rotation 2xVw
+   Since reference is often made to the wake infinitely far
+behind the propeller, it is desirable to establish certain                         angular velocity of propeller, radians per second
+relationships between the dimensions, of the propeller and
+those of the wake helix at infinity. The present paper con-            y'          radial velocity' at point P due to a douhlet'element at
+                                                                                   O,x except for a-constant factor
+siders the relationship of the propeller diameter and the wake
+diameter, or the problem of the slipstream contraction.                   (       [0 cos (0+r) —sin (0+ T)] [1-2x2+X202+x cos (0+r)]
+   The discussion is restricted to a consideration of first-order                             [1+x 2 +X 202 -2x cos (O+r)]
+effects, that is, to the determination of the contraction per
+unit of loading for infinitely small loadings only. It will be              K(x).. 1 wherenr=O, 1, 2, . . . pl
+                                                                       y 2 =—y
+seen that the contractions are indeed very small, of the order
+of a few percent of the propeller diameter, and that the
+high-order terms are therefore not of concern. The inter-
+ference velocity accordingly • is neglected as small compared
+                                                                      • Y1    =f 2 dx
+                                                                                   y
+
+with the stream velocity. The wake helix lies on a perfect             Y2          angle of contraction, except for a constant
+cylinder and the pitch angle is everywhere the same. It is
+noted that the assumption of zero loading corresponds to                                   factor (2=J Y1 do)
+that used by Goldstein for a different purpose.
+                                                                                • contour line of contraction, except for a constant
+                            SYMBOLS
+
+R       tip radius of propeller                                                    factor'(Yi=fYido)
+r       radius of element of vortex sheet
+  r     contraction                                                        r0                                         '- Ic3 X3
+                                                                                   total contractioni n terms of radius -
+                                                                       -
+                                                                                                                         \KI
+
+  r0    total contraction or contraction at =O
+        angle between starting point of spiral line and point Pc
+                                                                                       •                   /x37
+                                                                            - contraction coefficient (- 11 3)
+                                                                          Rc3                         4
+ H      pitch of spiral
+ 0      angular coordinate on vortex sheet
+                                                                              = sin {tan(x - x )E(k) + x 32 [F(k) -E(k)IJ
+ hH—                  -
+ X      advance ratio ()                                               wi =[(j_ k) F(k)_-yE(k)]'
+                                                                                                                                       1
+2                                  REPORT NO. 777—NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+                                  THEORY                                               By introducing the nondimensional quantities
+  The radial velocity is obtained by using the Blot-Savart
+                                                                                                                                    H
+law and integfating over the entire surface of discontin-                                                                           IrR
+uity. If A rG is the total contraction, the problem is to deter-                                                                                             (2)   -
+                                                                                                                                  F
+mine the ratio          for various numbers of blades at several
+advance ratios. Simple expressions referring to zero load-
+ing are used throughout.                                                               in the Biot-Savart law, the following expression is obtained
+  The radial inward velocity dvR' at the point P is calculated.                        for the radial inward velocity dvR' due to an element on
+(See figs. 1' and 2.) This velocity results from an element                            the wake helix of strength f:
+
+                                                                                                                           ü cos (O+r) —sin (o +7-)
+                                                                                                                                                             (3)
+                                                                                                          4ir R [1+x2+X282-2x cos (0+T)]
+
+                                                                                         By differentiatiiig equation (3) with respect to x, the field
+                                                                                       of a doublet element on the helical vortex sheet is obtained,
+                                                                                       the doublet element consisting of two neighboring singlet
+                                                                                       elements each of strengthf. Settingfdx equal to F and divid-
+                                                                                       ing through by the stream velocity V gives
+
+                                                                                        VR         1,
+                                                                                        V         47r
+                                                                                             F do [a cos (8+r) — s in (O+ r )] [ 1_2x2 + X2O2 + z cos ( 0 +7-)1
+                                                                                             7V               [1+x2+X202-2x cos (O+T)]
+                                                                                                                                                             (4)
+                FIGURE 1.—Geometric relationships of wake helix.
+                                                                                       where v, is the radial velocity at the point P.
+                                                                                        Equation (4) may be written in the form
+
+                                                                                                                   v           1 rdo
+                                                                                                                  d V= -         -XYi                        (5)
+                                                                                       where
+
+                                                                                              [0 cos (0+ r ) —sin (0-F7-)] [ 1 - 2 x 2 +X202 +x cos (0+r)]
+                                                                                                                                                             (6)
+                                                                                                            [1+x 2 +A202 - 2 x cos (0+T)]
+                                                                             P
+                                                                                       The functiony1 is plotted against 0+7- for four values of X
+                                                                                       and various values of r and x in figures 3 to 6. With
+
+                                                                                                                   F=2xTTWK(X)
+                                                                                                                            p0)
+
+
+                                                                                                                           2irV2i
+                                                                                                                       =                K(x)
+                                                                                                                             p0)
+
+
+        FIGURE 2.—Plan view of wake helix showing geometric relationships.                                                 it VR Xc,
+                                                                                                                       =                  K(x)               (7)
+                                                                                                                              plc
+of circulation J ds, which is located on a spiral of radius r
+that starts in a plane perpendicular to the axis and contain-                          where
+ing thereference point P. The angle between the starting                                                                            2KW
+                                                                                                                            CS
+point of the spiral line and the point P is designated T. The                                                                       _7
+spiral extends below the plane to infinity. If the pitch of
+this spiral is designated H, the element at a projected angle 0                                                               =2K113                         (8)
+from the starting point of the spiral is then at a distance h
+below the reference plane where                                                         substitution in equation (5) gives                            -
+
+                                                                                 (1)    -                                                                    (9)
+                                                                                                                  V          4Kp
+                                             THEORY OF PROPELLERS. Ill-SLIPSTREAM CONTRACTION                                                                        3
+                                                                                              If R 2 is the radius at the propeller and R 1 is the ultimate
+  If the point P is at a distance                           below the propeller,
+                                                                                              radius of the wake (0 = 0, 0 = ),
+integrating equation (9) over the wake yields
+                                                                                                                                                    Y,            (19)
+               VR
+                                                                                 (10)         where
+                       -
+                      2cK    -e o
+                            J5  1KP "
+                                                                                                                                   Y3=5Y2 do
+It is noted that, with equally spaced blades, the function
+
+                                         Yi                                      (11)         Values of Y3 are given in tables V and VI and are plotted in
+                                                                                              figure 9 for two-blade and four-blade propellers for which X
+is an odd function of 0 and
+                                                                                              and 0 take on various values.
+                                                                                                 After all substitutions are made, the complete multiple
+                           E  f         y do=0                                   (12)         integral for the total contraction is obtained as
+                           it
+                                    '
+Equation (10)-can therefore be rewritten as                                                               r0 c, X1 f55K(x).i_yi(o,x)dx do do
+                                                                                                                               00            Pn
+              VR
+
+                                                       '                         (13)         (See figs. 10 and 11..)
+                            0 /)
+                      x2cJf1K(
+                        K 0
+
+
+Let                                                                                                                INFINITE NUMBER OF BLADES
+                                 K(x)                                                            For purposes of comparison, it is useful to obtain the
+                           Y2                     Y1
+                                                                                              contraction for the case of an infinite number of blades.
+                                                                                              By resolving the circulation into components parallel to and
+                           Yi =fy 2 dx                                           (14)         perpendicular to the axis of the wake, the helical vortices
+                                                                                              can be replaced by a system, of vortices parallel to the axis
+                                                                                              and another of ring vortices having centers on the axis.
+                           Y2=fYido                                                           Only the ring vortices contribute to the radial velocity.
+                                                                                                 The field due to a vortex ring of strength f and radius
+Values of Y1 and Y2 , multiplied by a constant factor for                                     r=Rx, located at a distance h below the reference point P,
+convenience in plotting, are given in tables . 1 to IV for two-                               is given by Lamb (reference 1, p. 237). In the notation of
+blade and four-blade propellers for which X and 0 take on                                     the present paper it is
+various values. These functions are plotted against 0 in
+figures 7 and 8.                                                                                          .,,_flJ 1'[(_k) F(k)—                      E(k)]        (20)
+   Equation (13) becomes
+                                        X2                                                    where E(k) and F(k) are the complete elliptic integrals and
+                           VR                CS
+                                                                                 '(15)
+                                                                                                                                         4x
+                                                                                                                              k2—
+Now                                                                                                                                 ^R ) + (1+X)2
+
+                      VR        dr R ldx                                                      As before, a doublet ring is obtained by differentiating
+                                                                                 (16)
+                                                                                              equation (20) with respect to x. By setting
+                                        uR
+
+                                                                                                                                    fdx==
+                                                                                                                                             r
+Therefore
+                                                                                              the following expression 'is obtained for the field of a, doublet
+                      dx        v             X3 c,17
+                                                                                 (17)         ring:
+                                                                                                          R                                         _ 22
+whence                                                                                                        'Ic {x      ±    E(k) +x   J                        (21)
+                                                                                                                                                     1:E'(k)] }
+         irR 2 —R 1   15R2              512                 X3 C, Ce.7                          In order to obtain the effect of the entire vortex system,
+               R      R
+                                dr= dx=                                 1 2 do   (18)
+                                                                                              equation (21) is integrated with respect to h/R and x as
+         1k                Ri            xi                 -   '-J81
+
+
+
+                                         - =
+                                        ( )
+                                         h                 f'f    rR I - k
+                                                            _R SIIIT1   1
+                                                                         2
+                                                                  —kx —E(k)+x
+                                                                             L
+                                                                              L
+                                                                                   2
+
+                                                                                                      2       )_ I
+                                                                                                                       2—k2
+                                                                                                                              ( )1} dx
+                                                                                                                               k
+                                                                                                                                                                  (22)'
+
+
+The radial velocity
+                                                                                         'alit,
+                                                                                  VR
+                                                                                        'k2
+4                                    REPORT NO. 777           NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+Equation (22) may be written in the form                                                                   -        hIRv
+                                                                                                                           dh
+                                                                                                               J0, V R
+
+
+
+so that
+        •
+                                                                             (23)
+                                                                                                                       f
+                                                                                                                            r   f,   IR
+                                                                                                                                           Rh
+                                                                                                                                                     R
+                                                                                                                                                         (25)
+                                                                                         By substituting
+                           1 1'   h                                                                                        'irc,XVR
+                         VR_JI qb   X)dX                                                                              =               K(x)               (26)
+                          (—R                                                                                                   K
+
+
+
+    •                                                                        (24)        where K(x) is the horizontal component of the circulation
+                                               (, X)X                                    coefficient, which may be expressed as
+Now
+                          lChdr                                                                                                 /     2        \31
+                      1r                                                                                                        /S
+                                                                                                                                                         (27)
+                         RRt dhdh                                                                                   K(x)=x2+2)
+
+
+
+
+the following equation is finally obtained:
+                       Ar                  2 )%
+                                        l' 2    dxf kjx_ 1—,E(k)+ x                                                                                      (28)
+                                       c-           /R
+
+            For convenience in using the Legendre tables, the second integral is written in the form
+
+                                                                                                                                                         (29)
+                                                                                 Sh/R B
+where
+                                                   z1=     sin 41tan2(x2_x/2)E(k) + 2x 2 [ F(k) -
+and
+                                                                          fh\2      4x
+                                                                                    in2
+                                                                                      (l+5)2
+
+or
+                                                                                 q= sink
+    (See fig. 12 for plots of z 1 against h/R.)
+             The final expression is
+                                                                                           1/   1/             1/
+                                 zr c,              x2
+                                                                                                                                          }d
+                                                           )% dxf°
+                                              fo,( _               h/Il
+    (See table VII and fi g . 13.)
+
+
+            INFINITE NUMBER OF BLADES FOR DUAL ROTATION                                   of the advance ratio. The calculations involve triple inte-
+                                                                                          grations and are therefore somewhat laborious and susceptible
+      .The contraction for a dual-rotating propeller with an
+                                                                                          to numerical errors. Until more convenient methods are
+    infinite number of blades is next obtained. In this case
+                                                                                          devised to perform this integration, it is hoped that the
+    K(x)=1, and the radial velocity is
+                                                                                          values given in this paper will serve the purpose. It is well
+                                                                                          to notice the small magnitude of the contraction. A four-
+                  VIl=       j1j [x {( .—k)F(k) - E(k)}].                                 blade propeller with normal loading and advance ratio is
+                                                                                          shown to have a total contraction in terms of the radius of
+        Since the value at the lower limit is zero and' K(s) = 1 for                      less than one percent. The first-order treatment embodied
+        an infinite number of blades, it follows by substituting the                      in the paper, is therefore adequate for all technical purposes.
+        value of I' that
+                                 r          c,C°       h
+                                R47rJh/R'R
+        where
+                           wi=[(—k) F(k)— E(k)]                                           LANGLEY MEMORIAL AERONAUTICAL LABORATORY,
+                                                                                            NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS,
+        (See table VIII and fig. 14.)                                                         LANGLEY FIELD, VA., October 10, 1944.
+
+                             CONCLUDING REMARKS                                                                           REFERENCE •
+          The contraction coefficients are given for two-blade and                        1. Lamb, Horace: Hydrodynamics. Sixth ed., Cambridge Univ.
+        four-blade single-rotating propellers at four specific values                          Press, 1932.
+                                                      THEORY OF PROPELLERS. Ill-SLIPSTREAM CONTRACTION                                                                                        5
+                                  X3
+TABLE 1.-FUNCTION                       Y, FOR TWO-BLADE PROPELLER                           TABLE 111.-F UNCTION Y2 FOR TWO-BLADE PROPELLER
+
+              A'                                                 A'                                                  As                                          .A'
+              -Yl        .                                       -1'l                                                     Y2                                        -3'2
+               4                                                  .4                               0                -4            0                                    4
+      6                            o
+    (deg)                        (deg)                                                           (deg)                          (deg)                                         -
+                                                                 X=1                                                A=3                                             A=1
+
+      00    -0.000291               1        -0.000138                         -0.000683            0               8.138900          0           0.377250       -0.004494        -0.003136
+     100       .000148              2         -.000213      -0.000282           -.001088           20               8.159900          2            .377650        -.004435
+     130       .001966              3         -.000293                          -.001367           40               8.219400          4            .378580        -.004280
+     110       .004813              4         -.000382                          -.001232           60               8.291400          6            r380140        -.003990
+     170       .006679              5         -.000488                          -.001283           80               8.351400          8            .382320        -.003490
+
+     200      .005052            - 6          -.000570          -.000923       -.001316           100               8.358900      10            .385170    -.002700               -.002466
+     220      .002008               7         -.000682                         -.001358           120               8.223900      20            .402420      .000595              -.001651
+     250      .000730               8         -.000789                         -.001358           140               7. 745900     30        ------------------                    -.000876
+     300      .000450               9         -.000898                         -.001350           160               6.570500      40            .437620      .005355              -.000189
+     350      .001305              10         -.000984          -.001792       -.001358           180               4.917900      50        ------------------------                .000407
+
+     400       .000622             20         -.001139          -.001571       -.001367           200               3.412900      60           . 467020  .010075                    .060907
+     500       .000270             40         -.000999          -.001286       -.001080           220               2.512900      70        -------------------                     .001302
+                                              -.000802          -.000862                          240               2.232900      80           .486770   .013075                    .001577
+     550       .000400             60                                          -.000759           260               2.202900      90        -------------------                     .001717
+     600       .000145             80         -.000339          -.000324       -.000304           280     .         2.245900     100           - 4S5670  .013075                    .001724
+     650       .000031            100           .000400           .000312         .000084
+                                                                                                  300               2.215900     120               .453070          .011070         .001504
+     700       .000149            120          .001730           .000709          .000274         320               2.026900     140               .373150          .008050         .001129
+     750       .000175            140          .003131           .000809          .000347         340               1.73490')    160               .267250          .004870         .000718
+     800       .000058            160          .003351           .000740          .000321         360               1.404900     180               .109400          .002470         .000444
+     900       .000079            180       1.002658             .000492          .000132         380               1.108400     200               .102200          .001070         .000313
+                                  200          .001544           .000237          .000100
+                                                                                                  400                .890900     220               .067320          .000470         .000207
+                                  220           .000625           .000093         .000073         420                .780400     240               .055310          .000280         1000178
+                                  240           .000160           .000014       -.000015          440                .745400     260               .063460          .000270         .900189
+                                  260         -.000056 .          .000003         .000008         460                .740400     280               .052810          .000280         .000162
+                                  280           .000049         -.000013           .000036        500         .      .674400     300               .048820          .000290         .000112
+                                  300           .000213         -.000004           .000047
+                                                                                                  540                .504400     320               .040500          .000290 -. 000065
+                                  320           .000363           .000004         .000036         580                .324400     340               .028630          .000250      .000025
+                                  340           .000300           .000008         .000030         620                .246400     360               .016630          .000150      .000007
+                                  360           .000343           .000031          .000001        660                .231400     380               .007610          .000090      .000007
+                                  380           .000232           .000008       -.000603          700                .189400     400               .002400          .000080      .000000
+                                  400           .000113         -.000003           .000004
+                                                                                                  740                .112000     420               .000420          .000070
+                                  420           .000027           .000020         .000007         780                .030000     440               .000100
+                                  440         -.000011           6.000011                         820              -.006000
+                                  460           .000014                                           800              -.004000
+
+
+
+TABLE 11.-FUNCTION Y1 FOR FOUR-BLADE PROPELLER                                               TABLE IV.-FUNCTION -Y2 FOR FOUR-BLADE PROPELLER
+
+               A'                                 .
+               -1'1                                               X3 yl                                              A'                                             A'
+                                                                                                                     -l'                                            -1'2
+      0                            o                                                               6                              0
+    (deg)   -----                (deg)                                                            (deg)       -                 (deg)
+                             -                 A=y          .     A=1                                                                                               A=1            A==13/
+
+       0     0.000500                  1   -----------  ----------- -           -0.000273           0              0.024414           0           0.017258        0.007918        0.005175
+      10    -.020680                   2                   -0.000001            -.000260           10               .024414           2 .          .017259         .007918         .005107
+      30      .097700                  3   ----------- --------                 -.000088           20               .024416           4            .017261         .007918         .004728
+      60     1,251120                  4   - ---                                   .000083         30               .024380           6            .017266         .007918         .004084
+      65     1.858120                  5     -0.004211                             .000251         40               .024256           8            .017276         .007918         .003214
+      70     2.879450               6                        .000002 .000501                       00               .023969       10               .017287         .007918         .002343
+      75     3.849270               7      ------------.000704                                     60               .023338       20               .017317         .007908         .001099
+      80     4.594600               8      -- -- - --- -- ---.000905                               70               .021958       40               .546676         .000873         .001235
+      85     4.987600               9      - ---
+                                              --        --- -        .001263                       80               .018333       60               .013899         .054520         .000902
+      90     4.538300              10         -.-011374   -.-000013  .001432                       90               .016049       80               .009902         .002668         .000675
+      95     3.549380              20           .006150           .001786         .002984         100               .013540      100              .005845          .001094         .000541
+     100     2.685010              40           .137004 -         .006466         .005328         110               .012166      12))             .005059          .001014         .000404
+     110     1.330560              60           .363018           .006423         .003108         130               .010889      140              .004010          .000044         .000314
+     120      .821510              80           .342699           .004174         .001577         100               .009821      160              .003112          .000407         .000240
+     160     1.017150             100           .218548           .002161         .000532         170               .008444      180              .002383          .000255         .009173
+     200      .902770             120           .112735           .001281         .000298         180               .006951     200               .001859          .000157         .000135
+     250      .436960             140           .091686           .000865         .000224         210               .005703     220               .001486    .     .000091         .000102
+     300      .323530             160           .075117           .000535         .000214         230               .004773     240               .001186          .000037         .000073
+     350      .217700             180           .055218           .000345         .000166         250               .004002     260               .600040          .000049         .000052
+     400      .154190             200           .040861           .000224         .000078         270               .003528     280               .000744          .000020         .000035
+     450.     .154010             220           .030023           .000176         .000101         290              - .003035    300               .000596           .000010        .000020
+     500      .119570             240           .024839           .000130         .000066         310                .002594    320               .000472        -.000002          .050009
+     550      .038450             g60           .021139           .000100         .000057         330                .002216    340               .000363        -.009010          .000093
+     600    -.029500              280           .017093           .000062         .000048         350                .001887    360               .000271        -.000019
+                                  300           .014048           .000042         .000037         370                .001612    380               .000192        -.000021
+                                  320           .011174           .000032         .000025         390             - .001376     400               .000132        -.000013
+                                  340           .009069           .000016         .000002         410               .001166     420               .000087        -.000001
+                                  360           .007762           .000032 --      .009004         430               .000959     440               .000046
+                                  380           .006439         -.000018                          400               .090704
+                                  400            004650         -.000041                         .470               .000500
+                                  420           .003748         -.000003                          490               .000367
+                                  440           .003884         -.000004                          510               . 000205                  .
+                                  460           .004428                                           530               .000075                                                           . - -
+6                                               REPORT NO.. 777-NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+                                       X3                                                        TABLE VII.-CONTOUR LINES-SINGLE-ROTATING
+TABLE V.-FUNCTION                               Y3 FOR TWO-BLADE PROPELLER
+                                                                                                                 PROPELLER
+
+                   X3                                                   X3
+                _______                                                                                    Rc.                     Rc.                     Rc.               Rc.
+                             7                                                                   h/R    ___________         h/R              h/R                     h/R
+    (deg)                            (deg)           --
+
+                                                                         X=i                               X=3/                                            X=1
+
+
+                 0.048613               0                0.015944      0.002141      0.000602    4.0      0.00045           4.0   0.00060    4.0          0.00058    4.0    0. 00032
+       0                                                                                                                                                   .00188
+                                                          .015800                                3.0       .   00263        3.0    . 00226   3. 0                    3.0     .00148
+      20          .044739               2                               .002154
+                                                                                                 2.0       .00747           2.6    .00350    2.6           . 00292   2.6     .00226
+      40          .040850               4                 .015656       .002168
+      60          .036926               6                 .015511       .002180                  1.6       .01148           2.2    .00545    2.2           .00424    2.2      .00332
+      80          .032975               8                 .015366       .002191                  1.2       .01796           1.8    .00838    1.8           .00626    1.8     .00487
+
+     100          .029007              10                  .015221      .002201       .000748     .8       .02888           1.4    .01266    1.4            00937    1.4     .00726
+     120          .025056              20                  .014474      .002217       .000855     .45      . 04733          1.0    . 01963   1.0           .01446    1.0     .01107
+     140          .021248              30                                             .000021                                .8    .02499     .8           .01812     .6     .01768
+                                                           .012913      .002111       .000950                                .6    .03247     . 6          .02312     .45    .02330
+     160          .017800              40
+     180          .015057              50                                             .000944                                .4    .04312     .4           .03053
+
+     200
+     220
+     240
+     260
+     280
+                  .013062
+                  .011670
+                  .010549
+                  .009501
+                  .008448
+                                       60
+                                       70
+                                       80
+                                       90
+                                      100
+                                                           .011197
+
+                                                           .009382
+
+                                                           .007525
+                                                                        .001852
+
+                                                                        .001490
+
+                                                                        .001094
+                                                                                      .000910
+                                                                                      .050854
+                                                                                      .000780
+                                                                                      .000695
+                                                                                      .000607
+                                                                                                                       1^    .2
+                                                                                                                             .1
+                                                                                                                                   .05997
+                                                                                                                                   .07388
+                                                                                                                                              .2
+                                                                                                                                              .12
+                                                                                                                                                           .04233
+                                                                                                                                                           .04985
+
+
+
+
+     300          .007392             120                  .005732      .000728 .     .000439
+     320
+     340
+                  .000381
+                  .005483
+                                      140
+                                      160
+                                                           .004148
+                                                           .002927
+                                                                        .000437
+                                                                        . 000243
+                                                                                      .000303
+                                                                                      .000208
+                                                                                                 TABLE VIII.-CONTOUR LINES-DUAL-ROTATING
+     360          .004734             180                  .002099      .000136       .000148                    PROPELLER
+     380          .004139             200                  .001594      .000087       .000111
+
+     400          .003664             220                  .001277      .000065       .000086
+     420          .003268             240                  .001049      .000055       .000066                                     h/R
+     440          . 002903            260                  .000837      .000047       .000048
+     460          .002459             280                  .000632      . 000039      .000030
+     500          .001882             300        '         .000441      .000031       .000017                                     10.00       0.000060
+                                                                                                                                   9.50        .000141
+     540          .001318             320                  .000276      .000022        .000007                                     9.00        .000244
+     580          .000922             340                  .000146      .000014        .000002                                     8.50        .000368
+     620          .000651             360                  .000066      .000008        .000001                                     8.00        .000513
+     660          .000425             380                  .000021      .000005        .000001
+     700          .000232             400                  .000005      .000002                                                    7.50        .000680
+                                                                                                                                   7.00        .000867
+     740           .000085            420            •     .000001                                                                 6.50        .001074
+     780         -.000006                                                                                                          6.00        .001472
+     820         -.000005                                                                                                          5.50        .001898
+                                                                                                                                   5.00         .002355
+                                                                                                                                   4.50         .002873
+                                                                                                                                   4.00         .003716
+TABLE VI.-FUNCTION T Y3 FOR FOUR-BLADE PROPELLER                                                                                   3.50
+                                                                                                                                   3.00
+                                                                                                                                                .004671
+                                                                                                                                                .006183
+                                                                                                                                   2.50         .008889
+                   X3                                                        X3                                                    2.00         .013390
+                                                                                                                                   1.75         .016370
+           4                                                                                                                       1.50         .020350
+       o                                0
+     (deg)                            (deg)          ---                                                                           1.25         .025820
+                                                                        x=1           x= 1y                                        1.00         .033490
+                                                                                                                                    .75         .044930
+                                                                                                                                    .50         .062340
+        0         0.067786                  0            0.033572      0.010513..   0.005286                                        .41         .060120
+       10          .063525                  2             .032969       .010236                                                     .40         .070340
+       20          .059264       .          4             .032367       .009960
+       30          .055006                  6             .031764    .. 009684                                                      .35         .075070
+       40          .050757                  8             .031162       .009407                                                     .30         .080400
+                                                                                                                                    . 25        .086370
+       10          .046549              10          .030558    .009131 .004389                                                        20        . 093230
+       60          .042420              20          .027537    .007750 .003532                                                      .15         .101230
+       70          .038450              30       ----------- ------ .002766
+       80          .034832              40          .021584    .005158 .002131                                                                  .110680
+       90          .031732              50       ------------ .001650                                                               .05         .123220
+      100          .020167              60          .016211 .003155  .001297
+      110          .026892              70         ------------ .001040
+      130   .      .022885              80          .012055 .001916' .000856
+      150          .019263              90       . ------------ .000722
+      170          .016059             100          .009157 .001185  .000618
+
+      190          .013358             120                .007100      .000738       .000465
+      210          .011148             140                .005512      .000453       .000343
+      230          .009303            .160                . 004265     .000267       . 000243
+      250          .007765             180                .003314'     .000151       .000173
+      270          .006435             200                .002574      .000086       .000122
+
+      290          .005288             220                .002003      .000052       .000080
+      310          .004300   .         240                .001545      .000022       .000049
+      330          .003461             260                .001165    - . 000000      .000029
+      350          .002748             280                .000863    -.000012        .000015
+      370          .002138             300                .000634    -.000019        .000000
+
+      390          .001621             320                .000452    -.000021        .000002
+      410          .001181             340                .000307    -.000019
+      430          .000823             360                .000196    -.000014
+      450          .000532             380                .000116    -.000008
+      470          .000306             400                .000061    -.000002
+      490          .000153             420                .000023
+      510          .000052
+                    -                   THEORY OF PROPELLERS. Ill—SLIPSTREAM CONTRACTION                                                       FA
+
+                                                       (.
+     3.5
+
+                                        --
+     3.0                                -
+                                        ---
+
+                                        -                                                                            (d
+                                        -
+                                        -
+                                        ----
+     V1
+
+      /.
+
+
+
+      /.c
+                .11111111:IiiiIIIIIIIIIIIIIII
+
+           C
+                                            -   '--- -                                                                                   (a)
+
+
+
+
+                                        -
+
+
+                                        _
+
+                        900
+
+                                        _
+
+
+
+
+                      ---H---           _
+
+
+                    ---1--   -
+                          --
+                      -
+
+
+
+
+            '   0       /00 -       200         300            400
+                                                                          8+   i
+                                                                               500
+                                                                                 deg
+                                                                                             600           700      800         900   /000
+
+                                (a) z=3'.                                                                            (b) x=3.
+                                                      FIGURE 3.—The function Ui for X= Y4 and four values of   r.
+
+
+737880-47-2
+8                             REPORT NO. 777—NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+
+
+     /0
+
+
+
+
+             ---
+                                                 I
+
+
+
+
+             IIIIIILIIIIIIIIi"i_IIII
+                  --                             I                                               0
+         6
+
+
+
+
+                  —
+                  —
+             0   1 9LOO                                                                   —
+
+         C                -            -         -   -     S   __                  -                       ---   --   -
+
+
+
+
+     -                             -
+
+
+
+
+     SC
+
+
+
+     5C                          7Iiiii
+     ill
+     4c      IIIIIIII[tIIIIIIIIIIIIIII
+                  -
+                                                                                         --/80
+
+
+
+
+     Sc
+
+
+
+
+    —2c
+
+     Sc      ---                                                                             de9)
+
+
+
+     V1
+
+
+
+
+     2c
+
+
+
+         C
+
+
+    —2G0
+                  /00            200       300       400          500        600   700     800       900          /000
+                                                               8+ r, deg
+             (c) x=.                                            (d) x=.                               (e) x=16.
+                                                           F1GuRE3.—Contjnued.
+                                         ------------- - - - ---- -
+             THEORY OF PROPELLERS. Ill—SLIPSTREAM CONTRACTION
+
+
+
+
+70---H-                          -
+
+
+
+
+50 --                            -------                                                         -
+
+
+4C-- --------
+      -5----- --
+
+            --               ll----------'4 - --
+
+
+
+
+         1----
+            -
+
+
+
+
+/0iiiiiii1Iiiiiiiiiiiiiiiii
+ IIIIIItIi.iIII
+                         !IVHI
+
+
+
+
+                                                                                                      (f)
+
+      /00   200    300           400         500            600              700   800     900   /000
+                                          8+ r, c/eq
+                                 (f)z=4, , 4,   and 1s;    27O0.
+                                      FIGURE 3.—Concluded.                                                  -
+
+
+
+
+                                                                                    I r
+                                                                                    () -
+                                                                                      0
+                                                                                    90
+
+
+
+
+-
+
+                  -
+                  -
+    900]                    .       ()
+-    Ii -          ------------------
+      /00   200    300           400        500             600              700   800     900   /0
+                                          8+ r, deg
+                                            (a) x=i.
+                    FIGURE 4.—The function yi for Xi and four values of r.
+10                        REPORT NO. 777—NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+      IC
+
+
+
+      I.'
+
+
+
+
+      Vt
+
+
+
+
+     -.
+                 _(              -                                                        ---      -
+                  9Q0
+
+
+
+                                      -
+      /.
+
+
+
+
+                                                     ---                                                7.
+                                                                                                     (de')
+                                                     _L                                                o
+                                                                                                     90
+
+
+
+
+                                      ---       5/
+
+
+
+
+     Vt.                              -
+
+
+
+
+                                      -
+                  9Q0                  /
+
+                                                                                          ---
+                                                                                                             --
+
+
+     -.
+
+
+
+
+     -.6
+                                                                                                                           (c)
+                                                                                             I
+            Cl     1L4J       CL/Cf         .JL/Lf    #UU          QUU             bUll     f(JJ   OZL'           900   /000
+                                                               9 + r, cIe9
+                          (b) x=.                                                                    (C) z=.
+                                                            FIGURE 4.—Continued.
+                                          THEORY OF PROPELLERS. 111 —SLIPSTREAM CONTRACTION                                           11
+
+
+
+
+o--
+
+
+
+
+                                                                 --                                          (de
+C ---                                                             -
+                                                                                                         -/80
+
+4--                                             - -
+                                                                                                                                  -
+
+2-----
+    900
+ --s---                                                                  ----
+L
+        /8 0
+C0                                                    ___
+
+                                      --
+
+
+
+
+        1        1
+4
+
+
+
+
+    0
+            iI
+                     ---   177
+                           IC/(I      eLv
+                                                       I                        I                  I
+
+                                                                                                           800
+                                                                                                                               w
+
+                                                      iLIU       quv         ouv          bC/U   ((1(1                   900   /000
+                                                                          8+ r c/eq
+                           (d) x=34½, and 4; r2700.                                                          (e)   z=.
+                                                             -         FIGURE 4.—Continued.
+12                             REPORT NO. 777—NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+         /.G
+
+
+
+
+                                                                                                           (deg)
+                                                                                                              I
+
+
+                                                                                                             0
+
+                                                 I _                                            —/80
+
+
+
+
+                                               11/
+                                               —
+
+           C
+                r - 00               1                                                    ----
+
+
+
+
+     OR                                        -
+
+                                               -
+                                               -
+
+                                               -
+
+     -.
+
+
+
+
+     -.
+
+
+
+     -
+
+
+
+
+                          _
+                    11111111 iLiiiiiIiiIiIIII
+                          - -L                               -
+                                                                                      ye --------
+
+
+
+
+          I.'
+
+
+
+
+                0        /00             '00   307     4u0        5C/U          6O0       700           800            .900      1000
+                                                                8+deg
+                               (1)                                                                  (g) x=',i and 'fe; 7=2700.
+                                                             FIGURE 4.—Concluded.
+                          -_/\,___
+                          THEORY OF PROPELLERS. Ill—SLIPSTREAM CONTRACTION                                                              13
+
+
+
+
+                              2700                                                                       -
+                           -\----                                                                                r
+                                                                                                              (deg)
+                                                                                                                        - - - -
+                          -                                                                               -
+                                                                                                              90
+                        --                                                                             —270
+                        -\                                                                                                          -
+                        - --
+.2 --
+
+                        -
+                  -
+     °
+c -:-°—    -
+
+
+
+                        -
+                        ---
+
+.6                      _- - -------                      FT
+     --I---
+       900
+           --
+
+                        ----
+                        --                                                                                                          -
+                        —                                                                                     d)
+                        -
+
+                        --
+                                I                                                                      --270
+
+
+
+
+     00
+0
+
+
+
+
+ V        IL/f]
+
+
+
+                  (a)   eVU     .jfL'
+                                                           O^r,deçi
+                                                                               bUU            I (i()     tJOO
+
+
+                                                                                                              (b) x.
+                                                                                                                       900
+                                                                                                                             I   /000
+
+
+                                        FIGURE 5.—The function y ' for X=1 and four values of T.
+14                           REPORT NO. 777—NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+                — —         --
+
+
+
+     /.
+                  --
+                ---
+                                           -fi---
+                IIIIIII                           111111                                       ---90
+           6-                              -I-   -f-
+
+
+                                                 -
+                                                                                               -   /80-
+                                                                                               --270
+                                                                                                            -   -     -   -   —
+
+
+
+
+           4--                                                                                                                —
+
+     V1
+                                     --i------
+
+
+                                     -
+
+           o r0
+                0                  180 0            '                            -                                               )
+
+
+
+
+                                     —
+
+
+
+
+     I.
+
+
+
+
+     /.1   0                       ----.-                ---
+
+
+
+
+           6 --
+                                                                                                    (deg)
+              --                                                                           -            0 •-
+                                                                                               ----90
+           6 —H- --                                                                                 ,30--
+                                                                                               -- 270
+
+           4iiiiii                               iiiiiiiiiiiii
+
+
+
+
+           60         /00
+
+                             (C)
+                                    200    300    400        500
+                                                           8+ideg
+
+                                                        FIGURE 5.—Continued.
+                                                                               600   700          800
+                                                                                                     Ift
+                                                                                                     (d) x=.
+                                                                                                                900       /000
+                       THEORY OF PROPELLERS. 111—SLIPSTREAM CONTRACTION                                     15
+
+
+151,
+
+6—
+                                                                                      I (g)
+                                                                                 -------- 0------
+                                                    90
+           ---                               /o0--
+                                                --270
+4:                                       -                               --
+
+     -
+I                               I
+           900
+                       --
+                       --                                         -
+     1-=
+                 I8°
+
+
+
+2 - - - --2700 -
+
+
+    0 iiiiiiiiiiiiiiiiiiiiiiii
+       IOU P/F) %f) 21)1)                           9+1deg
+                                                                         ,1t)
+
+
+
+                                                     (e) x='/f6.
+                                                FIGURE &—Concluded.
+
+
+
+
+     -i-
+     ir
+        -
+
+
+                 --
+                 --
+
+
+
+
+                 -(deg)
+                 —0--
+                         90
+                 --.---ioo--
+                 -
+
+     -                   ----
+
+     ---I--
+
+
+
+     ---I--
+
+
+
+
+                 _
+
+           9Q0   _
+                                                                                                      (a)
+      - - _i_
+    0      /00    200         00          400           500            RUb            7    Ofli   If)fln
+                                                    8+i-,deg
+                                                       (a)x=Y4.
+
+                               FIGURE 6.—The function yj for X=l3j and four values of r.
+16                                    REPORT NO.' 777—NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+      .1
+                                                                                                         -
+               _.0                     /80        -
+      C                 —         -      J.                       -      -        -                                                   -
+                                            ---v-                                                                                     (b)
+                              - ----
+
+                                  /
+     —.1
+
+
+
+     yl. ---I--
+                                                --
+
+                                                                              '
+                1                                          '
+              ---      9Q0
+                                             ----
+                                             —    ' --- 900
+
+
+
+                       900
+                                                -
+
+               •              ,        /8f.2 ° - - - - ._._- --__
+                                                             --   -                            -
+     ye
+                                                                                                                                      (c)
+
+
+
+
+                                                      —                                            /2
+
+
+
+
+          C
+                                                                                             HHHL
+                                                                                                                                      (d)
+                          I                           /l                            I
+
+           0            /00.              200         300         400            500         500   100   800        900           1000
+                                                                             49 + -r, c/eq
+                   (b) z36.                                                  (c)                               (d) x=34, 3, and %; 7=2700.
+                                                                        FIGURE 6.—Continued.
+                       THEORY OF PROPELLERS. Ill—SLIPSTREAM CONTRACTION                                  17
+
+  4
+
+
+
+
+ -/      IIIIII'IIIIIIIIIiII'7IIIIi
+                   \      -
+V1
+
+-'I
+                      --
+-'
+                      -
+ A
+
+
+
+
+                      -H -
+                         ---
+         IIIIIIT'IIIIIIIIIIIIIIIII
+     C
+
+                             L                      .                                 0
+                       I
+                      -                                                       ---90
+                                                                                  /80
+
+
+
+
+--4
+
+
+
+-'.
+
+
+
+
+           /00      aoo      300     40C       500            - 600 -   700     800         900 - /000
+                                             9+r,deg
+                 (C) x=.                                                         (I) Z1)6
+                                           FIGURE   6.—Concluded.
+18                 REPORT NO. 777—NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+         r;v
+
+
+
+
+     I
+
+
+
+
+                                                       0, deg
+
+                                        (a) Two-blade propeller. (See table I.)
+
+
+
+
+         .020--
+                                                                                           A
+              ---- —
+         .016   _n----_
+
+
+
+         .0/2
+                     -
+
+
+         .008I.SIIII__IIIIII_IIIII__III
+         .004
+                     —
+                     --.         -
+
+
+
+         .004-
+                                                                                                       (b)
+               a       lao                200                            300                   400   500
+                                                         49, deg
+                                        (b) Four-blade propeller. (See table IL)
+                                FIGURE 7.—The function       against 0 for four values of X.
+                         THEORY OF PROPELLERS. Ill—SLIPSTREAM CONTRACTION                                            19
+
+
+
+
+A
+4
+
+
+
+
+                                                            8, deg
+                                            (a) Two-blade propeller. (See table III.)
+
+
+
+
+    .028----                                                                                     -
+
+
+
+    .024IIIIIIIIiiIIIIiIiiIIIIIiII
+    .020--J
+                     ------------                                                                          -
+                      •                                                                      I---
+                     -
+    A3   - - -
+
+    .012                                        -                 -                  -           -•        -
+                     --                                                         -
+    .008 -
+               N    •                                                                                      -
+         ------------•-                                                                                    -
+    .004 - - - - - - - - - -          S                                     -5---
+                                                                                    5--
+         --      -.        -------
+                               -                                                             -
+
+
+
+             —   -   -
+                         100        ---         £00                            300               - - 400       500
+                                -                              8, deg
+                                             (b) Four-blade propeller. (See table IV.)
+                                     FIGURE 8.—The function Y2 against 0 for four values of A.
+20                       REPORT NO. 777 — NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+
+
+
+           05 F—
+
+
+
+
+                                                                                                        72
+                                                                                                         /
+                                                                                                        /7_
+     I-.
+
+           02 -          .\
+
+
+                    N                                                 -
+           c_---                    --              - - - - -
+
+                                                                                                                                  (a)
+            o      too        200        300           400           500            1500       700           AQO   .Qfl/?   /001?
+                                                                    Odeg
+                                                  (a) Two-blade propeller. (See table V.)
+
+
+
+
+           0;---
+
+
+
+                                                                                                A
+                              -
+                              -
+
+           05-
+
+
+                              -
+
+
+
+                              --
+                              -
+
+           02
+                                    N
+                                    --                     --                          -             -             --
+
+            • .-              -
+           0/                 - -                        -                -                  -.              ---
+
+
+                                                                       --                                                      (b)
+                               -
+           0                  /00                     200                          300                       400            500
+                                                                  tIdeg
+                                         -.       (b) Four-bladepropeller. (See table VI.)
+
+                                    FIGURE 9.—The contour function.=Y3 against 0for four values of A.
+           THEORY OF PROPELLERS. Ill—SLIPSTREAM CONTRACTION                                     21
+
+
+
+
+                                       0                                                  0
+
+
+
+                                                                                      V
+                                                                                          Co
+
+
+
+                                       0                                                  0
+                                       0                                                  0
+
+                                       •0                                             V
+                                                                                      0
+                                                                                          Co
+
+
+                                       0                                                  0
+
+
+
+                                       0
+
+
+
+
+                                       0                                                  to
+                                       to
+                                       Ct                                                 Co
+
+
+
+
+                                                                                          0
+
+
+
+
+                                       0                                                  0
+
+
+                                                                                          0
+
+
+                                        0                                                 'C
+
+                                                                                      0
+                                        0                                              0
+                                                                                      0
+
+
+
+
+                                        Co
+                                        Co
+                                                    ':-                                   Co
+                                                                                          'C.
+                                                                                          0
+                                        0                                                 0
+
+
+
+
+                                                                           C-
+
+
+
+
+                                                                           0
+
+
+
+                                                                           C)
+
+
+
+
+                                                                                 •:   •
+
+                                                                           ti.
+ Lo
+                     11 OQ
+
+
+
+
+ I I I
+iI I I I _
+                                                          tc)
+                                 VNI
+
+
+
+                                                                                      *0
+
+                             _
+
+
+
+
+III II _ _ _ Iiii_-f"I
+                                                          C)    1*)   C)
+      0
+      10             14.                     *121
+                               -H                                                                                        -
+22                  REPORT NO. 777—NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+
+
+
+                                 Number of blades
+                                    ---2
+                               --4                                                     -                    -
+
+
+                %---.-
+                _.-----                                                                                     -
+
+                               —\. —
+                               -- --- -
+                               - '-"k-
+                               -  (a)                                                            --                      (b)
+                               —
+            7   /          2    4     fl                                         I                          I        A
+                                                                h/H.
+
+                    (a) A34.                                                                          (b) X=4.
+
+
+
+
+       08--  .    Number of blades
+       --   —___---2_
+                             4
+                                                                       a
+       06
+
+
+                           ---
+
+
+
+
+     Ar
+     H Cs
+
+
+
+
+       04_
+
+
+
+
+                          C      .5            4              b              b               /        5          3
+                                                            h/fl
+
+                    (e) X=T.                                                                     -    (d)
+                                  l'!G!JRE 13.—Contour lines of wake helixes. (See table VII.)
+            THEORY OF PROPELLERS. 111—SLIPSTREAM CONTRACTION                                                                              23
+
+
+
+
+     .14•—.
+
+
+
+
+     .12
+
+
+     .10
+     • 1                                                                                                   -
+I?
+
+     .08                                ----                                                         -
+
+
+
+
+      °IIIIIIIIIIIIIIIIIIIIIIIII
+              -
+              -
+       ------- ___     ==== ---------
+           /2            3             4             5              6             7           d           9              /0
+                                                           h/R
+
+                FIGURE 14.—Contour lines of wake for p=oo. Dual rotation. (See table VIII.)
+
+
+
+
+                                                                                                  U. S. GOVERNMENT PRINTING OFFICE 1947
+                                                                                                                     K
+                                                         --——-
+
+
+
+
+                                                                                             6
+
+
+
+
+                            Positive directions of axes and angles (forces and moments) are shown by arrows
+
+                     Axis                                    Moment about axis                        Angle                   Velocities
+                                          Force
+                                         (parallel                                                                       Linear
+            Designation             5 r syrnbo       Designation Sn1 -            Positive       Des.ina      Syx-
+                                                                                                                     ng Angular
+                                                                                                                      axis)
+
+         Longitudinal -------- -     X      X        Rolling--------     L        Y----+Z        Roll                      u               p
+         Lateral-----------------    Y      Y        Pitching ------ -   M        Z--+X          Pitch----------0          v               q
+         Normal --------------- -    Z      Z        Yawing------- -     N        —
+                                                                                  XY             Yaw                       w               r
+
+
+Absolute coefficients of moment                                              Angle of set of control surface (relative to neutral
+                               M                     N                           position), 5. (Indicate surface by proper subscript.)
+                                           cn
+    (rolling)         (pitching)          (yawing)
+                                                         4. PROPELLER SYMBOLS
+
+D   Diameter
+    Geometric pitch                                                          P        Power, absolaite coefficient O=
+P
+p/D Pitch ratio                                                                                                           5
+                                                                                                                              IT/
+V'  Inflow velocity                                                          C        Speed-power coefficient =
+V,  Slipstream velocity                                                               Efficiency
+T                                    T                                       n        Revolutions per second, rps
+    Thrust, absolute coefficient Cr=2D4
+                                                                                                                              /
+                                                         Q                            Effective helix angle=tan
+Q      Torque, absolute coefficient                                                                                               V)
+
+                                                         5. NUMERICAL RELATIONS
+
+1 hp=76.04 kg-m/s=550 ft-lb/sec                                              1 lb=0.4536 kg
+1 metric horsepower= 0.9863 hp                                               1 kg=2.2046 lb
+1 mph=0.4470 mps                                                             1 mi= 1,609.35 m=5,280 ft
+1 mps=2.2369 mph                                                             1 m=3.2808 ft
+

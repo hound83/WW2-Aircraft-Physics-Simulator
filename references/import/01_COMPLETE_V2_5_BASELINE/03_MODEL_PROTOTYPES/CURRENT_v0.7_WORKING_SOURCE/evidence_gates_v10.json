@@ -1,0 +1,19 @@
+{
+  "purpose": "Evidence gate for comparative low-speed / turning-model inputs, not a historical aircraft database",
+  "bf109f4": {
+    "clMax": {"status": "assumed", "basis": "v0.7 nominal CLmax=1.50; simulation-game stall speed not accepted as a flight measurement"},
+    "oswald": {"status": "Greg worksheet inferred, not independently measured", "basis": "Greg 325-mph drag split, 6371-lb assumed weight implies e about 0.558; cannot validate airframe independently"},
+    "stallSpeed": {"status": "unresolved", "basis": "No matched-weight, calibrated, primary flight-test stall EAS found"}
+  },
+  "p47b": {
+    "clMax": {"status": "assumed", "basis": "v0.7 nominal CLmax=1.30; manual 115 mph IAS does not provide specimen-matched low-speed CAS"},
+    "oswald": {"status": "related-variant Greg worksheet inferred, not measured", "basis": "P-47 D-28-style high-power, 13065 lb Greg worksheet implies e about 0.784; power and aerodynamic configuration not identical to P-47B"},
+    "stallSpeed": {"status": "unresolved", "basis": "P-47 manual correction chart begins at 170 mph IAS, above the quoted 115 mph IAS clean stall; no extrapolation permitted"}
+  },
+  "p51b": {
+    "clMax": {"status": "assumed", "basis": "v0.7 nominal CLmax=1.60; 86 mph IAS clean power-off stall at 8000 ft and 9270 lb is not corrected CAS/EAS"},
+    "oswald": {"status": "assumed", "basis": "No independently fitted full low-speed polar for the modeled B-15 specimen"},
+    "stallSpeed": {"status": "reported IAS only; conversion unresolved", "basis": "Wright Field Eng-47-1749-A 20 May 1944 reports 86 mph IAS at 8000 ft, 9270 lb, gear/flaps up, shutters closed, power off; the same report's airspeed-calibration chart does not cover 86 mph IAS", "transcription": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html", "scan": "https://www.wwiiaircraftperformance.com/org/p-51/p-51_files/P-51B_24777_Airspeed_Calibration.jpg"}
+  },
+  "method": {"note": "A wartime test report's IAS figure is evidence of an IAS stall, not proof of CLmax until converted to calibrated/equivalent airspeed at a matched test weight and configuration. Published generic aerodynamic sensitivity cannot substitute for that correction.", "nacaTestConditionStudy": "https://ntrs.nasa.gov/citations/19930081417", "nacaP51bDragStudy": "https://ntrs.nasa.gov/citations/19930092458"}
+}

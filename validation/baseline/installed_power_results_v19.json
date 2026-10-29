@@ -1,0 +1,1543 @@
+{
+  "version": "v1.9-power-accounting-not-fitted",
+  "date": "2026-10-26",
+  "method": "Candidate C unchanged by default. Hypothetical exhaust F=coefficient*engine BHP (force, NOT propeller horsepower); source-speed CD0 reanchored separately per scenario/aircraft; SAME coefficient shared across all three. Flight weight is separate sensitivity. Not an identification or a correction to flight-data results.",
+  "modelState": "C live; no exhaust term promoted; historical speed holdouts left unaltered",
+  "sources": {
+    "p51May1944": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+    "propTheory1944": "https://ntrs.nasa.gov/citations/19930093312",
+    "exhaustTest1940": "https://ntrs.nasa.gov/citations/20090014842",
+    "independentP51BPropTest": "https://ntrs.nasa.gov/citations/19780078569"
+  },
+  "keyCaveats": [
+    "Packard chart is SOURCE of P-51 BHP, not an onboard torque transducer; uncertainties not quantified.",
+    "The reported 9,335 lb is TAKEOFF gross; figure 5 level flight is explicitly weight-corrected to 9,240 lb at 22,400 ft.",
+    "1940 NACA exhaust test was a different RADIAL engine at 550 mph; its 18% figure is NOT a P-51 thrust coefficient.",
+    "F4 e still conditioned on IL-2 sea-level turn, not a wartime flight drag measurement.",
+    "P-47B and P-51B speed constraints share the airplane used for engine-climb results; avoid false independence.",
+    "All nonzero exhaust forces here are HYPOTHETICAL with no source-backed upper bound for the three installed exhaust systems.",
+    "A necessary thrust-force magnitude is not proof exhaust caused the discrepancy."
+  ],
+  "scenarios": [
+    {
+      "coefficientLbfPerBhp": 0,
+      "p51AnchorExhaustLbf": 0,
+      "p51CD0": 0.0162226349489314,
+      "p51E": 0.78,
+      "p51Climb67": {
+        "fpm": 3401.0861529653175,
+        "tasMph": 171,
+        "exhaustHp": 0,
+        "shaftHp": 1603.1,
+        "eta": 0.7809409097141065
+      },
+      "p51Climb75": {
+        "fpm": 3978.538324234923,
+        "tasMph": 175,
+        "exhaustHp": 0,
+        "shaftHp": 1811.1,
+        "eta": 0.7841005727757949
+      },
+      "p51BoostGainFpm": 577.4521712696055,
+      "p51SpeedHoldouts": {
+        "count": 8,
+        "maeMph": 2.609900709896465,
+        "rows": [
+          {
+            "altFt": 4000,
+            "sourceMph": 380,
+            "modeledMph": 377.98763003051863,
+            "rating": "67inHg",
+            "errorMph": -2.0123699694813695
+          },
+          {
+            "altFt": 7400,
+            "sourceMph": 395.5,
+            "modeledMph": 392.7345797327289,
+            "rating": "67inHg",
+            "errorMph": -2.765420267271111
+          },
+          {
+            "altFt": 10300,
+            "sourceMph": 409,
+            "modeledMph": 405.8958576063451,
+            "rating": "67inHg",
+            "errorMph": -3.104142393654911
+          },
+          {
+            "altFt": 18000,
+            "sourceMph": 408,
+            "modeledMph": 407.12014541306417,
+            "rating": "67inHg",
+            "errorMph": -0.879854586935835
+          },
+          {
+            "altFt": 20800,
+            "sourceMph": 417,
+            "modeledMph": 417.60596632995293,
+            "rating": "67inHg",
+            "errorMph": 0.6059663299529348
+          },
+          {
+            "altFt": 24000,
+            "sourceMph": 426,
+            "modeledMph": 429.837995102891,
+            "rating": "67inHg",
+            "errorMph": 3.837995102891
+          },
+          {
+            "altFt": 28000,
+            "sourceMph": 419,
+            "modeledMph": 422.8539732156496,
+            "rating": "67inHg",
+            "errorMph": 3.853973215649603
+          },
+          {
+            "altFt": 32000,
+            "sourceMph": 410,
+            "modeledMph": 413.81948381333495,
+            "rating": "67inHg",
+            "errorMph": 3.819483813334955
+          }
+        ]
+      },
+      "p47SpeedHoldouts": {
+        "count": 5,
+        "maeMph": 3.6493562890740576,
+        "rows": [
+          {
+            "altFt": 15000,
+            "sourceMph": 386,
+            "modeledMph": 386.0511311975133,
+            "rating": "military",
+            "errorMph": 0.051131197513313964
+          },
+          {
+            "altFt": 25000,
+            "sourceMph": 420,
+            "modeledMph": 423.26229896230507,
+            "rating": "military",
+            "errorMph": 3.262298962305067
+          },
+          {
+            "altFt": 27800,
+            "sourceMph": 429,
+            "modeledMph": 434.0999065944634,
+            "rating": "military",
+            "errorMph": 5.099906594463391
+          },
+          {
+            "altFt": 30000,
+            "sourceMph": 426,
+            "modeledMph": 429.8896967333567,
+            "rating": "military",
+            "errorMph": 3.8896967333566863
+          },
+          {
+            "altFt": 34000,
+            "sourceMph": 412,
+            "modeledMph": 417.94374795773183,
+            "rating": "military",
+            "errorMph": 5.94374795773183
+          }
+        ]
+      },
+      "p51Fig5": {
+        "rows": [
+          {
+            "tasMph": 270,
+            "sourceBhp": 490,
+            "engineRpm": 2100,
+            "predictedBhp": 555.8276814692874,
+            "deltaBhp": 65.82768146928743
+          },
+          {
+            "tasMph": 318,
+            "sourceBhp": 610,
+            "engineRpm": 2300,
+            "predictedBhp": 728.6330118989196,
+            "deltaBhp": 118.63301189891956
+          },
+          {
+            "tasMph": 387,
+            "sourceBhp": 1000,
+            "engineRpm": 2700,
+            "predictedBhp": 1117.20384741811,
+            "deltaBhp": 117.20384741810994
+          },
+          {
+            "tasMph": 395,
+            "sourceBhp": 1090,
+            "engineRpm": 3000,
+            "predictedBhp": 1142.9063950906718,
+            "deltaBhp": 52.90639509067182
+          },
+          {
+            "tasMph": 415,
+            "sourceBhp": 1290,
+            "engineRpm": 3000,
+            "predictedBhp": 1309.5422563049074,
+            "deltaBhp": 19.54225630490737
+          },
+          {
+            "tasMph": 430,
+            "sourceBhp": 1440,
+            "engineRpm": 3000,
+            "predictedBhp": 1451.75589065585,
+            "deltaBhp": 11.755890655849953
+          }
+        ],
+        "firstFourMaeBhp": 88.64273396924719,
+        "fullMaeBhp": 64.31151380629102
+      },
+      "f4E": 0.5469811060803458,
+      "f4SLTurnSeconds": 20.299999999999994,
+      "f4TurnAt3000mSeconds": 25.891688221818473,
+      "f4TurnSpeedTasMph": {
+        "seaLevel": 167.77022190407996,
+        "at3000m": 194.23223459434303
+      }
+    },
+    {
+      "coefficientLbfPerBhp": 0.025,
+      "p51AnchorExhaustLbf": 39.5,
+      "p51CD0": 0.01673007202253712,
+      "p51E": 0.78,
+      "p51Climb67": {
+        "fpm": 3452.4554411420577,
+        "tasMph": 172,
+        "exhaustHp": 18.382213333059504,
+        "shaftHp": 1603.1,
+        "eta": 0.7816525363086789
+      },
+      "p51Climb75": {
+        "fpm": 4038.9629948273387,
+        "tasMph": 176,
+        "exhaustHp": 21.25023999968345,
+        "shaftHp": 1811.1,
+        "eta": 0.7847927903926211
+      },
+      "p51BoostGainFpm": 586.507553685281,
+      "p51SpeedHoldouts": {
+        "count": 8,
+        "maeMph": 3.0589382646794547,
+        "rows": [
+          {
+            "altFt": 4000,
+            "sourceMph": 380,
+            "modeledMph": 378.19790354717406,
+            "rating": "67inHg",
+            "errorMph": -1.8020964528259356
+          },
+          {
+            "altFt": 7400,
+            "sourceMph": 395.5,
+            "modeledMph": 393.1536135839706,
+            "rating": "67inHg",
+            "errorMph": -2.346386416029418
+          },
+          {
+            "altFt": 10300,
+            "sourceMph": 409,
+            "modeledMph": 406.5189044785511,
+            "rating": "67inHg",
+            "errorMph": -2.4810955214488786
+          },
+          {
+            "altFt": 18000,
+            "sourceMph": 408,
+            "modeledMph": 407.9561843734991,
+            "rating": "67inHg",
+            "errorMph": -0.043815626500872895
+          },
+          {
+            "altFt": 20800,
+            "sourceMph": 417,
+            "modeledMph": 418.6648523416079,
+            "rating": "67inHg",
+            "errorMph": 1.6648523416079115
+          },
+          {
+            "altFt": 24000,
+            "sourceMph": 426,
+            "modeledMph": 431.1846460313827,
+            "rating": "67inHg",
+            "errorMph": 5.1846460313827265
+          },
+          {
+            "altFt": 28000,
+            "sourceMph": 419,
+            "modeledMph": 424.3568417033821,
+            "rating": "67inHg",
+            "errorMph": 5.356841703382088
+          },
+          {
+            "altFt": 32000,
+            "sourceMph": 410,
+            "modeledMph": 415.5917720242578,
+            "rating": "67inHg",
+            "errorMph": 5.591772024257807
+          }
+        ]
+      },
+      "p47SpeedHoldouts": {
+        "count": 5,
+        "maeMph": 5.076471490267432,
+        "rows": [
+          {
+            "altFt": 15000,
+            "sourceMph": 386,
+            "modeledMph": 386.57202306811814,
+            "rating": "military",
+            "errorMph": 0.572023068118142
+          },
+          {
+            "altFt": 25000,
+            "sourceMph": 420,
+            "modeledMph": 424.56930271416786,
+            "rating": "military",
+            "errorMph": 4.569302714167861
+          },
+          {
+            "altFt": 27800,
+            "sourceMph": 429,
+            "modeledMph": 435.69402742836974,
+            "rating": "military",
+            "errorMph": 6.694027428369736
+          },
+          {
+            "altFt": 30000,
+            "sourceMph": 426,
+            "modeledMph": 431.5961772306182,
+            "rating": "military",
+            "errorMph": 5.596177230618196
+          },
+          {
+            "altFt": 34000,
+            "sourceMph": 412,
+            "modeledMph": 419.9508270100632,
+            "rating": "military",
+            "errorMph": 7.950827010063222
+          }
+        ]
+      },
+      "p51Fig5": {
+        "rows": [
+          {
+            "tasMph": 270,
+            "sourceBhp": 490,
+            "engineRpm": 2100,
+            "predictedBhp": 553.1421499813847,
+            "deltaBhp": 63.142149981384705
+          },
+          {
+            "tasMph": 318,
+            "sourceBhp": 610,
+            "engineRpm": 2300,
+            "predictedBhp": 725.2782832083466,
+            "deltaBhp": 115.27828320834658
+          },
+          {
+            "tasMph": 387,
+            "sourceBhp": 1000,
+            "engineRpm": 2700,
+            "predictedBhp": 1109.8968862121487,
+            "deltaBhp": 109.89688621214873
+          },
+          {
+            "tasMph": 395,
+            "sourceBhp": 1090,
+            "engineRpm": 3000,
+            "predictedBhp": 1136.0013851381846,
+            "deltaBhp": 46.00138513818456
+          },
+          {
+            "tasMph": 415,
+            "sourceBhp": 1290,
+            "engineRpm": 3000,
+            "predictedBhp": 1299.8062877971513,
+            "deltaBhp": 9.806287797151299
+          },
+          {
+            "tasMph": 430,
+            "sourceBhp": 1440,
+            "engineRpm": 3000,
+            "predictedBhp": 1439.1716002401479,
+            "deltaBhp": -0.8283997598521182
+          }
+        ],
+        "firstFourMaeBhp": 83.57967613501614,
+        "fullMaeBhp": 57.492232016178
+      },
+      "f4E": 0.5469811060803458,
+      "f4SLTurnSeconds": 20.15312548524436,
+      "f4TurnAt3000mSeconds": 25.66971844053397,
+      "f4TurnSpeedTasMph": {
+        "seaLevel": 167.77022190407996,
+        "at3000m": 194.23223459434303
+      }
+    },
+    {
+      "coefficientLbfPerBhp": 0.05,
+      "p51AnchorExhaustLbf": 79,
+      "p51CD0": 0.017237509096142845,
+      "p51E": 0.78,
+      "p51Climb67": {
+        "fpm": 3503.947491075874,
+        "tasMph": 173,
+        "exhaustHp": 36.9781733327825,
+        "shaftHp": 1603.1,
+        "eta": 0.7823592566557008
+      },
+      "p51Climb75": {
+        "fpm": 4099.582739306755,
+        "tasMph": 177,
+        "exhaustHp": 42.74195999936331,
+        "shaftHp": 1811.1,
+        "eta": 0.7854800422417789
+      },
+      "p51BoostGainFpm": 595.6352482308807,
+      "p51SpeedHoldouts": {
+        "count": 8,
+        "maeMph": 3.6806463275497663,
+        "rows": [
+          {
+            "altFt": 4000,
+            "sourceMph": 380,
+            "modeledMph": 378.40013271095813,
+            "rating": "67inHg",
+            "errorMph": -1.5998672890418675
+          },
+          {
+            "altFt": 7400,
+            "sourceMph": 395.5,
+            "modeledMph": 393.55680359332473,
+            "rating": "67inHg",
+            "errorMph": -1.9431964066752698
+          },
+          {
+            "altFt": 10300,
+            "sourceMph": 409,
+            "modeledMph": 407.11867398247705,
+            "rating": "67inHg",
+            "errorMph": -1.8813260175229516
+          },
+          {
+            "altFt": 18000,
+            "sourceMph": 408,
+            "modeledMph": 408.7605951522419,
+            "rating": "67inHg",
+            "errorMph": 0.7605951522418763
+          },
+          {
+            "altFt": 20800,
+            "sourceMph": 417,
+            "modeledMph": 419.68400316350744,
+            "rating": "67inHg",
+            "errorMph": 2.684003163507441
+          },
+          {
+            "altFt": 24000,
+            "sourceMph": 426,
+            "modeledMph": 432.48126658276306,
+            "rating": "67inHg",
+            "errorMph": 6.481266582763055
+          },
+          {
+            "altFt": 28000,
+            "sourceMph": 419,
+            "modeledMph": 425.8021879242442,
+            "rating": "67inHg",
+            "errorMph": 6.802187924244208
+          },
+          {
+            "altFt": 32000,
+            "sourceMph": 410,
+            "modeledMph": 417.29272808440146,
+            "rating": "67inHg",
+            "errorMph": 7.29272808440146
+          }
+        ]
+      },
+      "p47SpeedHoldouts": {
+        "count": 5,
+        "maeMph": 6.448084607889177,
+        "rows": [
+          {
+            "altFt": 15000,
+            "sourceMph": 386,
+            "modeledMph": 387.07273496719426,
+            "rating": "military",
+            "errorMph": 1.0727349671942648
+          },
+          {
+            "altFt": 25000,
+            "sourceMph": 420,
+            "modeledMph": 425.82675068851677,
+            "rating": "military",
+            "errorMph": 5.826750688516768
+          },
+          {
+            "altFt": 27800,
+            "sourceMph": 429,
+            "modeledMph": 437.22810814602417,
+            "rating": "military",
+            "errorMph": 8.22810814602417
+          },
+          {
+            "altFt": 30000,
+            "sourceMph": 426,
+            "modeledMph": 433.2370845847472,
+            "rating": "military",
+            "errorMph": 7.237084584747208
+          },
+          {
+            "altFt": 34000,
+            "sourceMph": 412,
+            "modeledMph": 421.8757446529635,
+            "rating": "military",
+            "errorMph": 9.875744652963476
+          }
+        ]
+      },
+      "p51Fig5": {
+        "rows": [
+          {
+            "tasMph": 270,
+            "sourceBhp": 490,
+            "engineRpm": 2100,
+            "predictedBhp": 550.5711294107887,
+            "deltaBhp": 60.57112941078867
+          },
+          {
+            "tasMph": 318,
+            "sourceBhp": 610,
+            "engineRpm": 2300,
+            "predictedBhp": 722.094109701165,
+            "deltaBhp": 112.09410970116505
+          },
+          {
+            "tasMph": 387,
+            "sourceBhp": 1000,
+            "engineRpm": 2700,
+            "predictedBhp": 1103.0426639528207,
+            "deltaBhp": 103.0426639528207
+          },
+          {
+            "tasMph": 395,
+            "sourceBhp": 1090,
+            "engineRpm": 3000,
+            "predictedBhp": 1129.5220029701024,
+            "deltaBhp": 39.52200297010245
+          },
+          {
+            "tasMph": 415,
+            "sourceBhp": 1290,
+            "engineRpm": 3000,
+            "predictedBhp": 1290.7078007188081,
+            "deltaBhp": 0.7078007188081301
+          },
+          {
+            "tasMph": 430,
+            "sourceBhp": 1440,
+            "engineRpm": 3000,
+            "predictedBhp": 1427.4497636228737,
+            "deltaBhp": -12.550236377126339
+          }
+        ],
+        "firstFourMaeBhp": 78.80747650871922,
+        "fullMaeBhp": 54.74799052180189
+      },
+      "f4E": 0.5469811060803458,
+      "f4SLTurnSeconds": 20.00939352203527,
+      "f4TurnAt3000mSeconds": 25.453361341148405,
+      "f4TurnSpeedTasMph": {
+        "seaLevel": 167.77022190407996,
+        "at3000m": 194.23223459434303
+      }
+    },
+    {
+      "coefficientLbfPerBhp": 0.1,
+      "p51AnchorExhaustLbf": 158,
+      "p51CD0": 0.018252383243354296,
+      "p51E": 0.78,
+      "p51Climb67": {
+        "fpm": 3607.2669277397977,
+        "tasMph": 175,
+        "exhaustHp": 74.81133333221892,
+        "shaftHp": 1603.1,
+        "eta": 0.7837579207959524
+      },
+      "p51Climb75": {
+        "fpm": 4221.373458155635,
+        "tasMph": 179,
+        "exhaustHp": 86.44983999871224,
+        "shaftHp": 1811.1,
+        "eta": 0.7868395922841374
+      },
+      "p51BoostGainFpm": 614.1065304158369,
+      "p51SpeedHoldouts": {
+        "count": 8,
+        "maeMph": 4.87523891019373,
+        "rows": [
+          {
+            "altFt": 4000,
+            "sourceMph": 380,
+            "modeledMph": 378.78222043873393,
+            "rating": "67inHg",
+            "errorMph": -1.2177795612660702
+          },
+          {
+            "altFt": 7400,
+            "sourceMph": 395.5,
+            "modeledMph": 394.31905500937137,
+            "rating": "67inHg",
+            "errorMph": -1.1809449906286318
+          },
+          {
+            "altFt": 10300,
+            "sourceMph": 409,
+            "modeledMph": 408.25328021109453,
+            "rating": "67inHg",
+            "errorMph": -0.746719788905466
+          },
+          {
+            "altFt": 18000,
+            "sourceMph": 408,
+            "modeledMph": 410.2812350906024,
+            "rating": "67inHg",
+            "errorMph": 2.281235090602422
+          },
+          {
+            "altFt": 20800,
+            "sourceMph": 417,
+            "modeledMph": 421.61138901658705,
+            "rating": "67inHg",
+            "errorMph": 4.611389016587054
+          },
+          {
+            "altFt": 24000,
+            "sourceMph": 426,
+            "modeledMph": 434.93465124696377,
+            "rating": "67inHg",
+            "errorMph": 8.934651246963767
+          },
+          {
+            "altFt": 28000,
+            "sourceMph": 419,
+            "modeledMph": 428.53248840090237,
+            "rating": "67inHg",
+            "errorMph": 9.532488400902366
+          },
+          {
+            "altFt": 32000,
+            "sourceMph": 410,
+            "modeledMph": 420.49670318569406,
+            "rating": "67inHg",
+            "errorMph": 10.49670318569406
+          }
+        ]
+      },
+      "p47SpeedHoldouts": {
+        "count": 5,
+        "maeMph": 9.036815487238346,
+        "rows": [
+          {
+            "altFt": 15000,
+            "sourceMph": 386,
+            "modeledMph": 388.01805035295547,
+            "rating": "military",
+            "errorMph": 2.01805035295547
+          },
+          {
+            "altFt": 25000,
+            "sourceMph": 420,
+            "modeledMph": 428.20338283941965,
+            "rating": "military",
+            "errorMph": 8.203382839419646
+          },
+          {
+            "altFt": 27800,
+            "sourceMph": 429,
+            "modeledMph": 440.1285760081082,
+            "rating": "military",
+            "errorMph": 11.128576008108212
+          },
+          {
+            "altFt": 30000,
+            "sourceMph": 426,
+            "modeledMph": 436.3360815710912,
+            "rating": "military",
+            "errorMph": 10.3360815710912
+          },
+          {
+            "altFt": 34000,
+            "sourceMph": 412,
+            "modeledMph": 425.4979866646172,
+            "rating": "military",
+            "errorMph": 13.497986664617201
+          }
+        ]
+      },
+      "p51Fig5": {
+        "rows": [
+          {
+            "tasMph": 270,
+            "sourceBhp": 490,
+            "engineRpm": 2100,
+            "predictedBhp": 545.7445226966662,
+            "deltaBhp": 55.744522696666195
+          },
+          {
+            "tasMph": 318,
+            "sourceBhp": 610,
+            "engineRpm": 2300,
+            "predictedBhp": 716.1879189124144,
+            "deltaBhp": 106.18791891241437
+          },
+          {
+            "tasMph": 387,
+            "sourceBhp": 1000,
+            "engineRpm": 2700,
+            "predictedBhp": 1090.5339462166398,
+            "deltaBhp": 90.53394621663983
+          },
+          {
+            "tasMph": 395,
+            "sourceBhp": 1090,
+            "engineRpm": 3000,
+            "predictedBhp": 1117.691846474959,
+            "deltaBhp": 27.691846474958993
+          },
+          {
+            "tasMph": 415,
+            "sourceBhp": 1290,
+            "engineRpm": 3000,
+            "predictedBhp": 1274.1882193051329,
+            "deltaBhp": -15.811780694867139
+          },
+          {
+            "tasMph": 430,
+            "sourceBhp": 1440,
+            "engineRpm": 3000,
+            "predictedBhp": 1406.26155290493,
+            "deltaBhp": -33.73844709506989
+          }
+        ],
+        "firstFourMaeBhp": 70.03955857516985,
+        "fullMaeBhp": 54.95141034843607
+      },
+      "f4E": 0.5469811060803458,
+      "f4SLTurnSeconds": 19.730920656834243,
+      "f4TurnAt3000mSeconds": 25.036567998654544,
+      "f4TurnSpeedTasMph": {
+        "seaLevel": 167.77022190407996,
+        "at3000m": 194.23223459434303
+      }
+    },
+    {
+      "coefficientLbfPerBhp": 0.15,
+      "p51AnchorExhaustLbf": 237,
+      "p51CD0": 0.01926725739056574,
+      "p51E": 0.78,
+      "p51Climb67": {
+        "fpm": 3711.0130633683384,
+        "tasMph": 176,
+        "exhaustHp": 112.85823999831884,
+        "shaftHp": 1603.1,
+        "eta": 0.7844498359136539
+      },
+      "p51Climb75": {
+        "fpm": 4343.84172348855,
+        "tasMph": 181,
+        "exhaustHp": 131.1236399980467,
+        "shaftHp": 1811.1,
+        "eta": 0.7881791111379253
+      },
+      "p51BoostGainFpm": 632.8286601202117,
+      "p51SpeedHoldouts": {
+        "count": 8,
+        "maeMph": 6.060837759447168,
+        "rows": [
+          {
+            "altFt": 4000,
+            "sourceMph": 380,
+            "modeledMph": 379.1371103920683,
+            "rating": "67inHg",
+            "errorMph": -0.8628896079317201
+          },
+          {
+            "altFt": 7400,
+            "sourceMph": 395.5,
+            "modeledMph": 395.0275621624605,
+            "rating": "67inHg",
+            "errorMph": -0.47243783753947355
+          },
+          {
+            "altFt": 10300,
+            "sourceMph": 409,
+            "modeledMph": 409.30866727090324,
+            "rating": "67inHg",
+            "errorMph": 0.30866727090324275
+          },
+          {
+            "altFt": 18000,
+            "sourceMph": 408,
+            "modeledMph": 411.6943653640046,
+            "rating": "67inHg",
+            "errorMph": 3.694365364004625
+          },
+          {
+            "altFt": 20800,
+            "sourceMph": 417,
+            "modeledMph": 423.4033694122627,
+            "rating": "67inHg",
+            "errorMph": 6.403369412262691
+          },
+          {
+            "altFt": 24000,
+            "sourceMph": 426,
+            "modeledMph": 437.2170227650495,
+            "rating": "67inHg",
+            "errorMph": 11.217022765049478
+          },
+          {
+            "altFt": 28000,
+            "sourceMph": 419,
+            "modeledMph": 431.0672464801173,
+            "rating": "67inHg",
+            "errorMph": 12.06724648011732
+          },
+          {
+            "altFt": 32000,
+            "sourceMph": 410,
+            "modeledMph": 423.4607033377688,
+            "rating": "67inHg",
+            "errorMph": 13.460703337768791
+          }
+        ]
+      },
+      "p47SpeedHoldouts": {
+        "count": 5,
+        "maeMph": 11.437555780151161,
+        "rows": [
+          {
+            "altFt": 15000,
+            "sourceMph": 386,
+            "modeledMph": 388.8951728256943,
+            "rating": "military",
+            "errorMph": 2.895172825694317
+          },
+          {
+            "altFt": 25000,
+            "sourceMph": 420,
+            "modeledMph": 430.4113256709825,
+            "rating": "military",
+            "errorMph": 10.411325670982478
+          },
+          {
+            "altFt": 27800,
+            "sourceMph": 429,
+            "modeledMph": 442.82420710023143,
+            "rating": "military",
+            "errorMph": 13.824207100231433
+          },
+          {
+            "altFt": 30000,
+            "sourceMph": 426,
+            "modeledMph": 439.2122342917428,
+            "rating": "military",
+            "errorMph": 13.212234291742789
+          },
+          {
+            "altFt": 34000,
+            "sourceMph": 412,
+            "modeledMph": 428.8448390121048,
+            "rating": "military",
+            "errorMph": 16.844839012104785
+          }
+        ]
+      },
+      "p51Fig5": {
+        "rows": [
+          {
+            "tasMph": 270,
+            "sourceBhp": 490,
+            "engineRpm": 2100,
+            "predictedBhp": 541.2971845023831,
+            "deltaBhp": 51.29718450238306
+          },
+          {
+            "tasMph": 318,
+            "sourceBhp": 610,
+            "engineRpm": 2300,
+            "predictedBhp": 710.8268446384723,
+            "deltaBhp": 100.82684463847227
+          },
+          {
+            "tasMph": 387,
+            "sourceBhp": 1000,
+            "engineRpm": 2700,
+            "predictedBhp": 1079.4044006419049,
+            "deltaBhp": 79.40440064190489
+          },
+          {
+            "tasMph": 395,
+            "sourceBhp": 1090,
+            "engineRpm": 3000,
+            "predictedBhp": 1107.1600579339204,
+            "deltaBhp": 17.16005793392037
+          },
+          {
+            "tasMph": 415,
+            "sourceBhp": 1290,
+            "engineRpm": 3000,
+            "predictedBhp": 1259.5814508992391,
+            "deltaBhp": -30.418549100760856
+          },
+          {
+            "tasMph": 430,
+            "sourceBhp": 1440,
+            "engineRpm": 3000,
+            "predictedBhp": 1387.6274829291206,
+            "deltaBhp": -52.37251707087944
+          }
+        ],
+        "firstFourMaeBhp": 62.172121929170146,
+        "fullMaeBhp": 55.24659231472015
+      },
+      "f4E": 0.5469811060803458,
+      "f4SLTurnSeconds": 19.46375989313967,
+      "f4TurnAt3000mSeconds": 24.639600917492107,
+      "f4TurnSpeedTasMph": {
+        "seaLevel": 167.77022190407996,
+        "at3000m": 194.23223459434303
+      }
+    },
+    {
+      "coefficientLbfPerBhp": 0.2,
+      "p51AnchorExhaustLbf": 316,
+      "p51CD0": 0.020282131537777186,
+      "p51E": 0.78,
+      "p51Climb67": {
+        "fpm": 3815.1478542849727,
+        "tasMph": 178,
+        "exhaustHp": 152.18762666439966,
+        "shaftHp": 1603.1,
+        "eta": 0.7858187612506508
+      },
+      "p51Climb75": {
+        "fpm": 4466.917548578731,
+        "tasMph": 183,
+        "exhaustHp": 176.76335999736688,
+        "shaftHp": 1811.1,
+        "eta": 0.7894984885544157
+      },
+      "p51BoostGainFpm": 651.7696942937582,
+      "p51SpeedHoldouts": {
+        "count": 8,
+        "maeMph": 7.38472352334793,
+        "rows": [
+          {
+            "altFt": 4000,
+            "sourceMph": 380,
+            "modeledMph": 379.4675850190979,
+            "rating": "67inHg",
+            "errorMph": -0.5324149809021037
+          },
+          {
+            "altFt": 7400,
+            "sourceMph": 395.5,
+            "modeledMph": 395.6877332669392,
+            "rating": "67inHg",
+            "errorMph": 0.18773326693917625
+          },
+          {
+            "altFt": 10300,
+            "sourceMph": 409,
+            "modeledMph": 410.2926739892282,
+            "rating": "67inHg",
+            "errorMph": 1.2926739892282058
+          },
+          {
+            "altFt": 18000,
+            "sourceMph": 408,
+            "modeledMph": 413.01070748557686,
+            "rating": "67inHg",
+            "errorMph": 5.010707485576859
+          },
+          {
+            "altFt": 20800,
+            "sourceMph": 417,
+            "modeledMph": 425.0732769884926,
+            "rating": "67inHg",
+            "errorMph": 8.07327698849258
+          },
+          {
+            "altFt": 24000,
+            "sourceMph": 426,
+            "modeledMph": 439.34495405413327,
+            "rating": "67inHg",
+            "errorMph": 13.344954054133268
+          },
+          {
+            "altFt": 28000,
+            "sourceMph": 419,
+            "modeledMph": 433.4259994511667,
+            "rating": "67inHg",
+            "errorMph": 14.425999451166717
+          },
+          {
+            "altFt": 32000,
+            "sourceMph": 410,
+            "modeledMph": 426.2100279703445,
+            "rating": "67inHg",
+            "errorMph": 16.210027970344527
+          }
+        ]
+      },
+      "p47SpeedHoldouts": {
+        "count": 5,
+        "maeMph": 13.669441495317733,
+        "rows": [
+          {
+            "altFt": 15000,
+            "sourceMph": 386,
+            "modeledMph": 389.71111088237376,
+            "rating": "military",
+            "errorMph": 3.7111108823737595
+          },
+          {
+            "altFt": 25000,
+            "sourceMph": 420,
+            "modeledMph": 432.4673037715547,
+            "rating": "military",
+            "errorMph": 12.467303771554725
+          },
+          {
+            "altFt": 27800,
+            "sourceMph": 429,
+            "modeledMph": 445.33507968779304,
+            "rating": "military",
+            "errorMph": 16.33507968779304
+          },
+          {
+            "altFt": 30000,
+            "sourceMph": 426,
+            "modeledMph": 441.88785375034786,
+            "rating": "military",
+            "errorMph": 15.887853750347858
+          },
+          {
+            "altFt": 34000,
+            "sourceMph": 412,
+            "modeledMph": 431.9458593845193,
+            "rating": "military",
+            "errorMph": 19.94585938451928
+          }
+        ]
+      },
+      "p51Fig5": {
+        "rows": [
+          {
+            "tasMph": 270,
+            "sourceBhp": 490,
+            "engineRpm": 2100,
+            "predictedBhp": 537.1861011616646,
+            "deltaBhp": 47.186101161664624
+          },
+          {
+            "tasMph": 318,
+            "sourceBhp": 610,
+            "engineRpm": 2300,
+            "predictedBhp": 705.9387480015912,
+            "deltaBhp": 95.9387480015912
+          },
+          {
+            "tasMph": 387,
+            "sourceBhp": 1000,
+            "engineRpm": 2700,
+            "predictedBhp": 1069.4378499215966,
+            "deltaBhp": 69.43784992159658
+          },
+          {
+            "tasMph": 395,
+            "sourceBhp": 1090,
+            "engineRpm": 3000,
+            "predictedBhp": 1097.7240113330556,
+            "deltaBhp": 7.724011333055614
+          },
+          {
+            "tasMph": 415,
+            "sourceBhp": 1290,
+            "engineRpm": 3000,
+            "predictedBhp": 1246.5734485682733,
+            "deltaBhp": -43.42655143172669
+          },
+          {
+            "tasMph": 430,
+            "sourceBhp": 1440,
+            "engineRpm": 3000,
+            "predictedBhp": 1371.1119725710805,
+            "deltaBhp": -68.88802742891949
+          }
+        ],
+        "firstFourMaeBhp": 55.071677604477,
+        "fullMaeBhp": 55.433548213092365
+      },
+      "f4E": 0.5469811060803458,
+      "f4SLTurnSeconds": 19.20716553769487,
+      "f4TurnAt3000mSeconds": 24.260936507796295,
+      "f4TurnSpeedTasMph": {
+        "seaLevel": 167.77022190407996,
+        "at3000m": 194.23223459434303
+      }
+    },
+    {
+      "coefficientLbfPerBhp": 0.225,
+      "p51AnchorExhaustLbf": 355.5,
+      "p51CD0": 0.020789568611382907,
+      "p51E": 0.78,
+      "p51Climb67": {
+        "fpm": 3867.3369155094624,
+        "tasMph": 178,
+        "exhaustHp": 171.2110799974496,
+        "shaftHp": 1603.1,
+        "eta": 0.7858187612506508
+      },
+      "p51Climb75": {
+        "fpm": 4528.661146297806,
+        "tasMph": 183,
+        "exhaustHp": 198.85877999703774,
+        "shaftHp": 1811.1,
+        "eta": 0.7894984885544157
+      },
+      "p51BoostGainFpm": 661.3242307883438,
+      "p51SpeedHoldouts": {
+        "count": 8,
+        "maeMph": 8.06877180714946,
+        "rows": [
+          {
+            "altFt": 4000,
+            "sourceMph": 380,
+            "modeledMph": 379.62443485317635,
+            "rating": "67inHg",
+            "errorMph": -0.3755651468236465
+          },
+          {
+            "altFt": 7400,
+            "sourceMph": 395.5,
+            "modeledMph": 396.0011907631124,
+            "rating": "67inHg",
+            "errorMph": 0.5011907631123904
+          },
+          {
+            "altFt": 10300,
+            "sourceMph": 409,
+            "modeledMph": 410.76008776944946,
+            "rating": "67inHg",
+            "errorMph": 1.7600877694494557
+          },
+          {
+            "altFt": 18000,
+            "sourceMph": 408,
+            "modeledMph": 413.6355610289902,
+            "rating": "67inHg",
+            "errorMph": 5.635561028990196
+          },
+          {
+            "altFt": 20800,
+            "sourceMph": 417,
+            "modeledMph": 425.866166225489,
+            "rating": "67inHg",
+            "errorMph": 8.866166225488996
+          },
+          {
+            "altFt": 24000,
+            "sourceMph": 426,
+            "modeledMph": 440.35563429255853,
+            "rating": "67inHg",
+            "errorMph": 14.355634292558534
+          },
+          {
+            "altFt": 28000,
+            "sourceMph": 419,
+            "modeledMph": 434.5448076669418,
+            "rating": "67inHg",
+            "errorMph": 15.544807666941779
+          },
+          {
+            "altFt": 32000,
+            "sourceMph": 410,
+            "modeledMph": 427.5111615638307,
+            "rating": "67inHg",
+            "errorMph": 17.511161563830683
+          }
+        ]
+      },
+      "p47SpeedHoldouts": {
+        "count": 5,
+        "maeMph": 14.727368279237998,
+        "rows": [
+          {
+            "altFt": 15000,
+            "sourceMph": 386,
+            "modeledMph": 390.09807202083175,
+            "rating": "military",
+            "errorMph": 4.098072020831751
+          },
+          {
+            "altFt": 25000,
+            "sourceMph": 420,
+            "modeledMph": 433.4429616200796,
+            "rating": "military",
+            "errorMph": 13.442961620079586
+          },
+          {
+            "altFt": 27800,
+            "sourceMph": 429,
+            "modeledMph": 446.5268337854941,
+            "rating": "military",
+            "errorMph": 17.52683378549409
+          },
+          {
+            "altFt": 30000,
+            "sourceMph": 426,
+            "modeledMph": 443.15666855793097,
+            "rating": "military",
+            "errorMph": 17.15666855793097
+          },
+          {
+            "altFt": 34000,
+            "sourceMph": 412,
+            "modeledMph": 433.4123054118536,
+            "rating": "military",
+            "errorMph": 21.412305411853595
+          }
+        ]
+      },
+      "p51Fig5": {
+        "rows": [
+          {
+            "tasMph": 270,
+            "sourceBhp": 490,
+            "engineRpm": 2100,
+            "predictedBhp": 535.2449588335141,
+            "deltaBhp": 45.24495883351415
+          },
+          {
+            "tasMph": 318,
+            "sourceBhp": 610,
+            "engineRpm": 2300,
+            "predictedBhp": 703.6529283241578,
+            "deltaBhp": 93.65292832415776
+          },
+          {
+            "tasMph": 387,
+            "sourceBhp": 1000,
+            "engineRpm": 2700,
+            "predictedBhp": 1064.83518145228,
+            "deltaBhp": 64.83518145228004
+          },
+          {
+            "tasMph": 395,
+            "sourceBhp": 1090,
+            "engineRpm": 3000,
+            "predictedBhp": 1093.3648073023355,
+            "deltaBhp": 3.364807302335521
+          },
+          {
+            "tasMph": 415,
+            "sourceBhp": 1290,
+            "engineRpm": 3000,
+            "predictedBhp": 1240.5891424108177,
+            "deltaBhp": -49.41085758918234
+          },
+          {
+            "tasMph": 430,
+            "sourceBhp": 1440,
+            "engineRpm": 3000,
+            "predictedBhp": 1363.5388922318355,
+            "deltaBhp": -76.46110776816454
+          }
+        ],
+        "firstFourMaeBhp": 51.774468978071866,
+        "fullMaeBhp": 55.49497354493906
+      },
+      "f4E": 0.5469811060803458,
+      "f4SLTurnSeconds": 19.082616282576076,
+      "f4TurnAt3000mSeconds": 24.07803575904125,
+      "f4TurnSpeedTasMph": {
+        "seaLevel": 167.77022190407996,
+        "at3000m": 194.23223459434303
+      }
+    },
+    {
+      "coefficientLbfPerBhp": 0.25,
+      "p51AnchorExhaustLbf": 395,
+      "p51CD0": 0.021297005684988633,
+      "p51E": 0.78,
+      "p51Climb67": {
+        "fpm": 3919.6353099094918,
+        "tasMph": 179,
+        "exhaustHp": 191.303266663817,
+        "shaftHp": 1603.1,
+        "eta": 0.7864957433526665
+      },
+      "p51Climb75": {
+        "fpm": 4590.5617591640885,
+        "tasMph": 184,
+        "exhaustHp": 222.1615999966906,
+        "shaftHp": 1811.1,
+        "eta": 0.7901505901892619
+      },
+      "p51BoostGainFpm": 670.9264492545967,
+      "p51SpeedHoldouts": {
+        "count": 8,
+        "maeMph": 8.729795123545045,
+        "rows": [
+          {
+            "altFt": 4000,
+            "sourceMph": 380,
+            "modeledMph": 379.7760625036608,
+            "rating": "67inHg",
+            "errorMph": -0.2239374963392038
+          },
+          {
+            "altFt": 7400,
+            "sourceMph": 395.5,
+            "modeledMph": 396.30428502333234,
+            "rating": "67inHg",
+            "errorMph": 0.8042850233323406
+          },
+          {
+            "altFt": 10300,
+            "sourceMph": 409,
+            "modeledMph": 411.21216104886844,
+            "rating": "67inHg",
+            "errorMph": 2.2121610488684382
+          },
+          {
+            "altFt": 18000,
+            "sourceMph": 408,
+            "modeledMph": 414.2396415271505,
+            "rating": "67inHg",
+            "errorMph": 6.239641527150525
+          },
+          {
+            "altFt": 20800,
+            "sourceMph": 417,
+            "modeledMph": 426.63280949232285,
+            "rating": "67inHg",
+            "errorMph": 9.632809492322849
+          },
+          {
+            "altFt": 24000,
+            "sourceMph": 426,
+            "modeledMph": 441.33303723883,
+            "rating": "67inHg",
+            "errorMph": 15.333037238830002
+          },
+          {
+            "altFt": 28000,
+            "sourceMph": 419,
+            "modeledMph": 435.625864131056,
+            "rating": "67inHg",
+            "errorMph": 16.625864131056005
+          },
+          {
+            "altFt": 32000,
+            "sourceMph": 410,
+            "modeledMph": 428.766625030461,
+            "rating": "67inHg",
+            "errorMph": 18.766625030461
+          }
+        ]
+      },
+      "p47SpeedHoldouts": {
+        "count": 5,
+        "maeMph": 15.749175756057957,
+        "rows": [
+          {
+            "altFt": 15000,
+            "sourceMph": 386,
+            "modeledMph": 390.47195936899516,
+            "rating": "military",
+            "errorMph": 4.471959368995158
+          },
+          {
+            "altFt": 25000,
+            "sourceMph": 420,
+            "modeledMph": 434.3859845601546,
+            "rating": "military",
+            "errorMph": 14.385984560154611
+          },
+          {
+            "altFt": 27800,
+            "sourceMph": 429,
+            "modeledMph": 447.6788485540601,
+            "rating": "military",
+            "errorMph": 18.678848554060096
+          },
+          {
+            "altFt": 30000,
+            "sourceMph": 426,
+            "modeledMph": 444.38248670866597,
+            "rating": "military",
+            "errorMph": 18.382486708665965
+          },
+          {
+            "altFt": 34000,
+            "sourceMph": 412,
+            "modeledMph": 434.82659958841396,
+            "rating": "military",
+            "errorMph": 22.826599588413956
+          }
+        ]
+      },
+      "p51Fig5": {
+        "rows": [
+          {
+            "tasMph": 270,
+            "sourceBhp": 490,
+            "engineRpm": 2100,
+            "predictedBhp": 533.374526438325,
+            "deltaBhp": 43.374526438325006
+          },
+          {
+            "tasMph": 318,
+            "sourceBhp": 610,
+            "engineRpm": 2300,
+            "predictedBhp": 701.4636811705101,
+            "deltaBhp": 91.46368117051009
+          },
+          {
+            "tasMph": 387,
+            "sourceBhp": 1000,
+            "engineRpm": 2700,
+            "predictedBhp": 1060.4610528211988,
+            "deltaBhp": 60.46105282119879
+          },
+          {
+            "tasMph": 395,
+            "sourceBhp": 1090,
+            "engineRpm": 3000,
+            "predictedBhp": 1089.2211587531463,
+            "deltaBhp": -0.7788412468537445
+          },
+          {
+            "tasMph": 415,
+            "sourceBhp": 1290,
+            "engineRpm": 3000,
+            "predictedBhp": 1234.9153455230432,
+            "deltaBhp": -55.08465447695676
+          },
+          {
+            "tasMph": 430,
+            "sourceBhp": 1440,
+            "engineRpm": 3000,
+            "predictedBhp": 1356.3731580872268,
+            "deltaBhp": -83.62684191277322
+          }
+        ],
+        "firstFourMaeBhp": 49.01952541922191,
+        "fullMaeBhp": 55.798266344436264
+      },
+      "f4E": 0.5469811060803458,
+      "f4SLTurnSeconds": 18.960458949594493,
+      "f4TurnAt3000mSeconds": 23.899210214002643,
+      "f4TurnSpeedTasMph": {
+        "seaLevel": 167.77022190407996,
+        "at3000m": 194.23223459434303
+      }
+    }
+  ],
+  "weightSensitivity": [
+    {
+      "weightLb": 9335,
+      "deltaFromTakeoffLb": 0,
+      "climb67Fpm": 3401.0861529653175,
+      "climb75Fpm": 3978.538324234923,
+      "sourceWeightStatus": "documented takeoff weight"
+    },
+    {
+      "weightLb": 9285,
+      "deltaFromTakeoffLb": 50,
+      "climb67Fpm": 3425.8211116221914,
+      "climb75Fpm": 4006.25082919583,
+      "sourceWeightStatus": "HYPOTHETICAL fuel/weight change; actual 2200-ft flight weight unknown"
+    },
+    {
+      "weightLb": 9235,
+      "deltaFromTakeoffLb": 100,
+      "climb67Fpm": 3450.7892437921896,
+      "climb75Fpm": 4034.2508239126532,
+      "sourceWeightStatus": "HYPOTHETICAL fuel/weight change; actual 2200-ft flight weight unknown"
+    },
+    {
+      "weightLb": 9135,
+      "deltaFromTakeoffLb": 200,
+      "climb67Fpm": 3501.458723168593,
+      "climb75Fpm": 4091.067030301482,
+      "sourceWeightStatus": "HYPOTHETICAL fuel/weight change; actual 2200-ft flight weight unknown"
+    }
+  ],
+  "oswaldSensitivity": [
+    {
+      "e": 0.78,
+      "cd0": 0.0162226349489314,
+      "climb67Fpm": 3401.0861529653175,
+      "climb75Fpm": 3978.538324234923,
+      "fig5FourMaeBhp": 88.64273396924719
+    },
+    {
+      "e": 0.85,
+      "cd0": 0.016303228677926163,
+      "climb67Fpm": 3448.425280311956,
+      "climb75Fpm": 4024.7934655139256,
+      "fig5FourMaeBhp": 75.30777154676409
+    },
+    {
+      "e": 0.92,
+      "cd0": 0.01637155814381303,
+      "climb67Fpm": 3489.105922529682,
+      "climb75Fpm": 4064.5311671091094,
+      "fig5FourMaeBhp": 64.00204253639805
+    },
+    {
+      "e": 1,
+      "cd0": 0.016437935339245983,
+      "climb67Fpm": 3529.1375954465443,
+      "climb75Fpm": 4103.596938194967,
+      "fig5FourMaeBhp": 53.0193343548995
+    }
+  ],
+  "crossCheck": {
+    "p51Ref": {
+      "observed67Fpm": 3820,
+      "observed75Fpm": 4380,
+      "observedGainFpm": 560
+    },
+    "zeroResidual67Fpm": -418.9138470346825,
+    "zeroResidual75Fpm": -401.46167576507696,
+    "zeroBoostGainResidualFpm": 17.452171269605515,
+    "scenarioForceToClose67Lbf": {
+      "coefficientLbfPerBhp": 0.20232431164749062,
+      "approxSeaLevelForceLbf": 319.6724124030352,
+      "bracket": [
+        0.2,
+        0.225
+      ],
+      "note": "linear interpolation of exploratory force scenario; NOT source-observed exhaust thrust"
+    },
+    "scenarioForceToClose75Lbf": {
+      "coefficientLbfPerBhp": 0.16468943087927942,
+      "approxSeaLevelForceLbf": 260.2093007892615,
+      "bracket": [
+        0.15,
+        0.2
+      ],
+      "note": "linear interpolation of exploratory force scenario; NOT source-observed exhaust thrust"
+    }
+  }
+}

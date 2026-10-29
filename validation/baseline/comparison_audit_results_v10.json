@@ -1,0 +1,316 @@
+{
+  "version": "v1.0-evidence-gated-audit",
+  "conditions": {
+    "altFt": 5000,
+    "easMph": 170
+  },
+  "aircraft": {
+    "bf109f4": {
+      "baselineDegSec": 18.689640191167204,
+      "sourceGate": {
+        "clMax": {
+          "status": "assumed",
+          "basis": "v0.7 nominal CLmax=1.50; simulation-game stall speed not accepted as a flight measurement"
+        },
+        "oswald": {
+          "status": "Greg worksheet inferred, not independently measured",
+          "basis": "Greg 325-mph drag split, 6371-lb assumed weight implies e about 0.558; cannot validate airframe independently"
+        },
+        "stallSpeed": {
+          "status": "unresolved",
+          "basis": "No matched-weight, calibrated, primary flight-test stall EAS found"
+        }
+      },
+      "oneParameterAtATime": {
+        "oswald": [
+          {
+            "e": 0.6,
+            "turnDegSec": 16.05692086360487
+          },
+          {
+            "e": 0.78,
+            "turnDegSec": 18.689640191167204
+          },
+          {
+            "e": 0.9,
+            "turnDegSec": 19.449328422209508
+          }
+        ],
+        "clMax": [
+          {
+            "clFactor": 0.85,
+            "clMax": 1.275,
+            "turnDegSec": 16.131768066075427
+          },
+          {
+            "clFactor": 1,
+            "clMax": 1.5,
+            "turnDegSec": 18.689640191167204
+          },
+          {
+            "clFactor": 1.15,
+            "clMax": 1.7249999999999999,
+            "turnDegSec": 18.689640191167204
+          }
+        ]
+      },
+      "combinedIndependentExploration": [
+        16.05692086360487,
+        20.255565795901827
+      ],
+      "speedAnchorPolarNonUniqueness": [
+        {
+          "e": 0.6,
+          "cd0": 0.025644795115105996,
+          "etaAtAnchor": 0.8276726752904248,
+          "anchorSpeed": 325,
+          "anchorAlt": 0,
+          "origin": "calibrated from one speed anchor; NOT a measured drag polar",
+          "valid": true
+        },
+        {
+          "e": 0.78,
+          "cd0": 0.026017217056890238,
+          "etaAtAnchor": 0.8276726752904248,
+          "anchorSpeed": 325,
+          "anchorAlt": 0,
+          "origin": "calibrated from one speed anchor; NOT a measured drag polar",
+          "valid": true
+        },
+        {
+          "e": 0.9,
+          "cd0": 0.02618273791990545,
+          "etaAtAnchor": 0.8276726752904248,
+          "anchorSpeed": 325,
+          "anchorAlt": 0,
+          "origin": "calibrated from one speed anchor; NOT a measured drag polar",
+          "valid": true
+        }
+      ]
+    },
+    "p47b": {
+      "baselineDegSec": 14.163187219154254,
+      "sourceGate": {
+        "clMax": {
+          "status": "assumed",
+          "basis": "v0.7 nominal CLmax=1.30; manual 115 mph IAS does not provide specimen-matched low-speed CAS"
+        },
+        "oswald": {
+          "status": "related-variant Greg worksheet inferred, not measured",
+          "basis": "P-47 D-28-style high-power, 13065 lb Greg worksheet implies e about 0.784; power and aerodynamic configuration not identical to P-47B"
+        },
+        "stallSpeed": {
+          "status": "unresolved",
+          "basis": "P-47 manual correction chart begins at 170 mph IAS, above the quoted 115 mph IAS clean stall; no extrapolation permitted"
+        }
+      },
+      "oneParameterAtATime": {
+        "oswald": [
+          {
+            "e": 0.6,
+            "turnDegSec": 12.046589842847004
+          },
+          {
+            "e": 0.78,
+            "turnDegSec": 14.163187219154254
+          },
+          {
+            "e": 0.9,
+            "turnDegSec": 14.163187219154254
+          }
+        ],
+        "clMax": [
+          {
+            "clFactor": 0.85,
+            "clMax": 1.105,
+            "turnDegSec": 11.483021244057074
+          },
+          {
+            "clFactor": 1,
+            "clMax": 1.3,
+            "turnDegSec": 14.163187219154254
+          },
+          {
+            "clFactor": 1.15,
+            "clMax": 1.4949999999999999,
+            "turnDegSec": 14.240328488610174
+          }
+        ]
+      },
+      "combinedIndependentExploration": [
+        11.483021244057074,
+        15.531624980815144
+      ],
+      "speedAnchorPolarNonUniqueness": [
+        {
+          "e": 0.6,
+          "cd0": 0.019162871720428996,
+          "etaAtAnchor": 0.8230748957469042,
+          "anchorSpeed": 352,
+          "anchorAlt": 5000,
+          "origin": "calibrated from one speed anchor; NOT a measured drag polar",
+          "valid": true
+        },
+        {
+          "e": 0.78,
+          "cd0": 0.01968315937146469,
+          "etaAtAnchor": 0.8230748957469042,
+          "anchorSpeed": 352,
+          "anchorAlt": 5000,
+          "origin": "calibrated from one speed anchor; NOT a measured drag polar",
+          "valid": true
+        },
+        {
+          "e": 0.9,
+          "cd0": 0.019914398327480553,
+          "etaAtAnchor": 0.8230748957469042,
+          "anchorSpeed": 352,
+          "anchorAlt": 5000,
+          "origin": "calibrated from one speed anchor; NOT a measured drag polar",
+          "valid": true
+        }
+      ]
+    },
+    "p51b": {
+      "baselineDegSec": 16.605375938738696,
+      "sourceGate": {
+        "clMax": {
+          "status": "assumed",
+          "basis": "v0.7 nominal CLmax=1.60; 86 mph IAS clean power-off stall at 8000 ft and 9270 lb is not corrected CAS/EAS"
+        },
+        "oswald": {
+          "status": "assumed",
+          "basis": "No independently fitted full low-speed polar for the modeled B-15 specimen"
+        },
+        "stallSpeed": {
+          "status": "reported IAS only; conversion unresolved",
+          "basis": "Wright Field Eng-47-1749-A 20 May 1944 reports 86 mph IAS at 8000 ft, 9270 lb, gear/flaps up, shutters closed, power off; the same report's airspeed-calibration chart does not cover 86 mph IAS",
+          "transcription": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+          "scan": "https://www.wwiiaircraftperformance.com/org/p-51/p-51_files/P-51B_24777_Airspeed_Calibration.jpg"
+        }
+      },
+      "oneParameterAtATime": {
+        "oswald": [
+          {
+            "e": 0.6,
+            "turnDegSec": 14.185799494772104
+          },
+          {
+            "e": 0.78,
+            "turnDegSec": 16.605375938738696
+          },
+          {
+            "e": 0.9,
+            "turnDegSec": 18.039020074295028
+          }
+        ],
+        "clMax": [
+          {
+            "clFactor": 0.85,
+            "clMax": 1.36,
+            "turnDegSec": 15.977653140107142
+          },
+          {
+            "clFactor": 1,
+            "clMax": 1.6,
+            "turnDegSec": 16.605375938738696
+          },
+          {
+            "clFactor": 1.15,
+            "clMax": 1.8399999999999999,
+            "turnDegSec": 16.605375938738696
+          }
+        ]
+      },
+      "combinedIndependentExploration": [
+        14.185799494772104,
+        18.039020074295028
+      ],
+      "speedAnchorPolarNonUniqueness": [
+        {
+          "e": 0.6,
+          "cd0": 0.015929043507593332,
+          "etaAtAnchor": 0.816949929255663,
+          "anchorSpeed": 361.5,
+          "anchorAlt": 0,
+          "origin": "calibrated from one speed anchor; NOT a measured drag polar",
+          "valid": true
+        },
+        {
+          "e": 0.78,
+          "cd0": 0.0162226349489314,
+          "etaAtAnchor": 0.816949929255663,
+          "anchorSpeed": 361.5,
+          "anchorAlt": 0,
+          "origin": "calibrated from one speed anchor; NOT a measured drag polar",
+          "valid": true
+        },
+        {
+          "e": 0.9,
+          "cd0": 0.01635312003397054,
+          "etaAtAnchor": 0.816949929255663,
+          "anchorSpeed": 361.5,
+          "anchorAlt": 0,
+          "origin": "calibrated from one speed anchor; NOT a measured drag polar",
+          "valid": true
+        }
+      ]
+    }
+  },
+  "pairs": [
+    {
+      "aircraftA": "bf109f4",
+      "aircraftB": "p47b",
+      "baselineDifferenceDegSec": 4.526452972012949,
+      "sharedAssumptionDifferenceRange": [
+        4.0103310207578655,
+        5.286141203055253
+      ],
+      "independentAssumptionDifferenceRange": [
+        0.5252958827897256,
+        8.772544551844753
+      ],
+      "signRobustShared": true,
+      "signRobustIndependent": true,
+      "interpretation": "Shared-factor span is a what-if systematic-error illustration ONLY; not evidence of actual correlated parameter errors across unlike wings."
+    },
+    {
+      "aircraftA": "bf109f4",
+      "aircraftB": "p51b",
+      "baselineDifferenceDegSec": 2.0842642524285075,
+      "sharedAssumptionDifferenceRange": [
+        0.15411492596828502,
+        2.216545721606799
+      ],
+      "independentAssumptionDifferenceRange": [
+        -1.9820992106901585,
+        6.069766301129723
+      ],
+      "signRobustShared": true,
+      "signRobustIndependent": false,
+      "interpretation": "Shared-factor span is a what-if systematic-error illustration ONLY; not evidence of actual correlated parameter errors across unlike wings."
+    },
+    {
+      "aircraftA": "p47b",
+      "aircraftB": "p51b",
+      "baselineDifferenceDegSec": -2.4421887195844416,
+      "sharedAssumptionDifferenceRange": [
+        -4.494631896050068,
+        -2.1392096519251
+      ],
+      "independentAssumptionDifferenceRange": [
+        -6.555998830237954,
+        1.34582548604304
+      ],
+      "signRobustShared": true,
+      "signRobustIndependent": false,
+      "interpretation": "Shared-factor span is a what-if systematic-error illustration ONLY; not evidence of actual correlated parameter errors across unlike wings."
+    }
+  ],
+  "conclusions": [
+    "The speed anchor identifies one total drag/power balance, not a unique parasite/induced drag polar.",
+    "Published raw IAS stall speeds cannot constrain CLmax without valid low-speed IAS->CAS correction and weight/configuration alignment.",
+    "Do not average or plot combined scenario extrema as statistical uncertainty on the aircraft comparison.",
+    "Baseline turn figures are provisional model outputs; no historical combat turning rank is validated."
+  ]
+}

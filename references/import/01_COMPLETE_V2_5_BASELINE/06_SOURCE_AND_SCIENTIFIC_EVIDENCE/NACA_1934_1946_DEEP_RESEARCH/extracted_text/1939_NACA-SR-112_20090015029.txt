@@ -1,0 +1,2781 @@
+              The f u n d a m o n t a l p r i n c i p l e s of f l u i d f l o w , p r e s s u r e
+    l o s s o a , and h e a t t r a n s f e r have been p r e s e n t e d a n d a n a l y z e d
+    f o r t h e c a s e o f a smooth t u b e w i t h f u l l y d e v e l o p e d t u r b u l e n t
+    flow.         These e q u a t i o n s a p p l y t o t u b e s w i t h l a r g e l e n g t h -
+    d i a m e t e r r a t i o s where t h e f 1 o w . i ~a t a h i g h ~ e y n ' o l d s Number.
+    The e r r o r i n t r o d u c e d by u s i n g t h e s e e q u a t i o n s i n c r e a s e s a s
+    t h e m a g n i t u d e of t h e t u b e l e n g t h a n d t h e a i r - f l o w R e y n o l d s
+    Number a p ~ r o a c h e st h e v a l u e s e n c o u n t e r e d i n modern r a d i a t o r
+    d e s i g n s . A c c o r d i n g l y , h e a t - t r a n s f e r t e s t s on r a d i a t o r s e c -
+    t i o n s were made a n d t h e r e s u l t s a r e p r e s e n t e d i n nondimon-
+    s i o n a l form t o f a c i l i t a t e t h e i r u s e a n d f o r comparison w i t h
+    other heat-transfer data.                       I n a d d i t i o n , p r e s s u r e l o s s e s mere
+    measured a l o n g smooth t u b e s of c i r c u l a r , s q u a r e , a.nd r e c t a n -
+    g u l a r c r o s s s e c t i o n a n d t h e r e s u l t s mere a l s o c o r r e l a t e d a n d
+    a r e p r e s e n t e d i n n o n d i m e n s i o n a l form.
+
+              The problem of a r a d i a t o r d e s i g n f o r a p a r t i c u l a r i n -
+    s t a l l a t i o n i s s o l v e d , t h e e x p e r i o e n t a l h e a t - t r a n s f e r and
+    p r e s s u r e - l o s s d a t a being u s e d , on a b a s i s of power c h a r g e a b l e
+    t o t h e r a d i a t o r f o r form d r a g , f o r p r o p e l l i n g t h e w e i g h t ,
+    and f o r f o r c i n g t h e air through t h e r a d i a t o r .
+'
+              The c a s e of a n i n s t a l l a t i o n w i t h i n a wing o r a n e n g i n e
+    n a c e l l e i s c o n s i d e r e i l , An i l l u s t r a t i o n o f r a d i a t o r d e s i g n
+    i s c a r r i e d t h r o u g h f o r a n a ~ b i t r a r ys e t of c o n d i t i o n s .        Suf-
+    f i c i e n t d e t a i l i s given t o enable t h e r e a d e r t o reproduce
+    t h e a n a l y s i s f o r any gfven ease.                The e f f e c t upon t h e c o o l -
+    i n g e f f i c i e n c y i s c o n s i d e r e d f o r a chnngo i n t h e following
+    design conditions:
+
+                (1)     The p r e s s u r e d r o p a c r o s s t h o r a d i a t o r .
+                        The             e f f i c i e n c y of t h e d u c t .
+                (3)     The f r e e - a r e a r a t i o of t h e r a d i a t o r .
+                (4)     Tho wing c h a r a c t o r i s t i c s f o r t h o d o s i g n c o n d i -
+                          tions.
+                (5)     Tho a i r c o n s t a n t s .
+                (6)     Tho change i n d e n s i t y w i t h altitude.
+          '     (7)     The w i d t h o f t h e w a t e r passageway.
+          Comparisons o f t h e c o o l i n g e f f i c i e n c y p o s s i b l e w i t h
+t u b e s of v a r i o u s s h a p e s l e a d t o t h e c o n c l u s i o n t h a t t h e
+smooth h e x a g o n a l l y shaped t u b e i s s u p e r i o r t o t h e c i r c u l a r
+t u b e and t h a t f i n n e d t u b e s a n d Cubes shaped t o groduce
+t u r b u l e n c e cause a d e c r e a s e i n c o o l i n g e f f i c i e n c y .
+          The u s e of e t h y l e n e g l y c o l i n s t e a d o f w a t e r f o r t h e
+l i q u i d makes i t p o s s i b l e t o i n c r e a s e t h e c o o l i n g e f f i c i e n -
+cy s e v e r a l t i m e s (depending uFon t h e i n l e t - a i r tempera-
+ture).         The a n a l y s i s of t h o l e n g t h of p a s s a g o on t h e
+l i q u i d s i d e of t h e r a d i a t o r sbovs i t t o be a secondary
+cons2 a e r a t i o n .     The d e s i g n problem f o r an i n s t a l l a t i o n i n
+a s o p o r a t e n a c e l l e i s s o l ~ e d . S e v e r a l v a l u e s a r e chosen
+f o r t h e o f f e c t i v s nacslfe-drag c o e f f i c i e n t t o permit evalu-
+a t i o n of t h e n a c e l l e - w i a g i n t e r f e r e n c e on t h e c o o l i n g e f f i -
+c i e n c y . A cooling-power comparison between l i q u f d - c o o l e d
+ana a i r - c o o l e d e n g i n e s i s made a a d i t i s concluded t h a t
+t h e power t o c o o l i s n o t a d e t e r m i n i n g f a c t o r i n t h e s e l e c -
+t i o n of t h e t y p e of e n p i n e .        The r e c o v e r y of mechanical
+e n e r g y from t h e h e a t energy d i s s i p a t e d b y t h e r a d i a t o r i n
+t h e d u c t i s shown t o be possible. An approximate Bator-
+m i n a t i o n of t h e n a g n i t u d e o f t h e e f f e c t i s made, Fhe de-
+s i g n o f t h e r a d i a t o r i s n o t a f f ~ c t e dby c o n s i d e r a t i o n s of
+t h e e n e r g y recovery,
+
+                                   INTRODUCTION
+
+
+          Vlth the wealth of information a v a i l a b l e i n heat-
+t r a n s f e r processes, a l l t h e necessary information f o r the
+d e s i g n of a i r c r a f t r a d i a t o r s would a p p e a r t o be a t hand.
+Such i s p r a c t i c a l l y t h e c a s e ,       In f a c t , t h e r e i s s o much
+i n f o r n a t i o n on s p e c i a l c a s e s t h a t a d e s i g n e r s e t t i n g o u t
+t o choose a r a d i a t o r i s confused by a l a r g e v a r i e t y of r e -
+p o r t s , a l 1 . o f which a p p e a r t o have sone b e a r i n g on t h e
+problem.
+
+          The most m i s l e a d i n g r e p o r t s of t h i s t y p e a r e t h o s e
+d e a l i n g w f t h . t h e r a d i a t o r mounted i n t h e a i r stream.          The
+d a t a i n t h e s e r e p o r t s were i n v a l u a b l e when r a d i a t o r s mere
+mounted o u t s i d e t h e a i r p l a n e w i t h o u t b e n e f i t of c o w l i n g ,
+but t h e d a t a a p p l y o n l y t o a s p e c i a l c a s e a n d c a n n o t be
+u s e d f o r a modern r a d i a t o r i n s t a l l a t i o n i n which t h e r a d i -
+a t o r i s l o c a t e d i n a wing, a cornling, @ ra n e n g i n e n a c e l l e .
+                                                                                                      J
+        A r a d i a t o r mounted i n a f r e e a i r s t r e a m a c t s more o r
+l e s s l i k e a f l a t p l a t e , depending upon t h e r e s i s t a n c e t o
+f l o v throuqh the r a d i a t o r tubes.      If t h e r a d i a t o r h a s a
+h i g h r e s i s t a n c e , most of t h e a i r elow a p p r o a c h i n g t h e r a d i -
+a t o r Biverges and passes around t h e o u t s i d e .                In so d o i n g ,
+t h e a i r b r e a k s away a t b o t h t h e f r o n t a n d t h e r e a r f a c e s
+of t h e r a d i a t o r , r e s u l t i n g i n a l a r g e d r a g . If the radia-
+t o r i s nade m i t h a low r e s i s t a n c e t o f l o w t h r o u g h t h e t u b e s ,
+most o f t11e a i r a p p r o a c h i n g t h e r a d i a t o r g o e s t h r o u g h t h e
+r a d i a t o r and t h e drag i s g r e a t l y reduced.
+
+        Vhen t h e r a d i a t o r i s mounted i n t h e f r e e a i r s t r e a m ,
+t h e pomer consumed by t h e r a d i a t o r i n c r e a s e s m i t h t h e cube
+of t h e v e l o c i t y .   With t h e r a d i a t o r i n a d u c t , however, i t
+i s n e c e s s a r y t o c o n s i d e r o n l y t h e v e i g h t of t h e r a d i a t o r
+a n d t h e i n t e r n a l pomer consumed i n i t . The r a d i a t o r l o c a t -
+e d i n a d u c t can be made t o d i s s i p a t e a g i v e n amount o f
+hea$ by a l m o s t a s low a n e x p e n d i t u r e of power f o r c o o l i n g
+a s d e s i r e d . . But t h e lowor t h o power, t h e l n r q e r t h e r a d i a -
+tor.      Tho most e c o n o m i c a l r a d i a t o r s i z e doponds upon t h o
+v i n g l o a d i n g of t h e p a r t i c u l a r a i r p l a n e .
+
+          T h e r e a p p e a r s t o be a p r e v a l e n t n o t i o n t h a t , by t h e
+i n v e n t i o n of some p e c u l i a r t u b e a r r a n g e m e n t a n d s h a p e ,
+l a r g e g a i n s i n c o o l i n g p e r f o r m a n c e ca,n b e a t t a i n e d .     The
+b e s t s i 5 u a t i o n t h a t can be o b t a i n e d i s t o have t h e f r i c -             *
+
+
+t i o n l o s s t h a t o c c u r s i n t h e r a d i a t o r be t r u e s u r f a c e f r i c -
+t i o n on t h e d i r e c t c o o l i n g s u r f a c e .        Prosaure l o s s e s asso-
+c i a t c d m i t h s h a r p c o n t r a c t i o n s , e x p a n s i o n s , and s h a r p b e n n s
+a s fell a s s u r f a c e f r i c t i o n o v e r a n i n d i r o c t c o o l i n g a u r -
+f a c e a r c a11 u n d e s i r a b l e .       If t h e optimum c o n d i t i o n i s r e -
+a l i z e d , i t a p p e a r s t o bo of l i t t l e i m p o r t ~ ~ n cfrom    c      consid-
+e r a t i o n s of hoat d i s s i p a t i o n whether t h e tubes a r e c i r c u -
+l a r , s q u c r e , r e c t a n g u l a r , h e x a g o n a l , o r a n y o t h e r conven-
+i e n t shape.          One s h a p e nay have an a d v a n t a g e o v e r a n o t h e r
+a s r e q a r d s t h e r a t i o of w e i g h t r e q u i r e d t o t h e s p a c e r e -
+mainix5y f o r t h e l i q u i d f l o w .            If t h e r a d i a t o r m e e t s t h e
+r e q a i r e m e n t s of d i r e c t c o o l i n $ s u r f a c e a n d p r e s s u r e l o s s
+c o n n e c t e d o n l y m i t h t h e s u r f a c e f r i c t i o n , however, t h e
+c i i c l c o n s i d e r a t i o n may be t h e c a s e o f m a n u f a c t u r e , t h e
+e a s e of r e p a i r , a n d t h e d u r a b i l i t y .
+
+          T h i s r e p o r t m i l l r e v i e w t h e f u n d a m e n t a l p r i n c i p l e s of
+h e a t t r a n s f e r a s t h e y a p p l y t o t h e problem of r a d i a t o r s .
+O r i s i n a l d a t a on r a d i a t o r s w i l l be p r e s e n t e d a n d a number
+of s p e c i a l c a s e s m i l l be a n a l y z e d on t h e b a s i s o f t h e fun-
+damental p r i n c i p l e s , t h e d a t a , and similar d a t a f r o r n . o t h e r
+so-ilrces,
+                                           SYMBOLS
+
+          The f o l l o n i n g symbols a r e u s e d i n t h e r e p o r t a n d a r e
+l i s t e d a l p h a b e t i c a l l y f o r ready reference.
+
+         A,        f r o n t a l a r e a of t h e h o u s i n g .
+
+       Ac,         t o t a l c o o l i n g s u r f a c e upon which          ht      i s based.
+
+ c l , c2,         constants.
+
+        c,,        specific heat a t constant pressure.
+
+        c,,        s p e c i f i c h e a t a t c o n s t a n t volume.
+
+        CL,        l i f t c o e f f i c i e n t o f t h e wing.
+
+      CD,,         drag c o e f f i c i e n t o f t h e sing.
+
+      CD,,         d r a g c o e f f i c i e n t of t h e r a d i a t o r i n s t a l l a t i o n
+                       m i t h no c o o l i n g - a i r f l o w .
+
+             D , h y d r a u l i c d i a m e t e r of t h e t u b e .
+             D,    drag.
+
+             d,    r a d i a t o r d.epth,
+
+        fl ,       friction factor              (i;-z-)
+                                                  Ap D .
+
+
+             f ,   f r e e - a r e a r a t i o , o f open f r o n t a l a r e a t o t h e
+                       t o t a l frontal area.
+
+             ,     t h e a c c e l e r a t i o n of g r a v i t y .
+
+             h,    surface heat-transfer                 coefficient.
+
+        htt        over-all heat-transfer                  c o e f f i c i e n t from f l u i d
+                     to fluid.
+
+        h,,        heat-transfer           c o e f f i c i e n t from a i r t o t u b e m a l l .
+
+        ht,        heat-trsnsfer           c o e f f i c i e n t from l i q u i d t o t u b e
+                     wall.
+
+             3,    q u a n t i t y of h e a t d i s s i p a t e d p e r u n i t time.
+       Hr,       required quantity of heat dissipation.
+        k,       thermal conductivity.          . ,.
+
+K K         .    constants,
+           L,    tube length.
+           1,    mass flow of fluid per unit time.
+
+Nu = --
+     hD          Nusselt number.
+       k'
+           P,    power.
+       P t , total power chargeable to the radiator.
+       PD,       power required to force %he air through the
+                   radiator.
+       Pw, pomer required to support and propel the weight
+                  -   of the radiator.
+           p,    statfc pressure.
+
+      Ap,        total pressure differcnco, usually across the
+                   'radiator,
+      Apf,       drop in pressure due to skin friction.
+
+Pr = ---
+     'P"
+       k       , Prandtl number.
+q =& p v ,
+            2
+                 dynamic pressure (q     carries same subscripts as
+                   V , velocity).
+
+           Q,    quantity of air by volume passing through the radi-
+                   ator per unit' time.
+      VD
+R = p --,        Reynolds Eumber.
+       P
+       B,        universal gas constant.
+           ,     absolute temperature, OF.
+       T         air temperature.
+
+      *iaa       inlet-air temperature.
+       T,,       average liquid temperature.
+AT,   = Ta   -   Tia,        change i n a i r t e m p e r a t u r e .
+
+                 AT,,        change i n l i q u i d t e m p e r a t u r e .
+
+             ATw,,,          mean t e m p e r a t u r e d i f f e r e n c e between c o o l a n t
+                               and a i r .
+
+                  Vd,        a i r velocity i n the duet.
+
+                  Vt,        a i r v e l o c i t y i n t h e tube.
+                  TO, a i r - s t r e a m v e l o c i t y .
+                      v,     s p e c i f i c volume.
+
+                      W,     t h e work o b t a i n a b l e from a c y c l e .
+
+                      w,     r a d i a t o r width.
+
+                  'Wry       w e i g h t of t h e r a d i a t o r .
+
+                      x,     l e n g t h of t u b e t o t h e s e c t i o n u n d e r c o n s i d e r -
+                                 ation.
+
+                      E,     f a c t o r by which t o m u l t i p l y r a d f a t o r w e i g h t
+                                 t o account f o r t h e a d d i t i o n a l r e q u i r e d
+                                 airplane structure.
+
+                      Y,     r a t i o of t h e s p e c i f i c h e a t s of a i r .
+
+                      p,     density.
+
+                  ph,        d e n s i t y a t a l t i t u d e . h.
+
+                      V ,    kinematic viscosity.
+
+                  qt , h e a t - t r a n s f e r e f f i c i e n c y .
+                  q,, &
+                            ' p u m p e f f i c i e n c y of t h e d u c t w i t h t h e r a d i -
+                                 a t o r installed..
+
+                      ,      c o e f f i c i e n t of v i s c o s i t y .
+
+Subscripts:
+
+                      i,     a p p l y t o t h e i n s i d e of t h e t u b e .
+                   o,     a p p l y t o t h e o u t s i d e of t h e t u b e .
+
+                   0 , a p p l y t o t h e f r e e a i r stream.
+                   w,     a p p l y t o t h e l i q u i d s i d e of t h e r a d i a t o r .
+
+                                    SINGLE TUBES
+
+                                       .Analysis          .
+                                                     ,.   .,
+
+          d r a d i a t o r b e i n g codposed of a ' n u m b e r o f small t u b e s ,
+i t i s e s s e n t i a l t o have a c l e a r u n d e r s t a n d i n g of t h e op-
+e r a t i o n of t h e i n d i v i d u a l t u b e - i n a s t u d y o f r a d i a t . o r
+characteristics.                T h i s s t a t e m e n t d o e s n o t mean t h a t s i n g l e
+t u b e s can be s t u d i e d a n d t h e r e s u l t s a p p l i e d w i t h o u t ' q u n l -
+i f i c a t i o n t o a r a d i a t o r c o m p r i s i n g a n a s s e m b l y of t u b e s .
+          i.iuch of t h e p u b l i s h e d d a t a on s i n g l e t u b e s . b a s been
+t a k e n f o r a r e g i o n of t h e t u b e w e l l d-ownstream from t h e
+t u b e e n t r a n c e a n d , a s a r e s u l t , g i v e s r e s u l t s t h a t show
+the f r i c t i o n a l l o s s e s and t h e h e a t t r a n s f e r f o r tubes i n
+which t h e b o u n d a r y l a y e r i s i n e q u i l i b r i u m . ThaB i s , - t h o
+boundary l a y o r i s e i t h e r i n t h e laminar c o n d i t i o n w i t h
+p a r a b o l i c v e l o c i t y d i s t r i b u t i o n over t h e tube o r i s i n the
+c o m p l e t e l y a e v e l o p e d t u r b u l e n t c o n d i t i o n . Now i n a r a d i -
+a t o r t u j e , i'--the         R e y n ~ & ~ s - N u m b eir s below SOE~-SX&Z&G~?L
+_v&ue, t h e boundary l a y e r m i l l be l a m i n a r a n d t h e v e l o c i t y
+d i s t r i b u t i o n w i l l go t h r o u g h a c o n t i n u o u s e v o l u t i o n f r o n
+almost uniform at the entrance t o p a r a b o l i c a c r o s s t h e
+s e c t i o n considered.              If t h e t u b e i s l e s s t h a n 1 5 0 d i a m e t e r s
+i n l e n g t h , t h e t u b e may be completely i n t h e s t a b i l i z i n g
+region.            I t m i l l t h e r e f o r e h a v e a t h i n n e r boundary l a y o r
+and, as a r e s u l t , n groator f r i c t i o n and consequently s
+g r e a t e r Loat-transfer cocfficient.                          If t h e R ~ e g g o l d s - W ~ m ~ o e ~
+& ~ , c ~ % o v c some c r i t i c a l v a l u e , t h e f l o w i n t h e t u b e mag be
+turbulent.             If t h e e n t r a n c e i s f a v o r a b l e f o r i n i t i a t i n g
+t u r b u l e n c e i n t h e f l o w , t h e t u b e m i l l have t u r b u l e n t Plow
+t h r o u g h o u t i t s l e n g t h a n d w i l l have t h e f r i c t i o n a n d t h e
+heat-transfer c o e f f i c i e n t s a s s o c i a t e d with t u r b u l e n t flow
+a n d t h e p a r t i c u l a r Reynolds IJumber.                   If t h e e n t r a n c e i s
+d e s i g n e d t o g i v e a smooth s t r e a m l f n e f l o v , t h e f l o w w i l l
+e v o l v e t h r o u g h a t r a n s i t i o n a n d become t u r b u l e n t down-
+stream.           The h i g h e r t h e R e y n o l d s Number, t h e n e a r e r t h i s
+t r a n s i t i o n p o i n t m i l l be t o t h o t u b e e n t r a n c e .         Thus 2% i s
+s e e n t b a t , even t h o u g h t h e f l o w may be a b o v e t h e c r i t i c a l
+R e y n o l & s Wumber, t h e t u b e may be t o o s h o r t t o y i v e a n op-
+p o r t u n i t y f o r t h e s t a b i l i z i n g f l o v t o b r e a k down.    If the
+e n t r a n c e i s such t h a t t u r b u l e n c e i s i n i t i a t e d , f o r a f l - o v
+above t h e c r i t i c a l Reynolds Number, t h e f l o v w i l l r e m a i n
+t u r b u l e n t throughout.          On t h e o t h e r h a n d , i f t h e f l o w i s
+be1o.w t h e c r i t i c a l Reynolds Number, t h e t u r b u l e n c e s e t ' u p
+by a n ' e n t r a n c e n i l 1 be damped o u t a n d l a n i n a r f l o w w i l l
+result.
+
+          I t i s nom o b v i o u s t h a t t e s t s on s i n g l e t u b e s have d i -
+r e c t a p p l i c a t i o n t o t h e r a d l a t o r problem o n l y when t h e
+t u b e s a r e t e s t e d u n d e r c o n d i t i o n s r e p r o d u c i n g t h o s e ex-
+isting in a radiator,                     If t h e e n t r a n c e t o a t u b e a s s e m b l y
+i n a r a d i a t o r i s smoothly s t r e a m l i n e d , t h e n t h e h e a t -
+t r a n s f e r c o e f f i c i e n t d e c r e a s e s r a p i d l y downstream f r o m t h e
+e n t r a n c e a s t h e boundary l a y e r b u i l d s up.                It i s there-
+f o r e n e c e s s a r y t o s t u d y numcrous c o m b i n a € i o n s of l e n g t h s
+a n d d i a m e t e r s t o d e v e l o p t h e complote p i c t u r e of t h e p h c ~
+nomena i n v o l v e d .          If t h e e n t r a n c e p r o m o t e s t u r b u l e n c e ,
+however, t h e f r i c t i o n and t h e h e a t - t r a n s f e r c o e f f i c i e n t s
+w i l l c l o s o l y approximate t h e accepted r e s u l t s f o r turbu-
+l e n t f l o n ' i n tubes.
+
+          Thc p r e s s u r e l o s s , o r f r i c t i o n , i n t u b e s h a s bean
+s t u d i e d bg S t a n t o n a n d o t h e r s f o r bot'h t h e l a m i n a r a n d t h e
+t u r b u l e n t r e q i m e s i n t h e r e g i o n s where t h e boundary l a y e r
+i s aeveloped.             The r e l a t i o n s t h a t s a t i s f y e a c h c o n d i t i o n
+a r e q i v e n by G l a u e r t ( r e f e r e n c e 1 ) a s f o l l o w s :
+
+          --
+          dp = -32      R-'        vt 2                                                   ( 11
+                                                                                                     i
+
+
+
+          dL                    P -5"-             f o r laminar flow
+
+         dp
+         --                               vta
+                                          --
+            = -0.157          B-2 p                f o r t u r b u l e n t flow           (2 1
+         dL                                D
+
+
+                  F r i c t i o n - L o s s T e s t s and C o r r e l a t i o n
+
+        The p r e s s u r e l o s s e s were n e a s u r e d , o n C i r c u l a r t u b e s
+havin$y d i a m e t e r s o f     1 / 2 , 1 / 4 , 118, a n d 1/16 inch; a square
+t u b e of 1 / 2 i n c h h y d r a u l i c d i a m e t e r ; a n d r e c t a n g u l a r t u b o s
+112 b y 1 / 8 i n c h a n d 1 / 2 by 1 / 1 6 i n c h .           The l e n g t h of t u b 0
+was mzdc a p p r o p r i a t e t o g i v e a l e n g t h - d i a m e t e r r a t i o of
+150 t o 200 f o r e a c h t u b e .
+
+        The p r e s s u r e s were measured by s t a t i c t u b e s f l u s h
+w i t h t h e i n s i d e of t h e t u b e , a s s e e n i n f i g u r e l ( a ) . The
+t u b e s u r f a c e s mere smooth, a n d a b e i l - s h a p e e n t r a n c e ss-
+s u r e d s t r e a m l i n e f l o w a t t h e o u t s e t ( f i g . l ( 5 ) ) . The
+v e l o c i t y mas ~noasurodby a s u r v e y u s i n g a p i t a t t u b e mount-
+ed on a micrometer.                   T y p i c a l s u r v e y s f o r t h e 1/2-inch-
+d i a m e t e r c i r c u l a r t u b e a r c shoan i n f i g u r e 2.             It m a s
+f o u n d t h a t t h e e n t r a n c e mas sufficiently c l o s e t o a stream-
+l i n e shzpe t h a t t h e v e l o c i t y c a l c u l a t e d from t h e f i r s t
+s t a t i c - t u b e r e n d i n g a n d t h e a t m o s p h o r ic p r e s s u r e a g r e e d
+w i t h i n t h e experimental e r r o r w i t h t h e averago v e l o c i t y
+measared i n t h e s u r v e y .
+
+          F i g u r e 3 shows a sample c u r v e of t h e p r e s s u r e - d r o p
+measurements on one o f t h e t u b e s .                    The r e s u l t s f o r a l l t h e
+t u b e s t e s t e d , p l o t t e d i n n o n d i m e n s i o n a l form, a r e shown
+i n f i g u r e 4; t h e a b s c i s s a is t h e Reynolds Number, t h e or-
+d i n a t e i s €he f r i c t i o n f a c t o r f , ,          a n d each curve i s f o r
+a constant length-diameter r a t i o ,                       The data f o r a l l t h e
+t u b e s f a l l on t h e c u r v e s w i t h t h e e x c e p t i o n of t h e = q u a r e
+a n d t h e r e c t a n g u l a r t u b e a , which a g r e e in t h e t u r b u l e n t
+r e g i o n 5 u t d e v i a t e r a d i c a l l y from t h e d a t a f o r c i r c u l a r
+tubes i n thc laminar region.
+
+          From e q u a t i o n s (1) and ( 2 ) , fl = 1 6 f ~ f o r Laminar
+f l o n and .fl = 0 . 0 7 8 5 / ~ ' ' ~ ~f o r t u r b u l e n t flovv.               Tho
+c u r v e s f o r f u l l y developed l a m i n a r a n d t u r b u l e n t f l o w a r c
+a l s o shown on f i g u r e 4 . Tho t e s t d a t a s h o u l d f a l l between
+t h o t w o c u r v e s f o r f u l l y d e v e l o p e d f l o n because t h e s t a -
+b i l i z a t i o n and t h o t r a n s i t i o n r e g i o n s s r o i n c l u d e d .
+          The f r i c t i o n - f a c t o r d a t a f o r t h e r a d i a t o r s t e s t e d a r e
+shown i n f i g u r e 5 , Data from t h e s i n g l e - t u b e t e s t s a t t h e
+sane L/D r a t i o a s t h a t f o r t h e smooth-tube r a d i a t o r s a r e
+also plotted.              The c u r v e s f r o m r a d i a t o r d a t a s h o u l d f a l l
+h i g h e r t h a n t h e c u r v e s from t h o s i n g l e - t u b e d a t a bocciuse
+t h e r a d i a t o r A-p i n c l u d e s t h e l o s s e s a t t h e e x i t .            Since
+t h e t r a n s i t i o n o c c u r s a t t h e same Reynolds Number f o r b o t h
+t u b e s and r a 6 - i a t o r s , t h e e x i t l o s s e s can be .d.eternined
+from t h e d i f f e r e n c e s between t h e f r i c t i o n f a c $ o r s f o r t h e
+s i n g l e t u b e s and t h e r a d i a t o r s .           Tahle I i l l u s t r a t e s v a l u e s
+of t h e o x i t 1,oss o v e r a r a n g e of Reynolds Numbers.                            The av-
+e r a g e o x i t - l o s s v a l u e f o r t h e 1/4-inch-d-iameter t u b e i s
+s e e n t o bc. 0.2 g t , i n agreement w i t h H a r t s h o r n ( r e f e r e n c e
+2).       The l a r g e r v a l u e s found f o r t h e 1/8-=inch;diameter
+t u b e may be a t t r i b u t e d t o a l o w e r f r e e - a r e a r a t i o , which
+r e s u l t s i n a g r e a t e r c s p a n s i o n a t t h o e x i t , and p o s s i 3 l y
+t o t h o r e l . a t ~ i v e l y g r e a t e r s o l d e r i n g irregularities a t en-
+trance and e x i t .
+                               E X I T LOSSES FOR THBEE RADIATORS
+*------..----_-l__
+
+     Radiator                         R c y n o l d s Number              Exit loss/qt
+---.---.--           .-.--   ----
+                                             6,000                               0.19
+             "A                             15,000                                 .23
+                                            30,000                                 .305
+- .--.------.--------
+
+
+
+
+a
+    See f i g . 5 f o r e x p l a n a t i o n o f t h e r a d i a t o r d e s i s n a t i o n s .
+
+         A r a d i a t o r m a s made up h a v i n g t u b e e x i t s f a i r e d g r a d -
+u a l l y from a c i r c u l a r t o a h e x a g o n a l f o r m o v e r a d i s t a n c e
+of a b o u t 1 i n c h .      A l t h o u g h t h i s f a 5 r i n ~a p p r e c i a b l y r e d u c e d
+t h e e x i t l o s s f o r t h e s i n g l e t u b e , no m e a s u r a b l e improve-
+ment rvzs f o u n d f o r t h e r a d i a t o r .
+
+          F i q u r e 4 may be u s e d t o o b t a i n t h e v a r i a t i o n o f a i r
+v e l o c i t y i n t h e tube with tube l e n g t h f o r any p r e s s u r e                               4
+
+
+arop aad tube diameter.                      The method i s a s f o l l o w s :           Por
+any c h o i c e of         L a n d D, f i g u r e 4 g i v e s t h e r e l a t i o n s h i p
+b e t w e e n f, = A p ~ / q t 4 ~a n d R e y n o l d s Number = p v ~ ~ ) / P .                         T
+
+and          .
+The c o n d i t i o n s o f t e m p e r a t u r e a n d p r e s s u r e d e t e r m i n e P
+                  The v e l o c i t y Vt        i s c a L c u 1 a t e d from a n y R e y n o l d s
+N m b e r a n d qt            follows.        The c o r r e s p o n d i n g v a l u e o f   f,
+g i v e s Ag.         P r o c e e d i n g i n t h i s manner g i v e s s e v e r a l s e t s
+of v-alu8s o f            Vt      a n d Ap.       Then Vt           i s pl-otted a g a i n s t
+(Ap 4 0.2 q t ) .          The t e r m 0.2 q t             i s includ.ed t o account
+f o r pressure losses at thc radiator exit.                                  (See t a b l e 1 . )
+Such p l o t s e n a b l e t h e d c t e r m 5 n c t i o n o f        Vt       f o r a n y cTc3T-
+all. p r e s s u r e drop        ( = Ap -6 0.2 q t ) .           R e p e a t i n g the process
+f o r other lengths or diameters w i l l give the desired rela-
+t i o n s h i p between a i v~e l o c i t y i n t h e t u b e a n d t u b e l e n g t h ,
+F i ~ u r e6 i l l u s t r a t e s t h i s r e l a t i o n s h i p , u s i n g t h e v a l u e s
+f o r D a>rd Bp              ( o v e r - a l l ) s3,own on t h e f i g u r e .
+          The R ~ y n o l d sBumber d e s c r i b e s t h e n a t u r e of t h e bound-
+ary lager.          Inasmuch a s b o t h t h e f r i c t i o n l o s s of t h e f l u i d
+a n d t h e h e a t t r a n s f e r from m a l l t o f l u i d depend upon t h e
+n a t u r e of t h e b o u n d a r y l a y e r , b o t h c h a r a c t e r i s t i c s a r e
+f u n c t i o n s of t h e Reynolds Eumber . Reynolds r e c o g n i z e d
+t h i s common dependence on R e y n o l d s Nunber a n d s t a t e d t h e
+dependence i n a p r i n c i p l e known as R e y n o l d s a n a l o g y . A s a
+ye s.ul t
+
+
+
+
+          3 0 t h t h o f r i c t i o n f a c t o r a n d t h e h e a t - t r a n s f e r c6of-
+f i c i e n t & r e l a r g e r mith t u r b u l e n t flow than with laminar
+f l o w above t h e c r i t i c a l R e y n o l d s Number a n d e a c h i s l a r g e r
+w i t h a t h i n t h a n w i t h a t h i c k boundary l a p e r . A more e l a b -
+o r a t e r e l a t i o n h a s been e v o l v e a a s a r e s u l t of t h e work of
+S t a n t o n , P r a n d t l , Taylor, and o t h e r s t h a t c o r r e l a t e s t h e
+d a t a on h e a t t r a n s f e r from p i p e s f o r v a r i o u s v e l o c i t i e s a n d
+flu5cI.s; namely,
+
+
+
+
+          E q u a t i o n ( 4 ) i s t h e e q u a t i o n u s e d by many w o r k e r s i n
+t h i s f i e l d to c o r r e l a t e experimental heat-transfer data,
+The c o n s t a n t c l a n d t h e e x p o n e n t s t , m , a n d n v a r y
+m i t h a change i n t h e t y p e o f . f l o w ,            FOT v e r y l o n g p i p e s ,
+( L / D ) ~ can be a s s i m i l s t e d i n t o t h e c o n s t a n t and a ilew
+c o n s t a n t c,        used.     The e x p o n e n t n        i n a n y c a s e i s small.
+The t c r m L/D h a s a s t r o n g i n f l u e n c e o n l y i n t h e e n t r a n c e
+r e g i o n of t h e t u b e a h e r s t h e boundary Zayor i s g o i n g
+t h r o u g h change.          Thc P r a n d t l nunbor i s c e a r l y c o n s t a n t
+mhon a i r i s u s e d a s t h e f l u i d f l o n i n g t h r o u g h t h e t u b e .
+I t f o l l o m n t h e n t h a t e q u a t i o n ( 4 ) f o r a i r f l o w a n d a con:
+s t a n t L/D           reduces t o
+
+
+
+
+    Equations f o r Eoat-Transfer                   a n d Cooling-Powcr           Loss
+        m
+          he l o c a l h c a t - t r a n s f z r c o e f f i c i e n t a n d t h e f r i c t i o n
+f a c t o r have been r o l s t e d i n t h e f o r e g o i n g d i s c n s s i o n .
+Thcre r c ~ c i n st h e problem of d.etermining how much h e a t can
+be d i s s i p a t e d f r o m a g i v e n t u b e a s a f u n c t i o n of w a l l tem-
+p e r a t u r e , i n l e t - a i r t e m p e r a t u r e , R e y n o l d s l?umber, a n d
+l e n g t h . Although t h e average l o c a l h e a t - t r a n s f e r c o e f f i -
+c i e n t cnn be d e t c r m i n e d by means of t h e t u b e f r i c t i o n , t h e
+t u b e l e n e t h h a s a n i m p o r t a n t S e a r i n g on t h e a c t u a l h e a t
+t r a n s f e r by c o n t r o l l i n g t h e r i s e i n t h e a i r t e m p e r a t u r e .
+The h e a t - t r a n s f e r e f f i c i e n c y            h a s been d e f i n e d t o de-
+s c r i S e t h e efficiency of h e a t i n g up of t h e a i r a s
+
+
+
+
+I t i s d e s i r a b l e t o have a h i q h h e a t - t r a n s f e r e f f i c i e n c y i n
+o r d e r t o d i s s i p a t e a maximum a n b u n t of h e a t f o r a g i v e n
+mass f l o w of a i r .
+
+          The h e a t d i s s i p a t e d a n d t h e power f o r cool-ing p e r
+
+f u n c t i o n of b p ,
+s t a n t s o f the fluid.
+                              TW    -
+u n i t oFen f r o n t a l a r e a of t u b e can be d e t e r m i n e d a s a
+                                        Ti,,    L, D , a n d t h e p h y s i c a l con-
+                                      Tho r a t i o of t h e s e two q u a n t i t i e s
+g i v e s a r e l a t i o n from which i t w i l l be p o s s i b l o t o d e t e r -
+mine t h c optimum d i m e n s i o n s . 1
+
+                a n a l g s i s w i l l b e nadc f o r t h e c a s e o f f u l l y do-
+v c l o p c d t u r b u l e n t f l o w i n a t u b e of c o n s t a n t wall tempor-
+aturc.        ?he t u b e considered i s c i r c u l a r , b u t t h e e q u a t i o n s
+may b e a p p l i e d e q u a l l y w e l l t o h e x a g o n a l o r s q u a r e tu-bes
+by u s i n q t h e h 2 d r a u l i c a-iarneter.
+
+          T:le h e a t A H       dissipated for a length                dx     of t h e
+tube      (fig, 7 ) i s
+
+
+
+
+          F r o m e q u a t i o n s ( 6 ) a n d ( 7 ) i t may be shown t h a t
+
+
+
+
+I
+    T h i s a n a l y s i s f o r optimum t u b e d i m e n s i o n s t a k e s no a c c o u n t
+       o f t h e r a d i a t o r w e i g h t o r t h e p r o f i l e drag, ~ h i c hw i l l
+       be c o n s i d e r e d l a t e r ,
+           k
+M          a , .     n
+d   id k              cn
+           01        V
+           d
+    cii a3
+           k
+    au
+    0 I
+    m -I=
+    *rd         *
+    :a":
+    Pi          FI
+    $4 Q-I=
+    a, ha
+       a3 a
+    s k d
+    o m e
+    F: P
+    m 6%
+                     m
+                     O
+                     -
+                      .
+                     ..P
+                      3
+                         0.
+                      u
+                     a IN
+                     *!*
+                     0 io      cu a,
+                     =rl           d
+                               E
+                     'PI       0@
+                         0     k id
+                               I% d
+                         ,-i       .+=
+                         0
+                                ' 0
+                         11    Cn*
+                               to
+                         d I   CUR
+                               0 id
+                                  d
+                               0 -rl
+                                   a -*
+                               II .A a
+                                   tn    G
+                                         $
+                               orid o
+                                   0 k
+                                   .ri
+                               a, 4'     c9
+                               k 03.t-I
+                               a, l-i
+                               d 0)y-
+                               !z k n i
+where        IJ     i s i n f t . "/hr.
+
+           Ap,      i n lb./sq.ft.
+
+         F i y u r e 8 shows t h e v a r i a t i o n of t h e h e a t d i s s i p a t e d
+w i t h t h e l e n g t h o f t h e t u b e f o r a c o n s t a n t Ap f o r s e v -
+e r a l tube diameters.             F i g u r e 9 shows t h e v a r i a t i o n of t h e
+heat clissipated w i t h the l e n g t h b f the tube f o r a tube
+d i a m e t e r o f 1 / 4 8 f o o t f o r s e v e r a l v a l u e s of Ap.     I t may
+be n o t e d from f i g u r e 8 t h a t t h e p e a k h e a t d i s s i p a t i o n p e r
+s u a r e l o o t o f open a r e a o c c u r s a t a b o u t t h e same v a l u e of
+ 3
+L D f o r the various diameters.
+       H a r t s h o r n ( r e f e r e n c e 2 ) showed t h a t t h e ;eak          efficien-
+                                                          Do. 2
+c y a s a f u n c t i o n o f L/D v a r i e d a s
+
+          The b a s i s f o r t h e c h o i c e of a r a d i a t o r i s i t s c o o l i n g
+e f f i c i e n c y , d e f i n e d a s t h e r a , t i o of t h e h e a t d i s s i p a t e d t o
+t h e poser chargeable t o the r a d i a t o r .
+
+        The t o t a l power c h a r g e a b l c t o t h e r a d i a t o r i s
+
+
+
+
+On the r i g h t s i d e bf t h i s e q u a t i o n , t h e f i r s t t e r m i s t h e
+power t o overcome t h e form d r a g ; t h e s e c o n d t e r m i s t h e
+?over t o support tho rreight; and t h e t h i r d term i s t h e
+power t o f o r c e t h e a i r t h r o u g h t h e r a d i a t o r .
+
+     The pump e f f i c i e n o y i s d . e f i n e d . i n r e f e r e n c e 4 f o r a
+separate n a c e l l e i n s t a L l a t i o n as
+    work expended f o r c o o l i n g i s (D               -
+    The u s e f u l c o o l i n g work done p e r s e c o n d i s QAp a n d t h e
+                                                            D ~ V)o .      The q u a n t i t y
+           i s t h e d r a g of a c l o s e d comling w i t h magor d i m e n s i o n s
+    Do
+    s i m i l a r t o t h o s e of t h e a c t u a l c o m l i n g , a n d (D
+    t h e d r a g i n c r e m e n t due t o t h e c o o l i n g - a i r flow.
+                                                                                    -
+                                                                                  D ~ )i s
+
+
+            S i m i l a r l y , t h e pump e f f i c i e n c y f o r a d u c t i s d e f i n e d
+    a s t h e r a t i o of t h e u s e f u l c o o l i n g work done t o t h e t o t a l
+    work expended i n f o r c i n g t h e a i r t h r o u g h t h e r a d i a t o r .
+    Thus f o r a wing d u c t ,
+
+
+
+
+    where AD i s t h e d i f f e r e n c e i n d r a g between t h e o r i g i n a l
+    wing a n d t h e wing w i t h t h e d u c t - r a d i a t o r c o m b i n a t i o n .   In
+    any i n s t a l l a t i o n , t h e e n t r a n c e and t h e e x i t l o s s e s a r e in-
+    c l u d e d i n t h e pump e f f i c i e n c y .
+              The form-drag power i s n.ot e n t i r e l y i n d e p e n d e n t of
+    t h e c o o l i n g - a i r f l o w , a n d t h e c h o i c e of t h e pump e f f i c i e n -
+    c y a s a n i n t e r f e r e n c e f a c t o r e n a b l e s t h e breakdown of t h e
+    t o t a l power r e q u i r e d i n t o t h e s u b d i v i s i o n s t a t e d .  In a n
+    i n s t a l l a t i o n where t h e c o o l i n g - a i r flow may d e c r e a s e t h e
+    form d r a g , t h e pump e f f i c i e n c y may be more t h a n 1 0 0 p e r -
+    cent,         I t i s p o s s i b l e t h a t , f o r such c a s e s , t h e b a s i c shape
+    w i t h o u t c o o l i n g - a i r f l o w may be c o n s i d e r a b l y improved a n d
+    s u c h c o h s i d e r a t i o n s may be w o r t h i n v e s t i g a t i n g .
+            1%i s l i k e l y t h a t t h e pump e f f i c i e n c y w i l l v a r y i r i t h
+    t h e f l i g h t speed and t h e q u a n t i t y o f c o o l i n g - a i r flow.
+              F o r t h e r a d i a t o r mounted i n a s e p a r a t e n a c e l l e , t h e
+    r e s u l t s p r a s e n t o d i n r e f e r e n c e 4 g i v e c~~ a n d           np;
+                                                                                          the
+    a i r p l a n e design determines                       a n d CL.
+\                                                     C ~ w
+              F o r t h e r a d i a t o r mounted i n s i d e a n e n g i n e n a c e l l e o r
+    w i t h i n a w i n g , t h e f i r s t t e r m on t h e r i g h t s i d e o f equa-
+    t i o n (13) vanishes.               T h i s f a c t makes t h e i n s t a l l a t i o n w i t h -
+    i n a wing v e r y a t t r a c t i v e b e c a u s e , w i t h o u t t h e f r o n t a l -
+    a r e a l i m i t a t i o n , i t i s o n l y n e c e s s a r y t o s e e k a compromise
+    between t h e second and t h e t h i r d terms.                     The b e s t compso-
+    m i s e r e s u l t s i n a n i n s t a l l a t i o n w i t h a more f a v o r a b l e c o o l -
+    i n g c P f i c i c n c y t h a n i s p o s s i b l e when a s e p a r a t o n a c o l l a in-
+    s t a l l a t i o n i s uaed.
+                                        RADIATORS
+
+                        A p p a r a t u s f o r Heat T r a n s f e r
+
+
+        The h e a t d i s s i p a t i o n o f s e v e r a l r a d i a t o r s mas s t u d -
+ied.     C i r c u l a r t u b e s mere u s e d f o r t h e f o l l o n i n g r a d . i n -
+tors:
+
+         (I)     L e n g t h , 9 i n c h e s ; t u b e d i a m e t e r , 0.250 i n c h .
+
+         (2)     L e n g t h , 1 8 i n c h e s ; t u b e d i a m e t e r , 0.240       inch.
+
+         (3)     L e n g t h , 5 i n c h e s ; t u b e d i a m e t e r , 0.125        inch.
+
+I n a d d i t i o n , a r a d i a t o r ma.s b u i l t up o f c o . r r u g a t e d t u b i n g
+ ( f i 5 . 1 0 ) w i t h a l e n g t h o f 1 . 9 7 f e e t a n d a mean d i a m e t e r
+of 0141 i n c h .           For t h e s e f o u r r a d i a t o r s , a i r nas ~ a s s e d
+through the tubes and water m a s d i r e c t e d perpendicular t o
+them,           The a v e r a g e i n l e t a n d o u t l e t t e m p e r a t u r e s o f b o t h
+t h e a l r a n d t h e w a t e r mere m e a s u r e d by means of thormo-
+couples.           The mass f l o w of a i r w a s o b t a i n e d e i t h e r by a
+survey u s i n g a p i t o t tube and s t a t i c tubes i n t h e duct
+downstream from t h e r a d i a t o r o r , more commonly, by a ven-
+t u r i c o n n e c t i n g t h e a i r a t room t e m p e r a t u r e a n d a t m o s -
+g h e r i c p r e s s u r e w i t h a l a r g e box, o r e x p a n s i o n chamber,
+a h e a d of t h e r a d i a t o r d u c t ,      The mass f l o w of w a t e r was
+o b t a , i n e d from a c a l i b r a t e d o r i f i c e i n t h e w a t e r l i n e ,
+The p r e s s u r e d r o p a c r o s s t h e r a d i a t o r w a s measured by
+p i t o t and s t a t i c t u b e s c o n n e c t e d t o a n a l c o h o l manometer.
+The a p p a r a t u s f o r t h e h e a t - t r a n s f e r i n v e s t i g a t i o n i s shown
+i n f i ' s u r e 11.
+
+          In the r e s u l t s herein presented, t h e a c t u a l average
+v a l u e of t h e l o c a l h e a t - t r a n s f e r c o e f f i c i e n * from a i r t o
+t u b e w a l l ha           i s used,           In order, to obtain an a c c u r a t e
+v a l u e of t h i s c o e f f i c i e n t , t h e w a t e r p a s s a g e s were made
+s h o r t z n d t h e w a t e r v e l o c i t y mas k e p t h i g h s o t h a t t h e
+d r o p i n t e m p e r a t u r e of t h e w a t e r G T m was v e r y s m a l l .
+S e v e r n l w a t e r s p e e d s mere u s e d a t e a c h a i r s p e e d , a n d t h e
+o v e r - a l l h e a t - t r a n s f e r coefficient h t               was p l o t t e d a g a i n s t
+GT,/~T,,            a s i n f i g u r e 1 2 , mhcro e a c h c u r v e i s f o r s con-
+s t a n t mass f l o w o f a i r .               The c u r v e s n e r c e x t r a p o l a t e d t o
+AT,/~T,         = 0. A t t h i s value,               l / h t = 0 , where hl                   i s the
+h e a t - t r a n s f e r c o e i ? f i c i e n t from l i q u i d t o tube w a l l .            Since
+t h e n ha = k t .        The v a l u e of ht was computed i n a l l
+c a s e s u s i n g t h e l o g a r i t h m i c mean t e m p e r a t u r e d i f f e r e n c e
+from a i r t o w a t e r .
+
+                                R e a t - T r a n s f e r Data
+          The f o r m u l a f o r t h e h e a t - t r a n s f e r c o e f f i c i e n t g i v e n
+by McAdams ( r e f e r e n c e 3 , p. 1 7 3 ) i s f o r c o m p l e t e l y d e v e l -
+oped t u r b u l e n t f l o w .       F i g u r e 13 shams t h e h e a t - t r a n s f e r
+d a t a , p l o t t e d i n n o n d i m e n s i o n a l form, o b t a i n e d f r o m s e v e r -
+a l t y p i c a l r a d i a t o r s compared w i t h t h e McAdams f o r m u l a .
+Except l o r t h e corrugated-tube r a d i a t o r , t h e r a d i a t o r s
+t e s t e d showed a l o w e r h e a t - t r a n s f e r c o e f f i c i e n t t h a n i n d i -
+c a t e d by t h e f o r m u l a f o r t u r b u l e n t f l o w .     The same g e n e r a l
+f o r m u l a can be u s e d , however, f o r r a d i a t o r s a t R e y n o l d s
+Numbers nbovs 1 0 , 0 0 0 by c h a n g i n g t h e c o e f f i c i e n t f r o m
+0.0269 t o 0.0247.                S i m i l a r l y , Hartshorn {reference 2 ) a m -
+l y z e d t h e d a t a of Lorenz ( r e f e r e n c e 5 ) a n d f o u n d t h e , c o e f -
+f i c i e n t e q u a l t o 0,026,           Care must be u s e d i n t h e f o l l o w -
+ing s e c t i o n s t o a p p l y t h e d a t a a n d t h e e q u a t i o n s t o r e g i o n s
+where t h e y w i l l be v a l i d .
+
+          The h e a t - t r a n s f e r c o e f f i c i e n t mas f o u n d t o be l o w e r
+t h a n t h a t f o r t u r b u l e n t f l o v g i v e n by McAdams a n d H a r t s -
+h o r n ( f i g . 1 3 ) . T h i s d i f f e r e n c e was t o be e x p e c t e d inas-
+much a s t h e f r i c t i o n l o s s w a s a l s o l e s s ,          ( S e e f f g , 4.)
+The e x p l a n a t i o n l i e s i n t h e e n t r a n c e c o n d i t i o n s f o r t h e
+f l o w . A t R e y n o l d s ITumbers i n t h e u s u a l o p e r a t i n g r a n g e of
+a r a d i a t o x , a n a p p r e c i a b l e l e n g t h of t h o t u b s i s i n t h e
+s t a b i l i z a t i o n r e g i o n where t h o f l o a i s n e i t h e r l a m i n a r n o r
+turbulent.              Thus t h e f r i c t i o n f a c t o r a n d t h e h e a t - t r a n s f e r
+c o e f f i c i e n t should f a l l betncen t h e curves f o r e s t a b l i s h e d
+l a m i n a r and t u r b u l s n t f l o ~ v .
+
+          The e m p i r i c a l e q u a t i o n s p r e s e n t e d e a r l i e r b a s e d on n
+t u r b u l e n t boundary l a y e r m i l l g i v e both t o o h i g h n h e a t
+t r a n s f e r a n d t o o hEgh s power consumption t o push t h e a i r
+t h r o u g h t h e r a d i a t o r , Almost t h e same optimum d i m e n s i o n s
+w i l l b e f o u n d f o r t h e r a d i a t o r r e g a r d l o s s of w h e t h e r t h e s e
+e q u a t i o n s o r t h o g r o s e n t experimental r o s u l t s a r e used.
+            INSTALLATION V I T H I N A V I N G OR AN EXGIXE NACELLE
+
+
+          The h i g h c o s t ' of c o o l i n g commonly a s s o c i a t e d w i t h
+l i q u i d c o o l i n g w a s due a l m o s t e n t i r e l y t o t h e r a d i a t o r i n -
+s t a l l a t i o n . The r a d i a t o r was l o c a t e d i n t h e a i r s t r e a m
+w i t h o u t b e n e f i t of c o w l i n g a n d w i t h no means of c o n t r o l -
+l i n g the cooling.                The d r a g mas % l a r g e , owing t o t h e l a r g e
+f r o n t a l a r e a , a n d t h e c o o l i n g power i n c r e a s e d w i t h t h e
+cube of t h e a i r s p e e d .           If t h e r a d i a t o r gave a d e q u a t e
+c o o l i n s i n clTmb, t o o much c o o l i n g mas a v a i l a b l e a t c r u i s -
+ing.        R a d i a t o r s h a v e been made r e t r a c t a b l e a n d have been
+mounted i n t h e e n g i n e n a c e l l e , i n t h e w i n g , o r i n s e p a r a t e
+nacelles.            Each of t h e s e a r r a n g e m e n t s h a s l o w e r e a t h e
+power r e q u i r e d f o r c o o l i n g .      The c o s t of c o o l i n g c a n be
+r e d u c e a t o a f r a c t i o n of t h a t r e q u i r e d i n p r e s c h t i n s t a l -
+l a t i o n s by a p r o p c r l y d e s i g n e d a r r a n g e m e n t .
+
+          Then t h e r a d i a t o r i s i n s t a l l e d w f t h i n a wing o r a n
+e n g i n e n a c e l l e , t h e power c h a r g e a b l e t o t h e r a d i a t o r i s
+composed of t w o p a r t s :          t h e power a c t u a l l y used i n c o o l i n g
+PD, which i s g i v e n by Q A ~ / T ) ~and              ; t h e power u s e d t o
+c a r r y a n d p r o p e l t h e w e i g h t of t h e r a d i a t o r and w a t e r Pg,
+which i s g i v e n by E (CD / c ~ Wr           ) V,.       The r e s u l t s of t h e s e
+                                       m
+c o n s i d e r a t i o n s m i l l be p r e s e n t e d on t h e b a s i s of optimum
+h e a t d i s s i p a t i o n w i t h r e s p e c t t o t h e power d i s s i p a t e d f o r
+v a r i o u s tube l e n g t h s and d i a n e t e r s .
+
+          F o r t h e f o l l o w i n g c a s e , s e v e r a l v a r i a b l e s v i l l be
+kept f i x e d 'in order t o simplify the discussion.                                Later
+t h e s e v a r i a b l e s w i l l be changed one by one t o a s c e r t a i n
+t h e i r fmportance and e f f e c t .              The. d e s i g n Ap i s t a k e n a s
+25.6 pounds p e r s q u a r e f o o t ; t h e e n t r a n c e a n d e x i t l o s s e s
+f o r e a c h r a d i a t o r a r e t a k e n a s 0.2 q t ;              t 3 e pump e f f i -
+c i e n c y f o r t h e d u c t i s t a k e n a s 1 0 0 p e r c e n t ; t h e r a t i o of
+open t o t o t a l f r o n t a l a r e a f
+ E ( C D /cL) = 0.1;
+        w
+                                  t h e f 1 u i d . i ~w a t e r ,    -
+                                                      i s t a k e n a s 0.650;
+                                                                      T,        Ti,  = 70' F.:
+t h e tube-wall. t h i c k n e s s i s 0.005 i n c h ; a n d t h e d e n s i t y ,
+t h e s u c c i f i c h e a t , a n d t h e v i s c o s i t y of t h e a i r a r e t a k e n
+a t 7'3.5O F.
+
+          The n e c e s s a r y d a t a a r e o b t a i n e d f r o m f i g u r e s 4 a n d 1 3 .
+F i g u r e 4 i s u s e d t o g i v e t h e v a r i a t i o n of t u b e v e l o c i t y
+w i t h t u b e l e n g t h f o r Ap = 25.6 l b . / s q . f t .         and s e v e r a l
+t u b e 5-iamet o r s , a s p r e v i o u s l y e x p l a i n e d .   Thcn , by means
+o f e q u a t i o n ( 1 0 ) w i t h Qt       from f i g u r e 6 and t h e h e a t -
+    t r a n s f o r d a t a from f i g u r e 1 3 ( e q u i v a l e n t t o p u t t f n g c l =
+    0.0247                                                            *
+                   i n e q u a t i o n ( l o ) ) , c u r v e s of --Z--
+                                                                  nD / 4
+                                                                            against
+    l e n g t h f o r t h e assumed c o n d i t i o n s a r e p l o i t e d i n f i g u r e 1 4 .
+
+              F i g u r e 1 4 d i f f e r s from f i g u r e 8 i n s e v e r a l r e s p e c t s .
+    The d a t a f o r f i g u r e 8 were o 3 t a i n e d from t h e e m p i r i c a l
+    e q u a t i o n s f o r f u l l y developed t u r b u l e n t flow, whereas t h e
+    d a t a f o r f i s u r e 1 4 a r e t h e r e s u l t s of measurements u n d e r
+    t h e a c t u a l flow conditions.                In a d d i t i o n , t h e e x i t l o s s i s
+    i n c l u d e d i n t h e p r e s s u r e l o s s e s u s e d t o o b t a i n f i g u r e 14,
+    but t h e e x i t l o s s w a s not considered f o r f i g u r e 8 ,
+
+
+              The S e l e c t i o n of Optimum R a d i a t o r Dimensi-ons
+
+            The power expended f o r c o o l i n g i s e q u a l t o                  QAp,      or
+
+    pD = QAp       =
+                       ( n ~ ~ / 4
+                                 V t) np
+                                             -- Vt Ap       foot-pounds p e r square
+                            n~'/4
+    f o o t o f open f r o n t a l a r e a ,
+
+              The d e s i g n Ap,        25.6 pounds p e r s q u a r e f o o t , t o g e t h e r
+    w i t h t h e v e l o c i t i e s from f i g u r e 6 , g i v e s t h e power f o r
+    c o o l i n g f o r a n y t u b e l e n g t h and d i a m e t e r .
+
+             The power expended i n c a r r y i n g a n d p r o p e l l i n g t h e
+    w e i g h t of t h e compl-ete r a d i a t o r i s a f u n c t i o n of t h e f l i g h t
+    s p e e d , t h e a e r o d y n a m i c c h a r a c t e r i s t i c s of t h e a i r p l a n e ,
+    a n d t h e t y p e of r a d i a t o r .       That i s , PIV = .E ( C D / c ~ wrVo:         )
+                                                                                  W
+    c (Cg / c ~ =
+                ) 0.1;             and      Vo = 200 a n d 300 m i l e s p e r h o u r
+             w
+    for the illustration.                    The r e m a i n i n g v a r i a b l e , W r ,   may
+    be a p p r o x i m a t e l y computed f o r round o r h e x a g o n a l t u b e s a s
+    a f u n c t i o n of L / D ,          of l e n g t h , a n d of t h e f r e e - a r e a r a t i o *
+    (See t h e appendix,)                 The method i s f o u n d t o check t h e
+    w e i g h t s o f t h e r a d i a t o r s u s e d by Harris a n d C a y g i l l ( r e f -
+    e r e n c e 6 ) w i t h i n 2 o r 3 pounds p e r s q u a r e f o o t of f r o n t a l
+    area.        T h i s v a r i a t i o n i s a b o u t t h a t e n c o u n t e r e d i n manu-
+    facture.
+
+              I f t h e h e a t d i s s i p a t e d i s d i v i d e d by t h e sum of t h e
+    p o w e r s expended f o r c o o l i n g a n d w e i g h t p r o p u l s i o n f o r a
+    p a r t i c u l a r tube diameter and l e n g t h , f i g u r e 15 i s o b t a i n e d ,
+                                                  H
+t
+    showing t h e v a r i a t f on of          -------
+                                               PD + Pm
+                                                              against length, f o r
+    t h r e e diameters and t w o a i r speeds.
+           F i g u r e 1 5 i s t h e s o l u t i o n t o t h e problem f o r t h e pre-
+  v i o u s l y mentioned c o n d i t i o n s .      T a b l a I1 compares t h e op-
+  timum v a l u e s of t h e s e c u r v e s f o r a n e n e r g y d i s s i p a t i o n of
+  500 horsepower,              I t i s now o f i n t e r e s t t o i n v e s t i g a t e t h e
+  e f f e c t of v a r i a t i o n s i n t h e s e c o n d t t i o n s .
+
+
+                                          TABLE 11
+
+            A COMPARISON OF THE OPTIlhUM RADIATOR-DIS I G N
+
+                             . SOLUTIONS        OF FIGURE 1 5
+
+     h n e r g q t o be d i s s i p a t e d , 5 0 0 hp.; Tw  T i a = 70' F.:  -
+----------              ------     ---I ---------------
+         Ap, 25.6 l b . / s q . f t . :     f , 0.650; c (CD,/CL). 0.13
+
+                                                                   Power urjea
+                                                                                  ------.--.----------
+
+                 D          L                                       PD -+ PP,  Frontal
+     0                                        (h~./sq*
+                                     I,                           (hp./sq.ft.    area
+(m.p.h.)      (ft.)      (2.)                 f t . open----                   r e quired
+                                     ij       f r o n t a l 'D+~V    'open
+                                                                    frontal    ( ~ q ** )
+                                                area)
+---------I----------
+                                 *----_______           ____ _ - _    area)
+                                                                              ---I--------               -------
+  200         1/96      0.58       55.7        111.6       11.92                      41.9                6.89
+
+              1/48      1 . 1 0 5 53.0        ,112.6         9.82                     50.9                6-82
+
+              1/32      1.50       48.0        107.6         8.31                     60.2                7.14
+----------------------____________________                   __-__.---.------------                         -. --
+
+  300         1/96 ,0.52           50.0        109.6         9.83                     50.9                7.01
+
+              1/48         .90     43.2        10'7.6        7,96                     62.8                7.14
+
+
+-    -      -
+              1 / 3 2 , 1 * 3 0 41.6
+                  -      -       -        1
+                                          -   ,
+                                              i
+                                               102.5
+                                               ,,-
+                                                 - ----  ,  -
+                                                             6.681
+                                                      ----------+-------
+                                                                ,  ,  -
+                                                                                      71.8                7.50
+
+
+                                   The Choice of            Ap
+
+            The Ap c h o s e n f o r t h e d e s i g n i s f u n d a m e n t a l i n de-
+  t e r m i n i n g t h e r e l a t i v e c o o l i n g e f f i c i e n c y of t h e r a d i a t o r .
+  In a n y p a r t i c u l a r p r o b l e m i t w i l l be n e c e s s a r y t o d e t e r -
+  mine b e f o r e h a n d t h e v a l u e o f t h e p r e s s u r e d r o p t o be u s e d
+  i n t h e r a d i a t o r design.          An u p p e r l i m i t i s s e t by t h e
+  cllmbing speed of t h e a i r p l a n e .                   The l o w e r l i m i t i s d e t e r -
+  mined by t h e         amount       of  s p a c e   a v a i l a b l e f o r t h e d u c t and       .
+  tho radiator.
+          T5e c h o i c e of t h e d e s i g n Ap i s made a s f o l l o w s : A
+p a r t i c u l a r tube diameter i s taken as f i x e d .                   Then, f o r
+each        11p c o n s i d e r e d , t h e t u b e v e l o c i t y , t h e h e a t t r a n s -
+f e r , t h e power u s e d f o r c o o l i n g , a n d t h e pomer u s e d f o r
+w e i g h t p r o p u l s i o n a r e c a l c u l a t e d f o r a s e r i e s of v a l u e s of
+L, The c o n d i t i o n s assumed a n d t h e c a l c u l a t i o n s a r e s h o w
+i n t a b l e 111.          T a b l e I11 i s u s e d t o c o n s t r u c t i i g u r e 1 6 ( a ) ,
+                                                                   H
+sbominp a p l o t of c o o l i n g e f f i c i e n c y .        ------     a~ainst
+l e n g t h f o r t h e v a r i o u s v a l u e s of      lip,
+                                                                PD  ' PIT
+                                                                  The optimum l e n g t h
+a n d t h e c o o l i n g e f f i c i e n c y f o r e a c h v a l u e of Ap from
+t h i s f i g u r e are u s e d t o c o n s t r u c t t a b l e I T , which compares
+t h e v a r i o u s v a l u e s of Ap on t h e b a s i s o f t k e power and.
+t h e f r o n t a l a r e a r e q u i r e d t o d i s s i p a t e 500 h o r s e p o n e r .
+D a t a f o r Ap = 6 . 4 l b . / s q . f t , a r e t a k e n f r o n f i g u r e s 6
+a n d 1 4 . F i g u r e l6(b) i s t h e n drawn, t h e v a l u e s f r o m t a b l e
+IT S e i n g u s e d . From f i g u r e 1 6 ( b ) i t i s e v i d e n t t h a t t h e
+c h o i c e o f Ap t o r e s u l t i n a n optimum c o o l i n g e f f i c i e n c y
+will be d e t e r m i n e d by t h e s p a c e l i m i t a t i o n s of t h e w i n s o r
+t h e engine n a c e l l e .        A l t h o u g h a f i x e d nump e f f i c i e n c y has
+been u s e d i n t h e s e c a l c u l a t i o n s , a d e c r e a s e d pump e f f i -
+c i e n c y v i l l p r o b a b l y be a s s o c i a t e d w i t h l a r g e v e l o c i t y r e -
+d u c t i o n s i n the duct entrance section.                      A s i m i l a r s e t of
+curves a i l 1 r e s u l t f o r any o t h e r tube d i a n e t e r s i n c e t h e
+optimum v a l u e s of f i g u r e l 6 ( a ) a r e p r i m a r i l y a f u n c t i o n
+of      L/D. Hence, t h e Ap c h o s e n from considerations of
+one t u b e d i a m e t e r w i l l s e r v e s a t i s f a c t o r i l y f o r t h e d e s i g n
+p r e s s u r e drop.
+                                      TABLE IT'
+
+  A COMPARISON OF THE OFTIMUM VALUES FROH FIGURE 1 6 (a)
+
+   [ E n e r ~t o~ be d i s s i p a t e d , 500 hp.; Tw         -T i a = 70'
+         f , 0.750: TD,   - . "
+                                100 p e r c e n t : E (GD,/cL), 0.1;
+                    T o , 300 m.p.h.;         D, 1 / 4 8 f t . f
+
+
+      4                     L                                                requ.ired
+
+(lb./sq.ft.)           (ft.)                                                 (sq. f t . )
+
+      6.4             0.36                                                    13.00
+
+    25.6                                                                       5.99
+
+    40.0                                                                       4.63
+                                                         I
+     64.0                                       187.5ii      80.0              3.55
+
+   100.0                                                                       2.81
+
+
+
+           I t i s a p p a r e n t from t a b l e IV t h a t t h e c o o l i n g e f f i -
+c i e n c y i n c r e a s e s a s t b e Ap d e c r e a s e s .       These c o o l i n g
+e l f i c i c n c i e s a r e , however, f o r r a d i a t o r s of v a r y i n g
+l e n g t h s . A c c o r d i n g l y , c o m p u t a t i o n s mere made t o n s c e r -
+tain t h e v a r f a t i o n of c o o l i n g e f f i c i e n c y f o r a g i v e n r a d i -
+a t o r a s t h e Ap changes o v e r a wide range.                       F o r t h i s pur-
+p o s e , e q u a t i o n s ( 6 ) and ( 8 ) were combined t o g i v e
+
+
+
+
+mhere       2     i s given i n S.t.u./sec.
+
+          7%, i n f.p.s,
+
+            p,    i n slugs/cu.           ft.
+
+            g,    in f t . / ~ e c . ~
+
+The d a t a f o r      Vt       and   h     f o r each value o f        Ap     a r e ob-
+t a i n e d Zrom f i g u r e s 4 a n d 1 3 , r e s p e c t i v e l y ,    Figure 17
+
+shows t h e c o o l i n g e f f i c i e n c y    ?;-;a,
+                                                   H
+                                                        plotted against n p
+f o r a standard-type r a d i a t o r under t h e conditions given i n
+the figure,             It i s s e e n t h a t <he c o o l i n g e f f i c i e n c y r e a c h e s
+a naximum a t a Ap of 13.5 pourids p e r s q u a r e f o o t f o r t h e
+s t a t e d c o n d i t i o n s , whereas t h e c o o l i n g e f f i c i e n c y f o r t h e
+optimum Oesign a t e a c h Ap                 (fig. I S ( % ) ) i n c r e a s e d w i t h
+d e c r e a s i n g Bp a s l o n g a s t h e t y p e of f l o w remained un-
+changed.
+
+                  The V a r i a t i o n i n Pump E f f i c i e n c y
+
+          F i q r e 1 8 shows t h e e f f e c t of r e d u c i n g t h e pump e f f i -
+c i e n c y from 1 0 0 t o 80 p e r c e n t ,           I n t h i s c a s e , t h e power
+exgended f o r c o o l i n g , q A p / q p ,            i s increased; the efficien-
+c y of c o o l i n g i s r e d u c e d ; a n d t h e peak of t h e c u r v e i s
+moved i n t h e d i r e c t i o n of l o n g e r t u b e l e n g t h s . Harris and
+R e c a n t ( r e f e r e n c e 7 ) p r e s e n t d a t a on pump e f f i c i e n c y f o r
+ainq ducts.
+
+
+        V a r i a t i o n of t h o R a t i o o f Open t o F r o n t a l A r e a ,         f
+
+          The h e a t d i s s i p a t i o n p e r s q u a r e f o o t o f open f r o n t a l
+area i s , o f c o u r s e , u n a f f e c t e d ,       The v a r i a t i o n o f f       in-
+t r o d u c e s two i m p o r t a n t c h a n g e s , b o t h o f which a f f e c t t h e
+w e i g h t of t h e r a d i a t o r .     An i n c r e a s e i n f w i l l d e c r e a s e
+t h e m a t e r c a p a c i t y of t h e r a d i a t o r a n d t h e f r o n t a l a r e a
+f o r an;? r e q u i r e d q u a n t i t y of h e a t d i s s i p a t i o n .    The maxi-
+m u m v a l u e of f          f o r a p a r t i c u l a r t u b e w i l l be d i s c u s s s d
+on t h e basis of a minimum d e s i r a b l e m a t e r - p a s s a g e w i d t h .
+
+        Somewhat a r b i t r a r i l y , t h e mininum w a t e r - p a s s a g e w i d t h
+i s s e t a t 0 , 0 2 8 i n c h i n o r d e r t o a s s u r e open w a t e r w a y s a n d
+a m o d e r a t e e x p e n d i t u r e o f power f o r pumping.       The t h i c k -
+n e s s o f t h e t u b e m e t a l i s t a k e n a s 0.005 i n c h .     The f r e e -
+a r e a r a t i o f o r t h e s e c o n d i t i o n s can now be c a l c u l a t e d from
+geometric considerations.                     (Scc t a b l e V , )
+                                               TABLE V
+
+THS EFFECT OF TUBE SEAPE AND SIZE UPON THE FREE-ASEA R A T I O
+
+            [ w a l l t h i c k n e s s , 0.005 i n . ; minimum m a t e l - p a s s a g e
+                                           w i d t h , 0.028 i n ,
+------- .---.------------------                 _ ___                       --------------     - - --
+Radiator
+----.-...-..---
+          A
+
+           3
+
+           C
+                         i    Tube s h a p e
+                          -----_-___
+                                 Round
+
+                                   do.
+
+                                   do.
+                                                IiI
+                                                  !
+                                                  I
+                                                          Inside diameter
+                                                               (ft.
+                                                      -I-_-_-___I-----
+
+
+
+
+                                                                1/96
+
+                                                                1/48
+
+                                                                1/32
+                                                                                  41    Free-area
+                                                                                        ratio,
+                                                                                          0.465
+
+                                                                                             .60
+
+                                                                                             .65
+                                                                                                  f
+
+
+
+
+                                                  I                                I
+           D                  Hexagonal           i             1/96                         .59
+
+
+
+
+---------
+           E
+           F
+                        1 ---------
+                                   do.
+
+                                   do.
+                                   ----A
+                                                  i             1/48
+
+                                                                1/32
+
+
+          Fie diameter f o r t h e hexagonal tube i s t h e d i s t a n c e
+a c r o s s t h e f l a t s , equal t o t h e hydraulic diameter.
+                                                                                   1         .75
+
+
+
+
+         F i q u r e 19 shows t h e variation o f c o o l i n g e f f i c i e n c y
+with length f o r these radiators.                Table V I l i s t s Shese
+r a d i a t o r s a t t h e peak v a l u e s . The c o r r u g a t e d - t u b e r a d i a -
+t o r i s i n c l u d e d f o r comparison.
+
+         O n t h e b a s i s of t h i s a n a l y s i s , t h e h e x a g o n a l t u b e i s
+shown t o be s u p e r i o r t o t h e r o u n d t u b e .        N e i t h e r t u b e ap-
+p e a r s t o h a v e a n y a d v a n t a g e from a c o n s i d e r a t i o n o f e a s e
+of c o n s t r u c t i o n .
+
+                         The E f f e c t of V a r i a t i o n i n      cD,/cL
+           The power u s e d t o c a r r y t h e w e i g h t o f . t h e r a d i a t o r i s
+ E      (CD,/cL) Fr Po.     Thus a v a r i a t i o n i n c D , / C ~       w i l l pro-
+duce e x a c t l y t h e same e f f e c t a s                   proportional variation
+in                Vo.   F i g u r e 1 5 g i v e s t h e p l o t of        E
+                                                                       ------
+                                                                       against
+                                                        PD + l q r
+L e n g t b f o r v e l o c i t i e s of 200 a n d 300 n i l c s p e r h o u r w i t h
+C ( c ~ , / c ~ ) c o n s t a n t a t 0.1.     Tho same f i g u r e can be u s e d
+t o show t h e v a r i a t i o n of                   E   (CD,/CL)     by k c o p i n g      Vo = 200
+m i l e s y e r hour and g i v i n g       (CD,/GL)
+                                                E          t h e value of 0.1 f o r
+t h e u p g e r c u r v e a n d of 0.15 f o r t h e l o w e r c u r v e o r , a l t e r -
+n a t e l y , by k e e p i n g To = 300 m i l e s p e r h o u r a n d g i v i n g
+ E (CD /CL)         t h e v a l u e of 0.1 f o r t h e l o w e r c u r v e a n d of
+        PP
+0.067 f o r t h e upper curve,                 Inasmuch a s t h e v a l u e of
+ E (CD,/CL)           i s f i x e d . by t h e p a r t i c u l a r a i r p l a n e c o n s i d e r e d ,
+i t n i l 1 a f f e c t t h e d e s i g n c o n s i d e r a t i o n s o n l y as i t a f f e c t s
+t h e v a l u e o f t h e t u b e l e n g t h f o r t h e maximum c o o l i n g e f f i -
+ciency,         This f a c t i s i l l u s t r a t e d i n f i g u r e 1 5 , t h e curves
+b e i n g i n t e r p r e t e d a s suggested.
+
+
+ Thc E f f e c t of Changes i n t h e A i r C o n s t a n t s Duo t o H e a t i n g
+
+        ------  e c t on t h e h e a t d i s s i p---
+      Thc e f f -l..__-l_l___-----------          ted.-                 Consider equation
+(3.0) i n t h e f o l l o w i n g form:
+                                                                                           4
+
+
+
+
+         Tie change i n            cp-
+                                         w i t h ,temperature i s n e g l i g i b l e .
+C o n s i d e r t h e e f f e c t of a change i n t h e v a l u e of t h e v i s -
+c o s i t y 1.       A change i n a i r t e m p e r a t u r e from 32' F. t o
+122' F, w i l l change p from 0,0172 t o 0.0193, a b o u t 2 p e r -
+cect in                     Thus, by t a k i n g a n a v e r a g e v a l u e f o r P,
+t h e c h a n s e would be a b o u t 1 p e r c e n t i n t h e e x p o n e n t .       The
+maxinum v a l u e of            B and t h e , L / D f o r t h e maximum v a l u e
+a r e not affected.               F o r v a l u e s of L/D b e l o a 35, h o w e v e r ,
+t h e h e a t d i s s i p a t i o n i n c r e a s e s by a b o u t 1 p e r c e n t . For
+v a l u e s o f L/D o v e r 4 0 , thc e f f e c t i s a f r a c t i o n of 1
+p e r c e n t a n d can be n e g l e c t e d .
+
+          I n e q u a t i o n ( 1 0 1 , t h e d e n s i t y o c c u r s o n l y i n t h a com-
+b i n a t i o n pVt.         T h e r e f o r e , i f t h e mass f l o w o f a i r t h r o u g h
+the radiator            i s  k e p t c o n s t a n t , t h e v a r i a t i o n i n p due t o
+h e a t i n g w i l l n o t a f f e c t t h e h e a t t r a n s f e r b e c a u s e pTt
+w i l l n o t change,            T h i s c o n d i t i o n o f . c o n s t a n t mass a i r f l o w
+w i l l n e c e s s i t a t e an i n c r e a s e i n t h e p r e s s u r e drop a c r o s s           '
+
+
+t h e r a d i a t o r w i t h s c o r r e s p o n d i n g chsnge i n t h e power r e -
+quired f o r cooling,
+
+         ............................
+         The e f f e c t on t h e power f o r p ------
+                                                ooling.-                    For a h e a t e d
+r a d i a t o r , t h e p r e s s u r e drop a c r o s s t h e r a d i a t o r i s equal
+t o t h e d i f f e r e n c e i n t o t a l p r e s s u r e (fig. 2 0 ) :
+
+
+
+
+     -- Dl =P2 -f
+                       6   p2 v2"    -1 2 p1 T1 2
+                                                ,
+                                                        ' ( n e g l e c t i n g end l o s s e s )
+
+
+
+
+v h e r e t h e v a r i a t i o n i n p due t o h e a t i n g a n d p r e s s u r e
+change a l o n g t h e t u b e i s c o n s i d e r e d .      The p r e s s u r e e f f e c t
+b e i n g p r e s e n t f o r a c o l d r a d i a t o r , i t w i l l n o t be i n c l u d e d
+i n tho corrections.
+
+        A c c o r d i n g t o t h e momentum t h e o r e m ,
+
+
+
+where      Apf      i s t h e d r o p i n p r e s s u r e due t o s k i n f r i c t i o n
+
+
+
+
+Then
+
+
+                        + a n end l o s s       0 . 1 p2 Vz2                              (16)
+
+n e g l e c t i n g t h e p r e s s u r e chance a l o n g t h e t u b e .     The change
+i n Ap upon h e a t i n g t h e r a d i a t o r and k e e p i n g pV con-
+s t a n t a r i s e s from t h e t e r m s on t h e r i g h t - h a n d s i d e of equa-
+t i o n ( 1 6 ) . The i n c r e a s e d v e l o c i t y of t h e a i r i n t h e t u b e
+w i l l r e s u l t i n a l a r g e r p r e s s u r e l o s s due t o s k i n f r i c t i o n .
+The s e c o n d t e r m on t h e s i g h t r e p r e s e n t s t h e i n c r e a s e i n
+p r e s s u r e d r o p a s a r e s u l t of a n a , d d i t i o n of momentum t o
+t h e a i r i n p a s s i n g through t h e r a d i a t o r .        A s m a l l portion
+of t h i s added momentum i s c o n v e r t e d i n t o t o t a l p r e s s u r e ,
+r e d u c i n g t h e momentum p r e s s u r e d r o p by a f a c t o r f '/2.
+F i n a l l y , t h e end l o s s s l i g h t l y i n c r e a s e s by r e a s o n of t h e
+h i g h e r v a l u e of t h e e x i t v e l o c i t y .
+
+        Lorenz      (reference 5 ) f i n d s t h a t , f o r various values
+of   T,      -
+          Tia,    t h e value of h p f l q t reriains c o n s t a n t and
+equal t o that f o r the cold radiator.       Then, s i n c e Apf/qt
+i s constant f o r the various radiator temperatures,
+
+          @pf 1                                         -2
+                                                   " 1 p 3J 2        ----1
+               heated                      mean                      m
+                                                                     f' ean
+
+using        p Y
+                 1   1
+                         = paV2   -
+                                    'mean
+                                               V    .
+                                                 mean
+                                                           This r e l a t i o n s h i p w i l l
+g i v e t h e i n c r e a s e i n Opf          f o r a gfven change i n t h e den-
+sity    of     t h e a i r mith s u f f i c i e n t accuracy f o r design pur-
+poses.         Capon ( r e f e r e n c e 8 ) shows from t h e o r e t i c a l c o n s i d -
+e r a t i o n s t h a t , f o r values of            L/D o f a b o u t 4 0 , t h e i n -
+c r e a s e i n t h e s k i n - f r i c t i o n t e r m i s a b o u t 0.3 t h e momentum
+term.        No d a t a a r e a v a i l a b l e f o r l o n g e r t u b e l e n g t h s .
+
+          T h e magnitude of t h e e f f e c t may be computed f o r one
+of t h e r a d i a t o r s t e s t e d :   Gongider a r a d i a t o r w i t h L =
+5 inches,          D = 1 / 8 i n c h , L/D = 4 0 , f = 0.6.            Take the
+i n i t i a l c o n d i t i o n s a t 73.5O F. w i t h V1 = 1 3 0 f e e t p e r s e c -
+ond.        Then
+                                      ..
+V l = 1 3 0 f .p.s.:         and. taking      AT,=2?O        F. ,i   T,=560°     F. absolute
+                                                                 !
+p1 = O ? 00231             I u s i n g pl Vl =pa   Q2            1 pa=0.00220
+
+
+                                                                 i
+Then
+
+
+
+End l o s s ,        = 3.9   lb,/.sq.ft.                End l o s s a =, 4 . i   ib./sq.ft.
+
+Momentum change = p, Vl 2
+                f2 \
+
+
+
+
+--
+" = 1.10 tar f i g . 4 )
+ 9
+                                                                          =22.0 l b . / s q . f t .
+                                                               'heated
+
+Apl    total=25.4 lb./sq.ft.              (cold)       Ap,    total=27.7 lb./sq.ft.
+                                                                     (heated)
+
+The c a l c u l a t e d change i n p r e s s u r e i s 9 . 0 p e r c e n t .          The ob-
+served i n c r e a s e i s about 6 percent.
+
+          The c o n d i t i o n of c o n s t a n t mass a i r f l o w , assumed t o
+s i m p l i f y t h e f o r e g o i n g d i s c u s s i o n , c a u s e d a change i n t h e
+b? r e q u i r e d .      From d e s i g n c o n s i d e r a t i o n s , t h e a v a i l a b l e
+p r e s s u r e drop i s t h e independent v a r i a b l e ,                It i s n e c e s -
+s a r y t o s t a r t w i t h t h i s q u a n t i t y t o compute t h e mass a i r
+f l o w a n d , f i n a l l y , t h e power r e q u i r e d f o r c o o l i n g .
+
+          From e q u a t i o n ( 1 6 ) , i t f o l l o w s t h a t t h e i n c r e a s e i n
+p r e s s u r e c a u s e d by h e a t i n g t h e r a d i a t o r i s
+
+
+        4 v1      (ip - j    1    (1 * 1 "   )'2
+                                                                    'T,
+                                                                   T,+T,
+                                                                          -T
+                                                    + (4 p i ) 1 (-------A)                 (1'7)
+
+
+         F i g u r e 4 m i l l p r o v i d e t h e v e l o c i t y of t h e a i r i n t h e
+tube        T1 f o r a g i v e n a v a i l a b l e Ap.            Equation (17) m i l l
+then give t h e i n c r e a s e i n t h e p r e s s u r e drop a f t e r c o r r e c t -
+i n g f o r t h e temperature, r i s e expected.                    Figures similar
+t o 6 , 1 4 , and 15 a r e then c o n s t r u c t e d , u s i n g t h e reduced
+Ap f o r a co'ld r a d i a t o r .          A s p r e v i o u s l y e x p l a i n e d , t h e mass
+f l o w of a i r c a l c u l a t e d f o r t h e c o l d r a d i a t o r a t t h e r e -
+d u c e d Ap m i l l r e m a i n a s t h e mass a i r f l o w f o r t h e h o t
+r a d i a t o r a t t h e g i v e n Ap.        I n t h e c a l c u l a t i o n o f t h e PJJ
+o r V t Ap,          t h e Ap u s e d i s t h e a c t u a l p r e s s u r e d r o p a n d
+p       v, + v2 ,
+      = -------.--        I n t h e computrztion of t h e c o o l i n g e f f i c i e n -
+             2
+c y f o r f i g u r e 1 5 , t h e power f o r c o o l i n g i s a d d e d t o t h e
+power f o r c a $ r y i n g t h e w e i g h t o f t h e r a d i a t o r .
+
+
+          The E f f e c t of a Change i n A l t i t u d e 'upon t h e
+                              Badiator Efficiency
+
+          Mesed.ith ( r e f e r e n c e 9 ) i n a n a n a l y s i s of t h e e f f e c t
+of a l t i t u d e on c o o l i n g e f f i c i e n c y f o u n d t h e d e n s i t y a s a
+f u n c t i o n of t h e t e n p e r a t u r e .  This function v a r i e s with
+the coolant and the i n i t i a l temperature difference.                              Any
+s o l u t i o n o f t h e n r o b l e m i s b a s e d on t h e s t a n d a r d ntmos-
+p h o r e ( r e f e r e n c e l o ) , which i t s e l f i s s t a n d a r d . o n l y u n d e r
+r a r c l y r e a l i z e d s p e c i f i e d atmospheric conditions.
+
+         A g e n e r a l method of a s c e r t a i n i - n g t h e e f f e c t , of a l t i -
+t u d e upon t h e r a d i a t o r p e r f o r m a n c e f o r a s u p e r c h a r q e d en-
+g i n e i s needed.        For t h e c a s e of n c o n s t a n t d u c t - o x i t open-
+ing, i t i s poasiblc to evaluate the decrease i n heat dis-
+s i p a t i o n under s p e c i f i c f l i g h t c o n d i t i o n s f o r i n c r e a s i n g
+altitudes.
+
+        E q u a t i o n ( 1 0 ) i s u s e d i n t h o f o l l o w i n g form:
+
+
+----
+  E    = 2 . 7 5 ~ 1 0 p~ v ~ ( T , - T ~ , )
+nD / 4
+where
+           2
+        ---           i s in B.t.u./hr./sq,ft,                02 open f r o n t a l are?,.
+        ,TJZ/i
+
+
+
+
+         The problem r e d u c e s t o o b t a i n i n g t h e v a r i a t i o n of p ,
+p,     T        T i        a n d Vt w i t h a l t i t u d e ; e q u a t i o n ( 1 0 ) i s     ,
+
+
+
+t h e n nsed f o r t h e h e a t d i s s i p a t i o n .      The v a l u e f o r t h e a i r
+d e n s i t y a t a l t i t u d e may be c o r r e c t e d f o r t h e a d i a b a t i c
+compression i n t h e duct before t h e r a d i a t o r .                    The conver-
+s i o n of dynamic p r e s s u r e t o s t a t i c p r e s s u r e m i t h i n t 5 e
+d u c t i n c r e a s e s t h e a i r d e n s i t y a n d t h e t e m p e r a t u r e of t h e
+air,         he q u a n t i t a t i v e i n c r e a s e i n t h e t e m p e r a t u r e of t h e
+a i r i s l a t e r d i s c u s s e d i n t h e s e c t i o n e u t i t l e d The J e t -
+Progulsion Effe'ct. )
+
+         F o r t h e p a r t i c u l a r a i r p l a n e , i t i s n e c e s s a r y t o know
+t h e v a r i a t i o n , a f v e l o c i t y w i t h a l t i t u d e and t h e v e l o c i t y
+o f t h e a i r i n t h e t u b e f o r She d e s i g n a l t i t u d e a n d c o n d i -
+tions.          For a c o n s t a n t a u c t - e x i t opening,         Vt      i s directly
+p r o p o r t i o n a l t o To.        Hence, t h e v a r i a t i o n of Vt            and
+pVt      w i t h a l t i t u d e nay be computed.
+
+        The q u a n t i t y T,
+coolant used.
+                                     -  T i a v a r i e s w i t h a l t i t u d e and t h e
+                            B y a c o m b i n a t i o n of t h e f o r e g o i n g d a t a , t h e
+h e a t d i s s i p a t i o n may bc o b t a i n e d f o r a n y a l - t i t u d e , a s
+shown 3y t h e f o l f o w i n g example.
+          The r a d i a t o r i s d e s i g n e d f o r s e a - l e v e l o p e r a t i o n ;
+D = 1-/48 f o o t , L/D = 5 0 , V t = 1 5 0 f . p . s.                        It i s desired
+t o detcrrninc t h e v a r i a t i o n of h e a t d i s s i p a t i o n m i t h a l t i -
+t u d e a t a c o n s t a n t e x i t s e t t i n g f o r l e v e l f l i ~ h ta t maxi-
+mum s p e e d .      The p e r f o r m a n c e c a l c u l a t i o n s s i v e t h o v a r i a -
+t i o n o f f l i z h t v e l o c i t y Vo          n i t h a l t i t u d e , a s shonn i n
+f i q u r e ?1.      N e x t , t h e v a r i a t i o n of       Vt      ~ i t ah l t i t u d e i s
+comyutcd.           In t h e colilputation o f                pVt      at a l t i t u d e , the
+v a l u e of      p f o r t h e f r e e 2ir s t r e a m i s u s e d .               Vith water
+2s c o o l a n t a n d Tw t a k e n x t 27O F , below t h e b o i l i n g tern-
+qerature at the p a r t i c u l a r a l t i t u d e ,                -
+                                                                     T,      Tia      is easily
+obtained.           S i m i l a r l y , n i t h g l y c o l as c o o l a n t , T           i s tnken
+a t 52' 3'. below t h e b o i l i n g p o i n t f o r a 3 7 - p e r c e n t g l y c o l
+solution.           The v a l u e s f o r Ti,             a r e f o r t h e s t a n d a r d atmos-
+phere.        The n e c e s s a r y c a l c u l a t i o n s a r e shown i n t a b l e V I E .
+The c?zan%e i n h e a t d i s s i p a t i o n n i t h a l t i t u d e i s p l o t t e d i n
+f i q u r e 2 2 f o r b o t h t h e rveter a n d t h e g l y c o l r a d i a t o r s .
+The d . e c r e a s e i n h e a t d i s s i p a t i o n v i t h a l t i t u d e i s n o t so
+s e r i o u s above t h e r a t e d a l t i t u d e b e c a u s e , a f t e r t h a t p o i n t ,
+t h e r e q u i r e d amount of h e a t d i s s i p a t i o n d e c r o z s e s .
+
+          T i t h a constant. e x i t s e t t i n g , t h e decrease i n h e a t
+d i s s i p a t i o n w i t h i n c r e a s e i n a l t i t u d e is g r e a t e r f o r a
+g l y c o l r a d i a t o r t%an f o r a water r a d i a t o r .           The r e a s o n f o r
+t h i s d i f f e r e n c e i s t h a t t h e v a r i a t i o n of a i r t e m p e r a t u r e
+w i t h a l t i t u d e makes a L a r g e r p e r c e n t a g e change i n t h e t e n -
+p c r a t u r e d i f f e r e n c e b e t n e ~ na i r a n d c o o l a n t f o r t h o w a t e r
+r a d i a t o r than f o r the glycol radiator.
+
+           The np r e q u i r e d f o r a c o n s t a n t r a t e of h e a t d i s s i -
+p a t i o n mas c a l c u l a t e d by means o f e q u a t i o n ( 1 2 ) aild i s
+shown i n t a b l e V I I .              In a d d i t i o n , t h e r e q u i r e d v e l o c i t y
+of t h e a i r i n t h e t u b e , the poder f o r c o o l i n g , and t h e
+c o o l i n g e f f i c i e n c y f o r a c o n s t a n t r a t e of h e a t d i s s i p a -
+t i o n a r e shown.            A n e x z m i n a t i o n of t h e s e columns w i l l r e a d -
+i l y shon t h e i m p o r t a n c e of d e s i g n i n g t h e r a d i a t o r f o r con-
+d i t i o n s a p p r o x i m a t i n g t h o s e t o be e n c o u n t e r e d i n o p e r a -
+tion.          F o r e x a m p l e , t h e power u s e d f o r c o o l i n g w i l l h a v e
+d o u b l e d a t 20,000 f e e t f o r t b e g l y c o l r a d i a t o r even m i t h
+t h e a s s u m p t i o n t h t t h e pump e f f i c i e n c y h a s r e m a i n e d con-
+stant.           The i n c r e a s e i n                      w i t h a l t i t u d e may c a u s e
+c i i f f i c u l t y i n d i s s i p t i t i n g t h e r e q u i r e d . amount of h e a t a f -
+t e r n certain altitude.                        Table VII i s n o t intended t o qive
+a conpa.rison of t h e a l t i t u d e p e r f o r m a n c e c h a r a c t e r i s t i c s
+f o r water and g l y c o l r a d i a t o r s .               The same d e s i g n n a s c h o s e n
+f o r b o t h c o o l c n t s t o f a c i l i t a t e c o m p u t z t i o n of t a b l o V I I ,
+a n d n e i t h e r d e s i g n I s ogtimum f o r t h e c o n d i t i o n s a s s u n e d .
+
+          The p r e c e d i n g c a l c u l a t i o n s n e g l e c t e d t h e c o r r e c t i o n s
+t o t h e i n l e t - a i r temperature and d e n s i t y f o r t h e a d i a b a t i c
+compression i n t h e duct-entrance s e c t i o n ,                         Where o n l y r e l -
+a t i v e v a l u e s f o r 'the h e a t d i s s i p a t i o n a t a l t i t u d e a r e r e -
+q u i r e d , t h e u s e of t h e u n c o r r e c t e d v a l u e s i n t r o d u c e s v e r y
+l i t t l e error.
+
+                        SHAPE OF THE I N D I V I D U A L TUBE
+
+
+          The t e s t s on s i n g l e t u b e s shoved t h a t s q u a r e a n d r e c -
+t a n s u l a r t u 3 e s h a d t h e same f r i c t i o n a l r e s i s t a n c e i n t h e
+t u r b u l e n t r e g i o n a s r o u n d t u b e s of t h e same h y d r a u l i c diam-
+eter,         It i s s a f e t o p r e d i c t , thert, t h a t t h e h e a t d i s s i p a -
+t i o n f o r the square, hexagonal, o r rectangular tubes m i l l
+a l s o be t h e same a s f o r t h e round- t u b e s .                Indeed, t h e heat-
+t r a n s f e r e q u a t i o n s g i v e n f o r s i n g l e t u b e s may be a p p l i e d
+t o t h c n o n c i r c u l a r t u b c s by u s i n g t h e i r h y d r a u l i c d - i a m e t e r s .
+The oi2ly d i f f c r e n c e s t h a t s h o u l d a p p e a r w i t h v a r i o u s l y
+s h a p e d t u b e s s h o u l d be i n t h e b e a t t r a n s f e r from l i q u i d t o
+t u b e w a l l , t h e power r e q u i r e d t o f o r c e t h e l i q u i d t h r o u g h
+t h e r a d i a t o r , t h o w e i g h t of t h o r a d i a t o r f i l l e d , t h e e n d
+l o s s e s , and t h e f r e e - a r e a r a t i o .
+
+          Tor e x a m p l e , r a d i a t o r s f o r m e d o f h e x a g o n a l o r r e c t a n -
+~ u l a rt u b e s , w h i c h h a v e u n i f o r m l i q u i d p a s s a g e s , m i l l be
+l i g h t e r on a c c o u n t of s m a l l e r l i q u i d ' c a p a c i t y , ! y i L l r e q u i r e
+l e s s I r o n t s l a r e a , a n d m a g r e q u i r e more power t o f o r c e t h e
+l i q u i d through t h e r a d i a t o r ,           Of t h e s e e f f e c t s , t h e o n e s
+o f g r e a t e s t importance          -   l i q u i d c a p a c i t y and f r o n t a l a r e a
+h a v e Been c o n s i d e r e d u n d e r t h e s e c t i o n I n s t a l l a t i o n w i t h i n
+                                                                                                        -
+a Wing o r a n E n g i n e I T s c e l l e .
+
+          Some r a a i a t o r s h a v e b e e n b u i l t w i t h i r r e g u l a r l y s h a p e d
+a i r ? ? a s s a g e s , s u c h a s t h e c o r r u g a t e d t u b e s shown i n f i g u r e
+10.       Such s h a p e s a r e u s e d i n a n a t t e m p t t o p r o d u c e g r e a t e r
+m i x i n g of t h e h o t a i r n e a r t h e t u b e v n l l w i t h t h e c e n t r a l
+c o r e of a i r .        O b v i o u s l y , t h e d e s i r e d r e s u l t can be e a s i l y
+a c c o m p l i s h e d i n a v a r i e t y of n a y s .
+
+         The v a r i a t i o n of t h e b e a t - t r a n s f e r c o e f f i c i e n t w i t h
+R e y n o l d s Number f o r t h e c o r r u 5 a t e d - t u b e r a d i a t o r i s shown
+i n f i g u r e 13.      I n o r d e r t o a p p l y t h e f o r m u l a s a n d t o con-
+pare t h i s r a d i a t o r with the o t h e r types t e s t e d , each tube
+i s c o n s i d e r e d t o have 3 s q u a r e c r o s s s e c t i o n w i t h s i d e a .
+Then a = 0.410 i n c h and L = 23.7 i n c h e s .                        In addition,
+f i g u r e 5 shows t h e i s o t h e r m a l f r i c t i o n f a c t o r f o r t h i s
+r a d i a t o r a s a f u n c t i o n of t h e Reynolds Number.
+
+          F o r a Ap of 25.6 p o u n d s p e r s q u a r e f o o t , t h e h e a t
+d i s s i p a t i o n p o r u n i t open f r o n t a l a r e a as a f u n c t i o n of
+l e n g t h i s g i v e n by f i g u r e 1 4 .     It i s Bvident t h a t , f o r
+e q u a l v q l u e s of L/D o r e q u a l l e n g t h s , t h e cor'sugated-
+tube r a d i a t o r i s d e f i n i t e l y i n f e r i o r i n h e a t - d i s s i p a t i n g
+ability.
+
+          The lorn v a l u e of t h e a i r v e l o c i t y t h r o u g h t h e - t u b e
+red-uces t h e Beynolds Num3er t o s u c h a n e x t e n t t h a t t h e e f -
+f e c t of t h e h i g h e r v a l u e of t h e h e a t - t r a n s f e r c o e f f i c i e n t
+f o r a g i v e n R e y n o l d s Number i s n u l l i f i e c ? and, t h e h e a t
+d i s s i p a t i o n i s reduced.             T a b l e TI compares t h o c o o l i n g e f -
+f i c i e n c i e s f o r a corrugated-tube r a d i a t o r with s e v e r a l
+c i r c u l a r - a n d h e x a g o n a l - t u b e r a d i a t o r s u n d o r t h e same con-
+ditions.
+
+                   CONDITIOITS OF FLOB AROUND THE TUBES
+
+
+          I n t h e m a t e r i a l i n t h e s e c t i o n S i n g l e Tubes,            the
+v a r i a b l e s a f f e c t i n g f r i c t i o n l o s s a n d h e a t t r a n s f e r mere
+considered f o r t h e i n s i d e of the tube.                       The phenomena i n -
+v o l v e d f o r t h e o u t s i d e of t h e t u b e must a l s o be c o n s i d -
+eyed.         The same f u n d a m e n t a l p r i n c i p l e s r u l e i n t.he t r a n s -
+f e r of h e a t from t h e l i q u i d t o t h e o u t s i d e o f t h e t u b e
+a s f r o m t h e t u b e t o t h e f l u i d on t h e i n s i d e .            The l i q u i d
+may f l o w p e r p e n d i c u l a r o r p a r a l l e l t o t h e t u b e s .
+
+        .The f a c t t h a t t h e same phenomena o f f r i c t i o n l o s s a n d
+h e a t t r a n s f e r e x i s t f o r t h e o u t s i d e of t h e t u b e s a s f o r
+t h e i n s i d e would a p p e a r t o make c o n d i t i o n s on t h e o u t s i d e
+a s much of a p r o b l e m f o r stucly a s c o n d i t i o n s on t h e i n s i d e .
+The o v e r - a l l h e a t - t r a n s f e r c o e f f i c i e n t h t from l i q u i d
+t o a i r i s g i v e n by
+
+
+
+
+      I f e i t k e r ha o r hI           i s s m a l l , the t o t a l thermal re-
+sistance l/ht         i s l a r g e l y d e t e r m i n e d by t h a t p a r t i c u l a r
+term.    In nost liquid-to-air radiators,                      l/ha      i s much
+l a r g e r than 1            a n d l / h l . can be i i e g l e c t e d . I t may
+e a s i l y happen t h a t , n i t h low l i q u i d v e l o c i t i e s , h l w i l l
+bccomo small enough s o t h a t t h e t h e r m a l r e s i s t a n c e l / h l
+mil.1 b e i m p o r t a n t .
+
+          I n t h e f o r e g o i n g r a d i a t o r d e s i g n , ha        i s taken equal
+t o h t , a n d a method of cornputins t h e t u b e l e n g t h a n & t h e
+number o f t u b e s f o r e a c h p a r t i c u l a r c a s e i s g i v e n .            I n ad-
+d i t i o n , a c e r t a i n w a t e r - p a s s a g e a i d t h i s t a k e n a s optimum.
+Thus, f o r t h e c h o s e n t u b e d i a m e t e r , the f r o n t a l a r e a of
+the radiator i s fixed.                   S i n c e no c o n d i t i o n s have beon pos-
+t u l a t e d c o n c e r n i n g t h e a r r a n q o m e n t of t h i s r e q u i r e d f r o n t a l
+a r e a i n t o a n y p a r t i c u l a r form, i t f o l l o w s t h a t t h e w i d t h
+a n d t h e d e p t h ( f i g . 2 3 ( a ) > may be v a r i e d t o f i t a d e s i r e d
+i a s t z l l a t i o n within the l i m i t a t i o n t h a t the product a d i s
+c o n s t a n t ( f i g . 2 3 ( b ) ).     C o n s i d e r a t i o n s of t h e w a t e r f l o w
+a r o u n d t h e t u b e s , howovor, l e a d t o t h o c s t a b l i s h m o n t o f
+c r i t e r i o n s f o r maxlmum p e r m i s s i b l e v a l u e s f o r e i t h e r m
+o r d.
+
+          The q u z n t i t y of h e a t d . i s s i p a t e d f o r a p a r t i c u l a r de-
+s i g n i s d e t e r m i n e d by t h e o v e r - a 1 1 h e a t - t r a n s f e r . c o e f f i -
+c i e n t a n d t h e t e m p e r a t u r e d i f f e r e n c e between t h e two f l u i d s .
+In order t o maintain a constant heat d i s s i p a t i o n f o r in-
+c r e a s i n g v a l u e s of w ,        i t i s necessary t o maintain both
+ht      an-d       Tw c o n s t a n t .     F u ~ t h e rc o n s i d e r a t i o n w 5 l l shorn
+t h a t t h e c o n s t a n c y of ht          n e c e s s i t a t e s t h e c o n s t a n c y of
+AT,v.        T o r e x a m p l e , suppose h i c o n s t a n t a s AT,                   decreases
+r i t h a q r e a t e r r a d i a t o r midth.          The d e c r e a s e i n AT,            im-
+p l i e s a d e c r e a s e i n t h e q u a n t i t y of h e a t l o s t by t h e w a t e r ,
+v h e r e n s t h e i n c r e a s e i n t h e a v e r a g e w a t e r t e m p e r a t u r e Tv
+i n c r e a s e s t h e r a t e r - a i r temperature d i f f e r e n c e and hence
+t h e q u a n t i t y o f h e a t d i s s i p a t e d ( = ht ATrJwa A c ) a l s o i n -
+c r e t a s c s . The f u r t h e r a s s u m p t i o n i s h o r e i n made t h a t t h e
+volume of w a t e r f l o n i s c o n s t a n t f o r t h e c i v e n d o s i g n h e a t -
+t r a n s f e r conditions.
+
+          xo i n v e s t i q a t i o n s have been r e p o r t e d on t h e v a r i a t i o n
+of t h e h e a t - t r a n s f e r c o e i ' f i c i e n t w i t h a e y a o l d s Rumber f o r
+l i q u i d s f l o w i n g p e r p e n d i c u l a r t o t u b e b a n k s of r o u n d o r
+h e x a < o n a l t u b e s a t % h e low Reynolds lVumbers found. i n r a d i -
+ators.         The ? r e s e n t h e a t - t r a n s f e r d a t a , when round t u b e s
+a r e u s e d , i n d i c a t e TL X u s s c l t number of a h o u t 65 a t a
+Reynold-s BumSer of 880 b a s e d on t h e w a t e r v e l o c i t y a t t h e
+minimum :?assage a i d t h a n d t h e t u b e d i a m e t e r f o r t h e l e n g t h
+parameter.            The N u o s c l t number may t h e n be r o u q h l y assumed
+t o be c I i ~ e c t L ~pyr o y o r t i o n a l t o t h e Reynold.s Number.            Thus,
+hz     mc?,;r be c ~ , l c u l n t e df o r a n y v c l u e of     .     S i n c e ha      is
+known f-om t h e d e s i g n s o l u t i o n , i t i s p o s s i b i e t o o s t i m n t e
+t h o c f f c c t upon h t          a n d , a c c o r d i n g l y , upon t h e h e a t d i s -
+s i p n t c d f o r any i n c r e a s e i n m.
+
+          For long l i q u i d p a s s a g e s o r g r e a t e r r a d i a t o r d e p t h s ,
+ht      becomes i n c r e a s i n g l y g r e a t e r t h a n ha. As p r e v i o u s l y
+e s p l a f n e e . , t h e i n c r e a s e i n hz   does n o t a f f e c t t h e over-
+a l l beat-transfer coefficient.                     The o n l y l i m i t a t i o n t o be
+c o n s i d e r e d i s t h e power e x p e n d e d i n pumping t h e w a t e r
+through the r a d i a t o r .
+
+
+                                   TYPE OF LIQUID
+
+
+           The t y p e of l i q u i d e n t e r s t h e p r o j i e m by i t s e f r o c t
+on t h e h e a t - t r a n s f e r c o e f f i c i e n t , t h a t i s , t h r o u g h t h e
+N u s s e l t , P r a n d t l , a n d ReynoZds NumSers,                  From t h e r e l a -
+t i o n s shown e a r l i e r , t h e s p e c i f i c h e a t , t h e t h e r m a l con-
+c ? u c t i v i t y , t h e v i s c o s i t y , a n d t h e d e n s i t y of t h e l i q u i d
+a r c t h o most i m p o r t a n t t r a r i a b l e s ,      Brown a n d E a r l o n ( s e f -
+e r e n c o 1 1 ) shorn t h a t w a t e r g i v e s a b o u t 6 t o 8 p c r c o n t b e t -
+t e r hcc.t t r a n s f e r t h a n g l y c o l .         Xqual f l o w r a t e s o f t v a t c r
+a n d ~ L y c o lmere u s e d a n d no correction was made f o r t h e
+d i m i n i s h e d a i r f l o w due t o t h e h i g h e r t e m g c r a t u r e s a t
+n h i c h t h e r a d i a t o r was o p e r a t e d .       S i n c e t h e d i m i n i s h e d air
+f l o w d e c r e a s e d ha         by s e v e r a l p e r c e n t a n d s i n c e h i g h e r
+l i q u i d - f l o w r a t e s a r e c o s s i b l e w i t h g l y c o l a t e q u a l pump
+s p e e d s ( r e f e r e n c e 1 2 ) I t a - ? p e a r s t h a t t h e d i m e n s i o n s of
+t h e r a d i a t o r a n d t h e v e l o c i t y of f l o w c a n b e made more
+s u i t a b l e t o t h e q l y c o l a n d c a n r e d u c e t h e 6 p e r c e n t a s much
+as desired.
+
+        The h e a t - t r a n s f e r c o e f f i c i e n t hl from l i q u i d t o t h e
+t u b e ? . a l l m i l l v a r y i n t h e same manner a s ha          from a i r t o
+tube w a l l .       Thus
+
+
+
+
+where v a l u e s of     n = 0.3         a n d m = 0.5         a r e taken f o r flow
+below t h e c r i t i c a l R e y n o l d s Number from 3dcAdams (reference
+3 , ch. V I I I ) . V a r i o u s o x p c r i m o n t c r s have found v a l u e s of
+n a n d m d i i ' f o r i n g from 0.3 and 0.5 o v e r a l i m i t e d r a n g e .
+The a v e r a g e v a l u e s chosen m i l l s e r v e s u f f i c i e n t l y w e l l f o r
+the discussion.            Then
+
+
+
+
+                                    i s a b o u t 1.1 p
+                       Pglycol                            water'
+
+                   c                i s a b o u t 0.62     op
+                       Pglycol                                  water
+
+                                    i s a b o u t 0.45 kmater.
+
+                                    i s about equal
+
+Then
+                                   \0.3
+         hmter-           (A_-) (iyi,
+                                  i j o o 5 -.---1 lo*' = 1.92
+                                           (0.451
+         hglycol            0.62
+
+     I n t h e normal o p e r a t i o n of a r a d i a t o r ,           ht = 50 ha
+when w a t e r i s t h e l i q u i d , Then
+
+
+
+
+T h u s , i f ht becomes s e v e r a l t i m e s a s l a r g e , t h e e f f e c t on
+ht,       vhich i s t h e determining f a c t o r , i s negligible.                        If
+ht      i s o n l y h a l f a s l a r g e , h t = 25/26 h a , and t h e d i f f e r -
+ence i s 2 p e r c e n t i n h t .               T h u s , by t h e u s e o f g l y c o l , t h e
+o v e r - a l l h e a t - t r a n s f e r c o e f f i c i e n t a t t h e same voLume of
+l i q u i d f l o w i s 2 p e r c e n t l e s s than' f o r n a t e r .         The a v a i l a -
+b l e temperature difference T                     -         T i w i t h g l y c o l i s sev-
+e r a l t i m e s t h a t f o r w a t e r , d e p e n d i n g on t h e i n l e t - a i r tem-
+p e r a t u r e , so that t h e n e t r e s u l t i s s e v e r a l t i m e s t h e to-
+t a l h c a t t r a n s f e r v i t h t h e same a i r f l o v a n d l i q u i d f l o w .
+The c o o l i n g e f f i c i e n c y may be s t i l l f u r t h e r i n c r e a s e d , f o r
+t h e t o t a l a v a i l s b l e d u c t s p a c e , b e i n g a d e q u a t e f o r t h e wa-
+t e r r c d i a t o r a t a c e r t a i n Ap, w i l l now p e r m i t t h e g l y -
+c o l r a d i a t o r t o f u n c t i o n a t a l o n e r Ap p i t h t h e d e s i r e d
+result     .
+                   INSTALLATION I W A S E P A U Y E HACELLE
+
+
+          I n t h e c o n s i d e r a t i o n of t h e i n s t a l l a t i o n of t h e r a d i -
+a t o r i n a s e p a r a t e n a c e l l e , p r e v i o u s c o n s i d e r a t i o n s of
+power u s e d f o r c o o l i n g a n d 17eight s u p p o r t a p p l y .               It i s
+o n l y n e c e s s a r y t o a d d t h e power l o s t owing t o p r o p e l l i n g
+t!lc n a c e l l e ~ i t h o u ta n y c o o l i n g a i r f l o n t h r o gh t h e ns-
+cclle.           I t f o l l o r v s from e q u a t i o n ( 1 3 ) a n d t h e . p r e v i o u s
+d i s c u s s i o n t h a t , f o r a r e q u i r e d amount of h e a t d i s s i p a t i o n ,
+
+
+
+
+        Subscript 0 r e f e r s t o the f r e e a i r stream and                            PD
+and     Pv r e f e r t o u n i t opoa f r o n t a l a r e a .
+
+
+                                The Choice of             Ap
+
+          The c o o l i n g e f f i c i e n c y improved w i t h a d e c r e a s e i n t h e
+p r e s s u r e d r o p f o r a r a d i a t o r mounted i a a wing o r 2"n en-
+gine nncello.             A r a d i a t o r mounted i n a s e p a r a t e n a c e l l e ,
+horrcvcr, h a s a n o z t i m u m A p ,                nhich i s f u l l y as important
+                                                                                                  .
+a s t h c optimum r a d i a t o r d i m o n s i o n s .         For any p a r t i c u l a r
+t u b e dic.mctcr a n d f l i g h t c o n d i t i o n s , t h e comparison can be
+v o r k c d o u t i n e x a c t l y t h e s a x e manner t h a t n a s p r e v i o u s l y
+folloncd in            I n s t a l l a t i o n v i t h i n a Ring o r a n E n ~ i n eBa-
+colle.         The v a l u e of                  f o r t h e p a r t i c u l a r n a c e l l e con-
+                                         c ~ n
+s i d e r e d i s used.         For t h e p r e s e n t c o m p a r i s o n , a x ~ e l l -
+d e s i ~ n e dc o m l i n g i s assumed f o r which                           i s 0.12 ( r e f e r -
+                                                                   Crh
+ence 4 ) .        The uower expended i n overcoming t h e form d r a g
+p e r s q u z r e f o o t of open f r o n t a l a r e a f o r t h e condif$ions i n
+t a b l e I11 w i t h t h e a i r a t s t a n d a r d d e n s i t y i s , from equa-
+t i o n ( 2 1 ) , 29.5 h o r s e p o ~ v e r . T h i s v a l u e i s combined n i t h
+t h e d z t a of t a b l e 1 1 1 and f i g u r e 2 4 i s c o n s t r u c t e d s h o v i n g
+t h o v a r i a t i o n of t h e c o o l i n g e f f i c i e n c y
+w i t h l e i l g t h f o r s e v e r a l v a l u e s of Ap,    It appears t h a t ,
+f o r a n y g i v e n i n s t a l l a t i o n , one v a l u e of b p w i l l g i v e a
+maximum c o o l i n g e f f i c i e n c y .
+
+
+                  The Choice of t h e Tube Dimensions
+
+          F i g u r e 25 shows t h e v a r i a t i o n of t h e c o o l i n g e f f i -
+c i e n c y z/Pt        with l e n g t h f o r various tube s i e e s and shapes
+f o r t h r e e v a l u e s f o r GD,.,      two of which a l l o w f o r t h e i n -
+t e r f e r e n c e e f f e c t between t h e wing a n d t h e n a c e l l e .
+
+          T a b l e V,IlI shows t h e v a l u e s of L/D f o r t h e peak
+c o o l i n g e f f i c i e n c i e s from f i g u r e 25.        Considcrc3lo l a t i t u d e
+i s p e r m i s s i b l e o v i a g t o t h e f l a t p e a k s of t b e c u r v e s .        0%-
+v i o u s l y , s i n c e t h e i n t e r f e r e n c e of f e c t i s v e r y f a v o r a b l e ,
+t h o s a n e L/D i s n e a r l y e q u a l l y good foc a l l t h e i n t e r -
+f e r e n c e f a c t o r s computed.
+
+         I t may be n o t e d t h a t , rvlson t h e i n f c r f e r e n c e e f f e c t i s
+m o d o r a t c o r n e g l i g i b l e , t h e r e a p 2 c a r s t o be a n optimum
+d i a m e t e r a s w e l l a s a n optimum l e n g t h .
+
+          F o r a n y r e q u i r e d amount o f h o a t d i s s i p a t i o n , t h o p o n c r
+r e q u i r e d f o r t h e r a d i a t o r i s o b t a i n e d by d i v i d i n g t h e r e -
+q u i r e d h e a t d i s s i p a t t o n by t h e c o o l i n g e f f i c i e n c y .
+                                       TABLE V I I I
+
+MDZBTOB LEKGTSS REQUIRED FOR TEE TEAK C O O L I N G EFF IGIENC IES
+
+          [T,       -
+                 T i n = '70° F . ; Op, 2 5 . 6 1 b , / s q . f t . ;
+ f , optimum f o r e a c h t u b c s h a p e a n d s i z e ; Fp, 100 p e r c e n t ;
+               E (CD b L )0,      . 1 ; V,,    200 m.p.h.l
+                             w
+
+            1       I----                      --
+                                                Installation
+
+
+Radiator1
+         i(ft.)i
+                    1       In a
+                            duct
+                                     --.
+
+                                           l
+                                                In a separate nacelle
+
+                                                                                                  -
+            I
+            I
+                    I
+
+-           I
+
+
+
+
+                                                       I
+
+          The a c t u n l c o o l i n g c f f i c i c n c i e s p r e s e n t e d i n t h i s r e -
+p o r t a r e somewhat m i s l e a d i n g oxring t o t h e s m a l l v a l u e
+('70' F.) assurned f o r Tm                -    Ti,.        In a c t u a l p r a c t i c e , t h e
+v a l u e of            -
+                    'I' T i w i l l be t ~ v o o r t h r e e t i m e s t h e d e s i q n
+v a l u e . r n c r e a s i n g t h e h e a t d i s s i p a t i o n by t h e s a n e f a c t o r .
+A c c o r d i n g l y , t h e c o o l i n g e f f i c i e n c y w i l l be t w o t o t h r e e
+times a s large.               A r a d i a t o r d e s i y n c d from t h e v a l v e s i n
+t h i s r e p o r t g i v i n ~o c o o l i n g e f f i c i e n c y o f , s a y , 7 m i l l -
+a c t u a l l y g i v e a c 9 o l i n g e f f i c i e n c y of 14 t o 21; t h a t i s ,
+f o r e v e r y horsepower o f h e a t t o b o d i s s i p a t e d , 1 / 1 4 t o
+1/21 horsepol.ver w i l l be                                  o r a p g r o x i z n a t e l y 3.5 t o
+2.4 g e r c e n t of t L e b r a k c horsepo7,Ycr \?ill be u s e d f o r c o o l -
+ing,        The i n p o r t a a c c of a h i g h - t e m p e r a t u r e c o o l a n t l i q a i d
+i s e v i d c n t , f o r t 5 c cooling e f f i c i e n c y i s d i r e c t l y propor-
+t i o n a l t o t h c i n i t i a l t e m p c r a t u r c ?..ifference.
+                                                                                           39
+
+
+The C o o l i n g E f f i c i e n c y f o r a B a d - i a t o r i n a F r e e A i r S t r e a m
+
+          The r a d i a t o r chosen f o r t h e comparison i s made 11.p of
+h e x a g o n a l t u b e s h a v i n g a h y d r a u l i c d i a m e t e r of 0.06 i n c h
+a,nd a l e n g t h of 3.74 i n c h e s .           The h e a t - t r a n s f e r a n d d r a g
+date* a r e g i v e n b y P a r s o n s a n d H a r p e r ( r e f e r e n c e 1 3 ) f o r
+a i r s p e e d s of 60 a n d 120 m i l e s p e r h o u r .              Extrapolation
+was nade t o a f l i g h t speed of 200 m i l e s p e r h o u r .                     The
+power u s e d t o t r a n s p o r t t h e w e i g h t mas c a l c u l a t e d , a s f o r
+the ducted r a d i a t o r .           I t i s f o u n d t h a t , a t 200 m i l e s p e r
+h o u r , w i t h Tw     -    Tia = 70° F.           a n 6 E (CDW/CL)= 0.1,                  the
+c o o l i n g e f f i c i e n c y i s a b o u t 1.7.      S i n c e t h e same r a d i a t o r
+i s d e s i g n e d t o d i s s i p a t e a n e q u a l o r a ~ r e a t e ramount o f
+h e a t i n c l i m b a t a much lomor s p e e d , i t i s assumod t h a t                   '
+
+
+
+the rad.iator i s r o t r a c t a b l c s o t h a t t h i s cooling e f f i c i e n c y
+m i l l hold.         For a n o n r e t r a c t a b l c r a d i a t o r , t h e c o o l i n g ef-
+f i c i e n c y mould be much l a s s i a a d d i t i o n t o t h e o v e r c o o l i n g
+t h a t mould o c c u r .         This e f f i c i e n c y i s about one-foueth t h a t
+f o u n d i n tl s e p a r a t e n a c a l l e a n d becomos r a p i d l y l e s s a s
+t h e v e l o c i t y of t h e a i r p l a n e i n c r e a s e s .
+
+
+             C O O L I N G - POWZR                     OF L I Q U I D - COOLED
+
+                             AXD AIR-COOLED EBGINXS
+
+
+          I t mould a p p e a r t h a t t h e l i q u i d - c o o l e d e n g i n e ha,s sev-
+e r a l inherent advantages,                  The m d i a t o r can be made l a r g e ,
+t h u s a l l o w i n g c o o l i n g a t a s m a l l Qp a n d , s i n c e t h e power
+                                        3/ a
+i s p r o : g o r t i o n a l t o bp            t h i s power may be r e d u c e d t o
+any d e s i r e d v a l u e ,       I t h a s been shown, however, t h a t t h e r e
+i s a l i m i t a t i o n imposed by t h e power t o t r a n s p o r t t h e r 8 - d i -
+ator.        The l i q u i d - c o o l e d e n g i n e i s o f t e n p i c t u r e d a s com-
+p l e t e l y o n c l o s e d i n t h e wing o r t h e n a c e l l e w i t h no form
+d r a g chargeable t o t h o z n g i n o i n s t a l l a t i o n .
+
+          Thc a i r - c o o l e d e n g i n e , on t h c o t h e r h a n d , i s d e s c r i b e d
+a s l o c a t e d i n a c o w l i n g w i t h a l a r g e form d r a q .        Xow, if
+t h c wing i s l a r g e cnough t o h o u s e t h e l i q u i d - c o o l e d e n g i n e ,
+i t i s a l s o l a r g e cnough t o h o u s e t h o a i r - c o o l e d e n g i n e .
+1% h a s been shorrn ( r e f c r c n c c 1 4 ) t h a t t h e i n t e r f e r e n c e e-f-
+f e c t b e t w r e n wing a n d n a c e l l e i s f a ~ o r a b l - eso t h a t t h e e f -
+f e c t i v e d r a g of t h e n a c e l l e i n f r o n t of a wing i s o n l y 4 0
+percent o f the nacelle drag alone.                       When i t i s c o n s i d e r e d
+t h a t , i n t h e s e t e s t s , t h e r a t i o of t h e n a c e l l e d i n m o t e r t o
+wing t i i c k n e s s was l a r g e a n d t h a t t h e c o n n u c t i v i t y o f t h e
+c n g l n e nas a l s o l a r g e , i t seems r e a s o n a b l e t o assume t h a t
+t h e i n t e r f e r e n c e on a modern e n g i n e w i t h modern c o w l i n g
+l o c a t e d . i n a wing of t h i c k n e s s c o m p a r a b l e w i t h t h e e n g i n e
+d i a m e t e r m i l l be s o f a v o r a b l e t h a t t h e n a c e l l e d r a g m i l l
+alnost disappear.               It i s probable t h a t t h e 40 percent
+f o u n d i n t h e t e s t s of r e f e r e n c e . 1 4 w i l l be r e d u c e d t o t h e
+o r d e r of 1 0 p e r c o n t on a s e t - u p of t h e n a t u r e assumed i n
+t h i s pacer.
+
+         I t was f o u n d i n r e f e r e n c e 4 t h a t t h e d.rag of a na-
+c e l l e of 5 2 - i n c h d i a m e t e r a t 1 0 0 m i l e s p e r h o u r mas 45
+pourds without c o o l i n g - a i r flow and t h a t a s t r e a m l i n e
+n o s e cave a d r a g o f 32 p o u n d s .         It was f u r t h e r f o u n d t h a t
+t h e e n g i n e c o u l d be c o o l e d w i t h a n a d d i t i o n a l d r a g of 20
+ponnds z t t h i s speed.             The c o o l i n g d r a g m i l l r e m a i n t h e
+same r e g a r d l e s s of wing t h i c k n e s s .       If t h e i n t e r f e r e n c e
+i s f a p o r a b l e , a s h a s been a s s u m e d , t h e form d r a g r e d u c e s
+t o 4 . 5 pounds so t h a t t h e t o t a l d r a g a t 1 0 0 m i l e s p e r h o u r
+i s 24.5 p o u n d s ; t h a t i s , 5 . 3 h o r s e p o w e r f o r c o o l i n g a n d
+1.2 h o r s e p o v e r f o r form d r a g .
+
+          With a w e l l - d e s i g n e d c o w l i n g , t h e c o o l i n g power a t
+h i g h e r s p e e d s w i l l n o t i n c r e a s e a n d nay p o s s i b l y d e c r e a s e .
+A t 300 m i l e s p e r h o u r , t h e r e i s s t i l l . 5 . 3 h o r s e p o w e r f o r
+c o o l i n c a n d 2 7 t i m e s a s much p o w e r , o r 32 h o r s e p o w e r , f o r
+form d r a g .        T h i s f o r m d r a g i s i n d e p e n d e n t of t h e e n g i n e
+p o v e r a n d d e p e n d s o n l y on t h e e n g i n e d i a m e t e r .    The c o o l -
+i n g pomer i s p r o p o r t i o n a l t o t h e e n g i n e power.            Thc v a l u e s
+c i t c i a r c f 0 x . a 550-horsepower e n g i n e .               Thus, a 2,000-
+h o r s e p o w e r e n g i n e o f t h e same d i a m e t e r a t 1 0 0 m i l e s p e r
+h o u r t a f r c s 19.3 h o r s e p o w e r f o r c o o l i n g a n d 1.2 h o r s c p o l v e r
+f o r f o r m d r a g a n d , a t 300 m i l e s p e r h o u r , i t t a k e s 19.3
+horsepower f o r c o o l i n g and 32 horsepomer f o r f o r m d r a g .
+T h i s t o t a l makes t h e power r e q u i r e d f o r t h e e n g i n e i n s t a l -
+l a t i o n a n d c o o l i n g o n l y 2.5 p e r c e n t of t h e e n g i n e power.
+
+        The power t o c o o l a n d t o t r a n s p o r t t h e c o o l i n g s y s t e m
+i s s o small with e i t h e r l i q u i d - or air-cooled engines t h a t
+i t c a n h a r d l y be a d e t e r m i n i n g f a c t o r i n t h e s e l e c t i o n of
+one i n p r e f e r e n c e t o t h e o t h e r .
+
+          I f t h e e n g i n e s a r e mounted i n n a c e l l e s i n f r o n t o f
+c o m p a r a t i v e l y t h i n w i n g s , t h e l i q u i d - c o o l e d c n g i n e may
+have a o t r o a m l i n o n o s e , t h u s h a v i n g a d r a g of 32 p o u n d s
+i n s t c a d of 45 p011ild.s a t 1 0 0 m i l c s p e r h o u r .              A separate
+n a c e l l e , o r f n s t a l l z t i o n f o r t h e r a d i a f o r , however, m i l l he
+r e q u i r e d , n h i c h w i l l a d d e a s i l y a s much a s t h i s d i f f e r e n c e
+i n drczs;.
+                          'THX JET-PBOPULS I O N EFFECT
+
+          The e f f e c t of h e a t i n g a n a i r s t r e a m a f t e r e x p a n s i o n
+i n a d.uct and t h e n c o n t r a c t i n g t h e d u c t b e f o r e e x p u l s i o n
+o f t h e a i r i s t o c o n v e r t some o f t h e added h e a t e n e r g y
+into thrust.           Both M e r e d i t h ( r e f e r e n c e 9 ) a n d Capon ( r e f -
+e r e n c e 8 ) have made e s t i m a t e s o f t h e t h r u s t so d e r i v e d .
+
+        B e i t h e r l h e r e d i t h n o r Capon c o n s i d e r s t h e w e i g h t o r
+t h e f o r m d r a g of t h e r a d i a t o r .     If t h e v e i g h t ' a n d t h e form
+drag a r e considered, the n e t e f f e c t i s a reduction i n tho
+power c h a r g e a b l e t o t h o r a d i a t o r .
+
+          In both of t h e foregoing c a s e s and i n the f o l l o w i n g
+d i s c u s s i o n , l o s s e s o c c u r r i n g a t the duct entrance and e x i t
+a r e not considered.                The q u e s t i o n of a n e f f i c i e n t d u c t de-
+s i g n i s e x t r e m e l y i m p o r t a n t i n t h e c o n s i d e r a t i o n of t h e
+p r o p u l s i v e e f f e c t , f o r a n i n e f f i c i e n t d u c t m i l l more t h a n
+o f f s e t a n y p o s s i b l e t h r u s t t o be s o d e r i v e d .
+
+        The p a t h t r a v e r s e d by t h e a i r t h r o u g h t h e d u c t shown
+i n f i g u r e 2 6 i s i l l u s t r a t e d by t h e p a t h ABCD on t h e p v
+diagram i n f i g u r e 27.           The p o i n t - s A , 3, C , a n d D c o r r e -
+spond t o t h e p o s i t i o n s marked on f i g u r e 26.
+
+  .     Path      83     r e p r e s e n t s t h e a d i a b a t i c c o m p r e s s i o n of t h e
+a i r e n t e r i n g the duct.            P a t h BG r e p r e s e n t s t h e h e a t i n g
+a t constant p r e s s u r e along t h e duct.                     P a t h CD r e p r e s e n t s
+t h e a d i a b a t i c expansion as t h e duct c o n t r a c t s a f t e r tho
+heating section.              F i n a l l y , p a t h DA,          representing cooling
+a t constant p r e s s u r e , ' i s equivalent to expelling the heated
+s f Ta t a t m o s p h e r i c p r e s s u r e and t a k i n g i n o t h e r a i r a t t h e
+same p r e s s u r e a n d a t m o s p h e r i c t e m p e r a t u r e .
+
+        Vhen no h e a t i s a d d e d , t h e a i r t r a v e r s e s t h e c y c l e
+AB, BA,     a n d no work i s done.          F o r t h e c y c l e ABCD, t h e
+p o r k done i s
+Using      p v = BT,
+
+
+
+
+The h e a t a d d e d p e r u n i t mass i s
+
+
+
+The e f f i c i e n c y o f t h e c o n v e r s i o n of h e a t e n e r g y i n t o me-
+chanical energy i s
+
+
+
+
+which q i v e s , u s i n g t h e a d i a b a t i c r e l a t i o n
+
+
+
+
+and t h e r e l a t i o n     B = c          cv,
+                                      P
+
+
+
+
+a r e s u l t a l r e a d y g i v e n by M e r e d i t h ( r e f e r e n c e 9 ) .
+
+        :iost o f t h e mechanical e n e r g y i s r e c o v e r a b l e a s t h r u s t
+energ.          The r a t i o of t h e t h r u s t e n e r g y t o t h e t o t a l mechan-
+i c a l e n e r T y , p e r u n i t mass o f a i r , i s
+
+
+
+
+F o r e x a m p l e , t a k e V, = 300 m i l e s p e r h o u r a n d V, = 328
+m i l e s 13er h o u r ; t h e u s e f u l t h r u s t e n e r g y t h e n r e p r e s e n t s
+9 5 . 5 ~ ~ c r c e noft the m e c h a n i c a l e n e r g y o b t a i n e d .
+
+          I n ? ? a c t i c e , t h e h e a t i s a d d a d 5y a r a d i a t o r t h a t r c -
+q u i r e s a c c r t a i n prcssu-re drop f o r tho h e a t d i s s i p a t i o n .
+Tho z s s u ~ p t i o i io f c o n s t a n t p r e s s u r e h e a t i n g must b e a l t e r e d .
+P a t h SC ( f i g . 2 7 ) i s r e p l a c e d by some p a t h B C t , w i t h a
+d e c r e a s e i n t h e a r e a of t h e c y c l e i n d i c a t i n g a r e d u c e d
+c o n v e r s i o n of h e a t i n t o m e c h a n i c a l e n e r g y . In o r d e r t o
+a s c e r t a i n t h e e f f e c t of r a d i a t o r d e s i g n upon t h e p r o p u l -
+s i v e e f f e c t , t h o h e a t w i l l s t i l l be c o n s i d e r e d a d d e d a t
+c o n s t a n t p r e s s u r e , t h i s p r e s s u r e being taken as t h e aver-
+age over t h e r a d i a t o r .
+
+          Then f o r To = 300 m i l e s p e r h o u r a t s e a l e v e l a n d
+s t a n d a r d a t m o s p h e r i c c o n d i t i o n s , p o = 2 , 1 1 6 . pounds p e r
+s q u a r e f o o t a n d q, = 230.4 pounds p e r sq.uare f o o t .                          The
+d e s i g n Ap i s t a k e n a s 25.6 o r 64 pounds p e r s q u a r e f o o t .
+The r e s l 3 e c t i v e e f f i c i e n c i e s a r e o b t a i n e d , u s i n g e q u a t i o n
+( 2 6 ) with ' Y = 1.4:
+
+
+
+                                       '
+                                      \'-l
+                                           Y
+                                               =   2 . 8 a n d 2.6 p e r c e n t of t h e
+                                                        heat dissipated ~ 0 n ~ o I ? t C d
+                                                        i n t o mechanical energy.
+
+I t h a s beon p r e v i o u s l y shown t h a t , f o r a n y i n s t a l l a t i o n ,
+t h e r e i s a hp which m i l l . p e r m i t c o o l i n g st a minimum
+polvor e x p e n d i t u r e .       lo t h e r a d i a t o r d - e s i g n , t 2 e o n l y f s c -
+t o r t h z t a f f e c t s t h e o r e r g y recovery i s t h i s drop i n p r c s -
+s u r e a c r o s s t h e r a d i a t o r ; t h e lower t h e p r e s s u r e drop, t h e
+g r e a t e r t h e recovery.             F o r t h e i n s t a l l a t i o n i n a wing o r
+a n e n g i n e n a c e l l e , t h e l o w e s t p o s s i b l e v a l u e of t h e Ap
+i s used. f o r d o s i g n .         3 e n c e a f u r t h e r d e c r o a s e i n t h e Ap
+t o i n c r e a s e t h o energy secovcry i s impossiblo.                            For t h e
+i n s t a l l a t i o n i n a s e p a r a t e n a c e l l e , t h e optimum Ap i s
+usad f o r design.               ( s e e f i g . 24.)       V h e r e a s a change i n Ap
+from 64 t o 25.6 pounds p e r s q u a r e f o o t w i l l change t h e en-
+e r g y r e c o v e r e d from 26 t o 2 8 horsapomer f o r a 1 , 0 0 0 - h o r s e -
+g o n o r d i s s i p a t i o n , t h e c o o l i n g e f f i c i e n c y d e c r e a s e s by 1 5
+p e r c e n t o r a b o u t 1 2 t o 1 5 h o r s e p o w e r f o r s good d e s i g n .              To
+a t t e n s t a compromise would r'educe t h e e n e r g y r e c o v e r y t o
+a n e q l i g i b l e amount w i t h a r e a l i n c r e a s e i n t h e power ex-
+penditure.             The c o n c l u s i o n f o l l o w s t h a t a qood r a d i a t o r
+d e s i g n w i t h o u t c o n s i d e r a t i o n o f t h e t h r u s t w i l l a l s o be
+t h e b e s t d e s i g n mhen t h e t h r u s t e f f e c t i s t a k e n i n t o a c -
+count.
+
+         As p o i a t e d o u t , by M e r e d i t h ( r e f e r e a c e 9 1 , t h e a d i a -
+b a t i c compression of t h e a i r e n t e r i n g t h e d u c t enusos a
+r i s e i n a i r temperature.              The a v a i l a b l e t e m p e r a t u r e d i f -
+f o r c n c e Tm     -  Ti,    w   i l l ba  l e s s than t h e value u s i n g t h e
+                                          e a n amount d e p c n b i n g on t h e a i r
+a t m o s p h e r i c t c n p ~ r ~ t u rby
+speed.         Fron e q u a t i o n ( 2 5 ) , assuming t h e a i r brought t o
+rest,
+
+
+
+
+g i v e s t h e u p p e r l i m i t f o r t h e t ~ m p e r ~ t u rr oi s e .     Meredith
+g i v e s t h e same r e s u l t i n t h e sim-ple form
+
+
+
+
+                                    COWCLUSIONS
+
+          I,    The d c s i 5 n o f a r a d i a t o r i s a f u n c t i o n of t h e con-
+d i t i o n s u n a e r which t h e r a d i a t o r i s t o o p e r a t e .  Hence i t
+f s n e c e s s a r y t o know b e f o r e h a n d :
+
+        (a)     The q u a n t i t y of h e a t t o be d i s s i p a t e d .
+
+        (33     The a v a i l a b l e s p a c e f o r a n i n t e r n a l i n s t a l l a t i o n ,
+                    0 1"
+
+
+        (c)     The d r a g c o e f f i c i e n t of t h e n a c e l l e when no c o o l -
+                  i n g a i r flow i s p e r m i t t e d , i n t h e c a s e of a n
+                  external installation in a separate nacelle.
+
+        (d)     The        Qp   a v a i l s b l e i n climb,
+
+        (el     The t y p e o f l i q u i d , w a t e r o r g l y c o l , and t h e v a l u e
+                  of    T,      -
+                               Tia      expected.
+
+        (f)     The p r o b a b l e pump e f f i c i e n c y of t h e d u c t o r t h e
+                  n a c e l l e i n s t a l l a t ion.
+
+        (       The r a t i o o f t h e l i f t a n d t h e d r a g c o e T f i c i e n t s
+                  o f t h e wing.
+
+        (h)     The t o t a l w e i g h t of t h e r a d i a t o r a n d t h e a d d i t i o n -
+                  a l s t r u c t u r e f o r any r a d i a t o r dimensions.
+
+        ( i ) The v e l o c i t y of       the airplane i n level f l i g h t .
+    Such i n f o r m a t i o n i s b o t h n a c o s s a r y a n d , mhen conbinod n i t h
+    t h e h e a t - t r a n s f e r a n d t h e p r o s s u r e - l o s s d a t a of t h i s r e -
+    p o r t , i s s u f f i c i e n t f o r an optimum r a d i a t o r d e s i g n .         Par-
+    t i c u l a r c a s o s may a d d o t h o r q u a l i f i c a t i o n s , such a s maxi-
+    mum g o s s i ' o l e r a d i a t o r l e n g t h , a maxfmum b p f o r d e s i g n t o
+    i n s u r e good c o o l i n g on t h e g r o u n d ; e t c .
+
+           2        The e f f e c t o f e a c h o f t h e f o l l o w i n g f a c t o r s on
+    t h e c o o l i n g e f f i c i e n c y a n d t h e r a d i a t o r d i m e n s i o n s w.as
+    considered.
+
+                     (a) The pump e f f i c i e n c y : " A d e c r e a s e i n t h e gump
+            e f f i c i e n c y of t h e d u c t n i l 1 p r o p o r t i o n s l l y i n c r e a s e
+*
+            t h e power f o r c o o l i n g a n d d e c r e a s e t h e c o o l i n g e f f i -
+            ciency.
+
+                     ( 3 ) The f r e e - a r e a r a t i o : An i n c r e a s e i n t h e
+            v a l u e of t h e f r e e - a r e a r n t i o w i l l d e c r e a s e t h e r a d i -
+            a t o r weight and t h e t a t a l f r o n t a l a r e a w i t h a corre-
+            sponding i n c r e a s e i n tho c o o l i n g e f f i c i e n c y .
+
+                      (c)    The r n t i o      E   ( c ~ ~ / C ~ ) Tho
+                                                                     :  poser used t o
+            t r a n s p o r t t h e r a d i a t o r weight i s d i r e c t l y p r o p o r t i o n -
+            71' t o     t h e v a l u e of       E ( G ~ ~ / c ~ ) .
+
+                      ( d ) The change i n t h e a i r c o n s t a n t s , c p , IJJ t
+            nnd p due t o t h e h e a t i n g up of t h e ' e i r : To main-
+            tg,in a f i x e d r a t e of h e a t a i s s i p a t i o n r e q u i r e s t h e
+            c o n d i t i o n of a c o n s t a n t mass f l o w of a i r . m h e n ' t h e ra-
+            d i a t o r i s heated.          This requirement i n t u r n n e c e s s i -
+            t a t e s a l a r g e r Ap t h a n i s r e q u i r e d by t h e same a i r
+            flow f o r t h e i s o t h e r m a l flow.       Ths'design s o l u t i o n
+            i n c l u d e s t h i s e f f e c t by morking o u t t h e , i s o t h e r n a l
+            c a s e a t a r e d u c e d Ap.        The c a l c u l a t i o n of t h e ex-
+            p e c t e d i n c r e a s e i n Ap c a u s e d by h o a t i n g t h e r a d i a -
+            t o r i s presented.
+
+                      ( e ) The change i n t h e h e a t d i s s i p a t i o n n i t h a l -
+            titude:         For a s u p e r c k a r c e d e n g i n e i n which t h e max-
+            imum r e q u i r e d h e a t d i s s i p a t i o n i s a t t h e r a t e d h e i g h t ,
+            an i n c r e a s e i n t h e a i r flow through t h e duct i s re-
+            quired i f t h e r a d i a t o r i s designed f o r ground-level
+            conditioni,           The r a d i a t o r must $9 d e s i g n e d w i t h a
+            view t o t h e r a t e d a l t i t u d e a t which i t i s t o o p e r a t e
+            b e c a u s e t h e g r o p o r t i o n of t h e a v a i l a b l e Ilp r e q u i r e d
+            f o r cooling increases with altitude..
+                  ( f ) The n i d t h o f t h e w a t e r p a s s a g e :    I t i s de-
+        s i r a b l e t o use the s n a l l e s t p o s s i b l e nater-passage
+        a i d t h , c o n d i t i o n e d upon t h e power u s e d t o pump t h e
+        l i q u i d throu+:h t h e r a d i a t o r a n d t h e n e c e s s i t y of
+        keeping t h e water passages open, i n o r d e r t o reduce
+        t h e r a d i a t o r weight and t o i n c r e a s e tho f r e e - a r e a
+        ratio.
+
+          A v a r i a t i o n i n a n y of t h e f o r e g o i n g f a c t o r s i n c r e a s -
+i n g o r d . e c r e a s i n g a n y p a r t o f t h e pomer c h a r g e a b l e t o t h e
+r a d i a t o r m i l l c a u s e a change i n t h e optimum r a d i a t o r d i -
+m e n s i o n s t e n d i n g t o b r i n g t h e v a r i o u s o p p o s i n g pomer eon-
+s i d e r a t i o n s i n t o balance agabn,            For e x a m p l e , s n p p o s e t h e
+pump e f f i c i e n c y d e c r e a s e s .    Then PD i n c r e a s e s a n d t h e
+o p t i n u n r a d i a t o r d e s i g n f o r t h e new c o n d i t i o n s m i l l h a v e a
+longer length.               Tho v e l o c i t y f o a~n y g i v e n Ap z ~ i 1 3 . be
+l e s s a n d t h e v a l v e of         PD n i x 1 be d e c r e a s e d .
+
+          3. Tho f u n d a m e n t a l d a t a p r e s e n t e d on h e a t t r a n s f e r
+a n d p r e s s u r e l o s s e s f o r smooth-tube r a d i a t ~ ~ s ' w e rob-   e
+tained f o r the f l o p conditions that a c t u a l l g exist i n the
+t u b e s e c t i o n c o n t a i n i n g t h e entrance. A comparisoll w i t h
+t h e e s t a b l i s h e d r e s u l t s f o r f u l l y developed t u r b u l e n t
+f l o w showed t h a t t h e h e a t t r a n s f e r a t a p a r t i c u l a r Ap i s
+?*bout t h e same f o r b o t h c a s e s m i t h a l a r g o r power cxpen-
+d i t u r e required t o f o r c e the a i r throu2h the r a d i a t o r f o r
+t h e a c t u a l flow.
+
+          4.    An e f f i c i e n t r a d i a t o r i n s t a l l a t i o n w i t h i n a d u c t
+o r n a c e l l e where t h e q u a n t i t y o f f l o w i s c o n t r o l l a % l e i s
+s u p e r i o r t o a n y i n s - t a l l a t i o n n h e r e tLe. r a ' d i a t o r ' i s e x p o s e d
+t o t h e a i r stream, whether t h e r a d i a t o r i s r e t r a c t a b l e o r
+shuttered.           Relative cooling e f f i c i e n c i e s f o r the i n s t a l -
+l a t i o n s u n d e r s i m i l a r assumed c o n d i t f o n s mere a s f o l l o a s :
+
+            Installation
+            ---.....---------                                 --------
+                                                              Relative
+                                                      cooling-gff4sZencx
+         SetractaFle radiator                         1.7
+
+         SeparatG n a c e l l e                       5.9    ... No w i n g - n a c e l l e i n -
+                                                                        terference
+
+         Segarate nacelle                             8.0    . . . 40 p e r c e n t       C
+                                                                                              Dn
+         Internal duct                                9.8
+          5.  In t h e d e s i g n of a r a d i a t o r f o r a n i n s t a l l a t i o n
+w i t h i n a wing d u c t o r a n e n g i n e n a c e l l e , i t mas f o u n d t h a t
+a higher cooling efficiency i s possible with a decrease
+i n t h e ' Ap a c r o s s t h e r a d i a t o r .   Henbe, t h e f i r s t s t e p i n
+s u c h a d e s i g n i s t o s e l e c t a v a l u e f o r t h e Ap t h a t m i l - 1
+require a radiator f i l l i n g all the'available frontal area
+i n t h e duct space.          T h i s Ap w i l l be tho optimum a n d min-
+imum f o r t h e p a r t i c u l a r c a s e .
+
+          6.    The optimum d e s i g n Ap f o r a n i n s t a l l a t i o n w i t h -
+i n a s e 3 a r a t e n a c e l l e i s t h e r e s u l t of s compromise be-
+tween t h e powers u s e d f o r c o o l i n g , w e i g h t p r a p u l s i o n , and
+form d r a g .       T h i s c a s e a p p r o a c h e s t h e d e s i g n problem f o r 3
+d u c t a s t h e e f f e c t i v e d r a g - c o e f f i c i e n t 'of tho n a c e l l e de-
+c r e a s e s a n d t h e power u s e d t o overcomo t h e form d r a g be-
+comes of d e c r e a s i n g i m p o r t a n c e .         On t h e o t h e r h a n d , a s t h e
+form-drag power i n c r e a s e s i n r o l n t i v e m a g n i t u d e , t h e f r o n -
+t a l a r e a must be d e c r e a s e d , requiring a l a r g e r Ap a n d
+l o n g e r r a d i a t o r , t h u s i n c r e a s i n g t h s pomor f o r c o o l i n g a n d
+t h e weight propulsion.                  Tho b e s t d e s i g n i s i n t h e r o g i o n
+n h o r o t h e o p p o s i n g c o n s i d e r s t i o n s a r e of o q u a l i m p o r t a n c e +
+
+          7.    The L/D, v a l u e s f o r t h e s o l u t i o n s of a r a d i a t o r -
+design aroblem, d i f f e r e n t tube d i n a c t o r s being u s e d , f a l l
+v e r y near each o t h e r .           aence, the length available f o r the
+r a d i a t o r i s a secondary f a c t o r s i n c e a reduction i n t h e
+r a d i a t o r d e s i g n l e n g t h m e r e l y c a l l s f o r t h e u s e o f a small-
+e r tube diameter.                I n many c a s e s , one t u b e d i a m e t e r w i l l
+give a s l i g h t l y higher cooling e f f i c i a n c y than i s possiblo
+w i t h a n y o t h e r d i a n e t e r ; t h i s s o l u t i o n m i l l be t h e o r e t i c -
+a l l y tho most d o s i r a b l o , a l t h o u g h p e r h a p s n o t p r a c t i c a b l e
+owing t o t h e l e n g f h n e c e s s a r y .
+
+      8.   A comparison was made between t h e c i r c u l a r t u b e
+and t h e hexagonal tube.  I t ras found t h a t :
+
+                ( a ) The w e i g h t of t h e r a d i a t o r r o q u i r o d f o r a
+        necessary h e a t d i s s i p a t i o n i s l o n e r f o r a hexagonal
+        t u b e b e c a u s e t h e w a t e r c o n t e n t of t h e r a d i a t o r i s
+        l e s s f o r e q u a l minimum w a t e r - p a s s a g e w i d t h s .
+
+                  ( b ) The f r e e - a r e s r a t i o i s much h i g h e r f o r a
+        hexagonal tube.                 S i n c e b o t h s h a p e s have e q u a l h e a t
+        d i s s i p a t i n g a b i l i t y p e r s q u a r e f o o t of open f r o n t a l
+        a r e a , t h o n e c e s s a r y f r o n t a l area m i l 2 be l e s s f o r a
+        hexagonal tube.                 T h i s f a c t may be u s e d t o a d v a n t a g e
+        i n t h e l i g h t of c o n c l u s i o n s ( 5 ) and ( 6 ) .
+            9.   The h i g h e r t e m p e r a t u r e d i f f e r e n c e s available 3e-
+ tween l i q u i d a n 6 a i r , when g l y c o l i s s u b s t i t u t e d f o r wa-
+ t e r a s t h e c o o l a n t , i n e r e a s e t h e t o t a l h e a t t r a n s f e r sev-
+ e r a l t i m e s ; d e p Q n d i n g on t h e i n l e t - a i r t e m p e r a t u r e .    The
+ d e c r e a s e i n t h e o v e r - a l l h e a t - t r a n s f e r c o e f f i c i e n t when
+ g l y c o l i s s u b s t i t u t e d f o r w a t e r i s sbonn t o be s e v e r a l
+ percent.          The n e t r e s u l t i s a n i n c r e a s e i n h e a t d i s s i p a -
+ t i o n p e r u n i t f r o n t a l a r e a of. t h e r a d i a t o r .         The c o n s e -
+ q u e n t s p a c e s a v i n g f o r a n y r e q u i r e d amount of h e a t d i s s i -
+. p a t i o n may be u s e d t o d e c r e a s e t h e power r e q u i r e d t o o v e r -
+  come t h e form d r a g a n d t h e p-owsr-xsod i n p r o p e l l i n g t h e
+ w e i g h t o r , a l t e r n a t e l y , t h e r a d i a t o r s i z e may be k e p t a n -
+ c h a n g e & a'nd t h e c o o l i r r g accomp2ished a t a l o w e r A p w i t h
+ a s a v i n g i n t h o pomcr f o r c o o l i n g .              In t h e design p r o c e s s ,
+ t h o b a l a n c e between t h e v a r i o u s powers i s a u t o m a t i c a l l y
+ t a k e n i n t o a c c o u n t by t h e s e l e c t i o n of t h e optimum d c s i g n .
+
+           1 0 . A c o m p a r i s o n of t h e c o o l i n g e f f i c i e n c i e s f o r t h e
+a i r - c o o l e d a n d t h e l i q u i d - c o o l e d e n g i n e s was made.       I t was
+shown t h a t t h e power u s e d f o r c o o l i a g a n d w e i g h t p r o p u l -
+s i o n i s of comparable m a g n i t u d e f o r b o t h c a s e s and i s t o o
+small i n e i t h e r c a s e t o be u s e d a s a d e t e r n l i n i n g f a c t o r i n
+t h e s e l e c t i o n of one e n g i n e o v e r t h e o t h e r .
+
+          11. It mas f o u n d t h a t , a t h i g h , s p e e d s , a m e c h a n i c a l -
+e n e r g y r e c o v e r y i s p o s s i b l e from t h e h e a t d i s s i p a t e d by
+the r a d i a t o r i n t h e duct.            In t h e i d e a l f r i c t i o n l e s s case,
+nost o f t h i s nechanical energy i s u s e f u l l y converted i n t o
+t h r u s t energy.         Good r a d i a t o r d c s i g n and e n o r g y r e c o v e r y
+a r e c o m p a t i b l e f o r nn i n s t a l l a t i o n w i t h i n a w i n s .     For t h e
+i n s t e l l a t i o n in a separate nacelle, the detrimental effect
+of c h a n g i n g t h e d e s i g n t o i n c r e a s e t h e t h r u s t e f f e c t i s
+r e l a t i v e l y t o o g r e a t t o > e r r n i t a n y compromise.
+
+
+L a n g l e y bIemoria1 A e r o n a u t i c a l L a B o r a t o r y ,
+          N a t i o n a l A d v i s o r y Committee f o r A e r o n a u t i c s ,
+                    L a n g l e y . F i e l d , V a , , Decenber 2 0 , 1938.
+                             .f      F1    .
+                      rt     -P - a
+                       cdloopr
+                       $ a , 3*rlocu
+                       5'kd-P           k
+                       0      ot3ucj
+                           i
+                           D a k.d $
+                       m a          .s: u'
+                      *ri$md$m
+                          rl *rf a,
+                       k 0       k k k
+                       O p ~ ~ c j C D
+                      .r      d l kF4
+                      .dcu*o                 "
+                      -4,.a       Q)    .a, cSt k'
+                      a* fi.k o o
+                      d                 % k*
+m bV                  k h d                   r3d
+P      A                ,a G            0,      B
+   V   w              0           dArl
+ 0 0 'rl              A d               * d o
+-P b W                +.am                .PG
+       B                   .rl a, m a *
+d                     F:d@+I-!.O
+mocu                  4 p, $  k 41
+      a                    +.P                . G O
+a3P-P             '   $4 .P             9-l
+                      0dcu                    r-l*
+                      @ $ A                   d A
+rn     (r,            6                              h[r
+     k A                                H 0 *rl
+     a h              B k k                   -130
+4 P,                  0 a o                          5
+cj                                        * a
+l-lm * ! I            -P (d       0 a,-A e,
+k d d
+(Ustoc3               .%-I
+                            B E
+                              $Ft
+                                         E-2
+& P C @                0 W I - l P l V)
+ale+ k                     , ~ O O . r*
+f?   P*      cj       *.r b.P. F: rn
+                      A              0 $
+                       w9-4 a,d mn 6
+                      *'-I 0.4 & O H c)
+                      GJ     *+k         k
+                      b3s               OP,                rj
+                           -P & . P a )
+                      o-ria,                  kdF:
+                      A r o - P O                    0 0
+                      H a k d                        k k
+                           o d,%l                    rj 0
+                           a                  1
+                                  w a c r ~ ~ w
+                      c u O S ! O                 c J 0
+                           ,c,   .,-I   k        .v
+                           *      G 4 - f F: S3-P
+                                 .rl      0 0 0
+                           0 rjdd            k 0
+                           .P     Ei a,-Pkk
+had a f r o n t a l a r e a of 1 s q u a r e f o o t .           Then, p e r s q u a r e
+f o o t of open f r o n t a l a e L t h e c a s i n g w e i g h t from f i g a r e
+28 i s e u l t i o l i e d by        h / f      on t h e . a s s u m p t i o n t h a t t h e
+c a s i n g s i z e i n c r e a s e s w i t h t h e s q u a r e r o o t of t h e f r o n t a l
+area,        A s m a l l e r r o r i s i n t r o d u c e d when t h e t o t a l w e i g h t
+p e r s q u a r e f o o t of open f r o n t a l a r e a i s u s e d t o c o n p u t e
+w e i g h t s f o r r a d i a t o r s of i n c r e a s i n g f r o n t a l a r e a s , b e c a u s e
+t h e c a s i n g w e i g h t i s now m u l t i p l i e d by t h e r a t i o of t h e
+f r o n t n l a r e a s i n s t e a d of by t h e s q u a r e r o o t a f t h i s r a t i o .
+
+        4,    The w e i g h t of s o l d e r p e r s q u a r e f o o t o f open f r o n -
+t a l a r e a i s t a k e n a s 1,5 pounds.
+
+
+                                      REFERENCES
+
+
+I.     G l a u e r t , H.:   The E l e m e n t s o f A c r o f o i l a ~ l dA i r s c r e w
+            lheory.
+            n              Cambridge U n i v e r s i t y P r e s s , 1 9 3 0 , pp. 107-
+            108.
+
+2.     H c r t s h o r n , A . S.:   Xoto on F e r f o r m a n c e Data f o r Honey-
+            comb R a d i a t o r s i n a 3 u c t . B. & I$. No. 1 7 4 0 , B r i t -
+             i s h A.R.C.,      1936.
+
+3.     McAd.ams, ' i F i l l i a m H . : Heat T r a n s m i s s i o n .         McGraa-Bill
+          Book Go. , I n c . , 1-933.
+
+4,     T h e o d o r s e n , T h e o d o r e , 3 r e e v o o r t , 3d. J., a n d S t i c ? ~ l e ,
+            Geor'ze Ti. : F u l l - S c a l e T e s t s of 1q.A.C.A.             Cowlings.
+            T.R. No. 5 9 2 , N.A.C.A.,                  1937.
+                          .     It
+5.     L o r e n z , H . : Varmeabgabe und W i d e r s t a n d von ~ f i h l e r e l -
+             ementen.       Aerod. I n s t . a n d e r Tech. Hochs. A a c h e n ,
+             h e f t 1 3 , 1 9 3 3 , S. 12-59,
+
+6.     H a r r i s , R. G . , a n d G a y s i l l , L. E . :   Further Experi-
+            ments on Honeycomb B a d i a t o r s .           B. & 14. Xo. 9 5 2 ,
+            S r i t i s h B.R.C.,   1925.
+
+7,     H a r r i s , Thomas A , , a n d B e c a n t , I s i d o r e G . :        Investiga-
+            t i o n i n t h e 7- by 10-Foot F i n d Tunnel o f D u c t s f o r
+            C o o l i n g R a d i a t o r s w i t h i n a n A i r p l a n e Wing.   TeR.
+             ( t o bc p u b l i s h e d ) , N.A.C.A.,        1939.
+
+ 8.     Capon, R. S . :      The Cowling of C o o l i n g S y s t e m s .                          lh.
+           Eo'. 1 7 0 2 , B r i t i s h X,R.C,, 1936.
+B!erod.ith, 3'. F.:       Xoto on t h e C o o l i n q o f A i r c r a f t
+   Engines mith S p e c i a l Xeference t o Ethylene Glycol
+   R a d i a t o r s Enclosed i n Ducts.     R.           go. 1 6 8 3 ,
+   S r i t i s h AeRoC., 1 9 3 6 .
+
+Brombachor , W. G. : A l t i t u d . e - P r e s s u r e T a b l e s Based
+   on t h e U n i t e d S t a t e s S t a n d a r d Atmosphere.       TOR.
+   NO. 5 3 8 , N * A o C . A o , 1935.
+
+Sromn, G. A n d e r t o n , a n d Barlom, F. G. : Heat D i s s i p z -
+   t i o n o f E t h y l e n e G l y c o l R a d i a t o r s a n d Comparison
+   mith r a t e r Radiators.              R. & M. No. 1 6 9 6 , B r i t i s h
+   A*BeCe, 1936.
+
+? y e , D. R.:      The I n t e r n a l Combustion E n g i n e . Vol. 11.
+      The Aoro-Engine.          O x f o r d st t h e Clarond.oa P r e s s ,
+      1 9 3 4 , p. 209.
+
+P a r s o n s , S . R., a n d H a r p e r , D. R*, 3d:     Badintors for
+     A i r c r a f t Engines.          Tech. P-t.uer 30. 211, v o l e 1 6 ,
+      N a t i o n a l B u r , S t a n d z r d s , 1922.
+
+Wood, Donald H. : T e s t s of Y a c e l l e - P r o p e l l e r Combina-
+   t i o n s i n Various P o s i t i o n s mith Reference t o Pings.
+   Part I.       T h i c k Wing
+   Tractor Propeller.
+                                  -3.h.C.d.    Comled W a c e l l e
+                                T.B. No, 4 1 5 , X.A.G.A.,         1932.
+                                                                        -
+H a r r i s , .B. G,, a n d h l f o r d , IT. K.: mind Channel T e s t s
+    on R a d i a t o r s . 8. & M. No. 9 3 4 , B r i t i s h A . R . C . ,
+    1925.
+ N.A. C.A
+
+
+                                                               TABLE I11
+                                       TIG C~LLCULATIONS
+                                                       RE'JJIRGD FOR A CHOICE OF Ap
+
+     c ~ e x a ~ o n atube;
+                        l   computations based on u n i t open f r o n t a l area;     T,,    -   Ti,   = 7 0 ° ~ . ; f , 0.750;
+
+            qpr 100 percent; r(Ch/CL),          0.1;     Vo,   300 m.p. h. ; D, 1/48 f t . ; Ta, 73.5°~.3
+
+
+
+
+                                                               TABLE V I
+                                  OPTIWMCOOLINGEFFICIENCIE3FORV.~IOUS~DIAT~~
+energy t o be d i s s i p a t e d , 250 hp. ; tube-wall thickness, 0.005 in. ; minimum water-passage w a i d t h ,
+ 0.028 in. ; T, - Ti, = 70'~. ; bp, 25.6 lb./sq. f t. ; qp, 100 percent; c(cDW/cL),0.1; Vo, 200 m.p.hd
+
+                               Heat d i s s l -                                                           Cooling
+                                                         ~ e i g h tof Pomr re- Power re-
+                                     per q. equired a complete
+                                   of open 'frontal
+                                  ft                                     qulred      qulred f o r Power  efflcienc~
+  Radiator           L     L/D           area     area   r a d i a t o r f o r cool- weight pW reouired (neglecting
+                                                                         i n g PD                   Pt  frontal area)
+                   et .I         hp.1           (8s.ft.1   (lb.)           (hp.)       (hp.)      (hp.)
+                                                                                                            H
+                                                                                 -                                       FT
+        A          0.52    50.0    110.0               4.88         215      12.25           11.50          23.75         10.50
+        B          1.04    50.0    111.5               3-74         251      13-15           13.40          26.55          9.40
+        C          1.48    47.4    107.0               3.60         295      14.40           15.75          30.15          8-33
+        D            .56   53.8    111.2               3.81         190      11.70           10.15          21.85         11.45
+        E          1.17    56.2     114.0              2.92         215      12.05           11.45          23.50     '10.70
+        F          1.65    52.s     110.5              2.73         240     113.20           12.80          26.00          9.61
+
+  Corrugated
+   f = 0.82        1.30    38.0        72.7            4.19         291     114.7            15.5           30.2           g.28
+
+
+    a
+        Neglecting decrease i n casing weight a s t h e t o t a l r a d i a t o r s i z e increases.
+                                   I          I            I   I   Water
+                                                                           >
+                                                                           0
+                                                                           k
+
+
+
+
+                     TABLE V I I
+  TfIE EFFECT OF ALTITUDE UPON RADIATQA B3ELFORMBNCE
+
+
+
+@eat diselpatiou and     PD are i n hp./eq. it. of open
+
+
+
+
+frontal area; q , 100 percent, agarrmed for a l l values
+               P
+
+
+     of the e x i t aettin& D, 1/48 Pt*; L/D, 503                          (n
+                                                                           G,
+                              FIGURE LEGEMIR
+
+
+  (a) Static-tube connection.
+  ( 7 1 ) Saml2le tube.
+Figure 1.- Tube for friction-loss study.
+
+Figure 2.- Velocity distributions for the 1/2-inch-diameter
+   circular tube.
+Figure 3.- Pressure drop alonq a smooth tube with a stream-
+   line entrance.
+
+Figure 4.- Summary of friction-loss data for single tubes.
+
+
+                Radiators
+               Length   Tube
+       Curve
+
+         A      18             0.240     75     '75
+         B       9
+         C       5
+         G      23.7
+
+
+Figure 5.- Isothermal friction data for several radiators
+   and comparison with single-tube data.
+
+
+
+               ----- ----- -------------
+                                         25.6
+
+
+                     D
+                      C
+                     AB       I:$J;]
+                              11/96
+                              '1/48 ,
+                                         25.6
+                                         25.6
+                                          6.4
+                -      - l
+                         -,-           i-----------,---
+Figure 6.- Air velocity in the tube against length for sev-
+   eral aiameters. End losses included: Ta, 73.5' .'3
+Figure 7?- Analysis o f single tubes.
+Figure 8. Heat transfer against length for several tube
+   diameters. T,          -
+                     Ti, = 70° F.; fully develaped turbu-
+   lent flow; h p , 25.6 lb,/sq, ft.
+F i g u r e 9.- Heat t r a n s f e r a g a i n s t l e n g t h f o r s c v c r a l v a l u e s
+      o f Ap.    T,      -
+                       Ti,     = 70' R e ; D , 1 / 4 8 f t .
+
+F i q u r e 1 0 , - Throe-tube          s e c t i o n from t h e corrugated-tube
+      radiator,
+
+     A , capper-coil          secondary shorted.
+     B , m a t e s pump.
+     C,
+      bypass.
+      valvia.
+     D,
+     E,
+      expansion tank.
+     F,
+      o r i f i c e f b r measuring w a t e r flow.
+      s t a t i c t u b e , w a t e r manometer.
+     G,
+  H, v e n t u r i f o r m e a s u r i n g a i r flow:
+  I , thermocouple i n s t a l l a t i o n . .
+  3 , s t a t i c t u b e , a l c o h o l nanometer.
+  K, baffle plate.
+  L, duct w a l l .
+  M, radiator.
+  B , e x p a n s i o n box.
+  0 , p i t o t t u b e , a l c o h o l manometer.
+  P , i n s t a l l a t i o n s f o r nine thermocouples.
+Figure lI?- Apparatus f o r h e a t - t r a n s f e r i n v e s t i g a t i o n .
+
+F i g u r e 12.- I l l u s t r a t i o n of e x t r a p o l a t i o n t o f i n d       ha   from
+     ht     f o r one of t h e r a d i a t o r s .
+
+
+                             Radiator                          Diameter
+                 Curve        length
+               -- _--_--__--_._.>
+                                                                 (in. )
+                               (in.
+                     A        23.7
+                     B          5
+                     C        18                                     .240
+                     D          9                                    .250
+                     E       Recommended f o r f u l l y d e v e f -
+                             oped t u r b u l e n t f l o w by
+                             ii1cAdams ( r e f e r e n c e 3 , p . 1 7 3 )
+               ----i     -___-_-----_            _ _---------.-------
+4 i . z u r e 13.-
+-I
+                     C o r r e l a t i o n of t h e h e a t - t r a n s f e r   data.
+                         curve/ ( f t . 1
+                                       I)    I   ( 1 b .AP
+                                                        /sq.ft.)
+
+                                                    25.6
+                                                    25.6
+                                                    25,6
+                                                     6.4
+                                  Corru-            25.6
+                                  gated
+                                  tube
+
+F i g u r e 14.- B e a t t r a n s f e r a g a i n s t l e n g t h f o r s e v e r a l t u b e
+      diameters.            Tw-    Ti,'=  70° 2.; e n d l o s s e s i n c l u d e d ; a i r
+      c o n s t a n t s t a k e n a t '73.59,
+
+F i g u r e 15.- C o o l i n g e f f i c i e n c y a @ a i n s t l e n g t h . Tw -
+                                                                                  Tia =
+      70° I'.;     dp, 25.6 l b . / s q . f t . :    f , 0.650: qp, 1 0 0 p e r c e n t ;
+      € ( C D / c L ) , 0 . 1 ; v l , 200 mepahe; $ 300 m*p*h*
+           ?V
+     ( a ) Cooling e f f i c i e n c y a g a i n s t l e n g t h f o r s e v e r a l v a l u e s
+             o f Ap.       T,      -T i , = 70' .F.; f , 0.750; q,,         .     LOO per-
+             c e n t ; E ( C D w / C ~ ) , 0 . 1 ; T o , 300 m.p.h. ; D , 1 / 4 8 f t .
+     (b) The c h o i c e of t h e d e s i g n Ap.     D a t a from . t a b l e IT.
+F i ~ u r e1 6 . - The c h o i c e o f . &p  f o r a duct i n s t a l l a t i o n .
+
+F i g u r e 17.- The change i n c o o l i n g e f f i c i e n c y n i t h Q p .
+      Tw -   Tia = '70' B . ; f , 0 . 7 5 0 ; q,, 100 p e r c e n t : € (cD,/cL).
+      0.1; 'J,,  300 m.p.h.; D , 1 / 4 8 fF.; L , 0.75 E t . ; Ta,
+     73,s0      F.
+F i g u r e 1 8 . - C o o l i n q e f f i c i e n c y a g a i n s t l e n g t h f o r two pump
+      efi'iciencies.            T, -    T i a = 70' F . ; Ap, 25.6 l b . / s q . f t . ;
+      f , 3 . 6 5 0 ; E ( C D V / c L ) , 0.1; T o , 200 m.p,h.; D , 1 / 4 8 f t .
+
+Figure 19.- Cooling e f f i c i e n c y a g a i n s t ' l e n g t h f o r v a r i o u s
+   r a d i a t o r s w i t h optimum f r e e - a r e a r a t i o s . A , B, etc.,
+   a s i n t a b l e V ; T,        -
+                                  Ti,  = 70° F . ; Q p , 2 5 . 6 ~ b . / s ~ . f t . ;
+   Op, 1 0 0 p e r c e n t ; E (cD,/CL), 0.1: To, 200 m.p.h.
+
+F i g u r e 20.-     The f l u i d c o n d i t i o n s f o r a r a d i a t o r i n a d u c t .
+
+F i g u r e 2 1 . - The e f f e c t of a l t i t u d e on t h e f l o w t h r o u g h t h e
+      radiator.       F i x e d d u c t - e x i t opening; supercharged. e n g i n e .
+F i g u r e 22.- I l l u s t r a t i o n of t h e change i n h e a t d i s s i p a -
+      t i o n w i t h a l t i t u d e f o r a f i x e d e x i t opening.
+
+    (a) The c r o s s - f l o w r a d i a t o r .
+    ( 5 ) P o s s i b l e f r o n t a l shapes f o r a given value of        md.
+1
+e i g u r e 23.- The l e n g t h of t h e p a t h on t h e l i q u i d s i d e .
+
+F i s u r e 24.- E f f e c t of        Ap on t h e c o o l i n g e f f i c i e n c y f o r
+      ail i n s t a l l a t i o n i n a s e p a r a t e n a c e l l e . T,-   Tia = ~ o O F . ;
+      f , 0.750: 7 , 1 0 0 p e r c e n t ; E ( c D W / c L ) , 0 . 1 ; $ , 300
+    m.p.h.;        D , 1/48 ft.:         CDn,     0.12.
+
+   ( a ) Czn, 0.12:          no i n t e r f e r e n c e .
+   ( b ) CD,,      0.048;     wing i n t e r f e r e n c e .
+   (c)    CD,,     0.018:     wing i n t e r f e r e n c e .
+F i g u r e 25.- C o o l i n g e f f i c i e n c y a g a i n s t l e n g t h f o r a n i n -
+      s t a l l a t i o n in a separate nacelle.                A , B, e t c . , as i n
+      t a b l e V; Tw    -    T i , = 70° F.; Op, 25.6 l b . / s q . f t . ;          f ,
+      ogtimvm f o r e a c h t u b e s h a p e a n d s i z e : V p , 1 0 0 p e r c e n t :
+      E ( c ~ ~ / c ~0.1:    ) , V g , 200 n . p . h
+F i g u r e 26.-    Zrictionless duct, heating a t constant pres-
+      sure.
+
+F i g u r e 27.-    The p r e s s u r e - v o l u n e   cycle f o r t h e flow through
+      s Ciuc.1;.
+
+F i g u r e 2 8 . - The a n a l y s i s of t h e d a t a on r a d i a t o r w e i g h t s
+      from r e f e r e n c e s 6 and 15.
+N.A.C.A.                                 Figs. la, 2
+
+
+
+
+                                        Figure la
+           /
+
+
+
+
+               Dtstonce f m wall, in.
+
+                 Figure 2
+                                            Fige, Ib, 10
+
+
+
+
+             NgPrc, 10,- Three-tube rection from the
+                         corrugated-tub mbiator,
+
+
+
+
+(b) Sample tube,
+
+Figure 1.0 Tube for friction-loss study.
+N.A.C.A.                     Figs. 3, 5
+
+
+
+
+            Le/7gfh, in.
+             Figure 3
+
+
+
+
+                             Figure 5
+
+
+
+
+           Reynolds Number
+N.A.C.A.   Fig. 4
+N.A.C.A.                            Figs. 6 , 7 , 8
+
+
+
+
+           0   /                2      3
+                   Length, fi
+
+                   Figure 8
+N.A.C.A.               Figs. 9,11
+
+
+
+
+           Figure 11
+N.A.C.A.               Figs. 12,14
+
+
+
+
+           Figure 12
+Figure 13
+N.A.C.A.                   Figs. 15,17
+
+
+
+
+           Ap, lb./sg.fi
+
+
+           Figure 1'7
+Fig. 16
+N.A. C . A .                F i g s . 18,19
+
+
+
+
+               Figure I &
+
+
+
+
+               Figure 19
+N.A.C.A.                 F i g s . 20,23
+
+
+
+
+                     Figure 20
+
+
+
+
+           Wafer
+
+
+
+
+                    Figure 23a
+
+
+
+
+                   F i g u r e 23b
+N.A.C.A.   Figs. 21,22
+
+
+
+
+             gure 22
+              Fig. 24
+
+
+
+
+      1
+Length, ft,
+N.A.   Figs. 2 5 , 2 6
+
+
+
+
+        Figure 2 5
+
+
+
+
+       Figure 26
+N.A.C.A.                Figs.
+
+
+
+
+           Figure 2 7
+

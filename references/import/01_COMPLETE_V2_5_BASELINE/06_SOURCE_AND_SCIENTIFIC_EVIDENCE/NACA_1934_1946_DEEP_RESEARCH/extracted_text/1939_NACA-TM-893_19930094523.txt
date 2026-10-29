@@ -1,0 +1,858 @@
+                                                                                                                                            *.....        ,
+                                                                                                                                       ,.            .,:.,4
+                                                                                                                                               ,’
+
+
+
+
+                                                                                .< ..,,.                     ..
+                                                                                TECHNICAL                         tiEMbRANDUMS
+                                                                                                                                                                          f., ,,-,,,.,
+                                      NATIONAL                          ADVISORY                        C6MMITTEE             FOR AERONAUTICS
+
+
+
+
+                                                                                                        No . 89X
+                                                                                                      ..-—        ---
+
+
+
+
+                                       ,,
+
+
+                        co~~RIBuTIoN                             TO             THE             T!HEORY            CF   THE   H~ATED                 DUCT     RADI~TCJR
+
+
+                                                                                                      By H. Winter
+
+
+                                                    Luftfahrtforschun-g
+                                           Vol. 15, No. 10/11, October 10, 19X8
+                                      Verlag von R. oldenbourg,    Miinchen und Berlin
+
+                                        ,,                                                                                                                        ,,
+                                                                                                                                  ,,
+
+                           ..                                                                                           .,
+
+
+
+
+-   a-   >--   . ...4           -A.     --   .-,.   ,   ,   ,.   ..3,    . ..      ,,.     -,     .
+
+
+
+
+                                                                                                  Washington
+                                                                                                “.April 1939
+                              \
+                                          Illllllllllllllnmiufillllllllllllll
+                                            31176014102686
+                                                            ‘-,
+                          NAT IOI?;L ADVm~VmKZH-~Uml                .AERONAUTICS
+
+
+                                  TECHNICAL     MEMORANDUM       NO. 893
+w’   .   . .   .                   ,..                       .
+
+
+
+                   CONTRIBUTION   TO THE THEORY     OF THE HEATED          DUCT   RADIATOR*
+
+                                              By H. Winter
+
+
+                                          I. INTRODUCTION
+
+
+                         A method is developed whereby without any undue ne.
+                   glect of certain factors the decrease in the mass flow of
+                   air and in the drag of the heated radiator,        i,e., one un.
+                   der actual operating    conditions,    as compared with the cor-
+                   responding   values in the cold state, may be simply computed.
+                   Altho,ugh a symmetrical   duct radiator has been used to
+                   bring out the flow relations,      the results apply equally as
+                   well to the unsymmetrical     radiator   shapes usual in air-
+                   plane construction.
+
+                         It was itieredith (reference 1) who first pointed out
+                   the possible gain in power required      to tow the radiator
+                   system under the operating condition      as compared with the
+                   cold condition and showed “how the momentum or power gain
+                   resulting  from the heating of the air by the coolant may
+                   be approximately   computed with the aid of simple momentum
+                   and energy considerations.      Since the computation,   however,
+                   involves rather extensive    simplifications,   the results may
+                   be used tentatively   as a first approximation     only.
+
+                         A very clear presentation  of the effect of the air
+                   forces on a duct radiator, particularly    on the radiator
+                   cowling, has been given by ITeise (reference 2) who ex-
+                   plained the change of state of the air in the radiator
+                   with the aid of a velocity-pressure    diagram.   In the pres-
+                   ent paper simple formulas are derived with the aid of
+                   which the lowering in the drag of a radiator due to heat-
+                   ing may be computed with an accuracy sufficient     for prac-
+                   tical requirements.    There is first considered   the case
+                   of the cold radiator and next the effect of the heating
+                   of the radiator on the rate of air flow and on the drag.
+
+               *jQeitrag Zur Theorie des beheizten  Dusenkiihlers.l’ From
+               Luftfahrtforschung,  vol. 15, no.. 10/I.1, Oct. 10, 1938, pp.
+                500 to 504.
+                                                                           ..
+
+
+
+
+2              :N.A..C. A...Technical                Memorandum.3To.       893
+                                               ,.,
+
+                                    II. .NOTATION
+                                                      ,.
+
+Vo,      PO, I?o, P.o,       velocity,  air density, cross-sec-
+                                tional area, and pressure at
+                                duct inlet.
+
+‘“l’ P 1’ F,        PI,      corresponding values immediately
+                               in front of radiator block.                                        See
+                                                                                               fig.     1.
+                             corresponding             values     behind         radia-    }
+‘2’      P 2’ F,    P2,
+                               tor block.
+
+v        P~, Fa, po,         corresponding             values     at duct         exit.
+    3’
+                                                                                          J“
+         F.
+
+
+
+iv.        internal        drag    of cold radiator.
+  lk’
+?$.
+ 1’
+          ,interilal drag          of heated          radiator.
+
+Cw ‘       drag    coefficient        of cold          radiator.
+
+ccc 9      effective        rate    of air flow            V1 /vo   (equation         (6))
+             through        cold    radiator.
+
+CPcl
+   ,       theoretical  flow          ratio          through    cold   radiator           (equa-
+             tion (6a)).
+
+T1         flow ratio through              the heated          radiator          (equations
+             “(14) ,and (1’7)).
+
+mJi>       efficiency of diverging  passage ahead                               of radiator
+             block (equations  (7) and (7a)).
+
+         V2
+C02=-,
+         ‘o
+
+
+
+
+N,         engine    power        (hp.).
+                                           .
+Q=75aN,              heat     quantity         to be conducted            away,      mkg/s .
+
+
+
+                      ..
+                       N.A.C.A.       Technical       Memorandum.No.         893               3
+
+
+                   Po
+.       ,P* = -—                                                  .,    ..
+Es==.   ,,.’..,.”..
+             ,&’,’:       ~,     ..                               ,..
+               ~Povo’
+
+                 ;5 aN
+        8=         —
+               $ P. V03 F
+
+        w~~ * “thermodynamic           efficiency       of”the    radiator         elements.
+
+              6;   temperature     drop between         cooling     flufd     and air
+              .,
+                     radiator-    entry.
+
+                                                  I
+         K=    1,4;                                    (kcal/kgm) .
+                       ‘P ‘0”24;         ‘.= ~
+
+
+                         III. THE UNHEATED             DUCT RADIATOR
+
+
+               We first consider     the flow through and around an un.
+        heated duct radiator.       On figure 1 the cross sections and
+         the corresponding    velocities,   densities,   and pressures
+        are indicated.     For the cold radiator       vl = V2 . The cross.
+         secticmal area    Fo,    which is proportional     to the quantity
+         of air flowing through, depends as is known on the cross-
+         section ratio    F /Fa , on the drag of the enclosed radiator
+         blo.c.k,,
+                 and on the remaining flow losses within the radia.
+         tor.. Of these losses that, due to the widening         of the
+        flow cross secti,~n from       F.  to F,    is of particular    im-
+        portance,     The flow may generally be considered       only part-
+        ,lY as a flow through a diffuser in the usual sense, i.e.,
+        as a flow through a diverging passage,         since the flow
+         cross sectio-n”begins to enlarge ahead of the duct entry
+         itself.   Up to the stagnation point at the nose of the
+        radiator,   the flow may be considered      as being free from
+         losses but in the diverging duct” in front of the radia-
+         tor elements losses arise and way be taken approximately
+         into account by introducing      a diffuser efficiency as will
+        be shown below.      However, losses are also involved in the
+         ext6rn”al flow” about the ra’diator.     This flow may he corn.
+        pared with “that about the” upper side “of a more or less
+         steeply inclined wing eection.        The 16ss the ,air quantity
+        fl’oti’ingthrohgh ‘for “given dimensions    of the ,duct “radiator
+        and given speed, i.e., the more divergent         the stream lines
+        ahead of the radiator, the greater are the losses of the
+        external flow, particularly       those about the leading edge
+4          N. A. C.A.   Technical          Memorandum., No.   893
+
+
+of the radiator.    The flow pattern then corresponds ap-
+proximately  to that a%out ah airfoil set at a large angle
+of attack; i.e. , the flow may, under certain conditions,
+separate from the outside duct wall and give rise to an
+external radiator  drag that may amount to a considerable
+portion of the total drag.
+
+      We shall next consider the flow at the radiator exit
+section.   Since the flow at the outer duct wall does not
+eriiirely sep’arate and the air exit from the radiator takes
+place without appreciable    contraction,   the static pressure
+at the plane of the exit section may be assumed as equal
+to the external pressure     Po    Not considering
+                                       ●
+                                                     for the mo-
+ment tile external flow losses, there is o“btained the veloc-
+ity distribution   shown by the continuous    line in figure 1.
+From the momentum   theorem, neglecting   changes in density,
+the “internal drag” of the cold radiator may le computed as
+
+                    w.  = P.       F Vl      (V. - V3)
+                     lk
+or
+                                                                    (1)
+
+
+             ‘1           ~=;_.
+where   ~k = ~-   and
+                                   a
+
+      The internal drag thus depends on the opening ratio
+of the eXit passage and on the flOw ratio     ~k.  The latter
+may be readily computed   if the drag coefficient   (Cw)   of
+the cold radiator  elements is known, for %xample from
+tests in the closed duct. The pressure rise ahead of the
+radiator elements not considering    diffuser loss is ob-
+tained from t~e Bernoulli   equation
+
+
+                  PI - P. = g              {vo’ - V12)              (2)
+
+
+For siinplicity the diffuser loss is expressed    in terms of
+the.total  theoretical  pressure rise although,   as previously
+mentioned,  the diverging   flow only partly takes place
+through the duct itself, and for the actual pressure rise
+there is obtained
+
+                  PI - p = TQ. ~              (v.o’ - v,’)          (3)
+                             12
+                        \ \+
+                             f’.
+p-                      –
+
+
+
+
+                            N. A..C,A. Technical Mem”orandru.q.No”. 89’3              !5.
+                                              ._-,
+
+                 ~ “’The flow” in.-the .dtict behind the” radiakor may be con-
+.             ‘sidered: as “prac’t.i.talky,,w,.ithout
+                                      ,.,.,’”.     ‘losses, s.,0t%a,t  “ ~~
+-,       ...,        .,,
+                       -..                          .-’—”,’. ,. ..,,,
+                                                                  .,,.       .,
+;.
+                                            P.   -
+                                  Pa = po + — V1”2,(&         - 1)                (4)
+              .,                           ,2. , .,
+             For” the pressure      drop   through    the radiator   elements,   we
+             have
+                   .,
+                                                 PO            “
+                                     PX - Pa = ~      Viacw                       (5)
+
+ r
+
+             and after simple substitution s,” there is obtained from
+             equations  (3), (4), and (5) the rate of flow ratio for                  the
+             cold radiator
+
+
+
+
+             This ratio thus &open&s on the diffuser efficiency       as well
+             as on   Cw and, P.     FOr .Otnerwise equal conditions   this
+             efficiency  will be somewhat    lower for a duct radiator with
+             small, inlet section than for one with large inlet section.
+             A contraction   of the inle..topening thus leads, to a lower-
+             ing in’ the “air discharge rate (equation (6)) but generally
+     ,       to an increase in the internal drag (equation      (l)).
+
+                   The actual velocity distribution        at the radiator exit
+             corresponds   approximately    to the dotted curve in figure 1,
+             The additional    momentum   loss is due to the external radia-
+     (       tor 10ss, i:.e., to the fribtioaal       resistance   of the exter-
+            nal cowling.      This loss willbe     relatively    small, provided
+             the flow separation     is nott,oo great, but “will increase
+            with decreasing     discnarge,ratio     (i.e. , for large    cm and
+            ~~don account of the strong flOW about the leading edge
+                   since the internald rag      is relatively    small, it will’
+            for: a considerable      portion of the total drag.        For the.
+             same reason, this loss will be somewhat smaller for a ra-
+            diator with diffuser      than for one without a diffuser.         The
+             inlet diffuser thus leads to a lowering of the external
+            drag at the expense of the internal drag and the rate of
+,,..        discharge    throu,gh the radiator.”., These changes will, how-
+            ever , n,ot”’bevery large, so, that. the total drag may be
+            considered    as suffic~en$ly    ind,e,pen~~nt .o”ft’he inlet cross
+            “S’~,c’$ion””whileit depends very much on -the value        Cw of
+             thq encl”osed radiator block and on the ratio,, radiator
+            cross section/exit      cross section.
+
+
+
+              —              —.
+I I   I 11111111111111111111 III   111111   I    I   I      II   I   I     11111111   I   I   11,,,,   mm,mm,m,    ,,,   ,,, ,,,.,                 ,,
+
+
+
+
+            6                               N,.A. G.A.. Technical                               Memo’randum’l?o. 893
+
+
+                  If the rate of flow ratio    of the cold radiator  is
+            known from measurements,    the diffuser: efficiency  may con-
+            versely be determined   from it.    Denoting by
+
+
+                                                                                                                                                        (f3a)
+
+
+            the theoretical discharge   ratio                                                              of the duct radiator                         is
+            obtained from equations   (6) and                                                              (6a):
+
+
+                                                                                                                                                        (7)
+
+
+            or , since                          cp       and         CPk    ar?,                 in general,                         not very   differ-
+                                                 o
+            ent
+
+                                                                                                                                                        (7a)
+
+
+            a very simple relation  for the expansion efficiency.    This
+            efficiency may be determined,for    example, from the effec-
+            tive rate of discharge  ratio    CPk obtained from model
+            tests              and from                  the theoretical                                discharge                    ratio   9..
+
+
+                                                     IV, THE HI!ATTQ DUCT RAilIATOR
+
+
+                  The heating of the radiator  elements leads to a de-
+            crease in the air density from    Pl to    P2 “and to an in-
+            crease                 in the velocity                         from                VI            to            V2.        (See fig.    1.)
+
+                  i?or the two-control surface’s aa and                                                                                 bb  directly
+            in front of and behind t,ineradiator block,                                                                                the momentum
+            equation    gives
+
+
+                                                     pl +        P. V12 = p2 +                                    P2 v2~, + $                           (8)
+
+
+           where    W  denotes “the total frontal and frictional  resist-
+           ance of the radiator blockl.     For the cola radiator    (Vl =
+           -—----                                     -—.
+           l~fl is
+                   s of course, not t-ne equvalent to the internal drag
+           of the system:     cooler block + duct, according  to equation
+           (l).
+                                  —.
+                                   ...-. .. .         ..                                            .
+l~z       -
+ ?.
+
+
+
+
+                                 N.A.C.AJ             Technical       Memo~andum        No.   893           7
+
+
+              V2),    the pressure difference   is a measure: of this resist.
+              ante:         ‘,.                         ,.         ,>
+               ..”        ,“
+                         ‘~                     :Po””“’  ““ ““     ““
+                .            .w=- F.(P1 - Q   = - vl~    c~ l’        -.
+                              .   . .,           2                       ..
+
+              For the heated, radiator,, this is no,longer  the case since:
+              as follows from equat,ion (8), the change in momentum here
+              also plays an important part.    For equal weight of cooling
+              air, the pressure drop in the heated radiator is greater
+              than: in” the.cold one since the momentum at the exit ex-
+              ceeds that at the inlet and mor60ver the mean, dynamic pres-
+              sure increases    to
+
+
+
+
+                    In the drag coefficient     Cw , there is included the
+              frontal resistance,    the frictional  loss, for example, in
+              the cooling elements,    and the mixing loss at the radiator
+              exit.   The frictional   drag depends on the Reynolds Number.
+              The small difference    in Cw due to the difference       in the
+      4
+              discharge  rate and in the mean air temperature      obtained
+              with the heated radiator as compared m~th the COld       radia-
+
+              tor, will not, however, be taken into a~cou.lt in the fol-
+              lowing computation., since, as further     computation    silows,
+              the change in the discharge rate is very slight and the
+              frictional  resistance   constitutes  only a (not ,accurately
+              known generally)   portion of the totai drag.
+
+                   On substituting                         the mean   dynamic      pr”essure,       (equation
+              (8) goes over into2
+
+                                                                                P         Pa
+              Aph = p
+              ——.—.
+                        1
+                            -p
+                                 2
+                                     = (P2V:2-
+                                                ---
+                                                             ~oV12)   +’$
+                                                                            (   .&vIa   + ---v22, cw
+                                                                                                )
+                                                                                                                (8a)
+
+              21f   the drag         coefficient               of th~ hot radiator            is defined        as
+                                                                  A ph
+                                                           Cwh = ——
+                                                               “&’2
+                                                                      V1
+ ..       .                                                       2
+              A Ph   includes the pr”essure rise due to the momentum in-
+              crease and the increase in the mean dynamic pressure.      The
+              drag ,Coefficient will. then of course differ essentially
+               (Continued on next page)
+     8           I?.A. C:A.   Technical   Mbmo%andum     No.. 893
+
+
+     On account of the increased pressure’ drop in the radiator
+     hock,    the streamlines   ahead of the radiator must diverge
+     more strongly than in the case of the cold radiator;         i.e.,
+     there is a decrease     in ,therate   of air discharge  until an
+     equilibrium   condition   corresponding   to equation  (8a) is
+     reached.    We shall therefore first determine      the cooling
+     air discharge   rate through, the heated radiator and from it
+     t21e internal drag of the heated radiator.               ..
+           Equation   (8a) contains five unknowns   (P,*P2.JV,PV2)
+     Pa).   If we neglect   the very small change in the diffuser
+     efficiency   on account ‘of the somewhat decreased   rate of
+     discharge,   equation  (3)  remains unchanged.  Equation   (4)
+     passes over into
+
+                                                                            (9)
+
+
+     to whicil must    be added   the continuity       equation
+
+                                                                        (lo)
+
+     and   finally   the energy   equation   in the following       form.
+
+           The difference  in the total energies at two cross
+     sections immediately   in front of and behind the radiator
+     block is equal to the quantity of heat transmitted    by the
+     radiator to the air.    The frontal and frictional resist-
+     ance of the radiator   gives rise to no loss in the total
+     energy since the’ work required is directly converted   into
+     the friction loss:
+                              2 ‘           V12
+                            ‘2..
+        Povl  Fg[i2+A—            -     +A—       =Q         (11)
+                  L(        2 g     “’.ll   2g )]
+
+     For the heat content, we have in general
+     ——-.-—                .—.—.—.———-                        — —-—
+     2Continu’ed from page ‘i’
+     from that of the cold radiator.        A similar consideration
+     of the momentum was given by H. Lorenz for the ducted
+     radiator and appreciable     deviations   were obtained in the
+     results of the measurements,      ascribed by Lorenz to the
+     simplified  assumptions    made.   This contradiction   is rather
+     to be explained by the fact that through an oversight         the
+     iiicrease in momentum   was set equal to ~(P2v22-     POV12) and
+     no’t to P2v22- Pov12    which is the proper expression, (ref-
+     erence 3).
+
+
+
+
+—.
+         .
+
+
+
+                                          N. A. C.A, Technical                        “Memorandum                   No.       893                            9
+
+
+
+
+         ,,..,,,,     .         -.1              . ..       .
+                                                                    .,. lJ.    .,      .     ,., ..-,    .-,   .    .         .   . ..... .
+
+
+
+
+                    The ‘quantity of heat    Q(kcal /s)                                          may be “taken as a frac.
+                    ti’o”nof tlie engine power:   ‘
+
+                               ; Q.=, A u75”N                                 ,(for ’water cooling,                      a : 0.50),
+
+                    Equation          (11) then becomes
+                                      K                     P=  PI      1
+                    POVIF 1 ——
+                          LK-lp                         (   — . .-
+                                                             2
+                                                                   )
+                                                                P0,2
+                                                                     +-   (V22-Vi=)
+                                                                                                                    1
+                                                                                                                         =’75                 aIf      (ha)
+
+
+                         The solution of the system of equations      (3), (8a),
+                    (9), (10), and (ha)     gives a relation between the inlet
+                    and outlet velocities    where in place of vl     and   v
+                    there ar,e again  introduced   the nondimensional  VG1OC !?
+                                                                              ties
+                    Tl = VI /vG   and  CP2 = v. /vo:
+
+
+
+                                                                                                                                                       (12)               ●
+
+
+
+
+                    I’inally, there                             is. obtained        an equation                    for    the velocity
+                    ratio   cpl
+
+                          r~
+
+
+
+
+                                          -1-’                                                                                                        -1-
+●
+
+
+
+    ✎✎
+
+
+
+
+                                                                                                        (P* +      ~Di),1,= ‘“                        .(13),,
+                    where
+                                                                           Po                                           75a          y,.
+                                                            P*”’        —                  and          6 =
+                                                                        ~ P. V02                                $ P. V03 F
+
+
+
+
+                                                                                                                                              -—7=—    .——       —   .—       —
+III   I   II   Illnmm,,,   1111111     ,,,,,    ,, ,   , ! . ! . !!!!!!.!. !!!..!!!! !. !! . !!...!.!..!!!   .,,
+                                                                                                               . , ,     ,,. ._.L    __,   ,,   ...    ., ,.,   .... .   .—-.
+
+
+
+
+                     10                        N.A.C.A.            Technical                     Memorandum            No.     893
+
+
+                    Equation   (13) can be represented     in the form of a family
+                    of curves with the parameters       Toi$   Cw ; P2 ~ and     6.   It
+                    is readily shown that the two middle terms of the expres-
+                    sion in brackets,    which arise essentially    from the squared
+                    velocities   in equation   (ha),  are” small under normal con-
+                    ditions compared with the other two terms.         Furthermore ,
+                    in the fourth term of the expression       in brackets    ~D , may
+                    Ye neglected   in comparison   with   p*.   The resulting    ~xpres-
+                    sion, neglecting   a small term under the root, then becomos
+
+
+
+                                                                                                                                                      (14)
+
+
+                    where            ~Di        for a given                    case           is to be determined                     by equa-
+                    tion (7) or estimated.    The remaining   terms on the right-
+                    hand side of the equation may be considered      as known.  The
+                    velocity  through the radiator decreases    linearly with the
+                    quantity of heat carried “off a N.      The decrease as com-
+                    pared with the cold radiator amounts to
+                                                                                                      c?
+                                                                           fkp=            1 -        -2                                              (15)
+                                                                                                       ‘%
+                          The internal drag of the cold radiator  is given by
+                    equation  (l).   In the same manner there is obtained for
+                    the internal drag of the heated radiator
+
+                            Wi = PoFvl(vo                             -~v2)=P0Fvo2cpl                                     (l -@q,)
+
+                    where  Cp2 is determined from                                                  equation            (12).        The decrease
+                    in drag therefore amounts to
+
+
+
+
+                          Only the internal radiator drag can be readily comput-
+                    ed.   If the chance in the rate of flow in heating the raiii-
+                    ator is not very lar~e, the external drag may be considered
+                    as unchanged.   Equation  (16) in that case gives, to a good
+                    degree of approximation,   the total decrease in the drag due
+                    to the heating.
+
+                         In some cases a different presentation    of these re-
+                    sults is desirable,    The heat given off by a radiator ele-
+                    ment is generally   expressed in the following  form
+
+
+
+
+                . ...—..
+                      —— .                                                                —.
+
+
+
+
+                             X?.A.C.A. !Eechnical Memorandum                               No. 893          11
+
+
+
+                                    Q =Fv                1   g P. cp ‘flthe (kcal/s’)                                9
+*.                .,...-:                ,.,-                                                                   .,
+         or
+
+                              Q=    7’5ctN=                  427      F ‘o      g   P.   Cp Tth6Cp1   (m%z/s)
+
+         where   ~th  is ‘the thermodynamic   efficiency” of’ the radi-
+         ato,r, which is known   from tests  on the radiator block in
+         the duct as a function    of the discharge   rate,   b is the
+         temperature” drop between the cooling fluid and the air at
+         the radiator inlet.     With this expression   for   Qor    aN
+ .,      the simplified   equation’ (13) gives
+                                                                           Q~
+                                                    Cl)l     =   ——                                        (17)
+                                                                           —.
+                                                                 J’i-+c6
+
+                                                                           @2+l+y-
+                      K A 1 g Po cp ~th
+              C = 427 -—    —.—         —                                                  ——
+                                Po
+
+         or with
+                                                    K=       1.4,               = 0.24
+                                                                           CP
+
+                                               @ 2+1+%
+                              G = 288 ~ ~th ——                                                             (17a)
+                                      P(J   1321- Cw -(1 - n~i)
+
+         where,       except       for          #     and          qdi,         C    contains    only magni-
+     1   tudes that are known from,experirnent for a ducted radiator,
+         If, in addition,   there is known tne velocity  CP1= for the
+                                                          a,
+         cold’ducted  radiator   ~lj)
+                                   #  may be determined from  equation
+         (7) and the velocity for’the heated radiator        condition                                          (0)
+         from equations  (17) and (17a).   The exit velOCitY       92,                                           the
+         decreas,e in the discharge velocity and in the drag are                                                giv-
+         en by equation  (12), (15), and (15), respectively
+
+               By the method described above, the decrease    in the
+         discharge rate and in the internal drag was computed for
+         radiators   of various drag coefficients   and thermodynamic
+         efficiencies   for   e = 65° (mean value for water cooling)
+         and for   6 = 115°,         being
+         n
+                                ~J~      , estimated at 0.85 and
+         Q = o 0000135    corresponding   to normal conditions  at
+         Po       ●
+
+
+
+
+         3,000 meters altitude.    The results are presented   in fig=
+     -.
+
+
+
+
+12          N. A.C,,A.   Teb.hnical.:M
+                                    emorandum    J?o..
+                                                     ”893
+
+
+ures      2 to 5 as a function    of t@e cross-section    ratio   I?a/F
+for       ?lth = 0.6 and 0..7. As’may be seen for 6 = 1150
+~th     =  0.7   and  Fa/F = 0.15, the condition     is reached at
+  . —..                                                         \
+which the radiator no longer possesses          any. internal drag.
+Since, however, for such duct” openings the internal drag
+agy amount to only a.very small portion of the total drag,
+ the decrease based on the total drag is relativt?ly small
+unless special means are prbvided for keeping the external
+drag small.        The decrease   in the discharge rate is prac-
+ ticality independent      of   cm and in the figures is repre-
+ sented therefore by only one curve.          The, effect of the de-
+crease in the radiator        drag on the power required for tow-         -
+ ing the duct system may readily be determined           b“y the usual
+method and will therefore be’ omitted.
+
+
+Translation  by S. Reiss,
+National Advisory  Committee
+                                                                          .
+for Aeronautics.
+
+
+                            REFERENCES
+
+
+1. Meredith,  F. W.:    Note on the Cooling of Aircraft En-
+       gines with Special Reference   to” Ethylene Glycol Ra-
+       diators Enclosed    in Oucts. R.& M. No. 1683, British
+      A.R.C., 1935.
+
+2. Weise, A.:   The Conversion  of Energy        in a Radiator.
+       T. M. No. 869, N.A.C.A. , 1938.
+
+3. Lorenz, H.:   W5rmeabgabe   und Widerstand  von Kuhlerele-
+      menten.   Abhandlungen   aus dem Aerodynamischen   Insti-
+       tut an der T’echn. Hochschule  Aachen, Heft 13, S. 26
+      und 31.
+
+
+
+
+            .,
+       N.A.C.A. .Technical.MemorandumNo. “893                               Figs.1,2,3,4,5
+
+
+
+                ., ,.:.      f
+
+
+
+. .                     v~
+                      --g-
+                        Po
+
+
+
+
+                          Figure 1.- Flow through and around a ducted radiator.
+
+
+
+
+                                            Fig. 2                                Fig, 4
+
+
+
+
+                                                                       —=
+                                                                             F
+
+
+
+
+                \\h
+       Q8                    I   I   I
+            I   V&!!%            I   t      Fig. 3                                ,Fig. 5
+
+
+
+
+      l’i~res 2 to 5.. Decrease in the discharge velocity and in the internal
+                       drag of a heated radiator in comparison with the unheated
+      condition as a function of the duct opening ratio Fa/F for various drag
+                                              Po
+      coefficients of the radiator block(cw). —  = 0.00001,35 (H=3,000 m).
+                                              Po
+                ,,..   ,.>-..,<
+                           <,:
+
+                                                1.’.
+
+
+
+
+                                                                  ,,
+
+
+
+
+                                      .,
+
+
+
+
+                                           ,,
+                                  ,
+
+
+
+
+>.....//’
+
+                                                        ,,
+
+
+
+                                                       .,.        ,
+    ‘,,
+          i,.
+
+
+                                                             ,.
+

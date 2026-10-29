@@ -1,0 +1,530 @@
+{
+  "version": "v1.6-source-RPM-and-untuned-figure-5",
+  "source": {
+    "specimen": "P-51B-15-NA USAAF 43-24777",
+    "source": "Wright Field Materiel Command flight test Eng-47-1749-A, 20 May 1944, original Figure 5: Power Required in Level Flight",
+    "url": "https://www.wwiiaircraftperformance.com/org/p-51/p-51_files/P-51B_24777_Power_Required.jpg",
+    "textSourceUrl": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+    "altitudeFt": 22400,
+    "nominalWeightLb": 9240,
+    "weightQualification": "9,240 lb around the 22,400 ft speed-test condition in this wartime report, NOT the 9,335 lb at takeoff of the climb test.",
+    "sourceMethod": "Original period chart, read by eye at circles on source graph; approximate values, NOT a published numerical data table. Source TEST B.H.P. was assigned using the Packard power chart, not a flight torque meter.",
+    "uncertainties": "All point readings carry at least +/- 4 mph and +/- 35 shaft horsepower graph-reading uncertainty. Other test uncertainties (engine chart, cooling, airspeed calibration) are unquantified.",
+    "points": [
+      {
+        "tasMph": 270,
+        "testBhp": 490,
+        "engineRpm": 2100,
+        "manifoldInHg": 24.9,
+        "gear": "low",
+        "mixture": "auto lean"
+      },
+      {
+        "tasMph": 318,
+        "testBhp": 610,
+        "engineRpm": 2300,
+        "manifoldInHg": 28.3,
+        "gear": "low",
+        "mixture": "auto lean"
+      },
+      {
+        "tasMph": 387,
+        "testBhp": 1000,
+        "engineRpm": 2700,
+        "manifoldInHg": 48,
+        "gear": "high",
+        "mixture": "auto rich",
+        "mapReadingStatus": "not clearly legible"
+      },
+      {
+        "tasMph": 395,
+        "testBhp": 1090,
+        "engineRpm": 3000,
+        "manifoldInHg": 42.9,
+        "gear": "low",
+        "mixture": "auto rich"
+      },
+      {
+        "tasMph": 415,
+        "testBhp": 1290,
+        "engineRpm": 3000,
+        "manifoldInHg": 67,
+        "gear": "high",
+        "mixture": "auto rich"
+      },
+      {
+        "tasMph": 430,
+        "testBhp": 1440,
+        "engineRpm": 3000,
+        "manifoldInHg": 67,
+        "gear": "high",
+        "mixture": "auto rich",
+        "readingStatus": "graph-reading approximation"
+      }
+    ],
+    "validationRule": "Run the one-speed-anchored aerodynamic polar and prop model with RECORDED engine RPM at each marker. Do not use these points to refit the speed anchor, fiddle e, or invent climb thrust. Do not treat six same-flight-programme markers as six independent aircraft tests."
+  },
+  "scenarios": [
+    {
+      "profile": "A",
+      "calibratedPolar": {
+        "cd0": 0.015865746048539454,
+        "e": 0.78,
+        "source": "v1.5 anchored A / e=0.78; single sea-level or 5000-ft observed speed only"
+      },
+      "sourceRpmCorrected": false,
+      "summary": {
+        "meanResidualBhp": 32.26804266330239,
+        "MAEBhp": 57.49317754897063,
+        "maxAbsResidualBhp": 99.7858358769306
+      },
+      "lowAndMidSpeed": {
+        "meanResidualBhp": 67.32091515920476,
+        "MAEBhp": 67.32091515920476,
+        "maxAbsResidualBhp": 99.7858358769306
+      },
+      "points": [
+        {
+          "tasMph": 270,
+          "testBhp": 490,
+          "engineRpm": 2100,
+          "manifoldInHg": 24.9,
+          "gear": "low",
+          "mixture": "auto lean",
+          "observedEtaNeededForCurrentPolar": 0.9056892814963603,
+          "modeledRequiredBhp": 554.7346849165207,
+          "etaAtSourceRpm": 0.8,
+          "etaIfIncorrectlyAt3000Rpm": 0.8,
+          "propRpm": null,
+          "parasiteRequiredHp": 243.43732326744126,
+          "inducedRequiredHp": 200.35042466577522,
+          "residualBhp": 64.73468491652068
+        },
+        {
+          "tasMph": 318,
+          "testBhp": 610,
+          "engineRpm": 2300,
+          "manifoldInHg": 28.3,
+          "gear": "low",
+          "mixture": "auto lean",
+          "observedEtaNeededForCurrentPolar": 0.930866670002532,
+          "modeledRequiredBhp": 709.7858358769306,
+          "etaAtSourceRpm": 0.8,
+          "etaIfIncorrectlyAt3000Rpm": 0.8,
+          "propRpm": null,
+          "parasiteRequiredHp": 397.719817570226,
+          "inducedRequiredHp": 170.10885113131863,
+          "residualBhp": 99.7858358769306
+        },
+        {
+          "tasMph": 387,
+          "testBhp": 1000,
+          "engineRpm": 2700,
+          "manifoldInHg": 48,
+          "gear": "high",
+          "mixture": "auto rich",
+          "mapReadingStatus": "not clearly legible",
+          "observedEtaNeededForCurrentPolar": 0.8566301534912396,
+          "modeledRequiredBhp": 1070.7876918640495,
+          "etaAtSourceRpm": 0.8,
+          "etaIfIncorrectlyAt3000Rpm": 0.8,
+          "propRpm": null,
+          "parasiteRequiredHp": 716.8507874453501,
+          "inducedRequiredHp": 139.77936604588973,
+          "residualBhp": 70.78769186404952
+        },
+        {
+          "tasMph": 395,
+          "testBhp": 1090,
+          "engineRpm": 3000,
+          "manifoldInHg": 42.9,
+          "gear": "low",
+          "mixture": "auto rich",
+          "observedEtaNeededForCurrentPolar": 0.824936108608674,
+          "modeledRequiredBhp": 1123.9754479793182,
+          "etaAtSourceRpm": 0.8,
+          "etaIfIncorrectlyAt3000Rpm": 0.8,
+          "propRpm": null,
+          "parasiteRequiredHp": 762.2319668397603,
+          "inducedRequiredHp": 136.9483915436945,
+          "residualBhp": 33.97544797931823
+        },
+        {
+          "tasMph": 415,
+          "testBhp": 1290,
+          "engineRpm": 3000,
+          "manifoldInHg": 67,
+          "gear": "high",
+          "mixture": "auto rich",
+          "observedEtaNeededForCurrentPolar": 0.7862975452153599,
+          "modeledRequiredBhp": 1267.9047916597676,
+          "etaAtSourceRpm": 0.8,
+          "etaIfIncorrectlyAt3000Rpm": 0.8,
+          "propRpm": null,
+          "parasiteRequiredHp": 883.9753642681533,
+          "inducedRequiredHp": 130.34846905966103,
+          "residualBhp": -22.095208340232375
+        },
+        {
+          "tasMph": 430,
+          "testBhp": 1440,
+          "engineRpm": 3000,
+          "manifoldInHg": 67,
+          "gear": "high",
+          "mixture": "auto rich",
+          "readingStatus": "graph-reading approximation",
+          "observedEtaNeededForCurrentPolar": 0.7702332242684599,
+          "modeledRequiredBhp": 1386.4198036832277,
+          "etaAtSourceRpm": 0.8,
+          "etaIfIncorrectlyAt3000Rpm": 0.8,
+          "propRpm": null,
+          "parasiteRequiredHp": 983.3344135052815,
+          "inducedRequiredHp": 125.80142944130074,
+          "residualBhp": -53.580196316772344
+        }
+      ]
+    },
+    {
+      "profile": "B",
+      "calibratedPolar": {
+        "cd0": 0.015603605319639653,
+        "e": 0.78,
+        "source": "v1.5 anchored B / e=0.78; single sea-level or 5000-ft observed speed only"
+      },
+      "sourceRpmCorrected": false,
+      "summary": {
+        "meanResidualBhp": 44.13940427846543,
+        "MAEBhp": 49.176881111057924,
+        "maxAbsResidualBhp": 91.04592754475675
+      },
+      "lowAndMidSpeed": {
+        "meanResidualBhp": 68.53439179941836,
+        "MAEBhp": 68.53439179941836,
+        "maxAbsResidualBhp": 91.04592754475675
+      },
+      "points": [
+        {
+          "tasMph": 270,
+          "testBhp": 490,
+          "engineRpm": 2100,
+          "manifoldInHg": 24.9,
+          "gear": "low",
+          "mixture": "auto lean",
+          "observedEtaNeededForCurrentPolar": 0.8974807571971344,
+          "modeledRequiredBhp": 539.5896577013445,
+          "etaAtSourceRpm": 0.8150000000000001,
+          "etaIfIncorrectlyAt3000Rpm": 0.8150000000000001,
+          "propRpm": null,
+          "parasiteRequiredHp": 239.41514636082061,
+          "inducedRequiredHp": 200.35042466577522,
+          "residualBhp": 49.58965770134455
+        },
+        {
+          "tasMph": 318,
+          "testBhp": 610,
+          "engineRpm": 2300,
+          "manifoldInHg": 28.3,
+          "gear": "low",
+          "mixture": "auto lean",
+          "observedEtaNeededForCurrentPolar": 0.9200940485120203,
+          "modeledRequiredBhp": 701.0459275447568,
+          "etaAtSourceRpm": 0.8006000000000001,
+          "etaIfIncorrectlyAt3000Rpm": 0.8006000000000001,
+          "propRpm": null,
+          "parasiteRequiredHp": 391.1485184610138,
+          "inducedRequiredHp": 170.10885113131863,
+          "residualBhp": 91.04592754475675
+        },
+        {
+          "tasMph": 387,
+          "testBhp": 1000,
+          "engineRpm": 2700,
+          "manifoldInHg": 48,
+          "gear": "high",
+          "mixture": "auto rich",
+          "mapReadingStatus": "not clearly legible",
+          "observedEtaNeededForCurrentPolar": 0.8447860342573624,
+          "modeledRequiredBhp": 1083.1978898030034,
+          "etaAtSourceRpm": 0.7799,
+          "etaIfIncorrectlyAt3000Rpm": 0.7799,
+          "propRpm": null,
+          "parasiteRequiredHp": 705.0066682114727,
+          "inducedRequiredHp": 139.77936604588973,
+          "residualBhp": 83.19788980300336
+        },
+        {
+          "tasMph": 395,
+          "testBhp": 1090,
+          "engineRpm": 3000,
+          "manifoldInHg": 42.9,
+          "gear": "low",
+          "mixture": "auto rich",
+          "observedEtaNeededForCurrentPolar": 0.813382047381204,
+          "modeledRequiredBhp": 1140.3040921485688,
+          "etaAtSourceRpm": 0.7775000000000001,
+          "etaIfIncorrectlyAt3000Rpm": 0.7775000000000001,
+          "propRpm": null,
+          "parasiteRequiredHp": 749.638040101818,
+          "inducedRequiredHp": 136.9483915436945,
+          "residualBhp": 50.30409214856877
+        },
+        {
+          "tasMph": 415,
+          "testBhp": 1290,
+          "engineRpm": 3000,
+          "manifoldInHg": 67,
+          "gear": "high",
+          "mixture": "auto rich",
+          "observedEtaNeededForCurrentPolar": 0.7749755111946101,
+          "modeledRequiredBhp": 1295.8112889708966,
+          "etaAtSourceRpm": 0.7715000000000001,
+          "etaIfIncorrectlyAt3000Rpm": 0.7715000000000001,
+          "propRpm": null,
+          "parasiteRequiredHp": 869.369940381386,
+          "inducedRequiredHp": 130.34846905966103,
+          "residualBhp": 5.811288970896612
+        },
+        {
+          "tasMph": 430,
+          "testBhp": 1440,
+          "engineRpm": 3000,
+          "manifoldInHg": 67,
+          "gear": "high",
+          "mixture": "auto rich",
+          "readingStatus": "graph-reading approximation",
+          "observedEtaNeededForCurrentPolar": 0.7589505318112533,
+          "modeledRequiredBhp": 1424.8875695022225,
+          "etaAtSourceRpm": 0.767,
+          "etaIfIncorrectlyAt3000Rpm": 0.767,
+          "propRpm": null,
+          "parasiteRequiredHp": 967.0873363669039,
+          "inducedRequiredHp": 125.80142944130074,
+          "residualBhp": -15.112430497777495
+        }
+      ]
+    },
+    {
+      "profile": "C",
+      "calibratedPolar": {
+        "cd0": 0.0162226349489314,
+        "e": 0.78,
+        "source": "v1.5 anchored C / e=0.78; single sea-level or 5000-ft observed speed only"
+      },
+      "sourceRpmCorrected": true,
+      "summary": {
+        "meanResidualBhp": 64.31151380629102,
+        "MAEBhp": 64.31151380629102,
+        "maxAbsResidualBhp": 118.63301189891956
+      },
+      "lowAndMidSpeed": {
+        "meanResidualBhp": 88.64273396924719,
+        "MAEBhp": 88.64273396924719,
+        "maxAbsResidualBhp": 118.63301189891956
+      },
+      "points": [
+        {
+          "tasMph": 270,
+          "testBhp": 490,
+          "engineRpm": 2100,
+          "manifoldInHg": 24.9,
+          "gear": "low",
+          "mixture": "auto lean",
+          "observedEtaNeededForCurrentPolar": 0.9168646956461813,
+          "modeledRequiredBhp": 555.8276814692874,
+          "etaAtSourceRpm": 0.808278745094226,
+          "etaIfIncorrectlyAt3000Rpm": 0.8242494021152714,
+          "propRpm": 1002.2727272727273,
+          "parasiteRequiredHp": 248.91327620085366,
+          "inducedRequiredHp": 200.35042466577522,
+          "residualBhp": 65.82768146928743
+        },
+        {
+          "tasMph": 318,
+          "testBhp": 610,
+          "engineRpm": 2300,
+          "manifoldInHg": 28.3,
+          "gear": "low",
+          "mixture": "auto lean",
+          "observedEtaNeededForCurrentPolar": 0.9455329488910638,
+          "modeledRequiredBhp": 728.6330118989196,
+          "etaAtSourceRpm": 0.7915851867875054,
+          "etaIfIncorrectlyAt3000Rpm": 0.826387560670274,
+          "propRpm": 1097.7272727272727,
+          "parasiteRequiredHp": 406.6662476922303,
+          "inducedRequiredHp": 170.10885113131863,
+          "residualBhp": 118.63301189891956
+        },
+        {
+          "tasMph": 387,
+          "testBhp": 1000,
+          "engineRpm": 2700,
+          "manifoldInHg": 48,
+          "gear": "high",
+          "mixture": "auto rich",
+          "mapReadingStatus": "not clearly legible",
+          "observedEtaNeededForCurrentPolar": 0.8727552123755663,
+          "modeledRequiredBhp": 1117.20384741811,
+          "etaAtSourceRpm": 0.7811960318544628,
+          "etaIfIncorrectlyAt3000Rpm": 0.8058573369487038,
+          "propRpm": 1288.6363636363635,
+          "parasiteRequiredHp": 732.9758463296765,
+          "inducedRequiredHp": 139.77936604588973,
+          "residualBhp": 117.20384741810994
+        },
+        {
+          "tasMph": 395,
+          "testBhp": 1090,
+          "engineRpm": 3000,
+          "manifoldInHg": 42.9,
+          "gear": "low",
+          "mixture": "auto rich",
+          "observedEtaNeededForCurrentPolar": 0.8406662708915031,
+          "modeledRequiredBhp": 1142.9063950906718,
+          "etaAtSourceRpm": 0.8017509038428665,
+          "etaIfIncorrectlyAt3000Rpm": 0.8017509038428665,
+          "propRpm": 1431.8181818181818,
+          "parasiteRequiredHp": 779.3778437280439,
+          "inducedRequiredHp": 136.9483915436945,
+          "residualBhp": 52.90639509067182
+        },
+        {
+          "tasMph": 415,
+          "testBhp": 1290,
+          "engineRpm": 3000,
+          "manifoldInHg": 67,
+          "gear": "high",
+          "mixture": "auto rich",
+          "observedEtaNeededForCurrentPolar": 0.8017118163544703,
+          "modeledRequiredBhp": 1309.5422563049074,
+          "etaAtSourceRpm": 0.7897478971128876,
+          "etaIfIncorrectlyAt3000Rpm": 0.7897478971128876,
+          "propRpm": 1431.8181818181818,
+          "parasiteRequiredHp": 903.8597740376057,
+          "inducedRequiredHp": 130.34846905966103,
+          "residualBhp": 19.54225630490737
+        },
+        {
+          "tasMph": 430,
+          "testBhp": 1440,
+          "engineRpm": 3000,
+          "manifoldInHg": 67,
+          "gear": "high",
+          "mixture": "auto rich",
+          "readingStatus": "graph-reading approximation",
+          "observedEtaNeededForCurrentPolar": 0.7855939342253325,
+          "modeledRequiredBhp": 1451.75589065585,
+          "etaAtSourceRpm": 0.7792324264469968,
+          "etaIfIncorrectlyAt3000Rpm": 0.7792324264469968,
+          "propRpm": 1431.8181818181818,
+          "parasiteRequiredHp": 1005.453835843178,
+          "inducedRequiredHp": 125.80142944130074,
+          "residualBhp": 11.755890655849953
+        }
+      ]
+    }
+  ],
+  "oswaldSensitivity": [
+    {
+      "e": 0.55,
+      "cd0": 0.01581338627312682,
+      "valid": true,
+      "meanResidualBhp": 121.97257776841695,
+      "MAEBhp": 121.97257776841695,
+      "maxAbsResidualBhp": 195.53876206188284,
+      "lowAndMidSpeed": {
+        "meanResidualBhp": 156.35663406263575,
+        "MAEBhp": 156.35663406263575,
+        "maxAbsResidualBhp": 195.53876206188284
+      }
+    },
+    {
+      "e": 0.65,
+      "cd0": 0.016026907321372685,
+      "valid": true,
+      "meanResidualBhp": 91.88854439687293,
+      "MAEBhp": 91.88854439687293,
+      "maxAbsResidualBhp": 155.41402284642368,
+      "lowAndMidSpeed": {
+        "meanResidualBhp": 121.0276427095634,
+        "MAEBhp": 121.0276427095634,
+        "maxAbsResidualBhp": 155.41402284642368
+      }
+    },
+    {
+      "e": 0.78,
+      "cd0": 0.0162226349489314,
+      "valid": true,
+      "meanResidualBhp": 64.31151380629102,
+      "MAEBhp": 64.31151380629102,
+      "maxAbsResidualBhp": 118.63301189891956,
+      "lowAndMidSpeed": {
+        "meanResidualBhp": 88.64273396924719,
+        "MAEBhp": 88.64273396924719,
+        "maxAbsResidualBhp": 118.63301189891956
+      }
+    },
+    {
+      "e": 0.9,
+      "cd0": 0.01635312003397054,
+      "valid": true,
+      "meanResidualBhp": 45.92682674590318,
+      "MAEBhp": 45.92682674590318,
+      "maxAbsResidualBhp": 100.89342988464318,
+      "lowAndMidSpeed": {
+        "meanResidualBhp": 67.05279480903647,
+        "MAEBhp": 67.05279480903647,
+        "maxAbsResidualBhp": 100.89342988464318
+      }
+    },
+    {
+      "e": 1,
+      "cd0": 0.016437935339245983,
+      "valid": true,
+      "meanResidualBhp": 33.97678015665098,
+      "MAEBhp": 36.715665649881686,
+      "maxAbsResidualBhp": 90.29165848788989,
+      "lowAndMidSpeed": {
+        "meanResidualBhp": 53.0193343548995,
+        "MAEBhp": 53.0193343548995,
+        "maxAbsResidualBhp": 90.29165848788989
+      }
+    }
+  ],
+  "p51ClimbPowerGap": [
+    {
+      "rating": "67inHg",
+      "altFt": 2200,
+      "modeledOptimumTasMph": 171,
+      "modelFpm": 3401.0861529653166,
+      "observedFpm": 3820,
+      "gapFpm": 418.9138470346834,
+      "sourceEngineRpm": 3000,
+      "modelEta": 0.7809409097141065,
+      "shaftBhp": 1603.1,
+      "extraPropulsiveHpNeeded": 118.50184127351997,
+      "etaIfExplainedSolelyByProp": 0.8548613396770033,
+      "note": "Power gap arithmetic; does NOT prove the propeller is the physical cause."
+    },
+    {
+      "rating": "75inHg",
+      "altFt": 2200,
+      "modeledOptimumTasMph": 175,
+      "modelFpm": 3978.538324234923,
+      "observedFpm": 4380,
+      "gapFpm": 401.46167576507696,
+      "sourceEngineRpm": 3000,
+      "modelEta": 0.7841005727757949,
+      "shaftBhp": 1811.1,
+      "extraPropulsiveHpNeeded": 113.5649922189745,
+      "etaIfExplainedSolelyByProp": 0.8468055543996559,
+      "note": "Power gap arithmetic; does NOT prove the propeller is the physical cause."
+    }
+  ],
+  "baselineUnmodified": {
+    "p47SpeedHoldoutMAEMph": 3.649356289075695,
+    "p51SpeedHoldoutMAEMph": 2.6099007098907805,
+    "bf109CombatToEmergencyMph": 339.37410024487417,
+    "bf109ClimbSeconds": 213.9355402759316
+  },
+  "verdict": "Chart power-required markers and takeoff-weight climb checks are a NEW independent speed-regime constraint, NOT a validated engine/propeller efficiency or airframe-specific Oswald fit. F4 still lacks a measured glide/turn polar. Do not retrofit a hidden P-51 coefficient."
+}

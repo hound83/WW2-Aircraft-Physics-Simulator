@@ -1,0 +1,85 @@
+{
+  "source": "NACA 1944 ACR L4L07 (Vogeley), 19930093302",
+  "textProvenance": "Original NACA report text indexed on Scribd with OCR; original image PDF is identified by NASA but could NOT be obtained for visual verification in this environment",
+  "status": "OCR-TRANSCRIBED-UNVERIFIED",
+  "propeller": {
+    "bladeDesign": "Curtiss 714-1C2-12",
+    "bladeCount": 4,
+    "diameterFt": 12.166666666666666,
+    "reductionRatio": 2.0,
+    "militaryBhpApprox": 2000,
+    "militaryEngineRpm": 2700,
+    "normalBhpApprox": 1625,
+    "normalEngineRpmApprox": 2550
+  },
+  "constraints": [
+    {
+      "id": "MIL_VS_NORMAL_165IAS",
+      "altitudeFt": "not a single test altitude; source reports climb variation over altitude",
+      "speedIasMph": 165,
+      "quantity": "relative efficiency decrease",
+      "lowerFraction": 0.05,
+      "upperFraction": 0.08,
+      "primaryText": "5 to 8 percent loss increasing normal to military power",
+      "sourcePart": "Report summary and conclusions; figures 4 & 6; Table I",
+      "percentInterpretation": "ambiguous whether relative percent or percentage points; compare both"
+    },
+    {
+      "id": "NORMAL_160_IAS",
+      "speedIasMph": 160,
+      "approxEfficiency": 0.8,
+      "confidence": "approximate text summary",
+      "sourcePart": "Results discussion / figure 5"
+    },
+    {
+      "id": "NORMAL_165_IAS",
+      "speedIasMph": 165,
+      "approxEfficiency": 0.85,
+      "confidence": "approximate text summary, inferred +5 percentage points from normal 160 IAS",
+      "sourcePart": "Results discussion / figure 6"
+    },
+    {
+      "id": "MIL_165_IAS",
+      "speedIasMph": 165,
+      "approxEfficiency": 0.76,
+      "confidence": "approximate text summary",
+      "sourcePart": "Results discussion / figure 4"
+    }
+  ],
+  "provisionalRunLabels": [
+    {
+      "run": "20-1",
+      "figure": "7a",
+      "speedIasMph": 160,
+      "power": "normal",
+      "J": 1.0,
+      "Cp": 0.165,
+      "Ct": 0.132,
+      "etaReportedOCR": 0.799,
+      "tipMach": 0.793,
+      "confidence": "medium: label OCR; \u03b7=J\u00b7Ct/Cp supports 0.800; run association needs scan"
+    },
+    {
+      "run": "24-6",
+      "figure": "11a",
+      "power": "high-speed test",
+      "J": 1.59,
+      "Cp": 0.343,
+      "Ct": 0.171,
+      "etaReportedOCR": 0.792,
+      "tipMach": 0.952,
+      "confidence": "medium: Table II OCR values; \u03b7=J\u00b7Ct/Cp supports 0.793; visually unverified"
+    },
+    {
+      "run": "24-5",
+      "figure": "11b",
+      "power": "high-speed test",
+      "J": 1.84,
+      "Cp": 0.347,
+      "Ct": 0.151,
+      "etaReportedOCR": 0.801,
+      "tipMach": 0.979,
+      "confidence": "medium: Table II OCR values; \u03b7=J\u00b7Ct/Cp supports 0.801; visually unverified"
+    }
+  ]
+}

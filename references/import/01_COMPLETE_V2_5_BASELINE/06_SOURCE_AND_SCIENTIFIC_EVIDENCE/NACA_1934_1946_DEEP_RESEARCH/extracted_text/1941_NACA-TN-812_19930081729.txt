@@ -1,0 +1,3010 @@
+                                - -. ——..--—.,   -—       . ,.—   .
+                                                                                  .
+                                      ...— —     .    .
+                                                                                  {
+                                                                                  i-
+                                                                                  L
+
+
+
+                                                                                  $
+                                                                                  :1
+                                                                                  i’ 3
+
+
+
+-.
+
+                          TECHNICAL         NOTES                     *
+          NATIONAL   ADVISORY     COMMITTEE          SfOR AERONAUTICS
+
+
+
+
+                                  No.    812
+                                 ——
+
+ “o
+
+
+      MINIMUM   INDU@ilD DRAG    IN WING--FUSELAGE                I17TEREERENCE
+ ?
+                         By Perry A. Pepper
+                        New York University
+.!
+ ,
+
+
+
+
+                                .——-—       —
+
+
+
+                                                                                        ...
+
+
+                                                                                  ,,-
+                                                                                        ‘[
+                                                                                        ,.
+                                                                                        lb
+
+                                                                                    1
+                                                                                   -,
+                                                                                   i.
+                                                                                   -..
+                             Washington                                           .+,f
+                                                                                     }
+                           September  1941
+                                                                                        (1
+                                                                                         ,r
+                                                                                         “~
+                                                                                         -1
+                                                                                             1
+                                                                                              k ...........
+      MATIOIZAL ADVISORY       00MMITTEU      W3R A13ROlJAUTICJS
+                              .—
+                  930WJICAL  IJ03?EHO.          812
+                          ——
+  MINIMUM   INDUCED   DRAG    IN   WIM(3-~USELAGIE INTERYF3CRENCE*
+
+                      By Perry      &    Pepper
+                                                               #
+
+                               SUMMARY
+
+
+      By means of a general theorem founded on the basis of
+Prandtl~s   theory of the lifting line. a method is derived
+for obtaining    the minimum induoed drag of airfoils     in the
+proximity  of   ideal internal boundaries.    The theorem is
+applied to the case of an ideal wing-fuselage       combination
+consisting   of a lifting   line intersecting  an infinitely
+long circular cylindrical     fuselage to determine   the effect
+of wing height on the minimum induced drag.       The case of
+ideal combinations    with constant circulation    is aleo con-
+sidered in detail. ae it has been treated erroneously        ia a
+previous analysis.     The analysis preeented   here incidental-
+ly reveals some errors in previous      work on aerodynamic
+theory.
+
+                             IIl!tRODUOTIOl!?         -
+
+
+      The approximations   of the Prandtl theory of the finite
+airfoil (reference    1) permit the general solution of the
+problem of minimum induced drag of isolated airfoils and
+airfoil systems (references     2. 3. and 4).   This problem has
+also been solved by Lennert!z (reference     5) for a particular
+case of wing-fuselage    interference.  in which the ,ideal fuse-
+lage consists of an infinitely     long circular cylinder with
+the airfoil in the midwing position.      These solutions   sug-
+geeted a theorem that would solve the problem of minimum
+induced drag for the most general case of wing-fuselage        in-
+terference,   in which any number of wings of any front ele-
+vation and any number of Ideal fuselages      (infinitely  long
+cylinders)  of any aross section are admitted.
+
+     ~hie note presents   this general solution as well as
+an important applicatlont   the determination  of the minimum
+.————..                -—                 —               ——       .——.—.
+*Based on q thesis accepted by the Graduate Division of the
+College of Engineering  of New York University  in partial
+fulfillment of the requirements  for the degree of Doctor of
+Engineering Science.
+
+
+                                                                            —~v   -“-   -------
+                                                                                                                    -&-
+
+    r     *. ,
+
+                             I
+                                 2                 NACA   Z!echntcal ITote ITo. 812
+                                                                                                                    ;
+
+
+
+
+                             i   induced drag of wing-fuselage   monoplane combinations   with
+            t-- .)
+                                 ideal circular fuselages and varying wing height.      In or-
+                             t   der to prove the theorem, it was found necessary    first to
+                                 repeat in a new form eertai.n portions of the basic aerody-
+                                 namic theory because of an error discovered    in the work of
+          .s ‘                   Trefftz (reference  3).  This error does not affect !Crefftzls
+                    ●    ,       results but its correction   is important in the present anal-
+          ...-4
+                                 yBis*
+
+          I..            *
+                                       Accordingly,   the first portion of this note deals with
+                #
+                                 the derivation    of analytic  expressions   for the lift and the
+                    ,>
+    ,i.             .*           induced drag of the finite airfoil and includes an eqlana-
+          ,* .
+                                 tion of the Trefftz error as well as that of a certain par-
+                                 adoxical statement by Prandtl on the application         of the mo-
+                                 mentum theorem to the flow about the finite airfoil;” Wie—
+                                 rest of the paper contains the establishment        of the general
+                                 solution of the minimum drag problem and its application         to
+                                 high-wing   and low-wing combinations,     including the deter-
+                                 mination of load distributions.       It was found that the in-
+                                 terference   effect for combinat3.ons with constant circula-
+.,.                 ,            tion has been treated erroneousl~- by Lennertz (reference        5).
+                                 The corrected analy6is     IS presen~ed-here    in an-appendix.    -
+                                                                                      .—.
+                                       The writer is very grateful to Dr. K. Friedrichs,   Pro-
+                                 fessor of Applied Mathematics   at New York University,  for
+                                 his guidance and assistance   in the pre@”aration of this note.
+                                                                                                                 =-
+                                                                                                                 .s
+                                                                                                                “i
+                                                                                                                  .
+                                      LIFT   AND   INDUCED    DRAG OF THE FINITE       AIRFOIL   ANfi   ‘-
+
+                                                    WING-FUSELAGE       COMBINATION                          —-——
+                                                                                                                    .3
+                                                                                                                     .
+                                       For simplicity,       the analytic expressions  for +ke lift
+                                 and the induced drag        will be derived first  for the single                      :i
+                                 airfoil; the results        will then be extended to include the
+                                 presence, of an ideal       fuselage.
+.                                                                                                        ——~          .
+                                                                                                                —
+                                              Analytic     Expression     for Lift    ~orce
+
+                                       In the first approximation   of Prandtlls  airfoil theory,
+                                 the airfoil is regarded as a lifting line; that is, a lin-
+                                 ear succession of elements of small chord, each possessing
+                                 a certain profile and angle    of attack.   Weak loading is as-
+                                 sumed and the vortex sheet produced     by the motion of the
+                                 airfoil is regarded as a semi-infinite     plane strip with
+                                 straight vortex lines parallel to the direction of motion.
+                                                                                              .-—
+                                                                                                                ...
+                                                                                                                  :
+                   NACA   Technical     Mote   No.    812             3
+
+                                                                          f;
+In this analysia.   the lifting line is taken as lying at                 \l,..
+rest along the x-axia in an infinite body of fluid that                   l:’8
+has a velocity of magnitude    V parallel   to the z-axis, at             /$ ~
+an infinite distance before the airfoil.     Both the air-
+foil and the flow are assumed symmetrical    with respect to
+the yz-plane.   !J?Ire
+                     velocity field of the fl!uid is repre-   - ‘-
+sented by a vector of components,     Q=, C?y, @z+  V,  where
+@ is the velocity potential    arising from the presence of
+the airfoil and its attendant   vortex sheet,    ~=  is
+a@/~x,  @y  ia ?M/~y, and    #=  is  i%P/~% The assump-
+tion of weak loading is equivalent  to the inequality:
+
+
+
+
+Also,    at an infinite      distance    before      the airfoil,
+
+                          @x=@y=a?z=o
+
+      In the application  of the momentum theorem to this
+flow, the airfoil is considered   enclosed in a very large
+rectangular  box of fluid with center at O     and with faces
+A,   B,  C,  D,   E,  and  F,  as shown in figure 1. The
+total upward force acting on the enclosed fluid is
+
+                    ~y=-L.
+                                 [Y’
+                                 .
+                                    A-B
+                                           p   d5    dx             (3)
+
+
+where    L     is the lift on the airfoil,      p  is the static
+pressure      of the fluid, and the subscript      A-B   indicates
+that the      integral extends over     A  with positive    sign and
+over   B      with negative   sign.   The pressure   is determined
+from the      Bernoulli  equation
+
+
+
+or
+        P =   ~-   ;pv=pvti=-            ~. (0=2 + !$Ya+ @z2)       (4)
+                                                                                                                      ..;
+                                                                                                                       i.=
+                                                                                                                        —  —.
+
+
+
+
+                  4
+
+
+                  where  p  IB density  and
+                  tion is valid everywhere
+                  outside the vortex sheet.
+                                             I?AOA Technical
+
+
+                                             H is total pressure.
+                                            in the simplY connected
+
+
+                           Under the inequality                      (l),
+                                                                           Rote     Ho. 812
+
+
+
+
+                                                                              the last
+                                                                                                                    “-fi.
+                                                                                                               This rela-
+                                                                                                               region
+
+
+                                                                                                 term of equafion
+                      (4) can be neglected,  so                     that
+
+
+                                                   P =
+                                                     -E-            :pv=          -g)v#z                            (5)
+                                                                                                                           .—      —.
+                  If this expression  is inserted                             in the           integral      of equation
+                  (3), it will reduce to
+
+
+
+
+                                                                                r-
+                  where    ~, a, s, and 4 are “the edges of the box shown in
+                  figure 1. If the faces       C and  D are removed to   z = - m   .
+                  and z = + m,    respectively,  the velocity potential  @ as-
+                  sumes the same constant value on 3 as on 4; and when the
+                  other four faces are removed to     x = & m,  y = A m, re-            I
+                                                                                                                                   t-
+                  spectively,                                                        , .!                                          :—
+                                                                                                                                   k
+
+
+
+
+                      J([p
+                                                                                                                                   r-
+
+                                  dz   dX=     -    () V             @dx=-pV                          @ dx
+                                                           f
+                                                           “1-2                                V z
+                        “ A-B                                                                                              ..
+
+
+                                 +[@dx-~@dx+[@dx)=PV~@dx                                                            (7)
+
+
+                  where         the added      terms,                      @ dx     and              @ dx, vanish
+                                        ●                     J 6                          i
+
+                  because   dx  vanishes on the edges  5 and  6, and where the
+                  last integral sign and subscript denote integration  around
+                  an infinitely  large contour in the counterclockwise sense
+                  in the plane   D at    z =+ ~.
+
+                        The total upward force,  F-v, is equal to the time
+                  rate of change of the y-compone~t  of the momentum of the
+                  enclosed fluid:                                                                                           -. —
+
+                                                           ‘Y == d My/dt                                            (8)
+
+
+““d
+,:,’
+
+~m.~   .   .   . .—     —        -
+                                       -       1“ Ii”--”lii                 ““’-”-         -                   lm     -
+                                                                                                       .!.
+
+                                                                                                       k
+
+
+                                                                                                       i
+
+
+
+
+                                                                                                       j
+                                                                                                       1
+                           NACA Technical         Note       No.   812
+                                                                                                             i-a
+As the flow is stationary,  the y-component  is just                                   the              :’$
+                                                                                                        .-.;
+                                                                                                         ~
+amount transported  per unit time through the sides                                    of the           k! 8
+box, with outgoing momentum  taken positive:
+                                                                                                        ~j:
+d~y
+                           P@y(@z+V)dxdy+                                    ~ P @7a dx d%
+m=          H                                                    1!
+                D-C                                                   A-B
+                                 +
+                                          -f       P #y @= dy dz                            (9)
+                                      ~J
+                                          F-E
+
+Of the six integrals    on the right-hand   side, the la8t four
+may be neglected   together with the terms in @z       in the
+first two, from the inequality     (1),   For the infinitely
+large box, the integral taken over       C vanishes as well,
+and
+                 dMy
+                      =pv           (PY dx dy               (lo)
+                 K           Jf
+                                D
+                                                                                                             ~~
+where the integration    extends over the entire XT plane,                                        D,
+                which is regarded as bounded by the trace,                                                    ,1
+at   z =+0,                                                                                                    !
+T,   of the vortox sheet.                                                                                     ,
+                                                                                                               i
+                                                                                                             I?7
+                                                                                                              ,-
+     Tho analytic expression for                             L     is obtainod       from   equa-
+                                                                                                              ri
+tions (3), (7), (8), and (10):                                                                                !{
+                                                                                                             t‘[
+
+                 L = .pv                       @ydxdy-PV                      @ dx          (11)
+                                 f~                                     J
+                                      D                                  w
+
+This result               can be transformed            by integration           by parts:
+                                                                                                             n
+                                                                                                             4.
+
+
+      -pv
+       that
+                If    D
+                            @ydxdy=-PV
+                                                        JT
+                                                              @dx+PV
+
+                                                                        R
+                                                                                J
+                                                                                @
+                                                                                     @ dx   (12)             fl
+
+                                                                                                             P
+                                                                                                             (f
+
+
+
+                                                                   r
+ SO
+                                           .
+                                                                                            (13)             i
+                          L =-   P?            @dx=PV                   I’dx
+                                       {
+                                      ‘iT                          ‘L
+ where   L and   R   reprosont tho left and tho right odgos                                                  ;1
+ of the vortex shoot,     r(x) is tho distributtou  of circula-
+                                                                                                             ●
+ tion. along the airfoil span, and where the relation,
+                                         =
+                                       r@a-@b                                               (14)
+                                                                                                                   ........
+       ., -i
+                                                                                                                      .
+
+
+
+                                                                                                                                       n
+
+               6                      NACA       Technical          Note    No.    812
+
+                                                                                                         .—
+                                                                          .-—
+               has been used., @a   being the velocity potential      on the up-””
+               per surface of the sheet and     tb~ that on the lower sur.
+               face.  Equation  (13) represents   the Kutta-Joukoweki    law                                                           .3
+               for the finite airfoil.
+                                                                                                                                       *
+                                                                                                                                       .
+                      In his application   of the momentum   theorem, Trefftz
+                (reference 3) obtained the result (13) but on the basis of                                                             ,
+               two omissions whose effects cancel.        Ho first omittod the
+               contribution    of tho prossuro forcos to the lift in equa-
+               tion (7) and then omitted the corresponding        integral in tho                                                      .4
+               partial Integration    of equation   (11).   This error did not
+               affect his results for he used only the form given hero by                                                                :
+               equation    (13).  In tho ensuing analysis,    howovor,   the prop-                                                     ~
+               or form .of equation    (11) is of docisivo importance.
+                                                                            -—    —-a
+                                                                                                                                    ~
+                                                                                                                                       ●
+
+                         Analytic          Expression          for Induced-Drag                  Foroe                             .?
+                                                                                                                                   —
+                     The analytic  expression   for the induced drag is ob-       ““ ‘A
+               tained in a similar manner by applying      the momentum  theo-
+               rem to the z-component    of forces, except that in this case
+               the second-order   terms must be retained,     Again, attention
+               is first restricted   to the finite box enclosing     the air-.--j
+               foil.   The force in the z-direction    acting on the enclosed          -
+               fluid iS
+
+                                       Fz=-Di-                               p dx dy                           (15)
+                                                               Jf
+                                                                     D.-G                 .-  d.
+                                                                                           .— 4
+                                                                                              .-.
+                                                                                              :.
+                                                                                         -.——
+               where  Di           is the induced-drag  force ac”ti~g~”tfi~””a~~~o”il~”     ‘n
+               By the use          of equation  (4) this expression  can be written
+                                                                              .-..—-..         I
+                                                                                     _____ ....-.
+                                                                                                                                  ..-5
+               as:
+                                                                                           “+
+
+                   Fz = -,Di+~
+                                       Jr    L
+                                             D-C
+                                                       (Qxa +!3=2+@za +2V           0=) dx dy                   (16) ‘-                    I
+                                                                                                                                           ,
+
+
+               The z-component of momentum  transported                              through         thi” sides”              –        ‘-
+
+                                                                                                                                  —
+                                                                                                                                  —
+               of tho box per unit time is:
+                                                                                                         .—.-..———__
+                                                                                                                 . . ..__ ._
+               dhiz
+               ==
+                        If
+                                      P (OZ+V)2 dx dy -1-
+                                                                        Lr           P (@z+V) @y          dX         dz
+
+
+
+                                            JJ P
+                             D-C                                             A-B                          .-
+                                       +                       (@z+V) @x dy dz                                  (17)
+                                                 F-E
+         t                                                                                                     -..        _       —-
+                                                                                                                                           :
+                              -u             ,         .,.-—           .-                .   .                                             i
+
+
+
+.r?-
+                                                                                                               ,{
+                                                                                                              .i,.
+                                                                                                    7
+                                                                                                              1‘~.
+                                                                                                               !
+
+
+
+                                                                                                              ~<,
+
+                                                                                                              I’t:
+                            liACA Technical          Note   No. 812                                           :w.
+                                                                                                              :,?
+
+Canceling         the terms           in     V=,     this       expression              is conveniently       ‘“”
+                                                                                                                3
+rewritten         as;                                                                                         i:‘8
+
+
+
+
+          +pv                       @zdxdy+p           V                  @z      iiX   dy
+                        J                                  VJ
+                              -c                                     -c
+
+          +                   @y dx dz +                   #x dy dz                               (18)
+              J                                  .                            )
+                                                 ~
+                   A-B                               -E
+
+       The        quantity          within     the last parentheses                      is,
+                                                                                                              I.1
+
+
+
+
+                                                                                                  (19)
+
+
+from the continuity    of the fluid flow, in which the surface
+integral extends also over the airfoil surface where        &3/~n
+vanishes  identically.    In this expression    dS   is an ele-
+ment of surface and     n  is the coordinate  normal to the
+surface of integration.     Then from equations    (16) and (18),
+the relation
+
+                                           3= = ali=~dt                                           (20)
+
+reduces       to:
+
+
+Di+
+        Jr        -c
+                        (Q:+        o;- @%a) dxdy-                   P
+                                                                         I A-B
+                                                                                   @z @y dx dz
+
+
+
+                                     -P
+                                           J     (t?Z #x
+                                             Ii’=-
+                                               E
+                                                                dy dz                             (21)
+
+
+When   all        the       sides    of the box are removed                       to infinity,
+
+                               Q==@y=@z=O                       on        O
+                                                                                                  (22)
+                                          0==0                  on        D
+                                                                              }
+
+
+
+                                                                                                          .
+     .,.            ,                                                                                ..
+
+                                                                                                          -i
+
+
+
+                              8                   17ACA Technical   Note    No. 812
+
+
+                              so that the integral extending over    O vanishes.   While
+                              the last four integrals are nominally   of the same order
+                              as the first, because the sides    A, B, E, and 3 are now
+                              infinitely  distant from the vortex sheet, the last four in-
+                              tegrals are actually of higher order and can be neglected.
+                              Hence,
+
+                                                Dp!j
+                                                       Jr @=a+(      #y%)    dx   dy          (23)
+
+                              where       the Integration   extends over the entire vertical
+                              plane       at  z = + ~   bounded by the trace of the vortex sheet.
+                                                                                                    —
+                                                                                              .-
+                                                                                             _———.— —
+                                               Ideal Wing-Fuselage   Combinations
+
+                                    In order to treat the problem of wing-fuselage      interf-
+                              erence,    the fuselage is idealized in a manner due to
+                              Lennertz   (reference   5).  The fuselage is taken ae an infi-
+                              nitely long cylinder,     extending from    z = - ~  to  z = + m,
+                              of any cross section, with generators      parallel  to the z-
+                              axis.    The airfoil is taken as a lifting line lying in the
+                              xy-plane.    The vortex sheet is taken as the cylindrical      sur-
+                              face lying between      z = O and z = + m, passing through
+                              the lifting line, with geners.tors (vortex lines) parallel
+                              to the z-axis.     Consequently,   with such an ideal wing-
+                              fuselage   combination,   the contour bounding the plane    D
+                              at   z .+cn     now consists of two parts:     The oross section
+                              of the fuselage, denoted henceforth      by the letter   F and
+                              the trace    T of the vortex sheet.      The entire contour is
+                              designated     C!.
+
+                                    The reason for this particular    choice of fuselage
+                              shape Is the following one.      If the vortex sheet is re-
+                              flected in the plane,     z = O,   the velocities   of the re-
+                              sulting flow in thie plane will be twice as large as those
+                              arising f~om the original vortex configuration,         31~t the
+                              resulting   flow is that induced by an infinitely      long vortex
+                              sheet and must be exactly equivalent     to the two-dimensional
+                              flow existing in the plane     Dat%=+m.            Thus, the x-
+                              and the y-components    of the fluid velocity in the plane       z =
+                              O   have just one-half the values of the velocity       components
+                              at the corresponding   points (those with the same values of
+                              x and     Y) in the plane at   z = + @.    In particular,    the
+                              downwash velocity at any point on the lifting line will be
+                              one-half the downwash velocity at the corresponding        point
+                              on the trace of the vortex sheet in the plane        D.   For any
+                              other type of fuselages    the vortex lines will not be straight
+       v-
+      4:, i
+                ‘
+           :
+
+      @_. “..           .—.   ——      .    .
+
+
+-m
+                   EACA   Technical   Note     No. 812                        9
+
+
+lines; so that in general the trace in the plane    D has
+neither the same shape nor the same length as the lifting
+line and the downwash at the wing now becomes a complicated
+function of the downmash at the trace.    In this way, the
+“two-dimensional”  character of the problem is lost.
+
+     Evidently,  the derivations             of equations’(n)       and (23)
+for  L and    Di  are unaffected             by the presence      of such
+ideal fueelages.   Then
+
+
+            L =-     pv          QFdxdy-pV               @ dv
+                          J! .                     J
+
+              =-
+                          J
+
+                                                                           (24)
+              ‘-~~i~-’’l”d’
+
+In general, neither of the laet two integrals vanishes,        so
+that the lift on such a wing-fuselage     combination   consists
+of two parts - a lift on the wings and a lift on the fuse-
+lage.   The lift on the fuselage arises from the aerodynam-
+ic pressure distribution    over the cylinder   eurface and is
+to be considered   as induced by the presence of the wings,
+because the lift on an isolated fuselage of the type con-
+sidered here $s zero.    For fuselages   of this type, these
+induced pressure   forces are normal to the cylinder surface,
+that is, parallel   to the xy-plane,   and can only contribute
+to the lift.    For any other type of fuselage,    the resultant
+of the induced pressure   forces on the fuselage will not be
+parallel to the xy-plane,    in general,  so that these forces
+will contribute   to the drag of the combination    as well.
+
+
+  Lift   and Induced      Drag   in Terms    of a Gomplex       Variable
+
+      It is useful here to transform   the expressions     for   L
+and Di     in still another manner so as to employ the com-
+plex variable    x -I-iy. The flow in the plane      D  iS  two-
+dimensional   and the stream function,   ~,  satisfying     the
+equations,
+
+
+                                                                           (25)   ‘,!
+
+
+
+
+                                                                                        .. .. ..—, . ...
+                                                                                           .-
+
+
+
+
+10                   lIACA Teehnical       Note       No.      812
+
+
+can therefore        be introduced.            Then
+
+
+              L =-     pv
+                               Jr
+                               .
+                                     araxdy-pv
+                                                               [
+                                                               ●
+                                                                     G ax
+                                                                                     .-
+
+                =pv                @=dxdy-PP                       0 ax
+                          Jf                               J
+
+
+
+
+As  F  is a rigid           houndaryg  it must              be a streamline      of the
+flow in the plane            D,   so that
+
+                            w = const. on             3’
+and
+
+                                   Qd~=O
+                   f                                                                 --
+AS the vortex sheet contains no sources                              or sinks,   Q    %s
+continuous  in crossing  T,  so that
+
+
+                                    llldy=o
+                                !
+                                “T
+ Thus   the expression         for the lift           reduces         to
+                                                                                           —
+
+        L =- ,pv            (@dx     - Wdy)
+                      J
+          =   - P V R.P.             f(z) dz                                          (26)
+                               r
+
+ where the symbol   R.P.  represents  the real part of the
+ quantity following  it (in general, complex);   z now repre-
+ sents the complex variable,    x + iy,  and   f(z)  is the
+ flow function (complex potential)   of the tmo-dimensional
+ flow in the plane   D,
+                f(z) = @ (X,y) + i * (X,y)                  (27)
+                NAOA   Teohnical   Note   No. 812                11
+
+
+     The expression   for     D~   ean also   be written   directly
+in terms of  *   or of    f(z):
+
+
+
+
+                                                                (28)
+
+
+
+      The expressions   for   L and     Di   in terms of    f(z)
+are valid, of course, when no fuselage is present and ~
+be regarded as the analogs of Blasius$ formulas for the
+infinite airfoil.     The results of this analysis as givan
+in equations   (26) and (28) are not original;        both expres-
+sions have been obtained     by Prandtl    (reference   1) by some-
+what different   considerations.
+
+
+                       Prandtl~s   Paradox
+
+      Prandtl (referenoe   1) concludes that the applicattin
+of the momentum theorem to the flow about the finite atr-
+foil yields different    results for the contribution   of the
+pressure   forces and the momentum transport    to the lift-
+depending on the order in which the faces of the box are
+removed to infinity.     A r%gorous analysis   shows that this
+general conclusion   is correct but that his precise state-
+ment is entirely inaccurate.      In the notation of figure 1,
+his statement    is;
+
+        ‘If an airfoil,   situated in a medium unbounded      in
+     all directions,    is enclosed in a control surface in
+     the form of a parallelopiped,      the application   of the
+     momentum  theorem for steady flows yields the follow-
+     ing results.    If the bounding faces,      A and B,   C and
+     D,   are first removed to infinity, and then the faces
+     B and F,   the momentum    theorem yields a momentum
+     transport arising from the vortex sheet, which is equal
+     to the lift.    If the faces,     A and B,   E and ~,    are
+     first removed, and then the faces,        C and D,   the vor-
+     tex sheet contributes    nothing,   but the momentum trans-
+     port arising from    the bound vortices yields the lift.
+     Ptnally,  if C and D,      E and 3’, are first removed,
+     and then   A and B,    the momentum   transport vanishes,
+     and the lift arises from the pressure forces-         In
+     other cases, both the pressure      forces and the momentum
+     transport are obtainedoU
+,,,
+
+
+
+
+      12                I?AGA 9 echnlcal           Xo t e Xo.     812
+
+
+            This statement  is inaccurate  for two rea$ons.    The
+      removal of the faces    A and B to infinity does not eliml-
+      mate the contribution   of the preseure forces.    This error
+      was also committed   by Trefftz~ as indicated above.     The
+      other reason is that the momentum transports     in any case.
+      cannot be separated   into contributions  from the vortex sheet
+      and the bound vortices,    Eor example. considering    the momen-
+       . ..
+
+      turn transport        across      E and ?.
+
+
+      application  of the Biot-Savart                   law shows that  @x  ari”aes”---”x”x”
+      from the vortex sheet and    @y                   arises from both the bound
+      vortices and the vortex eheet.
+                                                                                               -.
+            Thus, attention   can be restricted to the coitriiutiori~”                       ““‘=.
+      of the pressure   forces and the momentum transport.       From
+      the analysis presented,    it is clear that once the contri-                             “
+      bution of the pressure    forces has been transformed    into
+      the llne integral of equation (7), the faces      A, B, c, 3s,
+      and F    can be removed to infinite distance from the air-
+      foil in any order, for in the limit they contribute        noth-
+                                                                                               i
+      ing to the lift expression.     Then the expression    for   L                           *
+      becomes:                                                                                 ;
+                                                     -——.
+                                                        .— _     .._
+                                                                   — —-                        i
+                                                                                               ~>
+                     L =.     pv             @ydxdy-pV                  * dx          (29)     :
+                                     ff .                         L                          .-.
+                                                     -..        —.
+      where now the plane of integration    D   lies at””~ny distance,=’~
+      Z>O*     from the lifting line.   Here the double integral          ~
+      represents   the contribution of the momentum transport    to       ‘*
+                                                                          i.
+      the lift and the contour integral represents     that of the
+      pressure   forces.                                                  *
+                                                                          ;4
+            I* order to find the ratio of these contributions,     it                         ~
+      is necessary    to employ an exact expression  for the velocity                          ~
+      potential    0.   The vortex sheet is mathematically  equivalent                        j
+      to a dipole layer, with dipole strength equal to the circu-                             j
+
+
+                                                                                             -<
+      lation.
+
+                                                                                             ,
+                Hence, by the employment   of a well-known  formula
+      of potential    theory,                                                                 :.
+
+
+      Q                     bm                                                                .
+
+           (X,Y,Z)   = - ~;
+                               rf
+                              -“b o
+                                            r (q   $;
+                                                        [(X.x)a
+                                                                        .-+                   :
+                                                   + y8 + (Z-Z)=              dE dZ   (30)     ;
+                                                                        1                     .-
+                                                                                      ..—— —,~
+                                                                                             >
+                                                                                            _
+                                                                                             -.   -2.8
+                                                                                                    ,1
+where   b  is the semispan of the wing, and    r(x)   is the                                        ““3
+distribution  of circulation  along  the span.   This expres-
+sion for the potential   has been furnished hy K. Frledrichs                                        ~ ‘0
+and is much simp}er,than   the Yourier integral expression                                          ‘):
+derived by von Karraan (referonco 6)-    If equation  (30) is
+intogratod with respect to Z                                                                        :’“%.
+                                               ?
+                                                                                                      !; 1+
+                                                                                                    1;~
+                                                                                                    !5
+                                  Q = *@l+&a
+                                                                                                   :“ x
+where                               b
+                                                                       -I                           ‘j ‘k”
+         ox    (X,Y) = *                 r(~) y [(X-=)2        + y=]        d=       (31)           t . .
+                            !
+                            “-b
+                                                                                                     i
+is the potontial          of the two-dimensional                flow at          z = + =0
+                                                                                                    Jb
+and                                                                                                1.
+                             b
+@a(x,y,z)       = &              p(=)    Y E(x-~)a    + Ya]-%     z
+                       f
+                        -b                                   -+
+                                        [(x-~)a   -1-y2 + Z2]   d=                   (32)
+
+Evidently,
+
+
+
+        Xirst, consider the plane     D at an infinite                            distance          l’!!.
+from    the airfoil.   Then   @ = @l~   and
+                            b                                                                      [
+                                                                                                   ,.
+              Qldx=&                      r(=) Y     E(x-5)2    + Y21-1          d= dx
+       f
+       ‘Cn                   Jf
+                              m                                                                    i
+                                    -b        ‘                                                    ~~
+Then
+                                                                                                   fl
+
+
+
+
+and from       equation          (29)
+
+
+                       -Pv                @y ax dy = *L
+                                   .,
+                                   fr
+
+                                                                                                   ,-
+                                                                                                    .~
+                                                                                                   ,!
+                                                                                                   ..I
+                                                                                                     ....._
+,,, :
+       ..- 1“
+                                                                                                          —
+
+
+
+
+                  14                  NACA   Technical           Note   No.   812
+
+
+                        Now   let  D     be at any             finite   distance       z   from   the
+                  airfoil.     Then,
+
+                                 P                   .            P              -
+
+
+
+
+                  But for finite        z,
+
+
+          , 8-”
+        ,. #
+        .. ,
+                  so that
+                               J @=
+                              in this
+                                        dx~O
+
+                                        case$
+                                                          aS
+                                                                  [x’   + “r-m
+
+
+
+
+                                                                                                        --—
+
+
+
+
+   .
+                                             -Pv
+                                                      Ir
+                                                      .    .
+                                                                 #y dx dy = ~L
+
+                                                                         ,.— ..— --                           : ..-
+                        These distinct results yield the conclusion     that if
+                  the faces    A and B,  E and F are first removed to infin-
+                  ity and then the faces     C and D,   the pressure forces con-
+                  tribute one-quarter   of the Ilft and the momentum    trans-
+                  port contributes   threo-quartors.    If, on tho othor hand,
+                  the faces    O and D are first removed to inffnity and then
+                  the faces    A and B,   E and F,   in either order, the pres-
+                  sure forces contribute    one-half the lift and the momentum’
+                  transport contributes    one-half,   In other cases, on-e o-f““
+                  these two r,esults will be obtained,    depending only on
+                  whether    D  is the last face to be romovod~
+
+                        Mathomatioally,             this peculiar        result      arises   from a dis-
+
+
+                  continuity     at     z = + =           in tho expression,               @(X,y,Z)     dx.
+                                                                                     J
+                                                                                      m
+                  Physically,-. it signifies   that any distinction between the
+                  contributions   of ~ressure forces and momentum   transport  to
+                  the lift is an Artificial     one, at least when the airfoil
+                  is in an unbounded    fluid.
+
+
+                                              —..    .——          -—.
+                                         Bm
+                   IJACA Technical           Note     No.      812               15
+
+
+   MINIMUM     INDUCED    DRAG     IN WING-FUSELAGE              INTERFERENCE
+
+
+      The problem of minimum induced drag consists in mini=
+izing the itiduasd drag under the aondition of given lift.
+This is an isoperimetric   problem  in the caIculus of varia-
+tions, which consists   in determining  the analytic function,
+f(z) 8 which makes
+
+
+                   Dl=~                  /fi(z)l     8 dx dy
+                                 Jf .
+
+a minimum,     with
+
+                   L =.     P V R*P.               f(z)   dz
+                                            J u,
+given,    or   in short,
+
+                 8Di=0,           &2Di   > 0,        with       6L = O          (33)
+
+In the case of wing-fuselage    interference,   this problem
+contains mixed boundary conditions,     which are conveniently
+expressed   in terms of the stream function,     ~.  The fuee-
+lage crose section is a rigid boundary of the flow in the
+complex z-plane, so that    ~  is cOn5tant on the CrOSS      sec-
+tion,   3?; the trace of tile vortex sheet contains no
+sources or sinks so that    *  is continuous    in crossing the
+trace.   Hence, the boundary conditions    are;
+
+                            If     =0         on     1’                         (34)
+
+                            ~a=~bonq                                            ( 35)
+
+where    the subscripts  a and    b refer to values                        directly
+above    and below the trace, respectively.
+
+      This problem has been solved by Lennertz        (reference  5)
+for the particular   case of a midwing combination       with cir-
+cular fuselage by employing the method of images which, in
+fact, is available   for this one case only.       By means of a
+generalization   of Lennertz~s   result, the solution of the
+general variational   problem contained      in equation (33) and
+the boundary conditions    of  equations    (34) and (35) has been
+                                                                                        .
+found to lie in the following      theorem.                                             .1
+
+                                                                                            .. ....----- -.
+                                                                                    -—-
+                                                                         ----
+
+
+
+
+ 16                    NACA   Technical         Note   No. 812
+                                                                                                      .-
+
+      THEO REM : The analytic function,    f(z),   which minim-
+      izes the induced drag with given lift and satisfies
+      the boundary conditions,    is the sum of   two  analytic
+      functions:   one is the flow function of the downward
+      potential  flow about the fuselage boundary,       the other
+      is the flow function of the upward potential        flow
+      about the entire bo,unding contours      C,   consisting   of
+      the fuselage cross section and the trace of the vor-
+      tex sheet, where the two flows have equal and oppo-
+      site velocities   at infinity.
+
+       To prove that equation (33) is satisfied by the flow
+ function,    f(z),  advanced  in the theorem, let
+                                                         ——-._
+                    f(z) = f=(z) + f=(z)
+                                              1!
+ or                                                     (36)’
+                                               f
+
+                                                                                .. —._
+ where  fl(z) = 01 -1-i$l    is the flow function of the down-
+ ward flow about the fuselage cross section, and _f=(z) =
+ o= + iwa   is the flow function of the upward flow about               -.
+ the entihe bounding contour     C. These functions’ satisfy
+ the boundary conditions,    for
+                                                             —
+                                                            [.3;).;- “a,
+                    * Z=W2=0         on  ~......   _
+                 ..                                      .— (38)       <’
+                          lJ==O      onT
+                                                                         :
+ and, from the regularity    of                                       -.
+                                 fl(z)    outside F,
+
+                                         i3*z               W*
+            w,       = *lb    and        ~,a
+                                        ()          . -     ~bon           T             (39) “-”-1 :’
+                 a                                         ()
+                                                                                                  — .+ $
+ where  G l.s the direction                  normal       to the trace     and pointing                ‘,
+ into the fluid region.
+                                                                                                _-—
+                                                                                                            ,:,
+                                                                                                             .,
+       No W                                                                                                —+
+
+                       L =-    pv            (@dx    - Wdy)                                                 -9
+                                        Jm                                                                  *-
+                                                                                                           4
+                                                                                                           .
+. so that
+                                                                                                           -3”
+                      SL=-p         V        (60    dx - 8$ d~)                          (40)                ;“
+                                        .
+                                        1                                                                   ~
+                                                                                                           -4
+                                                                                                            .
+                                                                                           -.              ~
+                                                                                             .+
+                                                    II
+
+
+
+                      NACA    Technical     Note       lToO   812
+
+                                                  .,
+Also,
+
+                  Di~~               (v=’ + Qya) dx dy
+                              .
+                              ff .
+so that
+
+
+
+
+                  =    P
+                           JJ     (WLX Wx     +
+
+
+
+                       I-P           (W.x w=                                       (41)
+                             .
+                             ff
+
+Using   Greenls       theorem:
+
+
+
+
+where   v is the iiirection normal to the bounding  curves
+and pointing into the fluid region, and ds    is a line ele-
+ment of the boundtng curve.   But
+
+
+
+
+On 1?, 6* vanishes                by virtuo       of equation       (34).    Tho    SOC-
+ond integral is
+
+
+                                                                                           “f
+                                                                                           +’
+from equation         (39).       Also
+
+
+
+
+                                  Hence,    equation          (42) reduces   to:           -,.
+from equation         (37}.                                                                ;L
+                                                                                           ;,.
+                                                                                           ..:
+                                                                                           -:
+                                                                                           :1
+                                                                                           -“    ----   r-   . ..
+ -i -“.$
+● ;.
+
+
+
+
+           J?’orthe normal         direction  chosen hero for tho infinitely                                ...
+           large contour,          the Cauchy-Riemann  equations are:
+                                                                           -.—.—
+
+
+
+
+           Integrating      the second           term by parts,
+                                                                                                           —.
+                            6Di=-P                    (8$ d$        - 60 dva)                     (45)
+                                            f
+                                            .Co
+           From the definitions             of     fl (z)          and   fz(z)     given    in the
+           theoram,
+
+
+
+
+           where    c is a real, positivo   constant with tho dimensions
+           of PoloCity.    Evidently,  tho gonoral velocity vector,
+           (ox, @y, 02),    is proportional  to   c,  so that from the “i-n-
+           equality   (1),
+                                                                           .-—
+                                    c  <<v                          (47)
+
+           From an insertion             of the limiting             values   of    Q%     an d    $a
+           in equatio~  (45)
+
+
+
+                                                                                                  “(48) : “-’
+           from equation  (40),   If the variations   are restrict ed to
+           those that make   6LI = O,   in accordance  with oquatl on -(33),
+           tho function   f(z),   advanced  in the theorem, makes
+
+                                                 6Di    =      O                                  (49)
+           that    is, makes        Di    an extremum.
+    i
+   :i             .r__, ....TH ~            ..... —
+                 NACA   Technical      Note   No.   812                    19
+
+
+      In order   to show    that     the resulting        Di   is really    a
+minimum, let
+
+
+
+
+where   $ and   ~~  are now any two functions  satisfying  the
+boundary conditions  given In equations  (34) and (35).   Then
+
+
+
+
+In this equation,  let .* be the stream function of    f(z),
+the flow function of the theorem, and    8* any variation    of
+~ that satisfies   the boundary conditions  and makes  6L = O.
+Then, from equations  (41) and (49),
+
+
+
+so that
+                        11
+                    2Di ‘$,    8*     =6   Di = O                      (52)
+
+
+
+
+;:r:;J:::::]:s          ‘en’”‘i ‘s a‘inimum
+             . ‘“negative”
+      A similar argument   shows that this    W   (and consoquont-
+ly, i(z))     is uniqu~ to within a constant,      II’orsuppose
+any et-her stream function     W   satisfying   the boundary   con-
+ditions also minimizes     Dig   so that
+
+                                                                       (54)
+
+Then the difference,        5* = ~~ - ~,           is an admissible   varia-
+tion, and
+
+
+
+so that from     equation     (54)
+
+                         Di 1
+                            ‘6V,6’ ~] = O
+and                                                                             ,.
+                                                                                +:
+                                8*=*’-        *=     const.            (55)     .4
+                                                                                .f:
+                                                                                              . .            ?----
+                                                                                    _..                    .~.
+
+                                                                                                           “1
+                    20                    NACA   TeohnioaZ   Not.   Ho.   812
+                                                                                                      .-
+
+                    where th. last relation           follows from        the positive    definite
+                    charactar of the forma            Di [W,WJ
+                          I’inally, it is possible   to derive a simple relation
+                    botwoon the minimum Induoed. drag and the       (giwen) lifte
+                    Iloplaclng    6@ and    8V  in equations  (40) and (41) bY    0/2
+                    ;:;   :;2,    respectively,   811 is replaced by    L/2  and
+                               Di    Hence, equation
+                                     ●                 (48) is replaced by the rela.
+                    tion,
+
+                                                                                              (56)-
+
+
+                          The theorem ostablishod       is significant   in several ro-
+                    spects~    First, it is quite general in that it applitis ‘m
+                    any combination     whatsoever,   providod, only that the fuselage
+                    is of the type specified.        For it is olear from the mathe-
+                    matical analysig     that the combination     could consist of any
+                    number of fuselages,      each of any cross section, of any num.
+                    bor of wings, of any front elevation,         and lying in different
+                    planes.
+                                                                                —
+                          Second, the theorom contains all the previous           solu-
+                    tions in tho problem of ninimum induced drag as special
+                    casoeb   For when there is no fusolago,        tho downward flow of
+                    the theorem reduces to a simple rectilinear          flow and the
+                    upward flow is just that around the trace of the vortex
+                    shoot (of which several may bo present).           This case is the
+                    well-known   condition    of constant downwash derived by Munk
+                    (roferonce 2) and used by him and othors to find tho mini-
+                    mum drag of Isolatod
+                                      .       airfoils and systems of airfoils        (ref-
+                    oroncos 1 and 4). As previously         mentioned,   the solution
+          k’        obtained here was used by Lennertz to find the minimum drag
+          k   “:    of a particular     ideal combination,      De Hailer (reference 7)
+            l?:     has found the minimum drag of an airfol.1 in proximity           to
+           ?: ;     tho ground.     This solution can be immediately       established
+          t;        by means*of an obvious extension        of the precedtng    theorem
+          i
+          {!        to include the presence       of external boundaries.
+          ~;:
+           4?             The theorem reduces the ontire probl~m o-f minimun drag
+          k.        to tho determination    of  tho roquirod flow function,   that
+          I
+          ,:,
+            1.
+      a
+          J
+          ;~
+            ..}
+              .
+               t:
+                    is, a problon of conformal mapping,
+                    combination,   the detcrnination
+                                                              E’or a given typo of
+                                                       of the roquirod napping is
+
+      II
+       ~-:‘
+        4
+       c,
+      .i
+       y:i
+                    gonorally a difficult
+
+                    wing nonoplano
+                                             taske
+                    ost can bo solvod expltoitly,
+                                     oonbination
+                                                     Ono easo of particular   intor-
+                                                      namely, the high- or the low-
+                                                   with circular fuselagoo-- The
+                    rest of this paper is linito& to tho analysis of this caso
+      j:
+        /           and sono related aonsiderations$
+      #J.
+
+          j;
+          JJ
+          ._..-——   .—.— .   -
+~ml                              I   m-      “-i–””-”—”–—-
+                NACA    Technical      Note   No.    812                21
+
+
+       HIGH-   AND    LOW-WING   MONOPLANE         COMBINATIONS
+
+                     WITH   CIRCULAR    FUSELAGE
+
+
+      Only the high-wing   combination   will be Zreated in de-
+tail here, for, as will be shown later- it is exactly equiv-
+alent in the thpory to the low-wing combination.        !Che ideal
+combination   is shown in figure 2.    The fuselage is an infi-
+nitely long ctrcular cylinder with axis parallel       to OZ.
+The wings (lifting lines) lie along the X axis.        The fuse-
+lage radius is taken as the unit length, and the semispan
+(distance from wing tip to plane of symmetry)       is called   b.
+Like all other lengths appearing     here,   b   is a nondimen-
+sional quantityc     Such an ideal combination    is the first
+approximation   to an actual nonoplane    combination  with a
+long fuselage and wings of chord lcqgth small conparod with
+both tho span length and tho fuselage radtus.
+
+      Tho bounding contour in tho plane at      z = + OEI con-
+sists of a circlo roprosonting    tile fusolago cross soctiom.
+and two horizontal  linear sogmonts    (double lines) repre-
+senting the trace of the vortex sheet, as shown in figuro
+3. Let    @ TT be the .anglo botwoen tho positive Y axis and
+the.radius to the projection   of the wing root    on this
+plane, as shown.   Then the height of tlie wings above the
+fuselage axis is   Cos p l-r.
+
+
+                      The Conformal      Mapping
+
+      In order to find the minimum induced drag in terms of
+the given lift, as well as the various related aerodynamic               f’
+quan~ities for-this combination,    it is necessary  to find ..——..-— .——& .
+the flow functions defined in the theorem of the preceding                J
+                                                                         :*
+soctiou.   Tho first of thoso,   fl (z),  represents  tho down-          ;?
+                                                                         ,,
+ward flow about tho fuselago   contour (th~ circlo of fig. 3).           Lt
+                                                                        -f.;,
+This function is:
+                                                                         i,{
+                                                           1
+      fl(z)    =ic
+                       (z + i Cos pi-r -
+                                               z    +   i Cos pi-r)
+                                                                      (57)
+
+                                                                             jf
+Tho flow function,   f~(z),   of tho upward flow about the                   i
+                                                                             ~
+whole contour of figuro 3 is quite complicated   but can be                   \
+                                                                             :~
+obtained implicitly  by conformal mapping.
+                                                                             .
+     The analytic      function,                                             1
+                                                                             ..I
+                                                                               ..
+
+                                                                             J,,
+                                                                               ,-........
+                                                                                                                   .. .               ,
+                                                                                                                           .,.        :.
+
+                                                                                                                                  +
+
+                                                                                                                            -- :
+                22                    NACA          Technical    Note No,         812                                                 —.
+                                                                                     .               ..._____ .-.
+                                                                                               .- ——,.          --i,
+                                                                                                                 .—-
+                                                                                                                  .—
+                                                                                                                                      .
+                                                       1               z+sin$n
+                                      t                          log                                    (58)                          ;,
+                                          ‘28in@n                      Z-sinpll
+
+
+                maps the exterior bf t-ne whole contour in the   z-plane on
+                a region in the ~-plane bounded by straight lines, as s’hewn
+                in figure 4.   The point at infinity in the z-plane 3s
+                mapped on the origin of the ~-plane, and the points     E and                                                         .
+                A   of the ~-pl.ane have the coordinates:
+                                                                                                       —.                  “
+                                                                                                                          .-
+                                                                                                                                   ,
+                                                                                                                                  ~
+                      This region of the ~-plane is now napped conformably                                                            ~
+                on tho upper half of a conplox t-plane by tho Schmarz-
+                Christoffel  nethod, as shown in figure 5.     The point   G of                                                       ;
+                tho ~-plo.ne is mapped on the potnt at infinity of the t-                                                             :
+,
+                plane, mnd the other two arbitrary    points on the reel axis                                                         ‘.
+                of the t-plane are chosen as the point      O labeled   C and                                                         .;
+                tho point   +1   labeled D   in figure 5.    The differential                                                          ~~
+                equation is:                                                                                                          ~
+                                                                                                                             .. +-
+                                          LL=k                   t= - d=                                (60)                      ‘.
+                                          dt           (t2 - na)       (t= - 1)
+
+                where    d and   n are the coordinates  of E and     F “<in-the                                                   ‘;
+                t-plane.   Integration of equation  (60) and evaluation   of
+                the constants ytelds as the mapping funotion,                                                                     ~
+                                                                                                                                  .
+                                                                                                                                  .
+!..         .                    1
+
+    1                 t =
+        ,.. ,
+                                                    plog~+(l.p)log-                                     (61)                          ;
+      *: .F -                2sin~n             [                                                  1
+    ,,’
+          -,
+    ,“?‘“
+     ,1X.       mhera tho pnrametors   a                   and     n    depend
+                through tho relations,
+                       +
+
+                                           d2                                                           (62)                      ;?
+
+
+
+
+                            b+sinpm                                                                                       ‘“- ;
+                     log
+                            b-   sin (3TT
+                                                                                    p)   log   L/-+”        (63)
+
+
+                                                                                                                                  3
+
+                                                                                                                                  4
+
+
+                The origin       of tho         ~-piano     is napped        on a point         on the imag-                      ~“
+                                                                                                                                  .-
+                                                                                                                                  >
+
+
+                                                                                                                           : i-
+                   NACA        Technical         IIoto Noc      812                        23
+
+
+inary axis of the t-plane,                    t = i El,          where        s%   satisfies
+the relation,
+                                        -1
+               n = S1 cot             I($          1) cot-’          s~                (64)
+                                      L
+                                                                          I
+
+Equations   (62), (63) , and (64) per~a~                        the evaluation of the
+unthenatical   parameters   St,  n,                              d in terms of the
+physical paranoters,      b and  P.
+        Tho flow ‘function           in the t-plane             corresponding         to
+fa(z)    is:
+
+
+                                                                                       (65)
+
+where
+                                         2C(t)sin      (3I7 -
+                      IT(t)      =   e                          1                      (66)
+                                                                                                ..
+                      The Mininum           Induced       Drag
+
+        The mintmun       Induced         drag    of the combination               is given
+by
+
+
+
+
+where
+
+                      L =.          P v R.P.           f(z)     dz
+                                                 1Ca
+                          =-        P V R.Pa           f~(z)        dz
+                                                   {
+
+
+                                                  Um
+From    equation   (57)
+
+
+            - P V R.Po                fl(z)      dz=-2v             PVC’               (67)
+                               {m
+
+
+Tha second intogrul in tho oxprossion    for  L   is evaluated
+by transforming  it into the corresponding   integral in tho
+t-piano.
+
+                                                                                                     i..   .- -.-, . . -
+                                                                                                               <
+
+
+
+
+              24                     NACA    Technical          Note   Moo    812
+
+
+                   - P v R*P.         fa(z)dz=PV’                       3’=(t) Z1 (t) alt
+                                Jm                              f t=is~
+                                                                “
+              By expansion of F* (t) and                        ~! (t) about    t = i 81,          one
+              finds
+                         r
+              P V R,P. o      F=(t) ~t(t) dt                                                               .
+                       dt=is~       - *                            Q          -..              .
+
+
+
+
+              where  N(t)  3s defined                    by equation         (66).   Addin.y-eqUations             “-~
+              (67) and (69),
+
+                                               L = mpvc/M(b,@)                                       (70)          :
+              where
+
+                   1
+              ‘=
+              M(b, @)        2[MY{[:N12
+                                                                                                                   4
+
+                                                            ~   r~l’t (iS ~) 1 + J-2                 (71)
+
+              Then
+                                                     =    ~pc2/2M(b,    P)                            (7/2)
+                                         ‘Lain
+
+              Eliminating         c     between          equations     (70) and      (72),
+
+                                        Di          = -< li2         M(b,f3)                          (73)
+                                             xntn     2nPv
+
+              Equation   (7%) expresses   tho dopendonoo   of the mininum in-
+              duced drag of the combination       on the given lift in terms
+              of the nondimensional     lengthe used in this section.     The
+              corresponding   dimensional    expression  is:
+
+                                                                                                      (74)
+
+                                                                                                                    x
+              where      R    is the fuselage              radius.                                                  -.
+                                                                                                                    *
+                       For   given     lift,        n~      varioe directly            with     M(b,f3)e            a~
+                                                      r3in                                                          ~
+,. ‘t_... .   This     quantity       has boon       evaluated nunorically             and    is shown              G
+ Iji
+                  NACA       Technical   Note   No.   812              25
+
+
+in figure 6 as a function of tho wing height,    00s p m,
+for sovoral values of b.    Tho values for ncgativo wing
+heights have been found fron a relation  to he dorivod latar
+in this section.
+
+                       Tho Intorferonco         Effect        #
+
+      The effect of tho presenco  of tho fuselago upon the
+mininun induced drag can be found by coxaparing that of tho
+coxabtnations with that of an isolated lifting line of the
+sane span length and total lift,    With tha use of nondi-
+nonsional  lengths, tho nininua induced drag of t’ho isolatod
+wing is:
+
+                                                                      (75)
+
+
+Honoo, tha rolativo incroaso in tho nininun induced drag
+of tho combination as oonpared with that of tho isolated
+wing is:
+
+                        Dt         - D’,
+                             uin      %in
+         I(b,@)    =                        = b2 M(b,~)     - 1       (76)
+                               D\nin
+
+
+&he dependence of this ‘interference   coeff~cient’t on the
+semispan   b and the wing height    Cos p ~   is shown in
+figure 7.
+
+                    The Low-Wing         Combination
+
+      The case qf the low-wing combination        is treated by
+considering   a combination    of aemispan    b and of wing
+height   - Cos @ n = Cos(l - p) m.       The minimizing    flow
+function for this oombinati.on represents       the superposition
+of the downward flow about the fueelage cross section and
+the upward flow   about tha entiro contour in the z-plane.
+When the axes are rotated through 180°, this combination            i-s
+transformed   into the corresponding     high-wing   combination    of
+semispan    b and wing height      Cos p n    while the minimiz-
+ing flow function    is transformed    into   - f(z)*    where
+f(z)   is the minimizing    flow  function for the high-wing
+combination.    Hence, all the relations      previously   obtaiaed
+are equally valid for tho low-wing combination         and, in
+particular,   this argument yi.olds the important results:
+                                                                             : i*
+                                                                              - +.
+                                                                             -.
+                                                                                 i’
+                                                                             ,,{
+                                                                  .                   .- ... . .
+                                                                                  .--n
+
+
+                                                                                         -.
+
+26                NACA   Technical      Noto No.      812
+
+
+                     M(b,    $)   =   M(b,   1 - p)
+                                                                           (77)
+                     I(b, 13) = I(b,         1 - p)
+                                                      }
+These relations     have    already     been used         in plotting   figures
+6 an~ 7.
+
+      The complete equivalence     of high-wing   and low-wing
+combinations   in this thoorotical    first approximation     is not
+rofloctod   in oxporimental   results   (references   6 to 13), in
+which the presence of the boundary layer creates a funda-
+mental difference between th~ two typos of combination.
+For unfillotod   combinations,    tho oxporimcmts    show that the
+drag characteristics    of high-wing   combinations    are much
+superior to thoso of tho low-ning typo but that the lift
+characteristics   are nearly the same, tho high-wing       combina-
+tion being only slightly superior.
+                                                          -,-
+                                                            J
+
+      LOADING   PROPERTIES        03’ WING-3’USELAGE        COMBINATIONS
+
+
+       As indicated  in connection   with equation   (24), the
+lift on wing-fuselage     combinations   is composed of a lift
+force on the wings and a lift force on the fuselagea           In
+this section, the &istribution      of these loads over the com-
+bination width is determined      and, in particular,   the “effect
+of changes in the wing height is investigated.         Uxcessivo
+calculations    are avoidod by treating in detail only the
+case of tho oxtromo high-wing      combination.   (f3= O); tho
+midwing case has already been treated by Lennertz         (roforonce
+5), but some considorationi is made also of combinations          with
+internediato    wing heights.    This treatment automatically       in-
+cludes tho caso of the oxtroao low-wing combination           @   =  1),
+
+                                                                                              —
+            ‘ Detornination           of Lift   Distributions
+
+      Tho bounding contours            in tho z-piano for such an ox-
+trome high-wing   combination           is shown in figuro 86  I’r0x3
+equation  (24),
+                                                                            .—. - --—
+                              L =LF+Lw                                                            .
+wher o
+
+
+
+
+                                                                                         —
+                       NACA   Technical         Noto   No.    812                         27
+
+
+is tho lift       on tho fusolago            and
+
+
+
+
+is tho lift       on tho wings.             Writing                       #
+                                                                                                  .
+
+
+
+whoro     @l     and     0=     aro   the velocity           potentials          of the down-
+ward    and    the upward       flows   of tho thoorcna                 rospoctivcly,
+
+
+                                ‘1? = ‘b” + ‘2Y
+whero
+                                                  n
+
+
+
+
+Tho distribution of lift across                       the fuselage            width   is thoro-
+foro defined %y the equation:
+
+        dLF      dLIF      dL2F
+                           —    = PV (@la-@lb)                +   PV     (@2a-@2~)
+        C=x              +   dx
+
+whore   dLF /dx  is tho lift por unit length in the x-direction
+and the subscripts    a and    b refer to the top and the bot-
+tom sides of the fuselage section.     The quantities,     dLIF/dx
+and   dL2F/dx   may 30 regarded,  for the purposos  of this sec-
+tion, as partial lift distributions    arising from the sepa-
+rate flow functions,   f~ (z) and   f=(z).   From equation    {57),
+with   9 = O:
+
+                        f=(z)    =i     c       z+i-—————— 1
+                                            (            Z+i        )
+so that
+
+
+
+
+                                                                                        (78)              i ..
+                                                                                                      f
+
+
+                                                                                                          !l     .. . . .. ....
+                                                                                            .
+
+                                                                                 . —“—+”
+                                                                                   ----
+
+
+                 28               NACA   Tochnieal       Noto   No.   812             .-
+     ,,
+7
+
+
+
+
+.
+
+
+                 This oxprossion  represents an elliptic distribut”ton of neg-
+.’               ative lift across the fuselage width or, so to speaks the
+,
+,                downward flow gtves rise to a downward thrust on the fuse-
+                 lage.
+
+                       In order to find    dL2F/dx,    the distribution  of @a
+                 over the fuselago   cross section must be determined.      Zhi S
+                 distribution   of potential   Is obtained from the mapping
+                 proooss described    in tho procoding   sectiom by taking tho
+                 limit   p = o*   In this way, it is found that the function,
+
+                                           c = l/z                                   (79)
+
+                 maps the exterior of the contour in the z-plane on a region
+                 in the t-plane bounded by the straight lines shown in fig-
+                 ure 9. This r~gio~i  is mapped on the upper hmlf-plane shown
+                 in figuro 10 by the function
+                                                                                       .-
+
+                                                                                     (80)
+
+
+                 whoro the paramotor   n       doponds     on th~-”somispan,   bi—
+
+
+
+
+                                                                               .=
+                 through the rolatiom,
+
+
+
+
+     :...
+     ~,
+     :,1
+     :i,   .;                                                               ——
+                                                                            ..—
+                                                                              —
+                                                                              —
+     1’
+                 Tho imago in tho t-piano of tho point at infinity             of the -      ;
+        I
+      ~L1                                                                                    ;
+                 z-piano lies on the imag3.nary axis at                          .—    .—. 4
+       ;!‘:,{                                                                  . .——-—     .-
+          ,x
+         ;..4>                             t    =   i SL
+      1 :3,’                                                                                    .
+                 NACA   Technical    Note    No.      812           29
+
+
+the boundary   (real axis) of the half t-plane is doterrni.
+                                                          nod.,
+and through equations    (79) and (80), the corresponding po-                    -,
+tential distribution   along the bounding  contour of the z-
+plane.   Eence, the lift distributions
+                                                                         —
+
+
+
+
+can be found from this graphical method.         Calculations   have
+been performed   for the cases     b = 2 and     II = 6 and tho
+results are illustrated    in figures 11 and 12$ which also
+show    dLIE/dx   (given by oquatiom    (78)) as WOII as tho to-,
+tal lift distribution,     dLF/dx.    Thoso curves show that the
+lift on tho fuselage,    given by tho area under tho curvo for
+dLF /dx   in each case, is negativo as can be domonstratod          by
+olemontary considerations.      Tho curves of figures 11 and
+12 show tho Va~UOS of dLIF/dx,        dL2~/dx,    and   dLF/dx,
+each divided by tha convoniont      factor,    2TTPVC.      Tho ~C-
+tual values in each case, of course, dopond on the tatal
+lift on tho combination,    and may be found from tho ro~a-
+tion,
+
+                    *PVC=            2L/M(b,O)
+
+     The lift distribution   on the wings is fcund by tha
+same method except that for tho wings only     @a  contrib-
+utes to tho lift.   Tho results for   b = 2 and    b = 6 aro
+showm in figures 13 and 14.    Theso distributions  do not
+differ markedly from elliptic distributions.
+
+
+          Lift   Distribution       ovor   Fusalago         Width
+
+      It has boon shown that the lift on the fuselage is
+negative in e~tremo high-wing      combinations   with minimum
+induced drag.    From olonontary    considerations,    ono is also
+led to expect negative lift on the fuselage         in similar com-
+binations with constant circulation.        This case has already
+been investigated    by Lonnertz   (roforence 5), who obtained
+a Fositive fuselage lift.      This result has been found to be
+erroneous; tha corrected analysis of this caso is presontod
+hero in the appendix.
+
+      For the sako of complotonoss,  tho loading distribu-
+tions over tho co~bindtion width havo boon plotted to a con-
+venimt   soale for eight ilifforent cases in figures 15, 16,
+
+                                                                          ih
+                                                                         -t
+                                                                          ‘,..
+                                                                                      -   --k
+                                                                . ..
+                                                                       .._.
+                                                                         . .. .
+                                                                                —..
+                                                                                 . .
+
+
+
+
+30               NACA   TOChIli   Cal   ~oto   NOO   812
+
+
+ii’, and 18 to show the dependence       of the loading on the
+wing height, the span length, and the distribution          of circu-
+lation ovor the wing length.         Tho scalo  in these  diagrams
+is choson so that the maxtmum circulation,         occurring at tho                    ~
+win= roots. is the same in all cases.          Tke distributions                       E
+for”oxtrem&   high-wing     combinations  with minimum induced
+drag aro takom from tho preceding        four figures, whilo thoso
+for hfgh-wing    combl,nations with constant circulation. havo
+boon plotted from tho results of tho analysis          in tho appen-
+dix- .Tho other four cases for midwing combinations           are
+taken. from tho results of Lonnortz.         In those figures,”-~o
+lift distributions     over   the fuselage width for the high-
+ming combinations     are given by the curves lying below the
+horizontal  axis and inside the vertical        lines marking the
+fuselage width-
+
+       As regards the load on the wings, the principal ”dif~ ‘“
+,foronce botwoon the oxtrome high-wing             (or low-wing) combl-
+ nationt and tho midwing combination            of tho same span Ieng-th,
+ 2b , is that tho formor pessoss larger wing Iongth,
+ 2(b - sin. /3~).       Thus, for a given total load on tho combi-
+ nation.and    a given span length, tho load on tho wings is
+ higher for     the oxtromo     high-wing    (or  low-wing)   combination,
+ tho moro so bocauso for those combinations,              the lift on tho
+ fusolago is nogativo        so that tho load on the wings is actu-
+ ally groator than tho kotal lift on tho combination
+                                                                      .———
+       Tho fundamental       difforonco    botwoon tho extreme hlgh-
+ wing (or low-wing) and midwing combinations              is that in the
+ high- or low-wing cases, the fuselage lift is negative,
+ while in the midwing,        it is positive.       This interesting
+ result is indicated by tho curves shown in fi@rO                 190
+ Thoso curves show tho dopondonco            of tho ratio of fuselage
+ lift to total lift on the combination,             that is, LF/L, “Oil
+ tho somispau       b   for various typos of combination.           Tho
+ curvos,    A and B,       for midwing combinations       are taken from
+ the resu~ts of Lennertz;           the curves,    O and D,    for ex-
+ treme high-wing       combinations, are found, respectively,         from
+ equation    (A-15) of the appondi.x and frou the analysis            of
+ this section; the curvo for a conbinatiori of I.nternodiato
+ wfng height with constant circulation             has been found from
+ oquatiom    (A-13) of tho appendix.           (The portinont   valu6s---
+ for tho curvo        Elaro      pm = 20,5°, sin @ m = 0.350$
+ Cos p l-r= 099379)        Thoso curves tend toward tho value,
+ zero, as     b   incroasos      indofinitoly;    thoso for tho midwing
+ combinations      change more slowly than the others.            The rea=
+  son for this behavior        is to be found in equation, (A-16)        of
+                     NACA Technical     Note    Mo.   812               31
+
+
+     the appendix.    For the midwing combination,       L~  approaclies
+     a finite linit as     b becomes infinite, while in the case
+     of the extremo high-wing     combination,    L~  approaches   zero.
+     The curves for in,tez%aQdate    wing  heights will cross tho
+     axis in general    (but see the following    discussion);   those
+     for the extrene high-wing     and nidwing conbina%ions     do note
+     Also, for the extreae high-wing      and midwing corabinations,
+     LF/L   is nunorically   larger in the case of nininun induced
+     drag than in the case of constant circulation.
+
+           The a=lysis     prosonted    in the appendix     indicates   sono
+     interesting     conclusions     in tho case of intoraodiato       wing
+     heights.    For    l>cospn>o,             tho Itft distribution      ovor
+     the fuselage is positivo ov~r that portion of tho fusolago
+     I$ing botwoen tho vorticul        eections through tho wing roots
+     and is nogativo     over tho ro8t of the fusolago-          Tho tran-
+     sition in tho loading b~tweon theso portions occurs by
+     moans of a jump in tho distribution,           as shown later i=.
+     ftgure 23.     Although    tho distributions     for these intormodi-
+     ato cases have been found analytically           only  for the caso
+     of constant circulation        (equations    (A-8) and (A-9) of the
+     appendix),    a general consideration       of the potential     distri-
+     bution over the fuselage boundary          shows that an exactly
+     similar result is obtained for intermediate           wing hetghts
+     in tho case of minimum induced drag.            For tho ideal combi-
+     nations considorod      hereiu    with any Distribution      of circu-
+:    lation, there is gonara,lly a jump in tho loading distribu-
+t:   tion in the vertical piano through the wing root mhoso
+,=   magnitudo    is   P v rR$    whor o ‘R     is tho circulation     at tho
+     root.    Whothor tho fusolago lift is positivo,          nogativo,    or
+     zero doponds on tho relativo aagnitudos           of tho areas undor-
+     noath tho soparato portions        of tho distribution      curves;
+     and tho aroaso in turn, dopond on tho wing span, tho wing
+     height, and tho distribution         of circulation    alon~g tho wings,
+     which may bo constant or be that corresponding             to minimum
+     induced drag, etc.
+
+           The circumstances   under w.~ich the fuselage lift van-
+     ishes are easily determined     for the CQSO of constant cir-
+     culation.   Yror~ equation   (A-12) of tho appendix, lot
+
+
+
+
+     If this   equation   is solved   for      b,
+#,.4   #,
+
+                                                                            ——.    .
+
+
+
+
+            32              NACIA Technical   Note   No.   812
+
+
+                                                                            (82)
+
+
+            The firet solution is trivial, for in this case the wing
+            1 ength , 2(b-   sin p n),   vo,nishes so that the total lift
+            on the combination  vanishes as well~     The second solu-
+            tion is the desired relation.     Figuro 20 shows the. dopond-
+            onco of this ficritical somispan’f on    sin ~ n.   Tho dashed
+            line of figuro 20 roprosonts    the equation,
+
+
+
+            Tho point of intersoctiom     of the two curves      is found   from
+            thci equation,
+
+
+
+                                                                             -.—.—
+            and. lies at
+
+
+
+            Tho graph shows that for      pll~45°,       ba ~ Sill @ m,   tx.o.,
+            in this range, any wing span necessarily        exceeds the crit-
+            ical value an$ the fuselage lift is necessarily         positive..
+            I’or ~mC45,        the fuselage lift is positive,       z6ro, or
+            negative, accordingly   as   bsb2,       b=ba,      sin pm:”< b< ba,
+            For tho oxtromo high-wing     (or  low-wing)   combination,
+            sin ~ m = O and     ba   is infi.nito, SO that tho fuso~a~o
+            lift is negative.    In short, for wing heights such that
+            @’l-r~45°,    if tho wing span is incroasod., tho fusolago
+            lift..docroasos nunorically     but remains positivo;    for wing
+            hozghts such that    ~ n < 45°,     tho fuselage lift is ncga-
+            tivo for suffictontly    small span and, as tho span inoroasos,
+            passes through tho valuo zero when        b = ~,     and then be-
+            comes positive.    Tho second caso     is illustrated   by tho
+            curv o E of figuro 19.
+
+                  Finally,   it should bo romarkcd      that, if tho com~ln=-
+            tlon is regarded    as a sin~lo  structure,      tho  loading dis-
+            tribution ovor tho width of this structuro           is continuous
+            through tho root socticnne Tho reason for this result is
+            that , at tho roots, tho load por unit length of tho wing
+            passes from. P V rR to %%~ro; thoso discontinuitios           just
+            b.alanco thoso in tho fusolago loading.          In any case, thoro
+                                                                               ..__
+
+  ..
+                NACA   Technical   Xoto   ~?o, 812               33
+                                                                          f?
+
+will bo discontinuitios   in the loading OVOr the width of               —3
+any particular  crosf3 soctiom of the fusolago at tho verti-
+cal sootions that pass through tho roots-
+
+      Tho analysis presented       in th~s section mill be pro-
+foundly mo&ifiod for combinations         with different fusalage
+cross Soationsb     For example, if tho sections ‘hro roatangu-
+lar, it can be readily soon that for tho oxtromo high-wiag
+or low-wing combinations,       in which the lifting lino is
+tango~t to tho upper or the Iovor         surface, respoctivoly,
+tho fuselage lift is positivo and that @ortion of tho lift-
+ing lino tangent to the fuselago C08EOS to act aB a ~ing.
+Thus, tho loadiag distributions         of those combinations     will
+bo totally different from those of the corresponding             com-
+bi.nati.ons with CiSCU~~5    fUSOhgEJS*      The disconnooted    com-
+binations with rectangular        fusolagos   will, howovor, bo very
+similar to thosq with ciroulur fusolagos.            Exporimonts
+(roforonoos 9 and 15) also rovoal characteristic            diffor~
+oncos arising from the shapo of tho fusolago cross section.
+Thoso difforonoos     in actual combinations       ariso from, causes
+quito different from thoso doscribod hero.
+
+
+Daniel Guggenheim   School of Aeronautics,
+      New York University,
+           New York, N. Y,, November 1940.
+
+
+
+
+                                                                         ,1 y,
+
+                                                                          1.
+                                                                          ,..,
+                                                                         .: -.
+                                                                         Ii “--
+                                                                          I :.
+                                                                          “~~. . . .. . .
+                                                       ..                     ..          ----—
+                                                                                     . . ....
+
+                                                                              -.           -. —.
+                                                                                            .—
+34                  NAOA    Technica3. .I?oteNo.          812
+
+
+                                  APPENDIX
+                                                                                          —
+                  HIGH-    AND    LOW-WING     COMBINATIONS
+
+                     WITH    CONSTANT        CIRCUMTION
+
+
+     Agatn the combination    shown in figure 2 is considered
+but now constant circulation    over the lifting lines is as-
+sumed.   From the Prandtl theory, the vortex sheet in thfs
+case dogoneratos  into a “horsoshoo vortex, w so that the
+flow in tho piano at    z = + co 1s that arising from tho
+two vortox fllamonts   trailing in straight lines from the
+wing ttps, with the fuselage    cross section as a boundary.
+Tho flow in this plane is obtained by rofloctlng     thoso vor-
+tices in the circle, so that the resulting vortex system
+has tho form ehown in figure 23.     The vortices outsido tho
+circlo havo tho coordinntos,
+                                                                                                        . ..
+                          x =k~,y           = 00s @ 1-r                                   (A-l)
+
+and     thoso   insido    ha.vo tho coordinates,
+
+                                                                                          (A--2)
+
+whoro
+
+                           c’ =    b’ -t- Cosa p TT                            -          (A-3)
+
+
+         In ordor   to find the lift           distribution     over          tho fu-8-o-
+lago     section,   tho relation,
+                                                                                                       —-
+                           dLF
+                           -=       Pv(@a       -@b)
+                           ax                                                                     .—
+iS used.    Tho potontial   distribution   ovor tho fuselage is
+found from elomontary     potontial  theory,. but caro must bo
+taken in oxprossi.ng it mathomatlcally      because of its multi-
+ple values. . The multiple values are avoided here by the
+introduction   of a cut in the z-plane between the two vor-
+tices outside the oircle.       It can be shown from simplo
+considerations   that this cut must hava tho fern of tho pro-
+jection of tho lifting l.ine.on this plane.        For the case
+considered here, the cut is a horizontal .straight line, as
+showm in figure 21- .
+                                                            —
+
+
+
+                                                                       -,..        ----
+                  NACA    Technical       lloto No.        812                     35
+
+
+     The potential        field    of the vortices               outside     the cir-
+cle is:
+
+
+
+
+            L     tan-l       2b (Y - aos B 77)      #
+
+          ‘%              A-(Y-     COS ~ #     - b s’
+
+
+Writing
+                                      2b (y - Coa pll)
+          E’> (x,y) = tan
+                              Xz+      (y - CQS j3TT)2- b2
+
+and restricting     the     tan- i        function         to its principal       val-
+ues,  -TT/2 ~ tan-L       0 S T/2,         the single-valued               expression
+for this potential        is:
+
+
+
+
+Thus , for 1x1 >b,    this potential  is continuous   in pass-
+ing through   y ,= cos j3m, while for    \X~ < b,   it increas-
+es by I’ in passing through this value.
+
+     Similarl~     writing
+
+                                                             fh-r
+                                            (
+                                                     Cos
+                                    2%Y-.7
+                                                                )
+           F    (x,y) = tan
+                                  X=:(.      -WY-$
+
+Wfth the same restriction  on the tan-l   function,                           the po-
+tential of the image vortices  can be written as
+,,-! ;-q”
+i
+                   ..                                                                                                     .-—     .- -,
+        ]1”1
+                   ‘b
+                                                                                                                                           ..
+
+                                                                                                                           ——..       .—
+                        36                           NACA    Technical            Note   No.    812
+
+
+                        0= =-~                Fa(xOy)C      Xs+       (Y-wy?g
+,“
+    L
+
+                                                                                                                             (A-5)
+
+
+
+
+            ! ,:
+              t.
+            ,,
+
+                        Thus,        for        1%1 > b/ca,            this potential               i.s continuous   in
+                        passing           through”” y = QQ&%                       while      for     1%1 < b/ca,     i-t
+        4
+                        decreases by  I’ in passing through this value.   In par-                                                 ‘
+                        titular, this potential  is continuous on the circle.  ‘-
+
+                                    The total         potential          is
+
+                                                                  @    = al        +     Q=
+                                                                                                                                .—.—.-
+                        and     its distribution                  over    the fusela-ge circle,
+                                                                              a
+                                                                  X2 +-y           =     1
+                                                                                                                      — --
+                        may    be      written        as
+
+
+                        @r
+                         = G [‘an
+                                                -1
+
+                                                     1 + ‘0s2
+                                                              2b      (y - ‘0s pm)
+                                                                      @TT - b“ - 2Y ‘os &T
+
+
+                                                                                  2.(Y-SQA.J59                         “
+                                                         - tan- ~
+                                                                                  (’OSa ~m-ba)                     1
+                                         ●
+                                                                       c 2+            ca              - 2, Cos pn_l
+
+
+                        where, if the    tan- z functions are restricted      to their
+                        principal values, the conditions     given   in equations    (A-4)
+                        and (A-5) must be employed.      This distribution    is discon-
+                        tinuous at the coordinates,      x = ~ sin IT, y = cos n,
+                        which correspond   to the wing roots, the potential       increas-
+                        ing lJy the value   r,   in passing upward through these
+                        points.   Therefore,   the potential   distribution   can bo
+                        written as:
+
+
+                                                                                                                                           .,
+
+                              ..—    .- - -
+                     NACA   Technical         Moto    No,   812                         37
+
+
+                                                                                      (A- 6)
+
+
+                                                                                      (A-7)
+                                                                     ●
+where
+
+            c+(y)     = 2 tan-l                   ‘G-+)
+                                        2y - Cos @l-r( 1+%
+                                                           c
+
+In this expression,  however, values of the tan-l function.
+are to be chosen so as to make    G(y)  continuous  over the
+circle.   From the equations,  (A-6) and (A-7) , the lift
+distribution  over the fuselage width is found to be:
+
+dLF                                          4b   (C2 - 1) n7
+—=Pvr           1.    ~ tan-z                                                          ?
+ax          [         l-r             c4+l-2(b2-cos2&r)           - 4c2(l-xa)     1
+
+
+                              Ixt “~          sin p Tr                                (A-8 )
+
+dLF                                     4b
+                                      (C2 - l)fi-xa
+—=pVp           - ~ tan-l              2    a                                     s
+dx                R           c4+l-2(b ‘COs ~m) - 4Ca (1-+)
+
+                                lx!     ~     sin J3IT                                (A-9   )
+
+     The error made by Lennertz     (reference ~ in treating
+this problem was a~parently    caused by hik failure to sep-
+arate the potential   distribution   over the fuselage surface
+into distinct parts, so that he obtained equation      (A-8) as
+the lift distribution   over the entire width.
+                                                                                                        .“
+                                                                                                       ,.,
+     These results          for the lift             distribution        are   readily                 r., ;
+put into graphical          form.  Let                                                                   t
+                                                                                                       1:’:
+                                                                                                 -—-——[t: ~
+                                       411 (C2 - 1) %/=E                                               ./
+                                                                                                       J
+        F(x) =;      tan- 1
+                              c4+l-2(b2.-cos2 pTr) - 4C2 (1-X2)                                        \$
+                                                                                                       ;~~
+This. function has the form shown in figure 22.     Hence, if
+                                                                                                       l!-
+(dLF/dx/PV r)   is plotted against   x,   the curve shown  in                                           1
+figure 23 is obtained.     In the special case of the midwing                                           [
+                                                                                                       ;;
+combination    (co” pTr=   0),  this distribution  reduces to                                          ::;
+                                                                                                       :,i
+                                                                                                       1,.1
+                                                                                                       I ‘.-.
+                                                                                                            ....-.
+                                                                                                           +
+                                                                                                           x
+                      IIACA Technioal                 Note      No,    812                                 .:
+38                                                                                                         ,
+
+                                                         In the
+the form obtained by Lennertz,    shown in ff ure  24,
+                                                combination
+case of the extreme high-wing    (or low-wing f
+(Cos pl-r=l),    the distribution   reduces to the form shown
+in figure 25.   These last two distributions    appear in fig-
+ures 16 and 180
+
+      In order to find the lift on tho fuselage,   it is un-
+necessary  to integrate   the lift distribution as Lennortz
+has done.    Instead, tho total lift on tho combination   is
+found first-    From equation   (26)9
+
+                          L = p V R*P.                     f(z)       dz
+                                                     Jm                                             ..
+Writing
+                               Z1 =b+icospfi
+
+&L . *1 Am   +Itfi-++nn        ~.n       this    case      is:
+
+                                                                           =.1
+                     m    I ,*-z.-              21
+                                                                 z++
+                                                      -LlnsP—                    I                             I
+                                         Z*Z1
+                                                                      z. I
+                                                                 z.-#l
+
+
+
+                           r                               —
+               =   -d          10E (1 - ‘1 + :%) +logl+— I
+                                                                                           c“
+                                                                                                -   II
+
+
+
+
+ Expand    in descending                 powers       of        (z +E~)              and
+                                                                                           (z-%)
+                                        + Z1   (zz+EJ/c2
+                                     ‘1      +                                   +**
+          f’(z) = *             -                     z~
+                                     z + Z1
+                                                 z- ~
+                            [
+                                     r
+
+
+
+
+ as
+                      r
+                     —2b
+                   = 2mi
+                                     [
+                                         —
+                                           -1
+                                         Z+zl
+                                                      +*+.
+                                                           z-     ~
+                                                                                 ●
+
+
+
+
+                                                                                       1
+                                                                                       9
+
+
+
+
+                                                                                                .-— .— —
+                               NACA    Technical               Mote   No.    812                      39
+
+
+          Then
+                       L =.     PVR.     P         ~       2b %i           .1+$
+                                             {                         (              )]
+
+
+                         “V”2’C%
+
+          This expression for the lift is based                              on    nondimensional
+          lengths; the dimensional relation is
+
+
+                                                                 (l-5)
+E
+                                    II =Pvr                                                         (A-1O)
+                                                        ‘2b
+          where   R  is the fuselage radius.    Thus , for the same cir-
+          culation and span length, the extreme high-wing     (or low-
+!“”
+~
+          wing) combination   has greater lift than the midwing combi.
+          nation, although for practical   values of b,     the differ-
+          ence is negligible;   and, in either case, the lift does not
+          differ greatly from that of an isolated wing of the same
+          span.
+     i
+     .           The    lift    on the wings              is:
+
+                               LH = PvrR2                  (b-        Sin p l-r)                    (A-n)
+     \    Hence,
+     --
+                        LY=L-Lw              =2         PvrR.sinplT-                  +             (A-12)
+~                                                                (                         )
+&
+          and
+t.                                                                     b>
+.                                       sin ~ m -
+                                                                                                    (A-13)
+                                L
+:.                                               b-     T-J%---
+                                                        b +COS             ~TT
+
+                 For    ;~.e midwing         combination,
+
+                                sin ~ m = 1,                   Ccs p l-f= o
+          and
+                                             ~
+                                               g           1
+                                             —=                                                     (A-14)
+                                              L         b+l
+
+
+●         This result is shown
+          19.  For the extreme
+                                             graphically
+                                             high-wing
+                                                           by t-he curve
+                                                         (or low-win~)
+                                                                           3   of figure
+                                                                         combination,
+
+                                             =     o,      Cos    p ~ = * 1
+                                                                                          —-                  —.
+                                                                                                       .
+
+
+                                                                                                           -- -—
+      40                   IIACA Technical             Note       Ho   ●   812
+
+
+      so that
+                                                                                                 (A-15)
+
+                                                                                                     —.
+      This result        is shown       by       the   curve       0       of figure      i9.
+
+            The limiting case of infinite                          wing      span is of special
+      interest.   For this case, equation                          (A.-12)     reduces to
+
+                                L~ = 2pVrRsinpm                                                  (A-16)
+
+      Thus , DE vanishes  for the extreme high-wing and low-wing
+      combinations with infinite wing span, while for the mldwing
+      combinations
+
+                                       LE =2PVrR                                                 (A-17)
+
+      The general result, equation      (A-16), signifies that for in-
+      finite span the lift on the combination       is just the same
+      as if the wings were continuous      through the fuselage and
+      tho fuselage removed.      The particular   result; equation
+      (A-17), was dori.vod by Lonnortz     (referonco 5) by an in-
+      volved mathematical    analysis and has since been verified
+      by experiment   (reference 11).
+
+            The analysis presented   here applies as well to dis-
+      connected  combinations,   i.e., those in which the wings do
+      not intersect   the fusolago but lie at some distance above
+      or below it.    If tho nondimensional  height of the lifting
+      line from the fusolago axis is called      h,  ft is readily
+      soon from equations    (A-IO) and (A-13) that, in this case,
+
+                         L =2     PVrRb                 l-1                                      (A-18)
+                                                       (    ba + ha )
+      an~
+                     +                                            1
+                         LF =2     PYI’Rb.—                                                      (A-19}
+                                                       (       ba + ha )
+                                                                                                            .-...
+      SO    that
+                                  ‘Y
+                                  —=         -             1
+                                                                                                 (A-20)
+                                   L             ba+h=l
+
+           ‘lhus, for such combinations, L~                                 is   always    nogati.ve
+      and vanishes for infinito wing span~
+
+              This   thoorotical         result        agro~s          po orly    with    tho moasuro.
+,-.
+
+                                                                                                .-
+                 NACA   Technical   Note   No,   812                    41
+
+
+ments of the foroes acting on the separate members of dis-
+connected combinations.     In the tests of referenco    12 it
+was found that the interference     lift forco on tho fuselages
+of disconnected   high-wing  combinations   wore predominantly
+positive.    The reason for this poor agreement    appears to
+lie in the oreation of a low-pressure      region between wing
+and fuselage by means of a venturi effect arising from the
+finite profile of tho airfoil and the curvature of the
+fuselage in side elevation.      These quantities   do not appear
+in the first approximation    of the theory used here.      The
+experiments also reveal (referenco 12) tho presence        of an
+interforenco   lift forco acting on the wing, of which no in-
+dication appears in tho theory.
+
+      I’iilally, the lifting-line theory yields another inter-
+esting result for combinations    with constant circulation.
+It follows direotly from the last analysis     that the lift
+distribution   over the entire width of the combination,
+that is, over both fuselage and wings, depends only on the
+positions of the wing roots and wing tips and is ontiroly
+independent   of the front elevation   of the wings.
+
+      Other results of the application  of the lifting-line
+theory to combinations  with finite fuselages have been
+obtained by Y. Vandrey  (roferenco 16).
+
+
+                           REFERENCES
+
+
+1.   Prandtl, L.:     Tragfl~geltheorie,    pk. I. Nachrichten
+         d. Kg>. Ges. d. Wissensch.      zu Gottingen.   Math.
+        phys. K1. 1918, pt. II, 1919.        Reprinted  in ‘Vier
+        Abhandlungen    zur Hydrodynamic    und Aerodynamic, ~ by
+        L. Prandtl and A. Bet%, Kaise& Wilhelm Inst. fur
+         Str&nungsforsohung,    Gottingen,   1927, pp. 9-36.
+
+2.   Munk, Max M.:  The Minimum Induoed           Drag   of Aerofoils.
+        Rep. No. 121, EACAC 1921.
+
+3,   Trefftz, E.:     Prandtlsche    Tragfl&chen- und Propeller-
+        Theorie.     Z.f.a.U.M.,    Bd. 1, Heft 3, June 1921,
+        Pp. 206-2180
+
+4.   Rossnfir, ~.:    Die gfinst”igste Auftriebsverteilung  bei
+         Tragflugelgittern   mit endlicher    Spannweite.  Ing.-
+        Archiv,   II Bd., Heft 1, Uarch 1931, pp. 36-46.
+
+5*   Lennertz,   J.:   On the Nutual Reaction          of Wings   and
+        Body.    TolLa No. 400, NAOA, 1927,
+     42                    NACA   Technical   Note   No.   812
+
+
+     6.     .ron    Kdrmdn, Th.:    Neue Darstellung der Tragfl~gel-
+                   theor$e.   Z.f.a.M.M.,  Bd. 15, Heft 1/2, Feb. 1935.
+                   pp. 56-61.
+
+     7.     de Hailer, Pierre:   La Portance et la tra~n~o Induite
+               minimum dlune aile au vofisinage du sol.   Mitteilung
+               No. 5, Inst. Aerod. Tech. H.S. Zurioh, Gebr. Leemann
+               & (10. (Zurich), 1936.
+
+     8.     Prandtl, L.:   Effects of Varying the Relative Vertical-
+               Position of Wing and Euselage.    T.N. XO. 75, NAOA,
+                1921.
+                                                                  ..——
+      9.    Muttray, H.:   Investigation  of the Nffect of the-ruse.
+                lage on the Wing of a Low-Wing Monoplane.   T.U. ~Oa
+                517, NACA, 1929.
+
+     10.    Parkin, J. H., and K?ein, G. Ja:    The Interference be-
+                tween the Body and wings of Aircraft.   R.A.S. Jour.,
+               vol. XxXIV, no~ 229S Jan. 1930, pp. 1-91.
+
+     11.    Ower, E.:    Some Aspects of the Mutual Interference   be-
+                tween Parts of Aircraft.   R. & ii. Ho. 1480, -—
+                                                              Brit-
+                ish A.R.C.* 1932.
+
+     12.    Jacobs, Eastman 2T9~ and W*S     Kenneth   ~.:   Intorforonco
+                of Wing and fiselage fro:l Tests of 209 Combinations
+                in the N.A.C.A. Variable-Density     Tunnel.   Rep. No.
+                540, NACA, 1935.
+
+      13,    Sherman, Albert:    Interference   of Wing and R’uselage
+                from Tests of 28 Combinations     in the N.A.C.A.
+                Variable-Density   Tunnel.    Rep. NO. 575, NACA, 1936~
+                                                                   _—-—.—
+      14.     Sherman,     Albert:   Interference   of Wing and Fuselage
+                    from  Tests of 17 Combinations     in the N.A.COAS
+                    Vakiable-Density   Tunnel.    Combinations  with Spo.
+                    clal Junctures.    T.N. ~Oc   641, NMA, 1938.
+
+      15.     Sherman, Albert:     Intorferenco   of Wang and Yusolag~-
+                  from .Tests of Eight Combinations     in tho N.A.C.A,
+                 _Variable-Density   Tunnel.    Combinations   with
+                  Tapered Fillets and Straight-Side      Junctures.   T.N*
+                 No. 642, NACA, 1938.
+
+      16.     Vandrey, F.:     Zur theoretischen  Bfihandlung des gegen-
+                  seitigen ISinflusses won Tragflugel und Rumpf.
+                  Luftfahrtforschung,    nd- 14s Lfgo 7S 20 JUUTS lgzyt
+                  pp. 347-3550
+
+
+
+-1
+    ,,
+
+                                                                              ,,.
+
+                          f’
+         s                kl\
+                                  “\
+                                       \+
+
+                                         “l-”--
+
+
+
+.
+
+
+
+
+                        I m                 Ii
+
+                          L                                                         %
+                                                                                    w
+                                                                                    (?4
+                                                                                    m
+                                                                                    .
+
+
+                                  lb’
+                        “u              G
+                                                     FIG.   9.-   BOUNI)ING
+
+                                                                  CONTOUR
+                                                                  ATz=+m.
+
+
+
+             F16 .3   801JNflUW        cONTOUR   AT ?J~+-    .
+                                                                                                                                    Figs. 6,7,11,12
+     NACA Technical Note No. 812
+                                                                                                                                —
+                                                                                                                                                                        .-?
+
+                                                                                                                                                                  --    .:3
+      e~                                                                                                                                                               -“-
+                                                                                                                                                                              s
+r-
+
+1
+
+                                                                                                                                                                              ‘8
+                                               .30-
+
+
+                                           M(b,p)
+
+t
+                                                .20-
+
+
+
+
+                                                .1
+                                                 0-
+
+          &“L                     ---                       .._        —..
+
+
+          ~b=6                                                                   .. . ..      _@b;_————                         -—
+                                                                                                                                                           ..-.
+          , b 8                                                                                     =b.m                    ,0
+          ;b~m
+                                                                                      1.0    -1.0          -.5                  0            .5     1.0
+     - Lo                    -.5                     0                 .5
+                                                     CO’Oh                                                                  Cos %
+                                                                                                    FlG.7. -     THE    INTERFERENCE     COEFFICIENT.
+                                 FIG.6.-      THE FuNCT1ON, M(4~)            .
+
+                                             d~~
+                                             2Tr pvc                                                                   dLF/dx        .   .
+                                                       t                                                               21rpvc
+
+                                                                                   dLzF/dx                                      t
+
+                 ,/’                                                             Azi@Z
+                                                    ,2 .          ~K
+             /
+
+
+
+
+     -1
+
+
+                                                    -. z-
+                       ‘\_
+
+
+                                                    -. +-
+                  ‘.,
+                        \
+                             \
+
+
+
+
+                                                                                                    F16. 12.-  DISTR18UTION OF LIFT OVER
+           FtG.ll.- DISTRIBUTION OF LIFT OVER
+                                                                                                          FUSELAGE OF HIGH-WING ENSEMBLE,               b = 6.
+               FUSELA6E OF H16H-WIN6 ENSEMBLE, b= 2.
+
+                                                                                                                                                                              w.
+                                                                                                                                                                              L ....
+    ffACATechnioal Note No. 812                                            Figs . 8,9,10
+
+
+
+
+                                                    Yt q
+                           ~b                                    b
+                           A                                               c4X
+                                                                       @
+
+
+
+
+                           Fle.s.-      8cunDw6 Caumamz-bmmc      .
+
+
+
+
+                           FIG.9 .-   BOUtiM’i6   CONTOUR   [H %-Mw.
+
+
+
+
+t
+                           =--4--+
+                           FIG. w.-   ~lMu        Cnwraum W t- QWE     .
+
+s
+
+i
+
+
+
+●
+
+
+
+
+                                                                                           .
+
+                                                                                           ‘!.
+                                                                                           I   “
+                                                                                               .
+                                                                                                   .-..
+..
+
+
+
+
+                        I                                                         ~                                               !        1                                 t                                 J        -x   ?
+                        -2                        -1                              0                                  1            2   -6          -4            -2           0            .2           4           6.
+                                                                                                                             —x
+                                                                                                                                                                                                                             w
+                                                                                                                                                                                                                             P
+                      F16.13 .-   DISTRIBUTION    OF Ll~       OVW   WIN6S   OF       HIGH-WING      ENSEtlBLE,                                F16.14 .-   DISTRIBUTION          OF UIT        OV2R WIN6   S                 N
+                                                                                                                                                           OF    HIGH-WING        ENSEMBLE,         b=6,
+
+
+                                                                                                        I
+                                                                                                        ,,
+                                                                                                             1
+
+                                      \..\
+          .3 I                                                                                          !
+                                                                                                        ,!
+                                             \\                                                                          1
+
+
+
+
+          ,Zi
+
+             L
+             I
+          .11
+                                                                                            ,           ~.
+                1
+
+     .,
+             1                                                                                               !E
+           0/
+                                       /’-                                                                       g       ‘
+                                                                      /
+                                                                                            :,,              ;
+
+
+
+
+                                                               C’H16H-WINGICONSTANT                CIRCULATION
+
+
+
+
+     :==
+
+            0                         2                    4
+
+
+            FI&19.-      RATIO    OF FLLSELA6E    LIFT   TO TOTAL     UFT    AeAINST            SEMI.SPAN
+llACATechnical Note No. 812                                           Figs. 15,16,17,18
+
+
+                                                                                                     ,:-
+
+                                           Q
+               H16H-WlN~ENW3113LE                    I-UGI+-WING     ENSSN8LE
+                 lll?W’lUM DRAO                  CGUSTANT          CIRCULATION
+
+
+
+
+                                                       MID-WIri6     ENSEFlOLE
+               t’No-vJw3   misEN8LE
+                                                 CONSTANT          CIRCIJLATION
+                 PNNIMLIM DRAO
+
+
+  FV3.1~.-     LIFT DISTRIBUTION      FlGJ6. -       LIFT C4STRIWTIQN
+               CNER E~i~Mt3LE ,                       QVER EN SEFIBLE,
+                             ●                                b=2.
+
+
+
+
+             HIG44-WING    ENSEMBLE
+                                                      WGH-WltiG       ENSEM13LE
+                 mltnmum    Dlum
+                                                     cONSTANT        CIRCULATION
+                                                                                          —
+
+
+
+
+                                                                                                     ;J.i
+                                                                                                      I
+
+               MtD-WIMi    ENSEMBLE
+                                                                                                       i-
+                                                                                                      .-.
+                                                                                                     ““i:,
+ FIG.W. -
+                Mwwlum     DRAG
+
+
+               LIFT DISTRIWION
+                OVER ENSEMBLE,
+                       b=6 ,
+                                        FIG. 16. -
+                                                     CONSTANT        CIRCULATION
+
+
+                                                         LIFT D19TRlBUTtON
+                                                         OVER E;=S~~BLE>
+                                                                                              ----
+                                                                                                      I.   ●
+
+
+
+
+                                                                                                               >.. ___
+}
+
+.
+     l/ACA Technical               Note No. 812                                      Figs.       21,22,23,24,25
+
+
+
+
+                                                                  1
+
+
+
+                                  Flli.al    .-
+
+
+
+
+                          F(X)4                                                   $Liq
+.
+
+
+
+
+                                                                                                 1- +ii   *
+
+                                              I
+    -1   -in fr              o                     4infR      1   -1                     0                    I
+
+                                                                                                                                   ~:*
+     F16.22,       -   DEPENDENCE           OF Ftx)6N      X.
+                                                                        FlG.24.-
+                                                                      LIFT   DlSTRt13UT10fi OVER FUSELAGE
+                                                                             OF FIID:WINGENSEM8LE.
+                                                                                                                                   $     ?
+                                                                                                                                        ..
+                                                                                                                                             ~>
+
+
+*
+~
+
+
+
+
+                                                                  -1                         0
+
+                                                                                                 +.;’     *
+                                                                                                                  ‘   “x           !3
+                                                                                                                                   f!
+
+
+
+                                                                                                                                   jp
+                                                                                                                                             i
+
+
+
+
+                                                                                                                                   )“
+
+                                                                                                                                  _; ,1..
+         FIG.     23. -                                                F16. 25.-                                                        i (/.
+    LIFT DIsTI?IBUTION            OVER            FUSELA6E            LIFT DISTRIBUTION   OVER FUSELAGE
+      FOR INTERMEDIATE
+                                                                                                                                  1
+                                                                                                                                  ;.L
+                                      WING          HE\&tT.       OF      EXTREME 14\6H-WING ErW5EPN3LE .
+                                                                                                                                  ., t
+                                                                                                                                    f
+                                                                                                                                  5
+                                                                                                                                  ..’
+                                                                                                                                       ,.
+                                                                                                                                  ! i’
+                                                                                                                                  g
+                                                                                                                                  1’.”
+                                                                                                                                  .,
+                                                                                                                       .4 —.--*
+                                                                                                                                  :/ “l.,. - ... .
+

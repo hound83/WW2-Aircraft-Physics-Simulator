@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "purpose": "Secondary, independent simulator cross-checks ONLY. No simulator output is a measured wartime airframe result or interchangeable aircraft variant.",
+  "captureDate": "2026-10-26",
+  "metadata": {
+    "il2": {
+      "source": "IL-2 Sturmovik Great Battles developer aircraft specifications",
+      "url": "https://forum.il2sturmovik.com/topic/25993-aircraft-flight-and-technical-specifications-and-operational-details/",
+      "status": "developer-published flight-model statistics; game-version and difficulty/atmosphere details may have changed"
+    },
+    "dcs": {
+      "source": "Eagle Dynamics official DCS documentation and independent DCS simulator test reports",
+      "p47Manual": "https://www.digitalcombatsimulator.com/en/downloads/documentation/dcs-thunderbolt_flight_manual_en/",
+      "p51Manual": "https://www.digitalcombatsimulator.com/en/downloads/documentation/dcs-p-51d_flight_manual_en/",
+      "note": "Official manuals identify simulated variants and operations; manual historical diagrams are NOT DCS-measured flight-model outputs"
+    }
+  },
+  "aircraft": [
+    {
+      "id": "il2_p47d28",
+      "simulator": "IL-2 Great Battles",
+      "variant": "P-47D-28",
+      "engine": "R-2800-59, 2600 hp water-injection WEP (64 inHg, 2700 rpm)",
+      "sourceUrl": "https://forum.il2sturmovik.com/topic/25993-aircraft-flight-and-technical-specifications-and-operational-details/",
+      "weightKg": 6503,
+      "fuelCondition": "50% internal fuel",
+      "turn": [{"altMeters":0,"iasKmh":322,"seconds":27.5,"rating":"WEP"},{"altMeters":3000,"iasKmh":330,"seconds":31,"rating":"WEP"}],
+      "climb": [{"altMeters":0,"mps":18.1,"rating":"WEP"},{"altMeters":3000,"mps":17.6,"rating":"WEP"},{"altMeters":6000,"mps":16.4,"rating":"WEP"}],
+      "speed": [{"altMeters":0,"kmhTAS":557,"rating":"WEP"},{"altMeters":7000,"kmhTAS":700,"rating":"WEP"}],
+      "comparison": "DO NOT compute P-47B historical/model residuals against D-28: different engine, prop and ~14,337 vs 12,565 lb test weight. Greg D-style 2600 hp worksheet is NOT a matched D-28 test."
+    },
+    {
+      "id": "il2_p51b5_v1650_7",
+      "simulator": "IL-2 Great Battles",
+      "variant": "P-51B-5",
+      "engine": "Packard V-1650-7 (explicitly select -7 option; game also offers V-1650-3)",
+      "sourceUrl": "https://forum.il2sturmovik.com/topic/25993-aircraft-flight-and-technical-specifications-and-operational-details/",
+      "weightKg": 4389,
+      "fuelCondition": "68% internal fuel",
+      "turn": [{"altMeters":0,"iasKmh":290,"seconds":19.0,"rating":"WEP"},{"altMeters":3000,"iasKmh":295,"seconds":28.0,"rating":"WEP"}],
+      "climb": [{"altMeters":0,"mps":19.3,"rating":"WEP"},{"altMeters":3000,"mps":18.0,"rating":"WEP"},{"altMeters":6000,"mps":11.8,"rating":"WEP"}],
+      "speed": [{"altMeters":0,"kmhTAS":604,"rating":"WEP 67 inHg"},{"altMeters":7500,"kmhTAS":717,"rating":"WEP 67 inHg"}],
+      "comparison": "Same engine designation as historical P-51B-15, but DIFFERENT B block, ~9,676 versus 9,240 lb, fuel/load and engine horsepower representations (IL-2 specifies 1650 hp sea level versus 1580 hp at 0 ft in historical node model); do not fit B-15 to this benchmark."
+    },
+    {
+      "id": "il2_p51d15",
+      "simulator": "IL-2 Great Battles",
+      "variant": "P-51D-15",
+      "engine": "Packard V-1650-7",
+      "sourceUrl": "https://forum.il2sturmovik.com/topic/25993-aircraft-flight-and-technical-specifications-and-operational-details/",
+      "turn": [{"altMeters":0,"iasKmh":290,"seconds":20.0,"rating":"WEP"},{"altMeters":3000,"iasKmh":295,"seconds":29.5,"rating":"WEP"}],
+      "climb": [{"altMeters":0,"mps":18.1,"rating":"WEP"}],
+      "speed": [{"altMeters":0,"kmhTAS":592,"rating":"WEP"}],
+      "comparison": "D-15 is NOT B-15: different canopy and airframe drag, mass, fuel and equipment."
+    },
+    {
+      "id": "dcs_p51d_tacview2022",
+      "simulator": "DCS World, 2022 user-measured, derivative E-M chart",
+      "variant": "P-51D",
+      "sourceUrl": "https://www.8492sqdn.net/guides/combat-sim/bfm/docs/em.pdf",
+      "testDate": "2022-07-05",
+      "confidenceByAuthor": "LOW",
+      "weightKg": 4331,
+      "flightCondition": "Full power, clean, 0 ft; Tacview observations reprocessed via derived aerodynamic fit; IAS calibration not given",
+      "turn": [{"altMeters":0,"iasKnots":132,"degSec":17.0,"rating":"full power","measure":"chart maximum sustained turn"}],
+      "climb": [{"altMeters":0,"ftPerSec":47,"iasKnots":132,"rating":"full power","measure":"chart maximum climb"}],
+      "comparison": "User-derived and author LOW confidence, historical DCS version and unknown exact engine setting; never promote to DCS official or to P-51B measured flight data."
+    },
+    {
+      "id": "dcs_p51d_2020_user_test",
+      "simulator": "DCS World, old v2.5.6.57530, 2020 user measurement",
+      "variant": "P-51D (DCS module variant)",
+      "sourceUrl": "https://forum.europeanaf.net/t/dcs-tas-speeds-horizontal-flight-for-all-dcs-wwii-fighters-at-three-levels/35780",
+      "confidenceByAuthor": "UNVERIFIED USER-REPORTED; OLD BUILD",
+      "weightCondition": "50% fuel; 20 C; no wind",
+      "engine": "67 inHg, 3000 rpm",
+      "speed": [{"altMeters":0,"kmhTAS":592,"rating":"67 inHg"},{"altMeters":3300,"kmhTAS":631,"rating":"67 inHg"},{"altMeters":6100,"kmhTAS":674,"rating":"67 inHg"}],
+      "comparison": "DCS player P-51D at 67 inHg and IL-2 developer P-51D-15 at WEP both state 592 km/h TAS sea level: notable convergence but distinct variant, temperature, fuel and historical simulator builds. Never treat matching reported numbers as proof of independent fidelity."
+    },
+    {
+      "id": "dcs_p47d30_2020_user_test",
+      "simulator": "DCS World, old v2.5.6.57530, 2020 user measurement",
+      "variant": "P-47D-30",
+      "sourceUrl": "https://forum.europeanaf.net/t/dcs-tas-speeds-horizontal-flight-for-all-dcs-wwii-fighters-at-three-levels/35780",
+      "confidenceByAuthor": "UNVERIFIED USER-REPORTED; OLD BUILD",
+      "weightCondition": "50% fuel; 20 C; no wind",
+      "engine": "Water injection 71 inHg at 2700 rpm",
+      "speed": [{"altMeters":0,"kmhTAS":615,"rating":"71 inHg"},{"altMeters":3300,"kmhTAS":646,"rating":"71 inHg"},{"altMeters":6100,"kmhTAS":670,"rating":"71 inHg"}],
+      "comparison": "DO NOT compare 71-inHg DCS D-30 615 km/h sea-level directly with 64-inHg IL-2 D-28 557 km/h; both rating AND model differ. DCS official P-47D manual confirms D-30 (not P-47B)."
+    }
+  ]
+}

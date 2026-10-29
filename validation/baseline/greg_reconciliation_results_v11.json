@@ -1,0 +1,768 @@
+{
+  "version": "v1.1-Greg-crosscheck",
+  "sources": "Greg user-supplied screenshots reconstructed in cases.json; not certified measured report data",
+  "bf109": {
+    "case": "Bf109F-4 Greg sea level; same 6371-lb nominal test weight",
+    "currentParams": {
+      "cd0": 0.026017217056890238,
+      "e": 0.78,
+      "etaAt325": 0.8276726752904248
+    },
+    "gregImplied": {
+      "cd0": 0.02437284688790079,
+      "e": 0.5576706734059873,
+      "propulsiveHpAt325": 1058,
+      "impliedEtaAt325": 0.7945734687562898
+    },
+    "isolatedTurnImpact": {
+      "condition": "5000 ft, 170 mph EAS, CLmax unchanged; CD0 re-fitted ONLY to preserve same 325-mph engine/prop speed anchor",
+      "baselineDegSec": 18.689640191167204,
+      "gregDerivedEDegSec": 15.405115033105616,
+      "changeDegSec": -3.2845251580615873
+    },
+    "caveat": "Greg power-available schedule is a worksheet input and may use different engine rating, PS/hp and propeller assumptions; current CD0 is fitted with the current prop candidate, so polar and eta differences are coupled.",
+    "rows": [
+      {
+        "speedMph": 100,
+        "greg": {
+          "parasLbf": 108,
+          "indLbf": 856,
+          "totalLbf": 964,
+          "requiredHp": 257,
+          "availableHp": 832
+        },
+        "baseline": {
+          "parasLbf": 114.90748760971556,
+          "indLbf": 611.6950108419583,
+          "totalLbf": 726.6024984516738,
+          "requiredHp": 193.76066625089337,
+          "availableHp": 947.2826005572696
+        },
+        "reconstructed": {
+          "parasLbf": 107.6449720068448,
+          "indLbf": 855.5624873416642,
+          "requiredHp": 256.8553224891096
+        },
+        "residualPct": {
+          "paras": 6.39582186084775,
+          "ind": -28.540302471733845,
+          "requiredHp": -24.606744649457834,
+          "availableHp": 13.856081797748754
+        }
+      },
+      {
+        "speedMph": 125,
+        "greg": {
+          "parasLbf": 169,
+          "indLbf": 548,
+          "totalLbf": 717,
+          "requiredHp": 240,
+          "availableHp": 876
+        },
+        "baseline": {
+          "parasLbf": 179.54294939018055,
+          "indLbf": 391.48480693885335,
+          "totalLbf": 571.0277563290339,
+          "requiredHp": 190.3425854401759,
+          "availableHp": 978.3408102883202
+        },
+        "reconstructed": {
+          "parasLbf": 168.19526876069497,
+          "indLbf": 547.5599918986654,
+          "requiredHp": 238.58508688289947
+        },
+        "residualPct": {
+          "paras": 6.238431591822802,
+          "ind": -28.561166616997568,
+          "requiredHp": -20.690589399926708,
+          "availableHp": 11.682740900493172
+        }
+      },
+      {
+        "speedMph": 150,
+        "greg": {
+          "parasLbf": 243,
+          "indLbf": 380,
+          "totalLbf": 623,
+          "requiredHp": 250,
+          "availableHp": 943
+        },
+        "baseline": {
+          "parasLbf": 258.54184712186,
+          "indLbf": 271.86444926309264,
+          "totalLbf": 530.4062963849526,
+          "requiredHp": 212.16251855082064,
+          "availableHp": 1006.523638737706
+        },
+        "reconstructed": {
+          "parasLbf": 242.20118701540076,
+          "indLbf": 380.24999437407325,
+          "requiredHp": 248.98047255208076
+        },
+        "residualPct": {
+          "paras": 6.395821860847728,
+          "ind": -28.456723878133516,
+          "requiredHp": -15.134992579671746,
+          "availableHp": 6.736334966882929
+        }
+      },
+      {
+        "speedMph": 168,
+        "greg": {
+          "parasLbf": 304,
+          "indLbf": 303,
+          "totalLbf": 607,
+          "requiredHp": 273,
+          "availableHp": 988
+        },
+        "baseline": {
+          "parasLbf": 324.31489302966116,
+          "indLbf": 216.72867447631745,
+          "totalLbf": 541.0435675059787,
+          "requiredHp": 242.3875182390678,
+          "availableHp": 1024.8635479544532
+        },
+        "reconstructed": {
+          "parasLbf": 303.81716899211875,
+          "indLbf": 303.13296745382104,
+          "requiredHp": 271.91366112373055
+        },
+        "residualPct": {
+          "paras": 6.6825306018622355,
+          "ind": -28.472384661281367,
+          "requiredHp": -11.213363282392752,
+          "availableHp": 3.731128335470979
+        }
+      },
+      {
+        "speedMph": 175,
+        "greg": {
+          "parasLbf": 331,
+          "indLbf": 280,
+          "totalLbf": 611,
+          "requiredHp": 286,
+          "availableHp": 1000
+        },
+        "baseline": {
+          "parasLbf": 351.9041808047539,
+          "indLbf": 199.73714639737415,
+          "totalLbf": 551.641327202128,
+          "requiredHp": 257.43261935715833,
+          "availableHp": 1031.5279201104302
+        },
+        "reconstructed": {
+          "parasLbf": 329.66272677096214,
+          "indLbf": 279.36734280544147,
+          "requiredHp": 284.21403246475467
+        },
+        "residualPct": {
+          "paras": 6.3154624787776115,
+          "ind": -28.665304858080663,
+          "requiredHp": -9.988594630364222,
+          "availableHp": 3.152792011043015
+        }
+      },
+      {
+        "speedMph": 200,
+        "greg": {
+          "parasLbf": 432,
+          "indLbf": 214,
+          "totalLbf": 646,
+          "requiredHp": 345,
+          "availableHp": 1029
+        },
+        "baseline": {
+          "parasLbf": 459.62995043886224,
+          "indLbf": 152.92375271048957,
+          "totalLbf": 612.5537031493518,
+          "requiredHp": 326.69530834145445,
+          "availableHp": 1053.0795889756557
+        },
+        "reconstructed": {
+          "parasLbf": 430.5798880273792,
+          "indLbf": 213.89062183541606,
+          "requiredHp": 343.7176052550373
+        },
+        "residualPct": {
+          "paras": 6.39582186084775,
+          "ind": -28.540302471733845,
+          "requiredHp": -5.30570772711465,
+          "availableHp": 2.3400961103649864
+        }
+      },
+      {
+        "speedMph": 225,
+        "greg": {
+          "parasLbf": 547,
+          "indLbf": 169,
+          "totalLbf": 716,
+          "requiredHp": 431,
+          "availableHp": 1058
+        },
+        "baseline": {
+          "parasLbf": 581.719156024185,
+          "indLbf": 120.82864411693005,
+          "totalLbf": 702.5478001411151,
+          "requiredHp": 421.5286800783899,
+          "availableHp": 1070.938674793288
+        },
+        "reconstructed": {
+          "parasLbf": 544.9526707846518,
+          "indLbf": 168.99999749958803,
+          "requiredHp": 428.3716009641628
+        },
+        "residualPct": {
+          "paras": 6.347194885591412,
+          "ind": -28.503760877556182,
+          "requiredHp": -2.1975220235754267,
+          "availableHp": 1.222937126019663
+        }
+      },
+      {
+        "speedMph": 250,
+        "greg": {
+          "parasLbf": 675,
+          "indLbf": 137,
+          "totalLbf": 812,
+          "requiredHp": 543,
+          "availableHp": 1058
+        },
+        "baseline": {
+          "parasLbf": 718.1717975607222,
+          "indLbf": 97.87120173471334,
+          "totalLbf": 816.0429992954355,
+          "requiredHp": 544.028666188853,
+          "availableHp": 1084.9037471254687
+        },
+        "reconstructed": {
+          "parasLbf": 672.7810750427799,
+          "indLbf": 136.88999797466636,
+          "requiredHp": 539.7807153369234
+        },
+        "residualPct": {
+          "paras": 6.395821860847728,
+          "ind": -28.561166616997568,
+          "requiredHp": 0.18944128708158203,
+          "availableHp": 2.5428872519346557
+        }
+      },
+      {
+        "speedMph": 275,
+        "greg": {
+          "parasLbf": 817,
+          "indLbf": 113,
+          "totalLbf": 930,
+          "requiredHp": 684,
+          "availableHp": 1058
+        },
+        "baseline": {
+          "parasLbf": 868.9878750484739,
+          "indLbf": 80.88529068984573,
+          "totalLbf": 949.8731657383196,
+          "requiredHp": 696.5736548643913,
+          "availableHp": 1094.815696465242
+        },
+        "reconstructed": {
+          "parasLbf": 814.0651008017637,
+          "indLbf": 113.1322297311292,
+          "requiredHp": 679.9447090473261
+        },
+        "residualPct": {
+          "paras": 6.363264999813212,
+          "ind": -28.420096734649793,
+          "requiredHp": 1.8382536351449374,
+          "availableHp": 3.4797444674141698
+        }
+      },
+      {
+        "speedMph": 300,
+        "greg": {
+          "parasLbf": 972,
+          "indLbf": 96,
+          "totalLbf": 1068,
+          "requiredHp": 857,
+          "availableHp": 1058
+        },
+        "baseline": {
+          "parasLbf": 1034.16738848744,
+          "indLbf": 67.96611231577316,
+          "totalLbf": 1102.133500803213,
+          "requiredHp": 881.7068006294363,
+          "availableHp": 1100.5607514800754
+        },
+        "reconstructed": {
+          "parasLbf": 968.804748061603,
+          "indLbf": 95.06249859351831,
+          "requiredHp": 851.0937973114189
+        },
+        "residualPct": {
+          "paras": 6.395821860847728,
+          "ind": -29.201966337736295,
+          "requiredHp": 2.882940563528158,
+          "availableHp": 4.022755338381412
+        }
+      },
+      {
+        "speedMph": 325,
+        "greg": {
+          "parasLbf": 1137,
+          "indLbf": 81,
+          "totalLbf": 1218,
+          "requiredHp": 1058,
+          "availableHp": 1058
+        },
+        "baseline": {
+          "parasLbf": 1213.7103378776205,
+          "indLbf": 57.91195368917948,
+          "totalLbf": 1271.6222915668,
+          "requiredHp": 1102.0726526748101,
+          "availableHp": 1102.07265267481
+        },
+        "reconstructed": {
+          "parasLbf": 1137.0000168222982,
+          "indLbf": 80.99999880157772,
+          "requiredHp": 1055.6000135249683
+        },
+        "residualPct": {
+          "paras": 6.7467315635550085,
+          "ind": -28.503760877556207,
+          "requiredHp": 4.165657152628555,
+          "availableHp": 4.165657152628532
+        }
+      }
+    ],
+    "summary": {
+      "meanAbsRequiredPowerErrorPct": 8.92852790280787,
+      "meanAbsInducedDragErrorPct": 28.584266945677893
+    }
+  },
+  "p47Dscenario": {
+    "case": "P-47D-28-like 2600-bhp Greg worksheet; 13065-lb reference, shared Thunderbolt geometry",
+    "currentSharedGeometryParams": {
+      "cd0P47BAnchor": 0.01968315937146469,
+      "e": 0.78
+    },
+    "gregImplied": {
+      "cd0": 0.0227442377745287,
+      "e": 0.7838029308363434
+    },
+    "caveat": "The parasite CD0 discrepancy combines B versus D variant, different speed/altitude/rating/prop/cooling, and anchor method. No direct historical P-47B validation is implied.",
+    "rows": [
+      {
+        "speedMph": 100,
+        "greg": {
+          "parasHp": 47,
+          "indHp": 436,
+          "requiredHp": 483,
+          "availableHp": 1700
+        },
+        "baselineGeometry": {
+          "parasHp": 40.25568058026601,
+          "indHp": 437.12085880676415,
+          "requiredHp": 477.37653938703005,
+          "availableHpHypothetical2600": 1863.0992651966158
+        },
+        "reconstructed": {
+          "parasHp": 46.516148836370256,
+          "indHp": 434.99999356402833,
+          "requiredHp": 481.51614240039856
+        },
+        "residualPct": {
+          "paras": -14.349615786668068,
+          "ind": 0.2570777079734299,
+          "requiredHp": -1.1642775596211075,
+          "availablePowerAt2600": 9.594074423330333
+        },
+        "eta": {
+          "greg": 0.6538461538461539,
+          "genericCandidateC": 0.7165766404602368
+        }
+      },
+      {
+        "speedMph": 125,
+        "greg": {
+          "parasHp": 91,
+          "indHp": 349,
+          "requiredHp": 440,
+          "availableHp": 1800
+        },
+        "baselineGeometry": {
+          "parasHp": 78.62437613333204,
+          "indHp": 349.69668704541135,
+          "requiredHp": 428.3210631787434,
+          "availableHpHypothetical2600": 1925.3691084952936
+        },
+        "reconstructed": {
+          "parasHp": 90.85185319603563,
+          "indHp": 347.9999948512228,
+          "requiredHp": 438.8518480472584
+        },
+        "residualPct": {
+          "paras": -13.599586666668095,
+          "ind": 0.19962379524680607,
+          "requiredHp": -2.6543038230128713,
+          "availablePowerAt2600": 6.964950471960751
+        },
+        "eta": {
+          "greg": 0.6923076923076923,
+          "genericCandidateC": 0.7405265801904976
+        }
+      },
+      {
+        "speedMph": 150,
+        "greg": {
+          "parasHp": 157,
+          "indHp": 291,
+          "requiredHp": 448,
+          "availableHp": 1950
+        },
+        "baselineGeometry": {
+          "parasHp": 135.86292195839772,
+          "indHp": 291.41390587117615,
+          "requiredHp": 427.27682782957385,
+          "availableHpHypothetical2600": 1981.3713582142705
+        },
+        "reconstructed": {
+          "parasHp": 156.99200232274953,
+          "indHp": 289.99999570935233,
+          "requiredHp": 446.9919980321019
+        },
+        "residualPct": {
+          "paras": -13.463107032867693,
+          "ind": 0.14223569456224272,
+          "requiredHp": -4.625708073755841,
+          "availablePowerAt2600": 1.6087876007318203
+        },
+        "eta": {
+          "greg": 0.75,
+          "genericCandidateC": 0.7620659070054886
+        }
+      },
+      {
+        "speedMph": 175,
+        "greg": {
+          "parasHp": 250,
+          "indHp": 249,
+          "requiredHp": 499,
+          "availableHp": 2080
+        },
+        "baselineGeometry": {
+          "parasHp": 215.74528810986314,
+          "indHp": 249.78334788957955,
+          "requiredHp": 465.52863599944266,
+          "availableHpHypothetical2600": 2030.446908764771
+        },
+        "reconstructed": {
+          "parasHp": 249.29748516992177,
+          "indHp": 248.57142489373055,
+          "requiredHp": 497.86891006365244
+        },
+        "residualPct": {
+          "paras": -13.70188475605475,
+          "ind": 0.3145975460158823,
+          "requiredHp": -6.7076881764644,
+          "availablePowerAt2600": -2.3823601555398533
+        },
+        "eta": {
+          "greg": 0.8,
+          "genericCandidateC": 0.7809411187556812
+        }
+      },
+      {
+        "speedMph": 200,
+        "greg": {
+          "parasHp": 372,
+          "indHp": 218,
+          "requiredHp": 590,
+          "availableHp": 2145
+        },
+        "baselineGeometry": {
+          "parasHp": 322.0454446421281,
+          "indHp": 218.56042940338207,
+          "requiredHp": 540.6058740455101,
+          "availableHpHypothetical2600": 2072.007256227095
+        },
+        "reconstructed": {
+          "parasHp": 372.12919069096205,
+          "indHp": 217.49999678201416,
+          "requiredHp": 589.6291874729761
+        },
+        "residualPct": {
+          "paras": -13.428643913406436,
+          "ind": 0.2570777079734299,
+          "requiredHp": -8.3718857549983,
+          "availablePowerAt2600": -3.402925117617961
+        },
+        "eta": {
+          "greg": 0.825,
+          "genericCandidateC": 0.7969258677796519
+        }
+      },
+      {
+        "speedMph": 225,
+        "greg": {
+          "parasHp": 530,
+          "indHp": 194,
+          "requiredHp": 724,
+          "availableHp": 2210
+        },
+        "baselineGeometry": {
+          "parasHp": 458.53736160959244,
+          "indHp": 194.2759372474507,
+          "requiredHp": 652.8132988570433,
+          "availableHpHypothetical2600": 2105.546233128662
+        },
+        "reconstructed": {
+          "parasHp": 529.8480078392798,
+          "indHp": 193.33333047290154,
+          "requiredHp": 723.1813383121813
+        },
+        "residualPct": {
+          "paras": -13.483516677435393,
+          "ind": 0.14223569456222052,
+          "requiredHp": -9.832417284938778,
+          "availablePowerAt2600": -4.726414790558275
+        },
+        "eta": {
+          "greg": 0.85,
+          "genericCandidateC": 0.8098254742802548
+        }
+      },
+      {
+        "speedMph": 250,
+        "greg": {
+          "parasHp": 729,
+          "indHp": 174,
+          "requiredHp": 903,
+          "availableHp": 2210
+        },
+        "baselineGeometry": {
+          "parasHp": 628.9950090666563,
+          "indHp": 174.84834352270568,
+          "requiredHp": 803.843352589362,
+          "availableHpHypothetical2600": 2130.6502643653835
+        },
+        "reconstructed": {
+          "parasHp": 726.8148255682851,
+          "indHp": 173.9999974256114,
+          "requiredHp": 900.8148229938964
+        },
+        "residualPct": {
+          "paras": -13.718105752173349,
+          "ind": 0.487553748681413,
+          "requiredHp": -10.980802592540206,
+          "availablePowerAt2600": -3.5904857753220165
+        },
+        "eta": {
+          "greg": 0.85,
+          "genericCandidateC": 0.8194808709097628
+        }
+      },
+      {
+        "speedMph": 275,
+        "greg": {
+          "parasHp": 968,
+          "indHp": 159,
+          "requiredHp": 1126,
+          "availableHp": 2210
+        },
+        "baselineGeometry": {
+          "parasHp": 837.1923570677194,
+          "indHp": 158.95303956609604,
+          "requiredHp": 996.1453966338155,
+          "availableHpHypothetical2600": 2147.006853868517
+        },
+        "reconstructed": {
+          "parasHp": 967.3905328313874,
+          "indHp": 158.18181584146487,
+          "requiredHp": 1125.5723486728523
+        },
+        "residualPct": {
+          "paras": -13.513186253334775,
+          "ind": -0.02953486409054129,
+          "requiredHp": -11.532380405522602,
+          "availablePowerAt2600": -2.850368603234532
+        },
+        "eta": {
+          "greg": 0.85,
+          "genericCandidateC": 0.8257718668725065
+        }
+      },
+      {
+        "speedMph": 300,
+        "greg": {
+          "parasHp": 1256,
+          "indHp": 145,
+          "requiredHp": 1401,
+          "availableHp": 2210
+        },
+        "baselineGeometry": {
+          "parasHp": 1086.9033756671818,
+          "indHp": 145.70695293558808,
+          "requiredHp": 1232.6103286027699,
+          "availableHpHypothetical2600": 2154.4110585857497
+        },
+        "reconstructed": {
+          "parasHp": 1255.9360185819962,
+          "indHp": 144.99999785467617,
+          "requiredHp": 1400.9360164366726
+        },
+        "residualPct": {
+          "paras": -13.463107032867693,
+          "ind": 0.4875537486814352,
+          "requiredHp": -12.019248493735201,
+          "availablePowerAt2600": -2.5153367155769324
+        },
+        "eta": {
+          "greg": 0.85,
+          "genericCandidateC": 0.8286196379175961
+        }
+      },
+      {
+        "speedMph": 325,
+        "greg": {
+          "parasHp": 1597,
+          "indHp": 134,
+          "requiredHp": 1731,
+          "availableHp": 2210
+        },
+        "baselineGeometry": {
+          "parasHp": 1381.9020349194443,
+          "indHp": 134.49872578669667,
+          "requiredHp": 1516.4007607061408,
+          "availableHpHypothetical2600": 2152.769762275461
+        },
+        "reconstructed": {
+          "parasHp": 1596.8121717735228,
+          "indHp": 133.84615186585492,
+          "requiredHp": 1730.6583236393776
+        },
+        "residualPct": {
+          "paras": -13.468876961838172,
+          "ind": 0.3721834229079679,
+          "requiredHp": -12.397414170644671,
+          "availablePowerAt2600": -2.5896035169474696
+        },
+        "eta": {
+          "greg": 0.85,
+          "genericCandidateC": 0.8279883701059465
+        }
+      },
+      {
+        "speedMph": 350,
+        "greg": {
+          "parasHp": 1995,
+          "indHp": 124,
+          "requiredHp": 2120,
+          "availableHp": 2210
+        },
+        "baselineGeometry": {
+          "parasHp": 1725.9623048789051,
+          "indHp": 124.89167394478977,
+          "requiredHp": 1850.8539788236947,
+          "availableHpHypothetical2600": 2142.1036245153905
+        },
+        "reconstructed": {
+          "parasHp": 1994.3798813593742,
+          "indHp": 124.28571244686528,
+          "requiredHp": 2118.6655938062395
+        },
+        "residualPct": {
+          "paras": -13.48559875293709,
+          "ind": 0.719091890959489,
+          "requiredHp": -12.695567036618172,
+          "availablePowerAt2600": -3.072234184823963
+        },
+        "eta": {
+          "greg": 0.85,
+          "genericCandidateC": 0.8238860094289963
+        }
+      },
+      {
+        "speedMph": 375,
+        "greg": {
+          "parasHp": 2453,
+          "indHp": 116,
+          "requiredHp": 2570,
+          "availableHp": 2210
+        },
+        "baselineGeometry": {
+          "parasHp": 2122.858155599964,
+          "indHp": 116.56556234847046,
+          "requiredHp": 2239.423717948435,
+          "availableHpHypothetical2600": 2122.5466478931166
+        },
+        "reconstructed": {
+          "parasHp": 2453.000036292961,
+          "indHp": 115.99999828374096,
+          "requiredHp": 2569.000034576702
+        },
+        "residualPct": {
+          "paras": -13.458697284958665,
+          "ind": 0.4875537486814352,
+          "requiredHp": -12.862890352200985,
+          "availablePowerAt2600": -3.9571652537051305
+        },
+        "eta": {
+          "greg": 0.85,
+          "genericCandidateC": 0.8163640953435064
+        }
+      }
+    ],
+    "summary": {
+      "meanAbsRequiredPowerErrorPct": 8.820381977004429,
+      "meanAbsInducedDragErrorPct": 0.3246932975280244
+    }
+  },
+  "p47Graph27k": {
+    "case": "P-47B 27000-ft plot read approximately from Greg screenshot",
+    "chartSpeedKindAssumed": "CAS, UNVERIFIED",
+    "rows": [
+      {
+        "chartMph": 125,
+        "gregSustainedG": 1.5,
+        "modeledSustainedG": 1.2240562643845851,
+        "residualG": -0.27594373561541485
+      },
+      {
+        "chartMph": 150,
+        "gregSustainedG": 1.7,
+        "modeledSustainedG": 1.7530401208959383,
+        "residualG": 0.05304012089593835
+      },
+      {
+        "chartMph": 175,
+        "gregSustainedG": 1.8,
+        "modeledSustainedG": 1.9158027425668387,
+        "residualG": 0.11580274256683865
+      },
+      {
+        "chartMph": 200,
+        "gregSustainedG": 1.7,
+        "modeledSustainedG": 1.9296071750665889,
+        "residualG": 0.2296071750665889
+      },
+      {
+        "chartMph": 225,
+        "gregSustainedG": 1.7,
+        "modeledSustainedG": 1.8612166622171695,
+        "residualG": 0.16121666221716957
+      },
+      {
+        "chartMph": 250,
+        "gregSustainedG": 1.5,
+        "modeledSustainedG": 1.6793780662100235,
+        "residualG": 0.1793780662100235
+      },
+      {
+        "chartMph": 275,
+        "gregSustainedG": 1,
+        "modeledSustainedG": 1.311853655705247,
+        "residualG": 0.3118536557052469
+      }
+    ],
+    "meanAbsResidualG": 0.18954887975388868,
+    "caveat": "Not an independent observation; chart transcription approximate; speed axis definition unresolved. Bf109F 27000-ft engine envelope unavailable, so no numeric 109 comparison."
+  },
+  "conclusion": "The shared mathematical drag law reproduces Greg if supplied Greg-implied e and CD0. The current coefficients/eta are different because max-speed anchor alone does not determine them. Do not automatically overwrite coefficients from a worksheet as historical measurements."
+}

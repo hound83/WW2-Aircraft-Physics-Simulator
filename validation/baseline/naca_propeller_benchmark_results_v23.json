@@ -1,0 +1,541 @@
+{
+  "version": "2.3 NACA evidence checkpoint",
+  "date": "2026-10-27",
+  "sourceArchive": "Official NASA NTRS, original NACA 1934–1946 PDFs and extracted report figures",
+  "method": "Graph-read Figure 10/11/12 η(J,Cp) 3-/4-blade research interpolant, ±0.03–0.05; NO hidden source-dependent empirical tuning",
+  "naca1941FigureCurves": {
+    "ntrs": "https://ntrs.nasa.gov/citations/19930093644",
+    "imagePage": 27,
+    "chart": [
+      {
+        "blades": 3,
+        "J": 0.3,
+        "Cp": 0.2,
+        "eta": 0.44,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 0.5,
+        "Cp": 0.2,
+        "eta": 0.6,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 1,
+        "Cp": 0.2,
+        "eta": 0.8,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 1.5,
+        "Cp": 0.2,
+        "eta": 0.85,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 2,
+        "Cp": 0.2,
+        "eta": 0.86,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 2.5,
+        "Cp": 0.2,
+        "eta": 0.81,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 3,
+        "Cp": 0.2,
+        "eta": 0.7,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 3.5,
+        "Cp": 0.2,
+        "eta": 0.4,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 0.3,
+        "Cp": 0.4,
+        "eta": 0.23999999999999996,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 0.5,
+        "Cp": 0.4,
+        "eta": 0.42000000000000004,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 1,
+        "Cp": 0.4,
+        "eta": 0.68,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 1.5,
+        "Cp": 0.4,
+        "eta": 0.8,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 2,
+        "Cp": 0.4,
+        "eta": 0.85,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 2.5,
+        "Cp": 0.4,
+        "eta": 0.8,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 3,
+        "Cp": 0.4,
+        "eta": 0.7,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 3.5,
+        "Cp": 0.4,
+        "eta": 0.53,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 0.3,
+        "Cp": 0.6,
+        "eta": 0.08000000000000002,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 0.5,
+        "Cp": 0.6,
+        "eta": 0.12,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 1,
+        "Cp": 0.6,
+        "eta": 0.2,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 1.5,
+        "Cp": 0.6,
+        "eta": 0.30000000000000004,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 2,
+        "Cp": 0.6,
+        "eta": 0.43,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 2.5,
+        "Cp": 0.6,
+        "eta": 0.64,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 3,
+        "Cp": 0.6,
+        "eta": 0.77,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 3,
+        "J": 3.5,
+        "Cp": 0.6,
+        "eta": 0.82,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 0.3,
+        "Cp": 0.2,
+        "eta": 0.38,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 0.5,
+        "Cp": 0.2,
+        "eta": 0.55,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 1,
+        "Cp": 0.2,
+        "eta": 0.78,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 1.5,
+        "Cp": 0.2,
+        "eta": 0.84,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 2,
+        "Cp": 0.2,
+        "eta": 0.855,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 2.5,
+        "Cp": 0.2,
+        "eta": 0.83,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 3,
+        "Cp": 0.2,
+        "eta": 0.78,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 3.5,
+        "Cp": 0.2,
+        "eta": 0.71,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 0.3,
+        "Cp": 0.4,
+        "eta": 0.20000000000000004,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 0.5,
+        "Cp": 0.4,
+        "eta": 0.39,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 1,
+        "Cp": 0.4,
+        "eta": 0.67,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 1.5,
+        "Cp": 0.4,
+        "eta": 0.79,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 2,
+        "Cp": 0.4,
+        "eta": 0.84,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 2.5,
+        "Cp": 0.4,
+        "eta": 0.85,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 3,
+        "Cp": 0.4,
+        "eta": 0.82,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 3.5,
+        "Cp": 0.4,
+        "eta": 0.77,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 0.3,
+        "Cp": 0.6,
+        "eta": 0.1,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 0.5,
+        "Cp": 0.6,
+        "eta": 0.18,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 1,
+        "Cp": 0.6,
+        "eta": 0.32,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 1.5,
+        "Cp": 0.6,
+        "eta": 0.48,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 2,
+        "Cp": 0.6,
+        "eta": 0.64,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 2.5,
+        "Cp": 0.6,
+        "eta": 0.75,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 3,
+        "Cp": 0.6,
+        "eta": 0.81,
+        "readingUncertaintyEta": 0.04
+      },
+      {
+        "blades": 4,
+        "J": 3.5,
+        "Cp": 0.6,
+        "eta": 0.82,
+        "readingUncertaintyEta": 0.04
+      }
+    ],
+    "limitations": "NACA tested Hamilton Standard propellers; non-identical VDM/Rotol/K-6523A-24 installations. Figure Cp0.2–0.6 only. Near-Mach blade losses not included."
+  },
+  "naca1944DesignCase": {
+    "nacaReport": "NACA ACR L4I29, September 1944; PDF pp. 16–17",
+    "enginePowerHp": 2000,
+    "altitudeFt": 25000,
+    "speedMph": 425,
+    "diameterFt": 12,
+    "rpm": 1380,
+    "bladeCount": 4,
+    "reportedJ": 2.26,
+    "reportedCp": 0.342,
+    "reportedInducedEta": 0.931,
+    "reportedInstalledTestCaseEta": 0.848,
+    "naca1941ChartApproximateEta": 0.8442719999999999,
+    "differenceEtaPoints": -0.004,
+    "note": "The 1941 chart and 1944 design example may share underlying Hamilton Standard data; this is a consistency check, NOT independent airframe validation."
+  },
+  "mustang": {
+    "sourceActualSpeedMph": 361.5,
+    "sourceClimbs": [
+      {
+        "rating": "67inHg",
+        "sourceClimbFpm": 3820,
+        "sourceCondition": "May 1944 P-51B-15 43-24777 @ 2200 ft / takeoff weight 9335 lb",
+        "baselineC": {
+          "optimalTasMph": 171,
+          "climbFpm": 3401.0861529653166,
+          "eta": 0.7809409097141065
+        },
+        "nacaNWithOldFrozenDrag": {
+          "optimalTasMph": 182,
+          "climbFpm": 3345.249343013715,
+          "eta": 0.7802053731343284
+        },
+        "nacaNWithOriginalSpeedReanchor": {
+          "optimalTasMph": 182,
+          "climbFpm": 3320.0391689623116,
+          "eta": 0.7802053731343284
+        },
+        "nacaVsCReanchoredClimbFpm": -81.047,
+        "remainingHistoricalResidualFpm": 499.961,
+        "chartCpAtOptimum": 0.16774815309242735,
+        "chartCpBoundedTo": 0.2,
+        "uncertainty": "Cp below 1941 NACA Figure 10 minimum; nearest Cp=0.2 curve used as research extrapolation only; true installed Hamilton Standard K-6523A-24 η unknown."
+      },
+      {
+        "rating": "75inHg",
+        "sourceClimbFpm": 4380,
+        "sourceCondition": "May 1944 P-51B-15 43-24777 @ 2200 ft / takeoff weight 9335 lb",
+        "baselineC": {
+          "optimalTasMph": 175,
+          "climbFpm": 3978.538324234923,
+          "eta": 0.7841005727757949
+        },
+        "nacaNWithOldFrozenDrag": {
+          "optimalTasMph": 182,
+          "climbFpm": 3918.932222633682,
+          "eta": 0.7802053731343284
+        },
+        "nacaNWithOriginalSpeedReanchor": {
+          "optimalTasMph": 182,
+          "climbFpm": 3893.7220485822777,
+          "eta": 0.7802053731343284
+        },
+        "nacaVsCReanchoredClimbFpm": -84.816,
+        "remainingHistoricalResidualFpm": 486.278,
+        "chartCpAtOptimum": 0.1895132431324903,
+        "chartCpBoundedTo": 0.2,
+        "uncertainty": "Cp below 1941 NACA Figure 10 minimum; nearest Cp=0.2 curve used as research extrapolation only; true installed Hamilton Standard K-6523A-24 η unknown."
+      }
+    ]
+  },
+  "bf109": {
+    "gregIndependentPolar": {
+      "cd0": 0.02437284688790079,
+      "e": 0.5576706734059873,
+      "source": "Greg 109F4 screenshot, assumed 6,371 lb weight; inferred parameters not independently measured"
+    },
+    "sourceIL2TurnTimes": [
+      {
+        "altMeters": 0,
+        "sourceIL2Seconds": 20.3,
+        "iasKmh": 270,
+        "IASassumedCAS": true,
+        "tasMph": 167.77022190407996,
+        "C": {
+          "eta": 0.7804028180605987,
+          "seconds": 20.22594253502058
+        },
+        "N": {
+          "eta": 0.7744444444444439,
+          "seconds": 20.331287028703443
+        },
+        "nacaResidualSeconds": 0.031,
+        "nacaCp": 0.17511989249563933,
+        "nacaChartCp": 0.2,
+        "source": "IL-2 F-4 official technical specifications SECONDARY; Greg F-4 drag at 325 mph plus assumed source weight; not primary Bf109 measured polar."
+      },
+      {
+        "altMeters": 3000,
+        "sourceIL2Seconds": 26.1,
+        "iasKmh": 270,
+        "IASassumedCAS": true,
+        "tasMph": 194.23223459434303,
+        "C": {
+          "eta": 0.7986757431913056,
+          "seconds": 25.828118869538322
+        },
+        "N": {
+          "eta": 0.7906795959869924,
+          "seconds": 26.014768707991273
+        },
+        "nacaResidualSeconds": -0.085,
+        "nacaCp": 0.23268871032433266,
+        "nacaChartCp": 0.23268871032433266,
+        "source": "IL-2 F-4 official technical specifications SECONDARY; Greg F-4 drag at 325 mph plus assumed source weight; not primary Bf109 measured polar."
+      }
+    ],
+    "speed": {
+      "historicalCombatTasMph": 325,
+      "CwithGregPolar": 315.4865023477514,
+      "NwithGregPolar": 320.5046849354612,
+      "nacaResidualMph": -4.495
+    },
+    "warning": "Still misses F-4 combat speed by a few mph with source-derived Greg polar. Do not tune away or claim match."
+  },
+  "allAircraftSpeedAnchors": [
+    {
+      "id": "spitfire_lfix_bs543",
+      "aircraft": "Spitfire LF Mk IXc / Merlin 66 (BS.543)",
+      "bladeCount": 4,
+      "sourceAnchorMph": 336,
+      "sourceAnchorAltitudeFt": 0,
+      "nacaJAtSpeedAnchor": 1.9220905855392745,
+      "nacaCpAtSpeedAnchor": 0.19009280147942567,
+      "nacaEtaAtSpeedAnchor": 0.8526627175661782,
+      "c": 336.0000000000009,
+      "nFrozen": 340.50837694417805,
+      "nReanchored": 336.0000000000009,
+      "sourceMustNotBeRetunedToClimb": "NACA chart transfer assumes no aircraft-specific efficiency correction; speed-anchor reanchor changes only inferred CD0."
+    },
+    {
+      "id": "bf109f4",
+      "aircraft": "Bf 109 F-4 / DB 601E",
+      "bladeCount": 3,
+      "sourceAnchorMph": 325,
+      "sourceAnchorAltitudeFt": 0,
+      "nacaJAtSpeedAnchor": 1.9584822400000002,
+      "nacaCpAtSpeedAnchor": 0.19608944890263724,
+      "nacaEtaAtSpeedAnchor": 0.8591696448,
+      "c": 324.9999999999991,
+      "nFrozen": 330.6163609934947,
+      "nReanchored": 324.9999999999991,
+      "sourceMustNotBeRetunedToClimb": "NACA chart transfer assumes no aircraft-specific efficiency correction; speed-anchor reanchor changes only inferred CD0."
+    },
+    {
+      "id": "p47b",
+      "aircraft": "P-47B / R-2800-21 (41-5902)",
+      "bladeCount": 4,
+      "sourceAnchorMph": 352,
+      "sourceAnchorAltitudeFt": 5000,
+      "nacaJAtSpeedAnchor": 1.8859056316590561,
+      "nacaCpAtSpeedAnchor": 0.17686274005628633,
+      "nacaEtaAtSpeedAnchor": 0.8515771689497716,
+      "c": 352.0000000000009,
+      "nFrozen": 356.6090600014786,
+      "nReanchored": 352.0000000000009,
+      "sourceMustNotBeRetunedToClimb": "NACA chart transfer assumes no aircraft-specific efficiency correction; speed-anchor reanchor changes only inferred CD0."
+    },
+    {
+      "id": "p51b",
+      "aircraft": "P-51B-15 / V-1650-7 (43-24777)",
+      "bladeCount": 4,
+      "sourceAnchorMph": 361.5,
+      "sourceAnchorAltitudeFt": 0,
+      "nacaJAtSpeedAnchor": 1.9896631130063966,
+      "nacaCpAtSpeedAnchor": 0.1549468021243305,
+      "nacaEtaAtSpeedAnchor": 0.8546898933901919,
+      "c": 361.4999999999991,
+      "nFrozen": 367.3032050261363,
+      "nReanchored": 361.4999999999991,
+      "sourceMustNotBeRetunedToClimb": "NACA chart transfer assumes no aircraft-specific efficiency correction; speed-anchor reanchor changes only inferred CD0."
+    }
+  ],
+  "stillMissing": [
+    "Installed aircraft-specific blade efficiency maps and geometric station data",
+    "NACA1941 high tip Mach correction / compressibility under real blade helices",
+    "F-4 full-throttle 325-mph source rating, weight and matching manifold/rpm",
+    "P-51B 2200-ft actual climb TAS and matching propeller thrust/torque vs speed",
+    "Spitfire climb radiator-open drag vs closed level-flight anchor",
+    "Lift-dependent wing profile drag and stall physics for sustained turns"
+  ],
+  "noMeredithFit": "Original NACA cooling power balance is configuration-dependent; no low-speed cooling thrust was added or adjusted."
+}

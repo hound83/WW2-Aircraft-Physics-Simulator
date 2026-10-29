@@ -1,0 +1,1358 @@
+                                                                        --        ~ ,:--         . . . ..
+                                                      \=-_   ,:                            -..
+        -,.   .   —                  .—
+                                                                  -. ,,. _— ~_.
+    .                                  ~G4
+
+
+#
+
+
+
+
+                      NA.7!TOIKC ADVISORY        COMMITTEE     I’OR AERONAUTICS
+
+
+
+
+                                                                                                                                              -.
+
+
+
+
+                                                No. 579
+
+
+
+
+                  CHARTS    FOR   CALCULATING     THE PERFORMANCE            OF AIRPLA~                                - _                    ._
+
+                              KAVING      CONSTANT-SPEED     PROPELLERS
+
+                           By Roland J. White and Victor J. Martin
+                             California Institute of Technology
+                                                                                                                                —————_
+
+                                                                                                  .:”
+                                                                                                   ---- .-=.—.:.
+                                                                                                            .-, -”----
+                                                                                                                    .. -.--=
+
+
+
+
+                                                                                                   - -. - . --      —_
+
+
+
+
+                                                                                                 -----           . . . . .. . ..    -m-----
+
+                                               Washington
+                                             September  1936                                                             ..1
+                                                                                                                 .. .-.-=.._
+                                                                                                                           _..
+                                                                      —                                                        -.
+                                                                                                                                    L,
+
+
+
+                                                                                                                     -----               ,.
+                                                                                   —
+                                                                                   —
+                                               %.      \
+      NATIONAL      ADVISORY     COMMITTEE    R’OR A51RONAlJ~ICS
+                                                       4-----
+                                                          ----
+
+                     TECHNICAL     NOTE NO.    579
+
+
+  CHARTS   FOR    CALCULATING     THE PERFORMANCE      OE’ AIRPLANES
+
+                 HAVING   CONSTANT-SPEED      PROPELLERS
+
+           By Roland      J. White   and   Victor    J. Martin
+
+
+                                 SUMMARY
+
+
+      Charts are presented  for determining   the performance
+of airplanes  having variable-pitch   propellers,  the pitch
+of which is assumed to be adjusted    to maintain  constant
+speed for all rates of flight.                         —
+
+      The charts are based         on the general performance   equa-
+tions developed by Oswald          in reference  1. and are used in
+a similar manner.
+
+      Examples applying   the charts to airplanes  having              both
+supercharged   and unsupercharged   engines are included.
+
+
+                            INTRODUCTION
+
+
+      Within the past several years the two-pitch      control-
+lable propeller   has been developed    to a reliable form and
+at present the multiposition,     or variable-pitoh,  propeller
+is being perfected.     Because of these recent advances,     Dr.
+C. B. Millikan   suggested   the problem of calculating   a set
+of performance   charts for airplanes having constant-speed
+propellers.    The presentation   of these charts is the sub-
+ject of this paper.     The authors wish to extend their ap-
+preciation   to Dr. MiZlikan for inva.luablq assistance     ren-
+dered throughout   the preparation    of the paper.
+
+      As the full-throttle    brake horsepower   of an airplane
+is approximately   proportional    to the engine speed, it is
+evident that the maximum brake horsepower       for a given al-
+titude will be realized     only when the engine ip operating                 ‘\
+at rated revolution    speed; therefore,   aside from special
+settings, the most efficient use of the variable-pitch                        s
+propeller  is obtained by adjusting     its pitch so as to main-
+tain the rated revolution     speed for all speeds of flight.
+                                                              -—. -.
+                                                                       .D
+
+
+2                *     I?JA.C,A. Technical                         Note     No. 579
+
+
+Propellers  operated in this                           manner          have    been   termed     ‘coh-
+stant-speed  propellers.lt.
+
+      No attempt will be made to develop the basic’ perform-
+ance equations or to describe in detail the method of cal-
+culating the ~resent charts, &s the pro-cetas is similar to
+that of referenco  1.  The difference   between the present
+charts and those developed   for fixed-pitch   propellers lies
+fn the   Ta and   Tv  functions, which give the variation
+of thrust horsepower  available with altitude and velocity
+of fl,ight.
+
+
+
+
+      For the purpose of performanc~  calculation,   the char-
+acteristics  of the airplane are represented   by three de-
+sign parameters:
+
+        ‘P = ~/f*           parasite              loading,
+
+        .t ~ =       W/e(kb2),         effective                   span loading,
+
+        t~ = R/P.          ~,      thrust              horsepower             loading,
+
+whera
+
+        w    is gross           weight       of the ai?Pl?n?r                         ........
+
+        f, equivalent  p-arasite area”. (sq. ft.) .def.ined by the
+             equation    f = CD s,
+                                P
+        kb, Munk~s equivalent monoplane      span,
+                                                               —
+                                                       .-
+         e, airplane efficiency   fact””o”r,
+                                                --
+                                                 --     :=.. ,
+        m“0, desig~ prcipulsive eff”i”~~=ncy,                   ,
+        P ~, design         brake       horsepower,
+
+      Thes_e’parameters are combined i“bto-”a’
+                                             s~n~ie ‘pa-~~me{e-r,
+A,  which is plotted””as the absoissa  in the various per-
+formance charts,                 .,
+                                                                                      .\,
+                                                             4/3
+        ..            .-                    .1s        It
+                                   h    s
+                                                   7        1 /3
+                                                   ‘P                                                                           —
+
+                                                                                                                            —.
+                                                                                                  ----   .   . . ...-__”   -.
+                    N.A.C.A.        Technical         Note       No. 5.79                    3
+
+
+The maximum        speed     at    sea level,              Vm,    is expressed        in terms
+of the three design parameters    and speeds                              for other condi-
+tions of flight, which are given in terms                                 of Rv,   a dimen-
+sionless speed “ratio,
+      .,
+                               Tr
+                         Rv=&
+                                m                                                                          —
+
+
+        The fundamental           performance              equation
+                                    :..                                    .-.
+                        Q=        (t.hp. a ‘- t’hp.r)
+                                               -.                 550
+                                                                                             (1)
+                        dt                       w
+
+
+is expressed        in engineering        units             in the form
+                                         ,,
+                                                 .     .
+ dh=                                                        2s -ti
+ dt      ‘~~ [ (TaTv~v”-              aaRr4)         - -—
+                                                       3.014         Vm
+                                                                          (1 - $RV4”) ] (2)            -
+
+
+
+where
+
+          a        is rate        of climb   ai altitudea                  and    velocity       Rv,
+          dt
+
+       tohp.a,     thrust     horsepower         available,
+
+       t.hp.r$     thrust     horsepower             required,
+
+        o-= P/P.    (Po = 0.002378),
+
+               t.hp.a    at velocity         V                                   ,,
+       Tv =                                                (At sea level)
+                 t.hp.a      at Vm
+
+               t.hp.a    at altitude
+       Ta =                                                (At constant          velocity)
+               t.hp.a    at eea level”
+
+      By the imposing of the various flight conditions        on
+equation  (2), expressions    are obtained   enabling charts for
+the major performance    characteristics    to be calculated,
+when suitable   expressions for    Ta   and   Tv are introduced~
+                                                                                                                                                          ..
+                                                                                                                                                     .. ..—
+                                                                                                                                                          =..
+
+
+
+                                                    -.                                                                                                .-
+4                         N, A. CSA. Technical                   ~o~~             No. 579
+
+                    .:.      . ‘.-;.3jXl?RESSION
+                                               FOR                 Tv
+                                             ---- --”                   , .-- ..:
+                                                                 :.-: ..;                          +:: :--: -: :, ,--.
+
+       The       Tv          function             gives     the effect                 Qf   viri%tion                   of
+t.hp. a      at sea level                   due     to different                  speeds         of flight.
+                                                                                                                                                      —.,
+                                                                                                                                           .-
+In general,
+
+                                       t,hp.a        = b.hp.            T                                                    (3)
+
+
+and, in the case of the constant-speed   propeller!
+b.hp. = b.hp.o  at sea level for ~il speeds of flight;
+                 -...                  .    .—.
+therefore                                    .:
+                              Tv = l.hp.             ~/behp,o               To = q/v.                                        (4)
+
+
+By refer~ncci to Weick$s propeller   charts (reference                                                              2),
+the value of   Vo” is determined   in the usual manner                                                              from
+tho design        values              of the propeller                      parameters                 Cso          and
+                                                                                                                                                               .-
+J o’   where            Jo       is        V/nD.                                       ..        .,                                        —,-.    — .—
+
+                                                                        1/5
+                                                   0.638       Vm u                                                                                        ●
+                                 .C..=                                                                                                                         ✎
+                                   so                    1/5
+                                                   ‘T.         N02’=
+                                                                                                                                                           b
+
+
+
+
+                                                  88 Vm
+                                             Jo = -
+                                                    NOD                       ‘
+                                                                 ... . . .,                 -,         -   .,           ,-                 -.              .    .
+
+
+
+
+As the b,hp. and “N (r.p.m. ) are invar;arit with sp’esd, the
+values of   C   and   J are both directly proportional   to
+                                                                                                                                                               -.
+the speed
+      .-   ofgflight; hence,                -.       . .      .                                                                                        ...-
+                                                                                                                                                      ..-—
+
+                                  .. -..
+        .-                                   “C8 = Rv 6s                                                                     (5)
+                                                                    o
+                                              .
+        :-
+        ,..         .        .   ------     .. J     = Rv      Jo                                                            (6)
+        .-.
+        ..  —.                                                                                                  - ..                                    -4
+        ,-     .. . .            . ...-<                                                    .-\ ..*.
+        *r
+                                                                    .“”-          ---- -                ,:,
+                                                                                                   ------        $+.-            =-.
+                                                                                                                                 .     ,                --=9
+                                                                                                                                                         .-
+       2?!~ra.given.-”Cso                     and         Jo     it is pos”slble, by”-usln~
+        .—
+
+
+
+        .—                                                                                                                   ,             .. --      ... ,--
+                    N. A. C.A.   Technical   Note    No,   !579                  5
+
+
+equations   (5) and (6) , to determine    the propulsive    effi-
+ciency   ~ and the blade angle       ~ as a functign of Rv,
+which has %een done for various values of         Cs   for both
+                                                     o
+the BEST PERFORMANCE   PROPELLER AND PEAK EFFICIENCY        PROPEL.
+LER* on the propeller    charts presente      n-f%gures-+       d 2,
+respectively.                                                                                  —
+                           /                            “+%                                     i-
+      As a definite   Jo %%    associated   with each    %0     for
+                                                                                       \
+both types of propeller,  it is necessary only to specify
+the value of  Cso@   Since the value of ~ for different
+                                                                                           )
+values of   Rv   is known, equation (4) enables a curve of
+Tv   to be plotted as a function of   Rv,  which is the de’.
+sired relation.
+                                                                                                 .
+      This     Tv     function     will   depend    upon    C~o,       Jo,     and
+                                                                   &                           ‘
+ the type of engine        installation.       Curves      of     Tv    have    been
+plotted in ffguge 3 based on the propeller  chart for the
+case of fuselage 6 (reference 2) , which is most represon”t-
+ative for modern airplanes.                                                                     —
+       In order that the charts may be used for propeller
+ desigris other than those resulting     in best performance     or
+ peak efficiency   propellers,   three representative     curves
+ were drawn to represent     this family of + Tv functions      and
+ ‘have been used in calculating    the performance    charts.
+ These representative    curves were chosen to paes through
+,%c = 0.86, 0.90, and 0.94, where        Tv    is termed the
+                                            c
+ “critical    Tvlt and is defined as the value of       Tv. for
+ Rv = 0.60.    The value   Rv = 0.60    was chosen as that corre-
+ sponding to the speed for best climb.        By this specifica-
+ tion of the curves, values of       Tv used ‘iticalculating     the
+
+      *The BEST PERFORMANCE PROPELLER  is defined as a pro-
+peller having its diameter and blade angle chosen so that
+%    lies on the envelope of the family of efficiency  curves.
+     The PEAK 3Fl?ICIENCY PROPELLXR  is defined                    as a propel-
+ler having its dfmater and blade angle chosen                      so that   %
+lies on the peak of its efficiency  curve.    -
+       These   definitions        are “those adopted       %y Oswald         in ref-
+ erence 1.
+                                                                                           .-.—=.
+                                                                                              . .-.+
+                                                                                           --- -
+                                                                                            —.
+                                                                                            =- -=
+                                                                                                —
+                                                                                              .-.
+                                                                                      r.    .&       a
+                                                                                 -.                  -1
+
+
+
+
+ 6                N. A. C~A.   Technical   Note    No. 579
+
+
+ per for-nan”ce”$har~~ w~”’r~a~iee wi-th ““t-he+
+                                               k&~&l     ‘V~lues at
+ maximu:n velocity and at a speed near to that for best                                          .
+ climb for any propeller     design and will approximate         values
+ for other spe”eds very closely.     The curve.    for
+                                              .. ......—...-.  =  0.94
+                                                           ‘PC
+                                                          —.       ..
+ was ch>sen to include the cases in which, in order to re-
+ duce the take-off run, it is desirable        to use a propeller
+ of diameter greater than that of a peak efficiency            propel-
+ ler (reference 3) , which gives a Tv        curve having values
+ slightly greater than 1.00 at values of Rv            near 1.00 and
+ lying a,e a whoie above the      Tv curv-es for either the be-et                                    —
+ performance   or the peak efficiency propellers.           Tti reason-
+ able i]lcreasgs in propeller    diameter,      the curves used fn
+ calculating   the charts will give a sufficiently          acc_ura.te
+ approx!l~t~oU   and,. in any case, will be on the conservative
+ e$de.   In the calculation   of the charts, it is necessary
+ to know the derivative     dTv/dRv.     This derivative       was graph-
+ ically obtained by using a large scalo because. it waB. im-
+ possible to find a convenient analytical           expression    that
+ would I’G-present. .
+                    the  Tv  c>~rves used.
+                                     L +..-.. -“L     .
+                                               ..’.-–”:.”-.-:    . .
+                                    ,“.
+                                      .,           ,.=               .’..7.
+                                                             “-::-:”------       .7{
+                 ..
+                  . . . ..:.
+                       .~.~PR:EssIo~ I@     :Ta-=””” : “’- ““”:-:”
+                                                               ““ .,.;-m~-,r     =,.,
+                    ...= .                                             ,“   -,                   --
+                                                  ,.
+
+       The  Ta function repr-esents the +ariation of t,hp.a
+                                                               - ---
+                                                                   .=
+ at different altitudes    for “the a.i-rp”l”ane
+                                               fl_y$ng at constant
+ velocit”y.  The t.~-pma ?_qu~.t_i.oR>.
+                                      in whi_ch the  subsqrl.t
+                                                  —.-...=..-.. ..B._
+ refers izo--a:ltitudg~
+                      conditio~.s, becomes                                                       *
+                                ..-..-. ---- -- ..’=-. -~
+                                                        “F .*
+                                                   ...-’.    ‘..~.-:
+                                                                  -,+=.          .-                  ;.
+
+                      ‘t.hp.a”h =“-b.hp.h” ~
+                                                       .
+       Three cuFv&s-for variation         of b.h”p~ tiith”altitud~ are
+ shown in figure 4.      The lower curve labeled          ‘QSWmZdll and
+ used in ref”er-ence“1 (fig, 2.2).is @ Combi&t~”Qi            o_f..=da_.t_i
+                                                                       .Qb.-
+ tained from” referenctis””3 and 4 and–is representative             .of un-
+Isupercha.~.e_d engines.       The upper curve labeled ~N.A.F.11 is
+ a curve obtained from altitude-chamber            tests at the Naval
+ Aircraft Factory and is believed to be more representative
+ of pree~nt,-day s.uperaharg?d .?ngiges .... .Th.e.    ..md.$lele
+                                                                curve. ie.
+ a meqn ado”pte”d i-ncalculating       “the charts and. is s.QrneWhat
+ conservative   for the higher altitudes.           It .$8 e~ressed      by
+ the equation
+          . .             .....            ..:=       .-.~..-.. ..      .,..
+                                                                         — .—
+                                                    ,-”- .-’ “.= -.= T-.”—
+           -.
+                                                                   ..-
+                 b.”hpih ’ CT- o.li7 = ~ - ‘-””    a.
+                 —=
+                 b.hp.o          0.883        1 -a
+
+                                                                                 —      ----
+                                                                            —.
+                                  .:.                            .>.              s --?-.-.,
+                                                                                 ,“   .i ~
+                                     N. A. C.A.     Techntcal      Note       No.’ 579                             7
+Q
+         From the conditfon that. N remain constant, the value of
+.        V /nD is constant for a given velocity at all altitudes.
+         The value of   C., however, vartee with altitude accor&ing
+         to the relation”
+     %                      .-
+                                                                                                   1 /5
+
+
+
+
+                                                                                                                   1
+                                   0.638    V C#’=
+               c        =                       —=              c~ (u=        l.~)       .—
+                   ‘h                                                                          -    a        1/5
+                                 (b.hp.h) “5      No=/’                           #      (;”             )
+                                                                                               -    aj
+
+
+
+               The change in propulsive   efficiency with altitude at
+         constant velocity,  due to the change in    Cs,  was investi-
+         gated for the various    C so ‘s for both the best performance
+         and   the peak              efficiency          propellers,      for values           of            Rv    from
+         0.6 to 1.0.   The maximum increase in efficiency   at 30,000
+         feet for the lest performance   propeller was found to be
+         about 3 percent for    USO*  ranging from 1.7 to 2.0, and at                                                     .-
+         operating ‘velocities.     The increase in efficiency    for the
+         peak efficiency   propeller   in the -“s&me range was-from 1 to 2
+         percent.   For   Cso   lese than 1.7, the change in efficiency
+         at operating   spee&s at 30,000 feet was a,lways within 1 per-
+         cent, being sometimee positive and sometimes negative.          ‘--
+
+               This change in propulsive    efficiency   with altitude at
+         constant velocity was not considered      sufficient    to take in-
+         to account in calculating    the performance    charts.    Hence
+         it is assumed that   11 will be the same for all        values of
+         a, and the     Ta expression   becomes
+                                                                          . .
+                                           bchpsh    ~         bshp.~
+                                                                    .    SC     -,0,117
+                                 Ta=.                      =
+                                           b.hp,o    To        b.hp.o           0.883
+
+               From the foregoing  discussion it is seen that this as-
+         sumption leads to somewhat conservative   values for thrust
+         horsepower  at the higher altitudes for high    Cs .
+                                                           G
+               By the use of these   Ta and   Tv  functions,  perform-
+         ance charte have been calculated  as explained in reference
+         1. Figures 5 to 9 give, respectively:    maximum velocity at
+         altitude;  absolutq and service ceilfng; maxfmum rate,of
+?,       climb; velocity for maximum rate of climb; and mintmum time
+         to climb to altitude.
+                                                      .                                                                                   -:=
+                                                  *                                                                                       .=.-
+                                                                                        ..                                    -.,         ...:-
+                                                                                                .“                            .,.:        ~
+                                                                                                                                          -’..+-.
+                                                                                                                                              ,=
+
+         .—                        .                                                                                          G<.         :.-
+                                                                                                                                           ‘ a_-
+         .—                     .N.”l.C-,
+                                        A-~ Technical       Ngte   No. 579
+                                                                                                                                             .-
+                                                                                                                                             4.
+                                                                                                                                              -.
+              -.
+         ;-             .                   - USE     OF CHARTS
+                                                                                         ;=     .-       .-                                  *.=
+                                                                                    .
+         .-                                                                .-..         .. .. . .. -----      -               ●                .-
+
+      T“he first step in making a performance     calculation   i;
+to estimate the value of the parasite area        f and the air-
+plane e“fftcienc~ factor     e.  This estimation   is most CQD-
+veniently accomplished    by comparison with similar air~laneg
+of kno+’n ptirforrnance or by the utie of figure   25 and table
+III of reference 1.     Then , by assuming  a value of. Vm and
+using    the known              one can find the value ~? C~a.
+                                       engine    data,
+                                      —                                                                                                           -.
+By the selection @ the ~ropeller     diameter,  the value~ of
+Jo anc~ no     are determined.   This determination    gives suf-                                                                                 —
+          .-
+ficient data to c-o”mputo”the design-parameters      lP, 2s, and
+1~.   The value of Vm                                  tho oassumed
+                          may then be computed and:.t..rr,. r..=,,=...
+                                                                   .-                                                                      :---+
+value c:heakad.                     \          ..    .  ..:
+                                                                                        —
+        B~~fore the charts “can be employed,
+                                       .                              the valtie
+                                                                      ..:-   ---- of-. .:.?c
+                                                                               . -..                                                              .
+must bo “d~terrnined,, which         is accomplished    by tak$-ng 60 per-
+cent of: the Oso and     Jo          valuea” and obtaining a new       v
+                                                                   —.
+ correspo~cling .to the now          Cs and     J,   If a best perform-
+ance or _pe~k efficiency          propeller   is used, this new      71
+ may be found from figure 1 or figure 2 at Rv = 0.6                  for
+                                                                                                                                             \
+ the dealgn” CEO.         Dividing .this new       m“ by ‘fIO  g!ves   the
+                  --,                                                                                                                             .-
+ value of       ‘“. I“f’ Tv
+             T Vc                   is known and     ~ ‘i’sco~puted~ the “
+                    ,-”        c                                                                                                             *-
+
+ charts may be used to find the performance              characteristics.
+                          .                              .    . ..                                                                .....    -,-—
+
+       Should the airplane have a supercharged             engine, these
+ charts may be used to calculate            the full-throttle    perform-
+ance above the critical altitude by either of two methods
+given in reference          5.   The second of these methods, which
+will be used in the second example, consists of using a
+“fictitious unsupercharged           engine of .incr,eag.gdb~h~t chosQn                                                           -.
+ to give the” actual design b.hp. at the crttical altitude.
+All performance         ckracteristi~s      below the critical altitude
+are invalid ~.  and
+                ...     should   be  disoarded.
+                                     .                              —.
+                                                                                .        ..
+                                                                   ..—. -. _.                                     :-. .:=i:
+                                                                                                                         .          .,     -.=
+                                                                                                                                          .—t..
+                   .,
+                        “titiMPLEI          - UNSU+R6mR.GED        3NGIN.E
+                                                                   .. .                 -      :,,:.                          ~              ...+
+                                           .       ,                                                                              .,          .:.:
+Given:             “W       = 8,500        lb.        .                s.=“ 3.90”” .Sqq ft,                          ,                      \
+          .- b              =          48 ft.                          f =          7.6       sq. ft.                                         ...
+          .—
+           —P.              =          700 hp. at 2,000      r.p:m.    e = .,       o,:02                                 , %.,
+          .—
+          .-                                                                                                            .—>-
+          --
+                                                                                                                  .-L-:..=.
+                                                                                                                          . -:;ym
+                          N. A. C.A.        Technical     Note      No. 5?9
+
+
+     Assume:
+
+             P* = 220 m.p.h.            at    sea level
+                                                                                           ——
+         c’
+          so = 1.8 for 220 m..p.h. , 700 hp. , at 2,000                                 r.p. m.
+
+             70   = 0.86,       for best       performance          propeller        (fig. 1),
+
+     Calculati:
+
+             2P =      1,218
+                                                          .
+             18 = 4.5                                               18 It = 63.5
+
+                                                                    tp t~ = 79.3
+             It   =    14.1
+     Find:
+
+             v~ = 218.5         m.p.h,       (fig. 29, reference                1)
+
+           If this calculation  does ”not check the assumed value
+     of   Vm   closely enough, a new choice must be made, and the
+     procedure   repeated..
+
+
+             m=       0.747    at Rv = 0.6 for C                = 1.8          (fig. 1)
+                                                          ‘o
+
+           If the propeller                 were   not a best performance   or a peak
+     efficiency   propeller,                 Jo    corresponding  to the design diam-
+     eter  would. be found:
+
+             Jo = 1,035          (in this ease          for     Cso     and best          performance
+                                    setting)
+
+           Then find 0.6 C~o = 1.085 and 0.6 Jo = 0-621 and, from
+     figure 14 of reference 2, read   ~ = 0.747 at Cs = 1.Q8 and
+     J = 0.621.
+
+             Calculate          TVC = ‘rl(Rv = 0.6)/q.                = 0.747/0.860          = 0.87
+
+             Calculate           A     = 14.75
+
+.*           Enter      charts       with    A = 14.75        and     Tv       = 0.87
+                                                                           c
+
+.’
+
+
+
+
+                                                                                                        —.
+                                                                                                        -.                                        ----
+                                                                                               ..                                                 . .::4.s
+                                                                                                                                                  A
+                                                                                                                                                                    —A;
+                                                                                                                                                      -
+                                                                                                                                                                    —.
+
+
+
+
+ 10      --
+                                                                                                                                                          d
+                                                                                                                                              -..”            ---
+
+
+
+Results:                                                                                                               -, >:.,.,
+                                                                                                                                                              --
+                                                             L .-                                       1-                                    ... y
+   Standard                                                         V.c            c~                          T
+   alt~.tude
+
+                            m.p.h.                                               ft. /min.
+                                                                                                    I   ‘     min.
+                            218.5                   --+i%-                        1,210                        0
+      10, 000               206.0                       135.5                       592                       11.6
+      20, UOU               164.5                       146.0                       “4ab6                     88.0
+      Sex’rice
+      ceiling
+
+      18,800                ,..                         .*,                         100                      . . .
+  Absolute
+    ceiling
+
+      20,900                147.0                       147.0
+                                                          .                              0                   . . .
+
+                        ~~MpLE            I I       .   SUPERCHARGED                ENGINE
+
+Given:             - -- --~=- - + --                         –         - - -- ...:
+                                                                     -,;          *--,.a
+                                                                              ._ ~.    = ~,.-
+                                                                                            —..=-.
+                                                                                            .,    ..-.. s
+                                                                                              s....
+                                                                                                 .=.                               —
+                                                                                                                                                          %
+                                                                                   s = 390 Sq. ft.
+                            .         .                                     :.= .
+                                                                           ,..  .....
+                                                                                    ....*
+                                                                                      ..?–.—
+                                                                                          . ..=,  >. .Y”<
+                                                                                               ...= .*=
+        bs”             --48 ft.                                                ,.f ..5..     gk~ ~QL.Jf.$.t -...                                      9
+                                                                                                                                                     .—.
+
+
+
+
+      P. =              600 hp. at 2,000 r.p. m.                                   -e=          0.82
+                              at -..10,000 ft.                                          . . .. —-
+                                                                                               -. ..=— .-                                                  ——
+                                                                                                                                            ..—
+
+      (The sabscript                            f       denotes              fictitious        conditions                 at
+sea level. )
+       .—                                                                    -. ,.-,...                       ..
+       :=                                                                   -—.       ....-+.
+                                                                                      ..      .--
+                                                                                               .-. ~
+                                                                                        .. .. .-   .s-,.
+                                                                                                       -.-...+
+                                                                                                            ....-
+                                                                                                              -.
+                                                                                                                 A-
+                                                                                                                ...                    .-                 -*
+Assume:                                                                                                       .-
+
+         !&f = .220
+                  ~ m.p.h.                                                                                         .
+              .1    =
+              4            0.’705 at 10,000                               feet   (fig. 4)
+
+         :?of = 600/0,705                       = 852 hp.
+                                                                                                                                                      “m
+        c,~ = 1.74 for 220 m.p. h.,                                          852 hp. at 2,000                   r.p. m.
+          of
+         ‘%f = 0.853, for best performance                                               propeller              (fig. 1)
+
+              T=         0.”737 at              Rv = 0.6 for                     Csof = 1.74                 (fig. 1)
+                                  .                                                                      .                             =.     .. .
+                                  N.A.C.A.             Technical         Note        No. 579                         11
+
+
+          Calculate          T!vc = 0.737/0.853                 = 0.865
+                                                                                                         .
+          Calculate:
+                       = 945
+                  ‘P
+                  Is = 4:5                                                           Is l%=           52.’7
+     .k          t~f’=” 8500/(0.853)(862)                      = 11.7                Ip Ztf= 80.7                “
+
+          Find    Vmf = 221.5            m.p.h.          and   check       assumption                        ,
+
+          Calculate          A = 12.2                      .                         .
+
+          Enter    charts         with        A = 12.2          and        T         = 0.865
+                                                                               ‘c
+                                                                                         .-..            ,..     _
+          Results:
+
+                  Standard                    Vm
+                                                   h                                             CH
+                  altitude
+                                                           t                    .,
+                       ft.                m.p.h.                m.poh.                   ft./rein.
+                             o-          (22 1.5)
+
+                   10,000                 211.0                 134.5                           798
+
+                   20,000                 183.0                 144.0                           171
+
+                   Service
+                   ceiling
+
+                   21,200                 ●    a*               ●   *9                          100
+
+                  Absolute
+                   ceiling
+
+                   22,900                 14?.5                 147.5                             0
+
+                   ..                                  CONCLUSION
+
+
+                Because insufficient   flight-test   data are available
+          for airplanes   having constant-speed    propellers,  it has been
+.
+●
+          impossible   to dotermino  the accuracy   of the charts by corn-                                                .
+          parison with flight-test    data.   It is reasonable   to expect
+.“
+
+
+
+                                               .
+                                                                                                                              .-
+
+
+
+
+  1.2                      N, A-.C.A~ _Tec@i. cal No.t.e.No..5?9..
+
+
+  the same order             of accuracy as ~E obtained                   from        Oswaldis
+  similar charts             for fixed-pitch propellers.                                                              —,
+                                                                                        - -. .        . .- - -
+
+  California   Institute of Technology,
+        Pasadena,     -  -
+                    California, March 1936.                                                                             .-
+                                                                               —..—              .—.                              ..
+                                                                                                                      — .
+                 ..           ...   ,.    .       , :.-.::...   .   .   . .   . =-=-:=.-..            -.!
+                                                                                                                           -.=
+            .—                                                                                   ..                   -----,-.
+            ..
+                                         REFERtiNCES
+                              -----         -.                                                                             -.
+                                                                         --       ... -. ...-.                   -.   -.+.
+                                                                                                                       “..—
+                                                                                                                 -.
+“1.       Oswald, W. Bailey:     Genera”l Formulas and                        Charts for the
+             Calculation   ~f Airplane Performance.                           T.R. NO,    408,
+             N.A.C.A. , ,1932.      —             -. -                          -— ~..-,-
+ 2. Weick, I’red E.:   Working Charta for tho Sele.c.tiQn.af
+       Aluminum Alloy Propellers    of a Stand?rd Zgrm to Clpor-
+       ate with. Var$o.us Aircraft Engines and BQAies.    T.R,
+       No, 3-50, N.A.C.A. , 19300
+W“30 Gove, W..D.:    ~he Variation   in 13ngine Power with Alti-
+         tude Deterrninod from MoasurornQn$.Sb.jD.FliKht with a
+        Hub Dynamomet6’r.    T.R. ~Oo 295, N.A.=C,A,~ . l,g:28f
+                        ?.           +                                                                                       .s
+
+
+ V4  Coalos, J.-D., an-d Lingard, A. L-.: ““The-Determination
+      ●
+                                                                                                                         “.
+        of the Horsepower   Height Eactor of Engines      from the
+        Results of Type Trials of Aircraft.      .R. & M. No.
+        1141, British A.R.C.,    1928.                                                                                   .
+                                                 ----- --r-----
+ 5,       Ashley, R: B.:- M’ethods of P~rformance ’-Cal&la~=~-on f-or ‘-”
+             Airplanes with Superc-harg6d Engines Developed        by W.
+             Bailey Oswald.   A.C.I.C, No. 679, Materiel Division,
+             Army Air Corps, 1933.                         —                                                           .. ....
+             .-                                       . ...-,.
+                                                            r-.
+                                                              te.a.-
+                            :                         -   :..
+                                                            ...
+                                                              ..
+                                                               ...
+                                                                 .
+
+
+
+                      .7
+
+
+
+
+                                                                                                                 -.
+                                                                                                                 ..      ..=
+                                                                                                                       .+.
+                                                                                                                       -.-+,
+                                                                                                                        .
+                                                                                                                       z
+                                                                                                                        . .
+
+                                                                                                                        “.
+
+                                                                                                                         —-
+          N.A.C.A. Technical Note No 579                                        Tig. 1
+
+
+
+          1.00                                                                                   ●
+
+
+
+
+              .90
+
+
+
+              .80                                                                         ,.—-
+
+          n
+              ●   70
+
+
+
+              .60
+
+
+
+              .50
+
+
+
+              .40
+
+
+
+              .30 /
+
+
+
+
+      \
+                                                                                   - 15
+
+
+
+                                   !
+                                                                                     10
+
+
+
+
+                   .20   .30      .40     .50     .60     .70     .80     .90      1.00
+...
+                                                  %
+
+,.                             Characteristics of two-bladed,constant-speed best
+                               performance propeller.
+                                                                                                 —
+     N.A.C.A. Technical Note Ho. 579                                       Fig. 2
+
+
+
+
+                                                                                        -.
+
+
+
+
+                                                                                    .
+                                                                             30$
+                                                                                    .
+                                                                                  0
+
+
+
+
+..
+
+                                                                                  -%
+                                                                             20;
+
+
+
+                                                                             15
+
+
+
+
+                                                                             10
+
+
+
+      .20        .30     .40     .50     .60     .70     .80     .90       1.00
+                                          Rv
+
+
+            Figure 2.- Characteristics of %wo-bladed constant-speed.peak                —
+                       efficiency propeller.
+-.         ..                              .        ..                                                        I
+
+
+
+
+1.0
+
+
+
+
+ .9
+
+
+
+
+Tv
+
+
+
+
+ .8
+
+
+
+
+ .,
+      .5                 .6                    .7                               .9             1.0
+                                                         ~,~:
+
+
+           Figure 3.- Vaxiation of thrust horsepower with velocity at constant,engine speed.
+                                            ~_t, hp. at%
+                                               V-%. hp. ,at ~=1.O
+                                                                                                     GI
+
+
+
+
+                                  #
+
+
+
+
+                                                                                                          1
+        N.A.C.A. Technical Note No. 579                                                            Fig. 4
+.
+
+
+
+
+        1.00                                                                        I
+
+
+
+
+             \\
+
+                  \\
+                       \ .
+
+
+
+
+                                                               ,
+
+                                     \
+
+
+
+
+            .80
+
+
+
+            ,70
+                                                    \
+
+                                                          ‘8
+                             A   a
+        ,.60 : :                                               \
+                          z...
+                         $- !=
+    .                        k                                         \
+,
+            .50
+                                                                         * \
+                                                                         ‘\~
+..                                                                     /   ‘: q,
+                                                                              .
+                                                            .117   /           \
+                                                  l?:= a- Q
+        .40                                            0.683 ‘–
+
+                                                                                             \\
+                                                                                         \
+            .30                                                                                \
+                                                                                                    \       <
+                                                                                                        \
+                                           !
+        0                                        10,OOO                    20,000                  30,000
+                                                          Altitude, feet
+
+
+ .
+.
+
+                        Figure           4.- Variation of full-throttle brake horsepower at,
+;                                            constant r.p.m. with altitude.
+                                                                                      rig. 5
+             N.A.C.A. Technical Note No. 579
+“,           1.00    !      I    I
+
+
+●
+
+
+
+
+                                                                                          \
+
+
+
+               .90
+
+
+
+
+               .80
+
+
+                                                                                          b
+              % ~
+                                      \
+
+    t’          .70                            \
+                                      l\
+                                               I
+                                       I
+                                      11
+
+                                  /
+                              /
+                          /
+                .6CD
+
+
+
+
+                                                                  20                 30
+     ‘
+         .            0                         10
+                                                              A
+
+         &                                 Figure 5.- Rvm ad RvHas functions of A.
+N.A.C.A. Technical ??ote No. 579                                            Fig. 6
+
+
+
+
+                         I
+
+       h          1      I                —..
+40,000 tsl~                          .—
+
+                                                    Tv
+              \
+
+                                                         1   I   I             I
+
+                                                       4— – - +- —
+                                                       0
+                                                     . 6– –– –— —
+
+
+
+
+30,000
+  -P
+  o
+  J!
+   .
+  a
+  ‘s
+  .5
+  &
+  s
+20,000
+
+
+
+
+10,000
+
+
+
+
+         o                      10                  20’              30        .
+                                                A
+
+
+         Figure       6.- Absolute and service ceiling as functions of A.
+                                                                                     —
+      N.A.C.A. Technical Note No. 579                                                                                                     Tig. 7
+     25,000
+                 \
+                                                                                                            TV
+                                   \                                                                          c
+                  \                                                                                         Cl.
+
+              \                                                                             .                   .& — -.         —. -—
+                  \                                        \ \
+                                           \
+                       \                                           \ ,
+                           \
+                               \                                           \
+     20,000                            x                   \                   \
+                               .               \                                       \
+                  \                                    \
+                                                           L                                \
+                                           .                                       \
+              \                \                                   \                                 \
+                  \                                                    \
+                      \                                \
+                        \                                                                                        -
+                  \                                                                \                              \8&e
+                          \                                    \                       \                A            ~    ?
+              >        \    \                                      \
+                                       \                                                    L                \           Ye .%J
+                                                                                                                             ‘
+                                           \                           \                        \                                                     .
+                               \                               \                                    \
+     15,000(                                           \                       \                            \
+                  L.                                       \                                                    \               \
+                               \           \                                           \                            k
+                                                                   \       \                                            .
+               \ “’
+                  L                                                                                                         \
+              \     \                                                                           \.
+                                   \                                       \                                                    \
+      z tcH                            \                                                                                            \\            \
+                                           \           \                                                 ‘,8.
+              \                                                                            \.                                            \\   \
+                  \                            \                                            \
+                      \                  \         \                \
+                                   \                          \               .                     \
+             \            \  \        \                          \
+                       \                 \    \   \                 \              \
+     10,000 i            \ \ \            \                           \      \
+ .                  \
+*                         \                 \        ~  @
+                 \ \               \          \                            \           \
+                                 \              \                             \.
+                                                                                \
+                               \                        \                         \    \ \\
+8-                               \ \                              .
+                                   \                  \           \,                 \
+               \                     \                  \                              \
+               +                                           \\ \ \                        \ \,
+                  \                                            \        -                   \
+               \ \                                                \     \                       \     \
+                                                                    \                              \
+               t                                                      \                               . <
+                                                                         >
+                                                        \                  \
+                                                                             \       \
+              -. \                                                             \
+                                                        \                        \
+                    \                                                              \
+                      \                                   \
+                                                            \                        \
+                                                                \                       \      \
+                           \     \            \                   \
+                         +        \             \’ \                 \                       \
+                              &     \
+                                                                                                 \
+                            \\                     \ ‘.                                            \\
+                                                        \\
+               o                        10                         20                      30
+                                                                                            A
+
+                              i?igure7.- ltCH as a fwnction of A                                                    -atvarious altitudes.
+                                                           C= is the msximum rate of climb in feet pcr minute,
+     N.A.C.A. Technical Hote No; 579                                                                        Fig. 8
+.
+ t
+
+
+t
+
+
+
+
+                                  I
+                                                                     Vc
+                                                                    o 94
+                                                                     :90                      I     I
+                                                                     .86 —- -—           –
+
+                                        2’},002 ft .     15 ,000 ft.
+         .’7                 >5,C00 p.-
+                   3C .000 ft..                               /
+                                                                    /
+                                     /               / -                                          / -       >
+                                                              / -       ~                     -
+                                      #                          ~ -                          ~
+         .6                        / “ /~       / -    /   w          / “                               ~ S.L,
+                                                            ~   ~   -
+                        /         < / 5 F          ~ -“
+
+         .5
+
+     R                                                      15,000 ft.                   10 000 ft.
+         ‘c
+                                          20,()0o ft.-%                             5*OC0 fL\
+          .7              25,I)00 ft. -                                                             ~
+                           ftl.a
+                   3C .Oo(.1                        /                                               ~
+
+         .6
+                                                                                    —    —    —     .— —        —
+
+         .5
+                                                                                         10,$00 ft.->
+                                                 15, CM30ft.-                       5,0Co f“;.= -. .k” --
+                                      20,000 ft.>
+         .7                                                                % -           L-   -~
+                       2$i                          $. ~--                       _ --
+                                    >     -                     -     -“                                T
+                                               .M
+                                  / .     .-    =          --   -- - --          -. --
+                               /H. “:   ~=     -        - --- - --   --                                 ~ S.L,
+         .6
+                                                        I
+
+                                                                                    I
+         ● U
+
+               o                        10                          20     30
+                                                    A
+                       E’@re    8.- Rvc as a function of A at various altitudes.
+                                          velocity for maximum rate of climb                                         -—.
+                                    %C =    maximum velocity at sea level
+
+                                                                                                                     _—.
+N.A.C.A. Technical Note No, 579                                            Pig.    9
+
+
+
+
+  J-o
+
+
+   9
+
+
+
+  8
+
+
+  7                                                     c
+               lgl~lla: I              Will
+                                                        a
+                                                        o
+
+
+
+
+  5
+
+
+
+
+  3
+
+
+
+   2
+
+
+   1
+
+
+
+   n
+   “o                         10                   20                30
+                                               A
+        Figure 9.-   T./lt   as a   function of A at various altitudes. T is the
+                     minimum time required to climb to altitide      (minutes)
+

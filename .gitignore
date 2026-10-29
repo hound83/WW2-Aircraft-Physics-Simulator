@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+*.log
+*.tmp
+__pycache__/
+.DS_Store
+Thumbs.db
+# Never commit handover bundles or fresh large scans.
+*.zip
+references/downloads/
+validation/current/test-output.txt

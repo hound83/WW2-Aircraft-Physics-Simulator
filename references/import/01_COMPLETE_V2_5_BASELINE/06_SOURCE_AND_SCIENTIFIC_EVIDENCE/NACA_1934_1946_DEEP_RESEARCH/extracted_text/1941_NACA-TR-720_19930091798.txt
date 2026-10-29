@@ -1,0 +1,1275 @@
+NATIONAL ADVISORY COMMITTEE
+      FOR AERONAUTICS
+
+
+
+                    REPORT No. 720
+
+
+PRESSURE AVAILABLE FOR COOLING WITH
+           COWLING FLAPS
+
+
+  By GEORGE W. STICKLE, IRVEN NAIMAN, and JOHN L. CRIGLER
+
+
+
+
+                           1941
+                                               AERONAUTIC SYMBOLS
+                                       1. FUNDAMENTAL AND DERIVED UNITS
+
+
+                                                   Metric                                           English
+
+                            Symbol
+                                                Unit                    Abbrevia-            Unit                Abbrevia-
+                                                                          tion                                     tion
+
+        Length ___ . __       l       meter __________________             m        foot (or mile) ______ ____ ft (or mi)
+        Time ________         t       second _________________              s       second (or hour) ___ ____ sec (or hr)
+        Force __ .. _____     F       weight of 1 kilogram ______          kg       weight of 1 pound ______ Ib
+
+
+       Power _______          P       horsepower (metric) ______ ---------- horsepower ___________ hp
+       Speed _______                 {kilometers per ho ur ______   kph     miles per hour _________ mph
+                              V       meters per second ________    mps     feet per second ________ fps
+
+
+                                                  2. GENERAL SYMBOLS
+w   Weight=mg                                                       II      Kinematic viscosity
+9   Standard acceleration of gravity=9.80665 m/s 2                  p       Density (mass per unit volume)
+      or 32.1740 ft/sec 2                                           Standard density of dry air, 0.12497 kg_m- 4_s 2 at 15° C
+            W                                                         and 760 mm; or 0.002378Ib-ft-4 sec 2
+m   Mass=-                                                          Specific weight of "standard" air, 1.2255 kg/m3 or
+              9
+I   Moment of inertia=mP. (Indicate axis of                           0.07651lb/cu ft
+     radius of gyration k by proper subscript.)
+    Coefficient of viscosity
+                                               3. AERODYNAMIC SYMBOLS
+    Area                                                                        Angle of setting of wings (relative to thrust line)
+    Area of wing                                                                Angle of stabilizer setting (relative to thrust
+    Gap                                                                          line)
+    Span                                                            Q           Resultant moment
+c   Chord                                                           n           Resultant angular velocity
+                  b2
+A   Aspect ratio, S                                                 R           Reynolds number, p Vl where l is a linear dimen-
+                                                                                                          fJ.
+V   True ail' speed                                                               sion (e.g., for an airfoil of 1.0 ft chord, 100 mph,
+                                                                                  standard pressure at 15° C, the corresponding
+q   Dynamic pressure, ~p V 2
+                                                                                  Reynolds number is 935,400; or for an airfoil
+L   Lift, abso! te coefficient OL=      :s                                        of 1.0 m chord, 100 mps, the corresponding
+                                                                                  Reynolds number is 6,865 ,000)
+D   Drag, absolute coefficient OD= q~                               a           Angle of attack
+                                                                    f           Angle of downwash
+    Profile drag, absolute coefficient CDO=~S                                   Angle of attack, infinite aspect ratio
+                                                                                Angle of attack, induced
+    Induced drag, absolute coefficient CDi=~S                                   Angle of attack, absolute (measUTed from zero-
+                                                                                  lift position)
+    Parasite drag, absolute coefficient OD'P=~S                                 Flight-path angle
+
+a   Cross-wind force, absolute coefficient Cc = q~
+    2626°
+                    REPORT No. 720
+
+
+     PRESSURE AVAILABLE FOR COOLING WITH
+                COWLING FLAPS
+
+I   By GEORGE W. STICKLE, IRVEN NAIMAN, and JOHN L. CRIGLER
+
+!              Langley Memorial Aeronautical Laboratory
+
+
+
+
+!
+I
+                              NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+                                           HEADQUARTERS. NAVY B UILDI       G. WASHI      GTO • D. C.
+
+     Created by act of Congress approved March 3, 1915, for the supervi ion and direction of the scie ntific study of the problem of
+flight ( . S. Code, Title 50, Sec. 151). It membe rship was increa ed to 15 by act approved March 2, 1929. The membe rs are
+appointed by tile President, and erve as such without compensation.
+
+   VA 'NEVAR Bu H, Sc. D. , Chairman,                                       ROBERT E. DOHERTY, M. S.,
+       Wa hil1gto n, D . C.                                                      Pittsburgh, Pa.
+   GEORGE J. M EAD, c. D ., Vice Chairman,                                  ROBERT H. HI KLEY, A. B.,
+       We t Hartford, C onn .                                                    A sistant Secretary of Commerce.
+   CHARLES G. ABB OT, Sc. D .,                                              JEROME C. H UNSAKER, Sc. D.,
+         ecretary, Sm ithsonian I n titution.                                   Cambri dge, Mass.
+   HENRY H. AR OLD, Major General, United 'tatcs Arm y,                     SYDNEY M. KRAUS, Captain, United tate         avy ,
+       Chief of Air Corps, War D epartment.                                     Burea u of Aeronautic, Navy Depart ment.
+   GEORGE H . BRETT, Brigadier General, nited State Army,                   FRA CIS W . R EICHELDERFER, Sc. D. ,
+       Chief Materiel Division, Air Corp, Wright Field,                          Ch.ief, Unit ed States Weather Bureau .
+          Dayton, Ohio.                                                     .TOH H. TOWERS, R ear Admiral, nited States Navy,
+   LYMAN .T. BRIGGS, Ph. D .,                                                    Chief, Bureau of Aerona utics, Navy D epa rtm e nt.
+       Director, at ional Bureau of Fitanclarcl .                           E DW ARD W ARNER, Sc. D .,
+   DONA LD H. C NNOLLY, B. S. ,                                                  Wash.il1gton, D. C.
+        Arlministrator of Civil Aeronautics.                                ORVILLE WRIGHT, Sc. D.,
+                                                                                 Dayton, Ohio.
+
+
+
+                GEORGE W. LEWIS, Dil'ector oj A eronautical Research                 . P AIn .TOHN TON, COD1·dinatD1· oj Re earch
+
+                                                        JOHN F. VI TORY,       ecretary
+
+                 HE NHY J. E. REID, Engineer in Charge, Langley Arem-Ol'ial Aeronautical Laboratory , Lan gley Field, Va.
+
+                      SMIT H .T. D EFRANCE, En.ginee?· in Chm'ge, Ames AeTonautical L abomt01'Y, A10jJett /rield, Calif.
+
+
+
+                                                      TECHNICAL COMMITTEES
+             AERODYNAMICS                                                                                 AIR CRAFT STR CT URES
+             POWER PLA TS FOR AIRCRAFT                                                                    AIRCRAFT ACCI DE TS
+             AIRC RAFT M ATERIALS                                                                         INV E TIONS AND DESI GNS
+                                       Coordination oj R esearch Needs oj M ilitary and Civil Aviation
+
+                                                     P reparation oj Research Programs
+
+                                                           Allocation oj P roblem
+
+                                                          P revention of Duplication
+
+                                                         Consideration of I nventions
+
+ LAN GLEY MEMORIAL AERO AUTI CAL LABORATORY                                           AMES AERONAUTICAL LABORATORY
+                         LANGLEY FIELD. VA.                                                      MO FFETT FJELD, CA LIF.
+
+              Condl1ct, under unified contr ol, for all agencies, of cientifi c resea rch on the fundamental problems of flight.
+
+                                            OFFI CE OF AERO A TI CAL I TELLIGE CE
+                                                             WAS HI NGTON . D . C.
+
+                                      Collection, classification, compilation, and d i semination of
+                                            scien tific and techni cal information on aeronautics
+   9-20-41
+
+     If
+
+
+
+
+                                                                                                                                       J
+                                                      REPORT No. 720
+
+                  PRESSURE AVAILABLE FOR COOLING WITH COWLIN G FLAPS
+                                  By G l, OlWE V,T. STI C K LE, IIWEN NAIMAN, a nd J OHN L. C IU C LEI~
+
+
+
+                           S MMARY                                     that time. The present report is an exten ion of th e
+                                                                       investigation of cowli.n g Haps in which the fl ap ha been
+     A. jull-swle inves tig(~tio71 ha bel'71 c(m ducted in the
+                                                                       appl ied to a smoo th-contou!' exit- lot design. T h e
+ N ACA 20~lo ot tunnel to detl'rminf' th e PH)S. UH) dij-
+                                                                       r esults in clud e tests with two Iull- cale, three-blade,
+ (fr f'llCf avc~ilab7f' for cooling with cow7ing flap s. Th p
+                                                                       adjust able propellers. On e propel ler ll a cO ll ventioJ)fil
+ flaps wf'1'p appli('d to an exit slot of smooth contour at 0°
+                                                                       rOllnd bl ade sh ank an d th e oth er propell er has the
+flap angle. Fl(~p angles oj 0°, 15°, and 30° werp testNL.
+                                                                       ai rfoil ection s extendin g cIo er to th e p ropeller hub .
+ Two propellers were used; propeller C has conventional
+ round blade shanlcs and JJrop eller F ha airf oil section                                       SYMBOLS
+ ('xtending close1' to the hu b.
+     The preSSU1'e available jor cooling is shown to bp a                  A 2 area of exit slot
+ dirfct junction oj the th1'USt disk-loading coefficient oj                 D diam eter of propeller; drag
+ the 7Jl"oJ) flln·. The maximum 81}'ction obtain('d with Cb               6,.D in crea e of dra o' wh en fi il' fl ow t hrough cowl iJl g
+ cllwlin g flap set at 30°, located in Cb rfgion whn'e th f static         Of) estimated drag c efficient (D/ qF)
+ ]J1"eSs1U'(' .101' thp 0° flap po, ition is equal to that oj th e       6,.0 0 mcrease in drag coefficien t (J ll e to passn,gc or
+ free (/ 1',. stream, is shown to be Njual to apP1'O.1'imately 07le-               cooling air (6,.D/qF)
+ half the avemgl' total p1'essur(' of th (' air strec~m; the total         ( \. thru t eoefficient ( T/pn~D<\)
+pre sute i given by the sum oj the dynamic 711'(,S ure and                   F proj ected frontal area of nacell e
+II< tMust loading. The total pre U1'e in jront oj the                     lTr total pre ure behind propell er
+cowling is critically cl penclent on the ratio oj the front                 II incl'ea e in total pre u l'e produ ced by propeller
+opening to the propeller diameter jor propeller C. Propel-                  K conducta.nce of engine 01' baffi pl ate
+ler F gave a highe1' total preSSU1 e in jl"ont of the cowling.             K 2 conductan ce of ex it lo t ( 12 /F )
+     For the tc~lce-oif concl1.iion, it W(~S jound that (1 ) with           P power input to propeller
+the 0° flap , propeller C produced only one-half as much                   P c power eli k-loadin g coefficient (P /qSI1)
+available cooling pressure as propeller F; (2) with th e                     1) static pres ure on surface of cowliJlg referred to
+30° flap, pl"Opelle1' C produced an available cooling pres-                       static pressure of free air stream
+sure three time as la rge as wa obtained with the 0° flap                   Po ~ tatic pre ure of free air tream
+(md propeller F produced a preSS'l~l"e difference twice                     p! pre ure in front of engine or baffle
+that obtained with the 0° flap; and (3) with th e 30 0 flap                 /Jr pres Tire in rear of engine or baffle
+and a conductance oj 0.118, the pressure drop across the                  6,.p pre sure drop across engme or baffle plate
+baffle plate with propelle1' C was 3.17 and with propeller                       (PIPr)
+F was 4.85 times the dynamic p1 es 'ure oj the air otream .               6,.P press ure differ ence available for pumping air
+                                                                              q dynamic pre ure of air stream O~ p 112)
+                       INTROD UCTIO                                          Q volume of air flowin g through cowling per second
+    The NAC \.. in 1935 con du cted an exLensi ve cowling                   R n et force on thru t bfilance of propeller-n acelle
+inve tio'ation (r efer en ces 1, 2, and 3) to furnish in for-                       unit
+m fition in regard to the cowling find COOlulg of airplane                   S disk ar ea of propeller
+engines under all operating conditions. The lnve tiga-                       T thru t of propeller (R +D )
+tion hO'wed the efl'ect of different nose form , kirts,                    T c thu t eli k-loading coeffic ien t ( T lqS)
+fl ap , spilmers, and propell er on the efficiency of th e                  11 velocity of air stream
+engine-cowlin g combin ations and on the available                            x fr actional raelius of propeller
+pres ure difterence for cooling the engine. The chief                        {3 blad -ano1c setting of propeller at 0.75 rad ius
+emphasis in thi inve tigation was on th e fittlng of all                      7} propulsive efficiency of propeller ( T cIP J
+
+the variable into a r ational an alysi' of th e cowling and                 7)" n et efficien cy of propeller-n acelle uni t (R V /P )
+
+coolillg problem . A smooth. contour line for th e skirt                    7}0 n et effi ciency of propeller· n acelle uni t wiLb no
+
+de ign was found to be a primary requirem en t. The                                 air flow through cowling and ex iL closed
+ea rlier tests on cowling flaps were confined to a single                  7} p pump efficiency of cowlin o'
+  eri e of a de ign typical of those in use on airplanes at                  p mass den ity of air
+2                             I EPOR'l'       O . 72 0-      A'J'IO A L A DVISORY CO MMITT E E FOR AE TWNA TI CS
+
+                  A ALY IS OF THE PR OBLEM                                        static pre ure in the region of the cowling exit i then
+                                                                                  almost equ al t o that 01 the free air t ream. If a £lap
+  The pumping neLion of tIl(' cowling is ci epend en t on
+                                                                                  j extended in to the slip tream , the resultant increase
+the pres m e d iHer ence between the en trance and th e
+                                                                                  of velocity will cause a cu.·op in th e tatic pre ure fti
+exit of tb e cowl ing. F or tIl e condi tion of hi gh-speed
+                                                                                   the exit. A suction at the exit will thereby be produced.
+Digh 1" th e f orwarcl vcloci ty of tb e nirpl nn e produces
+                                                                                      The pre m e at the cowlin g en trance i approxi-
+mo 1, of thi pre UTe cl ifl'('l'ence ; the cooling problem i
+                                                                                  mately the dynamic pressure of the air stream , bein D'
+Lher efore u usny eu y and inl<~l' est is cen tel' d 111Tgc1y
+                                                                                  m ore or les than thi value dependiuO' upon the hape
+                                                                                  of the inner ections of the pr opell er. The over-all
+                                                                                  pre , ure dif1'erence !J.p is then t he difference between
+                                                                                  the entr ance and the exi t pre m e . It i thus ev i-
+                                                                                    len t that, by propel' d sign of the iJ111 e1' section of the
+                                                                                  propeller and of the cowlin g exit, for the take-oil and
+                                                                                  tbe climb condit ion , over-all pre sure clift rence ev-
+                                                                                  er al time th e dy namic pre sure of th e ail' tream are
+                                                                                  obtain able.
+                                                                                      The flow eq uation of the air tlu'ough the cowlu1g,
+                                                                                  O' iven in reference 1, may be pu t in th e fo11owinO' form :
+                                                                                                                                                          (1)
+                                                                                         equation pecme the ratio of engin e to exit C011 -
+                                                                                  luctance nece ary to ecm e the dcsu'c 1 cooling-pres-
+                                                                                   nre dr op !J.p when !J.P is available a over-all pre ure
+    PIOVRE l,- 'l'est set·up in tunnel. (Nose slot was closed for these tests.)
+                                                                                  differ ence.
+
+on the efficiency of the cooling. For the sta tic-tJu'u 1,                          <t.'prope//er        Adjustable
+condition, the prop eller produce all the pre SUTe cliffer-                         r" r-----tr----1
+                                                                                               ~-_ _
+ n e. The m o 1, difficul t coolinO' condi tion ar e in take-
+on: and climb. A an \lid to the analy j of the cooling
+problem und er th e e condi tions, it i de ira ble to con-
+sider the pI' Ufe produced by the propeller and the
+forward velocity.
+   If th e di tri bu Lion of th e Lhr u 1, i as umed to b e uni-
+form over tb e prop eller li k area and the ro ta tion of
+the lipstl'eam j n eglected , th e iota.l pres m e in th e ail'
+                                                                                               PI GV I~ E 2.-   Line drawin g of the test arrangements.
+ tl'eam behind the propeller j
+                                         T                                           In r eference 1, the pump fficiency of a cowling wa
+                         Il7'= Po + q+""""",
+                                                                                  defined a the r atio of the U efnl coolin O' power to th e
+wher e Po and q ar e m ea ur d in th e undi tUl'b ed ail'.                        in cr eased power r equired to propel the airplane,
+T he increa e in Lolal pre su re du e to th e propeller i                                                                   Q!J.1)
+O' iven by                                                                                                            TJP= l'!J.D
+                                                                                  Altern ately, thi pump efficien cy may be expre e 1 in
+                                                                                  term of the net efficiency of t he propeller, the engin e
+Tf hoth sid es ar divid ed by q,
+                                                                                  condu ctn,nce, and the power disk-load ing coeffi cien t as
+                            JI     T
+                            q= qc',),= Tc= TJPc                                                                       KF
+                                                                                                                T},,= S Pc
+    For a constant v~Llu e of P c> changes in thl'u t eli t ri-
+but ion an d T} wi th blndc-angle sctting bein g neglected ,                                            APPARATUS A D T EST
+the average val uo of JI/q gives the pressul'C produ ced
+by the propell er in terms of the dyn ami c pres llre of                            The investigation wn s conclu cLed in Lh e A CA 20-
+the air tream . B ecause the pumping a tion of the                                foot w.ind tunn cl, wh ich wiLh it sLan lard cquipm en t i
+cowling is dependen t on the pre ures and the veloci-                             de cribecl in l' fel'ence 4. T he tesL et-up was th e arn e
+t ie in the p1'O pCn CI' slip tream , the pre ure in cl'ea e                      a that used in r cfer cnce 5. Figure 1 hows Lh e O'cnernl
+fol' the difl'cl'clIL condi tion of propeller operation mu . t                    an angemen 1, oJ th e set-up on LllO tunne l balance. T JlO
+be kn own.                                                                        no e slo t "\ a d o cd for Lh e test. T he skirt wn
+    A few feet behind the p ropell er, the pre m e incr ease                      opened at the poin t hown in the lin e d rawing or Ll1l'
+ha. heen almost co mpletelyconvc rtcdin tovel cit y. Th e                         test aJTnn gemenl s (fi g. 2). T he 1, i1't for Lh e 0° fl ap
+
+
+                                                                                                                                                                j
+                                      PRE S RE AVAILABLE FOR COO LI G WI'l'H COWLl G FLAPS                                       3
+wa mad e of a circu lar cyJi n del' LlH)'L could b ' movcd         hub , is Bmeau of el'on auLics drawing No.4 93. BoLh
+axially Lo vary Lh exit al'ca in or d er Lo covcr th e mnge        prop ellers arc tilTee-blade, adju Lab le prop ellers of 10-
+0 [' cooling pro me for all cond i Lion s of fli gh t. T h e 15°   foot diameter. D etails of Lhese prop ell I' blades ar'
+and Lh o 30 ° £laps wer e mad e of conical piece of m e Lal        given in r eference 5. A ll Le t weI' made wiLh a bbcl c-
+wi th 6-inch ch ord s. These flap s were te ted in on ly on e      anglo etLing of 20 ° aL 0 .75 radiu s.
+po iLion. T llO nacell e diam eter WfiS 52 lnelle .
+                                                                                              RE ULTS
+    A baffle plate, COD t1'ucLcd a a lI u tte1' with foUl' top
+and conLl'olled from thc balan ce hou e, imulatecl ngine                T able I pH'senL a ummaryof LIte r e 'ulL obLained
+conductances of 0, 0.039 , 0.079 , and 0.11           The pro-      wi th both prop eller. Tb tabl j divid ed inLo fOlll'
+p eller wa driven by a 150-hor epowcl', three-ph a c,                ection s repre en ting conductance of 0, 0.039 , 0.079,
+                                                                    and 0.11 . Each se Lion i further divided into co11lmn
+                                                                   for values of 1/:';P c of 0. 5, 0.6 , 1.0, and 1.6. ]<.aell of
+                                                                    Lb e e column givcs Lh e pre sm e drop acro s Lhe b aITI c
+                                                                   tJ.p and th e r oar pre m e 1), a Jraction of Lb e dynam ic
+                                                                   pre sur q; each column al 0 gives th c n ct efficien cy.
+                                                                   Th pump efficiency i givcn in Lbe bigh -sp ced eondi-
+                                                                    Lion, 1/ 3 P o= 1.6 , for Lhe 0° £lap an 1 is g iven in Lh e
+                                                                   climb condition, 1/ 3 P c = 1.0 , for the 15° and the 30 °
+                                                                   [Jap. T h e pump effi cien cy i omitted for th e oLb l'
+                                                                     lot openings and operat ing condition b ecau se Lllc
+                                                                   exp erimental accurac did noL ju ti fy lI ch ompuLa-
+                                                                   Lion.
+                                                                       T h e drag cocfficienL wiU I LJIC propeller J'('JnOvl'cl is
+                                                                   given in th e 111 t colum n. T JIC drag valu es for opcn
+                                                                   exit 10L were obLained in Lh e followin g manncr : T JIC
+                                                                   ba ic drag v alu e for th e cowl i11 O' wiLh exit sIoL clo cd
+                                                                   at zero co ndueLance " -er e obLained by cpa raLe dmg
+                                                                   LesL. The basic l1'llg wa d educted from Lhe drag
+                                                                   of th e sa m e co wlin g-prop eller comb ination al zero powcr
+                                                                   Lo giv th e drag of Lh e free-wh eelinO' prop 11er. TIl
+                                                                   d rag of LIle fr ee-wh eelin g prop ellcr wa Lh en cleducL d
+                                                                   from Lb e dra g of Lhe open-exiL co wling-propellcr com-
+                                                                   binaLion at z '0 power Lo obtain tIl e values g ivcll
+                                                                   in Lable 1.
+                                                                       Figur e 4, 5, and 6 g iv e LlIC pr ess ure dis Lrib uLions
+                                                                   for Lh e 0°, LJl c 15°, a n I t hc 30° flap , 1" P cLivcly,
+                                                                   sJl owino' Lh e cfYeoL of Lwo values of cngine conducLance
+                                                                   and of prop eller operatinO' condiLion .
+                                                                       T h e prc sure lrop for zer o conci.ucLancc i Lakcl1 as
+                                                                   Lh e available pr c urc cliffercnce !::"P . TIlC value of
+                                                                   Lhi available pre m e liD'cren ce as a fracL ion of Lil e
+                                                                   dy n amic prc sure of Lh e a i r sLrcam i givcn in fig Ul'e 7
+                                                                   a a fun cLion of Lh c flap an ole for several disk loa din gs .
+                                                                       Fi gure givcs a gr aphieal olution of t il e flow equa-
+                                                                   Lion of th e ail' Llnough Lb e cowling (equaLioll (1)).
+              c                                              F
+                                                                   T IIC cxp erimenLal porn L for th e 0° :flap and th e h ig h-
+                  l ' !G URE 3.-Blades of propellers used.
+                                                                                             3
+                                                                     p eed condition of 1/ P c = 1.6 ar plotted on th e graph,
+\\'ounc/-l'oLor indue Lion moLor moun Lcd in Lbe nacelle.          wh er e J{2=A 2/F, [01' comp al'i on with the theoreLical
+T h e sp eed and th e powel' ouLpuL of Lhe motor wer e co o-       curve. Figure 9 prescn Ls imilal' l'e ults for Lbe Le L
+Lrolled by 1'e i tance in Lli 1'0 Lor cir cu iL. Pre m es i 0-     of the 15° and th e 30° flap f I' the tak e-off condiLion ,
+sid and outside Lh e ex iL sloL and acros Lhe en gine baffle       I/-,3/-P c= 0.5 and 0.6.
+were photographically r ecorded on a mulLiple-tub e                   A comparison of Lh c co olin g-clra o. coefficienL wi Lh Lhe
+manometer.                                                         pres m e drop in th e eru i ing con lition is given in figur e
+    T h e propellers u sed for Lhi inves Ligation arc h o \vn      10 . The drag incr case du e to cooling wa computed
+in figure 3. Prop eller , wi Lh conven tionall'ound blad e         from
+sh ank, i Bmeau of A eronauLic drawinO' No.5 6 - 9;
+prop eller F , with airfoil ection extending closer Lo Lh e
+4                      REPORT NO. 720-        NATIONA L ADVISORY COMMTl"fEE FOR AERONAUTI CS
+
+
+
+
+                                                                                                     -   - - - 1.39
+                                                                                                                    C,p / q     Prlq
+                                                                                                                           -0.22 0.5
+                                                                                                                                       11m
+                                                                                                                      1.35  - ./8 .S
+                                                                                                                      /.08 -. 15 1.0
+                (al                                                   p/q =1                                           .98  - .14 1. 6
+
+
+
+
+                                                                                                  ------ -
+                                                                                                     - - - - 0 . /2
+                                                                                                                     /:'p / q   Prlq
+                                                                                                                                1.24
+                                                                                                                                       1/0.5Pc
+                                                                                                                                         3
+
+
+                                                                                                                         .15    I.OS     .S
+                                                                                                     ------              .07     .85    1.0
+                 (b)                                                 p / q =1                        - - - .04                   .80 /.B
+                                                                      (a) } {=o.
+                                                                    (b) K =O. IIS.
+                               FJ(; UHl<: 4.- Pressurc distribution for the 0° flap.   Opening,}2 inch ; propeller (',
+
+
+
+AL 1I;j Pc = J .6 J l' a lO-fooL propeller on t1 52-inch                      high-speed condition, rcspecLi ely. Figu l'e' ]] and 12
+nacclle, Lh is eq uaLion b ccoml's                                            wcr e plotted from unpubli h ed Lc t daLa.
+                                                                                   EFFECT OF FRO T OPENING ON THE AVAILABLE
+                                                                                                   PRESSURE
+                                                                                 A study of figurc 11 shows th aL Lh e increase in Lotal
+From the definiti n for pump cfficicncy,
+                                                                              pre ure behind propeller C varies considerably with
+                                                                              propeller operating condi tion and propeller radiu .
+                                                                              A blocking eff ect OCClli'S over th e inn er two- tenths of
+                                                                              th e prop eller radius bu t, outside thi l'adiu , th e total
+                                                                              pressure increases rapid ly with radius, a bout 0 per-
+The curve fol' 100-percent pump efficien cy i included                        cen t of th e maximum value r ealized being obtained aL
+for comparative pUTpose . The ection below th e ba e                          x = 0. 3. Inasmuch a th e maximum diameter of the
+line in Lhc figurc indicates the additional form drag for                     fron t opening of th e te t arrangem ent, x = 0.29 , i
+Lh e open nose over th e closed streamline nose, as given                     lo cated in th e r egion of this te p pre sure gradien t, th e
+by unpubli h ed data.                                                         pressure obtained from th e propeller slipstream i very
+   FigUl'e 11 s11 o\ s th e di tribu Lion of total-pre sure                   critical to m all ch anges in th e front opening. If more
+increa e b hind prop eller C, which h as round blade                          cooling at low ail' peed is th detcrmin ing considcration,
+ hank , for th e different condition of prop Jler opera-                      it i advantageou to block off t he hub and th e inner
+Lion. Fig ure 12 h ows Lhe Lr eamlines around th e fron t                     pOI'lions of th e propeller with a spinn er an 1 to incl'ea e
+of the cowling for high and low lip tr eam con tractions,                     the di ameter of th e cowling opening in ord er to utiliz e
+which cOI'l'esponl Lo Lhe take-off condi ti n and to the                      th e available fron t press ure.
+                                                                                                                                                      ------~ - .----                        --' --"--- - -- ._------,
+
+
+
+
+                                                                                                                                                                       ----
+                                                                                                                                                                                                       ....
+                                                                                                                                                                                                       ~
+
+                                         /'
+                                                               --                                                                                                                                      (fJ
+                                                                                                                                                                                                       (fJ
+                                                                                                                                                                                                       q
+                                                                                                                                                                                                       !:d
+                                                                                                                                                                                                       t<J
+                                  //                                                                                                                                                                   0>
+                          ,/'                                                                                                                                                                          <
+                                                                                                                                                                                                       0>
+                                                                                                                                                                                                       H
+(aJ                                                                                                                                                                                                    t"
+                                                                                                                                                                      /!'p/q P r/q llWc                0>
+                                                                                                                                                          - - - - 3.88 -2.40 0.5                       bj
+                                                                                                                                                                                                       t"
+                                                      - - --
+                                                                      6.p / q
+                                                                       Pr/ q   f.IP;
+                                                                       -2.96 0.5
+                                                                      4.20
+                                                                                        t/                                                                - - - - 3. 17 -1.77 .6
+                                                                                                                                                          - - - - - - 1.73 -.90 1.0
+                                                                                                                                                                                                       t<J
+                                                                                                                                          p/q =1          -- - -      1.50   - .66 1.6                 "'l
+                                                      - - - - 3.32 - 2.18 .6                   (a)                                                                                                     o
+                                                      - - - - - - 1.99 -1 .02 1.0                                                                                                                      ~
+                                                      - - - 1.57                 -.72    1.6                                                                                                           ()
+                                                                                                                                                                                                       o
+                                                                                                                                                                                                       o
+                                                                                                                                                                                                       t"
+                                                                                                                                                                                                       ....
+                                                                                                                                                                                                       Z
+                                                                                                                                                                                                       Q
+
+                                                                                                                                               - - - -1_____ -                                         ~
+                                                                                                                                                                                                       .....
+                                                                                                                                                                                                       '"'
+                                                                                                                                                                                                       ~
+                                                                                                                                                                                                       ()
+                                                                                                                                                                                                       o
+                                                                                                                                                                  ----                                 ~
+                                                                                                                                                                     --------
+                                                                                                                                                                          -----                        t"
+                                                                                                                                                                                                       H
+                                                                                                                                                                                                       Z
+                                                                                                                                                                                                       Q
+                                                                                                                                                                                                       "'l
+                                                                                                                                                                                                       t"
+                                                                                                                                                                                                       0>
+                                                                                                                                                                                                       "C
+                                                                                                                                                                                                       (fJ
+(b)                                                                                            (b)
+                                                              /!'p /q Pr/q 11M                                                                                                /!' p/q    Pr/q liM
+                                                                                                                                          p / g =1         - - - - 2. /0                -020 0. 5
+                                                      - - - - 3./7 -0.84 0.5
+                                                                                                                                                                 - - 1.70                 - .0 4 .6
+                                                                      2.32       - .48 .6                                                                  - - - - - - 1.0/               .cO   /.0
+                                                      - - - - - - 1.23           - .08 1.0                                                                 - - - .77                      25    /.6
+                                                      ---               .92       .04 1.6
+                                     (a) ](= 0.                                                                                     (a) [, =0.
+                                  (b ) f{ = O. 118.                                                                              (b ) / \ = O. llh.
+      F, GU RE 6.- Pressure distribu t io n for the 31)° fla p. P ropeller C .                       F IGt:RE 5.-Pressure d istribution fo r lhe 15° fl ap .   Propellci C.
+
+
+
+
+                                                                                                                                                                                                       Q.
+6                                            RE POH'l' NO . 720-                           Ano TA L ADV I SOHY COMMITTEE l!'OH AEHO A U'l'I S
+
+
+
+
+                                                                            -
+                    6
+                                                                            .5
+                                                                                     f---
+                                                          V
+                    5                        /
+                                                  V
+                                      /v                                                                                                                                                    I
+
+                                                                                                                               -    f--                                              - l?ffc
+                                                                                                                      ~
+                                                                                                ~I--
+                    4         /                            V-
+                                                                              .~ ~
+                                                                                                                                                                        r--
+                                                                                                                                                                                         .5
+                                                                                                                                                                                                -    '--
+
+
+
+                        1/
+                          /                  ./
+                                                  V
+                                                                                                                                                        -/-
+                                                                                                                                                              V
+                                                                                                                                                                                         .6
+
+                    3
+                                      V                                                                                                      V         V
+                                                                                                                                                              l..--- !---
+                                                                                                                                                                                       r-
+
+
+                I1P       /                                                                                                            / V
+                                                                                                                                   /;V
+                q                                                          1. 0
+
+
+
+                                            --- ---
+                                                           ~
+                                                                         f---
+
+                                                                                                                                                                        !--- ~
+                    2
+
+                              ,,/'
+                                      V                                     ,:1. 6
+                                                                                                                              f.                 .---   ~ !---                           1. 6 \
+
+
+                                      v==                                                                                     ~ ::::::-
+                        V                   ~                                2.2-'                                                            ~                                         '2 .2
+                      IV
+                        I--- (a)                                                                                               -   (b)
+
+
+                      o
+                                      I
+                                                                        15                                                 o
+                                                                                                                                   I                                  15                                             30
+                                                                                                                 Flop an gle , deg
+                                                                (a) P ropeller F .                                                                    (b ) Propeller C.
+                                                                                                FI GU R E i .-   Available pressure differcnce.
+
+
+
+    1.0                                                                                                                                         1.0
+           \                                                                         -          f.-      -       --
+                                                                                                                                                           Ii- ~
+                                                                                                                                                             x             --.....
+           x
+    .8      x
+                                                          o Propeller F
+                                                          x          C  .                                                                        .8                                  1'1. "
+                *' \                                                                                                                                                                        1 ~1----
+                                                                                                                                                                                                 0
+
+    .6          •   0 \
+                                                                                                                                                 .6
+                                                                                                                                                                                                           ~ "
+E!.
+                    "'0
+                    x         \                                                                                                                I1p                                                           ~~
+6P
+                                  ~
+                                                                                                                                               6P
+    .4                                                                                                                                           .4 I--- i -",
+                                                                                                                                                              Propeller                 1(~
+                                  ~                                                                                                                              F                       0.5
+                                  x                                                                                                                        <J    F                          .6
+                                                                                                                                                           "'0
+    .2                                ""   ~
+                                               ~ r---               0
+                                                                                                                                                 .2
+                                                                                                                                                      I---
+                                                                                                                                                           x
+                                                                                                                                                                 C
+                                                                                                                                                                 C
+                                                                                                                                                                                            .5
+                                                                                                                                                                                            .6
+
+
+                                                                    xt--                   0
+                                                                                                                               0
+                                                                                           x-                                  x
+
+     o                                       2
+                                                               ~
+
+                                                              ..J                    4                   5                6                       o              .2           .4                     .6     .8       1.0
+                                                                K/K ,                                                                                                                  K/K,
+          F IGUR E S.-Graph ical solu tion of Lhe flow eq uation.                        ' rhe 0° fl a p aL Lhe high,s l)ecd           F IG U RE 9.-Graph ical soluLion of Lhe flow eq ua tion .            The 15° a nrl Lhe 30°
+                                                  condi l ion, 1/;)P.= 1.6 .                                                                                     fl a ps aL Lhe lake·off condition .
+
+
+   F or 1 /~Pc= 0. 5 , propell l' C i 47 per cen t eff-icient,                                                                cr eiL ' 0 in Lotal pr e m e in tllC slip Lresm being 3 .76q,
+giv.ing an average .incr ease in total pr e SUTe in the lip·                                                                  only on -fifLeen Lh of this aver age pre SUTe incl'ca e j
+ tr eam of 3.76 tim th e dynamic pre ure in th main                                                                           se 'n to be av ailable for front pres UTe on Lh c Le
+air stream. (The aver aO'e values of II/q = Tc COl'l'e-                                                                       se t-up.
+ pond.ing to th e giv en valu e of 1/ 3 Pc may be obtained                                                                        The average fron t pr c Ul' ob tained for propellcr F
+from r eference 5.) R eference to table I for the oper-                                                                       und Cl' cond itions imilal' Lo tho for propeller C i
+a ting condi tion of 1 /~/Pc = 0.5 and J{ = 0 show that                                                                       2.67q, 0 1' an incr ease in Lotal pre sure of 1.67q over the
+the aver age fron t pre UTe ob ta.ined for prop ell I' C i                                                                    dynamic pr e ure of the all' tream. Wh en air i fio\\,-
+1.25 time th e dynamic pre UTe of the main ail'                                                                               in O' tm:ough th e cowl.in g, th e front pr e ure b come
+str eam, an increa in total pre UTe of 0.25q over th e                                                                         till gr eaLer . For th e condition of 1 /~/Pc = 0. 5, th
+dynamic pre m e of th e airstr eam. The average in-                                                                           pre ur e added by propeller C incr ea eel from 0 .25q
+
+
+
+
+---.-~-~~~-.~~--                                                        - - - --                                                                                                                                           _ _J
+                                                  PRESSURE AVAILABLE FOR 'OO LING WITH CO WLING FLAPS                                                                                              7
+lor zero ail' flow Lo 1.33q for a condu ctance of 0.11                                             on till same 52-inch nacelle i inLel'esLing. Propeller
+with th e 30 0 flap; und er th e ame condi tions, Lbe                                              diameter of 10 and 17 fcet on this nacelle r epresen t
+prcssure added by propcller F incr eased from ] .67q                                               the maximum and the minimum ratios of FIS encoun-
+to 2.93q. Tbi large change in fron t pres m e with                                                 tercel in presenL-d ay de ign. With tIl e 17-foot propell '1'
+air flow at low pc d is largely an eHecL of th e chang                                             th maximum diameter of the fron t opening will h ave
+III the efrecLive diameLcr of Lbe opening a a r e ulL of                                           a value of x of 0.17 as comp ared with 0.29 for the
+                                                                                                   lO-foo t propeller. It hould be r ealized that, al thou gh
+                                                                                                   the available fron t pre sure r apidly decrea e for eith er
+                                                                                                   propeller wi th a deCI'ease in size of the fron t opening,
+                                                                                                   th e pressure decrea e occms at a sma ller value of x
+     .ZOr-~-+--r-~-+--r-~-+--r-~-+--+-~~
+
+            ~~-+__+--+~o Prope~er Fr-~-+--+--+~
+                                         x          "            C
+                                                                                                   with propeller F than with propeller        beca use of the
+                                                                                                   better blad e sections. Although on th e Lest set-up
+                                                                                                                                                                         °
+      .l6r-~-+--+--+--r-~-+--+--+--r-~-4--+-~                                                      propeller F produ ced much high er fron t pres ure th an
+                                                                                                   propeller 0, this larg diHerenee in th e increa e in front
+     . 08r-~-+--r-~-+--+--r~--+--r~--+--r-4
+                                                                                                    5.6
+                                                                                             --                                                                     I
+                                                                                                                                                                   We
+                                                                                                                                                         l---- f-:5
+                                                                                                    4.8
+                                                                                                                                                    /                     1'\
+                                                                                                                                       /                                     \
+                                                                                                                                   I
+                                                                                                                                                                                  1\
+      .16r-~-+--r-~-+--+-~-+--+--r-4--+-~~
+
+
+
+                                                    ./'
+                                                                                                    4.0
+                                                                                                                           -;                                               \
+      . I z~+-+-+--l--l---+--l--+--l---+--1--+/--J,L--I
+                                                                                                    3.2
+                                                                                                                          I                     /
+                                                                                                                                                                   .6
+                                                                                                                                                                          ~  \
+                                                                                                     H
+                                                                                                                          I 7                                                     1\ \
+                                               x/
+                                                                                                     q
+
+                                                                                                    2.4
+                                                                                                                           (
+                                                                                                                                            ...-...-
+                                                                                                                                                                   .7
+
+                                                                                                                                                                           ~
+                                                                                                                                                                                      \·n
+                                                                                                                          I /
+                                                                                                                          1/                                                      .'" \ \
+                                                                                                     1.6
+                                                                                                                          Ij / ---          -                      .8
+                                                                                                                                                                          r--
+                                                                                                                                                                                     ~
+
+
+                                             1/
+                                                                                                                          (/ V-                                    1.0
+                                                                                                                                                                         I - -r----...      \~
+      .I   Zf-+-4--+----+--+--+-4;--+----+i-;/;/L-+-4--+--
+                                                        '7, =1.00 1/
+                                                                                                     .8 f - -
+
+                                                                                                                          fl                                       1.3                    f\\
+      .08~+~--+_-+--r-+~I-7
+                          / 4--+--r-+~--~-_1
+                                              o /v
+                                                   x         [7
+                                                                                                      o              .C
+                                                                                                                          r                .4                 _6
+                                                                                                                                                                   1_6
+                                                                                                                                                                                _8
+                                                                                                                                                                                       -~        1.0
+
+      .04f-+~--+_---+-7                 V
+                     /~+~--+----+--+--+~--+__4
+                                                                                                                                                        :r:
+                                                                                                           FIG URE ll.-Distribution of pressure increase .               Propelldr C; P. 20° .
+                                //
+                        . -<'   x                                                     (e) -
+               -,,~h!''''- o                                                             1         pre sure would no t exi L for geometri cally imilar pro-
+           o        Grog increase for open nose over closed stream/me nose,O.OOB.
+
+           o                     .4          .6             .B         10       1.2          1.4   pellers 17 fee L in diameLer on tlJO test na cell e_ BoLJI
+                                                  ilp / q                                          propeller would probably give orne blockin g effecL [or
+               (a) 1(=0.039.             (b) [(= 0.079.                 (e) [(= 0.1l8.
+                                                                                                   such an arrangemen L_
+FtG U RE 1O.-    VariatioD of cooling-drag coeflicient with pressur-e drop at I,';,/ P,= I .~ .
+                                                                                                      A poin t of fm ther interest is Lh e fron t pres nrc
+                                                                                                   available for ground operation. Th e manner in whi ch
+ch anging Lhe str eamlin es in honL of Lile co wling. If
+                                                                                                   Lh e availabl e fron t pressure varies with the prop eller
+Lh e cowling opening were no t 10caLed in such a criLical
+                                                                                                   mdi u for ground opera Lion is shown in figure 4 of
+pres m e r egion, the ch ange in pres ur with air flow
+                                                                                                   r eference 6. For a fron t opening of x= 0.29 , correspond-
+would be n early n egligibl . For th e high-speed con-
+                                                                                                   ing to th e te t arrangem en t, the ava ilable front-pre m e
+dition, 1 /~Pc = ] .6, th e pre sure r emain approximately
+                                                                                                                               3
+con tant with radiu .                                                                              coefficien L p,X 10 is equal to 0.25 for a blade-angle
+   The eHect of larger propellers, say 17 feet in diameLer,                                                          n2   D2
+      402131-41-2
+                              RE PORT     TO. 7 20-        A'J'IO AL AD VI OR Y COMMI'l'TE E FOR AERONAUTICS
+
+sc tinO' of 20° for prop cllcr C. F or a valu e of x= 0.17,                            sure added by t he propell er h as b een almost entirely
+COlT ponding to th c large]' prop ellcr , tb e fron t pre ure                          converted into dy namic pres ure in this reg ion . Any
+coefficient i only 0.0] . In oth er word , th e ] 7-fooL                               ch ange in t h e cooli ng-pre sure drop for th e 0 ° flap
+prop eller would givc c en tially zero fron t pre u]'e for                             m ay t her efor e be attributed almo t en tirely to a change
+groun d cooling. Thi s r csul t iUu tl'a tes th e desirabili ty                        in exi t conductan ce. A m all econ dary ch ange occurs
+of a irfoil section s on th e innel' p or tion of th e prop ellcr .                    th at i du e to th e ch an O'e in frOD ' pres ur e.
+                                                                                          The olut ion of th e flow eq u ation (equation (1))
+EFFECT OF EXIT SLOT 0                THE AVAILABLE PRE                         RE      given in figu re        h ow that, fo r large valu e of K IK 2
+     T wo effect resul t from cb angin g t he a rea of th e                            (col're p ondinO' to m all exi t op en in gs), th e agreem ent
+exit lot of a smooth-con to ur exi t design by m ean of                                of th e POlll ts an d th e th eoreticfl.l cu I've j very good ;
+fl ap : (1 ) T hc in crea e in the cowEnO'-cx it area in-                              but , for m all valu e of K jK 2 , t h e experimental po u1 ts
+C 1'(,<1 se" th e con clu tanc   of tb e exit lot nfl d , conse-                       fall b elow th e curve. The el i Crepa)l cy i la rgely elu
+Cj ll (')ltly , the pre ._ure drop ncro th e engin e ; (2) t h c                       to t h e fact t h at A 2 IF= K 2 i n ot a good m ell, ure of tb e
+clHl.llge in the con toLlr of t il e cowliJl g in th e reO' io)1 of                    conductan ce for la rge ex it op eninO's.
+tllC exit ch a)1O'e th e pres ure eli t ribu t ion over t h e                             It m ay be r epeated t h at th e 1I e of A 2/F = K 2 ill Lhe
+cowlin g an d t h er eby nffect t h e over-aU availabl e pre -                         flow equ atioll will give a fir t approx imati01 l of th e
+sure. T he e t wo errect a re separ ately illl.lst['fl,tecl by                         ch ange in coolin g pr e sure drop with exit con ductan ce.
+t h e t e result s aJH l will be ep arately discu seel .                               If t he te t et-up i r ep rodu ced , a closer app rox ima-
+         EFFE CT OF CHA N GI N G THE EXIT C ONDU C TAN C E
+                                                                                       tion may be ob tained by fairing a curve tlu'ouglt th e
+                                                                                       exp el'imell tal p o in t .
+    Th e eA.·ect of ch an gin g th e ex it COll ciuctan ce i · illu -
+                                                                                       EFFE CTS OF CHANGI N G TH E COWL I, G co T O                 It AT THE EXIT ' LOT
+tl'Hted by t h e tes t 0 11 th e 0° fl ap fo r vari olls exit- lot
+H I'('iL.   Table 1 show. th e ntt io or t h e PI' sSUl'e b ehi1l(1                        The c fl'ec ~ of Clll~lI g il lO' t he cowlin g eOll Lo ur n,t It ,
+Lh(' h ltffle pl ate to t he dYllllmi c pre sure or t h e nil'                         exi t slot iillustJ'H,ted by th e tests of th e 15° l~lld Lho
+st l'('l~ m PTlg to h e nearly COll t n.ll t for all COlldi t iOll of                  30° fl aps. T t~hl c I , K = O, sh ow th at ]JTlq ulldergoe
+t hc 0° (I n,p at K = O, reg !~l'dl e of tIl(' slot op (,)lill g 0 1'                  11 g reat cltl1ll'Te WhCl l th e fl ap is cxtelldedul to th e
+til e p ropeller openl,ti)l g cOlld i ti01 l.   Jl examin ation of                       lipstream . Thi c11 aJl ge in Prlq i ('vi lently 11 1'e ult
+Lho P I'C surc di st r ibu t ion for th e 0° fl u.p \ it h }~ - ill Ch                 of t he deri ect iOl l of t h e li p t rea m, whi ch g ive all
+exit slot (fi g. 4) h.ow t he ~\m e resul t for seve nd C01 l-                         in crease in the local velocity over tll. exit. Thi lJl -
+cii tiol lS of propeller operation . F or ](= 0, th e tatic                            crea e ill local veloci y prod uces a negative pr e ll re
+pros urc at t be slot w <t ll e,l, r1 y ze ro 1'0 1' all oncii t iOl l                  behuld th e fl ap . The Jl1 aglli t uci e of PTlq is a fLlll Ct iOl l
+of prop en er op eratioll , indi catillg th at th e Lotal prc -                        of th e prop eller loadill g . a i, clearly howli by t ll e
+
+                                                                           1
+
+
+                                                                1            /
+                                                      I,       I          I / I
+                    \                             j'          /            / /
+                    \          \                  I        II
+                                                                     VV                             1           j       1
+                        \\ H                 If-                          ~                      ~ --
+                                                                                                        I"" -\
+   I - - 1--                       . - --
+                                                       1-/ f          -             -I--- (~ -
+                                                                                                                       1-\1--       -        -- -         . - - . I-
+
+
+                                             :1        I    I
+                        """~                                         I I                                  <:::::pi::
+
+
+
+
+                                                                                                                                                    .
+
+    f-- (a )                                                                             (b)
+
+    <-I                                                                                   1
+   o           .2        .4          .6           .8                1.0        /.2 0           .2          .4            .6             .8              /.0     /.2
+                                                                                   x
+                                    (a) T ake-o tT cond itio n.                                      (b) H igb·speed co ndit ion.
+                                                    FWURE 12.-S1ream ii oes around front of cowl ing. P ropeller .
+                                PRESS RE AVAILABLE FOR COO LING WITH COWLI NG FLAPS                                                       9
+ pressure distributions of figures 5 and 6. The decrease            out id e air stream . If th e air from th e ex it is n ot til
+ in static pres ure for 1(= 0 and 1 /~ P c= 0 . 5 behind            the ame lirection as th at in th e air stream, it will
+ propeller C i 2. 25q for th e 15° flap an d 2.75q for the          cause an upset of th e main ail' flow with a r esultant
+ 30° :flap; th at is, the 15° filtp produced a negative             drag ul crea e. Very low effi ciencies usual1y mdicate
+ pre ure of 47 percent and the 30° fl ap produ ced a                 improper ex it co n lition. The low efficiencies shown
+ n egative pres ure of 5 percen t of the average dynamic            ill tGtble I associated wi th the smitll exits, u h as th e
+ pre m e in the slipstr am, 4.76q.                                  X-in ch slot , do not necessarily iJlclicate poor exit-slot
+    Examination of all t h e r e ults for zero conductan ce         de igns but are p),obably clue t o inacc uracies in
+   how that approximately 55 per cent of the avemge                 measurem ent.
+ total pres ure in th e slip tream i available as clecrea ed             For th e low- peed-flight condition , th e pnmpmg
+ pl'eSS Ul'e at th e exit lot with the 30° Hap. Other un-           ('ffi ciency is of secon dary importitll Ce; the prima ),y
+publish ed mea uroments also h ow th at approximate ly              reqll i ite is l arge avail able pressure for cooliJl g. It !ta.
+ t he arne clecrease in static pres ute m ay be obtaiJl ed          already been shown th at the exten ded fl np i a very
+for th e tatic cOJlClition , wh ere thc avemge dyna mic             efl'cctive me aJl S of producin g la rge availabl e pres u)'o
+pre m e in th e slipstream is given hy T/ .                         eli ff eren ce .
+    T able I shows th at the values of th e n egativc pre -              The extended fl ap CiW e a brea k in the air fl ow,
+   ures for propeller F a re somewhat larger th an those            which ill turn causes th e pumpin g efficien cy to fali
+1'01' propen er C. Thi incr ease jn n eo-ative pressure for         below JOO pe)'cent. F or the take-off condi t ion , th e
+propeller F i due to a ch ange in th e distribu t ion of            difference iJl net efficien cy is too small LO permi.t th e
+th e total-pTe sure iJ1Crea e behuld th e propeller , which         pump effici eJl cy to h e ftcc ll rately computed . Th e
+con centrate more of th e thrust over th e umer section             pumpu1g effi cien cies fi re i:llcludecl for th e 15° alld th e
+01 th e propelle1'.                                                 30° fl aps at 1 / ~ Pc =1.0 , co rrespollClill g t o tIl e climb
+    1'l1 e eff ect of ail' fl ow through t hc slot for hoth th e    cO.lldit ion . For J{ = 0.1.1 8, th e Vitlli e of 7] II Jltlls from 0.7G
+ 15° a nd the 30° f1 aps i sh owll in fig ure 9. AHhough            1'0 )' tl1e l5° fi G),]) to 0.39 for tllC 30° fill)) for prope ll er
+th e scatter of th e test POilltS is expla iJ lCd by th e i11-      If ami from 0.59 for t he] 5° fhtp to 0.32 for th e 30°
+abili ty accurately to detcrmin e K 2 , t be POi]l ts above th e    fl ap for propeller C. Part of t hi s la rge dec )'et), e ill 7] "
+th eoretical curve a re due Ul part to the ill crM e in             for th e 30° flap i , of COli )'se, du e to the di sturb an ce of
+front press ure with air flow.                                      th e air flow , bu t a p art of it i du e to th e fact th at th e
+    No ci a,ta are ~1V<tiJable cOJl ce min g th e ('frect 011 the   30 ° fl ap do c J1 0t con tract the coo] iJW air all th e way to
+pre m e at the ex it obtaulecl by v<\ryulg th e p]'opeller          th e exit. This cOlldit ion may be eeJl ill fi gure 6, wh ere
+di,tmeter with r espect to th e n acelle diameter, hut it is        the m ax i.mum velocity , that i , th e lowest pressure, is
+beli eved th at It tudy of th e te t results will give a goo d.     ob E'rv ed forw,t rci of th e exit.
+indi catiOl l of what pressm e migh t be expected with
+oth er ratios of prop Her to D:1celle diameter. Fo )'
+                                                                                       DESlGN COMPUTATlO S
+example, cO)l sicler th e 1.7 -foot geom etrically similar
+propeller on th e sam e nacelle. The exit lot in this                   Jt 1M beCl l sh own h ow th e press ure avaiJ a ble fo r
+case is locatecl at a value of x of 0.255. I na mu ch as            coolul g with cowliJl g Haps is depend ent 0 11 the con di -
+th e flap produ ces a pre m e drop eq uivalent to 55                t ion in t h e propeller slipstream ; th at is, how th e total,
+percent of the dynamic p)'es m e in th e lip tream for              th e static, ami the velocity p ressures vary with the
+th e case tested, i. t m ay be estimated th at only 45 per cent     propeller operating condition. In order t o illustrate
+of th 4 .76q, or 2.1q, sh ould b e availa ble as uction at          the application of th ese results, two typ ical design com-
+the exit with t h e 30° :O ap. l nasmuch a th e exit lot            putation s are given. Case] imulates th e te t set-up
+would be located in such a c)'i tical pres ure reg ion for          and ca e 2 applies th e l'e ults to a different r atio of
+this te t combinat ion, open il1O" th e flap s migh t result ill    cowlin g diameter to propeller diameter cOlTespollClmg
+a further in crease in ayailable pre sure for coolin g.             to a more modern design of engin e-propen er in stallation.
+                                                                        The pecification s for the two cases are given in
+             EFFICIENCY OF THE EXIT SLOT
+                                                                    table II .
+  For th e high- peed fli gh t condit ion, wi th a properly             Th e co wl in 0' specification mu st now be determined for
+design ed exit slot, th e drag in crease caused by th e             th e va rious condition of operation. The diameter i
+passage of th e cooling air i approximately that asso-              taken as 52 inches for case 1 and as 60 in ch es for ca e 2.
+ciated with 100-percen t plll1ping efficiency (fig. 10) .           The estimate for both cases are for propellers similar
+The exit must fair moothly into th e nacelle and th e               to propeller C. A propeller with bet ter airfoil sec tions
+au' leaving th e exit slo t must b e in th e sam e direction        on th e inner portion will produce greater press ure
+and of approximately t he sam e velocity as th at in th e           difreren es.
+10                                       HEPOH'l' . O. 720-                     A'l'I ONAL ADVI SOHY COMMI TTEE FOR AERONA TICS
+
+                                          TABT,E II                                                         5%-inch opening being requi.reJ for 1 /~/Pc=1. 0 at
+                  DATA FOR DE ION COM P UTATIONS                                                            109 mile per hour. For till case, an efficiency of 72
+                                                                                                            percent and, because of the greater thrust coefficient,
+Eng ine:                                                                    Cuse I             Case I!
+   Power output, hp __. ___ •. __ . _. ___ ._ . _ _                           550                 2,000
+                                                                                                            a front pre ure of 0.8q were assumed.
+   Indicated power, bp ___ . _____ . _________ . _____ ._.__ _                6.50                2.300                                                                                              Case 1      Cuse I!
+    Altitude rating, ft __ .. _____. __________ ______ __. ___________ 0- 10,000                            1/-{iF; _____ .______ _. __ . . . . . . . . ____ .. ___ . _______ ...                         0.5       1. 0
+                                                                                              0- t5, OOO
+   'r a ke·off power, hp _________ _. _. __ _____._. _. _. _. ___. ______ .   650                           to P/Q__ •• ________       _•. _._. _ .• _. ___ •• _ .••• __ • ______ • _._                  4.20      J. 57
+                                                                                                 2,300
+                                                                                                            toP, Ib/sq ft _. . . . . . . . . . _ ... _____ .__           _ ___ . ____ . _. __.           27. 3     46.3
+      top required for cooling at rated power and altitude,
+        lb/sq ft_ . _______________________ . ___ ___. ___... __. __ . ____ _                               toP/top • ___ • ___ . __ ._ . _. __ •.• ______ • ______ •. _._ ••.. _._ .• _..               1.09      1.16
+                                                                                        25            40
+                                                                                                            ](/](, . __ .. _.. _.. _... . _... _...... _._. __ .. ___ . . ___ .. _... __ . . _. ___      0.30      0.40
+    Indicated power at one·balf rated speed a nd minimum
+       blade·angle setting, hp ____ __________ . ____ ____ _. ___ _._                                       f(, _.. ___ .. __ ... _._ .... _... __ .... ____ . ____ . ___ . __ . _____ . ___ . _._._ _   0.20     0.375
+                                                                                       100           3 10
+                                                                                                            Width of xit slot. in. _____________________ ._ .. _________ .. , __ .. __ ...                2%        5%
+   top required for cooling atone-halfrated speed and minimum
+       blade-angle setting, lb/sq fL __ . _.. . . ___ ._ . . _.. __                    1.0           1.2
+   l\ Iaximum engine diameter, iD . ___ _ ______ _ ___ _____ __ __                       52            00
+                                                                                                               Ground operation,- The cooling estimate for ground
+   Engine·baffle conductance, f( .. ___________ . _                                    . 00          . 15   opera,tion i mad e for th e tatic-thru t condition a·t one-
+Airpla ne:
+    Top specd at ratcd altitude, mph ____ ____ ._ ___ _ _ ____ __                      230           300
+                                                                                                            h alf engine speed and minimum blade-angle setting.
+    Dynamic pressur at top speed and rated altitude, Ib/sq ft .                        100           145    A conservative esLimate will be made by assuming the
+    Cruising speed, mph .. __ ..                                                       209           270
+    Best climbing speed, mph ___________ . _____ . .                                   110           145
+                                                                                                            front pre sure to be zero . If th e flap etting is th e
+    D yna miC pressure for climbing speed at sea level, lb/sq ft. _                     31            54     ame as for th e take-off condi tion , tlP / tlp will also be
+Propeller:
+    Type of eontroL ________________________ ._ ... ___ .. _._.                  <')           <')          the arne.
+    Numberofbladcs ____ ___________ . . . _._"_,, _..... .                                                                                                                                           Case I      Casee
+    Speed at rated engine speed, rp m ... _ _____ ... ___ . ______ .              1,500              900     CT :statie) . _                                                                             0.13     0. 135
+    Diameter, ft. _______ . ______ ______ . _. _____ .. ______ . ___ ..              10               17     !/= T / , Ib/sq ft "                                                                        6.15     6.64
+    Blade-angle setti ng at top speed a nd ratcd atti tude, deg . __ .             32;~              3H     to P= -p" Ib/sq fL _ _                                                                       3.3      2. 99
+                                                                                                            to P/::.p ____ _ _                                        _ _ •••• _ __ __                   1.09     1.16
+    Blade-angle setting for full-power climb at best climbing
+       speed, deg __. _.• ____________ .. _. . . . . _._ . . . . . _                    22            25    top produced, Ib/sq ft . _ ..                   . .-._. _ . __                               3. 1     2.6
+    Minimum blade-aogle setting, deg _. __ ... _ _ ___ _                                15                  top required, Ib/sq ft . .. ___ . ___ ._. _ _.. _                                            1.0      1.2
+                                                                                                      16
+    P ower asborbed at one-balf rated speed and minimum blade-
+       angle setting, bp .. _._ . _____ .. __ .... ____ . ___ . __ ..                   50
+                                                                                                            Thus, the engine hould be adeq uately cooled und er
+                                                                                                     100
+                                                                                                            ordinary ground op raLinC' cond itions.
+  I    onstant speed.
+                                                                                                                                                     COL CL SIONS
+  Top speed,- Th e computation Jor tbe top -, peed
+                                                                                                     1. The pres ure available for cooling j shown Lo be
+condi tion i q ui te straightforward.
+                                                                               Case I Cuse I!
+                                                                                                 a  direct  function of th e tbTU t di k-loading coefficienL
+toP(for toP/q= l ), lb/sq ft. _                                                     100     145    f th e prop ·ll r.
+toP/top _       .•                                                                4. 00   3.63
+K /K ,= "\/to P /tolJ-1 • . '                                                     1.73    1. 62
+                                                                                                     2. The maximum uction obtained with a 30° cowl-
+f(,= A , /F ~._                                                                 0.0346 0.0925    ing flap located in a Tegion wher e the taLic pres ure faT
+WidLh of ex it sloL (14 diam .X A ,/Ji'), in. __ . _. ___ ._ . .... ____ _____
+                                                                 ~                    Y.i            I ~~
+                                                                                                 th e 0° flap i equal to that of the fr ee ai r stream is shown
+     Full-power elimb.- For the full-power climb , tlP/q to be equal to approximately one-half th e average
+must fir t be known. For case 1, thi yalue is ea ily total pre sure of the prop ell r slip tream, which i
+obtained from fwure 7 (b). For case 2, the estimate may given by the Stun of tb e dJ11amic pres l.u'e and Lll e
+be made in th followin g m[Inner:                                                                thrust loading.
+     In a climb at 115 mile per hour with 2000 horsepower                                            3. The total pres m e in front of the cowling i
+  being rtbsorb ed by a 17-foot propell er , l /~Pc = 1.33, or cri Lically depend nt on th e raLio of Lhe fr ont opening Lo
+ P c = 0.425. Witllfl,n effi ciency of opercent, T c= 0.34 ; the prop eller diameter for rouncl- h rtnk propelleT C.
+that is, the increa e i.n total pre sure behind the pro- Propeller F , with auJoil sections elo el' Lo th e bub, gave
+peller i 0.34q, For thi combination , 45 percent of the a higher Lotal pre ure in front of the cowlinC'.
+ total pre ure of the slipstream m ay be develop ed by                                              4. For the take-off condition wiLh the 0° flap , pro-
+ the 30° flap ; 45 percent of 1.34 is 0.60.                                J ow, because         peller C produced only one-ha1£ a much available
+ of the large propeneI' hub , an allowance rou t be made cooling pr essure a propeller F.
+ for blocking, and a front pressure of onl:y 0.7q may be                                             5. For thi same oper ating condiLion with Lhe 30 °
+ rt tuned . The over-all available pre ure difference Hap, propeller C produced an available cooling pre lire
+i tIm ] .3q.                                                                                     three times [IS large a was ob tained wi th the 0° fl<LP
+                                                                               CIIse I Ca •• I!  and prop eller F produce 1 a preSS Ul"' difference Lwice
+ l/-{iP , . . ~                                                                   1. 0<)   1.33
+ toP/y                                                                              1. 7    1. 3
+                                                                                                 that obtain ed with the 0° flap.
+ to P, Ib/sq fl                                                                       53      70     6. For the take-off condition, the 30° flap, and a
+ toP/top __                                                                       2. 11    1. 75
+ Kif(, _"                                                                          1. 05  0.87
+                                                                                                 cond   uctance of 0.11 , the pressure drop acro             th e
+  J(, ._                                                                         0.057 0. 173    the baffle plate with propeller C was 3.17 and with
+  Width of ex it slot, in. __ . . . ..                                                H     2H   propeller F was 4.85 times th e dynamic pre me of
+      Take-off,- Probn bly the condi tion of greate t in tere t the au' stream .
+  is the take-off or immediately thereafter. Computa-
+  tion imilar to th e preceding ones indicate that, for
+  case 1, ati factory cooling i obtained with a 2%-in ch L A 'G LEY MEMORIAL AERO AOTICAL L ABORATORY,
+ flap opening at 1/ 3 Pc = 0.5 at fin a irspeed of 50 mile                                             ATIO AL ADVISORY COMMITTE E FOR AERO , AUTICS ,
+  per hour. The conditions foJ' case 2 are more severe, a                                               L ANGLEY FIELD , VA., May 9,1940.
+                                                           l'RE             URE AVA ILABLE FOR COOLI                                              a WITH CO\VLI G FLAPS                                                                                                              11
+                                            REFERE CES                                                                                         .A.C.A. N o, e-Slot Cowling. R ep. N o. 595, NACA, 1937.
+                                                                                                                                       4. \Veick, Freel . E. , and Wooel, D onald H .: Th e Twen ty-Foot
+1. Th eodorsen, Tbeodor , Brevo rt, M. J ., and     tickl , Geo rge                                                                         Prop eller R e earcb Tunn el of Lhe Na ti onal Advi ory Com -
+    W .: Full- cale T e l of     .A.C.A. Cowlings. R ep. N o.                                                                               mi tt e for Aerona utics. R ep . o. 300, ACA, 192 .
+    592, ACA, 1937.                                                                                                                    5. Sti ckl e, George W. , Crigler, J ohn L. , a nd N aiman , Tr ven :
+2. Theoclor CD, Th eodore, Brevool' t, M. J ., and St ickle, George                                                                         J£fI'ect of Borl y N ose Shap e on th e Propulsive Rffi ciency of
+    W. : Cooling of Airplane E ngi nc at L ow Air Specds.                                                                                   a Propell er. R p . N o. 725, NA A, 1941.
+    R ep . N o. 593, NACA, 1937.                                                                                                       6. Sti ckl e, Geo rge V.r., a nrl Joy ner, Up hur T .: Th e Pre. ure
+3. Theodol'scn , Th dore, Brevoor t, M. J ., 'tickle, George W. ,                                                                            Avail a ble for Ground Cooling in Front of t he Cowling of
+     and Gough, M .      .. Full- cale T c ts of a        cw T yp c                                                                          Air-Cooled Airplane Engin c . T . N . N o. 673, ACA , 1938.
+                                                                       TABLE 1- CONDE J E D E XP E RIM E TTAL R E SULTS
+
+                                                                   1 /".yP;~ 0.5                             J / ..yP;~0 . 6                                   J / ..yP; ~ J. O                                           11' P, ~ J. 6                                   Gil
+
+   I    I?la p
+       n ng le
+                  S lot
+                 QPcn·
+                   i ng
+                            Pro-
+                            pr l·
+                                          I I,
+                                          l?
+                                                      --
+                                                          6.p                                       6.p
+                                                                                                                                       -----------------
+                                                                                                                                        6.p                                                            6.1)
+                                                                                                                                                                                                                                                                   ---
+                                                                                                                                                                                                                                                                     Est i·
+       (dcg)      (in .)     Ie I'
+                                                           q
+                                                                            ~
+                                                                            q
+                                                                                         ~.
+                                                                                                     q
+                                                                                                             I q I
+                                                                                                                  ~            ~.
+                                                                                                                                         q
+                                                                                                                                             ~
+                                                                                                                                             q       "p                     ~ ,
+                                                                                                                                                                                                           q        I ~q             ~.
+
+                                                                                                                                                                                                                                              t
+                                                                                                                                                                                                                                                    ".              m a t ed
+
+                                                                                                                    O NDUe'l'ANeE ~ O
+
+
+           0      0. 00       }'     .           .                0.488                           ------              .- 0. 552         .--                       -- . 0.716        --                                             0.753           -- - .. O.               1
+           0       .25       F           O~ 019           2. 82    .4 2-0.27                        2.21      - 0.22      .549            1. 34             -0. 15         . 714                       1. 09         -0· 1<1--1     . 753                 -- .          .0 4
+           0       .50       F            .03             3. 05    . 488-.22                        2. 7       -.1        .550            1. 37              -. 16         .716      ----              I. 10          -. 16         .754      - - - . ---      ~
+                                                                                                                                                                                                                                                                        .0 5
+                                                                                                                                                                                                  ..                  - . 16        · i n3      - --.---                .085
+           0
+           0
+                  I. 00
+                  1. 75
+                             F
+                              l'
+                                          .075
+                                          . 131
+                                                          2.80
+                                                          2. 79    · 5
+                                                                   .192I =:?~            "          2.39
+                                                                                                    2.46
+                                                                                                               -.2,
+                                                                                                               - . 12
+                                                                                                                          .5'18
+                                                                                                                          .55G
+                                                                                                                                          I. 40
+                                                                                                                                          1. 38
+                                                                                                                                                             - . 16
+                                                                                                                                                             -. 14
+                                                                                                                                                             -. 12
+                                                                                                                                                                           .714
+                                                                                                                                                                           .713
+                                                                                                                                                                           .719
+                                                                                                                                                                                                       J. 10
+                                                                                                                                                                                                       1. 0
+                                                                                                                                                                                                       1.0
+                                                                                                                                                                                                                      -. 16
+                                                                                                                                                                                                                      -. 14
+                                                                                                                                                                                                                                    .750
+                                                                                                                                                                                                                                    . 75J
+                                                                                                                                                                                                                                              --                        .0 6
+                                                                                                                                                                                                                                                                        .0 7
+           0      3. 25       F           . 238           2. 76
+                                                         -.02      .4 2                             2.43       -.07       .544            I. 31
+          15      1. 75       F           .142          -2. 5~
+                                                          5.li2    · <174                           4.01      -1. 9        . 540          2. 20              -.97          .687                        1.64           - . 70            6            ... -     ~        . 165
+          30      3.25        F           .259            5. 7
+                                                        1-3.15     .462                             4. 42     -2.29       .521            2.30              -1.12          . 65-1                      Lii            -.82          .541                      ..        .326
+           0       . 00              ..      ._--              -- .472                            -- 1. 30 -- ----    .. . 542          ----                               .721                                                     · no ---- --- -------
+           0       .25        e         .019      I. 24  -.2       . 47                                        -.24       .549               1.14            -. 15         . 723                       1.00           -. I.,        .773   _.- _. ..- .-
+           0        .50       e         .038      1. 52  -.16      .472                              1. 43     - . 16      . 543             1. 09           -. 1.5        . 71 2   --                  . 99          -. 15         · ii i   -.. .. . ..
+           0      1. 00       e         .075      1. &2  -. 13     · '182                            I. 44     - . 14     .550               1.11            - .1 5        . 71 4                      1. 00          -. 16         . 773                          .. -
+           0      I. 75       e         .1 31     1. 37  -.20      .474                              1. 29 . - . 15       .539               I.J O           -.14          .7 13                       1. 00          -. 16         . 767                                  - ..
+                                                                                                                                                                                                                      - . 14        . 768
+                                                                                                              1-.
+           0      3. 25       ('        .23       I. 07  -.02      · '173                            1. 17         05     .539               1.06            -. 11         .721                         .99
+           0      4. 62       C         .336      I. 37  -.09      .473                              1. 3      -.10       .540               1. 07           - . 14        .72 1                       I. 01          - . 17        · i£i2                    ..        .095
+          15      1. 75                 . 142     3.    - 2.40     .472                              3. 17 -1. 77         .53                1. 79           -.90          . 700     ----              1.50           -.66          .706          .. -
+          30      3. 25       e         . 259     4.20 -2.96       .454                              3.32 -2. 1           . 51               1. 99          -1.02          .658          ...   --"     1. 57          -.72          .571      - ---- - -       ~   -----
+                                                                                                               C O NDue 'rANeE~ 0.039
+
+
+            0     0.00        F      . .. --- - _.. -- _._-- . - 0.4                                ._. .. -- ---- 0. 552                                             .. 0. 716      ----_.
+                                                                                                                                                                                                                       0.70
+                                                                                                                                                                                                                                   0.753
+                                                                                                                                                                                                                                    .744        0.31
+                                                                                                                                                                                                                                                         ---- -----
+                                                                                                                                                                                                                                                          0.090
+            0      . 25       F          0.019            I. 44          1. 64          . 483       1.17
+                                                                                                    1. 47
+                                                                                                               1. 30   . 552
+                                                                                                                       .548
+                                                                                                                                             0. 47
+                                                                                                                                              .70
+                                                                                                                                                              0. 79
+                                                                                                                                                               . 59
+                                                                                                                                                                           . 716
+                                                                                                                                                                           .716
+                                                                                                                                                                                    -------            0.22
+                                                                                                                                                                                                        . 15            .53         .74          1. 50      .094
+            0      .50        F           . 038           l.             1. 20          . 486                    . 99                                                                 .-- --
+            0     1. 00       F           .075            2. 14           .73           . '1 5      1. 62        . 58  . 548                     6             .34         .7J3     .-------            .68             .29         . 744        1. 67      . 10
+            0     1. 75       F           . 131           2.24            . 58          · <I        1. 6         .44   .5                    1. 07             .21         . 718    -_._----               2            .16         .734         1. 11
+                                                                                                                                                                                                                                                      2
+                                                                                                                                                                                                                                                            . ll6
+            0     3.25        F            .23            2.40            .43           .4          I. 97        .33   .547                  1. 14             . 13        .708      . -          ..                    . 09        .724                    .124
+           15     1. 75       F            .142           4.94         - 1. 64          .47         3.69 -1.21         . 539                 1.              - . 59        .681          0.52          1. 42          - . 40        .63            .44      .222
+           30     3. 25       F            . 259          5.73         -2. 3            . 459       4.28 - 1. 73       .514                  2.12            -.75          .632           .27          1. 58          -.57          .472           . 21     .422
+            0      .00        e                  .-                               ..    .472      ----.38 -- --- .80-- .542             '"                          .-     .721         ----           .. -- ----                   .770      -- - - ... --.-----
+            0      . 25       0            ~ 01 9          .3             . 90          .479                           .549                   . 2,5            .68         .725     --------               . 18         .68         . 774
+                                                                                                                                                                                                                                                   '"    .-   ._---
+            0      . 75                    .03             . 64           .70           . 472         .55        . 65  .542                   .40              .53         . 716    --------               .36          .5 1        .770
+                                                                                                                                                                                                                                                    '"             ------
+            0     1.00        e            .075            . 84           .47           .480            6        .4 1  .5<18                  .71              . 30        . 716     -------               .57          .27         .760           1.2             --------
+            0     1. 75       0            . 131          1.00            .36           .476          .95        .30   .545                   .7               .19         .713     ---_._--               .70          . 17        .751            .92            ----
+            0     3. 25       e            .23             .92            .35           .476          .9         .26   .542                   .86              . 13        .711      ------                .77          . 11        .741            .70            ..
+            0     4.62        e            .336           1. 39           . 15          .472        1. 26        .12   .545                   .95              .05         .7 12     ..                    .85          . 02        . 740           .7                  .132
+           15     I. 75       e            .142           3. 14        -I. 66           . 472       2.52 - 1. 23       .536                  1. 50           -. 48         .686            .39         1. 27          - . 32        .660            .39            --------
+           30     3.25                     .259           3.70         -2. 13           . 453       2.94 -1.54         .514                  I. 65           -.66          .640            . 19        1.28           - .39         . '1 1          . 15           --------
+                                                                                                                e OND          eTANeE~0.079
+
+
+
+            0     0.00        F      -----  --        -        . .. ----- .. 0. 4                 ----   ---_._ -- 0.552 .- --                                  ---- 0.7J6               ---- -----,-
+                                                                                                                                                                            ------ .. 0. 09     O. 4
+                                                                                                                                                                                                       -                           0.753
+                                                                                                                                                                                                                                    .748
+                                                                                                                                                                                                                                              -- O. 6 .. 0.090---
+            0      .25        F       0.019               0. 75          1. 91          .483        0.60   I. 57    .551   0.25
+                                                                                                                                            .34
+                                                                                                                                                       0.97
+                                                                                                                                                        .86
+                                                                                                                                                                      . 709  ------- .19
+                                                                                                                                                                      .717 -------               .77                                . 753          5. 14                . 093
+            0      . 50       F            .038           1. 13          1. 74          .492            4   1. 36              .553
+            0     1.00        F            .075           1. 57          1. 33          .484        1.12    1. 05              .549         .57         .69           . 713 -------    . 40      . 60                               . 744          1.53                 . 103
+                                                                                                                                                                                                                                    .733           1. 37                . 120
+                                                                                                                                                                      .710 _.
+            0     1. 75       F            . 131          1.66           1. 10          .4          1. 38       6              . 551        .74         . 52          .714 --------    .61       .43
+            0     3. 25       F            .238           1. 93                         .4 6        1.53     .70               .546        1.00         .40                       ..   .76       .31                                .711            .93                 . 135
+           15     1. 75       F            . 142          4.18          -:79            .477        3.32   - . 56              .538        1.62      -.18                  .676          0.76          1. 19          -.0           . 618           .58                 .247
+           30     3.25        F            . 259          5. 25        -1. 67           .456        4.05  - 1.16               .512        1. 6      -.44                  . 610          .35          1. 3           - .27         .412            .29                 . 500
+                                     .. - . -- ---- ..                       ..                   ---- . .. --                 .542                          --            .721      ------ ----.05.. ---..78                       .770          _.-              ---          ..
+            0      .00        e
+                              e            . 019           .1 8
+                                                                       -----
+                                                                         1.13
+                                                                                        .472
+                                                                                        .478         .17    1. 00              .549
+                                                                                                                                        --   ~-
+
+
+                                                                                                                                            . 11
+                                                                                                                                                 -- --
+                                                                                                                                                        .85                .720     -----_.                                         .769            .68            --------
+            0      . 25
+            0      .50                     . 13            . 42          1. 00          . 477        .34     . 89              .545         .19         . 75               .713      ------     .13       . 73                      .763            .62            --------
+            0     1.00                     · J7S           .50                          .477         .4i     . 76              .5'1         .3          . 62               . 7J6                .33      . 57                       .752            . 64
+                                                                                                                                                                                                                                                   1. 15
+                                                                                                                                                                                                                                                                   ...     --
+            0     1. 75                    . 131           .7 1             .73         . 475        .70     .65               . 543        .53         .47                .70       .. -               .49             . '13       . 752                          ------
+            0     3.25        e            .238            .71              .65         .477         . 73    .55               .540         . 70        .35                . 713                        .63             .30         .734
+                                                                                                                                                                                                                                    .716            .74
+                                                                                                                                                                                                                                                          I        ----
+            0     4. 62                    .336           1. 07             .4          . 476       I. 02    .37               .549            2        .23                .711              ----       .76             .20                                          · ]65
+           15
+           30
+                  1. 75
+                  3.25
+                              e
+                              e
+                                           . 142
+                                           .259
+                                                          2.63
+                                                          3.55
+                                                                        -
+                                                                       -1.44
+                                                                                        .472
+                                                                                        . '152
+                                                                                                    2.22
+                                                                                                    2.72
+                                                                                                           -.60
+                                                                                                           -.96
+                                                                                                                               . 533
+                                                                                                                               .512
+                                                                                                                                           1. 23
+                                                                                                                                           I. 46
+                                                                                                                                                     -. 17
+                                                                                                                                                     -.34
+                                                                                                                                                                           . 67
+                                                                                                                                                                           .620
+                                                                                                                                                                                           . 47
+                                                                                                                                                                                           .26
+                                                                                                                                                                                                        .9
+                                                                                                                                                                                                       1.14
+                                                                                                                                                                                                                      -.03
+                                                                                                                                                                                                                      - .15
+                                                                                                                                                                                                                                    .634
+                                                                                                                                                                                                                                    .4 14
+                                                                                                                                                                                                                                                    . '12
+                                                                                                                                                                                                                                                    .21
+                                                                                                                                                                                                                                                                    ------
+                                                                                                                                                                                                                                                                   -_.- _ ..
+
+                                                                                                               eOND        eTA ' eE~0. 1I 8
+
+
+            0     0. 00       F          ----  - --               ..    ----  .        0. 488     --.- -.                  0. 552       .. -           ..             .   0.7 16    ..                            -- _.            0.753                --- -- ------
+            0      . 25       F           0.0 19          0. 33          2. 21          . 474       0.33         1. 75      . 55 1           0. 18            1.0·1        .713     ------             0.06               0. 89     .74            0.22      0.0 9
+                   . 50       }1'          .038            .54           2.03           . 484        .50         I. 59      . 5·19             .23             .95         .719      --.                   . 14            .86       752           2. :l7      .093
+            0                                                                                                                                                                                              .2(;                                    1. 08      . 097
+            0     1.00         I"          .075            .86           1.7            . '186       . 76        1. 36      .552               . 42            .87         . 714                                           .76      .743
+            0     1. 75       Jo'          . 131          1. 30          1.4            .47         1.13         1.16       .543               . (\4           .72         .7 10                           . 41            . G:J    .73            1. 4       · II I
+            0     3.25        1"           .23 '          J.52           1. 2(;         .47         I. 36         .97       .539                 2             .59         .708                            . 62            .1iO     . 7()'1             9      . 141
+           15     J _ 75      }<'          . 142          3.68            .02           . 1177      2.77          . 09      . 53             I. 30             .1 6        . 673      0.76                 . 97            .2:,     . 632           .7 1      .228
+           30     3.25        1<'          . 259          4. 5          -.92            . 456       3. 58       -.65        .5 10            1. 67           -.17          . 59:3      .39             1.]                 .0 1     .383            .3 1       .540
+            0      .00         c                                 ...                    · '172                              .,<;42                                         . 721       --                                           .770
+            0      .25        0            .019            .13        1.22              .479         .1 2         1. 05     . 5'19             .05                7        . 719     -----                 .0-1                     . 768           .36            --       .
+                    .50       e            . J.            .J.!       1. 16             • <I '0      . 14         I. O~     .547               .10             .83         .7J3      ------                .07             .7       . 7~            .28
+            0                                                                                                                                                                                                                       .76 1              1            .
+            0      1. 00      e            · l i5          . 4G       1. OG             .4 2         . ,10        .93       .549               .2-1            .75         .7 17    -----                  . 19            .70                                                  --
+            0      I. 75      C            . I :!!         . :16       .97              . 117 \      . :19        .84       .542               .3              . ~         .7 14               --          .36             .60      .7             1. 63            ---
+            0     3.25        e            .238            .n          .8 1             . 4. 0       .72          .75       .,<;42            . 57             .5:3        .709                            .52             . '1
+                                                                                                                                                                                                                           .35
+                                                                                                                                                                                                                                    . 73 1
+                                                                                                                                                                                                                                    .700
+                                                                                                                                                                                                                                                    .87
+                                                                                                                                                                                                                                                    .69
+                                                                                                                                                                                                                                                                   ..
+            0     '1. (,2     0            . 336           .89         . 74             . 47         .89          .62       .54f)             .73              .42         . 709     -- .59                .66                                                          · 179
+           15      I. 75      e            · 142          2.10       -. 20              . 472       1.70        - . O~      .5.1'            I. 01             . 20        . OS:!                          .77             .25      . 642           .48            ----         .
+          :10     3. 2.5      e            .259           3. 17         - I             .4-18       2. 32       - .4        .503             1. 29           -.0           . 620           .32             .92             . 04     .38'1           .21            - - -- ...
+    -----                                                                                                                                                                           -----
+                                                                                                                                                                                                       U S. GO VE RNM E NT P RI NT IN G O FFI CE : 194 1
+I
+I
+r
+
+
+
+
+        ,
+    f
+                                                             '\.
+                                                                   "-
+                                                                        " " ......
+
+
+                                                                                     z
+                             Positive directions of axes and angles (forces and moments) are shown by arrows
+
+                     Axis                                    Moment about axis                              Angle            Velocities
+
+                                        Force
+                                      (parallel                                                                            Linear
+              Designation        Sym- to axis)     Designation              Sym-           Positive    Designa-     Sym- (compo- Angular
+                                  bol  symbol                                bol           direction     tion        bol nentalong
+                                                                                                                            axis)
+
+            LongitudinaL ____     X        X       Rolling _____              L            y~Z         RolL ____     cf>    u             P
+            LateraL __ _______     y       y       Pitching ____              111          Z~X         Pitch ____    (J     v             q
+            NormaL _________      Z        Z       yawing ____                N            X~Y         yaw ___ __    if;    w             T
+
+
+
+
+Absolute coefficients of moment                                                      Angle of set of control surface (relative to neutral
+             L                   M                                                     position), 8. (Indicate surface by proper subscript.)
+       0 1= qbS             Om= qcS
+       (rolling)            (pitching)
+
+                                                     4. PROPELLER SYMBOLS
+
+D,
+p,
+         Diameter
+         Geometric pitch
+                                                                                     P,        Power, absolute coefficient CP =      ~lY'
+pjD,
+V',
+         Pitch ratio
+         Inflow velocity
+                                                                                     a.,       Speed-power   coeffiCient=~~~:      pn
+
+V.,      Slipstream velocity                                                         T),       Efficiency
+                                                                                     n,        Revolutions per second, r.p.s.
+T,       Thrust, absolute coefficient OT= pn~D4
+                                                                                     <P,      Effective helix an gle=tan-{2:n)
+Q,       Torque, absolute coefficient CQ =         9
+                                                  pn D
+                                                         5
+
+
+                                                    5. NUMERICAL RELATIONS
+1 hp.=76.04 kg-mjs=550 it-lb./sec.                                                   1 lb. = 0.4536 kg.
+1 metric horsepower= 1.0132 hp.                                                      1 kg=2.2046 lb.
+1 m.p.h.=0.4470 m.p.s.                                                               1 mi.=1,609.35 m=5,2S0 ft.
+1 m.p.s.=2.2369 m.p.h.                                                               1 m=3.2S0S ft.
+

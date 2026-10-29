@@ -1,0 +1,1154 @@
+               NATIONAL ADVISORY COMMITTEE
+                     FOR AERONAUTICS
+
+
+
+                                                  REPORT No. 564
+
+
+
+ TESTS OF A WING-NACELLE-PROPELLER COMBINATION
+      AT SEVERAL PITCH SETTINGS UP TO 42°
+
+
+                                                     By RAY WINDLER
+
+
+
+
+                                                             1936
+
+
+For sale by the Superiuteudent of Documents, Washington, D. C.   •   •   •   •   '.   ••   ••   -   Price 10 cents
+                                                   AERONAUTIC SYMBOLS
+                                           1. FUNDAMENTAL AND DERIVED UNITS
+
+                                                            Metric                                              English
+
+                             Symbol
+                                                                          Abbrevia-                      Unit               Abbrevia-
+                                                     Unit                   tion                                              tion
+
+           Length ______ _     l
+                                           meter __________________                 m           foot (or mile) _________   ft. (or mi.)
+           Tirne _________     t           second _________________                  s          second (or hour) _______   sec. (or hr.)
+           Force _________     F           weight of 1 kilogram _____               kg          wcight of 1 pound _____    lb.
+                                      -
+           Power ________      P           horsepower (metric) ______ ---------- horsepower ___________                    hp.
+                                          {kilometers per hOUL _____    k.p.h.   miles per hOUL _______                    m.p.h.
+           Speed _________     V                                                 feet per second ________
+                                           meters per second _______    m.p.s.                                             f .p.s.
+                                                                                            I
+
+
+                                                      2. GENERAL SYMBOLS
+w,      Weight=mg                                                       v,     Kinematic viscosity
+g,      Standard acceleration of             gravity = 9.80665          p,     Density (mass per unit volume)
+          m/s 2 or 32.1740 ft./sec. 2                                   Standard density of dry air, 0.12497 kg_m- 4 _s 2 at
+                                                                          15° C. and 760 rom; or 0.002378 Ib.-ft.-4 sec. 2
+m,      Mass = W                                                        Specific weight of "standard" air, 1.2255 kg/rna or
+                g
+I,      Moment of inertia=mk2 • (Indicate axis of                         0.07651 lb./cu.ft.
+         radius of gyration k by proper subscript.)
+        Ooefficient of viscosity
+                                                  3. AERODYNAMIC SYMBOLS
+S,      Area                                                            i,,))            Angle of setting of wmgs (relative to thrust
+StJ),   Area of wing                                                                      line)
+G,      Gap                                                                              Angle of stabilizer setting (relative to thrust
+b,      Span                                                                               line)
+C,      Chord                                                           Q,               Resultant moment
+b2                                                                      0,               Resultant angular velocity
+        Aspect ratio                                                      Vl
+S'                                                                      p-,              Reynolds Number, where l is a linear dimension
+V,      True air speed                                                       J.I.
+                                                                                           (e.g., for a model airfoil 3 in. chord, 100
+q,      Dynamic pressure = ~p V2                                                           m.p .h . normal pressure at 15° 0 ., the cor-
+
+L,      Lift, absolute coefficient OL =     :s                                             responding number is 234,000; or for a model
+                                                                                           of 10 cm chord, 40 m.p.s. the corresponding
+                                                                                           number is 274,000)
+D,      Drag, absolute coefficient OD - "{!s                                             Oenter-of-pressure coefficient (ratio of distance
+                                                                                           of c.p. from leading edge to chord length)
+        Profile drag, absolute coefficient OD. = ~S                                      Angle of attack
+                                                                                         Angle of down wash
+        Induced drag, absolute coefficient On, = ~S                                      Angle of attack, infinite aspect ratio
+                                                                                         Angle of attack, induced
+        Parasite drag, absolute coefficient On• ~ DSp
+                                                  q                                      Angle of at tack, absolute (measured from zero-
+                                                                                           lift position)
+0,      Cross-wind force, absolute coefficient Oc = q~                  'YI              Flight-path angle
+R.      Resultant force
+                     REPORT No. 564
+
+
+TESTS OF A WING-NACELLE-PROPELLER COMBINATION
+          AT SEVERAL PITCH SETTINGS UP TO 42°
+
+                           By R AY WIND LER
+                Langley Memor ia l Aerona utical Laboratory
+
+
+
+
+   7-1063-:)6
+                                NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+                                               H EADQUA RT ER S, N AVY BUILD ING , WASH INGTO N, D. C.
+
+                                                         LABORATORI ES, LAN GLEY F I E LD, VA.
+
+              Created hy act of C'on~r('ss appro\'e{\ "la rcb :~, 101.J. for tbt' ~lIpe n- isiun and lli l'l'ction of the scienlific
+          study of til(' prohlems of f\ igh l (r. s. Colle, Tille 30, Sec. 131 ). Its membl'l'ship was iucrl'ascd to 1:) by
+          ad aJlPl'oY('t1 ~lar('h 2, 1!l2f1. The members an' apPO inted by tbe l'resicll'nt, and ~en'e as such withoul
+          t'ol1lJ1ell~atioll.
+
+JOSEPH S. AMES, Ph.           D., ChairJllall,                                           ( 'II.\IlLES A. LIN DBERG II , LL. D.,
+       Baltimol'l', 1\1d.                                                                        X ew Yo rk C it,\'.
+DAI'ID " '. TAYLOR. D. Bng., Vic(' ('/tairll/(lTl,                                       \ \ 'ILLl A M P . ?I I ACCIlA ('E: 1'; :-; , .Jr. , LL. D .,
+       ,\Yashinglon, D. C.                                                                       Was hin gto n . D . C.
+(' II.\HLES G. ABBCYl', Sc. n .,                                                         A UOUSTI NI, \ V . R OBINS, Bri gadie r Genera l, United State' A l'ln~' ,
+       SC'cret;11'~· . Smithsonian lnstilution.                                                  Ch ief M ateriel Divi s ion, Air Co r ps, W r ig-h t F iC'ld, D ayton,
+L Y1UN J. BRIGos, Ph. D .,                                                                          Ob io.
+       ])irC'ctnr, ::-i'alional Hureau of Standards.                                     Euo I';" I': L . Ym AI.,   C. E.,
+ARTIIl'l~ B. COOK, Hear A{lnlirnl, Uniled Statl';; Na v.\·,                                      Directol' o[ A i r l'o III III C l,(,P, Departmenl or CO ll llllcree.
+       Cbief, BUI'l'au of AC'l'ollautic!', Nayy De)ln1'lmf'111.                          ]<; /J WAlW 1'. \ Y AH"!;'!l. M . S.,
+\r ILLIS HAY (;nl':C:O. I \. A.,                                                                 ?\ew Y o rk Cit,\'.
+       Chier. L'nitl'll Statl's \\,patlll'r 111lrp<1l1 .                                  O so.\l~ \YESTO\'ER, l\IHj ol' Ge ncI'n l, Un iled      tale:; Ar lll Y,
+1I.\ llHY F. G1.' (;O£,' ][EIM. M. A.,                                                           Ch ief of A il' COI'[)S, W a l' D epartment.
+       P o r t ' Yashing:ton, Long- I~laJ1(l, ::-i'. Y.                                   OR\'l LLl<; W nIGII 'I" Sc. D. ,
+SYDNEY ?II. KRAUS, Captain, United Stales NHV~',                                                 D uyto n , Ohi o.
+       Bureau of .\ ('l'onaulic>;, ::-i'av.\' DC'Jlflrlllll'l1t.
+
+
+
+                                              GEOROI-: " '. LE\\, IS. li iree/or of .·l croHauli(·al J? e8careh
+                                                               .TOlIN F. I' rCTORY, Secre t aI'll
+
+             IIENHY J. K IlF:ln. t.'llrlillccr ill Charyc. I ,anrl /e!! .1I eJllor ial . l crollal/tica / /,/I/)",.,,/or!!. I ,ollflley Fiel ri, Va, •
+                                          .JOliN .T. I DE. TerTil/if'/I /    \ .'<8i8/(I11/ ii' H llro'[lt', I 'aris.   1-'1'111/('(,
+
+
+
+
+                                                             TE CH NICAL COMMITTEES
+         AERODY ' AM ICS                                                                                      AIRCRAFT A CCIDE ' 1'S
+         P OW ER PLANTS FOR AIRCRAFT                                                                          IN VENTIO NS AND DESIG N S
+         A IRCRAFT STRUCTURES AND MAT ERI AL S
+
+
+                                       C()(j/'(fin(l/ioll "f H cscu/'ch .vccd.~ of Jlifi / a1'!J and airi / .t ria/ion
+                                                          I 'reparat i oll Of Research P1'0(frams
+
+                                                                  .1I/ oratiOI1 of Problellls
+                                                                l 'r(,l'enti,(J1l of Dll pl'iratiol1
+                                                               ( ' ml 8ir/('ra I ion   ()f I nTclllioll"
+
+LANGLEY MEMO RIAL AERONAUTICA L LABORATORY                                                   OFFICE OF AERO NAUTICAL I I TELLTGE CE
+                           LANGLEY FIELD. VA.                                                                           WASHINGTON, D, C.
+
+               rnif]('(l ('on!lllct , [or all agenC ies, of                                             Col1 C'ction  ('l m;s ifi eat ion, com p il n.lion,
+           s(; ientiJit r('s(,<1r('11 on tbe fundfl menta l                                          a nd el i sem ination or sc icntific anel tech-
+           1)1'o1>lel1l::; of flight.                                                                n ical infOl'mation on ue rollautics.
+                                                REPORT No. 564
+
+    TESTS OF A WING-NACELLE-PROPELLER COMBINATION AT SEVERAL PITCH
+                           SETTINGS UP TO 42°
+                                                     By RAY \ VINDL"I!
+
+
+                        S MMA RY                               5-foot chord and 15-foot span, the nacelle, an l the
+    A 4-joot model oJ Ncwy pr01 ellel' No . 4412 was tested    propeller de cribecl in refcrel1C'e 2 were u cd. Th single
+in conjunction with CLn N. A. C. A. cowled nacelle             sting was replaced by a double one with on' et at the
+mounted ahead of (~ thick wing in the 20-foot propeller-       rear, partly for convenience and partly to ec ure a
+research tunnel. A range of propeller pitches from 17°         larger negative angle of attack. (ee fig. 1.)
+tv 42° at O.75R was cow'ed, and jar this JJTopeUer the            Tb e method of te ting was similar to that of refer-
+efficiency reached a maximum at a pitch setting oj 27°;        ence 2 except that tare runs were omitted becanse
+at higher pitches the efficiencies were slightly lower. The    previous te ts had shown that Lhe tare W:18 independell t
+cONected propulsive efficiency is shown to be ind pendent      of lift and therefore not required in the ana ly i. Th
+of the angle oj attack for the high-speed and the climbing     winO" \Va te ted for airfoil characteri tic. from - 10°
+ranges oj flight. A working chart is presented for the         to 10° angle of attack with and without Lhe nacelle.
+selection oj similar propellers over a wide range of air-      Propeller te ts were then made with propeller pitche
+plcLne peed, engine power, and propeller revolution
+87 Jeed .
+                     I NTR OD CTIO
+
+     Of the numerou N. A. . A. report on the hal'-
+Ilcteristic of metal propeller, probably the mo t
+II idcly u cd is reference 1, which prov ides working
+
+cha rt for the election of propellers for use with ClJO"ines
+located in the va riou hap e of fu selage commonly
+I I. ed at the time of puhlication . A , ufficient rang   of
+airplane peed, engin e power, propeller pi tch, and
+propeller revol ution speed wa covered in these te t
+Lo l1lret and even to exceed the needs at that time.
+The recent increase in high peed and the u e of more
+iliO"hly powered and of geared engines has, howe er,
+llrce ita ted additional proprUer tests.
+       unent research of the N. A. C. A. on wing-nacelle-
+propeller arrangements, confined mainly to a propeller
+pitch of 17° at 0.75R, ha hown that po ition B of
+rcferen e 2, with the nacelle located in line with and
+about 30 percent of the chord ahead of the leadil1O"                            FI(lI:RE i.- Test set-up.
+
+edge of the wing, is one of the desirable combinations
+[or u e witb radial engines. Accordingly, this positionfrom 17 ° to 42° at 0.75R for wing angles of attack from
+was elected for an exten ion of the program to includ e- ° to 5°.
+te t of a propeller-pitch range from 17 ° to 42° at       Th e VlnD range for each pitch wa obtained in the
+0.75R. The ubj ect paper presents the re ult of the e  following manner: A revolu tion peed wa et th at
+                                                       would require about the maximulll torque of the motor
+tests in a form suitable for the election of a propeller
+for a wide range of condition ; the r e ults cover the at the ground point. This revolution speed wa beld
+})resent needs as well as some future po ibili tie     con tant and the air speed gradually increased up to
+                                                       about 102 miles pel' hour. In order to obtaiu the
+              APPARATUS A D ME THODS                   higher values of FinD, the ail' peed wa held at 102
+  The te ts were conducted in the ]. A. C. A. 20-foot mile per hour and the revolution peed decrea eel.
+propeller-re en rch tunnel (ref rence 3). Th wing of I The following va lue o[ propeller peed (wi.thin ± 15
+                                                                                                             1
+2                                      RE P ORT N AT IO NAL ADVIS ORY CO MMI'J"J'EE FOR AERON A ' I' TCS
+
+l'. p. Ill.) \\'ere u ed for the constan t revolu tion-speed
+portion of the te ts.
+
+                     Pit ch at O.iIl 1'. 1 ProJll' llcr spC'ed
+                                                                         \ h err
+                                                                                   q, dYJl;lmic preSS lIl'e ( X p \'2 ) .
+                         f) eyrce :<           T. p. m.                                       p, ma s den ity of th e air.
+                             Ii                 2,800
+                             22                 2,31l0                                     11, velocity .
+                                 2T             1,950
+                                 :l2            I, TOO                                      S, area of the wing.
+                                 :IT            I. 170
+                                  12              I. 100                                    ,} ', thru t of propeller operating in fron t of a
+                                                                                                    body (ten ion in crankshaft).
+                                      RE ULTS                                               R , r es ultant forward force.
+                                                                                           D , drag at aiven angle with propell er r emoved.
+  Th ese res ul t arc presen ted in the sarne grnphi e Itnd                               Dr., drag with propeller r emoved at the lift
+tabul tH form ns i.n previo us wing-nacelle r epor t, . A                                           o btltined with the propeller opera ti ng
+deL:tiled disc u sion of Lh e aCC Ul'n cy fi nd 111nnner or                                          (same dynamic pressm e) .
+presentntion may be found ill r efer ences 2 and 4 . The                                 D.D, change in drag of body du e to action of
+                                                                                                    pr opeller .
+                                                                                             11, r evolu tion per unit time.
+                                                                                           D , propeller diameter .
+                                                                                            P , power.
+                                                                                  The airfoil characteristic of the wing alon e and for
+                                                                             the win g with nacelle are given in figure 2.              0 tare
+                                                                             corrections h ave been made. It hould be noted that
+                                                                             measm ements have been m ade for clo e incremen t
+                                                                             of angle of attack, especially in the r egion of minimum
+                                                                             drag.
+                                                                                  Although propeller te ts were made a t 17 °, 22°, 27 °,
+    . 4 f---A-H-                                                             32 °, 37°, and 42° pitch at 0 .75R a t each of - 0 , _ 5°,
+                                                                             - 2 .5°, 0°, 2.5°, and 5° angle of attack , only a few
+                                                                             sn,mple test cun e are shown. Figure 3 and 4 , which
+                                                                             are for the two extreme of pitch te ted, how a on-
+                                                                               ider a ble ca ttering of the te t poin t, par ticularly of
+                                                                              the thru st a t the hiah pitch (42°) . The power varia-
+                                                                              tion nre largely a function of pitch, not angle of a ttack,
+      o                                                                      and all power da ta arc reliable, since the torque was
+                                                                             measured direc tly a,nd i not a computed value as i
+       o                                               .12          .16  .20  the thru st (thru st= r e ultant force + drag). The
+                                                                              efllciency points, being computed from the thru t and
+              FIGt..'HE 2. .\ irfoi l r un'cs, propeller remo\'cd .
+                                                                              power , show a di per ion imilar to the tlu'u t .
+ nondimensional coefficien t and symbol employed are                               In te ts of thi type there i an inheren t cattering
+ given and defined n follows :                                                of      thru t-cocfficien t point at m aximum efficiency
+                                                                              and beyond , which increase a either the angle of
+                           lift
+                   OL= qS (propell er r em oved)                              a t tack or propeller pi tch is increased . Three r ea on
+                           draa                                                e;..rist for thi di per ion. First, catterin g 0 curs
+                  OD = qSo (propeller r emoved )                               because the thru t, a computed value, i determined
+                                                                               a      the algebraic sum of the two measured qu antities
+                 OLp= rrt   ~ (propeller operating)                            R     and   D.           zero thru t is approached the e quanti-
+                            q,-
+                   r _ (T - Lill) (R + I!l                                     ties    ar e  of   the   ame order of magnitude but of oppo ite
+                      T-       pn2TJ I -          pn2D 4                         ign and consequen tly a mall error in either m ay be
+            ( '..        _ R+ Dr,                                              It large percen tage error in the effec tive thrust . econd,
+             ' 0", . -       pn2/Y                                             Ll1cl'easillg the anale of attn,ck, in addition to incr ea ing
+                                p                                              I he drag force , in trodu ces correspondingly larger forc e
+                   (',.= pll 3U'.,                                              flu ct ua tion tha t ar e independen t of propeller pitch .
+                         _ (T - D.D)V _ (R + D ) V _ ( OT) ~                   Third,         and probably mo t importan t , in order to
+                     'rI -           P         -         P       - Op nD       obtain th e higher yalu e of V /nD that corre pond to
+                            (R+ D IJ l ' = ( OTCOTT')~                         higher pitches, the revolution peed of the propeller
+               'rICOTT. = ---;-.,----P                  Op nD                  must       be deer ea ed because the tunnel air peed is
+                            TEST                  OF A WING- ACELLE- PROPELLER COMBINATION AT SEVERAL PITCH SE'l""l'INGS                                                                                                                                                         3
+
+      /8 I--                                         ,..
+                                                           ~
+                                                                                 ~ r-"..
+     · /S                                                                                                           x
+                                                                                                                                            i'<-
+                                                                                                                                        x
+                                                                                                                                                    h     ~
+                                                     ~
+
+     · /4
+                                IT t, ~ """ ~
+                                                                        ..A
+
+
+                                                                                   ""                               •                                            '-"
+     .12
+            t----
+                                                                                                                                                                               '"1\·           1\                              17"
+                                                                                                                                                                                                                                             At 0.75R
+                                                                                                                                                                                                                                                        42·
+                                r----- r-                                                                                                                                                                                       o--- cP-- x-I -
+                                                  -t                                                                                                                                                 ~                          D- - - CT - - + _
+     · /0                                                                   +~     +:=:t                                                                                                                                                          1 - ./0
+                                                                                                                                                                                                                                0 - - - TJ - - t>
+                                                                                               +"1--- -+
+                                                                                                                                                                                                         \
+     .08
+            1--0 ......                                                                                                      +,'-+- +. . .                                      .                              '\
+                                                                                                                                                                                                                               · 'V--- G p --            t;. _   f---
+
+                                                                                                                                                                                                                                                                        8
+                                 '>I.,
+                                         10.,              !9e-<' ~ I<>¢.                                                                           \,---" ~          •                                             \
+Cp
+                                                     _/                                                                                     &:::-
+                                                                                                                                                                                +
+                                                                                                                                                                                           • t--
+     .06
+                                         I?
+                                              t! b.
+                                                            'b.
+                                                                                               \
+
+                                                                                               ~V
+                                                                                                                    ....... V-
+                                                                                                                                 I--'                              +'-.:
+                                                                                                                                                                             i'<t-
+                                                                                                                                                                                       ~
+                                                                                                                                                                                                     · ':--r\. \1\ '\                                                   6
+                                                                                                                                                                                                                                                                            7J
+     .0 4
+            r-l}                li       lo~
+                                                                    hiB-.        V                 ~                                                                                       +.."                     ~ I \ 1\                                            4
+                            /                              ~ k;,)                                                                                                                                    + I~                  \ '\
+                                                                                                                                                                                                              1>-- . 1\
+                       1/                         V                              1 ~'8,
+                                                                                                       \
+                                                                                                                                                                                                            + ;-
+     .02                                                                                                                                                                                                                                                                2
+             9                  V                                                          r~o                                                                                                                      +I~.                 \
+            I~ v                                                                                   Q \ \,
+                                                                                                                                                                                                                           ~N
+       0.                                                                                                                                                                                                                                                               0.
+                                                                                                           'Ie                                                                                                                     t     l'
+
+        o                                       .4                .6                      .8                /.0.                                 1. 4           /.6                  /.8             2.0.           2.2            2.4         26       2.8        3.0
+                                                                                                                                                        Vj'nD
+                                                      FIGURE                3.-Sample curves, uncorrected.                                       Hi ght-baud propeller No. 44 12, 4-Coot diameter, a=- •.
+
+
+
+     . 18
+            /..----'                              ~ I"<
+                                                                      I-~
+     ./S
+                                                                                                                                    X'
+                                                                                                                                                        -..,.~
+                                ~
+                                         ~o ~-il-
+                                                                                                                                                                 I~
+     · /4
+                                                           ......
+                                                                        .'       ro
+                                                                                                                                                                  '"            ~
+                                                                                                                                                                                     x\
+     ./ 2                                                                                                                                                                                  x                                   17°
+                                                                                                                                                                                                                                         At 0. 75R
+                                                                                                                                                                                                                                                        42·
+            -....... r-----                                                                                                                                                                    "'-                              o - - - Cp - - x - I -
+                                                                                                                                                                                                 '\
+     .10
+                                              -I"-*- -:j:                          ..,.
+                                                                                                                                                                                                      [\                        ~===S;==~ - '--- ./0
+                                                                                                                                                                                                                                ' V - - - Q p- - t;. _
+
+
+
+                                                                                                                                                                                           . ·· .\
+                                                                                                                                                                                                                                                                 I-
+                                                                                                           ~
+            -<lI-
+                       --,
+                                                                                                                   -.±..            +
+                                                                                                                                 ""+- :-p,                                                 •                                                             1
+     .08
+                                 "B-1><.
+                                                  ,<§I' ,
+                                                           o$-f! ~~ ~                                                                               Pk           I--
+                                                                                                                                                                  "'-
+                                                                                                                                                                                • i>                        --;1\.,                                                     B
+
+                                              )                                            ~.o                             /,
+                                                                                                                                 V          -~
+                                                                                                                                                                  ....'-.;
+                                                                                                                                                                                                                    \ r\
+     .06
+                                         w           -'p
+                                                                                               \ ../ V"                                                                      "'"+
+                                                                                                                                                                                       ~                                I\" \
+                                                                                                                                                                                                                                                                        6
+                                                                                                                                                                                                                                                                           7J
+     .0.4 1-0                   li~                          "\,
+                                                                                 ~ V"~                                                                                                         ~                          ~l                                            4
+                            /                              ~;; ~                                                                                                                                         I~                   ~\
+                                                           ;<>
+                                                                                 .~~
+     .02
+                       1/                         V                                                                                                                                                          ~~                                                         2
+               !                V                                                          F~)                                                                                                                          1,,\       x
+
+            ~
+                       V                                                                           t ~o
+       0.
+                                                                                                                                                                                                                               \. 1\                                    o
+                                                                                                       'j,                                                                                                                         ~
+        o                   .2                  .4                .6                      .8                1.0                                  1. 4           /.6                  /.8             2 .0           2.2.           2.4         2.6      2.8        3 .0.
+                                                                                                                                                        V;"nD
+
+                                                       .'WURE               'J.-          ample curves, uncorrected. Eight-hand propeller                                                  TO.   4412, 4-Cool diameter, <>=0°.
+             7 40(;:l-36-2
+4                                                           REPORT NATIONAL AD\,! ORY                                                                      OMMITTEE FOR AERO I AUT I CS
+
+
+       · /0
+
+
+       .08
+
+
+
+      .06
+
+    C Tcorr
+
+
+      .04
+
+
+      .02
+                f--
+
+          0
+              0                .2               .4                .6             .8                   1.0                      I.c           1.4                16              ' /.8              2.0               2.2          2.4        2.6         2.8      3.0
+                                                                                                                                                    'V/ nD
+                                                                Fll a 'HE .1.    Co mposil(, of ('o r:cc:ed thru s l.                               Hi ,;:ht-hand propeller No. -'112. 4- fool diarneter.
+
+
+       · /8                                                                                                                                                                                                      I
+                ~--                               ~
+                                                         - ~
+                                                                                                                                                I
+                                                                     N~
+       · /6
+                                1
+                                                                                         -                  ---                                      ,....~,                                        App~oXimate Cp against V/ nf) _                             t---
+                                                                                                                                                                                                                                                     I
+       · /4
+                          ~ t---
+                             --.;;;
+                                                         - r::s \ii.-
+                                                                            I
+
+                                                                                   [I. +--                            I
+                                                                                                                                         l--t-
+                                                                                                                                                                  ~
+                                                                                                                                                                                I~ V
+                                                                                                                                                                                              /-
+                                                                                                                                                                                                       .:                 at maXimum '1 I
+                                                                                                                                                                                                                                   I                             --
+
+                                                                                         -                                                                           I          v/ i\
+
+                                                                                                                                                                                               ,
+                                                                                                        ~                                                                                                                           0(0 Symbol
+                ~ I                                                         1                 I             ,         I   ""'" ~                                                                                                  -8.0
+       · /2
+                    ~l;:---                                                        t                                  I
+                                                                                                                                         I':                   /v                             1\                                  -S.O --- ---- -
+                                                                                                                                                                                                                                   2 .S - - -
+
+        · /0. l -
+                                            I
+                                                            ' - r=~
+                                                                                    I
+                                                                                              I
+                                                                                                            "'~
+                                                                                                                      :                  ,
+                                                                                                                                         1/
+                                                                                                                                                    >\ 1                                               r\
+                                                                                                                                                                                                                                      0---
+
+
+
+                                                                                                                                                                                                            ~
+                                                                                                                                                ,
+                  ~-                    -                                                     I                                ~k l                                  I\,
+                                                                 --                                                                             I
+        .08
+                                    I       I
+                                            I
+                                                                             --""'1'1                                 VI                 ~                                      ~                                \\ \--4Co of 0. 7SR
+                                                                                                                                                                                                                     \~~
+                                                                                          f/"~ ~7"
+        .0.6 '==                                                                                 J I ~r-                                                                         '\ 37"
+                                                                                                                                                                                                                          I'\~
+                                        -
+                                                             r= ~                                                                                                                     ~
+                                                                                                                                                                                          ~                                \\l\
+        .0.4
+                   f..-
+
+                                    I
+                                                     I
+                                                            t-- N
+                                                                                ~
+                                                                                      ~ ~22 ° ~                                                                  ~
+                                                                                                                                                                     ~\                       1'\                                '0
+                                                                                                                                                           "
+                           I
+                                                                             i"-         II                 j\..                         I\ :                            ~~                        ~                              \~\ \\
+                                                                                                                                                                                                       r~
+        .02
+                                                                                        I'\~                                                        ~                           ~                                                     '\\
+                                    I
+                                            I
+                                                                                              \
+                                                                                                                          '"\                        \~                          ~~
+                                                                                                                                                                                                   2.0.
+                                                                                                                                                                                                        ~
+                                                                                                                                                                                                                      2.2.         2.4        2.6        2.8       3 .0
+              0.               .2                .4                 .6            .8                    1.0                    /,2            1.4      /.6                          1.8
+                                                                                                                                                 Vj nD
+                                                                         I'IGl'l<£ Ij.    Composite of power .                               Hight-hand prOI eller ~o ..1-11 2, I-foot dhlll , ler.
+
+
+
+                                                                                                                                J",,- ~ "'- r-::.                                              b
+           .8                                                                                     "-
+                                                                                                     --
+                                                                                          "-.: "<'\ -- I ~
+                                                                                                              "-
+                                                                                                                  ~
+
+
+                                                                                                                                             ~
+                                                 b~ ~ ~i\\ #' ~ M ~~                                             i"                                                                                                                          0( 0 Symbol
+                                                                                 ~                                                           ~                                                              "-
+                                                                                                                                                                                                                                           -8.0.            -I--
+
+                                             #~ ~~ V~~ ~ ~,             ~~\ ~      ~~          ~   i\       I\~      ,\                                                                                              ~,                    -S.O ---- - - --
+                                                                                                                                                                                                                                            2 . S - - - - I--
+                                            {4A~ t7/n
+           .6
+                                                              ~ f:"",
+                                                                            :'\\    \\1             ~        \   [\~  ,\                                                                                                                      0.---
+
+                                    t!       .- P'~Yv
+     7] corr.
+                                                                      \      ~,\      1\1\\             1\\ \       \1\\
+          .4
+
+
+
+           .2.
+                                                     ~~/V
+                                                           ,?
+                                                           - l--
+                                                                                                  I
+
+
+
+                                                                                                            /7"
+                                                                                                                           I
+
+                                                                                                                           \ c2°
+                                                                                                                                               \\
+                                                                                                                                                IIII 27"
+                                                                                                                                                                         " ~\
+                                                                                                                                                                         II \1 32°
+                                                                                                                                                                          \ I   f--
+                                                                                                                                                                                                   ,
+                                                                                                                                                                                                   \             1
+                                                                                                                                                                                                                      I[
+                                                                                                                                                                                                                           1\ \'..1 \ 42° of o..7SR
+                                                                                                                                                                                                                 \~=- \_. \ - t---
+                                                                                                                                                                         ~\
+                                                                                                       \                       \                     \\                                                          I                                   -    -
+                   I-               ~
+
+                                                                                                      iji                      1\                   l\\\                                                         I               '1\\ I-
+              0.                .2               .4                 .6             .8                       /.0                    /.2          /.4      /.6                         /. 8              2.0                2.2       2.4        2.6        2.8          3.0
+                                                                                                                                                   V/ nD
+                                                FI (. l HE. 7,        C'mnpO$ilC of correctcd propulsh'c cfficienc y .                                         Hight-h and propeller :\0. 1112, i-foo t diam c ter .
+                        TESTS OF A WIN - 'A ELLE-PROPELLER                                                                                          OMBI ' A'l'IO                             AT             EVERAL PI,\, H                                ETTINGS
+
+
+
+   ./0
+               ""'r--- r--
+                                          - r----..r----.- r--::: ~ ---
+                                                f--.
+                                                             -.::
+
+
+
+   .08
+       f-- t----   r-- ~                                            -....:
+                                                                             ~
+                                                                                  - ---- I--
+                                                                                         ~ '---- ~ r-- r---
+                 ""'~                                                                                      ~                                                 ~
+
+                                                       "" ""                               "-                                      """,
+
+   .06
+                                                ~                                               I"-                 ~                             "-                      "'"      "" 42° of O.75R
+                                                                                                      "-
+                                                       I"-                                                 "-                 I""                            ,,-3 7"
+
+                                                                                                                                                                                         '"
+                                                                    '"\ ""
+  Tcorr
+                    I        I                                                             ~                    \                       ,,,,,3 2°                     f"-..                       ~
+   .0.4
+                                                                                                                                                                              '\
+                                                                                                1\                   \27"                         r\
+                                                                                                                                                                                             ""
+                                                1
+
+                    I                                                             \                  \ 22°                    1\                        "-                          \,                                   \,
+   .02
+                                                                                           \17"            \                            '\                    \                           '\                                   "-
+                                                                                                1                   1\                       \                        \                                                             "-
+        o
+           o               .2              .4                 .6                      .8           "  !.O
+                                                                                                                      '\
+                                                                                                                          /.2                /.4
+                                                                                                                                                   "-
+                                                                                                                                                   Vj n.D
+                                                                                                                                                                /. 6                    1.8       ""    2.0               c.2
+                                                                                                                                                                                                                                            "-
+                                                                                                                                                                                                                                             c.4           2.6    2 .8           3.0
+
+                                                                    FlOUR}; .-A \' erage correcled i hrusl. Righi·hand propeller No. 4412, 4·fooi diameler.
+
+
+     ./8                 -                 -
+                                                    "~
+                                                                     ..........
+                                                                                  t-- t--..
+     ./6
+                                                                                                                                                        -~
+
+                                 t-----                                                                                                                                                                                                                                          -
+     .14                ------                  I--
+                                                         ---                                                                                                              "'"                                                                                            -   -
+
+
+
+                                                                    I--
+
+                                                                                                                    ---- ~                                                          '"1\
+     . /c -......:...
+
+
+     ./0
+                        --       I---
+
+                                                                                             --- i'---
+                                                                                                f--.
+                                                                                                                                         "'"
+                                                                                                                                                    '" \                37"
+                                                                                                                                                                                                  \
+                                                                                                                                                                                                        \ '4co of 0..75R
+                                                                                                                                                                                                                \
+Cp                                                                                                                  "-
+                                                                                                                                                                                                                     \
+     .08                                                                           -......
+                                                                                                                              ~2°                                      1\
+              -
+
+              -
+                                 -                                                           '----- ~
+                                                                                                           "",27"
+                                                                                                                                        "-'\ - -                          -
+                                                                                                                                                                                   \ [\           -             -
+                                                                                                                                                                                                                         \
+      06
+                                                         ---r--                                                     r\                                  \                                                                          \    \
+         r-
+                                                                                     "'-
+                                                                                                                                                             1\                               \
+                                                                                    ""
+                                                                                                                              1\
+     .04
+                                                         I----- I'--.,
+                                                                                                " " 22°
+                                                                                                                                   \                                                              1\                                        1\
+                                                                                                                                                                                                         \                                      '\
+                                                                                                           ~                            1\                                \
+                                                                                  "" ""
+                                                                                             17"
+     .Oc
+                                                                                                                    1,\                           1\                               1\                           1\                                   1\
+                                                                                                                                                                                                                     \                                '\
+                                                                                                                          \                            \                            \
+         a                 .2                  .4              .6                     .8
+
+                                                                          FIGURE 9.- Average power.
+                                                                                                   ""  /.0                1.2                    1.4
+                                                                                                                                                    Vjn.D
+                                                                                                                                                          /.6
+
+                                                                                                                                   Right·hand propeller No. 4412, 4·foot dial11eter.
+                                                                                                                                                                                        /.8              c.o                  2.c            2.4            2.6   2.8                3.0
+
+
+
+                                                                                                                                                                                                                                        T I
+       .8                                                           17    A               ? r\.......- /                                          ~                                                   -......
+                                                         'i                                                                                                  ~
+                                                                                                                                                                                   ~
+
+                                                                                                                    --- '" 1\
+                                                    /'                  /              /'                                                                                                                       ~
+
+                                           / '/
+                                                                    V
+                                                                                   / '\ /       \                             ...--'I
+                                                                                                                                                             1\                           [\                             ~         4cO      0/0. 75R
+       .6
+                                                                                                                                                                                                                              '\
+                                     j     /
+                                                         /          /' / ~ /                                                                                      \                            \37"
+'7 corr.
+       .4
+                                 / V // V/, 7 [,/7                                                                                           \                           3cO
+                                                                                                                                                                                                  \                                1\
+                         / / ~ ' / /'                               /'                                                                           \ 27"                  \                             \                                \
+                        /1 i j/ /                                                                                         22°                                             \                  \                                                                                   I-
+                  /; (0 y                                                                             17°
+                                                                                                                                                                                          I- \
+
+
+         0.
+              ~V
+                           .c                  .4              .6                     .8               /.0                /.2                ·1.4       /.6
+                                                                                                                                                                              \
+                                                                                                                                                                                        18
+                                                                                                                                                                                                          T
+                                                                                                                                                                                                         2 .0                 2.2
+                                                                                                                                                                                                                                            \2. 4           2.6   2.8                3.0
+                                                                                                                                                 Vj n.D
+                                                J.' w till ~ JO.          .\ vemge corrected propulsive efficiency.                                            Ri ght·hand propeller No. 4112, 4·looi diamete r.
+                                         REPORT NATIONAL ADYI ORY COMMI TTEE FOR AERO AUTlCS
+
+limited. A the thru t coefficient varies directly a                                                              pitch a at the lowest. The cur ves for the 37 ° pro-
+the thrust and inversely as n2, the scatterLt1O" with                                                            peller pitch at 0° angle of attack of the \ ing are an
+propeller pitch will vary roughly as (rjnD) 2 for the                                                            example of wbat would res ult if mo t of tbe te t points
+ arne value of tltru t coefficient a nd the same v,tlue of                                                       were obtained under adver e condition re ulting from
+                                                      r-                    ~
+
+
+                                                                                                           I
+                                                                                                                                                         J                                              I
+                                                                                                                                   -          If'
+                                                                                                                                                                 I                                      I
+                                                                                     ~
+                                                                                                                                                in              48"
+                                                                                                                                                c:i
+                                                                                                                                               ~
+                                                                                     I                   60 "
+                                                                                                                          ----                18.5 "
+                  /.0                                                                                                                                     '"'-
+                                                                                                  (Pos ition B, refer ence 2)
+
+
+                                                                                                                                                                                £nvelope,
+                  .8                                                                     ~                      >-                                                                          ,
+                                                                                      ,                                    ~                           )"'.;;
+
+
+                                                    // b/     V      ~
+                                                                k ~ ""'"      ~~
+                                                                                      ~ -
+                                                                                         V
+           l1corr.
+
+                                                  ~ VI  /
+                                                              /
+                                                            V/ V ~ ~ ~~             :j~~ I)
+                                                                                              /
+                                                                                                                                                                 ""               ~
+
+
+
+
+                                                                                                                                                                           ""
+                  .6
+
+                                                            ~     ~ f\ '>
+                                                                                "f.      42·
+                                               /V
+                                                              /
+                                                    1// / /                     32·
+
+
+                  .4
+                                              if/i~ ~V             ,'f\ 22· 27"
+                                                                                                                                        I
+                                                                                                                                        I
+                                                                                                                                          I
+
+
+
+
+                                         / l;j /:V                                                      --I---
+                                                                                                                                   17" at 075R
+
+
+
+                  .2
+                                  !0 ~ /
+                            Ih ~              /
+
+
+
+                   o    ~
+                                                                                                                      I
+                                                                                                                                                                Envelope ___
+                                                                                                                                                                                 -/
+                                                                                                                                                                                      /
+                                                                                                                                                                                                   V-
+               2.0
+                                                                                                                                                                                  ~
+                                                                                                                                                                                    ~Z·-
+                                                                                                                                                                      Y                     ~
+                                                                                                                                                                                            "37"
+                                                                                                                                                                  /-V
+                                                                                                                                                                      /
+
+                  /.6
+                                                                                                                                                       V
+                                                                                                                                                 V L--- L---
+                                                                                                                                    /         k:
+                                                                                                                                              p -----                      k--
+                                                                                                                                                                                  '32   0
+
+
+
+
+                  U?                                                                                       I          ~ t/ ---- L--- 1--- 'cr
+                                                                                                                                   "7
+
+                                                                                                                        V
+              V                                                                                    $                  ~ --- l--- 1---~2·
+                                                                                         ~ ~ L--- J---
+             nD                                                                                                       ~                                 ---17" at 0.75R
+                  .8
+
+                                                                    A ~~ ~
+                                                      ~~
+                                                                           V
+                  .4
+
+                                 j ~        ~                                 .. -           -l-
+
+
+                   o
+                        V                .4                   .8                                         1.6                 2.0                      24                  2.8             3.2       3.6
+
+                        Fffil'la; I I.    \\ 'O l'''ill~ (' h a rl , ,, ' , ,\. C .. \ . rl:l<'ellc in Iinc \dl h t lJiek win!!.    Hig-1H · lw nd propel' ..',. 1\,'0. '-4121 l-foot diameter.
+
+
+force I1u ct untion s. On this basis tbe flu ctuation of                                                          the three reaso ns disc u sed . "file thru t i higlt and
+the thrust coefficient would increase witb pitch and                                                              the effect on the efficiency i more obviou ; thi t hrust
+wou ld be from 4 to 10 time as great at the highe t                                                               curve wa omitted in obtaining average value.
+             'rESTS OF A WING-NACELLE-PROPELLER COMBI A'rIOr                AT        EVERAL PITCH SET'rINGS                                     7
+                M E THOD OF A ALY SI                         is mall, being almo t within the accuracy of the ex-
+   A full di eu ion of the difficultie and methods of        periment. The corrected propu1 ive efficiency may
+comparing wing-nacelle-propeller combination i ginn          therefore be considered to be independent of the angle
+in reference 2 and 4 find need not be repefitod h 1'e.       of attack except in very pecifil ases find. may be
+T he "corrected propul ive efficiency" was introduced        Laken a the average over the high-speed find Lho
+in reference 4 and is the basis on which these data are      clim bing range.
+analyzed.                                                       The working chart given in figure 11 i to be u cd
+   Fio-UTes 5, 6, and 7 fife compo ite curve of corrected    in the ame manner a tho e of reference 1. Thi
+thru t, power, and corrected propulsive efficiency for       chart i , of course, ba ed on certain fixed te t condi-
+all the pitches te ted from - ° to 0° angle of attack        tion and in its application due allowances hould be
+of th wing; the curve for 2.5° and 5° are not includ d       made for the effect of change in propeller diameter,
+on account of the scattering of points previously men-       power input, and other variables.
+tioned. These data have been corrected similarly to             The ffect of the propeller on the lift i hO\\']1 in
+those of reference 4 except that, instead of computing       fLgure 12. The curve apply only to these particu lar
+the difference in induced chag and jet-boundary cor-         te t condi tion and mu st not be considered to have
+rection, it wa read directly from figure 2 and ther fore     general application. They have been in erted to give
+include a slight change in profile drag. Thi method          the change in lift cau ed by the propeller and al 0 to
+of correction, considered admi ible ince previou test         how that for a given arrangement the effect of pro-
+have hown the tare drag to be independent of the lift,       peller pitch is slio-ht with a :/i'(ed-diameter propeller at
+give lightly higher valu s of thru t and efficiency than     con tant value of          as.
+                                                                                          0 te t point ( ee fig . 3 and
+
+the method of reference 4, which a umes no change
+in profile drag. The difference in thru t and efficien y
+obtained by the e two method i mall, especially neal'
+maximum efficiency, and certainly does not exceed the
+limits of accuracy of the tests.
+   The composite curve in £igUTes 5, 6, and 7 indicate
+that, up to 0° angle of attack, the limit to which the
+data are con idered to be reliable, the corrected tlu'u t,
+power, and corrected propulsive efficiency are inde-
+pendent of angle of attack.          verage curve were
+accordingly drawn from figUTe 5 and 6, omitting the
+thru t for 37° pitch at 0° angle of attack. Figure
+and 9 how the e average values of thrust and power                o    .4        .8               1.6
+                                                                                                        Cs
+                                                                                                             2.0     2.4        2.8   32   3.6
+and fio-ure 10 shows the recomputed corrected pro-                               FI Gult '; 12.- EITccL of propeller on lifL.
+pul ive efficiency, ba ed on the foregoing average .
+Table I lists these values together with the computed        4) are given, but the maximum variation of the faired
+value of the operating coefficient  as.                        UTves for ea h pitch i h wn . The mall eftect of
+   Fig UTe 11 present the data of table I in working-        prop ner pitch may eem unu sual but a few imple
+chart form. Figure 12 i a plot of aLp again t asgiv-         computation at the different pitche, assuming                                  as,
+ing average value for all pitche . Table II li ts value      velocity, propeller difimeter, and angle-oI-attack con-
+read from figure 12.                                           tant, will how that th thru t i about the ame for
+                                                             all pitche and, since the change in lift for any com-
+                      DI CUSSIO N
+                                                             bination i mainly a function of propeller thru t, it is
+   The airfoil CUTVes for the wing alone and the wi.ng       not unrea on able that the lift variation with propeller
+with nacelle as hown in figure 2 are conventional.           pitch should be small.
+I n general, the effective nacelle-drag coefficient at a        The e are the first published result of tests made
+con tant lift i in good agreement ,vith that of refer-       in the pro eller-re earch tunnel of propellers at pitches
+en e 2. jlJthough the effective nacelle-drag coeffici nt     greater than about 27° at 0.75R. It is hoped that
+varies somewhat ,vith lift, it may be taken a 0.0026         they may be useful in indicating trends for higher
+[or this combination over the high-speed range of            pitches from previoll tests Ior lower pitche a well a be
+flight.                                                      u eiuI to the designer of modern high-speed airplanes.
+   Fig UTe 7 indicate a tendon y of the corrected pro-       The refi on for the fallin o' oft' in efficiency a early flS
+pul ive efficiency to increa e with angle of attack.         27 ° i not fully explained. One po ibility is tbat there
+This ame trend is al 0 hown by the data in reference         may be increa ing interference with the wing as the
+2 when the corrected propulsive efficiency is computed.      pitch of the propeller i increa ed. Available data
+Ov r th high- peed and climbing range of lift co-             (reference 5) covering the values of propeller pitches
+efficient the change in corrected propul ive efficiency      only up to 23° provide evidence that the tendency of
+8                                                         rmpORT NATIONAL ADVISO RY COl\LMITTEE FOR AERONAUTIC
+
+the Wll1g in terfe rence is to iucrea e as the propeller         \\·ith Va ri ous Ai rcraft Engine and Bodie·. T. R. No . 350,
+pitcb is increased. The pitch distribution of the pro-           N. A. C. A. , 1030.
+                                                            :2. Wood, D onald ll. : Tests of Nacelle-Propel ler ombination
+peller used in this investigtLtion is not considered             in Variolls Positiolls with Reference to \Yi ngs. Part J.
+particularly good for the higher pitches and a se ries of        Tnick Win g- No A. C. A. Cowlecl Nacelle- Tractor Pro-
+full-scale test with more favorable pitch di tribuLion           peller. T . R. No . .Jl5, 7\. A . C. A., 1932.
+is contemplated. It is expected that some improye- 3. W eick, Fred E ., aIld W ooel, Donald ll.: The Twenty-Foot
+men t in the efftciency in the higher pitch nlnp.e can be        Propeller R esearch Tunnel of the ~atiollal Advi ory Com-
+                                                                 mittee for ,\ erollautics. T. R. No. 300, );. A. C. A. , 192 .
+ubtain ed.                                                I L \Y ood, Donald JI., and Biol0tti, Carl ton: Test1> of :\ aee lle-
+L ,\NGLEY .\11':MOHI AL ~\J"no"AUTlCAL LA BOHATOIU,
+                                                                                                                                            Propeller Combinations in \ 'arious P ositions with R ef<'J"I'Il("(,
+                                                                                                                                            to " -ings . \ ' J- Wi ngs and ~ acelles \\·i th Pllsl1('r Pro JlI'II cr .
+     ~ ATIOXAL AnVl SOHY CO:\!MITTEE Fon .\ EROXAU'f[C~,
+                                                                                                                                            T. R. ~o. 507, ~. ,\ . C . A., 1934.
+           LA NGLEY FIELD, , . A.,                             November 12, 1935.                                                      5. W eick, Fred E ., and \Y ood, Donald IT .: The Efl"ect of the
+                                             REFEREN CES
+                                                                                                                                            " 'ings of Single EngilH' Airplanes on Propulsive Efficiency
+                                                                                                                                            as SllO\\·n by Full 'calc \ \"ind Tunnel T ests. T. ~ . No.
+I . \re ick, Fred E.: " Torking C hu rts for the Selection of AIII-                                                                         322, N . A. C. A., 1929.
+           Illinllm All oy Pr ope ll e r ~ of a Standard F orHl to Operate
+
+                                                                                                    TARLB I.- AVERAGE \' ALUEH
+                                                                                                                    [Corrected for Iiftl
+                                                                                                  [Hight·lrmd propeller 1\0. 1112. I·foot diameter)
+
+                       <ielliOatO.i5R                           'ct :?20 at 0.i5 U                                                               Ret :l2" at O. i5 if                                                      ~et 42" at 0.i5 R
+    ' "lnD
+             \
+                 C T,. ,.   C',.      ~"". I Cs "T" ".v                C /.   1 ~' '''.    C·.<                                           C Tt: orr.     Cp      'f1rorr·   Cs     C'T          I c,. ~"". Cs C T"". C,. ~"".
+       o        0.0,46 O. OI:J:J 0
+        .05 , . 0~4 6 . ().I:?:l . 100
+                                              O. I~JOO O. Ofl2h I 0
+                                                 g~~t,    :g~;~3   : ?;~
+                                                                           ()
+                                                                              .OU
+                                                                                  :
+                                                                                   0.IOIOO.IHn2 o
+                                                                                                      ·OWUI .
+                                                                                                 osn:1 .05~ . OS
+                                                                                                                    0      0.1020 '0.120\ o
+                                                                                                                             .1022 . Ilbi .01:1 . O~
+                                                                                                                                                         0       O.           O. 152a 0
+                                                                                                                                                                  . 10 iii .1505 .035 .07
+                                                                                                                                                                                         :::a 0    I O. 10iO:0. Ii '0' 0
+                                                                                                                                                                                                       .1067 .1789 . 030 .07
+                                                                                                                                                                                                                                 o
+        · IO     .0; 121 . Oil; . 202                                         · Ii   · 09iO . O\S~ ' · lIa . IO              · 1023 . 1107 .08S . [.,             .10 1i . 11~(j i .070 . 15           .1060. 1797 .059 . 11
+        .15 .0>31 . 0110 .ao l                 .0 i .OG07 .219 · :?n                 · Q<J51 . 0~5:l · Hii .25               .J021.IIJ8 · 131 .23                 .10 1, .1I6i .107 .22                .J051.1 '05 .0 i           .21
+        .20 . 0817 . 040~ ~        100         · (HHI .0'iOO .291 · :15             · 09 IO . O~.;O .222 .3:1                · lOW . 1I:10 .IISO .31              · IOli . II W . 1.J4 .20             . lOW . (S19 . lt5 .28
+        .25 .0786 . 010:1 . I~U . Ii           · (hi't , . Q,iUa    .3iO ' .41      .0917 .O;"'W · '271               .41    .1012 .111:1 · 22~ . au              .101 :1 . 11:10 .IS2 , . 3;          .1012.1822 .lla .35
+        · :10 . 0750.010 I . 556 . fii
+        .:l5 . 0711 .010:3 . (ii' . Iii
+        · 40 . OGiO: . 010') . fiiO . 71i
+                                               .0'>iO .05!)l . HI .Sl
+                                               .0,60 . . 05,U .511 · Ii:,?
+                                               · 0,11 . 05'> I .5i9 .71
+                                                                                     · O!IlS ' .OSII      · :l21i . 19
+                                                                                    .0909 : .0,>" · :lih .57
+                                                                                     · 0./110 . O,:lU · -1'2H . fif)
+                                                                                                                             .1005.1100 .2il .Ii
+                                                                                                                             .099;1 . lOs;" · :120 .55                :g.:~
+                                                                                                                             · 09~0 . 10i\ · aM .6:l , .102, . I:I~I .297 .60
+                                                                                                                                                                                        : :UM :
+                                                                                                                                                                                         ~;~ ~~                  : :~~~ :~O, .4U
+                                                                                                                                                                                                                        ::8:18 :
+                                                                                                                                                                                                       .1022. 1~12 .220 , .50
+                                                                                                                                                                                                                                  . 42
+                                                                                                                                                                                                                                         .
+        .45 .0621 .0:l9:1 . ill . hli          · 0\21 . 05i9 . O:li · ,0             .0,9 I .O,:ll · 1\1 . i4                . 0961 . 10iO · 101 . iO             .IOIS .laGi .335 .67                 .101i .li95 .251 . 6:J
+        .•,0 .0571.03S1 .749 .!lIi             . 07"" .05;0 . 691 . 0                .0'90 .0'>:lIJ · .1 :~~j . ~2           · OJ42 . 10!i I · II~ . i            · 100(i . 1:).12 .3il .;5            . lOO'J .1762 .286 . il
+        · .,.; . 0.)1 S . 0:165 . ibO I. Oi     .Oi15 .0560 . i31 · 9~ ' . O"i . 0\2:) .5U'2 . HI                            · IJ<J26 , . IOIi2 · liU . '-:fl     · O!lflO . 1:140 , .4()(i .82        .1000.1732 .317 .7S
+        · 1i0 . ()')59 . 0:141 . 800 I. lh     .Ofi99 .0519 . i64 I. Oi              · 0\\0 . 0~l5 · Iilb . .99              .0910 . 100jI .51.1 . VI             .IJ<Jil .1 :J2<J .439 .90            . 0'.J92 .liO:) .349 '         5
+        .(;5 .Oa95 .0319 .;,01 1.:1O           .Of;!9 .05:31 . ;91 I. Ii             .0,73 .0,01 .706 I. 0-<                 .0'l9S . IOIiI · ';50 I. 02
+                                                                                                                                   1                              .(JlJ5i .1:!I9 . 4il .9i             .O'JI>3. Wi9 .381 . 9:1
+        · iO .03:10.0289 .800 . I. 12          .0591 .0512 .;'11 I. 27               .0"152 . 07U2 .751 1. lfi               · 0Sb~ . 10(;1' · .1'>6 1. 10        . 0910 . I:!I 0 .502 I. 05           .0975. WHO . III 1.00
+        · i,; .0261 .0"251 . i ,\O I. ;;i       .0.\10 .01\9 ' .;,29 1. 3i           · 0\1'\ . OiiU          -1>8 ' I ·'5 . 0,),0 . 105-; · (i24 I. l~ .O'J2\ .1:103 .5:14 1.1:) .09f .1611 .4 11 I. 07
+        · \0 .0192 . 0210 . i:!I I. i:l         .Oli9 .0159 . 8:35 I. 4\             .0iiO . Oi(j[ : ~·IO I I: 31             .0\i3 . 10.10 · Hf,5 1.2(1           . (m:1 .12% .51l3 1.21              .IJ<J59 .1I'!I .469 I. 15
+        .S5 .0121 .0162 .6% l.91                .01I(; .0125 .S:lI I. liD             .Oi20 . 0illJ . 52i 1. 1:1              .0,66 . 1011 · iOi I. al            .0902 .1291 . 593 I. 2'              . O'J50. 1Ii21       49 ' I. 22
+         .90 .0019. OIOI . 436 . 2.21i          . 0151 .03,4 .;,22 1.7:l              · OIj(j2 . Oil:l · b31i I. 5:1          .0,50 .1 030 · il:l I.IZ             .0. 90 .128~ .623 1.36 .0939 .1012, :52-l I. 20
+         · U5 - .002\ ,001\            2. io l · 01\5 . 0·13\ . bOO 1. ~i             · ()(j()~ • OIiS2   .hlfi I.Ii:l        . 0,21 . lOIS .7HO 1..10             .0 ~I .12S3 .651 1.41                .0929 ' . IfJo:l .550 I. 36
+       I. 00 •... .                             · 0"2I~ . 02\; . ifiO 2.01            .0519 . OllIS · S IS I. i:1             · Oi83 . IJ<JU3 · i&'l I. 5!i        .O'lil .12RI .681 1.51               . 09W .1598 .576 I. 45
+       l. 0.; ..                                · OIl(; .022\ . fln 2.21              .01'>S . 0Ii0i1 .811 I. 81              · Oi 12 . OiIIiS .80,> I. 6,         .OS6' .1279 .7[.l 159               .090> .1592 .598 I. 52
+       l.10                                     .00i2 .Olfj2 . Ihi) 2.51              .012(; .0.;(;1          ':JIi 1. un     .Ofl9S . on; · ~20 I. 7i             . 0'5~ ' . 1272 . ilO 1:07 .089(; .1590 . (6i210 ' I. 59
+       l. 15                                    · (j()(11 . (lO91           2.91      . O:lflO .0510 · hIl 2. O~ ' .0r,50 .0901 .82f1 I. 81i                        . OSII . 12(i3 .767 I. 74           . 08!i:j . 15.           I. 66
+       l. 20                                                                          .02!12 .01.;1        .7ih 2.:.n         .00iOO .0%0 .8:1i I. IIf;            · 0~25 ; . 12.,0 .792 1. , 2         . 08il. 1.,86 .6(iO 1.7I
+       I. 2.5 1                                                                       ,onn .o:mo . 725 2.:19 .05 15 .OSI.>                           3n 2. ()(i     .Oi97 .1229 .811 I.89 1 .08li8 .1586 . 676 I. I
+       I. 30                                                                          .015, . 0320 · ow 2.59                  · 01. ' . OiO:3 · ~:ll 2. I7          .0755 .1201 .816 ' 1.98             . 0>11 .155 . 690 I.
+       1.:3., ..            ·.... 1----                                               .0091 .02 10 · I i 2.85                  . ()')2~ .070i       ' 16 2.2H       .0710 . I W7 . 822 2.08             . ~29 . 1583 .705 I. 95
+
+       t: :~I· '"
+                                                                                      · 1J02:l . 01 "r, ' .20H : :l.22        . 036, . OIiIn : · inn 2.12           .0'i61 .112(j .823 ' 2.16           . OSI:1 1 . 11;,0 .720 2.02
+                                                                                   - . nOli . (JIln2                 1. 00    .0:10 I .05i' .762 2. Sf!             .01112 1 .1080         23 2.26      . Oi95. 1573 . i 33 2.10
+       150 ..                                                                                                                  · 0"23Q ' . 0.;0.1 · ilO 2.72        .0562 . 1029           20 2.36      . Oiii . . 15(i2 .7-15 2.17
+       I 5;' .                                                                                                                 · OliO. 012i · (ito , 2.02           .0510 .OUil ."4 2.17 ' .0750 : .15 14 .753 2.24
+       I 60 .                                                                                                                   .0102 .0:11:1 .... i'H ' :t II      . o I.;(i , .0001 . ~o., 2.59       .0.720.1513 .761 2.32
+       I 1i5                                                                                                                    .0031 .02:;' .IU' :1.1:1             .0100 , .0'<31 .791 2. 71          . OC,si . lli2 . iiO 2.42
+       :: ;~!
+       I. 80
+                =-
+                                                                                                                           -.OO:lU . Olin                 :3. ~"     . 0:1l2 .Oi59 . i66 2.85 1 .0631 . J 124 .777 2.50
+                                                                                                                                                                                         :~~i~i :~~; :~~ ~: W, :~t :~J;g :~~b    2.61
+                                                                                                                                                                                                                                 2. iO
+       !.R5 1..                                                                                                                                                      · OlliS .0500 , .621 3.3i           . 0.)2l. 1239 .7 0 2. 0
+       l. HO , ..                                                                                                                                                    .010' . (),)Oi .5()') 3.61          . ()')74 . 1168 .772 2.92
+       ~: ~& I                                                                                                                                                       .001i . ().308 '1 . 298 ~ 3.90
+                                                                                                                                                                 -.0012 .02011 . _.. __ 4.35
+                                                                                                                                                                                                         .0124. I 9 .760 3.04
+                                                                                                                                                                                                         . ().3i3 .1006 .7 12 3.17
+       2.0:')                                                                                                                                                                                            .0:321 .0919 .716 3.31
+       2.10 ..                                                                                                                                                                                           . Q2fj8 . 0828    . 680 3.46
+       2.15                                                                                                                                                                                              .0211 . 0734 .619 3.63
+       2.20
+                                                 .\.                                                                                                                                                     .01M .0032 .5 12 3.83
+       2.25
+       2.30
+       2.3.1
+                                                                  I                       J:                        '1                                                            II           .\:
+                                                                                                                                                                                              .. .
+                                                                                                                                                                                      • __... .. .
+                                                                                                                                                                                                         . 0099 .053 1 . 41 4.05
+                                                                                                                                                                                                     , .0011 .()')3 1 .21 4.32
+                                                                                                                                                                                                      - . 0018. ().329            1. 66
+
+
+                                            T ,\ BLE H.- A I'ERAGE "ALUES OF CLp FOR ALL PITCIIEf3 (17° TO 42° )
+                                                                                                  [Right·hand propeller ,,0. 4112. I·foot <li :lln~terl
+
+                                                                          .\ ngle or attack, a                                                                                   .\ngle of attack, a
+                                   ( ',"
+                                            -,                                -WI 00-1                    2 . .1°
+                                                                                                                                         Cs
+                                                                                                                                                                                        2 ,So [      (J 0   2 ..i O
+
+                                    n.li    0.0.>4            0.191           0.331         0.471        0.628           0.789            2.0          0.009         0.1:17       0.2.1'          O. :180   0.501      0.631
+                                      .X     .039              · ti7           .30.8         . 43~        . 579           · i2(}          2.2           .009          .136         .258            . :li9    .500       .630
+                                    1.0      . 02~             · 163           .289          .413          .M;            · fi~~          2.4           .0.09         . 13,1       .258            .3i9      .500       . 630
+                                    1.2      .019              .11i3           .2i8          .39i          . ,;27         .66:1           2.6           .009          . 131            .2.>        .378      .500       .630
+                                    1. 1     . 0.13            .147            .269          .3 8          . .113         · 1149          2.8           . (L09        .133             .2!)8       . :l78    .500       .629
+                                    1.1l     . OIl             · 140           .262          .3 I          .507           .640            3.0           .009          .133             .258        . 378     .500       .629
+                                    I. ,~    .(){)9            .138            . 259           .380       .503            .631
+
+                                                                                                                                                                                                            U S , GOV [ RNMENT PRINTING OFFICE: !9 . '
+                                y
+
+                                    ~-----             .... ...-   --   --~----
+
+
+
+
+                                                                                                    8
+
+
+
+
+                                                                                 z
+                           Positive directions of axes a nd angles (forccs and moments) are shown by arrows
+                                                                                                                                            -
+                        Axis                                       Moment about a xis                    Angle             Velocities
+                                           Force
+                                          (parallel
+                                                                                                                         Linear
+                 Designation        Sym - to axis)                       Sym-          Posit ive    Designa-      Sym- (compo- Angular
+                                     bol  symbol Designat ion
+                                                                          bol          direct ion     tion         bol nent along
+                                                                                                                          axis)
+
+             LongitudinaL __         X      X     Rolling ___ __           L           y-.z         R oIL __ __           u             p
+             LateraL ___ ___ _
+             NormaL _______
+                                     Y
+                                     Z
+                                            Y
+                                            Z
+                                                  Pitching ____
+                                                  yawing _____
+                                                                          M
+                                                                          N
+                                                                                       Z-.X
+                                                                                       X-.Y
+                                                                                                    Pit ch ____
+                                                                                                    yaw ____ _     '"
+                                                                                                                   (J
+                                                                                                                          "
+                                                                                                                          w
+                                                                                                                                        q
+                                                                                                                                        r
+                                                                                                                   '"
+Absolute coefficients of moment                                                 Angle of set of control surface (relative to neutral
+             L                        ?vI                  N                      position), o. (Indicate surface by proper subscript.)
+       0 1 = qbS                Om = qcS            0,, = qbS
+       (rolling)               (pitching)           (yawing)
+                                                          4. PROPELLER SYMBOLS
+D,       Diameter
+p,       Geometric pitch                                                        P,          Power, absolute coefficient Op=
+                                                                                                                                 pn
+                                                                                                                                   ~D5
+p/D,
+V' ,
+         Pitch ratio
+         Inflow velocity                                                        0.,          Speed-power coefficient =    4p~:
+V"       Slipstream velocity                                                    Ti ,         Efficiency
+                                                                                n,
+T,       Thrust, absolute coefficient OT =             ~D4                                   Revolutions per second, r .p.s.
+
+Q,       T orque, absolute coefficient OQ =
+                                                  pn
+
+                                                       9D    5
+                                                                                            Effective helix angle = tan- 1    (2!n)
+                                                  pn
+
+                                                       5. NUMERICAL RELATIONS
+1 hp. = 76.04 kg-m/s = 550 ft-lb./sec.                                          1 lb. = 0.4536 kg.
+1 metric horsepower = 1.0132 hp.                                                1 kg = 2.2046 lb.
+1 m .p.h. =0.4470 m.p.s.                                                        1 mi. = 1,609.35 m = 5,280 ft.
+1 m.p.s. = 2.2369 m.p.h                                                         1 m=3 .2808 ft.
+

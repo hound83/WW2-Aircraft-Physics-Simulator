@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "usaaf-p51b15-43-24777-1944-05",
+  "designation": "North American P-51B-15-NA",
+  "serial": "43-24777",
+  "testDate": "1944-05-20",
+  "engine": "Packard V-1650-7",
+  "propeller": {
+    "model": "Hamilton Standard Hydromatic, 4 blades, drawing K-6523A-24",
+    "diameterFt": 11.166666667,
+    "etaModel": {
+      "type": "constant_provisional",
+      "value": 0.8,
+      "quality": "D",
+      "warning": "NOT a measured propeller map. Replace with eta(J, RPM, blade pitch, density/Mach) when sourced."
+    }
+  },
+  "geometry": {
+    "spanFt": 37,
+    "wingAreaFt2": 233,
+    "wingSection": "North American low-drag wing; exact installed section stations still to be digitized"
+  },
+  "referenceWeightLb": 9240,
+  "testTakeoffWeightLb": 9335,
+  "fuelAtTakeoffUSGal": 265,
+  "configuration": "Clean except wing racks fitted; flaps and gear up; gun ports covered; automatic oil/coolant shutters; unpainted skin",
+  "aerodynamicModel": {
+    "cd0": 0.016,
+    "oswaldEfficiency": 0.8,
+    "clMaxClean": 1.6,
+    "illustrativeStructuralGLimit": 6,
+    "waveDragModel": "none",
+    "quality": "D",
+    "warning": "Working assumptions broadly checked against low-altitude speed; NOT directly measured coefficients of 43-24777. NACA P-51B-1 propeller-off results are methodological comparison, not identical-airframe coefficients."
+  },
+  "supercharger": {
+    "gears": ["low", "high"],
+    "illustrativeAutoShiftFt": 16000,
+    "autoShiftQuality": "D",
+    "warning": "Illustrative gear selection; use documented stage transition and operating procedure for production."
+  },
+  "powerRatings": {
+    "67inHg": {
+      "rpm": 3000,
+      "manifoldInHg": 67,
+      "status": "1944 test: present war emergency rating",
+      "quality": "A/B",
+      "powerMeaning": "BHP inferred from contemporary Packard V-1650-7 altitude charts and reported in flight test",
+      "gears": {
+        "low": [
+          {"altFt": 0, "bhp": 1580},
+          {"altFt": 4000, "bhp": 1622},
+          {"altFt": 7400, "bhp": 1660},
+          {"altFt": 10300, "bhp": 1695},
+          {"altFt": 17000, "bhp": 1350},
+          {"altFt": 24000, "bhp": 1037}
+        ],
+        "high": [
+          {"altFt": 18000, "bhp": 1390},
+          {"altFt": 20800, "bhp": 1390},
+          {"altFt": 24000, "bhp": 1390},
+          {"altFt": 28000, "bhp": 1200},
+          {"altFt": 32000, "bhp": 1038}
+        ]
+      }
+    },
+    "75inHg": {
+      "rpm": 3000,
+      "manifoldInHg": 75,
+      "status": "1944 experimental/proposed rating with 44-1 fuel; NOT blanket authorization for every operational P-51B",
+      "quality": "A/B",
+      "powerMeaning": "BHP from reported Packard altitude power charts / flight test",
+      "gears": {
+        "low": [
+          {"altFt": 0, "bhp": 1788},
+          {"altFt": 4000, "bhp": 1830},
+          {"altFt": 7400, "bhp": 1868}
+        ],
+        "high": [
+          {"altFt": 18000, "bhp": 1577},
+          {"altFt": 20800, "bhp": 1572}
+        ]
+      }
+    }
+  },
+  "measuredLevelSpeeds": [
+    {"rating": "67inHg", "gear": "low", "altFt": 0, "mphTas": 361.5},
+    {"rating": "67inHg", "gear": "low", "altFt": 4000, "mphTas": 380},
+    {"rating": "67inHg", "gear": "low", "altFt": 7400, "mphTas": 395.5},
+    {"rating": "67inHg", "gear": "low", "altFt": 10300, "mphTas": 409},
+    {"rating": "67inHg", "gear": "high", "altFt": 18000, "mphTas": 408},
+    {"rating": "67inHg", "gear": "high", "altFt": 20800, "mphTas": 417},
+    {"rating": "67inHg", "gear": "high", "altFt": 24000, "mphTas": 426},
+    {"rating": "67inHg", "gear": "high", "altFt": 28000, "mphTas": 419},
+    {"rating": "67inHg", "gear": "high", "altFt": 32000, "mphTas": 410},
+    {"rating": "75inHg", "gear": "low", "altFt": 0, "mphTas": 376.5},
+    {"rating": "75inHg", "gear": "high", "altFt": 18000, "mphTas": 423},
+    {"rating": "75inHg", "gear": "high", "altFt": 20800, "mphTas": 431}
+  ],
+  "measuredClimb": [
+    {"rating": "67inHg", "altFt": 2200, "ftMin": 3820},
+    {"rating": "75inHg", "altFt": 2200, "ftMin": 4380}
+  ],
+  "measuredStalls": [
+    {"altFt": 8000, "weightLb": 9270, "flaps": "up", "gear": "up", "engine": "power-off", "mphIas": 86}
+  ],
+  "source": {
+    "report": "USAAF Flight Test Engineering Branch, Memo Report Eng-47-1715-A, 20 May 1944",
+    "originalReportTranscription": "https://www.wwiiaircraftperformance.org/mustang/p51b-24777.html",
+    "nacaRelatedButDifferentAirframe": "https://ntrs.nasa.gov/citations/19930092458",
+    "nacaReport": "NACA ACR 4K02, P-51B-1-NA propeller-off drag investigations, February 1945",
+    "specificChart": "https://www.wwiiaircraftperformance.org/mustang/P-51B_24777_Power_Required.jpg"
+  }
+}

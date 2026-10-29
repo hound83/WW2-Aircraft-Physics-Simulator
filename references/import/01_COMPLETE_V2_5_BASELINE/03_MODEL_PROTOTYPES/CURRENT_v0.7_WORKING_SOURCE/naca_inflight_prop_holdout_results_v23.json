@@ -1,0 +1,186 @@
+{
+  "report": "https://ntrs.nasa.gov/citations/19930093653",
+  "period": "July 1945",
+  "variant": "P-47D three-bladed Hamilton Standard 6507A-2 (NOT P-47B)",
+  "scientificStatus": "INDEPENDENT AIRCRAFT FLIGHT TEST HOLDOUT, not a simulation target or a model fit",
+  "originalMeasurements": "J, Cp, eta, tip Mach from published Table I/II; selected 12 legible runs",
+  "tested1941Chart": "1941 low-speed research charts only; NO Mach-dependent compressibility, actual blade geometry or spinner/installation correction",
+  "overall": {
+    "count": 12,
+    "MAEEfficiency": 0.03601359166666667,
+    "biasEfficiency": 0.034118258333333346
+  },
+  "lowSpeedClimb": {
+    "count": 6,
+    "MAEEfficiency": 0.01413191666666667,
+    "biasEfficiency": 0.010798583333333334
+  },
+  "highSpeed": {
+    "count": 6,
+    "MAEEfficiency": 0.05789526666666667,
+    "biasEfficiency": 0.05743793333333336
+  },
+  "withinGraphPowerDomain": {
+    "count": 6,
+    "MAEEfficiency": 0.025710516666666666,
+    "biasEfficiency": 0.025253183333333356
+  },
+  "measurements": [
+    {
+      "table": "I climb",
+      "run": "3-1",
+      "J": 0.92,
+      "Cp": 0.107,
+      "eta": 0.778,
+      "tipMach": 0.811,
+      "etaNaca1941Graph": 0.768,
+      "errorEta": -0.010000000000000009,
+      "outsideGraphCp": true,
+      "highTipMachUnmodeled": false,
+      "provenance": "NACA MR L5G09a, original table I , run 3-1"
+    },
+    {
+      "table": "I climb",
+      "run": "3-10",
+      "J": 1.128,
+      "Cp": 0.171,
+      "eta": 0.795,
+      "tipMach": 0.869,
+      "etaNaca1941Graph": 0.8128,
+      "errorEta": 0.017799999999999927,
+      "outsideGraphCp": true,
+      "highTipMachUnmodeled": false,
+      "provenance": "NACA MR L5G09a, original table I , run 3-10"
+    },
+    {
+      "table": "I climb",
+      "run": "3-14",
+      "J": 1.239,
+      "Cp": 0.205,
+      "eta": 0.799,
+      "tipMach": 0.901,
+      "etaNaca1941Graph": 0.8217365000000001,
+      "errorEta": 0.02273650000000005,
+      "outsideGraphCp": false,
+      "highTipMachUnmodeled": false,
+      "provenance": "NACA MR L5G09a, original table I , run 3-14"
+    },
+    {
+      "table": "I climb",
+      "run": "5-1",
+      "J": 0.974,
+      "Cp": 0.15,
+      "eta": 0.786,
+      "tipMach": 0.869,
+      "etaNaca1941Graph": 0.7896000000000001,
+      "errorEta": 0.0036000000000000476,
+      "outsideGraphCp": true,
+      "highTipMachUnmodeled": false,
+      "provenance": "NACA MR L5G09a, original table I , run 5-1"
+    },
+    {
+      "table": "I climb",
+      "run": "5-4",
+      "J": 1.128,
+      "Cp": 0.2,
+      "eta": 0.791,
+      "tipMach": 0.912,
+      "etaNaca1941Graph": 0.8128,
+      "errorEta": 0.02179999999999993,
+      "outsideGraphCp": false,
+      "highTipMachUnmodeled": false,
+      "provenance": "NACA MR L5G09a, original table I , run 5-4"
+    },
+    {
+      "table": "I climb",
+      "run": "5-8",
+      "J": 1.273,
+      "Cp": 0.25,
+      "eta": 0.798,
+      "tipMach": 0.948,
+      "etaNaca1941Graph": 0.8068550000000001,
+      "errorEta": 0.008855000000000057,
+      "outsideGraphCp": false,
+      "highTipMachUnmodeled": true,
+      "provenance": "NACA MR L5G09a, original table I , run 5-8"
+    },
+    {
+      "table": "II fast",
+      "run": "5-29",
+      "J": 1.152,
+      "Cp": 0.184,
+      "eta": 0.761,
+      "tipMach": 0.91,
+      "etaNaca1941Graph": 0.8152,
+      "errorEta": 0.054200000000000026,
+      "outsideGraphCp": true,
+      "highTipMachUnmodeled": false,
+      "provenance": "NACA MR L5G09a, original table II, run 5-29"
+    },
+    {
+      "table": "II fast",
+      "run": "5-26",
+      "J": 1.945,
+      "Cp": 0.185,
+      "eta": 0.814,
+      "tipMach": 0.996,
+      "etaNaca1941Graph": 0.8589,
+      "errorEta": 0.04490000000000005,
+      "outsideGraphCp": true,
+      "highTipMachUnmodeled": true,
+      "provenance": "NACA MR L5G09a, original table II, run 5-26"
+    },
+    {
+      "table": "II fast",
+      "run": "5-24",
+      "J": 2.486,
+      "Cp": 0.175,
+      "eta": 0.664,
+      "tipMach": 1.079,
+      "etaNaca1941Graph": 0.8114,
+      "errorEta": 0.14739999999999998,
+      "outsideGraphCp": true,
+      "highTipMachUnmodeled": true,
+      "provenance": "NACA MR L5G09a, original table II, run 5-24"
+    },
+    {
+      "table": "II fast",
+      "run": "5-12",
+      "J": 2.252,
+      "Cp": 0.245,
+      "eta": 0.76,
+      "tipMach": 1.084,
+      "etaNaca1941Graph": 0.83255,
+      "errorEta": 0.07255,
+      "outsideGraphCp": false,
+      "highTipMachUnmodeled": true,
+      "provenance": "NACA MR L5G09a, original table II, run 5-12"
+    },
+    {
+      "table": "II fast",
+      "run": "15-24",
+      "J": 1.694,
+      "Cp": 0.246,
+      "eta": 0.819,
+      "tipMach": 1.052,
+      "etaNaca1941Graph": 0.8459496,
+      "errorEta": 0.026949600000000018,
+      "outsideGraphCp": false,
+      "highTipMachUnmodeled": true,
+      "provenance": "NACA MR L5G09a, original table II, run 15-24"
+    },
+    {
+      "table": "II fast",
+      "run": "17-19",
+      "J": 1.845,
+      "Cp": 0.256,
+      "eta": 0.852,
+      "tipMach": 1.02,
+      "etaNaca1941Graph": 0.850628,
+      "errorEta": -0.0013719999999999288,
+      "outsideGraphCp": false,
+      "highTipMachUnmodeled": true,
+      "provenance": "NACA MR L5G09a, original table II, run 17-19"
+    }
+  ]
+}

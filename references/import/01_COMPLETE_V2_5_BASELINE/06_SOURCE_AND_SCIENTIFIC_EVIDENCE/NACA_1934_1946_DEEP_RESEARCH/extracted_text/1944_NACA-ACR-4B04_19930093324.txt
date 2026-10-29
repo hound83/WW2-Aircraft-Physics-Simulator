@@ -1,0 +1,1740 @@
+                                                                                      ACR No. 4B04
+
+
+
+
+       NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+
+
+
+                                     ORtGNALL Y ISSUED
+                                      February 1944 as
+                              Advance Confidential Report 4B04
+
+
+                   CO~{PARISON   OF CALCULATED PND EXPERIMENTAL PROPELLER
+
+                     CHARo,CTERISTICS FOR FOUR -, SIX -, PND EIGHT-BLADE
+
+                                    SINGLE-ROTATING PROPELr~S
+                                         By John L. Crigler
+
+
+                         Langley Memorial Aeronautical Laboratory
+                                   Langley Field, Va.
+
+
+
+
+                                                                             (    1
+                                           WASHINGTON
+
+NACA WARTIME REPORTS are reprints of papers originally issued to provide rapid distribution of
+advance research results to an authorized group requiring them for the war effort. They were pre-
+viously held under a security status but are now unclassified. Some of these reports were not tech-
+nically edited.   All have been reproduced without change in order to expedite general distribution.
+                            Date Due
+
+&027   '5"
+
+  Mf1.Y 1 0 967
+   t"1="I~       2   1974
+
+
+
+
+        ......
+                      ,
+
+
+
+
+                          LIbrary Bureau Cat. No. 1137
+
+
+
+
+                                                         .
+      NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+              ADVANCE CONFIDENTIAL HEPORT
+
+  COMPARISON OF CALCULATED AND EXPERIMENTAL PROPELLl::R
+    CHARACTERIS'l'ICS FOR FOUR-, S IX-, AND EIGHT-BLADE
+               SINGLE-ROTATING PROPELLERS
+                  By ,Tohn L. Crigler
+
+                         SUMMARY
+
+      The calculated performance of four-, six- , and
+eight-blade single-rotating propellers has been compared
+with experimental results for blade angles ranging from
+25 0 to 65 0 • The experimental data were obtained on
+propellers mounted in front of a streamline body with a
+spinner housing the hub.    The ca,lculated propeller per-
+formance was found to be in good agreement with the
+experimental results over the complete range of blade
+angle investigated.    The method of calculations is pre-
+sented in detai l and a sample computation· is included.
+
+                      INTRODUCTION
+
+     The selection of a propeller for a new airplane
+design may be based on either wind-tunnel test data or
+theoretical calculations.    If test data are used,
+empirical corrections are applied, if required, for
+changes in number of blades, activity factor, blade
+thickness, airfoil section, Mach number, and body shape.
+If these empirical corrections are large , they become
+the determining factor in selecting the propeller for
+the design application .   The selection of propellers
+based on theoretical calculations tias been open to con-
+siderable question because the the~ry strictly applies
+only to the idealized propeller.    From time to time
+calculated results have been compared with experimental
+data for a few blade angles, but a comparison over a
+wide range of blade anele for a propeller operating .at
+conditions giving nonoptimum load distribution has been
+lacking.
+2
+
+
+       A method of analysis is presented in detai l and cal-
+culated results are compared with experinental results on
+sing le - rotating propellers of four , six , and eight blades
+for blade - angle settings of 25° , 35° , 45° , 55° , and 65°
+at the 0 . 75 radius .       The propeller tests ( r e ferenc es 1
+and 2 ) of the Hamilton Standard p~opeller 3155- 6 aff o rd
+an exce l lent opportunity for making such a comparison .
+On this test setup the interference drag was s~all , t h e
+velocity distribution in the plane of the propeller was
+ap p roxinately free strean , and the airfoil section c ha r -
+acteris t ics we re available for the te st l'1a ch numbers .
+This informat ion perm~tted a direct che ck betw ee n pro -
+peller theory and experimenta l r es ults without the use of
+empir i ca l corr e ctions .
+
+     The method of calculations is based on the propelle r
+theory as used by Lock .     The corr e ction factors for a
+finite nl~ber of blades as obta ine d from Goldstein (f o r
+the two - b lade propeller and extended by Lock for other
+blade n umb ers) are ~trictly limi t ed to a very li ght
+loading and to a pa rticular distribution of circulation
+along the blade .    For this reason there has been s om e
+hesitancy in using the Goldstein corrections fo r any othe r
+distributions of loadinc .     The optimum distribution of
+loading is here i n comp ared wi th t he actual distribution
+for the Hamilton Standard p rope ller 3155 - 6 at a nur:1ber o f
+operating co nditions .    The deg ree to which the calculate d
+and experimental propeller characteristics a g ree o ver the
+entire range of blade a ng le is an indication of the
+validity of the c orrection factors .
+
+
+                            SYMBOLS
+
+
+a       axial - velocity interference faGtor
+
+B       number of propeller blades
+
+b       cho r d of prope l ler blade element
+
+CD      s ection drag coefficient       ~0/~ pv2b)
+CL      section 11.f t   coefficient    (L/~pV2b)
+Cp      power coefficient      (p/pn 3 D5 )
+                                                                3
+
+
+          torque coefficient       ( Q/ pn2 D5)
+          thr'.wt coefficient      ( T/pn 2 D4)
+ J
+ )
+C\        propeller diameter
+•
+..l       drag of blade element
+
+      F   Goldstein correction factor for fini te ntnnber of'
+           blades
+
+      h   thickness of propeller blade element
+
+      J   advance - diameter ratio      ( V/ nD )
+
+      L   lift   ~f    blade section
+
+      n   rotational speed of pr opeller , revolutions per
+            second
+
+      p   geometric pitch of propeller
+
+      P   input power of propeller
+
+      Q   torque of propeller
+
+      r   radius to any blade element
+
+      R   tip radius
+
+      T   thrust of propelle r
+
+      V   axial velocity of prope ll er
+
+      x   radial location of bl a de element            (r/R)
+
+      a   angle of attack
+
+          propeller blade angle at 0 . 75 radius
+          tan- l CD
+                 "CL
+      E   angle of inflow       (¢ - io )
+      8   propeller blade angle at radius           r
+
+      p   mass density of ai r
+4
+
+
+a         propeller element solidity        (Bb/2rrr )
+
+          angle of advance of prop911er
+          angle of resultant velocity to plane of rotation
+
+          propel ler or element     efficienc~T
+
+
+
+                        BASIC DATA AND METHODS
+
+
+       The characteristics for the airfoil sections from
+x = 0 . 45 to x = 0 . 95 given in figures 1 and 2 were
+taken £'rom reference 3.       The section at the 0 . 45 radius
+is a modified Clark Y section a~d the eections from the
+0 . 6 radius to the tip are Clark Y sections .         Data for
+the section thicknesses used were obbained by cross
+fairing.       The section at x         =
+                                     0 . 3 was arbitrarily ~i ven
+a CD of 0.10 and a slope of lift curve of 0 .045 per
+degree with zero lift at a          =
+                                   0° .    The charactaristics a t
+x   = 0 . 3 are onl y approximate but, since the torque absorbed
+at this radilJS is smal l, the HS ,3 of these characteristics
+is cO::l.siderad sat:i.sfactory.   I nasmucl-). as the average spin-
+ner radius for tho exp·~r imental results of references 1 and
+2 was O. 21R, the calc~latad curva s pre sented herein were
+cut off at the 0 . 21 radius , although the section at the
+0 . 2 radius was compute d to aid in fairing the curves .
+The section at the 0.2 radius i s almost circular and was
+assumed to opera t e at z ero lift and con8tant CD of 0 . 4 .
+       The method used for computing the element thrust a n d
+e l ement torque co eff icients is given in detail with a
+sample computation .      The following data are required :
+
+        ( 1) The propeller blade plan form and pitch d.istr i-
+               bution ( fig. 3)
+
+        (2 )   ~he   numb3r of blades
+        ( 3) The lift and drag characteristics of the b l ade
+                 sections at each radius ( figs . I and 2 )
+
+Element calculations can be made for as many rad ii as
+desired.   I n making these element calculations the blade
+angle at each radius and the operating V/nD are re -
+quired .  The procedure at radius x follows :
+                                                                                         5
+
+              (1) Obtain         ¢o          from
+
+                                       rI.
+                                       'Po
+                                                 = tan -1 VI.TrxnD
+              (2)   Obtain       a +         £    f r om
+
+
+
+                                  .                .
+      where     8    is the blade angle at the 'chosen radius .
+
+           (3) Assume a value o f a a.nd obta5,n the corre -
+      sponding value of CL from airfoil section character -
+      istics .
+
+              ( 4) Fi~d      c   fro~            the formula
+
+
+                                      tan c =
+                                                       4F sin    if
+      Using ¢o ,   ~nst e ad of ¢~     and F obta i ned from ¢o
+, J   gi ves an approximation ' to    c . ' Using ¢ equal to
+      ~o + capprox gives a second ' approximation to c .           The
+      value of - c is thus fGtmd ' by successive approximations ,
+      but t he second approximation usually gives c to the
+      desired degree of accuracy.         (Fig . 4 , tatt~n from refer -
+      ence 4 , May
+                 , be used   in finding
+                                   crC ' £ i nstead of so lving
+      the equation        tan c       = 41" s i~ if·            In this fi g ure ,   c   fS
+      given in terms of nDx/V and crCL/F instead of as a
+      function of ¢.        In this case, the first approximatio ~
+      is usually sufficiently accurate, the only a pp roxima ti~n
+      being the use of F based on ¢o instead of ¢ . )             \
+                                                                  i
+            ( 5 ) Detf'rmine F from figure 5 ( data taken frOr'lj
+      reference .,f$), where F is plotted . a g ainst ¢.
+           (6) Repe at c alcu lations of a and      c with the ew
+.,    assumed a from step ( 3 ) and p l o t    a ag~inst a + c~
+      This p lot aids in re duc ing calcul at ions because the value
+      of a + t    that equals 8 - ¢o glve's the desired a
+      and c.
+6
+
+
+        (7) F ind   ~    from
+                                              CD
+                                tan "f     = 'Or:
+     The final torque and thrust coefficients are t hus
+given as
+
+
+
+
+                                            cot ¢ -
+                                   E:
+
+                                "5-7 . 3   r" ;6
+                                           "cot     +
+
+
+      The contributions of thr us t and torque at t he 0 . 2
+r adius were computed on the as sumptlon that there ',as no
+li ft on this se ct Ion .  The va l ue of CL was accordingl y
+put equal to zero and the axial Inflow was neglected in
+t he calcllations .    The e lement thrust coefficient
+
+
+                                                         sin ;6)
+
+
+
+r eq~lces to
+
+
+                    dx
+
+
+
+    l
+                                    rrx      J2
+                         = - oCD 4"" sin ¢
+and ~he elemen t torque coef ficient
+
+
+
+                                               sin ¢ + CD cos   ;6)
+                                                             7
+
+
+reduces to
+
+                 dC Q               2 3
+                 dx-    = (JCD -rr 8
+                                   x
+                                     VJ2 + ( rrx)2
+                                  rr 2 x 3     J
+                        =   oCD     8        sin ¢
+
+
+      A~ an example in the usc of the method , computations
+are given in table J for the four-blade single - rotati1l8
+propeller having a Hamilton Standard 3155 - 6 blade set at
+  0
+45 at tre 0 . 75 radius 8:nd operating at a      r/r:D of 1. 8 .
+The differe!1tial - t:b..rust and the differential - torque dis -
+tributIon from table I i a plotted in figure 6 .          Curves
+of this type were constructed and from them the calcu-
+lated propeller charact eristics were made .         (S ee fig~ . 8
+to 13 . )  ,The range of the calculated curves is limited
+to the stalling angles of the airfoil section~, the max i-
+mum allov.:able value of the lift coefficient at any section
+                                                     •   u
+
+being ahout 1.0.       This valne depends on the airfoil sec -
+tion and its thicl:nes s ratio .
+
+                   RSSULTS AND DISCUSSION
+
+       The factor F , which is a correction for fin i te
+number of '.Jl'ades as p:iven by Goldstein 's analysis , is
+derived for the case of a very light loading and
+particular distribution of circulation alone the blade .
+The suitability of thiR factor for computing the perfor -
+mance of propelle rs with other l oadings is determ5ned
+by comparison with experimenta l results .         The calculated
+distribu t ions of the element l~ad coefficient for t~e
+test propeller at several operating conditions are com-
+pared in fi gure 7 with the optimun dist ri butions from
+r efe rence 4 .   Although the di stribution varies widely
+from the optimum in :nany caset' , notab ly at high vnlues
+of V/nD, the co~~puted propeller coefflcients arc in
+close agreement with the experimental v alues.          It is
+therefore concluded that the correction factors are
+suffici ent ly accurate for p r actical p ro pel l er calcula-
+tions.
+8
+
+
+       T~e experimen t a l p r opel l er c hara cter isti c s of t he
+single - rotating four - and six - blade propellers ( refer -
+en c e 1 ) and of the eight - blade propeller ( reference 2)
+are compared with the calculated characterist i cs in
+f i gures 8 to 13 .    F:!.gLre 14. is a c omposite of the thrlls t
+curves for easy comparison .           The agr eement i s very Goo d
+in al l cases except for the eight - b l ade prope l ler when
+~ = 55 0    and 65 0 •
+
+       Figure 15 c ompares t~e experimenta l and calculated
+e ff icienci e s of the f'our -, s i x -, and eight - blade pro -
+pel l ers over the entire range of blade anele .           As would
+be expe cted , the calcllate d values g:ve SMoothly faired
+cur ves , w: ich show that the hi ghe st efficier:.cy envelope
+is obtajn ed wi th the four - blade propeller and th~ l owes t
+efficiency with the eight - blade propel l er .         The experi -
+mental curves show the sa: e trends and the variat i ons
+between the two sets are considered to be within the
+accuracy of the tests, the main discrepancy be_nc at th~
+65 0 blade - ane l e settingsr
+
+
+                            CO TCLUSION
+
+      The calculated and experimental perforr.1ances of four-,
+six-, and eight - bJade singl e - rotating propel l ers have been
+compared .   It is concluded from this comparIson that the
+performance of a propeller can be accurately calculated i f
+the velocity distribution in the plane of the propeller ,
+the propeller airfo i l section characterist i c s, and the
+propeller plan form are knOVlrrl .
+
+
+Langley Menoria l Aerongutical Laboratory ,
+     National Advisory Cor.mit t ee for Aeronautics ,
+          Langley Field , Va .
+                                                                  9
+
+
+                               REFERENCES
+
+
+     1.   Biermann , David, and Hartman,. Edwin P <: Wind- Tunnel
+\I
+')          TeRts of Four- and Six - Blade Single - and Dual-
+            Rotating Tractor Propellers.     Rep . No . 747, NACA ,
+            19 42 .
+
+     2.   Biermann, David, and Gray , W. H.: Wind- Tunn el Tests
+            of Eight - Blade Single - and Dua l- Rotating Propellers
+            in the Tractor Position o     NACA A. R. R., Nov . 1941.
+
+     3.   Pinkerton , Robert M., and Greenberg , Harry : Aero -
+            dynamic Characteristics of a Large Number of Airfoils
+            'rested in the Variable - Densi ty \':" ind Tu.."1nel . Rep .
+            No . 628, NACA , 1938 .
+
+     4.   Crigler , John L ., and Talkin, Herbert W.: Propelle r
+            Selection from Aerodynamic Considerations .   NACA
+            A~C.R ., July 1942 .
+
+
+     5.   Lock, C. N. H., and Yeatman, Do: Tables for Use in
+            an Improved r1ethod of Airscrew Strip Theory Calcu-
+            lation .  R. & M. No . 1674, Br i tish A. R.C ., 1935 .
+                                                                                                                                                  f-'
+                                                                                                                                               o
+                           TABLE I. - COMPUTAT I On OF PROPELLEH T 1:JRUST lum TORQUE COEFF I CIEJJTS
+                                                  [ 13 = 45° ; V/nD. = 1. 8 ; B = 4J
+
+ x
+      :
+      1 - InD -1
+          V
+          rr x
+               -;0  I
+                              I   e      a +EI   (5'
+                                                             a   I   E ~I [6 ~ CL
+                                                                       _    _ .
+                                                                                             I
+                                                                                             i
+                                                                                                 L/D   I   tarry   I cot [6ldCq/dx I <leT/dx
+                                                                                                                              I
+0 . 3 1 . 90S9·62 . 3~ ~o . 8G I 4 . 49 0 . 212 3 . 951 0 . 54 ~2.9~ 1 .09 1 0 .1 :7l 1 . 77 0 . 5650 0 . 5117 0 . 006 11 - 00 0 017
+  . 45 1. 2732 51.80 ,)7 . 50 5 . 65 . 1935 2 . 85 2 . 80 04.6.) . 917 . 708 59 . 7            .01G8 . 7094 . 0502 1 .1 524
+  . 6 . • 954~ ~3.68 5~ . 45 6 . 7~ .1 681 3 . 60 ~ . ~71 ~6 . 8~ . 788 .762 77<0   1          .0130 .9371 . 0900            . 2 73 7
+  .7 I . SlSo .:>9 . 30 40 . 65 7.3;] . 1380 4 . 23 0 . 12 42<4", . G98 . 748 176.4            ,0131 1.0944 . • 1088         . 3355
+  .8  I .71 62 35.6 1 43 . 45 7 . 84 .1041 4 . 72 3 . 12 3S .73 . 586 . 77317R . 1             . 01~3 1 1 . 2469 .1 217      . 3693
+  .9  I                                                       1
+        . 6366 j32 . 48 40,85 8 . 3 7 . 071 7 5 . 08 3.29. 35 . 7 7 . 422 .792173.1            •0137 11. 338 1 . 1 201       .3 60 1
+  . 95 . 603 1 \31. 0939. 708 . 6 1 . 0541 5 . 0_~-=L~4 . 64 1 . 301 .783\_~~1_J . 013911.4474 1 . 1058                      . 3120
+
+
+ x                 cr             rrCn      l--Tl'X -, 4
+                                                                 J
+                                                                     (rrx ) 2      .J
+                                                                                  ::;11193
+                                                                                                  ;Z8x 3       I
+                                                                                                            _ _ _ _ _.
+                                                                                                                      dC /dx
+                                                                                                                        Q.            dCT/dx
+
+0.2              0 . 255          0 . 102        0 . 15 71           0 . 395      1 . 907         0,OOG9              0 . 00 19      - 0 .0 550
+
+
+
+
+                                                                                                                         '-
+NACA       Fig. 1
+
+       \   .
+NACA   Figs. 2,3
+       NACA                  Fig. 4
+
+
+
+
+N
+~
+C"'I
+ I                    .,.:
+H
+                      C1J
+                      u
+                      c:
+                      C1J
+                      \...
+                      ~
+                      '"
+                      l-
+
+                      E
+                       0
+                      .l:
+
+
+                       8
+                      ~
+                      0
+                       E
+                       ~
+                      <+-
+
+
+                      ~
+              LL      '0
+               ...I   '"'"
+                      "::J
+              I.J     "0
+              b        >
+
+                      ~
+                      ~~
+                      -:;;
+                       c:
+                      '0
+                       c-
+                       o
+                       III
+                      '0-
+
+                      -
+                      ~
+                       '-
+                       0
+                      u
+                       I
+                      "<t
+                       Q)
+                       '-
+                       ~
+                       0-
+                      Ii:
+      NACA                                                                                                                                                                         F ig. 5a
+
+        m
+       fffi
+
+
+
+
+                 ;~"i L~                ,        ~
+                                                                           lit!
+                                \1
+                                                                                              ,~
+I+!
+                                            tj
+ ffl
+ :p      llH,':.f f4 I p~li:tt
+ W[~11:I1=Ir:m
+ j1j                             ;1
+                                                                                                                                                                                         ~
+       ~.t
+       ~
+        ,
+
+                                                                                                                                                                                        .~
+IE
+1$ ,. 1:IJ
+r'f~ [l+!
+ ii'                            ~       u
+Ir t:i .. ;fti                \ iti If.\
+                                 '~ tU~
+     , <HIItt+                         rtif \
+                                                     _\
+ ~
+                       It<-
+                            1-\
+IW i..,                fiffi If'
+.1f,'if:;
+ kf
+                       fH
+                       ill!
+                               $E!
+                                        ,
+ !II ' '"'             It+'
+
+
+        ±r:
+
+
+       ~~
+                       ;m
+        'm             l1t!
+                       let            k\.;>
+                                                                                                                                                                              EE    m
+Iflt if
+
+       I';
+
+
+
+
+Fit
+11f: If 1+1
+M1        " 1+
+
+                                                                                                                                                        t:t           11
+m1               'i.          if+i
+It                                                                                                                                                      lliBti        I[
+                                                                                         -                -
+                               f-                                  I             1                 I,·                                          !II     FP            E1. 1
+                                             -                         -'hi]                                                .,                                AIt!,
+                                                                                                                11'
+            ",
+                                                                                                                                     lifJ ;~1
+                                                                                                                       A~            L~ 1!hI      If1
+       !~
+                                             , !~ ;            -:b lill ~               ~ffitt, ~         It'
+                                 I±::tl j d .til                                                                ,'If
+                   Ir.tJ~
+                    ~~ jQj
+                           iii:~ ,:2:; Ie.j                                       R;.   lc""tll LF              'Yij ffi~
+       ~,Fl                      ~,   'Tt-                1t&1 '.11 :tin
+                                                                           It,               tH          b-f           m1+'· II.+,
+       NACA                                                                                                                                                                Fig. 5b
+
+III l'A                   It          I                                                 ,
+
+
+                                                                                                                                   ,1
+
+
+                                                                                                                                "U
+~.
+
+~I, 'r               ~I          r                                    .,'1                      ,I '
+Cl1                               ,        I.~
+                                                         ,
+                                                         '"   "~'I   1         , j:i
+                                                                                      , ii,'H IIHi: H 1~ ,,;i, ~t L·1
+                                                                                            I                                                                                               m=
+fS-l-,-'"i+-'--fL-.-l-+-'+-'--f+14,....-+---!1--L+-+--.lf-'-+-1-+-'-4l-+-l-'-+-t-+--4-=+-~
+~:                       1t'                   'I                                         3-h-·J;+lilt
+                                                                                                   ~   :rijHil:l.i!>r lk ~r ffl                                           ~ -      -:j ifl~ rtf
+                    ,
+                             i ii                               ~         o :h
+                                                                                 "   .A't, :ll'itf =It d'1                                                                                  It
+                                                                                                                                        r
+
+       rtF H J ,s!'                               :,;l:rl                                       'j,F ,'v!lff- +t fE ltlt :t,f 1:
+       1111c ,db~r,              tr:: ' i,L,            4.1          .t                   ,;1-:l" 'i1             1it;i
+   ,d£ ,it' ,if; it, tW                               , n%~                             h7' f~           tt  'w   :rt :t!
+1'1:1:     -pc        J                      '.u,± ~ 1l ttt, :bit n                             ,Hl,~                       ·if:t-
+           r~ -, 41 rr.          tal -
+           1!L'1W~ 1:1-
+
+           F \                   th [i
+          'iffiW                       tti
+        ,, ~f        ., 1\'_ ~ + m
+       ~ -rif                         X
+
+
+
+
+                                                              ~,                                                              i:n       r
+                                                        #1           ~,                                           :r   1:-1       "'j. + ll-tf:  t1, ' '-''''T<I, ' '~-'-1
+                                 '0   if         ~1; ill      tt ~:iW :fit                             :f:    It '' '&' P. fu'-:~~";!111" mt} ;f11' f1h lIt!,              .;
+
+ .~-            I"             ,t''1:1 r ~b       :itl!-~        I                                           tfu41't ,            Ii r--... rl -.!tlhf illH" h fll " !J' If, Itf
+                                   t,1 1~ - ttl              ,L                                        ~          '',fll+! I ~l I, '4' 'I ," "'-r-i-, '1I':'1t      f! i1+j f.
+                                       I, InlF         Jli ~    -W'                                      " iW~ : IJ t i - t .      ,~   ~t-+t--     T.ll
+                                   ~.       tRl:f:ti± I£HIR l : f t                                    ~r ,~l' 1m;   r lfi,W;#1 #lHfi iM li a 1 ttl tl
+
+
+
+
+                                                                                                                                                                ,
+                                                    f                        I                                     1
+                                             ,- !---'         --c- -               --+-+-+--+-+--1                          -                                              !
+                                                                                 icC:
+                                                                                                                        -1                  ' :;1'         f"
+
+- ~·~-r~f~?~-+'O~~
+                , r+-~~~~~~~-+~~~+-~~+-~-r~-o~
+                                         8?                                                                                                    6?J
+                                                                                                                                                .,
+                                    f) ,                                                                      ~        dJ, de'7 !?
+                                                                                                                                                                      1
+             (161 F i r .r/~- .Indo                                                                                    .I   }-~"
+                                                                                                                                                     :11
+     NACA                                                                                                                                                                                                                                                Fig. 5c
+tAl
+
+                 Int .;ll ; III >++111                                              ,,1Il Ii;
+                                                                                                j.+t
+
+                                                                                                            I"
+                                                                                                                 811=1 r'" i!{l!+'
+                                                                                                                            '"' I +
+                                                                                                                                                          0'
+
+                                                                                                                                                               10>:
+                                                                                                                                                                      "
+
+                                                                                                                                                                                      nWIft!'l
+                                                                                                                                                                                                    ltl lt!        fU:l1 ~ I*ilI:t1f!
+                                                                                                                                                                                                                         1t+JJ; I~
+                                                                                                                                                                                                                                             ..
+                               ~ttl                                                                         11£3 'fu .~           ItP     l~d                                      1M 1b.1 fln illf                      III          "±J
+                                                                                                                                                                                                                                                         "
+                                                                                                                                                                                                                                                                         fB
+                               ,1 ,                                                                          $ 1-8          t1 1+ Ilk f.- t\                                               1"" lm                                                 Ilii
+                                                                                                                            ~ lftl                       jl'-ll)'                          tlil                                                          ;':             U
+                                                                                                                   1;-1.
+                                                                                                                                      InJ                 ffj If!                           Hi              to-
+                                                                                                                                                                          li1:,                                    .
+                                                                                                                   !;:i,                II              tttll:il, IH                        1-':1           IF
+                                                                                                                                      1-\+               :+ 11:<;              ,           r:.              1=     );>
+
+                 L;-1    ~     ,.tikffi tI                                                                                                    If, ~.                                       It· V
+     )      A           [tr"
+                                        ~# I ~                                                                                                                  : II       "'it
+           ~.
+
+                          ~     H
+                                           1"            ott                                         '.f+                                           ,                                                                    I
+
+fit '::I, r=t                         rill
+         Ig                            .~t
+
+
+
+
+                                                                                                                            ~t-.::
+
+
+H.                                                                                                                                                                        "-
+
+
+
+
+                                      ill
+
+
+
+
+                                                                                                                                                                a:         $                                                       t±'                                        :JJ
+                                                                                                                                                                           l'                               r'l 'O!                                                      t":!:!Fr'
+                                                                                                                                               :ri,IU "ill -:t"                            1""              If I'll                           IT 1I      I"    tlti-l +.fJi
+                                                                    ••f                                                         ,,~            fI:E'                                                 j r~1liJl11:fl B=!     fill    ft+'r:
+                                                                               r-W ~...:
+                                                   r
+                                                                                                                                                                                    . T'
+                                      !--
+                                                   1:£         I~                          Itttill                         if                '1'0        c                                             df ~ ~        :i:l IP~ Ifi-lu -c:h,,,                                  1+1
+                                             It\ ttL           I ~.g tl'ffi    Iit-lptj itUl          i7            .F                                   c                  -1-:                                               ~            Itt                M!:
+                                                                       p:
+WflW" PrJ
+         -:-i?
+                               l~~ tt        ~r
+                                                         ,8
+                                                          if . ~~.        rt
+                                                                          flU! H:I ~ n           fa , ~,. , ~~                                                                        tlo                                b               ~b                    tt ~~     '"
+ .   i   Ini:jI" I~ 11-&                                   ~ I! t .lLitHl iffi!            IT"J-         ;'" " ,r~".,                                                                                       I.",
+!11'I tt!: I#I<. I:f1i ~,~ .t:: ..('m                        L'll ~ lY.E I'd IlI!3 il-iT ,  'L
+      If! ,l1j1 tfl lhl-l =!'i;t               ,         , 4 ~:h, I;,b : HI1tfHffi, ,~ I .ft l ~    ~1;~ I" I                                                                                       ,,:tt                                                        "   ~
+     NACA                                                                                                                                                                                                                               Figs . 6,7a
+
+
+
+
+                                                                                                                                                                                                                                            41                 ~'         t
+                                                                                                                                                                                                                                                                    ,         <
+                                                                                                                                                                                                                                                               ,c:.,
+                                                                                                                                                                                                                                          Iffl
+                                                                                                                                                                                                                                                  ·~,d-j
+                                                                                                                                                                                            fl:I'!                                                       %      'to
+
+                                                                                                                                                                                                                                                  8"; 5"' if
+                                                                                                                                                                                     '"                                                           A , ~ ~J
+
+     W                                                                                                                                                                                                                                            'iri                  I"
+                                                                                                                                                                                                                                                  l'ffl        #U ImJ
+                                                                                                                                                                                                                                                  ",,:' :n f'F Irl'i
+                                                                                                                                                                                                                                          ~I,     ,liltH
+                                                                                                                                                                                                                                                                        11i:A
+                                                                                                                                                                                                                                        , :4111·# !~ fF', rrt,.
+                                                                                                                                                                                                                                                                         1ft,
+                              :                                                                                                                                                                                                        ttt '':! ,'rr tI1:l
+               ;1,1
+
+
+                                                                " Btl                                                                                                                           j
+                                                                                                                                                                                                                   ~
+                                                                                                                                                                                                                  !1,
+                                                                                                                                                                                                                                    ,~ ~(           Ii!
+                                                                                                                                                                                                                                                               rl-t 'g,
+                                                                                                                                                                                                                                                                         m
+                                                                                                                                                                                            ,H-                    +I,    It,# l                                 ::i=t "':,
+                                                                                                                                                                               ;;:'f 1')                                  :...1                   :,'           ff!!          :1
+                                                                                                                                                                                                                                                                         ,~
+                                                                                                                                                                               Ift[!j:               *'!:'                                 ttl
+           ~                                                                                                                                                                   pm                    'ff:!.
+                                                                                                                                                                                                      rUi                                                                il
+                                                     I<F' '1', ,                                                                                                          rlWtrl           'In
+           ~ y iH:             " 'm             r£~~, f        1.1!                                                                                             14t. i~ l t'1              I:r. it 1,,[ :cit t~                           1,1 ,;:{j f
+                      '''''          it
+                                                ' ,Z, '      (:n[P 1! fl1                                                               14           "J ·,,If           :j:!l' !            Of                IAI ' ~;)fJ~ Jtr f.t" t~ ,I,
+t          ~,     :P                 a            4 I mm~ ~ I'!fj:t           t: f"! , Cr               , :t::'m:'~                   ,.;.t,    HI,fH ,~                ,EO"",~ I} I ~t               rl)" f"'N, ,II ! LIi;!                               'tJ I'         it
+                                                                                                  r:,T ;hl ftf"' '..,i lp~f '"hi ,HI ''',! P'
+                                                     . .to
+l'                                   '4:'                        lIft'        '8 ...                                                                                    1::,          j                                           I"
+                                                                                                                                                                                                                                                                        ' +lj
+     ;.,                      ,;t"              l~~~'~~~1~~~~~m!~~m~~~#~ti,0                                                                                                                  ,I                  Iq              1'1     >1"     '"          fat iUI
+                              ,:~               r"b:' U f", t7l               ,J i1-f           r:-1J:}t: "3ip      ttl   W ,H'l r,::: iirl frf4      ,4                                                                                    .j
+                                                                                                                                                                                                                                                              'I11:l ,liP
+                  Im"":                   :Jo
+                                                                                                                                                                                "
+1;':' '                                                                                 d   '               .p:;t         '~ A "fj!;1 ,,'                                                                                                       fi~       ,!i- ~jj       ,t
+           E ~:?, ' n ' Z t :-~
+                  :~
+                                                                ...l~A Ift       7Jr / ha: lI- j ;(A;                     ) , ; ~• .;!."           I-J<"                                   3 , '''l:'.r.! ~ ·            Wr, .'7'.19                  +
+t·                                                                    !Ai'?                     01'+"   ~£ II       "                      I.. ~.. i4"           l.+.
+ NACA                                                                                                                                                                                                                                                                                                       Figs. 7b,c
+                                                                                         I ~,i       '                              lf                       n                                                                               IW11if1                  If] ,j'i:!:,                                      ; :,                Itt
+                                                                                                                 '1#                                                              IffiW               ;
+                                                                                                                                                                                                          Fe                  "
+                                                                                                                                                                                                                                                                                           Ifli'
+           h~                ~                                          't                                                                    ,'~' Im: ltti                                                         Il±t                 t             Etii ~ Fi I1i                                       &            lID
+
+ffl11 [':1':1                fT1:"                                            I ..."        it                      i~   rn lIB                     1J:j:j! ~I+,                                                           I ~ti                       I±!:
+lil ~                                                                         1mIl:i f ;,                                                                   W"
+tt'" :-c t"                                    b" 1'" ' ttf$;                                      I ....        W                                                                                                                                                                                                                fil
+h1,'                         ~/)                                                         llit ~ rJ ft'+ ti
+                                           ,
+                                                                     bnwm                           !tli
+
+
+
+
+                                                                                                                                                   •
+                                                                           ['i'nlJ:1 'U1m
+                                               I-:                     'l<      ;q; fit ,
+     ti               W, lB.]                                        If. fflE
+     1 '                              Iif!,W'                        I'W IIH'                       ' ,",
+
+ l. ~                                                                         Ifif
+I(ill F4I Lr...                                                                                                                                                                                                                                                                                                              I
+                             i,r. "
+                             It' ''',                ,                                                   g               ~
+
+I.                                                       fI
+                                                                   ,                   'F:1 iffl
+,;1        to                                  ,ff                                   :UP. 1!i'i1lW!
+                                               ,
+                                                                                                                                                                                                                                                                                                                                             ~
+                        "
+                                                                                   ~1;1i! It"l
+                !u                    I"                                                 I~         . ~t+
+                                                                                                                                                                                                                                                                                                                                             ~\;
+
+
+:'he' ".7t1 " I ~                                        -t                                                                                          ,~
+
+
+f:7; t:':t " I ~                                                                   tt,                                                                                                                                                                                                                     ,~
+                                                              I;m
+                                                              '"to
+I ~t                         1;;0,
+                                                                                                                                                     H+\;;:t
+ ,y '                                                         :·+t              I#!                                          !t:Ff'                  ~                                                                              tl:-                                                                                     :!
+                                                                     ~i-+       rw                  I·t                                                                         ,
+  II- I '                                                                                                                                                                                                 If';.t!                                                                                          'Ii
+ '!}i it'                                                       ,                      , B:j,                '      ' 1 ~ItE ~~                             :'J             +1~                           1:U:                                                                Ii;                  FH"i01o ~ W :
+  .-i:f 1j:.; t              n                                      ' ;1l 1 ~~ flll It. Iii                                   Ii"             'it                                                                          ~ l tl1                                            i,. 1 ~' Jftr "itIJ:!
+   "'I¥i                                ~
+
+
+                                                                       iHllfn                                    ~~                                                                                                                                                           '1 ~ 'fti)f ffil . "rt
+                                                                                                                                                                                                                                                                                  Il:ttiffi L~ ,                                             '}fm
+                                                                                                                   .~'
+                                                                                                                                                                                                                                                                                                    ~,
+                                                     1         : ~' 'I; I".: ifu                                               ,i
+                                      IF; bo:o. ,j,
+                                                                                                                                                                                                                                                                                               Iln  iTIiJ                                   tttFrg
+           I"         ~".
+                                               It                              t:1tft,                           1.~"t                        H.                            '11             :lli                                                                              M 'IT)                              "",!~;t!#.t                      ,fit
+ "              :•.,j I ~
+                                ,.1 l
+                                                                              I,;                                I/li in J!l,I.it r::j:llj:+'~It!                                                                                              'm ',.,1                ffI .:fi:t ]                                                                 Jf
+                                                                                    ,J                                               ; f.~"1 : tiffi iiiJ                                                                            i-H' ' :f$fjth r~                                                     ~;.f
+                 WI" ''''                                tf 't,                                                                                                                                                                                                                      :li
+I,f. t.I:JI'I         til ' It                                                                                           :r,                                                                                                             ltlifu :1j:jl 1fi ; ,
+                                                                                                                                                                                                                                                                                                                        ,-;0:;
+Iii' ,lO la: £I 1:ll. +" 1:                                                                                                                                                                                                           ~~f
+                                                                                                                                                                                                                                                                                 !
+                                                                                                                 v~
+ftf ~1! I ~: f.ll 1'1+ r++' I.+                                                                    1,1£ ~f1= Ib+ r~i}
+pl fi~ J ~h .                                                                             X                          i        .                                                                                                                                                                     'H                 [YJ: :t,
+I~   t                                                                                                                              W                                                                                                                                                                              h
+
+I ~ ut                                               y,                     ' LL , I~                                         f.+1-c
+                                                                                                                                                                                                                                                                j:j                                                    fit••.
+                "t1 ~ ;
+                                                    ',:f l:,; rn I... f;         !tE t;m                                                                                                                                                                                                                                                    ,X;:
+
+ho ' f                       llo                   r411 m~t 1m!
+                                                        Itt]             !i'!t! I1:(
+                                                                                                                                                                                                                                                                                                                                            I~.
+
+
+                                                   ftt Pi! ,i1t" :.,W""" Hrtl tf¥J d:l
+                                                                                                                                                                                                                                                                                                                                            ~
+           =r.Il                                                                                                                                                                                                                                                                                                       Ii:!'
+                                                                                                                                                                                                                                                                                                                       L;;
+            ~'                                                  ' fH           ~~                        . ( to 1/
+IV! ;,t;: lIti                        Iff:rr; lim . t,                                                                                                                                                                                                                                                                 IEtP~
+
+                             Ut                    i!~ Wi                     1flt1                  1:7; H frt~                         I"iW                                                                                                                                                                          Nt:
+Ill>                                       ~                  If:i ,                     t" Itt.                                                    I ~;:! . n'                                                                                                                                               ,    .
+                                                                                                                                         '"                                                                                                                                                        J.W:           ..;+ rN:,!~
+                                                                       ',',                                                  JI                                                                           IF         M.-ti.                   I~               f~     I':t, ' l ' l '
+                                        't                    !1 Lei I i                                                            ~I              Irl l~                                                                 ';E,:'                       ~~:W :;
+
+                             11',                             I'     1.1i' :\1                                                                        ;ii                 lti                      14; i t!                                                    I ~ b iml.i                         llh                                             r
+ ,"1       t-' ~ 1"-
+                                                                              ltfi I±H-.                                       i                            Itt                            1""                                                                                                                                    fE               IF
+lil'i                            ,:l: litr                                       '" 1.,4 l it
+                                                                                          ; '.                           ff                                                                Ii+>
+                                                                                                                                                                                                                                                                                           ;;tflt.                     l'          +~
+                                                                                                                                                                                                                                                                                                                                        •
+I;~j i ft~             ,       , "~   Ir>                                     If"
+                                                                                                                    f!                                  'I !I                                                                                                                                                                                           .~
+ ,";
+                             ~          -t:t                                                                      ,:,.                                                                       +~     Ai                                                          ;;iitr           'It-!                :l
+      'lIE'                           riIH                                    Ir                   W                1                .111' fN lf:I~                                 "H ~;t.:tl til                          m: :'i.l 1:1 ~l llf fl:I. 'fl f""=                                        q 'T
+
+           1"11         ; ':.         I:tft f:g                                                                                             " +,                                    ,1:1                                   li"                  ", liii'·lffi, ." iA.l IDI!M.: IAU Uti~"                                               iJ
+                                                                                                                                                                                                                                                                                                                                                   J"
+      ii          "     tt                                           I~~;l Ii;~                          J                   /.,           1ft .1]                 tit I'It.' 1~ l t' ,w'llE                               I';·
+                                                                                                                                                                                                                                             t/::,             000                                                      JTleS r
+                   ., n' 5i: di                                             ti:ti.·          ;:;                                         tt r :j:J                 :,,"             [;1                    :...            114
+                                                                                                                                                                                                                                                                                                                                                        ~P
+                                                                                                     ' :1:>
+           f':t: 1,1                                                 m¥. '~f1:<                                                                     Iii'!                   ':>                                                                    ,                                 f,~
+
+ . T Iif~
+                       , r.-:-1
+                                                                     1+>14 IAi I'm Ir4:i                                                                                                                   it'              ,ll;1¥                 mil                      lllEl±t                  rJ,
+
+IlW 1m
+                                      Ifll                             ':1.1 J!i          w,.:~ l~                           .1: :)j l'l::                                                                                 Ittl: Itt :i:Htl·                                rtm              'I-!f:t! ;.. 8                       I"
+                                      P!                                                    ,;;                                                                                                                     iI                                 f:4t.
+           ~i I;':~
+                                                                       .' ~ ~                                            I                                                                                                                                            1#
+                                                              :~                                                                              .i                                                           j:ji                  fl ip          T                                                                                 ~ri
+    NACA
+
+
+    t
+
+
+                   I
+           I
+
+
+
+
+               :
+
+
+
+
+r   -                  [I
+             NACA                                                                                                                                                                                Fig. 9a
+
+                                                                                                                                                                                                                      ",;
+N
+~
+           :~
+
+                                                        --                   •   -   -         1-                            1-       'I~               I-   -~ ---I--f--i----l- I-
+C"'\
+ I
+~                      I' l
+            r                   ,                 j
+
+           r-                                 . 1'1
+                          -
+                                                  1
+                              I .
+
+                                                                                                                                                                                                       t
+
+
+
+                                                                                                                                                                           ~\                   I •
+
+
+
+
+           I""
+
+                                                                                           \
+                                                                         I           '1.       1\
+
+
+
+
+           ~"11                     rt    +I ~ ':Ii $         rrr; ' 1 l t w ; H . It!                             .tl-t lt+:'.tt1     ~     .WJ# "               tI             :,4   il   ~ f..i;J                 tf
+                  Ii          P             Ii: .!:! ft:r:f1J~-;;' Xl · 11K          1:: .itI ~l:ffi! ,$                               ~         I, IE ~                               ~        I~c                  11
+                  .f • ~      .:!i I ~wJ+~ hr.' !}" ~~. W: iYl - hll l----'i:~ fit t-: EL.:ttl".c:",E                                  iff       !lJ'        ~!'~      "        '/.<1' ~       idtii       ;j        -I't
+                 ~""~tr~~~ . ~~~                                        ~ m ~j\- l~~ ~                       ~ e~            ~ .                                                  ,~
+
+
+
+
+                                                                 I .T            ,· IB                  \
+
+                                         1 1i~            \                          ,              .                                                                                                           ~. 1--
+           W "'£~tl-
+                · ' pl~=+..:::·'· ·H--4+t+--+--~-4-+-tr-JH-+-+-+-H-++--r\\-t--r-~'-l--+-+-H·--
+                                               1\' "
+                                                                 ' \~                                                             .          \
+                                                                                                                                                                                             --I-- f-!--:- \     -~
+                                                          t
+                                                        lb"                                                  1\                                                   llATIOfl ~L lAD IISPR                         ~l
+                                                                        \\                                    \                                              ~o 1M ITHE FO •J ]l 1~Nl ~r:cs                          --
+                                         I'                                                                                                                                                                          p.
+                                                                         \\                                  U                                                         --I-                 I--f- --                  -
+                                                 ,(                I fC                    I.~                    .<:ro I/J. TI 44 ~_                    .f: '8     _1-1-..;+:2        _
+       I   f.:-.+-l--+--+-+--+ -+-+-+-1 -+-'4---+--1-+--1----...+-+--1-.1-1-- -+--+-+-+-I-~-+_+-.- f-- - - . -             f-- f- r- -i--
+                ",ti", v/ I.a I::J ( r;.,1 ....:In -/( ,~ /J Ie rn Vr, ,,..I=o,d /lIn_ It ", Iv. I..." - ,7' ~ I::'~~.rl;. b'" in . '1m _
+                                ~~k ~ ~ ~lrl                                         ~         ~            ~ ~'~~~~r ~ ~b b i _ ~ ~'~ b                                         b~                        ~~
+          NAC A                                                                                                                               Fig. 9b
+(\/
+-.D     ,--,.---                                              ~f ~-~-r~,-,-~,,-.-r~-'-~~" ·-'-'--f ~r- I -r-
+
+  ,
+ C"'I
+        f-- f--      1- -+~~-4-+-~1-4-+~~+-+-~1-4-+-+-~--1·-+~4-+-+-~4~~·
+                      f-- f---         -                                  -~
+H
+        f-- a                                                 ,j-i--'-i
+        ~-+-+~-~+-1--1-4-+-r~-~-+~~~+-~~-+-~~4-+-+-~4--~-+~-4-+-+~'- - -
+                                                                                                                                    1._1--+
+                                                                                                              - - ...   ~   - fez"",, It. :t!=',        ._
+                                                 /                         .... ~                                              t·y, ¥'.~i          1/
+            ....
+            II?
+                                             /                                       .",:--..
+        ~f-+-+~~+-~I-4-v~-
+        f--f-+-r~~+-~f--+I/          ~. I4-+-f--4-+~~+-.f--+-~~,~~                ' " - +~41~ ~ ~--~+-~f~~~~+--r4-                                 , +-~
+        f--f--~-'+-~~-+~J          ~+-+-+-~-+~~+-+-+--4.~,~~                                      ~~+-+-+--I-f~ ~-+-+-I-4-~4-+­
+        f-..-I-II+-+.4--J...-+-+-l+ -I-+-+-+-·+--j.-..-i r- -+.....j..,....j.,.....+-+-.,......f..~,~r'\~+-l-Tii--t~-.....-+- + .... -.,.f-..-+-I,.4--I-+-
+                         r
+        ~-+-+~~+-+/
+                  ~4-+-.~f--1-+-+-+-~+-~r~4-+I-
+                                              , ~~,~
+                                                   -+~~-I -4~-+-
+                                                               1 ~~
+                                                                  ll +-+-~f.~ f--f-
+
+        ~__~-+-+-~~~~-+_-J...~4-+~~il~JI_'~'l ~J~H~_r ~I'~~4+~~~~~w'~~-+u, ~
+                                                                           1 B41~'+-+-f--1~I --~
+                  II        I                  1· IFt{  I'
+        f-4~~-f~+-~-4'~~-·~~4-+-~k4~~~4-·+-~k4-+~~~+-~~~~~-+-+-+-~
+                           1     J                                     j       \!ti ltJlL l.:r, i,
+                                                                                       1
+
+
+                                                                                                      t
+                                                                                 ,      , .           t I
+                                                                                                      I
+                                                                           ,                         II
+                                                                                           'F
+                                                                                                      I   '
+
+                                                                   "   H-        -                  - -
+                                                                           ~
+                                                                                                I
+
+
+
+
+                                  '1 "
+
+                                 ;1-;-
+           W                             I
+
+
+
+
+           ,
+           ........
+                                  ~
+                 NACA                                                                                                                                                                                                                                Fig. 10
+                                                                                                                                                                                                                                                      D-
+                                                         1                                              IP f          I ~-:t          ,·tttl I" ,ttt                                           I'                I[ '~l'         I'          ;:- '   -I ~       ~e: lt:i:
+\l                                                       .         H                  I;~           ,,#,.,      _E:    '! t ,0                                                                             t.   il ll'lr              ,,,-            I~       ~. It! t-
+o
+                             ," I::"'l.                                                 H Wl rn:I "rp, t ,I:j:! ill tt IF. r                                                                                   Ifml!£t eft                   :'tl           .s l'u Ie:
+"
+I
+.:l         ,±                      t-i-t ~ I"                      ,··ll               2 d ra Rlrt fH .'f:1 iltcfI::.t . ~                                                          ~
+                                                                                                                                                                                           I' :J !'l
+                                                                                                                                                                                           ~                  .~:tf.F :
+                                                                                                                                                                                                                                      L
+                                                                                                                                                                                                                                                       ~.
+                               r~             l' :~                '111                          ::+'                                                                    til:!   #.f! W; IJ~ IW~tfu    J:j"
+                                                                                                                                                                                                                                                             . Ii:
+                               ' rj                                . ,t ..                       ,;'1 ti'                                      ,t± on ~ IT' tt ~j:tt                           ~,'
+                                                                                                                                                                                                       '        '~
+
+        FTi             .'c:    .'1.l             , [1              :tt ~ , liF                                                                                          .~tl                                                                                   I'n
+       cit' ,                                                                                                                                                                                                                                    :
+                                         Ii  c                     u.,.15                        :lH1:tl                                           ~,
+
+
+
+                                                                                                                                                                         In         ·i ~                                   ftt
+                                         It ~                      '~: ': ~                      pp.                                                                             1 '1~ ~
+                                    \,                             I~j          -;-              rm           1ft     Iitl3 11'111 :l1l                 I"          :flli.i'I L
+                 ,                   ;           It"                Wi'+: I ~                     '4          I ''tttt':! 1):t,'1
+                                                                                                                                                                                                                                                                l'
+       If<'                         J,                              if;               f1l.              ttl           Iff!                                    ' ft ·,.                                                                                          I~ U
+                                                                                                                                                                                                                                                                   f
+        ;tt                          I                              ttict
+                                                                                                                            ;
+                                                                                                                                                                                                                                                                          m
+                                     i           lJ:i1                                                                                                                                                                                                         Ii
+            .     ,                              It.'
+                                            ,"t'w a:,
+                               IJ        Ir
+                                                 1;1         ttr                                                                                                                                                                                                I~ ~ .
+                        '+                                                                                                                                                                                                                                      1',;
+                                    J . 18-J
+
+
+
+
+                                                                                                                                                                                                                                                                     '\
+
+
+
+
+                                         1-
+                                            'r
+                                        1
+                                    'j
+
+            \
+        ti            I.'..              It
+                                    "              "
+                                                                                                                                               IiY
+                                         I•
+                                                                                                                                               'q ~r '
+                                                                                             1
+                                                                                                                            +, '~,1                     ftt~             m in
+                                                                                                                                              I'        1B1 lb"'"
+            I                                                                                           +'~ ~ Itp [J.                 lifti             III
+                                         ! •
+                                                                            I                            J      ;1:    "T       ~~    It' lil],
+                                            '+                                                      , ;xtl :tifiE t?
+                                                                                                 ,"1:+          ....... V       C.,                I
+
+                                                                                                 ,:...--<             l it            _fi'J I:t
+       --                                          ,
+                                                       'i
+        ,- -+-"-+-t
+
+                 ,- ' -
+
+                                                         i                            1::1,
+                                                                                .• I}'                                  •
+       f--                                               ,                        ' 11' ! ~,
+                        1-.
+                 1- f- ~ 1-'                                                             -f
+                        f-          - .-
+
+
+
+
+      ",t
+NACA   Fig. lla
+NACA   Fig. llb
+      NACA                                                                                                                                                                                   Fig. 12
+
+                                                                                                                        . If          m: 'fr,~:, fl.' i'lrf-"n:f Ji1                                      Iij"
+                                                                                                                                                                                                                                      IIil'
+                                                                                                                                            -",-:R£ ~ I~                                             i                                      81
+                                                                                                                                                U ~3S I""                       it               11- r j.}
+                                                                                                                                                   \1"                                                    ~         Ii .
+                                                                                                                                                                    'fIf1 8'. .21 If!                     ~    ..                      ftJ
+                                                                                                                                                                    :'! i J :I; lf Ili,                               fr I,t
+                                                                                                                                                                                     -L 1/+.4 jIi .
+                                                                                                                                                                                         il Efl ~-
+                                                                                                                                                                                           w
+                                                                                                                                                                                            ij,i              81
+
+                                                                                                                                                                                                                                            ~
+
+
+
+
+                                                                                                                                                                                     ,
+
+
+                                                                                                                                                                                             .B 9. j:j:j
+
+                                                                                                                                                                                                          ffL
+
+                                                                                                                                                                                                                                      11'9
+
+                                                                                                                                                                                                                                        *l
+                                                                                                                                                                                   I;::                  lffir;:p                      ,n
+                                                                                                                                                                                                                 1m                   I~I
+                                                                                                                                                                                                         ~'!                          Ini
+                                                                                                                                                                                                                                      lu
+                                                                                                                                                         :
+                                                                                                                                           ,~                       ~~ .                                 r~                                 I
+
+
+                                                                                                                                                                                                         ~ '~
+                                                                                                                                                                                                                            Ij          ~
+                                                                                                                                                   ~               I1B:'
+                                                                                                                                           1$                      F                 ;:                  p;                            j
+                                             II                                                                                                   fh r:l U'
+                                                                                                                                                  Hi         ti!                                                 I~
+                                                                                                                                                                                                                                      im          •
+
+                                                                                                                                                  ltf1                     OR                                                         ~1
+                                                                                                                                                             ~                                  . 1iJ" .i:Jl                             ~
+                                                                              ~~
+                                                                                                                                                             bi            fi                     ~ IW'                                 '~
+                                                         dT               2!l                                                              I"              114 1[41 ±l                            fti        )                             I\:
+
+                                                                                                                                           1m                1:1           J+i:!                  ,j                              :n:
+                                                                    ttl                                                                          Elm "J:!                                   J:'~ . '4 ....
+                                                                                                                                                           19 ifE': flii '                               '~ "J
+                                                                                                                                                                                                                                       U
+                                                                                                                                    ~:,:         I~ "t        Itf'"                        .,.,-
+                                                                                                                                                                                                rJ        '+I~::::i I~
+
+                                                                                                                                ~ >11[                                             tS!,.                 1Q:.':~11 ~1 ~
+                                                                                                                                           :T;    OBIt!; f,llf                     ffil                  I}[
+
+                                                                                                                          ~                                                               , .
+                                                                                                                                                                                                         [jiJ;'t ..~
+                                                                                                                                fi: I ~                       .~
+                                                                                                                                 .~                                                  ,,,,b<;"''''1 :iij                           r~ .1.:  ;:..
+
+
+                                                                                                                                                           ~r'                             .' 1:(,. 'il
+
+                                                                                                                                                             :if £                                                                <
+                                                                                                                                                       ,      II     ' ll: ~                             Ii          ':! .~.i
+                                                                                                                                                                                                                     rt
+                                                                                                                                I.l
+                                                                                                                                                               ct,                                                     t
+                                                                                                                                ~
+                                                                                                                                                                                   I"
+                                                                                                                                                                                   It:i              :!
+                                                               '~                              fti   Iik'        !'i . 'll l~                                                              -=                                     ~
+                                                      ~ 1']l!ffllfI                                  1i:1f! ,fF I'+;+                                                                                                             ~
+                              if 1'1' 11,           Hl'fjt  (,II II:!
+                                                                                    ill! 'rl :1-'$               Af L                                                                                                             ~
+                              E'iI          fF                                                       .. ,~.    I'j'
+                                                                          l              ':U
+                                                                                                                                                             .i
+                                                                                                                                                                                                     I~
+                                                                                                                                                                                                                             1.1:1-'"
+  ru It It          Hjj              II:'         ' .S        [!ij I '
+                                                                                                               IH
+                                                                                                                                            "    I~                                                                        1,,-
+  (:ttfrll I .                r"                              IE." 'It!                                                                     E ,~                                                                                      r-
+       .. Wt'                               l:m ifWIIo'F I!l                       . ff  'I                    ffJH                                                                                                           -f"':
+..,              ttft@4 ,'1   "'it                                            IJ                                                                                                                     C'\
+'to                       ~
+                                               ~             ~                     ~\J                   Ie)
+                                                                                                          ":
+                                                                                                                            ~
+                                                                                                                                                               ~
+                                                                                                                                                                                                 ,)
+       NACA                                                                                                                                                                                                                                         Fig. 13a
+  '7.
+,-'                              1ft ,,;~                             r'l                                          Ip .                         I\j    .. j! IliW                   ~f      tW                               rtF                                      III
+                        ~j¥#
+                                                                                                               ,                                q,\ h!i%                                                           I+J~ "          ., ..     ~,~
+
+         ,-," 1,#1                          ;;                                               'f                                                    8 r:U flr
+   ./.0- ',                       'm                                      ,Ii           liillwt                                                 1-..1 ~\                                                                                                              .'1
+
+                                  ;w                                                 'I     .Im'
+                                                                                                                                                                                                                       8:'
+                                   .f!                 1£ If              't       I I"                            J""             lri          fJt        ~\'
+   .~ ,           I:                                   r.tJ1:l: "tt                 11ft                                                                    ~\
+   L.                                                  w              if                     "
+                                                                                                                    .fb                         ,1
+                                                                           "I,                f       c!.,fI1 :il:
+                                                                           t!
+                                                                          ;;
+                                                                                                          ItJ iff
+                                                         "[                                 III           ffi :tt~
+
+....,.   -                                  ,!=i       ':t                'L
+                                                                                                 ,I        :[1
+
+                                           'W' ,~~ 111: ri fl
+                                       .. a:
+                                       } r h    .,,1; 1 jl                                                                 ,
+ 'I# f~ .+; 'jf,{lb                                       -~lfHittt 'll
+"~~~.                                                                                             it
+.....                                      i:jt                       f,'
+;tf:1 ~"                         ,.+'        'j:
+                                                              I L~ i# r\                    n
+  ~      irt'                                                      :':t:                          'llJ
+rio Lr.                    T:               r            ."                                       II
+If'l+r'ffi                       Iitt! bl±L I ~,                      r:...~ lltr;
+       +11'                r                ,if                                         j
+
+tf.!                   ..'1. 'i:Htit fl'li :'j; r:H ,Il
+                                                       Ifj, lfti: ':f:'i
+                                                                                        p
+         iW                           ,I
+                                                  ,
+                                                                 'J C'"
+
+          '~1'1                                               II; '+liH
+  l1.                                                    ,H
+                                                                          ""g'tl
+  ... 1..1t                                     'nli:i=                   w'd tti                 IE!                              II+!
+  ~ 'm "-,1:                               l:'f. lj.i:'                   tj±t~tt                 1m               t:::
+  ~           .                  .f                    1+<1           +<,                         In               ~.
+
+                                            :tt. '1- L1tiLfl:
+                                            ]±t ,it: nWl "til
+l±l                                   .. tt:                                         "'-
+                                 tI; ~.                                            tI
+                       ,;,                                                =It!';.li:
+                                                :tr
+                       r           CJ.~' I:t                  'I.;.                          -a~
+                  .t.;:im,                                          i/tI" P
+              'Ii, ji'     :if                                    . tllrl,
+:1:.                    rn
+                        tJ:.
+
+
+
+
+                                                                      ,
+                   11\                                                                                                                                                             1'J:li
+                                                                                                                                                 1'1
+
+                   Iflf,                                                           IiTI           .ffl :.:it
+                                                                                .t::,
+~"
+                           ... rn ,,'                                 k. Illff                    rt'ii
+                                                                                                          ft\ :
+                                                                                                          ~1 1!                                                    c;~                             ~;                                                           ..f
+ tm ·'t                                    li1"        tm             1:m' 1:t:                   ,:).: Ib'f I'4.t                 11                                                                                                                    ill: Wt ll ' ;Pf
+                             i                                                     11                     II              II             :II
+                                                                                                                                                W·                  nflu                 [It:f .                                             ,: :f:!                          ,.,.
+W 'rr f                                           ~i
+                                                               '*              tl ltr'l                            ~           r                ILtj               ttnln I,mtn 'Hi                                                            I,'                            ~
+                                                                            ·' I ~·                                1'\\                                          ii ·~W                     Effl I! : ~       J        Pt j·ti JfIIIlLl It:~IU" ~U' !J~ ..;.t
+                                                                  ,                Ir                                     \                                             ,:b        It! : ~                         . . "?I$'!.. tt                      'r
+
+                                   .'] ,                                                                                                                                      +1                        IJ             ::,Jet#.
+ /.,                                  11';:"                                   ~                           7f.~                                A~                ..a;l.l:J~~.~'If "'rt!                                                               "4' ~     l'          '.;lj
+
+                                                                                                                                                                    J
+                                                                                                                                   t             Jt,d."                                                                       Ix
+ , . ?ib.l.\;~ Ji~ ~                                                  "'''',s>. ,~ ! IJH:'~ T-            EL       h~           j1}.:jl ;:t:.; I-tll                                                                           Ji:l.L 1 . j ,             ,;,,;,.              't
+ ~ ~ J:li!:                       ,...•.1'; .... .                    .J,        ,;t;   JL     c c: .,:.:;"' ... e.'fii ~f ,h',,., i.. :\1    I. r.                                                          1.1       JU;':        ~j ...         ~')~ ' <r-":,             !,
+     NACA                                                                                                                                                                                                                                                                                                                                                    Fig. 13b
+
+~i:
+If...;1'='1
+ft-
+               J li               Ti                l i· ,<-               ,
+                                                                                         Tfll'
+                                                                                                    ...          T                    -:IF-                              ~,
+                                                                                                                                                                                   -+
+                                                                                                                                                                                                 I r~j.
+                                                                                                                                                                                                   '11-1<;
+                                                                                                                                                                                                            I'                   "                                                                     'iI      ~
+                                                                                                                                                                                                                                                                                                                                           ~1 lit
+                                                                                                                                                                                                                                                                                                                                                         T
+                                                                                                                                                                                                                                                                                                                                                                                            I
+
+
+
+
+               ..t
+                                                                                ;l
+                                                                                                                 'tort                                                                                                                                                                                                                                                               .~    -- I---:-
+mft                                                                         tt#If WI:I ,,:J! ~c rfll P" ;;                                                                     ,
+                                                                                                                                                                                                 \tt1 If' ,t                     :t
+                                                                                                                                                                                                                                                        ,                                                ;~            1¥ 'I                        ,                                                ..j
+
+
+t+ "",                                                                                                      ll:l ,                                     11
+                                                                                                                               -.rc                                                                     ,                                                                                                                                          'i:
+                                                                            ',,'                 tw                                                                                                                                   Ib
+Il '                                                                                             I"              '1:              tFttl          ~:
+                                                                                                                                                                         It·,                           ~                                              .t                                                                                           t
+                                                                               :0:1:
+                                                                                                 t11£f             it                                  +t       ::,                                                                                                                                                                        : ,1:
+it
+         "'''''                                                                                  ".                                                                      I-'                                                                      :,-       ,-" ,.,-¢           '~         -, ,r, Jr" 11; I""" -d                                                                               I~
+
+                                                                                                                                                                                                                    LJii 'H1 ;(:
+                                                                                                                                                                                                                                                  H
+      1': ,                  i'l='                      'V',,!i1                                 Wi ~' 'i!                             ,i:':
+                                                                                                                                                               ' ... ::+.11=
+                                                                                                                                                                                                   "Ifi                                                                         '"                 rJ #i-                                                                                       f.
+                                                                                                                                                       "~ .11" ,,"',
+                                                                                                                                                                                                                                      ti '                             tt
+                                                                                                                                                                                                                                                                                                              'f, •.J',               -,   ,~,
+                                                                                                                                                                                                                                                                                                                                                          ~      ;»                  'J"        Erl'.
+                                                                           m"w- IF [,1                                                w                            '"                                       .....       ~             #                        £I:!p' ~,                                                   ,         ,~                                                         f'
+:It< r;:: t:                                   !J                                                                                                         ~                                                                      ,J                                                        i                                                        I
+W, J<'/,                                 f            .J ' ';j .. ~'i - tt~ f£ ·tt +-...; 1ffi f!;                         '
+                                                                                                                                                                 ..                                                                                                         il~                                                                                                                       j
+                                                            ffi: n ;!t !fit- 1ft ttl$
+                                                                                                                                                                                        ,,-'
+t't~                              ,j:
+                                                ::/:.                                             1!:t <It.     -,                                                                                                                                             -:-j-                                                                                                                                 ~.
+
+
+
+
+#' tfJ                                                      fu, I i'   iif   Pit ill   '4
+                                                                                          j:f ·f  u     ~ h , ~ If- ;,                                                                                                                                                      h              'L                                                                                                         :
+             /~
+                     I,                    It! ,'t
+                                                          !
+                                                                     ." 1i1 Ilts; H:11    fg     It.':t<
+                                                                                                   "        W ~ ~.
+                                                                                                            j'
+
+                                                                                                                                                                         j", i'
+                                                                                                                                                                                                                             "                              r--..                                                              j
+                                                                                                                                                                                                                                                                                                                                                                                                fBI
+                                                                                                                                                                                                                                                                                                                                                                                                It'-j
+                                                                                                                                                                                                                                                                                                                                                                                     ,.
+ It fH1B                                 It                r               .:-++t       "111 I± .~ , ,g- flffi #!@ I"" IftT i" 11                o'J                                                                                                        i·" j ,\:1"                                                              If                                                         If:.. 1
+                                                                                                                                                  "
+ tiE ~                                                                                     I;;' t!          ~L     'IP Itf" 4 In" ,.,                                                                                                                                       ~                                                                                                                    ~
+
+ ~       f+i                         1              If;                                    IIiii 110'1.* .Ii1\ r~ "11fl '!i IfiIitt •t 1m, lfit. '4t :tt                                                                                                                                                        T                                                                            'HI
+                                                                iF                                                                                                                                                                                             il                    I'"
+         J:1.l              It R           IfW '~                      ,                 -4 flm ~: #t la                 ,I+:j:j       i1F1 #l 8' I r~ w                                                                                                                                           \.                  'b            Ie                                                  "" II"t
+                                         I@[OO'i:                                       fie!:                                  I' .11:1                 T&               If ':!                 !It             n                     ~                      .tf/ .t. It...:t                                 ~                      k:"l ~.                                          .,    Iftj
+~t                             .tt                  lri. f                                         ·n            M E:t: la                                                                                                                                     ~
+                                                                                                                                                                                                                                                                                               ,
+                                                                                                                                                                                                                                                                                                                "                                                                                    .r
+!!p' f'                   ; 'fIi 1                                                                               mt rftJ lIt' "                                                                                                                                                                                            '0                                              \1-                       f
+                                 :!fi1 Itt                                                        'ti1
+                                  tit ft:!"                                                      Itill tr II- t                                                                                                                                                                                                                      ~
+                                                                                                 mt fd rt "'iCE';;
+             /A
+r>+.
+         WIiif: 1mIlt                                                                  I itt:                                                          fit- :!:i                                                        rt                    ~                u, if I,t                                         ,-P
+                                                                                                                                                                                                                                                                                                                                      \                              'T'             Y 11:1
+ei illi .,.ft, ~ fr.'                                                        Id                                                                         .::;                                                                                                                                                                            'V\                                          r Ir
+ a, om ,:l                                   .):1                 Wi IT                                                                                ,w                                      j-J:J:           t' i+                                              . fit.                                                            P'
+                                                                                                                                                                                                                                                                                                                                          'tx                               io ~                 ~r:
+             ::j:ti. ,F .I:I:t.          fl'                   fi nlm t :fflj                                    #l1 '$.              :m; iY ;rJIl.fjt ',f\.fI- '4'                                                              ;:        -
+                                                                                                                                                                                                                                                            11 l*'
+                                                                                                                                                                                                                                                              ~I:t                                                                                       \                            ~,        :!',
+                      +:;     .
+                                             '~ :tf~            ;:;'111                     ,+"             t,                            tI~ P                          ffl:""                   '8:                                 1;tt                   H-ti                              r
+                                                                                                                                                                                                                                                                                                                                                                 :\..-,              1;         :r '
+                                                                                                                                            ',pi ffi ,                                                                                .1:-,                  ~!=.                                      ,.
+         if                  fr k -@ .l:':F ii.                                                  l±f! ·,:t d J:l                      w                        Ill'                ;f!f~ lli' 't                                                                            [l.t                                 t
+         tfi :1ft: 1:;' :1:" -"\:It ' ..... \;1+1!t++L +1f 'Ii' lL~                                                                   11 Ht                         '~                  W~       r<j                                  t.'r                   p              t't                c 'f~             !
+                                                                                                                                                                                                                                                                                                                                                                           .\                   ~
+                                                                                                                                                                                                                                                                                                                                                                            '.
+,rp, »
+                                                                                                                                                                                                                                                                                                                               ,.
+                                                               "             -it
+             ' ")7
+                                         -I:;'            ,I               .:¥ -~ .tr. 41 i{] ' ~.                                                                                                                                        . .t:
+                                                                                                                                                                                                                                                                                                                                                                      ~              ,\
+
+                                                                                                                                                                                                                                                                                                                                                                                           ~-
+                                                                                                  ,"<
+     ' . •t.                                                       .             . "'"           ,'~ ~,
+                                                                                                                           '-
+                                                                                                                                                                                                                                                                                                                               .1 '
+
+                                                                                                                                                                                                                                                                                                                               1
+                              .n                                                                            '\! fi                                                                                                                                                                                                             .fI                                                              \-C
+                                                                                                                                                               ?r- ..
+                                                                                        ..;j •
+
+                                                                                                                                                                                                                                                                                                                                                                                           .-l -\
+                                                                                                                                       ~:tt                                                                                                                                                                                    "l
+             "'"!
+                                                                                                                                       ......          V
+                                                                                                                                                                                                                    -. - I"r-
+                                                                                                                                                                                        '"
+         ':"                                                               ;;.-..                                    '.;
+
+[~
+                                                    v                                                                      ~              ~ r~                                                  ~- ~-                        .
+                                                                                                                                                                                                                                                       - '-                                                                        jl"         L
+
+
+
+
+'fr                         , .~!l       I          I:'            :t'                     ~i ltJ:.                   ~         '''f                   "?1~
+                                                                                                                                                                                                                                                                                                              0-;:,.
+                                                                                                                                                                                                                                                                                                                                                    I                       1:
+                                                                                                                                                                                                                                                                                                                                                                                                      J
+
+                                                                                                                                    \                                                                                                                                                                                  ~
+                                                                                                                                                r\.                                                                                                t                                                                                 I'    t--...                                               l-
+.                                 ~
+
+
+                                  t                                            ,.                                                                      \                           ll ~
+                                                                                                                                                                                        I~
+                                                                                                                                                                                                                                              t·                                                                                                          "" ,
+                                                                               ,:;.' t"                                                                                                                                                                                              I:.                                                                                   .\
+             .,                .l                   l.:t
+                                                                                                                     ~
+
+                                                                                                                                           t                                                                                                                                                                                                                                                .- r-
+         ,
+                                                ~I ~            t.                                                   ';: ', 1~                                 \                          r                                                   !                                                                                                                             '...:.
+                                                                             ~-i
+                                                                                                                                                                                                                                                                                                                                                             -
+                                  1:
+                                                                                                                                                                                                                                                                                                                                                                 .-
+                                                                                                                     ,. I ~ j
+                                                                                                                                                                                                                                                                                                              .-. -
+                                                                                                                                                                                                                                                                                                   i--
+                                                                                                                                                                                                                                                                        ,
+                                                                                                        j
+                                                                                                                                 . If I I                                                                           .                                                                                                                      t-
+                                                                                                                                                                                                                                                                                                                                                                               T C
+                                                                                         -p
+                                                                                                 WI tt,                                                 t                1\                                                                                                                                                ' - i-
+
+I!·                                                        ,~
+                                                                                          i If                                             JH' tt                                                                    1
+                                                                                                                                                                                                                                                                                                   I                                       I
+                                                                                                                                                                                                                                                                                                                                                                                 .....-
+                                                                                                                                                                                                                                                                                                                                     Illlt~~ UN~TJ1 Ir.:
+                                                                                                                                                                                                                                                                                                   N~l IOrrm                                             .UII,T
+I' "                                                           ,j:           l:. f                                                         i"           ~       I                       \                                                                                       C(                            Itt' f(
+I ~ ~ ,f                                                                     ~                   It l                                 It i l t                      1                                                                                                                ~~~                                   -.
+ItF                                                                                                                                        !                             II:                      \
+                                                                                                                                                                                                                                                                                .,. :tf                                                    i                     I
+                                                                                                                                                                                                                                                                                                                       ; 3. ;;;--                                                               6.C
+--:      -                        2. f!..
+                                                    - -
+                                                                               i:t.I
+                                                                                                                     "' Z                                      6                                    <i ~o
+                                                                                                                                                                                                                    ~ 1,/24
+                                                                                                                                                                                                                                                  <'f
+                                                                                                                                                                                                                                                                                                                                -
+                                                                                                                                                                                                                                                                                                                                                                     oJ 6
+
+                                                                                         _.
+                                                                                                                                                                                                                                                                                                       ...
+
+
+                                                                                                                                                                                                                                                                            - _.. -
+                                                                                                                                                                                                                                                                                                                       ,
+
+                                                                                                                                                                                                                                                   - -
+--: -F.
+-.:....: _.                 'A.
+                            .J
+                                                    .",        ~'i .           //-,
+                                                                                                 --:
+                                                                                                            ", j/, -" l
+                                                                                                                                                                                                                             -+-'1                -- .--                        -                  .,.
+                                                                                                                                                                                                                                                                                                                     .'--
+                                                                                                                                                                                                                                                                                                                       I
+
+                                                                                                                                                                                                                                                                                                                       I
+                                                                                                                                                                                                                                                                                                                                           ( ~ _.J ,I
+ NACA                                                                                                                                                                                                                                                Fig. 14
+
+                                                                                 I '~                                                                                                          1*:
+                       1                                                                                                                                  II
+                                                                                                  c;        ."
+                                                                                                                     .I.,
+                           I
+                           i                                         ,
+                                         "<,;,: .,-                                          d l~          h'                     i=i     '=u                                         J     :tlt ','               lif                                   r'fi ' fl'! 1'1.
+                   I","                             r                                            IS-                              l            ,i   ~'*        ' 1tJ:                          1.Iii               l'( ~                                 1ft' I ~
+           ' rlil W ~ .t -\                                              '. iii Le' ~                                                                            r,1       .tt. ltttl;1*"1                                                                mIt'tl                t   Ttq
+            ~ I~                     ~                                                  ~                    ~','*1-,                   =!:i        em '1+         •. ' / ~'± I;               :n;
+                                                                                                                                                                                    :/ 'jl ~ ttt                                                               l ~i:I,>
+                                                                           :1           '1-;:;                   , :t;: " lT            ¥           rc=          ::::fF "      .>' ~ rl alii' '!                                                               Ittll                ~
+            1
+                 IL
+                 If
+
+          11;1
+             J
+             ;
+
+                                                                                        I,             V~ I<'      tit:                                                   t~ 1Jt;J. ~!:t: Itt!         ,'I gtli\
+                                                                                                                                                                          I~ .            1"i1fFt; 'm
+                                                                                                                                                                                 Hi       Iti" .            L~ ~'H
+It'                                                                                                                                                                           }1:t'~ f\t                1fj:1ffl
+I~                             1-;
+If,                                                                                                                                                                                                         .r
+                                                                , , /... ~ m.,                                                i
+
+                T                                         X' .t,l l-                    :'ft''" IE                           1£ ,                                                                                + 1+, .
+
+f-.-- 1...2 I--
+                I                          J7l ~               f1=i ~ ~ if;:1  1ft ~
+           ~i         '' U               C) 7               ~"           mil'
+                                                                        :it iW'CH'~                                                                       ~                                                 lIT ~                                        00                '4
+
+I~                                                                                                                                                                                                                                             f         ~ t.'i:l ' It1o]
+I',                                                                                                                                                                                                                                                      ':S thl Ii:!
+                                                                                                                                                                                                                                                         I'u    "jl
+      ~
+          I "j                                                                                                                                                                                                                                      It   rg; "~            ~ !{1-1J
+                  t    :~
+                                                                                                                                                                                                                                              ffJ        Ith    $1 .~I "!
+           ~ ',j .tt                                                                                                                                                                                                                                                                M
+~
+Ic-- ~ l-
+                                                                           tt'      . [~                 i:j lo/:fl:! ,. .                                                                                                  '. ~.
+                                                          I;"        k l ~::g y r,,:n                       F9 - ;1                                                        ti,                          ",,,,,tttff'H
+                                                                                                                                                                                                                    ,,,+        :,>j.. ~ ',
+f-,- r---.
+                                                          ~          ~' ~ ' 7 ~ m                                                                                         I ~~            I~            ¥          ~ ' ~~
+                           "                  Ii                     /.                          I                        IY '~_
+                                                                                                                             "                                                        It = t '                     t;      ~ ':lfXl
+             i ;                          N                      /    t                      ~ Oi' iil't              dl ~ '1ltti ,                                              It!: 7 E+t :t~ ,                          .A': '                        "':lr.t11
+             ,
+ +
+
+f- f-
+
+
+
+
+                                              ,I .....~                                                    r.
+          ,, .                                                       r
+                                                                 I
+                                              1                  I        -                                                                                                                                                                                            j                1
+                                                                     j                                                      I- i'=!
+                                              1 -",
+                                                                                                                     ~                               ~
+                                                                 )
+                                                                 )
+                                                                                             0
+                                                                                             ~
+     NACA                                                                                                                                                                                                                           Fig. 15
+
+
+
+
+                                                                                                                                     ,Ii        t"t]~                        ,:j:             rr'                              tt    .'J , 'ct.'++;:
+                                                                                                                             ,H     '~tr J(iW                                                 l;~l 1:\                                   h,          hi
+                                                                                                                                . ';            l iili~        ',11Jrt                        c' ff!. tIT,               i:. 'T     t.m; ~ I'J
+
+
+                                                                                                                             .p' lr l E l                                    i!i":t                 $I!         .m ~ '
+                                                                                                                           ~'ltjlr                                                                        II,
+
+
+
+                                                                                                                                                                                               ¢+tti::tl i
+                                                                                                                                                                                                    H+ .... 1
+
+
+                                                                                                                           .j±~ :tI'!itu
+                                                                                                          l ',"",                                                                                                                         T
+                                                                         H.. t:          I"t                                                                   ..:'t .
+ ?                                                           :L     :1                                    " r.              l~iW
+-~
+           1f              [If ';,            rc        11                                         l:IJ·lf1:l ,tl          te1
+        .ttl'                      rrH ., 1        t         Jt~ H                                 Wli+' !1ft:        'Hi.1t
+                           11. MtltillfB- ~,.j                            itir . . . :             :', [lfi ct" !H!. IWI*t
+:;'L                       r . ",' l!                                     til. r                         "I
+                                                                                                                           Iii=<.' ~,:
+    ~                          .          f.
+                                    4:,' 'T                              M;;.,,·"1 nm-t,..""
+ ,t                                      l"+                  'fj        C,                        ..;    tl
+'~          ~          4           ~,t$':Jlj:!F,                    'ili~:~                        '~ iilil                  Li..
+                   t~              'J,U{'                    W"·                                               ,r            't! !~
+            ,      i       ..\j W             tm                                                               IWWI:t         ,;
+            j     1        ~                           ta. ~.'                                                  $ ~
+                ~ ',               :-, . "tilt:.                                                               1..It] tnl1,: ,~~                it.!:!-
+                           ~       ~      ';f liJ~:                                                      1m:   'T;                         ''It :jf ;1: r· ,                 Itftt l '
+
+
+
+                                                                                                                                                                                                                          ", ,em b
+                 'I \                  '+lq!~;~::a                   'l:.                  =m ,";                    mR,                 l' .             '" ~ '             , "L                                   1:: fit~   ,f11! ~
+                  ~~.                     'i.i±              "."!                 :# ~::.'                                                  ~             l:             '               tt                               it,riTti: l
+
+
+
+
+                                                                                                                                                                                                                                    IrJ
+
+
+
+
+ :>;'II j r                ~[l j f                     '~           .'                         j
+
+
+
+                                                                                                                     .
+                                                                                                                      I
+                                                                                               1
+                                                                                  It
+

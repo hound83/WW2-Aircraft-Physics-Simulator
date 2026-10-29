@@ -1,0 +1,18 @@
+title,url,source_kind,why_relevant_and_limits
+USAAF Wright Field P-51B-15 s/n 43-24777 report,https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html,period_primary_report_reproduced_HTML,"Source P-51B-15 speed, climb, boost and power; Eng-47-1749-A, 20 May 1944; image/HTML discrepancies; verify actual climb IAS and weights"
+P-51B-1 airspeed correction report,https://www.wwiiaircraftperformance.com/org/p-51/p51b-12093.html,period_report_HTML,Indicated error at altitude / Mach; DO NOT transfer position-error curve across aircraft
+P-51B-5 s/n 43-6883,https://www.wwiiaircraftperformance.com/org/p-51/p-51b-6883.html,period_report_HTML,Different P-51 test variant already in Atlas registry; do not merge with P-51B-15 data
+Wright Field P-47B historical performance,https://www.wwiiaircraftperformance.com/org/p-47/p-47.html,period_report_HTML,P-47B speed and climb per source; climb engine rating / cooling distinct from maximum speed
+P-47D-22 ratings same aircraft,https://www.wwiiaircraftperformance.com/org/p-47/p47-26167.html,period_report_HTML,"Same aircraft changes of boost, water, fuel; keep same-altitude comparisons separate from peak speed at changed altitudes"
+P-38G-1 test,https://www.wwiiaircraftperformance.com/org/p-38/p-38.html,period_report_HTML,P-38G clean performance; Greg bomb graph independent and original conditions unverified
+Mosquito A&AEE B IX external bombs,https://www.wwiiaircraftperformance.com/org/mosquito/mosquito.html,period_report_HTML,"LR495 before/after bomb load; test ages differ, RAF 15–18 mph stated loss, raw peaks altitude differences"
+Fw 190 A-4 WNr 619 Report 1,https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-619-nr1.html,manufacturer_report_translation,"Five stage 1942 stores configurations, actual speed and weights; initially misadjusted engine control"
+Fw 190 A-4 WNr 619 Report 3,https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-619-nr3.html,manufacturer_report_translation,Further stores penalties: installation state differs from Report 1
+Fw 190 A-4 WNr 619 Report 5,https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-619-nr5.html,manufacturer_report_translation,External fuel tanks affect measured IAS by 6–7 km/h in 1943 calibration; avoid double correcting
+NACA propeller efficiency charts ACR L4I29,https://ntrs.nasa.gov/citations/19930093312,historic_naca_archive,"Propeller eta from advance ratio/loading/geometry and test evidence, not one universal constant"
+NACA P-51B propeller high-speed MR L4L18,https://ntrs.nasa.gov/citations/19780078569,historic_naca_archive,P-51B propulsive efficiency changes and uncertain engine BHP without torquemeter
+NACA P-51B drag ACR 4K02,https://ntrs.nasa.gov/citations/19930092458,historic_naca_archive,"Propeller-off configuration, not directly powered P-51B drag polar"
+WWII aircraft performance historical archive,https://www.wwiiaircraftperformance.com/,test_document_host,Use underlying report conditions and scans where possible; web transcriptions not independently verified scans
+FAA Aerodynamics for Naval Aviators,https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/00-80T-80.pdf,reference_text,Flight dynamic principles; NOT aircraft-specific parameter measurements
+USAAF WWII Statistical Digest,https://www.ibiblio.org/hyperwar/AAF/StatDigest/,historic_official_report_transcription,Historic aircraft inventories/production/losses; not identical to physics model inputs
+P-51 and other report leads at NACA,https://ntrs.nasa.gov/,official_archive,Locate independent calibrated performance and aerodynamic sources

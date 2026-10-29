@@ -1,0 +1,278 @@
+{
+  "version": "2.2",
+  "sourceStatement": "Original Greg spreadsheet/screenshot table as comparative arithmetic; actual 1944 P-51B and 1943 Spitfire data remain primary.",
+  "gregPowerAvailable": {
+    "p47DPlateauHp": 2210,
+    "p47DEngineAssumptionBhp": 2600,
+    "p47DPeakEtaAssumed": 0.85,
+    "sourceBf109F4PlateauPropulsiveHp": 1058,
+    "normalizedComparison": [
+      {
+        "speedMph": 100,
+        "gregF4": 0.7863894139886578,
+        "gregP47D": 0.7692307692307693,
+        "differencePercentagePoints": 1.715864475788853,
+        "propHypothesisEta": 0.6538461538461539,
+        "modelP51CEta": 0.7188719996265616
+      },
+      {
+        "speedMph": 125,
+        "gregF4": 0.8279773156899811,
+        "gregP47D": 0.8144796380090498,
+        "differencePercentagePoints": 1.3497677680931353,
+        "propHypothesisEta": 0.6923076923076923,
+        "modelP51CEta": 0.7431711713929456
+      },
+      {
+        "speedMph": 150,
+        "gregF4": 0.8913043478260869,
+        "gregP47D": 0.8823529411764706,
+        "differencePercentagePoints": 0.8951406649616356,
+        "propHypothesisEta": 0.75,
+        "modelP51CEta": 0.7648899935424128
+      },
+      {
+        "speedMph": 175,
+        "gregF4": 0.945179584120983,
+        "gregP47D": 0.9411764705882353,
+        "differencePercentagePoints": 0.40031135327477374,
+        "propHypothesisEta": 0.7999999999999999,
+        "modelP51CEta": 0.7837579207959524
+      },
+      {
+        "speedMph": 200,
+        "gregF4": 0.9725897920604915,
+        "gregP47D": 0.9705882352941176,
+        "differencePercentagePoints": 0.20015567663738132,
+        "propHypothesisEta": 0.825,
+        "modelP51CEta": 0.7995354878534919
+      },
+      {
+        "speedMph": 225,
+        "gregF4": 1,
+        "gregP47D": 1,
+        "differencePercentagePoints": 0,
+        "propHypothesisEta": 0.85,
+        "modelP51CEta": 0.8120193632262409
+      },
+      {
+        "speedMph": 250,
+        "gregF4": 1,
+        "gregP47D": 1,
+        "differencePercentagePoints": 0,
+        "propHypothesisEta": 0.85,
+        "modelP51CEta": 0.8210467086948463
+      },
+      {
+        "speedMph": 275,
+        "gregF4": 1,
+        "gregP47D": 1,
+        "differencePercentagePoints": 0,
+        "propHypothesisEta": 0.85,
+        "modelP51CEta": 0.8264987137767846
+      },
+      {
+        "speedMph": 300,
+        "gregF4": 1,
+        "gregP47D": 1,
+        "differencePercentagePoints": 0,
+        "propHypothesisEta": 0.85,
+        "modelP51CEta": 0.8283031979693157
+      },
+      {
+        "speedMph": 325,
+        "gregF4": 1,
+        "gregP47D": 1,
+        "differencePercentagePoints": 0,
+        "propHypothesisEta": 0.85,
+        "modelP51CEta": 0.8264362010935521
+      }
+    ],
+    "sharedShapeMeanAbsoluteDifferencePct": 0.7602066564592965,
+    "warning": "Both worksheets have almost the same speed curve: probably a common modeling assumption, not independent historical propeller validation. F-4 underlying BHP/rating is not written on screenshot."
+  },
+  "mustang": {
+    "originalAirframe": "P-51B-15 43-24777, 20 May 1944",
+    "altFt": 2200,
+    "sourceSpeedAnchorMph": 361.5,
+    "sourceMassNote": "20 May 1944 detailed report: 9,335 lb at takeoff. Current top-speed CD0 fitted with the separate 9,240 lb cruise/altitude scenario; no undocumented correction to instantaneous mass is asserted.",
+    "cases": [
+      {
+        "rating": "67inHg",
+        "historicalClimbFpm": 3820,
+        "sourceTakeoffWeightLb": 9335,
+        "original": {
+          "tasMph": 171,
+          "climbFpm": 3401.0861529653166,
+          "eta": 0.7809409097141065,
+          "shaftHp": 1603.1,
+          "dragRequiredHp": 289.83124395100845,
+          "excessUsefulHp": 962.0951284116753
+        },
+        "gregTransferFixedPolar": {
+          "tasMph": 184,
+          "climbFpm": 3497.380847695101,
+          "eta": 0.809,
+          "deltaFpm": 96.29469472978417,
+          "residualFpm": 322.6191523048992
+        },
+        "gregTransferRefitToOriginalSeaLevelSpeed": {
+          "tasMph": 181,
+          "climbFpm": 3475.048891545658,
+          "residualFpm": 344.9511084543419,
+          "fittedCd0": 0.01691852006018527
+        },
+        "sourceClimbMinusModeledFpm": 418.9138470346834,
+        "deficitUsefulHp": 118.5018412748112,
+        "etaRequiredAtOriginalOptimumIfOnlyPropChanged": 0.8548613396778088,
+        "eOneMaxClimbFpm": 3534.3203915910594,
+        "artificially8500LbMaxClimbFpm": 3848.451494936373,
+        "ramBoostRegulatedAtOptimum": true,
+        "notes": "Optimized TAS is unknown in USAAF report; η required is a one-variable thought experiment at the unchanged baseline optimum."
+      },
+      {
+        "rating": "75inHg",
+        "historicalClimbFpm": 4380,
+        "sourceTakeoffWeightLb": 9335,
+        "original": {
+          "tasMph": 175,
+          "climbFpm": 3978.538324234923,
+          "eta": 0.7841005727757949,
+          "shaftHp": 1811.1,
+          "dragRequiredHp": 294.6404486776265,
+          "excessUsefulHp": 1125.4440986766158
+        },
+        "gregTransferFixedPolar": {
+          "tasMph": 190,
+          "climbFpm": 4094.4503689019293,
+          "eta": 0.815,
+          "deltaFpm": 115.91204466700628,
+          "residualFpm": 285.5496310980707
+        },
+        "gregTransferRefitToOriginalSeaLevelSpeed": {
+          "tasMph": 187,
+          "climbFpm": 4069.9677548290038,
+          "residualFpm": 310.03224517099625,
+          "fittedCd0": 0.01691852006018527
+        },
+        "sourceClimbMinusModeledFpm": 401.46167576507696,
+        "deficitUsefulHp": 113.56499222021192,
+        "etaRequiredAtOriginalOptimumIfOnlyPropChanged": 0.8468055544003391,
+        "eOneMaxClimbFpm": 4109.103031521189,
+        "artificially8500LbMaxClimbFpm": 4480.404459756064,
+        "ramBoostRegulatedAtOptimum": true,
+        "notes": "Optimized TAS is unknown in USAAF report; η required is a one-variable thought experiment at the unchanged baseline optimum."
+      }
+    ],
+    "result": "Transfer of Greg P-47D shape slightly reduces climb deficit but breaks the fixed 361.5-mph anchor unless drag is recalibrated; neither alternative eliminates missing power."
+  },
+  "anchorCrossChecks": {
+    "p51b": {
+      "sourceAnchorMph": 361.5,
+      "baselineMph": 361.4999999999991,
+      "gregTransferMph": 366.6969126726117,
+      "gregMinusSourceMph": 5.196912672611688,
+      "gregRefitMph": 361.4999999999991,
+      "originalCd0": 0.0162226349489314,
+      "gregRefitCd0": 0.01691852006018527
+    },
+    "bf109f4": {
+      "sourceAnchorMph": 325,
+      "baselineMph": 324.9999999999991,
+      "gregTransferMph": 329.26139096380666,
+      "gregMinusSourceMph": 4.261390963806662,
+      "gregRefitMph": 325.0000000000009,
+      "originalCd0": 0.02275143940480398,
+      "gregRefitCd0": 0.02364210733589431
+    },
+    "p47b": {
+      "sourceAnchorMph": 352,
+      "baselineMph": 352.0000000000009,
+      "gregTransferMph": 356.24830563047453,
+      "gregMinusSourceMph": 4.248305630474533,
+      "gregRefitMph": 352.0000000000009,
+      "originalCd0": 0.01968315937146469,
+      "gregRefitCd0": 0.020383784695566537
+    },
+    "spitfire_lfix_bs543": {
+      "sourceAnchorMph": 336,
+      "baselineMph": 336.0000000000009,
+      "gregTransferMph": 340.02888073253143,
+      "gregMinusSourceMph": 4.028880732531434,
+      "gregRefitMph": 336.0000000000009,
+      "originalCd0": 0.020249187154646586,
+      "gregRefitCd0": 0.02097742530421768
+    }
+  },
+  "bf109": {
+    "gregInferredPolar": {
+      "oswald": 0.5576706734059873,
+      "cd0": 0.02437284688790079,
+      "parasiteShare": 0.9334975369458128,
+      "inducedShare": 0.0665024630541872,
+      "source": "Greg 109F4 screenshot, assumed 6,371 lb weight; inferred parameters not independently measured"
+    },
+    "sourceIL2": "https://il2sturmovik.com/museum/fighters/bf-109-f-4/",
+    "gregF4ShaftSeaLevelCombatBhp": 1183.584,
+    "gregF4ShaftSeaLevelEmergencyBhp": 1331.532,
+    "impliedPeakEtaIfCombatPowerRating": 0.893895152350826,
+    "impliedPeakEtaIfEmergencyPowerRating": 0.7945734687562898,
+    "seaLevelSpeedCrossCheck": {
+      "sourceCombatMph": 325,
+      "sourceEmergencyMph": 336,
+      "baselineC": {
+        "combat": 324.9999999999991,
+        "emergency": 339.37410024487417
+      },
+      "gregPolarWithC": {
+        "combat": 315.4865023477514,
+        "emergency": 329.75003903938796
+      },
+      "gregPolarWithTransferredP47DShape": {
+        "combat": 319.3159417752531,
+        "emergency": 333.3543702287143
+      },
+      "warning": "Greg e/CD0 + assumed 109 propeller C or P-47D G can nearly match IL-2 turns but does not satisfy BOTH F-4 speed references. Do not call this independently validated."
+    },
+    "note": "Source Greg worksheet says 1058 *propulsive* hp at 325 mph, but does not specify matching DB601E shaft BHP/rating; do not assert a unique η.",
+    "turns": [
+      {
+        "altMeters": 0,
+        "assumedSpeed270IASasCAS": true,
+        "tasMph": 167.77022190407996,
+        "IL2Seconds": 20.3,
+        "modelGenericE078Seconds": 17.46923365487042,
+        "modelSimulatorConditionedSeconds": 20.299999999999997,
+        "gregPolarWithCEtaSeconds": 20.22594253502058,
+        "gregPolarWithP47DTransferredEtaSeconds": 20.136411669249,
+        "gregOriginalF4PowerScheduleIfEmergencyDenominatorSeconds": 20.943633903881892,
+        "gregOriginalF4PowerScheduleIfCombatDenominatorSeconds": 19.342454425612843,
+        "impliedGregF4EtaIfEmergencyDenominator": 0.7415710285296936,
+        "impliedGregF4EtaIfCombatDenominator": 0.8342674070959053
+      },
+      {
+        "altMeters": 3000,
+        "assumedSpeed270IASasCAS": true,
+        "tasMph": 194.23223459434303,
+        "IL2Seconds": 26.1,
+        "modelGenericE078Seconds": 21.05780349419373,
+        "modelSimulatorConditionedSeconds": 25.891688221818473,
+        "gregPolarWithCEtaSeconds": 25.828118869538322,
+        "gregPolarWithP47DTransferredEtaSeconds": 25.36612915747468,
+        "gregOriginalF4PowerScheduleIfEmergencyDenominatorSeconds": 26.57281876352633,
+        "gregOriginalF4PowerScheduleIfCombatDenominatorSeconds": 24.445215897238,
+        "impliedGregF4EtaIfEmergencyDenominator": 0.7677693004219485,
+        "impliedGregF4EtaIfCombatDenominator": 0.863740462974692
+      }
+    ]
+  },
+  "settings": {
+    "weightForMustangClimbLb": 9335,
+    "sourceP47Variant": "D-family high-power; not P-47B",
+    "propTransfer": "G is opt-in 0.85 × normalized Greg P-47D worksheet available-power curve; NOT a measured K-6523A-24/VDM/Rotol map",
+    "dragBaseline": "No source CD0 or e changed in baseline; G what-if is shown both at unchanged C-fitted CD0 and at re-fitted same historical sea-level speed.",
+    "cooling": "Mustang Meredith-effect heating/recovery not quantified; no unsupported low-speed radiator drag term added.",
+    "source": "cases.json and physics.js",
+    "sourcedClimbVsPredictedSpeed": "Report did not specify climb IAS/TAS; optimizing speed is a model sensitivity, not reconstructed historical procedure."
+  }
+}

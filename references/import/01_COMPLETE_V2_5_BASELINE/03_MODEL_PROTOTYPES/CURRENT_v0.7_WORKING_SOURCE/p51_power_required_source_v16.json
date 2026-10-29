@@ -1,0 +1,20 @@
+{
+  "specimen": "P-51B-15-NA USAAF 43-24777",
+  "source": "Wright Field Materiel Command flight test Eng-47-1749-A, 20 May 1944, original Figure 5: Power Required in Level Flight",
+  "url": "https://www.wwiiaircraftperformance.com/org/p-51/p-51_files/P-51B_24777_Power_Required.jpg",
+  "textSourceUrl": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+  "altitudeFt": 22400,
+  "nominalWeightLb": 9240,
+  "weightQualification": "9,240 lb around the 22,400 ft speed-test condition in this wartime report, NOT the 9,335 lb at takeoff of the climb test.",
+  "sourceMethod": "Original period chart, read by eye at circles on source graph; approximate values, NOT a published numerical data table. Source TEST B.H.P. was assigned using the Packard power chart, not a flight torque meter.",
+  "uncertainties": "All point readings carry at least +/- 4 mph and +/- 35 shaft horsepower graph-reading uncertainty. Other test uncertainties (engine chart, cooling, airspeed calibration) are unquantified.",
+  "points": [
+    {"tasMph": 270, "testBhp": 490, "engineRpm": 2100, "manifoldInHg": 24.9, "gear": "low", "mixture": "auto lean"},
+    {"tasMph": 318, "testBhp": 610, "engineRpm": 2300, "manifoldInHg": 28.3, "gear": "low", "mixture": "auto lean"},
+    {"tasMph": 387, "testBhp": 1000, "engineRpm": 2700, "manifoldInHg": 48.0, "gear": "high", "mixture": "auto rich", "mapReadingStatus": "not clearly legible"},
+    {"tasMph": 395, "testBhp": 1090, "engineRpm": 3000, "manifoldInHg": 42.9, "gear": "low", "mixture": "auto rich"},
+    {"tasMph": 415, "testBhp": 1290, "engineRpm": 3000, "manifoldInHg": 67.0, "gear": "high", "mixture": "auto rich"},
+    {"tasMph": 430, "testBhp": 1440, "engineRpm": 3000, "manifoldInHg": 67.0, "gear": "high", "mixture": "auto rich", "readingStatus": "graph-reading approximation"}
+  ],
+  "validationRule": "Run the one-speed-anchored aerodynamic polar and prop model with RECORDED engine RPM at each marker. Do not use these points to refit the speed anchor, fiddle e, or invent climb thrust. Do not treat six same-flight-programme markers as six independent aircraft tests."
+}

@@ -1,0 +1,1975 @@
+                                                                                .. .. .   .   .
+
+         %.$
+
+
+
+
+                                                                                                                                    .—.,
+          ,0----=NATIONAL- ADVISORY COMMIHEE...FOR AERCNAUK’S
+
+
+
+
+                                                                     ORIGINALLYISWED
+                                                                  September1944 as
+                                                                             ReportLk12g
+                                                           AdvanceConfldentlal
+                                                                                                                                         .,Jj
+
+                                                                                              EFFICIENCY                                            -.
+                                                                                                                                         .
+                                                                   L. Criglerand Herbertw. TalkIn                                                   1’
+
+                                                    LangleyMemorialAeronauticalLaboratory
+                                                             LangleyField,Va.
+
+
+
+
+         .,
+         “,.                  .,
+          ,.,
+                                          ..
+         “,
+         ,’,
+          .              ..
+         ,,
+         .’                        .1-,
+                                               .,
+                                                    , “.                                                                                     4
+
+
+
+
+                                                                                                                 -.’.:-
+                                                                                                             {
+
+
+
+                NACA WARTLME REPORTS are reprints of papers originally issued t+ provide rapid distribution of
+                advance research results to an authorized group requiring them for the war effort.  They were pre-
+                viously held under a security status but are now unclassified. Some of these reports were not tech-
+                nically edited. AU have been reproduced     without change in order to ex&ite  general distribution.
+
+                                                                          L- 14L
+
+    .A                                                     ,. !.
+    w,
+
+-                                                                                                 ——.   —.         —.-.   .   ,~,   .-
+                                                                                                                                                —
+.,                  -— -.     .
+,..
+1}    ,        ,.
+
+
+
+
+          NACA ACR No. L4129
+                NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+
+                            ADVAITCE CONFIDENTIAL..REPORT.
+
+
+                CIiARTS FOR DETERMINING PROPELLER EFFICIXNCY
+
+                    By John L. Crigler and.Herbert W. Talkin
+
+                                     SUMMARY
+
+               A short method of estimating propeller efficiency
+          for a g3.ven operating condition is described. The
+          efficiency is determined. for any design condition by
+          evaluating separately from charts the induced losses
+          and the profile-drag losses. The estimsited efficiency
+          is compared with experimental results for a wide range
+          of operatin~ conditionsand found to be in.agreement
+          near peak efficiency.
+                The present analysis covers single-rotating Pro-
+          -pellers of two, three, four, six, and eight blades and
+          includes charts showing the rotational-ener,qy loss for
+          the given operatin~ condition in order to assist in estim-
+          ating   the gain in effieie.ncy for dual-rotating propel-
+          lers. The change in efficiency to be expected from body
+          interference is discussed. Two examp].es illustrating
+          the use of the method are given in an appendix.
+
+                                    INTRODUCTION
+
+
+               In reference 1, analytically determined propeller
+          performance is compared with experimental results for
+          propellers having four, six, and ei~ht blades of con-
+          ventional design. The calculated results ‘tame in
+          aRreement with the experimental results over the com-
+          piete range of blade angle investigated (25”0to 65° at
+          0.75 radius). The calculations were made by a strip-
+          theory analysis by which the thru-st and torque contri-
+          butions for several elements along the radius are
+          graphically integrated for each operating condition.
+          The time required to analyze a single oDerating condi-
+          tion by the strip-theory method is negligible compared
+          with the tir,erequired to obtain experimental data for
+          the same condition. The time required to analyze the
+—.                —-   .-— .—   .— —-- .—--— _   _   ——     —.
+
+
+                ,45-                                   . t**
+
+
+
+
+     2                                               NACA ACR No. L4129
+
+     complete range of operatfon fs considerable, however,
+     and a shorter method is deslreble.
+
+          A method of estimating the propeller performance
+     supported by the results of referer.ce 1 is presented
+     herein. By this method, a lo.rge reduction in the time
+     and effort required for propeller anal~sis 1s effected
+     as compared with the strjp-theory method. The results
+     obtained are in aGreement with those from exp~riment.
+     The basic propeller parameters are interrelated in
+     charts that ald in the selection of a propeller for a
+     given design condition. The charts are useful in
+     analyzing data for any propeller and aid in the deter-
+     mination of excessive losses.
+
+          The induced power losses for a conventional round-
+     shank ~ropeller are co~ared with the losses for the
+     optimum load distribution. The induced losses are
+     divided into axial- ad rotational-energy losses so
+     that the maximum gains possible by the use of dual-
+     rotating propellers instead of opttrnum single-rotating
+     propellers can be estimated. The effect of profile
+     drag is treated separately. Because drag losses are
+     evaluated separately, ir~creased losees due t~ compres-
+     sibility can be estimated directly Then airfoil data “
+     at high Mach numbers become available.
+
+          Detailed applications of the nethod are illustrated
+     by examples in the appendix.
+
+
+
+
+     a        axial-velocity interference factor
+     al       rotational-velocity        interference factor
+
+     B        number of prcpeller blades
+
+     b        chord of propeller blade element                 .
+
+     CD       sectim   drag coefficient (Do/qS)
+
+     CL       section lift coefficient (L/qS)
+
+     Cp “    power coefficient (P/pn3D5)
+                                    .—                  ... -
+
+
+
+
+     NACA ACR NO. L4129      1~1.                                       3
+
+b.
+     CQ       torque coefficient -(@pn2ti-)         .... -.     -   .
+$
+
+
+
+I
+     CT       thrust coef fIclent (T/pn2D4)
+     D        propeller diameter
+     Do       drag of propeller blade element for Infinite
+                 aspect ratio
+     Ea       axial energy per unit time in slipstream
+
+     Er       rotational energy per unit time in slipstream
+     F        Goldstein cor.rectlon factor for finite number
+                 of blades
+     J        advance-diameter      ratio (V/nD)
+
+     L        lift of blade section
+
+     n        propeller    rotational speed, revolutions per
+                  second
+     P        input power to propeller
+
+     Pc       power disk-loading coefficient (P/qSV)
+
+     Q        torque of    prapeller
+
+     q        dynamic pressure of air stream
+
+     R        tip radius
+
+     r        radius to any blade elemerlt
+
+     s        disk area of propeller
+     T        thrust of propeller
+
+     Uo       axial velocity in plane of propeller (propeller
+                 removed)
+     v        axial velocity of propeller
+     x        radial location of blade element (r/Rl
+     dC@x     element torque coefficient        -
+                                              ()pn2D5
+         t
+ -.. .           ..-    —    -.             ._—   _ . ..—.   ...
+
+
+
+
+                         .
+
+
+
+
+                                                             NACA ACR No.   L4129   .
+
+                   element thrust coefficient   dT dx
+                                               (4)
+                                                pnD   ~
+                   angle of’attack of blade element for inftiite
+                      aspect ratio
+                   propeller blade angle at G.75 radius
+
+                   propeller or elemsnt efficiency
+
+                   mass density of air
+
+                  propeller element solidity (Bb/2mr)
+
+                  propeller elenent load coefficient
+
+              angle of resultat velocity to plane of
+                 rotation (P - a.
+                                  )
+     Subscripts:
+
+     0.7R          at 0.7 radius
+
+     D             due to drag
+
+     i             for zero drag
+
+
+                                   FORYULAS
+
+
+          The derivation of the formulas for element thrust
+     and torque calculations !s qivm  in reference 2, from
+     which the element thrust coefficimt is
+
+
+
+
+     and the element torque coefficient is
+-.
+
+            ~=         Bfixb(l+a)2                                           (2)
+            dx         XT?     ~inz~   (%     sin t + co Cos $)
+                                              .
+  1.
+Ii
+! .,
+
+
+             ,
+
+                 .
+
+       NACA ACR      NO.   L4129   ,~k                           5
+
+           The expression for the axial-velocity
+                                   . . . ...     interference
+           factor a is
+
+       .
+                                         ~cL   cot   j?i,
+
+                                   L=ZGGT                       (3)
+
+                                    &G~+@-hL\tiw’r
+                                                                      ! <L
+            The values of the correction factor F as used
+       in the present report are given in figure 1. The values
+       of F for two-, three-, and four-blade propellers are
+       taken from reference 3. The values of F for SIX- and
+       eight-blade propellers were extrapolated from these data
+       by the method developed in reference 3.
+            For calculations showing the effect of drag on
+       propeller performance, the following formulas were
+       obtained from equations (1) to (3) for CL= o:
+
+
+
+
+                                                                (4)
+
+
+
+
+             .
+
+                                                                (5)
+
+
+
+            Equations  (4) and (5) are derived for zero loadlng
+       without inflow and consequently are not exact for a
+       .f$nlte loadlng. The formulas show, however, that the
+       error in estimating the loss due to drag is negligible
+       for llght loadings which occur near peak propeller
+       efficiency.
+                .
+    6                        r                              NACA ACR No. L4.129
+
+
+         The formulas for the rotational-energy and axial-
+    energy losses from reference 4 are
+
+
+
+                                                                          (5)     ‘
+                                                                                      -+
+                       Ea        J            ‘o    dCT
+                       —=—                                                (7)     ‘
+                       P         Cp   T
+                                                   azF- b
+                                          o
+
+    where
+
+
+
+
+    and
+
+
+
+                      a—   =-’+v1+4R%-        2
+
+
+    These formulas! from reference 4 have been modlfled herein
+    by inclusion of the correction factor F.
+
+
+                                     M!3WOD
+                    Charts for Induced Losses
+
+
+         The basic propeller performance charts are presentsd
+    in figure 2 for two-, three-, four-, six-, and eight-
+    blade propellers. The crd.inates repre~ent values of the
+    efficiency for propellers operating without drag and the
+
+#   abscissas represent values of  —1   = D \ ~ + , Against
+                                            f
+                                   rPci
+    these scales, curves of constant element load coefficient
+NACA AOR   No.   L4129   all                          7
+
+          “ are orossed by long-dash lines of oonstapt
+(W*.7R
+V/nD and short-dash lines Of constant power coeffi-
+cient Cpi. The @-curves     show the variation of
+()          with V) nD for constant Cpi and are included
+ ‘L 0.7R
+for convenience of computation for constant-speed pro-
+pellers. The curves were obtained from calculated opthmn
+torque and thrust distributions graphically integrated
+from the tip of the blade to x = 0.2. These performance
+charts are the same as the propeller selection charts In
+reference 5 except that the drag losses are not Included.
+     In the present report, the value of the solidity at
+0“7RS ‘0.7Rs is taken as a convenient measure of the
+propeller solidity. The value of
+                                   (ocL)0.’7R ‘scOrre-
+spondlngly taken as a neasure of tl?epower absorbed.
+The activity factor has frequently been taken as an
+Index of the power-absorbing qualities of a propeller.
+For the Hamilton Standard 3155-6 propeller reported in
+reference 6 (for which comparlssns are made in the present
+paper), the activ5ty factor is 90 (per blade) and ~o.7R
+is 0.0345B: that is, for propellers of this design, the
+                        ‘0.7RC
+activity factor ia 2600 ~       This nurher is approxi-
+mately the same for all conventional propellers.  If the
+exact relationship is desired, however, the activity
+factor A.F. may be obtained from
+
+
+
+
+            Breakdown of Propeller Power Losses
+
+     In the calculation of propeller efficiency, it has
+been customary to compute the thrust and torque at a
+given value of V/nD for a fixed blade-angle setting.
+The analytical determination of propeller performance
+may be considerably simplified in many cases, however,
+by evaluating the,several sources of power loss rather
+than by attempting the direct computation of thrust and
+torque. In the present paper, the efficiency is
+ #
+                                   ●✎
+8                                       NACA ACR No. L4129
+
+
+determined by deducting the sum of the power lossbs from
+unity. The total Dower losses are divided Into induced
+    “             .
+
+
+
+losses and profile-drag losses; the induced losses are
+subdivided into axial- and rotational-energy losses for
+use In evaluating the efficiency of dual-rotating pro-
+pellers. l’heblade drag has no appreciable effect on
+the induced losses for normal propellers but must be
+considered in obtaining the total power losses. Thi S
+method of analysis has the advantagq that compressibility
+corrections can be included when the airfoil section
+characteristics at the operating Mach number become known.
+
+     Rotational-energy losses.- The losses of efficiency
+due t~otational   velocity are shown in fimre
+                                          -.   3 for
+three-, four-, six-, and eight-blade
+                         -           propellers. The
+rotational-energy loss for a given operating condition
+(constant Pc and V/nD) is seen to increase as the
+number of blades decreases. This increase in power
+loss arises from the increase in the tip
+                                      .  loss as the
+number of blades decreases.
+
+     Calculations for a large number of load distributions
+show that overloading the inner radii is of secondary
+significance at values of operating V/nD< 2.5. As am
+illustrative case, the calculated rotatimal energy for
+the four-blade Hamilton Standard 3155-6 propeller of
+reference 6, which has round blade shanks, is compared in
+figure 4 with that for a four-blade propeller computed
+from the charts of figu~e 3. The rotational energy
+for the Hamilton Standard 3155-6 propeller was com-
+puted for several blade angles up to 65° at 0.75R and
+the value of V/nD for peak propeller efficiency. The
+values of Er/P for the optimum propeller were taken
+from figure 3(b) at the same values of V/nD and Pc
+as for the Hamilton Standard 3155-6 propeller. Figure 4
+shows that no appreciable difference in rotational energy
+exists between the two load distributions at V/nE< 2.5
+and that the losses differ by only 1.5 percent of the
+total power at V/nD = q“g~ which correspmds to a
+blade-angle setting of 65 at 0.75R. The rotatlo~.al-
+energy losses given in figure 3 are therefore close
+approximations to the expected losses for conventional
+round-sh~k propellers over the usual present-day
+operating range. Similar results are found even when
+airfoil sections are used over the inner radii when
+V/nD< 2.5. It cannot be emphasized too strongly,
+however, that if cuffs are used to cover the round
+                                                                  9
+
+I
+P.      shanks, the, 10-ssmay.b eoome ,serio.us at hl~ values of
+        V/nD ‘&less the c~ffs are set”-at an-angie of aftack     .’
+    f   between 0° and the optimum to give low loadlng over
+        these sections.. This dependence of the rotational
+        energy In the slipstream on the loadlng over the inner “
+        radfi 1s apparent from equation (6), which shows how
+        the effect of overloading the inner radii Increases In
+        importance as the operating V/nD increases.
+
+             Axial-energy losseso- Z?he mdal-energy loss for
+        any operating condl tlon may be obtained from the rela-
+        tionship
+
+                            Ea                   Er
+                            —=      1-    m~-y
+                            P
+
+
+        where the induced efficiency ml is obtained from
+        figure 2 and E#P     Is obtained-from figure 3. The
+        axial-energy loss shows but little variatim amon~
+        propellers in prssent-day usage operating near peak
+        ef’ficiency~ As an 111.ustratlon, the axial-energy
+        losses for a four-blade propeller obtained from the
+        charts of figures 2 and 3 are compared In figure 5
+        with the calculated values for the four-blade Hamilton
+        Standard 3155-6 proFeller operating at peak propeller
+        efficiency and for the ideal propeller (actuator disk).
+        The values of Pc at V/nD for peak efficiency for
+        the Hamilton Standard 3155-6 propeller were “taken from
+        reference 6. The axial-ener~    losses for the optimum
+        propeller load distribution and for the Ideal propeller
+        were determined at the same values of V/nD and Pc as
+        for the Hamilton Standard 3155-6 propeller. The axial-
+        energy loss,es for the optimum distribution of loading
+        (figs. 2 and 3) and for the loading obtained with the
+        Hamilton Standard 3155-6 propeller are nearly equal and
+        are about 1 percent higher than for the ideal propeller
+        over the range investlSated. A part of this increase
+>       In axial-energy loss is due to the finite”number of
+        blades and therefore becomes less as the nuniber of
+        blades increases. A small part of the difference occurs
+        because the load distribution differs from that of an
+        actuator disk. The axial-energy loss for optimum disln’i-
+        butlon, obtained with the aid of figures 2 and 3, Is
+        therefore sufficiently accurate for application to
+        conventional propellers.
+
+
+                          —.. —   ..— —   ----
+                                                              .
+
+
+
+
+       10                    ~               NACA ACR No. L4129
+
+
+            Blade-drag losses.- The effect of blade drag on the
+       chara~ri  stics of ig%tly loaded propellers (near peak
+       efficiency) can be esttmated from equations (4) and (5).
+       These equations were obtained by eliminating the axial
+       inflow and putting CL = O in equations (1) and (2).
+       The equations are not exact but, near peak efficiency
+       for modern high-speed propellers, the omfsston of the
+       inflow factor a causes a negligible change in the
+       calculated propeller efficiency. Equationg (4) and (5)
+       show that, for a given radius and value of V/nD, the
+       element thrust and torque coefficients due to drag are
+       directly proportional to the drag coefficient.
+
+            The profile-drag coefficients for fnfinlte aspect
+       ratio for several sections along the Hamilton Standard
+       315!5-6blade are shown against llft coefficient in
+       figure 6. These data were taken from reference 7. The       .
+       profile-drag coefficients change with lift coefficient
+       but, since the change is very small for a wide range of
+       llft coefficient, average values were used h  the calcu-
+       lations for operation near peak efficiency. The proflle-
+       drag coefficient increases raptdly near the stalling
+       angle of the section and the average values are accord-
+       ingly not representative for such conditions.
+            Figures 7 and 8 show the effect of dra~ on the
+       thrust and torque coefficients, respectively, for
+       several values of v/nD 9’ The values of tke section
+       profile-drag coefficient shown In figures 7 and 8 were
+       used in the calculations for the Hamilton Standard 315S6
+       propeller. Curves of the differential-thrust and
+       differential-torque oorractions due to drag, for the
+       drag coefficients shown, are plotted against the radial
+       location x,and the Integrated corrections are also
+       included in figures 7 and 8. These inte~rated values
+       apply for one blade and the correction is directly pro-
+       portional to the number of blades and to the blade cm
+       The element thrust coefficient and the element torque
+       coefficient due to drag at a given value of V/nD are
+       directly proportional to CD, and a change in CD at
+       any radius is repre~ented by a proportional change in
+       the ordinate of the differential-thrust and differentla3-
+       torque curves. For this reason, the method of analysis
+       is adaptable to any blade section for which .the airfoil
+       characteristics are available. The suggestion is also
+       made that the loss In efficiency due to drag at high
+       speeds at which the blade section drag becomes large
+
+
+
+----
+    NACA ACR No. L4129                                      11
+
+
+
+
+1
+      ,
+    can be predicted when the drag coefficients at high -
+>   Mach numbers become available. The calculations show         -
+    that the drag correction to the thrust Is chiefly due
+    to the high drag of the inner sections (see fig. 7)
+    and that a change in the drag coefficient of the
+    principal working part of the blade due to.a change
+    In the lift coefficient near peak efficiency (see
+    fig. 6) results in a negligible change in the correc-
+    tion to the thrust coefficient.
+
+         The effect of drag on the efficiency envelope and
+    on the integrated power coefficient for operation at
+    peak efficiency in unobstructed air flow is ~hown in
+    figure 9. The values of qi and the corresponding ~Pi
+    without drag were ta’kenfrom fi~ure 2 for ~a’m-.blade
+    pi”opellers at LocL)~.7R = 0.07. For cptlmum Distri-
+    bution of loading along the radius f~r the cslidlty of
+    the four-blade Hamilton Standard 3155-6 prop’?iisr, this
+    value of (%)*a7~      corresponds to
+                                           c%.7n = ‘“51”
+    The solid lines ir.figure 9 give the mcximw,l efficiency
+    and the corresponding power coefPici.ents against v/rii)
+    for optimum distribution for a four-blade fr~ctionless
+    propeller at (ocL)0.7R = 0.07. The short-dash line~
+    show q and Cp as modified by blade drag integrated
+    from 0.20R to the tl~. The curve for q for blade
+    drag integrated from 0.45R to tinetip is shown by the
+    long-dash line.    The Cp-curve is not shown for the
+    latter case but falls between the other Cp-curves.
+    The introduction of blade drag of the magnitude shown
+    in figures 7 and 8 has little effect on the total power
+    absorbed during operation near peak efficiency, regard-
+    less of V/nI); the effect of the drag on the inte~rated
+    thrust and hence on the efficiency, however, Is important
+    and increases raptdly with V/m   ●  For  example, the loss
+    in efficiency for the entire blade varies from 5.5 per-
+                 = 1.0 to 23.@ percent at #j = 6.0. On the
+3   cent at &
+    other hand, the loss in efficiency due to the drag of
+    the principal working sections - that is, from 0.4SR to
+    the tip - is relatively unimportant. The loss in effi-
+    ciency for this portion of the blade (see long-dash
+    line,. fig. 9) is thus s6en to vary from 2.5 percent at
+     v = 1.0 to 4.0 percent at J& = 6.0; these losses
+    3
+     ,
+
+                         ..     —   ---            - —-   —.— .—
+12                                        NACA ACR No. L4129
+
+
+represent the upper llmfts for Increases In efficiency
+that may be achieved by reducing the profile drag for
+the working sections of the blade operating at
+CL= ~.~1 with optimum load distribution.     The thick
+irmer sections of conventional round-shank propellers,
+wh~ch are used for strl~ctural reagons, are therefore
+the chief source of blade-drag loss, especially at
+high values of V/’nD. This loss in efficiency due to
+drag may be greatly reduced by covering the inner
+portion of the shank with a spinner and the outer
+portion with cuff’s, if the cuff angle is properly set.
+It is emphasized that cuffs may result in a loss In
+efficiency instead of a gain unless set at the proper
+angle of attack. Overloading of the inner radii results
+in a large increase in the pGwer in rotational energy
+for single-rotating propellers, and the blade-dra~ loss
+also becomes large for blade secttons operating near
+the stall.
+
+     The losses due to the thick inner sections are also
+reduced when the propeller is operatinE in front of a
+blunt body, such as an NACA cowling, bGcause of the low
+velocity over these sections. Calculations of thrust
+and torque coefficient have therefore been made at the
+same values of V/nD and for the same distribution of
+the element drag coefficients as h figures 7 and 8 but
+with the irunerportion of the blade assumed to be
+operating in a region of low-velocity air as in front
+of a conventional air-cooled Installation. The velocity
+distribution in the plane of the propeller, as used in
+these calculations, is given ti figure K, f~r which the
+data are taken from reference 4. The region of low-
+velocity alr depends on the ratio of the nacelle dl&rmeter
+to the propeller diameter, the conductance of the engine,
+and the distance of the propeller in front ~f the cawling.
+The ratio of the nacelle diameter to the propeller dimeter
+in the setup in reference 4 was 0.417. The effect of
+operation in front of an open-nose cowling (velocity dis-
+tribution of fig. lG) is shown In fi~ures 11 and 12 for
+a four-blade propeller. Thrust and power coefficients
+due to the distribution Gf drag in figures 7 and 8 are
+shown for free-stream operation by short-dash lines In
+figure 11; the long-dash lines represent operation in
+front of the NACA cowling.  The value of the power
+coefficient due to drag ~ACp)D is seen to vary but
+little with   V/nD   whereas    ACT ~
+                               ()       rises rapidly.
+
+                        8
+I        NACA ACR No. L4129                                   13
+
+-
+         Equations (4) and (5) also show this effeot. The effect
+    ..   on the efficiency of operathg a propeller In the velocity
+         distribution of figure 10 is shown in figure 12 and com-
+    ;    pared with the efficiency computed for operation In free
+         stream. The increase in propeller efficiency resulting
+         from the presence of the cowllng varies from 1.0 percent
+         at$=     1.0 to 9.0 percent at   ~ = 6.0. In the calcu-
+         lations for the curves shown In figure 12, the only    “
+         variation considered is the drag of the blade shanks.
+         The low-veloclty air causes an increase in lift over the
+         outer sections of the shank and, accordingly, an Increase
+         in the rotational-energy loss, which may result in a
+         somewhat ~maller ga~n in propeller efficiency than lndl-
+         cated by figure 12. Tn order to detemlne exactly the
+         magnitude of the change in propeller efficiency, element
+         calculations for each velocity distribution are neces-
+         sary inasmuch as a ckan~e in velocity distribution pro-
+         duces an effective change In pitch distribution.
+
+
+                        COMPARISON WITH EKP3RIMEWT
+
+               The experimental efflcienc~ enveloDes for four-.
+         six-, and e~ght-blade Hamilton 9tandard”3155-6 propefiers
+         are compared with the calculated results integrated to
+         0.20R In figure 13. The experimental results for the
+         four- and six-blade propellers were taken from refer-
+         ence 6 and the results for the eight-blade propeller
+         were taken from reference 8. The single-rotating
+         propellers were made up of two htis mounted in tandem.
+         The spinner in the setup for all the experimental data
+         covered the Inner 0.183R of the front unit of one-half
+         the blades and the inner 0.232R of the rear blades.
+         The results are in agreement over the entire range
+         Investigated for each set of blades. The calculated
+         efficiency is about 1 percent lower than the experi-
+         mental efficiency at low values of V/nD and Is higher
+         than the experimental efficiency at very high values of
+b        v/nD ; the calculated curve crosses the experimental
+         curve at v/nD “3.5.     Part of the discrepancy 1s due
+         to the use of the short method.
+
+
+
+
+         I
+                     r                NACA ACR NO. L4129
+
+
+                      CONCLUSIONS
+
+
+     A short method ~f estimati~ propeller efflc~ency
+for a given operating condition has beer~ developed by
+a theoretical analysis. The efficiency is determined
+by evaluating separately the induced losses and the
+profile-drag losses. A comparison of the estlnated
+efficiencies with experimental results indicated the
+following conclusions:
+
+     1. The performance for operation at values of the
+advance-diamt.er ratio equal to or less thar.2.5 may be
+accurately predicted.
+
+     2. The approximate performance o.fconventional
+round-shank propellers may be predicted to values of
+the advance-djameter ratio much higher than 2.5.
+
+     3. The upper ljmlt of possible performance for
+other t~es of propeller (airfoil sections over the
+Inner radii or the use of clWfs over the round shankg)
+is shown for values of tke advance-diameter ratio up
+to 6.0.
+
+     4. The cause-of excessive losses may 5C detcrr.incci
+for any propeller design.
+
+     5. The maximum gain in efficiency to be realized
+with dual-rotating prope.lle~’sover optimum single”-
+rotating propellers i~ evaluated for a wide ran~’c of
+op~rating condition.
+
+
+
+Lan~ley Memorial Aeronautical  Laboratory
+     National Advisory Committee for Aeran~utic@
+           Lar.81ey Field, Va.
+NAOA ACR No. L4129      [~t                                   15
+
+                          APPENDIX
+          ..!.
+                 tiPLICATIOfi‘oF T*          mHOD-   “-- “~        .
+
+     The problem of determining the propeller efficiency
+for a given design condition by the methods of the present
+report may be resolved into two parts:   (1) determination
+of the Induced power losses and (2) determination of the
+profile-drag losses. The induced power losses for a given
+design condition are available from figure 2 as 1 - Tf.
+The induced losses obtained from figure 2 at V/nII< 2.5
+are very close approximations to those obtained with
+conventional pr?pe31ers. TMs range of V/nD covers most
+current high-speed desl~s.    The blade drag !e handled
+separately and can therefore be used for high Mach numbers
+and high drags if the correct airfoil section character-
+istics are used for thg corresponding ;dachnumbers. The
+profile-drag loeses are obtained from ftgure 11, which
+shows the variation of the thrust and power coefficients
+d~e to drag for the values of the element drag coefficients
+shown in figures 7 and 8. These drag values are repre-
+sentative for the Hamilton Standard 3155-6 propeller
+operating near peak efficiency. The ordinates of the
+curves in figures 7 and 8 are directly proportional to
+the drag coefficients at each radius so that, if other
+drag values are used, new curves givinC the thrust and
+power coefficients due to drag may be easily plotted.
+Since the total power losses are divided into induced
+power losses and profile-drag losses, the method aids
+In determining excessive losses for any desi~ condition.
+12xcessive losses may be due to the fact that the propeller
+Is either too heavily loaded or too lightly ioaded, to a
+poor load distribution along the blade, or to high blade
+drag due to compressibility. .The use of the performance
+charts determines the lift coefficient at a representative
+station and thus the loadlng.
+
+     Two examples are given to Illustrate the use of the
+charts In the determination of the propeller efficiency
+for a given design condition.
+
+                         Example 1
+
+     In example 1, the propeller selected operatea on a
+liquid-cooled installation In the tractor position and .
+all the sections are assumed to operate at free-stream
+velocfty. No compressibility corrections are applied.
+
+
+
+                              . .. - —..-:            ._
+           16                                        f                          NACA ACR No. L4129
+
+
+                  The following design conditions are assumed:
+
+           Power, hp . . . . . . . . . . . . . . . . . . .      2000
+           Altitiude, ft.......          . . . . . . . . . . ‘25,000
+           Velocity, mph.   . . . . . . . . . . . . . . . . .    425
+           Rotational speed, rps . . . . . . . . . . . . .        23                          ●           “
+           Propeller diameter, ft . . . . . . . . . . . .         12                          ●
+
+
+           Numberofblades      . . . . . . . . . . . . . . . 9 Four
+           ‘O.7R ‘i%?””””’”””””’””                            0.1380
+                                                     ““”””
+           Actlvlty factor . . . . . . . . . . . . . . . .        90                          w
+
+           V/nD
+            #    . . . . . . . . . . . . . . . . . . . . .      2.26                          ●
+
+
+
+           (jP=
+                  +“””’””’””’’”””                              0.342               ““””       ●
+
+
+
+
+                  The calculated values for operation in                                  free air
+           are
+
+           (ACP)D         (fig. 11) . . . . . . . . . . . . . . . .G.006
+           CPI ‘Cp-(ACp)D                    s   ●   .   ●   s s . . .      ●   . . . . . . 0.336
+
+           l/&            .   .   .   ..     d....             . ... . . .. .. .- ..*..       ,    3.67
+           (ocL)oa7R (f@. 2(c))    . . . . . . . . . . . . .0.07
+           c~am    . . . . . . . ..o.    . . . 0 . . . ...0.51
+           qi(fi&      2(c)) . . . . . . . . . . . . . . ...0.931
+           Er/P(fl~.     3(b)) . . . . . . . ● . ..o   . . ..o.c39
+                  WCP1
+           cTi=m””                      ””””’     ”g o”””””       ““”0”1385
+           (AcT)D(fi&                 lo) . . . . . . . . . . . . . . .-0.0103
+           CT “Ti+(AcT)D                         ““”’          ””””         ””””          ””0”1282
+                 CT   v
+                                                                                                  0.848
+           q=~iiv””’                       m’”””””””                        ““””””
+
+                In order to determine whether the propeller selected
+           is loaded properly, the value of          is first deter-
+                                             CL0.7X
+           mined in the selection chart in fi ure Z?. Sinee the
+           design conditions are given and lfi
+                                             7      and V/nD have
+           been predetemlned,  the value of ~OCL)o ,7R is read       .
+           directly from the chart.                          The value of         C% ,7R     required
+
+
+
+-...   .
+L    NACA ACR NO.
+           . .
+                           L4129             j~l
+
+
+     is found to be 0.51 and indiciite”sa’satisfactory destgn                                                     .-
+
+
+
+
+1“
+     condition. This lift coefficient has been found to be
+     that absorbed.near peak propeller efficiency for the
+     Hamilton Standard 3155-6 propeller for operation at the
+     given V/nD. The power loss due to rotational velocity
+*.   E#P , which is equal to 0.059, is the maximum increase
+     In efficiency to be expected from the use of dual-
+     rotating propellers of the same dltieter and solidity.
+     The induced efficiency Is 0.93 but the introduction of
+     drag of the magnitude of that strewnin figures 7 and 8
+     reduces the over-all propeller efficiency to 0.848. The
+     use of l/@     with drag include~ instead of l/~,
+     results in negligible changes in                                   qi       and         (aCL)om7R.
+
+
+                                                 Example 2
+          The only difference between example 2 and example 1
+     is that the propeller in example 2 is mounted in front
+ .   of an open-nose cowling (air-cooled installation) with
+     the Inner sections of the propeller in retarded air flow.
+          The des!gn conditions, which are the same as in
+     example 1, are
+
+     Pqwer, hp.   . . . . . . . . . . . . . . . . . .    2000
+     Altitude, ft.......            . . . . . . . . . “25,000
+     Velocity, mphl   . . . . . . . . . . . . . . . . .   425
+     Rotational speed, rps . . . . . . . . . . . . .       23                                         ●
+
+
+     Propeller diameter, ft . . . . . . . . . . . . 9      12
+     Numberofblades     . . . . . . . . . . . . . . .    Four,                                        ●
+
+
+          = ~Bb   . . . . . .. mm....       . . . . . 0.1380
+     UO.7
+     Actlvltyfactor.                .    ●   .      .   .   .   .   .   .    .   .   .   .    .   .   9
+
+     v/nD  ●   .   m   ●    ,   .   .   .     .*.           ●   ●   .   .    .   .   .   .    .   ●   .    2.::
+
+     %=*””””””””’”””                                                         ‘“””””                   .   0.342
+
+          The calculated values for operation In front of
+     NACA cowlhg are
+
+     (ACp)D(f18.            11)         . .         . . . . . . . . . . . ..0.006
+     cP~ ‘CP-(ACp)D                 O=......                            . . . . . ...0.336
+     l/~       . . . . ..                m....                  . . -. . . . . ...3.67
+                                                                                ———.— -.   —
+
+
+
+
+18                                                                        No. L4129
+
+
+                                                                                0.07
+()‘CL 0.7R   (fig. 2(C))      .   9   ●   ●   ●   ●   ●   s   .   ●   ●   ●
+
+
+
+
+                      9   ●   .   .   ●   ●   ●   ●   ●   .   .   ✎   ✎   .     0.51
+                      .   ✎   .   ●   ●   ●   ●   ●   ✎   .   .   ✎   ●   ●    C.931
+                      .   ✎   ●   .   ✎   ●   9   ✎   ✎   .   .   ✎   ✎   ●    G.03!I
+
+                      .   ✎   ✎   ●   ✎   w   .   ●   ✎   .   .   ✎   ✎   9 0.1385
+(Ac~)D “ (flfJ.11)    .   9   ●   .   ●   ●   ●   9   ✎   .   .   ●   ✎       -0.0065
+                      9   .   ✎   ●   9   ●   .   ●   ✎   .   .   ✎   ✎   ●   0.1320
+             (’CT)D
+
+             ..**     .   .   ✎   .   .   .   .   ●   ✎   .   9   ✎   ✎   8    0.872
+       NACA ACR No. L4129                                      19
+
+L-
+:/
+   “                            REFERENCES
+                                         ..
+
+       1.    Crigler, John L.: Comparison of Calculated and
+                Experimental Propeller Characteristics for Four-,
+                six- , and Eight-Blade Single-Rotating Propellers.
+                NACA ACR No. 4B04, 1944.
+       2.    Glauert, H.: A!rplane Propellers. Vol. IV of Aero-
+                dynamic Theory, div. L., !Y. F. Durand, cd.,
+            .1  Jullus Springer (Eerlln), 1935, pp. 169-360.
+
+       3.    Lock, C. N. H., and Yeatman, D.: Tables for Use in
+                an Improved Method of Airscrew Strip Theory
+                Calculation.  R. & M. Ho. 1674, British A.R.C.,
+                1935●
+
+
+
+
+       4.    Stickle, George W. , &nd Cr~gler, J~hn L.: Propeller
+                Analysis from Experimental Data. NACA Rep.
+                No. 712, 1941.
+       F
+       Lm    Crigler, John L., and Talkln, Herbert W.: Propeller
+                Sclectlon from.Aerodynamic Considerations. ~?ACA
+                ACR, July 1942.
+
+       6.    Riermmn, I)avld, and Hartm&n, Edwin P.: Wind-’humel
+                Tents of’Faur- and Six-Blade Einqle- and”Du~l-
+                Rotating Tractor Propellers,. NACA Rep. No. 747,
+                1942●
+
+
+
+
+       7.    Pinkerton, Robert M., and Greenberg, Harry: Aerody-
+                namic Characteristics of a Large Number of Airfoils
+                TeEted in the Vartable-Density Wind Tunnel. NACA
+                Rep. No. 628, 1939.
+       8.    13iermann, David, and Gray, 1%. H.: Wind-Tunnel Tests
+                of Eight-Blade Single- and Dual-Rotating Propellers
+                in the Tractor Position. NACA AKR, Nov. 1941.
+
+
+
+
+                                                               —      .—
+                                                .
+
+
+
+
+NACA ACR No.       L4129                        A                              Fig. la
+
+
+
+
+     G)fir      rwo-b/ude        pro    //ens.W ‘[”%ra   #mm reference   3.)
+         figure    I. - Curves   cd F agalnat      ~,
+NACA ACR No.   L4129   Fig. lb
+         NACA   ACR    No.     L4129                          ~                                       Fig. lC
+                                                                                                       -.
+
+
+
+
+     .
+
+
+
+
+                (c)   For    four-   b/oo”    propel   Iera       ( Z5urq   from   referent   e 3.)
+                      Figure     f. - Con finued.
+
+
+
+
+II
+NACA ACI?No.                           L4,129                                                                                                                                                                     Fig. ld
+
+                                         ---         -—. .. . . .. —--- ..-.                              .. ..        —--------
+    l.4-—                                                                                                         1-
+                                 7                                                                                                             7–                      -
+                                 -+---                    --       . . .. -—                  .,-                                                                          ,       —. -—
+       I
+    L.5                                      .—.          —.            ... —-                ..-                             —.
+
+                                             -----            ..    -                                                               ...- ..—
+                                                                                                                                                                       x“=Qj?
+    u -,                         .—.--- .-                     .    --- --.. --T--       —-..—..—.—                                                                    —.
+                                    -..,-—- ---                       ,. --. +...--1 --      .,..— -                                                                               ,3/ -—                             -—
+     1,/                                                             - --- II        .—-                                                                      ..                   —+..-. ——.-..
+          ~                           ~~
+                                       ~k~                                                                        ,,                     ‘            5            ~           :        :            ~“           :
+          ~                         –-                   --        ---[----—–––                                   --              , >L.                  ----- — -.                    .-i--—. ~                     –
+                                                                                                                                                    .-                                                            ---
+                                                                                              —..
+                                                                        ~E                                                    ‘              ‘ ‘
+                                                                                                                                              -—. .———- —- -—-. -—. -—.-
+
+  .;;F                                   ‘f~g
+                                                                                                              ~                                                    [=–”                   --j
+                                                                                                                          ;               ;,         ~;     ; ;-..—.— .+. ? ‘,
+                                                                                                                                                            !-.      .
+                                                                                                                                                      .––L——J—..—-==+-- .==.,
+                                                                                                                                                            ,{
+                                                         -—         .—_,. \\.-/.-...-i                                 ..-._pyJ:._7                                . ...l..-.. .. ~II ._ ~...
+                                                                                                                                                        . . .. . ..__
+     .7~----        — +–}-----              \---{ --- -t-–+           –-~~––+-—-w---j                                                                    -:=’**7~-:T&—-$                                                     --~
+       I                                ,,’   ““\ ~                 ~      \\!       I                                                                         ,
+       1                             ‘\ ,
+       *-                           — ---— .. —- \-.-l.-.l-..-.j–..            +<+.                                                       1
+                                                                                                                                         -1---------------                 ~.. -        -.-..-;..-.::;=
+                                       t ~,                                                                                                                                                                       1’
+                                              \                    ‘\
+     G-- —-‘         –-                              .—— -—
+                                         I                                                          -T
+                                                                             \
+                   T’                                                                                                          -’%y–~j---j----                                                       -----t-”-~
+          -.-.-+.___q_J                              +                                .                                                                                            8
+
+
+     .5 .                                                 \                                                                                                                                     —.
+                                                                                                                                                                                                                       --i
+                                                                                                                                                                        “ .’           ‘7            *
+
+                                                                         \
+
+
+     .4;                        —                                                                                                            \_
+                                                                                                                                                              ----
+                                                                                                         \.                                                                    <s
+          L--                                                 -—             —            -—                                                                                                -        .            -——
+
+     .3T                        -–                       ——                               ----                                                       -—--—
+                                                                                                                                                    -..=
+                                                     -1
+
+
+     .2
+
+
+                                                              4
+
+     ./                   +
+                                                                                                                                                                                                                  I
+
+
+
+
+     0;                    ,o—                                                            -                                                          ~             ~                    ‘                -L.
+                                                     M                   30                              L@ ~,d,qfo                                  60                    70                   80                            90
+              tiJ ‘“b~ ,~x -Mx@                          pr~w%ro.                (Etirffpolofea’                  t?om        ref   iv    ace            3.   )
+
+              K@e         /.-        G?nhnud,
+NACA ACR No.   L4129                                                      Fig. le
+                                                                                    ●
+
+
+
+
+                               \                I          I     I        I
+
+                                                                              I
+    4
+
+                                       i
+
+    .3
+
+
+                 .
+    2
+
+
+                                               rA1’KJR m    m    ?---     —
+                                           COMti ITTEE FOR AERON) UTICS
+       t                                                                      —
+
+
+
+
+   o                   I   I   1   I
+       (a) Two-blade        PrOpe//ers,                                    ‘=9
+                                                                           r.
+FI~u   re Z.-   Propeller     A57formtvwe   Char&   Wi7%Ou   f c7%a   9.   m
+                                                                            .
+                    I       1   f                                                                                                  ~
+                1
+                    1       i   t
+                I
+                                                            /               “           /
+                                                                                /   -           ---       ---
+
+    ,t96                                                            /       “
+
+                                                                                                                --   --
+
+     . ..                                                       /
+
+
+
+
+    .92
+
+3
+
+    .88
+
+
+
+
+    .84
+
+
+
+
+    .80
+
+
+
+
+            /           z           3       4     5                     6                   7         8                   9   /0
+                                                                                                                                       ‘7
+                                                      //i                                                                              P
+            {6)     Z%.%zE-&iiHcw   /4PCWZU%’S+                                                                                        m.
+
+                                                                                                                                       iv
+                                                                                                                                       Cr
+[00
+
+
+
+      z
+      0
+      .
+      r’
+      lb
+      H
+      N
+      u)
+52’
+
+
+
+
+,80
+
+
+
+.76
+
+      ‘=5
+      r.
+      m
+       .
+
+
+      N
+      (-3
+     ,                                                                                  0
+                                                                                        .
+
+                                                                                        1+
+
+                                                                                        N
+                                Y         I      r=    I V.wvl       I   I     1
+                                                                                        0
+    ,%
+                            P
+                                    .z-   t-/f
+
+
+
+
+q
+
+
+
+    ,88       I
+
+
+
+
+    .84
+
+
+
+
+    .80
+                                                         NATIO
+                                                             ‘iALAOtISORY
+                                                      c)MMllTE
+                                                             : FJIR       s
+                                                                  AE10NAUTl(
+
+
+
+    ,%    I
+                  s         6                    7               8       9         /0
+                      //q
+                                                                                    - ,..
+
+
+
+                                                                               z
+                                                                               ?I
+                                                                               >
+,96
+
+
+                                                                               z
+                                                                               o
+                                                                               .
+.92
+
+
+
+
+.80
+
+                  l\
+
+.76   I
+                                                  NATION)!
+                                                         L ADVIS
+                                                               IRY
+                       z4,(q)o,   ~~           COhMlllEE‘OR AER(NAUTICS
+
+
+
+,72                                                                            %J
+      /   z   3        -4         5    6   7           8           9      /0   P
+                                                                               ml
+                                                                               .
+
+                                                                               N
+                                                                               m
+                         I                                                                ,         -,
+
+
+
+
+                                                                   NATIONALADVISORY
+                                                                COMMIITEE
+                                                                        FOI?AERONAUTICS
+                                                                                              ‘=5
+i7H6??E-&zHD&       P!oP&LLE.e     s.                                                         P
+                                                                                              m
+d055   W   .5FF/C76.Cy       &UF   70   W   Tfi   7..O/V#L   VEL OCI TX                       .
+
+
+                                                                                              :
+                                                                                          v
+
+
+
+
+  ,20
+
+
+
+
+  ./6
+
+Ep/p
+                                     /
+                             4
+ ./2
+
+
+
+                    i?
+ .08
+
+
+
+ .04
+
+
+                    \
+ 0      b
+
+            /   2        3       4       J-              6          7             8   9       /6
+                                              //q
+                                                    /’
+                                                            NATIONALADVISORY
+                                                         COMMITTEE
+                                                                 FORAERONAUTICS
+                                                                                                                                          .- )
+
+
+
+         .24
+
+
+
+
+         .20
+                                                                                                                                    z
+                                                                                                                                    0
+                                                                                                                                    .
+
+
+         ,/6
+
+
+
+         ./2
+
+         L.!
+         /F’
+
+                                          Y   \   I         x   Xl/             I       x       I    1     I   I   1   I
+                                     /1               /1                  .         /       \                                   I
+
+                                                           ,,         ,        t        1       r
+                                                                                                    16
+                                                                                                     /.0’      I I I I
+                                                                                                               1   I   1
+
+ . ...
+                                     y--~
+                                                                      I        I                    -p&o       I       I    I
+,,,,,                                                                                                II        I   I   I        I
+                             \
+                       ’10
+               I
+                   /   z         3     4                    5                  6                7          8       9       /0
+                                              ‘7.@j
+               1
+                                                                                 NATIONALADVISORY                                   ‘zJ
+                                                                                                                                    P
+                                                                              COMMHTEEFORAERONAUTICS
+                                                                     .-
+
+
+
+
+,24
+
+
+                                                                 z
+                                                                 o
+                                                                 .
+.20
+
+
+
+ ,/6
+
+Epp
+
+ ./2
+
+
+                               / ‘
+ .08 ‘                         \
+
+
+
+
+ .04‘                    \
+                    \
+                         ~       ~
+
+
+
+       o        /       2            3   +   5   6   7   8   s
+
+
+
+       F/GupE 3;- CONCLUDED.
+      NACA ACR No.       L4129                                                                                       Figs.    4,5
+
+
+
+
+      M ‘
+.                                                                                        /
+                                                                                //
+     .08                                                                   /
+                                                                          /
+                                                                         /
+                                                                        /
+                                                                   /“
+                                                               //
+     .06
+
+    Ep/P .                                            //
+                                                  v
+                                              /
+     .Cw
+                                     /                                         Optimum            dis+ribufiql         8=4
+                                                      .-.      ___       __
+
+
+     .02
+                                                                                                N)(IONAL iIDVISORY
+                                                                                                   FOR
+                                                                                                     AERONA1
+                                                                                             COMMIT“EE   TICS
+
+                                                                                                                               ,
+      ‘o          /              2
+                                                            3 k-77D        +                     3               6
+
+
+
+     .06 ~
+
+                                                           ——                                  I
+                                                                          — Opfl”kwm d~Wzi&fkv@?=G
+    EJP              L
+                                                           -----        -—. - pmpe//er 3/.55-6, @=4
+     .04
+
+                          \
+
+     .az
+
+
+
+
+     o/J         /                                                         +
+                                 2                         J v/%@
+                                                                                                 5               6
+
+     #&AeE Z-   A xiol-       energy              /oss       U?      @     ccwres~ondln~                     ?o       ~euk
+                efficie~cy               of       four-b/ode                    /+umi/tcw                S+onda          ~d
+                3/55-6         propelle~
+                                                                                                                                                                                                    z
+
+
+
+
+                                                                      x                                                                                                                             z
+                                         ——                                                                                                                                                         o
+                                                            —0.4J                                                                                                                                   .
+                                                                      .6
+                                          -----             ---       9
+                                                                                                                                                                                                    17
+                                                                                                                                                                                                    &
+                                                                                                                                                                                                    H
+                                                                                                                                                                                                    N
+                                                                                                                                                                                                    m
+                                                                                                                                                 NATIONALADM$ORY
+                                                                                                                                              COMMITTEEFORAERONAUTl~
+
+
+         (9
+         +-                                                                                                                                          .
+    co                                                                                                                                                                                     x
+
+     .8
+
+
+         1I
+         00
+
+     F/gare
+              ———————
+              -------
+
+
+              I
+
+
+
+                   6.-
+                         I
+                        ./
+                               --------
+
+
+                                  I
+
+
+
+                              /?ir{oi/
+                                            I
+                                           .Z
+                                                  -------
+
+
+                                                      I
+
+
+
+                                                chnzcferls
+                                                              .3
+                                                                  I
+                                                                      -------
+
+
+                                                                            I
+
+
+
+                                                                                jks
+                                                                                      .
+                                                                                          ---
+
+
+
+                                                                                          I
+                                                                                                ———————
+
+
+
+
+                                                                                                g
+                                                                                                 ------
+
+
+
+
+                                                                                          cwnotedfo
+                                                                                                    I
+                                                                                                          ‘J
+                                                                                                              I
+                                                                                                                  --   --------
+
+
+
+
+                                                                                                                       I
+
+
+                                                                                                                         i~f;tiije
+                                                                                                                                  ●
+                                                                                                                                      I   I
+                                                                                                                                                 ,
+
+                                                                                                                                              asm~
+                                                                                                                                                     I
+                                                                                                                                                         _~~
+
+
+
+
+                                                                                                                                                              i
+                                                                                                                                                                  #
+
+                                                                                                                                                               mj)o
+                                                                                                                                                                      ----
+
+
+
+
+                                                                                                                                                                      I        I
+
+                                                                                                                                                                             for
+                                                                                                                                                                                   --r
+                                                                                                                                                                              *----”
+
+
+
+
+                                                                                                                                                                                       I
+
+
+
+                             severe/            @de                 -
+                                                              Sec?ioms,                        “
+                                                                                              (22a +a     f       Pom p fere~c                   e       Z)
+                                                                                                                  I
+
+                                                                                                                                                                                               ?
+1                                                                                                                                                                                              m
+                                                                                                                                                                                               ●
+
+
+
+                                                                                                                                                                                               0)
+I
+,
+             o’
+                                                                                                       z
+                                                                                                       0
+                                                                                                       .
+                                                                                                       r’
+                                                                                                       lb
+                                                                                                       H
+          -.(V                                                                                         NJ
+                                                                                                       0
+
+
+
+
+      *
+
+          -.02                                        .—   - —     /.0    -0.0007          -o.@o/
+                                                      —--—2.0               -.002/           -.UOM
+                                                      —---—3.0              7od43            -.0008
+          -.03
+
+
+
+
+            ~=     .4   .3    ./             .0//            Dim          Do?                   .006
+                                                                              NATIONAL AOVISORY
+                                                                           COMMlllEEFORAERONAUTICS
+F@ure 7.-        Vuria+ion of /Zvwt   coeffrcie~t   due I% drag.    B=/     ●
+             o
+
+
+          “.0+
+
+
+          - .o&
+    dc~
+    3%-
+          “./2
+
+
+
+          ‘./6
+
+          CO=4       .3   ./      ,0//   8008   ,007   ,006
+
+    Figw-e        Z - Coat/t4
+                            ded
+
+I
+
+I
+                                                                                                                               .-rf,
+
+
+
+
+                      f                ,?            ,/          .0(/           .Oy       ,0? 7               .oy6
+                                        I                I   I                                                       f
+
+
+,.                                ~1
+                                                                                                                         z
+                                                                                                                         o
+                                                                                                                         .
+              .0010                     <
+                                            \
+     .
+
+
+                              I
+                                  If            \
+                                                 \
+                                                 I
+
+                                                                        .—. — Lo
+                                                                                    ~1)      .f’’%’d%+$
+                                                                                               “
+                                                                                            0,00//
+                                                                                                    ,X
+                                                                                                     0,:007
+              .ooo&
+                          I
+                          [
+                          I
+                                                 I                      —..     —   *J       .00/6    ,00/0
+                                                     I
+                                                     I                  —---—       3D       .0021    .Uolz
+                                                     I
+
+
+              .0006
+         dc
+         fx
+              .0004
+
+
+
+              .0002
+
+
+
+               0
+                                                                                                                         ‘%J
+                                                                                                                         P
+                                                                                                                                                                         -.-.-.2
+
+
+
+
+                          \        I             I       I
+
+
+                              ‘~
+                                                                                                                                                                    z
+                                                                                                                                                                    o
+                                                                                                                                                                    .
+
+
+
+
+      .0020                                                                             37-J”+%j&.
+                                                                          -------- W7.g 0.0025 O,%i
+                                                                          ——         —           g              .003/              .00/7
+                                                                                                                .0037              ,0020
+      ,00/3
+Cfc                                                                                                                           NIT
+                                                                                                                                ‘IONAL
+                                                                                                                                     dOVISORY
+                                /--”\                                                                                                       TICS
+                                                                                                                          COMMIT“EEFORkERONAl
+8%                                      1
+                           If
+                          I             \
+      .00/0               f
+                                        \\
+                                        \
+                                         \
+                                               \
+                                             \
+                                              \                                                            ~                              \
+                                                \                                                               —                     -
+                                                 \                                                         /                                  \
+      .0003                                          \
+                                                         \
+                                                               \                                                     --                              .\
+                                                         \                                ~“         ---   --                                     -.\\
+                                                             ~..                            --                                                         \
+                                                                       - ___ ---                                                                           \
+                                                                                                                          I
+                                                                                                                                                               \
+                                                                                                                    ‘~                                          \
+          0
+                     .2                     .3                     4               3~,6                         .7            .8              9                k;
+
+F/6uA?E       8-   co4/cLU22ED.
+                                                                                                                                                                    al
+                                                                                                                                                                    0’
+NACA ACR No.        L4129                                                                                                        Fig. 9
+
+
+
+
+  /4
+Cp
+
+  /2
+
+
+
+  /.0
+
+
+
+
+                                                           ,      , ---‘/ 1              #            1        I            I
+  .8                                         I             1                 1                                                           i
+                                                                                 ---
+                                                                                             ---
+                                                                                                          -.
+                                                                   f’                                              -.~~
+
+
+
+
+                                                       Y
+
+                                                                                    MTIONALAovl,m’ ‘
+                                                                                 COMM~TEE FORAEROm JTICS
+  .4
+
+
+
+                                                                                  W17H0ti~f2+HG
+                                                  ——              .
+  .2                                                                              wlZW             &A%;        #5~TOT/P
+                                                  -------               --
+                                                                                  w/Z4         DA?.96; .zO~                TOT/
+                    i                                                                                                                4
+
+
+
+  0
+
+     F/Gu,.eE 9,-       ~FFECT      OF DE’AK       ON          &%F/C/EAfCY             #A/O        FV W&@             COEFF/C/&VT
+               H7   PE4&         EFF\C   I ENCy        FOP       @-OU@-&~&DE                       ~AMILTON               STANDARD
+
+               3443-6
+                    PPoPEL L EF .
+z
+o
+.
+p,
+
+
+
+
+     NACA ACR No.   L4129   Fig. 11
+
+                                      *
+             ~         -.,-
+                                                                 z
+    .8                               -–                          o
+                                                                 .
+             -t-f--Ill                    ‘-t---l%
+                                                 t-l-l
+    .6
+7
+
+    4 ‘
+
+
+    .2
+
+
+                                                   ‘~
+    0                                                    I   1
+
+         0         z          3
+                                  v//7D
+
+             ~?WZWRQ 3/’J5-
+                          6 PEOPELLER        ●
+                                                                                                                              -.-.
+
+
+
+
+NACA ACR         No.        L4129                                                                               Fig. 13
+
+
+
+    Lo
+
+
+?                               ----. ----
+    .8                                                    --~
+                                                           ‘-
+                                                                ---
+                                                                        \
+                                                                               ---                 8
+
+
+                                                                                                 ‘- 8
+    .6
+
+
+
+
+    Lo
+
+
+?                                 =---
+                                     ----
+                                                    ---
+    ,8                                                                 1.
+                                                                                       :.-
+                                                                                         ‘-- 6
+    .6 k
+
+                                            ___ ___- Ca/cuiated
+                                            —.      -—                EXj&wimenta           I {references       6 and& 1
+
+    Lo
+                                                                                        Nim
+                                                                                          h Ad’mw
+                                                                                          EFORAERONAIJT
+                                                                                     [;Ilmlm         Cs
+                             -- --_~    --- -- -m
+7                                                   ---
+    .8                                                                  --
+                                                                             % .--
+                                                                                      ---
+                                                           ,                                           4
+
+    .6
+         0             /               z’                                                    5              6
+
+    fl’gurt?     /3-       COAVPaPfSOh                of co/cu/a+ed                  ancf     experimenfa/
+               propefier          effl’dency                efl tieiopes.
+
+
+
+
+                                                                                                                   .—      .—-.
+                . .   .   .   ..   ...       .                ‘?
+                                                                   ~.,
+
+
+                                         ~
+                                             3 1176005000816 ~
+                                         L.—.—.
+                                              —          — . ..—.
+
+
+
+
+.,. ,.—   .,,
+

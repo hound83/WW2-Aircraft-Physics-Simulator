@@ -1,0 +1,924 @@
+                NATIONAL ADVISORY COMMITTEE
+                      FOR AERONAUTICS
+
+
+                                                     REPORT No. 595
+
+
+
+           FULL-SCALE TESTS OF A NEW TYPE N. A. C. A.
+                                          NOSE-SLOT COWLING
+
+                                 By THEODORE THEODORSEN, M. J. BREVOORT
+                                       GEORG E W. STICKLE, and M. N. GOUGH
+
+
+
+
+                                                               193 7
+
+
+For sale by the Superintenden t of Documents, WashiDllton, D. C.   -   -   -   -   -   -   -   -   -   -   -   -   P rice 10 cents
+                                                     AERONAUTIC SYMBOLS
+                                             1. FUNDAMENTAL AND DERIVED UNITS
+                    .-                                               ,
+                              j
+                                                             Metric                                             E nglish
+
+                                  Symbol
+                                                      Unit                Abbrevia-                      Unit               Abbrevia-
+                                                                            tion                                              tion
+
+            Length _____ __         l       meter __________________                m           foot (or mile) _________   ft . (or mi.)
+            Time _______ __         t       second _______________ __                s          second (or hour) _______   sec. (or hr.)
+            Force _________         F       weight of 1 kilogram _____              kg          weight of 1 pound _____    lb.
+
+           Power ________           P       horsepower (metric) ___ . __ ---------- horsepower ___________                 hp.
+           Speed _________                 {kilometers per hour. _____      k.p.h.  miles per hour. _______                m.p.h.
+                                    V       meters per second _______      m.p.s.   feet per second ________               f.p.a.
+                                                                                            I
+
+
+                                                       2. GENERAL SYMBOLS
+W,      Weight =mg                                                       v,     Kinematic viscosity
+g,      Standard acceleration of              gravity = 9.80665          p,     Density (mass per unit volume)
+          m/s 2 or 32.1740 ft./sec. 2                                    Standard density of dry air, 0.12497 kg-m- 4_s 2 at
+                                                                           15° C. and 760 rom ; or 0.002378 Ib.-ft.-4 sec. 2
+m,      Mass = W
+                g                                                        Specific weight of "standard" air, 1.2255 kg/m3 Of
+I,      Moment of inertia =mP. (Indicate axis of                           0.07651 lb. /cu.ft.
+          radius of gyration k by proper subscript.)
+/1- ,   Coefficient of viscosity
+                                                     3. AERODYNAMIC SYMBOLS
+S,      Area                                                          i/D'               Angle of setting of wings (relative to thrust
+SID'    Area of wing                                                                       line)
+G,      Gap                                                                              Angle of stabiliz~r setting (relative to thrust
+b,      Span                                                                              line)
+C,      Chord                                                            Q,              Resultant moment
+b2                                                                    12,                Resultant angular velocity
+        Aspect ratio
+S'                                                                      Vl
+                                                                      p- ,           Reynolds Number, where 1 is a linear dimension
+V,      True air speed                                                        Jl.
+                                                                                        (e.g., for a model airfoil 3 in. chord, 100
+q,      Dynamic pressure = ~p V2                                                       m.p.h. normal pressure at 15° C., the cor-
+
+L,      Lift, absolute coefficient CL =      :s                                        responding number is 234,000; or for a model
+                                                                                       of 10 cm chord, 40 m.p.s. the corresponding
+                                                                                       number is 274,000)
+D,      Drag, absolute coefficient CD -        {!s                                   Center-of-pressure coefficient (ratio of distance
+                                                                                       of c.p. from leading edge to chord length)
+        Profile drag, absolute coefficient CD, = ~S                                  Angle of attack
+                                                                                     Angle of downwash
+        Induced drag, absolute coefficient CD; = ~S                                  Angle of attack, infinite aspect ratio
+                                                                                     Angle of attack, induced
+        Parasite drag, absolute coefficient CD• - DSl1
+                                                  q                                  Angle of attack, absolute (measured from zero-
+                                                                                       lift position)
+0,      Cross-wind force, absolute coefficient Co ~ q~                'Y,            Flight-path angle
+R.      Resultant force
+                     REPORT No. 595
+
+
+
+   FULL-SCALE TESTS OF A NEW TYPE N. A. C. A.
+              NOSE-SLOT COWLING
+
+            By THEODORE THEODORSE N, M . J. BREVOORT
+               GEORGE W. STICKLE, and M. N. GOUG H
+
+                Langley Memorial Aeronautical Laboratory
+
+
+
+143134-37                                                  I
+                               NATIONAL ADVISORY COMMITTEE FOR AERONAUTICS
+                                           HEADQUARTERS, NAVY BUILDING, WASHI GTON, D. C.
+
+                                                   LABORATORIES, LA GLEY FIELD, VA.
+
+               Created by act of Congress approved March 3, 1915, for the supervision and direction of the scientific
+           study of the problems of flight (U. . Code, Title 50, Sec. 151 ) . It member ship wa increased to 15 by
+           act approved March 2, 1929. The members are appointed by the Presiden t, and se rve as such wi tho ut
+           compensation.
+    JOSEPH S. .AMES, Ph. D., Chwinnan,                                     HARLES A... LnmBEROH, LL. D.,
+        Baltimore, M t                                                        New York City.
+    DAVID 'V. TAYLOR, D . Eng., Vice hai l"matn,                         WrLLIAM P. l\lAC RACKEN, Jr., LL. D.,
+        Wa hington, D. C.                                                     Washington, D. C.
+    CHARLES G. ABBOT, Sc. D.,                                            .AUGUSTINE W . ROBINS., Brigadier General, United States ArmY,
+        Secreta.ry, Smithsonian Institution .                                 Ch ief iateriel Division, .Air Corp, Wri ght Field, Dayton ,
+    LYMAN J. BBIGO , Ph. D.,                                                    Ohio.
+        Director, National Bureau of Standards.                          EUGENE L. VIDAL, C. E .,
+    .ARTHUR B. COOK, R ear .Admiral, nited States Navy,                       Director of .Air Commerce, Department of Com mer ce.
+        Chief, Bureau of .Aeronautic, Navy D epartment.                  EDWARD P. WARNER, M. S'.,
+    Wn.u:s RAY GREGO, B . .A.,                                                New York City.
+        Chief, Unitecl States W eather Bureau .                           OSOAB1 WESTOVER, Major General, United States Army,
+    HAnRY F. GUGOI!lNHElIM, M . .A.,                                          Chief of .Air Corps, W ar Department.
+        P ort Wa bington, Long I sland, N. Y.                             ORVlLLE WRIGHT, Sc. D.,
+     SYDNEY M. KMUS, Captain, United States Navy,                             Dayton, Ohio.
+        Bureau of Aeronautics, Navy Department.
+
+
+
+                                          GEORGE W.   LEWIS, Directol" ot Aeronautical R esearch
+                                                        Jon   F. VICTORY, Secr etary
+                 HENRY J. lB. HElD, Nngineel' in Charge, Langley Memorial A.eronaut·ical LaboTalory, Langley F 'ield, Va.
+                                       JOHN J. IDE, 7'ec hnical Assistant in Ettr01Je, Pa1'is, France
+
+
+
+                                                      TECHNICAL COMMITTEE
+           AERODYNAMICS                                                                  AIRCRAFT ACCID ENTS
+           POWER PLANTS FOR AIRCRAFT                                                     INVENTIONS AND DESIGNS
+           AIRCRAFT STRUCTURES AND MATERIALS
+
+
+                                     CooraAtnatio'n oj ReSeal"ch N eeds of MilitarJ! and Civil A'I}iation
+                                                    PreIJa rat'ion at Research Pl'ogl'ams
+                                                          A.llocation of Problems
+                                                         Prevention ot Duplication
+                                                        Considemtion at Inventiol/s
+
+    LANGLEY MEMORI AL AERONAUTICA L LA BORA TORY                            OFFICE OF AERO AUTICAL I N TELLIGENCE
+                          LANGLEY FIELD, VA.                                                  WASHINGTON, D. C.
+
+                 nified conduct, for all agenCies, of                                 Collection   cla mcation,   compilation,
+             scientific r esearch on the fundamental                                and dis emination of scientific and tech-
+             problems of flight.                                                    nical information on aeronautics.
+            II
+
+r
+
+I
+r
+
+I
+
+
+I
+r
+
+L
+I-
+I
+
+
+
+
+                                                                      REPORT No. 595
+
+                 FULL-SCALE TESTS OF A NEW TYPE N. A. C. A. NOSE-SLOT COWLING
+
+                               By THEODORE THEODORSEN,               M . J. BREVOORT,        GEORGE        \V. STICKLE, and       1. N. GOUGH
+                                      S UMMARY                                             eral, the efficiency is jound to be high, owing to the fact
+         An extended experimental study ha been made in regard                             that higher velocities may be used in the exit opening.
+      to the various refinements in the design oj engine cowlings
+      as related to the propeller-nacelle unit as a whole, under
+      conditions c07'responding to take-off, climb, and n07'mal
+     flight . The te ts were all conducted atjull scale in the 20-
+     joot wind tunnel. This r-eport p7'esents the results oj a
+     novel type oj engine cowling, characterized by the jact that
+     the exit opening di charging the cooling air is not, a usual,
+     located behind the engine but at the f oremo t extremity 01'
+     nose of the cowling. This type of cowling is inherently
+     capable of producing two to three times the pre sure head                                                                            p / q= I
+     obtainable with the normal type of cowling because the                                FlGUl!E I.-Typical pressure distribution 00 cow liogs. Test arrangemeot7-2· 0-3 O.
+     exit opening is located in a field of considemble negative
+     pressure . Thus identical conditions oj cooling can be                                Fli ght te ts oj a temporary installation showed promi ing
+     obtained at correspondingly lower (tir speeds . I n gen-                              re ults.
+               rt. Propeller               rt. Cylinders
+
+                                       I
+
+
+
+                                                                                                                                                        Application
+                                                                                                                                        .-----'~-        to engine
+
+
+                                                                                     ---~--                 ------------
+                                                                                               •   '>"   Tachometer
+
+                                                                                                                                                               Tes!
+                                                                                                                                                         - - sel- up
+
+
+
+
+                                ,                             " Skirl S
+                                ' Perforated plate
+     FIGURE 2.-Drawing shOwing the prinCiple of operation of the nose·slot cowling. The upper half of the drawing shows the practical application; the lower hall shows the
+                                                             arraogement of the test installation with nose lO- ~.
+
+                                    INTRODUCTION                 value be exceeded by about 20 percent. The pressure-
+        It has been hown in the report on conventional cowl- d.istribu tion te t reported in the same r eference show
+     ings (reference 1) that the available pres ure head ac1'O s that a negative pressure of several times the velocity
+                                                                                       I
+     th e engine is very nearly equal to 1 q and that only in head is available near the no e of the cowling. (ee fig.
+     very extreme cases, as by the u e of skirt flap ,may this I 1.) Since cases may be expected to OCCill' in which a
+                                                                                                                                                            1
+2                      REPORT             O. 595- r ATIONAL ADVr. ORY COMMITTEE FOR AERONA1:TTCS
+
+large press ure drop is de ired, a pecial type of cowling
+was designed to ha ve the exit opening at or very near
+the front portion of the cowling in order to make use of
+this available pres ure drop. At B:r t thought, this
+flrrangement might be expected to be inefficient a a
+fairly large di turbance in the entire bOl1n lary layer i
+normally exp cted. Peculiarly enough the contrary
+ eemed to be the case, the yery first de ign hO\vmg a
+very high efficiency. The air enters the cowling in the
+central front opening in the usual manner, pa
+through the engine ba.ITle , and is then returned acro s
+
+
+
+
+                                                                                                            (a 1 Nose 10-1/2
+         FIG UJ<E ~ . -The test installatio n in the 20·[oot wind tunnel.
+
+
+the top of the cylinder, guid ed into the nose ring, and
+di charged through the slot.
+
+       DESCRIPTIO              OF TEST ARRANGEME T
+
+   Figure 2 giycs a general idea of the te t arrangement;
+tbe engine I"e i tance was r eplaced by a perforated plate
+ju t behind the nose ring, as hown in the lower half of
+the figure. Thi pia te con tuined several hundred
+I-in ch holes, uny Jl umbel" oC which co uld be closed a
+de ired, thus repre en ting engines of a wide variety of
+cond uctivitie. Figure 3 is a photograph of the in tal-
+lation with the original no e, which i de ignaLed 10- }t
+the 6Tst numeral giving the llumber of the no e and the
+second numeral giving the exit openin o· in inches, a
+ ome of the e no e were tested with two sizes of exit
+opening. Figure 4 (a) is a photograph of no e 10-% ;
+flgures 4 (b) ancl4 (c) how two more de ign , 11- 1 and                                   (c) Nose 12- J.
+12 1, te ted successively . A total of nine cowling of                       F, GURE 4.-Pbotographs of noses tested.
+
+
+
+
+                                                                                                                               !
+                             FULL-SCALE T ESTS OF A NEW T YP E                     . A. C. A. NOSE-SLOT COWLI NG                                                           3
+ this ty pe were tested, all of which are shown with the                       tests were conducted in connection with th ese tests
+ proper designations in the scale drawing (fig. 5). All                        as the requi ito information was available from
+ the cowling no e rings were given the same major di-                          reference 1.
+
+
+
+
+                                                                             Per forate d
+                                                                            .-- p la t e
+                                                                                                   -j."
+
+                                                   6 " to ct..
+                                                   cyl/nders - - 1
+    52 "dia.                                                        Gh                                         I
+                                                                        I
+                                                            20 "ro d. );--_ _ _ _ _- -
+                                                                                                              51. 9 "dio.
+
+                                                                 37.2 "dia.
+                                                               (d) Nose 12-1
+                             Perforated
+                             . plate                                                                                                                'Per forat -
+                                                                                                                                                    ed p l ate
+    6 " to ct..
+    cyl!nders-~1                                                                                              6" t o <t.
+                                                                                                              cyltnders- - i
+                       EaT                                                                                                       e     A-
+
+
+                  ZO "rad
+                            "1- - -----                                                                                                I
+                                                                                                                         20 "ro d. );---_ _ _- -
+                      37. 2"&0.                                                                                                             "
+                   (a) Nose 10- %?                                                                                              369 "dio.
+                                                                            Perforated
+                                                                                                 f'
+                                                                                                                            (gJ Nos e 14%
+                                                                            .' plaTe
+                                                6 " to 1.
+                                                cyli nders- - 1
+    I                                                               $                                          I
+    52 "d/a.                                                                                                   5 1.9 "&0.
+                                                           2 0 "rad "I -          - - -- - -                                                                       (
+                                                                 J7.Z "d ia.                                                                                        z.
+                                                              (elNos e I Z A -I
+                               Perforated
+                             , -- plate                                                                                                              Perforated
+                                                                                                                                                    .-' plafe
+   6 " t o <t                                                                                                 6 " to 1.
+   cyllnders- - 1
+                                               I                                                              cyl lnders- -1
+                      Ea1
+                  20 "rod. \,-_ _ __ _-
+                                               5Z"dio.
+                                                                                                                                 eT
+                                                                                                                            2 0 "rod. );--_ _ _-
+                         32.Z"dia .                                                                                                             1
+                                                                                                                                37. 0 "dio .
+                  (b) Nose 10 - I
+                                                                                                                       (h) N ose 16- Yc
+                                                                             Perforated
+                                                                               pla/e             -,::..
+                                             6 " 10 If
+                                             cylinders-        -1
+   5 1.9 "d/a .                                                 e                                             5/.9"&0.
+                                                           20 "rod.
+                                                                    I
+                                                                         "1---- - --                                                                               -,::.
+                                                                   32.2 "dio.
+                                                               ( f lNos e 13-1
+                               ?erforaled
+                              -- plate                                                                                                                ?erforated
+   6" t o <l                                                                                                                                          - plate
+   c y lJ"nders - -' 1                                                                                        6" t o 1.
+                                                                                                              c y lInders
+                      Ea1                                                                                                        $ "
+
+                   20 "r o d. \,-_ _ _-            o                          s                       10
+                                                                                                          ,                  2 0 "rad.
+                                                                                                                                        I
+                         3 6.9"&0.
+                                                                            Inches
+                                                                                                                                  37.0 "dio .
+                                                                                                                                                    "1- ----
+                       Ie) Nose II-I                                                                                   (i ) Nose /6-/
+                                            F IGURE 5.- D rawings or tbe nine nose·cowlings tested.
+
+
+m enslOns; all were fitted t o the arne perforated disk                         The test were performed at bo th illgh and low air
+comprising the te t re istance. The conductivity of                           peeds, the low speeds for the purpo e of obtaining the
+tills perforated di k could be changed at will between                       cooling from the propeller slip tream alone. The tests
+the limits of 0 to 0.09, thus simulating the complete                        were conducted as usual, with th e propeller both on and
+range of actual installations.     0 heat-transmission                       off for th e sake of completeness.
+            143134-37-       -2
+4                 REPORT NO . 595- ATIONAL ADVISORY COMMITTEE FOR AERO JAUTIC
+
+         DEFI ITION OF PARAMETERS USE D                                 (3) Propeller load factor or disk-loading coefficient,
+  The variou terms used in the paper will be defined                  d fin ed a
+and briefly cliscu ed. These terms are taken from the                                              P
+                                                                                             P c= - -
+report on conventional cowlings (reference 1).                                                    q V
+  (1) Pump efficiency, defined as                                     where P is the power supplied to the propeller shaft,
+                                                                      and S is the di I area of the propeller. Thi quantity
+                                   QIJ.p
+                                                                      i in the fir t order proportional to the contraction of
+                                                                       the propeller slip tream (reference 1). Equal values
+where Q is the quantity of air per second which is forced             of Pc tIm e entially repre ent geometrically identical
+              tluough the resi tance.                                 flow picture. In the analy is of the re ults obtained
+      IJ.p, the associated pres UTe drol acros the same               for variou propeUer a certain simplicity i achieved
+              re istance.                                             in comparing uch re ults at a fixed value of P c.
+       D, the ob erved dnw of the cowling-nacelle unit.                  (4) Net efficiency, defined as
+      Do, the drag of a body of identical major dim en-
+               ion but with the cooling channel cIo ed
+                                                                                                     RV
+                                                                                                7Jn= p
+              and the outline faired into a streamline
+              contoUT.                                                in the ca e of the power runs, where R i the thru t of
+        V, the air peed.                                              the unit a given by the thrust scale. The net efficiency
+   It may thu be seen that QIJ.p is the useful work done              obtained with the cooling air hut off and the outline
+per econd and that (D- Do) V i the work expended .                    faired into a carefully treamline contour is needed
+It will be realized from the following that the pump                  to determine the pump efficiency for the case of pro-
+efficiency i a very preci e meaSUTe of the aerodynamic                peller on and i de ign ated 7Jo.
+quality of the design. For the case of the power run,                      (5) In reference 2 the quantity IJ.p/n2 was cho en as
+or the propeller on, the pump efficiency i given by the               a haracteri tic function to repre ent the cooling prop-
+formula                                                               erties of any particular combination of engine cowling
+                          (IJ.]J /q)3/2 P eS                          and prop ller at the condition of zero air speed, repre-
+                      7Jv    7Jo- 7J    J{F                           sen ting the case of cooling airplane engines on the
+                                                                      ground. The square root of the foregoing quantity, or
+where the quantities J{, F, P c,           ,7Jo, and 7J will be de-
+                                                                          tJ.p/n, obtained from eA.-perimental data, i given as a
+fined under the next headings.
+                                                                       function of the advance-diameter ratio V /nD. It is
+   (2) onductivity, defined as
+                                                                      realized that the propeller at zero air speed act very
+                J{=   A /F                   Q                        much the same as any other blower in reo-ard to the
+                       IJ.p /1J.     ..jIJ.p/qFV                      pres ure produced for cooling. The quantity IJ.p /n2 or
+                                                                       "/ IJ.p/n i therefore very nearly a con tant for a given
+where F is the maximum cro - ectional area of the                     propeller at a given blade-angle etting and is inde-
+nacelle. This quantity give the inver e of the resi t-                pendent of th e revolution speed of the propeller. It is
+ance of the engine to the air flow and is nonclimensional.            referred to in th e following di cus ion a the "pre ure
+  The apparent conductivity of the e)"-it opening may                 con tant." Th e speed of the propeller may be con-
+ imilarly be I' presented by a value J{2 which is simply                idered known from the result of a previous inve tiga-
+the ratio of the area of the exit opening to that of th               tion (reference 3).
+maximum 1'0 section of the nacelle, or
+                                                                                            TE T RE S LTS
+
+                                                                         The te t re ults are hown in conden ed form in
+                                                                      table 1. Oolumn 1 o-ives the de ignation of the co vling
+  It ha been shown in reference 1 that the following                  nose corresponding to those given in figure 5. Oolumn
+relation exist in regard to the flow through the cowling:             2 hows the propeller used, the zero standing for pro-
+
+                 IJ.P (Q)2[1 1]
+                                                                      peller off and the Bx and 0, for the plll'pose of the pre ent
+                 q   = FV J{2+ J{l                                    paper, representing two normal lO-foot propellers
+                                                                      (rcferenc 3). Th e main diITerence between Bx and
+where IJ.P i equal to the total head of the air entering              is that Bx has a well-shaped airfoil section extendino'
+the cowling minus the static pre ure in the region of                 down do e to the hub, whereas 0 ha a round shank.
+the exit opening. The former pre UTe is alway                         Oolumn 3 how the apparent conductivity of the exit
+found to b very nearly equal to the total head of the                 opeillng. Oolumn 4 is the conductivity of the test
+air stream. Thi quation will be referred to a "the                    resi tance or "engine." Oolumn 5, 6, and 7 show the
+equation of flow regulation."                                         pre mes (in term of q) with re pect to the test re ist-
+
+
+
+
+                                                                                                                                      I
+                                       FULL-SCALE TESTS OF A                             EW TYPE N. A. C. A. NOSE- LOT COWLING                                                        5
+ance. Column 5 gives values of Ph the pre sures in                                              outlet in a converging-flow field, a for no e 10, in
+front of, and column 6 gives values of Pr, the pressures                                        contrast to the low efficiency obtaining by locating the
+in the rear of the resistance; column 7 give valu es of                                         ou tlet back of the ma:h.imum velocity, a for nose II.
+~P, the pres ure difference acros the resistance. Col-                                             As is evident from the introdu ction, the main reason
+umn 8 give the drag in usual coefficient form CD.                                               for designing and testing the new nose-slot cowling is
+Column 9 is given, for convenience, to illustrate the                                           the large pre sure available for cooling . Figure 7 is a
+approximate forces involved by giving the drag at 100                                           plot of the results in table I giving the available pres-
+miles per hour or, more exactly, at a q of 25.6 pounds                                          sure against the engine condu ctivity, J{. It is seen
+per square foot for the drag run; i . e., th e forward net                                      that the available pressure difference created by this
+                                                                                                type of cowling lies in the region of 2 q an 1 in a few
+          '20                                                                                   cases even exceeds 2.5 q. Th e decrease in available
+   "'"-
+    c:                     Nose/O 'f.                                                           pressure with increased conductivity is caused by the
+    ~ 100
+    ~                                      /i10 Yz                                   /2-/       fairly small size of the apparent exit conductivities .
+    Cl.                                   f          -"""
+                                                            1.---- l -I -      /16-1- I -       It may be observed from the equation of flow regula-
+    ~ 80                          .;--; '.I--                                                   tion previou ly given th at a small value of J{2 means
+    ~
+    u     60               ./   v 11' v ~ 16-Yz                                                 that a large part of the pres ure differ ence created by
+                I - ~y
+   .§                             V                                  ./
+                                                                                                the cowling is used to produ ce velocity head in the exit
+   .U                 V/                             l - 1--;"-
+   ~ 40
+                                 ~v
+                                                                                                opening and the remaining pre sure ~P available for
+    ~           /Ii    Y                                         /1 - /
+                                                                                                cooling is corre pondingly redu ced. 1£ the pre sure
+   "-
+    " 20
+         fill ./                                                                                available for cooling ~p is added to the velocity head in
+   c(    'IV I                      /3~/·        V <t'12A-1
+                ~                   ·/4-"/.,                                                    the slo t, it is found that the total, which i ~P, is of a
+            o          .01       .02       .03    .04         .05      .06   .07   .08   .09    n early constant magnitude for any given cowling.
+                                                        f(
+                                                                                                   The value [{2 have been inserted for the various noses
+            FIG U RE 6.-Dependency of pump efficiency on conducti vity.
+                                                                                                shown in figure 7. It has been shown in reference 1
+                                                                                                t11at J{= 0.05 may be consider ed as the normal value
+ thrust at the same tunnel speed and at a fixed disk
+                                                                                                of the conductivity of a well-baffled single-row radial
+loading for the propeller runs. Column 10 gives the
+                                                                                                engin e. The aver age available pressure of the nose
+net efficiency 7/" for the propeller run , and column 11                                        cowling at this cond uctivity is seen to approximate 1 q
+the pump efficiency 7/p as defined in the preceding
+                                                                                                an 1 to reach a maximum of about 1}~ q with nose 16- l.
+section.                                                                                        A compari on of the available pressure drops and effi-
+    In figure 6 the pump efficiency has been plotted
+                                                                                                ciencies at any desired condu ctivity with those obtained
+against the onductivity for variou nose. It was
+the very succe s[ul result on the original no e 10 - }~                                               ~8.r-.-r-",,-.-.-.-'-'-'-'~~-'-'-~~
+
+that prompted the study of everal other designs, which
+were later tested. No es 10, 12, and 16 all tend to
+reach a 100-percent efficiency at conductivities beyond
+0.07 and 0.08.         ose 10 actually exceeds 100-percent
+pump efficiency even at the low conductivity 0.03.
+    The reason for the relatively large efficiences obtained
+with this type of cowling lies in the fact th at the ve-
+locities in the exit opening more nearly equal those of                                                                     10~~2 .o35j '""t----                 T-16-1
+the external air stream. The beneficial effect of large                                                 .8r-r-r,~~~-;'/~
+                                                                                                                       6-_Yz~z~~~~~
+                                                                                                                                  -+~-+-+-'~
+                                                                                                                                           /2~_~1
+                                                                                                                                                                                           I
+exit velocities on the pump efficiency has been conclu-                                                                                                          .064·17-"1-"-
+                                                                                                        . 4r-r-~~-+-+-+-+~~~~+-~~~r-
+sively demonstra,ted in reference 1. The reason for
+the larger exit velocities is clue to the fact that a much                                                                                                                                 I
+1111'0'81' pre sure difference is available and that part of                                             o      .01     .02     .03    .04       .05   .06    .07     .08    .09
+                                                                                                                                             K
+this difference may be used in the e:h.rit opening, leaving                                        F IGU RE 7. - '\ vailabJe pressure differences across tbe engi ne ploUed against
+                                                                                                                                                                                           I
+at least the usual pressure drop for cooling.                                                                                      conductivity.
+    The noses showing a very low efficiency in figure 6                                                                                                                                    I
+were designed primarily with the intention of obtain-                                           on the regular cowlings (reference 1) shows that the
+ing a large available pressure drop at zero air speed.                                          nose-slot cowlings for most conditions are superior;
+On the whole, the design was found to be critical, a                                            hence, at an available pressure drop across the engine                                    .1
+minor chang in the external contour sufficing to drop                                           of about 1 q, the efficiencie on some of the no e-slot
+ the efficiency from neal' 100 percent to a small quantity.                                     cowling approach 100 percent, while in the normal                                          I
+It was found that a projecting edge at the slo t , such as                                      type they were of the order of 60 to 0 percent.
+embodied in cowlings 12, 13, or 14 in figure 5, was very                                           No attempt was made during the present investiga-
+detrimental to the efficiency. It was also noted that                                           tion to test nose- lot cowling with large exit conduc-
+ the highest efficiency wa obtained by locating the                                             tivities. Such cowling should provide a larger pres-
+6                                 REPORT r O. 595-NATIONAL ADVI ORY COMMITTEE FOR AE RONA TICS
+
+
+
+         .7
+
+               Li.I ~ I II I~, I ~~o
+                                 J I        J ~ O,,?oL/~
+                                     ~,f ~5 ~ ---1,---+-);+
+                                                         , -Jf~7'
+                                                                          ,1_    I pr...l-o-'P-fil-le-rj-IB-x+ls-e-tt'-25-0j-O-t+'0-.7-T--t--+-+--i
+                                                               , 4"--j----i---iI-L--
+                                                                                        K       0.
+                             Pr0r.;eller         s:t                     0.
+                                                                                                                                      5R
+         .6
+               I I       0        " I       F'j ;' "..                                      m                  .0/034       I        :          1
+
+                                                                                                                        -'---~~~--+---1-+--+-~-+--+---1--~
+                                                                                                                                                              I
+                                                                         . D236:-~ .0.231, V                                                                          j( ~ I 0.0~87 1 ./
+         .5
+                                            I
+                                                                     I            g
+                                                                                  I                     Y           1       I
+                                                                                             1--.,-,-+--I...,.-----i---+---4I-                                        t- I - -VV -r--                               -
+                                                N05e 10-/            ·'· f f                ./           T :0292            !   L-                            1
+                                                                                                                                                              1
+                                                                                                                                                                                     v         I         I
+                                                                                      - 7 -+
+                                                                                                                                                                                ./
+
+         .4                                           I      I       k,t'                                           I       t                                              /-                            1--
+                                                             . /fo                    ./                            I                     I     ---"-         -/
+                                                                                                                                                              ~-+--_l_-+--+--+--f__l ~
+         .3
+                     1
+                                      1          / f
+                                                   JiL ~/
+                                                       /'                                              r~L:                 i
+                                                                                                                            I iLL
+                                                                                                                            I
+                                                                                                                                                           l
+                                                                                                                                ../""-l-l--+---l---+-+---1-l--+----1
+                                                                                                                                                                                                                        1
+                                                                                                                                                             4--t--+-+~I--+-4--t----1
+
+
+                                 / //jt~e 10. - Y2
+                                                                                            ~ [t r                  !
+         .2                                                                                                             I-_-_\b---'rdr-.->---;!r---!f---I--I--I--I--+--+--+--+--+--,
+
+          .I
+                f-_-::-::-_,+~-.. d"'--+-/(-t7""""    -      -       r                                   t-                                               --      --+-+-t-t---l1--t--1---I
+                 ___ I__ ./ IF''''''''?V        (a)         Nose 10.                                                    I-+I--+__t-+-----t--
+                                                                                                                                          (d)               Nose 13-/
+                -----                                                                       1            rI'                I             I
+          0.
+                             1                                                K ~ 0. 0000.. /            +---,---+--+--+---+__+1                t--
+          .6
+                         Propeller Bx s et 25° of 0..75 R                          L.11'/ V                                 I        1 Pr10peller Bx set 25° at 0. 75 R
+
+                                                                                  LV                                                      t I
+    '0
+    Q..
+         .5
+                I--T--t---t-'_'
+
+                     I     L
+                                      !     I
+                                            I
+                                                             1   /
+                                                                         7/ (f-
+                                                                             J
+                                                                              1
+
+
+                                                                                -r-'
+                                                                                                       ' 0114
+
+                                                                                                                                                ~-+---+----11------++-_-I-+-
+                                                                                                                                                            j( =      0. 0450
+                                                                                                                                                                                           -_:1:=:=::
+    ~4 r----+--+--+i--+-+--A-                                                                   . 1             -
+                                                                                                                                                         ~-%-/-t--+--+--+--+--+---1
+                                                                                    l
+    ""               I             i I /V/ I                                      d /           '- .   -.0462           I -I-I-t---t- I
+                                   ~~     ~tf                                                                                                        / / V - .0850
+                 ------ !o---' J /                        /VI                               ,I                                           /V /
+
+
+
+
+                     I                          (b)         Nose 11-/                                                                               (e)     NoseI4-J<,
+                I--+-+--t--j--+~~                                    t-T--t--l--+--f--+---I--t--t--+'-1-r
+
+
+
+
+           0.             .2         .4           .6             .8               1.0             I.e            1. 4   0       .2        .4          .6              .8                 1.0       /.2       1. 4
+                                                          V / nJ)                                                                                          V j n J)
+                                                           FIG URE S.- Pressure constants -JMJ/TI against 1'lnD for the several noses tested.
+                                   FULL-SCALE TESTS OF A                                EW TYPE N. A. C. A.            OSE-SLOT COWL! G                                         7
+sure drop for cooling, probably at some expense of                                                 at zero air speed are given in figm'e 8 for nose 10, 11,
+pump efficiency.   ince the largest pressure drop IS                                               12, 13, 14, and 16. These result will be more fully
+                                                                                                  under tood by a study of reference 2, which shows the
+                                                                                                  pre sure con tant at zero air speed for yarious normal
+                                                                                                  and special arrangements.       TO c 10, 12, and 16 ar e
+                                                                                                  seen to give very low pressure constants at the ground
+                                                                                                  point.    Jose 11 compares favorably with the best
+                                                                                                  result previou ly obtained on normal cowlings.       oses
+                                                                                                  13 and 14 also give large available pre sure on the
+                                                                                                  ground. It is noticed, in general, that the nose giving
+                                                                                                  high available pres ure on the ground are not efficient
+                                                                                                  in the flight condition, and vice versa.
+                                                                                                  PRELIMI ARY FLIGHT TESTS OF THE         EW TYPE
+                                                                                                       N. A. C. A. CO WLING 0 BFC-l AIRPLA E
+
+                                                                                                    In order that the practical value of the information
+     FIGuRE 9.· Origi nal cowling inslallation On t he CUl tiSS llF C- J airplane.                on the new type of cowling might be demonstrated ,
+needed only at low peeel, the maHer of some efficiency
+10 is not importnnt. It is perfectly po ible to provide
+means for cbano-ing the exit opening during flights.
+
+
+
+
+                                                                                                  FIGURE ll.- The Curliss llF C- l airplane equipped with the nose-sIal cow li ng.
+
+                                                                                                   the following flight tests were made with a preliminary
+                                                                                                  cowling in tallation on the Curti s BFC- 1 airplane.
+                                                                                                     TIle Curtis BFC- l airplane (fig. 9) has a 'W right
+                                                                                                    GR- 1510 twin-row, 14-cylinder, geared. engine, com-
+                                                                                                  pletely equipped with pressure baffies and a wide-chord
+                                                                                                  ring owling (fig. 10). A selective thermocouple in-
+                                                                                                  stallation allowed the determination of temperatme 1'01'
+                                                                                                  28 positions on the heads and ba e of the 14 cylinder.
+                                                                                                  In till condition a level flight wa made for reference
+                                                                                                  purpose at maximum allowable continuous power for
+                                                                                                  a sullicient length of time to allow all temperatures
+                                                                                                  to tabilize. Complete data identifying th e flight were
+                                                                                                  recorded.
+                                                                                                     The new . A. C. A. nose- lot cowling wa then
+                                                                                                  installed as shown in figlU'e 11. Tlus photograph doe
+                                                                                                  not show the external oil cooler, as in figure I, a it
+                                                                                                  had been removed ju t before the picture wa taken.
+                                                                                                  The in tallation used nose 16- 1 (fig. 5) and was arranged
+                                                                                                  as shown in the upper part of figure 2, except for the
+                                                                                                  fact that the internal dividing wall was located between
+                                                                                                  the heads and the cylinder barrel and below the spark
+                                                                                                  plugs. The wall extended back to the econd row.
+  F IG URE 1O.- (, l o~ e· t1p "I the origina l cowling on l he (' lIr ti ~s B FC- I " irpl ane
+                                                                                                  The flow is approximately as indicated by arrow in
+  The expcl'imcn tnl results in regard to the pressure                                            the upper part of figme 2. Clo e-up photographs of
+drop available for cooling with th propell r lip tream                                            the Ie ign are shown in fig me 12.
+                                                                                                                                          --1
+8                REPORT N . 590-1 ATJONAL ADVI SORY CO MMITTEE FOR AERONAUTICS
+
+   Another ch ange consisted in rever ing the pre ure                      flight reproducing the conditions of the one with th e
+baffie on the cylinder head to suit the rever ed now                       original cowling was made. From t hi flight the follow-
+direction ; the baffle on the barrel were r edesigned to                   ing comparison was obtained.
+fit the new in tallation. Three th ermocouple on                              At the ame den ity altitude and wi th the ame power
+front cylind er were m oved from the real' to the front                    but with a free-air temperature lower by 13° C., the
+  park-plu g bosse. I t hould be noted that the loca-                      indicated ail' pecci wa , within the accuracy of meas-
+tion of the exhau t manifold (see fig. 10) could not be                    ut ment, the same. Th e oil, both in and out, was GOC.
+
+
+
+
+                              F IGURE l2.- Close-ups of the nose-slot cowling in t ailed on a Curtis5 BF C- \ airplane.
+
+
+ch anged for the e te ts and that therefore it was                          cooler ; the cylind er bases consistently averaged 30° C.
+entirely enclosed within the new cowling.                                   cooler; the h ad ,35 ° . hotter) there being little
+   Th e operation on the ground of the engine with the                      difi'erence between the front and real' plug; and the
+new no e- lo t cowling indicated the ab ence of exces-                      magneto, 30° . cooler. K 0 difficulti were experi-
+ ive heating, which would have prevented flight test.                       enced. The handlin g characteristic of the airplane,
+There was some evidence of 1.1111.1 ual local heating,                      the visibility, the local cockpit heating, and the engin e-
+mainly of the rubber connection on the in take mani-                        operating condition appeared unchanged. Another
+fold. It is appreciated that the completely new                             nigh t yermed the results.
+arrangement might cause orne change in local 11 eating                         An i]) pection immediatoly after the engine was
+of part not de ie-ned for the type of air flow provid ed                    stopped on the ground re\' ealed nothing amis ; the
+by thi cowling.       0 evid ence of overheating ap-                        Clwine acces ory or a uxiliary cOlllpfirtment and the
+peared. After a cautious take-off and climb, a level                        cowling aft of the cylinder was exception ally cool. It
+[-                    F LL-SCALE TESTS OF A          JE W TYPE           . A. C. A.                JOSE-SLOT COWLING                                                                       9
+ was in teresting to obsene that, as expected, the nose          2 TllCoe orsen, TIleo d ore, B revoor t , 1\1 J ., aneI St·IC kl e, George
+ of the cowling \\'a the hottest point.                               W.: Cooling of Airplane Engines at Low Air Speeds. T. R.
+    In view of the fact that the air user! to cool the                 Jo . 593,   A. C. A., 1937.
+ head contains also the accumulated heat obtained from           3. Theodorsen, Theodore, Stickle, George W., and Bre\'oorL, M.
+                                                                      J.: Characteristic of Six Propeller s Including the High-
+ the exhaust manifold, the re ults obtained indicate very             Speed Range. T . R. No. 594, N. A. C. A., 1937.
+ promi ing po ibilities for consider ably improved cool-
+ ing when the baffling and manifold locations are de-                                TABLE 1.--00 DENSED TE T RES LTS
+  igned specifically for thi type cowling. Possible
+                                                                     I           2           3        4        5              6          7                        9         10        11
+  peed gain are also indicated when the external cowl-
+                                                                 - - - - - - - - - ---- - - ---- - - - - - - - - - -
+ ing lines may be incorporated in a new design rather                                                                                                      Drag in
+ than adapted to an already e:xisting afterbody shape.                                                                                                    pounds at
+                                                                                                                                                           q=25.6
+                                                                                                                                                           pouorls/
+                                                                                                                                                            square
+                  GENERAL CO CLUSIONS                                                                                                                      (Dot, or
+                                                                   Tose        Pro-                  J(       P.!..          l!.!       ~
+                                                                               peller       j(,                                                   CD      t hrust at          ~"       ~"
+                                                                                                               q                        q
+   1. It has been found that the new type nose-slot                                                                          "                            1/ ~ 'P;=
+                                                                                                                                                           l.
+                                                                                                                                                           '1=25.6
+                                                                                                                                                                  and
+  owling produces pressure difference of 2 to 2.5 time                                                                                                    pound s/
+                                                                                                                                                           square
+  the velocity head of the air tream, a comp ared with 1 ve-                                                                                                foot
+ locity head for the normal cowling. This fact is impor-         - - --- - - - --- - -                                                 ---- - - - - -                     -- --
+  tant as regards cooling in climb and at low air speeds.         IO-Hi
+                                                                  10-}2
+                                                                                0
+                                                                                0
+                                                                                              0.0000
+                                                                                               .00248
+                                                                                                              0.922 -1. 250
+                                                                                                               .904        -I.Q~3
+                                                                                                                                        2.170 O.I~~?
+                                                                                                                                        J. ~~~  .l~~
+                                                                                                                                                                 4 .6
+                                                                                                                                                                 50.2
+                                                                                                                                                                          -.----     o:m
+                                                                  IO-J-\!       0              .00·197         .904         -.955       1. 60 .n                 52.4                .457
+    2. A well-designed nose- lot cowling shows pump effi-         10-J-2        0               OO~~I
+                                                                                        0.032 ·.0200           · P29        -. i56      1. 683 .1499             56.6     ------ .M2
+                                                                                                                                                                          -- ---- . 652
+                                                                                                                  9l~ -=:~~
+                                                                  10-J-2        0                              · n26                    1. 313 . J573            59.4
+ ciencie close to 100 percent, owing to the fact that a           IO-j/z                                       ·. 88                    J. 135 .1475
+                                                                                                                                                                                     U?~
+                                                                                0              .0304                                                             55.7
+                                                                  10-' 2        B              .0292                 1  .1 1;3          1. 034 ---_.-           250       -ii~ m
+ smaller fraction of the total available pressure head is         IO-H          C              .0291                  54    -.190       1. 043 ---._-           247         .7       .998
+ needed in the resistance, thu leaving a larger velocity         10-1           0                  .0000      .911         -1. 313      2. 223 .13i2             51.8     ---- .000
+                                                                 lO- 1          0                  .00267     .930         -1. 209      2. 140 .1433             5-1.1    ------ .3
+                                                                                                                                                                                 .260
+ head in the exit opening and reducing the impact or             10-1           0                  .00527     .923         -1.117       2.0·10 .1510             57. 0    ------    6
+                                                                 10-1           0                  .01034     .927         -1.0tO       1.938 .1 67 1            63.1     ---- :~~
+ mixing 10 ses that take place as t11 e low-energy cooling       10-1           r.          .064   .01 62     . 926         -.966       1.894 . 1965             74 . 2   --_.-
+                                                                 10-1           0                  .0238      . 925        -1.058       1. ~~3 .209              78.9      ----      .6 0
+ air re- nter the main air tream.                                JO- I          0                  .0278      · 9~~        -1. 166      2. 095 .20.1             i7.6                · ~9
+                                                                 10-1           B                  .0270      · 91         -1. 101      1. 992 ----.-           236. 0    --~ ii76 I. 243
+    3. Jose-slot cowlings designed for high efficiency fI t      10-1           B                  .0236      . 887         - . 955     1. 840 ----.-           239.0       . 685 I. 117
+                                                                 10-1           B                  .01034     .901          -.907       1. 808 --- -- -         242.0       .693 . 555
+ normal speed were found to b ligh tly inferior to normal
+                                                                  11 - 1        0                  .0000       .925 -1.000              I. 935 . 299            11 3.0    -----  .000
+ cowling in regard to cooling in th e propeller slip tream.       II- I         B,                 .0000       .913 -1.306              2.220 ------            200.0       .573 .000
+                                                                  11-1          0                  · OO~§~     .9!E - . 840             I. 768 . 3 12           12!l.0     --- .0103
+ A pecially de igned nose-slot cowling for improving the          11 - 1        0           . on   .00979      .934 -.73 1              1. 665 .381             144.0      ----- .0780
+                                                                  II - I        0                  .0267       .9 13 - . 593            I. 535 .416             157.0     ----   .0865
+ cooling on theground was fou nd to beinefficientatnormal-        11 - 1        n,                 .0214       .923 - 00                I. 723 -- -- --         166.0       .476 · 197
+                                                                  II - I        jJ ,               .0462      ·.950
+                                                                                                                O!~  -. 172             1.090 ------            I 0.0       .51 6 . 252
+ flight peed in comparison \\'i th norm al cowlings . A two-      II- I         0                  .0138             -.114              1.06·1 .318             120.0     ------ .233
+ slot de ian, in whi h one slot may be clo cd at will, may        I~- I          0                 .0000      .933          -.794       I. 725 .1245             47.0     ------  .000
+                                                                  12- 1         )1 ,               .0000      .920          - . 561     I. ~~2                  244.0        .698 .000
+ therefore be recommended for case in which good cooling         12- 1           0                 . 00·193   .914          - . 68 1    1.59·1 -~ i34 5          50.8     --- -~- .426
+                                                                  12- 1                                                                                                   ------ .584
+ from the propeller slip tream is particularly important.         12- 1
+                                                                                 0
+                                                                                 0                 : ~g8      .910
+                                                                                                              .9 14         =:~~g
+                                                                                                                                        1.504 .1427
+                                                                                                                                        I. 301 . 15.17
+                                                                                                                                                                 53.9
+                                                                                                                                                                 58.      ------  .739
+                                                                  12- 1         E,          .064   .021 3                               I. 095 ----- -          243.0
+                                                                                                              .920          - . .175                                         .696 .574
+    4. The nose-slot cowling i cri tical in regard to design.     12-1          0                  .0·127     .932          -.0 17       .948 .1 589             60.0             . 827
+                                                                                                                                                                           ----- .890
+                                                                 12- 1          0                  .0647      .939            .261       . 679 . J520            57.4      -----
+ It has been found that the exit op ning hould be                               E,
+                                                                                                                                                                          ----.- :grir
+                                                                 .12- 1                            .0'124     .915            .137       . 779 ------           242.0        .693
+                                                                 12- 1          0                  .0839      .933            . 397      . 536 .1475             55.7
+ located 0 as to permit the low-energy air to join the
+                                                                 12A- I         I!'                · 0~19      . 920        -.613       I. 531 ----.-           150. 5      .431 .276
+ main air stream in a convergen t-flow field, that is, ahead     12A - I        0       } .066     .0419       .957         -.373       1. 330 . 580            219.0     ------ .137
+ of the point of maximum velocity. High efficiency is ob-        12A- I                            . 0413         03        -.569       I. 433   ------         147.0       .42 .240
+                                                                 13- 1          0                  .02 1      .938          -.146       I. 384 .575             217.0     ------ .099
+ tained only by exercising great care in the detail de ign.      13-1           E,      } .066     .0287      .913          -.767       1. 679 ------           143.0       .41 .203
+    5. Preliminary flight to t gave promising result .           14-%'          0                  . 0000      .948 -1.038              1. 983 . 527            199.0                .000
+                                                                 J4-h           E,                 .0000     ------- ----.--- .------ ---- -- --- ii2 ~ii-- --~. 32
+                                                                                                                                                                 44 -
+                                                                                                                                                                      .000
+                                                                 14-'.! B,
+                                                                 14-3           0           . 054 - -~020i -    . 955 --:":~ 563 1. 519 .651      246.0 ------ - ~ii70-
+                                                                 14-Vt          0                 -- ------ ----- -- -------- ------- .625        236.0 ------ -.-._-
+                                                                 14-Vt          E,                ----.--- ------- -------- ------- ------ 105.0 .30 ------
+ L ANGLEY MEMORIAL AERONAUTICAL L ABORATORY,                     16-1           0                  .0000       .921 -1. 09              2.730 .1324              50. 0            . 000
+                                                                 16-1           B,                 .0000          97 -1. 750            2.645 ----.-            244.0     --~7iiii. 000
+     NATIONAL    DVISORY COMMITTEE FOR AERONAUTI CS,             16-1           E,                 .01950      .894 -I. 030             I. 923 ------           219.0       . 627 . 490
+                                                                 16-1           0           .070   .01965      .903 -.946               1. 848 . 263             99.5     ------ . 325
+      LA TGLEY FIELD, VA., J une 5, 1936.                        16-1
+                                                                 16-1
+                                                                                0
+                                                                                B,
+                                                                                                   .0388
+                                                                                                   .0390
+                                                                                                               · 9!~ -.488
+                                                                                                               · 93 -.499
+                                                                                                                                        1.408 .263
+                                                                                                                                        ~. 391 ------
+                                                                                                                                                                 99.5
+                                                                                                                                                                216.0     --.-620 :~~~
+                                                                 16-1           B,                 .0790       .888    . 061                26 _____ _          226. 0      .648 .683
+                        REFERENCES
+                                                                 16-1           0                  .0711       . 908 -.049               .958 .1967              74. 3    --- --- · i82
+                                                                 16-J-\!        0
+                                                                                E,
+                                                                                                   .0000
+                                                                                                   .01901
+                                                                                                               .890 -1.621
+                                                                                                               .878 -.608
+                                                                                                                                        2. 513 .1290
+                                                                                                                                        1. 547 ------
+                                                                                                                                                                 48.7
+                                                                                                                                                                234.0
+                                                                                                                                                                          ------  .000
+                                                                                                                                                                            .671 . 557
+                                                                 16-h
+ 1. Th  dorsen, Theodorc, Brevoort, M. J., and Stickle, George
+      W.: Full-Scale Tests of N . A. C. A. Co,,·ling. T. R. o.
+                                                                 I C....J-\!
+                                                                 16-J-\!
+                                                                                0
+                                                                                0
+                                                                                        f   .035   .01920
+                                                                                                   .0390
+                                                                                                               .903 -.712
+                                                                                                               .907    . 095
+                                                                                                                                        I. 614 .1872
+                                                                                                                                        1.000 .1679
+                                                                                                                                                                 iO.7
+                                                                                                                                                                 63. 4
+                                                                                                                                                                          ---.--
+                                                                                                                                                                          ------ :~
+                                                                 IC.... J-\!    E,                 .0383       . 875 - .082              .955 ------            235.0       .673 . 561
+      592, . A. C. A., 1937.
+
+
+
+
+                                                                                                                                         U. S. GOV£RNME:NT PRINTING OF'F'I CE ' 1937
+     I
+     I
+__   J
+                                                                                             I
+                                                                                            I
+                                                                                        I
+
+
+
+
+                                                        "" " "
+                                                                 -
+                                                                    Z
+                       Positive directions of axes and angles (forces and moments) are shown by arrows
+
+                   Axis                                 Moment about axis                        Angle            Velocities
+                                         Force
+                                       (parallel                                                                Linear
+            Designation           Sym- to axis) Designation Sym-          Positive    Designa-           Sym- (compo- Angular
+                                   bol  symbol               bol          direction     tion              bol nent along
+                                                                                                                 axis)
+
+           LongitudinaL __         X      X     Rolling _____   L         Y~Z         RoIL _____          4>     u             p
+           Latel'aL _______        Y      Y     Pitching ____   M         Z~X         Pitch ____          6      \I            q
+           NormaL _______          Z      Z     yawing ____ _   N         X~Y         yaw _____                  w             r
+                              I                                                                           '"
+Absolute coefficients of moment                                     Angle of set of control surface (relative to neutral
+          L                    M                       N              position), o. (Indicate surface by proper subscript.)
+   G,= qbS              G11I = qcS               Gn = qbS
+    (rolling)          (pitching)                (yawing)
+                                                    4. PROPELLER SYMBOLS
+
+D,
+p,
+       Diameter
+       Geometric pitch
+                                                                    P,                                           ~~
+                                                                               Power, absolute coefficient Gp = pn.l.r
+
+                                                                               Speed-power coefficient = ~ ~~:
+p/D,   Pitch ratio
+                                                                    G.,
+V',    Inflow velocity
+V.,    Slipstream velocity                                          1/,        Efficiency
+                                                                    n,         Revolutions per second, r.p.s.
+T,     Thrust, absolute coefficient GT =          fD4
+                                               pn
+                                                                               Effective helix angle = tan-l          (2':n)
+Q,                                        9T\Ji
+       Torque, absolute coefficient GQ = pnLr
+
+                                                    5. NUMERICAL RELATIONS
+
+1 hp. = 76.04 kg-m/s = 550 ft-lb./see.                              1 lb. = 0.4536 kg
+1 metric horsepower = 1.0132 hp.                                    1 kg = 2.2046 lb.
+1 m.p.h. = 0.4470 m.p.s.                                            1 mi. = 1,609 .35 m= 5,280 ft.
+1 m.p.s. = 2.2369 m.p.h.                                            1 m=3 .2808 ft.
+
