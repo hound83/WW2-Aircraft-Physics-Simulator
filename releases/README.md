@@ -6,6 +6,6 @@ Imported the working four-aircraft source, original Greg records, latest stall a
 
 The original standalone page is `baseline-v2.5.html`. Build the current code with `npm run build`.
 
-Local tag: `baseline-v2.5-import` after checks pass. This is a reproducibility checkpoint. It is not v3.0 and has no historical accuracy certification.
+Frozen GitHub branch: `baseline/v2.5-import`. This is a reproducibility checkpoint. It is not v3.0 and has no historical accuracy certification.
 
 Major releases must document acceptance gates, results, remaining failures and unresolved comparisons before a stable version tag is created.

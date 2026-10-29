@@ -49,4 +49,4 @@ try{
  ].join('\n');
  fs.writeFileSync(path.join(root,'docs/CURRENT_VALIDATION.md'),md);
  console.log('Baseline comparison: '+difference.comparedNumericValues+' numeric values, '+difference.changed+' changed, '+missing.length+' missing, '+added.length+' added.');
-}catch(e){console.error(e.stack);process.exitCode=1;}
+}catch(e){fs.writeFileSync(path.join(root,'docs/CURRENT_VALIDATION.md'),'# Current validation\n\nThe latest validation attempt failed. Review validation/current/test-summary.json and the local test-output.txt. Previously generated numerical results have not been refreshed and must not be treated as results of this failed attempt.\n');console.error(e.stack);process.exitCode=1;}

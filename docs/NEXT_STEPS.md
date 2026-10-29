@@ -1,8 +1,8 @@
 # Next steps
 
-## Setup completion
+## Setup completed
 
-The local repository is prepared first. Publish it to the empty GitHub repository when that repository and authentication are available. Confirm the remote main commit and CI result before treating GitHub setup as complete. See [REMOTE_SETUP.md](REMOTE_SETUP.md).
+The baseline is published on main and preserved on baseline/v2.5-import. The initial GitHub regression run succeeded. See [REMOTE_SETUP.md](REMOTE_SETUP.md) and [SETUP_VERIFICATION.md](SETUP_VERIFICATION.md).
 
 ## Next assignment: stall/weight/calibration gate
 

@@ -2,7 +2,7 @@
 
 ## Scope and continuity
 
-- GitHub repository `hound83/WW2-Aircraft-Physics-Simulator` is the authoritative project history once the local setup is pushed.
+- GitHub repository `hound83/WW2-Aircraft-Physics-Simulator` is the authoritative project history.
 - At each assignment start inspect git status, remote branches, latest commits/tags, README.md, docs/DECISIONS.md, docs/NEXT_STEPS.md and current validation results.
 - Fetch remote state when connected; inspect divergence and preserve uncommitted user work. Never overwrite it or force-push.
 - Continue the same Work conversation across assignments where practical. A new conversation must be able to continue from repository records alone.

@@ -6,6 +6,10 @@ A separate research repository for the shared WWII flight-performance engine. Th
 
 Initial benchmarks: **Bf 109 F-4, P-47B, P-51B-15 and Spitfire LF Mk IX**. Greg's worksheets and the controlled P-47 2,000/2,600 hp comparison are retained. The 2,600 hp scenario is not a verified P-47B engine rating.
 
+[![Physics regression](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/regression.yml/badge.svg)](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/regression.yml)
+
+GitHub setup is complete. The frozen import is on branch **baseline/v2.5-import**. See [setup verification](docs/SETUP_VERIFICATION.md).
+
 ## Start here
 
 Read [decisions](docs/DECISIONS.md), [known limitations](docs/KNOWN_LIMITATIONS.md), [next steps](docs/NEXT_STEPS.md), [workflow](docs/WORKFLOW.md) and the [current validation report](docs/CURRENT_VALIDATION.md). Repository instructions for development agents are in [AGENTS.md](AGENTS.md).
