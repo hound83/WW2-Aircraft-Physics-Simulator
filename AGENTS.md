@@ -38,3 +38,14 @@
 - Explain briefly why Medium may be insufficient, the recommended level and the specific expected benefit.
 - Extra High only for particularly difficult scientific/mathematical problems that cannot reasonably be resolved at High.
 - Do not recommend an increase for routine work. Prioritize meaningful validated milestones over exhaustive research and minor releases.
+
+## Standing scope and subscription rules for every Work run
+
+These rules apply to **every future Work assignment and generated handover/export**, not just the current milestone. The user's objective is a meaningful, tested result within their standard approximately €20/month ChatGPT Plus allowance.
+
+1. **Agree and obey the scope:** state the one assigned deliverable, explicit out-of-scope work, acceptance tests and stop condition at the start. Deliver the assignment instead of starting open-ended research, extra features, additional aircraft, architectural rewrites or another project's work. Log tangent discoveries for later; do not act on them now.
+2. **Budget-aware execution:** default to an economical available model at Medium reasoning; read only relevant sources and files. Prefer existing source indexes, tests and earlier research over large repeated searches. Do not load or paste huge archives, entire repositories, all screenshots or lengthy test output into the chat. The agent may not know the user's remaining allowance and must not promise a precise cost.
+3. **Escalate only if it matters:** recommend High reasoning in one or two sentences only when a specific difficult scientific, historical or technical blocker warrants it. The user must select a different effort level; never auto-escalate or recommend Extra High for routine work.
+4. **Keep Work sessions short:** long sessions caused size errors after roughly two assignments. Use a fresh Work run for each next substantial milestone; use current GitHub commits, PRs and documented next steps for continuity rather than a growing conversation transcript.
+5. **Stop with a deliverable:** record what actually changed, before/after impact, tests actually run, PR/commit link, unresolved issues and exactly one suggested next milestone. Do not claim unrun tests passed or an unmerged branch is deployed. Stop after completing the task.
+6. **Handover filenames:** use descriptive, human-readable names like `Project_Component_Milestone_Handover_YYYY-MM-DD.md`, **not `ZZZ_` prefixes** (those were a temporary file-finding trick). Future handovers should be short Markdown links to GitHub and the shared Hobby research Library, not duplicate multi-gigabyte ZIP exports unless explicitly requested.
