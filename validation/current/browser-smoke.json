@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "version": "3.0.0-rc.1",
+  "browser": "Chrome/156.0.8078.47",
+  "checks": [
+    "P default, current UI version, four live rows, no render error",
+    "Coverage uses exact card engine/options",
+    "Simulator Bf109 excluded from historical-style pairwise output",
+    "P47 sea-level gap returns unavailable/null",
+    "75-inHg engine gap remains distinct from exact 8000-ft chart diagnostic",
+    "Exact-node selector displays chart scenario range",
+    "P/C control changes live model and coverage together",
+    "Greg selection honors named polar under profile P",
+    "Reference Bf109 enables qualified scenario comparison",
+    "Weight/e/EAS controls render without exceptions"
+  ],
+  "errors": [],
+  "scope": "Headless Chromium interactive smoke; not cross-browser or historical validation",
+  "htmlSha256": "3c0954e5806036fcbe6b6e2003c38d8d49f2cc1f304240c19be6a8f339b8887b"
+}
