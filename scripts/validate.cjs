@@ -27,6 +27,7 @@ try{
  require('../validation/diagnostics/climb_power_cooling.cjs').writeReport();
  require('../validation/diagnostics/p51_climb_states.cjs').writeReport();
  require('../validation/diagnostics/p51_propeller_audit.cjs').writeReport();
+ require('../validation/diagnostics/source_chart_climb.cjs').writeReport();
  const md=[
  '# Current validation',
  '',
@@ -44,6 +45,8 @@ try{
  '| Interactive browser tests | Not run |',
  '| Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |',
  '| 5:1 comparative accuracy | Unresolved |',
+ '',
+ 'Chart-power mode: [explicit source-chart climb input](SOURCE_CHART_CLIMB_MODE.md); [progress assessment](PROGRESS_ASSESSMENT.md); default numerical predictions unchanged.',
  '',
  'Propeller milestone: [coupled source/candidate audit](P51_PROPELLER_EFFICIENCY_AUDIT.md); no supported default replacement; research v2.6.0.',
  '',
