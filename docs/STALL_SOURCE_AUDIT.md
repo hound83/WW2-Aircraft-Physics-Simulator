@@ -1,6 +1,6 @@
 # Stall evidence audit - 30 October 2026
 
-No calibrated historical CLmax is established by this milestone. `references/stall-calibration.json` records eight observations, source inspection limits and the transcribed six-node P-47 correction table. `resolveStallEvidence` requires matched variant/specimen, configuration, power-off one-g condition, contemporaneous weight, wing area, corrected airspeed provenance and valid calibration domain. It returns reasons and null corrected EAS/CLmax when blocked. Source verification flags are audit inputs, not automatic authentication of a document.
+No calibrated historical CLmax is established by this milestone. `references/stall-calibration.json` records nine observations, source inspection limits and the transcribed six-node P-47 correction table. `resolveStallEvidence` requires matched variant/specimen, configuration, power-off one-g condition, contemporaneous weight, wing area, corrected airspeed provenance and valid calibration domain. It returns reasons and null corrected EAS/CLmax when blocked. Source verification flags are audit inputs, not automatic authentication of a document.
 
 | Aircraft / engine | Measurement or citation | Stall-test weight | Correction applicability | Active CLmax assumption | Unresolved |
 |---|---|---|---|---:|---|
@@ -30,3 +30,8 @@ Corrected CAS, EAS and measured CLmax remain **unresolved for every row**. Do no
 The default comparison is 5,000 ft ISA, 170 mph EAS, profile C, e=0.78, assumed 7g cap, each aircraft's documented research weight/default rating. These are matched atmosphere/speed conditions, not standardized combat loads, cooling states or engine powers. Alternate P-51 9,270 lb and Spitfire 7,485 lb examples preserve CLmax and the speed-anchored drag polar; they do not silently refit drag. All 5:1 comparisons remain UNRESOLVED because independent matched historical turns and differential error bounds are absent. Model difference/5 is explicitly illustrative.
 
 The full imported regression set, Greg's controlled P-47 2,000/2,600 hp case and Mustang climb failures are preserved. The P-47C propeller OCR issue is outside this milestone. No Atlas changes or browser-interaction validation.
+
+
+## P-47B primary-source update
+
+The [41-5902 audit](P47B_STALL_WEIGHT_AUDIT.md) supersedes the manual-only evidence description above. The original acceptance report records 105 mph indicated clean power-off; 12,565/12,560 lb are separate nominal loading statements, not a verified instantaneous stall weight. Original calibration identifies the installation and instrument/water-column basis but only covers 170-310 mph. No verified stall EAS/CLmax is inferred.

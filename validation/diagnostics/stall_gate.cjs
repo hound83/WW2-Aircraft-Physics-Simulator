@@ -16,7 +16,7 @@ function run(){
  const samples=sensitivity.samples.map(s=>({assumedTestStallEasMph:s.assumedTestStallEasMph,...compact(s.result),peaks:peak(ac,s.clMax,ac.weightLb)}));
  const alternate=id==='p51b'?9270:id==='spitfire_lfix_bs543'?7485:null;
  return {id,name:ac.name,rating:ac.defaultRating,weightStatus:ac.weightStatus,before:compact(before),after:compact(base),peaks:peak(ac,ac.clMaxAssumed,ac.weightLb),scenario:{...scenario,status:sensitivity.status,samples},alternateWeight:alternate?{reason:id==='p51b'?'Closed-shutter stall-test weight; turning transfer remains unverified':'Reported climb weight, not a verified combat or stall weight',...compact(m.evaluated(ac,condition.altFt,tas,{...condition,weightLb:alternate}))}:null,
- evidence:evidence.records.filter(r=>r.aircraftId===id).map(r=>m.resolveStallEvidence(ac,r,r.id==='p47-manual'?evidence.calibrations.p47Manual:null))};});
+ evidence:evidence.records.filter(r=>r.aircraftId===id).map(r=>m.resolveStallEvidence(ac,r,r.id==='p47-manual'?evidence.calibrations.p47Manual:r.id==='p47b-415902-clean'?evidence.calibrations.p47bAcceptance:null))};});
  const pairs=[];for(let i=0;i<aircraft.length;i++)for(let j=i+1;j<aircraft.length;j++){
  const a=aircraft[i],b=aircraft[j],delta=a.after.sustTurnSeconds-b.after.sustTurnSeconds;
  pairs.push({a:a.id,b:b.id,modelSustainedTurnDifferenceSeconds:delta,requiredCombinedErrorForModelGapSeconds:Math.abs(delta)/5,historicalDifferenceSeconds:null,absoluteDifferentialResidualSeconds:null,validatedCombinedErrorSeconds:null,status:'UNRESOLVED',reason:'Matched independent turn observations and validated differential uncertainty absent; model gap/5 is illustrative, not acceptance evidence'});

@@ -1,0 +1,191 @@
+{
+  "schema": 1,
+  "auditDate": "2026-10-30",
+  "target": {
+    "aircraftId": "p47b",
+    "variant": "P-47B",
+    "specimen": "41-5902",
+    "engine": "R-2800-21",
+    "propeller": "Curtiss 714-1C2-12 with cooling cuffs",
+    "report": "PHQ-M-19-1417-A, 18 June 1942",
+    "sourceUrl": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf",
+    "inspection": "Original scan visually inspected in Edge: page 1 purpose, page 3 paragraph 10, page 4 paragraphs 12/13. Browser OCR was not trusted for numerical transcription. Uploaded original retained as a Library reference; local byte materialization was unavailable, so no byte-identity or new local rendering verification is claimed.",
+    "uploadedSource": {
+      "libraryFileId": "libfile_4553541e8458819188d6320a069c6914",
+      "fileId": "file_00000000bec88246ade92ac7e3b35a60",
+      "filename": "P-47B_41-5902_PHQ-M-19-1417-A.pdf",
+      "sizeBytes": 2044252,
+      "pages": 4
+    }
+  },
+  "observations": [
+    {
+      "id": "p47b-415902-clean",
+      "iasMph": 105,
+      "gear": "up",
+      "flaps": "up",
+      "power": "off",
+      "flight": "level",
+      "cowlFlaps": "closed",
+      "oilCoolerFlaps": "neutral",
+      "intercoolerFlaps": "neutral",
+      "sourcePage": 3,
+      "sourceParagraph": "10",
+      "stallWeightLb": null,
+      "stallAltitudeFt": null,
+      "instrumentCorrection": "unknown"
+    },
+    {
+      "id": "p47b-415902-gear-down",
+      "iasMph": 108,
+      "gear": "down",
+      "flaps": "up",
+      "power": "off",
+      "flight": "level",
+      "cowlFlaps": "closed",
+      "oilCoolerFlaps": "neutral",
+      "intercoolerFlaps": "neutral",
+      "sourcePage": 3,
+      "sourceParagraph": "10",
+      "stallWeightLb": null,
+      "stallAltitudeFt": null,
+      "instrumentCorrection": "unknown"
+    },
+    {
+      "id": "p47b-415902-half-flaps",
+      "iasMph": 97,
+      "gear": "down",
+      "flaps": "half",
+      "power": "off",
+      "flight": "level",
+      "cowlFlaps": "closed",
+      "oilCoolerFlaps": "neutral",
+      "intercoolerFlaps": "neutral",
+      "sourcePage": 3,
+      "sourceParagraph": "10",
+      "stallWeightLb": null,
+      "stallAltitudeFt": null,
+      "instrumentCorrection": "unknown"
+    },
+    {
+      "id": "p47b-415902-landing",
+      "iasMph": 88,
+      "gear": "down",
+      "flaps": "full",
+      "power": "off",
+      "flight": "level",
+      "cowlFlaps": "closed",
+      "oilCoolerFlaps": "neutral",
+      "intercoolerFlaps": "neutral",
+      "sourcePage": 3,
+      "sourceParagraph": "10",
+      "stallWeightLb": null,
+      "stallAltitudeFt": null,
+      "instrumentCorrection": "unknown"
+    },
+    {
+      "id": "p47b-415902-flaps-down",
+      "iasMph": 90,
+      "gear": "up",
+      "flaps": "full",
+      "power": "off",
+      "flight": "level",
+      "cowlFlaps": "closed",
+      "oilCoolerFlaps": "neutral",
+      "intercoolerFlaps": "neutral",
+      "sourcePage": 3,
+      "sourceParagraph": "10",
+      "stallWeightLb": null,
+      "stallAltitudeFt": null,
+      "instrumentCorrection": "unknown"
+    }
+  ],
+  "weightEvidence": [
+    {
+      "valueLb": 12565,
+      "sourcePage": 1,
+      "sourceParagraph": "A.1",
+      "kind": "gross weight as tested",
+      "cgPercentMac": 32
+    },
+    {
+      "valueLb": 12560,
+      "sourcePage": 4,
+      "sourceParagraph": "12",
+      "kind": "airplane loaded for tests",
+      "note": "Design useful load represented partly by rear-fuselage fuel and baggage-compartment test equipment instead of full wing ammunition; CG about 3.5 percentage points rearward of standard loading"
+    }
+  ],
+  "weightConclusion": "Both values are retained as report statements, not endpoints of a measured uncertainty interval. No per-stall contemporaneous weight/fuel correction is stated in inspected paragraphs.",
+  "calibration": {
+    "sourcePage": 4,
+    "sourceParagraph": "13",
+    "installationId": "p47b-415902-kollsman-d1-left-wing",
+    "head": "Kollsman D-1",
+    "staticHolesAheadOfLeadingEdgeIn": 67.375,
+    "distanceInboardFromLeftWingtipIn": 43,
+    "heightAboveChordLineInApprox": 1,
+    "columns": [
+      "indicatedMph",
+      "waterColumnMph",
+      "calibratedMph"
+    ],
+    "rows": [
+      {
+        "indicatedMph": 170,
+        "waterColumnMph": 170.5,
+        "calibratedMph": 175
+      },
+      {
+        "indicatedMph": 200,
+        "waterColumnMph": 201,
+        "calibratedMph": 206.5
+      },
+      {
+        "indicatedMph": 230,
+        "waterColumnMph": 230,
+        "calibratedMph": 237.5
+      },
+      {
+        "indicatedMph": 260,
+        "waterColumnMph": 260,
+        "calibratedMph": 268.5
+      },
+      {
+        "indicatedMph": 290,
+        "waterColumnMph": 290.5,
+        "calibratedMph": 300.5
+      },
+      {
+        "indicatedMph": 310,
+        "waterColumnMph": 311.5,
+        "calibratedMph": 322.5
+      }
+    ],
+    "minimumIndicatedMph": 170,
+    "maximumIndicatedMph": 310,
+    "nearStallVerified": false,
+    "altitudeRangeFt": null,
+    "configurationNote": "Airspeed-calibration flap/gear/cooling state not separately specified; do not certify the stall configuration from generic test defaults",
+    "basisNote": "Indicated-to-calibrated mapping includes indicated-to-water-column instrument correction. Source installation-error column is water-column minus calibrated speed, not raw indicated minus calibrated."
+  },
+  "excludedTransfers": [
+    {
+      "source": "Generic B/C/D/G manual stall excerpt",
+      "iasMph": 115,
+      "reason": "Generic type/configuration and missing matched weight; not a 41-5902 observation"
+    },
+    {
+      "source": "P-47D 42-26167 report",
+      "iasMph": 116,
+      "reason": "Different airframe/variant, uncorrected IAS, takeoff rather than instantaneous stall weight"
+    }
+  ],
+  "derivedHistoricalClMax": null,
+  "remainingBlockers": [
+    "Contemporaneous stall weight, including reconciliation of report nominal weights",
+    "Stall altitude and instrument-correction convention/channel linkage",
+    "Calibration observed at 105 mph/stall AoA, with matched configuration and uncertainty"
+  ],
+  "conclusion": "New specimen-specific clean power-off IAS is established; verified EAS/CLmax remains blocked. Preserve default coefficient and frozen numeric baseline."
+}

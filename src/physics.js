@@ -406,9 +406,13 @@ function resolveStallEvidence(ac,record,calibration=null){
    if(calibration.nearStallVerified!==true||calibration.scanVerified!==true)reasons.push('near-stall-position-correction-unverified');
    const domain=calibration.altitudeRangeFt;
    if(!validAlt||!Array.isArray(domain)||domain.length!==2||!domain.every(Number.isFinite)||domain[0]>domain[1]||record.altFt<domain[0]||record.altFt>domain[1])reasons.push('calibration-altitude-not-covered');
-   if(positive(record.speed.mph)&&validAlt){
-    try{air=resolveAirspeed(record.speed.mph,'IAS',record.altFt,calibration);if(air.status!=='resolved')reasons.push('stall-outside-calibration-range');}
-    catch{reasons.push('invalid-calibration');}
+   if(positive(record.speed.mph)){
+    // Coverage can be rejected even when test altitude is still unknown.
+    // Never hide an independent speed-domain blocker behind missing metadata.
+    try{const cas=casFromIAS(record.speed.mph,calibration);
+     if(cas===null)reasons.push('stall-outside-calibration-range');
+     else if(validAlt)air=resolveAirspeed(record.speed.mph,'IAS',record.altFt,calibration);
+    }catch{reasons.push('invalid-calibration');}
    }
   }
  }else if(positive(record?.speed?.mph)&&validAlt&&['CAS','EAS'].includes(record.speed.kind)){

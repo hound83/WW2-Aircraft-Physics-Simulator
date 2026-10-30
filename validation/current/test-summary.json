@@ -1,8 +1,8 @@
 {
   "node": "v24.19.0",
-  "discoveredScripts": 33,
-  "reportedScripts": 33,
-  "passed": 33,
+  "discoveredScripts": 34,
+  "reportedScripts": 34,
+  "passed": 34,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -105,6 +105,10 @@
     },
     {
       "script": "test_naca_v23.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_p47b_stall_audit.cjs",
       "status": "pass"
     },
     {

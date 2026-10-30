@@ -156,7 +156,7 @@
       "id": "p47b",
       "name": "P-47B / R-2800-21 (41-5902)",
       "rating": "military",
-      "weightStatus": "Reported test weight of aircraft 41-5902",
+      "weightStatus": "12,565 lb gross as tested in report A.1; para 12 separately says loaded to 12,560 lb. Neither is an independently documented instantaneous stall weight",
       "before": {
         "status": "modelled",
         "weightLb": 12565,
@@ -278,7 +278,8 @@
             "calibration-identity-or-configuration-mismatch",
             "airspeed-installation-not-matched",
             "near-stall-position-correction-unverified",
-            "calibration-altitude-not-covered"
+            "calibration-altitude-not-covered",
+            "stall-outside-calibration-range"
           ],
           "rawSpeed": {
             "kind": "IAS",
@@ -289,6 +290,36 @@
             "reference": "AN 01-65BC-1 attributed manual excerpt, section 14; full document identity not visible in crop",
             "kind": "manual-excerpt",
             "scanVerified": false
+          },
+          "correctedEasMph": null,
+          "correctedCasMph": null,
+          "clMax": null,
+          "uncertainty": null,
+          "turnTransfer": "unverified: power-off one-g lift need not transfer to powered accelerated flight"
+        },
+        {
+          "status": "unresolved",
+          "recordId": "p47b-415902-clean",
+          "reasons": [
+            "matched-stall-weight-missing",
+            "test-altitude-missing-or-outside-atmosphere",
+            "ias-instrument-correction-state-unknown",
+            "calibration-identity-or-configuration-mismatch",
+            "calibration-input-correction-state-mismatch",
+            "near-stall-position-correction-unverified",
+            "calibration-altitude-not-covered",
+            "stall-outside-calibration-range"
+          ],
+          "rawSpeed": {
+            "kind": "IAS",
+            "mph": 105,
+            "instrumentCorrection": "unknown"
+          },
+          "weightLb": null,
+          "source": {
+            "reference": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf page 3 para 10(a); loading pages 1/4 and calibration page 4",
+            "kind": "primary",
+            "scanVerified": true
           },
           "correctedEasMph": null,
           "correctedCasMph": null,

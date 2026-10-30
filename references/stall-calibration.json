@@ -203,6 +203,37 @@
         "scanVerified": false
       },
       "uncertainty": null
+    },
+    {
+      "id": "p47b-415902-clean",
+      "aircraftId": "p47b",
+      "variant": "P-47B",
+      "specimen": "41-5902",
+      "configurationId": "gear-up-flaps-up-cowl-closed-oil-intercooler-neutral",
+      "power": "off",
+      "loadFactor": 1,
+      "altFt": null,
+      "speed": {
+        "kind": "IAS",
+        "mph": 105,
+        "instrumentCorrection": "unknown"
+      },
+      "airspeedInstallationId": "p47b-415902-kollsman-d1-left-wing",
+      "installationApplicability": "Report para 13 identifies installation; exact observed stall indication channel/convention not separately stated",
+      "weightLb": null,
+      "weightKind": "report-loaded-weight-not-instantaneous",
+      "reportedWeightsLb": [
+        12565,
+        12560
+      ],
+      "wingAreaM2": 27.870912,
+      "geometrySource": "Existing P-47B model geometry; report does not independently establish area in inspected paragraphs",
+      "source": {
+        "reference": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf page 3 para 10(a); loading pages 1/4 and calibration page 4",
+        "kind": "primary",
+        "scanVerified": true
+      },
+      "uncertainty": null
     }
   ],
   "calibrations": {
@@ -243,6 +274,52 @@
           "casMph": 322.5
         }
       ]
+    },
+    "p47bAcceptance": {
+      "source": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf page 4 para 13",
+      "configuration": "Calibration configuration not separately established",
+      "aircraftId": "p47b",
+      "variant": "P-47B",
+      "specimen": "41-5902",
+      "configurationId": "not-recorded",
+      "airspeedInstallationId": "p47b-415902-kollsman-d1-left-wing",
+      "inputInstrumentCorrection": "not-removed",
+      "instrumentCorrectionIncluded": true,
+      "scanVerified": true,
+      "nearStallVerified": false,
+      "altitudeRangeFt": null,
+      "points": [
+        {
+          "iasMph": 170,
+          "waterColumnMph": 170.5,
+          "casMph": 175
+        },
+        {
+          "iasMph": 200,
+          "waterColumnMph": 201,
+          "casMph": 206.5
+        },
+        {
+          "iasMph": 230,
+          "waterColumnMph": 230,
+          "casMph": 237.5
+        },
+        {
+          "iasMph": 260,
+          "waterColumnMph": 260,
+          "casMph": 268.5
+        },
+        {
+          "iasMph": 290,
+          "waterColumnMph": 290.5,
+          "casMph": 300.5
+        },
+        {
+          "iasMph": 310,
+          "waterColumnMph": 311.5,
+          "casMph": 322.5
+        }
+      ]
     }
   },
   "sourceInspections": [
@@ -277,5 +354,6 @@
       "inspection": "Catalog confirms F-1 to F-4 handbook entries; does not expose a calibrated F-4 stall observation in retrieved content. No new value assigned."
     }
   ],
-  "p51CalibrationAudit": "p51-low-speed-audit.json"
+  "p51CalibrationAudit": "p51-low-speed-audit.json",
+  "p47bStallWeightAudit": "p47b-stall-weight-audit.json"
 }

@@ -2,13 +2,14 @@
 
 ## Completed bounded milestones
 
-- Executable stall gate, four-aircraft EAS/weight sensitivity and explicit unresolved pairwise comparisons: [source audit](STALL_SOURCE_AUDIT.md), [results](STALL_CALIBRATION_RESULTS.md).
-- Targeted P-51B near-stall source audit: [findings](P51_LOW_SPEED_CALIBRATION_AUDIT.md). Five candidates inspected; no matched correction established. The gate now checks pressure-installation identity and instrument-correction convention, including rejection of double correction.
+- Executable stall gate and four-aircraft sensitivity: [source audit](STALL_SOURCE_AUDIT.md), [results](STALL_CALIBRATION_RESULTS.md).
+- P-51B installation/correction audit: [findings](P51_LOW_SPEED_CALIBRATION_AUDIT.md). No matched near-stall correction established.
+- P-47B original acceptance report: [findings](P47B_STALL_WEIGHT_AUDIT.md). New 105 mph indicated clean power-off observation; both nominal loading statements and the complete correction-table basis retained. Instantaneous mass, stall altitude and near-stall correction remain blocked.
 
-Both milestones preserve default coefficients, frozen material, Greg checks and the existing Mustang climb failure. See [current validation](CURRENT_VALIDATION.md). Feature PRs must be reviewed/merged before describing them as part of main.
+These feature milestones preserve default numerical behavior, frozen source/Greg material and the Mustang climb failure. See [current validation](CURRENT_VALIDATION.md). Open feature PRs are not released main.
 
-## Next single assignment: P-47B contemporaneous stall weight
+## Next single assignment: Bf 109 F-4 original stall evidence
 
-Audit the original P-47B 41-5902 test/manual evidence for a clean power-off stall at documented instantaneous weight, configuration and measurement installation. Keep generic B/C/D/G manual figures and P-47D tests separate. Populate the existing source gate only with supported data; quantify any defensible correction or retain an explicit blocker. Do not broaden to a propeller redesign, new aircraft or Atlas work.
+Audit an original F-4 flight manual or test for clean power-off stall, actual weight, slat/configuration state and calibrated airspeed basis. Keep F-2/G-series and simulator values separate. Record supported observations in the existing source gate; quantify only defensible numerical changes. Stop with the evidence finding, tested data/code improvement and reviewable commit, rather than broadening into an all-aircraft literature search.
 
-P-51 numerical calibration should be reopened only with new original 43-24777 stall/instrument sheets establishing the observed channel, correction convention, near-stall domain and uncertainty. Repeating the existing high-speed plot is not another milestone. Use current GitHub records and a fresh Work session for the next substantial assignment.
+Reopen P-47B numerical calibration only with new matched stall-run/loading and low-speed correction evidence. Reopen P-51 only with new matched original instrument/stall sheets. Do not repeat unavailable corrections as new milestones. Use current GitHub records and a fresh Work session for the next substantial assignment.

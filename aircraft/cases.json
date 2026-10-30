@@ -245,12 +245,12 @@
       "wingAreaM2": 27.870912,
       "spanM": 12.426950000000001,
       "weightLb": 12565,
-      "weightStatus": "Reported test weight of aircraft 41-5902",
+      "weightStatus": "12,565 lb gross as tested in report A.1; para 12 separately says loaded to 12,560 lb. Neither is an independently documented instantaneous stall weight",
       "clMaxAssumed": 1.3,
-      "clStatus": "Assumed; P-47 B/C/D/G manual 115 mph IAS is not an independently calibrated 41-5902 EAS stall",
+      "clStatus": "Assumed; 41-5902 report para 10 gives 105 mph indicated clean power-off, but instantaneous stall weight, altitude and near-stall correction remain unresolved",
       "stallEvidence": {
-        "status": "manual generalized IAS, not specimen-specific",
-        "raw": "115 mph IAS clean in T.O. 01-65BC-1; low-speed correction unknown"
+        "status": "Primary 41-5902 scan inspected; IAS observation established, corrected stall/CLmax unresolved",
+        "raw": "105 mph indicated clean power-off in PHQ-M-19-1417-A para 10; cowl closed, oil/intercooler neutral. Generic manual 115 mph retained separately; calibration only covers 170-310 mph"
       },
       "engine": "Pratt & Whitney R-2800-21",
       "prop": "Curtiss 714-1C2-12; geometric default, exact blade map missing",
