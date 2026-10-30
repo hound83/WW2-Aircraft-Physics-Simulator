@@ -1,0 +1,376 @@
+{
+  "schema": 1,
+  "scope": "Sparse original-chart reconstruction and conditional Mustang climb diagnosis",
+  "sources": {
+    "fig4": {
+      "path": "references/sources/p51b-24777-figure4.jpg",
+      "url": "https://www.wwiiaircraftperformance.com/org/p-51/p-51_files/P-51B_24777_Power_vs_Altitude-Level.jpg",
+      "sha256": "21503d454dffe046989615b88ea26658a9bac7ad77f57d49f10561109f46eb33",
+      "width": 1200,
+      "height": 1591,
+      "printedPage": 10,
+      "inspection": "Downloaded original and inspected enlarged weight-axis strip/curve. New source outside frozen import."
+    },
+    "fig6": {
+      "path": "references/import/01_COMPLETE_V2_5_BASELINE/06_SOURCE_AND_SCIENTIFIC_EVIDENCE/P51B_24777_ORIGINAL_SCANS/Fig_6_climb_vs_altitude.jpg",
+      "sha256": "3be7ddb992591651c516c5e05b13b44196ae274ad8a2d30e4a2847a468b49bff",
+      "width": 1200,
+      "height": 1594,
+      "printedPage": 12,
+      "inspection": "Pixels rechecked for rate curves and takeoff/configuration caption. No new rate values replace summary. No climb airspeed found."
+    },
+    "fig7": {
+      "path": "references/import/01_COMPLETE_V2_5_BASELINE/06_SOURCE_AND_SCIENTIFIC_EVIDENCE/P51B_24777_ORIGINAL_SCANS/Fig_7_climb_power_vs_altitude.jpg",
+      "sha256": "eb8721b34e82fd288e5201a0edb45f4c561ac038dfd0e58571d25b1b07b151da",
+      "width": 1200,
+      "height": 1594,
+      "printedPage": 13,
+      "inspection": "Pixels and enlarged low-altitude BHP axis/curves inspected. Reading boxes below; no shutter-opening/drag coordinates accepted."
+    }
+  },
+  "conventions": {
+    "coordinates": "Native image pixels, origin top left; boxes [left,top,right,bottom]. Read unscaled originals.",
+    "bounds": "Conservative manual pixel-selection/axis-reading brackets, rounded outward; not confidence intervals, measurement accuracy or validated historical error bounds.",
+    "atmosphere": "Report VI: NACA standard conditions. No independent re-reduction from raw flight data.",
+    "power": "Standard BHP assigned from Packard altitude-performance chart dated 12-3-43, not in-flight torque. Selected 3000 RPM climb branches only.",
+    "weight": "Figure 4 normal-power-climb weight curve used for level-flight normalization per V.B. Not documented instantaneous weight for 67/75-inHg climb observations.",
+    "branchPolicy": "Sparse low-blower coordinates only; no interpolation/extrapolation across critical heights, blower changes or obscured intersections. 61-inHg and high-blower coordinates remain unaccepted."
+  },
+  "weightCurve": [
+    {
+      "id": "weight-2200",
+      "kind": "weight",
+      "figure": "fig4",
+      "axis": "fig4Weight",
+      "altFt": 2200,
+      "box": [
+        1045,
+        1348,
+        1058,
+        1365
+      ],
+      "application": "level-speed-normalization-only",
+      "bounds": [
+        9290,
+        9360
+      ],
+      "unit": "lb",
+      "usableAsMatchedClimbWeight": false
+    },
+    {
+      "id": "weight-10000",
+      "kind": "weight",
+      "figure": "fig4",
+      "axis": "fig4Weight",
+      "altFt": 10000,
+      "box": [
+        1031,
+        1110,
+        1053,
+        1132
+      ],
+      "application": "level-speed-normalization-only",
+      "bounds": [
+        9240,
+        9350
+      ],
+      "unit": "lb",
+      "usableAsMatchedClimbWeight": false
+    },
+    {
+      "id": "weight-22400",
+      "kind": "weight",
+      "figure": "fig4",
+      "axis": "fig4Weight",
+      "altFt": 22400,
+      "box": [
+        1008,
+        740,
+        1032,
+        764
+      ],
+      "application": "level-speed-normalization-only",
+      "bounds": [
+        9170,
+        9280
+      ],
+      "unit": "lb",
+      "usableAsMatchedClimbWeight": false
+    },
+    {
+      "id": "weight-30000",
+      "kind": "weight",
+      "figure": "fig4",
+      "axis": "fig4Weight",
+      "altFt": 30000,
+      "box": [
+        986,
+        520,
+        1010,
+        544
+      ],
+      "application": "level-speed-normalization-only",
+      "bounds": [
+        9090,
+        9200
+      ],
+      "unit": "lb",
+      "usableAsMatchedClimbWeight": false
+    },
+    {
+      "id": "weight-38000",
+      "kind": "weight",
+      "figure": "fig4",
+      "axis": "fig4Weight",
+      "altFt": 38000,
+      "box": [
+        964,
+        287,
+        990,
+        311
+      ],
+      "application": "level-speed-normalization-only",
+      "bounds": [
+        9020,
+        9140
+      ],
+      "unit": "lb",
+      "usableAsMatchedClimbWeight": false
+    }
+  ],
+  "powerCurve": [
+    {
+      "id": "bhp-67-2200",
+      "kind": "power",
+      "figure": "fig7",
+      "axis": "fig7Bhp",
+      "altFt": 2200,
+      "rating": "67inHg",
+      "gear": "low",
+      "engineRpm": 3000,
+      "box": [
+        830,
+        1341,
+        856,
+        1363
+      ],
+      "application": "chart-assigned-climb-bhp",
+      "bounds": [
+        1520,
+        1630
+      ],
+      "unit": "BHP",
+      "proxyStatus": "modeled-peak",
+      "proxyAtModelOptimizedTasBhp": 1603.1,
+      "modelOptimizedTasMph": 171,
+      "proxyWithinReadingBracket": true
+    },
+    {
+      "id": "bhp-75-2200",
+      "kind": "power",
+      "figure": "fig7",
+      "axis": "fig7Bhp",
+      "altFt": 2200,
+      "rating": "75inHg",
+      "gear": "low",
+      "engineRpm": 3000,
+      "box": [
+        902,
+        1341,
+        920,
+        1363
+      ],
+      "application": "chart-assigned-climb-bhp",
+      "bounds": [
+        1760,
+        1850
+      ],
+      "unit": "BHP",
+      "proxyStatus": "modeled-peak",
+      "proxyAtModelOptimizedTasBhp": 1811.1,
+      "modelOptimizedTasMph": 175,
+      "proxyWithinReadingBracket": true
+    },
+    {
+      "id": "bhp-75-4000",
+      "kind": "power",
+      "figure": "fig7",
+      "axis": "fig7Bhp",
+      "altFt": 4000,
+      "rating": "75inHg",
+      "gear": "low",
+      "engineRpm": 3000,
+      "box": [
+        852,
+        1284,
+        875,
+        1305
+      ],
+      "application": "chart-assigned-climb-bhp",
+      "bounds": [
+        1590,
+        1700
+      ],
+      "unit": "BHP",
+      "proxyStatus": "modeled-peak",
+      "proxyAtModelOptimizedTasBhp": 1766.5304758362543,
+      "modelOptimizedTasMph": 193,
+      "proxyWithinReadingBracket": false
+    },
+    {
+      "id": "bhp-75-8000",
+      "kind": "power",
+      "figure": "fig7",
+      "axis": "fig7Bhp",
+      "altFt": 8000,
+      "rating": "75inHg",
+      "gear": "low",
+      "engineRpm": 3000,
+      "box": [
+        790,
+        1168,
+        820,
+        1188
+      ],
+      "application": "chart-assigned-climb-bhp",
+      "bounds": [
+        1390,
+        1510
+      ],
+      "unit": "BHP",
+      "proxyStatus": "no-engine-source",
+      "proxyAtModelOptimizedTasBhp": null,
+      "modelOptimizedTasMph": null,
+      "proxyWithinReadingBracket": null
+    },
+    {
+      "id": "bhp-75-12000",
+      "kind": "power",
+      "figure": "fig7",
+      "axis": "fig7Bhp",
+      "altFt": 12000,
+      "rating": "75inHg",
+      "gear": "low",
+      "engineRpm": 3000,
+      "box": [
+        741,
+        1048,
+        767,
+        1070
+      ],
+      "application": "chart-assigned-climb-bhp",
+      "bounds": [
+        1220,
+        1340
+      ],
+      "unit": "BHP",
+      "proxyStatus": "no-engine-source",
+      "proxyAtModelOptimizedTasBhp": null,
+      "modelOptimizedTasMph": null,
+      "proxyWithinReadingBracket": null
+    }
+  ],
+  "comparisons": [
+    {
+      "rating": "67inHg",
+      "altFt": 2200,
+      "reportedFpm": 3820,
+      "baselineFpm": 3401.0861529653175,
+      "baselineShaftHp": 1603.1,
+      "powerReadingBhp": [
+        1520,
+        1630
+      ],
+      "weightCurveScenarioLb": [
+        9290,
+        9360
+      ],
+      "requiredShaftHpAtPriorFixedEta": 1754.8423915170506,
+      "inverseMassOnlyLb": 8549.001562047633,
+      "weightOnlyGridFpm": [
+        3388.8049459683593,
+        3423.3371850694507
+      ],
+      "jointGrid": {
+        "min": {
+          "bhp": 1520,
+          "weightLb": 9360,
+          "tasMph": 170,
+          "climbFpm": 3159.2732984890763
+        },
+        "max": {
+          "bhp": 1630,
+          "weightLb": 9290,
+          "tasMph": 172,
+          "climbFpm": 3498.2378564909427
+        },
+        "samples": 180,
+        "powerStepBhp": 10,
+        "weightStepLb": 5,
+        "tasStepMph": 1,
+        "tasRangeMph": [
+          100,
+          290
+        ],
+        "remainingShortfallFpm": 321.7621435090573
+      },
+      "weightAdoption": null,
+      "interpretation": "Sensitivity using level-speed normalization weight as an explicit counterfactual, not matched climb mass. Finite-grid range is not a rigorous continuous or historical uncertainty bound. C eta recalculated for each shaft/speed state; original polar preserved."
+    },
+    {
+      "rating": "75inHg",
+      "altFt": 2200,
+      "reportedFpm": 4380,
+      "baselineFpm": 3978.538324234923,
+      "baselineShaftHp": 1811.1,
+      "powerReadingBhp": [
+        1760,
+        1850
+      ],
+      "weightCurveScenarioLb": [
+        9290,
+        9360
+      ],
+      "requiredShaftHpAtPriorFixedEta": 1955.9347267710098,
+      "inverseMassOnlyLb": 8655.802877037204,
+      "weightOnlyGridFpm": [
+        3964.7878538224372,
+        4003.465544033574
+      ],
+      "jointGrid": {
+        "min": {
+          "bhp": 1760,
+          "weightLb": 9360,
+          "tasMph": 174,
+          "climbFpm": 3823.1122040719774
+        },
+        "max": {
+          "bhp": 1850,
+          "weightLb": 9290,
+          "tasMph": 175,
+          "climbFpm": 4112.193359644275
+        },
+        "samples": 150,
+        "powerStepBhp": 10,
+        "weightStepLb": 5,
+        "tasStepMph": 1,
+        "tasRangeMph": [
+          100,
+          290
+        ],
+        "remainingShortfallFpm": 267.806640355725
+      },
+      "weightAdoption": null,
+      "interpretation": "Sensitivity using level-speed normalization weight as an explicit counterfactual, not matched climb mass. Finite-grid range is not a rigorous continuous or historical uncertainty bound. C eta recalculated for each shaft/speed state; original polar preserved."
+    }
+  ],
+  "acceptedDefaultCorrection": null,
+  "unresolved": {
+    "climbTasMph": null,
+    "instantaneousClimbWeightLb": null,
+    "rawShaftTorque": null,
+    "shutterDragCalibration": null,
+    "completeHighBlowerDigitization": null
+  },
+  "conclusion": "At reconstructed chart-reading scenarios the existing C model still misses climb. No demonstrated extra chart shaft power or large normalization weight reduction closes the gap. Actual climb TAS/mass, installed efficiency and net cooling/exhaust effects remain unidentified."
+}

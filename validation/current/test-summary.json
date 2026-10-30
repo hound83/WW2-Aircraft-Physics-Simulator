@@ -1,8 +1,8 @@
 {
   "node": "v24.19.0",
-  "discoveredScripts": 38,
-  "reportedScripts": 38,
-  "passed": 38,
+  "discoveredScripts": 39,
+  "reportedScripts": 39,
+  "passed": 39,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -125,6 +125,10 @@
     },
     {
       "script": "test_p51_calibration_audit.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_p51_climb_states.cjs",
       "status": "pass"
     },
     {

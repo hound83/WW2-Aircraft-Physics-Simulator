@@ -75,5 +75,6 @@
     "Installed K-6523A-24 propeller map in required J/Cp/RPM domain",
     "Incremental cooling/duct/exhaust force at matched flight/thermal/shutter states",
     "Independent validation and uncertainty after a future coupled power/polar change"
-  ]
+  ],
+  "followup": "references/p51-climb-state-reconstruction.json: later Figure 4 retrieval and sparse weight/BHP digitization supersede the earlier coordinate-access limit; preserve this stage unchanged."
 }

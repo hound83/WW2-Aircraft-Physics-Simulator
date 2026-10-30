@@ -65,7 +65,7 @@ P-47B uses the existing source climb-MAP/BHP proxy without the fitted aggregate-
 
 These inherited 22400-ft level-flight graph readings use recorded RPM; they cannot directly calibrate 2200-ft climb eta, and they share the flight programme. No graph-reading uncertainty is promoted to a validated bound.
 
-Original Mustang Figures 6 and 7 were visually inspected from frozen local scans. They confirm the plotted rate/power/shutter states and automatic cooling; they do not provide a matched climb airspeed or isolated cooling drag. No new BHP/shutter coordinates were digitized from the difficult scan. See [source ledger and exact access limits](../references/climb-power-cooling-audit.json).
+The preceding diagnosis inspected original Mustang Figures 6/7 without digitizing new coordinates. The subsequent [chart-state reconstruction](P51_CLIMB_STATE_RECONSTRUCTION.md) retains Figure 4 and sparse weight/BHP reading brackets, with joint sensitivities. No matched climb TAS/mass or isolated cooling drag is established. The [earlier ledger](../references/climb-power-cooling-audit.json) preserves that stage of the audit.
 
 No matched historical climb-rate/TAS/weight chain; no inverse cooling or eta fit attempted.
 
