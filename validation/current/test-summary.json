@@ -1,8 +1,8 @@
 {
   "node": "v24.19.0",
-  "discoveredScripts": 31,
-  "reportedScripts": 31,
-  "passed": 31,
+  "discoveredScripts": 32,
+  "reportedScripts": 32,
+  "passed": 32,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -125,6 +125,10 @@
     },
     {
       "script": "test_spitfire_v20.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_stall_gate.cjs",
       "status": "pass"
     },
     {

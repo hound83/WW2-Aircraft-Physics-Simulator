@@ -15,7 +15,7 @@ function casFromIAS(iasMph,calibration){
    throw Error('IAS needs a sourced, configuration-specific calibration');
  const p=[...calibration.points].sort((a,b)=>a.iasMph-b.iasMph);
  for(let i=0;i<p.length;i++){
-   if(!(p[i].iasMph>0&&p[i].casMph>0)||i&&!(p[i].iasMph>p[i-1].iasMph&&p[i].casMph>p[i-1].casMph))
+   if(!(Number.isFinite(p[i].iasMph)&&Number.isFinite(p[i].casMph)&&p[i].iasMph>0&&p[i].casMph>0)||i&&!(p[i].iasMph>p[i-1].iasMph&&p[i].casMph>p[i-1].casMph))
      throw Error('IAS calibration nodes must be positive and strictly increasing');
  }
  if(iasMph<p[0].iasMph||iasMph>p.at(-1).iasMph)return null;
@@ -378,6 +378,55 @@ function gregP47MaxSpeed(greg,shaftHp){
  return (lo+hi)/2;
 }
 
+// Explicit source gate; no IAS record silently changes active coefficients.
+function resolveStallEvidence(ac,record,calibration=null){
+ const reasons=[],id=ac.stallIdentity,positive=x=>Number.isFinite(x)&&x>0;
+ if(!id||record?.aircraftId!==id.aircraftId||record?.variant!==id.variant||record?.specimen!==id.specimen)reasons.push('aircraft-variant-or-specimen-not-matched');
+ if(!record?.configurationId||record.power!=='off'||record.loadFactor!==1)reasons.push('one-g-power-off-condition-not-established');
+ if(!positive(record?.weightLb)||record.weightKind!=='instantaneous-stall-test')reasons.push('matched-stall-weight-missing');
+ if(!positive(record?.wingAreaM2)||Math.abs(record.wingAreaM2-ac.wingAreaM2)>1e-6||!record?.geometrySource)reasons.push('matched-wing-area-source-missing');
+ if(!record?.source?.reference||record.source.scanVerified!==true||record.source.kind!=='primary')reasons.push('original-observation-not-verified');
+ const validAlt=Number.isFinite(record?.altFt)&&record.altFt>=0&&record.altFt<=36089;
+ if(!validAlt)reasons.push('test-altitude-missing-or-outside-atmosphere');
+ if(!positive(record?.speed?.mph)||!['IAS','CAS','EAS'].includes(record?.speed?.kind))reasons.push('stall-speed-missing-or-invalid');
+ let air=null;
+ if(record?.speed?.kind==='IAS'){
+  if(!calibration)reasons.push('low-speed-calibration-missing');
+  else{
+   if(calibration.aircraftId!==record.aircraftId||calibration.specimen!==record.specimen||calibration.variant!==record.variant||calibration.configurationId!==record.configurationId)reasons.push('calibration-identity-or-configuration-mismatch');
+   if(calibration.nearStallVerified!==true||calibration.scanVerified!==true||calibration.instrumentCorrectionIncluded!==true)reasons.push('near-stall-position-and-instrument-correction-unverified');
+   const domain=calibration.altitudeRangeFt;
+   if(!validAlt||!Array.isArray(domain)||domain.length!==2||!domain.every(Number.isFinite)||domain[0]>domain[1]||record.altFt<domain[0]||record.altFt>domain[1])reasons.push('calibration-altitude-not-covered');
+   if(positive(record.speed.mph)&&validAlt){
+    try{air=resolveAirspeed(record.speed.mph,'IAS',record.altFt,calibration);if(air.status!=='resolved')reasons.push('stall-outside-calibration-range');}
+    catch{reasons.push('invalid-calibration');}
+   }
+  }
+ }else if(positive(record?.speed?.mph)&&validAlt&&['CAS','EAS'].includes(record.speed.kind)){
+  if(record.speed.correctionVerified!==true||!record.speed.correctionSource)reasons.push('corrected-airspeed-provenance-missing');
+  air=resolveAirspeed(record.speed.mph,record.speed.kind,record.altFt);
+ }
+ const resolved=reasons.length===0&&air?.status==='resolved';
+ return {status:resolved?'derived-power-off':'unresolved',recordId:record?.id??null,reasons,rawSpeed:record?.speed??null,weightLb:record?.weightLb??null,source:record?.source??null,
+  correctedEasMph:resolved?air.eas:null,correctedCasMph:resolved?air.cas:null,
+  clMax:resolved?2*record.weightLb*LBF/(RHO0*record.wingAreaM2*(air.eas*MPH)**2):null,
+  uncertainty:record?.uncertainty??null,turnTransfer:'unverified: power-off one-g lift need not transfer to powered accelerated flight'};
+}
+// Explicit EAS endpoints are scenario limits, never confidence bounds. Actual
+// weight scaling and all drag/power/propeller calculations reuse evaluated().
+function stallSensitivity(ac,scenario,altFt,easMph,opts={}){
+ const positive=x=>Number.isFinite(x)&&x>0,bounds=scenario?.stallEasMph;
+ if(!scenario?.label||!scenario.reason||!positive(scenario.testWeightLb)||!Array.isArray(bounds)||bounds.length!==2||!bounds.every(positive)||bounds[1]<bounds[0])throw Error('Explicit positive ordered EAS scenario bounds, test weight, label and reason required');
+ if(opts.clMax!==undefined)throw Error('Scenario derives CLmax; do not override it');
+ const samples=bounds.map(stall=>{
+  const clMax=2*scenario.testWeightLb*LBF/(RHO0*ac.wingAreaM2*(stall*MPH)**2);
+  const result=evaluated(ac,altFt,tasFrom(easMph,'EAS',altFt),{...opts,clMax});
+  return {assumedTestStallEasMph:stall,clMax,result};
+ });
+ return {status:'unverified-sensitivity',label:scenario.label,reason:scenario.reason,testWeightLb:scenario.testWeightLb,
+  warning:'Endpoints are assumptions, not measured corrections or a confidence interval; power-off to powered-turn transfer also assumed.',samples};
+}
+
 // v0.4: generic maximized steady-climb prediction, with no aircraft-specific
 // drag/power refitting to the target climb results. This is a *model* maximum,
 // not a documented climbing IAS or flight procedure.
@@ -427,5 +476,5 @@ function matchedPowerClimb(ac,altFt,ratingA,ratingB,opts={}){
    deltaClimbFpm:b.climbFpm-a.climbFpm,deltaShaftHp:high.bhp-low.bhp,
    provenance:'calculated from frozen speed-calibrated polar; NO climb-rate calibration'};
 }
-return Object.freeze({isa,airspeeds,tasFrom,trueFromCAS,casFromTrue,casFromIAS,resolveAirspeed,shaftPower,shaftPowerAtMeasuredBoost,inletPressureAtSpeed,ramManifoldAtSpeed,referenceLevelTas,shaftPowerAtRamSpeed,nacaLowSpeedPropChart,nacaMachResearch,propEta,dragBreakdown,cd0FromAnchor,evaluated,maxSpeed,greg109At,inferredGregF4,inferredGregP47,climbConditionEngine,climbPrediction,equivalentClimbDrag,gregP47PowerPoint,gregP47MaxSpeed,bestClimb,matchedPowerClimb});
+return Object.freeze({isa,airspeeds,tasFrom,trueFromCAS,casFromTrue,casFromIAS,resolveAirspeed,resolveStallEvidence,stallSensitivity,shaftPower,shaftPowerAtMeasuredBoost,inletPressureAtSpeed,ramManifoldAtSpeed,referenceLevelTas,shaftPowerAtRamSpeed,nacaLowSpeedPropChart,nacaMachResearch,propEta,dragBreakdown,cd0FromAnchor,evaluated,maxSpeed,greg109At,inferredGregF4,inferredGregP47,climbConditionEngine,climbPrediction,equivalentClimbDrag,gregP47PowerPoint,gregP47MaxSpeed,bestClimb,matchedPowerClimb});
 });

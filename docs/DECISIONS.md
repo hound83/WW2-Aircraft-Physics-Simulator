@@ -17,3 +17,11 @@
 The full inherited record is [ACCEPTED_MODEL_DECISIONS_LEGACY.md](ACCEPTED_MODEL_DECISIONS_LEGACY.md). Its scientific constraints remain applicable. The four-aircraft scope and v3 evidence gates are specified in [V3_PLAN_AND_ACCEPTANCE.md](V3_PLAN_AND_ACCEPTANCE.md).
 
 No aerodynamic coefficients or historical evidence values were changed during repository setup.
+
+## 2026-10-30: executable stall evidence gate
+
+- Added variant/specimen identities and a structured source register, including separate P-51 closed/open/powered records and nontransferable P-47D evidence.
+- Require matched instantaneous weight, geometry, configuration and near-stall calibrated speed before deriving power-off CLmax. Missing evidence returns null values and explicit blockers.
+- The P-47 correction crop covers 170-310 mph IAS; never extrapolate it to 115 mph. P-51 Fig. 1 has no observed 84-86 mph coverage.
+- Add an opt-in EAS/weight sensitivity pathway through the existing shared engine, with four-aircraft comparison, finite-grid peaks and unresolved 5:1 pairwise results. Scenario endpoints are assumptions, not historical bounds.
+- Preserve default coefficients, frozen import/Greg fixtures and v2.5 output parity. Source-backed numerical recalibration remains blocked. See STALL_SOURCE_AUDIT.md and STALL_CALIBRATION_RESULTS.md.

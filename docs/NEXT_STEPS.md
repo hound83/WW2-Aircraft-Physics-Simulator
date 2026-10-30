@@ -1,24 +1,11 @@
 # Next steps
 
-## Setup completed
+## Completed bounded milestone: executable stall gate
 
-The baseline is published on main and preserved on baseline/v2.5-import. The initial GitHub regression run succeeded. See [REMOTE_SETUP.md](REMOTE_SETUP.md) and [SETUP_VERIFICATION.md](SETUP_VERIFICATION.md).
+The source gate and opt-in EAS/weight sensitivity pathway are implemented for four benchmark aircraft. Default coefficients remain unchanged because no matched near-stall correction is verified. See [source audit](STALL_SOURCE_AUDIT.md), [comparison](STALL_CALIBRATION_RESULTS.md) and [current validation](CURRENT_VALIDATION.md). Frozen import and Greg material remain intact.
 
-## Next assignment: stall/weight/calibration gate
+## Next single assignment: P-51B near-stall calibration
 
-1. Start from latest remote state and a feature branch such as `physics/stall-calibration`.
-2. Read current evidence and `references/stall_evidence_register.csv`. Seek only the missing matched low-speed calibration, actual stall weight and configuration data.
-3. Keep unmatched variants, shutters, slats and takeoff/stall weights separate. If no defensible correction is found, preserve explicit bounds rather than invent corrected EAS or CLmax.
-4. Audit the original NACA L4L07 Table I row 20-1 before using the claimed 0.779 correction. Correct active evidence separately from frozen v2.5 fixtures.
-5. Implement supported corrections in the shared engine/data, rerun checks and compare numerical results against the baseline. Record source applicability and residual changes.
-6. Update documentation, commit and push a meaningful milestone.
+Obtain and audit a configuration/specimen-matched low-speed airspeed calibration for P-51B-15 43-24777 at the 8,000-ft stall condition. Start with the existing report, its instrument/static installation, and linked original evidence. Record calibrated speed coverage, instrument/position uncertainty and contemporaneous mass. If supported, populate `references/stall-calibration.json`, pass the existing gate and quantify changes to lift/turn outputs. If unavailable, record the evidence limit without inventing a correction. Preserve other aircraft coefficients and the Mustang climb failure. Stop at this one source/calibration milestone.
 
-## Following assignments
-
-- Improve CLmax and lift-/power-limited turns using the same solver, with structural G limits and explicit instantaneous/sustained distinction.
-- Complete four-aircraft speed/climb/stall/turn validation, Greg and P-47 propeller fixtures, matched-condition differential errors and 5:1 scoring.
-- Release v3.0 only when the acceptance report identifies measured passes, failures and unresolved cases honestly. An unresolved scientific gate must remain visible.
-
-## Fresh-conversation prompt
-
-Continue European Air War Physics from `hound83/WW2-Aircraft-Physics-Simulator`. Read README.md, AGENTS.md, docs/DECISIONS.md, docs/NEXT_STEPS.md, docs/KNOWN_LIMITATIONS.md and docs/CURRENT_VALIDATION.md. Inspect current branches/tags and run npm run check. Continue the next documented milestone, preserving the frozen v2.5 import and scientific evidence distinctions. Do not modify the Atlas repository.
+Do not add aircraft, redesign the Atlas, expand all NACA research or fix unrelated propeller/climb issues. Current source history is in GitHub; use a fresh Work session per substantial assignment.

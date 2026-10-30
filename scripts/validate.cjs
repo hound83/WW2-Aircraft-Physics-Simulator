@@ -21,6 +21,7 @@ try{
  const rows=changes.map(r=>[r.key,r.baseline,r.current,r.delta].join(','));
  fs.writeFileSync(path.join(root,'validation/current/numerical-differences.csv'),'metric,baseline,current,delta\n'+rows.join('\n')+(rows.length?'\n':''));
  const digest=sha256(JSON.stringify(current));
+ require('../validation/diagnostics/stall_gate.cjs').writeReport();
  const md=[
  '# Current validation',
  '',
@@ -35,12 +36,14 @@ try{
  '| Engine SHA256 | '+buildInfo.physicsSha256+' |',
  '| Numerical result SHA256 | '+digest+' |',
  '| Interactive browser tests | Not run |',
- '| Historical stall/CLmax validation | Unresolved |',
+ '| Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |',
  '| 5:1 comparative accuracy | Unresolved |',
+ '',
+ 'Stall milestone: [source audit](STALL_SOURCE_AUDIT.md), [comparison tables](STALL_CALIBRATION_RESULTS.md), [machine-readable results](../validation/current/stall-gate.json).',
  '',
  'Full records: [test summary](../validation/current/test-summary.json), [numerics](../validation/current/numerics.json), [baseline differences](../validation/current/baseline-diff.json).',
  '',
- 'The setup baseline and current output include the same known scientific failures and provisional evidence. Zero numerical change establishes import parity, not historical accuracy. The original 30 tests passed before relocation; the repository adds one check of current standalone embedding and JavaScript syntax.',
+ 'The setup baseline and current output include the same known scientific failures and provisional evidence. Zero numerical change establishes import parity, not historical accuracy. The original 30 regression scripts are preserved; additional scripts check current standalone embedding and stall-evidence/sensitivity guardrails.',
  '',
  'The P-47C 20-1 fixture still carries the original 0.799 OCR value; the handover reports 0.779 from the scan. This is an open evidence correction, not a setup regression failure. See [known limitations](KNOWN_LIMITATIONS.md).',
  '',

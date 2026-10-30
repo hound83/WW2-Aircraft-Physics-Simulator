@@ -2,7 +2,7 @@
 
 A separate research repository for the shared WWII flight-performance engine. The Atlas website in [hound83/ww2-airwar](https://github.com/hound83/ww2-airwar) is outside this repository's scope.
 
-**Current state: imported v2.5 working baseline; v3.0 is in development and is not validated.** This setup changes file locations and development tooling only. It does not change physics equations, aircraft coefficients or historical claims.
+**Current state: imported v2.5 working baseline; v3.0 is in development and is not validated.** The stall-calibration milestone adds an executable source gate and four-aircraft scenario sensitivity. Default coefficients and v2.5 numerical predictions remain unchanged.
 
 Initial benchmarks: **Bf 109 F-4, P-47B, P-51B-15 and Spitfire LF Mk IX**. Greg's worksheets and the controlled P-47 2,000/2,600 hp comparison are retained. The 2,600 hp scenario is not a verified P-47B engine rating.
 
@@ -47,4 +47,4 @@ The 5:1 separation criterion is an acceptance target, not achieved accuracy. Mat
 
 ## Next milestone
 
-Complete the stall/weight/airspeed evidence gate on a feature branch, implement only supported corrections, and compare against this baseline. Do not add aircraft or redesign the Atlas. See [NEXT_STEPS.md](docs/NEXT_STEPS.md).
+The first bounded stall milestone is implemented: see [source audit](docs/STALL_SOURCE_AUDIT.md) and [generated comparison](docs/STALL_CALIBRATION_RESULTS.md). Next, obtain and audit a specimen/configuration-matched P-51B near-stall calibration, then exercise the existing evidence gate without broadening the aircraft set. Do not add aircraft or redesign the Atlas. See [NEXT_STEPS.md](docs/NEXT_STEPS.md).
