@@ -131,6 +131,7 @@
       "quality": "PRIMARY same-aircraft A&AEE 1943 +18 test, 21 speed points and 16 speed-specific climb points; historical speed/climb conditions NOT identical. Engine power curve outside 5,750ft and 16,000ft reported critical points is PROVISIONAL. IL-2 Mk IXe is a DIFFERENT armament/airframe from historical Mk IXc; DCS Mk IX full-wing option is a secondary sanity reference."
     },
     "bf109f4": {
+      "stallSlatStateRequired": true,
       "stallIdentity": {"aircraftId":"bf109f4","variant":"Bf 109 F-4","specimen":"unspecified"},
       "name": "Bf 109 F-4 / DB 601E",
       "force": "Luftwaffe",

@@ -39,6 +39,8 @@ try{
  '| Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |',
  '| 5:1 comparative accuracy | Unresolved |',
  '',
+ 'Bf 109 F-4 source milestone: [bounded audit](BF109F4_STALL_AUDIT.md); original stall pages unverified, specimen/slat gate tightened.',
+ '',
  'P-47B source milestone: [primary stall/loading audit](P47B_STALL_WEIGHT_AUDIT.md); 105 mph IAS observation added, corrected EAS/CLmax unresolved.',
  '',
  'P-51 source milestone: [installation and low-speed audit](P51_LOW_SPEED_CALIBRATION_AUDIT.md); no supported coefficient change.',

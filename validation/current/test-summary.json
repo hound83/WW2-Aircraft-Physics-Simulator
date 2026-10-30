@@ -1,8 +1,8 @@
 {
   "node": "v24.19.0",
-  "discoveredScripts": 34,
-  "reportedScripts": 34,
-  "passed": 34,
+  "discoveredScripts": 35,
+  "reportedScripts": 35,
+  "passed": 35,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -17,6 +17,10 @@
     },
     {
       "script": "test_bf109_rating_v14.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_bf109f4_stall_audit.cjs",
       "status": "pass"
     },
     {

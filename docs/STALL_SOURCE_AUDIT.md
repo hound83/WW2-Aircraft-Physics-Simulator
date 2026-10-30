@@ -35,3 +35,7 @@ The full imported regression set, Greg's controlled P-47 2,000/2,600 hp case and
 ## P-47B primary-source update
 
 The [41-5902 audit](P47B_STALL_WEIGHT_AUDIT.md) supersedes the manual-only evidence description above. The original acceptance report records 105 mph indicated clean power-off; 12,565/12,560 lb are separate nominal loading statements, not a verified instantaneous stall weight. Original calibration identifies the installation and instrument/water-column basis but only covers 170-310 mph. No verified stall EAS/CLmax is inferred.
+
+## F-4 follow-up
+
+The bounded F-4 source audit found candidate catalogs/documents but verified no original stall pages. Simulation values remain separate; no numerical recalibration. See [findings and exact access limits](BF109F4_STALL_AUDIT.md).

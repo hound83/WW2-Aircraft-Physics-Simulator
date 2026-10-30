@@ -381,6 +381,9 @@ function gregP47MaxSpeed(greg,shaftHp){
 // Explicit source gate; no IAS record silently changes active coefficients.
 function resolveStallEvidence(ac,record,calibration=null){
  const reasons=[],id=ac.stallIdentity,positive=x=>Number.isFinite(x)&&x>0;
+   const identified=x=>typeof x==='string'&&x.trim().length>0&&!['unknown','unspecified'].includes(x.trim().toLowerCase());
+   if(!identified(id?.specimen)||!identified(record?.specimen))reasons.push('specimen-identity-not-established');
+   if(ac.stallSlatStateRequired===true&&(!identified(record?.slatState)||!identified(record?.slatStateSource)))reasons.push('slat-state-not-established');
  if(!id||record?.aircraftId!==id.aircraftId||record?.variant!==id.variant||record?.specimen!==id.specimen)reasons.push('aircraft-variant-or-specimen-not-matched');
  if(!record?.configurationId||record.power!=='off'||record.loadFactor!==1)reasons.push('one-g-power-off-condition-not-established');
  if(!positive(record?.weightLb)||record.weightKind!=='instantaneous-stall-test')reasons.push('matched-stall-weight-missing');
@@ -392,6 +395,7 @@ function resolveStallEvidence(ac,record,calibration=null){
  let air=null;
  if(record?.speed?.kind==='IAS'){
   const instrumentState=record.speed.instrumentCorrection;
+    if(ac.stallSlatStateRequired===true&&calibration&&(!identified(calibration.slatState)||calibration.slatState!==record.slatState))reasons.push('calibration-slat-state-not-matched');
   if(!['not-removed','removed'].includes(instrumentState))reasons.push('ias-instrument-correction-state-unknown');
   if(!calibration)reasons.push('low-speed-calibration-missing');
   else{

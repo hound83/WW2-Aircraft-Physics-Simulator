@@ -24,3 +24,7 @@ No matched near-stall correction was established within the inspected Wright Fie
 ## P-47B primary-source update
 
 The earlier manual-only evidence description is superseded: the original 41-5902 scan records a clean 105 mph indicated power-off stall. However, nominal report weights differ by 5 lb, instantaneous stall weight/altitude and instrument convention are unstated, and calibration starts at 170 mph. This new observation does not establish stall EAS or measured CLmax. See P47B_STALL_WEIGHT_AUDIT.md. Model weight and coefficient remain unchanged.
+
+## Bf 109 F-4 evidence limits
+
+The original manual/test candidates remain unverified at the stall-page level; catalogs and attachment filenames do not establish F-4 applicability. No matched historical stall weight, slat state or near-stall correction was obtained. Placeholder specimen matches and undocumented F-4 slat states now fail the executable gate. See BF109F4_STALL_AUDIT.md.

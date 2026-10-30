@@ -126,6 +126,8 @@
           "status": "unresolved",
           "recordId": "109-simulator",
           "reasons": [
+            "specimen-identity-not-established",
+            "slat-state-not-established",
             "one-g-power-off-condition-not-established",
             "matched-stall-weight-missing",
             "original-observation-not-verified",
@@ -269,6 +271,7 @@
           "status": "unresolved",
           "recordId": "p47-manual",
           "reasons": [
+            "specimen-identity-not-established",
             "aircraft-variant-or-specimen-not-matched",
             "one-g-power-off-condition-not-established",
             "matched-stall-weight-missing",
@@ -665,6 +668,7 @@
           "status": "unresolved",
           "recordId": "spit-7150",
           "reasons": [
+            "specimen-identity-not-established",
             "aircraft-variant-or-specimen-not-matched",
             "matched-stall-weight-missing",
             "original-observation-not-verified",
@@ -692,6 +696,7 @@
           "status": "unresolved",
           "recordId": "spit-7800",
           "reasons": [
+            "specimen-identity-not-established",
             "aircraft-variant-or-specimen-not-matched",
             "matched-stall-weight-missing",
             "original-observation-not-verified",

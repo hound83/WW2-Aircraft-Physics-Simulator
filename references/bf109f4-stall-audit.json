@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "auditDate": "2026-10-30",
+  "target": {
+    "aircraftId": "bf109f4",
+    "variant": "Bf 109 F-4",
+    "specimen": null
+  },
+  "scope": "Bounded original-source discovery and evidence-gate audit; original F-4 stall pages not verified",
+  "candidates": [
+    {
+      "id": "german-handbook-catalog",
+      "url": "https://www.museumalkmaar40-45.nl/voorschriften-manuals/d-luftt/d-luftt-2109",
+      "access": "catalog-only",
+      "finding": "Catalog lists D.(Luft)T.2109 F-1 bis F-4 parts. Original stall/loading/calibration pages not inspected.",
+      "acceptedStallEvidence": false
+    },
+    {
+      "id": "german-handbook-attachment",
+      "url": "https://ww2aircraft.net/forum/threads/me-109-engine-swaps.36408/",
+      "access": "forum-attachment-listing-only",
+      "finding": "Bf 109 F1 Flugzeughandbuch Mai 1941.pdf is listed; original attachment contents and F-4 applicability not verified.",
+      "acceptedStallEvidence": false
+    },
+    {
+      "id": "us-f-evaluation",
+      "url": "https://stephentaylorhistorian.com/wp-content/uploads/2020/04/bf-109f-evaluation.pdf",
+      "access": "pdf-discovered-no-readable-text-or-visual-inspection",
+      "finding": "Eight-page candidate; no numerical observation or variant applicability accepted from search snippets.",
+      "acceptedStallEvidence": false
+    },
+    {
+      "id": "spanish-adaptation",
+      "url": "https://www.patrulla-azul.com/descargas/Manual_Bf_109_Trop.pdf",
+      "access": "pdf-text-read",
+      "finding": "Claims F-4/B Trop; page 3 names DB 605 A-1, conflicting with the target DB 601 E. Translation/adaptation provenance unresolved; excluded.",
+      "acceptedStallEvidence": false
+    },
+    {
+      "id": "il2-developer-spec",
+      "url": "https://forum.il2sturmovik.com/applications/core/interface/file/attachment.php?id=39971",
+      "access": "simulation-specification",
+      "finding": "154-171 km/h IAS and standard 2890 kg remain simulator inputs, not historical stall observations.",
+      "acceptedStallEvidence": false
+    }
+  ],
+  "historicalObservation": {
+    "stallSpeed": null,
+    "stallWeightLb": null,
+    "altitudeFt": null,
+    "slatState": null,
+    "calibration": null
+  },
+  "derivedHistoricalClMax": null,
+  "remainingBlockers": [
+    "Original F-4 applicability and identified test specimen",
+    "Clean one-g power-off condition and documented slat state",
+    "Instantaneous stall-test weight and altitude",
+    "Matched pressure installation, correction convention and near-stall calibration"
+  ],
+  "conclusion": "No new historical numerical calibration justified. Preserve default CLmax 1.5 and weight 6371 lb. Reject placeholder specimen matches and require slat state for F-4 evidence."
+}

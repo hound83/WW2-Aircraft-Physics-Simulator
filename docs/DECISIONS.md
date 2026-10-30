@@ -33,3 +33,7 @@ The targeted P-51 audit did not establish a defensible 84-86 mph correction. Pre
 ## 2026-10-30: P-47B primary stall and loading audit
 
 The original 41-5902 acceptance scan establishes 105 mph indicated clean power-off, with cowl closed and oil/intercooler neutral. Preserve its 12,565-lb gross-as-tested and separate 12,560-lb loaded statements without promoting either to instantaneous stall weight. Its Kollsman D-1 table includes raw indicated, water-column and calibrated speeds only from 170 mph upward. Add the primary record and correction provenance separately from generic 115 mph manual and 116 mph P-47D figures. Do not extrapolate or change CLmax. The gate reports missing altitude and out-of-range calibration independently. See P47B_STALL_WEIGHT_AUDIT.md and references/p47b-stall-weight-audit.json.
+
+## 2026-10-30: Bf 109 F-4 bounded evidence audit
+
+No original F-4 stall pages were verified. Preserve simulator values separately and retain default coefficients. Reject matching placeholder specimen identities for every aircraft; require documented slat state for F-4 evidence and matching IAS-calibration slat state. These guardrails do not create a historical measurement. See BF109F4_STALL_AUDIT.md.

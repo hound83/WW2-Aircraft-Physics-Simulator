@@ -202,7 +202,9 @@
         "kind": "simulation",
         "scanVerified": false
       },
-      "uncertainty": null
+      "uncertainty": null,
+      "slatState": "unknown",
+      "slatStateSource": null
     },
     {
       "id": "p47b-415902-clean",
