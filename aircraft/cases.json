@@ -3,8 +3,17 @@
   "scope": "v0.5 matched-report weight and configuration audit with cross-aircraft benchmark, still no validated sustained turns",
   "aircraft": {
     "spitfire_lfix_bs543": {
-      "stallConfiguration": {"wingTips":"full-span","gear":"up","flaps":"up","externalStores":"none"},
-      "stallIdentity": {"aircraftId":"spitfire_lfix_bs543","variant":"Spitfire LF Mk IXc","specimen":"BS.543"},
+      "stallConfiguration": {
+        "wingTips": "full-span",
+        "gear": "up",
+        "flaps": "up",
+        "externalStores": "none"
+      },
+      "stallIdentity": {
+        "aircraftId": "spitfire_lfix_bs543",
+        "variant": "Spitfire LF Mk IXc",
+        "specimen": "BS.543"
+      },
       "name": "Spitfire LF Mk IXc / Merlin 66 (BS.543)",
       "force": "RAF",
       "wingAreaM2": 22.48253568,
@@ -24,24 +33,88 @@
           "notes": "PARTLY SOURCED, partly explicit proxy: published Merlin 66 engine 1,705 bhp at 5,750 ft in MS and 1,580 bhp at 16,000 ft in FS. A&AEE BS.543 report records full-throttle heights in FLIGHT at 10,800 and 22,000 ft, not identical to engine test-bed heights; flat-power intervals to flight FTH assume ram recovery. Sea-level +18 bhp 1,600 is a PROVISIONAL estimate, not a published test-bed reading. Above FTH, BHP is scaled from source-observed boost with atmospheric +14.7 psi denominator; this is a proxy, not measured BHP.",
           "gears": {
             "low": [
-              {"altFt": 0, "bhp": 1600, "powerEvidence": "provisional 1,600 bhp SL +18 boost, not a period engine reading"},
-              {"altFt": 5750, "bhp": 1705, "powerEvidence": "published 1,705 bhp Merlin 66 +18 MS critical altitude"},
-              {"altFt": 10800, "bhp": 1705, "powerEvidence": "ASSUMED constant power to observed 10,800-ft flight full-throttle height (ram recovery)"},
-              {"altFt": 12000, "bhp": 1632.03, "powerEvidence": "proxy using source-observed +16.6 boost"},
-              {"altFt": 14000, "bhp": 1512.01, "powerEvidence": "proxy using source-observed +14.3 boost"},
-              {"altFt": 16000, "bhp": 1412.99, "powerEvidence": "proxy using source-observed +12.4 boost"},
-              {"altFt": 18000, "bhp": 1329.59, "powerEvidence": "proxy using source-observed +10.8 boost"}
+              {
+                "altFt": 0,
+                "bhp": 1600,
+                "powerEvidence": "provisional 1,600 bhp SL +18 boost, not a period engine reading"
+              },
+              {
+                "altFt": 5750,
+                "bhp": 1705,
+                "powerEvidence": "published 1,705 bhp Merlin 66 +18 MS critical altitude"
+              },
+              {
+                "altFt": 10800,
+                "bhp": 1705,
+                "powerEvidence": "ASSUMED constant power to observed 10,800-ft flight full-throttle height (ram recovery)"
+              },
+              {
+                "altFt": 12000,
+                "bhp": 1632.03,
+                "powerEvidence": "proxy using source-observed +16.6 boost"
+              },
+              {
+                "altFt": 14000,
+                "bhp": 1512.01,
+                "powerEvidence": "proxy using source-observed +14.3 boost"
+              },
+              {
+                "altFt": 16000,
+                "bhp": 1412.99,
+                "powerEvidence": "proxy using source-observed +12.4 boost"
+              },
+              {
+                "altFt": 18000,
+                "bhp": 1329.59,
+                "powerEvidence": "proxy using source-observed +10.8 boost"
+              }
             ],
             "high": [
-              {"altFt": 13000, "bhp": 1530, "powerEvidence": "PROVISIONAL high-gear BHP at observed in-flight changeover 13,000 ft, not a test-bed measurement"},
-              {"altFt": 16000, "bhp": 1580, "powerEvidence": "published Merlin 66 +18 FS rating at 16,000 ft"},
-              {"altFt": 22000, "bhp": 1580, "powerEvidence": "ASSUMED constant power to observed 22,000-ft flight full-throttle height"},
-              {"altFt": 24000, "bhp": 1442.95, "powerEvidence": "proxy using source-observed +15.6 boost"},
-              {"altFt": 26000, "bhp": 1347.77, "powerEvidence": "proxy using source-observed +13.6 boost"},
-              {"altFt": 28000, "bhp": 1252.59, "powerEvidence": "proxy using source-observed +11.6 boost"},
-              {"altFt": 30000, "bhp": 1162.65, "powerEvidence": "proxy using source-observed +9.7 boost"},
-              {"altFt": 32000, "bhp": 1067.47, "powerEvidence": "proxy using source-observed +7.7 boost"},
-              {"altFt": 34000, "bhp": 972.29, "powerEvidence": "proxy using source-observed +5.7 boost"}
+              {
+                "altFt": 13000,
+                "bhp": 1530,
+                "powerEvidence": "PROVISIONAL high-gear BHP at observed in-flight changeover 13,000 ft, not a test-bed measurement"
+              },
+              {
+                "altFt": 16000,
+                "bhp": 1580,
+                "powerEvidence": "published Merlin 66 +18 FS rating at 16,000 ft"
+              },
+              {
+                "altFt": 22000,
+                "bhp": 1580,
+                "powerEvidence": "ASSUMED constant power to observed 22,000-ft flight full-throttle height"
+              },
+              {
+                "altFt": 24000,
+                "bhp": 1442.95,
+                "powerEvidence": "proxy using source-observed +15.6 boost"
+              },
+              {
+                "altFt": 26000,
+                "bhp": 1347.77,
+                "powerEvidence": "proxy using source-observed +13.6 boost"
+              },
+              {
+                "altFt": 28000,
+                "bhp": 1252.59,
+                "powerEvidence": "proxy using source-observed +11.6 boost"
+              },
+              {
+                "altFt": 30000,
+                "bhp": 1162.65,
+                "powerEvidence": "proxy using source-observed +9.7 boost"
+              },
+              {
+                "altFt": 32000,
+                "bhp": 1067.47,
+                "powerEvidence": "proxy using source-observed +7.7 boost"
+              },
+              {
+                "altFt": 34000,
+                "bhp": 972.29,
+                "powerEvidence": "proxy using source-observed +5.7 boost"
+              }
             ]
           }
         }
@@ -49,62 +122,373 @@
       "defaultRating": "combat+18",
       "defaultGear": "low",
       "calibration": {
-        "altFt": 0, "tasMph": 336, "rating": "combat+18", "gear": "low",
+        "altFt": 0,
+        "tasMph": 336,
+        "rating": "combat+18",
+        "gear": "low",
         "source": "A&AEE Spitfire LF/HF Mk IX report, Table V, Merlin 66 BS.543, sea-level max level TAS corrected to 7,110 lb at +18 lb boost, radiator shutters closed",
         "role": "ONE level-speed anchor; 1,600-bhp sea-level engine assumption is a separate provisional input"
       },
       "observedSpeed": [
-        {"altFt": 0, "mphTas": 336, "rating": "combat+18", "gear": "low"},
-        {"altFt": 2000, "mphTas": 345, "rating": "combat+18", "gear": "low"},
-        {"altFt": 4000, "mphTas": 353, "rating": "combat+18", "gear": "low"},
-        {"altFt": 6000, "mphTas": 363, "rating": "combat+18", "gear": "low"},
-        {"altFt": 8000, "mphTas": 372, "rating": "combat+18", "gear": "low"},
-        {"altFt": 10000, "mphTas": 380, "rating": "combat+18", "gear": "low"},
-        {"altFt": 10800, "mphTas": 384, "rating": "combat+18", "gear": "low"},
-        {"altFt": 12000, "mphTas": 384, "rating": "combat+18", "gear": "low"},
-        {"altFt": 14000, "mphTas": 383.5, "rating": "combat+18", "gear": "low"},
-        {"altFt": 16000, "mphTas": 383, "rating": "combat+18", "gear": "low"},
-        {"altFt": 18000, "mphTas": 382, "rating": "combat+18", "gear": "low"},
-        {"altFt": 16000, "mphTas": 381.5, "rating": "combat+18", "gear": "high"},
-        {"altFt": 18000, "mphTas": 390.5, "rating": "combat+18", "gear": "high"},
-        {"altFt": 20000, "mphTas": 399, "rating": "combat+18", "gear": "high"},
-        {"altFt": 22000, "mphTas": 407, "rating": "combat+18", "gear": "high"},
-        {"altFt": 24000, "mphTas": 406, "rating": "combat+18", "gear": "high"},
-        {"altFt": 26000, "mphTas": 403, "rating": "combat+18", "gear": "high"},
-        {"altFt": 28000, "mphTas": 399.5, "rating": "combat+18", "gear": "high"},
-        {"altFt": 30000, "mphTas": 395, "rating": "combat+18", "gear": "high"},
-        {"altFt": 32000, "mphTas": 389, "rating": "combat+18", "gear": "high"},
-        {"altFt": 34000, "mphTas": 381, "rating": "combat+18", "gear": "high"}
+        {
+          "altFt": 0,
+          "mphTas": 336,
+          "rating": "combat+18",
+          "gear": "low"
+        },
+        {
+          "altFt": 2000,
+          "mphTas": 345,
+          "rating": "combat+18",
+          "gear": "low"
+        },
+        {
+          "altFt": 4000,
+          "mphTas": 353,
+          "rating": "combat+18",
+          "gear": "low"
+        },
+        {
+          "altFt": 6000,
+          "mphTas": 363,
+          "rating": "combat+18",
+          "gear": "low"
+        },
+        {
+          "altFt": 8000,
+          "mphTas": 372,
+          "rating": "combat+18",
+          "gear": "low"
+        },
+        {
+          "altFt": 10000,
+          "mphTas": 380,
+          "rating": "combat+18",
+          "gear": "low"
+        },
+        {
+          "altFt": 10800,
+          "mphTas": 384,
+          "rating": "combat+18",
+          "gear": "low"
+        },
+        {
+          "altFt": 12000,
+          "mphTas": 384,
+          "rating": "combat+18",
+          "gear": "low"
+        },
+        {
+          "altFt": 14000,
+          "mphTas": 383.5,
+          "rating": "combat+18",
+          "gear": "low"
+        },
+        {
+          "altFt": 16000,
+          "mphTas": 383,
+          "rating": "combat+18",
+          "gear": "low"
+        },
+        {
+          "altFt": 18000,
+          "mphTas": 382,
+          "rating": "combat+18",
+          "gear": "low"
+        },
+        {
+          "altFt": 16000,
+          "mphTas": 381.5,
+          "rating": "combat+18",
+          "gear": "high"
+        },
+        {
+          "altFt": 18000,
+          "mphTas": 390.5,
+          "rating": "combat+18",
+          "gear": "high"
+        },
+        {
+          "altFt": 20000,
+          "mphTas": 399,
+          "rating": "combat+18",
+          "gear": "high"
+        },
+        {
+          "altFt": 22000,
+          "mphTas": 407,
+          "rating": "combat+18",
+          "gear": "high"
+        },
+        {
+          "altFt": 24000,
+          "mphTas": 406,
+          "rating": "combat+18",
+          "gear": "high"
+        },
+        {
+          "altFt": 26000,
+          "mphTas": 403,
+          "rating": "combat+18",
+          "gear": "high"
+        },
+        {
+          "altFt": 28000,
+          "mphTas": 399.5,
+          "rating": "combat+18",
+          "gear": "high"
+        },
+        {
+          "altFt": 30000,
+          "mphTas": 395,
+          "rating": "combat+18",
+          "gear": "high"
+        },
+        {
+          "altFt": 32000,
+          "mphTas": 389,
+          "rating": "combat+18",
+          "gear": "high"
+        },
+        {
+          "altFt": 34000,
+          "mphTas": 381,
+          "rating": "combat+18",
+          "gear": "high"
+        }
       ],
       "observedClimb": [
-        {"altFt": 2000, "fpm": 4640, "tasMph": 176.5, "reportedIasMph": 170, "rating": "combat+18", "gear": "low", "reportedBoostPsi": 18},
-        {"altFt": 4000, "fpm": 4660, "tasMph": 182, "reportedIasMph": 170, "rating": "combat+18", "gear": "low", "reportedBoostPsi": 18},
-        {"altFt": 6000, "fpm": 4690, "tasMph": 187, "reportedIasMph": 170, "rating": "combat+18", "gear": "low", "reportedBoostPsi": 18},
-        {"altFt": 7000, "fpm": 4700, "tasMph": 190, "reportedIasMph": 170, "rating": "combat+18", "gear": "low", "reportedBoostPsi": 18},
-        {"altFt": 8000, "fpm": 4560, "tasMph": 193, "reportedIasMph": 170, "rating": "combat+18", "gear": "low", "reportedBoostPsi": 17},
-        {"altFt": 10000, "fpm": 4280, "tasMph": 199, "reportedIasMph": 170, "rating": "combat+18", "gear": "low", "reportedBoostPsi": 15.1},
-        {"altFt": 12000, "fpm": 4000, "tasMph": 205, "reportedIasMph": 170, "rating": "combat+18", "gear": "low", "reportedBoostPsi": 13.4},
-        {"altFt": 14000, "fpm": 3860, "tasMph": 211.5, "reportedIasMph": 170, "rating": "combat+18", "gear": "high", "reportedBoostPsi": 18},
-        {"altFt": 16000, "fpm": 3860, "tasMph": 218.5, "reportedIasMph": 170, "rating": "combat+18", "gear": "high", "reportedBoostPsi": 18},
-        {"altFt": 18000, "fpm": 3860, "tasMph": 223, "reportedIasMph": 168, "rating": "combat+18", "gear": "high", "reportedBoostPsi": 18},
-        {"altFt": 20000, "fpm": 3560, "tasMph": 224, "reportedIasMph": 163, "rating": "combat+18", "gear": "high", "reportedBoostPsi": 15.8},
-        {"altFt": 22000, "fpm": 3270, "tasMph": 225, "reportedIasMph": 158, "rating": "combat+18", "gear": "high", "reportedBoostPsi": 13.8},
-        {"altFt": 24000, "fpm": 2970, "tasMph": 226, "reportedIasMph": 153, "rating": "combat+18", "gear": "high", "reportedBoostPsi": 11.9},
-        {"altFt": 26000, "fpm": 2700, "tasMph": 227, "reportedIasMph": 148, "rating": "combat+18", "gear": "high", "reportedBoostPsi": 10.1},
-        {"altFt": 28000, "fpm": 2400, "tasMph": 229, "reportedIasMph": 143, "rating": "combat+18", "gear": "high", "reportedBoostPsi": 8.4},
-        {"altFt": 30000, "fpm": 2120, "tasMph": 230, "reportedIasMph": 138, "rating": "combat+18", "gear": "high", "reportedBoostPsi": 6.6}
+        {
+          "altFt": 2000,
+          "fpm": 4640,
+          "tasMph": 176.5,
+          "reportedIasMph": 170,
+          "rating": "combat+18",
+          "gear": "low",
+          "reportedBoostPsi": 18
+        },
+        {
+          "altFt": 4000,
+          "fpm": 4660,
+          "tasMph": 182,
+          "reportedIasMph": 170,
+          "rating": "combat+18",
+          "gear": "low",
+          "reportedBoostPsi": 18
+        },
+        {
+          "altFt": 6000,
+          "fpm": 4690,
+          "tasMph": 187,
+          "reportedIasMph": 170,
+          "rating": "combat+18",
+          "gear": "low",
+          "reportedBoostPsi": 18
+        },
+        {
+          "altFt": 7000,
+          "fpm": 4700,
+          "tasMph": 190,
+          "reportedIasMph": 170,
+          "rating": "combat+18",
+          "gear": "low",
+          "reportedBoostPsi": 18
+        },
+        {
+          "altFt": 8000,
+          "fpm": 4560,
+          "tasMph": 193,
+          "reportedIasMph": 170,
+          "rating": "combat+18",
+          "gear": "low",
+          "reportedBoostPsi": 17
+        },
+        {
+          "altFt": 10000,
+          "fpm": 4280,
+          "tasMph": 199,
+          "reportedIasMph": 170,
+          "rating": "combat+18",
+          "gear": "low",
+          "reportedBoostPsi": 15.1
+        },
+        {
+          "altFt": 12000,
+          "fpm": 4000,
+          "tasMph": 205,
+          "reportedIasMph": 170,
+          "rating": "combat+18",
+          "gear": "low",
+          "reportedBoostPsi": 13.4
+        },
+        {
+          "altFt": 14000,
+          "fpm": 3860,
+          "tasMph": 211.5,
+          "reportedIasMph": 170,
+          "rating": "combat+18",
+          "gear": "high",
+          "reportedBoostPsi": 18
+        },
+        {
+          "altFt": 16000,
+          "fpm": 3860,
+          "tasMph": 218.5,
+          "reportedIasMph": 170,
+          "rating": "combat+18",
+          "gear": "high",
+          "reportedBoostPsi": 18
+        },
+        {
+          "altFt": 18000,
+          "fpm": 3860,
+          "tasMph": 223,
+          "reportedIasMph": 168,
+          "rating": "combat+18",
+          "gear": "high",
+          "reportedBoostPsi": 18
+        },
+        {
+          "altFt": 20000,
+          "fpm": 3560,
+          "tasMph": 224,
+          "reportedIasMph": 163,
+          "rating": "combat+18",
+          "gear": "high",
+          "reportedBoostPsi": 15.8
+        },
+        {
+          "altFt": 22000,
+          "fpm": 3270,
+          "tasMph": 225,
+          "reportedIasMph": 158,
+          "rating": "combat+18",
+          "gear": "high",
+          "reportedBoostPsi": 13.8
+        },
+        {
+          "altFt": 24000,
+          "fpm": 2970,
+          "tasMph": 226,
+          "reportedIasMph": 153,
+          "rating": "combat+18",
+          "gear": "high",
+          "reportedBoostPsi": 11.9
+        },
+        {
+          "altFt": 26000,
+          "fpm": 2700,
+          "tasMph": 227,
+          "reportedIasMph": 148,
+          "rating": "combat+18",
+          "gear": "high",
+          "reportedBoostPsi": 10.1
+        },
+        {
+          "altFt": 28000,
+          "fpm": 2400,
+          "tasMph": 229,
+          "reportedIasMph": 143,
+          "rating": "combat+18",
+          "gear": "high",
+          "reportedBoostPsi": 8.4
+        },
+        {
+          "altFt": 30000,
+          "fpm": 2120,
+          "tasMph": 230,
+          "reportedIasMph": 138,
+          "rating": "combat+18",
+          "gear": "high",
+          "reportedBoostPsi": 6.6
+        }
       ],
       "historicalConditions": {
         "sourceReport": "Original A&AEE Report: Spitfire LF/HF Mk IX BS.543 Merlin 66, Tables II and V",
-        "levelSpeed": {"weightLb": 7110, "radiator": "closed", "engineRpm": 2995, "boostPsi": 18, "airspeed": "TAS corrected to 95% of 7,485 lb takeoff weight", "gearFullThrottleHeightsFt": [10800, 22000]},
-        "climb": {"weightLb": 7485, "radiator": "fully open", "engineRpm": 3000, "boostPsi": 18, "airspeed": "separately published TAS and IAS, no guessed correction", "gearShiftAltitudeFt": 13000},
+        "levelSpeed": {
+          "weightLb": 7110,
+          "radiator": "closed",
+          "engineRpm": 2995,
+          "boostPsi": 18,
+          "airspeed": "TAS corrected to 95% of 7,485 lb takeoff weight",
+          "gearFullThrottleHeightsFt": [
+            10800,
+            22000
+          ]
+        },
+        "climb": {
+          "weightLb": 7485,
+          "radiator": "fully open",
+          "engineRpm": 3000,
+          "boostPsi": 18,
+          "airspeed": "separately published TAS and IAS, no guessed correction",
+          "gearShiftAltitudeFt": 13000
+        },
         "notMatched": "Cooling drag OPEN vs CLOSED is not quantified; original climb numbers are observations, not calibration inputs. Altitude of engine rated BHP differs from flight full throttle because of ram; simplified proxy noted in power nodes."
       },
       "boostComparison": {
         "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds",
         "referenceLevelSpeedBoostPsi": {
-          "low": [[0,18],[10800,18],[12000,16.6],[14000,14.3],[16000,12.4],[18000,10.8]],
-          "high": [[16000,18.5],[22000,18.5],[24000,15.6],[26000,13.6],[28000,11.6],[30000,9.7],[32000,7.7],[34000,5.7]]
+          "low": [
+            [
+              0,
+              18
+            ],
+            [
+              10800,
+              18
+            ],
+            [
+              12000,
+              16.6
+            ],
+            [
+              14000,
+              14.3
+            ],
+            [
+              16000,
+              12.4
+            ],
+            [
+              18000,
+              10.8
+            ]
+          ],
+          "high": [
+            [
+              16000,
+              18.5
+            ],
+            [
+              22000,
+              18.5
+            ],
+            [
+              24000,
+              15.6
+            ],
+            [
+              26000,
+              13.6
+            ],
+            [
+              28000,
+              11.6
+            ],
+            [
+              30000,
+              9.7
+            ],
+            [
+              32000,
+              7.7
+            ],
+            [
+              34000,
+              5.7
+            ]
+          ]
         },
         "method": "At the SAME height/gear, compare actual climb MAP to documented level-speed MAP in ABSOLUTE pressure (14.7 + gauge boost PSI) before scaling chart-based BHP. This is a bounded torque proxy, NOT measured BHP. Do not assume MAP is identical at climb and max speed."
       },
@@ -113,15 +497,42 @@
         "status": "SOURCE CRITICAL HEIGHTS + IDEAL INLET PRESSURE RECOVERY ASSUMPTION; no measured pressure-recovery fraction",
         "ratings": {
           "combat+18": {
-            "low": {"criticalAltitudeFt":10800,"criticalTasMph":384,"criticalManifold":{"unit":"gaugePsi","value":18},"criticalSource":"A&AEE BS.543 Table V low-gear 10,800 ft/384 mph +18 psi"},
-            "high": {"criticalAltitudeFt":22000,"criticalTasMph":407,"criticalManifold":{"unit":"gaugePsi","value":18.5},"criticalSource":"A&AEE BS.543 Table V high-gear 22,000 ft/407 mph +18.5 psi"}
+            "low": {
+              "criticalAltitudeFt": 10800,
+              "criticalTasMph": 384,
+              "criticalManifold": {
+                "unit": "gaugePsi",
+                "value": 18
+              },
+              "criticalSource": "A&AEE BS.543 Table V low-gear 10,800 ft/384 mph +18 psi"
+            },
+            "high": {
+              "criticalAltitudeFt": 22000,
+              "criticalTasMph": 407,
+              "criticalManifold": {
+                "unit": "gaugePsi",
+                "value": 18.5
+              },
+              "criticalSource": "A&AEE BS.543 Table V high-gear 22,000 ft/407 mph +18.5 psi"
+            }
           }
         }
       },
       "propGeometry": {
-        "bladeCount": 4, "diameterFt": 10.75, "propRpm": 1431, "reductionRatioEnginePerProp": 2.0964360587,
-        "engineRpmByRating": {"combat+18": 3000},
-        "note": "Period A&AEE BS.543 report: 10ft9in Rotol 4-blade RA10061; 0.477:1 propeller/engine gear reduction; default 3000rpm combat. Installed blade J/Cp/efficiency map is NOT known."
+        "bladeCount": 4,
+        "diameterFt": 10.75,
+        "propRpm": 1431,
+        "reductionRatioEnginePerProp": 2.0964360587,
+        "engineRpmByRating": {
+          "combat+18": 3000
+        },
+        "note": "Period A&AEE BS.543 report: 10ft9in Rotol 4-blade RA10061; 0.477:1 propeller/engine gear reduction; default 3000rpm combat. Installed blade J/Cp/efficiency map is NOT known.",
+        "momentumModel": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        }
       },
       "sourceLinks": [
         "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html",
@@ -129,11 +540,25 @@
         "https://forum.il2sturmovik.com/topic/25993-aircraft-flight-and-technical-specifications-and-operational-details/",
         "https://www.digitalcombatsimulator.com/en/downloads/documentation/dcs-spitfire_flight_manual_en/"
       ],
-      "quality": "PRIMARY same-aircraft A&AEE 1943 +18 test, 21 speed points and 16 speed-specific climb points; historical speed/climb conditions NOT identical. Engine power curve outside 5,750ft and 16,000ft reported critical points is PROVISIONAL. IL-2 Mk IXe is a DIFFERENT armament/airframe from historical Mk IXc; DCS Mk IX full-wing option is a secondary sanity reference."
+      "quality": "PRIMARY same-aircraft A&AEE 1943 +18 test, 21 speed points and 16 speed-specific climb points; historical speed/climb conditions NOT identical. Engine power curve outside 5,750ft and 16,000ft reported critical points is PROVISIONAL. IL-2 Mk IXe is a DIFFERENT armament/airframe from historical Mk IXc; DCS Mk IX full-wing option is a secondary sanity reference.",
+      "workingModel": {
+        "e": 0.6,
+        "openCoolingDeltaCd0": 0.0024443379400155814,
+        "cd0AtCalibration": 0.022332693217227445,
+        "role": "Estimated from existing qualified fit subset",
+        "boundaryWarning": "Effective drag parameter at search-grid boundary; do not interpret as measured wing efficiency",
+        "profile": "P",
+        "calibrationVersion": "2.8.0",
+        "calibrationRecord": "calibration/v2.8-working-model.json"
+      }
     },
     "bf109f4": {
       "stallSlatStateRequired": true,
-      "stallIdentity": {"aircraftId":"bf109f4","variant":"Bf 109 F-4","specimen":"unspecified"},
+      "stallIdentity": {
+        "aircraftId": "bf109f4",
+        "variant": "Bf 109 F-4",
+        "specimen": "unspecified"
+      },
       "name": "Bf 109 F-4 / DB 601E",
       "force": "Luftwaffe",
       "wingAreaM2": 16.05,
@@ -224,8 +649,28 @@
         "source": "IL-2 Bf 109 F-4 developer engine critical power heights: 4,900m at 1.3 ata and 4,800m at 1.42 ata; 635km/h at 6km COMBAT used as explicitly PROVISIONAL critical-speed proxy, not a wartime matched speed observation",
         "status": "SECONDARY SIMULATOR-CONDITIONED SENSITIVITY ONLY; Bf 109 fluid-coupling supercharger cannot be reduced to one fixed blower-pressure-ratio map",
         "ratings": {
-          "combat": {"fluid":{"criticalAltitudeFt":16076,"criticalTasMph":394.57,"criticalManifold":{"unit":"absoluteAta","value":1.3},"criticalSource":"IL-2 developer 4,900m engine critical height, 635 km/h at 6,000m combat as non-matched speed proxy"}},
-          "emergency": {"fluid":{"criticalAltitudeFt":15748,"criticalTasMph":394.57,"criticalManifold":{"unit":"absoluteAta","value":1.42},"criticalSource":"IL-2 developer 4,800m engine critical height; unmatched combat-speed proxy only"}}
+          "combat": {
+            "fluid": {
+              "criticalAltitudeFt": 16076,
+              "criticalTasMph": 394.57,
+              "criticalManifold": {
+                "unit": "absoluteAta",
+                "value": 1.3
+              },
+              "criticalSource": "IL-2 developer 4,900m engine critical height, 635 km/h at 6,000m combat as non-matched speed proxy"
+            }
+          },
+          "emergency": {
+            "fluid": {
+              "criticalAltitudeFt": 15748,
+              "criticalTasMph": 394.57,
+              "criticalManifold": {
+                "unit": "absoluteAta",
+                "value": 1.42
+              },
+              "criticalSource": "IL-2 developer 4,800m engine critical height; unmatched combat-speed proxy only"
+            }
+          }
         }
       },
       "propGeometry": {
@@ -237,11 +682,31 @@
           "combat": 2500,
           "emergency": 2700
         },
-        "note": "DB601E engine:prop reduction ratio 1.685:1 explicitly stated in Bf109 F-2/F-4 original documentation. Wartime 19 Sep 1942 Messerschmitt report confirms DB601E climb/combat n=2500 rpm at 1.3 ata. Emergency 2700 rpm from DB601E specifications. The propeller efficiency *equation* remains heuristic, not a measured VDM map."
+        "note": "DB601E engine:prop reduction ratio 1.685:1 explicitly stated in Bf109 F-2/F-4 original documentation. Wartime 19 Sep 1942 Messerschmitt report confirms DB601E climb/combat n=2500 rpm at 1.3 ata. Emergency 2700 rpm from DB601E specifications. The propeller efficiency *equation* remains heuristic, not a measured VDM map.",
+        "momentumModel": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        }
+      },
+      "workingModel": {
+        "e": 0.78,
+        "openCoolingDeltaCd0": 0,
+        "cd0AtCalibration": 0.02542899193686372,
+        "role": "e retained at 0.78; no observed climb fit",
+        "boundaryWarning": null,
+        "profile": "P",
+        "calibrationVersion": "2.8.0",
+        "calibrationRecord": "calibration/v2.8-working-model.json"
       }
     },
     "p47b": {
-      "stallIdentity": {"aircraftId":"p47b","variant":"P-47B","specimen":"41-5902"},
+      "stallIdentity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
       "name": "P-47B / R-2800-21 (41-5902)",
       "force": "USAAF",
       "wingAreaM2": 27.870912,
@@ -264,12 +729,12 @@
               {
                 "altFt": 5000,
                 "bhp": 2000,
-                "mapInHg": 52.0
+                "mapInHg": 52
               },
               {
                 "altFt": 15000,
                 "bhp": 2000,
-                "mapInHg": 51.0
+                "mapInHg": 51
               },
               {
                 "altFt": 25000,
@@ -279,7 +744,7 @@
               {
                 "altFt": 27800,
                 "bhp": 2000,
-                "mapInHg": 52.0
+                "mapInHg": 52
               },
               {
                 "altFt": 30000,
@@ -289,7 +754,7 @@
               {
                 "altFt": 34000,
                 "bhp": 1575,
-                "mapInHg": 40.0
+                "mapInHg": 40
               }
             ]
           }
@@ -363,7 +828,7 @@
           "altFt": 20000,
           "tasMph": 233,
           "fpm": 2150,
-          "observedMapInHg": 52.0,
+          "observedMapInHg": 52,
           "engineRpm": 2700,
           "rating": "military",
           "cooling": "cowl/oil/intercooler flaps open",
@@ -393,7 +858,7 @@
           "altFt": 30000,
           "tasMph": 265,
           "fpm": 1190,
-          "observedMapInHg": 41.0,
+          "observedMapInHg": 41,
           "engineRpm": 2700,
           "rating": "military",
           "cooling": "cowl/oil/intercooler flaps open",
@@ -407,8 +872,14 @@
       "propGeometry": {
         "bladeCount": 4,
         "diameterFt": 12.166666666666666,
-        "propRpm": 1350.0,
-        "note": "Reduction .5 estimated for R2800 P-47; source-to-specimen audit outstanding"
+        "propRpm": 1350,
+        "note": "Reduction .5 estimated for R2800 P-47; source-to-specimen audit outstanding",
+        "momentumModel": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        }
       },
       "climbCalibration": {
         "altFt": 15000,
@@ -418,10 +889,24 @@
           30000
         ],
         "notes": "Altitude-specific climbing MAP vs level MAP: approximate constant-RPM horsepower proportionality, with military rating power cap. Do not extrapolate to other planes."
+      },
+      "workingModel": {
+        "e": 0.7,
+        "openCoolingDeltaCd0": 0.01804155050509509,
+        "cd0AtCalibration": 0.02182668614955703,
+        "role": "Estimated from existing qualified fit subset",
+        "boundaryWarning": null,
+        "profile": "P",
+        "calibrationVersion": "2.8.0",
+        "calibrationRecord": "calibration/v2.8-working-model.json"
       }
     },
     "p51b": {
-      "stallIdentity": {"aircraftId":"p51b","variant":"P-51B-15","specimen":"43-24777"},
+      "stallIdentity": {
+        "aircraftId": "p51b",
+        "variant": "P-51B-15",
+        "specimen": "43-24777"
+      },
       "name": "P-51B-15 / V-1650-7 (43-24777)",
       "force": "USAAF",
       "wingAreaM2": 21.646408320000003,
@@ -652,12 +1137,44 @@
         "status": "SOURCE ALTITUDE/SPEED AIRFRAME RATINGS; 75-low LEVEL critical 7,400ft at inferred 411.5mph is based on report's explicit 16mph increment over 67-inHg speed 395.5mph; the tabulated 75-inHg speed 395.5mph at 7,400ft contradicts that narrative. Critical-speed input is uncertain. Climb critical altitude is separately 2,200ft.",
         "ratings": {
           "67inHg": {
-            "low": {"criticalAltitudeFt":10300,"criticalTasMph":409,"criticalManifold":{"unit":"absoluteInHg","value":67},"criticalSource":"P-51B-15 Eng-47-1749-A level-flight speed at 10,300ft"},
-            "high": {"criticalAltitudeFt":24000,"criticalTasMph":426,"criticalManifold":{"unit":"absoluteInHg","value":67},"criticalSource":"P-51B-15 Eng-47-1749-A level-flight high-gear peak near 24,000ft"}
+            "low": {
+              "criticalAltitudeFt": 10300,
+              "criticalTasMph": 409,
+              "criticalManifold": {
+                "unit": "absoluteInHg",
+                "value": 67
+              },
+              "criticalSource": "P-51B-15 Eng-47-1749-A level-flight speed at 10,300ft"
+            },
+            "high": {
+              "criticalAltitudeFt": 24000,
+              "criticalTasMph": 426,
+              "criticalManifold": {
+                "unit": "absoluteInHg",
+                "value": 67
+              },
+              "criticalSource": "P-51B-15 Eng-47-1749-A level-flight high-gear peak near 24,000ft"
+            }
           },
           "75inHg": {
-            "low": {"criticalAltitudeFt":7400,"criticalTasMph":411.5,"criticalManifold":{"unit":"absoluteInHg","value":75},"criticalSource":"USAAF 1944 report 75-inHg level-flight critical height 7,400ft, speed INFERRED 395.5+16=411.5mph from original prose; source tabulated 75-inHg 395.5mph contradicts its own prose. DIFFERENT 75-inHg climb critical altitude 2,200ft"},
-            "high": {"criticalAltitudeFt":20800,"criticalTasMph":431,"criticalManifold":{"unit":"absoluteInHg","value":75},"criticalSource":"P-51B-15 Eng-47-1749-A 75-inHg high-gear peak"}
+            "low": {
+              "criticalAltitudeFt": 7400,
+              "criticalTasMph": 411.5,
+              "criticalManifold": {
+                "unit": "absoluteInHg",
+                "value": 75
+              },
+              "criticalSource": "USAAF 1944 report 75-inHg level-flight critical height 7,400ft, speed INFERRED 395.5+16=411.5mph from original prose; source tabulated 75-inHg 395.5mph contradicts its own prose. DIFFERENT 75-inHg climb critical altitude 2,200ft"
+            },
+            "high": {
+              "criticalAltitudeFt": 20800,
+              "criticalTasMph": 431,
+              "criticalManifold": {
+                "unit": "absoluteInHg",
+                "value": 75
+              },
+              "criticalSource": "P-51B-15 Eng-47-1749-A 75-inHg high-gear peak"
+            }
           }
         }
       },
@@ -670,7 +1187,13 @@
           "67inHg": 3000,
           "75inHg": 3000
         },
-        "note": "Engine reduction 21:44 from Packard manual; prop diameter from report; both modeled engine ratings at 3000 RPM. Part-throttle source observations can explicitly override RPM in validation only."
+        "note": "Engine reduction 21:44 from Packard manual; prop diameter from report; both modeled engine ratings at 3000 RPM. Part-throttle source observations can explicitly override RPM in validation only.",
+        "momentumModel": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        }
       },
       "climbPowerComparison": {
         "source": "USAAF Wright Field Eng-47-1749-A, 20 May 1944, P-51B-15 serial 43-24777, Summary and Conclusions B",
@@ -767,7 +1290,17 @@
           "status": "reported contemporaneous memo summary; values not independent new flight tests",
           "role": "alternate weight/report consistency check, not independent new aircraft"
         }
-      ]
+      ],
+      "workingModel": {
+        "e": 0.92,
+        "openCoolingDeltaCd0": 0,
+        "cd0AtCalibration": 0.018397874493288696,
+        "role": "Estimated from existing qualified fit subset",
+        "boundaryWarning": null,
+        "profile": "P",
+        "calibrationVersion": "2.8.0",
+        "calibrationRecord": "calibration/v2.8-working-model.json"
+      }
     }
   },
   "greg": {
@@ -1025,7 +1558,7 @@
         ],
         [
           275,
-          1.0
+          1
         ]
       ],
       "bf109ApproximateGReadings": [
@@ -1047,7 +1580,7 @@
         ],
         [
           225,
-          1.0
+          1
         ]
       ]
     }

@@ -13,10 +13,12 @@ try{
  const a=flatten(baseline),b=flatten(current);
  const changes=Object.entries(b).flatMap(([key,value])=>key in a&&value!==a[key]?[{key,baseline:a[key],current:value,delta:value-a[key]}]:[]);
  const missing=Object.keys(a).filter(k=>!(k in b)),added=Object.keys(b).filter(k=>!(k in a));
- const difference={comparedNumericValues:Object.keys(a).filter(k=>k in b).length,changed:changes.length,missing,added,changes,meaning:'Difference from frozen v2.5 setup, not a historical accuracy score.'};
+ const materialChanges=changes.filter(r=>Math.abs(r.delta)>1e-9+1e-12*Math.abs(r.baseline));
+ const difference={comparedNumericValues:Object.keys(a).filter(k=>k in b).length,changed:changes.length,materialChanged:materialChanges.length,materialChanges,tolerance:{absolute:1e-9,relative:1e-12},missing,added,changes,meaning:'Legacy C comparison with frozen v2.5 setup; exact differences include cross-runtime floating-point rounding. Material threshold: abs(delta) > 1e-9 + 1e-12*abs(baseline). Not a historical accuracy score.'};
  const write=(p,obj)=>fs.writeFileSync(path.join(root,p),JSON.stringify(obj,null,2)+'\n');
  write('validation/current/numerics.json',current);
  write('validation/current/baseline-diff.json',difference);
+ if(materialChanges.length||missing.length)throw Error('Legacy C compatibility regression; inspect baseline-diff.json');
  write('validation/current/build.json',buildInfo);
  const rows=changes.map(r=>[r.key,r.baseline,r.current,r.delta].join(','));
  fs.writeFileSync(path.join(root,'validation/current/numerical-differences.csv'),'metric,baseline,current,delta\n'+rows.join('\n')+(rows.length?'\n':''));
@@ -28,6 +30,7 @@ try{
  require('../validation/diagnostics/p51_climb_states.cjs').writeReport();
  require('../validation/diagnostics/p51_propeller_audit.cjs').writeReport();
  require('../validation/diagnostics/source_chart_climb.cjs').writeReport();
+ require('../validation/diagnostics/working_validation_v28.cjs').writeReport();
  const md=[
  '# Current validation',
  '',
@@ -38,7 +41,8 @@ try{
  '| Research version | '+buildInfo.version+' |',
  '| Node regression scripts | '+report.passed+'/'+report.discoveredScripts+' pass |',
  '| Numeric values compared with v2.5 setup | '+difference.comparedNumericValues+' |',
- '| Changed numeric values | '+difference.changed+' |',
+ '| Exact floating-point differences | '+difference.changed+' |',
+ '| Legacy C changes above numeric tolerance | '+difference.materialChanged+' |',
  '| Missing / added numeric paths | '+missing.length+' / '+added.length+' |',
  '| Engine SHA256 | '+buildInfo.physicsSha256+' |',
  '| Numerical result SHA256 | '+digest+' |',
@@ -46,9 +50,11 @@ try{
  '| Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |',
  '| 5:1 comparative accuracy | Unresolved |',
  '',
- 'Chart-power mode: [explicit source-chart climb input](SOURCE_CHART_CLIMB_MODE.md); [progress assessment](PROGRESS_ASSESSMENT.md); default numerical predictions unchanged.',
+ 'v2.8 working model: [joint calibration results](V28_RESULTS.md); P is the application default. Legacy C numerical compatibility is reported separately.',
  '',
- 'Propeller milestone: [coupled source/candidate audit](P51_PROPELLER_EFFICIENCY_AUDIT.md); no supported default replacement; research v2.6.0.',
+ 'Chart-power mode: [explicit source-chart climb input](SOURCE_CHART_CLIMB_MODE.md); [progress assessment](PROGRESS_ASSESSMENT.md); legacy C predictions unchanged; P is the new working profile.',
+ '',
+ 'Propeller milestone: [coupled source/candidate audit](P51_PROPELLER_EFFICIENCY_AUDIT.md); retained as earlier research; superseded for the working profile by the v2.8 joint engineering fit.',
  '',
  'Mustang reconstruction: [original chart power/weight states](P51_CLIMB_STATE_RECONSTRUCTION.md); sparse pixel-reading brackets and joint sensitivities, no default correction.',
  '',

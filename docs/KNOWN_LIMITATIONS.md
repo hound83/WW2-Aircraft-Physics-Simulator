@@ -52,3 +52,11 @@ No inspected source establishes a target-installed K-6523A-24 efficiency surface
 ## Source-chart mode
 
 The new API exposes an optional exact-node climb diagnostic. It holds chart-assigned BHP constant across the speed grid; actual climb TAS, instantaneous mass and shaft torque remain unknown. Source metadata are input assertions, not automatic document authentication; the report separately checks retained scan hashes. Reading bounds are extraction choices, not historical uncertainty. No interpolation/high-blower extension or interactive UI selector is supplied. This improves diagnostic coverage, not established accuracy; the default model and known failures remain unchanged.
+
+## v2.8 working approximation
+
+P is an empirical joint engineering fit, using already-exposed observations. Its source speed anchors, Figure 5 power rows and selected climb rows participate in calibration. Reserved rows were seen during development and acceptance. Near-zero Mustang residuals do not imply near-zero prediction uncertainty.
+
+Effective e and aggregate open-configuration CD0 can absorb shaft-power, propeller, cooling and exhaust errors. Spitfire e=0.60 lies at the search boundary; Bf109 has no climb observations in this fit. Do not transfer fitted drag to validated turn claims. P47 reserved climb error is 84.7 ft/min versus 70.5 for the prior conditional experiment. Historical mass, climb TAS, source reading and engine installation remain qualified. See V28_RESULTS.md.
+
+The UI uses P; direct API callers must request it explicitly. The e slider at 0.78 uses the aircraft-specific fitted e and reanchors the scenario. P cooling/configuration loss applies only when explicit source-climb state or a documented open climb observation is requested. Interactive browser tests have not been run for v2.8.

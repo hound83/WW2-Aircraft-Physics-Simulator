@@ -279,11 +279,43 @@ function propEta(ac,alt,tasMph,bhp,profile='C',rating=ac.defaultRating,options={
   eta=profileFraction*v/(v+vi);
   debug={inducedVelocityMps:vi,diskAreaM2:area,idealInducedEfficiency:v/(v+vi),assumedProfileAndInstallationPowerFraction:profileFraction,
     note:'NACA-inspired actuator-disk momentum bound with a GLOBAL unmeasured 0.85 blade/profile/installation power fraction; no J/Cp blade map, finite blade or compressibility model. Optional research case ONLY.'};
- }else throw Error('Unknown profile');return {eta:Math.max(.05,Math.min(.91,eta)),...debug,method:profile==='M'?'1941 NACA chart plus 1938/1945 source-bounded Mach research scenario (not yet validated for aircraft)':profile==='N'?'NACA 1941 FIGURE-DIGITIZED TRANSFER: approximate 3-/4-blade research data, not installed aircraft flight measurement':profile==='D'?'ideal momentum disk plus assumed global loss fraction; NOT flight-calibrated':profile==='G'?'Greg P-47D worksheet speed-shaped 0.85 plateau, transferred ONLY as an unvalidated test':'heuristic; not a NACA measured propeller map'};}
+ }else if(profile==='P'){
+  const p=ac.propGeometry||{},fit=p.momentumModel;
+  const rpm=options.engineRpmOverride??p.engineRpmByRating?.[rating];
+  const hasRpm=options.engineRpmOverride!==undefined||p.engineRpmByRating!==undefined;
+  if(hasRpm&&!(Number.isFinite(rpm)&&rpm>0&&p.reductionRatioEnginePerProp>1))return null;
+  const propRpm=hasRpm?rpm/p.reductionRatioEnginePerProp:p.propRpm;
+  if(!(fit&&Number.isFinite(fit.retainedPowerFraction)&&fit.retainedPowerFraction>0&&fit.retainedPowerFraction<=1&&
+       Number.isFinite(fit.machPenalty)&&fit.machPenalty>=0&&Number.isFinite(fit.advanceLoss)&&fit.advanceLoss>=0&&
+       Number.isFinite(fit.machOnset)&&fit.machOnset>0&&propRpm>0&&p.diameterFt>0&&bhp>0&&v>0))return null;
+  const n=propRpm/60,diameter=p.diameterFt*FT,area=Math.PI*diameter*diameter/4,power=fit.retainedPowerFraction*bhp*HP;
+  let lo=0,hi=Math.cbrt(power/(2*at.rho*area));
+  for(let i=0;i<35;i++){const mid=(lo+hi)/2;if(2*at.rho*area*mid*(v+mid)**2>power)hi=mid;else lo=mid;}
+  const vi=(lo+hi)/2,J=v/(n*diameter),tipMach=Math.hypot(v,Math.PI*n*diameter)/at.a;
+  const machFactor=Math.exp(-fit.machPenalty*Math.max(0,tipMach-fit.machOnset)**2);
+  const advanceFactor=Math.exp(-fit.advanceLoss*Math.max(0,J-1.65)**2);
+  eta=fit.retainedPowerFraction*v/(v+vi)*machFactor*advanceFactor;
+  debug={J,Cp:bhp*HP/(at.rho*n**3*diameter**5),tipMach,propRpm,engineRpm:hasRpm?rpm:null,
+   inducedVelocityMps:vi,machFactor,advanceFactor,...fit,
+   note:'v2.8 joint engineering calibration: shared loss parameters; geometry-specific loading. Not measured installed eta.'};
+ }else throw Error('Unknown profile');return {eta:Math.max(.05,Math.min(profile==='P'?1:.91,eta)),...debug,method:profile==='P'?'v2.8 momentum/loss working approximation, jointly calibrated':profile==='M'?'1941 NACA chart plus 1938/1945 source-bounded Mach research scenario (not yet validated for aircraft)':profile==='N'?'NACA 1941 FIGURE-DIGITIZED TRANSFER: approximate 3-/4-blade research data, not installed aircraft flight measurement':profile==='D'?'ideal momentum disk plus assumed global loss fraction; NOT flight-calibrated':profile==='G'?'Greg P-47D worksheet speed-shaped 0.85 plateau, transferred ONLY as an unvalidated test':'heuristic; not a NACA measured propeller map'};}
 function geometry(ac){const S=ac.wingAreaM2,b=ac.spanM;if(!(S>0&&b>0))throw Error('Geometry unavailable');return {S,b,AR:b*b/S};}
 function dragBreakdown(ac,alt,tasMph,weightLb,cd0,e,n=1){const v=tasMph*MPH,at=isa(alt),geo=geometry(ac),W=weightLb*LBF,q=.5*at.rho*v*v,CL=n*W/(q*geo.S),dParasite=q*geo.S*cd0,dInd=n*n*W*W/(q*Math.PI*e*geo.b*geo.b),drag=dParasite+dInd;return {q,CL,parasiteLbf:dParasite/LBF,inducedLbf:dInd/LBF,totalLbf:drag/LBF,dParasite,dInd,drag,requiredHp:drag*v/HP,parasiteHp:dParasite*v/HP,inducedHp:dInd*v/HP};}
 function cd0FromAnchor(ac,profile,e,sourceOnly=false){const ref=ac.calibration,at=ref.altFt,sp=ref.tasMph,sh=shaftPower(ac,at,ref.rating,ref.gear);if(!sh)return null;const prop=propEta(ac,at,sp,sh.bhp,profile,ref.rating);if(!prop)return null;const V=sp*MPH,q=.5*isa(at).rho*V*V,W=ac.weightLb*LBF,b=ac.spanM,S=ac.wingAreaM2;const total=prop.eta*sh.bhp*HP/V,ind=W*W/(q*Math.PI*e*b*b),cd0=(total-ind)/(q*S);return {cd0,etaAtAnchor:prop.eta,anchorSpeed:sp,anchorAlt:at,origin:'calibrated from one speed anchor; NOT a measured drag polar',valid:cd0>.005&&cd0<.085};}
-function evaluated(ac,alt,tasMph,opts={}){const profile=opts.profile||'C',polar=opts.polar,e=polar?polar.e:(opts.e??.78),storesWeightLb=opts.storesWeightLb??0,addedDragAreaM2=opts.addedDragAreaM2??0,weight=(opts.weightLb??ac.weightLb)+storesWeightLb,clMax=opts.clMax??ac.clMaxAssumed,structG=opts.structG??7,rating=opts.rating||ac.defaultRating,gear=opts.gear||'auto';if(!(weight>0&&clMax>0&&e>0&&e<=1&&Number.isFinite(storesWeightLb)&&storesWeightLb>=0&&Number.isFinite(addedDragAreaM2)&&addedDragAreaM2>=0)||opts.engineCondition&&opts.engineModel)return {status:'invalid-input'};
+function workingOptions(ac,opts={}){
+ const fit=ac.workingModel;
+ if(!fit||!ac.propGeometry?.momentumModel)throw Error('No v2.8 working inputs for this aircraft');
+ const e=opts.e??fit.e;
+ if(!(Number.isFinite(e)&&e>0&&e<=1))throw Error('Invalid working effective drag efficiency');
+ const anchor=cd0FromAnchor(ac,'P',e);
+ if(!anchor?.valid)throw Error('No valid working speed-anchor polar');
+ const out={...opts,profile:'P',polar:{e,cd0:anchor.cd0,source:'v2.8 joint engineering calibration; source speed anchor; not measured drag'}};
+ delete out.e;delete out.refit;
+ if(opts.coolingState==='source-climb')out.addedDragAreaM2=(opts.addedDragAreaM2??0)+fit.openCoolingDeltaCd0*ac.wingAreaM2;
+ return out;
+}
+
+function evaluated(ac,alt,tasMph,opts={}){if(opts.profile==='P'&&!opts.polar)opts=workingOptions(ac,opts);const profile=opts.profile||'C',polar=opts.polar,e=polar?polar.e:(opts.e??.78),storesWeightLb=opts.storesWeightLb??0,addedDragAreaM2=opts.addedDragAreaM2??0,weight=(opts.weightLb??ac.weightLb)+storesWeightLb,clMax=opts.clMax??ac.clMaxAssumed,structG=opts.structG??7,rating=opts.rating||ac.defaultRating,gear=opts.gear||'auto';if(!(weight>0&&clMax>0&&e>0&&e<=1&&Number.isFinite(storesWeightLb)&&storesWeightLb>=0&&Number.isFinite(addedDragAreaM2)&&addedDragAreaM2>=0)||opts.engineCondition&&opts.engineModel)return {status:'invalid-input'};
  if(polar&&(opts.e!==undefined||opts.refit||!(polar.cd0>.005&&polar.cd0<.085)||typeof polar.source!=='string'||!polar.source.trim()))return {status:'invalid-polar-input',reason:'Explicit polar requires sourced CD0 and e; do not simultaneously refit or override e'};
  const shaft=opts.engineCondition?shaftPowerAtMeasuredBoost(ac,alt,rating,gear,opts.engineCondition):opts.engineModel==='ram-critical'?shaftPowerAtRamSpeed(ac,alt,tasMph,rating,gear,{recovery:opts.ramRecovery??1}):opts.engineModel===undefined?shaftPower(ac,alt,rating,gear):null;
  if(!shaft)return {status:'no-engine-source',aircraft:ac.name,altFt:alt,reason:opts.engineCondition?'No sourced same-condition boost data for power correction':'No source-bounded engine power at selected altitude/rating/gear'};
@@ -324,7 +356,7 @@ function climbPrediction(ac,point,opts={}){
  if(engine.status!=='estimated')return {status:engine.status};
  const prop=propEta(ac,point.altFt,point.tasMph,engine.climbBhP,opts.profile||'C',point.rating||ac.defaultRating);
  if(!prop)return {status:'no-prop-model'};
- const weight=(opts.weightLb??ac.weightLb)+(opts.storesWeightLb??0),e=baseline.oswald,addedCd0=opts.addedCd0??0;
+ const weight=(opts.weightLb??ac.weightLb)+(opts.storesWeightLb??0),e=baseline.oswald,addedCd0=opts.addedCd0??(opts.profile==='P'&&/open/i.test(point.cooling||'')?(ac.workingModel?.openCoolingDeltaCd0??0):0);
  if(!Number.isFinite(addedCd0)||addedCd0<0)return {status:'invalid-added-drag'};
  const drag=dragBreakdown(ac,point.altFt,point.tasMph,weight,baseline.cd0+addedCd0,e,1);
  const W=weight*LBF,V=point.tasMph*MPH,power=prop.eta*engine.climbBhP*HP;
@@ -506,7 +538,7 @@ function sourceChartClimb(ac,altFt,opts={}){
  if(!(Number.isFinite(opts.polar.cd0)&&opts.polar.cd0>.005&&opts.polar.cd0<.085&&
       Number.isFinite(opts.polar.e)&&opts.polar.e>0&&opts.polar.e<=1&&typeof opts.polar.source==='string'&&opts.polar.source.trim()))
   return blocked('invalid-explicit-polar');
- if(!['A','B','C','D','G','N','M'].includes(opts.profile||'C'))return blocked('unsupported-propeller-profile');
+ if(!['A','B','C','D','G','N','M','P'].includes(opts.profile||'C'))return blocked('unsupported-propeller-profile');
  const weight=opts.weight;
  if(!(Number.isFinite(weight?.valueLb)&&weight.valueLb>0&&weight.kind==='scenario'&&
       typeof weight.source==='string'&&weight.source.trim()))return blocked('explicit-scenario-weight-required');
@@ -546,7 +578,7 @@ function matchedPowerClimb(ac,altFt,ratingA,ratingB,opts={}){
  const low=shaftPower(ac,altFt,ratingA,'auto'),high=shaftPower(ac,altFt,ratingB,'auto');
  return {status:'modeled-comparison',altFt,ratingA,ratingB,a,b,
    deltaClimbFpm:b.climbFpm-a.climbFpm,deltaShaftHp:high.bhp-low.bhp,
-   provenance:'calculated from frozen speed-calibrated polar; NO climb-rate calibration'};
+   provenance:opts.profile==='P'?'v2.8 joint engineering fit; 67-inHg fitted, 75-inHg out of fit':'calculated from frozen speed-calibrated polar; NO climb-rate calibration'};
 }
-return Object.freeze({isa,airspeeds,tasFrom,trueFromCAS,casFromTrue,casFromIAS,resolveAirspeed,resolveStallEvidence,stallSensitivity,shaftPower,shaftPowerAtMeasuredBoost,inletPressureAtSpeed,ramManifoldAtSpeed,referenceLevelTas,shaftPowerAtRamSpeed,nacaLowSpeedPropChart,nacaMachResearch,propEta,dragBreakdown,cd0FromAnchor,evaluated,maxSpeed,greg109At,inferredGregF4,inferredGregP47,climbConditionEngine,climbPrediction,equivalentClimbDrag,gregP47PowerPoint,gregP47MaxSpeed,bestClimb,sourceChartClimb,matchedPowerClimb});
+return Object.freeze({isa,airspeeds,tasFrom,trueFromCAS,casFromTrue,casFromIAS,resolveAirspeed,resolveStallEvidence,stallSensitivity,shaftPower,shaftPowerAtMeasuredBoost,inletPressureAtSpeed,ramManifoldAtSpeed,referenceLevelTas,shaftPowerAtRamSpeed,nacaLowSpeedPropChart,nacaMachResearch,propEta,dragBreakdown,cd0FromAnchor,workingOptions,evaluated,maxSpeed,greg109At,inferredGregF4,inferredGregP47,climbConditionEngine,climbPrediction,equivalentClimbDrag,gregP47PowerPoint,gregP47MaxSpeed,bestClimb,sourceChartClimb,matchedPowerClimb});
 });

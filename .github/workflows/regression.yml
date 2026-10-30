@@ -12,7 +12,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: node validation/diagnostics/joint_calibration_v28.cjs
       - run: npm run check
+      - name: Record generated validation
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs');
+          for(const p of ['docs/V28_RESULTS.md','docs/CURRENT_VALIDATION.md','validation/current/v28-working.json','validation/current/test-summary.json','validation/current/baseline-diff.json','validation/current/build.json']){
+            console.log('V28_FILE '+JSON.stringify({path:p,content:fs.readFileSync(p,'utf8')}));
+          }
+          NODE
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -23,3 +32,4 @@ jobs:
             dist/build.json
             releases/*.md
             docs/CURRENT_VALIDATION.md
+            docs/V28_RESULTS.md
