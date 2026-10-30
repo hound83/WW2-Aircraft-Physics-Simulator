@@ -7,8 +7,8 @@ assert.equal(m.casFromIAS(170,data.calibrations.p47Manual),175);
 assert.equal(m.casFromIAS(185,data.calibrations.p47Manual),190.75);
 assert.throws(()=>m.casFromIAS(170,{...data.calibrations.p47Manual,points:[{iasMph:170,casMph:175},{iasMph:Infinity,casMph:Infinity}]}));
 // Synthetic fixtures test gate arithmetic only. They are NOT aircraft evidence.
-const record={...copy(raw),source:{kind:'primary',scanVerified:true,reference:'SYNTHETIC TEST ONLY'}};
-const cal={...ac.stallIdentity,source:'SYNTHETIC TEST ONLY',configuration:'synthetic',configurationId:record.configurationId,scanVerified:true,nearStallVerified:true,instrumentCorrectionIncluded:true,altitudeRangeFt:[7900,8100],points:[{iasMph:80,casMph:85},{iasMph:90,casMph:95}]};
+const record={...copy(raw),airspeedInstallationId:'synthetic-channel',speed:{...raw.speed,instrumentCorrection:'not-removed'},source:{kind:'primary',scanVerified:true,reference:'SYNTHETIC TEST ONLY'}};
+const cal={...ac.stallIdentity,airspeedInstallationId:'synthetic-channel',inputInstrumentCorrection:'not-removed',source:'SYNTHETIC TEST ONLY',configuration:'synthetic',configurationId:record.configurationId,scanVerified:true,nearStallVerified:true,instrumentCorrectionIncluded:true,altitudeRangeFt:[7900,8100],points:[{iasMph:80,casMph:85},{iasMph:90,casMph:95}]};
 const resolved=m.resolveStallEvidence(ac,record,cal);assert.equal(resolved.status,'derived-power-off');near(resolved.correctedCasMph,91);assert.ok(resolved.correctedEasMph<91,'compressibility CAS -> EAS at 8000 ft');
 near(resolved.clMax,2*9270*4.4482216153/(1.225*ac.wingAreaM2*(resolved.correctedEasMph*.44704)**2));assert.equal(resolved.uncertainty,null,'no invented uncertainty');assert.match(resolved.turnTransfer,/unverified/);
 for(const changes of [{specimen:'other'},{variant:'other'},{weightKind:'takeoff'},{weightLb:null},{wingAreaM2:16},{power:'on'},{loadFactor:2},{altFt:Infinity},{speed:{kind:'IAS',mph:NaN}}])assert.equal(m.resolveStallEvidence(ac,{...record,...changes},cal).status,'unresolved');

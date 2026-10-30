@@ -1,8 +1,8 @@
 {
   "node": "v24.19.0",
-  "discoveredScripts": 32,
-  "reportedScripts": 32,
-  "passed": 32,
+  "discoveredScripts": 33,
+  "reportedScripts": 33,
+  "passed": 33,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -109,6 +109,10 @@
     },
     {
       "script": "test_p47c_source_v25.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_p51_calibration_audit.cjs",
       "status": "pass"
     },
     {

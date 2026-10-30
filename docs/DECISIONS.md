@@ -25,3 +25,7 @@ No aerodynamic coefficients or historical evidence values were changed during re
 - The P-47 correction crop covers 170-310 mph IAS; never extrapolate it to 115 mph. P-51 Fig. 1 has no observed 84-86 mph coverage.
 - Add an opt-in EAS/weight sensitivity pathway through the existing shared engine, with four-aircraft comparison, finite-grid peaks and unresolved 5:1 pairwise results. Scenario endpoints are assumptions, not historical bounds.
 - Preserve default coefficients, frozen import/Greg fixtures and v2.5 output parity. Source-backed numerical recalibration remains blocked. See STALL_SOURCE_AUDIT.md and STALL_CALIBRATION_RESULTS.md.
+
+## 2026-10-30: P-51B instrument installation and correction convention
+
+The targeted P-51 audit did not establish a defensible 84-86 mph correction. Preserve explicit unknown instrument-error treatment/channel in the target records. A calibration must match the pressure installation as well as serial/configuration, and accept the observation's correction convention. Already instrument-corrected IAS requires position-only correction; reject double application. Do not transfer different P-51B installations, NACA pressure-error percentages or instrument readability as target stall uncertainty. Five inspected candidates and their limits are recorded in P51_LOW_SPEED_CALIBRATION_AUDIT.md and references/p51-low-speed-audit.json. Default numerical predictions remain unchanged.

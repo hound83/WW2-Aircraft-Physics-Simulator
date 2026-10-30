@@ -47,4 +47,4 @@ The 5:1 separation criterion is an acceptance target, not achieved accuracy. Mat
 
 ## Next milestone
 
-The first bounded stall milestone is implemented: see [source audit](docs/STALL_SOURCE_AUDIT.md) and [generated comparison](docs/STALL_CALIBRATION_RESULTS.md). Next, obtain and audit a specimen/configuration-matched P-51B near-stall calibration, then exercise the existing evidence gate without broadening the aircraft set. Do not add aircraft or redesign the Atlas. See [NEXT_STEPS.md](docs/NEXT_STEPS.md).
+The first bounded stall milestone is implemented: see [source audit](docs/STALL_SOURCE_AUDIT.md) and [generated comparison](docs/STALL_CALIBRATION_RESULTS.md). The [P-51B source audit](docs/P51_LOW_SPEED_CALIBRATION_AUDIT.md) found no matched near-stall correction; calibration now checks installation identity and instrument-correction convention. Next, audit the P-47B contemporaneous stall weight. Do not add aircraft or redesign the Atlas. See [NEXT_STEPS.md](docs/NEXT_STEPS.md).

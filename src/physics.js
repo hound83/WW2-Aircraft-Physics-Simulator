@@ -391,10 +391,19 @@ function resolveStallEvidence(ac,record,calibration=null){
  if(!positive(record?.speed?.mph)||!['IAS','CAS','EAS'].includes(record?.speed?.kind))reasons.push('stall-speed-missing-or-invalid');
  let air=null;
  if(record?.speed?.kind==='IAS'){
+  const instrumentState=record.speed.instrumentCorrection;
+  if(!['not-removed','removed'].includes(instrumentState))reasons.push('ias-instrument-correction-state-unknown');
   if(!calibration)reasons.push('low-speed-calibration-missing');
   else{
    if(calibration.aircraftId!==record.aircraftId||calibration.specimen!==record.specimen||calibration.variant!==record.variant||calibration.configurationId!==record.configurationId)reasons.push('calibration-identity-or-configuration-mismatch');
-   if(calibration.nearStallVerified!==true||calibration.scanVerified!==true||calibration.instrumentCorrectionIncluded!==true)reasons.push('near-stall-position-and-instrument-correction-unverified');
+   // A specimen can have multiple pressure heads/static systems. Match the
+   // observed channel, not just the serial number or aircraft family.
+   if(typeof record.airspeedInstallationId!=='string'||!record.airspeedInstallationId.trim()||['unknown','unspecified'].includes(record.airspeedInstallationId.trim().toLowerCase())||record.airspeedInstallationId!==calibration.airspeedInstallationId)
+    reasons.push('airspeed-installation-not-matched');
+   if(calibration.inputInstrumentCorrection!==instrumentState)reasons.push('calibration-input-correction-state-mismatch');
+   if(instrumentState==='not-removed'&&calibration.instrumentCorrectionIncluded!==true)reasons.push('instrument-correction-not-established');
+   if(instrumentState==='removed'&&calibration.instrumentCorrectionIncluded!==false)reasons.push('instrument-correction-would-be-applied-twice');
+   if(calibration.nearStallVerified!==true||calibration.scanVerified!==true)reasons.push('near-stall-position-correction-unverified');
    const domain=calibration.altitudeRangeFt;
    if(!validAlt||!Array.isArray(domain)||domain.length!==2||!domain.every(Number.isFinite)||domain[0]>domain[1]||record.altFt<domain[0]||record.altFt>domain[1])reasons.push('calibration-altitude-not-covered');
    if(positive(record.speed.mph)&&validAlt){

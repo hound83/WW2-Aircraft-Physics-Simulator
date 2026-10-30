@@ -1,0 +1,204 @@
+{
+  "schema": 1,
+  "auditDate": "2026-10-30",
+  "target": {
+    "aircraftId": "p51b",
+    "variant": "P-51B-15",
+    "specimen": "43-24777",
+    "altFt": 8000,
+    "observations": [
+      {
+        "recordId": "p51-closed",
+        "iasMph": 86,
+        "weightLb": 9270,
+        "power": "off",
+        "shutters": "closed"
+      },
+      {
+        "recordId": "p51-open",
+        "iasMph": 84,
+        "weightLb": 9240,
+        "power": "off",
+        "shutters": "open"
+      }
+    ],
+    "instrumentCorrection": "unknown",
+    "observedPressureChannel": null,
+    "matchedStallCorrection": null,
+    "measuredClMax": null
+  },
+  "conclusion": "No matching near-stall correction established within inspected sources. This is not proof that no archival calibration exists.",
+  "candidates": [
+    {
+      "id": "wf24777-fig1",
+      "reference": "Eng-47-1749-A, 20 May 1944, section V.E and Figure 1",
+      "url": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+      "figureUrl": "https://www.wwiiaircraftperformance.com/org/p-51/p-51_files/P-51B_24777_Airspeed_Calibration.jpg",
+      "libraryFileId": "libfile_29ddbd3f8dcc8191ad8ad116e066744a",
+      "evidenceAccess": "Existing preserved scan visually inspected; report text is a transcription",
+      "specimen": "43-24777",
+      "variant": "P-51B-15",
+      "installation": "Kollsman D-1 head; wing-mounted as annotated on Fig. 1",
+      "inputBasis": "IAS without instrument error, as labelled on horizontal axis",
+      "observedCalibrationMinimumIasMphApprox": 140,
+      "stallRegionObserved": false,
+      "calibrationAltitudeFt": null,
+      "pointsDigitized": false,
+      "applicability": "insufficient-coverage",
+      "blockers": [
+        "No observed 84-86 mph calibration",
+        "Stall-table instrument-error removal is unstated",
+        "Observed pressure channel at stall not independently linked",
+        "No quantified stall-domain uncertainty"
+      ]
+    },
+    {
+      "id": "wf6883",
+      "reference": "Eng-47-1734-A, 24 April 1944, sections III, VI.A and VI.F",
+      "url": "https://www.wwiiaircraftperformance.com/org/p-51/p-51b-6883.html",
+      "evidenceAccess": "Report transcription; referenced calibration Figs. 1/2 not linked in retrieved page",
+      "specimen": "43-6883",
+      "variant": "P-51B-5 / V-1650-3",
+      "installation": "Flush-static airspeed system per VI.A; detailed Fig. 1 unavailable in inspected page",
+      "inputBasis": "Stall table explicitly says IAS, instrument error removed",
+      "stallObservations": [
+        {
+          "iasMph": 94,
+          "weightLb": 9100,
+          "power": "off",
+          "shutters": "closed"
+        },
+        {
+          "iasMph": 94,
+          "weightLb": 9095,
+          "power": "off",
+          "shutters": "open"
+        },
+        {
+          "iasMph": 81,
+          "weightLb": 9075,
+          "power": "46.5 inHg / 2700 rpm",
+          "shutters": "auto"
+        }
+      ],
+      "stallAltitudeFt": null,
+      "matchedStallCorrection": null,
+      "applicability": "not-transferable",
+      "blockers": [
+        "Different block/serial/engine",
+        "Different described static-pressure system",
+        "Instrument-corrected IAS is not position-corrected CAS",
+        "Unretrieved calibration figures and unspecified stall altitude"
+      ]
+    },
+    {
+      "id": "wf12093",
+      "reference": "FS-M-19-1587-A, 18 May 1943, paragraphs B.5/B.6",
+      "url": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-12093.html",
+      "evidenceAccess": "Report transcription",
+      "specimen": "43-12093",
+      "variant": "P-51B-1 / V-1650-3",
+      "installation": "Standard Kollsman D-2 under right wing; static holes about 34.75 inches aft of leading edge and 14.5 inches below lower surface",
+      "inputBasis": "Source labels True Indicated Air Speed; instrument-correction convention not independently established",
+      "seaLevelIndicatedAndCalibratedMph": [
+        [
+          230,
+          223
+        ],
+        [
+          250,
+          241
+        ],
+        [
+          280,
+          269
+        ],
+        [
+          300,
+          287
+        ],
+        [
+          315,
+          301
+        ],
+        [
+          335,
+          319
+        ],
+        [
+          350,
+          333
+        ],
+        [
+          365,
+          347
+        ]
+      ],
+      "additionalAltitudeError": true,
+      "stallRegionObserved": false,
+      "applicability": "not-transferable",
+      "blockers": [
+        "Different block/serial and D-2 installation",
+        "230 mph minimum table entry, outside stall",
+        "Additional altitude dependence; no matched 8000-ft stall correction"
+      ]
+    },
+    {
+      "id": "naca-l5k29a",
+      "reference": "NACA RB L5K29a / WR L-43, February 1946, printed pp. 2-4 and Figs. 4-6",
+      "url": "https://ntrs.nasa.gov/citations/19930093491",
+      "pdfUrl": "https://ntrs.nasa.gov/api/citations/19930093491/downloads/19930093491.pdf",
+      "evidenceAccess": "NASA original PDF text read; no plot digitization or new visual-verification claim",
+      "specimen": null,
+      "variant": "P-51B, exact serial not established in inspected text",
+      "installation": "Kollsman 651B, boom 0.95 local chord ahead of leading edge at 85% semispan",
+      "inputBasis": "Static-pressure error / impact pressure; not an IAS-to-CAS node table",
+      "levelCalibrationMachRange": [
+        0.24,
+        0.43
+      ],
+      "levelCalibrationStaticErrorFraction": 0.013,
+      "highSpeedMaximumMach": 0.75,
+      "pulloutMaximumG": 4,
+      "surveyIasMph": 175,
+      "surveyAltitudeRangeFt": [
+        15000,
+        26000
+      ],
+      "calibrationAltitudeRangeFt": null,
+      "uncertainty": null,
+      "applicability": "not-transferable",
+      "blockers": [
+        "Boom installation differs from Wright Field wing head",
+        "Exact target serial not established",
+        "Low-speed is relative to dives, not verified near-stall coverage",
+        "1.3% pressure error and roughly 1% variation are not stall-speed uncertainty or correction"
+      ]
+    },
+    {
+      "id": "naca-4k02",
+      "reference": "NACA ACR 4K02, printed pp. 4-6, PDF pp. 5-7",
+      "libraryFileId": "libfile_a6898caa37188191bcf729b46918b0c3",
+      "evidenceAccess": "Original PDF text read from shared research; no plot digitization",
+      "specimen": null,
+      "variant": "Modified P-51B-1-NA gliding configuration",
+      "installation": "Two independent swiveling heads on booms about 0.8 local chord ahead of each wingtip; service total-head tube plus fuselage static orifices also installed",
+      "configuration": "Propeller removed, spinner installed; stabilizer incidence changed and metal elevators fitted",
+      "instrumentReadabilityMph": 2,
+      "instrumentReadabilityAltitudeFt": 250,
+      "stallSpeedUncertaintyMph": null,
+      "applicability": "not-transferable",
+      "blockers": [
+        "Modified airframe and multiple separate measurement channels",
+        "No target-serial linkage or matched near-stall correction",
+        "Readout resolution is not total calibration uncertainty and must not be imported as target stall error"
+      ]
+    }
+  ],
+  "requiredToReopen": [
+    "Exact stall-table airspeed channel and instrument-correction convention for 43-24777",
+    "Position calibration valid at stall AoA/configuration and 84-86 mph, with instrument treatment and altitude applicability",
+    "Source-based uncertainty, not transfer of a different report readout resolution"
+  ],
+  "nextSourceTarget": "Original Eng-47-1749-A instrument calibration sheets and stall-test log for serial 43-24777"
+}

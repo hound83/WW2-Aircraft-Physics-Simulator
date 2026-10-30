@@ -39,6 +39,8 @@ try{
  '| Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |',
  '| 5:1 comparative accuracy | Unresolved |',
  '',
+ 'P-51 source milestone: [installation and low-speed audit](P51_LOW_SPEED_CALIBRATION_AUDIT.md); no supported coefficient change.',
+ '',
  'Stall milestone: [source audit](STALL_SOURCE_AUDIT.md), [comparison tables](STALL_CALIBRATION_RESULTS.md), [machine-readable results](../validation/current/stall-gate.json).',
  '',
  'Full records: [test summary](../validation/current/test-summary.json), [numerics](../validation/current/numerics.json), [baseline differences](../validation/current/baseline-diff.json).',

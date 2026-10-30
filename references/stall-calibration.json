@@ -14,18 +14,21 @@
       "altFt": 8000,
       "speed": {
         "kind": "IAS",
-        "mph": 86
+        "mph": 86,
+        "instrumentCorrection": "unknown"
       },
       "weightLb": 9270,
       "weightKind": "instantaneous-stall-test",
       "wingAreaM2": 21.646408320000003,
-      "geometrySource": "Existing cases.json geometry; no variant transfer implied",
+      "geometrySource": "Eng-47-1749-A section IX: 233 square feet",
       "source": {
         "reference": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html section V.E",
         "kind": "transcription",
         "scanVerified": false
       },
-      "uncertainty": null
+      "uncertainty": null,
+      "airspeedInstallationId": null,
+      "airspeedBasisNote": "Table V.E labels IAS without stating whether instrument error has been removed. Fig. 1 uses an instrument-corrected IAS abscissa; linkage of stall indication to that pressure/instrument channel is not established."
     },
     {
       "id": "p51-open",
@@ -38,18 +41,21 @@
       "altFt": 8000,
       "speed": {
         "kind": "IAS",
-        "mph": 84
+        "mph": 84,
+        "instrumentCorrection": "unknown"
       },
       "weightLb": 9240,
       "weightKind": "instantaneous-stall-test",
       "wingAreaM2": 21.646408320000003,
-      "geometrySource": "Existing cases.json geometry; no variant transfer implied",
+      "geometrySource": "Eng-47-1749-A section IX: 233 square feet",
       "source": {
         "reference": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html section V.E",
         "kind": "transcription",
         "scanVerified": false
       },
-      "uncertainty": null
+      "uncertainty": null,
+      "airspeedInstallationId": null,
+      "airspeedBasisNote": "Table V.E labels IAS without stating whether instrument error has been removed. Fig. 1 uses an instrument-corrected IAS abscissa; linkage of stall indication to that pressure/instrument channel is not established."
     },
     {
       "id": "p51-powered",
@@ -62,18 +68,21 @@
       "altFt": 8000,
       "speed": {
         "kind": "IAS",
-        "mph": 83
+        "mph": 83,
+        "instrumentCorrection": "unknown"
       },
       "weightLb": 9100,
       "weightKind": "instantaneous-stall-test",
       "wingAreaM2": 21.646408320000003,
-      "geometrySource": "Existing cases.json geometry; no variant transfer implied",
+      "geometrySource": "Eng-47-1749-A section IX: 233 square feet",
       "source": {
         "reference": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html section V.E",
         "kind": "transcription",
         "scanVerified": false
       },
-      "uncertainty": null
+      "uncertainty": null,
+      "airspeedInstallationId": null,
+      "airspeedBasisNote": "Table V.E labels IAS without stating whether instrument error has been removed. Fig. 1 uses an instrument-corrected IAS abscissa; linkage of stall indication to that pressure/instrument channel is not established."
     },
     {
       "id": "p47-manual",
@@ -267,5 +276,6 @@
       "url": "https://www.museumalkmaar40-45.nl/voorschriften-manuals/d-luftt/d-luftt-2109",
       "inspection": "Catalog confirms F-1 to F-4 handbook entries; does not expose a calibrated F-4 stall observation in retrieved content. No new value assigned."
     }
-  ]
+  ],
+  "p51CalibrationAudit": "p51-low-speed-audit.json"
 }

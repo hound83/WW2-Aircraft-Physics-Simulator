@@ -131,6 +131,7 @@
             "original-observation-not-verified",
             "test-altitude-missing-or-outside-atmosphere",
             "stall-speed-missing-or-invalid",
+            "ias-instrument-correction-state-unknown",
             "low-speed-calibration-missing"
           ],
           "rawSpeed": {
@@ -273,8 +274,10 @@
             "matched-stall-weight-missing",
             "original-observation-not-verified",
             "test-altitude-missing-or-outside-atmosphere",
+            "ias-instrument-correction-state-unknown",
             "calibration-identity-or-configuration-mismatch",
-            "near-stall-position-and-instrument-correction-unverified",
+            "airspeed-installation-not-matched",
+            "near-stall-position-correction-unverified",
             "calibration-altitude-not-covered"
           ],
           "rawSpeed": {
@@ -427,11 +430,13 @@
           "recordId": "p51-closed",
           "reasons": [
             "original-observation-not-verified",
+            "ias-instrument-correction-state-unknown",
             "low-speed-calibration-missing"
           ],
           "rawSpeed": {
             "kind": "IAS",
-            "mph": 86
+            "mph": 86,
+            "instrumentCorrection": "unknown"
           },
           "weightLb": 9270,
           "source": {
@@ -450,11 +455,13 @@
           "recordId": "p51-open",
           "reasons": [
             "original-observation-not-verified",
+            "ias-instrument-correction-state-unknown",
             "low-speed-calibration-missing"
           ],
           "rawSpeed": {
             "kind": "IAS",
-            "mph": 84
+            "mph": 84,
+            "instrumentCorrection": "unknown"
           },
           "weightLb": 9240,
           "source": {
@@ -474,11 +481,13 @@
           "reasons": [
             "one-g-power-off-condition-not-established",
             "original-observation-not-verified",
+            "ias-instrument-correction-state-unknown",
             "low-speed-calibration-missing"
           ],
           "rawSpeed": {
             "kind": "IAS",
-            "mph": 83
+            "mph": 83,
+            "instrumentCorrection": "unknown"
           },
           "weightLb": 9100,
           "source": {
@@ -629,6 +638,7 @@
             "matched-stall-weight-missing",
             "original-observation-not-verified",
             "test-altitude-missing-or-outside-atmosphere",
+            "ias-instrument-correction-state-unknown",
             "low-speed-calibration-missing"
           ],
           "rawSpeed": {
@@ -655,6 +665,7 @@
             "matched-stall-weight-missing",
             "original-observation-not-verified",
             "test-altitude-missing-or-outside-atmosphere",
+            "ias-instrument-correction-state-unknown",
             "low-speed-calibration-missing"
           ],
           "rawSpeed": {
@@ -1172,6 +1183,7 @@
         "matched-stall-weight-missing",
         "original-observation-not-verified",
         "test-altitude-missing-or-outside-atmosphere",
+        "ias-instrument-correction-state-unknown",
         "low-speed-calibration-missing"
       ],
       "rawSpeed": {
