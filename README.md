@@ -47,7 +47,7 @@ The 5:1 separation criterion is an acceptance target, not achieved accuracy. Mat
 
 ## Earlier validation and current next step
 
-**v2.8 supersedes the default-model decisions in the earlier milestones below.** C compatibility tests still preserve all 3628 legacy numbers; P deliberately changes working predictions. The [v2.8 results](docs/V28_RESULTS.md) show gains, regressions, weight sensitivity and the prior P-47 conditional baseline. Use `npm run diagnose:joint-calibration` to repeat the bounded fit. Raw API calls keep C for compatibility; request `{profile:'P'}` for the new fit. The UI e control is a scenario scale around each fitted e at slider value 0.78; it is not a new measurement. The existing simulator/Greg Bf 109 scenarios remain separate from historical evidence.
+**v2.8 supersedes the default-model decisions in the earlier milestones below.** C compatibility tests still retain all 3628 legacy numbers within numeric tolerance; P deliberately changes working predictions. The [v2.8 results](docs/V28_RESULTS.md) show gains, regressions, weight sensitivity and the prior P-47 conditional baseline. Use `npm run diagnose:joint-calibration` to repeat the bounded fit. Raw API calls keep C for compatibility; request `{profile:'P'}` for the new fit. The UI e control is a scenario scale around each fitted e at slider value 0.78; it is not a new measurement. The existing simulator/Greg Bf 109 scenarios remain separate from historical evidence.
 
 Next: [v2.9 robustness and path to v3.0](docs/NEXT_STEPS.md).
 

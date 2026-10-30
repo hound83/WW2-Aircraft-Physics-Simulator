@@ -19,6 +19,8 @@ for(const [id,a]of Object.entries(D.aircraft)){
  assert.equal(o.profile,'P');assert.equal(o.polar.e,fit.e);
  assert.ok(Math.abs(o.polar.cd0-fit.cd0AtCalibration)<1e-10);
  assert.ok(Math.abs(o.polar.cd0-anchor.cd0)<1e-12);
+ const top=M.maxSpeed(a,a.calibration.altFt,{profile:'P',rating:a.calibration.rating,gear:a.calibration.gear});
+ assert.ok(Math.abs(top-a.calibration.tasMph)<1e-7,id+' speed anchor');
  assert.deepEqual(a.propGeometry.momentumModel,F.sharedPropeller);
  const low=M.propEta(a,5000,200,700,'P'),high=M.propEta(a,5000,200,1700,'P');
  assert.ok(low.eta>high.eta&&high.eta>0&&low.eta<=1,id+' loading response');
@@ -41,4 +43,5 @@ assert.ok(F.aircraft.spitfire_lfix_bs543.boundaryWarning);
 const html=fs.readFileSync(require('node:path').join(__dirname,'../dist/model.html'),'utf8');
 assert.ok(html.includes('<option value="P" selected>'));
 assert.ok(html.includes('<option value="C">'));
+assert.ok(html.includes("engineModel:profile==='P'?'ram-critical':undefined,weightLb:src.reportedTakeoffWeightLb"),'Mustang panel uses fitted power scenario');
 console.log('PASS v2.8 working profile: fixed-fit reproduction, loading/RPM responses, input immutability, configuration handling, weight sensitivity and UI default');
