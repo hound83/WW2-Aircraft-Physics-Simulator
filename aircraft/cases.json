@@ -3,6 +3,7 @@
   "scope": "v0.5 matched-report weight and configuration audit with cross-aircraft benchmark, still no validated sustained turns",
   "aircraft": {
     "spitfire_lfix_bs543": {
+      "stallConfiguration": {"wingTips":"full-span","gear":"up","flaps":"up","externalStores":"none"},
       "stallIdentity": {"aircraftId":"spitfire_lfix_bs543","variant":"Spitfire LF Mk IXc","specimen":"BS.543"},
       "name": "Spitfire LF Mk IXc / Merlin 66 (BS.543)",
       "force": "RAF",
@@ -11,10 +12,10 @@
       "weightLb": 7110,
       "weightStatus": "7,110 lb: A&AEE Table V level-speed NORMALIZED weight, not the 7,485-lb takeoff and climb condition; the simulator's default clean polar therefore references 7,110 lb",
       "clMaxAssumed": 1.6,
-      "clStatus": "Provisional common aerodynamic assumption; A.P.1565J reported 90/93 mph IAS clean at 7,150/7,800 lb, but no low-speed position-error map supports treating those as EAS",
+      "clStatus": "Provisional aerodynamic assumption; September 1946 A.P.1565J 90/93 mph IAS rows refer to clipped wings and distinct loading/stores, not matched full-span BS.543 stalls; no near-stall correction",
       "stallEvidence": {
         "status": "Air Ministry pilot notes, IAS only; not used to infer CLmax",
-        "raw": "Clean power-off stall ~90 mph IAS at 7,150 lb and ~93 mph IAS at 7,800 lb, standard canopy; specimen BS.543 not separately measured"
+        "raw": "1946 pilot notes: gear/flaps up, non-rear-view fuselage, clipped wings; 90 mph IAS at 7,150 lb training load, 93 mph at 7,800 lb including 45-gallon drop tank. Not BS.543 measurements; full-span note is qualitative"
       },
       "engine": "Rolls-Royce Merlin 66, +18 lb/in² / 3,000 rpm combat setting",
       "prop": "Rotol XH54D-RM-S5, four Duralumin RA10061 blades, 10 ft 9 in diameter, serial EH240",

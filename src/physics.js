@@ -385,7 +385,12 @@ function resolveStallEvidence(ac,record,calibration=null){
    if(!identified(id?.specimen)||!identified(record?.specimen))reasons.push('specimen-identity-not-established');
    if(ac.stallSlatStateRequired===true&&(!identified(record?.slatState)||!identified(record?.slatStateSource)))reasons.push('slat-state-not-established');
  if(!id||record?.aircraftId!==id.aircraftId||record?.variant!==id.variant||record?.specimen!==id.specimen)reasons.push('aircraft-variant-or-specimen-not-matched');
- if(!record?.configurationId||record.power!=='off'||record.loadFactor!==1)reasons.push('one-g-power-off-condition-not-established');
+ // Match explicit target geometry/stores state even if configuration IDs agree.
+   for(const [field,expected] of Object.entries(ac.stallConfiguration||{})){
+    if(!identified(expected)||record?.configurationState?.[field]!==expected)reasons.push('configuration-'+field+'-not-matched');
+    if(record?.speed?.kind==='IAS'&&calibration&&calibration.configurationState?.[field]!==record?.configurationState?.[field])reasons.push('calibration-configuration-'+field+'-not-matched');
+   }
+   if(!record?.configurationId||record.power!=='off'||record.loadFactor!==1)reasons.push('one-g-power-off-condition-not-established');
  if(!positive(record?.weightLb)||record.weightKind!=='instantaneous-stall-test')reasons.push('matched-stall-weight-missing');
  if(!positive(record?.wingAreaM2)||Math.abs(record.wingAreaM2-ac.wingAreaM2)>1e-6||!record?.geometrySource)reasons.push('matched-wing-area-source-missing');
  if(!record?.source?.reference||record.source.scanVerified!==true||record.source.kind!=='primary')reasons.push('original-observation-not-verified');

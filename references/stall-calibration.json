@@ -135,50 +135,78 @@
     {
       "id": "spit-7150",
       "aircraftId": "spitfire_lfix_bs543",
-      "variant": "Spitfire IX pilot notes",
+      "variant": "Spitfire IX/XVI pilot notes, clipped wings",
       "specimen": "unspecified",
-      "configurationId": "clean-standard-canopy",
+      "configurationId": "clipped-non-rear-view-gear-up-flaps-up-no-stores",
       "power": "off",
       "loadFactor": 1,
       "altFt": null,
       "speed": {
         "kind": "IAS",
-        "mph": 90
+        "mph": 90,
+        "instrumentCorrection": "unknown"
       },
       "weightLb": 7150,
       "weightKind": "pilot-notes-reference",
-      "wingAreaM2": 22.48253568,
-      "geometrySource": "Existing cases.json geometry; no variant transfer implied",
+      "wingAreaM2": null,
+      "geometrySource": null,
       "source": {
-        "reference": "A.P.1565J table as cited in inherited register; original scan not reverified",
-        "kind": "manual-citation",
-        "scanVerified": false
+        "reference": "A.P.1565J, P & L-P.N., third edition, September 1946, para 42(i), printed p24 / PDF page16",
+        "kind": "primary-manual-text",
+        "url": "https://zenoswarbirdvideos.com/Images/spit/SPIT9MANUAL.pdf",
+        "date": "1946-09",
+        "textVerified": true,
+        "scanVerified": false,
+        "inspection": "PDF extracted text read; no pixel verification. Postwar edition, not a wartime BS.543 test."
       },
-      "uncertainty": null
+      "uncertainty": null,
+      "configurationState": {
+        "wingTips": "clipped",
+        "fuselage": "non-rear-view",
+        "gear": "up",
+        "flaps": "up",
+        "externalStores": "none"
+      },
+      "loadingDescription": "Full main tanks, no ammunition or external stores",
+      "applicabilityNote": "Clipped-wing reference; full-span note reports approximate 3-6 mph reduction, not a calibrated BS.543 observation. Para 53 position-error table starts at 120 mph IAS; no stall-domain calibration accepted."
     },
     {
       "id": "spit-7800",
       "aircraftId": "spitfire_lfix_bs543",
-      "variant": "Spitfire IX pilot notes",
+      "variant": "Spitfire IX/XVI pilot notes, clipped wings",
       "specimen": "unspecified",
-      "configurationId": "clean-standard-canopy",
+      "configurationId": "clipped-non-rear-view-gear-up-flaps-up-45gal-tank",
       "power": "off",
       "loadFactor": 1,
       "altFt": null,
       "speed": {
         "kind": "IAS",
-        "mph": 93
+        "mph": 93,
+        "instrumentCorrection": "unknown"
       },
       "weightLb": 7800,
       "weightKind": "pilot-notes-reference",
-      "wingAreaM2": 22.48253568,
-      "geometrySource": "Existing cases.json geometry; no variant transfer implied",
+      "wingAreaM2": null,
+      "geometrySource": null,
       "source": {
-        "reference": "A.P.1565J table as cited in inherited register; original scan not reverified",
-        "kind": "manual-citation",
-        "scanVerified": false
+        "reference": "A.P.1565J, P & L-P.N., third edition, September 1946, para 42(i), printed p24 / PDF page16",
+        "kind": "primary-manual-text",
+        "url": "https://zenoswarbirdvideos.com/Images/spit/SPIT9MANUAL.pdf",
+        "date": "1946-09",
+        "textVerified": true,
+        "scanVerified": false,
+        "inspection": "PDF extracted text read; no pixel verification. Postwar edition, not a wartime BS.543 test."
       },
-      "uncertainty": null
+      "uncertainty": null,
+      "configurationState": {
+        "wingTips": "clipped",
+        "fuselage": "non-rear-view",
+        "gear": "up",
+        "flaps": "up",
+        "externalStores": "45-gallon-blister-drop-tank"
+      },
+      "loadingDescription": "Full main tanks, full ammunition and one 45-gallon blister drop tank",
+      "applicabilityNote": "Clipped-wing reference; full-span note reports approximate 3-6 mph reduction, not a calibrated BS.543 observation. Para 53 position-error table starts at 120 mph IAS; no stall-domain calibration accepted."
     },
     {
       "id": "109-simulator",

@@ -21,7 +21,8 @@ try{
  const rows=changes.map(r=>[r.key,r.baseline,r.current,r.delta].join(','));
  fs.writeFileSync(path.join(root,'validation/current/numerical-differences.csv'),'metric,baseline,current,delta\n'+rows.join('\n')+(rows.length?'\n':''));
  const digest=sha256(JSON.stringify(current));
- require('../validation/diagnostics/stall_gate.cjs').writeReport();
+ const stall=require('../validation/diagnostics/stall_gate.cjs').writeReport();
+ require('../validation/diagnostics/stall_readiness.cjs').writeReport(stall);
  const md=[
  '# Current validation',
  '',
@@ -38,6 +39,8 @@ try{
  '| Interactive browser tests | Not run |',
  '| Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |',
  '| 5:1 comparative accuracy | Unresolved |',
+ '',
+ 'Consolidated evidence review: [four-aircraft readiness](FOUR_AIRCRAFT_STALL_REVIEW.md), including the [Spitfire configuration audit](SPITFIRE_IX_STALL_AUDIT.md).',
  '',
  'Bf 109 F-4 source milestone: [bounded audit](BF109F4_STALL_AUDIT.md); original stall pages unverified, specimen/slat gate tightened.',
  '',

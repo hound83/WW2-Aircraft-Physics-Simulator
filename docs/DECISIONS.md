@@ -37,3 +37,9 @@ The original 41-5902 acceptance scan establishes 105 mph indicated clean power-o
 ## 2026-10-30: Bf 109 F-4 bounded evidence audit
 
 No original F-4 stall pages were verified. Preserve simulator values separately and retain default coefficients. Reject matching placeholder specimen identities for every aircraft; require documented slat state for F-4 evidence and matching IAS-calibration slat state. These guardrails do not create a historical measurement. See BF109F4_STALL_AUDIT.md.
+
+## 2026-10-30: consolidated four-aircraft evidence review
+
+Correct the inherited Spitfire manual rows: clipped wings, non-rear-view fuselage, and a 45-gallon drop tank in the 7,800 lb case. The available third edition is September 1946. Extracted text was read; original pixels remain unverified. Do not assign model full-span wing area or digitize ambiguous correction columns. The shared gate now matches explicit target configuration fields in observations and IAS calibration. The generated readiness register covers eight target observations plus one nontransferable P-47D reference; no measured historical CLmax or turn-comparison pass follows. Preserve all default numerical behavior.
+
+Batch related work into cohesive end-to-end milestones, as requested by Michael. Routine source/code/test/commit steps within an agreed scope do not need a fresh GO. Consolidate the four stacked PRs into one cumulative main-targeted review; preserve their branches and commits.

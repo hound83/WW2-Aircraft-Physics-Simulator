@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "auditDate": "2026-10-30",
+  "target": {
+    "aircraftId": "spitfire_lfix_bs543",
+    "specimen": "BS.543",
+    "engine": "Merlin 66",
+    "modelWingTips": "full-span",
+    "modelWingAreaM2": 22.48253568,
+    "modelSpanM": 11.2268
+  },
+  "manual": {
+    "reference": "A.P.1565J, P & L-P.N.",
+    "edition": 3,
+    "date": "1946-09",
+    "url": "https://zenoswarbirdvideos.com/Images/spit/SPIT9MANUAL.pdf",
+    "access": "PDF extracted text inspected; no original page pixels verified",
+    "scanVerified": false,
+    "paragraph": "42(i)",
+    "printedPage": 24,
+    "pdfPage": 16,
+    "scope": "Postwar IX/XI/XVI pilot notes; stall rows here are non-rear-view IX/XVI, clipped wings",
+    "rows": [
+      {
+        "recordId": "spit-7150",
+        "iasMph": 90,
+        "referenceWeightLb": 7150,
+        "loading": "Full main tanks; no ammunition or external stores",
+        "gear": "up",
+        "flaps": "up",
+        "wingTips": "clipped",
+        "externalStores": "none"
+      },
+      {
+        "recordId": "spit-7800",
+        "iasMph": 93,
+        "referenceWeightLb": 7800,
+        "loading": "Full main tanks; full ammunition; one 45-gallon blister drop tank",
+        "gear": "up",
+        "flaps": "up",
+        "wingTips": "clipped",
+        "externalStores": "45-gallon-blister-drop-tank"
+      }
+    ],
+    "fullSpanNote": {
+      "approximateReductionMph": [
+        3,
+        6
+      ],
+      "use": "Qualitative manual guidance only; do not create measured endpoints, CAS/EAS or a BS.543 correction from this note"
+    },
+    "positionCorrection": {
+      "paragraph": 53,
+      "printedPage": 32,
+      "pdfPage": 20,
+      "minimumIasMph": 120,
+      "nearStallVerified": false,
+      "points": [],
+      "note": "Extracted table layout is ambiguous for individual signed corrections; no nodes digitized. Its lowest listed IAS exceeds both stall rows."
+    }
+  },
+  "targetReport": {
+    "url": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html",
+    "access": "Transcription of original A&AEE report, sections 2-4 and Tables II/V; original scan not visually verified",
+    "testScope": [
+      "partial climbs",
+      "ceiling climbs",
+      "maximum level speeds"
+    ],
+    "stallObservationFound": false,
+    "takeoffWeightLb": 7485,
+    "normalizedSpeedWeightLb": 7110,
+    "pressureHeadTransfer": {
+      "fromSpecimen": "BF.274",
+      "report": "A&AEE/692,m, 3rd Part",
+      "basis": "Report section 4 explicitly states same head make, position and setting",
+      "nearStallDomainVerified": false
+    },
+    "note": "Documented installation equivalence for report performance corrections does not establish a BS.543 stall-domain calibration or stall weight."
+  },
+  "remainingBlockers": [
+    "Original BS.543 stall observation, instantaneous weight/altitude and configuration",
+    "Full-span geometry and stores matching; clipped table is not a clean BS.543 measurement",
+    "Verified near-stall instrument/position correction and channel linkage",
+    "Power-off to accelerated powered-turn applicability and uncertainty"
+  ],
+  "derivedHistoricalClMax": null,
+  "conclusion": "Correct inherited clipped-wing/stores provenance; preserve numerical inputs and do not calibrate from manual IAS."
+}

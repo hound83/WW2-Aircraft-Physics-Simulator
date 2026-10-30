@@ -670,7 +670,9 @@
           "reasons": [
             "specimen-identity-not-established",
             "aircraft-variant-or-specimen-not-matched",
+            "configuration-wingTips-not-matched",
             "matched-stall-weight-missing",
+            "matched-wing-area-source-missing",
             "original-observation-not-verified",
             "test-altitude-missing-or-outside-atmosphere",
             "ias-instrument-correction-state-unknown",
@@ -678,13 +680,18 @@
           ],
           "rawSpeed": {
             "kind": "IAS",
-            "mph": 90
+            "mph": 90,
+            "instrumentCorrection": "unknown"
           },
           "weightLb": 7150,
           "source": {
-            "reference": "A.P.1565J table as cited in inherited register; original scan not reverified",
-            "kind": "manual-citation",
-            "scanVerified": false
+            "reference": "A.P.1565J, P & L-P.N., third edition, September 1946, para 42(i), printed p24 / PDF page16",
+            "kind": "primary-manual-text",
+            "url": "https://zenoswarbirdvideos.com/Images/spit/SPIT9MANUAL.pdf",
+            "date": "1946-09",
+            "textVerified": true,
+            "scanVerified": false,
+            "inspection": "PDF extracted text read; no pixel verification. Postwar edition, not a wartime BS.543 test."
           },
           "correctedEasMph": null,
           "correctedCasMph": null,
@@ -698,7 +705,10 @@
           "reasons": [
             "specimen-identity-not-established",
             "aircraft-variant-or-specimen-not-matched",
+            "configuration-wingTips-not-matched",
+            "configuration-externalStores-not-matched",
             "matched-stall-weight-missing",
+            "matched-wing-area-source-missing",
             "original-observation-not-verified",
             "test-altitude-missing-or-outside-atmosphere",
             "ias-instrument-correction-state-unknown",
@@ -706,13 +716,18 @@
           ],
           "rawSpeed": {
             "kind": "IAS",
-            "mph": 93
+            "mph": 93,
+            "instrumentCorrection": "unknown"
           },
           "weightLb": 7800,
           "source": {
-            "reference": "A.P.1565J table as cited in inherited register; original scan not reverified",
-            "kind": "manual-citation",
-            "scanVerified": false
+            "reference": "A.P.1565J, P & L-P.N., third edition, September 1946, para 42(i), printed p24 / PDF page16",
+            "kind": "primary-manual-text",
+            "url": "https://zenoswarbirdvideos.com/Images/spit/SPIT9MANUAL.pdf",
+            "date": "1946-09",
+            "textVerified": true,
+            "scanVerified": false,
+            "inspection": "PDF extracted text read; no pixel verification. Postwar edition, not a wartime BS.543 test."
           },
           "correctedEasMph": null,
           "correctedCasMph": null,

@@ -45,6 +45,8 @@ Passing regressions means the imported behavior is reproducible. It does not dem
 
 The 5:1 separation criterion is an acceptance target, not achieved accuracy. Matchups without adequate independent, matched-condition evidence must be reported as unresolved.
 
-## Next milestone
+## Current milestone and next step
 
-The first bounded stall milestone is implemented: see [source audit](docs/STALL_SOURCE_AUDIT.md) and [generated comparison](docs/STALL_CALIBRATION_RESULTS.md). The [P-51B source audit](docs/P51_LOW_SPEED_CALIBRATION_AUDIT.md) found no matched near-stall correction; calibration now checks installation identity and instrument-correction convention. The [P-47B primary audit](docs/P47B_STALL_WEIGHT_AUDIT.md) adds a 105 mph indicated power-off observation, with loading/correction limits explicit. The [F-4 audit](docs/BF109F4_STALL_AUDIT.md) records unresolved original-source access and adds specimen/slat guardrails. Next, audit original Spitfire LF IX stall evidence. Do not add aircraft or redesign the Atlas. See [NEXT_STEPS.md](docs/NEXT_STEPS.md).
+The [consolidated four-aircraft stall review](docs/FOUR_AIRCRAFT_STALL_REVIEW.md) brings the source audits, executable evidence gate, sensitivity comparisons and unresolved conditions together. The Spitfire audit corrects clipped-wing and drop-tank attribution. Default coefficients and numerical predictions are unchanged; historical stall calibration remains blocked for all four targets.
+
+Related research, code, tests and documentation are handled as one cohesive milestone without another GO for each routine step. The next complete assignment is [matched-condition speed and climb validation](docs/NEXT_STEPS.md). No Atlas redesign or additional aircraft.

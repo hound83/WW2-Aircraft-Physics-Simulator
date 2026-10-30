@@ -7,7 +7,7 @@ No calibrated historical CLmax is established by this milestone. `references/sta
 | Bf 109 F-4 / DB 601E | IL-2 154-171 km/h IAS; simulation only | No historical matched weight; model 6,371 lb (2,890 kg reference) | No matched historical low-speed map | 1.5 | Wartime observation, slat state, mass, power, correction |
 | P-47B 41-5902 / R-2800-21 | Generic B/C/D/G manual excerpt: 115 mph IAS clean; power unspecified | Missing; model 12,565 lb must not be assigned to manual stall | Manual correction crop covers 170-310 mph IAS only; specimen/configuration/issue not established | 1.3 | Exact B specimen, contemporaneous weight, low-speed correction, power |
 | P-51B-15 43-24777 / V-1650-7 | 86 mph IAS, power off, gear/flaps up, oil/coolant closed, 8,000 ft; separate 84 mph IAS shutters open | 9,270 lb closed; 9,240 lb open | Fig. 1 has lowest plotted observation about 140 mph IAS; no 84-86 mph observations. Horizontal axis excludes instrument error. Dashed extrapolation cannot verify stall | 1.6 | Stall-domain position/instrument correction and uncertainty; powered-turn transfer |
-| Spitfire LF IXc BS.543 / Merlin 66 | Inherited A.P.1565J citation: 90 / 93 mph IAS at reference weights, not a BS.543 test | 7,150 / 7,800 lb cited pilot-note references; model 7,110 lb is normalized speed weight, climb 7,485 lb | No verified Mk IX low-speed map; pilot-note scan not reverified | 1.6 | Exact specimen/configuration, corrected speed, direct scan verification |
+| Spitfire LF IXc BS.543 / Merlin 66 | September 1946 A.P.1565J para 42(i): 90 / 93 mph IAS, clipped wings/non-rear-view; heavier case includes 45-gallon tank, not a BS.543 test | 7,150 / 7,800 lb cited pilot-note references; model 7,110 lb is normalized speed weight, climb 7,485 lb | Para 53 starts at 120 mph IAS; PDF text read, scan pixels unverified | 1.6 | Clipped/full-span and stores mismatch; postwar reference, corrected speed, scan verification |
 | P-47D 42-26167 / R-2800-63, external only | Report V.D: 116 mph uncorrected IAS, gear/flaps up, idling, shutters closed or open | Not reported at stall; 13,230 lb is takeoff | Fig. 1 mentioned but not linked in retrieved transcription; low-speed coverage unverified | Not transferred to P-47B | Weight, altitude, correction; variant/propeller differs |
 
 Corrected CAS, EAS and measured CLmax remain **unresolved for every row**. Do not subtract a model EAS from raw IAS to manufacture a historical residual. The generic manual does not establish a P-47B measured CLmax. A Spitfire Va NACA result is not substituted for a Merlin-66 IX.
@@ -19,7 +19,7 @@ Corrected CAS, EAS and measured CLmax remain **unresolved for every row**. Do no
 - P-47 manual section 23 correction crop visually inspected: IAS/CAS mph pairs 170/175, 200/206.5, 230/237.5, 260/268.5, 290/300.5, 310/322.5. The crop is in frozen imported user figures and shared research (`libfile_1cd5828bdd3081919d42329a7a341b25`). No exact manual issue or airframe installation is visible. Recorded nodes are evidence of what the crop says, not permission to use them on any P-47 or at 115 mph.
 - Manual section 14 stall excerpt was available as Library OCR: 115 mph IAS clean and 100 mph IAS gear/flaps down. Its returned pixels were unavailable in that read. No original scan-verification flag was granted.
 - [P-47D report transcription, Eng-47-1774-A, 15 July 1944](https://www.wwiiaircraftperformance.com/org/p-47/p47-26167.html), sections III and V.D: rechecked the takeoff/instantaneous-weight distinction, idling and powered observations, and explicit uncorrected-IAS warning. Its Fig. 1 was not available as a link in retrieved content. No inferred correction.
-- [Bf 109 handbook catalog](https://www.museumalkmaar40-45.nl/voorschriften-manuals/d-luftt/d-luftt-2109): confirms F-1 to F-4 handbook parts, but retrieved catalog content supplies no calibrated stall test. The inherited Spitfire references remain unverified; no new historical value is claimed for either aircraft.
+- [Bf 109 handbook catalog](https://www.museumalkmaar40-45.nl/voorschriften-manuals/d-luftt/d-luftt-2109): confirms F-1 to F-4 handbook parts, but retrieved catalog content supplies no calibrated stall test. The Spitfire references were subsequently checked as extracted PDF text; see follow-up below. No F-4 original stall observation established.
 
 ## Executable implementation and interpretation
 
@@ -39,3 +39,7 @@ The [41-5902 audit](P47B_STALL_WEIGHT_AUDIT.md) supersedes the manual-only evide
 ## F-4 follow-up
 
 The bounded F-4 source audit found candidate catalogs/documents but verified no original stall pages. Simulation values remain separate; no numerical recalibration. See [findings and exact access limits](BF109F4_STALL_AUDIT.md).
+
+## Spitfire and consolidated follow-up
+
+The [Spitfire audit](SPITFIRE_IX_STALL_AUDIT.md) corrects the wing/stores attribution, retains the postwar edition/date and distinguishes extracted text from verified scans. Its manual correction table does not cover stall. See the generated [four-aircraft review](FOUR_AIRCRAFT_STALL_REVIEW.md) for all records and acceptance blockers.

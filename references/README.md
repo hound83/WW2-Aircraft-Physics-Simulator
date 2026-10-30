@@ -13,3 +13,5 @@ Large original scans:
 Those two PDFs remain available in the original handover and local imported archive, but are not duplicated in Git. Preserve their checksums and applicability caveats. Newly downloaded large scans belong in the ignored `references/downloads/` directory.
 
 The handover's OCR/transcriptions and secondary/simulator material are not automatically verified primary measurements. Source links and rights remain with their original authors; no new blanket license is granted for third-party material.
+
+The active per-aircraft audits and `stall-calibration.json` are summarized in [the consolidated review](../docs/FOUR_AIRCRAFT_STALL_REVIEW.md). Generated `validation/current/stall-readiness.json` retains every observation and independent blocker, including the external P-47D record. Source text inspection, original scan verification, catalog discovery and simulator values remain separate evidence levels.

@@ -1,17 +1,15 @@
 # Next steps
 
-## Completed bounded milestones
+## Completed cohesive milestone: four-aircraft stall evidence review
 
-- Executable stall gate and four-aircraft sensitivity: [source audit](STALL_SOURCE_AUDIT.md), [results](STALL_CALIBRATION_RESULTS.md).
-- P-51B installation/correction audit: [findings](P51_LOW_SPEED_CALIBRATION_AUDIT.md). No matched near-stall correction established.
-- P-47B original acceptance report: [findings](P47B_STALL_WEIGHT_AUDIT.md). New 105 mph indicated clean power-off observation; both nominal loading statements and the complete correction-table basis retained. Instantaneous mass, stall altitude and near-stall correction remain blocked.
+Use [the consolidated review](FOUR_AIRCRAFT_STALL_REVIEW.md) as the entry point, with [machine-readable readiness](../validation/current/stall-readiness.json) and [validation](CURRENT_VALIDATION.md). It includes the executable gate, sensitivity comparisons, P-51 installation audit, original P-47B observation/loading audit, bounded F-4 review and Spitfire clipped-wing/stores correction.
 
-- Bf 109 F-4 bounded audit: [findings](BF109F4_STALL_AUDIT.md). Original stall pages remain unverified; placeholder specimen matches and undocumented/mismatched slat states now fail the gate. No numerical recalibration.
+No target has a complete corrected historical stall chain. No default coefficient changed and no 5:1 claim is justified. These are completed evidence-review tasks with explicit blockers, not a validated v3.0 release. One cumulative PR against main supersedes the four small stacked PRs; their branches/commits preserve the intermediate history.
 
-These feature milestones preserve default numerical behavior, frozen source/Greg material and the Mustang climb failure. See [current validation](CURRENT_VALIDATION.md). Open feature PRs are not released main.
+## Next cohesive milestone: matched-condition speed and climb validation
 
-## Next single assignment: Spitfire LF IX original stall evidence
+Build one four-aircraft validation package that classifies fit versus withheld points, verifies source condition/weight/rating/airspeed compatibility, and reports signed/absolute residuals with explicit exclusions and pairwise uncertainty requirements. Reuse the existing solver and source registers. Fix only supported implementation defects and quantify every numerical change. Complete tests, source/decision updates and one reviewable PR without repeated approval requests for routine substeps.
 
-Audit an original Spitfire IX manual/test for applicability to LF IX BS543, clean power-off stall, instantaneous weight/configuration and calibrated airspeed basis. Keep other marks, engines, wings and generic pilot-note figures separate. Record supported observations in the existing source gate; quantify only defensible numerical changes. Stop with the evidence finding, tested data/code improvement and reviewable commit, rather than broadening into an all-aircraft literature search.
+Acceptance: all four target aircraft represented; IAS/EAS/TAS and loading mismatches cannot be scored silently; known Mustang climb and controlled P-47 power cases remain visible; npm run check passes; no imported/frozen fixture rewritten; unresolved historical uncertainty remains unresolved. Stop with that complete validation deliverable.
 
-Reopen F-4 only with new original stall/configuration, weight and calibration evidence. Reopen P-47B numerical calibration only with new matched stall-run/loading and low-speed correction evidence. Reopen P-51 only with new matched original instrument/stall sheets. Do not repeat unavailable corrections as new milestones. Use current GitHub records and a fresh Work session for the next substantial assignment.
+Do not repeat the blocked stall searches as standalone milestones. Reopen them only with new matched original evidence. The Spitfire BF.274 A&AEE/692,m third-part citation is retained as a specific unverified retrieval lead. Keep Atlas changes, additional aircraft, propeller OCR correction and UI redesign outside this next milestone.

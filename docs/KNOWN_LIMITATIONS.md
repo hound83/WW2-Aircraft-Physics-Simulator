@@ -28,3 +28,7 @@ The earlier manual-only evidence description is superseded: the original 41-5902
 ## Bf 109 F-4 evidence limits
 
 The original manual/test candidates remain unverified at the stall-page level; catalogs and attachment filenames do not establish F-4 applicability. No matched historical stall weight, slat state or near-stall correction was obtained. Placeholder specimen matches and undocumented F-4 slat states now fail the executable gate. See BF109F4_STALL_AUDIT.md.
+
+## Consolidated review and Spitfire correction
+
+The 90/93 mph pilot-note rows belong to clipped-wing reference conditions, with a 45-gallon tank in the heavier case. They are not clean full-span BS.543 observations. The inspected edition is postwar (September 1946), and PDF text inspection does not establish scan verification. The manual correction table begins at 120 mph IAS; BF.274 correction adoption in the target performance report supplies no demonstrated stall-domain coverage. All four historical stall calibrations and all six 5:1 comparisons remain unresolved. See FOUR_AIRCRAFT_STALL_REVIEW.md and SPITFIRE_IX_STALL_AUDIT.md.
