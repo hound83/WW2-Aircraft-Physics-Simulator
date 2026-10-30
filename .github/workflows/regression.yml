@@ -14,11 +14,12 @@ jobs:
           node-version: '22'
       - run: node validation/diagnostics/joint_calibration_v28.cjs
       - run: npm run check
+      - run: npm run test:browser
       - name: Record generated validation
         run: |
           node - <<'NODE'
           const fs=require('node:fs');
-          for(const p of ['docs/V28_RESULTS.md','docs/V29_ROBUSTNESS.md','docs/CURRENT_VALIDATION.md','validation/current/v28-working.json','validation/current/test-summary.json','validation/current/baseline-diff.json','validation/current/build.json']){
+          for(const p of ['docs/V28_RESULTS.md','docs/V29_ROBUSTNESS.md','docs/CURRENT_VALIDATION.md','validation/current/v28-working.json','validation/current/test-summary.json','validation/current/baseline-diff.json','validation/current/build.json','docs/V3_RELEASE_CANDIDATE.md','validation/current/v3-coverage.json','validation/current/browser-smoke.json']){
             console.log('V28_FILE '+JSON.stringify({path:p,content:fs.readFileSync(p,'utf8')}));
           }
           NODE
@@ -34,3 +35,4 @@ jobs:
             docs/CURRENT_VALIDATION.md
             docs/V28_RESULTS.md
             docs/V29_ROBUSTNESS.md
+            docs/V3_RELEASE_CANDIDATE.md

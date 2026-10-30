@@ -1,0 +1,1923 @@
+{
+  "version": "3.0.0-rc.1",
+  "releaseStage": "release-candidate",
+  "workingCalibration": "2.8.0",
+  "registry": [
+    {
+      "id": "spitfire_lfix_bs543",
+      "name": "Spitfire LF Mk IXc / Merlin 66 (BS.543)",
+      "referenceWeightLb": 7110,
+      "weightQualification": "7,110 lb: A&AEE Table V level-speed NORMALIZED weight, not the 7,485-lb takeoff and climb condition; the simulator's default clean polar therefore references 7,110 lb",
+      "engineDomains": [
+        {
+          "rating": "combat+18",
+          "gear": "low",
+          "minAltFt": 0,
+          "maxAltFt": 18000,
+          "nodes": [
+            0,
+            5750,
+            10800,
+            12000,
+            14000,
+            16000,
+            18000
+          ],
+          "qualification": "PARTLY SOURCED, partly explicit proxy: published Merlin 66 engine 1,705 bhp at 5,750 ft in MS and 1,580 bhp at 16,000 ft in FS. A&AEE BS.543 report records full-throttle heights in FLIGHT at 10,800 and 22,000 ft, not identical to engine test-bed heights; flat-power intervals to flight FTH assume ram recovery. Sea-level +18 bhp 1,600 is a PROVISIONAL estimate, not a published test-bed reading. Above FTH, BHP is scaled from source-observed boost with atmospheric +14.7 psi denominator; this is a proxy, not measured BHP.",
+          "interpolation": "Existing engine law linearly interpolates adjacent nodes inside each gear only; no extension past endpoints."
+        },
+        {
+          "rating": "combat+18",
+          "gear": "high",
+          "minAltFt": 13000,
+          "maxAltFt": 34000,
+          "nodes": [
+            13000,
+            16000,
+            22000,
+            24000,
+            26000,
+            28000,
+            30000,
+            32000,
+            34000
+          ],
+          "qualification": "PARTLY SOURCED, partly explicit proxy: published Merlin 66 engine 1,705 bhp at 5,750 ft in MS and 1,580 bhp at 16,000 ft in FS. A&AEE BS.543 report records full-throttle heights in FLIGHT at 10,800 and 22,000 ft, not identical to engine test-bed heights; flat-power intervals to flight FTH assume ram recovery. Sea-level +18 bhp 1,600 is a PROVISIONAL estimate, not a published test-bed reading. Above FTH, BHP is scaled from source-observed boost with atmospheric +14.7 psi denominator; this is a proxy, not measured BHP.",
+          "interpolation": "Existing engine law linearly interpolates adjacent nodes inside each gear only; no extension past endpoints."
+        }
+      ],
+      "speedEvidence": [
+        {
+          "altFt": 0,
+          "mphTas": 336,
+          "rating": "combat+18",
+          "gear": "low",
+          "role": "speed-anchor"
+        },
+        {
+          "altFt": 2000,
+          "mphTas": 345,
+          "rating": "combat+18",
+          "gear": "low",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 4000,
+          "mphTas": 353,
+          "rating": "combat+18",
+          "gear": "low",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 6000,
+          "mphTas": 363,
+          "rating": "combat+18",
+          "gear": "low",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 8000,
+          "mphTas": 372,
+          "rating": "combat+18",
+          "gear": "low",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 10000,
+          "mphTas": 380,
+          "rating": "combat+18",
+          "gear": "low",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 10800,
+          "mphTas": 384,
+          "rating": "combat+18",
+          "gear": "low",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 12000,
+          "mphTas": 384,
+          "rating": "combat+18",
+          "gear": "low",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 14000,
+          "mphTas": 383.5,
+          "rating": "combat+18",
+          "gear": "low",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 16000,
+          "mphTas": 383,
+          "rating": "combat+18",
+          "gear": "low",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 18000,
+          "mphTas": 382,
+          "rating": "combat+18",
+          "gear": "low",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 16000,
+          "mphTas": 381.5,
+          "rating": "combat+18",
+          "gear": "high",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 18000,
+          "mphTas": 390.5,
+          "rating": "combat+18",
+          "gear": "high",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 20000,
+          "mphTas": 399,
+          "rating": "combat+18",
+          "gear": "high",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 22000,
+          "mphTas": 407,
+          "rating": "combat+18",
+          "gear": "high",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 24000,
+          "mphTas": 406,
+          "rating": "combat+18",
+          "gear": "high",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 26000,
+          "mphTas": 403,
+          "rating": "combat+18",
+          "gear": "high",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 28000,
+          "mphTas": 399.5,
+          "rating": "combat+18",
+          "gear": "high",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 30000,
+          "mphTas": 395,
+          "rating": "combat+18",
+          "gear": "high",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 32000,
+          "mphTas": 389,
+          "rating": "combat+18",
+          "gear": "high",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 34000,
+          "mphTas": 381,
+          "rating": "combat+18",
+          "gear": "high",
+          "role": "already-exposed-checkpoint"
+        }
+      ],
+      "climbEvidenceCount": 16,
+      "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+      "independentAccuracy": null
+    },
+    {
+      "id": "bf109f4",
+      "name": "Bf 109 F-4 / DB 601E",
+      "referenceWeightLb": 6371,
+      "weightQualification": "Illustrative 2,890 kg standard-mass reference; not the specific Greg worksheet weight",
+      "engineDomains": [
+        {
+          "rating": "combat",
+          "gear": "fluid",
+          "minAltFt": 0,
+          "maxAltFt": 16076,
+          "nodes": [
+            0,
+            16076
+          ],
+          "qualification": "1200 PS at 0 m and 4900 m, secondary flight-sim compilation; interpolation only",
+          "interpolation": "Existing engine law linearly interpolates adjacent nodes inside each gear only; no extension past endpoints."
+        },
+        {
+          "rating": "emergency",
+          "gear": "fluid",
+          "minAltFt": 0,
+          "maxAltFt": 15748,
+          "nodes": [
+            0,
+            15748
+          ],
+          "qualification": "1350 PS sea level; 1320 PS at 4,800 m; rating restrictions unresolved",
+          "interpolation": "Existing engine law linearly interpolates adjacent nodes inside each gear only; no extension past endpoints."
+        }
+      ],
+      "speedEvidence": [
+        {
+          "altFt": 0,
+          "mphTas": 325,
+          "rating": "combat",
+          "gear": "fluid",
+          "source": "M. Baumgartl/Rechlin tables quoted by Jan Bobek, Info EDUARD 06/2023: 523 km/h combat sea level",
+          "role": "speed-anchor",
+          "independentFlightTest": false
+        },
+        {
+          "altFt": 0,
+          "mphTas": 336,
+          "rating": "emergency",
+          "gear": "fluid",
+          "source": "Baumgartl/Rechlin and H. H. Vogt cited by Jan Bobek, Info EDUARD 06/2023: 540 km/h emergency sea level",
+          "role": "already-exposed-checkpoint",
+          "independentFlightTest": false
+        }
+      ],
+      "climbEvidenceCount": 0,
+      "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+      "independentAccuracy": null
+    },
+    {
+      "id": "p47b",
+      "name": "P-47B / R-2800-21 (41-5902)",
+      "referenceWeightLb": 12565,
+      "weightQualification": "12,565 lb gross as tested in report A.1; para 12 separately says loaded to 12,560 lb. Neither is an independently documented instantaneous stall weight",
+      "engineDomains": [
+        {
+          "rating": "military",
+          "gear": "turbo",
+          "minAltFt": 5000,
+          "maxAltFt": 34000,
+          "nodes": [
+            5000,
+            15000,
+            25000,
+            27800,
+            30000,
+            34000
+          ],
+          "qualification": "2000 BHP from flight torquemeter up to critical altitude; later power fall-off in report",
+          "interpolation": "Existing engine law linearly interpolates adjacent nodes inside each gear only; no extension past endpoints."
+        }
+      ],
+      "speedEvidence": [
+        {
+          "altFt": 5000,
+          "mphTas": 352,
+          "rating": "military",
+          "gear": "turbo",
+          "source": "PHQ-M-19-1417-A transcription",
+          "role": "speed-anchor"
+        },
+        {
+          "altFt": 15000,
+          "mphTas": 386,
+          "rating": "military",
+          "gear": "turbo",
+          "source": "PHQ-M-19-1417-A transcription",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 25000,
+          "mphTas": 420,
+          "rating": "military",
+          "gear": "turbo",
+          "source": "PHQ-M-19-1417-A transcription",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 27800,
+          "mphTas": 429,
+          "rating": "military",
+          "gear": "turbo",
+          "source": "PHQ-M-19-1417-A transcription",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 30000,
+          "mphTas": 426,
+          "rating": "military",
+          "gear": "turbo",
+          "source": "PHQ-M-19-1417-A transcription",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 34000,
+          "mphTas": 412,
+          "rating": "military",
+          "gear": "turbo",
+          "source": "PHQ-M-19-1417-A transcription",
+          "role": "already-exposed-checkpoint"
+        }
+      ],
+      "climbEvidenceCount": 5,
+      "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+      "independentAccuracy": null
+    },
+    {
+      "id": "p51b",
+      "name": "P-51B-15 / V-1650-7 (43-24777)",
+      "referenceWeightLb": 9240,
+      "weightQualification": "Provisional 9,240-lb model scenario; source V.C uses 9,240 lb for cruise at 22,400 ft. V.B speed points follow a separate weight-at-altitude curve not retrieved as point masses; not a matched speed/climb test weight.",
+      "engineDomains": [
+        {
+          "rating": "67inHg",
+          "gear": "low",
+          "minAltFt": 0,
+          "maxAltFt": 24000,
+          "nodes": [
+            0,
+            4000,
+            7400,
+            10300,
+            17000,
+            24000
+          ],
+          "qualification": "67inHg; chart-derived standard BHP (not flight torquemeter)",
+          "interpolation": "Existing engine law linearly interpolates adjacent nodes inside each gear only; no extension past endpoints."
+        },
+        {
+          "rating": "67inHg",
+          "gear": "high",
+          "minAltFt": 18000,
+          "maxAltFt": 32000,
+          "nodes": [
+            18000,
+            20800,
+            24000,
+            28000,
+            32000
+          ],
+          "qualification": "67inHg; chart-derived standard BHP (not flight torquemeter)",
+          "interpolation": "Existing engine law linearly interpolates adjacent nodes inside each gear only; no extension past endpoints."
+        },
+        {
+          "rating": "75inHg",
+          "gear": "low",
+          "minAltFt": 0,
+          "maxAltFt": 7400,
+          "nodes": [
+            0,
+            4000,
+            7400
+          ],
+          "qualification": "75inHg; chart-derived standard BHP (not flight torquemeter)",
+          "interpolation": "Existing engine law linearly interpolates adjacent nodes inside each gear only; no extension past endpoints."
+        },
+        {
+          "rating": "75inHg",
+          "gear": "high",
+          "minAltFt": 18000,
+          "maxAltFt": 20800,
+          "nodes": [
+            18000,
+            20800
+          ],
+          "qualification": "75inHg; chart-derived standard BHP (not flight torquemeter)",
+          "interpolation": "Existing engine law linearly interpolates adjacent nodes inside each gear only; no extension past endpoints."
+        }
+      ],
+      "speedEvidence": [
+        {
+          "altFt": 0,
+          "mphTas": 361.5,
+          "rating": "67inHg",
+          "gear": "low",
+          "source": "Eng-47-1749-A",
+          "role": "speed-anchor"
+        },
+        {
+          "altFt": 4000,
+          "mphTas": 380,
+          "rating": "67inHg",
+          "gear": "low",
+          "source": "Eng-47-1749-A",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 7400,
+          "mphTas": 395.5,
+          "rating": "67inHg",
+          "gear": "low",
+          "source": "Eng-47-1749-A",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 10300,
+          "mphTas": 409,
+          "rating": "67inHg",
+          "gear": "low",
+          "source": "Eng-47-1749-A",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 18000,
+          "mphTas": 408,
+          "rating": "67inHg",
+          "gear": "high",
+          "source": "Eng-47-1749-A",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 20800,
+          "mphTas": 417,
+          "rating": "67inHg",
+          "gear": "high",
+          "source": "Eng-47-1749-A",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 24000,
+          "mphTas": 426,
+          "rating": "67inHg",
+          "gear": "high",
+          "source": "Eng-47-1749-A",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 28000,
+          "mphTas": 419,
+          "rating": "67inHg",
+          "gear": "high",
+          "source": "Eng-47-1749-A",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 32000,
+          "mphTas": 410,
+          "rating": "67inHg",
+          "gear": "high",
+          "source": "Eng-47-1749-A",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 0,
+          "mphTas": 376.5,
+          "rating": "75inHg",
+          "gear": "low",
+          "source": "Eng-47-1749-A",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 18000,
+          "mphTas": 423,
+          "rating": "75inHg",
+          "gear": "high",
+          "source": "Eng-47-1749-A",
+          "role": "already-exposed-checkpoint"
+        },
+        {
+          "altFt": 20800,
+          "mphTas": 431,
+          "rating": "75inHg",
+          "gear": "high",
+          "source": "Eng-47-1749-A",
+          "role": "already-exposed-checkpoint"
+        }
+      ],
+      "climbEvidenceCount": 2,
+      "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+      "independentAccuracy": null
+    }
+  ],
+  "states": [
+    {
+      "altFt": 0,
+      "tasMph": 250,
+      "rows": [
+        {
+          "id": "spitfire_lfix_bs543",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 0,
+          "tasMph": 250,
+          "rating": "combat+18",
+          "weightLb": 7110,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 778.3209787252076,
+          "climbFpm": 3612.4602443537324,
+          "engineGear": "low",
+          "propEta": 0.8978052190768044
+        },
+        {
+          "id": "bf109f4",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 0,
+          "tasMph": 250,
+          "rating": "combat",
+          "weightLb": 6371,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 533.5140437679421,
+          "climbFpm": 2763.4536919424604,
+          "engineGear": "fluid",
+          "propEta": 0.9012608413276232
+        },
+        {
+          "id": "p47b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 0,
+          "tasMph": 250,
+          "rating": "military",
+          "weightLb": 12565,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "unavailable",
+          "reason": "No compatible engine/polar input: no-engine-source",
+          "evidenceStatus": "no-applicable-calculation",
+          "excessHp": null,
+          "climbFpm": null,
+          "engineGear": null
+        },
+        {
+          "id": "p51b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 0,
+          "tasMph": 250,
+          "rating": "67inHg",
+          "weightLb": 9240,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 875.8089599028692,
+          "climbFpm": 3127.8891473112326,
+          "engineGear": "low",
+          "propEta": 0.9002905818745932
+        }
+      ],
+      "pairwise": [
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "bf109f4",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 849.006552411272,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p47b",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 484.5710970424998,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p47b",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": -364.4354553687722,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "p47b",
+          "b": "p51b",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        }
+      ]
+    },
+    {
+      "altFt": 2200,
+      "tasMph": 250,
+      "rows": [
+        {
+          "id": "spitfire_lfix_bs543",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 2200,
+          "tasMph": 250,
+          "rating": "combat+18",
+          "weightLb": 7110,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 840.586383466883,
+          "climbFpm": 3901.4557942312467,
+          "engineGear": "low",
+          "propEta": 0.8951021682332363
+        },
+        {
+          "id": "bf109f4",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 2200,
+          "tasMph": 250,
+          "rating": "combat",
+          "weightLb": 6371,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 556.4640426533283,
+          "climbFpm": 2882.328274328302,
+          "engineGear": "fluid",
+          "propEta": 0.8995128859975826
+        },
+        {
+          "id": "p47b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 2200,
+          "tasMph": 250,
+          "rating": "military",
+          "weightLb": 12565,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "unavailable",
+          "reason": "No compatible engine/polar input: no-engine-source",
+          "evidenceStatus": "no-applicable-calculation",
+          "excessHp": null,
+          "climbFpm": null,
+          "engineGear": null
+        },
+        {
+          "id": "p51b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 2200,
+          "tasMph": 250,
+          "rating": "67inHg",
+          "weightLb": 9240,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 915.6968059090361,
+          "climbFpm": 3270.345740409056,
+          "engineGear": "low",
+          "propEta": 0.898073135367472
+        }
+      ],
+      "pairwise": [
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "bf109f4",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 1019.1275199029446,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p47b",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 631.1100538221908,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p47b",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": -388.0174660807538,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "p47b",
+          "b": "p51b",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        }
+      ]
+    },
+    {
+      "altFt": 5000,
+      "tasMph": 250,
+      "rows": [
+        {
+          "id": "spitfire_lfix_bs543",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 5000,
+          "tasMph": 250,
+          "rating": "combat+18",
+          "weightLb": 7110,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 915.7713045761396,
+          "climbFpm": 4250.415344219109,
+          "engineGear": "low",
+          "propEta": 0.8913503949719531
+        },
+        {
+          "id": "bf109f4",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 5000,
+          "tasMph": 250,
+          "rating": "combat",
+          "weightLb": 6371,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 582.8543640166733,
+          "climbFpm": 3019.0227659822185,
+          "engineGear": "fluid",
+          "propEta": 0.8971062772411744
+        },
+        {
+          "id": "p47b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 5000,
+          "tasMph": 250,
+          "rating": "military",
+          "weightLb": 12565,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 977.8584206096614,
+          "climbFpm": 2568.1916378550654,
+          "engineGear": "turbo",
+          "propEta": 0.8940006159685574
+        },
+        {
+          "id": "p51b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 5000,
+          "tasMph": 250,
+          "rating": "67inHg",
+          "weightLb": 9240,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 963.7321905680002,
+          "climbFpm": 3441.900685882961,
+          "engineGear": "low",
+          "propEta": 0.8949868768535926
+        }
+      ],
+      "pairwise": [
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "bf109f4",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 1231.3925782368906,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p47b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 1682.2237063640437,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 808.5146583361479,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p47b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 450.8311281271531,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": -422.87791990074265,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "p47b",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": -873.7090480278957,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        }
+      ]
+    },
+    {
+      "altFt": 8000,
+      "tasMph": 250,
+      "rows": [
+        {
+          "id": "spitfire_lfix_bs543",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 8000,
+          "tasMph": 250,
+          "rating": "combat+18",
+          "weightLb": 7110,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 956.2591867535393,
+          "climbFpm": 4438.333784993366,
+          "engineGear": "low",
+          "propEta": 0.887796181480627
+        },
+        {
+          "id": "bf109f4",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 8000,
+          "tasMph": 250,
+          "rating": "combat",
+          "weightLb": 6371,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 607.6237993409131,
+          "climbFpm": 3147.321520801638,
+          "engineGear": "fluid",
+          "propEta": 0.8942799941598306
+        },
+        {
+          "id": "p47b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 8000,
+          "tasMph": 250,
+          "rating": "military",
+          "weightLb": 12565,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 1004.3756694488912,
+          "climbFpm": 2637.8350292627633,
+          "engineGear": "turbo",
+          "propEta": 0.8909396515420035
+        },
+        {
+          "id": "p51b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 8000,
+          "tasMph": 250,
+          "rating": "67inHg",
+          "weightLb": 9240,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 1012.5593611280945,
+          "climbFpm": 3616.283438150957,
+          "engineGear": "low",
+          "propEta": 0.8912986908944026
+        }
+      ],
+      "pairwise": [
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "bf109f4",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 1291.0122641917278,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p47b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 1800.4987557306026,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 822.050346842409,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p47b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 509.4864915388748,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": -468.9619173493188,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "p47b",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": -978.4484088881936,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        }
+      ]
+    },
+    {
+      "altFt": 12000,
+      "tasMph": 250,
+      "rows": [
+        {
+          "id": "spitfire_lfix_bs543",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 12000,
+          "tasMph": 250,
+          "rating": "combat+18",
+          "weightLb": 7110,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 925.7741468711444,
+          "climbFpm": 4296.842038486594,
+          "engineGear": "low",
+          "propEta": 0.8846732888313276
+        },
+        {
+          "id": "bf109f4",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 12000,
+          "tasMph": 250,
+          "rating": "combat",
+          "weightLb": 6371,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 634.9639243954905,
+          "climbFpm": 3288.9357302170943,
+          "engineGear": "fluid",
+          "propEta": 0.8900656289989226
+        },
+        {
+          "id": "p47b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 12000,
+          "tasMph": 250,
+          "rating": "military",
+          "weightLb": 12565,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 1029.3144438632332,
+          "climbFpm": 2703.332805381862,
+          "engineGear": "turbo",
+          "propEta": 0.886383919362263
+        },
+        {
+          "id": "p51b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 12000,
+          "tasMph": 250,
+          "rating": "67inHg",
+          "weightLb": 9240,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 981.249294473346,
+          "climbFpm": 3504.4617713552207,
+          "engineGear": "low",
+          "propEta": 0.8881372032531354
+        }
+      ],
+      "pairwise": [
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "bf109f4",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 1007.9063082694997,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p47b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 1593.5092331047322,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 792.3802671313733,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p47b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 585.6029248352324,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": -215.5260411381264,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "p47b",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": -801.1289659733588,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        }
+      ]
+    },
+    {
+      "altFt": 16000,
+      "tasMph": 250,
+      "rows": [
+        {
+          "id": "spitfire_lfix_bs543",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 16000,
+          "tasMph": 250,
+          "rating": "combat+18",
+          "weightLb": 7110,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 905.5189684817207,
+          "climbFpm": 4202.8306618513,
+          "engineGear": "high",
+          "propEta": 0.8807172229387951
+        },
+        {
+          "id": "bf109f4",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 16000,
+          "tasMph": 250,
+          "rating": "combat",
+          "weightLb": 6371,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 655.6824258256476,
+          "climbFpm": 3396.2517792273925,
+          "engineGear": "fluid",
+          "propEta": 0.8852735424591971
+        },
+        {
+          "id": "p47b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 16000,
+          "tasMph": 250,
+          "rating": "military",
+          "weightLb": 12565,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 1041.7646348102996,
+          "climbFpm": 2736.0312774776685,
+          "engineGear": "turbo",
+          "propEta": 0.8812158038003959
+        },
+        {
+          "id": "p51b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 16000,
+          "tasMph": 250,
+          "rating": "67inHg",
+          "weightLb": 9240,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 819.20041337199,
+          "climbFpm": 2925.715766533491,
+          "engineGear": "low",
+          "propEta": 0.8884149855126185
+        }
+      ],
+      "pairwise": [
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "bf109f4",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 806.5788826239072,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p47b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 1466.7993843736313,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 1277.1148953178085,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p47b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 660.220501749724,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 470.5360126939013,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "p47b",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": -189.68448905582272,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        }
+      ]
+    },
+    {
+      "altFt": 20000,
+      "tasMph": 250,
+      "rows": [
+        {
+          "id": "spitfire_lfix_bs543",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 20000,
+          "tasMph": 250,
+          "rating": "combat+18",
+          "weightLb": 7110,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 920.6530377575108,
+          "climbFpm": 4273.073177585145,
+          "engineGear": "high",
+          "propEta": 0.8748010609146801
+        },
+        {
+          "id": "bf109f4",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 20000,
+          "tasMph": 250,
+          "rating": "combat",
+          "weightLb": 6371,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "unavailable",
+          "reason": "No compatible engine/polar input: no-engine-source",
+          "evidenceStatus": "no-applicable-calculation",
+          "excessHp": null,
+          "climbFpm": null,
+          "engineGear": null
+        },
+        {
+          "id": "p47b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 20000,
+          "tasMph": 250,
+          "rating": "military",
+          "weightLb": 12565,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 1040.8532049815933,
+          "climbFpm": 2733.6375501085104,
+          "engineGear": "turbo",
+          "propEta": 0.8753495244089505
+        },
+        {
+          "id": "p51b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 20000,
+          "tasMph": 250,
+          "rating": "67inHg",
+          "weightLb": 9240,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 815.9677433509503,
+          "climbFpm": 2914.1705164406285,
+          "engineGear": "high",
+          "propEta": 0.8836203476472492
+        }
+      ],
+      "pairwise": [
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "bf109f4",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p47b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 1539.4356274766342,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 1358.902661144516,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p47b",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p51b",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "p47b",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": -180.53296633211812,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        }
+      ]
+    },
+    {
+      "altFt": 26000,
+      "tasMph": 250,
+      "rows": [
+        {
+          "id": "spitfire_lfix_bs543",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 26000,
+          "tasMph": 250,
+          "rating": "combat+18",
+          "weightLb": 7110,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 736.1853094120365,
+          "climbFpm": 3416.8938463974896,
+          "engineGear": "high",
+          "propEta": 0.8724579682671258
+        },
+        {
+          "id": "bf109f4",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 26000,
+          "tasMph": 250,
+          "rating": "combat",
+          "weightLb": 6371,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "unavailable",
+          "reason": "No compatible engine/polar input: no-engine-source",
+          "evidenceStatus": "no-applicable-calculation",
+          "excessHp": null,
+          "climbFpm": null,
+          "engineGear": null
+        },
+        {
+          "id": "p47b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 26000,
+          "tasMph": 250,
+          "rating": "military",
+          "weightLb": 12565,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 1011.6749433372104,
+          "climbFpm": 2657.005426292946,
+          "engineGear": "turbo",
+          "propEta": 0.8649990657942516
+        },
+        {
+          "id": "p51b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 26000,
+          "tasMph": 250,
+          "rating": "67inHg",
+          "weightLb": 9240,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 731.1144301819977,
+          "climbFpm": 2611.1229689435086,
+          "engineGear": "high",
+          "propEta": 0.8778110469353572
+        }
+      ],
+      "pairwise": [
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "bf109f4",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p47b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 759.8884201045435,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 805.770877453981,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p47b",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p51b",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "p47b",
+          "b": "p51b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 45.88245734943757,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        }
+      ]
+    },
+    {
+      "altFt": 34000,
+      "tasMph": 250,
+      "rows": [
+        {
+          "id": "spitfire_lfix_bs543",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 34000,
+          "tasMph": 250,
+          "rating": "combat+18",
+          "weightLb": 7110,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 408.2192705056939,
+          "climbFpm": 1894.6886001919618,
+          "engineGear": "high",
+          "propEta": 0.873955151633717
+        },
+        {
+          "id": "bf109f4",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 34000,
+          "tasMph": 250,
+          "rating": "combat",
+          "weightLb": 6371,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "unavailable",
+          "reason": "No compatible engine/polar input: no-engine-source",
+          "evidenceStatus": "no-applicable-calculation",
+          "excessHp": null,
+          "climbFpm": null,
+          "engineGear": null
+        },
+        {
+          "id": "p47b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 34000,
+          "tasMph": 250,
+          "rating": "military",
+          "weightLb": 12565,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "within-input-domain",
+          "reason": "Engine input law covers this state; propeller/drag and configuration remain working assumptions",
+          "evidenceStatus": "scenario-only; no exact historical checkpoint",
+          "flightStatus": "above-assumed-stall (provisional)",
+          "excessHp": 569.7604715619912,
+          "climbFpm": 1496.3864377560662,
+          "engineGear": "turbo",
+          "propEta": 0.859682541675727
+        },
+        {
+          "id": "p51b",
+          "comparisonPolicy": "native-reference-weight-and-selected-rating",
+          "altFt": 34000,
+          "tasMph": 250,
+          "rating": "67inHg",
+          "weightLb": 9240,
+          "profile": "P",
+          "configurationKind": "reference",
+          "scenarioKind": "reference",
+          "independentAccuracy": null,
+          "turnStallStatus": "Provisional; no validated historical turn/stall accuracy",
+          "calculationStatus": "unavailable",
+          "reason": "No compatible engine/polar input: no-engine-source",
+          "evidenceStatus": "no-applicable-calculation",
+          "excessHp": null,
+          "climbFpm": null,
+          "engineGear": null
+        }
+      ],
+      "pairwise": [
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "bf109f4",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p47b",
+          "status": "scenario-comparison",
+          "deltaClimbFpm": 398.3021624358955,
+          "reason": "A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "spitfire_lfix_bs543",
+          "b": "p51b",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p47b",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "bf109f4",
+          "b": "p51b",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        },
+        {
+          "a": "p47b",
+          "b": "p51b",
+          "status": "not-comparable",
+          "deltaClimbFpm": null,
+          "reason": "Missing input or mixed altitude/speed/profile/scenario policy",
+          "historicalDifferentialError": null,
+          "fiveToOne": null
+        }
+      ]
+    }
+  ],
+  "chartRanges": [
+    {
+      "status": "scenario-range",
+      "altFt": 2200,
+      "rating": "67inHg",
+      "minClimbFpm": 3479.633531418961,
+      "maxClimbFpm": 3989.1667738301617,
+      "samples": 9,
+      "weightsLb": [
+        9135,
+        9335,
+        9535
+      ],
+      "readings": [
+        "lower",
+        "midpoint",
+        "upper"
+      ],
+      "configuration": "P-51B report climb: gear/flaps up, automatic cooling, wing racks; 3000 engine RPM, low blower",
+      "qualification": "Optimized climb under chart-assigned BHP and assumed masses; not a range for the current fixed-speed slider state, a confidence interval or independent historical accuracy"
+    },
+    {
+      "status": "scenario-range",
+      "altFt": 2200,
+      "rating": "75inHg",
+      "minClimbFpm": 4134.87617982961,
+      "maxClimbFpm": 4613.460988351038,
+      "samples": 9,
+      "weightsLb": [
+        9135,
+        9335,
+        9535
+      ],
+      "readings": [
+        "lower",
+        "midpoint",
+        "upper"
+      ],
+      "configuration": "P-51B report climb: gear/flaps up, automatic cooling, wing racks; 3000 engine RPM, low blower",
+      "qualification": "Optimized climb under chart-assigned BHP and assumed masses; not a range for the current fixed-speed slider state, a confidence interval or independent historical accuracy"
+    },
+    {
+      "status": "scenario-range",
+      "altFt": 4000,
+      "rating": "75inHg",
+      "minClimbFpm": 3652.637585791723,
+      "maxClimbFpm": 4170.572337551952,
+      "samples": 9,
+      "weightsLb": [
+        9135,
+        9335,
+        9535
+      ],
+      "readings": [
+        "lower",
+        "midpoint",
+        "upper"
+      ],
+      "configuration": "P-51B report climb: gear/flaps up, automatic cooling, wing racks; 3000 engine RPM, low blower",
+      "qualification": "Optimized climb under chart-assigned BHP and assumed masses; not a range for the current fixed-speed slider state, a confidence interval or independent historical accuracy"
+    },
+    {
+      "status": "scenario-range",
+      "altFt": 8000,
+      "rating": "75inHg",
+      "minClimbFpm": 3058.538170693412,
+      "maxClimbFpm": 3586.299765153239,
+      "samples": 9,
+      "weightsLb": [
+        9135,
+        9335,
+        9535
+      ],
+      "readings": [
+        "lower",
+        "midpoint",
+        "upper"
+      ],
+      "configuration": "P-51B report climb: gear/flaps up, automatic cooling, wing racks; 3000 engine RPM, low blower",
+      "qualification": "Optimized climb under chart-assigned BHP and assumed masses; not a range for the current fixed-speed slider state, a confidence interval or independent historical accuracy"
+    },
+    {
+      "status": "scenario-range",
+      "altFt": 12000,
+      "rating": "75inHg",
+      "minClimbFpm": 2536.541653382688,
+      "maxClimbFpm": 3049.6179100206323,
+      "samples": 9,
+      "weightsLb": [
+        9135,
+        9335,
+        9535
+      ],
+      "readings": [
+        "lower",
+        "midpoint",
+        "upper"
+      ],
+      "configuration": "P-51B report climb: gear/flaps up, automatic cooling, wing racks; 3000 engine RPM, low blower",
+      "qualification": "Optimized climb under chart-assigned BHP and assumed masses; not a range for the current fixed-speed slider state, a confidence interval or independent historical accuracy"
+    }
+  ],
+  "unsupportedChartExample": {
+    "status": "unavailable",
+    "reason": "No exact chart node for this altitude/rating; no interpolation",
+    "minClimbFpm": null,
+    "maxClimbFpm": null
+  },
+  "numericalTasWindow": [
+    100,
+    590
+  ],
+  "atmosphereFt": [
+    0,
+    36089
+  ],
+  "qualification": "Power-input coverage and exposed checkpoints are separate. Calculable states do not establish a validated flight envelope. Source chart nodes are exact; existing engine interpolation stays inside each rating/gear interval.",
+  "historicalPairwiseAccuracy": null,
+  "historicalTurnStallAccuracy": null
+}

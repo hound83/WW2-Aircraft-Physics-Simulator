@@ -1,0 +1,28 @@
+'use strict';
+(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;root.UniversalModelSupport=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
+ const scenarioTasMph=[100,590],atmosphereFt=[0,36089];
+ function registry(D){return Object.entries(D.aircraft).map(([id,a])=>({id,name:a.name,referenceWeightLb:a.weightLb,weightQualification:a.weightStatus??'Aircraft reference input; not matched instantaneous mass for every test.',engineDomains:Object.entries(a.powerRatings).flatMap(([rating,r])=>Object.entries(r.gears).map(([gear,rows])=>({rating,gear,minAltFt:Math.min(...rows.map(p=>p.altFt)),maxAltFt:Math.max(...rows.map(p=>p.altFt)),nodes:rows.map(p=>p.altFt),qualification:r.notes,interpolation:'Existing engine law linearly interpolates adjacent nodes inside each gear only; no extension past endpoints.'}))),speedEvidence:(a.observedSpeed||[]).map(p=>({...p,role:p.altFt===a.calibration.altFt&&p.rating===a.calibration.rating&&p.gear===a.calibration.gear&&Math.abs(p.mphTas-a.calibration.tasMph)<.01?'speed-anchor':'already-exposed-checkpoint'})),climbEvidenceCount:a.observedClimb?.length??0,turnStallStatus:'Provisional; no validated historical turn/stall accuracy',independentAccuracy:null}));}
+ function assess(M,ac,state){
+  const {altFt,tasMph,options={}}=state,base={altFt,tasMph,rating:options.rating||ac.defaultRating,weightLb:options.weightLb??ac.weightLb,profile:options.profile||'C',configurationKind:options.coolingState||options.addedDragAreaM2||options.storesWeightLb?'modified':'reference',scenarioKind:state.scenarioKind||'reference',independentAccuracy:null,turnStallStatus:'Provisional; no validated historical turn/stall accuracy'};
+  const unavailable=reason=>({...base,calculationStatus:'unavailable',reason,evidenceStatus:'no-applicable-calculation',excessHp:null,climbFpm:null,engineGear:null});
+  if(!Number.isFinite(altFt)||altFt<atmosphereFt[0]||altFt>atmosphereFt[1])return unavailable('Outside atmosphere input range');
+  if(!Number.isFinite(tasMph)||tasMph<scenarioTasMph[0]||tasMph>scenarioTasMph[1])return unavailable('Outside declared 100-590 mph TAS scenario window; this is a numerical window, not a validated speed envelope');
+  let r;try{r=M.evaluated(ac,altFt,tasMph,options);}catch(e){return unavailable(e.message);}
+  if(r.status!=='modelled'||!Number.isFinite(r.power?.excessHp)||!Number.isFinite(r.power?.climbFpm))return unavailable('No compatible engine/polar input: '+r.status);
+  const referenceState=Math.abs(base.weightLb-ac.weightLb)<.01&&base.configurationKind==='reference';
+  const matching=referenceState&&(ac.observedSpeed||[]).find(p=>p.rating===base.rating&&p.gear===r.engine.gear&&Math.abs(p.altFt-altFt)<.01&&Math.abs(p.mphTas-tasMph)<.01);
+  const anchor=matching&&matching.altFt===ac.calibration.altFt&&matching.rating===ac.calibration.rating&&matching.gear===ac.calibration.gear&&Math.abs(matching.mphTas-ac.calibration.tasMph)<.01;
+  return {...base,calculationStatus:'within-input-domain',reason:'Engine input law covers this state; propeller/drag and configuration remain working assumptions',evidenceStatus:base.scenarioKind!=='reference'?'simulator-or-worksheet-scenario':matching?(anchor?'speed-anchor-fit':'already-exposed-speed-checkpoint'):'scenario-only; no exact historical checkpoint',flightStatus:r.limits.nLift<1?'below-assumed-stall':'above-assumed-stall (provisional)',excessHp:r.power.excessHp,climbFpm:r.power.climbFpm,engineGear:r.engine.gear,propEta:r.prop.eta};
+ }
+ function pairs(rows){const out=[];for(let i=0;i<rows.length;i++)for(let j=i+1;j<rows.length;j++){
+  const a=rows[i],b=rows[j],compatible=a.calculationStatus==='within-input-domain'&&b.calculationStatus==='within-input-domain'&&a.altFt===b.altFt&&Math.abs(a.tasMph-b.tasMph)<1e-8&&a.profile===b.profile&&a.scenarioKind==='reference'&&b.scenarioKind==='reference'&&a.comparisonPolicy==='native-reference-weight-and-selected-rating'&&a.comparisonPolicy===b.comparisonPolicy&&a.configurationKind==='reference'&&b.configurationKind==='reference'&&a.flightStatus!=='below-assumed-stall'&&b.flightStatus!=='below-assumed-stall';
+  out.push({a:a.id,b:b.id,status:compatible?'scenario-comparison':'not-comparable',deltaClimbFpm:compatible?a.climbFpm-b.climbFpm:null,reason:compatible?'A minus B at same altitude/TAS, each native reference weight and selected rating. This is specific excess power expressed as ft/min, not a matched historical climb-rate comparison.':'Missing input or mixed altitude/speed/profile/scenario policy',historicalDifferentialError:null,fiveToOne:null});
+ }return out;}
+ function bands(audit,query){
+  const rows=audit.chart.rows.filter(r=>r.profile==='P'&&r.altFt===query.altFt&&r.rating===query.rating);
+  if(!rows.length)return {status:'unavailable',reason:'No exact chart node for this altitude/rating; no interpolation',minClimbFpm:null,maxClimbFpm:null};
+  const values=rows.map(r=>r.climbFpm),weights=[...new Set(rows.map(r=>r.weightLb))];
+  return {status:'scenario-range',altFt:query.altFt,rating:query.rating,minClimbFpm:Math.min(...values),maxClimbFpm:Math.max(...values),samples:rows.length,weightsLb:weights,readings:['lower','midpoint','upper'],configuration:'P-51B report climb: gear/flaps up, automatic cooling, wing racks; 3000 engine RPM, low blower',qualification:'Optimized climb under chart-assigned BHP and assumed masses; not a range for the current fixed-speed slider state, a confidence interval or independent historical accuracy'};
+ }
+ return Object.freeze({registry,assess,pairs,bands,scenarioTasMph,atmosphereFt});
+});

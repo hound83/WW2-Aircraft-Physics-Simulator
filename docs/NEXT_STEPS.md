@@ -1,11 +1,11 @@
 # Next steps
 
-## v2.9 completed: robustness of the working approximation
+## v3.0.0-rc.1 completed: supported conditions and scenario ranges
 
-Three split assignments, a finer and wider Spitfire effective-e search, near-optimal parameter families, 27 paired Mustang chart-power/weight scenarios, and 162 Figure 5 reading/RPM scenarios are reproducible in [v2.9 results](V29_ROBUSTNESS.md). None of eight distinct fixed candidate models passes every documented replacement limit. Retain the v2.8 working calibration; the application/report version is 2.9.0.
+The release candidate retains the v2.8 working model, exposes live input-domain coverage and gaps, separates historical evidence from numerical scenarios, and shows five exact Mustang chart-power ranges. Legacy panels and simulator/worksheet comparisons are explicitly qualified. See V3_RELEASE_CANDIDATE.md and the executed regression/browser records.
 
-## Next cohesive milestone: v3.0 supported-envelope release candidate
+## Next cohesive milestone: release-candidate acceptance review
 
-Define the usable altitude/speed/rating/configuration envelope of the current four-aircraft speed/climb model, including explicit unsupported gaps. Surface scenario ranges and source/configuration caveats where users compare aircraft, and compare absolute speed/climb residuals and pairwise differences only under compatible assumptions. Keep turn/stall comparisons explicitly provisional. Target any new source work at the precise weakest constraint revealed here, rather than beginning another broad collection exercise.
+Review the four-aircraft output under a small set of agreed operational cases, especially practical speed/climb ordering and the remaining P47/Spitfire tradeoffs. Resolve any UI interpretation or comparison-policy issue before a stable working release. Keep source-independent turn/stall and historical 5:1 accuracy unresolved unless supported evidence is added. Do not expand aircraft scope or alter the Atlas.
 
-Acceptance: documented supported conditions, no invented interpolation or missing-data scores, visible distinction between fitted agreement and exposed checks, reproducible scenario ranges, npm run check, and an interactive smoke test of the built application. A practical release candidate may preserve unresolved science. Do not claim independent historical accuracy, validated turn/stall behavior or 5:1 discrimination without evidence. Finish the release candidate without Atlas changes or additional aircraft.
+Acceptance: reviewed operational examples, explicit loading/rating/configuration policy, no silent unavailable results, regression/browser checks and a clear decision on whether to publish a stable practical v3.0. A stable software version must not be described as historical accuracy certification.

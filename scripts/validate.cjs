@@ -32,6 +32,7 @@ try{
  require('../validation/diagnostics/source_chart_climb.cjs').writeReport();
  require('../validation/diagnostics/working_validation_v28.cjs').writeReport();
  require('../validation/diagnostics/robustness_v29.cjs').writeReport();
+ require('../validation/diagnostics/coverage_v3.cjs').writeReport();
  const md=[
  '# Current validation',
  '',
@@ -47,9 +48,11 @@ try{
  '| Missing / added numeric paths | '+missing.length+' / '+added.length+' |',
  '| Engine SHA256 | '+buildInfo.physicsSha256+' |',
  '| Numerical result SHA256 | '+digest+' |',
- '| Interactive browser tests | Not run |',
+ '| Interactive browser tests | See browser-smoke.json; run separately on the current build |',
  '| Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |',
  '| 5:1 comparative accuracy | Unresolved |',
+ '',
+ 'v3.0 release candidate: [calculation domains, source nodes and scenario ranges](V3_RELEASE_CANDIDATE.md); historical accuracy unresolved.',
  '',
  'v2.9 robustness: [power, mass, RPM and split sensitivity](V29_ROBUSTNESS.md); v2.8 working coefficients retained.',
  '',

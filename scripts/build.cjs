@@ -27,7 +27,7 @@ function patchWorkingUI(html){
 
 function build(){
  const version=require('../package.json').version;
- if(!/^\d+\.\d+\.\d+$/.test(version))throw Error('Invalid research release version');
+ if(!/^\d+\.\d+\.\d+(?:-rc\.\d+)?$/.test(version))throw Error('Invalid research release version');
  const template=fs.readFileSync(path.join(root,'releases/baseline-v2.5.html'),'utf8');
  const read=p=>fs.readFileSync(path.join(root,p),'utf8');
  const engine=read('src/physics.js'),cases=read('aircraft/cases.json'),stores=read('aircraft/stores.json');
@@ -48,9 +48,17 @@ function build(){
  html=html.replace(/<title>[^<]*<\/title>/,'<title>European Air War Physics v'+version+' | Research</title>');
  html=html.replace('<header>','<header><p class="status" id="research-version">Research v'+version+' · Historical accuracy remains unresolved</p><p class="status">Profile P: the e slider at 0.78 uses each aircraft’s fitted base e. Moving it changes an effective-drag scenario and reanchors speed drag; this is not measured wing efficiency.</p>');
  html=patchWorkingUI(html);
+ html=html.replace("if(conf.profile==='P'){o.e=", "if(conf.profile==='P'){if(isGreg109){const gp=M.inferredGregF4(ac,D.greg.bf109f4);o.polar={e:gp.oswald,cd0:gp.cd0,source:gp.source};return o;}o.e=");
+ const panel='<section class="panel" id="release-support"><h2>Model coverage and scenario ranges</h2><p>This release candidate retains the v2.8 working calibration. A calculation inside its input domain is not historical validation. Stall and turn results remain provisional; no 5:1 accuracy claim.</p><p>100-590 mph TAS is a declared numerical scenario window, not a validated flight envelope. Engine interpolation is limited to each recorded gear domain. Source speed points remain discrete checkpoints.</p><div id="supportTable" style="overflow-x:auto"></div><div id="supportPairs" style="overflow-x:auto"></div><div id="supportRange"></div><label>Inspect exact Mustang source node <select id="supportNode"><option value="2200|67inHg">2200 ft / 67 inHg</option><option value="2200|75inHg">2200 ft / 75 inHg</option><option value="4000|75inHg">4000 ft / 75 inHg</option><option value="8000|75inHg">8000 ft / 75 inHg</option><option value="12000|75inHg">12000 ft / 75 inHg</option></select></label><p id="supportNodeRange"></p></section>';
+ html=html.replace(/(<section\b[^>]*\bid="crossaudit"[^>]*>)/,panel+'$1<p class="status">Legacy A/B/C diagnostic below. With P selected this historical panel shows C; use the live coverage panel above for current-profile comparisons. These are exposed engineering checks.</p>');
+ html=html.replace(/(<section\b[^>]*\bid="conditioning"[^>]*>)/,'$1<p class="status">Legacy C one-point P-47 configuration-loss experiment. This panel is retained for comparison and does not follow the working-profile selector.</p>');
+ html=html.replace('render,model:M,data:D,version:"2.5"','render,model:M,data:D,conditions:key,optionsFor:optFor,version:'+JSON.stringify(version));
+ const source=read('src/support.js'),ui=read('src/support-ui.js'),audit=read('validation/current/v29-robustness.json');
+ for(const text of [source,ui,audit])if(/<\/script/i.test(text))throw Error('Unsafe release support embed');
+ html=html.replace('</body>','<script>'+source+'</script><script type="application/json" id="robustness-data">'+audit+'</script><script>'+ui+'</script></body>');
  fs.mkdirSync(path.join(root,'dist'),{recursive:true});
  fs.writeFileSync(path.join(root,'dist/model.html'),html);
- const metadata={version,researchStatus:'v2.8 joint-calibrated working profile P; legacy C compatibility preserved',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
+ const metadata={version,researchStatus:'v2.8 joint-calibrated working profile P; legacy C compatibility preserved',workingCalibration:'2.8.0',releaseStage:'release-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
  fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify(metadata,null,2)+'\n');
  return metadata;
 }
