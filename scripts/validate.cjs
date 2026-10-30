@@ -26,6 +26,7 @@ try{
  require('../validation/diagnostics/performance_validation.cjs').writeReport();
  require('../validation/diagnostics/climb_power_cooling.cjs').writeReport();
  require('../validation/diagnostics/p51_climb_states.cjs').writeReport();
+ require('../validation/diagnostics/p51_propeller_audit.cjs').writeReport();
  const md=[
  '# Current validation',
  '',
@@ -33,6 +34,7 @@ try{
  '',
  '| Check | Result |',
  '|---|---|',
+ '| Research version | '+buildInfo.version+' |',
  '| Node regression scripts | '+report.passed+'/'+report.discoveredScripts+' pass |',
  '| Numeric values compared with v2.5 setup | '+difference.comparedNumericValues+' |',
  '| Changed numeric values | '+difference.changed+' |',
@@ -42,6 +44,8 @@ try{
  '| Interactive browser tests | Not run |',
  '| Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |',
  '| 5:1 comparative accuracy | Unresolved |',
+ '',
+ 'Propeller milestone: [coupled source/candidate audit](P51_PROPELLER_EFFICIENCY_AUDIT.md); no supported default replacement; research v2.6.0.',
  '',
  'Mustang reconstruction: [original chart power/weight states](P51_CLIMB_STATE_RECONSTRUCTION.md); sparse pixel-reading brackets and joint sensitivities, no default correction.',
  '',

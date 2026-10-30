@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "target": {
+    "aircraft": "P-51B-15",
+    "specimen": "43-24777",
+    "bladeDrawing": "K-6523A-24",
+    "bladeCount": 4,
+    "diameterFt": 11.166666666666666,
+    "reductionRatioEnginePerProp": 2.0952380952380953,
+    "engineRpm": 3000,
+    "source": "Eng-47-1749-A III.C"
+  },
+  "decision": "No matched installed K-6523A-24 efficiency map established in the inspected sources. Preserve default C; evaluate D/N/M only as research alternatives.",
+  "sources": [
+    {
+      "id": "wright-target",
+      "url": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+      "evidence": "Primary-report transcription plus retained Figures 4/6/7",
+      "locations": "III.C; V.B-D; Figures 4-7",
+      "finding": "Target propeller identity and chart-assigned BHP; not an independently measured efficiency surface.",
+      "adoption": "Identity and chart states only"
+    },
+    {
+      "id": "tk589-same-blade",
+      "url": "https://www.wwiiaircraftperformance.com/org/p-51/tk589.html",
+      "evidence": "Primary A&AEE report transcription read; original report scan not newly verified",
+      "locations": "2.3-2.5; 3; 4.2-4.3",
+      "finding": "Same K.6523A-24 blade drawing, four blades, 11 ft 2 in, on a different Mustang IV specimen. Level speeds have different mass/cooling conditions. Tip-Mach discussion is not an installed-efficiency table.",
+      "adoption": "Corroborates blade family; no numerical eta transfer"
+    },
+    {
+      "id": "naca-l4l18",
+      "url": "https://ntrs.nasa.gov/citations/19780078569",
+      "textUrl": "https://ntrs.nasa.gov/api/citations/19780078569/downloads/19780078569.txt",
+      "evidence": "Official NASA full-text OCR retrieved; original pixels not newly verified",
+      "locations": "Summary; Airplane item 4; Concluding remarks",
+      "finding": "Different P-51B 43-12105 / V-1650-3. OCR reads a 6487-24 propeller designation with ambiguous leading character, not a verified K-6523A-24 match. Power-estimate limitations and missing torque measurement prevent an independent installed-eta calibration.",
+      "adoption": "Qualitative constraint only; preserve OCR ambiguity",
+      "localText": "references/sources/p51-L4L18-nasa-ocr.txt",
+      "sha256": "1b7b00f2ec1954d55411404888683bb8735739d53fd23d0fdd04e53cb988bded",
+      "textNormalization": "CRLF converted to LF for version control; original source pixels remain unverified"
+    },
+    {
+      "id": "naca-1941",
+      "url": "https://ntrs.nasa.gov/citations/19930093644",
+      "localText": "references/import/01_COMPLETE_V2_5_BASELINE/06_SOURCE_AND_SCIENTIFIC_EVIDENCE/NACA_1934_1946_DEEP_RESEARCH/extracted_text/1941_NACA-WR-L-483_19930093644.txt",
+      "evidence": "Official catalog and inherited extracted report text; existing rounded chart data reused, not newly digitized",
+      "locations": "Experimental setup; Figures 5, 10-12; Table I",
+      "finding": "3155-6/3156-6 test blades and solidity comparisons; no matched Mustang installed map. Active N interpolant has Cp 0.2-0.6 coverage and discloses clamping below it.",
+      "adoption": "Generic research shape only"
+    },
+    {
+      "id": "naca-1944",
+      "url": "https://ntrs.nasa.gov/citations/19930093312",
+      "localText": "references/import/01_COMPLETE_V2_5_BASELINE/06_SOURCE_AND_SCIENTIFIC_EVIDENCE/NACA_1934_1946_DEEP_RESEARCH/extracted_text/1944_NACA-WR-L-144_19930093312.txt",
+      "evidence": "Official catalog and inherited extracted text inspected",
+      "locations": "3155-6 loss comparisons; design example",
+      "finding": "Loss-decomposition/design method for other blade geometry. The existing actuator-disk candidate D uses an assumed 0.85 loss fraction, not a coefficient measured for the target.",
+      "adoption": "Method context; no target numerical coefficient"
+    },
+    {
+      "id": "naca-1945",
+      "url": "https://ntrs.nasa.gov/citations/19930093653",
+      "evidence": "Existing source register and M-code provenance reused; not a new scan audit",
+      "locations": "Reduced-RPM comparison and existing M transfer",
+      "finding": "M uses a P-47D three-blade experiment with an assumed Mach onset and interpretation of the reported gain. The same campaign contributes its comparison rows.",
+      "adoption": "Research transfer; geometry and dependence exclusions"
+    }
+  ],
+  "profiles": {
+    "C": {
+      "sourceKind": "heuristic",
+      "sourceIds": [
+        "wright-target"
+      ],
+      "measuredInstalledMap": false,
+      "bladeDrawing": null,
+      "installationMatched": false,
+      "domain": null,
+      "limitation": "Current formula and fitted speed-anchor polar; not measured installed eta."
+    },
+    "D": {
+      "sourceKind": "theoretical-assumption",
+      "sourceIds": [
+        "naca-1944"
+      ],
+      "measuredInstalledMap": false,
+      "bladeDrawing": null,
+      "installationMatched": false,
+      "domain": null,
+      "limitation": "Ideal actuator disk plus global assumed 0.85 retained power; no sourced target loss coefficient."
+    },
+    "N": {
+      "sourceKind": "generic-chart-transfer",
+      "sourceIds": [
+        "naca-1941"
+      ],
+      "measuredInstalledMap": false,
+      "bladeDrawing": "3155-6",
+      "installationMatched": false,
+      "domain": {
+        "J": [
+          0.3,
+          3.5
+        ],
+        "Cp": [
+          0.2,
+          0.6
+        ],
+        "tipMach": null
+      },
+      "limitation": "Rounded generic chart with disclosed Cp floor; no target installation or verified tip-Mach envelope."
+    },
+    "M": {
+      "sourceKind": "generic-chart-mach-transfer",
+      "sourceIds": [
+        "naca-1941",
+        "naca-1945"
+      ],
+      "measuredInstalledMap": false,
+      "bladeDrawing": "3155-6 / 6507A-2",
+      "installationMatched": false,
+      "domain": {
+        "J": [
+          0.3,
+          3.5
+        ],
+        "Cp": [
+          0.2,
+          0.6
+        ],
+        "tipMach": null
+      },
+      "limitation": "N plus transferred P-47D Mach correction; assumed onset and related calibration/check data."
+    }
+  },
+  "constraints": {
+    "calibration": "Only the existing sea-level speed anchor may define each candidate polar. No climb or Figure 5 point is fitted.",
+    "checkpoints": "Figure 5 and speed/climb data have already been seen in development; diagnostic checkpoints, not new independent holdouts.",
+    "matchedClimbTasMph": null,
+    "matchedClimbWeightLb": null,
+    "validatedEtaErrorBound": null,
+    "acceptedDefaultChange": null
+  }
+}

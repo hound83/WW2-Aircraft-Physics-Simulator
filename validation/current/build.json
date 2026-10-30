@@ -1,9 +1,11 @@
 {
+  "version": "2.6.0",
+  "researchStatus": "Historical accuracy unresolved; default v2.5 numerical behavior preserved",
   "template": "releases/baseline-v2.5.html",
   "physicsSha256": "a74df31fc085664157bb1d21edbdb9b02d007a84cf057fe8b8f9d53ec7d0da05",
   "casesSha256": "5a06f359f11aa6aeaf91f2ce39065fd1c895abecbff067b8a48a2d761d223730",
   "storesSha256": "49f4eb05a187ec57b331bdcff360eacca8d591194f9ed6b3c842bcfae296ddd8",
-  "htmlSha256": "c2a368cb472e5f17f65261d3e81721e396afa1335ebb4c535da9e5bfbe743260",
-  "bytes": 4508673,
+  "htmlSha256": "2f7154e44f7b18be2eef74d05c473794fdaa2c8e27ace3b4c198b88eae772961",
+  "bytes": 4508742,
   "browserInteractionTested": false
 }

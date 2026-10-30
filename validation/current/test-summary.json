@@ -1,8 +1,8 @@
 {
   "node": "v24.19.0",
-  "discoveredScripts": 39,
-  "reportedScripts": 39,
-  "passed": 39,
+  "discoveredScripts": 40,
+  "reportedScripts": 40,
+  "passed": 40,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -129,6 +129,10 @@
     },
     {
       "script": "test_p51_climb_states.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_p51_propeller_audit.cjs",
       "status": "pass"
     },
     {

@@ -20,4 +20,6 @@ jobs:
           path: |
             validation/current/
             dist/model.html
+            dist/build.json
+            releases/v2.6.0.md
             docs/CURRENT_VALIDATION.md

@@ -19,4 +19,8 @@ assert.deepEqual(cases,require('../aircraft/cases.json'),'HTML must use current 
 assert.deepEqual(stores,require('../aircraft/stores.json'),'HTML must use current stores data');
 assert.equal(Object.keys(cases.aircraft).length,4,'scope stays at four benchmark aircraft');
 assert.ok(info.bytes>100000,'standalone template must not be accidentally truncated');
+assert.equal(info.version,require('../package.json').version);
+assert.ok(html.includes('id="research-version">Research v'+info.version));
+assert.ok(html.includes('<title>European Air War Physics v'+info.version));
+assert.equal((html.match(/id="research-version"/g)||[]).length,1);
 console.log('PASS current standalone: active engine/data parity, inline JavaScript syntax, four-aircraft scope');

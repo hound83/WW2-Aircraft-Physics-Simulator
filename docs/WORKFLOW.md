@@ -15,7 +15,7 @@ Use one ongoing Work conversation for the v3.0 cycle, with successive assignment
 ## Commands
 
 - `npm test`: run all Node regression scripts, including the current standalone build checks.
-- `npm run build`: generate `dist/model.html` from the v2.5 UI template with current engine/data.
+- `npm run build`: generate `dist/model.html` from the frozen v2.5 UI template with current engine/data and the package research-version label.
 - `npm run validate`: test and regenerate `validation/current/`, baseline differences and `docs/CURRENT_VALIDATION.md`.
 - `npm run check`: verify frozen import integrity, build and validate.
 

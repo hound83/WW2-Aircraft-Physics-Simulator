@@ -14,11 +14,11 @@ function readPoints(ledger=L){
  return ledger.readings.map(p=>({...p,bounds:C.reading(ledger.axes[p.axis],[p.box[0],p.box[2]])}));
 }
 const polar={...M.cd0FromAnchor(ac,'C',.78),e:.78,source:'Original C speed-anchor polar held fixed; chart-only diagnostic'};
-function chartPrediction(altFt,rating,bhp,weightLb){
+function chartPrediction(altFt,rating,bhp,weightLb,profile='C',scenarioPolar=polar){
  if(![altFt,bhp,weightLb].every(Number.isFinite)||altFt<0||bhp<=0||weightLb<=0)throw Error('Invalid chart scenario');
  const diagnostic={...ac,powerRatings:{[rating]:{notes:'Figure 7 chart-assigned power scenario; not measured torque',gears:{low:[{altFt,bhp}]}}}};
  // Explicit original polar prevents a source-power edit from refitting the anchor.
- return M.bestClimb(diagnostic,altFt,{profile:'C',polar,rating,gear:'low',weightLb,minTasMph:100,maxTasMph:290,stepMph:1});
+ return M.bestClimb(diagnostic,altFt,{profile,polar:scenarioPolar,rating,gear:'low',weightLb,minTasMph:100,maxTasMph:290,stepMph:1});
 }
 function grid(lo,hi,step){const a=[];for(let n=lo;n<hi;n+=step)a.push(n);a.push(hi);return a;}
 function run(){
