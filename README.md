@@ -2,7 +2,7 @@
 
 A separate research repository for the shared WWII flight-performance engine. The Atlas website in [hound83/ww2-airwar](https://github.com/hound83/ww2-airwar) is outside this repository's scope.
 
-**Current version: v2.9.0 robustness increment.** Three alternative fit/check assignments, wider Spitfire effective-drag search, chart-power/weight combinations and recorded-RPM reading scenarios stress the existing model. No tested candidate passes every cross-condition comparison limit, so the v2.8 working calibration remains active. See [v2.9 results](docs/V29_ROBUSTNESS.md) and [release notes](releases/v2.9.0.md). The application includes a short expandable robustness explanation. These are already-exposed engineering checks, not independent historical validation.
+**Current version: v3.0.0-rc.1, supported-envelope release candidate.** The working calibration remains v2.8. A live coverage panel follows the main controls, shows input-domain gaps and qualified pairwise scenario differences, and exposes exact-node Mustang chart-power ranges. Historical turn/stall and independent 5:1 accuracy remain unresolved. See [release-candidate coverage](docs/V3_RELEASE_CANDIDATE.md), [release notes](releases/v3.0.0-rc.1.md) and the browser smoke record in validation/current/.
 
 Initial benchmarks: **Bf 109 F-4, P-47B, P-51B-15 and Spitfire LF Mk IX**. Greg's worksheets and the controlled P-47 2,000/2,600 hp comparison are retained. The 2,600 hp scenario is not a verified P-47B engine rating.
 
@@ -14,15 +14,15 @@ GitHub setup is complete. The frozen import is on branch **baseline/v2.5-import*
 
 Read [decisions](docs/DECISIONS.md), [known limitations](docs/KNOWN_LIMITATIONS.md), [next steps](docs/NEXT_STEPS.md), [workflow](docs/WORKFLOW.md) and the [current validation report](docs/CURRENT_VALIDATION.md). Repository instructions for development agents are in [AGENTS.md](AGENTS.md).
 
-Requires Node.js 22 or newer. No npm packages are needed.
+Requires Node.js 22 or newer. No npm packages are needed. The separate interactive smoke test uses an installed headless Chrome or Edge executable; set BROWSER_PATH if it is not in a standard location.
 
 ```sh
 npm run check
 ```
 
-This verifies the tracked import, builds the standalone HTML and runs all regression scripts, then updates the validation report and numerical comparison against the frozen baseline. Run `npm test` for tests only, or `npm run validate` to refresh results.
+This verifies the tracked import, builds the standalone HTML and runs all regression scripts, then updates the validation report and numerical comparison against the frozen baseline. Run `npm test` for tests only, or `npm run validate` to refresh results. Run `npm run test:browser` after building to exercise the controls and record browser errors.
 
-Open `dist/model.html` after building. The unchanged original interface is [releases/baseline-v2.5.html](releases/baseline-v2.5.html). Browser interaction tests from the handover are preserved but have not been rerun here; static syntax and embedding checks are distinct from browser tests.
+Open `dist/model.html` after building. The unchanged original interface is [releases/baseline-v2.5.html](releases/baseline-v2.5.html). The new headless Chromium smoke test exercises the current application separately from inherited assertions; see validation/current/browser-smoke.json for the actual result, tested version and scope.
 
 ## Repository map
 

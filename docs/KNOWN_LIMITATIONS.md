@@ -66,3 +66,11 @@ The UI uses P; direct API callers must request it explicitly. The e slider at 0.
 Existing-data split checks and graph-reading scenarios do not certify historical accuracy. The 27 paired Mustang scenarios use three assumed masses (9135/9335/9535 lb) and independent lower/midpoint/upper chart-power readings at two ratings. They are a finite scenario set, not probability distributions or validated uncertainty bounds. The smallest winning margin is modest in the light/high-power corner; 27/27 is not a guarantee outside the tested set. Nominal residuals near 9 ft/min under the engine proxy become roughly 20–293 ft/min under these chart-power/weight choices.
 
 The original Spitfire e=0.60 grid boundary was coarse: a finer original-split fit favors 0.65, while alternate splits favor 0.70. Neither value is measured wing efficiency. Eight fixed candidate models were tested against documented cross-condition limits; none qualified for replacement. This is not exhaustive physical-model optimization. v2.9 retains v2.8 predictions, and v3.0 historical stall/turn and independent pairwise discrimination remain unresolved.
+
+## v3 release-candidate scope
+
+Calculation coverage is not a validated flight envelope. Engine-input intervals include documented proxies and assumptions; the propeller map remains an empirical working law. Numerical speed/altitude limits do not certify physical accuracy. Source speed checkpoints are discrete and already exposed.
+
+Pairwise differences are fixed-speed specific-excess-power scenarios using native reference masses/selected ratings; the shared weight percentage is not an equal-combat-load policy. They are not measured historical climb-rate comparisons. Modified configurations, unsupported inputs, below-assumed-stall states and mixed simulator/Greg states cannot generate a qualified pairwise value. Turn/stall and 5:1 historical accuracy remain unresolved.
+
+The five Mustang chart-power ranges retain the fitted P calibration and their own assumed masses; they do not follow e, weight or profile sliders and do not predict the current fixed-speed state. Graph-reading brackets are not confidence intervals. Headless Chromium smoke is a targeted interaction check, not exhaustive UI or cross-browser testing.

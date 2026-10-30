@@ -1,0 +1,24 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const M=require('../src/physics.js'),D=require('../aircraft/cases.json'),S=require('../src/support.js'),R=require('../validation/diagnostics/coverage_v3.cjs');
+const audit=require('../validation/current/v29-robustness.json');
+const state=(id,altFt=5000,tasMph=250,options={})=>({id,comparisonPolicy:'native-reference-weight-and-selected-rating',...S.assess(M,D.aircraft[id],{altFt,tasMph,options:{profile:'P',...options}})});
+assert.equal(S.registry(D).length,4);
+const domain=S.registry(D).find(a=>a.id==='p51b').engineDomains.find(d=>d.rating==='75inHg'&&d.gear==='low');assert.equal(domain.maxAltFt,7400);
+for(const altFt of [0,4999]){const r=state('p47b',altFt);assert.equal(r.calculationStatus,'unavailable');assert.equal(r.climbFpm,null);}
+assert.equal(state('p47b',5000).calculationStatus,'within-input-domain');
+assert.equal(state('p51b',8000,250,{rating:'75inHg'}).calculationStatus,'unavailable');
+assert.equal(state('p51b',18000,250,{rating:'75inHg'}).calculationStatus,'within-input-domain');
+assert.equal(state('bf109f4',17000).calculationStatus,'unavailable');
+assert.equal(state('p51b',37000).calculationStatus,'unavailable');assert.equal(state('p51b',5000,99).climbFpm,null);
+assert.equal(state('p51b',5000,250,{rating:'missing'}).calculationStatus,'unavailable');
+const a=state('p51b'),b=state('p47b'),pair=S.pairs([a,b])[0];assert.equal(pair.deltaClimbFpm,a.climbFpm-b.climbFpm);assert.equal(pair.historicalDifferentialError,null);assert.equal(pair.fiveToOne,null);
+for(const different of [{...b,scenarioKind:'nonhistorical'},{...b,altFt:6000},{...b,tasMph:260},{...b,profile:'C'},{...b,comparisonPolicy:undefined},{...b,flightStatus:'below-assumed-stall'},{...b,configurationKind:'modified'}])assert.equal(S.pairs([a,different])[0].deltaClimbFpm,null);
+const anchor=S.assess(M,D.aircraft.p51b,{altFt:0,tasMph:361.5,options:{profile:'P',rating:'67inHg',gear:'low'}});assert.equal(anchor.evidenceStatus,'speed-anchor-fit');
+assert.equal(a.evidenceStatus,'scenario-only; no exact historical checkpoint');
+const source=S.bands(audit,{altFt:8000,rating:'75inHg'});assert.equal(source.status,'scenario-range');assert.equal(source.samples,9);assert.ok(source.maxClimbFpm>source.minClimbFpm);
+assert.equal(S.bands(audit,{altFt:6000,rating:'75inHg'}).minClimbFpm,null);assert.equal(S.bands(audit,{altFt:8000,rating:'67inHg'}).maxClimbFpm,null);
+const report=R.run();assert.equal(report.releaseStage,'release-candidate');assert.equal(report.chartRanges.length,5);assert.equal(report.historicalTurnStallAccuracy,null);
+const html=fs.readFileSync(path.join(__dirname,'../dist/model.html'),'utf8');assert.ok(html.includes('id="release-support"'));assert.ok(html.includes('Legacy A/B/C diagnostic'));assert.ok(html.includes('conditions:key,optionsFor:optFor'));assert.ok(html.includes('id="robustness-data"'));
+assert.equal(require('../package.json').version,'3.0.0-rc.1');
+console.log('PASS release coverage: input domains, exact-node ranges, no gap extrapolation, explicit pairwise policy, provisional stall/turn and UI integration');

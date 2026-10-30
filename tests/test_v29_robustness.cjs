@@ -3,7 +3,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const S=require('../validation/diagnostics/robustness_v29.cjs'),V=require('../validation/diagnostics/joint_calibration_v28.cjs');
 const D=require('../aircraft/cases.json'),F=require('../calibration/v2.8-working-model.json'),P=require('../calibration/v2.9-robustness-policy.json');
 const archived=require('../validation/current/v29-robustness.json');
-assert.equal(P.version,require('../package.json').version);
+assert.equal(P.version,archived.version);
 assert.equal(archived.workingCalibration,F.version);
 assert.deepEqual(archived.policy,P);
 assert.equal(archived.independentHistoricalValidation,false);

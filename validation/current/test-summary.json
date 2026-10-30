@@ -1,8 +1,8 @@
 {
-  "node": "v24.22.1",
-  "discoveredScripts": 43,
-  "reportedScripts": 43,
-  "passed": 43,
+  "node": "v24.19.0",
+  "discoveredScripts": 44,
+  "reportedScripts": 44,
+  "passed": 44,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -149,6 +149,10 @@
     },
     {
       "script": "test_ram_predictive_v21.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_release_support.cjs",
       "status": "pass"
     },
     {
