@@ -48,3 +48,7 @@ The follow-up to the earlier diagnosis retains Figure 4 and sparse native-pixel 
 ## Propeller milestone and v2.6.0 scope
 
 No inspected source establishes a target-installed K-6523A-24 efficiency surface. The official NACA 43-12105 OCR has an ambiguous blade-prefix character and concerns a different specimen/engine; no original-pixel verification or numerical eta transfer is claimed. TK589 shares a blade drawing but differs in installation/loading/cooling. Existing N/M use other geometry, Cp-floor clamping and incomplete Mach applicability; D retains an assumed global loss fraction. Lower excluded Figure 5 residuals are insufficient evidence, especially while reanchored climb results worsen. C remains heuristic. The new release label is not new historical validation. Browser interaction tests remain unrun.
+
+## Source-chart mode
+
+The new API exposes an optional exact-node climb diagnostic. It holds chart-assigned BHP constant across the speed grid; actual climb TAS, instantaneous mass and shaft torque remain unknown. Source metadata are input assertions, not automatic document authentication; the report separately checks retained scan hashes. Reading bounds are extraction choices, not historical uncertainty. No interpolation/high-blower extension or interactive UI selector is supplied. This improves diagnostic coverage, not established accuracy; the default model and known failures remain unchanged.

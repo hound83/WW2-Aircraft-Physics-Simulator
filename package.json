@@ -1,6 +1,6 @@
 {
   "name": "european-air-war-physics",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "private": true,
   "description": "Four-aircraft research flight-performance engine; evidence and validation increment, v3.0 unresolved",
   "engines": {
@@ -10,6 +10,7 @@
     "test": "node scripts/test.cjs",
     "build": "node scripts/build.cjs",
     "validate": "node scripts/validate.cjs",
-    "check": "node scripts/verify-import.cjs && node scripts/build.cjs && node scripts/validate.cjs"
+    "check": "node scripts/verify-import.cjs && node scripts/build.cjs && node scripts/validate.cjs",
+    "diagnose:source-chart": "node validation/diagnostics/source_chart_climb.cjs"
   }
 }

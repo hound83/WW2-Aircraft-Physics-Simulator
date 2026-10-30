@@ -485,6 +485,56 @@ function bestClimb(ac,altFt,opts={}){
     sourceStatus:'calculated optimization; climb speed not directly reported',
     addedCd0:opts.addedCd0??0};
 }
+// Source-chart climb mode is an explicit diagnostic, never a default engine law.
+// Assigned standard BHP is held fixed across the sampled TAS grid. Historical
+// climb TAS/instantaneous mass and installed efficiency remain unverified.
+function sourceChartClimb(ac,altFt,opts={}){
+ const blocked=reason=>({status:'blocked-source-chart',reason});
+ const chart=opts.chart,identity=ac.stallIdentity,rating=opts.rating,gear=opts.gear;
+ if(!Number.isFinite(altFt)||altFt<0||altFt>36089)return blocked('invalid-altitude');
+ if(!chart||chart.purpose!=='climb'||chart.powerKind!=='chart-assigned-standard-bhp'||
+    typeof chart.source!=='string'||!chart.source.trim()||!Array.isArray(chart.nodes))return blocked('missing-chart-provenance');
+ for(const k of ['aircraftId','variant','specimen']){
+  if(typeof identity?.[k]!=='string'||!identity[k].trim()||/unspecified|unknown|placeholder/i.test(identity[k])||identity[k]!==chart.identity?.[k])return blocked('identity-mismatch-'+k);
+ }
+ for(const k of ['gearState','flaps','cooling','stores']){
+  const v=chart.configuration?.[k];
+  if(typeof v!=='string'||!v.trim()||v!==opts.configuration?.[k])return blocked('configuration-mismatch-'+k);
+ }
+ if(!opts.polar||opts.refit!==undefined||opts.engineModel!==undefined||opts.engineCondition!==undefined||
+    opts.climbMapInHg!==undefined)return blocked('explicit-polar-and-single-power-method-required');
+ if(!(Number.isFinite(opts.polar.cd0)&&opts.polar.cd0>.005&&opts.polar.cd0<.085&&
+      Number.isFinite(opts.polar.e)&&opts.polar.e>0&&opts.polar.e<=1&&typeof opts.polar.source==='string'&&opts.polar.source.trim()))
+  return blocked('invalid-explicit-polar');
+ if(!['A','B','C','D','G','N','M'].includes(opts.profile||'C'))return blocked('unsupported-propeller-profile');
+ const weight=opts.weight;
+ if(!(Number.isFinite(weight?.valueLb)&&weight.valueLb>0&&weight.kind==='scenario'&&
+      typeof weight.source==='string'&&weight.source.trim()))return blocked('explicit-scenario-weight-required');
+ if(!['lower','midpoint','upper'].includes(opts.selection))return blocked('explicit-reading-selection-required');
+ const nodes=chart.nodes.filter(n=>n.altFt===altFt&&n.rating===rating&&n.gear===gear);
+ if(nodes.length!==1)return blocked(nodes.length?'ambiguous-chart-node':'no-exact-chart-node');
+ const point=nodes[0],rpm=ac.propGeometry?.engineRpmByRating?.[rating];
+ if(!Number.isFinite(rpm)||point.engineRpm!==rpm)return blocked('engine-rpm-mismatch');
+ if(!(Number.isFinite(point.lowerBhp)&&Number.isFinite(point.upperBhp)&&point.lowerBhp>0&&
+      point.upperBhp>=point.lowerBhp&&typeof point.sourceLocation==='string'&&point.sourceLocation.trim()))
+  return blocked('invalid-reading-bracket-or-location');
+ const bhp=opts.selection==='lower'?point.lowerBhp:opts.selection==='upper'?point.upperBhp:(point.lowerBhp+point.upperBhp)/2;
+ const scenario={...ac,powerRatings:{[rating]:{notes:chart.source+'; chart reading, not measured torque',gears:{[gear]:[{altFt,bhp}]}}}};
+ const requestedGrid=opts.speedGrid??{minTasMph:100,maxTasMph:290,stepMph:1};
+ if(Object.keys(requestedGrid).some(k=>!['minTasMph','maxTasMph','stepMph'].includes(k)))return blocked('invalid-speed-grid');
+ const grid={minTasMph:requestedGrid.minTasMph,maxTasMph:requestedGrid.maxTasMph,stepMph:requestedGrid.stepMph};
+ if(!(Number.isFinite(grid.minTasMph)&&Number.isFinite(grid.maxTasMph)&&Number.isFinite(grid.stepMph)&&
+      grid.minTasMph>0&&grid.maxTasMph>grid.minTasMph&&grid.stepMph>0&&
+      (grid.maxTasMph-grid.minTasMph)/grid.stepMph<=10000))return blocked('invalid-speed-grid');
+ const result=bestClimb(scenario,altFt,{profile:opts.profile||'C',polar:opts.polar,rating,gear,weightLb:weight.valueLb,...grid});
+ return {...result,powerMethod:'source-chart climb diagnostic; selected BHP held constant across sampled TAS',
+  sourceChart:{source:chart.source,sourceLocation:point.sourceLocation,nodeId:point.id??null,
+   rating,gear,engineRpm:rpm,readingBracketBhp:[point.lowerBhp,point.upperBhp],selection:opts.selection,selectedBhp:bhp,
+   weight:{...weight},configuration:{...chart.configuration},speedGrid:{...grid},
+   historicalClimbTasMph:null,instantaneousClimbWeightLb:null,historicallyValidated:false,
+   warning:'Reading brackets are extraction estimates, not historical error bounds. Normalized/takeoff weight is a scenario only. No interpolation/extrapolation, torque measurement or installed eta validation implied.'}};
+}
+
 // Comparative check: at the same documented altitude, vary the engine rating,
 // holding aircraft, weight, prop category and drag polar fixed. Difference in
 // best climb rates is an independent check of power sensitivity; historical
@@ -498,5 +548,5 @@ function matchedPowerClimb(ac,altFt,ratingA,ratingB,opts={}){
    deltaClimbFpm:b.climbFpm-a.climbFpm,deltaShaftHp:high.bhp-low.bhp,
    provenance:'calculated from frozen speed-calibrated polar; NO climb-rate calibration'};
 }
-return Object.freeze({isa,airspeeds,tasFrom,trueFromCAS,casFromTrue,casFromIAS,resolveAirspeed,resolveStallEvidence,stallSensitivity,shaftPower,shaftPowerAtMeasuredBoost,inletPressureAtSpeed,ramManifoldAtSpeed,referenceLevelTas,shaftPowerAtRamSpeed,nacaLowSpeedPropChart,nacaMachResearch,propEta,dragBreakdown,cd0FromAnchor,evaluated,maxSpeed,greg109At,inferredGregF4,inferredGregP47,climbConditionEngine,climbPrediction,equivalentClimbDrag,gregP47PowerPoint,gregP47MaxSpeed,bestClimb,matchedPowerClimb});
+return Object.freeze({isa,airspeeds,tasFrom,trueFromCAS,casFromTrue,casFromIAS,resolveAirspeed,resolveStallEvidence,stallSensitivity,shaftPower,shaftPowerAtMeasuredBoost,inletPressureAtSpeed,ramManifoldAtSpeed,referenceLevelTas,shaftPowerAtRamSpeed,nacaLowSpeedPropChart,nacaMachResearch,propEta,dragBreakdown,cd0FromAnchor,evaluated,maxSpeed,greg109At,inferredGregF4,inferredGregP47,climbConditionEngine,climbPrediction,equivalentClimbDrag,gregP47PowerPoint,gregP47MaxSpeed,bestClimb,sourceChartClimb,matchedPowerClimb});
 });

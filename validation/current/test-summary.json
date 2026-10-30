@@ -1,8 +1,8 @@
 {
   "node": "v24.19.0",
-  "discoveredScripts": 40,
-  "reportedScripts": 40,
-  "passed": 40,
+  "discoveredScripts": 41,
+  "reportedScripts": 41,
+  "passed": 41,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -149,6 +149,10 @@
     },
     {
       "script": "test_ram_predictive_v21.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_source_chart_climb.cjs",
       "status": "pass"
     },
     {
