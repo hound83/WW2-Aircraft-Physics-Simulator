@@ -1,11 +1,13 @@
 {
-  "version": "2.7.0",
-  "researchStatus": "Historical accuracy unresolved; default v2.5 numerical behavior preserved",
+  "version": "2.8.0",
+  "researchStatus": "v2.8 joint-calibrated working profile P; legacy C compatibility preserved",
+  "workingProfile": "P",
+  "legacyProfile": "C",
   "template": "releases/baseline-v2.5.html",
-  "physicsSha256": "ff94ce947b5faf3f1ebcbd6fff349b1f7e32921d0559b96f581c4d37c9e45167",
-  "casesSha256": "5a06f359f11aa6aeaf91f2ce39065fd1c895abecbff067b8a48a2d761d223730",
+  "physicsSha256": "311e8aa4ae6b7432508c5b061f9b017ad12d71115cf749e8dcb7e075eac29e53",
+  "casesSha256": "8ea49d8a787fc68093f313e6a405e00a7a2dcdade542de7e4501b52021c50649",
   "storesSha256": "49f4eb05a187ec57b331bdcff360eacca8d591194f9ed6b3c842bcfae296ddd8",
-  "htmlSha256": "8274715b1525d1a44a6e28e76ec1ab7612b68c0d4301bb766c053b389254611d",
-  "bytes": 4513172,
+  "htmlSha256": "d243e432c49f61f8a95cc209c0e6830d0e1d0385a32a42a1f3b1ca052d6c585a",
+  "bytes": 4524400,
   "browserInteractionTested": false
 }

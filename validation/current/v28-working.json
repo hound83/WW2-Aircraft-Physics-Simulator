@@ -1,0 +1,811 @@
+{
+  "version": "2.8.0",
+  "current": {
+    "model": {
+      "profile": "P",
+      "params": {
+        "retainedPowerFraction": 0.93,
+        "machPenalty": 2,
+        "machOnset": 0.92,
+        "advanceLoss": 0.06
+      },
+      "fits": [
+        {
+          "id": "p51b",
+          "e": 0.92,
+          "delta": 0,
+          "profile": "P",
+          "params": {
+            "retainedPowerFraction": 0.93,
+            "machPenalty": 2,
+            "machOnset": 0.92,
+            "advanceLoss": 0.06
+          }
+        },
+        {
+          "id": "p47b",
+          "e": 0.7,
+          "delta": 0.01804155050509509,
+          "profile": "P",
+          "params": {
+            "retainedPowerFraction": 0.93,
+            "machPenalty": 2,
+            "machOnset": 0.92,
+            "advanceLoss": 0.06
+          }
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "e": 0.6,
+          "delta": 0.0024443379400155814,
+          "profile": "P",
+          "params": {
+            "retainedPowerFraction": 0.93,
+            "machPenalty": 2,
+            "machOnset": 0.92,
+            "advanceLoss": 0.06
+          }
+        },
+        {
+          "id": "bf109f4",
+          "e": 0.78,
+          "delta": 0,
+          "profile": "P",
+          "params": {
+            "retainedPowerFraction": 0.93,
+            "machPenalty": 2,
+            "machOnset": 0.92,
+            "advanceLoss": 0.06
+          }
+        }
+      ]
+    },
+    "summary": [
+      {
+        "id": "p51b",
+        "speedMae": 3.720416911238648,
+        "speedCheckMae": 4.2353400069534475,
+        "climbMae": 9.301218108906596,
+        "climbCheckMae": 6.365435249052098
+      },
+      {
+        "id": "p47b",
+        "speedMae": 0.8051874391452657,
+        "speedCheckMae": 0.7534348889303146,
+        "climbMae": 69.83019559807585,
+        "climbCheckMae": 84.69079183175957
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "speedMae": 4.632370329594323,
+        "speedCheckMae": 4.978856777136935,
+        "climbMae": 103.35445860293204,
+        "climbCheckMae": 110.24067957885164
+      },
+      {
+        "id": "bf109f4",
+        "speedMae": 3.100364798036935,
+        "speedCheckMae": 3.100364798036935,
+        "climbMae": null,
+        "climbCheckMae": null
+      }
+    ],
+    "speed": [
+      {
+        "id": "p51b",
+        "split": "fit",
+        "altFt": 4000,
+        "observed": 380,
+        "pred": 378.53546040788115,
+        "error": -1.4645395921188538
+      },
+      {
+        "id": "p51b",
+        "split": "check",
+        "altFt": 7400,
+        "observed": 395.5,
+        "pred": 393.8666327670826,
+        "error": -1.6333672329174078
+      },
+      {
+        "id": "p51b",
+        "split": "fit",
+        "altFt": 10300,
+        "observed": 409,
+        "pred": 407.46804186286954,
+        "error": -1.5319581371304594
+      },
+      {
+        "id": "p51b",
+        "split": "check",
+        "altFt": 18000,
+        "observed": 408,
+        "pred": 409.3534584967574,
+        "error": 1.353458496757412
+      },
+      {
+        "id": "p51b",
+        "split": "fit",
+        "altFt": 20800,
+        "observed": 417,
+        "pred": 419.97748018441143,
+        "error": 2.9774801844114336
+      },
+      {
+        "id": "p51b",
+        "split": "check",
+        "altFt": 24000,
+        "observed": 426,
+        "pred": 432.2070258665981,
+        "error": 6.207025866598087
+      },
+      {
+        "id": "p51b",
+        "split": "fit",
+        "altFt": 28000,
+        "observed": 419,
+        "pred": 425.78652884846724,
+        "error": 6.786528848467242
+      },
+      {
+        "id": "p51b",
+        "split": "check",
+        "altFt": 32000,
+        "observed": 410,
+        "pred": 417.9959013063026,
+        "error": 7.995901306302585
+      },
+      {
+        "id": "p51b",
+        "split": "fit",
+        "altFt": 0,
+        "observed": 376.5,
+        "pred": 377.06800415658745,
+        "error": 0.568004156587449
+      },
+      {
+        "id": "p51b",
+        "split": "check",
+        "altFt": 18000,
+        "observed": 423,
+        "pred": 426.98694713219174,
+        "error": 3.9869471321917445
+      },
+      {
+        "id": "p51b",
+        "split": "fit",
+        "altFt": 20800,
+        "observed": 431,
+        "pred": 437.41937507014245,
+        "error": 6.419375070142451
+      },
+      {
+        "id": "p47b",
+        "split": "fit",
+        "altFt": 15000,
+        "observed": 386,
+        "pred": 386.05627094353895,
+        "error": 0.056270943538947904
+      },
+      {
+        "id": "p47b",
+        "split": "check",
+        "altFt": 25000,
+        "observed": 420,
+        "pred": 421.4593039827314,
+        "error": 1.4593039827313987
+      },
+      {
+        "id": "p47b",
+        "split": "fit",
+        "altFt": 27800,
+        "observed": 429,
+        "pred": 431.26380175044596,
+        "error": 2.263801750445964
+      },
+      {
+        "id": "p47b",
+        "split": "check",
+        "altFt": 30000,
+        "observed": 426,
+        "pred": 426.04756579512923,
+        "error": 0.04756579512923054
+      },
+      {
+        "id": "p47b",
+        "split": "fit",
+        "altFt": 34000,
+        "observed": 412,
+        "pred": 411.8010052761192,
+        "error": -0.1989947238807872
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "fit",
+        "altFt": 2000,
+        "observed": 345,
+        "pred": 344.9775467110767,
+        "error": -0.022453288923315995
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 4000,
+        "observed": 353,
+        "pred": 354.1787527770239,
+        "error": 1.178752777023874
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "fit",
+        "altFt": 6000,
+        "observed": 363,
+        "pred": 363.2787592416453,
+        "error": 0.2787592416452753
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 8000,
+        "observed": 372,
+        "pred": 370.2677236848349,
+        "error": -1.7322763151651088
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "fit",
+        "altFt": 10000,
+        "observed": 380,
+        "pred": 377.45193813979404,
+        "error": -2.548061860205962
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 10800,
+        "observed": 384,
+        "pred": 380.3814559761531,
+        "error": -3.61854402384688
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "fit",
+        "altFt": 12000,
+        "observed": 384,
+        "pred": 379.1376553060809,
+        "error": -4.862344693919113
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 14000,
+        "observed": 383.5,
+        "pred": 376.5827461962681,
+        "error": -6.91725380373191
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "fit",
+        "altFt": 16000,
+        "observed": 383,
+        "pred": 375.0951350520909,
+        "error": -7.904864947909118
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 18000,
+        "observed": 382,
+        "pred": 374.430608251786,
+        "error": -7.569391748214002
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "fit",
+        "altFt": 16000,
+        "observed": 381.5,
+        "pred": 389.87736727518586,
+        "error": 8.377367275185861
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 18000,
+        "observed": 390.5,
+        "pred": 397.5141803249944,
+        "error": 7.014180324994413
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "fit",
+        "altFt": 20000,
+        "observed": 399,
+        "pred": 405.24312662387365,
+        "error": 6.24312662387365
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 22000,
+        "observed": 407,
+        "pred": 413.05043157943237,
+        "error": 6.05043157943237
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "fit",
+        "altFt": 24000,
+        "observed": 406,
+        "pred": 408.301944236463,
+        "error": 2.3019442364629867
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 26000,
+        "observed": 403,
+        "pred": 406.48329818627917,
+        "error": 3.483298186279171
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "fit",
+        "altFt": 28000,
+        "observed": 399.5,
+        "pred": 403.7246517448375,
+        "error": 4.224651744837502
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 30000,
+        "observed": 395,
+        "pred": 400.45091340386625,
+        "error": 5.450913403866252
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "fit",
+        "altFt": 32000,
+        "observed": 389,
+        "pred": 395.09526490755434,
+        "error": 6.095264907554338
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 34000,
+        "observed": 381,
+        "pred": 387.77352560881536,
+        "error": 6.773525608815362
+      },
+      {
+        "id": "bf109f4",
+        "split": "check",
+        "altFt": 0,
+        "observed": 336,
+        "pred": 339.10036479803694,
+        "error": 3.100364798036935
+      }
+    ],
+    "climbs": [
+      {
+        "id": "p51b",
+        "split": "fit",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "observed": 3820,
+        "pred": 3807.762999031239,
+        "error": -12.237000968761095
+      },
+      {
+        "id": "p51b",
+        "split": "check",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "observed": 4380,
+        "pred": 4386.365435249052,
+        "error": 6.365435249052098
+      },
+      {
+        "id": "p47b",
+        "split": "fit",
+        "altFt": 15000,
+        "observed": 2330,
+        "pred": 2383.4668863151505,
+        "error": 53.46688631515053
+      },
+      {
+        "id": "p47b",
+        "split": "check",
+        "altFt": 20000,
+        "observed": 2150,
+        "pred": 2146.613970105576,
+        "error": -3.386029894424155
+      },
+      {
+        "id": "p47b",
+        "split": "check",
+        "altFt": 23400,
+        "observed": 2000,
+        "pred": 2040.6644213190164,
+        "error": 40.664421319016355
+      },
+      {
+        "id": "p47b",
+        "split": "fit",
+        "altFt": 25000,
+        "observed": 1810,
+        "pred": 1768.38828382005,
+        "error": -41.61171617995001
+      },
+      {
+        "id": "p47b",
+        "split": "check",
+        "altFt": 30000,
+        "observed": 1190,
+        "pred": 979.9780757181618,
+        "error": -210.0219242818382
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "fit",
+        "altFt": 2000,
+        "observed": 4640,
+        "pred": 4569.625336315078,
+        "error": -70.37466368492187
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 4000,
+        "observed": 4660,
+        "pred": 4662.273695558193,
+        "error": 2.2736955581931397
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 6000,
+        "observed": 4690,
+        "pred": 4741.098293025871,
+        "error": 51.09829302587059
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 7000,
+        "observed": 4700,
+        "pred": 4722.7122812476855,
+        "error": 22.712281247685496
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "fit",
+        "altFt": 8000,
+        "observed": 4560,
+        "pred": 4522.741169367018,
+        "error": -37.2588306329817
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 10000,
+        "observed": 4280,
+        "pred": 4136.278546096634,
+        "error": -143.72145390336573
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 12000,
+        "observed": 4000,
+        "pred": 3781.5265628796246,
+        "error": -218.47343712037537
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 14000,
+        "observed": 3860,
+        "pred": 4025.9289527519313,
+        "error": 165.92895275193132
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "fit",
+        "altFt": 16000,
+        "observed": 3860,
+        "pred": 4011.229745567122,
+        "error": 151.22974556712188
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 18000,
+        "observed": 3860,
+        "pred": 3979.5802595379814,
+        "error": 119.58025953798142
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 20000,
+        "observed": 3560,
+        "pred": 3595.715596375505,
+        "error": 35.7155963755049
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 22000,
+        "observed": 3270,
+        "pred": 3239.9741987758885,
+        "error": -30.025801224111547
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "fit",
+        "altFt": 24000,
+        "observed": 2970,
+        "pred": 2898.0800571843324,
+        "error": -71.91994281566758
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 26000,
+        "observed": 2700,
+        "pred": 2563.4577418873873,
+        "error": -136.54225811261267
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 28000,
+        "observed": 2400,
+        "pred": 2235.40717981323,
+        "error": -164.59282018677004
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "split": "check",
+        "altFt": 30000,
+        "observed": 2120,
+        "pred": 1887.7766940981826,
+        "error": -232.2233059018174
+      }
+    ],
+    "figures": [
+      {
+        "split": "fit",
+        "speed": 270,
+        "engineRpm": 2100,
+        "observed": 490,
+        "pred": 501.16769483957273,
+        "error": 11.167694839572732
+      },
+      {
+        "split": "check",
+        "speed": 318,
+        "engineRpm": 2300,
+        "observed": 610,
+        "pred": 675.5678181925016,
+        "error": 65.56781819250159
+      },
+      {
+        "split": "fit",
+        "speed": 387,
+        "engineRpm": 2700,
+        "observed": 1000,
+        "pred": 1065.8087259440986,
+        "error": 65.80872594409857
+      },
+      {
+        "split": "check",
+        "speed": 395,
+        "engineRpm": 3000,
+        "observed": 1090,
+        "pred": 1117.8569139974072,
+        "error": 27.85691399740722
+      },
+      {
+        "split": "fit",
+        "speed": 415,
+        "engineRpm": 3000,
+        "observed": 1290,
+        "pred": 1286.230205424197,
+        "error": -3.769794575802962
+      },
+      {
+        "split": "check",
+        "speed": 430,
+        "engineRpm": 3000,
+        "observed": 1440,
+        "pred": 1428.762362483663,
+        "error": -11.237637516336918
+      }
+    ]
+  },
+  "sensitivity": [
+    {
+      "weightLb": 9135,
+      "profile": "C",
+      "mae": 303.7371232649625,
+      "rows": [
+        {
+          "rating": "67inHg",
+          "predicted": 3501.458723168593,
+          "observed": 3820,
+          "error": -318.5412768314068
+        },
+        {
+          "rating": "75inHg",
+          "predicted": 4091.0670303014817,
+          "observed": 4380,
+          "error": -288.93296969851826
+        }
+      ]
+    },
+    {
+      "weightLb": 9135,
+      "profile": "P",
+      "mae": 107.94665738992512,
+      "rows": [
+        {
+          "rating": "67inHg",
+          "predicted": 3912.639739948619,
+          "observed": 3820,
+          "error": 92.63973994861908
+        },
+        {
+          "rating": "75inHg",
+          "predicted": 4503.253574831231,
+          "observed": 4380,
+          "error": 123.25357483123116
+        }
+      ]
+    },
+    {
+      "weightLb": 9335,
+      "profile": "C",
+      "mae": 410.1877613998802,
+      "rows": [
+        {
+          "rating": "67inHg",
+          "predicted": 3401.0861529653166,
+          "observed": 3820,
+          "error": -418.9138470346834
+        },
+        {
+          "rating": "75inHg",
+          "predicted": 3978.538324234923,
+          "observed": 4380,
+          "error": -401.46167576507696
+        }
+      ]
+    },
+    {
+      "weightLb": 9335,
+      "profile": "P",
+      "mae": 9.301218108906596,
+      "rows": [
+        {
+          "rating": "67inHg",
+          "predicted": 3807.762999031239,
+          "observed": 3820,
+          "error": -12.237000968761095
+        },
+        {
+          "rating": "75inHg",
+          "predicted": 4386.365435249052,
+          "observed": 4380,
+          "error": 6.365435249052098
+        }
+      ]
+    },
+    {
+      "weightLb": 9535,
+      "profile": "C",
+      "mae": 512.571684493535,
+      "rows": [
+        {
+          "rating": "67inHg",
+          "predicted": 3304.527415621552,
+          "observed": 3820,
+          "error": -515.4725843784481
+        },
+        {
+          "rating": "75inHg",
+          "predicted": 3870.329215391378,
+          "observed": 4380,
+          "error": -509.67078460862194
+        }
+      ]
+    },
+    {
+      "weightLb": 9535,
+      "profile": "P",
+      "mae": 109.57086229656511,
+      "rows": [
+        {
+          "rating": "67inHg",
+          "predicted": 3706.898918057646,
+          "observed": 3820,
+          "error": -113.10108194235409
+        },
+        {
+          "rating": "75inHg",
+          "predicted": 4273.959357349224,
+          "observed": 4380,
+          "error": -106.04064265077614
+        }
+      ]
+    }
+  ],
+  "baseline": [
+    {
+      "id": "p51b",
+      "speedMae": 2.487484812169896,
+      "speedCheckMae": 2.627744259285282,
+      "climbMae": 410.1877613998802,
+      "climbCheckMae": 401.46167576507696
+    },
+    {
+      "id": "p47b",
+      "speedMae": 3.649356289075695,
+      "speedCheckMae": 3.5759978478281482,
+      "climbMae": 546.3921695312317,
+      "climbCheckMae": 553.6973021658329
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "speedMae": 4.990090793307081,
+      "speedCheckMae": 5.4655641011670015,
+      "climbMae": 103.88205168821466,
+      "climbCheckMae": 95.716918806678
+    },
+    {
+      "id": "bf109f4",
+      "speedMae": 3.374100244874171,
+      "speedCheckMae": 3.374100244874171,
+      "climbMae": null,
+      "climbCheckMae": null
+    }
+  ],
+  "acceptance": {
+    "mustangReduction": 0.9773244865298673,
+    "targetMet": true,
+    "priorP47CheckMae": 70.47708067095391,
+    "bounds": [
+      {
+        "id": "p51b",
+        "speedPass": true,
+        "climbPass": true
+      },
+      {
+        "id": "p47b",
+        "speedPass": true,
+        "climbPass": true
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "speedPass": true,
+        "climbPass": true
+      },
+      {
+        "id": "bf109f4",
+        "speedPass": true,
+        "climbPass": null
+      }
+    ],
+    "pass": true
+  },
+  "qualification": "Speed anchor exact; alternating non-anchor speed rows fit/check. P-51 67-inHg climb fitted, 75-inHg checked; alternating Figure 5 points fit/check at source RPM. P-47 climb fit 15k/25k ft, remaining altitudes checked. Spitfire climb every fourth row fitted. All records already exposed during development; these are out-of-fit engineering checks, not independent blind validation.",
+  "limits": [
+    "Spitfire effective e is at the search lower bound.",
+    "No Bf109 climb observation in this fit.",
+    "P47 earlier conditional climb fit is stronger than raw C; reserved error 70.48 versus current 84.69 fpm.",
+    "Weight sensitivity is a scenario test, not new historical validation."
+  ]
+}
