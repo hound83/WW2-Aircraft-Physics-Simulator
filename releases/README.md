@@ -13,3 +13,7 @@ Major releases must document acceptance gates, results, remaining failures and u
 ## v2.8.0 working approximation, 2026-10-30
 
 Joint drag/propeller calibration becomes the application default P. See [results and limitations](v2.8.0.md). This is a useful engineering iteration, not an independently certified final model.
+
+## v2.9.0 robustness, 2026-10-30
+
+Stress power/weight/RPM and alternate fit assignments. Retain the v2.8 working calibration because no tested fixed replacement meets all cross-condition limits. See [results and limitations](v2.9.0.md).

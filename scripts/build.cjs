@@ -19,6 +19,9 @@ function patchWorkingUI(html){
  html=html.replace('Fixed C/0.78 calibrated drag','Source-anchor drag (P uses joint fitted e)');
  html=html.replaceAll('Uses unchanged drag fit and prop profile','P uses joint-calibrated drag and propeller settings; legacy profiles retain their original fit');
  html=html.replaceAll('Not adjusted or tuned using climb numbers','P: 67-inHg climb fitted; 75-inHg excluded from parameter fit. All data seen during development');
+ const audit=require('../validation/current/v29-robustness.json');
+ const notice='<details id="v29-robustness"><summary>How stable is this model?</summary><p>The working model matches the two Mustang climb report rates more closely than the legacy reference in '+audit.chart.improves+' of '+audit.chart.total+' tested power/weight scenarios. Results remain sensitive to assumed test conditions. These scenarios are not historical accuracy bounds. The v2.9 review retains the v2.8 working calibration.</p></details>';
+ html=html.replace('</header>',notice+'</header>');
  return html;
 }
 

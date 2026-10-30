@@ -3,7 +3,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs');
 const M=require('../src/physics.js'),D=require('../aircraft/cases.json'),F=require('../calibration/v2.8-working-model.json');
 const R=require('../validation/diagnostics/working_validation_v28.cjs').run();
 const frozen=require('../validation/current/v28-calibration.json');
-assert.equal(F.version,require('../package.json').version);
+assert.equal(F.version,D.aircraft.p51b.workingModel.calibrationVersion);
 assert.equal(frozen.acceptance.pass,true);
 assert.deepEqual(frozen.selected.model.params,F.sharedPropeller);
 for(const f of frozen.selected.model.fits){assert.equal(f.e,F.aircraft[f.id].e);assert.ok(Math.abs(f.delta-F.aircraft[f.id].openCoolingDeltaCd0)<1e-10);}

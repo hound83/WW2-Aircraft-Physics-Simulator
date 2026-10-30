@@ -60,3 +60,9 @@ P is an empirical joint engineering fit, using already-exposed observations. Its
 Effective e and aggregate open-configuration CD0 can absorb shaft-power, propeller, cooling and exhaust errors. Spitfire e=0.60 lies at the search boundary; Bf109 has no climb observations in this fit. Do not transfer fitted drag to validated turn claims. P47 reserved climb error is 84.7 ft/min versus 70.5 for the prior conditional experiment. Historical mass, climb TAS, source reading and engine installation remain qualified. See V28_RESULTS.md.
 
 The UI uses P; direct API callers must request it explicitly. The e slider at 0.78 uses the aircraft-specific fitted e and reanchors the scenario. P cooling/configuration loss applies only when explicit source-climb state or a documented open climb observation is requested. Interactive browser tests have not been run for v2.8.
+
+## v2.9 robustness limits
+
+Existing-data split checks and graph-reading scenarios do not certify historical accuracy. The 27 paired Mustang scenarios use three assumed masses (9135/9335/9535 lb) and independent lower/midpoint/upper chart-power readings at two ratings. They are a finite scenario set, not probability distributions or validated uncertainty bounds. The smallest winning margin is modest in the light/high-power corner; 27/27 is not a guarantee outside the tested set. Nominal residuals near 9 ft/min under the engine proxy become roughly 20–293 ft/min under these chart-power/weight choices.
+
+The original Spitfire e=0.60 grid boundary was coarse: a finer original-split fit favors 0.65, while alternate splits favor 0.70. Neither value is measured wing efficiency. Eight fixed candidate models were tested against documented cross-condition limits; none qualified for replacement. This is not exhaustive physical-model optimization. v2.9 retains v2.8 predictions, and v3.0 historical stall/turn and independent pairwise discrimination remain unresolved.

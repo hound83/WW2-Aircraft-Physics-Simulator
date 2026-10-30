@@ -2,7 +2,7 @@
 
 A separate research repository for the shared WWII flight-performance engine. The Atlas website in [hound83/ww2-airwar](https://github.com/hound83/ww2-airwar) is outside this repository's scope.
 
-**Current version: v2.8.0 engineering-calibrated working approximation.** The application now defaults to the joint momentum/loss propeller and drag profile P. Existing observations support useful progress without establishing unique physical coefficients or independent historical accuracy. See [v2.8 release notes](releases/v2.8.0.md) and [measured before/after results](docs/V28_RESULTS.md).
+**Current version: v2.9.0 robustness increment.** Three alternative fit/check assignments, wider Spitfire effective-drag search, chart-power/weight combinations and recorded-RPM reading scenarios stress the existing model. No tested candidate passes every cross-condition comparison limit, so the v2.8 working calibration remains active. See [v2.9 results](docs/V29_ROBUSTNESS.md) and [release notes](releases/v2.9.0.md). The application includes a short expandable robustness explanation. These are already-exposed engineering checks, not independent historical validation.
 
 Initial benchmarks: **Bf 109 F-4, P-47B, P-51B-15 and Spitfire LF Mk IX**. Greg's worksheets and the controlled P-47 2,000/2,600 hp comparison are retained. The 2,600 hp scenario is not a verified P-47B engine rating.
 
@@ -49,7 +49,7 @@ The 5:1 separation criterion is an acceptance target, not achieved accuracy. Mat
 
 **v2.8 supersedes the default-model decisions in the earlier milestones below.** C compatibility tests still retain all 3628 legacy numbers within numeric tolerance; P deliberately changes working predictions. The [v2.8 results](docs/V28_RESULTS.md) show gains, regressions, weight sensitivity and the prior P-47 conditional baseline. Use `npm run diagnose:joint-calibration` to repeat the bounded fit. Raw API calls keep C for compatibility; request `{profile:'P'}` for the new fit. The UI e control is a scenario scale around each fitted e at slider value 0.78; it is not a new measurement. The existing simulator/Greg Bf 109 scenarios remain separate from historical evidence.
 
-Next: [v2.9 robustness and path to v3.0](docs/NEXT_STEPS.md).
+Next: [v3.0 supported-envelope release candidate](docs/NEXT_STEPS.md).
 
 The following paragraphs document previous milestones and their decisions at that time.
 

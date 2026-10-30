@@ -1,15 +1,11 @@
 # Next steps
 
-## v2.8 completed: practical joint approximation
+## v2.9 completed: robustness of the working approximation
 
-The working application now uses the joint-calibrated P profile. See [results](V28_RESULTS.md), [release notes](../releases/v2.8.0.md) and the reproducible fit manifest. Earlier restrictions against fitting the existing data were superseded by Michael's explicit request for practical progress. Independent accuracy and unique component identification remain unresolved.
+Three split assignments, a finer and wider Spitfire effective-e search, near-optimal parameter families, 27 paired Mustang chart-power/weight scenarios, and 162 Figure 5 reading/RPM scenarios are reproducible in [v2.9 results](V29_ROBUSTNESS.md). None of eight distinct fixed candidate models passes every documented replacement limit. Retain the v2.8 working calibration; the application/report version is 2.9.0.
 
-## Next cohesive milestone: v2.9 robustness
+## Next cohesive milestone: v3.0 supported-envelope release candidate
 
-Use the existing data first. Stress the selected joint fit against power-reading brackets, assumed mass, source RPM and alternative fit/check splits. Profile plausible parameter families rather than treating the single grid winner as identified physics. Compare P47 against the earlier conditional baseline and investigate the Spitfire e boundary. Keep the current P model unless a reproducible cross-condition gain survives those checks.
+Define the usable altitude/speed/rating/configuration envelope of the current four-aircraft speed/climb model, including explicit unsupported gaps. Surface scenario ranges and source/configuration caveats where users compare aircraft, and compare absolute speed/climb residuals and pairwise differences only under compatible assumptions. Keep turn/stall comparisons explicitly provisional. Target any new source work at the precise weakest constraint revealed here, rather than beginning another broad collection exercise.
 
-Acceptance: repeatable sensitivity report, fit versus check separation, no silent clamp/extrapolation, source anchors preserved, and npm run check. Improve one identified weakness without worsening the other aircraft beyond explicit guardrails. Additional broad data collection is optional; target new evidence only when this sensitivity identifies a specific missing constraint. No Atlas changes or additional aircraft.
-
-## v3.0 release gate
-
-Freeze a practical working model and document its supported altitude/speed/rating/configuration envelope. Show absolute speed/climb residuals, uncertainty from the v2.9 scenarios, qualified turn/stall limits and reproducible regression results. Obtain genuinely independent matched-condition checks where possible; leave unsupported comparisons unresolved. Do not call fitted residuals independent accuracy or declare the historical 5:1 target achieved without evidence. A useful v3.0 release can disclose unresolved science rather than wait for a final model.
+Acceptance: documented supported conditions, no invented interpolation or missing-data scores, visible distinction between fitted agreement and exposed checks, reproducible scenario ranges, npm run check, and an interactive smoke test of the built application. A practical release candidate may preserve unresolved science. Do not claim independent historical accuracy, validated turn/stall behavior or 5:1 discrimination without evidence. Finish the release candidate without Atlas changes or additional aircraft.
