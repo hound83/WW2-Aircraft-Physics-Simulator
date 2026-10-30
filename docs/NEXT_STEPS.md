@@ -1,15 +1,16 @@
 # Next steps
 
-## Completed cohesive milestone: four-aircraft stall evidence review
+## Completed cohesive milestones
 
-Use [the consolidated review](FOUR_AIRCRAFT_STALL_REVIEW.md) as the entry point, with [machine-readable readiness](../validation/current/stall-readiness.json) and [validation](CURRENT_VALIDATION.md). It includes the executable gate, sensitivity comparisons, P-51 installation audit, original P-47B observation/loading audit, bounded F-4 review and Spitfire clipped-wing/stores correction.
+- [Four-aircraft stall evidence review](FOUR_AIRCRAFT_STALL_REVIEW.md): source audits, executable acceptance gate, sensitivities and explicit unresolved calibration conditions.
+- [Four-aircraft speed/climb validation](PERFORMANCE_VALIDATION.md): 69 records (including the explicit absent Bf 109 climb-rate record), four speed anchors, native-unit diagnostic errors, condition exclusions, dependence/fit roles and twelve unresolved aircraft/metric comparisons. [Machine-readable results](../validation/current/performance-validation.json).
 
-No target has a complete corrected historical stall chain. No default coefficient changed and no 5:1 claim is justified. These are completed evidence-review tasks with explicit blockers, not a validated v3.0 release. One cumulative PR against main supersedes the four small stacked PRs; their branches/commits preserve the intermediate history.
+Default physics, weights and coefficients are unchanged. [Current validation](CURRENT_VALIDATION.md) reports numerical parity, not historical accuracy. The open cumulative review PR includes both packages; no v3.0 release or historical 5:1 claim follows.
 
-## Next cohesive milestone: matched-condition speed and climb validation
+## Next cohesive milestone: source-bounded climb power and cooling diagnosis
 
-Build one four-aircraft validation package that classifies fit versus withheld points, verifies source condition/weight/rating/airspeed compatibility, and reports signed/absolute residuals with explicit exclusions and pairwise uncertainty requirements. Reuse the existing solver and source registers. Fix only supported implementation defects and quantify every numerical change. Complete tests, source/decision updates and one reviewable PR without repeated approval requests for routine substeps.
+Use the new exclusion register to evaluate the P-51 climb shortfall and the P-47/Spitfire open-cooling mismatch as one shared power-budget assignment. Trace source-backed shaft power, propeller efficiency/RPM and cooling/stores effects separately. Reuse existing primary source and power-required registers. Implement a shared correction only where independent evidence supports it; otherwise deliver a quantified limit and specific missing evidence. Preserve the fitted drag anchor and distinguish conditional sensitivities from validation.
 
-Acceptance: all four target aircraft represented; IAS/EAS/TAS and loading mismatches cannot be scored silently; known Mustang climb and controlled P-47 power cases remain visible; npm run check passes; no imported/frozen fixture rewritten; unresolved historical uncertainty remains unresolved. Stop with that complete validation deliverable.
+Acceptance: explain the measured/model useful-power deficit at reported conditions or explicitly label the missing conditions; preserve known failures and the controlled P-47 case; quantify every numerical change; run npm run check; publish one complete review update with source/decision/limitation records. Routine research, code, tests and commits within that scope do not require repeated GO requests. If substantive model design or conflicting historical evidence warrants High reasoning, explain the concrete benefit before proceeding.
 
-Do not repeat the blocked stall searches as standalone milestones. Reopen them only with new matched original evidence. The Spitfire BF.274 A&AEE/692,m third-part citation is retained as a specific unverified retrieval lead. Keep Atlas changes, additional aircraft, propeller OCR correction and UI redesign outside this next milestone.
+Do not reopen blocked stall searches without new evidence, add aircraft, redesign the Atlas/UI, infer uncertainty from residuals or alter frozen fixtures. Stop with the power/cooling deliverable.

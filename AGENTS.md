@@ -63,6 +63,6 @@ The strict scope, stop-condition and Plus-usage rules above govern **Work execut
 ## Cohesive milestone authorization (30 October 2026)
 
 - Batch related research, evidence updates, shared-solver fixes, tests and documentation into one useful end-to-end milestone. Do not require another user GO for each small audit, commit or routine step within the agreed scope.
-- The current authorized deliverable is a consolidated four-aircraft stall review, including the Spitfire audit and one cumulative review PR. Preserve existing physics assumptions unless matched evidence supports a change.
+- The current authorized deliverable is the four-aircraft matched-condition speed/climb validation package, continuing the consolidated stall review. Preserve existing physics assumptions unless matched evidence supports a change.
 - Interrupt only for a material scope/goal decision or an action that lacks authorization. Report progress while continuing routine work in the background; do not change the user's desktop view.
 - The next substantial assignment should also be a complete deliverable with stated acceptance checks, rather than a sequence of permission requests for small substeps.

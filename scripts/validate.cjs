@@ -23,6 +23,7 @@ try{
  const digest=sha256(JSON.stringify(current));
  const stall=require('../validation/diagnostics/stall_gate.cjs').writeReport();
  require('../validation/diagnostics/stall_readiness.cjs').writeReport(stall);
+ require('../validation/diagnostics/performance_validation.cjs').writeReport();
  const md=[
  '# Current validation',
  '',
@@ -40,6 +41,8 @@ try{
  '| Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |',
  '| 5:1 comparative accuracy | Unresolved |',
  '',
+ 'Speed/climb validation: [69 source-conditioned checkpoints](PERFORMANCE_VALIDATION.md); fitted, diagnostic and independently matched scores separated; no new historical accuracy claim.',
+ '',
  'Consolidated evidence review: [four-aircraft readiness](FOUR_AIRCRAFT_STALL_REVIEW.md), including the [Spitfire configuration audit](SPITFIRE_IX_STALL_AUDIT.md).',
  '',
  'Bf 109 F-4 source milestone: [bounded audit](BF109F4_STALL_AUDIT.md); original stall pages unverified, specimen/slat gate tightened.',
@@ -52,7 +55,7 @@ try{
  '',
  'Full records: [test summary](../validation/current/test-summary.json), [numerics](../validation/current/numerics.json), [baseline differences](../validation/current/baseline-diff.json).',
  '',
- 'The setup baseline and current output include the same known scientific failures and provisional evidence. Zero numerical change establishes import parity, not historical accuracy. The original 30 regression scripts are preserved; additional scripts check current standalone embedding and stall-evidence/sensitivity guardrails.',
+ 'The setup baseline and current output include the same known scientific failures and provisional evidence. Zero numerical change establishes import parity, not historical accuracy. The original 30 regression scripts are preserved; additional scripts check current standalone embedding, stall-evidence/sensitivity and matched-performance scoring guardrails.',
  '',
  'The P-47C 20-1 fixture still carries the original 0.799 OCR value; the handover reports 0.779 from the scan. This is an open evidence correction, not a setup regression failure. See [known limitations](KNOWN_LIMITATIONS.md).',
  '',

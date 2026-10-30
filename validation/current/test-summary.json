@@ -1,8 +1,8 @@
 {
   "node": "v24.19.0",
-  "discoveredScripts": 36,
-  "reportedScripts": 36,
-  "passed": 36,
+  "discoveredScripts": 37,
+  "reportedScripts": 37,
+  "passed": 37,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -125,6 +125,10 @@
     },
     {
       "script": "test_p51_v16.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_performance_validation.cjs",
       "status": "pass"
     },
     {
