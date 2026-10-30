@@ -9,7 +9,8 @@
   if(!Number.isFinite(tasMph)||tasMph<scenarioTasMph[0]||tasMph>scenarioTasMph[1])return unavailable('Outside declared 100-590 mph TAS scenario window; this is a numerical window, not a validated speed envelope');
   let r;try{r=M.evaluated(ac,altFt,tasMph,options);}catch(e){return unavailable(e.message);}
   if(r.status!=='modelled'||!Number.isFinite(r.power?.excessHp)||!Number.isFinite(r.power?.climbFpm))return unavailable('No compatible engine/polar input: '+r.status);
-  const matching=(ac.observedSpeed||[]).find(p=>p.rating===base.rating&&p.gear===r.engine.gear&&Math.abs(p.altFt-altFt)<.01&&Math.abs(p.mphTas-tasMph)<.01);
+  const referenceState=Math.abs(base.weightLb-ac.weightLb)<.01&&base.configurationKind==='reference';
+  const matching=referenceState&&(ac.observedSpeed||[]).find(p=>p.rating===base.rating&&p.gear===r.engine.gear&&Math.abs(p.altFt-altFt)<.01&&Math.abs(p.mphTas-tasMph)<.01);
   const anchor=matching&&matching.altFt===ac.calibration.altFt&&matching.rating===ac.calibration.rating&&matching.gear===ac.calibration.gear&&Math.abs(matching.mphTas-ac.calibration.tasMph)<.01;
   return {...base,calculationStatus:'within-input-domain',reason:'Engine input law covers this state; propeller/drag and configuration remain working assumptions',evidenceStatus:base.scenarioKind!=='reference'?'simulator-or-worksheet-scenario':matching?(anchor?'speed-anchor-fit':'already-exposed-speed-checkpoint'):'scenario-only; no exact historical checkpoint',flightStatus:r.limits.nLift<1?'below-assumed-stall':'above-assumed-stall (provisional)',excessHp:r.power.excessHp,climbFpm:r.power.climbFpm,engineGear:r.engine.gear,propEta:r.prop.eta};
  }

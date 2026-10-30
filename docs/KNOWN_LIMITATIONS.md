@@ -74,3 +74,5 @@ Calculation coverage is not a validated flight envelope. Engine-input intervals 
 Pairwise differences are fixed-speed specific-excess-power scenarios using native reference masses/selected ratings; the shared weight percentage is not an equal-combat-load policy. They are not measured historical climb-rate comparisons. Modified configurations, unsupported inputs, below-assumed-stall states and mixed simulator/Greg states cannot generate a qualified pairwise value. Turn/stall and 5:1 historical accuracy remain unresolved.
 
 The five Mustang chart-power ranges retain the fitted P calibration and their own assumed masses; they do not follow e, weight or profile sliders and do not predict the current fixed-speed state. Graph-reading brackets are not confidence intervals. Headless Chromium smoke is a targeted interaction check, not exhaustive UI or cross-browser testing.
+
+The local Windows Edge CDP automation timed out while changing altitude and did not complete. The same smoke completed all ten interactions in hosted Chrome CI with no JavaScript exceptions. Edge compatibility is not certified by that Chrome result.

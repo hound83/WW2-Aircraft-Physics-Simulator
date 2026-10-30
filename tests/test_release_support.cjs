@@ -16,6 +16,7 @@ const a=state('p51b'),b=state('p47b'),pair=S.pairs([a,b])[0];assert.equal(pair.d
 for(const different of [{...b,scenarioKind:'nonhistorical'},{...b,altFt:6000},{...b,tasMph:260},{...b,profile:'C'},{...b,comparisonPolicy:undefined},{...b,flightStatus:'below-assumed-stall'},{...b,configurationKind:'modified'}])assert.equal(S.pairs([a,different])[0].deltaClimbFpm,null);
 const anchor=S.assess(M,D.aircraft.p51b,{altFt:0,tasMph:361.5,options:{profile:'P',rating:'67inHg',gear:'low'}});assert.equal(anchor.evidenceStatus,'speed-anchor-fit');
 assert.equal(a.evidenceStatus,'scenario-only; no exact historical checkpoint');
+const heavier=S.assess(M,D.aircraft.p51b,{altFt:0,tasMph:361.5,options:{profile:'P',rating:'67inHg',gear:'low',weightLb:D.aircraft.p51b.weightLb*1.05}});assert.equal(heavier.evidenceStatus,'scenario-only; no exact historical checkpoint');
 const source=S.bands(audit,{altFt:8000,rating:'75inHg'});assert.equal(source.status,'scenario-range');assert.equal(source.samples,9);assert.ok(source.maxClimbFpm>source.minClimbFpm);
 assert.equal(S.bands(audit,{altFt:6000,rating:'75inHg'}).minClimbFpm,null);assert.equal(S.bands(audit,{altFt:8000,rating:'67inHg'}).maxClimbFpm,null);
 const report=R.run();assert.equal(report.releaseStage,'release-candidate');assert.equal(report.chartRanges.length,5);assert.equal(report.historicalTurnStallAccuracy,null);
