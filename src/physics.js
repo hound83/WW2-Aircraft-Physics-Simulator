@@ -279,7 +279,26 @@ function propEta(ac,alt,tasMph,bhp,profile='C',rating=ac.defaultRating,options={
   eta=profileFraction*v/(v+vi);
   debug={inducedVelocityMps:vi,diskAreaM2:area,idealInducedEfficiency:v/(v+vi),assumedProfileAndInstallationPowerFraction:profileFraction,
     note:'NACA-inspired actuator-disk momentum bound with a GLOBAL unmeasured 0.85 blade/profile/installation power fraction; no J/Cp blade map, finite blade or compressibility model. Optional research case ONLY.'};
- }else throw Error('Unknown profile');return {eta:Math.max(.05,Math.min(.91,eta)),...debug,method:profile==='M'?'1941 NACA chart plus 1938/1945 source-bounded Mach research scenario (not yet validated for aircraft)':profile==='N'?'NACA 1941 FIGURE-DIGITIZED TRANSFER: approximate 3-/4-blade research data, not installed aircraft flight measurement':profile==='D'?'ideal momentum disk plus assumed global loss fraction; NOT flight-calibrated':profile==='G'?'Greg P-47D worksheet speed-shaped 0.85 plateau, transferred ONLY as an unvalidated test':'heuristic; not a NACA measured propeller map'};}
+ }else if(profile==='P'){
+  const p=ac.propGeometry||{},fit=p.momentumModel;
+  const rpm=options.engineRpmOverride??p.engineRpmByRating?.[rating];
+  const hasRpm=options.engineRpmOverride!==undefined||p.engineRpmByRating!==undefined;
+  if(hasRpm&&!(Number.isFinite(rpm)&&rpm>0&&p.reductionRatioEnginePerProp>1))return null;
+  const propRpm=hasRpm?rpm/p.reductionRatioEnginePerProp:p.propRpm;
+  if(!(fit&&Number.isFinite(fit.retainedPowerFraction)&&fit.retainedPowerFraction>0&&fit.retainedPowerFraction<=1&&
+       Number.isFinite(fit.machPenalty)&&fit.machPenalty>=0&&Number.isFinite(fit.advanceLoss)&&fit.advanceLoss>=0&&
+       Number.isFinite(fit.machOnset)&&fit.machOnset>0&&propRpm>0&&p.diameterFt>0&&bhp>0&&v>0))return null;
+  const n=propRpm/60,diameter=p.diameterFt*FT,area=Math.PI*diameter*diameter/4,power=fit.retainedPowerFraction*bhp*HP;
+  let lo=0,hi=Math.cbrt(power/(2*at.rho*area));
+  for(let i=0;i<35;i++){const mid=(lo+hi)/2;if(2*at.rho*area*mid*(v+mid)**2>power)hi=mid;else lo=mid;}
+  const vi=(lo+hi)/2,J=v/(n*diameter),tipMach=Math.hypot(v,Math.PI*n*diameter)/at.a;
+  const machFactor=Math.exp(-fit.machPenalty*Math.max(0,tipMach-fit.machOnset)**2);
+  const advanceFactor=Math.exp(-fit.advanceLoss*Math.max(0,J-1.65)**2);
+  eta=fit.retainedPowerFraction*v/(v+vi)*machFactor*advanceFactor;
+  debug={J,Cp:bhp*HP/(at.rho*n**3*diameter**5),tipMach,propRpm,engineRpm:hasRpm?rpm:null,
+   inducedVelocityMps:vi,machFactor,advanceFactor,...fit,
+   note:'v2.8 joint engineering calibration: shared loss parameters; geometry-specific loading. Not measured installed eta.'};
+ }else throw Error('Unknown profile');return {eta:Math.max(.05,Math.min(profile==='P'?1:.91,eta)),...debug,method:profile==='P'?'v2.8 momentum/loss working approximation, jointly calibrated':profile==='M'?'1941 NACA chart plus 1938/1945 source-bounded Mach research scenario (not yet validated for aircraft)':profile==='N'?'NACA 1941 FIGURE-DIGITIZED TRANSFER: approximate 3-/4-blade research data, not installed aircraft flight measurement':profile==='D'?'ideal momentum disk plus assumed global loss fraction; NOT flight-calibrated':profile==='G'?'Greg P-47D worksheet speed-shaped 0.85 plateau, transferred ONLY as an unvalidated test':'heuristic; not a NACA measured propeller map'};}
 function geometry(ac){const S=ac.wingAreaM2,b=ac.spanM;if(!(S>0&&b>0))throw Error('Geometry unavailable');return {S,b,AR:b*b/S};}
 function dragBreakdown(ac,alt,tasMph,weightLb,cd0,e,n=1){const v=tasMph*MPH,at=isa(alt),geo=geometry(ac),W=weightLb*LBF,q=.5*at.rho*v*v,CL=n*W/(q*geo.S),dParasite=q*geo.S*cd0,dInd=n*n*W*W/(q*Math.PI*e*geo.b*geo.b),drag=dParasite+dInd;return {q,CL,parasiteLbf:dParasite/LBF,inducedLbf:dInd/LBF,totalLbf:drag/LBF,dParasite,dInd,drag,requiredHp:drag*v/HP,parasiteHp:dParasite*v/HP,inducedHp:dInd*v/HP};}
 function cd0FromAnchor(ac,profile,e,sourceOnly=false){const ref=ac.calibration,at=ref.altFt,sp=ref.tasMph,sh=shaftPower(ac,at,ref.rating,ref.gear);if(!sh)return null;const prop=propEta(ac,at,sp,sh.bhp,profile,ref.rating);if(!prop)return null;const V=sp*MPH,q=.5*isa(at).rho*V*V,W=ac.weightLb*LBF,b=ac.spanM,S=ac.wingAreaM2;const total=prop.eta*sh.bhp*HP/V,ind=W*W/(q*Math.PI*e*b*b),cd0=(total-ind)/(q*S);return {cd0,etaAtAnchor:prop.eta,anchorSpeed:sp,anchorAlt:at,origin:'calibrated from one speed anchor; NOT a measured drag polar',valid:cd0>.005&&cd0<.085};}

@@ -12,6 +12,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: node validation/diagnostics/joint_calibration_v28.cjs
       - run: npm run check
       - uses: actions/upload-artifact@v4
         if: always()
