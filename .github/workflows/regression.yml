@@ -18,7 +18,7 @@ jobs:
         run: |
           node - <<'NODE'
           const fs=require('node:fs');
-          for(const p of ['docs/V28_RESULTS.md','docs/CURRENT_VALIDATION.md','validation/current/v28-working.json','validation/current/test-summary.json','validation/current/baseline-diff.json','validation/current/build.json']){
+          for(const p of ['docs/V28_RESULTS.md','docs/V29_ROBUSTNESS.md','docs/CURRENT_VALIDATION.md','validation/current/v28-working.json','validation/current/test-summary.json','validation/current/baseline-diff.json','validation/current/build.json']){
             console.log('V28_FILE '+JSON.stringify({path:p,content:fs.readFileSync(p,'utf8')}));
           }
           NODE
@@ -33,3 +33,4 @@ jobs:
             releases/*.md
             docs/CURRENT_VALIDATION.md
             docs/V28_RESULTS.md
+            docs/V29_ROBUSTNESS.md

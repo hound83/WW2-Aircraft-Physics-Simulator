@@ -1,0 +1,6848 @@
+{
+  "schema": 1,
+  "version": "2.9.0",
+  "workingCalibration": "2.8.0",
+  "policy": {
+    "version": "2.9.0",
+    "workingCalibration": "2.8.0",
+    "purpose": "Stress existing-data calibration before changing the working coefficients",
+    "splits": [
+      "original",
+      "alternate",
+      "rotated"
+    ],
+    "retainedPowerFraction": [
+      0.85,
+      0.87,
+      0.89,
+      0.91,
+      0.93,
+      0.95,
+      0.97
+    ],
+    "advanceLoss": [
+      0,
+      0.06,
+      0.12,
+      0.18,
+      0.24,
+      0.3,
+      0.36
+    ],
+    "effectiveE": [
+      0.6,
+      0.7,
+      0.78,
+      0.85,
+      0.92,
+      0.98
+    ],
+    "spitfireExtendedE": [
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.78,
+      0.85,
+      0.92,
+      0.98
+    ],
+    "nearOptimalScoreAllowance": 0.02,
+    "mustangWeightsLb": [
+      9135,
+      9335,
+      9535
+    ],
+    "figure5TasOffsetsMph": [
+      -4,
+      0,
+      4
+    ],
+    "figure5PowerOffsetsBhp": [
+      -35,
+      0,
+      35
+    ],
+    "rpmScenarioOffsets": [
+      -100,
+      0,
+      100
+    ],
+    "selectionPolicy": "Parameter fitting uses fit rows only. Evaluate every fitted winner on the same archived v2.8 check rows, and separately its own check rows. These are already-exposed engineering checks, not blind validation.",
+    "promotionPolicy": "A single fixed candidate must beat v2.8 P47 original-check climb MAE by at least 10 ft/min and stay within +0.5 mph speed / +10 ft/min climb MAE for every aircraft on original check rows AND on each of the three own-split check sets. Candidates are split winners and original-split near-optimal families. No promotion solely for lower training score or a lower Spitfire e.",
+    "scenarioPolicy": "Graph-reading bounds are reading brackets, not historical confidence intervals. Weight and +/-100 RPM perturbations are assumed scenarios, not measured uncertainty. No interpolation or extrapolation of chart power. No fit of new aircraft or new historical observations."
+  },
+  "current": [
+    {
+      "id": "p51b",
+      "speedMae": 3.720416911238648,
+      "speedCheckMae": 4.2353400069534475,
+      "climbMae": 9.301218108906596,
+      "climbCheckMae": 6.365435249052098
+    },
+    {
+      "id": "p47b",
+      "speedMae": 0.8051874391452657,
+      "speedCheckMae": 0.7534348889303146,
+      "climbMae": 69.83019559807585,
+      "climbCheckMae": 84.69079183175957
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "speedMae": 4.632370329594323,
+      "speedCheckMae": 4.978856777136935,
+      "climbMae": 103.35445860293204,
+      "climbCheckMae": 110.24067957885164
+    },
+    {
+      "id": "bf109f4",
+      "speedMae": 3.100364798036935,
+      "speedCheckMae": 3.100364798036935,
+      "climbMae": null,
+      "climbCheckMae": null
+    }
+  ],
+  "splits": [
+    {
+      "split": "original",
+      "winner": {
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "fits": [
+          {
+            "id": "p51b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.92,
+            "cd0": 0.018397874493288696,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.26419443327888736
+          },
+          {
+            "id": "p47b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "delta": 0.01804155050509509,
+            "unclippedDelta": 0.01804155050509509,
+            "deltaClipped": false,
+            "score": 0.07358110039804079
+          },
+          {
+            "id": "spitfire_lfix_bs543",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.6,
+            "cd0": 0.022332693217227445,
+            "delta": 0.002444337940015582,
+            "unclippedDelta": 0.002444337940015582,
+            "deltaClipped": false,
+            "score": 0.4454472179548967
+          },
+          {
+            "id": "bf109f4",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.78,
+            "cd0": 0.02542899193686372,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.00044444444444444544
+          }
+        ],
+        "score": 0.19591679901906733
+      },
+      "fixedChecks": [
+        {
+          "id": "p51b",
+          "speedMae": 3.720416911238648,
+          "speedCheckMae": 4.2353400069534475,
+          "climbMae": 9.301218108906596,
+          "climbCheckMae": 6.365435249052098
+        },
+        {
+          "id": "p47b",
+          "speedMae": 0.8051874391452657,
+          "speedCheckMae": 0.7534348889303146,
+          "climbMae": 69.83019559807585,
+          "climbCheckMae": 84.69079183175957
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedMae": 4.632370329594323,
+          "speedCheckMae": 4.978856777136935,
+          "climbMae": 103.35445860293204,
+          "climbCheckMae": 110.24067957885164
+        },
+        {
+          "id": "bf109f4",
+          "speedMae": 3.100364798036935,
+          "speedCheckMae": 3.100364798036935,
+          "climbMae": null,
+          "climbCheckMae": null
+        }
+      ],
+      "ownChecks": [
+        {
+          "id": "p51b",
+          "speedCount": 5,
+          "speedMae": 4.2353400069534475,
+          "climbCount": 1,
+          "climbMae": 6.365435249052098
+        },
+        {
+          "id": "p47b",
+          "speedCount": 2,
+          "speedMae": 0.7534348889303146,
+          "climbCount": 3,
+          "climbMae": 84.69079183175957
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCount": 10,
+          "speedMae": 4.978856777136935,
+          "climbCount": 12,
+          "climbMae": 110.24067957885164
+        },
+        {
+          "id": "bf109f4",
+          "speedCount": 1,
+          "speedMae": 3.100364798036935,
+          "climbCount": 0,
+          "climbMae": null
+        }
+      ],
+      "comparison": [
+        {
+          "id": "p51b",
+          "speedCheckDelta": 0,
+          "climbCheckDelta": 0
+        },
+        {
+          "id": "p47b",
+          "speedCheckDelta": 0,
+          "climbCheckDelta": 0
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCheckDelta": 0,
+          "climbCheckDelta": 0
+        },
+        {
+          "id": "bf109f4",
+          "speedCheckDelta": 0,
+          "climbCheckDelta": null
+        }
+      ],
+      "nearOptimal": [
+        {
+          "model": {
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "fits": [
+              {
+                "id": "p51b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.92,
+                "cd0": 0.018397874493288696,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.26419443327888736
+              },
+              {
+                "id": "p47b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.7,
+                "cd0": 0.02182668614955703,
+                "delta": 0.01804155050509509,
+                "unclippedDelta": 0.01804155050509509,
+                "deltaClipped": false,
+                "score": 0.07358110039804079
+              },
+              {
+                "id": "spitfire_lfix_bs543",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.6,
+                "cd0": 0.022332693217227445,
+                "delta": 0.002444337940015582,
+                "unclippedDelta": 0.002444337940015582,
+                "deltaClipped": false,
+                "score": 0.4454472179548967
+              },
+              {
+                "id": "bf109f4",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.78,
+                "cd0": 0.02542899193686372,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.00044444444444444544
+              }
+            ],
+            "score": 0.19591679901906733
+          },
+          "summary": [
+            {
+              "id": "p51b",
+              "speedMae": 3.720416911238648,
+              "speedCheckMae": 4.2353400069534475,
+              "climbMae": 9.301218108906596,
+              "climbCheckMae": 6.365435249052098
+            },
+            {
+              "id": "p47b",
+              "speedMae": 0.8051874391452657,
+              "speedCheckMae": 0.7534348889303146,
+              "climbMae": 69.83019559807585,
+              "climbCheckMae": 84.69079183175957
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedMae": 4.632370329594323,
+              "speedCheckMae": 4.978856777136935,
+              "climbMae": 103.35445860293204,
+              "climbCheckMae": 110.24067957885164
+            },
+            {
+              "id": "bf109f4",
+              "speedMae": 3.100364798036935,
+              "speedCheckMae": 3.100364798036935,
+              "climbMae": null,
+              "climbCheckMae": null
+            }
+          ]
+        },
+        {
+          "model": {
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "fits": [
+              {
+                "id": "p51b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.98,
+                "cd0": 0.018316034568985295,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.3414784963194331
+              },
+              {
+                "id": "p47b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.78,
+                "cd0": 0.021945689269456795,
+                "delta": 0.020832334925296677,
+                "unclippedDelta": 0.020832334925296677,
+                "deltaClipped": false,
+                "score": 0.048119666996200974
+              },
+              {
+                "id": "spitfire_lfix_bs543",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.7,
+                "cd0": 0.02236945316975287,
+                "delta": 0.004995443113611399,
+                "unclippedDelta": 0.004995443113611399,
+                "deltaClipped": false,
+                "score": 0.4094069021659095
+              },
+              {
+                "id": "bf109f4",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.78,
+                "cd0": 0.025277146468830978,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.00044444444444444544
+              }
+            ],
+            "score": 0.19986237748149702
+          },
+          "summary": [
+            {
+              "id": "p51b",
+              "speedMae": 2.4837308348903453,
+              "speedCheckMae": 2.782282601852239,
+              "climbMae": 29.40593702026854,
+              "climbCheckMae": 38.35110234884996
+            },
+            {
+              "id": "p47b",
+              "speedMae": 0.5641225641325945,
+              "speedCheckMae": 0.8993984656181055,
+              "climbMae": 69.85227032526673,
+              "climbCheckMae": 81.2084580908977
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedMae": 4.26741527685399,
+              "speedCheckMae": 4.665946050073944,
+              "climbMae": 87.96679718800222,
+              "climbCheckMae": 91.8229544676526
+            },
+            {
+              "id": "bf109f4",
+              "speedMae": 3.361055346910689,
+              "speedCheckMae": 3.361055346910689,
+              "climbMae": null,
+              "climbCheckMae": null
+            }
+          ]
+        },
+        {
+          "model": {
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.91,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "fits": [
+              {
+                "id": "p51b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.98,
+                "cd0": 0.018039634632447503,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.34745118203423536
+              },
+              {
+                "id": "p47b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.7,
+                "cd0": 0.021322987270798264,
+                "delta": 0.01598563532018867,
+                "unclippedDelta": 0.01598563532018867,
+                "deltaClipped": false,
+                "score": 0.05724358374629086
+              },
+              {
+                "id": "spitfire_lfix_bs543",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.6,
+                "cd0": 0.02183854763670904,
+                "delta": 0.0001323887851908966,
+                "unclippedDelta": 0.0001323887851908966,
+                "deltaClipped": false,
+                "score": 0.43553624320655354
+              },
+              {
+                "id": "bf109f4",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.78,
+                "cd0": 0.024863498773032372,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.00044444444444444544
+              }
+            ],
+            "score": 0.21016886335788104
+          },
+          "summary": [
+            {
+              "id": "p51b",
+              "speedMae": 3.9387881208236153,
+              "speedCheckMae": 4.538749980409738,
+              "climbMae": 64.65191748327061,
+              "climbCheckMae": 61.35100710875031
+            },
+            {
+              "id": "p47b",
+              "speedMae": 0.9041039018853553,
+              "speedCheckMae": 0.7907221569666945,
+              "climbMae": 61.56563801219636,
+              "climbCheckMae": 78.6934916280943
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedMae": 4.544956532556898,
+              "speedCheckMae": 4.881503765402522,
+              "climbMae": 101.4935926412983,
+              "climbCheckMae": 105.84876671747422
+            },
+            {
+              "id": "bf109f4",
+              "speedMae": 3.118910422580484,
+              "speedCheckMae": 3.118910422580484,
+              "climbMae": null,
+              "climbCheckMae": null
+            }
+          ]
+        },
+        {
+          "model": {
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.95,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "fits": [
+              {
+                "id": "p51b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.95,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.85,
+                "cd0": 0.01873839434838409,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.28988633366579236
+              },
+              {
+                "id": "p47b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.95,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.7,
+                "cd0": 0.02233008022593387,
+                "delta": 0.020091731894731617,
+                "unclippedDelta": 0.020091731894731617,
+                "deltaClipped": false,
+                "score": 0.0959968311951877
+              },
+              {
+                "id": "spitfire_lfix_bs543",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.95,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.6,
+                "cd0": 0.022826535676095265,
+                "delta": 0.004749410284676864,
+                "unclippedDelta": 0.004749410284676864,
+                "deltaClipped": false,
+                "score": 0.4590878675720278
+              },
+              {
+                "id": "bf109f4",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.95,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.78,
+                "cd0": 0.02599414600329728,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.00044444444444444544
+              }
+            ],
+            "score": 0.21135386921936308
+          },
+          "summary": [
+            {
+              "id": "p51b",
+              "speedMae": 3.3971448964319446,
+              "speedCheckMae": 3.785681575572562,
+              "climbMae": 48.95754355773943,
+              "climbCheckMae": 64.4063192698668
+            },
+            {
+              "id": "p47b",
+              "speedMae": 1.0292803398331671,
+              "speedCheckMae": 1.0226922036699762,
+              "climbMae": 78.06240392125349,
+              "climbCheckMae": 90.66553037057083
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedMae": 4.715548665527149,
+              "speedCheckMae": 5.071438041780493,
+              "climbMae": 106.81380543919155,
+              "climbCheckMae": 116.7556912413944
+            },
+            {
+              "id": "bf109f4",
+              "speedMae": 3.0826472981525512,
+              "speedCheckMae": 3.0826472981525512,
+              "climbMae": null,
+              "climbCheckMae": null
+            }
+          ]
+        },
+        {
+          "model": {
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.91,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "fits": [
+              {
+                "id": "p51b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.98,
+                "cd0": 0.017909817529780242,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.4117045528443665
+              },
+              {
+                "id": "p47b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.78,
+                "cd0": 0.02144366948071648,
+                "delta": 0.018774740650371814,
+                "unclippedDelta": 0.018774740650371814,
+                "deltaClipped": false,
+                "score": 0.03545556984768964
+              },
+              {
+                "id": "spitfire_lfix_bs543",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.7,
+                "cd0": 0.021877497714654998,
+                "delta": 0.0026813038333628313,
+                "unclippedDelta": 0.0026813038333628313,
+                "deltaClipped": false,
+                "score": 0.4037247058182695
+              },
+              {
+                "id": "bf109f4",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.78,
+                "cd0": 0.024714872888479896,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.00044444444444444544
+              }
+            ],
+            "score": 0.21283231823869253
+          },
+          "summary": [
+            {
+              "id": "p51b",
+              "speedMae": 2.3985202967977868,
+              "speedCheckMae": 2.678826139609555,
+              "climbMae": 60.89334956302423,
+              "climbCheckMae": 57.432812066536826
+            },
+            {
+              "id": "p47b",
+              "speedMae": 0.6641083763022835,
+              "speedCheckMae": 1.1421535938379748,
+              "climbMae": 61.58771273938726,
+              "climbCheckMae": 75.21115788723255
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedMae": 4.206358666076449,
+              "speedCheckMae": 4.588189880612845,
+              "climbMae": 87.08219665046202,
+              "climbCheckMae": 88.73272883841967
+            },
+            {
+              "id": "bf109f4",
+              "speedMae": 3.379603228105225,
+              "speedCheckMae": 3.379603228105225,
+              "climbMae": null,
+              "climbCheckMae": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "split": "alternate",
+      "winner": {
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.12
+        },
+        "fits": [
+          {
+            "id": "p51b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.98,
+            "cd0": 0.018316034568985295,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.31941740421169856
+          },
+          {
+            "id": "p47b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.85,
+            "cd0": 0.022088513330525417,
+            "delta": 0.019989911036543052,
+            "unclippedDelta": 0.019989911036543052,
+            "deltaClipped": false,
+            "score": 0.07984054189552835
+          },
+          {
+            "id": "spitfire_lfix_bs543",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.7,
+            "cd0": 0.02236945316975287,
+            "delta": 0.004280743589672927,
+            "unclippedDelta": 0.004280743589672927,
+            "deltaClipped": false,
+            "score": 0.4535865628620778
+          },
+          {
+            "id": "bf109f4",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.78,
+            "cd0": 0.025277146468830978,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.00044444444444444544
+          }
+        ],
+        "score": 0.2133222383534373
+      },
+      "fixedChecks": [
+        {
+          "id": "p51b",
+          "speedMae": 2.4837308348903453,
+          "speedCheckMae": 2.782282601852239,
+          "climbMae": 29.40593702026854,
+          "climbCheckMae": 38.35110234884996
+        },
+        {
+          "id": "p47b",
+          "speedMae": 0.8788111517818834,
+          "speedCheckMae": 0.27109062297677156,
+          "climbMae": 102.047718346405,
+          "climbCheckMae": 101.52468800317577
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedMae": 4.26741527685399,
+          "speedCheckMae": 4.665946050073944,
+          "climbMae": 87.20521040339558,
+          "climbCheckMae": 95.07018009184979
+        },
+        {
+          "id": "bf109f4",
+          "speedMae": 3.361055346910689,
+          "speedCheckMae": 3.361055346910689,
+          "climbMae": null,
+          "climbCheckMae": null
+        }
+      ],
+      "ownChecks": [
+        {
+          "id": "p51b",
+          "speedCount": 6,
+          "speedMae": 2.234937695755434,
+          "climbCount": 1,
+          "climbMae": 20.460771691687114
+        },
+        {
+          "id": "p47b",
+          "speedCount": 3,
+          "speedMae": 1.2839581709852912,
+          "climbCount": 3,
+          "climbMae": 114.45604975949762
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCount": 10,
+          "speedMae": 3.8688845036340354,
+          "climbCount": 12,
+          "climbMae": 87.18728326770821
+        },
+        {
+          "id": "bf109f4",
+          "speedCount": 1,
+          "speedMae": 3.361055346910689,
+          "climbCount": 0,
+          "climbMae": null
+        }
+      ],
+      "comparison": [
+        {
+          "id": "p51b",
+          "speedCheckDelta": -1.4530574051012084,
+          "climbCheckDelta": 31.985667099797865
+        },
+        {
+          "id": "p47b",
+          "speedCheckDelta": -0.48234426595354307,
+          "climbCheckDelta": 16.8338961714162
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCheckDelta": -0.3129107270629907,
+          "climbCheckDelta": -15.170499487001848
+        },
+        {
+          "id": "bf109f4",
+          "speedCheckDelta": 0.26069054887375387,
+          "climbCheckDelta": null
+        }
+      ],
+      "nearOptimal": [
+        {
+          "model": {
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "fits": [
+              {
+                "id": "p51b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.98,
+                "cd0": 0.018316034568985295,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.31941740421169856
+              },
+              {
+                "id": "p47b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.85,
+                "cd0": 0.022088513330525417,
+                "delta": 0.019989911036543052,
+                "unclippedDelta": 0.019989911036543052,
+                "deltaClipped": false,
+                "score": 0.07984054189552835
+              },
+              {
+                "id": "spitfire_lfix_bs543",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.7,
+                "cd0": 0.02236945316975287,
+                "delta": 0.004280743589672927,
+                "unclippedDelta": 0.004280743589672927,
+                "deltaClipped": false,
+                "score": 0.4535865628620778
+              },
+              {
+                "id": "bf109f4",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.78,
+                "cd0": 0.025277146468830978,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.00044444444444444544
+              }
+            ],
+            "score": 0.2133222383534373
+          },
+          "summary": [
+            {
+              "id": "p51b",
+              "speedMae": 2.4837308348903453,
+              "speedCheckMae": 2.782282601852239,
+              "climbMae": 29.40593702026854,
+              "climbCheckMae": 38.35110234884996
+            },
+            {
+              "id": "p47b",
+              "speedMae": 0.8788111517818834,
+              "speedCheckMae": 0.27109062297677156,
+              "climbMae": 102.047718346405,
+              "climbCheckMae": 101.52468800317577
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedMae": 4.26741527685399,
+              "speedCheckMae": 4.665946050073944,
+              "climbMae": 87.20521040339558,
+              "climbCheckMae": 95.07018009184979
+            },
+            {
+              "id": "bf109f4",
+              "speedMae": 3.361055346910689,
+              "speedCheckMae": 3.361055346910689,
+              "climbMae": null,
+              "climbCheckMae": null
+            }
+          ]
+        },
+        {
+          "model": {
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.91,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "fits": [
+              {
+                "id": "p51b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.98,
+                "cd0": 0.017909817529780242,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.3606674997110674
+              },
+              {
+                "id": "p47b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.85,
+                "cd0": 0.0215864935417851,
+                "delta": 0.018231433401023227,
+                "unclippedDelta": 0.018231433401023227,
+                "deltaClipped": false,
+                "score": 0.06492494688121955
+              },
+              {
+                "id": "spitfire_lfix_bs543",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.7,
+                "cd0": 0.021877497714654998,
+                "delta": 0.0020192299658613106,
+                "unclippedDelta": 0.0020192299658613106,
+                "deltaClipped": false,
+                "score": 0.43650701100341943
+              },
+              {
+                "id": "bf109f4",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.78,
+                "cd0": 0.024714872888479896,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.00044444444444444544
+              }
+            ],
+            "score": 0.21563597551003771
+          },
+          "summary": [
+            {
+              "id": "p51b",
+              "speedMae": 2.3985202967977868,
+              "speedCheckMae": 2.678826139609555,
+              "climbMae": 60.89334956302423,
+              "climbCheckMae": 57.432812066536826
+            },
+            {
+              "id": "p47b",
+              "speedMae": 0.7728286963772917,
+              "speedCheckMae": 0.33351734099778696,
+              "climbMae": 91.94390234270845,
+              "climbCheckMae": 92.48430012888632
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedMae": 4.206358666076449,
+              "speedCheckMae": 4.588189880612845,
+              "climbMae": 85.34204032378335,
+              "climbCheckMae": 89.995312357223
+            },
+            {
+              "id": "bf109f4",
+              "speedMae": 3.379603228105225,
+              "speedCheckMae": 3.379603228105225,
+              "climbMae": null,
+              "climbCheckMae": null
+            }
+          ]
+        },
+        {
+          "model": {
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "fits": [
+              {
+                "id": "p51b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.92,
+                "cd0": 0.018397874493288696,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.29714747357190596
+              },
+              {
+                "id": "p47b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.7,
+                "cd0": 0.02182668614955703,
+                "delta": 0.015097090938866657,
+                "unclippedDelta": 0.015097090938866657,
+                "deltaClipped": false,
+                "score": 0.1237428013857569
+              },
+              {
+                "id": "spitfire_lfix_bs543",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.6,
+                "cd0": 0.022332693217227445,
+                "delta": 0.001629287526532074,
+                "unclippedDelta": 0.001629287526532074,
+                "deltaClipped": false,
+                "score": 0.48273838507135924
+              },
+              {
+                "id": "bf109f4",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.78,
+                "cd0": 0.02542899193686372,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.00044444444444444544
+              }
+            ],
+            "score": 0.22601827611836664
+          },
+          "summary": [
+            {
+              "id": "p51b",
+              "speedMae": 3.720416911238648,
+              "speedCheckMae": 4.2353400069534475,
+              "climbMae": 9.301218108906596,
+              "climbCheckMae": 6.365435249052098
+            },
+            {
+              "id": "p47b",
+              "speedMae": 0.8051874391452657,
+              "speedCheckMae": 0.7534348889303146,
+              "climbMae": 113.514012443489,
+              "climbCheckMae": 118.00862763324183
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedMae": 4.632370329594323,
+              "speedCheckMae": 4.978856777136935,
+              "climbMae": 101.24268180954569,
+              "climbCheckMae": 112.28617358732616
+            },
+            {
+              "id": "bf109f4",
+              "speedMae": 3.100364798036935,
+              "speedCheckMae": 3.100364798036935,
+              "climbMae": null,
+              "climbCheckMae": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "split": "rotated",
+      "winner": {
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.12
+        },
+        "fits": [
+          {
+            "id": "p51b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.98,
+            "cd0": 0.018316034568985295,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.30188133965915487
+          },
+          {
+            "id": "p47b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.85,
+            "cd0": 0.022088513330525417,
+            "delta": 0.02415313782647792,
+            "unclippedDelta": 0.02415313782647792,
+            "deltaClipped": false,
+            "score": 0.036707199951818106
+          },
+          {
+            "id": "spitfire_lfix_bs543",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.7,
+            "cd0": 0.02236945316975287,
+            "delta": 0.0034853412574910882,
+            "unclippedDelta": 0.0034853412574910882,
+            "deltaClipped": false,
+            "score": 0.4734725306827288
+          },
+          {
+            "id": "bf109f4",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.78,
+            "cd0": 0.025277146468830978,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.00044444444444444544
+          }
+        ],
+        "score": 0.20312637868453656
+      },
+      "fixedChecks": [
+        {
+          "id": "p51b",
+          "speedMae": 2.4837308348903453,
+          "speedCheckMae": 2.782282601852239,
+          "climbMae": 29.40593702026854,
+          "climbCheckMae": 38.35110234884996
+        },
+        {
+          "id": "p47b",
+          "speedMae": 0.8788111517818834,
+          "speedCheckMae": 0.27109062297677156,
+          "climbMae": 89.35881115502096,
+          "climbCheckMae": 107.2921088684488
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedMae": 4.26741527685399,
+          "speedCheckMae": 4.665946050073944,
+          "climbMae": 93.38245618906872,
+          "climbCheckMae": 101.95002784758918
+        },
+        {
+          "id": "bf109f4",
+          "speedMae": 3.361055346910689,
+          "speedCheckMae": 3.361055346910689,
+          "climbMae": null,
+          "climbCheckMae": null
+        }
+      ],
+      "ownChecks": [
+        {
+          "id": "p51b",
+          "speedCount": 6,
+          "speedMae": 2.234937695755434,
+          "climbCount": 1,
+          "climbMae": 38.35110234884996
+        },
+        {
+          "id": "p47b",
+          "speedCount": 3,
+          "speedMae": 1.2839581709852912,
+          "climbCount": 3,
+          "climbMae": 135.30332860291352
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCount": 10,
+          "speedMae": 3.8688845036340354,
+          "climbCount": 12,
+          "climbMae": 89.50720079323845
+        },
+        {
+          "id": "bf109f4",
+          "speedCount": 1,
+          "speedMae": 3.361055346910689,
+          "climbCount": 0,
+          "climbMae": null
+        }
+      ],
+      "comparison": [
+        {
+          "id": "p51b",
+          "speedCheckDelta": -1.4530574051012084,
+          "climbCheckDelta": 31.985667099797865
+        },
+        {
+          "id": "p47b",
+          "speedCheckDelta": -0.48234426595354307,
+          "climbCheckDelta": 22.601317036689238
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCheckDelta": -0.3129107270629907,
+          "climbCheckDelta": -8.290651731262457
+        },
+        {
+          "id": "bf109f4",
+          "speedCheckDelta": 0.26069054887375387,
+          "climbCheckDelta": null
+        }
+      ],
+      "nearOptimal": [
+        {
+          "model": {
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "fits": [
+              {
+                "id": "p51b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.98,
+                "cd0": 0.018316034568985295,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.30188133965915487
+              },
+              {
+                "id": "p47b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.85,
+                "cd0": 0.022088513330525417,
+                "delta": 0.02415313782647792,
+                "unclippedDelta": 0.02415313782647792,
+                "deltaClipped": false,
+                "score": 0.036707199951818106
+              },
+              {
+                "id": "spitfire_lfix_bs543",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.7,
+                "cd0": 0.02236945316975287,
+                "delta": 0.0034853412574910882,
+                "unclippedDelta": 0.0034853412574910882,
+                "deltaClipped": false,
+                "score": 0.4734725306827288
+              },
+              {
+                "id": "bf109f4",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.78,
+                "cd0": 0.025277146468830978,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.00044444444444444544
+              }
+            ],
+            "score": 0.20312637868453656
+          },
+          "summary": [
+            {
+              "id": "p51b",
+              "speedMae": 2.4837308348903453,
+              "speedCheckMae": 2.782282601852239,
+              "climbMae": 29.40593702026854,
+              "climbCheckMae": 38.35110234884996
+            },
+            {
+              "id": "p47b",
+              "speedMae": 0.8788111517818834,
+              "speedCheckMae": 0.27109062297677156,
+              "climbMae": 89.35881115502096,
+              "climbCheckMae": 107.2921088684488
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedMae": 4.26741527685399,
+              "speedCheckMae": 4.665946050073944,
+              "climbMae": 93.38245618906872,
+              "climbCheckMae": 101.95002784758918
+            },
+            {
+              "id": "bf109f4",
+              "speedMae": 3.361055346910689,
+              "speedCheckMae": 3.361055346910689,
+              "climbMae": null,
+              "climbCheckMae": null
+            }
+          ]
+        },
+        {
+          "model": {
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "fits": [
+              {
+                "id": "p51b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.92,
+                "cd0": 0.018397874493288696,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.2989929805849264
+              },
+              {
+                "id": "p47b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.7,
+                "cd0": 0.02182668614955703,
+                "delta": 0.01940004516272057,
+                "unclippedDelta": 0.01940004516272057,
+                "deltaClipped": false,
+                "score": 0.049698898215495266
+              },
+              {
+                "id": "spitfire_lfix_bs543",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.6,
+                "cd0": 0.022332693217227445,
+                "delta": 0.0006734124814142817,
+                "unclippedDelta": 0.0006734124814142817,
+                "deltaClipped": false,
+                "score": 0.5004363424004132
+              },
+              {
+                "id": "bf109f4",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.93,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.06
+                },
+                "e": 0.78,
+                "cd0": 0.02542899193686372,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.00044444444444444544
+              }
+            ],
+            "score": 0.21239316641131983
+          },
+          "summary": [
+            {
+              "id": "p51b",
+              "speedMae": 3.720416911238648,
+              "speedCheckMae": 4.2353400069534475,
+              "climbMae": 9.301218108906596,
+              "climbCheckMae": 6.365435249052098
+            },
+            {
+              "id": "p47b",
+              "speedMae": 0.8051874391452657,
+              "speedCheckMae": 0.7534348889303146,
+              "climbMae": 86.05494175044836,
+              "climbCheckMae": 107.86446420617692
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedMae": 4.632370329594323,
+              "speedCheckMae": 4.978856777136935,
+              "climbMae": 107.60873126119807,
+              "climbCheckMae": 120.55403315706322
+            },
+            {
+              "id": "bf109f4",
+              "speedMae": 3.100364798036935,
+              "speedCheckMae": 3.100364798036935,
+              "climbMae": null,
+              "climbCheckMae": null
+            }
+          ]
+        },
+        {
+          "model": {
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.91,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "fits": [
+              {
+                "id": "p51b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.98,
+                "cd0": 0.017909817529780242,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.37469071651205094
+              },
+              {
+                "id": "p47b",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.85,
+                "cd0": 0.0215864935417851,
+                "delta": 0.021984864033397347,
+                "unclippedDelta": 0.021984864033397347,
+                "deltaClipped": false,
+                "score": 0.03019152051486004
+              },
+              {
+                "id": "spitfire_lfix_bs543",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.7,
+                "cd0": 0.021877497714654998,
+                "delta": 0.0012880689501481568,
+                "unclippedDelta": 0.0012880689501481568,
+                "deltaClipped": false,
+                "score": 0.44518113590639663
+              },
+              {
+                "id": "bf109f4",
+                "profile": "P",
+                "params": {
+                  "retainedPowerFraction": 0.91,
+                  "machPenalty": 2,
+                  "machOnset": 0.92,
+                  "advanceLoss": 0.12
+                },
+                "e": 0.78,
+                "cd0": 0.024714872888479896,
+                "delta": 0,
+                "unclippedDelta": 0,
+                "deltaClipped": false,
+                "score": 0.00044444444444444544
+              }
+            ],
+            "score": 0.212626954344438
+          },
+          "summary": [
+            {
+              "id": "p51b",
+              "speedMae": 2.3985202967977868,
+              "speedCheckMae": 2.678826139609555,
+              "climbMae": 60.89334956302423,
+              "climbCheckMae": 57.432812066536826
+            },
+            {
+              "id": "p47b",
+              "speedMae": 0.7728286963772917,
+              "speedCheckMae": 0.33351734099778696,
+              "climbMae": 76.96565801242886,
+              "climbCheckMae": 94.7289155193999
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedMae": 4.206358666076449,
+              "speedCheckMae": 4.588189880612845,
+              "climbMae": 90.37636973141676,
+              "climbCheckMae": 96.31950361177974
+            },
+            {
+              "id": "bf109f4",
+              "speedMae": 3.379603228105225,
+              "speedCheckMae": 3.379603228105225,
+              "climbMae": null,
+              "climbCheckMae": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "extension": [
+    {
+      "split": "original",
+      "winner": {
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "fits": [
+          {
+            "id": "p51b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.92,
+            "cd0": 0.018397874493288696,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.26419443327888736
+          },
+          {
+            "id": "p47b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "delta": 0.01804155050509509,
+            "unclippedDelta": 0.01804155050509509,
+            "deltaClipped": false,
+            "score": 0.07358110039804079
+          },
+          {
+            "id": "spitfire_lfix_bs543",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.65,
+            "cd0": 0.022408125187032907,
+            "delta": 0.0037623718072675324,
+            "unclippedDelta": 0.0037623718072675324,
+            "deltaClipped": false,
+            "score": 0.445218234391561
+          },
+          {
+            "id": "bf109f4",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.78,
+            "cd0": 0.02542899193686372,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.00044444444444444544
+          }
+        ],
+        "score": 0.1958595531282334
+      },
+      "summary": [
+        {
+          "id": "p51b",
+          "speedMae": 3.720416911238648,
+          "speedCheckMae": 4.2353400069534475,
+          "climbMae": 9.301218108906596,
+          "climbCheckMae": 6.365435249052098
+        },
+        {
+          "id": "p47b",
+          "speedMae": 0.8051874391452657,
+          "speedCheckMae": 0.7534348889303146,
+          "climbMae": 69.83019559807585,
+          "climbCheckMae": 84.69079183175957
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedMae": 4.945074452442623,
+          "speedCheckMae": 5.326527780696961,
+          "climbMae": 94.93762001970268,
+          "climbCheckMae": 100.14854332179141
+        },
+        {
+          "id": "bf109f4",
+          "speedMae": 3.100364798036935,
+          "speedCheckMae": 3.100364798036935,
+          "climbMae": null,
+          "climbCheckMae": null
+        }
+      ],
+      "comparison": [
+        {
+          "id": "p51b",
+          "speedCheckDelta": 0,
+          "climbCheckDelta": 0
+        },
+        {
+          "id": "p47b",
+          "speedCheckDelta": 0,
+          "climbCheckDelta": 0
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCheckDelta": 0.3476710035600261,
+          "climbCheckDelta": -10.092136257060233
+        },
+        {
+          "id": "bf109f4",
+          "speedCheckDelta": 0,
+          "climbCheckDelta": null
+        }
+      ],
+      "ownChecks": [
+        {
+          "id": "p51b",
+          "speedCount": 5,
+          "speedMae": 4.2353400069534475,
+          "climbCount": 1,
+          "climbMae": 6.365435249052098
+        },
+        {
+          "id": "p47b",
+          "speedCount": 2,
+          "speedMae": 0.7534348889303146,
+          "climbCount": 3,
+          "climbMae": 84.69079183175957
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCount": 10,
+          "speedMae": 5.326527780696961,
+          "climbCount": 12,
+          "climbMae": 100.14854332179141
+        },
+        {
+          "id": "bf109f4",
+          "speedCount": 1,
+          "speedMae": 3.100364798036935,
+          "climbCount": 0,
+          "climbMae": null
+        }
+      ]
+    },
+    {
+      "split": "alternate",
+      "winner": {
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.12
+        },
+        "fits": [
+          {
+            "id": "p51b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.98,
+            "cd0": 0.018316034568985295,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.31941740421169856
+          },
+          {
+            "id": "p47b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.85,
+            "cd0": 0.022088513330525417,
+            "delta": 0.019989911036543052,
+            "unclippedDelta": 0.019989911036543052,
+            "deltaClipped": false,
+            "score": 0.07984054189552835
+          },
+          {
+            "id": "spitfire_lfix_bs543",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.7,
+            "cd0": 0.02236945316975287,
+            "delta": 0.004280743589672927,
+            "unclippedDelta": 0.004280743589672927,
+            "deltaClipped": false,
+            "score": 0.4535865628620778
+          },
+          {
+            "id": "bf109f4",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.78,
+            "cd0": 0.025277146468830978,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.00044444444444444544
+          }
+        ],
+        "score": 0.2133222383534373
+      },
+      "summary": [
+        {
+          "id": "p51b",
+          "speedMae": 2.4837308348903453,
+          "speedCheckMae": 2.782282601852239,
+          "climbMae": 29.40593702026854,
+          "climbCheckMae": 38.35110234884996
+        },
+        {
+          "id": "p47b",
+          "speedMae": 0.8788111517818834,
+          "speedCheckMae": 0.27109062297677156,
+          "climbMae": 102.047718346405,
+          "climbCheckMae": 101.52468800317577
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedMae": 4.26741527685399,
+          "speedCheckMae": 4.665946050073944,
+          "climbMae": 87.20521040339558,
+          "climbCheckMae": 95.07018009184979
+        },
+        {
+          "id": "bf109f4",
+          "speedMae": 3.361055346910689,
+          "speedCheckMae": 3.361055346910689,
+          "climbMae": null,
+          "climbCheckMae": null
+        }
+      ],
+      "comparison": [
+        {
+          "id": "p51b",
+          "speedCheckDelta": -1.4530574051012084,
+          "climbCheckDelta": 31.985667099797865
+        },
+        {
+          "id": "p47b",
+          "speedCheckDelta": -0.48234426595354307,
+          "climbCheckDelta": 16.8338961714162
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCheckDelta": -0.3129107270629907,
+          "climbCheckDelta": -15.170499487001848
+        },
+        {
+          "id": "bf109f4",
+          "speedCheckDelta": 0.26069054887375387,
+          "climbCheckDelta": null
+        }
+      ],
+      "ownChecks": [
+        {
+          "id": "p51b",
+          "speedCount": 6,
+          "speedMae": 2.234937695755434,
+          "climbCount": 1,
+          "climbMae": 20.460771691687114
+        },
+        {
+          "id": "p47b",
+          "speedCount": 3,
+          "speedMae": 1.2839581709852912,
+          "climbCount": 3,
+          "climbMae": 114.45604975949762
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCount": 10,
+          "speedMae": 3.8688845036340354,
+          "climbCount": 12,
+          "climbMae": 87.18728326770821
+        },
+        {
+          "id": "bf109f4",
+          "speedCount": 1,
+          "speedMae": 3.361055346910689,
+          "climbCount": 0,
+          "climbMae": null
+        }
+      ]
+    },
+    {
+      "split": "rotated",
+      "winner": {
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.12
+        },
+        "fits": [
+          {
+            "id": "p51b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.98,
+            "cd0": 0.018316034568985295,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.30188133965915487
+          },
+          {
+            "id": "p47b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.85,
+            "cd0": 0.022088513330525417,
+            "delta": 0.02415313782647792,
+            "unclippedDelta": 0.02415313782647792,
+            "deltaClipped": false,
+            "score": 0.036707199951818106
+          },
+          {
+            "id": "spitfire_lfix_bs543",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.7,
+            "cd0": 0.02236945316975287,
+            "delta": 0.0034853412574910882,
+            "unclippedDelta": 0.0034853412574910882,
+            "deltaClipped": false,
+            "score": 0.4734725306827288
+          },
+          {
+            "id": "bf109f4",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.78,
+            "cd0": 0.025277146468830978,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.00044444444444444544
+          }
+        ],
+        "score": 0.20312637868453656
+      },
+      "summary": [
+        {
+          "id": "p51b",
+          "speedMae": 2.4837308348903453,
+          "speedCheckMae": 2.782282601852239,
+          "climbMae": 29.40593702026854,
+          "climbCheckMae": 38.35110234884996
+        },
+        {
+          "id": "p47b",
+          "speedMae": 0.8788111517818834,
+          "speedCheckMae": 0.27109062297677156,
+          "climbMae": 89.35881115502096,
+          "climbCheckMae": 107.2921088684488
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedMae": 4.26741527685399,
+          "speedCheckMae": 4.665946050073944,
+          "climbMae": 93.38245618906872,
+          "climbCheckMae": 101.95002784758918
+        },
+        {
+          "id": "bf109f4",
+          "speedMae": 3.361055346910689,
+          "speedCheckMae": 3.361055346910689,
+          "climbMae": null,
+          "climbCheckMae": null
+        }
+      ],
+      "comparison": [
+        {
+          "id": "p51b",
+          "speedCheckDelta": -1.4530574051012084,
+          "climbCheckDelta": 31.985667099797865
+        },
+        {
+          "id": "p47b",
+          "speedCheckDelta": -0.48234426595354307,
+          "climbCheckDelta": 22.601317036689238
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCheckDelta": -0.3129107270629907,
+          "climbCheckDelta": -8.290651731262457
+        },
+        {
+          "id": "bf109f4",
+          "speedCheckDelta": 0.26069054887375387,
+          "climbCheckDelta": null
+        }
+      ],
+      "ownChecks": [
+        {
+          "id": "p51b",
+          "speedCount": 6,
+          "speedMae": 2.234937695755434,
+          "climbCount": 1,
+          "climbMae": 38.35110234884996
+        },
+        {
+          "id": "p47b",
+          "speedCount": 3,
+          "speedMae": 1.2839581709852912,
+          "climbCount": 3,
+          "climbMae": 135.30332860291352
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCount": 10,
+          "speedMae": 3.8688845036340354,
+          "climbCount": 12,
+          "climbMae": 89.50720079323845
+        },
+        {
+          "id": "bf109f4",
+          "speedCount": 1,
+          "speedMae": 3.361055346910689,
+          "climbCount": 0,
+          "climbMae": null
+        }
+      ]
+    }
+  ],
+  "boundary": [
+    {
+      "e": 0.4,
+      "fit": {
+        "id": "spitfire_lfix_bs543",
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "e": 0.4,
+        "cd0": 0.021842385413491948,
+        "delta": 0,
+        "unclippedDelta": -0.006122882197122124,
+        "deltaClipped": true,
+        "score": 1.1303288108591822
+      },
+      "summary": {
+        "id": "spitfire_lfix_bs543",
+        "speedMae": 4.124892812960934,
+        "speedCheckMae": 4.553134963649609,
+        "climbMae": 317.6588576408357,
+        "climbCheckMae": 336.819121622933
+      }
+    },
+    {
+      "e": 0.45,
+      "fit": {
+        "id": "spitfire_lfix_bs543",
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "e": 0.45,
+        "cd0": 0.02200582134807045,
+        "delta": 0,
+        "unclippedDelta": -0.0032671421514095613,
+        "deltaClipped": true,
+        "score": 0.6788487162336526
+      },
+      "summary": {
+        "id": "spitfire_lfix_bs543",
+        "speedMae": 3.454613964129203,
+        "speedCheckMae": 3.7929869893299837,
+        "climbMae": 199.3571669552388,
+        "climbCheckMae": 213.86007750425634
+      }
+    },
+    {
+      "e": 0.5,
+      "fit": {
+        "id": "spitfire_lfix_bs543",
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "e": 0.5,
+        "cd0": 0.022136570095733245,
+        "delta": 0,
+        "unclippedDelta": -0.0009825501148395081,
+        "deltaClipped": true,
+        "score": 0.4969095543843664
+      },
+      "summary": {
+        "id": "spitfire_lfix_bs543",
+        "speedMae": 3.7828438913904394,
+        "speedCheckMae": 4.030226484325249,
+        "climbMae": 134.51124547561216,
+        "climbCheckMae": 142.9840295251349
+      }
+    },
+    {
+      "e": 0.55,
+      "fit": {
+        "id": "spitfire_lfix_bs543",
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "e": 0.55,
+        "cd0": 0.022243546343820992,
+        "delta": 0.000886661551445081,
+        "unclippedDelta": 0.000886661551445081,
+        "deltaClipped": false,
+        "score": 0.45678872993920827
+      },
+      "summary": {
+        "id": "spitfire_lfix_bs543",
+        "speedMae": 4.253020896453745,
+        "speedCheckMae": 4.556020894985158,
+        "climbMae": 113.89869712970386,
+        "climbCheckMae": 122.96383724174218
+      }
+    },
+    {
+      "e": 0.6,
+      "fit": {
+        "id": "spitfire_lfix_bs543",
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "e": 0.6,
+        "cd0": 0.022332693217227445,
+        "delta": 0.002444337940015582,
+        "unclippedDelta": 0.002444337940015582,
+        "deltaClipped": false,
+        "score": 0.4454472179548967
+      },
+      "summary": {
+        "id": "spitfire_lfix_bs543",
+        "speedMae": 4.632370329594323,
+        "speedCheckMae": 4.978856777136935,
+        "climbMae": 103.35445860293204,
+        "climbCheckMae": 110.24067957885164
+      }
+    },
+    {
+      "e": 0.65,
+      "fit": {
+        "id": "spitfire_lfix_bs543",
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "e": 0.65,
+        "cd0": 0.022408125187032907,
+        "delta": 0.0037623718072675324,
+        "unclippedDelta": 0.0037623718072675324,
+        "deltaClipped": false,
+        "score": 0.445218234391561
+      },
+      "summary": {
+        "id": "spitfire_lfix_bs543",
+        "speedMae": 4.945074452442623,
+        "speedCheckMae": 5.326527780696961,
+        "climbMae": 94.93762001970268,
+        "climbCheckMae": 100.14854332179141
+      }
+    },
+    {
+      "e": 0.7,
+      "fit": {
+        "id": "spitfire_lfix_bs543",
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "e": 0.7,
+        "cd0": 0.02247278116115187,
+        "delta": 0.004892115122054932,
+        "unclippedDelta": 0.004892115122054932,
+        "deltaClipped": false,
+        "score": 0.45338715817678726
+      },
+      "summary": {
+        "id": "spitfire_lfix_bs543",
+        "speedMae": 5.207376622675383,
+        "speedCheckMae": 5.617574740544296,
+        "climbMae": 87.96679718674132,
+        "climbCheckMae": 91.82295446691056
+      }
+    },
+    {
+      "e": 0.78,
+      "fit": {
+        "id": "spitfire_lfix_bs543",
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "e": 0.78,
+        "cd0": 0.02255898912664383,
+        "delta": 0.006398439541771449,
+        "unclippedDelta": 0.006398439541771449,
+        "deltaClipped": false,
+        "score": 0.48015386706168783
+      },
+      "summary": {
+        "id": "spitfire_lfix_bs543",
+        "speedMae": 5.5492903631528865,
+        "speedCheckMae": 5.9961879629305255,
+        "climbMae": 79.33583767015936,
+        "climbCheckMae": 81.60679723022476
+      }
+    },
+    {
+      "e": 0.85,
+      "fit": {
+        "id": "spitfire_lfix_bs543",
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "e": 0.85,
+        "cd0": 0.022621109572365974,
+        "delta": 0.00748387919715541,
+        "unclippedDelta": 0.00748387919715541,
+        "deltaClipped": false,
+        "score": 0.5151453361831325
+      },
+      "summary": {
+        "id": "spitfire_lfix_bs543",
+        "speedMae": 5.790376132111123,
+        "speedCheckMae": 6.262646681764272,
+        "climbMae": 74.2623335232872,
+        "climbCheckMae": 75.28649166395898
+      }
+    },
+    {
+      "e": 0.92,
+      "fit": {
+        "id": "spitfire_lfix_bs543",
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "e": 0.92,
+        "cd0": 0.022673776906782572,
+        "delta": 0.008404143252807026,
+        "unclippedDelta": 0.008404143252807026,
+        "deltaClipped": false,
+        "score": 0.5597853756698428
+      },
+      "summary": {
+        "id": "spitfire_lfix_bs543",
+        "speedMae": 5.991445163974822,
+        "speedCheckMae": 6.484569103577269,
+        "climbMae": 71.8472130063075,
+        "climbCheckMae": 70.57782450650014
+      }
+    },
+    {
+      "e": 0.98,
+      "fit": {
+        "id": "spitfire_lfix_bs543",
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "e": 0.98,
+        "cd0": 0.022712931922165176,
+        "delta": 0.009088304576979513,
+        "unclippedDelta": 0.009088304576979513,
+        "deltaClipped": false,
+        "score": 0.6053605223600006
+      },
+      "summary": {
+        "id": "spitfire_lfix_bs543",
+        "speedMae": 6.139157486616568,
+        "speedCheckMae": 6.647263336047945,
+        "climbMae": 71.95127951607063,
+        "climbCheckMae": 69.60996425699425
+      }
+    }
+  ],
+  "candidateChecks": [
+    {
+      "model": {
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "fits": [
+          {
+            "id": "p51b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.92,
+            "cd0": 0.018397874493288696,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.26419443327888736
+          },
+          {
+            "id": "p47b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "delta": 0.01804155050509509,
+            "unclippedDelta": 0.01804155050509509,
+            "deltaClipped": false,
+            "score": 0.07358110039804079
+          },
+          {
+            "id": "spitfire_lfix_bs543",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.6,
+            "cd0": 0.022332693217227445,
+            "delta": 0.002444337940015582,
+            "unclippedDelta": 0.002444337940015582,
+            "deltaClipped": false,
+            "score": 0.4454472179548967
+          },
+          {
+            "id": "bf109f4",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.78,
+            "cd0": 0.02542899193686372,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.00044444444444444544
+          }
+        ],
+        "score": 0.19591679901906733
+      },
+      "comparison": [
+        {
+          "id": "p51b",
+          "speedCheckDelta": 0,
+          "climbCheckDelta": 0
+        },
+        {
+          "id": "p47b",
+          "speedCheckDelta": 0,
+          "climbCheckDelta": 0
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCheckDelta": 0,
+          "climbCheckDelta": 0
+        },
+        {
+          "id": "bf109f4",
+          "speedCheckDelta": 0,
+          "climbCheckDelta": null
+        }
+      ],
+      "own": [
+        {
+          "split": "original",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": 0
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": 0
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": 0
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "alternate",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": 0
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": 0
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": 0
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "rotated",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": 0
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": 0
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": 0
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": null
+            }
+          ]
+        }
+      ],
+      "pass": false
+    },
+    {
+      "model": {
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.12
+        },
+        "fits": [
+          {
+            "id": "p51b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.98,
+            "cd0": 0.018316034568985295,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.31941740421169856
+          },
+          {
+            "id": "p47b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.85,
+            "cd0": 0.022088513330525417,
+            "delta": 0.019989911036543052,
+            "unclippedDelta": 0.019989911036543052,
+            "deltaClipped": false,
+            "score": 0.07984054189552835
+          },
+          {
+            "id": "spitfire_lfix_bs543",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.7,
+            "cd0": 0.02236945316975287,
+            "delta": 0.004280743589672927,
+            "unclippedDelta": 0.004280743589672927,
+            "deltaClipped": false,
+            "score": 0.4535865628620778
+          },
+          {
+            "id": "bf109f4",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.78,
+            "cd0": 0.025277146468830978,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.00044444444444444544
+          }
+        ],
+        "score": 0.2133222383534373
+      },
+      "comparison": [
+        {
+          "id": "p51b",
+          "speedCheckDelta": -1.4530574051012084,
+          "climbCheckDelta": 31.985667099797865
+        },
+        {
+          "id": "p47b",
+          "speedCheckDelta": -0.48234426595354307,
+          "climbCheckDelta": 16.8338961714162
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCheckDelta": -0.3129107270629907,
+          "climbCheckDelta": -15.170499487001848
+        },
+        {
+          "id": "bf109f4",
+          "speedCheckDelta": 0.26069054887375387,
+          "climbCheckDelta": null
+        }
+      ],
+      "own": [
+        {
+          "split": "original",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": -1.4530574051012084,
+              "climbCheckDelta": 31.985667099797865
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": -0.48234426595354307,
+              "climbCheckDelta": 16.8338961714162
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": -0.3129107270629907,
+              "climbCheckDelta": -15.170499487001848
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0.26069054887375387,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "alternate",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": -1.0563766357208806,
+              "climbCheckDelta": 8.22377072292602
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0.4442690316967248,
+              "climbCheckDelta": 69.20837515479198
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": -0.4169993784176764,
+              "climbCheckDelta": -17.10885594352176
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0.26069054887375387,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "rotated",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": -1.0563766357208806,
+              "climbCheckDelta": 31.985667099797865
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0.4442690316967248,
+              "climbCheckDelta": -9.999019526412297
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": -0.4169993784176764,
+              "climbCheckDelta": -17.06555248434131
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0.26069054887375387,
+              "climbCheckDelta": null
+            }
+          ]
+        }
+      ],
+      "pass": false
+    },
+    {
+      "model": {
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.12
+        },
+        "fits": [
+          {
+            "id": "p51b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.98,
+            "cd0": 0.018316034568985295,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.30188133965915487
+          },
+          {
+            "id": "p47b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.85,
+            "cd0": 0.022088513330525417,
+            "delta": 0.02415313782647792,
+            "unclippedDelta": 0.02415313782647792,
+            "deltaClipped": false,
+            "score": 0.036707199951818106
+          },
+          {
+            "id": "spitfire_lfix_bs543",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.7,
+            "cd0": 0.02236945316975287,
+            "delta": 0.0034853412574910882,
+            "unclippedDelta": 0.0034853412574910882,
+            "deltaClipped": false,
+            "score": 0.4734725306827288
+          },
+          {
+            "id": "bf109f4",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.78,
+            "cd0": 0.025277146468830978,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.00044444444444444544
+          }
+        ],
+        "score": 0.20312637868453656
+      },
+      "comparison": [
+        {
+          "id": "p51b",
+          "speedCheckDelta": -1.4530574051012084,
+          "climbCheckDelta": 31.985667099797865
+        },
+        {
+          "id": "p47b",
+          "speedCheckDelta": -0.48234426595354307,
+          "climbCheckDelta": 22.601317036689238
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCheckDelta": -0.3129107270629907,
+          "climbCheckDelta": -8.290651731262457
+        },
+        {
+          "id": "bf109f4",
+          "speedCheckDelta": 0.26069054887375387,
+          "climbCheckDelta": null
+        }
+      ],
+      "own": [
+        {
+          "split": "original",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": -1.4530574051012084,
+              "climbCheckDelta": 31.985667099797865
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": -0.48234426595354307,
+              "climbCheckDelta": 22.601317036689238
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": -0.3129107270629907,
+              "climbCheckDelta": -8.290651731262457
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0.26069054887375387,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "alternate",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": -1.0563766357208806,
+              "climbCheckDelta": 8.22377072292602
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0.4442690316967248,
+              "climbCheckDelta": 2.451196541065052
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": -0.4169993784176764,
+              "climbCheckDelta": -9.255995588327579
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0.26069054887375387,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "rotated",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": -1.0563766357208806,
+              "climbCheckDelta": 31.985667099797865
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0.4442690316967248,
+              "climbCheckDelta": 50.296771817509395
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": -0.4169993784176764,
+              "climbCheckDelta": -9.142065118294198
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0.26069054887375387,
+              "climbCheckDelta": null
+            }
+          ]
+        }
+      ],
+      "pass": false
+    },
+    {
+      "model": {
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "fits": [
+          {
+            "id": "p51b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.92,
+            "cd0": 0.018397874493288696,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.26419443327888736
+          },
+          {
+            "id": "p47b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "delta": 0.01804155050509509,
+            "unclippedDelta": 0.01804155050509509,
+            "deltaClipped": false,
+            "score": 0.07358110039804079
+          },
+          {
+            "id": "spitfire_lfix_bs543",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.65,
+            "cd0": 0.022408125187032907,
+            "delta": 0.0037623718072675324,
+            "unclippedDelta": 0.0037623718072675324,
+            "deltaClipped": false,
+            "score": 0.445218234391561
+          },
+          {
+            "id": "bf109f4",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.78,
+            "cd0": 0.02542899193686372,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.00044444444444444544
+          }
+        ],
+        "score": 0.1958595531282334
+      },
+      "comparison": [
+        {
+          "id": "p51b",
+          "speedCheckDelta": 0,
+          "climbCheckDelta": 0
+        },
+        {
+          "id": "p47b",
+          "speedCheckDelta": 0,
+          "climbCheckDelta": 0
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCheckDelta": 0.3476710035600261,
+          "climbCheckDelta": -10.092136257060233
+        },
+        {
+          "id": "bf109f4",
+          "speedCheckDelta": 0,
+          "climbCheckDelta": null
+        }
+      ],
+      "own": [
+        {
+          "split": "original",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": 0
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": 0
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": 0.3476710035600261,
+              "climbCheckDelta": -10.092136257060233
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "alternate",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": 0
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": 0
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": 0.27773724213657314,
+              "climbCheckDelta": -9.328660447847682
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "rotated",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": 0
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": 0
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": 0.27773724213657314,
+              "climbCheckDelta": -8.665902016741242
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0,
+              "climbCheckDelta": null
+            }
+          ]
+        }
+      ],
+      "pass": false
+    },
+    {
+      "model": {
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.93,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.12
+        },
+        "fits": [
+          {
+            "id": "p51b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.98,
+            "cd0": 0.018316034568985295,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.3414784963194331
+          },
+          {
+            "id": "p47b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.78,
+            "cd0": 0.021945689269456795,
+            "delta": 0.020832334925296677,
+            "unclippedDelta": 0.020832334925296677,
+            "deltaClipped": false,
+            "score": 0.048119666996200974
+          },
+          {
+            "id": "spitfire_lfix_bs543",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.7,
+            "cd0": 0.02236945316975287,
+            "delta": 0.004995443113611399,
+            "unclippedDelta": 0.004995443113611399,
+            "deltaClipped": false,
+            "score": 0.4094069021659095
+          },
+          {
+            "id": "bf109f4",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.93,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.78,
+            "cd0": 0.025277146468830978,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.00044444444444444544
+          }
+        ],
+        "score": 0.19986237748149702
+      },
+      "comparison": [
+        {
+          "id": "p51b",
+          "speedCheckDelta": -1.4530574051012084,
+          "climbCheckDelta": 31.985667099797865
+        },
+        {
+          "id": "p47b",
+          "speedCheckDelta": 0.14596357668779092,
+          "climbCheckDelta": -3.4823337408618755
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCheckDelta": -0.3129107270629907,
+          "climbCheckDelta": -18.417725111199047
+        },
+        {
+          "id": "bf109f4",
+          "speedCheckDelta": 0.26069054887375387,
+          "climbCheckDelta": null
+        }
+      ],
+      "own": [
+        {
+          "split": "original",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": -1.4530574051012084,
+              "climbCheckDelta": 31.985667099797865
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0.14596357668779092,
+              "climbCheckDelta": -3.4823337408618755
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": -0.3129107270629907,
+              "climbCheckDelta": -18.417725111199047
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0.26069054887375387,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "alternate",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": -1.0563766357208806,
+              "climbCheckDelta": 8.22377072292602
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": -0.49908384281297913,
+              "climbCheckDelta": 2.0343520497934477
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": -0.4169993784176764,
+              "climbCheckDelta": -17.324655116696135
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0.26069054887375387,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "rotated",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": -1.0563766357208806,
+              "climbCheckDelta": 31.985667099797865
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": -0.49908384281297913,
+              "climbCheckDelta": -0.4573948604303695
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": -0.4169993784176764,
+              "climbCheckDelta": -15.769004378177186
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0.26069054887375387,
+              "climbCheckDelta": null
+            }
+          ]
+        }
+      ],
+      "pass": false
+    },
+    {
+      "model": {
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.91,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "fits": [
+          {
+            "id": "p51b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.91,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.98,
+            "cd0": 0.018039634632447503,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.34745118203423536
+          },
+          {
+            "id": "p47b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.91,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.7,
+            "cd0": 0.021322987270798264,
+            "delta": 0.01598563532018867,
+            "unclippedDelta": 0.01598563532018867,
+            "deltaClipped": false,
+            "score": 0.05724358374629086
+          },
+          {
+            "id": "spitfire_lfix_bs543",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.91,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.6,
+            "cd0": 0.02183854763670904,
+            "delta": 0.0001323887851908966,
+            "unclippedDelta": 0.0001323887851908966,
+            "deltaClipped": false,
+            "score": 0.43553624320655354
+          },
+          {
+            "id": "bf109f4",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.91,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.78,
+            "cd0": 0.024863498773032372,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.00044444444444444544
+          }
+        ],
+        "score": 0.21016886335788104
+      },
+      "comparison": [
+        {
+          "id": "p51b",
+          "speedCheckDelta": 0.30340997345629095,
+          "climbCheckDelta": 54.98557185969821
+        },
+        {
+          "id": "p47b",
+          "speedCheckDelta": 0.03728726803637983,
+          "climbCheckDelta": -5.997300203665262
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCheckDelta": -0.09735301173441258,
+          "climbCheckDelta": -4.3919128613774205
+        },
+        {
+          "id": "bf109f4",
+          "speedCheckDelta": 0.01854562454354891,
+          "climbCheckDelta": null
+        }
+      ],
+      "own": [
+        {
+          "split": "original",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": 0.30340997345629095,
+              "climbCheckDelta": 54.98557185969821
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0.03728726803637983,
+              "climbCheckDelta": -5.997300203665262
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": -0.09735301173441258,
+              "climbCheckDelta": -4.3919128613774205
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0.01854562454354891,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "alternate",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": 0.14750557302553124,
+              "climbCheckDelta": 55.71582688902981
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0.14000259254256286,
+              "climbCheckDelta": -6.5423602969520545
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": -0.0774745823404368,
+              "climbCheckDelta": -3.084529200568312
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0.01854562454354891,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "rotated",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": 0.14750557302553124,
+              "climbCheckDelta": 54.98557185969821
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0.14000259254256286,
+              "climbCheckDelta": -10.635536237306809
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": -0.0774745823404368,
+              "climbCheckDelta": -0.1658047200650401
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0.01854562454354891,
+              "climbCheckDelta": null
+            }
+          ]
+        }
+      ],
+      "pass": false
+    },
+    {
+      "model": {
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.95,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.06
+        },
+        "fits": [
+          {
+            "id": "p51b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.95,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.85,
+            "cd0": 0.01873839434838409,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.28988633366579236
+          },
+          {
+            "id": "p47b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.95,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.7,
+            "cd0": 0.02233008022593387,
+            "delta": 0.020091731894731617,
+            "unclippedDelta": 0.020091731894731617,
+            "deltaClipped": false,
+            "score": 0.0959968311951877
+          },
+          {
+            "id": "spitfire_lfix_bs543",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.95,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.6,
+            "cd0": 0.022826535676095265,
+            "delta": 0.004749410284676864,
+            "unclippedDelta": 0.004749410284676864,
+            "deltaClipped": false,
+            "score": 0.4590878675720278
+          },
+          {
+            "id": "bf109f4",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.95,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.06
+            },
+            "e": 0.78,
+            "cd0": 0.02599414600329728,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.00044444444444444544
+          }
+        ],
+        "score": 0.21135386921936308
+      },
+      "comparison": [
+        {
+          "id": "p51b",
+          "speedCheckDelta": -0.44965843138088557,
+          "climbCheckDelta": 58.0408840208147
+        },
+        {
+          "id": "p47b",
+          "speedCheckDelta": 0.2692573147396615,
+          "climbCheckDelta": 5.974738538811266
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCheckDelta": 0.09258126464355865,
+          "climbCheckDelta": 6.515011662542761
+        },
+        {
+          "id": "bf109f4",
+          "speedCheckDelta": -0.01771749988438387,
+          "climbCheckDelta": null
+        }
+      ],
+      "own": [
+        {
+          "split": "original",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": -0.44965843138088557,
+              "climbCheckDelta": 58.0408840208147
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0.2692573147396615,
+              "climbCheckDelta": 5.974738538811266
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": 0.09258126464355865,
+              "climbCheckDelta": 6.515011662542761
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": -0.01771749988438387,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "alternate",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": -0.2179500009948847,
+              "climbCheckDelta": 21.27176687685096
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0.19398329132006142,
+              "climbCheckDelta": 6.516459577847556
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": 0.07377540722209286,
+              "climbCheckDelta": 3.071726968908237
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": -0.01771749988438387,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "rotated",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": -0.2179500009948847,
+              "climbCheckDelta": 58.0408840208147
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0.19398329132006142,
+              "climbCheckDelta": 10.593799353247391
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": 0.07377540722209286,
+              "climbCheckDelta": 2.3069328513683445
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": -0.01771749988438387,
+              "climbCheckDelta": null
+            }
+          ]
+        }
+      ],
+      "pass": false
+    },
+    {
+      "model": {
+        "profile": "P",
+        "params": {
+          "retainedPowerFraction": 0.91,
+          "machPenalty": 2,
+          "machOnset": 0.92,
+          "advanceLoss": 0.12
+        },
+        "fits": [
+          {
+            "id": "p51b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.91,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.98,
+            "cd0": 0.017909817529780242,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.4117045528443665
+          },
+          {
+            "id": "p47b",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.91,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.78,
+            "cd0": 0.02144366948071648,
+            "delta": 0.018774740650371814,
+            "unclippedDelta": 0.018774740650371814,
+            "deltaClipped": false,
+            "score": 0.03545556984768964
+          },
+          {
+            "id": "spitfire_lfix_bs543",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.91,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.7,
+            "cd0": 0.021877497714654998,
+            "delta": 0.0026813038333628313,
+            "unclippedDelta": 0.0026813038333628313,
+            "deltaClipped": false,
+            "score": 0.4037247058182695
+          },
+          {
+            "id": "bf109f4",
+            "profile": "P",
+            "params": {
+              "retainedPowerFraction": 0.91,
+              "machPenalty": 2,
+              "machOnset": 0.92,
+              "advanceLoss": 0.12
+            },
+            "e": 0.78,
+            "cd0": 0.024714872888479896,
+            "delta": 0,
+            "unclippedDelta": 0,
+            "deltaClipped": false,
+            "score": 0.00044444444444444544
+          }
+        ],
+        "score": 0.21283231823869253
+      },
+      "comparison": [
+        {
+          "id": "p51b",
+          "speedCheckDelta": -1.5565138673438925,
+          "climbCheckDelta": 51.06737681748473
+        },
+        {
+          "id": "p47b",
+          "speedCheckDelta": 0.38871870490766014,
+          "climbCheckDelta": -9.479633944527023
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "speedCheckDelta": -0.39066689652409003,
+          "climbCheckDelta": -21.507950740431966
+        },
+        {
+          "id": "bf109f4",
+          "speedCheckDelta": 0.27923843006828974,
+          "climbCheckDelta": null
+        }
+      ],
+      "own": [
+        {
+          "split": "original",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": -1.5565138673438925,
+              "climbCheckDelta": 51.06737681748473
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": 0.38871870490766014,
+              "climbCheckDelta": -9.479633944527023
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": -0.39066689652409003,
+              "climbCheckDelta": -21.507950740431966
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0.27923843006828974,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "alternate",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": -1.126382237021668,
+              "climbCheckDelta": 52.11688609075054
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": -0.4942775746767438,
+              "climbCheckDelta": -4.508008247159069
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": -0.46135643051165953,
+              "climbCheckDelta": -19.48644634481846
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0.27923843006828974,
+              "climbCheckDelta": null
+            }
+          ]
+        },
+        {
+          "split": "rotated",
+          "rows": [
+            {
+              "id": "p51b",
+              "speedCheckDelta": -1.126382237021668,
+              "climbCheckDelta": 51.06737681748473
+            },
+            {
+              "id": "p47b",
+              "speedCheckDelta": -0.4942775746767438,
+              "climbCheckDelta": -11.092931097736596
+            },
+            {
+              "id": "spitfire_lfix_bs543",
+              "speedCheckDelta": -0.46135643051165953,
+              "climbCheckDelta": -14.633121866118671
+            },
+            {
+              "id": "bf109f4",
+              "speedCheckDelta": 0.27923843006828974,
+              "climbCheckDelta": null
+            }
+          ]
+        }
+      ],
+      "pass": false
+    }
+  ],
+  "chart": {
+    "rows": [
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9135,
+        "profile": "C",
+        "selection": "lower",
+        "shaftHp": 1520,
+        "climbFpm": 3266.5045233231617,
+        "residualFpm": -553.4954766768383
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9135,
+        "profile": "C",
+        "selection": "midpoint",
+        "shaftHp": 1575,
+        "climbFpm": 3421.977640318301,
+        "residualFpm": -398.0223596816991
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9135,
+        "profile": "C",
+        "selection": "upper",
+        "shaftHp": 1630,
+        "climbFpm": 3577.602351852076,
+        "residualFpm": -242.39764814792397
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9135,
+        "profile": "P",
+        "selection": "lower",
+        "shaftHp": 1520,
+        "climbFpm": 3675.971847196001,
+        "residualFpm": -144.0281528039991
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9135,
+        "profile": "P",
+        "selection": "midpoint",
+        "shaftHp": 1575,
+        "climbFpm": 3832.6360947429785,
+        "residualFpm": 12.636094742978457
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9135,
+        "profile": "P",
+        "selection": "upper",
+        "shaftHp": 1630,
+        "climbFpm": 3989.1667738301617,
+        "residualFpm": 169.16677383016167
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9335,
+        "profile": "C",
+        "selection": "lower",
+        "shaftHp": 1520,
+        "climbFpm": 3170.958655233588,
+        "residualFpm": -649.0413447664118
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9335,
+        "profile": "C",
+        "selection": "midpoint",
+        "shaftHp": 1575,
+        "climbFpm": 3323.236504543703,
+        "residualFpm": -496.7634954562968
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9335,
+        "profile": "C",
+        "selection": "upper",
+        "shaftHp": 1630,
+        "climbFpm": 3475.6591827372044,
+        "residualFpm": -344.34081726279555
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9335,
+        "profile": "P",
+        "selection": "lower",
+        "shaftHp": 1520,
+        "climbFpm": 3575.876425081983,
+        "residualFpm": -244.12357491801686
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9335,
+        "profile": "P",
+        "selection": "midpoint",
+        "shaftHp": 1575,
+        "climbFpm": 3729.4118823989825,
+        "residualFpm": -90.58811760101753
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9335,
+        "profile": "P",
+        "selection": "upper",
+        "shaftHp": 1630,
+        "climbFpm": 3882.7097538102275,
+        "residualFpm": 62.70975381022754
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9535,
+        "profile": "C",
+        "selection": "lower",
+        "shaftHp": 1520,
+        "climbFpm": 3079.0257164428717,
+        "residualFpm": -740.9742835571283
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9535,
+        "profile": "C",
+        "selection": "midpoint",
+        "shaftHp": 1575,
+        "climbFpm": 3228.2412392079564,
+        "residualFpm": -591.7587607920436
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9535,
+        "profile": "C",
+        "selection": "upper",
+        "shaftHp": 1630,
+        "climbFpm": 3377.59511080909,
+        "residualFpm": -442.4048891909101
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9535,
+        "profile": "P",
+        "selection": "lower",
+        "shaftHp": 1520,
+        "climbFpm": 3479.633531418961,
+        "residualFpm": -340.36646858103904
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9535,
+        "profile": "P",
+        "selection": "midpoint",
+        "shaftHp": 1575,
+        "climbFpm": 3630.086247350611,
+        "residualFpm": -189.91375264938915
+      },
+      {
+        "nodeId": "bhp-67-2200",
+        "altFt": 2200,
+        "rating": "67inHg",
+        "weightLb": 9535,
+        "profile": "P",
+        "selection": "upper",
+        "shaftHp": 1630,
+        "climbFpm": 3780.3851876653957,
+        "residualFpm": -39.61481233460427
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "C",
+        "selection": "lower",
+        "shaftHp": 1760,
+        "climbFpm": 3946.034339244856,
+        "residualFpm": -433.9656607551442
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "C",
+        "selection": "midpoint",
+        "shaftHp": 1805,
+        "climbFpm": 4073.742188901904,
+        "residualFpm": -306.2578110980962
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "C",
+        "selection": "upper",
+        "shaftHp": 1850,
+        "climbFpm": 4201.5526617231435,
+        "residualFpm": -178.4473382768565
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "P",
+        "selection": "lower",
+        "shaftHp": 1760,
+        "climbFpm": 4358.376562570475,
+        "residualFpm": -21.62343742952544
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "P",
+        "selection": "midpoint",
+        "shaftHp": 1805,
+        "climbFpm": 4485.963063227841,
+        "residualFpm": 105.9630632278413
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "P",
+        "selection": "upper",
+        "shaftHp": 1850,
+        "climbFpm": 4613.460988351038,
+        "residualFpm": 233.4609883510384
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "C",
+        "selection": "lower",
+        "shaftHp": 1760,
+        "climbFpm": 3836.501256183876,
+        "residualFpm": -543.4987438161238
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "C",
+        "selection": "midpoint",
+        "shaftHp": 1805,
+        "climbFpm": 3961.5695756914124,
+        "residualFpm": -418.4304243085876
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "C",
+        "selection": "upper",
+        "shaftHp": 1850,
+        "climbFpm": 4086.753046322406,
+        "residualFpm": -293.24695367759386
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "P",
+        "selection": "lower",
+        "shaftHp": 1760,
+        "climbFpm": 4244.430353248185,
+        "residualFpm": -135.56964675181462
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "P",
+        "selection": "midpoint",
+        "shaftHp": 1805,
+        "climbFpm": 4369.429074374086,
+        "residualFpm": -10.570925625914242
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "P",
+        "selection": "upper",
+        "shaftHp": 1850,
+        "climbFpm": 4494.324429257317,
+        "residualFpm": 114.3244292573172
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "C",
+        "selection": "lower",
+        "shaftHp": 1760,
+        "climbFpm": 3731.16313250807,
+        "residualFpm": -648.8368674919302
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "C",
+        "selection": "midpoint",
+        "shaftHp": 1805,
+        "climbFpm": 3853.711031178931,
+        "residualFpm": -526.2889688210689
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "C",
+        "selection": "upper",
+        "shaftHp": 1850,
+        "climbFpm": 3976.3676253613403,
+        "residualFpm": -403.6323746386597
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "P",
+        "selection": "lower",
+        "shaftHp": 1760,
+        "climbFpm": 4134.87617982961,
+        "residualFpm": -245.12382017039
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "P",
+        "selection": "midpoint",
+        "shaftHp": 1805,
+        "climbFpm": 4257.3670404488175,
+        "residualFpm": -122.63295955118247
+      },
+      {
+        "nodeId": "bhp-75-2200",
+        "altFt": 2200,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "P",
+        "selection": "upper",
+        "shaftHp": 1850,
+        "climbFpm": 4379.756149941596,
+        "residualFpm": -0.24385005840395024
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "C",
+        "selection": "lower",
+        "shaftHp": 1590,
+        "climbFpm": 3456.413296954836,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "C",
+        "selection": "midpoint",
+        "shaftHp": 1645,
+        "climbFpm": 3612.6465570987516,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "C",
+        "selection": "upper",
+        "shaftHp": 1700,
+        "climbFpm": 3769.019607469503,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "P",
+        "selection": "lower",
+        "shaftHp": 1590,
+        "climbFpm": 3857.547955204605,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "P",
+        "selection": "midpoint",
+        "shaftHp": 1645,
+        "climbFpm": 4014.172074855409,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "P",
+        "selection": "upper",
+        "shaftHp": 1700,
+        "climbFpm": 4170.572337551952,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "C",
+        "selection": "lower",
+        "shaftHp": 1590,
+        "climbFpm": 3356.153325474799,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "C",
+        "selection": "midpoint",
+        "shaftHp": 1645,
+        "climbFpm": 3509.1715024166865,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "C",
+        "selection": "upper",
+        "shaftHp": 1700,
+        "climbFpm": 3662.3229636359188,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "P",
+        "selection": "lower",
+        "shaftHp": 1590,
+        "climbFpm": 3753.12084827182,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "P",
+        "selection": "midpoint",
+        "shaftHp": 1645,
+        "climbFpm": 3906.513695957641,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "P",
+        "selection": "upper",
+        "shaftHp": 1700,
+        "climbFpm": 4059.7765397530325,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "C",
+        "selection": "lower",
+        "shaftHp": 1590,
+        "climbFpm": 3259.6910565524186,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "C",
+        "selection": "midpoint",
+        "shaftHp": 1645,
+        "climbFpm": 3409.6279906376717,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "C",
+        "selection": "upper",
+        "shaftHp": 1700,
+        "climbFpm": 3559.6919770072345,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "P",
+        "selection": "lower",
+        "shaftHp": 1590,
+        "climbFpm": 3652.637585791723,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "P",
+        "selection": "midpoint",
+        "shaftHp": 1645,
+        "climbFpm": 3803.0296527582645,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-4000",
+        "altFt": 4000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "P",
+        "selection": "upper",
+        "shaftHp": 1700,
+        "climbFpm": 3953.199952265939,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "C",
+        "selection": "lower",
+        "shaftHp": 1390,
+        "climbFpm": 2863.8757584003547,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "C",
+        "selection": "midpoint",
+        "shaftHp": 1450,
+        "climbFpm": 3035.141960516602,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "C",
+        "selection": "upper",
+        "shaftHp": 1510,
+        "climbFpm": 3206.5764397228468,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "P",
+        "selection": "lower",
+        "shaftHp": 1390,
+        "climbFpm": 3242.4307511707057,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "P",
+        "selection": "midpoint",
+        "shaftHp": 1450,
+        "climbFpm": 3414.5171344131363,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "P",
+        "selection": "upper",
+        "shaftHp": 1510,
+        "climbFpm": 3586.299765153239,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "C",
+        "selection": "lower",
+        "shaftHp": 1390,
+        "climbFpm": 2773.838428144388,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "C",
+        "selection": "midpoint",
+        "shaftHp": 1450,
+        "climbFpm": 2941.591185845059,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "C",
+        "selection": "upper",
+        "shaftHp": 1510,
+        "climbFpm": 3109.504921710692,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "P",
+        "selection": "lower",
+        "shaftHp": 1390,
+        "climbFpm": 3148.7408452478453,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "P",
+        "selection": "midpoint",
+        "shaftHp": 1450,
+        "climbFpm": 3317.344714272496,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "P",
+        "selection": "upper",
+        "shaftHp": 1510,
+        "climbFpm": 3485.6611707688326,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "C",
+        "selection": "lower",
+        "shaftHp": 1390,
+        "climbFpm": 2687.1445946053454,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "C",
+        "selection": "midpoint",
+        "shaftHp": 1450,
+        "climbFpm": 2851.530325733525,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "C",
+        "selection": "upper",
+        "shaftHp": 1510,
+        "climbFpm": 3016.070042196772,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "P",
+        "selection": "lower",
+        "shaftHp": 1390,
+        "climbFpm": 3058.538170693412,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "P",
+        "selection": "midpoint",
+        "shaftHp": 1450,
+        "climbFpm": 3223.8236932221703,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-8000",
+        "altFt": 8000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "P",
+        "selection": "upper",
+        "shaftHp": 1510,
+        "climbFpm": 3388.847642559855,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "C",
+        "selection": "lower",
+        "shaftHp": 1220,
+        "climbFpm": 2344.6474638370096,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "C",
+        "selection": "midpoint",
+        "shaftHp": 1280,
+        "climbFpm": 2516.8622987861622,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "C",
+        "selection": "upper",
+        "shaftHp": 1340,
+        "climbFpm": 2689.2442387487445,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "P",
+        "selection": "lower",
+        "shaftHp": 1220,
+        "climbFpm": 2702.9721519835302,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "P",
+        "selection": "midpoint",
+        "shaftHp": 1280,
+        "climbFpm": 2876.4832038816126,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9135,
+        "profile": "P",
+        "selection": "upper",
+        "shaftHp": 1340,
+        "climbFpm": 3049.6179100206323,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "C",
+        "selection": "lower",
+        "shaftHp": 1220,
+        "climbFpm": 2263.0502297171133,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "C",
+        "selection": "midpoint",
+        "shaftHp": 1280,
+        "climbFpm": 2431.7430891677304,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "C",
+        "selection": "upper",
+        "shaftHp": 1340,
+        "climbFpm": 2600.5957567432542,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "P",
+        "selection": "lower",
+        "shaftHp": 1220,
+        "climbFpm": 2618.2073339890885,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "P",
+        "selection": "midpoint",
+        "shaftHp": 1280,
+        "climbFpm": 2788.25132144668,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9335,
+        "profile": "P",
+        "selection": "upper",
+        "shaftHp": 1340,
+        "climbFpm": 2957.9162693727335,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "C",
+        "selection": "lower",
+        "shaftHp": 1220,
+        "climbFpm": 2184.4385280953584,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "C",
+        "selection": "midpoint",
+        "shaftHp": 1280,
+        "climbFpm": 2349.7521960096283,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "C",
+        "selection": "upper",
+        "shaftHp": 1340,
+        "climbFpm": 2515.21678559646,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "P",
+        "selection": "lower",
+        "shaftHp": 1220,
+        "climbFpm": 2536.541653382688,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "P",
+        "selection": "midpoint",
+        "shaftHp": 1280,
+        "climbFpm": 2703.2623042611726,
+        "residualFpm": null
+      },
+      {
+        "nodeId": "bhp-75-12000",
+        "altFt": 12000,
+        "rating": "75inHg",
+        "weightLb": 9535,
+        "profile": "P",
+        "selection": "upper",
+        "shaftHp": 1340,
+        "climbFpm": 2869.6014627868162,
+        "residualFpm": null
+      }
+    ],
+    "paired": [
+      {
+        "weightLb": 9135,
+        "selection": "lower",
+        "selection75": "lower",
+        "cMae": 493.73056871599124,
+        "pMae": 82.82579511676227
+      },
+      {
+        "weightLb": 9135,
+        "selection": "lower",
+        "selection75": "midpoint",
+        "cMae": 429.87664388746725,
+        "pMae": 124.9956080159202
+      },
+      {
+        "weightLb": 9135,
+        "selection": "lower",
+        "selection75": "upper",
+        "cMae": 365.9714074768474,
+        "pMae": 188.74457057751874
+      },
+      {
+        "weightLb": 9135,
+        "selection": "midpoint",
+        "selection75": "lower",
+        "cMae": 415.99401021842164,
+        "pMae": 17.129766086251948
+      },
+      {
+        "weightLb": 9135,
+        "selection": "midpoint",
+        "selection75": "midpoint",
+        "cMae": 352.14008538989765,
+        "pMae": 59.29957898540988
+      },
+      {
+        "weightLb": 9135,
+        "selection": "midpoint",
+        "selection75": "upper",
+        "cMae": 288.2348489792778,
+        "pMae": 123.04854154700843
+      },
+      {
+        "weightLb": 9135,
+        "selection": "upper",
+        "selection75": "lower",
+        "cMae": 338.1816544515341,
+        "pMae": 95.39510562984356
+      },
+      {
+        "weightLb": 9135,
+        "selection": "upper",
+        "selection75": "midpoint",
+        "cMae": 274.3277296230101,
+        "pMae": 137.5649185290015
+      },
+      {
+        "weightLb": 9135,
+        "selection": "upper",
+        "selection75": "upper",
+        "cMae": 210.42249321239024,
+        "pMae": 201.31388109060003
+      },
+      {
+        "weightLb": 9335,
+        "selection": "lower",
+        "selection75": "lower",
+        "cMae": 596.2700442912678,
+        "pMae": 189.84661083491574
+      },
+      {
+        "weightLb": 9335,
+        "selection": "lower",
+        "selection75": "midpoint",
+        "cMae": 533.7358845374997,
+        "pMae": 127.34725027196555
+      },
+      {
+        "weightLb": 9335,
+        "selection": "lower",
+        "selection75": "upper",
+        "cMae": 471.14414922200285,
+        "pMae": 179.22400208766703
+      },
+      {
+        "weightLb": 9335,
+        "selection": "midpoint",
+        "selection75": "lower",
+        "cMae": 520.1311196362103,
+        "pMae": 113.07888217641607
+      },
+      {
+        "weightLb": 9335,
+        "selection": "midpoint",
+        "selection75": "midpoint",
+        "cMae": 457.5969598824422,
+        "pMae": 50.579521613465886
+      },
+      {
+        "weightLb": 9335,
+        "selection": "midpoint",
+        "selection75": "upper",
+        "cMae": 395.00522456694534,
+        "pMae": 102.45627342916737
+      },
+      {
+        "weightLb": 9335,
+        "selection": "upper",
+        "selection75": "lower",
+        "cMae": 443.9197805394597,
+        "pMae": 99.13970028102108
+      },
+      {
+        "weightLb": 9335,
+        "selection": "upper",
+        "selection75": "midpoint",
+        "cMae": 381.3856207856916,
+        "pMae": 36.64033971807089
+      },
+      {
+        "weightLb": 9335,
+        "selection": "upper",
+        "selection75": "upper",
+        "cMae": 318.7938854701947,
+        "pMae": 88.51709153377237
+      },
+      {
+        "weightLb": 9535,
+        "selection": "lower",
+        "selection75": "lower",
+        "cMae": 694.9055755245292,
+        "pMae": 292.7451443757145
+      },
+      {
+        "weightLb": 9535,
+        "selection": "lower",
+        "selection75": "midpoint",
+        "cMae": 633.6316261890986,
+        "pMae": 231.49971406611076
+      },
+      {
+        "weightLb": 9535,
+        "selection": "lower",
+        "selection75": "upper",
+        "cMae": 572.303329097894,
+        "pMae": 170.3051593197215
+      },
+      {
+        "weightLb": 9535,
+        "selection": "midpoint",
+        "selection75": "lower",
+        "cMae": 620.2978141419869,
+        "pMae": 217.51878640988957
+      },
+      {
+        "weightLb": 9535,
+        "selection": "midpoint",
+        "selection75": "midpoint",
+        "cMae": 559.0238648065563,
+        "pMae": 156.2733561002858
+      },
+      {
+        "weightLb": 9535,
+        "selection": "midpoint",
+        "selection75": "upper",
+        "cMae": 497.6955677153517,
+        "pMae": 95.07880135389655
+      },
+      {
+        "weightLb": 9535,
+        "selection": "upper",
+        "selection75": "lower",
+        "cMae": 545.6208783414202,
+        "pMae": 142.36931625249713
+      },
+      {
+        "weightLb": 9535,
+        "selection": "upper",
+        "selection75": "midpoint",
+        "cMae": 484.3469290059895,
+        "pMae": 81.12388594289337
+      },
+      {
+        "weightLb": 9535,
+        "selection": "upper",
+        "selection75": "upper",
+        "cMae": 423.0186319147849,
+        "pMae": 19.92933119650411
+      }
+    ],
+    "improves": 27,
+    "total": 27
+  },
+  "figure5": {
+    "rows": [
+      {
+        "point": 0,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 2100,
+        "eta": 0.8985939583535145,
+        "requiredShaftHp": 492.26308690970416,
+        "residualHp": 37.26308690970416
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 2100,
+        "eta": 0.9041792100730079,
+        "requiredShaftHp": 489.2223033769976,
+        "residualHp": 34.222303376997615
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 2100,
+        "eta": 0.9082519544179519,
+        "requiredShaftHp": 487.0285537684146,
+        "residualHp": 32.02855376841461
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 2100,
+        "eta": 0.897504942688035,
+        "requiredShaftHp": 492.8603897073649,
+        "residualHp": 2.8603897073649023
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 2100,
+        "eta": 0.9030834255810062,
+        "requiredShaftHp": 489.81591654494724,
+        "residualHp": -0.18408345505275747
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 2100,
+        "eta": 0.9071512341233533,
+        "requiredShaftHp": 487.6195050817312,
+        "residualHp": -2.3804949182688233
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 2100,
+        "eta": 0.8964236658147761,
+        "requiredShaftHp": 493.45488376353376,
+        "residualHp": -31.545116236466242
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 2100,
+        "eta": 0.9019954279820406,
+        "requiredShaftHp": 490.40673832142596,
+        "residualHp": -34.59326167857404
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 2100,
+        "eta": 0.9060583357967232,
+        "requiredShaftHp": 488.20767752061437,
+        "residualHp": -36.79232247938563
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 2100,
+        "eta": 0.8972149388213566,
+        "requiredShaftHp": 503.95009307171983,
+        "residualHp": 48.950093071719834
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 2100,
+        "eta": 0.9032465624289663,
+        "requiredShaftHp": 500.58485770314627,
+        "residualHp": 45.58485770314627
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 2100,
+        "eta": 0.9076994315933898,
+        "requiredShaftHp": 498.12915617964654,
+        "residualHp": 43.12915617964654
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 2100,
+        "eta": 0.8961715152505912,
+        "requiredShaftHp": 504.5368483932761,
+        "residualHp": 14.536848393276102
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 2100,
+        "eta": 0.9021961243313916,
+        "requiredShaftHp": 501.16769483957273,
+        "residualHp": 11.167694839572732
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 2100,
+        "eta": 0.906643814994608,
+        "requiredShaftHp": 498.70913411243987,
+        "residualHp": 8.70913411243987
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 2100,
+        "eta": 0.8951352135854306,
+        "requiredShaftHp": 505.1209527477798,
+        "residualHp": -19.879047252220175
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 2100,
+        "eta": 0.9011528560171954,
+        "requiredShaftHp": 501.7478987113506,
+        "residualHp": -23.252101288649385
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 2100,
+        "eta": 0.9055954035251542,
+        "requiredShaftHp": 499.28649169849825,
+        "residualHp": -25.713508301501747
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 2100,
+        "eta": 0.8956870040857953,
+        "requiredShaftHp": 516.2571116191652,
+        "residualHp": 61.257111619165244
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 2100,
+        "eta": 0.9021737297247601,
+        "requiredShaftHp": 512.5451677530325,
+        "residualHp": 57.5451677530325
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 2100,
+        "eta": 0.9070149068533355,
+        "requiredShaftHp": 509.80946636076294,
+        "residualHp": 54.80946636076294
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 2100,
+        "eta": 0.8946869638602085,
+        "requiredShaftHp": 516.8341602397653,
+        "residualHp": 26.83416023976531
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 2100,
+        "eta": 0.9011664470288219,
+        "requiredShaftHp": 513.1180673323128,
+        "residualHp": 23.118067332312762
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 2100,
+        "eta": 0.9060022189524031,
+        "requiredShaftHp": 510.3793080979734,
+        "residualHp": 20.37930809797342
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 2100,
+        "eta": 0.893693482544852,
+        "requiredShaftHp": 517.4087029564404,
+        "residualHp": -7.591297043559621
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 2100,
+        "eta": 0.900165770743916,
+        "requiredShaftHp": 513.6884790253855,
+        "residualHp": -11.311520974614496
+      },
+      {
+        "point": 0,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 2100,
+        "eta": 0.9049961729133313,
+        "requiredShaftHp": 510.9466752280279,
+        "residualHp": -14.053324771972086
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 2300,
+        "eta": 0.8910996423631714,
+        "requiredShaftHp": 662.1808896136909,
+        "residualHp": 87.18088961369085
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 2300,
+        "eta": 0.8983101265428846,
+        "requiredShaftHp": 656.8657487869443,
+        "residualHp": 81.86574878694432
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 2300,
+        "eta": 0.9039699503495834,
+        "requiredShaftHp": 652.7530629599966,
+        "residualHp": 77.75306295999656
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 2300,
+        "eta": 0.8904301684047188,
+        "requiredShaftHp": 662.678753317226,
+        "residualHp": 52.67875331722598
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 2300,
+        "eta": 0.8976352354221341,
+        "requiredShaftHp": 657.3596162777553,
+        "residualHp": 47.35961627775532
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 2300,
+        "eta": 0.903290807061659,
+        "requiredShaftHp": 653.2438383093256,
+        "residualHp": 43.24383830932561
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 2300,
+        "eta": 0.8897636618361922,
+        "requiredShaftHp": 663.1751545087485,
+        "residualHp": 18.175154508748506
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 2300,
+        "eta": 0.8969633357024496,
+        "requiredShaftHp": 657.8520329957286,
+        "residualHp": 12.852032995728564
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 2300,
+        "eta": 0.9026146740221924,
+        "requiredShaftHp": 653.7331719692147,
+        "residualHp": 8.733171969214709
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 2300,
+        "eta": 0.8891961188821569,
+        "requiredShaftHp": 680.8593633821253,
+        "residualHp": 105.85936338212525
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 2300,
+        "eta": 0.8968111433607557,
+        "requiredShaftHp": 675.0780338825737,
+        "residualHp": 100.07803388257366
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 2300,
+        "eta": 0.9028234497977646,
+        "requiredShaftHp": 670.5823863564658,
+        "residualHp": 95.5823863564658
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 2300,
+        "eta": 0.8885514547999592,
+        "requiredShaftHp": 681.3533421767457,
+        "residualHp": 71.35334217674574
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 2300,
+        "eta": 0.8961609584123935,
+        "requiredShaftHp": 675.5678181925016,
+        "residualHp": 65.56781819250159
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 2300,
+        "eta": 0.9021689059482232,
+        "requiredShaftHp": 671.0689089729143,
+        "residualHp": 61.0689089729143
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 2300,
+        "eta": 0.887909549760686,
+        "requiredShaftHp": 681.8459195389182,
+        "residualHp": 36.845919538918224
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 2300,
+        "eta": 0.8955135561352408,
+        "requiredShaftHp": 676.0562129698587,
+        "residualHp": 31.056212969858734
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 2300,
+        "eta": 0.9015171634251814,
+        "requiredShaftHp": 671.5540513103127,
+        "residualHp": 26.55405131031273
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 2300,
+        "eta": 0.8871814766647885,
+        "requiredShaftHp": 700.2505582236926,
+        "residualHp": 125.25055822369256
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 2300,
+        "eta": 0.8952066717262682,
+        "requiredShaftHp": 693.9730722540912,
+        "residualHp": 118.97307225409122
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 2300,
+        "eta": 0.9015769256044539,
+        "requiredShaftHp": 689.0696807304903,
+        "residualHp": 114.06968073049029
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 2300,
+        "eta": 0.8865605566037256,
+        "requiredShaftHp": 700.740992425996,
+        "residualHp": 90.74099242599596
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 2300,
+        "eta": 0.8945801349963064,
+        "requiredShaftHp": 694.4591098960666,
+        "residualHp": 84.4591098960666
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 2300,
+        "eta": 0.9009459304648758,
+        "requiredShaftHp": 689.552284186113,
+        "residualHp": 79.55228418611296
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 2300,
+        "eta": 0.8859422033552309,
+        "requiredShaftHp": 701.2300824223626,
+        "residualHp": 56.23008242236256
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 2300,
+        "eta": 0.8939561882975802,
+        "requiredShaftHp": 694.9438153824117,
+        "residualHp": 49.943815382411685
+      },
+      {
+        "point": 1,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 2300,
+        "eta": 0.900317543787089,
+        "requiredShaftHp": 690.0335648986907,
+        "residualHp": 45.033564898690656
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 2700,
+        "eta": 0.8859245336406564,
+        "requiredShaftHp": 1044.6651499431277,
+        "residualHp": 79.66514994312774
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 2700,
+        "eta": 0.8930135445020894,
+        "requiredShaftHp": 1036.3722828974926,
+        "residualHp": 71.3722828974926
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 2700,
+        "eta": 0.8983358010414316,
+        "requiredShaftHp": 1030.2322190667403,
+        "residualHp": 65.2322190667403
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 2700,
+        "eta": 0.8855557064178136,
+        "requiredShaftHp": 1045.1002450402084,
+        "residualHp": 45.10024504020839
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 2700,
+        "eta": 0.8926417659892784,
+        "requiredShaftHp": 1036.803924078462,
+        "residualHp": 36.80392407846193
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 2700,
+        "eta": 0.8979618067720588,
+        "requiredShaftHp": 1030.6613029577793,
+        "residualHp": 30.6613029577793
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 2700,
+        "eta": 0.885187787676813,
+        "requiredShaftHp": 1045.5346296665302,
+        "residualHp": 10.534629666530236
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 2700,
+        "eta": 0.89227090322782,
+        "requiredShaftHp": 1037.2348604286035,
+        "residualHp": 2.234860428603497
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 2700,
+        "eta": 0.89758873371181,
+        "requiredShaftHp": 1031.0896861938127,
+        "residualHp": -3.9103138061873324
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 2700,
+        "eta": 0.8840921847018185,
+        "requiredShaftHp": 1074.2847479782454,
+        "residualHp": 109.28474797824538
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 2700,
+        "eta": 0.8914834669828189,
+        "requiredShaftHp": 1065.3778617413595,
+        "residualHp": 100.37786174135954
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 2700,
+        "eta": 0.8968506403716867,
+        "requiredShaftHp": 1059.0021426960375,
+        "residualHp": 94.00214269603748
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 2700,
+        "eta": 0.8837347812906465,
+        "requiredShaftHp": 1074.7192143380923,
+        "residualHp": 74.71921433809234
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 2700,
+        "eta": 0.8911230755693256,
+        "requiredShaftHp": 1065.8087259440986,
+        "residualHp": 65.80872594409857
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 2700,
+        "eta": 0.8964880792228301,
+        "requiredShaftHp": 1059.430428406016,
+        "residualHp": 59.43042840601606
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 2700,
+        "eta": 0.8833782330768196,
+        "requiredShaftHp": 1075.1529914019702,
+        "residualHp": 40.15299140197021
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 2700,
+        "eta": 0.89076354650289,
+        "requiredShaftHp": 1066.2389065658156,
+        "residualHp": 31.23890656581557
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 2700,
+        "eta": 0.896126385612789,
+        "requiredShaftHp": 1059.8580346258414,
+        "residualHp": 24.858034625841356
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 2700,
+        "eta": 0.8821832073889749,
+        "requiredShaftHp": 1104.7559679571152,
+        "residualHp": 139.75596795711522
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 2700,
+        "eta": 0.8898722555575792,
+        "requiredShaftHp": 1095.210191246892,
+        "residualHp": 130.210191246892
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 2700,
+        "eta": 0.8952538330341863,
+        "requiredShaftHp": 1088.6266299373704,
+        "residualHp": 123.62662993737035
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 2700,
+        "eta": 0.8818368181724793,
+        "requiredShaftHp": 1105.1899207545869,
+        "residualHp": 105.18992075458686
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 2700,
+        "eta": 0.8895228472364933,
+        "requiredShaftHp": 1095.6403944230651,
+        "residualHp": 95.64039442306512
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 2700,
+        "eta": 0.8949023116368257,
+        "requiredShaftHp": 1089.054247062931,
+        "residualHp": 89.05424706293093
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 2700,
+        "eta": 0.8814912343036477,
+        "requiredShaftHp": 1105.6232044830515,
+        "residualHp": 70.6232044830515
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 2700,
+        "eta": 0.8891742512824267,
+        "requiredShaftHp": 1096.069934311402,
+        "residualHp": 61.069934311401994
+      },
+      {
+        "point": 2,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 2700,
+        "eta": 0.894551607519342,
+        "requiredShaftHp": 1089.4812048878316,
+        "residualHp": 54.48120488783161
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8968625299250004,
+        "requiredShaftHp": 1086.6739669411984,
+        "residualHp": 31.673966941198387
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8966065183463395,
+        "requiredShaftHp": 1086.9842492245343,
+        "residualHp": 31.984249224534324
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8936806050059731,
+        "requiredShaftHp": 1090.5430393535344,
+        "residualHp": 35.54303935353437
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8965121214424547,
+        "requiredShaftHp": 1087.098701606431,
+        "residualHp": -2.90129839356905
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8962562098887429,
+        "requiredShaftHp": 1087.409105165923,
+        "residualHp": -2.590894834077062
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8933314397167211,
+        "requiredShaftHp": 1090.9692862747202,
+        "residualHp": 0.9692862747201616
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8961625228612135,
+        "requiredShaftHp": 1087.522785580103,
+        "residualHp": -37.47721441989711
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8959067111012622,
+        "requiredShaftHp": 1087.8333102299566,
+        "residualHp": -37.16668977004338
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.892983081455373,
+        "requiredShaftHp": 1091.3948801875763,
+        "residualHp": -33.60511981242371
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8951768309448914,
+        "requiredShaftHp": 1117.08707063706,
+        "residualHp": 62.087070637059924
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.894900074267081,
+        "requiredShaftHp": 1117.4325408357831,
+        "residualHp": 62.43254083578313
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8919414760251605,
+        "requiredShaftHp": 1121.139100110854,
+        "residualHp": 66.13910011085409
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8948369940505592,
+        "requiredShaftHp": 1117.5113125976716,
+        "residualHp": 27.511312597671576
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.894560342438169,
+        "requiredShaftHp": 1117.8569139974072,
+        "residualHp": 27.85691399740722
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.89160286737192,
+        "requiredShaftHp": 1121.564880931751,
+        "residualHp": 31.564880931751077
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8944979206549079,
+        "requiredShaftHp": 1117.9349226997094,
+        "residualHp": -7.065077300290568
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8942213738718913,
+        "requiredShaftHp": 1118.2806551050487,
+        "residualHp": -6.719344894951291
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8912650194579175,
+        "requiredShaftHp": 1121.9900276021228,
+        "residualHp": -3.0099723978771635
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8933831879294386,
+        "requiredShaftHp": 1148.3889939142528,
+        "residualHp": 93.38899391425275
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8930894314546558,
+        "requiredShaftHp": 1148.7667239496225,
+        "residualHp": 93.76672394962247
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8901018116301814,
+        "requiredShaftHp": 1152.622550545327,
+        "residualHp": 97.62255054532693
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8930535653678731,
+        "requiredShaftHp": 1148.8128597791092,
+        "residualHp": 58.8128597791092
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8927599172774464,
+        "requiredShaftHp": 1149.1907292331507,
+        "residualHp": 59.190729233150705
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8897733997648498,
+        "requiredShaftHp": 1153.0479789992994,
+        "residualHp": 63.0479789992994
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8927246628267551,
+        "requiredShaftHp": 1149.236111745347,
+        "residualHp": 24.23611174534699
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8924311228839322,
+        "requiredShaftHp": 1149.6141204161354,
+        "residualHp": 24.614120416135393
+      },
+      {
+        "point": 3,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8894457052753472,
+        "requiredShaftHp": 1153.4727912915048,
+        "residualHp": 28.47279129150479
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8856475783103517,
+        "requiredShaftHp": 1250.2584234880912,
+        "residualHp": -4.741576511908761
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8853260693004887,
+        "requiredShaftHp": 1250.7124588562422,
+        "residualHp": -4.287541143757835
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8822794678205722,
+        "requiredShaftHp": 1255.0312972369134,
+        "residualHp": 0.03129723691336039
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.885350018613053,
+        "requiredShaftHp": 1250.6786262443086,
+        "residualHp": -39.32137375569141
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8850286176237232,
+        "requiredShaftHp": 1251.1328142104421,
+        "residualHp": -38.86718578955788
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8819830397403662,
+        "requiredShaftHp": 1255.4531041212588,
+        "residualHp": -34.546895878741225
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8850530503628923,
+        "requiredShaftHp": 1251.0982754879296,
+        "residualHp": -73.90172451207036
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8847317571793877,
+        "requiredShaftHp": 1251.5526158510359,
+        "residualHp": -73.44738414896415
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8816872008580298,
+        "requiredShaftHp": 1255.8743553799677,
+        "residualHp": -69.12564462003229
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8834775555243757,
+        "requiredShaftHp": 1285.339023573065,
+        "residualHp": 30.339023573065106
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.88315414980613,
+        "requiredShaftHp": 1285.80970696418,
+        "residualHp": 30.809706964179895
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8800932453751729,
+        "requiredShaftHp": 1290.2816656459404,
+        "residualHp": 35.28166564594039
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8831887262386138,
+        "requiredShaftHp": 1285.7593681054525,
+        "residualHp": -4.240631894547505
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.882865426249192,
+        "requiredShaftHp": 1286.230205424197,
+        "residualHp": -3.769794575802962
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8798055224988235,
+        "requiredShaftHp": 1290.7036265709937,
+        "residualHp": 0.7036265709937197
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8829004557751672,
+        "requiredShaftHp": 1286.1791735846546,
+        "residualHp": -38.82082641534544
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8825772613100065,
+        "requiredShaftHp": 1286.6501646336314,
+        "residualHp": -38.34983536636855
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8795183563041261,
+        "requiredShaftHp": 1291.1250463699869,
+        "residualHp": -33.874953630013124
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8812004725818555,
+        "requiredShaftHp": 1321.4245343566067,
+        "residualHp": 66.42453435660673
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8808789580528077,
+        "requiredShaftHp": 1321.9068448749272,
+        "residualHp": 66.90684487492717
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8778074939358882,
+        "requiredShaftHp": 1326.5322205615012,
+        "residualHp": 71.53222056150116
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8809200925286033,
+        "requiredShaftHp": 1321.845118566746,
+        "residualHp": 31.845118566745896
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.880598680298934,
+        "requiredShaftHp": 1322.3275825952994,
+        "residualHp": 32.32758259529942
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8775281934593759,
+        "requiredShaftHp": 1326.95443045068,
+        "residualHp": 36.95443045068009
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8806402406375952,
+        "requiredShaftHp": 1322.2651775635763,
+        "residualHp": -2.7348224364236557
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8803189305145993,
+        "requiredShaftHp": 1322.747794910664,
+        "residualHp": -2.25220508933603
+      },
+      {
+        "point": 4,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8772494191114691,
+        "requiredShaftHp": 1327.3761130964497,
+        "residualHp": 2.3761130964496715
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8758222073505549,
+        "requiredShaftHp": 1388.871601940989,
+        "residualHp": -16.128398059011033
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8755135137953445,
+        "requiredShaftHp": 1389.3612982229747,
+        "residualHp": -15.63870177702529
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.872436593471142,
+        "requiredShaftHp": 1394.261315081683,
+        "residualHp": -10.738684918316949
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8755580083043606,
+        "requiredShaftHp": 1389.290693022378,
+        "residualHp": -50.709306977621964
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.875249407869126,
+        "requiredShaftHp": 1389.7805370698911,
+        "residualHp": -50.219462930108875
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8721734157235059,
+        "requiredShaftHp": 1394.6820325054248,
+        "residualHp": -45.317967494575214
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8752942808189824,
+        "requiredShaftHp": 1389.7092884010515,
+        "residualHp": -85.29071159894852
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8749857733375168,
+        "requiredShaftHp": 1390.1992800393139,
+        "residualHp": -84.80071996068614
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": -4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8719107077138015,
+        "requiredShaftHp": 1395.1022523028062,
+        "residualHp": -79.89774769719384
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8732869632571466,
+        "requiredShaftHp": 1427.857744656074,
+        "residualHp": 22.85774465607392
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.872990536808118,
+        "requiredShaftHp": 1428.3425778623007,
+        "residualHp": 23.342577862300686
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8699132728437496,
+        "requiredShaftHp": 1433.3952506756034,
+        "residualHp": 28.395250675603393
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.87303038284403,
+        "requiredShaftHp": 1428.2773867867431,
+        "residualHp": -11.722613213256864
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8727340434880463,
+        "requiredShaftHp": 1428.762362483663,
+        "residualHp": -11.237637516336918
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8696576836544991,
+        "requiredShaftHp": 1433.8165202588907,
+        "residualHp": -6.183479741109295
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8727742486379838,
+        "requiredShaftHp": 1428.696545228974,
+        "residualHp": -46.303454771026054
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8724779962235857,
+        "requiredShaftHp": 1429.1816632523492,
+        "residualHp": -45.81833674765085
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 0,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8694025389485278,
+        "requiredShaftHp": 1434.237304277903,
+        "residualHp": -40.76269572209708
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8706461006902847,
+        "requiredShaftHp": 1467.9500701286095,
+        "residualHp": 62.95007012860947
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8703657040088918,
+        "requiredShaftHp": 1468.4229843602006,
+        "residualHp": 63.422984360200644
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": -35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8672918476001353,
+        "requiredShaftHp": 1473.6273701891814,
+        "residualHp": 68.62737018918142
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.870396901289796,
+        "requiredShaftHp": 1468.3703522744688,
+        "residualHp": 28.370352274468814
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8701165848645311,
+        "requiredShaftHp": 1468.8434019039946,
+        "residualHp": 28.843401903994618
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 0,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8670436082658073,
+        "requiredShaftHp": 1474.0492777771458,
+        "residualHp": 34.04927777714579
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": -100,
+        "sourceRpm": 3000,
+        "eta": 0.8701481242147233,
+        "requiredShaftHp": 1468.7901622714069,
+        "residualHp": -6.209837728593129
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 0,
+        "sourceRpm": 3000,
+        "eta": 0.8698678879095741,
+        "requiredShaftHp": 1469.2633471467602,
+        "residualHp": -5.736652853239775
+      },
+      {
+        "point": 5,
+        "tasOffsetMph": 4,
+        "powerOffsetBhp": 35,
+        "rpmOffset": 100,
+        "sourceRpm": 3000,
+        "eta": 0.8667957896298434,
+        "requiredShaftHp": 1474.4707113901522,
+        "residualHp": -0.5292886098477538
+      }
+    ],
+    "points": [
+      {
+        "point": 0,
+        "sourceRpm": 2100,
+        "minResidualHp": -36.79232247938563,
+        "maxResidualHp": 61.257111619165244,
+        "recordedRpmNominal": 11.167694839572732
+      },
+      {
+        "point": 1,
+        "sourceRpm": 2300,
+        "minResidualHp": 8.733171969214709,
+        "maxResidualHp": 125.25055822369256,
+        "recordedRpmNominal": 65.56781819250159
+      },
+      {
+        "point": 2,
+        "sourceRpm": 2700,
+        "minResidualHp": -3.9103138061873324,
+        "maxResidualHp": 139.75596795711522,
+        "recordedRpmNominal": 65.80872594409857
+      },
+      {
+        "point": 3,
+        "sourceRpm": 3000,
+        "minResidualHp": -37.47721441989711,
+        "maxResidualHp": 97.62255054532693,
+        "recordedRpmNominal": 27.85691399740722
+      },
+      {
+        "point": 4,
+        "sourceRpm": 3000,
+        "minResidualHp": -73.90172451207036,
+        "maxResidualHp": 71.53222056150116,
+        "recordedRpmNominal": -3.769794575802962
+      },
+      {
+        "point": 5,
+        "sourceRpm": 3000,
+        "minResidualHp": -85.29071159894852,
+        "maxResidualHp": 68.62737018918142,
+        "recordedRpmNominal": -11.237637516336918
+      }
+    ]
+  },
+  "decision": {
+    "promote": false,
+    "retainV28": true,
+    "reason": "No cross-split gain passes every documented guardrail; retain working coefficients."
+  },
+  "independentHistoricalValidation": false,
+  "pairwiseAccuracy": null
+}

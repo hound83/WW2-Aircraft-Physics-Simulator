@@ -1,8 +1,8 @@
 {
-  "node": "v22.23.4",
-  "discoveredScripts": 42,
-  "reportedScripts": 42,
-  "passed": 42,
+  "node": "v24.22.1",
+  "discoveredScripts": 43,
+  "reportedScripts": 43,
+  "passed": 43,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -173,6 +173,10 @@
     },
     {
       "script": "test_v28_working.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_v29_robustness.cjs",
       "status": "pass"
     }
   ],

@@ -31,6 +31,7 @@ try{
  require('../validation/diagnostics/p51_propeller_audit.cjs').writeReport();
  require('../validation/diagnostics/source_chart_climb.cjs').writeReport();
  require('../validation/diagnostics/working_validation_v28.cjs').writeReport();
+ require('../validation/diagnostics/robustness_v29.cjs').writeReport();
  const md=[
  '# Current validation',
  '',
@@ -49,6 +50,8 @@ try{
  '| Interactive browser tests | Not run |',
  '| Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |',
  '| 5:1 comparative accuracy | Unresolved |',
+ '',
+ 'v2.9 robustness: [power, mass, RPM and split sensitivity](V29_ROBUSTNESS.md); v2.8 working coefficients retained.',
  '',
  'v2.8 working model: [joint calibration results](V28_RESULTS.md); P is the application default. Legacy C numerical compatibility is reported separately.',
  '',

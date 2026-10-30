@@ -1,0 +1,73 @@
+{
+  "version": "2.9.0",
+  "workingCalibration": "2.8.0",
+  "purpose": "Stress existing-data calibration before changing the working coefficients",
+  "splits": [
+    "original",
+    "alternate",
+    "rotated"
+  ],
+  "retainedPowerFraction": [
+    0.85,
+    0.87,
+    0.89,
+    0.91,
+    0.93,
+    0.95,
+    0.97
+  ],
+  "advanceLoss": [
+    0,
+    0.06,
+    0.12,
+    0.18,
+    0.24,
+    0.3,
+    0.36
+  ],
+  "effectiveE": [
+    0.6,
+    0.7,
+    0.78,
+    0.85,
+    0.92,
+    0.98
+  ],
+  "spitfireExtendedE": [
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.78,
+    0.85,
+    0.92,
+    0.98
+  ],
+  "nearOptimalScoreAllowance": 0.02,
+  "mustangWeightsLb": [
+    9135,
+    9335,
+    9535
+  ],
+  "figure5TasOffsetsMph": [
+    -4,
+    0,
+    4
+  ],
+  "figure5PowerOffsetsBhp": [
+    -35,
+    0,
+    35
+  ],
+  "rpmScenarioOffsets": [
+    -100,
+    0,
+    100
+  ],
+  "selectionPolicy": "Parameter fitting uses fit rows only. Evaluate every fitted winner on the same archived v2.8 check rows, and separately its own check rows. These are already-exposed engineering checks, not blind validation.",
+  "promotionPolicy": "A single fixed candidate must beat v2.8 P47 original-check climb MAE by at least 10 ft/min and stay within +0.5 mph speed / +10 ft/min climb MAE for every aircraft on original check rows AND on each of the three own-split check sets. Candidates are split winners and original-split near-optimal families. No promotion solely for lower training score or a lower Spitfire e.",
+  "scenarioPolicy": "Graph-reading bounds are reading brackets, not historical confidence intervals. Weight and +/-100 RPM perturbations are assumed scenarios, not measured uncertainty. No interpolation or extrapolation of chart power. No fit of new aircraft or new historical observations."
+}
