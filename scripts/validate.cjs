@@ -28,6 +28,7 @@ try{
  require('../validation/diagnostics/p51_climb_states.cjs').writeReport();
  require('../validation/diagnostics/p51_propeller_audit.cjs').writeReport();
  require('../validation/diagnostics/source_chart_climb.cjs').writeReport();
+ require('../validation/diagnostics/working_validation_v28.cjs').writeReport();
  const md=[
  '# Current validation',
  '',
@@ -46,9 +47,11 @@ try{
  '| Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |',
  '| 5:1 comparative accuracy | Unresolved |',
  '',
- 'Chart-power mode: [explicit source-chart climb input](SOURCE_CHART_CLIMB_MODE.md); [progress assessment](PROGRESS_ASSESSMENT.md); default numerical predictions unchanged.',
+ 'v2.8 working model: [joint calibration results](V28_RESULTS.md); P is the application default. Legacy C numerical compatibility is reported separately.',
  '',
- 'Propeller milestone: [coupled source/candidate audit](P51_PROPELLER_EFFICIENCY_AUDIT.md); no supported default replacement; research v2.6.0.',
+ 'Chart-power mode: [explicit source-chart climb input](SOURCE_CHART_CLIMB_MODE.md); [progress assessment](PROGRESS_ASSESSMENT.md); legacy C predictions unchanged; P is the new working profile.',
+ '',
+ 'Propeller milestone: [coupled source/candidate audit](P51_PROPELLER_EFFICIENCY_AUDIT.md); retained as earlier research; superseded for the working profile by the v2.8 joint engineering fit.',
  '',
  'Mustang reconstruction: [original chart power/weight states](P51_CLIMB_STATE_RECONSTRUCTION.md); sparse pixel-reading brackets and joint sensitivities, no default correction.',
  '',

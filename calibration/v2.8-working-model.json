@@ -1,0 +1,102 @@
+{
+  "version": "2.8.0",
+  "status": "Engineering-calibrated working approximation; not independently validated historical truth",
+  "sharedPropeller": {
+    "retainedPowerFraction": 0.93,
+    "machPenalty": 2,
+    "machOnset": 0.92,
+    "advanceLoss": 0.06
+  },
+  "aircraft": {
+    "p51b": {
+      "e": 0.92,
+      "openCoolingDeltaCd0": 0,
+      "cd0AtCalibration": 0.018397874493288696,
+      "role": "Estimated from existing qualified fit subset",
+      "boundaryWarning": null
+    },
+    "p47b": {
+      "e": 0.7,
+      "openCoolingDeltaCd0": 0.01804155050509509,
+      "cd0AtCalibration": 0.02182668614955703,
+      "role": "Estimated from existing qualified fit subset",
+      "boundaryWarning": null
+    },
+    "spitfire_lfix_bs543": {
+      "e": 0.6,
+      "openCoolingDeltaCd0": 0.0024443379400155814,
+      "cd0AtCalibration": 0.022332693217227445,
+      "role": "Estimated from existing qualified fit subset",
+      "boundaryWarning": "Effective drag parameter at search-grid boundary; do not interpret as measured wing efficiency"
+    },
+    "bf109f4": {
+      "e": 0.78,
+      "openCoolingDeltaCd0": 0,
+      "cd0AtCalibration": 0.02542899193686372,
+      "role": "e retained at 0.78; no observed climb fit",
+      "boundaryWarning": null
+    }
+  },
+  "search": {
+    "retainedPowerFraction": [
+      0.85,
+      0.87,
+      0.89,
+      0.91,
+      0.93,
+      0.95,
+      0.97
+    ],
+    "advanceLoss": [
+      0,
+      0.06,
+      0.12,
+      0.18,
+      0.24,
+      0.3,
+      0.36
+    ],
+    "effectiveE": [
+      0.6,
+      0.7,
+      0.78,
+      0.85,
+      0.92,
+      0.98
+    ],
+    "machPenalty": 2,
+    "machOnset": 0.92
+  },
+  "fitPolicy": "Speed anchor exact; alternating non-anchor speed rows fit/check. P-51 67-inHg climb fitted, 75-inHg checked; alternating Figure 5 points fit/check at source RPM. P-47 climb fit 15k/25k ft, remaining altitudes checked. Spitfire climb every fourth row fitted. All records already exposed during development; these are out-of-fit engineering checks, not independent blind validation.",
+  "configurationPolicy": "Nonnegative aggregate CD0 increment for documented open-cooling climb states only. Not isolated measured cooling drag; no aircraft-specific climb multiplier.",
+  "objective": "Aircraft/group-balanced normalized squared fit residuals: speed power residual/60 hp, P51 climb/200 fpm (weight 2), other climb/250 fpm, Figure 5/60 bhp, plus weak e/config-drag regularization.",
+  "acceptance": {
+    "mustangReduction": 0.9773244865298673,
+    "targetMet": true,
+    "priorP47CheckMae": 70.47708067095391,
+    "bounds": [
+      {
+        "id": "p51b",
+        "speedPass": true,
+        "climbPass": true
+      },
+      {
+        "id": "p47b",
+        "speedPass": true,
+        "climbPass": true
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "speedPass": true,
+        "climbPass": true
+      },
+      {
+        "id": "bf109f4",
+        "speedPass": true,
+        "climbPass": null
+      }
+    ],
+    "pass": true
+  },
+  "development": "Initial unconstrained compression-only candidate improved climb but regressed speed. A high-J term and source-scale k=2 were evaluated; configuration drag was jointly fitted to its final listed altitude subset. Check data were seen during development/acceptance."
+}
