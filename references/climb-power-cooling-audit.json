@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "auditDate": "2026-10-30",
+  "scope": "Conditional climb power/cooling diagnosis; no default correction",
+  "sources": [
+    {
+      "id": "p51-wright-1944",
+      "reference": "Eng-47-1749-A, 20 May 1944",
+      "url": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+      "inspection": "Report transcription rechecked; original frozen Figures 6/7 visually inspected, including analytical crop/zoom of Fig.7",
+      "scans": [
+        {
+          "path": "references/import/01_COMPLETE_V2_5_BASELINE/06_SOURCE_AND_SCIENTIFIC_EVIDENCE/P51B_24777_ORIGINAL_SCANS/Fig_6_climb_vs_altitude.jpg",
+          "printedPage": 12,
+          "numericNodesDigitized": [],
+          "finding": "Rate/time against altitude, rating/RPM labels, 9335 lb takeoff, gear/wing flaps up, automatic cooling; no matched climb TAS established",
+          "sha256": "3be7ddb992591651c516c5e05b13b44196ae274ad8a2d30e4a2847a468b49bff"
+        },
+        {
+          "path": "references/import/01_COMPLETE_V2_5_BASELINE/06_SOURCE_AND_SCIENTIFIC_EVIDENCE/P51B_24777_ORIGINAL_SCANS/Fig_7_climb_power_vs_altitude.jpg",
+          "printedPage": 13,
+          "numericNodesDigitized": [],
+          "finding": "Standard MAP/BHP and shutter-position curves; no new coordinates accepted from difficult scan; no isolated cooling-drag increment",
+          "sha256": "eb8721b34e82fd288e5201a0edb45f4c561ac038dfd0e58571d25b1b07b151da"
+        }
+      ],
+      "limits": "Takeoff mass is not instantaneous mass; engine power assigned from Packard charts, not flight torquemeter. No exact BHP/shutter coordinates newly digitized."
+    },
+    {
+      "id": "p51-figure5",
+      "reference": "Inherited Fig.5 readings in validation/baseline/p51_power_required_source_v16.json",
+      "inspection": "Approximate register reused, not freshly visually digitized",
+      "limits": "22400-ft level flight at recorded RPM/chart BHP; not a 2200-ft climb-efficiency map. Reading estimates are not validated error bounds."
+    },
+    {
+      "id": "p47-acceptance",
+      "reference": "PHQ-M-19-1417-A, 18 June 1942",
+      "url": "https://wwiiaircraftperformance.com/org/p-47/p-47.html",
+      "inspection": "Existing source-conditioned register and original stall/loading audit reused",
+      "limits": "Climb-MAP power proxy, open cooling, nominal weights. Equivalent aggregate drag is not isolated cooling drag."
+    },
+    {
+      "id": "spit-aaee",
+      "reference": "A&AEE LF/HF IX, BS.543, Tables II/V",
+      "url": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html",
+      "inspection": "Transcription rechecked; original scan not newly inspected",
+      "limits": "Different mass/cooling states; absolute-boost correction is a BHP proxy."
+    }
+  ],
+  "retrievalLeads": [
+    {
+      "url": "https://ntrs.nasa.gov/citations/19780078569",
+      "title": "NACA MR L4L18, high-speed P-51B 43-12105 performance",
+      "inspection": "Catalog only; PDF fetch rejected as too large, 57402062 bytes",
+      "transfer": "Different specimen/high-speed regime; no target correction accepted"
+    },
+    {
+      "url": "https://ntrs.nasa.gov/search.jsp?R=19930092694",
+      "title": "Elimination of Rumble from Cooling Ducts",
+      "inspection": "Catalog only; PDF fetch rejected as too large, 15119834 bytes",
+      "transfer": "Discovery does not establish target climb-drag increment"
+    }
+  ],
+  "acceptedNumericalCorrection": null,
+  "diagnosticPolicy": [
+    "Inverse eta/shaft/mass/net-drag solutions are conditional explanations, not identifiable measurements",
+    "Positive added cooling drag cannot repair a positive useful-power deficit",
+    "Negative equivalent net drag could be less drag or more thrust; radiator heat recovery/exhaust are not ruled out but their magnitudes are unverified",
+    "C-profile 0.83 amplitude is a mathematical model property, not a measured installed-propeller bound",
+    "Do not transfer P-47 aggregate loss or Greg P-47D efficiency to other aircraft as measured data"
+  ],
+  "missingEvidence": [
+    "P-51 matched climb TAS and instantaneous mass/fuel",
+    "Independent installed shaft power or accepted climb-condition chart values",
+    "Installed K-6523A-24 propeller map in required J/Cp/RPM domain",
+    "Incremental cooling/duct/exhaust force at matched flight/thermal/shutter states",
+    "Independent validation and uncertainty after a future coupled power/polar change"
+  ]
+}

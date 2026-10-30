@@ -1,8 +1,8 @@
 {
   "node": "v24.19.0",
-  "discoveredScripts": 37,
-  "reportedScripts": 37,
-  "passed": 37,
+  "discoveredScripts": 38,
+  "reportedScripts": 38,
+  "passed": 38,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -25,6 +25,10 @@
     },
     {
       "script": "test_clean_v08.mjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_climb_power_cooling.cjs",
       "status": "pass"
     },
     {

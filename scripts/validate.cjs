@@ -24,6 +24,7 @@ try{
  const stall=require('../validation/diagnostics/stall_gate.cjs').writeReport();
  require('../validation/diagnostics/stall_readiness.cjs').writeReport(stall);
  require('../validation/diagnostics/performance_validation.cjs').writeReport();
+ require('../validation/diagnostics/climb_power_cooling.cjs').writeReport();
  const md=[
  '# Current validation',
  '',
@@ -40,6 +41,8 @@ try{
  '| Interactive browser tests | Not run |',
  '| Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |',
  '| 5:1 comparative accuracy | Unresolved |',
+ '',
+ 'Climb diagnosis: [useful-power and cooling budget](CLIMB_POWER_COOLING_DIAGNOSIS.md); inverse sensitivities separated from measured corrections; default solver unchanged.',
  '',
  'Speed/climb validation: [69 source-conditioned checkpoints](PERFORMANCE_VALIDATION.md); fitted, diagnostic and independently matched scores separated; no new historical accuracy claim.',
  '',

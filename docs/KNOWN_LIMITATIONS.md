@@ -36,3 +36,7 @@ The 90/93 mph pilot-note rows belong to clipped-wing reference conditions, with 
 ## Performance validation eligibility
 
 All 69 active performance records are explicit diagnostics or missing-evidence coverage. No current record passes every strict condition requirement; no independent validation aggregate or pairwise 5:1 pass is established. The Bf 109 climb-rate observation is absent, P-51 speed mass follows an undigitized altitude curve and climb TAS is unknown, P-47 per-point mass/cooling losses are unresolved, and Spitfire speed RPM differs by 5 from the nominal model while climb cooling is open. These exclusions do not prove large physics errors. Diagnostic residuals, especially Mustang climb deficits, remain visible. Original report transcriptions are not freshly verified scans, and prior model development has already seen the checkpoints. See PERFORMANCE_VALIDATION.md.
+
+## Climb power/cooling attribution
+
+The new inverse budgets assume the existing shaft/drag/prop model and chosen weight/TAS. They do not identify a physical correction. Positive cooling drag cannot supply missing power; negative equivalent net drag is not measured radiator thrust. The 0.83 C-formula amplitude is a code property, not a real propeller bound. Mass-only roots require roughly 680-790 lb below reported Mustang takeoff mass but do not reconstruct fuel burn. Fig.6/7 pixels were inspected without digitizing uncertain BHP/shutter coordinates. Heat recovery/exhaust and installed power errors remain possible, unquantified causes. No default numerical prediction changed.

@@ -17,3 +17,5 @@ The handover's OCR/transcriptions and secondary/simulator material are not autom
 The active per-aircraft audits and `stall-calibration.json` are summarized in [the consolidated review](../docs/FOUR_AIRCRAFT_STALL_REVIEW.md). Generated `validation/current/stall-readiness.json` retains every observation and independent blocker, including the external P-47D record. Source text inspection, original scan verification, catalog discovery and simulator values remain separate evidence levels.
 
 `performance-evidence.json` records source-condition and dependence metadata for the active speed/climb checkpoints. The reporting gate reads aircraft data without replacing it, rejects incompatible conditions, and writes per-point residuals/exclusions to `validation/current/performance-validation.json`. No new independent observations or calibrated uncertainty bounds are implied.
+
+`climb-power-cooling-audit.json` records original Fig.6/7 inspection paths/checksums, unchanged reading limits, candidate access failures and the evidence still needed to identify a correction. Generated inverse budgets are diagnostic explanations, not new measured cooling or propeller data.

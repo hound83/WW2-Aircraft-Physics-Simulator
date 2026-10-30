@@ -51,4 +51,6 @@ The [consolidated four-aircraft stall review](docs/FOUR_AIRCRAFT_STALL_REVIEW.md
 
 The [four-aircraft speed/climb validation package](docs/PERFORMANCE_VALIDATION.md) now covers 69 records, keeping anchor fits, diagnostic errors, condition exclusions and independent scores separate. It preserves the Mustang climb shortfall and controlled P-47 power experiment. None of these legacy checkpoints currently establishes independently matched accuracy or 5:1 separation.
 
+The [climb power/cooling diagnosis](docs/CLIMB_POWER_COOLING_DIAGNOSIS.md) quantifies the Mustang useful-power deficit, distinguishes shaft power from propulsive power, and tests the sign of cooling-loss explanations against P-47/Spitfire conditions. It introduces no unverified drag or efficiency correction.
+
 Related research, code, tests and documentation are handled as one cohesive milestone without another GO for each routine step. See [the next complete assignment](docs/NEXT_STEPS.md). No Atlas redesign or additional aircraft.
