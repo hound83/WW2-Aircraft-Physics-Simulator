@@ -2,7 +2,7 @@
 
 A separate research repository for the shared WWII flight-performance engine. The Atlas website in [hound83/ww2-airwar](https://github.com/hound83/ww2-airwar) is outside this repository's scope.
 
-**Current version: v2.7.0 research increment; v3.0 and historical accuracy remain unresolved.** This combines the four-aircraft evidence gates, performance diagnostics, Mustang chart reconstruction and coupled propeller audit. Default coefficients and v2.5 numerical predictions remain unchanged. See [v2.7.0 release notes](releases/v2.7.0.md).
+**Current version: v2.8.0 engineering-calibrated working approximation.** The application now defaults to the joint momentum/loss propeller and drag profile P. Existing observations support useful progress without establishing unique physical coefficients or independent historical accuracy. See [v2.8 release notes](releases/v2.8.0.md) and [measured before/after results](docs/V28_RESULTS.md).
 
 Initial benchmarks: **Bf 109 F-4, P-47B, P-51B-15 and Spitfire LF Mk IX**. Greg's worksheets and the controlled P-47 2,000/2,600 hp comparison are retained. The 2,600 hp scenario is not a verified P-47B engine rating.
 
@@ -41,11 +41,17 @@ The original archive had 378 files. A per-file [import manifest](references/IMPO
 
 ## Scientific status
 
-Passing regressions means the imported behavior is reproducible. It does not demonstrate historical accuracy. Near-stall IAS corrections and clean CLmax remain provisional for all four aircraft. The Mustang climb shortfall, simulator-conditioned Bf 109 scenario and P-47 OCR correction are open issues.
+Passing regressions means the imported behavior is reproducible. It does not demonstrate historical accuracy. Near-stall IAS corrections and clean CLmax remain provisional for all four aircraft. The P profile greatly reduces the two conditional Mustang climb residuals. Instantaneous mass/airspeed, simulator-conditioned Bf 109 assumptions and the P-47 OCR correction remain open.
 
 The 5:1 separation criterion is an acceptance target, not achieved accuracy. Matchups without adequate independent, matched-condition evidence must be reported as unresolved.
 
-## Current validation and next step
+## Earlier validation and current next step
+
+**v2.8 supersedes the default-model decisions in the earlier milestones below.** C compatibility tests still preserve all 3628 legacy numbers; P deliberately changes working predictions. The [v2.8 results](docs/V28_RESULTS.md) show gains, regressions, weight sensitivity and the prior P-47 conditional baseline. Use `npm run diagnose:joint-calibration` to repeat the bounded fit. Raw API calls keep C for compatibility; request `{profile:'P'}` for the new fit. The UI e control is a scenario scale around each fitted e at slider value 0.78; it is not a new measurement. The existing simulator/Greg Bf 109 scenarios remain separate from historical evidence.
+
+Next: [v2.9 robustness and path to v3.0](docs/NEXT_STEPS.md).
+
+The following paragraphs document previous milestones and their decisions at that time.
 
 The [consolidated four-aircraft stall review](docs/FOUR_AIRCRAFT_STALL_REVIEW.md) brings the source audits, executable evidence gate, sensitivity comparisons and unresolved conditions together. The Spitfire audit corrects clipped-wing and drop-tank attribution. Default coefficients and numerical predictions are unchanged; historical stall calibration remains blocked for all four targets.
 
@@ -55,7 +61,7 @@ The [climb power/cooling diagnosis](docs/CLIMB_POWER_COOLING_DIAGNOSIS.md) quant
 
 The [Mustang chart-state reconstruction](docs/P51_CLIMB_STATE_RECONSTRUCTION.md) retains original Figure 4, five normalization-weight brackets and five low-blower chart-power brackets. Joint sampled scenarios still leave 322/268 ft/min shortfalls at 2,200 ft under C; the source weight curve is not adopted as matched climb mass. No default correction.
 
-The [installed-propeller audit](docs/P51_PROPELLER_EFFICIENCY_AUDIT.md) tests C/D/N/M against the speed anchor, recorded-RPM power checkpoints and chart-state climb scenarios. No measured target map is established; reanchored alternatives worsen sampled climb maxima, so C remains the default. The built HTML identifies this as the current research version.
+The [installed-propeller audit](docs/P51_PROPELLER_EFFICIENCY_AUDIT.md) tests C/D/N/M against the speed anchor, recorded-RPM power checkpoints and chart-state climb scenarios. No measured target map is established; reanchored alternatives worsen sampled climb maxima, so C remained the default until the v2.8 joint engineering fit. The built HTML identifies this as the current research version.
 
 The [source-chart climb mode](docs/SOURCE_CHART_CLIMB_MODE.md) adds exact-node chart-power diagnostics through the shared solver. Run `npm run diagnose:source-chart`; no implicit weight, interpolation or default numerical change. See [what has improved so far](docs/PROGRESS_ASSESSMENT.md) for the distinction between evidence/engineering gains and unresolved historical accuracy.
 

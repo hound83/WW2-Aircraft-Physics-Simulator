@@ -14,7 +14,7 @@ function patchWorkingUI(html){
  once(/M\.maxSpeed\(a,row\.altFt,\{profile:c\.profile,e:c\.e,refit:c\.refit,rating:row\.rating,gear:row\.gear,weightLb:a\.weightLb\*c\.weight\}\)/,
   "M.maxSpeed(a,row.altFt,c.profile==='P'?M.workingOptions(a,{e:Math.min(1,a.workingModel.e*c.e/.78),rating:row.rating,gear:row.gear,weightLb:a.weightLb*c.weight}):{profile:c.profile,e:c.e,refit:c.refit,rating:row.rating,gear:row.gear,weightLb:a.weightLb*c.weight})",'cross audit');
  once(/profiles=\['A','B','C'\]/,"profiles=['A','B','C','P']",'Mustang comparison');
- once(/Generic Oswald e/,'Effective e scenario (0.78 = fitted base for P)','e label');
+ html=html.replace('Generic Oswald','Effective scenario Oswald');
  html=html.replace('weightLb:src.reportedTakeoffWeightLb,stepMph:1', "engineModel:profile==='P'?'ram-critical':undefined,weightLb:src.reportedTakeoffWeightLb,stepMph:1");
  html=html.replace('Fixed C/0.78 calibrated drag','Source-anchor drag (P uses joint fitted e)');
  html=html.replaceAll('Uses unchanged drag fit and prop profile','P uses joint-calibrated drag and propeller settings; legacy profiles retain their original fit');
@@ -43,7 +43,7 @@ function build(){
  });
  for(const [key,n]of Object.entries(replacements))if(n!==1)throw Error('Expected one '+key+' block; got '+n);
  html=html.replace(/<title>[^<]*<\/title>/,'<title>European Air War Physics v'+version+' | Research</title>');
- html=html.replace('<header>','<header><p class="status" id="research-version">Research v'+version+' · Historical accuracy remains unresolved</p>');
+ html=html.replace('<header>','<header><p class="status" id="research-version">Research v'+version+' · Historical accuracy remains unresolved</p><p class="status">Profile P: the e slider at 0.78 uses each aircraft’s fitted base e. Moving it changes an effective-drag scenario and reanchors speed drag; this is not measured wing efficiency.</p>');
  html=patchWorkingUI(html);
  fs.mkdirSync(path.join(root,'dist'),{recursive:true});
  fs.writeFileSync(path.join(root,'dist/model.html'),html);

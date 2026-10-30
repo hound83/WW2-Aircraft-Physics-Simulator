@@ -9,3 +9,7 @@ The original standalone page is `baseline-v2.5.html`. Build the current code wit
 Frozen GitHub branch: `baseline/v2.5-import`. This is a reproducibility checkpoint. It is not v3.0 and has no historical accuracy certification.
 
 Major releases must document acceptance gates, results, remaining failures and unresolved comparisons before a stable version tag is created.
+
+## v2.8.0 working approximation, 2026-10-30
+
+Joint drag/propeller calibration becomes the application default P. See [results and limitations](v2.8.0.md). This is a useful engineering iteration, not an independently certified final model.
