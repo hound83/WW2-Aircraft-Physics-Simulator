@@ -3,6 +3,8 @@
   "scope": "v0.5 matched-report weight and configuration audit with cross-aircraft benchmark, still no validated sustained turns",
   "aircraft": {
     "spitfire_lfix_bs543": {
+      "stallConfiguration": {"wingTips":"full-span","gear":"up","flaps":"up","externalStores":"none"},
+      "stallIdentity": {"aircraftId":"spitfire_lfix_bs543","variant":"Spitfire LF Mk IXc","specimen":"BS.543"},
       "name": "Spitfire LF Mk IXc / Merlin 66 (BS.543)",
       "force": "RAF",
       "wingAreaM2": 22.48253568,
@@ -10,10 +12,10 @@
       "weightLb": 7110,
       "weightStatus": "7,110 lb: A&AEE Table V level-speed NORMALIZED weight, not the 7,485-lb takeoff and climb condition; the simulator's default clean polar therefore references 7,110 lb",
       "clMaxAssumed": 1.6,
-      "clStatus": "Provisional common aerodynamic assumption; A.P.1565J reported 90/93 mph IAS clean at 7,150/7,800 lb, but no low-speed position-error map supports treating those as EAS",
+      "clStatus": "Provisional aerodynamic assumption; September 1946 A.P.1565J 90/93 mph IAS rows refer to clipped wings and distinct loading/stores, not matched full-span BS.543 stalls; no near-stall correction",
       "stallEvidence": {
         "status": "Air Ministry pilot notes, IAS only; not used to infer CLmax",
-        "raw": "Clean power-off stall ~90 mph IAS at 7,150 lb and ~93 mph IAS at 7,800 lb, standard canopy; specimen BS.543 not separately measured"
+        "raw": "1946 pilot notes: gear/flaps up, non-rear-view fuselage, clipped wings; 90 mph IAS at 7,150 lb training load, 93 mph at 7,800 lb including 45-gallon drop tank. Not BS.543 measurements; full-span note is qualitative"
       },
       "engine": "Rolls-Royce Merlin 66, +18 lb/in² / 3,000 rpm combat setting",
       "prop": "Rotol XH54D-RM-S5, four Duralumin RA10061 blades, 10 ft 9 in diameter, serial EH240",
@@ -130,6 +132,8 @@
       "quality": "PRIMARY same-aircraft A&AEE 1943 +18 test, 21 speed points and 16 speed-specific climb points; historical speed/climb conditions NOT identical. Engine power curve outside 5,750ft and 16,000ft reported critical points is PROVISIONAL. IL-2 Mk IXe is a DIFFERENT armament/airframe from historical Mk IXc; DCS Mk IX full-wing option is a secondary sanity reference."
     },
     "bf109f4": {
+      "stallSlatStateRequired": true,
+      "stallIdentity": {"aircraftId":"bf109f4","variant":"Bf 109 F-4","specimen":"unspecified"},
       "name": "Bf 109 F-4 / DB 601E",
       "force": "Luftwaffe",
       "wingAreaM2": 16.05,
@@ -237,17 +241,18 @@
       }
     },
     "p47b": {
+      "stallIdentity": {"aircraftId":"p47b","variant":"P-47B","specimen":"41-5902"},
       "name": "P-47B / R-2800-21 (41-5902)",
       "force": "USAAF",
       "wingAreaM2": 27.870912,
       "spanM": 12.426950000000001,
       "weightLb": 12565,
-      "weightStatus": "Reported test weight of aircraft 41-5902",
+      "weightStatus": "12,565 lb gross as tested in report A.1; para 12 separately says loaded to 12,560 lb. Neither is an independently documented instantaneous stall weight",
       "clMaxAssumed": 1.3,
-      "clStatus": "Assumed; P-47 B/C/D/G manual 115 mph IAS is not an independently calibrated 41-5902 EAS stall",
+      "clStatus": "Assumed; 41-5902 report para 10 gives 105 mph indicated clean power-off, but instantaneous stall weight, altitude and near-stall correction remain unresolved",
       "stallEvidence": {
-        "status": "manual generalized IAS, not specimen-specific",
-        "raw": "115 mph IAS clean in T.O. 01-65BC-1; low-speed correction unknown"
+        "status": "Primary 41-5902 scan inspected; IAS observation established, corrected stall/CLmax unresolved",
+        "raw": "105 mph indicated clean power-off in PHQ-M-19-1417-A para 10; cowl closed, oil/intercooler neutral. Generic manual 115 mph retained separately; calibration only covers 170-310 mph"
       },
       "engine": "Pratt & Whitney R-2800-21",
       "prop": "Curtiss 714-1C2-12; geometric default, exact blade map missing",
@@ -416,12 +421,13 @@
       }
     },
     "p51b": {
+      "stallIdentity": {"aircraftId":"p51b","variant":"P-51B-15","specimen":"43-24777"},
       "name": "P-51B-15 / V-1650-7 (43-24777)",
       "force": "USAAF",
       "wingAreaM2": 21.646408320000003,
       "spanM": 11.277600000000001,
       "weightLb": 9240,
-      "weightStatus": "Scenario 9,240 lb approximates speed-test operating weight; actual weight varied with altitude",
+      "weightStatus": "Provisional 9,240-lb model scenario; source V.C uses 9,240 lb for cruise at 22,400 ft. V.B speed points follow a separate weight-at-altitude curve not retrieved as point masses; not a matched speed/climb test weight.",
       "clMaxAssumed": 1.6,
       "clStatus": "Assumed; raw 86 mph IAS stall at 8,000 ft / 9,270 lb cannot be treated as EAS",
       "stallEvidence": {

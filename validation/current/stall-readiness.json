@@ -1,0 +1,374 @@
+{
+  "schema": 1,
+  "scope": "Consolidated four-aircraft stall evidence review; source discovery and synthetic guardrails do not establish historical calibration",
+  "aircraft": [
+    {
+      "id": "bf109f4",
+      "modelSpecimen": "unspecified",
+      "defaultClMax": 1.5,
+      "defaultWeightLb": 6371,
+      "findings": "BF109F4_STALL_AUDIT.md",
+      "defaultPredictionChanged": false,
+      "powerOffClMaxReady": false,
+      "recordCount": 1,
+      "records": [
+        {
+          "id": "109-simulator",
+          "variant": "Bf 109 F-4",
+          "specimen": "unspecified",
+          "configurationId": "flight-config-slat-state-unresolved",
+          "configurationState": null,
+          "source": {
+            "reference": "IL-2 developer specification 154-171 km/h IAS; no matched historical test",
+            "kind": "simulation",
+            "scanVerified": false
+          },
+          "status": "unresolved",
+          "blockers": [
+            "specimen-identity-not-established",
+            "slat-state-not-established",
+            "one-g-power-off-condition-not-established",
+            "matched-stall-weight-missing",
+            "original-observation-not-verified",
+            "test-altitude-missing-or-outside-atmosphere",
+            "stall-speed-missing-or-invalid",
+            "ias-instrument-correction-state-unknown",
+            "low-speed-calibration-missing"
+          ],
+          "correctedEasMph": null,
+          "derivedClMax": null
+        }
+      ]
+    },
+    {
+      "id": "p47b",
+      "modelSpecimen": "41-5902",
+      "defaultClMax": 1.3,
+      "defaultWeightLb": 12565,
+      "findings": "P47B_STALL_WEIGHT_AUDIT.md",
+      "defaultPredictionChanged": false,
+      "powerOffClMaxReady": false,
+      "recordCount": 2,
+      "records": [
+        {
+          "id": "p47-manual",
+          "variant": "P-47B/C/D/G manual generic",
+          "specimen": "unspecified",
+          "configurationId": "gear-up-flaps-up-shutters-unknown",
+          "configurationState": null,
+          "source": {
+            "reference": "AN 01-65BC-1 attributed manual excerpt, section 14; full document identity not visible in crop",
+            "kind": "manual-excerpt",
+            "scanVerified": false
+          },
+          "status": "unresolved",
+          "blockers": [
+            "specimen-identity-not-established",
+            "aircraft-variant-or-specimen-not-matched",
+            "one-g-power-off-condition-not-established",
+            "matched-stall-weight-missing",
+            "original-observation-not-verified",
+            "test-altitude-missing-or-outside-atmosphere",
+            "ias-instrument-correction-state-unknown",
+            "calibration-identity-or-configuration-mismatch",
+            "airspeed-installation-not-matched",
+            "near-stall-position-correction-unverified",
+            "calibration-altitude-not-covered",
+            "stall-outside-calibration-range"
+          ],
+          "correctedEasMph": null,
+          "derivedClMax": null
+        },
+        {
+          "id": "p47b-415902-clean",
+          "variant": "P-47B",
+          "specimen": "41-5902",
+          "configurationId": "gear-up-flaps-up-cowl-closed-oil-intercooler-neutral",
+          "configurationState": null,
+          "source": {
+            "reference": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf page 3 para 10(a); loading pages 1/4 and calibration page 4",
+            "kind": "primary",
+            "scanVerified": true
+          },
+          "status": "unresolved",
+          "blockers": [
+            "matched-stall-weight-missing",
+            "test-altitude-missing-or-outside-atmosphere",
+            "ias-instrument-correction-state-unknown",
+            "calibration-identity-or-configuration-mismatch",
+            "calibration-input-correction-state-mismatch",
+            "near-stall-position-correction-unverified",
+            "calibration-altitude-not-covered",
+            "stall-outside-calibration-range"
+          ],
+          "correctedEasMph": null,
+          "derivedClMax": null
+        }
+      ]
+    },
+    {
+      "id": "p51b",
+      "modelSpecimen": "43-24777",
+      "defaultClMax": 1.6,
+      "defaultWeightLb": 9240,
+      "findings": "P51_LOW_SPEED_CALIBRATION_AUDIT.md",
+      "defaultPredictionChanged": false,
+      "powerOffClMaxReady": false,
+      "recordCount": 3,
+      "records": [
+        {
+          "id": "p51-closed",
+          "variant": "P-51B-15",
+          "specimen": "43-24777",
+          "configurationId": "gear-up-flaps-up-shutters-closed",
+          "configurationState": null,
+          "source": {
+            "reference": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html section V.E",
+            "kind": "transcription",
+            "scanVerified": false
+          },
+          "status": "unresolved",
+          "blockers": [
+            "original-observation-not-verified",
+            "ias-instrument-correction-state-unknown",
+            "low-speed-calibration-missing"
+          ],
+          "correctedEasMph": null,
+          "derivedClMax": null
+        },
+        {
+          "id": "p51-open",
+          "variant": "P-51B-15",
+          "specimen": "43-24777",
+          "configurationId": "gear-up-flaps-up-shutters-open",
+          "configurationState": null,
+          "source": {
+            "reference": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html section V.E",
+            "kind": "transcription",
+            "scanVerified": false
+          },
+          "status": "unresolved",
+          "blockers": [
+            "original-observation-not-verified",
+            "ias-instrument-correction-state-unknown",
+            "low-speed-calibration-missing"
+          ],
+          "correctedEasMph": null,
+          "derivedClMax": null
+        },
+        {
+          "id": "p51-powered",
+          "variant": "P-51B-15",
+          "specimen": "43-24777",
+          "configurationId": "gear-up-flaps-up-shutters-auto",
+          "configurationState": null,
+          "source": {
+            "reference": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html section V.E",
+            "kind": "transcription",
+            "scanVerified": false
+          },
+          "status": "unresolved",
+          "blockers": [
+            "one-g-power-off-condition-not-established",
+            "original-observation-not-verified",
+            "ias-instrument-correction-state-unknown",
+            "low-speed-calibration-missing"
+          ],
+          "correctedEasMph": null,
+          "derivedClMax": null
+        }
+      ]
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "modelSpecimen": "BS.543",
+      "defaultClMax": 1.6,
+      "defaultWeightLb": 7110,
+      "findings": "SPITFIRE_IX_STALL_AUDIT.md",
+      "defaultPredictionChanged": false,
+      "powerOffClMaxReady": false,
+      "recordCount": 2,
+      "records": [
+        {
+          "id": "spit-7150",
+          "variant": "Spitfire IX/XVI pilot notes, clipped wings",
+          "specimen": "unspecified",
+          "configurationId": "clipped-non-rear-view-gear-up-flaps-up-no-stores",
+          "configurationState": {
+            "wingTips": "clipped",
+            "fuselage": "non-rear-view",
+            "gear": "up",
+            "flaps": "up",
+            "externalStores": "none"
+          },
+          "source": {
+            "reference": "A.P.1565J, P & L-P.N., third edition, September 1946, para 42(i), printed p24 / PDF page16",
+            "kind": "primary-manual-text",
+            "url": "https://zenoswarbirdvideos.com/Images/spit/SPIT9MANUAL.pdf",
+            "date": "1946-09",
+            "textVerified": true,
+            "scanVerified": false,
+            "inspection": "PDF extracted text read; no pixel verification. Postwar edition, not a wartime BS.543 test."
+          },
+          "status": "unresolved",
+          "blockers": [
+            "specimen-identity-not-established",
+            "aircraft-variant-or-specimen-not-matched",
+            "configuration-wingTips-not-matched",
+            "matched-stall-weight-missing",
+            "matched-wing-area-source-missing",
+            "original-observation-not-verified",
+            "test-altitude-missing-or-outside-atmosphere",
+            "ias-instrument-correction-state-unknown",
+            "low-speed-calibration-missing"
+          ],
+          "correctedEasMph": null,
+          "derivedClMax": null
+        },
+        {
+          "id": "spit-7800",
+          "variant": "Spitfire IX/XVI pilot notes, clipped wings",
+          "specimen": "unspecified",
+          "configurationId": "clipped-non-rear-view-gear-up-flaps-up-45gal-tank",
+          "configurationState": {
+            "wingTips": "clipped",
+            "fuselage": "non-rear-view",
+            "gear": "up",
+            "flaps": "up",
+            "externalStores": "45-gallon-blister-drop-tank"
+          },
+          "source": {
+            "reference": "A.P.1565J, P & L-P.N., third edition, September 1946, para 42(i), printed p24 / PDF page16",
+            "kind": "primary-manual-text",
+            "url": "https://zenoswarbirdvideos.com/Images/spit/SPIT9MANUAL.pdf",
+            "date": "1946-09",
+            "textVerified": true,
+            "scanVerified": false,
+            "inspection": "PDF extracted text read; no pixel verification. Postwar edition, not a wartime BS.543 test."
+          },
+          "status": "unresolved",
+          "blockers": [
+            "specimen-identity-not-established",
+            "aircraft-variant-or-specimen-not-matched",
+            "configuration-wingTips-not-matched",
+            "configuration-externalStores-not-matched",
+            "matched-stall-weight-missing",
+            "matched-wing-area-source-missing",
+            "original-observation-not-verified",
+            "test-altitude-missing-or-outside-atmosphere",
+            "ias-instrument-correction-state-unknown",
+            "low-speed-calibration-missing"
+          ],
+          "correctedEasMph": null,
+          "derivedClMax": null
+        }
+      ]
+    }
+  ],
+  "recordCount": 9,
+  "externalRecords": [
+    {
+      "comparisonTarget": "p47b",
+      "record": {
+        "id": "p47d-closed",
+        "aircraftId": "p47d",
+        "variant": "P-47D",
+        "specimen": "42-26167",
+        "configurationId": "gear-up-flaps-up-shutters-closed",
+        "power": "idling",
+        "loadFactor": 1,
+        "altFt": null,
+        "speed": {
+          "kind": "IAS",
+          "mph": 116
+        },
+        "weightLb": null,
+        "weightKind": "13230 lb is takeoff, not stall",
+        "wingAreaM2": 27.870912,
+        "geometrySource": "Existing cases.json geometry; no variant transfer implied",
+        "source": {
+          "reference": "https://www.wwiiaircraftperformance.com/org/p-47/p47-26167.html section V.D",
+          "kind": "transcription",
+          "scanVerified": false
+        },
+        "uncertainty": null
+      },
+      "result": {
+        "status": "unresolved",
+        "recordId": "p47d-closed",
+        "reasons": [
+          "aircraft-variant-or-specimen-not-matched",
+          "one-g-power-off-condition-not-established",
+          "matched-stall-weight-missing",
+          "original-observation-not-verified",
+          "test-altitude-missing-or-outside-atmosphere",
+          "ias-instrument-correction-state-unknown",
+          "low-speed-calibration-missing"
+        ],
+        "rawSpeed": {
+          "kind": "IAS",
+          "mph": 116
+        },
+        "weightLb": null,
+        "source": {
+          "reference": "https://www.wwiiaircraftperformance.com/org/p-47/p47-26167.html section V.D",
+          "kind": "transcription",
+          "scanVerified": false
+        },
+        "correctedEasMph": null,
+        "correctedCasMph": null,
+        "clMax": null,
+        "uncertainty": null,
+        "turnTransfer": "unverified: power-off one-g lift need not transfer to powered accelerated flight"
+      }
+    }
+  ],
+  "powerOffClMaxReady": false,
+  "turnComparisonsReady": false,
+  "defaultPredictionsChanged": false,
+  "pairwise": [
+    {
+      "a": "bf109f4",
+      "b": "p47b",
+      "status": "UNRESOLVED",
+      "historicalDifferentialResidualSeconds": null,
+      "validatedCombinedErrorSeconds": null
+    },
+    {
+      "a": "bf109f4",
+      "b": "p51b",
+      "status": "UNRESOLVED",
+      "historicalDifferentialResidualSeconds": null,
+      "validatedCombinedErrorSeconds": null
+    },
+    {
+      "a": "bf109f4",
+      "b": "spitfire_lfix_bs543",
+      "status": "UNRESOLVED",
+      "historicalDifferentialResidualSeconds": null,
+      "validatedCombinedErrorSeconds": null
+    },
+    {
+      "a": "p47b",
+      "b": "p51b",
+      "status": "UNRESOLVED",
+      "historicalDifferentialResidualSeconds": null,
+      "validatedCombinedErrorSeconds": null
+    },
+    {
+      "a": "p47b",
+      "b": "spitfire_lfix_bs543",
+      "status": "UNRESOLVED",
+      "historicalDifferentialResidualSeconds": null,
+      "validatedCombinedErrorSeconds": null
+    },
+    {
+      "a": "p51b",
+      "b": "spitfire_lfix_bs543",
+      "status": "UNRESOLVED",
+      "historicalDifferentialResidualSeconds": null,
+      "validatedCombinedErrorSeconds": null
+    }
+  ],
+  "stopCondition": "Evidence review and executable gate complete. New historical numerical calibration requires new matched original evidence; do not restart the same blocked searches as separate milestones."
+}

@@ -37,3 +37,11 @@ No P-51B/Thunderbolt/109/Spitfire aerodynamic coefficient was silently altered; 
 - Bf 109F-4 original flight manual/stall chart with calibrated speed, F-4 weight, automatic leading-edge slat behavior and power setting.
 
 **Acceptance rule:** retain the generic CLmax assumptions for *research comparisons* with explicit warning; do not label a turn result validated until the source gates above are satisfied and 5:1 differential error is tested independently.
+
+## 30 October 2026: specimen-specific P-47B update
+
+PHQ-M-19-1417-A page 3 paragraph 10(a), visually inspected, reports 105 mph indicated clean power-off for 41-5902, cowl closed and oil/intercooler neutral. Page 1 reports 12,565 lb gross as tested; page 4 paragraph 12 says loaded to 12,560 lb. Neither establishes a separate instantaneous stall weight. Paragraph 13 identifies the Kollsman D-1 installation and provides raw/water-column/calibrated data only over 170-310 mph. The source-backed observation advances Step 1; corrected EAS/CLmax and Step 2 remain blocked. See P47B_STALL_WEIGHT_AUDIT.md. Generic manual/P-47D records remain separate, and frozen v2.5 coefficients are unchanged.
+
+F-4 audit guardrails: a specimen identity cannot be blank, unknown or unspecified, even when both records match. F-4 observations require slatState and slatStateSource; IAS calibration must name the same slatState. Corrected CAS/EAS does not bypass configuration evidence. See BF109F4_STALL_AUDIT.md.
+
+Target configuration fields in `ac.stallConfiguration` must match `record.configurationState` and, for IAS, `calibration.configurationState`. The Spitfire model requires full-span wings, gear/flaps up and no external stores. The manual clipped-wing rows and heavier tank-carrying row cannot pass by sharing a configuration-ID string.

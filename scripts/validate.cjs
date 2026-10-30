@@ -21,6 +21,12 @@ try{
  const rows=changes.map(r=>[r.key,r.baseline,r.current,r.delta].join(','));
  fs.writeFileSync(path.join(root,'validation/current/numerical-differences.csv'),'metric,baseline,current,delta\n'+rows.join('\n')+(rows.length?'\n':''));
  const digest=sha256(JSON.stringify(current));
+ const stall=require('../validation/diagnostics/stall_gate.cjs').writeReport();
+ require('../validation/diagnostics/stall_readiness.cjs').writeReport(stall);
+ require('../validation/diagnostics/performance_validation.cjs').writeReport();
+ require('../validation/diagnostics/climb_power_cooling.cjs').writeReport();
+ require('../validation/diagnostics/p51_climb_states.cjs').writeReport();
+ require('../validation/diagnostics/p51_propeller_audit.cjs').writeReport();
  const md=[
  '# Current validation',
  '',
@@ -28,6 +34,7 @@ try{
  '',
  '| Check | Result |',
  '|---|---|',
+ '| Research version | '+buildInfo.version+' |',
  '| Node regression scripts | '+report.passed+'/'+report.discoveredScripts+' pass |',
  '| Numeric values compared with v2.5 setup | '+difference.comparedNumericValues+' |',
  '| Changed numeric values | '+difference.changed+' |',
@@ -35,12 +42,30 @@ try{
  '| Engine SHA256 | '+buildInfo.physicsSha256+' |',
  '| Numerical result SHA256 | '+digest+' |',
  '| Interactive browser tests | Not run |',
- '| Historical stall/CLmax validation | Unresolved |',
+ '| Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |',
  '| 5:1 comparative accuracy | Unresolved |',
+ '',
+ 'Propeller milestone: [coupled source/candidate audit](P51_PROPELLER_EFFICIENCY_AUDIT.md); no supported default replacement; research v2.6.0.',
+ '',
+ 'Mustang reconstruction: [original chart power/weight states](P51_CLIMB_STATE_RECONSTRUCTION.md); sparse pixel-reading brackets and joint sensitivities, no default correction.',
+ '',
+ 'Climb diagnosis: [useful-power and cooling budget](CLIMB_POWER_COOLING_DIAGNOSIS.md); inverse sensitivities separated from measured corrections; default solver unchanged.',
+ '',
+ 'Speed/climb validation: [69 source-conditioned checkpoints](PERFORMANCE_VALIDATION.md); fitted, diagnostic and independently matched scores separated; no new historical accuracy claim.',
+ '',
+ 'Consolidated evidence review: [four-aircraft readiness](FOUR_AIRCRAFT_STALL_REVIEW.md), including the [Spitfire configuration audit](SPITFIRE_IX_STALL_AUDIT.md).',
+ '',
+ 'Bf 109 F-4 source milestone: [bounded audit](BF109F4_STALL_AUDIT.md); original stall pages unverified, specimen/slat gate tightened.',
+ '',
+ 'P-47B source milestone: [primary stall/loading audit](P47B_STALL_WEIGHT_AUDIT.md); 105 mph IAS observation added, corrected EAS/CLmax unresolved.',
+ '',
+ 'P-51 source milestone: [installation and low-speed audit](P51_LOW_SPEED_CALIBRATION_AUDIT.md); no supported coefficient change.',
+ '',
+ 'Stall milestone: [source audit](STALL_SOURCE_AUDIT.md), [comparison tables](STALL_CALIBRATION_RESULTS.md), [machine-readable results](../validation/current/stall-gate.json).',
  '',
  'Full records: [test summary](../validation/current/test-summary.json), [numerics](../validation/current/numerics.json), [baseline differences](../validation/current/baseline-diff.json).',
  '',
- 'The setup baseline and current output include the same known scientific failures and provisional evidence. Zero numerical change establishes import parity, not historical accuracy. The original 30 tests passed before relocation; the repository adds one check of current standalone embedding and JavaScript syntax.',
+ 'The setup baseline and current output include the same known scientific failures and provisional evidence. Zero numerical change establishes import parity, not historical accuracy. The original 30 regression scripts are preserved; additional scripts check current standalone embedding, stall-evidence/sensitivity and matched-performance scoring guardrails.',
  '',
  'The P-47C 20-1 fixture still carries the original 0.799 OCR value; the handover reports 0.779 from the scan. This is an open evidence correction, not a setup regression failure. See [known limitations](KNOWN_LIMITATIONS.md).',
  '',

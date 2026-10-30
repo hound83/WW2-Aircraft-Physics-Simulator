@@ -1,0 +1,1287 @@
+{
+  "schema": 1,
+  "condition": {
+    "altFt": 5000,
+    "easMph": 170,
+    "profile": "C",
+    "e": 0.78,
+    "structG": 7
+  },
+  "warning": "ISA, clean research polar, differing source-limited weights and default ratings. Neither standardized combat loads nor validated turn comparisons. 7g structural cap is an assumption. Grid peaks use 1 mph EAS spacing, 80..300 mph.",
+  "aircraft": [
+    {
+      "id": "bf109f4",
+      "name": "Bf 109 F-4 / DB 601E",
+      "rating": "combat",
+      "weightStatus": "Illustrative 2,890 kg standard-mass reference; not the specific Greg worksheet weight",
+      "before": {
+        "status": "modelled",
+        "weightLb": 6371,
+        "clMax": 1.5,
+        "stallEasMph": 98.06509011620857,
+        "nLift": 3.0051695468827457,
+        "nInst": 3.0051695468827457,
+        "nSust": 2.7921400522569346,
+        "instantDegSec": 19.449328422209508,
+        "sustDegSec": 17.891500473862955,
+        "sustTurnSeconds": 20.12128611157633,
+        "shaftHp": 1183.584,
+        "requiredHp": 245.18876429750912
+      },
+      "after": {
+        "status": "modelled",
+        "weightLb": 6371,
+        "clMax": 1.5,
+        "stallEasMph": 98.06509011620857,
+        "nLift": 3.0051695468827457,
+        "nInst": 3.0051695468827457,
+        "nSust": 2.7921400522569346,
+        "instantDegSec": 19.449328422209508,
+        "sustDegSec": 17.891500473862955,
+        "sustTurnSeconds": 20.12128611157633,
+        "shaftHp": 1183.584,
+        "requiredHp": 245.18876429750912
+      },
+      "peaks": {
+        "instant": {
+          "easMph": 259,
+          "degSec": 31.09775751849357,
+          "seconds": 11.576397423058916
+        },
+        "sustained": {
+          "easMph": 163,
+          "degSec": 18.35780586047917,
+          "seconds": 19.610186682222782
+        }
+      },
+      "scenario": {
+        "label": "Existing exploratory CLmax +/-15%, expressed as EAS endpoints",
+        "reason": "Inherited lift_sensitivity.cjs factors 0.85..1.15; no historical confidence or correction bounds established",
+        "testWeightLb": 6371,
+        "stallEasMph": [
+          91.44616805388415,
+          106.3665244746845
+        ],
+        "status": "unverified-sensitivity",
+        "samples": [
+          {
+            "assumedTestStallEasMph": 91.44616805388415,
+            "status": "modelled",
+            "weightLb": 6371,
+            "clMax": 1.7250000000000005,
+            "stallEasMph": 91.44616805388415,
+            "nLift": 3.455944978915159,
+            "nInst": 3.455944978915159,
+            "nSust": 2.7921400522569346,
+            "instantDegSec": 22.70376241333221,
+            "sustDegSec": 17.891500473862955,
+            "sustTurnSeconds": 20.12128611157633,
+            "shaftHp": 1183.584,
+            "requiredHp": 245.18876429750912,
+            "peaks": {
+              "instant": {
+                "easMph": 242,
+                "degSec": 33.402023803664875,
+                "seconds": 10.77779005595765
+              },
+              "sustained": {
+                "easMph": 149,
+                "degSec": 19.257377041235827,
+                "seconds": 18.694134680394527
+              }
+            }
+          },
+          {
+            "assumedTestStallEasMph": 106.3665244746845,
+            "status": "modelled",
+            "weightLb": 6371,
+            "clMax": 1.2750000000000001,
+            "stallEasMph": 106.3665244746845,
+            "nLift": 2.554394114850334,
+            "nInst": 2.554394114850334,
+            "nSust": 2.554394114850334,
+            "instantDegSec": 16.13176806607543,
+            "sustDegSec": 16.13176806607543,
+            "sustTurnSeconds": 22.31621472150148,
+            "shaftHp": 1183.584,
+            "requiredHp": 245.18876429750912,
+            "peaks": {
+              "instant": {
+                "easMph": 281,
+                "degSec": 28.67869734193326,
+                "seconds": 12.552871412106198
+              },
+              "sustained": {
+                "easMph": 179,
+                "degSec": 17.270036961472538,
+                "seconds": 20.845352028088794
+              }
+            }
+          }
+        ]
+      },
+      "alternateWeight": null,
+      "evidence": [
+        {
+          "status": "unresolved",
+          "recordId": "109-simulator",
+          "reasons": [
+            "specimen-identity-not-established",
+            "slat-state-not-established",
+            "one-g-power-off-condition-not-established",
+            "matched-stall-weight-missing",
+            "original-observation-not-verified",
+            "test-altitude-missing-or-outside-atmosphere",
+            "stall-speed-missing-or-invalid",
+            "ias-instrument-correction-state-unknown",
+            "low-speed-calibration-missing"
+          ],
+          "rawSpeed": {
+            "kind": "IAS",
+            "mph": null
+          },
+          "weightLb": 6371,
+          "source": {
+            "reference": "IL-2 developer specification 154-171 km/h IAS; no matched historical test",
+            "kind": "simulation",
+            "scanVerified": false
+          },
+          "correctedEasMph": null,
+          "correctedCasMph": null,
+          "clMax": null,
+          "uncertainty": null,
+          "turnTransfer": "unverified: power-off one-g lift need not transfer to powered accelerated flight"
+        }
+      ]
+    },
+    {
+      "id": "p47b",
+      "name": "P-47B / R-2800-21 (41-5902)",
+      "rating": "military",
+      "weightStatus": "12,565 lb gross as tested in report A.1; para 12 separately says loaded to 12,560 lb. Neither is an independently documented instantaneous stall weight",
+      "before": {
+        "status": "modelled",
+        "weightLb": 12565,
+        "clMax": 1.3,
+        "stallEasMph": 112.26070296569274,
+        "nLift": 2.293202084918868,
+        "nInst": 2.293202084918868,
+        "nSust": 2.293202084918868,
+        "instantDegSec": 14.163187219154254,
+        "sustDegSec": 14.163187219154254,
+        "sustTurnSeconds": 25.418007573403887,
+        "shaftHp": 2000,
+        "requiredHp": 469.2660234843114
+      },
+      "after": {
+        "status": "modelled",
+        "weightLb": 12565,
+        "clMax": 1.3,
+        "stallEasMph": 112.26070296569274,
+        "nLift": 2.293202084918868,
+        "nInst": 2.293202084918868,
+        "nSust": 2.293202084918868,
+        "instantDegSec": 14.163187219154254,
+        "sustDegSec": 14.163187219154254,
+        "sustTurnSeconds": 25.418007573403887,
+        "shaftHp": 2000,
+        "requiredHp": 469.2660234843114
+      },
+      "peaks": {
+        "instant": {
+          "easMph": 297,
+          "degSec": 27.213863028126553,
+          "seconds": 13.228551919583282
+        },
+        "sustained": {
+          "easMph": 171,
+          "degSec": 14.193049282322393,
+          "seconds": 25.36452828698229
+        }
+      },
+      "scenario": {
+        "label": "Existing exploratory CLmax +/-15%, expressed as EAS endpoints",
+        "reason": "Inherited lift_sensitivity.cjs factors 0.85..1.15; no historical confidence or correction bounds established",
+        "testWeightLb": 12565,
+        "stallEasMph": [
+          104.68364529194614,
+          121.7638284469595
+        ],
+        "status": "unverified-sensitivity",
+        "samples": [
+          {
+            "assumedTestStallEasMph": 104.68364529194614,
+            "status": "modelled",
+            "weightLb": 12565,
+            "clMax": 1.4949999999999999,
+            "stallEasMph": 104.68364529194614,
+            "nLift": 2.6371823976566975,
+            "nInst": 2.6371823976566975,
+            "nSust": 2.3033223547678303,
+            "instantDegSec": 16.74748821025886,
+            "sustDegSec": 14.240328488610174,
+            "sustTurnSeconds": 25.28031570956656,
+            "shaftHp": 2000,
+            "requiredHp": 469.2660234843114,
+            "peaks": {
+              "instant": {
+                "easMph": 277,
+                "degSec": 29.18155148190216,
+                "seconds": 12.336561345042435
+              },
+              "sustained": {
+                "easMph": 157,
+                "degSec": 14.849122487845385,
+                "seconds": 24.24385685380902
+              }
+            }
+          },
+          {
+            "assumedTestStallEasMph": 121.7638284469595,
+            "status": "modelled",
+            "weightLb": 12565,
+            "clMax": 1.1049999999999998,
+            "stallEasMph": 121.7638284469595,
+            "nLift": 1.949221772181037,
+            "nInst": 1.949221772181037,
+            "nSust": 1.949221772181037,
+            "instantDegSec": 11.483021244057069,
+            "sustDegSec": 11.483021244057069,
+            "sustTurnSeconds": 31.35063432773101,
+            "shaftHp": 2000,
+            "requiredHp": 469.2660234843114,
+            "peaks": {
+              "instant": {
+                "easMph": 300,
+                "degSec": 23.285076561844583,
+                "seconds": 15.460546116043423
+              },
+              "sustained": {
+                "easMph": 188,
+                "degSec": 13.37611887230449,
+                "seconds": 26.913636417016814
+              }
+            }
+          }
+        ]
+      },
+      "alternateWeight": null,
+      "evidence": [
+        {
+          "status": "unresolved",
+          "recordId": "p47-manual",
+          "reasons": [
+            "specimen-identity-not-established",
+            "aircraft-variant-or-specimen-not-matched",
+            "one-g-power-off-condition-not-established",
+            "matched-stall-weight-missing",
+            "original-observation-not-verified",
+            "test-altitude-missing-or-outside-atmosphere",
+            "ias-instrument-correction-state-unknown",
+            "calibration-identity-or-configuration-mismatch",
+            "airspeed-installation-not-matched",
+            "near-stall-position-correction-unverified",
+            "calibration-altitude-not-covered",
+            "stall-outside-calibration-range"
+          ],
+          "rawSpeed": {
+            "kind": "IAS",
+            "mph": 115
+          },
+          "weightLb": null,
+          "source": {
+            "reference": "AN 01-65BC-1 attributed manual excerpt, section 14; full document identity not visible in crop",
+            "kind": "manual-excerpt",
+            "scanVerified": false
+          },
+          "correctedEasMph": null,
+          "correctedCasMph": null,
+          "clMax": null,
+          "uncertainty": null,
+          "turnTransfer": "unverified: power-off one-g lift need not transfer to powered accelerated flight"
+        },
+        {
+          "status": "unresolved",
+          "recordId": "p47b-415902-clean",
+          "reasons": [
+            "matched-stall-weight-missing",
+            "test-altitude-missing-or-outside-atmosphere",
+            "ias-instrument-correction-state-unknown",
+            "calibration-identity-or-configuration-mismatch",
+            "calibration-input-correction-state-mismatch",
+            "near-stall-position-correction-unverified",
+            "calibration-altitude-not-covered",
+            "stall-outside-calibration-range"
+          ],
+          "rawSpeed": {
+            "kind": "IAS",
+            "mph": 105,
+            "instrumentCorrection": "unknown"
+          },
+          "weightLb": null,
+          "source": {
+            "reference": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf page 3 para 10(a); loading pages 1/4 and calibration page 4",
+            "kind": "primary",
+            "scanVerified": true
+          },
+          "correctedEasMph": null,
+          "correctedCasMph": null,
+          "clMax": null,
+          "uncertainty": null,
+          "turnTransfer": "unverified: power-off one-g lift need not transfer to powered accelerated flight"
+        }
+      ]
+    },
+    {
+      "id": "p51b",
+      "name": "P-51B-15 / V-1650-7 (43-24777)",
+      "rating": "67inHg",
+      "weightStatus": "Provisional 9,240-lb model scenario; source V.C uses 9,240 lb for cruise at 22,400 ft. V.B speed points follow a separate weight-at-altitude curve not retrieved as point masses; not a matched speed/climb test weight.",
+      "before": {
+        "status": "modelled",
+        "weightLb": 9240,
+        "clMax": 1.6,
+        "stallEasMph": 98.46385799361909,
+        "nLift": 2.9808776192262396,
+        "nInst": 2.9808776192262396,
+        "nSust": 2.618033802649587,
+        "instantDegSec": 19.27244624534484,
+        "sustDegSec": 16.605375938738696,
+        "sustTurnSeconds": 21.67972597116309,
+        "shaftHp": 1633.1764705882354,
+        "requiredHp": 304.6141338658598
+      },
+      "after": {
+        "status": "modelled",
+        "weightLb": 9240,
+        "clMax": 1.6,
+        "stallEasMph": 98.46385799361909,
+        "nLift": 2.9808776192262396,
+        "nInst": 2.9808776192262396,
+        "nSust": 2.618033802649587,
+        "instantDegSec": 19.27244624534484,
+        "sustDegSec": 16.605375938738696,
+        "sustTurnSeconds": 21.67972597116309,
+        "shaftHp": 1633.1764705882354,
+        "requiredHp": 304.6141338658598
+      },
+      "peaks": {
+        "instant": {
+          "easMph": 261,
+          "degSec": 30.970458852440224,
+          "seconds": 11.623980184317963
+        },
+        "sustained": {
+          "easMph": 157,
+          "degSec": 17.27278433877928,
+          "seconds": 20.842036404736486
+        }
+      },
+      "scenario": {
+        "label": "Existing exploratory CLmax +/-15%, expressed as EAS endpoints",
+        "reason": "Inherited lift_sensitivity.cjs factors 0.85..1.15; no historical confidence or correction bounds established",
+        "testWeightLb": 9240,
+        "stallEasMph": [
+          91.81802101694124,
+          106.79904896573468
+        ],
+        "status": "unverified-sensitivity",
+        "samples": [
+          {
+            "assumedTestStallEasMph": 91.81802101694124,
+            "status": "modelled",
+            "weightLb": 9240,
+            "clMax": 1.8399999999999999,
+            "stallEasMph": 91.81802101694124,
+            "nLift": 3.428009262110175,
+            "nInst": 3.428009262110175,
+            "nSust": 2.618033802649587,
+            "instantDegSec": 22.503394667734117,
+            "sustDegSec": 16.605375938738696,
+            "sustTurnSeconds": 21.67972597116309,
+            "shaftHp": 1633.1764705882354,
+            "requiredHp": 304.6141338658598,
+            "peaks": {
+              "instant": {
+                "easMph": 243,
+                "degSec": 33.26456691558394,
+                "seconds": 10.822326378502932
+              },
+              "sustained": {
+                "easMph": 143,
+                "degSec": 18.003686994029408,
+                "seconds": 19.995904178926647
+              }
+            }
+          },
+          {
+            "assumedTestStallEasMph": 106.79904896573468,
+            "status": "modelled",
+            "weightLb": 9240,
+            "clMax": 1.3599999999999999,
+            "stallEasMph": 106.79904896573468,
+            "nLift": 2.533745976342303,
+            "nInst": 2.533745976342303,
+            "nSust": 2.533745976342303,
+            "instantDegSec": 15.977653140107138,
+            "sustDegSec": 15.977653140107138,
+            "sustTurnSeconds": 22.531469224120734,
+            "shaftHp": 1633.1764705882354,
+            "requiredHp": 304.6141338658598,
+            "peaks": {
+              "instant": {
+                "easMph": 283,
+                "degSec": 28.562861344476673,
+                "seconds": 12.603779280314113
+              },
+              "sustained": {
+                "easMph": 174,
+                "degSec": 16.401201064764575,
+                "seconds": 21.94961201795178
+              }
+            }
+          }
+        ]
+      },
+      "alternateWeight": {
+        "reason": "Closed-shutter stall-test weight; turning transfer remains unverified",
+        "status": "modelled",
+        "weightLb": 9270,
+        "clMax": 1.6,
+        "stallEasMph": 98.62357238568357,
+        "nLift": 2.971230766089585,
+        "nInst": 2.971230766089585,
+        "nSust": 2.6095612013465135,
+        "instantDegSec": 19.202152025041123,
+        "sustDegSec": 16.54243966815528,
+        "sustTurnSeconds": 21.762207221043184,
+        "shaftHp": 1633.1764705882354,
+        "requiredHp": 305.7083083547613
+      },
+      "evidence": [
+        {
+          "status": "unresolved",
+          "recordId": "p51-closed",
+          "reasons": [
+            "original-observation-not-verified",
+            "ias-instrument-correction-state-unknown",
+            "low-speed-calibration-missing"
+          ],
+          "rawSpeed": {
+            "kind": "IAS",
+            "mph": 86,
+            "instrumentCorrection": "unknown"
+          },
+          "weightLb": 9270,
+          "source": {
+            "reference": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html section V.E",
+            "kind": "transcription",
+            "scanVerified": false
+          },
+          "correctedEasMph": null,
+          "correctedCasMph": null,
+          "clMax": null,
+          "uncertainty": null,
+          "turnTransfer": "unverified: power-off one-g lift need not transfer to powered accelerated flight"
+        },
+        {
+          "status": "unresolved",
+          "recordId": "p51-open",
+          "reasons": [
+            "original-observation-not-verified",
+            "ias-instrument-correction-state-unknown",
+            "low-speed-calibration-missing"
+          ],
+          "rawSpeed": {
+            "kind": "IAS",
+            "mph": 84,
+            "instrumentCorrection": "unknown"
+          },
+          "weightLb": 9240,
+          "source": {
+            "reference": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html section V.E",
+            "kind": "transcription",
+            "scanVerified": false
+          },
+          "correctedEasMph": null,
+          "correctedCasMph": null,
+          "clMax": null,
+          "uncertainty": null,
+          "turnTransfer": "unverified: power-off one-g lift need not transfer to powered accelerated flight"
+        },
+        {
+          "status": "unresolved",
+          "recordId": "p51-powered",
+          "reasons": [
+            "one-g-power-off-condition-not-established",
+            "original-observation-not-verified",
+            "ias-instrument-correction-state-unknown",
+            "low-speed-calibration-missing"
+          ],
+          "rawSpeed": {
+            "kind": "IAS",
+            "mph": 83,
+            "instrumentCorrection": "unknown"
+          },
+          "weightLb": 9100,
+          "source": {
+            "reference": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html section V.E",
+            "kind": "transcription",
+            "scanVerified": false
+          },
+          "correctedEasMph": null,
+          "correctedCasMph": null,
+          "clMax": null,
+          "uncertainty": null,
+          "turnTransfer": "unverified: power-off one-g lift need not transfer to powered accelerated flight"
+        }
+      ]
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "name": "Spitfire LF Mk IXc / Merlin 66 (BS.543)",
+      "rating": "combat+18",
+      "weightStatus": "7,110 lb: A&AEE Table V level-speed NORMALIZED weight, not the 7,485-lb takeoff and climb condition; the simulator's default clean polar therefore references 7,110 lb",
+      "before": {
+        "status": "modelled",
+        "weightLb": 7110,
+        "clMax": 1.6,
+        "stallEasMph": 84.75121646336908,
+        "nLift": 4.0235181222116045,
+        "nInst": 4.0235181222116045,
+        "nSust": 3.4079117872537994,
+        "instantDegSec": 26.747234282102852,
+        "sustDegSec": 22.359152640622984,
+        "sustTurnSeconds": 16.10078904984699,
+        "shaftHp": 1691.304347826087,
+        "requiredHp": 277.323753936772
+      },
+      "after": {
+        "status": "modelled",
+        "weightLb": 7110,
+        "clMax": 1.6,
+        "stallEasMph": 84.75121646336908,
+        "nLift": 4.0235181222116045,
+        "nInst": 4.0235181222116045,
+        "nSust": 3.4079117872537994,
+        "instantDegSec": 26.747234282102852,
+        "sustDegSec": 22.359152640622984,
+        "sustTurnSeconds": 16.10078904984699,
+        "shaftHp": 1691.304347826087,
+        "requiredHp": 277.323753936772
+      },
+      "peaks": {
+        "instant": {
+          "easMph": 224,
+          "degSec": 36.0103699191951,
+          "seconds": 9.997120296398407
+        },
+        "sustained": {
+          "easMph": 154,
+          "degSec": 23.654779711909473,
+          "seconds": 15.218911542801253
+        }
+      },
+      "scenario": {
+        "label": "Existing exploratory CLmax +/-15%, expressed as EAS endpoints",
+        "reason": "Inherited lift_sensitivity.cjs factors 0.85..1.15; no historical confidence or correction bounds established",
+        "testWeightLb": 7110,
+        "stallEasMph": [
+          79.0309168563073,
+          91.92560094043341
+        ],
+        "status": "unverified-sensitivity",
+        "samples": [
+          {
+            "assumedTestStallEasMph": 79.0309168563073,
+            "status": "modelled",
+            "weightLb": 7110,
+            "clMax": 1.8400000000000005,
+            "stallEasMph": 79.0309168563073,
+            "nLift": 4.627045840543346,
+            "nInst": 4.627045840543346,
+            "nSust": 3.4079117872537994,
+            "instantDegSec": 31.00525845425721,
+            "sustDegSec": 22.359152640622984,
+            "sustTurnSeconds": 16.10078904984699,
+            "shaftHp": 1691.304347826087,
+            "requiredHp": 277.323753936772,
+            "peaks": {
+              "instant": {
+                "easMph": 209,
+                "degSec": 38.639724540905135,
+                "seconds": 9.316836604745811
+              },
+              "sustained": {
+                "easMph": 140,
+                "degSec": 24.78841198096047,
+                "seconds": 14.522914992558196
+              }
+            }
+          },
+          {
+            "assumedTestStallEasMph": 91.92560094043341,
+            "status": "modelled",
+            "weightLb": 7110,
+            "clMax": 1.3600000000000003,
+            "stallEasMph": 91.92560094043341,
+            "nLift": 3.4199904038798645,
+            "nInst": 3.4199904038798645,
+            "nSust": 3.4079117872537994,
+            "instantDegSec": 22.445851858012976,
+            "sustDegSec": 22.359152640622984,
+            "sustTurnSeconds": 16.10078904984699,
+            "shaftHp": 1691.304347826087,
+            "requiredHp": 277.323753936772,
+            "peaks": {
+              "instant": {
+                "easMph": 243,
+                "degSec": 33.20531437028336,
+                "seconds": 10.841638057857903
+              },
+              "sustained": {
+                "easMph": 170,
+                "degSec": 22.359152640622984,
+                "seconds": 16.10078904984699
+              }
+            }
+          }
+        ]
+      },
+      "alternateWeight": {
+        "reason": "Reported climb weight, not a verified combat or stall weight",
+        "status": "modelled",
+        "weightLb": 7485,
+        "clMax": 1.6,
+        "stallEasMph": 86.95749940748857,
+        "nLift": 3.821939057972546,
+        "nInst": 3.821939057972546,
+        "nSust": 3.2371747237641295,
+        "instantDegSec": 25.316477652051386,
+        "sustDegSec": 21.130352666264184,
+        "sustTurnSeconds": 17.037103246022042,
+        "shaftHp": 1691.304347826087,
+        "requiredHp": 288.2059282918531
+      },
+      "evidence": [
+        {
+          "status": "unresolved",
+          "recordId": "spit-7150",
+          "reasons": [
+            "specimen-identity-not-established",
+            "aircraft-variant-or-specimen-not-matched",
+            "configuration-wingTips-not-matched",
+            "matched-stall-weight-missing",
+            "matched-wing-area-source-missing",
+            "original-observation-not-verified",
+            "test-altitude-missing-or-outside-atmosphere",
+            "ias-instrument-correction-state-unknown",
+            "low-speed-calibration-missing"
+          ],
+          "rawSpeed": {
+            "kind": "IAS",
+            "mph": 90,
+            "instrumentCorrection": "unknown"
+          },
+          "weightLb": 7150,
+          "source": {
+            "reference": "A.P.1565J, P & L-P.N., third edition, September 1946, para 42(i), printed p24 / PDF page16",
+            "kind": "primary-manual-text",
+            "url": "https://zenoswarbirdvideos.com/Images/spit/SPIT9MANUAL.pdf",
+            "date": "1946-09",
+            "textVerified": true,
+            "scanVerified": false,
+            "inspection": "PDF extracted text read; no pixel verification. Postwar edition, not a wartime BS.543 test."
+          },
+          "correctedEasMph": null,
+          "correctedCasMph": null,
+          "clMax": null,
+          "uncertainty": null,
+          "turnTransfer": "unverified: power-off one-g lift need not transfer to powered accelerated flight"
+        },
+        {
+          "status": "unresolved",
+          "recordId": "spit-7800",
+          "reasons": [
+            "specimen-identity-not-established",
+            "aircraft-variant-or-specimen-not-matched",
+            "configuration-wingTips-not-matched",
+            "configuration-externalStores-not-matched",
+            "matched-stall-weight-missing",
+            "matched-wing-area-source-missing",
+            "original-observation-not-verified",
+            "test-altitude-missing-or-outside-atmosphere",
+            "ias-instrument-correction-state-unknown",
+            "low-speed-calibration-missing"
+          ],
+          "rawSpeed": {
+            "kind": "IAS",
+            "mph": 93,
+            "instrumentCorrection": "unknown"
+          },
+          "weightLb": 7800,
+          "source": {
+            "reference": "A.P.1565J, P & L-P.N., third edition, September 1946, para 42(i), printed p24 / PDF page16",
+            "kind": "primary-manual-text",
+            "url": "https://zenoswarbirdvideos.com/Images/spit/SPIT9MANUAL.pdf",
+            "date": "1946-09",
+            "textVerified": true,
+            "scanVerified": false,
+            "inspection": "PDF extracted text read; no pixel verification. Postwar edition, not a wartime BS.543 test."
+          },
+          "correctedEasMph": null,
+          "correctedCasMph": null,
+          "clMax": null,
+          "uncertainty": null,
+          "turnTransfer": "unverified: power-off one-g lift need not transfer to powered accelerated flight"
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "a": "bf109f4",
+      "b": "p47b",
+      "modelSustainedTurnDifferenceSeconds": -5.2967214618275555,
+      "requiredCombinedErrorForModelGapSeconds": 1.0593442923655112,
+      "historicalDifferenceSeconds": null,
+      "absoluteDifferentialResidualSeconds": null,
+      "validatedCombinedErrorSeconds": null,
+      "status": "UNRESOLVED",
+      "reason": "Matched independent turn observations and validated differential uncertainty absent; model gap/5 is illustrative, not acceptance evidence"
+    },
+    {
+      "a": "bf109f4",
+      "b": "p51b",
+      "modelSustainedTurnDifferenceSeconds": -1.558439859586759,
+      "requiredCombinedErrorForModelGapSeconds": 0.3116879719173518,
+      "historicalDifferenceSeconds": null,
+      "absoluteDifferentialResidualSeconds": null,
+      "validatedCombinedErrorSeconds": null,
+      "status": "UNRESOLVED",
+      "reason": "Matched independent turn observations and validated differential uncertainty absent; model gap/5 is illustrative, not acceptance evidence"
+    },
+    {
+      "a": "bf109f4",
+      "b": "spitfire_lfix_bs543",
+      "modelSustainedTurnDifferenceSeconds": 4.0204970617293405,
+      "requiredCombinedErrorForModelGapSeconds": 0.8040994123458681,
+      "historicalDifferenceSeconds": null,
+      "absoluteDifferentialResidualSeconds": null,
+      "validatedCombinedErrorSeconds": null,
+      "status": "UNRESOLVED",
+      "reason": "Matched independent turn observations and validated differential uncertainty absent; model gap/5 is illustrative, not acceptance evidence"
+    },
+    {
+      "a": "p47b",
+      "b": "p51b",
+      "modelSustainedTurnDifferenceSeconds": 3.7382816022407965,
+      "requiredCombinedErrorForModelGapSeconds": 0.7476563204481593,
+      "historicalDifferenceSeconds": null,
+      "absoluteDifferentialResidualSeconds": null,
+      "validatedCombinedErrorSeconds": null,
+      "status": "UNRESOLVED",
+      "reason": "Matched independent turn observations and validated differential uncertainty absent; model gap/5 is illustrative, not acceptance evidence"
+    },
+    {
+      "a": "p47b",
+      "b": "spitfire_lfix_bs543",
+      "modelSustainedTurnDifferenceSeconds": 9.317218523556896,
+      "requiredCombinedErrorForModelGapSeconds": 1.8634437047113792,
+      "historicalDifferenceSeconds": null,
+      "absoluteDifferentialResidualSeconds": null,
+      "validatedCombinedErrorSeconds": null,
+      "status": "UNRESOLVED",
+      "reason": "Matched independent turn observations and validated differential uncertainty absent; model gap/5 is illustrative, not acceptance evidence"
+    },
+    {
+      "a": "p51b",
+      "b": "spitfire_lfix_bs543",
+      "modelSustainedTurnDifferenceSeconds": 5.5789369213160995,
+      "requiredCombinedErrorForModelGapSeconds": 1.11578738426322,
+      "historicalDifferenceSeconds": null,
+      "absoluteDifferentialResidualSeconds": null,
+      "validatedCombinedErrorSeconds": null,
+      "status": "UNRESOLVED",
+      "reason": "Matched independent turn observations and validated differential uncertainty absent; model gap/5 is illustrative, not acceptance evidence"
+    }
+  ],
+  "speedChecks": [
+    {
+      "id": "bf109f4",
+      "points": [
+        {
+          "altFt": 0,
+          "observedTasMph": 325,
+          "beforeTasMph": 324.9999999999991,
+          "afterTasMph": 324.9999999999991,
+          "residualMph": -9.094947017729282e-13,
+          "role": "anchor"
+        },
+        {
+          "altFt": 0,
+          "observedTasMph": 336,
+          "beforeTasMph": 339.37410024487417,
+          "afterTasMph": 339.37410024487417,
+          "residualMph": 3.374100244874171,
+          "role": "inherited-checkpoint"
+        }
+      ],
+      "nonAnchorCount": 1,
+      "nonAnchorMaeMph": 3.374100244874171,
+      "note": "Inherited source checkpoints; no new independent evidence or matched-condition certification"
+    },
+    {
+      "id": "p47b",
+      "points": [
+        {
+          "altFt": 5000,
+          "observedTasMph": 352,
+          "beforeTasMph": 352.0000000000009,
+          "afterTasMph": 352.0000000000009,
+          "residualMph": 9.094947017729282e-13,
+          "role": "anchor"
+        },
+        {
+          "altFt": 15000,
+          "observedTasMph": 386,
+          "beforeTasMph": 386.0511311975233,
+          "afterTasMph": 386.0511311975233,
+          "residualMph": 0.051131197523318406,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 25000,
+          "observedTasMph": 420,
+          "beforeTasMph": 423.26229896231507,
+          "afterTasMph": 423.26229896231507,
+          "residualMph": 3.2622989623150715,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 27800,
+          "observedTasMph": 429,
+          "beforeTasMph": 434.0999065944643,
+          "afterTasMph": 434.0999065944643,
+          "residualMph": 5.099906594464301,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 30000,
+          "observedTasMph": 426,
+          "beforeTasMph": 429.8896967333412,
+          "afterTasMph": 429.8896967333412,
+          "residualMph": 3.889696733341225,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 34000,
+          "observedTasMph": 412,
+          "beforeTasMph": 417.94374795773456,
+          "afterTasMph": 417.94374795773456,
+          "residualMph": 5.943747957734558,
+          "role": "inherited-checkpoint"
+        }
+      ],
+      "nonAnchorCount": 5,
+      "nonAnchorMaeMph": 3.649356289075695,
+      "note": "Inherited source checkpoints; no new independent evidence or matched-condition certification"
+    },
+    {
+      "id": "p51b",
+      "points": [
+        {
+          "altFt": 0,
+          "observedTasMph": 361.5,
+          "beforeTasMph": 361.4999999999991,
+          "afterTasMph": 361.4999999999991,
+          "residualMph": -9.094947017729282e-13,
+          "role": "anchor"
+        },
+        {
+          "altFt": 4000,
+          "observedTasMph": 380,
+          "beforeTasMph": 377.98763003052863,
+          "afterTasMph": 377.98763003052863,
+          "residualMph": -2.012369969471365,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 7400,
+          "observedTasMph": 395.5,
+          "beforeTasMph": 392.734579732748,
+          "afterTasMph": 392.734579732748,
+          "residualMph": -2.7654202672520114,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 10300,
+          "observedTasMph": 409,
+          "beforeTasMph": 405.8958576063642,
+          "afterTasMph": 405.8958576063642,
+          "residualMph": -3.1041423936358115,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 18000,
+          "observedTasMph": 408,
+          "beforeTasMph": 407.120145413056,
+          "afterTasMph": 407.120145413056,
+          "residualMph": -0.8798545869440204,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 20800,
+          "observedTasMph": 417,
+          "beforeTasMph": 417.6059663299684,
+          "afterTasMph": 417.6059663299684,
+          "residualMph": 0.6059663299683962,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 24000,
+          "observedTasMph": 426,
+          "beforeTasMph": 429.83799510290646,
+          "afterTasMph": 429.83799510290646,
+          "residualMph": 3.8379951029064614,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 28000,
+          "observedTasMph": 419,
+          "beforeTasMph": 422.8539732156414,
+          "afterTasMph": 422.8539732156414,
+          "residualMph": 3.8539732156414175,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 32000,
+          "observedTasMph": 410,
+          "beforeTasMph": 413.81948381330676,
+          "afterTasMph": 413.81948381330676,
+          "residualMph": 3.8194838133067606,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 0,
+          "observedTasMph": 376.5,
+          "beforeTasMph": 376.9190564865303,
+          "afterTasMph": 376.9190564865303,
+          "residualMph": 0.4190564865302804,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 18000,
+          "observedTasMph": 423,
+          "beforeTasMph": 424.83596752601716,
+          "afterTasMph": 424.83596752601716,
+          "residualMph": 1.835967526017157,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 20800,
+          "observedTasMph": 431,
+          "beforeTasMph": 435.2281032421952,
+          "afterTasMph": 435.2281032421952,
+          "residualMph": 4.228103242195175,
+          "role": "inherited-checkpoint"
+        }
+      ],
+      "nonAnchorCount": 11,
+      "nonAnchorMaeMph": 2.487484812169896,
+      "note": "Inherited source checkpoints; no new independent evidence or matched-condition certification"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "points": [
+        {
+          "altFt": 0,
+          "observedTasMph": 336,
+          "beforeTasMph": 336.0000000000009,
+          "afterTasMph": 336.0000000000009,
+          "residualMph": 9.094947017729282e-13,
+          "role": "anchor"
+        },
+        {
+          "altFt": 2000,
+          "observedTasMph": 345,
+          "beforeTasMph": 344.8227718631033,
+          "afterTasMph": 344.8227718631033,
+          "residualMph": -0.17722813689670147,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 4000,
+          "observedTasMph": 353,
+          "beforeTasMph": 353.8236101067059,
+          "afterTasMph": 353.8236101067059,
+          "residualMph": 0.823610106705928,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 6000,
+          "observedTasMph": 363,
+          "beforeTasMph": 362.68530427898895,
+          "afterTasMph": 362.68530427898895,
+          "residualMph": -0.3146957210110486,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 8000,
+          "observedTasMph": 372,
+          "beforeTasMph": 369.4867173524881,
+          "afterTasMph": 369.4867173524881,
+          "residualMph": -2.5132826475119145,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 10000,
+          "observedTasMph": 380,
+          "beforeTasMph": 376.4499465487488,
+          "afterTasMph": 376.4499465487488,
+          "residualMph": -3.5500534512511877,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 10800,
+          "observedTasMph": 384,
+          "beforeTasMph": 379.28088514691535,
+          "afterTasMph": 379.28088514691535,
+          "residualMph": -4.719114853084648,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 12000,
+          "observedTasMph": 384,
+          "beforeTasMph": 378.1734494198563,
+          "afterTasMph": 378.1734494198563,
+          "residualMph": -5.826550580143703,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 14000,
+          "observedTasMph": 383.5,
+          "beforeTasMph": 375.8896089907639,
+          "afterTasMph": 375.8896089907639,
+          "residualMph": -7.610391009236082,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 16000,
+          "observedTasMph": 383,
+          "beforeTasMph": 374.65504459020394,
+          "afterTasMph": 374.65504459020394,
+          "residualMph": -8.344955409796057,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 18000,
+          "observedTasMph": 382,
+          "beforeTasMph": 374.2520401712909,
+          "afterTasMph": 374.2520401712909,
+          "residualMph": -7.747959828709099,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 16000,
+          "observedTasMph": 381.5,
+          "beforeTasMph": 388.6790648348824,
+          "afterTasMph": 388.6790648348824,
+          "residualMph": 7.179064834882411,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 18000,
+          "observedTasMph": 390.5,
+          "beforeTasMph": 396.15648027063526,
+          "afterTasMph": 396.15648027063526,
+          "residualMph": 5.656480270635257,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 20000,
+          "observedTasMph": 399,
+          "beforeTasMph": 403.78399693181836,
+          "afterTasMph": 403.78399693181836,
+          "residualMph": 4.783996931818365,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 22000,
+          "observedTasMph": 407,
+          "beforeTasMph": 411.5577047354882,
+          "afterTasMph": 411.5577047354882,
+          "residualMph": 4.557704735488187,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 24000,
+          "observedTasMph": 406,
+          "beforeTasMph": 407.4950194012936,
+          "afterTasMph": 407.4950194012936,
+          "residualMph": 1.4950194012935754,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 26000,
+          "observedTasMph": 403,
+          "beforeTasMph": 406.28828559446174,
+          "afterTasMph": 406.28828559446174,
+          "residualMph": 3.2882855944617404,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 28000,
+          "observedTasMph": 399.5,
+          "beforeTasMph": 404.28151734581206,
+          "afterTasMph": 404.28151734581206,
+          "residualMph": 4.781517345812063,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 30000,
+          "observedTasMph": 395,
+          "beforeTasMph": 401.90027654770984,
+          "afterTasMph": 401.90027654770984,
+          "residualMph": 6.9002765477098364,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 32000,
+          "observedTasMph": 389,
+          "beforeTasMph": 397.6930930415665,
+          "afterTasMph": 397.6930930415665,
+          "residualMph": 8.693093041566499,
+          "role": "inherited-checkpoint"
+        },
+        {
+          "altFt": 34000,
+          "observedTasMph": 381,
+          "beforeTasMph": 391.8385354181273,
+          "afterTasMph": 391.8385354181273,
+          "residualMph": 10.838535418127321,
+          "role": "inherited-checkpoint"
+        }
+      ],
+      "nonAnchorCount": 20,
+      "nonAnchorMaeMph": 4.990090793307081,
+      "note": "Inherited source checkpoints; no new independent evidence or matched-condition certification"
+    }
+  ],
+  "mustangClimb": [
+    {
+      "rating": "67inHg",
+      "altFt": 2200,
+      "sourceTakeoffWeightLb": 9335,
+      "observedFpm": 3820,
+      "beforeFpm": 3401.0861529653166,
+      "afterFpm": 3401.0861529653166,
+      "residualFpm": -418.9138470346834,
+      "note": "Existing power-budget audit: optimized model TAS, reported climb airspeed missing; takeoff weight not proven instantaneous climb weight"
+    },
+    {
+      "rating": "75inHg",
+      "altFt": 2200,
+      "sourceTakeoffWeightLb": 9335,
+      "observedFpm": 4380,
+      "beforeFpm": 3978.538324234923,
+      "afterFpm": 3978.538324234923,
+      "residualFpm": -401.46167576507696,
+      "note": "Existing power-budget audit: optimized model TAS, reported climb airspeed missing; takeoff weight not proven instantaneous climb weight"
+    }
+  ],
+  "p47Controlled": [
+    {
+      "shaftHp": 2000,
+      "at200": {
+        "speedMph": 200,
+        "shaftHp": 2000,
+        "availableHp": 1650,
+        "propEta": 0.825,
+        "parasiteHp": 372.1291851851852,
+        "inducedHp": 217.5,
+        "requiredHp": 589.6291851851852,
+        "excessHp": 1060.3708148148148,
+        "nPower": 2.4238952357911643,
+        "provenance": "Greg D-28-style 2600 hp worksheet; 2000 hp variant is a POWER-ONLY counterfactual with IDENTICAL drag/weight/propeller, not a documented P-47B test."
+      },
+      "maxSpeedMph": 322.84516941558104
+    },
+    {
+      "shaftHp": 2600,
+      "at200": {
+        "speedMph": 200,
+        "shaftHp": 2600,
+        "availableHp": 2145,
+        "propEta": 0.825,
+        "parasiteHp": 372.1291851851852,
+        "inducedHp": 217.5,
+        "requiredHp": 589.6291851851852,
+        "excessHp": 1555.3708148148148,
+        "nPower": 2.85501842079112,
+        "provenance": "Greg D-28-style 2600 hp worksheet; 2000 hp variant is a POWER-ONLY counterfactual with IDENTICAL drag/weight/propeller, not a documented P-47B test."
+      },
+      "maxSpeedMph": 355.3699078288628
+    }
+  ],
+  "p47External": [
+    {
+      "status": "unresolved",
+      "recordId": "p47d-closed",
+      "reasons": [
+        "aircraft-variant-or-specimen-not-matched",
+        "one-g-power-off-condition-not-established",
+        "matched-stall-weight-missing",
+        "original-observation-not-verified",
+        "test-altitude-missing-or-outside-atmosphere",
+        "ias-instrument-correction-state-unknown",
+        "low-speed-calibration-missing"
+      ],
+      "rawSpeed": {
+        "kind": "IAS",
+        "mph": 116
+      },
+      "weightLb": null,
+      "source": {
+        "reference": "https://www.wwiiaircraftperformance.com/org/p-47/p47-26167.html section V.D",
+        "kind": "transcription",
+        "scanVerified": false
+      },
+      "correctedEasMph": null,
+      "correctedCasMph": null,
+      "clMax": null,
+      "uncertainty": null,
+      "turnTransfer": "unverified: power-off one-g lift need not transfer to powered accelerated flight"
+    }
+  ],
+  "p51Illustrative": [
+    {
+      "status": "modelled",
+      "weightLb": 9240,
+      "clMax": 2.104188000024698,
+      "stallEasMph": 85.86072865355321,
+      "nLift": 3.920204322448778,
+      "nInst": 3.920204322448778,
+      "nSust": 2.618033802649587,
+      "instantDegSec": 26.01457863625942,
+      "sustDegSec": 16.605375938738696,
+      "sustTurnSeconds": 21.67972597116309,
+      "shaftHp": 1633.1764705882354,
+      "requiredHp": 304.6141338658598
+    },
+    {
+      "status": "modelled",
+      "weightLb": 9240,
+      "clMax": 1.8793110069052856,
+      "stallEasMph": 90.85263148224817,
+      "nLift": 3.501247575030934,
+      "nInst": 3.501247575030934,
+      "nSust": 2.618033802649587,
+      "instantDegSec": 23.02838054638116,
+      "sustDegSec": 16.605375938738696,
+      "sustTurnSeconds": 21.67972597116309,
+      "shaftHp": 1633.1764705882354,
+      "requiredHp": 304.6141338658598
+    }
+  ]
+}

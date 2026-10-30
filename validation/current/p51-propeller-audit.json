@@ -1,0 +1,5371 @@
+{
+  "schema": 1,
+  "version": "2.6.0",
+  "scope": "Mustang source-transfer and coupled candidate audit",
+  "sourceRegister": "references/p51-propeller-efficiency-audit.json",
+  "calibration": "Existing sea-level speed anchor only; original versus candidate polar explicitly separated",
+  "checkpointPolicy": "Figure 5 and speed/climb data have already been seen in development; diagnostic checkpoints, not new independent holdouts.",
+  "variants": [
+    {
+      "profile": "C",
+      "source": {
+        "sourceKind": "heuristic",
+        "sourceIds": [
+          "wright-target"
+        ],
+        "measuredInstalledMap": false,
+        "bladeDrawing": null,
+        "installationMatched": false,
+        "domain": null,
+        "limitation": "Current formula and fitted speed-anchor polar; not measured installed eta."
+      },
+      "cd0": 0.0162226349489314,
+      "anchorProp": {
+        "eta": 0.816949929255663,
+        "J": 1.9896631130063966,
+        "Cp": 0.1549468021243305,
+        "tipMach": 0.8875774457978027,
+        "engineRpm": 3000,
+        "chartWithinCp": null,
+        "transfer": {
+          "accepted": false,
+          "blockers": [
+            "no-measured-installed-map",
+            "blade-geometry-not-matched",
+            "installation-not-matched",
+            "unverified-domain-J",
+            "unverified-domain-Cp",
+            "unverified-domain-tipMach"
+          ]
+        }
+      },
+      "speeds": {
+        "fixedOriginalPolarMph": 361.4999999999991,
+        "candidateAnchoredPolarMph": 361.4999999999991
+      },
+      "figure5": [
+        {
+          "tasMph": 270,
+          "testBhp": 490,
+          "engineRpm": 2100,
+          "manifoldInHg": 24.9,
+          "gear": "low",
+          "mixture": "auto lean",
+          "prop": {
+            "eta": 0.808278745094226,
+            "J": 2.1229363387145903,
+            "Cp": 0.28546912790973267,
+            "tipMach": 0.6887523817743162,
+            "engineRpm": 2100,
+            "chartWithinCp": null,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-J",
+                "unverified-domain-Cp",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 555.8276814692874,
+          "residualBhp": 65.82768146928743,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 318,
+          "testBhp": 610,
+          "engineRpm": 2300,
+          "manifoldInHg": 28.3,
+          "gear": "low",
+          "mixture": "auto lean",
+          "prop": {
+            "eta": 0.7915851867875054,
+            "J": 2.282925743951052,
+            "Cp": 0.270500006219389,
+            "tipMach": 0.7726197403953411,
+            "engineRpm": 2300,
+            "chartWithinCp": null,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-J",
+                "unverified-domain-Cp",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 728.6330118989196,
+          "residualBhp": 118.63301189891956,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 387,
+          "testBhp": 1000,
+          "engineRpm": 2700,
+          "manifoldInHg": 48,
+          "gear": "high",
+          "mixture": "auto rich",
+          "mapReadingStatus": "not clearly legible",
+          "prop": {
+            "eta": 0.7811960318544628,
+            "J": 2.366680881307747,
+            "Cp": 0.27411301719727416,
+            "tipMach": 0.9186238158150355,
+            "engineRpm": 2700,
+            "chartWithinCp": null,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-J",
+                "unverified-domain-Cp",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1117.20384741811,
+          "residualBhp": 117.20384741810994,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 395,
+          "testBhp": 1090,
+          "engineRpm": 3000,
+          "manifoldInHg": 42.9,
+          "gear": "low",
+          "mixture": "auto rich",
+          "prop": {
+            "eta": 0.8017509038428665,
+            "J": 2.174044065387349,
+            "Cp": 0.21781294459512598,
+            "tipMach": 0.9914185606182915,
+            "engineRpm": 3000,
+            "chartWithinCp": null,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-J",
+                "unverified-domain-Cp",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1142.9063950906718,
+          "residualBhp": 52.90639509067182,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 415,
+          "testBhp": 1290,
+          "engineRpm": 3000,
+          "manifoldInHg": 67,
+          "gear": "high",
+          "mixture": "auto rich",
+          "prop": {
+            "eta": 0.7897478971128876,
+            "J": 2.284122245913291,
+            "Cp": 0.2577786225024885,
+            "tipMach": 1.0079474357951936,
+            "engineRpm": 3000,
+            "chartWithinCp": null,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-J",
+                "unverified-domain-Cp",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1309.5422563049074,
+          "residualBhp": 19.54225630490737,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 430,
+          "testBhp": 1440,
+          "engineRpm": 3000,
+          "manifoldInHg": 67,
+          "gear": "high",
+          "mixture": "auto rich",
+          "readingStatus": "graph-reading approximation",
+          "prop": {
+            "eta": 0.7792324264469968,
+            "J": 2.3666808813077473,
+            "Cp": 0.28775288093301044,
+            "tipMach": 1.020693128683373,
+            "engineRpm": 3000,
+            "chartWithinCp": null,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-J",
+                "unverified-domain-Cp",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1451.75589065585,
+          "residualBhp": 11.755890655849953,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        }
+      ],
+      "diagnosticFigure5MaeBhp": 64.31151380629102,
+      "climb": [
+        {
+          "rating": "67inHg",
+          "reportedFpm": 3820,
+          "polarPolicy": "original-C",
+          "min": {
+            "bhp": 1520,
+            "weightLb": 9360,
+            "tasMph": 170,
+            "climbFpm": 3159.2732984890763,
+            "prop": {
+              "eta": 0.7800767149309638,
+              "J": 0.9356645344705046,
+              "Cp": 0.15905258106199838,
+              "tipMach": 0.788379392907444,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1630,
+            "weightLb": 9290,
+            "tasMph": 172,
+            "climbFpm": 3498.2378564909427,
+            "prop": {
+              "eta": 0.7816990314658618,
+              "J": 0.9466723525230988,
+              "Cp": 0.1705629652178009,
+              "tipMach": 0.7891391684237511,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1520,
+              "weightLb": 9290,
+              "tasMph": 170,
+              "climbFpm": 3192.128947676933,
+              "prop": {
+                "eta": 0.7800767149309638,
+                "J": 0.9356645344705046,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.788379392907444,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9335,
+              "tasMph": 170,
+              "climbFpm": 3170.958655233588,
+              "prop": {
+                "eta": 0.7800767149309638,
+                "J": 0.9356645344705046,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.788379392907444,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9360,
+              "tasMph": 170,
+              "climbFpm": 3159.2732984890763,
+              "prop": {
+                "eta": 0.7800767149309638,
+                "J": 0.9356645344705046,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.788379392907444,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9290,
+              "tasMph": 171,
+              "climbFpm": 3345.110439319637,
+              "prop": {
+                "eta": 0.7808916559877003,
+                "J": 0.9411684434968016,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7887582613641192,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9335,
+              "tasMph": 171,
+              "climbFpm": 3323.236504543703,
+              "prop": {
+                "eta": 0.7808916559877003,
+                "J": 0.9411684434968016,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7887582613641192,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9360,
+              "tasMph": 171,
+              "climbFpm": 3311.1632293000084,
+              "prop": {
+                "eta": 0.7808916559877003,
+                "J": 0.9411684434968016,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7887582613641192,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9290,
+              "tasMph": 172,
+              "climbFpm": 3498.2378564909427,
+              "prop": {
+                "eta": 0.7816990314658618,
+                "J": 0.9466723525230988,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7891391684237511,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9335,
+              "tasMph": 172,
+              "climbFpm": 3475.6591827372044,
+              "prop": {
+                "eta": 0.7816990314658618,
+                "J": 0.9466723525230988,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7891391684237511,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9360,
+              "tasMph": 172,
+              "climbFpm": 3463.1973834845126,
+              "prop": {
+                "eta": 0.7816990314658618,
+                "J": 0.9466723525230988,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7891391684237511,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        },
+        {
+          "rating": "67inHg",
+          "reportedFpm": 3820,
+          "polarPolicy": "candidate-anchor",
+          "min": {
+            "bhp": 1520,
+            "weightLb": 9360,
+            "tasMph": 170,
+            "climbFpm": 3159.2732984890763,
+            "prop": {
+              "eta": 0.7800767149309638,
+              "J": 0.9356645344705046,
+              "Cp": 0.15905258106199838,
+              "tipMach": 0.788379392907444,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1630,
+            "weightLb": 9290,
+            "tasMph": 172,
+            "climbFpm": 3498.2378564909427,
+            "prop": {
+              "eta": 0.7816990314658618,
+              "J": 0.9466723525230988,
+              "Cp": 0.1705629652178009,
+              "tipMach": 0.7891391684237511,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1520,
+              "weightLb": 9290,
+              "tasMph": 170,
+              "climbFpm": 3192.128947676933,
+              "prop": {
+                "eta": 0.7800767149309638,
+                "J": 0.9356645344705046,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.788379392907444,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9335,
+              "tasMph": 170,
+              "climbFpm": 3170.958655233588,
+              "prop": {
+                "eta": 0.7800767149309638,
+                "J": 0.9356645344705046,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.788379392907444,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9360,
+              "tasMph": 170,
+              "climbFpm": 3159.2732984890763,
+              "prop": {
+                "eta": 0.7800767149309638,
+                "J": 0.9356645344705046,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.788379392907444,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9290,
+              "tasMph": 171,
+              "climbFpm": 3345.110439319637,
+              "prop": {
+                "eta": 0.7808916559877003,
+                "J": 0.9411684434968016,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7887582613641192,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9335,
+              "tasMph": 171,
+              "climbFpm": 3323.236504543703,
+              "prop": {
+                "eta": 0.7808916559877003,
+                "J": 0.9411684434968016,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7887582613641192,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9360,
+              "tasMph": 171,
+              "climbFpm": 3311.1632293000084,
+              "prop": {
+                "eta": 0.7808916559877003,
+                "J": 0.9411684434968016,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7887582613641192,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9290,
+              "tasMph": 172,
+              "climbFpm": 3498.2378564909427,
+              "prop": {
+                "eta": 0.7816990314658618,
+                "J": 0.9466723525230988,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7891391684237511,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9335,
+              "tasMph": 172,
+              "climbFpm": 3475.6591827372044,
+              "prop": {
+                "eta": 0.7816990314658618,
+                "J": 0.9466723525230988,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7891391684237511,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9360,
+              "tasMph": 172,
+              "climbFpm": 3463.1973834845126,
+              "prop": {
+                "eta": 0.7816990314658618,
+                "J": 0.9466723525230988,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7891391684237511,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        },
+        {
+          "rating": "75inHg",
+          "reportedFpm": 4380,
+          "polarPolicy": "original-C",
+          "min": {
+            "bhp": 1760,
+            "weightLb": 9360,
+            "tasMph": 174,
+            "climbFpm": 3823.1122040719774,
+            "prop": {
+              "eta": 0.7833230913629371,
+              "J": 0.957680170575693,
+              "Cp": 0.18416614649284024,
+              "tipMach": 0.789907086539501,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1850,
+            "weightLb": 9290,
+            "tasMph": 175,
+            "climbFpm": 4112.193359644275,
+            "prop": {
+              "eta": 0.7841601063614356,
+              "J": 0.96318407960199,
+              "Cp": 0.19358373352940594,
+              "tipMach": 0.7902940916644478,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1760,
+              "weightLb": 9290,
+              "tasMph": 174,
+              "climbFpm": 3860.7618094788277,
+              "prop": {
+                "eta": 0.7833230913629371,
+                "J": 0.957680170575693,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.789907086539501,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9335,
+              "tasMph": 174,
+              "climbFpm": 3836.501256183876,
+              "prop": {
+                "eta": 0.7833230913629371,
+                "J": 0.957680170575693,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.789907086539501,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9360,
+              "tasMph": 174,
+              "climbFpm": 3823.1122040719774,
+              "prop": {
+                "eta": 0.7833230913629371,
+                "J": 0.957680170575693,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.789907086539501,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9290,
+              "tasMph": 174,
+              "climbFpm": 3986.429760805894,
+              "prop": {
+                "eta": 0.7833939463472697,
+                "J": 0.957680170575693,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.789907086539501,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9335,
+              "tasMph": 175,
+              "climbFpm": 3961.5695756914124,
+              "prop": {
+                "eta": 0.7840911071105187,
+                "J": 0.96318407960199,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7902940916644478,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9360,
+              "tasMph": 175,
+              "climbFpm": 3947.864427791061,
+              "prop": {
+                "eta": 0.7840911071105187,
+                "J": 0.96318407960199,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7902940916644478,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9290,
+              "tasMph": 175,
+              "climbFpm": 4112.193359644275,
+              "prop": {
+                "eta": 0.7841601063614356,
+                "J": 0.96318407960199,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7902940916644478,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9335,
+              "tasMph": 175,
+              "climbFpm": 4086.753046322406,
+              "prop": {
+                "eta": 0.7841601063614356,
+                "J": 0.96318407960199,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7902940916644478,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9360,
+              "tasMph": 175,
+              "climbFpm": 4072.7135408616105,
+              "prop": {
+                "eta": 0.7841601063614356,
+                "J": 0.96318407960199,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7902940916644478,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        },
+        {
+          "rating": "75inHg",
+          "reportedFpm": 4380,
+          "polarPolicy": "candidate-anchor",
+          "min": {
+            "bhp": 1760,
+            "weightLb": 9360,
+            "tasMph": 174,
+            "climbFpm": 3823.1122040719774,
+            "prop": {
+              "eta": 0.7833230913629371,
+              "J": 0.957680170575693,
+              "Cp": 0.18416614649284024,
+              "tipMach": 0.789907086539501,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1850,
+            "weightLb": 9290,
+            "tasMph": 175,
+            "climbFpm": 4112.193359644275,
+            "prop": {
+              "eta": 0.7841601063614356,
+              "J": 0.96318407960199,
+              "Cp": 0.19358373352940594,
+              "tipMach": 0.7902940916644478,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1760,
+              "weightLb": 9290,
+              "tasMph": 174,
+              "climbFpm": 3860.7618094788277,
+              "prop": {
+                "eta": 0.7833230913629371,
+                "J": 0.957680170575693,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.789907086539501,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9335,
+              "tasMph": 174,
+              "climbFpm": 3836.501256183876,
+              "prop": {
+                "eta": 0.7833230913629371,
+                "J": 0.957680170575693,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.789907086539501,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9360,
+              "tasMph": 174,
+              "climbFpm": 3823.1122040719774,
+              "prop": {
+                "eta": 0.7833230913629371,
+                "J": 0.957680170575693,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.789907086539501,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9290,
+              "tasMph": 174,
+              "climbFpm": 3986.429760805894,
+              "prop": {
+                "eta": 0.7833939463472697,
+                "J": 0.957680170575693,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.789907086539501,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9335,
+              "tasMph": 175,
+              "climbFpm": 3961.5695756914124,
+              "prop": {
+                "eta": 0.7840911071105187,
+                "J": 0.96318407960199,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7902940916644478,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9360,
+              "tasMph": 175,
+              "climbFpm": 3947.864427791061,
+              "prop": {
+                "eta": 0.7840911071105187,
+                "J": 0.96318407960199,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7902940916644478,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9290,
+              "tasMph": 175,
+              "climbFpm": 4112.193359644275,
+              "prop": {
+                "eta": 0.7841601063614356,
+                "J": 0.96318407960199,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7902940916644478,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9335,
+              "tasMph": 175,
+              "climbFpm": 4086.753046322406,
+              "prop": {
+                "eta": 0.7841601063614356,
+                "J": 0.96318407960199,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7902940916644478,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9360,
+              "tasMph": 175,
+              "climbFpm": 4072.7135408616105,
+              "prop": {
+                "eta": 0.7841601063614356,
+                "J": 0.96318407960199,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7902940916644478,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        }
+      ],
+      "adoptedAsDefault": true,
+      "acceptedAsMeasuredInstalledModel": false
+    },
+    {
+      "profile": "D",
+      "source": {
+        "sourceKind": "theoretical-assumption",
+        "sourceIds": [
+          "naca-1944"
+        ],
+        "measuredInstalledMap": false,
+        "bladeDrawing": null,
+        "installationMatched": false,
+        "domain": null,
+        "limitation": "Ideal actuator disk plus global assumed 0.85 retained power; no sourced target loss coefficient."
+      },
+      "cd0": 0.01673384295195925,
+      "anchorProp": {
+        "eta": 0.8412290241693319,
+        "J": 1.9896631130063966,
+        "Cp": 0.1549468021243305,
+        "tipMach": 0.8875774457978027,
+        "engineRpm": 3000,
+        "chartWithinCp": null,
+        "transfer": {
+          "accepted": false,
+          "blockers": [
+            "no-measured-installed-map",
+            "blade-geometry-not-matched",
+            "installation-not-matched",
+            "unverified-domain-J",
+            "unverified-domain-Cp",
+            "unverified-domain-tipMach"
+          ]
+        }
+      },
+      "speeds": {
+        "fixedOriginalPolarMph": 365.3745162776404,
+        "candidateAnchoredPolarMph": 361.4999999999991
+      },
+      "figure5": [
+        {
+          "tasMph": 270,
+          "testBhp": 490,
+          "engineRpm": 2100,
+          "manifoldInHg": 24.9,
+          "gear": "low",
+          "mixture": "auto lean",
+          "prop": {
+            "eta": 0.8369011857940115,
+            "J": 2.1229363387145903,
+            "Cp": 0.28546912790973267,
+            "tipMach": 0.6887523817743162,
+            "engineRpm": 2100,
+            "chartWithinCp": null,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-J",
+                "unverified-domain-Cp",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 546.1904808557586,
+          "residualBhp": 56.19048085575855,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 318,
+          "testBhp": 610,
+          "engineRpm": 2300,
+          "manifoldInHg": 28.3,
+          "gear": "low",
+          "mixture": "auto lean",
+          "prop": {
+            "eta": 0.8399108922522329,
+            "J": 2.282925743951052,
+            "Cp": 0.270500006219389,
+            "tipMach": 0.7726197403953411,
+            "engineRpm": 2300,
+            "chartWithinCp": null,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-J",
+                "unverified-domain-Cp",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 701.9672912267865,
+          "residualBhp": 91.96729122678653,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 387,
+          "testBhp": 1000,
+          "engineRpm": 2700,
+          "manifoldInHg": 48,
+          "gear": "high",
+          "mixture": "auto rich",
+          "mapReadingStatus": "not clearly legible",
+          "prop": {
+            "eta": 0.8407946240787322,
+            "J": 2.366680881307747,
+            "Cp": 0.27411301719727416,
+            "tipMach": 0.9186238158150355,
+            "engineRpm": 2700,
+            "chartWithinCp": null,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-J",
+                "unverified-domain-Cp",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1065.4834563912968,
+          "residualBhp": 65.48345639129684,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 395,
+          "testBhp": 1090,
+          "engineRpm": 3000,
+          "manifoldInHg": 42.9,
+          "gear": "low",
+          "mixture": "auto rich",
+          "prop": {
+            "eta": 0.840571054019961,
+            "J": 2.174044065387349,
+            "Cp": 0.21781294459512598,
+            "tipMach": 0.9914185606182915,
+            "engineRpm": 3000,
+            "chartWithinCp": null,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-J",
+                "unverified-domain-Cp",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1119.3414301652374,
+          "residualBhp": 29.341430165237398,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 415,
+          "testBhp": 1290,
+          "engineRpm": 3000,
+          "manifoldInHg": 67,
+          "gear": "high",
+          "mixture": "auto rich",
+          "prop": {
+            "eta": 0.84038423683319,
+            "J": 2.284122245913291,
+            "Cp": 0.2577786225024885,
+            "tipMach": 1.0079474357951936,
+            "engineRpm": 3000,
+            "chartWithinCp": null,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-J",
+                "unverified-domain-Cp",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1264.5295379603326,
+          "residualBhp": -25.47046203966738,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 430,
+          "testBhp": 1440,
+          "engineRpm": 3000,
+          "manifoldInHg": 67,
+          "gear": "high",
+          "mixture": "auto rich",
+          "readingStatus": "graph-reading approximation",
+          "prop": {
+            "eta": 0.8403518241222397,
+            "J": 2.3666808813077473,
+            "Cp": 0.28775288093301044,
+            "tipMach": 1.020693128683373,
+            "engineRpm": 3000,
+            "chartWithinCp": null,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-J",
+                "unverified-domain-Cp",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1383.8717471211742,
+          "residualBhp": -56.12825287882583,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        }
+      ],
+      "diagnosticFigure5MaeBhp": 54.09689559292875,
+      "climb": [
+        {
+          "rating": "67inHg",
+          "reportedFpm": 3820,
+          "polarPolicy": "original-C",
+          "min": {
+            "bhp": 1520,
+            "weightLb": 9360,
+            "tasMph": 176,
+            "climbFpm": 3167.253135787861,
+            "prop": {
+              "eta": 0.7862910825913528,
+              "J": 0.9686879886282872,
+              "Cp": 0.15905258106199838,
+              "tipMach": 0.7906831235302101,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1630,
+            "weightLb": 9290,
+            "tasMph": 179,
+            "climbFpm": 3486.7364360461347,
+            "prop": {
+              "eta": 0.7853029130405212,
+              "J": 0.9851997157071785,
+              "Cp": 0.1705629652178009,
+              "tipMach": 0.7918623496232245,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1520,
+              "weightLb": 9290,
+              "tasMph": 176,
+              "climbFpm": 3199.8603705608743,
+              "prop": {
+                "eta": 0.7862910825913528,
+                "J": 0.9686879886282872,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7906831235302101,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9335,
+              "tasMph": 176,
+              "climbFpm": 3178.8499361753265,
+              "prop": {
+                "eta": 0.7862910825913528,
+                "J": 0.9686879886282872,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7906831235302101,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9360,
+              "tasMph": 176,
+              "climbFpm": 3167.253135787861,
+              "prop": {
+                "eta": 0.7862910825913528,
+                "J": 0.9686879886282872,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7906831235302101,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9290,
+              "tasMph": 177,
+              "climbFpm": 3343.3772984212246,
+              "prop": {
+                "eta": 0.7853348894130958,
+                "J": 0.9741918976545842,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7910741791466762,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9335,
+              "tasMph": 178,
+              "climbFpm": 3321.7351581643807,
+              "prop": {
+                "eta": 0.7862066652674796,
+                "J": 0.9796958066808814,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7914672555141049,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9360,
+              "tasMph": 178,
+              "climbFpm": 3309.791621947059,
+              "prop": {
+                "eta": 0.7862066652674796,
+                "J": 0.9796958066808814,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7914672555141049,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9290,
+              "tasMph": 179,
+              "climbFpm": 3486.7364360461347,
+              "prop": {
+                "eta": 0.7853029130405212,
+                "J": 0.9851997157071785,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7918623496232245,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9335,
+              "tasMph": 179,
+              "climbFpm": 3464.436704372767,
+              "prop": {
+                "eta": 0.7853029130405212,
+                "J": 0.9851997157071785,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7918623496232245,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9360,
+              "tasMph": 179,
+              "climbFpm": 3452.129179412642,
+              "prop": {
+                "eta": 0.7853029130405212,
+                "J": 0.9851997157071785,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7918623496232245,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        },
+        {
+          "rating": "67inHg",
+          "reportedFpm": 3820,
+          "polarPolicy": "candidate-anchor",
+          "min": {
+            "bhp": 1520,
+            "weightLb": 9360,
+            "tasMph": 175,
+            "climbFpm": 3152.6932761264957,
+            "prop": {
+              "eta": 0.7854102354057344,
+              "J": 0.96318407960199,
+              "Cp": 0.15905258106199838,
+              "tipMach": 0.7902940916644478,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1630,
+            "weightLb": 9290,
+            "tasMph": 178,
+            "climbFpm": 3471.4233457889677,
+            "prop": {
+              "eta": 0.7844264284119354,
+              "J": 0.9796958066808814,
+              "Cp": 0.1705629652178009,
+              "tipMach": 0.7914672555141049,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1520,
+              "weightLb": 9290,
+              "tasMph": 175,
+              "climbFpm": 3185.24075706939,
+              "prop": {
+                "eta": 0.7854102354057344,
+                "J": 0.96318407960199,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7902940916644478,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9335,
+              "tasMph": 175,
+              "climbFpm": 3164.268881574611,
+              "prop": {
+                "eta": 0.7854102354057344,
+                "J": 0.96318407960199,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7902940916644478,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9360,
+              "tasMph": 175,
+              "climbFpm": 3152.6932761264957,
+              "prop": {
+                "eta": 0.7854102354057344,
+                "J": 0.96318407960199,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7902940916644478,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9290,
+              "tasMph": 176,
+              "climbFpm": 3328.434175469978,
+              "prop": {
+                "eta": 0.7844487629449897,
+                "J": 0.9686879886282872,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7906831235302101,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9335,
+              "tasMph": 176,
+              "climbFpm": 3306.8039423462506,
+              "prop": {
+                "eta": 0.7844487629449897,
+                "J": 0.9686879886282872,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7906831235302101,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9360,
+              "tasMph": 177,
+              "climbFpm": 3294.8675544091816,
+              "prop": {
+                "eta": 0.7853348894130958,
+                "J": 0.9741918976545842,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7910741791466762,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9290,
+              "tasMph": 178,
+              "climbFpm": 3471.4233457889677,
+              "prop": {
+                "eta": 0.7844264284119354,
+                "J": 0.9796958066808814,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7914672555141049,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9335,
+              "tasMph": 178,
+              "climbFpm": 3449.1665797562123,
+              "prop": {
+                "eta": 0.7844264284119354,
+                "J": 0.9796958066808814,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7914672555141049,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9360,
+              "tasMph": 178,
+              "climbFpm": 3436.8826818359216,
+              "prop": {
+                "eta": 0.7844264284119354,
+                "J": 0.9796958066808814,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7914672555141049,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        },
+        {
+          "rating": "75inHg",
+          "reportedFpm": 4380,
+          "polarPolicy": "original-C",
+          "min": {
+            "bhp": 1760,
+            "weightLb": 9360,
+            "tasMph": 182,
+            "climbFpm": 3787.806935330048,
+            "prop": {
+              "eta": 0.7838971298553717,
+              "J": 1.0017114427860696,
+              "Cp": 0.18416614649284024,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1850,
+            "weightLb": 9290,
+            "tasMph": 184,
+            "climbFpm": 4058.2951217915097,
+            "prop": {
+              "eta": 0.78299099720447,
+              "J": 1.0127192608386637,
+              "Cp": 0.19358373352940594,
+              "tipMach": 0.7938679803152969,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1760,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3824.801834055172,
+              "prop": {
+                "eta": 0.7838971298553717,
+                "J": 1.0017114427860696,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3800.9629574627966,
+              "prop": {
+                "eta": 0.7838971298553717,
+                "J": 1.0017114427860696,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3787.806935330048,
+              "prop": {
+                "eta": 0.7838971298553717,
+                "J": 1.0017114427860696,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9290,
+              "tasMph": 183,
+              "climbFpm": 3941.601812296266,
+              "prop": {
+                "eta": 0.783431152558512,
+                "J": 1.0072153518123668,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7934628429632903,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9335,
+              "tasMph": 183,
+              "climbFpm": 3917.2294080315132,
+              "prop": {
+                "eta": 0.783431152558512,
+                "J": 1.0072153518123668,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7934628429632903,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9360,
+              "tasMph": 183,
+              "climbFpm": 3903.779259796455,
+              "prop": {
+                "eta": 0.783431152558512,
+                "J": 1.0072153518123668,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7934628429632903,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9290,
+              "tasMph": 184,
+              "climbFpm": 4058.2951217915097,
+              "prop": {
+                "eta": 0.78299099720447,
+                "J": 1.0127192608386637,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7938679803152969,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9335,
+              "tasMph": 184,
+              "climbFpm": 4033.389383248119,
+              "prop": {
+                "eta": 0.78299099720447,
+                "J": 1.0127192608386637,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7938679803152969,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9360,
+              "tasMph": 184,
+              "climbFpm": 4019.645214880141,
+              "prop": {
+                "eta": 0.78299099720447,
+                "J": 1.0127192608386637,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7938679803152969,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        },
+        {
+          "rating": "75inHg",
+          "reportedFpm": 4380,
+          "polarPolicy": "candidate-anchor",
+          "min": {
+            "bhp": 1760,
+            "weightLb": 9360,
+            "tasMph": 181,
+            "climbFpm": 3771.761810484493,
+            "prop": {
+              "eta": 0.7830206191969552,
+              "J": 0.9962075337597726,
+              "Cp": 0.18416614649284024,
+              "tipMach": 0.7926585789824101,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1850,
+            "weightLb": 9290,
+            "tasMph": 183,
+            "climbFpm": 4041.615628529968,
+            "prop": {
+              "eta": 0.7821148670154184,
+              "J": 1.0072153518123668,
+              "Cp": 0.19358373352940594,
+              "tipMach": 0.7934628429632903,
+              "engineRpm": 3000,
+              "chartWithinCp": null,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "unverified-domain-J",
+                  "unverified-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1760,
+              "weightLb": 9290,
+              "tasMph": 181,
+              "climbFpm": 3808.6825157216326,
+              "prop": {
+                "eta": 0.7830206191969552,
+                "J": 0.9962075337597726,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7926585789824101,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9335,
+              "tasMph": 181,
+              "climbFpm": 3784.8915027313783,
+              "prop": {
+                "eta": 0.7830206191969552,
+                "J": 0.9962075337597726,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7926585789824101,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9360,
+              "tasMph": 181,
+              "climbFpm": 3771.761810484493,
+              "prop": {
+                "eta": 0.7830206191969552,
+                "J": 0.9962075337597726,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7926585789824101,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3925.202980059407,
+              "prop": {
+                "eta": 0.7825546933642414,
+                "J": 1.0017114427860696,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3900.880112939962,
+              "prop": {
+                "eta": 0.7825546933642414,
+                "J": 1.0017114427860696,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3887.457218062884,
+              "prop": {
+                "eta": 0.7825546933642414,
+                "J": 1.0017114427860696,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9290,
+              "tasMph": 183,
+              "climbFpm": 4041.615628529968,
+              "prop": {
+                "eta": 0.7821148670154184,
+                "J": 1.0072153518123668,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7934628429632903,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9335,
+              "tasMph": 183,
+              "climbFpm": 4016.7611008875488,
+              "prop": {
+                "eta": 0.7821148670154184,
+                "J": 1.0072153518123668,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7934628429632903,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9360,
+              "tasMph": 183,
+              "climbFpm": 4003.045109455759,
+              "prop": {
+                "eta": 0.7821148670154184,
+                "J": 1.0072153518123668,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7934628429632903,
+                "engineRpm": 3000,
+                "chartWithinCp": null,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "unverified-domain-J",
+                    "unverified-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        }
+      ],
+      "adoptedAsDefault": false,
+      "acceptedAsMeasuredInstalledModel": false
+    },
+    {
+      "profile": "N",
+      "source": {
+        "sourceKind": "generic-chart-transfer",
+        "sourceIds": [
+          "naca-1941"
+        ],
+        "measuredInstalledMap": false,
+        "bladeDrawing": "3155-6",
+        "installationMatched": false,
+        "domain": {
+          "J": [
+            0.3,
+            3.5
+          ],
+          "Cp": [
+            0.2,
+            0.6
+          ],
+          "tipMach": null
+        },
+        "limitation": "Rounded generic chart with disclosed Cp floor; no target installation or verified tip-Mach envelope."
+      },
+      "cd0": 0.017017268017756937,
+      "anchorProp": {
+        "eta": 0.8546898933901919,
+        "J": 1.9896631130063966,
+        "Cp": 0.1549468021243305,
+        "tipMach": 0.8875774457978027,
+        "engineRpm": 3000,
+        "chartWithinCp": false,
+        "transfer": {
+          "accepted": false,
+          "blockers": [
+            "no-measured-installed-map",
+            "blade-geometry-not-matched",
+            "installation-not-matched",
+            "outside-domain-Cp",
+            "unverified-domain-tipMach"
+          ]
+        }
+      },
+      "speeds": {
+        "fixedOriginalPolarMph": 367.3032050261363,
+        "candidateAnchoredPolarMph": 361.4999999999991
+      },
+      "figure5": [
+        {
+          "tasMph": 270,
+          "testBhp": 490,
+          "engineRpm": 2100,
+          "manifoldInHg": 24.9,
+          "gear": "low",
+          "mixture": "auto lean",
+          "prop": {
+            "eta": 0.8461205400514635,
+            "J": 2.1229363387145903,
+            "Cp": 0.28546912790973267,
+            "tipMach": 0.6887523817743162,
+            "engineRpm": 2100,
+            "chartWithinCp": true,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 545.3788131352935,
+          "residualBhp": 55.37881313529351,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 318,
+          "testBhp": 610,
+          "engineRpm": 2300,
+          "manifoldInHg": 28.3,
+          "gear": "low",
+          "mixture": "auto lean",
+          "prop": {
+            "eta": 0.8425474056838542,
+            "J": 2.282925743951052,
+            "Cp": 0.270500006219389,
+            "tipMach": 0.7726197403953411,
+            "engineRpm": 2300,
+            "chartWithinCp": true,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 708.2032668066205,
+          "residualBhp": 98.20326680662049,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 387,
+          "testBhp": 1000,
+          "engineRpm": 2700,
+          "manifoldInHg": 48,
+          "gear": "high",
+          "mixture": "auto rich",
+          "mapReadingStatus": "not clearly legible",
+          "prop": {
+            "eta": 0.8406190189066125,
+            "J": 2.366680881307747,
+            "Cp": 0.27411301719727416,
+            "tipMach": 0.9186238158150355,
+            "engineRpm": 2700,
+            "chartWithinCp": true,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1080.9398028390065,
+          "residualBhp": 80.93980283900646,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 395,
+          "testBhp": 1090,
+          "engineRpm": 3000,
+          "manifoldInHg": 42.9,
+          "gear": "low",
+          "mixture": "auto rich",
+          "prop": {
+            "eta": 0.8460469089388475,
+            "J": 2.174044065387349,
+            "Cp": 0.21781294459512598,
+            "tipMach": 0.9914185606182915,
+            "engineRpm": 3000,
+            "chartWithinCp": true,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1128.1909757829822,
+          "residualBhp": 38.19097578298215,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 415,
+          "testBhp": 1290,
+          "engineRpm": 3000,
+          "manifoldInHg": 67,
+          "gear": "high",
+          "mixture": "auto rich",
+          "prop": {
+            "eta": 0.8422061582135629,
+            "J": 2.284122245913291,
+            "Cp": 0.2577786225024885,
+            "tipMach": 1.0079474357951936,
+            "engineRpm": 3000,
+            "chartWithinCp": true,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1280.543939826949,
+          "residualBhp": -9.4560601730509,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 430,
+          "testBhp": 1440,
+          "engineRpm": 3000,
+          "manifoldInHg": 67,
+          "gear": "high",
+          "mixture": "auto rich",
+          "readingStatus": "graph-reading approximation",
+          "prop": {
+            "eta": 0.8413465461658703,
+            "J": 2.3666808813077473,
+            "Cp": 0.28775288093301044,
+            "tipMach": 1.020693128683373,
+            "engineRpm": 3000,
+            "chartWithinCp": true,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1403.114328882018,
+          "residualBhp": -36.88567111798193,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        }
+      ],
+      "diagnosticFigure5MaeBhp": 53.175764975822574,
+      "climb": [
+        {
+          "rating": "67inHg",
+          "reportedFpm": 3820,
+          "polarPolicy": "original-C",
+          "min": {
+            "bhp": 1520,
+            "weightLb": 9360,
+            "tasMph": 182,
+            "climbFpm": 3104.7253342988784,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.15905258106199838,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1630,
+            "weightLb": 9290,
+            "tasMph": 182,
+            "climbFpm": 3441.4328048685984,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.1705629652178009,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1520,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3136.573224189538,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3116.0520002424705,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3104.7253342988784,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3289.003014529068,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3267.7469924496727,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3256.015158257664,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3441.4328048685984,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3419.441984656875,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3407.30498221645,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        },
+        {
+          "rating": "67inHg",
+          "reportedFpm": 3820,
+          "polarPolicy": "candidate-anchor",
+          "min": {
+            "bhp": 1520,
+            "weightLb": 9360,
+            "tasMph": 182,
+            "climbFpm": 3079.582495114065,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.15905258106199838,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1630,
+            "weightLb": 9290,
+            "tasMph": 182,
+            "climbFpm": 3416.1005147964925,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.1705629652178009,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1520,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3111.240934117433,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3090.841826191066,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3079.582495114065,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3263.670724456962,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3242.536818398268,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3230.872319072851,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3416.1005147964925,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3394.231810605471,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3382.1621430316363,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        },
+        {
+          "rating": "75inHg",
+          "reportedFpm": 4380,
+          "polarPolicy": "original-C",
+          "min": {
+            "bhp": 1760,
+            "weightLb": 9360,
+            "tasMph": 182,
+            "climbFpm": 3764.89911157358,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.18416614649284024,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1850,
+            "weightLb": 9290,
+            "tasMph": 182,
+            "climbFpm": 4051.1519662267197,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.19358373352940594,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1760,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3801.721400216579,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3777.9937844193537,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3764.89911157358,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3926.4366832216497,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3902.1078689525193,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3888.6816948125866,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 4051.1519662267197,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 4026.2219534856854,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 4012.464278051594,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        },
+        {
+          "rating": "75inHg",
+          "reportedFpm": 4380,
+          "polarPolicy": "candidate-anchor",
+          "min": {
+            "bhp": 1760,
+            "weightLb": 9360,
+            "tasMph": 182,
+            "climbFpm": 3739.756272388766,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.18416614649284024,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1850,
+            "weightLb": 9290,
+            "tasMph": 182,
+            "climbFpm": 4025.819676154614,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.19358373352940594,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1760,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3776.3891101444733,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3752.7836103679497,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3739.756272388766,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3901.1043931495437,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3876.897694901116,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3863.5388556277735,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 4025.819676154614,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 4001.0117794342814,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3987.32143886678,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        }
+      ],
+      "adoptedAsDefault": false,
+      "acceptedAsMeasuredInstalledModel": false
+    },
+    {
+      "profile": "M",
+      "source": {
+        "sourceKind": "generic-chart-mach-transfer",
+        "sourceIds": [
+          "naca-1941",
+          "naca-1945"
+        ],
+        "measuredInstalledMap": false,
+        "bladeDrawing": "3155-6 / 6507A-2",
+        "installationMatched": false,
+        "domain": {
+          "J": [
+            0.3,
+            3.5
+          ],
+          "Cp": [
+            0.2,
+            0.6
+          ],
+          "tipMach": null
+        },
+        "limitation": "N plus transferred P-47D Mach correction; assumed onset and related calibration/check data."
+      },
+      "cd0": 0.017017268017756937,
+      "anchorProp": {
+        "eta": 0.8546898933901919,
+        "J": 1.9896631130063966,
+        "Cp": 0.1549468021243305,
+        "tipMach": 0.8875774457978027,
+        "engineRpm": 3000,
+        "chartWithinCp": false,
+        "transfer": {
+          "accepted": false,
+          "blockers": [
+            "no-measured-installed-map",
+            "blade-geometry-not-matched",
+            "installation-not-matched",
+            "outside-domain-Cp",
+            "unverified-domain-tipMach"
+          ]
+        }
+      },
+      "speeds": {
+        "fixedOriginalPolarMph": 367.3032050261363,
+        "candidateAnchoredPolarMph": 361.4999999999991
+      },
+      "figure5": [
+        {
+          "tasMph": 270,
+          "testBhp": 490,
+          "engineRpm": 2100,
+          "manifoldInHg": 24.9,
+          "gear": "low",
+          "mixture": "auto lean",
+          "prop": {
+            "eta": 0.8461205400514635,
+            "J": 2.1229363387145903,
+            "Cp": 0.28546912790973267,
+            "tipMach": 0.6887523817743162,
+            "engineRpm": 2100,
+            "chartWithinCp": true,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 545.3788131352935,
+          "residualBhp": 55.37881313529351,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 318,
+          "testBhp": 610,
+          "engineRpm": 2300,
+          "manifoldInHg": 28.3,
+          "gear": "low",
+          "mixture": "auto lean",
+          "prop": {
+            "eta": 0.8425474056838542,
+            "J": 2.282925743951052,
+            "Cp": 0.270500006219389,
+            "tipMach": 0.7726197403953411,
+            "engineRpm": 2300,
+            "chartWithinCp": true,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 708.2032668066205,
+          "residualBhp": 98.20326680662049,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 387,
+          "testBhp": 1000,
+          "engineRpm": 2700,
+          "manifoldInHg": 48,
+          "gear": "high",
+          "mixture": "auto rich",
+          "mapReadingStatus": "not clearly legible",
+          "prop": {
+            "eta": 0.8406190189066125,
+            "J": 2.366680881307747,
+            "Cp": 0.27411301719727416,
+            "tipMach": 0.9186238158150355,
+            "engineRpm": 2700,
+            "chartWithinCp": true,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1080.9398028390065,
+          "residualBhp": 80.93980283900646,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 395,
+          "testBhp": 1090,
+          "engineRpm": 3000,
+          "manifoldInHg": 42.9,
+          "gear": "low",
+          "mixture": "auto rich",
+          "prop": {
+            "eta": 0.8429837438495458,
+            "J": 2.174044065387349,
+            "Cp": 0.21781294459512598,
+            "tipMach": 0.9914185606182915,
+            "engineRpm": 3000,
+            "chartWithinCp": true,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1132.2905034859748,
+          "residualBhp": 42.290503485974796,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 415,
+          "testBhp": 1290,
+          "engineRpm": 3000,
+          "manifoldInHg": 67,
+          "gear": "high",
+          "mixture": "auto rich",
+          "prop": {
+            "eta": 0.8362478985779143,
+            "J": 2.284122245913291,
+            "Cp": 0.2577786225024885,
+            "tipMach": 1.0079474357951936,
+            "engineRpm": 3000,
+            "chartWithinCp": true,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1289.6678052277714,
+          "residualBhp": -0.33219477222860405,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        },
+        {
+          "tasMph": 430,
+          "testBhp": 1440,
+          "engineRpm": 3000,
+          "manifoldInHg": 67,
+          "gear": "high",
+          "mixture": "auto rich",
+          "readingStatus": "graph-reading approximation",
+          "prop": {
+            "eta": 0.8325033305584247,
+            "J": 2.3666808813077473,
+            "Cp": 0.28775288093301044,
+            "tipMach": 1.020693128683373,
+            "engineRpm": 3000,
+            "chartWithinCp": true,
+            "transfer": {
+              "accepted": false,
+              "blockers": [
+                "no-measured-installed-map",
+                "blade-geometry-not-matched",
+                "installation-not-matched",
+                "unverified-domain-tipMach"
+              ]
+            }
+          },
+          "predictedRequiredBhp": 1418.0188248482707,
+          "residualBhp": -21.981175151729303,
+          "role": "already-exposed related-programme diagnostic; inherited approximate reading; not fitted"
+        }
+      ],
+      "diagnosticFigure5MaeBhp": 49.854292698475525,
+      "climb": [
+        {
+          "rating": "67inHg",
+          "reportedFpm": 3820,
+          "polarPolicy": "original-C",
+          "min": {
+            "bhp": 1520,
+            "weightLb": 9360,
+            "tasMph": 182,
+            "climbFpm": 3104.7253342988784,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.15905258106199838,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1630,
+            "weightLb": 9290,
+            "tasMph": 182,
+            "climbFpm": 3441.4328048685984,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.1705629652178009,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1520,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3136.573224189538,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3116.0520002424705,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3104.7253342988784,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3289.003014529068,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3267.7469924496727,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3256.015158257664,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3441.4328048685984,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3419.441984656875,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3407.30498221645,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        },
+        {
+          "rating": "67inHg",
+          "reportedFpm": 3820,
+          "polarPolicy": "candidate-anchor",
+          "min": {
+            "bhp": 1520,
+            "weightLb": 9360,
+            "tasMph": 182,
+            "climbFpm": 3079.582495114065,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.15905258106199838,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1630,
+            "weightLb": 9290,
+            "tasMph": 182,
+            "climbFpm": 3416.1005147964925,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.1705629652178009,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1520,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3111.240934117433,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3090.841826191066,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1520,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3079.582495114065,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.15905258106199838,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3263.670724456962,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3242.536818398268,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1575,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3230.872319072851,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.16480777313989964,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3416.1005147964925,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3394.231810605471,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1630,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3382.1621430316363,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1705629652178009,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        },
+        {
+          "rating": "75inHg",
+          "reportedFpm": 4380,
+          "polarPolicy": "original-C",
+          "min": {
+            "bhp": 1760,
+            "weightLb": 9360,
+            "tasMph": 182,
+            "climbFpm": 3764.89911157358,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.18416614649284024,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1850,
+            "weightLb": 9290,
+            "tasMph": 182,
+            "climbFpm": 4051.1519662267197,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.19358373352940594,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1760,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3801.721400216579,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3777.9937844193537,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3764.89911157358,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3926.4366832216497,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3902.1078689525193,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3888.6816948125866,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 4051.1519662267197,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 4026.2219534856854,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 4012.464278051594,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        },
+        {
+          "rating": "75inHg",
+          "reportedFpm": 4380,
+          "polarPolicy": "candidate-anchor",
+          "min": {
+            "bhp": 1760,
+            "weightLb": 9360,
+            "tasMph": 182,
+            "climbFpm": 3739.756272388766,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.18416614649284024,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "max": {
+            "bhp": 1850,
+            "weightLb": 9290,
+            "tasMph": 182,
+            "climbFpm": 4025.819676154614,
+            "prop": {
+              "eta": 0.7802053731343284,
+              "J": 1.0017114427860696,
+              "Cp": 0.19358373352940594,
+              "tipMach": 0.7930597081671902,
+              "engineRpm": 3000,
+              "chartWithinCp": false,
+              "transfer": {
+                "accepted": false,
+                "blockers": [
+                  "no-measured-installed-map",
+                  "blade-geometry-not-matched",
+                  "installation-not-matched",
+                  "outside-domain-Cp",
+                  "unverified-domain-tipMach"
+                ]
+              }
+            }
+          },
+          "samples": 9,
+          "rows": [
+            {
+              "bhp": 1760,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3776.3891101444733,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3752.7836103679497,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1760,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3739.756272388766,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.18416614649284024,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 3901.1043931495437,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 3876.897694901116,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1805,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3863.5388556277735,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.1888749400111231,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9290,
+              "tasMph": 182,
+              "climbFpm": 4025.819676154614,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9335,
+              "tasMph": 182,
+              "climbFpm": 4001.0117794342814,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            },
+            {
+              "bhp": 1850,
+              "weightLb": 9360,
+              "tasMph": 182,
+              "climbFpm": 3987.32143886678,
+              "prop": {
+                "eta": 0.7802053731343284,
+                "J": 1.0017114427860696,
+                "Cp": 0.19358373352940594,
+                "tipMach": 0.7930597081671902,
+                "engineRpm": 3000,
+                "chartWithinCp": false,
+                "transfer": {
+                  "accepted": false,
+                  "blockers": [
+                    "no-measured-installed-map",
+                    "blade-geometry-not-matched",
+                    "installation-not-matched",
+                    "outside-domain-Cp",
+                    "unverified-domain-tipMach"
+                  ]
+                }
+              }
+            }
+          ],
+          "interpretation": "Three power / three weight samples; optimized 100-290 mph TAS at 1 mph. Weight curve is a counterfactual, not matched climb mass. Finite-grid range is not a bound."
+        }
+      ],
+      "adoptedAsDefault": false,
+      "acceptedAsMeasuredInstalledModel": false
+    }
+  ],
+  "acceptedDefaultChange": null,
+  "conclusion": "Inspected evidence does not establish a matched installed target map. D/N/M remain research transfers or assumptions; lower climb residual alone cannot validate them. Preserve C and unresolved historical accuracy."
+}

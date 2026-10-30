@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "auditDate": "2026-10-30",
+  "scope": "Active speed/climb checkpoints only; no new physics fit or independent test claim",
+  "policy": "Same solver, profile C and e=0.78. Non-anchor means excluded from the single CD0 anchor only; these legacy checkpoints have already informed model development and are not fresh independent holdouts.",
+  "aircraft": {
+    "bf109f4": {
+      "source": {"kind":"secondary","reference":"Jan Bobek, Info EDUARD 06/2023, Baumgartl/Rechlin attribution","url":"https://info.eduard.com/en/06-2023-1/rufe","dependencyGroup":"f4-secondary-rechlin-attribution","inspection":"Inherited secondary citation; original specimen and test sheets not verified in this milestone"},
+      "speed": {"weightLb":null,"weightKind":"unknown","rpmByRating":{"combat":2500,"emergency":2700},"configuration":{"gearState":"up","flaps":"up","cooling":"unknown","stores":"unknown"},"note":"325 mph combat anchor and 336 mph emergency rating check; source mass, cooling, specimen and airspeed correction unresolved"},
+      "climb": {"available":false,"note":"No direct climb-rate record in active aircraft data. Existing secondary 1000-5000 m time constraint is not a matched rate-of-climb observation."}
+    },
+    "p47b": {
+      "source": {"kind":"primary-transcription","reference":"PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables","url":"https://wwiiaircraftperformance.com/org/p-47/p-47.html","dependencyGroup":"p47b-415902-acceptance","inspection":"HTML transcription rechecked; earlier original scan inspection covered stall/loading/calibration, not a fresh visual verification of these performance tables"},
+      "speed": {"weightLb":12565,"weightKind":"nominal-test","rpmByRating":{"military":2700},"configuration":{"gearState":"up","flaps":"up","cooling":"flush","stores":"none"},"note":"12,565 gross-as-tested and 12,560 loaded statements do not establish per-point instantaneous/normalized weight"},
+      "climb": {"weightLb":12565,"weightKind":"nominal-test","configuration":{"gearState":"up","flaps":"up","cooling":"open","stores":"none"},"note":"Original intake duct/no dust screen additional climb table; 15,000-ft aggregate-loss fit is retained only as a separate conditional experiment"}
+    },
+    "p51b": {
+      "source": {"kind":"primary-transcription","reference":"Eng-47-1749-A, 20 May 1944, III and V.B-D; May 15 memo is a related programme summary","url":"https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html","dependencyGroup":"p51b-4324777-wright-programme","inspection":"HTML transcription rechecked; original Figures 4/6/7 visually inspected in the subsequent chart-state audit. Both memos cover the same programme."},
+      "speed": {"weightLb":null,"weightKind":"altitude-curve-reading-only","rpmByRating":{"67inHg":3000,"75inHg":3000},"configuration":{"gearState":"up","flaps":"up","cooling":"automatic","stores":"wing-racks"},"note":"V.B speed weights follow Fig.4. Sparse pixel-reading brackets now retained in references/p51-climb-state-reconstruction.json; no point mass silently adopted. 9240 lb is a separate cruise condition, not universal speed mass. High-blower scatter/carburetor variability unresolved."},
+      "climb": {"configuration":{"gearState":"up","flaps":"up","cooling":"automatic","stores":"wing-racks"},"note":"Takeoff weights 9,335 and 9,680 lb kept per memo. Unknown instantaneous weights and climb TAS; optimized model output is diagnostic only."}
+    },
+    "spitfire_lfix_bs543": {
+      "source": {"kind":"primary-transcription","reference":"A&AEE Spitfire LF/HF IX, sections 2-4, Tables II/V, BS.543 Merlin 66","url":"https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html","dependencyGroup":"spitfire-bs543-aaee","inspection":"HTML transcription rechecked; corrected standard-atmosphere TAS used directly; no new scan verification"},
+      "speed": {"weightLb":7110,"weightKind":"normalized","rpmByRating":{"combat+18":2995},"configuration":{"gearState":"up","flaps":"up","cooling":"closed","stores":"none"},"note":"Table V normalized weight; model nominal 3000 RPM differs from listed 2995 RPM. Strict matching does not silently absorb the difference into an invented tolerance."},
+      "climb": {"weightLb":7485,"weightKind":"takeoff","configuration":{"gearState":"up","flaps":"up","cooling":"open","stores":"none"},"note":"Table II climb weight and cooling differ from speed state. Same-altitude source boost correction remains a proxy; open-cooling drag is unquantified."}
+    }
+  },
+  "modelConfigurations": {
+    "bf109f4":{"gearState":"up","flaps":"up","cooling":"unknown","stores":"none"},
+    "p47b":{"gearState":"up","flaps":"up","cooling":"flush","stores":"none"},
+    "p51b":{"gearState":"up","flaps":"up","cooling":"automatic","stores":"wing-racks"},
+    "spitfire_lfix_bs543":{"gearState":"up","flaps":"up","cooling":"closed","stores":"none"}
+  },
+  "modelConfigurationCaution":"These are the speed-anchor research-polar labels, not independently measured configuration drag corrections. No cooling drag increment is implicitly supplied.",
+  "crossAircraftComparisonEstablished":false,
+  "uncertainty":"No validated individual/differential upper bounds supplied. Null bounds must remain null; no uncertainty inferred from residuals, fitting or source rounding."
+}

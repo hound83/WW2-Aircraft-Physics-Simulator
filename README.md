@@ -2,7 +2,7 @@
 
 A separate research repository for the shared WWII flight-performance engine. The Atlas website in [hound83/ww2-airwar](https://github.com/hound83/ww2-airwar) is outside this repository's scope.
 
-**Current state: imported v2.5 working baseline; v3.0 is in development and is not validated.** This setup changes file locations and development tooling only. It does not change physics equations, aircraft coefficients or historical claims.
+**Current version: v2.6.0 research increment; v3.0 and historical accuracy remain unresolved.** This combines the four-aircraft evidence gates, performance diagnostics, Mustang chart reconstruction and coupled propeller audit. Default coefficients and v2.5 numerical predictions remain unchanged. See [v2.6.0 release notes](releases/v2.6.0.md).
 
 Initial benchmarks: **Bf 109 F-4, P-47B, P-51B-15 and Spitfire LF Mk IX**. Greg's worksheets and the controlled P-47 2,000/2,600 hp comparison are retained. The 2,600 hp scenario is not a verified P-47B engine rating.
 
@@ -45,6 +45,16 @@ Passing regressions means the imported behavior is reproducible. It does not dem
 
 The 5:1 separation criterion is an acceptance target, not achieved accuracy. Matchups without adequate independent, matched-condition evidence must be reported as unresolved.
 
-## Next milestone
+## Current validation and next step
 
-Complete the stall/weight/airspeed evidence gate on a feature branch, implement only supported corrections, and compare against this baseline. Do not add aircraft or redesign the Atlas. See [NEXT_STEPS.md](docs/NEXT_STEPS.md).
+The [consolidated four-aircraft stall review](docs/FOUR_AIRCRAFT_STALL_REVIEW.md) brings the source audits, executable evidence gate, sensitivity comparisons and unresolved conditions together. The Spitfire audit corrects clipped-wing and drop-tank attribution. Default coefficients and numerical predictions are unchanged; historical stall calibration remains blocked for all four targets.
+
+The [four-aircraft speed/climb validation package](docs/PERFORMANCE_VALIDATION.md) now covers 69 records, keeping anchor fits, diagnostic errors, condition exclusions and independent scores separate. It preserves the Mustang climb shortfall and controlled P-47 power experiment. None of these legacy checkpoints currently establishes independently matched accuracy or 5:1 separation.
+
+The [climb power/cooling diagnosis](docs/CLIMB_POWER_COOLING_DIAGNOSIS.md) quantifies the Mustang useful-power deficit, distinguishes shaft power from propulsive power, and tests the sign of cooling-loss explanations against P-47/Spitfire conditions. It introduces no unverified drag or efficiency correction.
+
+The [Mustang chart-state reconstruction](docs/P51_CLIMB_STATE_RECONSTRUCTION.md) retains original Figure 4, five normalization-weight brackets and five low-blower chart-power brackets. Joint sampled scenarios still leave 322/268 ft/min shortfalls at 2,200 ft under C; the source weight curve is not adopted as matched climb mass. No default correction.
+
+The [installed-propeller audit](docs/P51_PROPELLER_EFFICIENCY_AUDIT.md) tests C/D/N/M against the speed anchor, recorded-RPM power checkpoints and chart-state climb scenarios. No measured target map is established; reanchored alternatives worsen sampled climb maxima, so C remains the default. The built HTML identifies this as research v2.6.0.
+
+Related research, code, tests and documentation are handled as one cohesive milestone without another GO for each routine step. See [the next complete assignment](docs/NEXT_STEPS.md). No Atlas redesign or additional aircraft.

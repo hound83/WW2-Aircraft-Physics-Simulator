@@ -1,24 +1,13 @@
 # Next steps
 
-## Setup completed
+## v2.6.0 completed research increment
 
-The baseline is published on main and preserved on baseline/v2.5-import. The initial GitHub regression run succeeded. See [REMOTE_SETUP.md](REMOTE_SETUP.md) and [SETUP_VERIFICATION.md](SETUP_VERIFICATION.md).
+The accumulated four-aircraft stall gates, 69-record performance package, climb-energy diagnosis and Mustang original-chart reconstruction are combined with the [installed-propeller candidate audit](P51_PROPELLER_EFFICIENCY_AUDIT.md). See [release notes](../releases/v2.6.0.md).
 
-## Next assignment: stall/weight/calibration gate
+C/D/N/M were compared with both the original and separately anchored polars. D/N/M improve some Figure 5 diagnostics but worsen sampled low-altitude climb after preserving the original speed anchor. No inspected source establishes a measured target-installed efficiency map. Preserve C; no default numerical changes or validated historical accuracy claim.
 
-1. Start from latest remote state and a feature branch such as `physics/stall-calibration`.
-2. Read current evidence and `references/stall_evidence_register.csv`. Seek only the missing matched low-speed calibration, actual stall weight and configuration data.
-3. Keep unmatched variants, shutters, slats and takeoff/stall weights separate. If no defensible correction is found, preserve explicit bounds rather than invent corrected EAS or CLmax.
-4. Audit the original NACA L4L07 Table I row 20-1 before using the claimed 0.779 correction. Correct active evidence separately from frozen v2.5 fixtures.
-5. Implement supported corrections in the shared engine/data, rerun checks and compare numerical results against the baseline. Record source applicability and residual changes.
-6. Update documentation, commit and push a meaningful milestone.
+## Next cohesive milestone: source-bounded climb-power input mode
 
-## Following assignments
+Use readable Figure 7 low-blower BHP states to implement an explicit source-chart diagnostic input mode, separate from the level-flight/ram proxy. Extend coordinates only where original curve/rating/RPM identity is readable. Preserve missing high-blower transitions, actual climb airspeed and instantaneous weight as exclusions; do not extrapolate the level-flight engine curve beyond its source domain.
 
-- Improve CLmax and lift-/power-limited turns using the same solver, with structural G limits and explicit instantaneous/sustained distinction.
-- Complete four-aircraft speed/climb/stall/turn validation, Greg and P-47 propeller fixtures, matched-condition differential errors and 5:1 scoring.
-- Release v3.0 only when the acceptance report identifies measured passes, failures and unresolved cases honestly. An unresolved scientific gate must remain visible.
-
-## Fresh-conversation prompt
-
-Continue European Air War Physics from `hound83/WW2-Aircraft-Physics-Simulator`. Read README.md, AGENTS.md, docs/DECISIONS.md, docs/NEXT_STEPS.md, docs/KNOWN_LIMITATIONS.md and docs/CURRENT_VALIDATION.md. Inspect current branches/tags and run npm run check. Continue the next documented milestone, preserving the frozen v2.5 import and scientific evidence distinctions. Do not modify the Atlas repository.
+Acceptance: traceable input nodes/reading limits, shared-solver use with explicit original versus candidate polar, before/after climb and level-speed diagnostics, preserved default behavior and npm run check. This mode must not imply that chart-assigned BHP is measured torque or that a normalization weight is actual climb mass. Keep Atlas/UI redesign and additional aircraft out of scope. Complete one research/code/test/review milestone without routine substep approvals.

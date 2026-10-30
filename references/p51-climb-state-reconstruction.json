@@ -1,0 +1,239 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "specimen": "43-24777",
+  "report": "Eng-47-1749-A, 20 May 1944",
+  "url": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+  "conventions": {
+    "coordinates": "Native image pixels, origin top left; boxes [left,top,right,bottom]. Read unscaled originals.",
+    "bounds": "Conservative manual pixel-selection/axis-reading brackets, rounded outward; not confidence intervals, measurement accuracy or validated historical error bounds.",
+    "atmosphere": "Report VI: NACA standard conditions. No independent re-reduction from raw flight data.",
+    "power": "Standard BHP assigned from Packard altitude-performance chart dated 12-3-43, not in-flight torque. Selected 3000 RPM climb branches only.",
+    "weight": "Figure 4 normal-power-climb weight curve used for level-flight normalization per V.B. Not documented instantaneous weight for 67/75-inHg climb observations.",
+    "branchPolicy": "Sparse low-blower coordinates only; no interpolation/extrapolation across critical heights, blower changes or obscured intersections. 61-inHg and high-blower coordinates remain unaccepted."
+  },
+  "scans": {
+    "fig4": {
+      "path": "references/sources/p51b-24777-figure4.jpg",
+      "url": "https://www.wwiiaircraftperformance.com/org/p-51/p-51_files/P-51B_24777_Power_vs_Altitude-Level.jpg",
+      "sha256": "21503d454dffe046989615b88ea26658a9bac7ad77f57d49f10561109f46eb33",
+      "width": 1200,
+      "height": 1591,
+      "printedPage": 10,
+      "inspection": "Downloaded original and inspected enlarged weight-axis strip/curve. New source outside frozen import."
+    },
+    "fig6": {
+      "path": "references/import/01_COMPLETE_V2_5_BASELINE/06_SOURCE_AND_SCIENTIFIC_EVIDENCE/P51B_24777_ORIGINAL_SCANS/Fig_6_climb_vs_altitude.jpg",
+      "sha256": "3be7ddb992591651c516c5e05b13b44196ae274ad8a2d30e4a2847a468b49bff",
+      "width": 1200,
+      "height": 1594,
+      "printedPage": 12,
+      "inspection": "Pixels rechecked for rate curves and takeoff/configuration caption. No new rate values replace summary. No climb airspeed found."
+    },
+    "fig7": {
+      "path": "references/import/01_COMPLETE_V2_5_BASELINE/06_SOURCE_AND_SCIENTIFIC_EVIDENCE/P51B_24777_ORIGINAL_SCANS/Fig_7_climb_power_vs_altitude.jpg",
+      "sha256": "eb8721b34e82fd288e5201a0edb45f4c561ac038dfd0e58571d25b1b07b151da",
+      "width": 1200,
+      "height": 1594,
+      "printedPage": 13,
+      "inspection": "Pixels and enlarged low-altitude BHP axis/curves inspected. Reading boxes below; no shutter-opening/drag coordinates accepted."
+    }
+  },
+  "axes": {
+    "fig4Weight": {
+      "ticks": [
+        [
+          1054,
+          9335
+        ],
+        [
+          994,
+          9135
+        ]
+      ],
+      "pixelAllowance": 3,
+      "roundOut": 10,
+      "basis": "Curve sea-level intercept x~1054 anchored to caption 9335 lb; ~60 px per 200 lb checked against 9000/9200/9400 axis. Approximate local mapping; broad boxes cover line/scan/altitude selection."
+    },
+    "fig7Bhp": {
+      "ticks": [
+        [
+          790,
+          1400
+        ],
+        [
+          910,
+          1800
+        ]
+      ],
+      "pixelAllowance": 3,
+      "roundOut": 10,
+      "basis": "Lower BHP-axis 1400/1600/1800 labels, ~60 px per 200 BHP. Broad boxes cover line/scan/altitude selection; sparse low-altitude readings only."
+    }
+  },
+  "readings": [
+    {
+      "id": "weight-2200",
+      "kind": "weight",
+      "figure": "fig4",
+      "axis": "fig4Weight",
+      "altFt": 2200,
+      "box": [
+        1045,
+        1348,
+        1058,
+        1365
+      ],
+      "application": "level-speed-normalization-only"
+    },
+    {
+      "id": "weight-10000",
+      "kind": "weight",
+      "figure": "fig4",
+      "axis": "fig4Weight",
+      "altFt": 10000,
+      "box": [
+        1031,
+        1110,
+        1053,
+        1132
+      ],
+      "application": "level-speed-normalization-only"
+    },
+    {
+      "id": "weight-22400",
+      "kind": "weight",
+      "figure": "fig4",
+      "axis": "fig4Weight",
+      "altFt": 22400,
+      "box": [
+        1008,
+        740,
+        1032,
+        764
+      ],
+      "application": "level-speed-normalization-only"
+    },
+    {
+      "id": "weight-30000",
+      "kind": "weight",
+      "figure": "fig4",
+      "axis": "fig4Weight",
+      "altFt": 30000,
+      "box": [
+        986,
+        520,
+        1010,
+        544
+      ],
+      "application": "level-speed-normalization-only"
+    },
+    {
+      "id": "weight-38000",
+      "kind": "weight",
+      "figure": "fig4",
+      "axis": "fig4Weight",
+      "altFt": 38000,
+      "box": [
+        964,
+        287,
+        990,
+        311
+      ],
+      "application": "level-speed-normalization-only"
+    },
+    {
+      "id": "bhp-67-2200",
+      "kind": "power",
+      "figure": "fig7",
+      "axis": "fig7Bhp",
+      "altFt": 2200,
+      "rating": "67inHg",
+      "gear": "low",
+      "engineRpm": 3000,
+      "box": [
+        830,
+        1341,
+        856,
+        1363
+      ],
+      "application": "chart-assigned-climb-bhp"
+    },
+    {
+      "id": "bhp-75-2200",
+      "kind": "power",
+      "figure": "fig7",
+      "axis": "fig7Bhp",
+      "altFt": 2200,
+      "rating": "75inHg",
+      "gear": "low",
+      "engineRpm": 3000,
+      "box": [
+        902,
+        1341,
+        920,
+        1363
+      ],
+      "application": "chart-assigned-climb-bhp"
+    },
+    {
+      "id": "bhp-75-4000",
+      "kind": "power",
+      "figure": "fig7",
+      "axis": "fig7Bhp",
+      "altFt": 4000,
+      "rating": "75inHg",
+      "gear": "low",
+      "engineRpm": 3000,
+      "box": [
+        852,
+        1284,
+        875,
+        1305
+      ],
+      "application": "chart-assigned-climb-bhp"
+    },
+    {
+      "id": "bhp-75-8000",
+      "kind": "power",
+      "figure": "fig7",
+      "axis": "fig7Bhp",
+      "altFt": 8000,
+      "rating": "75inHg",
+      "gear": "low",
+      "engineRpm": 3000,
+      "box": [
+        790,
+        1168,
+        820,
+        1188
+      ],
+      "application": "chart-assigned-climb-bhp"
+    },
+    {
+      "id": "bhp-75-12000",
+      "kind": "power",
+      "figure": "fig7",
+      "axis": "fig7Bhp",
+      "altFt": 12000,
+      "rating": "75inHg",
+      "gear": "low",
+      "engineRpm": 3000,
+      "box": [
+        741,
+        1048,
+        767,
+        1070
+      ],
+      "application": "chart-assigned-climb-bhp"
+    }
+  ],
+  "missing": {
+    "climbTasMph": null,
+    "instantaneousClimbWeightLb": null,
+    "rawShaftTorque": null,
+    "shutterDragCalibration": null,
+    "completeHighBlowerDigitization": null
+  },
+  "acceptedDefaultCorrection": null
+}

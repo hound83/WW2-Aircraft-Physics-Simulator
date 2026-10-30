@@ -1,0 +1,389 @@
+{
+  "schema": 1,
+  "status": "All historical clean CLmax gates unresolved; no active coefficient changes",
+  "auditDate": "2026-10-30",
+  "records": [
+    {
+      "id": "p51-closed",
+      "aircraftId": "p51b",
+      "variant": "P-51B-15",
+      "specimen": "43-24777",
+      "configurationId": "gear-up-flaps-up-shutters-closed",
+      "power": "off",
+      "loadFactor": 1,
+      "altFt": 8000,
+      "speed": {
+        "kind": "IAS",
+        "mph": 86,
+        "instrumentCorrection": "unknown"
+      },
+      "weightLb": 9270,
+      "weightKind": "instantaneous-stall-test",
+      "wingAreaM2": 21.646408320000003,
+      "geometrySource": "Eng-47-1749-A section IX: 233 square feet",
+      "source": {
+        "reference": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html section V.E",
+        "kind": "transcription",
+        "scanVerified": false
+      },
+      "uncertainty": null,
+      "airspeedInstallationId": null,
+      "airspeedBasisNote": "Table V.E labels IAS without stating whether instrument error has been removed. Fig. 1 uses an instrument-corrected IAS abscissa; linkage of stall indication to that pressure/instrument channel is not established."
+    },
+    {
+      "id": "p51-open",
+      "aircraftId": "p51b",
+      "variant": "P-51B-15",
+      "specimen": "43-24777",
+      "configurationId": "gear-up-flaps-up-shutters-open",
+      "power": "off",
+      "loadFactor": 1,
+      "altFt": 8000,
+      "speed": {
+        "kind": "IAS",
+        "mph": 84,
+        "instrumentCorrection": "unknown"
+      },
+      "weightLb": 9240,
+      "weightKind": "instantaneous-stall-test",
+      "wingAreaM2": 21.646408320000003,
+      "geometrySource": "Eng-47-1749-A section IX: 233 square feet",
+      "source": {
+        "reference": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html section V.E",
+        "kind": "transcription",
+        "scanVerified": false
+      },
+      "uncertainty": null,
+      "airspeedInstallationId": null,
+      "airspeedBasisNote": "Table V.E labels IAS without stating whether instrument error has been removed. Fig. 1 uses an instrument-corrected IAS abscissa; linkage of stall indication to that pressure/instrument channel is not established."
+    },
+    {
+      "id": "p51-powered",
+      "aircraftId": "p51b",
+      "variant": "P-51B-15",
+      "specimen": "43-24777",
+      "configurationId": "gear-up-flaps-up-shutters-auto",
+      "power": "46.5 inHg / 2700 rpm",
+      "loadFactor": 1,
+      "altFt": 8000,
+      "speed": {
+        "kind": "IAS",
+        "mph": 83,
+        "instrumentCorrection": "unknown"
+      },
+      "weightLb": 9100,
+      "weightKind": "instantaneous-stall-test",
+      "wingAreaM2": 21.646408320000003,
+      "geometrySource": "Eng-47-1749-A section IX: 233 square feet",
+      "source": {
+        "reference": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html section V.E",
+        "kind": "transcription",
+        "scanVerified": false
+      },
+      "uncertainty": null,
+      "airspeedInstallationId": null,
+      "airspeedBasisNote": "Table V.E labels IAS without stating whether instrument error has been removed. Fig. 1 uses an instrument-corrected IAS abscissa; linkage of stall indication to that pressure/instrument channel is not established."
+    },
+    {
+      "id": "p47-manual",
+      "aircraftId": "p47b",
+      "variant": "P-47B/C/D/G manual generic",
+      "specimen": "unspecified",
+      "configurationId": "gear-up-flaps-up-shutters-unknown",
+      "power": "unspecified",
+      "loadFactor": 1,
+      "altFt": null,
+      "speed": {
+        "kind": "IAS",
+        "mph": 115
+      },
+      "weightLb": null,
+      "weightKind": "missing",
+      "wingAreaM2": 27.870912,
+      "geometrySource": "Existing cases.json geometry; no variant transfer implied",
+      "source": {
+        "reference": "AN 01-65BC-1 attributed manual excerpt, section 14; full document identity not visible in crop",
+        "kind": "manual-excerpt",
+        "scanVerified": false
+      },
+      "uncertainty": null
+    },
+    {
+      "id": "p47d-closed",
+      "aircraftId": "p47d",
+      "variant": "P-47D",
+      "specimen": "42-26167",
+      "configurationId": "gear-up-flaps-up-shutters-closed",
+      "power": "idling",
+      "loadFactor": 1,
+      "altFt": null,
+      "speed": {
+        "kind": "IAS",
+        "mph": 116
+      },
+      "weightLb": null,
+      "weightKind": "13230 lb is takeoff, not stall",
+      "wingAreaM2": 27.870912,
+      "geometrySource": "Existing cases.json geometry; no variant transfer implied",
+      "source": {
+        "reference": "https://www.wwiiaircraftperformance.com/org/p-47/p47-26167.html section V.D",
+        "kind": "transcription",
+        "scanVerified": false
+      },
+      "uncertainty": null
+    },
+    {
+      "id": "spit-7150",
+      "aircraftId": "spitfire_lfix_bs543",
+      "variant": "Spitfire IX/XVI pilot notes, clipped wings",
+      "specimen": "unspecified",
+      "configurationId": "clipped-non-rear-view-gear-up-flaps-up-no-stores",
+      "power": "off",
+      "loadFactor": 1,
+      "altFt": null,
+      "speed": {
+        "kind": "IAS",
+        "mph": 90,
+        "instrumentCorrection": "unknown"
+      },
+      "weightLb": 7150,
+      "weightKind": "pilot-notes-reference",
+      "wingAreaM2": null,
+      "geometrySource": null,
+      "source": {
+        "reference": "A.P.1565J, P & L-P.N., third edition, September 1946, para 42(i), printed p24 / PDF page16",
+        "kind": "primary-manual-text",
+        "url": "https://zenoswarbirdvideos.com/Images/spit/SPIT9MANUAL.pdf",
+        "date": "1946-09",
+        "textVerified": true,
+        "scanVerified": false,
+        "inspection": "PDF extracted text read; no pixel verification. Postwar edition, not a wartime BS.543 test."
+      },
+      "uncertainty": null,
+      "configurationState": {
+        "wingTips": "clipped",
+        "fuselage": "non-rear-view",
+        "gear": "up",
+        "flaps": "up",
+        "externalStores": "none"
+      },
+      "loadingDescription": "Full main tanks, no ammunition or external stores",
+      "applicabilityNote": "Clipped-wing reference; full-span note reports approximate 3-6 mph reduction, not a calibrated BS.543 observation. Para 53 position-error table starts at 120 mph IAS; no stall-domain calibration accepted."
+    },
+    {
+      "id": "spit-7800",
+      "aircraftId": "spitfire_lfix_bs543",
+      "variant": "Spitfire IX/XVI pilot notes, clipped wings",
+      "specimen": "unspecified",
+      "configurationId": "clipped-non-rear-view-gear-up-flaps-up-45gal-tank",
+      "power": "off",
+      "loadFactor": 1,
+      "altFt": null,
+      "speed": {
+        "kind": "IAS",
+        "mph": 93,
+        "instrumentCorrection": "unknown"
+      },
+      "weightLb": 7800,
+      "weightKind": "pilot-notes-reference",
+      "wingAreaM2": null,
+      "geometrySource": null,
+      "source": {
+        "reference": "A.P.1565J, P & L-P.N., third edition, September 1946, para 42(i), printed p24 / PDF page16",
+        "kind": "primary-manual-text",
+        "url": "https://zenoswarbirdvideos.com/Images/spit/SPIT9MANUAL.pdf",
+        "date": "1946-09",
+        "textVerified": true,
+        "scanVerified": false,
+        "inspection": "PDF extracted text read; no pixel verification. Postwar edition, not a wartime BS.543 test."
+      },
+      "uncertainty": null,
+      "configurationState": {
+        "wingTips": "clipped",
+        "fuselage": "non-rear-view",
+        "gear": "up",
+        "flaps": "up",
+        "externalStores": "45-gallon-blister-drop-tank"
+      },
+      "loadingDescription": "Full main tanks, full ammunition and one 45-gallon blister drop tank",
+      "applicabilityNote": "Clipped-wing reference; full-span note reports approximate 3-6 mph reduction, not a calibrated BS.543 observation. Para 53 position-error table starts at 120 mph IAS; no stall-domain calibration accepted."
+    },
+    {
+      "id": "109-simulator",
+      "aircraftId": "bf109f4",
+      "variant": "Bf 109 F-4",
+      "specimen": "unspecified",
+      "configurationId": "flight-config-slat-state-unresolved",
+      "power": "unspecified",
+      "loadFactor": 1,
+      "altFt": null,
+      "speed": {
+        "kind": "IAS",
+        "mph": null
+      },
+      "weightLb": 6371,
+      "weightKind": "IL-2 standard 2890 kg, not historical stall",
+      "wingAreaM2": 16.05,
+      "geometrySource": "Existing cases.json geometry; no variant transfer implied",
+      "source": {
+        "reference": "IL-2 developer specification 154-171 km/h IAS; no matched historical test",
+        "kind": "simulation",
+        "scanVerified": false
+      },
+      "uncertainty": null,
+      "slatState": "unknown",
+      "slatStateSource": null
+    },
+    {
+      "id": "p47b-415902-clean",
+      "aircraftId": "p47b",
+      "variant": "P-47B",
+      "specimen": "41-5902",
+      "configurationId": "gear-up-flaps-up-cowl-closed-oil-intercooler-neutral",
+      "power": "off",
+      "loadFactor": 1,
+      "altFt": null,
+      "speed": {
+        "kind": "IAS",
+        "mph": 105,
+        "instrumentCorrection": "unknown"
+      },
+      "airspeedInstallationId": "p47b-415902-kollsman-d1-left-wing",
+      "installationApplicability": "Report para 13 identifies installation; exact observed stall indication channel/convention not separately stated",
+      "weightLb": null,
+      "weightKind": "report-loaded-weight-not-instantaneous",
+      "reportedWeightsLb": [
+        12565,
+        12560
+      ],
+      "wingAreaM2": 27.870912,
+      "geometrySource": "Existing P-47B model geometry; report does not independently establish area in inspected paragraphs",
+      "source": {
+        "reference": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf page 3 para 10(a); loading pages 1/4 and calibration page 4",
+        "kind": "primary",
+        "scanVerified": true
+      },
+      "uncertainty": null
+    }
+  ],
+  "calibrations": {
+    "p47Manual": {
+      "source": "Shared image section 23, AIR SPEED CORRECTION; original manual issue/specimen/configuration unverified",
+      "configuration": "not established by crop",
+      "aircraftId": "p47b",
+      "variant": "P-47B/C/D/G manual generic",
+      "specimen": "unspecified",
+      "configurationId": "unknown",
+      "scanVerified": true,
+      "nearStallVerified": false,
+      "instrumentCorrectionIncluded": false,
+      "altitudeRangeFt": null,
+      "points": [
+        {
+          "iasMph": 170,
+          "casMph": 175
+        },
+        {
+          "iasMph": 200,
+          "casMph": 206.5
+        },
+        {
+          "iasMph": 230,
+          "casMph": 237.5
+        },
+        {
+          "iasMph": 260,
+          "casMph": 268.5
+        },
+        {
+          "iasMph": 290,
+          "casMph": 300.5
+        },
+        {
+          "iasMph": 310,
+          "casMph": 322.5
+        }
+      ]
+    },
+    "p47bAcceptance": {
+      "source": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf page 4 para 13",
+      "configuration": "Calibration configuration not separately established",
+      "aircraftId": "p47b",
+      "variant": "P-47B",
+      "specimen": "41-5902",
+      "configurationId": "not-recorded",
+      "airspeedInstallationId": "p47b-415902-kollsman-d1-left-wing",
+      "inputInstrumentCorrection": "not-removed",
+      "instrumentCorrectionIncluded": true,
+      "scanVerified": true,
+      "nearStallVerified": false,
+      "altitudeRangeFt": null,
+      "points": [
+        {
+          "iasMph": 170,
+          "waterColumnMph": 170.5,
+          "casMph": 175
+        },
+        {
+          "iasMph": 200,
+          "waterColumnMph": 201,
+          "casMph": 206.5
+        },
+        {
+          "iasMph": 230,
+          "waterColumnMph": 230,
+          "casMph": 237.5
+        },
+        {
+          "iasMph": 260,
+          "waterColumnMph": 260,
+          "casMph": 268.5
+        },
+        {
+          "iasMph": 290,
+          "waterColumnMph": 290.5,
+          "casMph": 300.5
+        },
+        {
+          "iasMph": 310,
+          "waterColumnMph": 311.5,
+          "casMph": 322.5
+        }
+      ]
+    }
+  },
+  "sourceInspections": [
+    {
+      "file": "P51B_airspeed_calibration_rotated.png",
+      "libraryFileId": "libfile_29ddbd3f8dcc8191ad8ad116e066744a",
+      "inspection": "Visual: lowest plotted observation about 140 mph IAS; dashed extension is not a stall measurement. Axis is IAS without instrument error. No 84-86 mph observations.",
+      "usableNearStall": false
+    },
+    {
+      "file": "20261026-122439__P47_original_manual_IAS_CAS_air_speed_correction.png",
+      "libraryFileId": "libfile_1cd5828bdd3081919d42329a7a341b25",
+      "inspection": "Visually transcribed all six rows; 170-310 mph IAS only. No document header/specimen/configuration; cannot certify applicability at 115 mph.",
+      "usableNearStall": false
+    },
+    {
+      "file": "P47_original_pilot_manual_stall_excerpt.png",
+      "libraryFileId": "libfile_8445ff3841f08191bf96cfe2b76e07e9",
+      "inspection": "Library OCR confirms section 14: 115 mph IAS clean, 100 mph IAS landing; no matched weight/power. Visual pixels not returned by Library read; do not claim scan verification.",
+      "usableNearStall": false
+    },
+    {
+      "url": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+      "inspection": "Report transcription rechecked V.E: 86/9270 closed, 84/9240 open, 83/9100 at 46.5 inHg/2700 rpm, all 8000 ft; retain power-on separately."
+    },
+    {
+      "url": "https://www.wwiiaircraftperformance.com/org/p-47/p47-26167.html",
+      "inspection": "Report transcription rechecked V.D: clean idle 116 IAS with shutters open or closed, explicitly uncorrected. Figure 1 mentioned but not linked; low-speed coverage unresolved."
+    },
+    {
+      "url": "https://www.museumalkmaar40-45.nl/voorschriften-manuals/d-luftt/d-luftt-2109",
+      "inspection": "Catalog confirms F-1 to F-4 handbook entries; does not expose a calibrated F-4 stall observation in retrieved content. No new value assigned."
+    }
+  ],
+  "p51CalibrationAudit": "p51-low-speed-audit.json",
+  "p47bStallWeightAudit": "p47b-stall-weight-audit.json"
+}
