@@ -21,3 +21,7 @@ Stress power/weight/RPM and alternate fit assignments. Retain the v2.8 working c
 ## v3.0.0-rc.1 supported-envelope candidate, 2026-10-31
 
 Live calculation coverage, qualified scenario differences, exact-node chart ranges and executed Chrome smoke checks. Working calibration remains v2.8; see [release notes](v3.0.0-rc.1.md). No stable v3.0 tag or historical accuracy claim.
+
+## v3.1.0 condition-aware climb, 2026-11-01
+
+Recorded source-climb states improve P47/Spitfire agreement through a shared boost-response law. Clean model calibration remains unchanged. See [release notes](v3.1.0.md).

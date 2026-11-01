@@ -76,3 +76,9 @@ Pairwise differences are fixed-speed specific-excess-power scenarios using nativ
 The five Mustang chart-power ranges retain the fitted P calibration and their own assumed masses; they do not follow e, weight or profile sliders and do not predict the current fixed-speed state. Graph-reading brackets are not confidence intervals. Headless Chromium smoke is a targeted interaction check, not exhaustive UI or cross-browser testing.
 
 The local Windows Edge CDP automation timed out while changing altitude and did not complete. The same smoke completed all ten interactions in hosted Chrome CI with no JavaScript exceptions. Edge compatibility is not certified by that Chrome result.
+
+## v3.1 condition-aware climb limits
+
+The fitted 0.75 MAP-ratio exponent is an engineering proxy for net shaft-power availability under documented climb boost, not an identified engine temperature, volumetric-efficiency or intercooler model. It is active for explicit matched source-climb states; it does not improve arbitrary clean-flight power or turn curves. Configuration drag is aggregate and fitted, not measured isolated cooling drag.
+
+Targets pass on the original reserved data and fair same-training-data refits. All observations were already exposed. One alternate P47 comparison against retained coefficients is worse, and Spitfire improves in 8 of 9 assumed power/mass stress scenarios. Parameter fits can move to the exploratory search boundary. The missing Spitfire 14000-ft reference boost is not filled. Source-weight and airspeed qualifications remain. No independent historical accuracy, measured turn/stall or 5:1 proof follows.

@@ -1,6 +1,6 @@
-# v3.0 release-candidate coverage
+# Model input coverage and source scenario ranges
 
-Version 3.0.0-rc.1; working calibration 2.8.0. The solver and aircraft inputs retain v2.8 behavior. This is a usable working approximation with explicit gaps, not historical accuracy certification.
+Version 3.1.0; working calibration 2.8.0. The solver and aircraft inputs retain v2.8 behavior. This is a usable working approximation with explicit gaps, not historical accuracy certification.
 
 ## Calculation domain versus evidence
 

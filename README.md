@@ -2,7 +2,7 @@
 
 A separate research repository for the shared WWII flight-performance engine. The Atlas website in [hound83/ww2-airwar](https://github.com/hound83/ww2-airwar) is outside this repository's scope.
 
-**Current version: v3.0.0-rc.1, supported-envelope release candidate.** The working calibration remains v2.8. A live coverage panel follows the main controls, shows input-domain gaps and qualified pairwise scenario differences, and exposes exact-node Mustang chart-power ranges. Historical turn/stall and independent 5:1 accuracy remain unresolved. See [release-candidate coverage](docs/V3_RELEASE_CANDIDATE.md), [release notes](releases/v3.0.0-rc.1.md) and the browser smoke record in validation/current/.
+**Current version: v3.1.0 condition-aware climb improvement.** A shared boost-response proxy and refitted nonnegative configuration drag reduce reserved-point climb MAE from 84.7 to 51.3 ft/min for P47 and 110.2 to 77.9 for Spitfire. The new application panel evaluates documented report climb states; generic clean curves retain the v2.8 calibration. See [results and tradeoffs](docs/V31_CLIMB_IMPROVEMENT.md) and [release notes](releases/v3.1.0.md). These are already-exposed engineering checks, not independent historical accuracy.
 
 Initial benchmarks: **Bf 109 F-4, P-47B, P-51B-15 and Spitfire LF Mk IX**. Greg's worksheets and the controlled P-47 2,000/2,600 hp comparison are retained. The 2,600 hp scenario is not a verified P-47B engine rating.
 
@@ -49,7 +49,7 @@ The 5:1 separation criterion is an acceptance target, not achieved accuracy. Mat
 
 **v2.8 supersedes the default-model decisions in the earlier milestones below.** C compatibility tests still retain all 3628 legacy numbers within numeric tolerance; P deliberately changes working predictions. The [v2.8 results](docs/V28_RESULTS.md) show gains, regressions, weight sensitivity and the prior P-47 conditional baseline. Use `npm run diagnose:joint-calibration` to repeat the bounded fit. Raw API calls keep C for compatibility; request `{profile:'P'}` for the new fit. The UI e control is a scenario scale around each fitted e at slider value 0.78; it is not a new measurement. The existing simulator/Greg Bf 109 scenarios remain separate from historical evidence.
 
-Next: [release-candidate acceptance review](docs/NEXT_STEPS.md).
+Next: [high-altitude source-condition validation](docs/NEXT_STEPS.md).
 
 The following paragraphs document previous milestones and their decisions at that time.
 

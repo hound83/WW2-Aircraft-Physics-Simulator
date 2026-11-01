@@ -1,0 +1,41 @@
+{
+  "version": "3.1.0",
+  "workingParent": "2.8.0",
+  "date": "2026-11-01",
+  "scope": "P47 and Spitfire matched-condition climb; clean speed/turn model unchanged",
+  "splits": [
+    "original",
+    "alternate",
+    "rotated"
+  ],
+  "chargeExponents": [
+    0.6666666666666666,
+    0.75,
+    0.85,
+    1
+  ],
+  "heatFractions": [
+    0,
+    0.5,
+    1
+  ],
+  "deltaBounds": [
+    0,
+    0.03
+  ],
+  "selection": "Lowest aircraft-balanced training mean squared climb residual / (250 ft/min)^2; nonnegative configuration loss is fitted on fit rows only. No held-out row chooses parameters.",
+  "primaryAcceptance": {
+    "reservedClimbReduction": 0.2,
+    "maxSpeedMaeRegressionMph": 0.5,
+    "preserveMustang": true
+  },
+  "foldAcceptance": "Refit BOTH the linear-MAP/constant-CD0 control and candidate on identical split fit rows; candidate own-split check MAE must not worsen for either aircraft. Also preserve the stricter comparison against retained coefficients, which can have trained on alternate check rows.",
+  "hypotheses": {
+    "charge": "MAP-ratio exponent 2/3 to 1 brackets a simplified polytropic charge-density response. Installed charge temperature, friction and intercooler effects are unmeasured; this is an engineering proxy, not an identified engine law.",
+    "configuration": "Nonnegative blend of constant CD0 and loss power proportional to source-conditioned shaft power. Normalize at first recorded climb input, never use its observed climb rate in the shape. No altitude polynomial or aircraft-specific climb multiplier."
+  },
+  "scenarioQualification": "Assumed level-power +/-3% and mass +/-2% stress, applied equally to old/new models; not historical uncertainty bounds.",
+  "initialFoldComparison": "Refit each alternative split independently; each target aircraft own-split check MAE must not worsen relative to the retained model. All observations already exposed; no blind historical validation.",
+  "developmentNote": "After the initial probe, the fold comparison was corrected to refit the linear control on the same data as the candidate. The initial retained-coefficient comparison remains reported and is not silently called a pass. All data already exposed; no blind-validation claim.",
+  "baselineReproductionToleranceFpm": 0.00001
+}

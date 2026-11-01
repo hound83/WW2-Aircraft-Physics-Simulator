@@ -33,6 +33,7 @@ try{
  require('../validation/diagnostics/working_validation_v28.cjs').writeReport();
  require('../validation/diagnostics/robustness_v29.cjs').writeReport();
  require('../validation/diagnostics/coverage_v3.cjs').writeReport();
+ require('../validation/diagnostics/climb_improvement_v31.cjs').writeReport();
  const md=[
  '# Current validation',
  '',
@@ -51,6 +52,8 @@ try{
  '| Interactive browser tests | See browser-smoke.json; run separately on the current build |',
  '| Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |',
  '| 5:1 comparative accuracy | Unresolved |',
+ '',
+ 'v3.1 climb model: [condition-aware source-climb gains and tradeoffs](V31_CLIMB_IMPROVEMENT.md); clean and Mustang predictions retained.',
  '',
  'v3.0 release candidate: [calculation domains, source nodes and scenario ranges](V3_RELEASE_CANDIDATE.md); historical accuracy unresolved.',
  '',
