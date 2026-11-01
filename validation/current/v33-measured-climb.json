@@ -1,0 +1,715 @@
+{
+  "version": "3.3.0",
+  "coefficientChanges": 0,
+  "rows": [
+    {
+      "id": "p47-5902-0",
+      "clean": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-0",
+        "altFt": 0,
+        "tasMph": 172,
+        "engineRpm": 2700,
+        "propRpm": 1350,
+        "shaftHp": 2000,
+        "propulsiveHp": 1697.100370092082,
+        "propEta": 0.848550185046041,
+        "weightLb": 12565,
+        "deltaCd0": 0,
+        "predictedFpm": 3172.7007523554526,
+        "observedFpm": 2560,
+        "errorFpm": 612.7007523554526,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "transferred": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-0",
+        "altFt": 0,
+        "tasMph": 172,
+        "engineRpm": 2700,
+        "propRpm": 1350,
+        "shaftHp": 2000,
+        "propulsiveHp": 1697.100370092082,
+        "propEta": 0.848550185046041,
+        "weightLb": 12565,
+        "deltaCd0": 0.018868610875495496,
+        "predictedFpm": 2656.986562663061,
+        "observedFpm": 2560,
+        "errorFpm": 96.9865626630608,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "fixed2700RpmControl": 2656.986562663061,
+      "rpmCorrectionDeltaFpm": 0,
+      "massScenarios": [
+        {
+          "weightLb": 12365,
+          "predictedFpm": 2722.038616117435,
+          "errorFpm": 162.03861611743514
+        },
+        {
+          "weightLb": 12565,
+          "predictedFpm": 2656.986562663061,
+          "errorFpm": 96.9865626630608
+        },
+        {
+          "weightLb": 12765,
+          "predictedFpm": 2593.629849331967,
+          "errorFpm": 33.62984933196685
+        }
+      ]
+    },
+    {
+      "id": "p47-5902-5000",
+      "clean": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-5000",
+        "altFt": 5000,
+        "tasMph": 183,
+        "engineRpm": 2700,
+        "propRpm": 1350,
+        "shaftHp": 2000,
+        "propulsiveHp": 1701.740899903189,
+        "propEta": 0.8508704499515946,
+        "weightLb": 12565,
+        "deltaCd0": 0,
+        "predictedFpm": 3099.8986329667055,
+        "observedFpm": 2545,
+        "errorFpm": 554.8986329667055,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "transferred": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-5000",
+        "altFt": 5000,
+        "tasMph": 183,
+        "engineRpm": 2700,
+        "propRpm": 1350,
+        "shaftHp": 2000,
+        "propulsiveHp": 1701.740899903189,
+        "propEta": 0.8508704499515946,
+        "weightLb": 12565,
+        "deltaCd0": 0.018868610875495496,
+        "predictedFpm": 2564.696034974454,
+        "observedFpm": 2545,
+        "errorFpm": 19.69603497445405,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "fixed2700RpmControl": 2564.696034974454,
+      "rpmCorrectionDeltaFpm": 0,
+      "massScenarios": [
+        {
+          "weightLb": 12365,
+          "predictedFpm": 2630.2593328631315,
+          "errorFpm": 85.25933286313148
+        },
+        {
+          "weightLb": 12565,
+          "predictedFpm": 2564.696034974454,
+          "errorFpm": 19.69603497445405
+        },
+        {
+          "weightLb": 12765,
+          "predictedFpm": 2500.812950710126,
+          "errorFpm": -44.18704928987381
+        }
+      ]
+    },
+    {
+      "id": "p47-5902-10000",
+      "clean": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-10000",
+        "altFt": 10000,
+        "tasMph": 196,
+        "engineRpm": 2700,
+        "propRpm": 1350,
+        "shaftHp": 2000,
+        "propulsiveHp": 1708.0286053457394,
+        "propEta": 0.8540143026728697,
+        "weightLb": 12565,
+        "deltaCd0": 0,
+        "predictedFpm": 3016.5230080707547,
+        "observedFpm": 2465,
+        "errorFpm": 551.5230080707547,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "transferred": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-10000",
+        "altFt": 10000,
+        "tasMph": 196,
+        "engineRpm": 2700,
+        "propRpm": 1350,
+        "shaftHp": 2000,
+        "propulsiveHp": 1708.0286053457394,
+        "propEta": 0.8540143026728697,
+        "weightLb": 12565,
+        "deltaCd0": 0.018868610875495496,
+        "predictedFpm": 2452.975979172062,
+        "observedFpm": 2465,
+        "errorFpm": -12.024020827937875,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "fixed2700RpmControl": 2452.975979172062,
+      "rpmCorrectionDeltaFpm": 0,
+      "massScenarios": [
+        {
+          "weightLb": 12365,
+          "predictedFpm": 2518.885647725089,
+          "errorFpm": 53.8856477250888
+        },
+        {
+          "weightLb": 12565,
+          "predictedFpm": 2452.975979172062,
+          "errorFpm": -12.024020827937875
+        },
+        {
+          "weightLb": 12765,
+          "predictedFpm": 2388.7239094279566,
+          "errorFpm": -76.27609057204336
+        }
+      ]
+    },
+    {
+      "id": "p47-5902-12600",
+      "clean": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-12600",
+        "altFt": 12600,
+        "tasMph": 204,
+        "engineRpm": 2700,
+        "propRpm": 1350,
+        "shaftHp": 2000,
+        "propulsiveHp": 1712.4785116239848,
+        "propEta": 0.8562392558119923,
+        "weightLb": 12565,
+        "deltaCd0": 0,
+        "predictedFpm": 2967.804438084149,
+        "observedFpm": 2410,
+        "errorFpm": 557.8044380841488,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "transferred": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-12600",
+        "altFt": 12600,
+        "tasMph": 204,
+        "engineRpm": 2700,
+        "propRpm": 1350,
+        "shaftHp": 2000,
+        "propulsiveHp": 1712.4785116239848,
+        "propEta": 0.8562392558119923,
+        "weightLb": 12565,
+        "deltaCd0": 0.018868610875495496,
+        "predictedFpm": 2382.7090153631457,
+        "observedFpm": 2410,
+        "errorFpm": -27.29098463685432,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "fixed2700RpmControl": 2382.7090153631457,
+      "rpmCorrectionDeltaFpm": 0,
+      "massScenarios": [
+        {
+          "weightLb": 12365,
+          "predictedFpm": 2448.620725813345,
+          "errorFpm": 38.62072581334496
+        },
+        {
+          "weightLb": 12565,
+          "predictedFpm": 2382.7090153631457,
+          "errorFpm": -27.29098463685432
+        },
+        {
+          "weightLb": 12765,
+          "predictedFpm": 2318.437271603705,
+          "errorFpm": -91.56272839629492
+        }
+      ]
+    },
+    {
+      "id": "p47-5902-12600-normal",
+      "clean": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-12600-normal",
+        "altFt": 12600,
+        "tasMph": 195,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1625,
+        "propulsiveHp": 1398.120262041451,
+        "propEta": 0.860381699717816,
+        "weightLb": 12565,
+        "deltaCd0": 0,
+        "predictedFpm": 2188.511362520282,
+        "observedFpm": 1800,
+        "errorFpm": 388.5113625202821,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "transferred": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-12600-normal",
+        "altFt": 12600,
+        "tasMph": 195,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1625,
+        "propulsiveHp": 1398.120262041451,
+        "propEta": 0.860381699717816,
+        "weightLb": 12565,
+        "deltaCd0": 0.018868610875495496,
+        "predictedFpm": 1677.488850610694,
+        "observedFpm": 1800,
+        "errorFpm": -122.51114938930596,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "fixed2700RpmControl": 1677.488850610694,
+      "rpmCorrectionDeltaFpm": 0,
+      "massScenarios": [
+        {
+          "weightLb": 12365,
+          "predictedFpm": 1733.2571753856319,
+          "errorFpm": -66.74282461436815
+        },
+        {
+          "weightLb": 12565,
+          "predictedFpm": 1677.488850610694,
+          "errorFpm": -122.51114938930596
+        },
+        {
+          "weightLb": 12765,
+          "predictedFpm": 1623.023007750626,
+          "errorFpm": -176.976992249374
+        }
+      ]
+    },
+    {
+      "id": "p47-5902-15000",
+      "clean": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-15000",
+        "altFt": 15000,
+        "tasMph": 200,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1625,
+        "propulsiveHp": 1397.971010501195,
+        "propEta": 0.86028985261612,
+        "weightLb": 12565,
+        "deltaCd0": 0,
+        "predictedFpm": 2141.202482102011,
+        "observedFpm": 1725,
+        "errorFpm": 416.2024821020109,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "transferred": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-15000",
+        "altFt": 15000,
+        "tasMph": 200,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1625,
+        "propulsiveHp": 1397.971010501195,
+        "propEta": 0.86028985261612,
+        "weightLb": 12565,
+        "deltaCd0": 0.018868610875495496,
+        "predictedFpm": 1631.016695859787,
+        "observedFpm": 1725,
+        "errorFpm": -93.98330414021302,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "fixed2700RpmControl": 1631.016695859787,
+      "rpmCorrectionDeltaFpm": 0,
+      "massScenarios": [
+        {
+          "weightLb": 12365,
+          "predictedFpm": 1687.5700629865921,
+          "errorFpm": -37.42993701340788
+        },
+        {
+          "weightLb": 12565,
+          "predictedFpm": 1631.016695859787,
+          "errorFpm": -93.98330414021302
+        },
+        {
+          "weightLb": 12765,
+          "predictedFpm": 1575.766526637677,
+          "errorFpm": -149.2334733623229
+        }
+      ]
+    },
+    {
+      "id": "p47-5902-20000",
+      "clean": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-20000",
+        "altFt": 20000,
+        "tasMph": 217,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1625,
+        "propulsiveHp": 1404.9387784465687,
+        "propEta": 0.864577709813273,
+        "weightLb": 12565,
+        "deltaCd0": 0,
+        "predictedFpm": 2028.205891216382,
+        "observedFpm": 1565,
+        "errorFpm": 463.20589121638204,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "transferred": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-20000",
+        "altFt": 20000,
+        "tasMph": 217,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1625,
+        "propulsiveHp": 1404.9387784465687,
+        "propEta": 0.864577709813273,
+        "weightLb": 12565,
+        "deltaCd0": 0.018868610875495496,
+        "predictedFpm": 1476.4127274687703,
+        "observedFpm": 1565,
+        "errorFpm": -88.5872725312297,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "fixed2700RpmControl": 1476.4127274687703,
+      "rpmCorrectionDeltaFpm": 0,
+      "massScenarios": [
+        {
+          "weightLb": 12365,
+          "predictedFpm": 1533.1343827432252,
+          "errorFpm": -31.86561725677484
+        },
+        {
+          "weightLb": 12565,
+          "predictedFpm": 1476.4127274687703,
+          "errorFpm": -88.5872725312297
+        },
+        {
+          "weightLb": 12765,
+          "predictedFpm": 1420.9580621716007,
+          "errorFpm": -144.04193782839934
+        }
+      ]
+    },
+    {
+      "id": "p47-5902-25000",
+      "clean": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-25000",
+        "altFt": 25000,
+        "tasMph": 236,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1625,
+        "propulsiveHp": 1411.5833711831071,
+        "propEta": 0.8686666899588351,
+        "weightLb": 12565,
+        "deltaCd0": 0,
+        "predictedFpm": 1897.9482385927201,
+        "observedFpm": 1380,
+        "errorFpm": 517.9482385927201,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "transferred": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-25000",
+        "altFt": 25000,
+        "tasMph": 236,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1625,
+        "propulsiveHp": 1411.5833711831071,
+        "propEta": 0.8686666899588351,
+        "weightLb": 12565,
+        "deltaCd0": 0.018868610875495496,
+        "predictedFpm": 1300.9774826542157,
+        "observedFpm": 1380,
+        "errorFpm": -79.02251734578431,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "fixed2700RpmControl": 1300.9774826542157,
+      "rpmCorrectionDeltaFpm": 0,
+      "massScenarios": [
+        {
+          "weightLb": 12365,
+          "predictedFpm": 1357.9246514230456,
+          "errorFpm": -22.07534857695441
+        },
+        {
+          "weightLb": 12565,
+          "predictedFpm": 1300.9774826542157,
+          "errorFpm": -79.02251734578431
+        },
+        {
+          "weightLb": 12765,
+          "predictedFpm": 1245.2567629646471,
+          "errorFpm": -134.74323703535288
+        }
+      ]
+    },
+    {
+      "id": "p47-5902-30000",
+      "clean": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-30000",
+        "altFt": 30000,
+        "tasMph": 270,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1625,
+        "propulsiveHp": 1428.6110063840222,
+        "propEta": 0.8791452346978598,
+        "weightLb": 12565,
+        "deltaCd0": 0,
+        "predictedFpm": 1717.3738914633982,
+        "observedFpm": 1140,
+        "errorFpm": 577.3738914633982,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "transferred": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-30000",
+        "altFt": 30000,
+        "tasMph": 270,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1625,
+        "propulsiveHp": 1428.6110063840222,
+        "propEta": 0.8791452346978598,
+        "weightLb": 12565,
+        "deltaCd0": 0.018868610875495496,
+        "predictedFpm": 971.0279424111851,
+        "observedFpm": 1140,
+        "errorFpm": -168.9720575888149,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "fixed2700RpmControl": 963.4082320851625,
+      "rpmCorrectionDeltaFpm": 7.619710326022641,
+      "massScenarios": [
+        {
+          "weightLb": 12365,
+          "predictedFpm": 1024.323160141805,
+          "errorFpm": -115.67683985819508
+        },
+        {
+          "weightLb": 12565,
+          "predictedFpm": 971.0279424111851,
+          "errorFpm": -168.9720575888149
+        },
+        {
+          "weightLb": 12765,
+          "predictedFpm": 918.8185507348632,
+          "errorFpm": -221.18144926513685
+        }
+      ]
+    },
+    {
+      "id": "p47-5902-35000",
+      "clean": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-35000",
+        "altFt": 35000,
+        "tasMph": 305,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1365,
+        "propulsiveHp": 1215.2025432072612,
+        "propEta": 0.890258273411913,
+        "weightLb": 12565,
+        "deltaCd0": 0,
+        "predictedFpm": 908.8793331299538,
+        "observedFpm": 450,
+        "errorFpm": 458.8793331299538,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "transferred": {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-35000",
+        "altFt": 35000,
+        "tasMph": 305,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1365,
+        "propulsiveHp": 1215.2025432072612,
+        "propEta": 0.890258273411913,
+        "weightLb": 12565,
+        "deltaCd0": 0.018868610875495496,
+        "predictedFpm": 17.81360187469243,
+        "observedFpm": 450,
+        "errorFpm": -432.18639812530756,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+      },
+      "fixed2700RpmControl": -11.093223537467438,
+      "rpmCorrectionDeltaFpm": 28.90682541215987,
+      "massScenarios": [
+        {
+          "weightLb": 12365,
+          "predictedFpm": 58.277577857912604,
+          "errorFpm": -391.7224221420874
+        },
+        {
+          "weightLb": 12565,
+          "predictedFpm": 17.81360187469243,
+          "errorFpm": -432.18639812530756
+        },
+        {
+          "weightLb": 12765,
+          "predictedFpm": -22.006826679630407,
+          "errorFpm": -472.0068266796304
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "count": 10,
+    "cleanMaeFpm": 509.90480305018093,
+    "transferredDragMaeFpm": 114.12603022229625,
+    "highAltitudeCount": 2
+  },
+  "sourceHashesVerified": true,
+  "independentHistoricalAccuracy": null,
+  "policy": "No fitting. Transfer existing 41-5931-derived configuration drag only as an explicitly qualified scenario. Clean-column residuals are not open-cooling performance predictions. No new altitude interpolation or default engine curve."
+}

@@ -1,10 +1,13 @@
 {
   "status": "passed",
-  "version": "3.1.0",
-  "browser": "Chrome/156.0.8078.47",
+  "version": "3.3.0",
+  "browser": "Edg/154.0.4258.53",
   "checks": [
     "P default, current UI version, four live rows, no render error",
     "21 source-climb states reproduce active v3.1 model",
+    "P47 source specimen and cross-specimen qualification are visible and computed",
+    "Ten measured-power states reproduce report, correct RPM and retained high-altitude failure",
+    "Measured-climb drag selector recalculates both scenarios",
     "Coverage uses exact card engine/options",
     "Simulator Bf109 excluded from historical-style pairwise output",
     "P47 sea-level gap returns unavailable/null",
@@ -14,9 +17,10 @@
     "Greg selection honors named polar under profile P",
     "Reference Bf109 enables qualified scenario comparison",
     "Weight/e/EAS controls render without exceptions",
-    "Source-climb report states remain fixed when exploratory controls change"
+    "Source-climb report states remain fixed when exploratory controls change",
+    "Measured-power report states remain independent of exploratory controls"
   ],
   "errors": [],
   "scope": "Headless Chromium interactive smoke; not cross-browser or historical validation",
-  "htmlSha256": "c86e8a5fb7b416f2fa2336fc01d2c743c574d187c258e19b91d5f9265f8a0ce4"
+  "htmlSha256": "398d6d68a6bb1577cd585b5e590e263bc485a2076131f89bf3e65ae4815329b0"
 }

@@ -1,5 +1,11 @@
 # Current decisions
 
+## v3.3: recorded-power replay before another coefficient fit
+
+Original 41-5902 printed p.2 supplies ten exact climb states with BHP, TAS and engine RPM, separate from the 41-5931 boost-proxy observations. Verify 0.5 propeller/crankshaft gearing from original preliminary P-47B handbook p.16/PDF p.18. Clone only engine/propeller inputs per exact state, hold the original clean-anchor polar fixed, and run the same shared evaluated solver. Keep generic engine domains and all v3.1/v2.8 coefficients unchanged. UI clean/transferred-drag selector exposes the remaining configuration uncertainty; neither scenario certifies installed eta or instantaneous mass. Keep the 35000-ft transferred-drag residual of -432 ft/min visible. Source power at one altitude does not authorize interpolation or a curve extension.
+
+Spitfire original Table II pixels were not recovered. Mirrored HTML and a climb graph cannot verify the suspect boost cell. Retain +6.7 literally with diagnostic-only status; do not guess +4.7 or refit against it. See V33_MEASURED_POWER_CLIMB.md.
+
 ## v3.2: fixed-model high-altitude validation and corrected P47 identity
 
 Keep calibration/v3.1-climb-model.json unchanged. Register six additional source observations; evaluate Spitfire 32000/34000 ft within existing engine inputs. The 32000-ft boost transcription is suspect and remains diagnostic-only. The 34000-ft prediction misses low by 261.8 ft/min. No extrapolation or correction curve is accepted.
