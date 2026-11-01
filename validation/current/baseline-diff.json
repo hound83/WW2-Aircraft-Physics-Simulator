@@ -1,6 +1,6 @@
 {
   "comparedNumericValues": 3628,
-  "changed": 0,
+  "changed": 38,
   "materialChanged": 0,
   "materialChanges": [],
   "tolerance": {
@@ -9,6 +9,235 @@
   },
   "missing": [],
   "added": [],
-  "changes": [],
+  "changes": [
+    {
+      "key": "spitfire.speed.rows.6.requiredEtaAtReportedSpeed",
+      "baseline": 0.8325422981730878,
+      "current": 0.8325422981730879,
+      "delta": 1.1102230246251565e-16
+    },
+    {
+      "key": "spitfire.speed.rows.6.powerCoefficientCp",
+      "baseline": 0.28130755332847823,
+      "current": 0.2813075533284782,
+      "delta": -5.551115123125783e-17
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.pressureMaePsi",
+      "baseline": 0.4220788916960471,
+      "current": 0.4220788916960487,
+      "delta": 1.5543122344752192e-15
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.predictedClimbMaeFpm",
+      "baseline": 138.9120623348635,
+      "current": 138.91206233486375,
+      "delta": 2.5579538487363607e-13
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.4.predictedBoostPsi",
+      "baseline": 16.975287249664238,
+      "current": 16.97528724966423,
+      "delta": -7.105427357601002e-15
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.4.manifoldPressureResidualPsi",
+      "baseline": -0.02471275033576248,
+      "current": -0.024712750335769584,
+      "delta": -7.105427357601002e-15
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.4.predictedClimbFpm",
+      "baseline": 4489.079536167833,
+      "current": 4489.079536167831,
+      "delta": -1.8189894035458565e-12
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.4.predictedClimbResidualFpm",
+      "baseline": -70.92046383216712,
+      "current": -70.92046383216893,
+      "delta": -1.8189894035458565e-12
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.4.shaftBhpPredicted",
+      "baseline": 1651.564167588501,
+      "current": 1651.5641675885004,
+      "delta": -6.821210263296962e-13
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.4.predictedEnginePowerRatio",
+      "baseline": 0.9686593358290329,
+      "current": 0.9686593358290325,
+      "delta": -3.3306690738754696e-16
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.5.predictedBoostPsi",
+      "baseline": 14.735609954826248,
+      "current": 14.735609954826236,
+      "delta": -1.2434497875801753e-14
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.5.manifoldPressureResidualPsi",
+      "baseline": -0.3643900451737512,
+      "current": -0.3643900451737636,
+      "delta": -1.2434497875801753e-14
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.5.predictedClimbFpm",
+      "baseline": 4058.192535810844,
+      "current": 4058.1925358108415,
+      "delta": -2.7284841053187847e-12
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.5.predictedClimbResidualFpm",
+      "baseline": -221.80746418915578,
+      "current": -221.8074641891585,
+      "delta": -2.7284841053187847e-12
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.5.shaftBhpPredicted",
+      "baseline": 1534.7714170897996,
+      "current": 1534.771417089799,
+      "delta": -6.821210263296962e-13
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.5.predictedEnginePowerRatio",
+      "baseline": 0.9001591889089734,
+      "current": 0.900159188908973,
+      "delta": -4.440892098500626e-16
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.6.predictedBoostPsi",
+      "baseline": 12.62845478163705,
+      "current": 12.628454781637044,
+      "delta": -5.329070518200751e-15
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.6.manifoldPressureResidualPsi",
+      "baseline": -0.7715452183629505,
+      "current": -0.7715452183629559,
+      "delta": -5.329070518200751e-15
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.6.predictedClimbFpm",
+      "baseline": 3656.578145883169,
+      "current": 3656.5781458831693,
+      "delta": 4.547473508864641e-13
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.6.predictedClimbResidualFpm",
+      "baseline": -343.4218541168311,
+      "current": -343.4218541168307,
+      "delta": 4.547473508864641e-13
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.6.shaftBhpPredicted",
+      "baseline": 1427.2748580446387,
+      "current": 1427.274858044639,
+      "delta": 2.2737367544323206e-13
+    },
+    {
+      "key": "ramPredictive.spitfire.ideal.rows.6.predictedEnginePowerRatio",
+      "baseline": 0.8745395967259417,
+      "current": 0.874539596725942,
+      "delta": 2.220446049250313e-16
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery07.pressureMaePsi",
+      "baseline": 0.47679699664584063,
+      "current": 0.4767969966458393,
+      "delta": -1.3322676295501878e-15
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery07.predictedClimbMaeFpm",
+      "baseline": 151.7446443707114,
+      "current": 151.7446443707116,
+      "delta": 1.9895196601282805e-13
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery07.rows.5.predictedBoostPsi",
+      "baseline": 15.862617483482778,
+      "current": 15.862617483482765,
+      "delta": -1.2434497875801753e-14
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery07.rows.5.manifoldPressureResidualPsi",
+      "baseline": 0.7626174834827779,
+      "current": 0.7626174834827655,
+      "delta": -1.2434497875801753e-14
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery07.rows.5.predictedClimbFpm",
+      "baseline": 4267.248333069477,
+      "current": 4267.248333069474,
+      "delta": -2.7284841053187847e-12
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery07.rows.5.predictedClimbResidualFpm",
+      "baseline": -12.751666930523243,
+      "current": -12.751666930525971,
+      "delta": -2.7284841053187847e-12
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery07.rows.5.shaftBhpPredicted",
+      "baseline": 1593.5416289448347,
+      "current": 1593.5416289448337,
+      "delta": -9.094947017729282e-13
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery07.rows.5.predictedEnginePowerRatio",
+      "baseline": 0.9346285213752695,
+      "current": 0.9346285213752691,
+      "delta": -4.440892098500626e-16
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery07.rows.6.predictedBoostPsi",
+      "baseline": 13.642798353704011,
+      "current": 13.642798353704002,
+      "delta": -8.881784197001252e-15
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery07.rows.6.manifoldPressureResidualPsi",
+      "baseline": 0.2427983537040106,
+      "current": 0.2427983537040017,
+      "delta": -8.881784197001252e-15
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery07.rows.6.predictedClimbFpm",
+      "baseline": 3848.0749950625227,
+      "current": 3848.0749950625222,
+      "delta": -4.547473508864641e-13
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery07.rows.6.predictedClimbResidualFpm",
+      "baseline": -151.9250049374773,
+      "current": -151.92500493747775,
+      "delta": -4.547473508864641e-13
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery07.rows.6.shaftBhpPredicted",
+      "baseline": 1480.8947066347514,
+      "current": 1480.8947066347512,
+      "delta": -2.2737367544323206e-13
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery07.rows.6.predictedEnginePowerRatio",
+      "baseline": 0.907394292160531,
+      "current": 0.9073942921605309,
+      "delta": -1.1102230246251565e-16
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery0.rows.6.predictedBoostPsi",
+      "baseline": 16.497187787625354,
+      "current": 16.49718778762535,
+      "delta": -3.552713678800501e-15
+    },
+    {
+      "key": "ramPredictive.spitfire.recovery0.rows.6.manifoldPressureResidualPsi",
+      "baseline": 3.0971877876253533,
+      "current": 3.0971877876253497,
+      "delta": -3.552713678800501e-15
+    }
+  ],
   "meaning": "Legacy C comparison with frozen v2.5 setup; exact differences include cross-runtime floating-point rounding. Material threshold: abs(delta) > 1e-9 + 1e-12*abs(baseline). Not a historical accuracy score."
 }

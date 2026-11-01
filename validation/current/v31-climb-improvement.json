@@ -903,8 +903,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.003721641620434722,
-          "unbounded": 0.003721641620434722,
+          "deltaCd0": 0.0037216416204347218,
+          "unbounded": 0.0037216416204347218,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -1030,7 +1030,7 @@
         "error": -118.53440812876124,
         "shaftHp": 1636.5217391304348,
         "propulsiveHp": 1385.7003390346692,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 4661.787202228519,
         "dragSlopeFpmPerCd0": 37704.22422539443,
@@ -1050,7 +1050,7 @@
         "error": -47.46703092482858,
         "shaftHp": 1673.0434782608695,
         "propulsiveHp": 1417.7216917660098,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 4757.4610396254175,
         "dragSlopeFpmPerCd0": 38941.97376061319,
@@ -1070,7 +1070,7 @@
         "error": 0.3173097418712132,
         "shaftHp": 1705,
         "propulsiveHp": 1444.9949287231154,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 4838.2763454931155,
         "dragSlopeFpmPerCd0": 39756.38995258018,
@@ -1090,7 +1090,7 @@
         "error": -28.94533208872963,
         "shaftHp": 1705,
         "propulsiveHp": 1446.8489440378823,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 4821.567914488654,
         "dragSlopeFpmPerCd0": 40442.70289798104,
@@ -1110,7 +1110,7 @@
         "error": -44.89621070786234,
         "shaftHp": 1665.73812936611,
         "propulsiveHp": 1417.6369844013423,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 4668.066882658788,
         "dragSlopeFpmPerCd0": 41100.9733698289,
@@ -1130,7 +1130,7 @@
         "error": -69.41378425533912,
         "shaftHp": 1590.273390267474,
         "propulsiveHp": 1360.6912969247867,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 4368.122501149266,
         "dragSlopeFpmPerCd0": 42329.78379743004,
@@ -1150,7 +1150,7 @@
         "error": -131.7504901061293,
         "shaftHp": 1505.2019247626636,
         "propulsiveHp": 1294.896543343583,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 4029.903538593608,
         "dragSlopeFpmPerCd0": 43436.21577256921,
@@ -1170,7 +1170,7 @@
         "error": 108.79371770050966,
         "shaftHp": 1546.6666666666667,
         "propulsiveHp": 1330.7586641784153,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 4135.266947223279,
         "dragSlopeFpmPerCd0": 44731.12842327328,
@@ -1190,10 +1190,10 @@
         "error": 113.24897428965369,
         "shaftHp": 1562.1175929036096,
         "propulsiveHp": 1346.006130204116,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 4145.209190576201,
-        "dragSlopeFpmPerCd0": 46205.474240261065,
+        "dragSlopeFpmPerCd0": 46205.47424026106,
         "chargeLawApplied": true,
         "split": "fit"
       },
@@ -1210,7 +1210,7 @@
         "error": 81.88841514670321,
         "shaftHp": 1562.1175929036096,
         "propulsiveHp": 1345.5644315098482,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 4112.971596275063,
         "dragSlopeFpmPerCd0": 45969.81609627561,
@@ -1230,7 +1230,7 @@
         "error": 90.74669143200026,
         "shaftHp": 1482.6028900629838,
         "propulsiveHp": 1276.9368814328975,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 3812.853251608744,
         "dragSlopeFpmPerCd0": 43557.81035970839,
@@ -1250,7 +1250,7 @@
         "error": 105.09253583769578,
         "shaftHp": 1409.0634012686899,
         "propulsiveHp": 1213.2730174208361,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 3528.518196180947,
         "dragSlopeFpmPerCd0": 41225.26448194369,
@@ -1270,7 +1270,7 @@
         "error": 27.758654333543745,
         "shaftHp": 1308.6527046109286,
         "propulsiveHp": 1128.0958781644558,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 3142.797531126525,
         "dragSlopeFpmPerCd0": 38971.74724604466,
@@ -1290,7 +1290,7 @@
         "error": -42.060432844566094,
         "shaftHp": 1220.6975090594335,
         "propulsiveHp": 1053.0879675779704,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 2794.8838736504363,
         "dragSlopeFpmPerCd0": 36796.74731021072,
@@ -1310,7 +1310,7 @@
         "error": -79.65977914957102,
         "shaftHp": 1136.433633405245,
         "propulsiveHp": 981.990741601233,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 2451.18664480597,
         "dragSlopeFpmPerCd0": 35158.2546362555,
@@ -1330,7 +1330,7 @@
         "error": -148.69961907926927,
         "shaftHp": 1049.985645172587,
         "propulsiveHp": 908.3594756624482,
-        "configurationDeltaCd0": 0.003721641620434722,
+        "configurationDeltaCd0": 0.0037216416204347218,
         "configurationFactor": 1,
         "rawFpm": 2094.5233919352418,
         "dragSlopeFpmPerCd0": 33109.85403595241,
@@ -1374,8 +1374,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.003721641620434722,
-          "unbounded": 0.003721641620434722,
+          "deltaCd0": 0.0037216416204347218,
+          "unbounded": 0.0037216416204347218,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -1403,8 +1403,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.0033475669892412034,
-          "unbounded": 0.0033475669892412034,
+          "deltaCd0": 0.003347566989241203,
+          "unbounded": 0.003347566989241203,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -1490,8 +1490,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.003876327497618178,
-          "unbounded": 0.003876327497618178,
+          "deltaCd0": 0.0038763274976181777,
+          "unbounded": 0.0038763274976181777,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -1519,8 +1519,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.0025640466813716713,
-          "unbounded": 0.0025640466813716713,
+          "deltaCd0": 0.002564046681371671,
+          "unbounded": 0.002564046681371671,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -1577,8 +1577,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.002444337940015582,
-          "unbounded": 0.002444337940015582,
+          "deltaCd0": 0.0024443379400155814,
+          "unbounded": 0.0024443379400155814,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -1606,8 +1606,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.002671434820589627,
-          "unbounded": 0.002671434820589627,
+          "deltaCd0": 0.0026714348205896265,
+          "unbounded": 0.0026714348205896265,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -1617,7 +1617,7 @@
         }
       },
       "split": "original",
-      "score": 0.09427181954578615
+      "score": 0.094271819545786
     },
     {
       "version": "3.1.0",
@@ -1664,8 +1664,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.004009484893574704,
-          "unbounded": 0.004009484893574704,
+          "deltaCd0": 0.0040094848935747045,
+          "unbounded": 0.0040094848935747045,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -2017,7 +2017,7 @@
             "configurationDeltaCd0": 0.0039221730787364385,
             "configurationFactor": 1,
             "rawFpm": 4152.237502869326,
-            "dragSlopeFpmPerCd0": 46205.474240261065,
+            "dragSlopeFpmPerCd0": 46205.47424026106,
             "chargeLawApplied": true,
             "split": "check"
           },
@@ -2488,7 +2488,7 @@
             "configurationDeltaCd0": 0.001629287526532074,
             "configurationFactor": 1,
             "rawFpm": 4124.171539461127,
-            "dragSlopeFpmPerCd0": 46205.474240261065,
+            "dragSlopeFpmPerCd0": 46205.47424026106,
             "chargeLawApplied": true,
             "split": "check"
           },
@@ -2990,7 +2990,7 @@
             "configurationDeltaCd0": 0.003829536128810593,
             "configurationFactor": 1,
             "rawFpm": 4152.237502869326,
-            "dragSlopeFpmPerCd0": 46205.474240261065,
+            "dragSlopeFpmPerCd0": 46205.47424026106,
             "chargeLawApplied": true,
             "split": "check"
           },
@@ -3461,7 +3461,7 @@
             "configurationDeltaCd0": 0.0006734124814142817,
             "configurationFactor": 1,
             "rawFpm": 4124.171539461127,
-            "dragSlopeFpmPerCd0": 46205.474240261065,
+            "dragSlopeFpmPerCd0": 46205.47424026106,
             "chargeLawApplied": true,
             "split": "check"
           },
