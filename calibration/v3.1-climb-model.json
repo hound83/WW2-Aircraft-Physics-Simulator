@@ -1,0 +1,33 @@
+{
+  "version": "3.1.0",
+  "chargeExponent": 0.75,
+  "heatFraction": 0,
+  "aircraft": {
+    "p47b": {
+      "deltaCd0": 0.018868610875495496,
+      "unbounded": 0.018868610875495496,
+      "clipped": false,
+      "reference": {
+        "altFt": 15000,
+        "tasMph": 207,
+        "shaftHp": 2000
+      }
+    },
+    "spitfire_lfix_bs543": {
+      "deltaCd0": 0.003721641620434722,
+      "unbounded": 0.003721641620434722,
+      "clipped": false,
+      "reference": {
+        "altFt": 2000,
+        "tasMph": 176.5,
+        "shaftHp": 1636.5217391304348
+      }
+    }
+  },
+  "split": "original",
+  "score": 0.06460431992246536,
+  "status": "Engineering calibration for documented source-climb states only; not independently identified engine thermodynamics",
+  "sourceStates": "references/climb-condition-states.json",
+  "policy": "calibration/v3.1-policy.json",
+  "cleanModelCalibration": "2.8.0"
+}

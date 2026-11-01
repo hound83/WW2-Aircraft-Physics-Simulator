@@ -1,0 +1,23 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs');
+const M=require('../src/physics.js'),D=require('../aircraft/cases.json'),C=require('../src/climb-conditions.js'),R=require('../validation/diagnostics/climb_improvement_v31.cjs');
+const states=require('../references/climb-condition-states.json').states,model=require('../calibration/v3.1-climb-model.json'),report=require('../validation/current/v31-climb-improvement.json');
+assert.equal(model.version,require('../package.json').version);assert.equal(report.acceptance.pass,true);
+for(const p of report.acceptance.primary)assert.ok(p.reduction>=.2,p.id+' reserved target');assert.ok(report.acceptance.cleanSpeedMaxDeltaMph<1e-7);assert.ok(report.acceptance.mustangMaxDeltaFpm<1e-7);
+assert.equal(model.chargeExponent,report.selected.model.chargeExponent);assert.equal(model.heatFraction,report.selected.model.heatFraction);assert.deepEqual(model.aircraft,report.selected.model.aircraft);
+const close=(a,b,label)=>assert.ok(Math.abs(a-b)<1e-6,label+': '+a+' versus '+b);
+const before=JSON.stringify(D),beforeStates=JSON.stringify(states);
+for(const s of states){const a=D.aircraft[s.aircraftId],r=C.evaluate(M,a,s,model),arch=report.selected.rows.find(x=>x.stateId===s.id);close(r.predictedFpm,arch.predictedFpm,s.id+' shared-engine reproduction');assert.ok(r.propulsiveHp<=r.shaftHp);assert.ok(r.configurationDeltaCd0>=0);const changed=C.evaluate(M,a,{...s,observedFpm:s.observedFpm+10000},model);assert.equal(changed.predictedFpm,r.predictedFpm,'observed climb must never drive prediction');}
+const check=states.find(s=>s.aircraftId==='p47b'&&s.index===1),old=check.observedFpm,fit=R.fitted(.75,0,'original');try{check.observedFpm+=10000;const changed=R.fitted(.75,0,'original');assert.deepEqual(changed,fit,'excluded observation cannot alter fit');}finally{check.observedFpm=old;}
+assert.equal(JSON.stringify(D),before);assert.equal(JSON.stringify(states),beforeStates);
+const a=D.aircraft.spitfire_lfix_bs543,condition={referenceBoostPsi:18,observedBoostPsi:12,source:'test fixture, bounded source-condition API'};
+const linear=M.shaftPowerAtMeasuredBoost(a,10000,'combat+18','low',condition),charge=M.shaftPowerAtMeasuredBoost(a,10000,'combat+18','low',condition,{chargeExponent:.75});assert.ok(charge.bhp>linear.bhp);assert.ok(charge.bhp<=charge.referenceBhp);close(charge.powerFraction,charge.absolutePressureRatio**.75,'pressure-density power response');
+const cap=M.shaftPowerAtMeasuredBoost(a,10000,'combat+18','low',{...condition,observedBoostPsi:20},{chargeExponent:.75});assert.equal(cap.bhp,cap.referenceBhp,'never exceed source level rating');assert.equal(M.shaftPowerAtMeasuredBoost(a,10000,'combat+18','low',condition,{chargeExponent:.5}),null);
+const missing=states.find(s=>s.aircraftId==='spitfire_lfix_bs543'&&s.altFt===14000);assert.equal(missing.engineCondition,null);assert.equal(C.evaluate(M,a,missing,model).chargeLawApplied,false,'no invented reference boost');
+const s=states[0],ac=D.aircraft[s.aircraftId];assert.throws(()=>C.evaluate(M,ac,{...s,source:''},model),/Matched/);assert.throws(()=>C.evaluate(M,ac,{...s,aircraftId:'wrong'},model),/No condition/);assert.throws(()=>C.evaluate(M,ac,s,{...model,chargeExponent:1.1}),/Invalid/);assert.throws(()=>C.evaluate(M,ac,s,model,{powerScale:Infinity}),/Matched/);
+const base=C.raw(M,ac,s,.75),scaled=C.raw(M,ac,s,.75,1.03,1.02);assert.equal(scaled.cleanCd0,base.cleanCd0,'sensitivity holds calibrated polar fixed');close(scaled.engine.bhp,base.engine.bhp*1.03,'power scaling affects shaft input');
+for(const f of report.folds){assert.ok(f.summary.every(p=>p.pass));for(const id of ['p47b','spitfire_lfix_bs543']){const expected=R.fitted(1,0,f.split).aircraft[id];close(expected.deltaCd0,f.refittedControl.model.aircraft[id].deltaCd0,'fair same-data baseline');}}
+assert.ok(report.folds.some(f=>f.retainedComparison.some(p=>!p.pass)),'retain documented unfavorable comparison');assert.ok(report.scenarios.some(s=>s.summary.some(p=>!p.improves)),'retain unfavorable stress scenario');
+assert.equal(report.independentHistoricalAccuracy,null);
+const html=fs.readFileSync(require('node:path').join(__dirname,'../dist/model.html'),'utf8');assert.ok(html.includes('id="v31-climb"'));assert.ok(html.includes('climb-condition-model'));assert.ok(html.includes('do not follow the exploratory controls'));
+console.log('PASS v3.1 source-climb: reserved gains, fair refits, observed-rate exclusion, clean/Mustang preservation, bounded charge law, source gaps, power budget, immutable inputs and UI integration');

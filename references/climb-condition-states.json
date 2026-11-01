@@ -1,0 +1,401 @@
+{
+  "schema": 1,
+  "policy": "Existing observations only. P47 open cowl/oil/intercooler configuration; Spitfire source climb configuration. Aggregate losses are not measured isolated cooling drag. Missing MAP at 14000 ft is not interpolated.",
+  "states": [
+    {
+      "id": "p47b-15000",
+      "aircraftId": "p47b",
+      "index": 0,
+      "altFt": 15000,
+      "tasMph": 207,
+      "observedFpm": 2330,
+      "rating": "military",
+      "gear": "turbo",
+      "weightLb": 12565,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 10.352961763729999,
+        "observedBoostPsi": 10.745885085513999,
+        "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription); absolute inHg converted to gauge psi for common MAP-ratio calculation"
+      },
+      "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription)",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "p47b-20000",
+      "aircraftId": "p47b",
+      "index": 1,
+      "altFt": 20000,
+      "tasMph": 233,
+      "observedFpm": 2150,
+      "rating": "military",
+      "gear": "turbo",
+      "weightLb": 12565,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 10.5248657170105,
+        "observedBoostPsi": 10.844115915959998,
+        "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription); absolute inHg converted to gauge psi for common MAP-ratio calculation"
+      },
+      "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription)",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "p47b-23400",
+      "aircraftId": "p47b",
+      "index": 2,
+      "altFt": 23400,
+      "tasMph": 245,
+      "observedFpm": 2000,
+      "rating": "military",
+      "gear": "turbo",
+      "weightLb": 12565,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 10.641760405241238,
+        "observedBoostPsi": 10.942346746406,
+        "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription); absolute inHg converted to gauge psi for common MAP-ratio calculation"
+      },
+      "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription)",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "p47b-25000",
+      "aircraftId": "p47b",
+      "index": 3,
+      "altFt": 25000,
+      "tasMph": 252,
+      "observedFpm": 1810,
+      "rating": "military",
+      "gear": "turbo",
+      "weightLb": 12565,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 10.696769670291,
+        "observedBoostPsi": 9.468884289716,
+        "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription); absolute inHg converted to gauge psi for common MAP-ratio calculation"
+      },
+      "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription)",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "p47b-30000",
+      "aircraftId": "p47b",
+      "index": 4,
+      "altFt": 30000,
+      "tasMph": 265,
+      "observedFpm": 1190,
+      "rating": "military",
+      "gear": "turbo",
+      "weightLb": 12565,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 8.633922230925,
+        "observedBoostPsi": 5.44142024143,
+        "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription); absolute inHg converted to gauge psi for common MAP-ratio calculation"
+      },
+      "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription)",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "spitfire_lfix_bs543-2000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 0,
+      "altFt": 2000,
+      "tasMph": 176.5,
+      "observedFpm": 4640,
+      "rating": "combat+18",
+      "gear": "low",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 18,
+        "observedBoostPsi": 18,
+        "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds"
+      },
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "spitfire_lfix_bs543-4000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 1,
+      "altFt": 4000,
+      "tasMph": 182,
+      "observedFpm": 4660,
+      "rating": "combat+18",
+      "gear": "low",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 18,
+        "observedBoostPsi": 18,
+        "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds"
+      },
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "spitfire_lfix_bs543-6000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 2,
+      "altFt": 6000,
+      "tasMph": 187,
+      "observedFpm": 4690,
+      "rating": "combat+18",
+      "gear": "low",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 18,
+        "observedBoostPsi": 18,
+        "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds"
+      },
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "spitfire_lfix_bs543-7000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 3,
+      "altFt": 7000,
+      "tasMph": 190,
+      "observedFpm": 4700,
+      "rating": "combat+18",
+      "gear": "low",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 18,
+        "observedBoostPsi": 18,
+        "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds"
+      },
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "spitfire_lfix_bs543-8000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 4,
+      "altFt": 8000,
+      "tasMph": 193,
+      "observedFpm": 4560,
+      "rating": "combat+18",
+      "gear": "low",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 18,
+        "observedBoostPsi": 17,
+        "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds"
+      },
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "spitfire_lfix_bs543-10000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 5,
+      "altFt": 10000,
+      "tasMph": 199,
+      "observedFpm": 4280,
+      "rating": "combat+18",
+      "gear": "low",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 18,
+        "observedBoostPsi": 15.1,
+        "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds"
+      },
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "spitfire_lfix_bs543-12000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 6,
+      "altFt": 12000,
+      "tasMph": 205,
+      "observedFpm": 4000,
+      "rating": "combat+18",
+      "gear": "low",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 16.6,
+        "observedBoostPsi": 13.4,
+        "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds"
+      },
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "spitfire_lfix_bs543-14000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 7,
+      "altFt": 14000,
+      "tasMph": 211.5,
+      "observedFpm": 3860,
+      "rating": "combat+18",
+      "gear": "high",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": null,
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "No matched reference boost at this row; retain source engine law without charge correction"
+    },
+    {
+      "id": "spitfire_lfix_bs543-16000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 8,
+      "altFt": 16000,
+      "tasMph": 218.5,
+      "observedFpm": 3860,
+      "rating": "combat+18",
+      "gear": "high",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 18.5,
+        "observedBoostPsi": 18,
+        "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds"
+      },
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "spitfire_lfix_bs543-18000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 9,
+      "altFt": 18000,
+      "tasMph": 223,
+      "observedFpm": 3860,
+      "rating": "combat+18",
+      "gear": "high",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 18.5,
+        "observedBoostPsi": 18,
+        "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds"
+      },
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "spitfire_lfix_bs543-20000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 10,
+      "altFt": 20000,
+      "tasMph": 224,
+      "observedFpm": 3560,
+      "rating": "combat+18",
+      "gear": "high",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 18.5,
+        "observedBoostPsi": 15.8,
+        "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds"
+      },
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "spitfire_lfix_bs543-22000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 11,
+      "altFt": 22000,
+      "tasMph": 225,
+      "observedFpm": 3270,
+      "rating": "combat+18",
+      "gear": "high",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 18.5,
+        "observedBoostPsi": 13.8,
+        "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds"
+      },
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "spitfire_lfix_bs543-24000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 12,
+      "altFt": 24000,
+      "tasMph": 226,
+      "observedFpm": 2970,
+      "rating": "combat+18",
+      "gear": "high",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 15.6,
+        "observedBoostPsi": 11.9,
+        "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds"
+      },
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "spitfire_lfix_bs543-26000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 13,
+      "altFt": 26000,
+      "tasMph": 227,
+      "observedFpm": 2700,
+      "rating": "combat+18",
+      "gear": "high",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 13.6,
+        "observedBoostPsi": 10.1,
+        "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds"
+      },
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "spitfire_lfix_bs543-28000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 14,
+      "altFt": 28000,
+      "tasMph": 229,
+      "observedFpm": 2400,
+      "rating": "combat+18",
+      "gear": "high",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 11.6,
+        "observedBoostPsi": 8.4,
+        "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds"
+      },
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    },
+    {
+      "id": "spitfire_lfix_bs543-30000",
+      "aircraftId": "spitfire_lfix_bs543",
+      "index": 15,
+      "altFt": 30000,
+      "tasMph": 230,
+      "observedFpm": 2120,
+      "rating": "combat+18",
+      "gear": "high",
+      "weightLb": 7485,
+      "configuration": "source-climb",
+      "engineCondition": {
+        "referenceBoostPsi": 9.7,
+        "observedBoostPsi": 6.6,
+        "source": "A&AEE report BS.543 Table V level-speed measured boost and Table II measured climb boost, SAME Merlin 66 and selected gear, different flight speeds"
+      },
+      "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
+      "powerQualification": "Observed boost-ratio proxy; not measured climb torque"
+    }
+  ]
+}

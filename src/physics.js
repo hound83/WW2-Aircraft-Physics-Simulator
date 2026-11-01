@@ -46,18 +46,21 @@ function shaftPower(ac,alt,rating,gear){const rr=ac.powerRatings[rating||ac.defa
 // Constant-RPM absolute-MAP scaling is an explicit PROXY, not measured torque.
 // Nothing changes in the core solver unless the caller explicitly supplies
 // source-identified, condition-specific boost measurements.
-function shaftPowerAtMeasuredBoost(ac,alt,rating,gear,condition){
+function shaftPowerAtMeasuredBoost(ac,alt,rating,gear,condition,options={}){
  const baseline=shaftPower(ac,alt,rating,gear);
  if(!baseline)return null;
  const ref=condition?.referenceBoostPsi,actual=condition?.observedBoostPsi;
  if(!(Number.isFinite(ref)&&Number.isFinite(actual)&&
     ref>-14.6&&actual>-14.6&&typeof condition.source==='string'&&condition.source.trim()))return null;
- const ratio=Math.min(1,(14.6959+actual)/(14.6959+ref));
+ const pressureRatio=Math.min(1,(14.6959+actual)/(14.6959+ref)),exponent=options.chargeExponent??1;
+ if(!(Number.isFinite(exponent)&&exponent>=2/3&&exponent<=1))return null;
+ const ratio=pressureRatio**exponent;
  return {...baseline,bhp:baseline.bhp*ratio,
    condition:'observed same-aircraft, same-altitude, same-gear MAP correction',
+   ...(options.chargeExponent!==undefined?{chargeExponent:exponent,absolutePressureRatio:pressureRatio,powerFraction:ratio,chargeLawQualification:'Bounded engineering charge-density proxy; not an installed-engine calibration'}:{}),
    referenceBhp:baseline.bhp,referenceBoostPsi:ref,observedBoostPsi:actual,
    absoluteManifoldRatio:ratio,boostSource:condition.source,
-   accuracy:'provisional BHP ∝ absolute MAP at constant RPM; NOT a torque-meter reading'};
+   accuracy:options.chargeExponent===undefined?'provisional BHP ∝ absolute MAP at constant RPM; NOT a torque-meter reading':'v3.1 bounded charge-density power proxy; not measured climb torque'};
 }
 // v2.1: predict the *availability* of manifold pressure from flight-speed ram.
 // At the source-reported full-throttle altitude and speed, the engine just
@@ -317,7 +320,7 @@ function workingOptions(ac,opts={}){
 
 function evaluated(ac,alt,tasMph,opts={}){if(opts.profile==='P'&&!opts.polar)opts=workingOptions(ac,opts);const profile=opts.profile||'C',polar=opts.polar,e=polar?polar.e:(opts.e??.78),storesWeightLb=opts.storesWeightLb??0,addedDragAreaM2=opts.addedDragAreaM2??0,weight=(opts.weightLb??ac.weightLb)+storesWeightLb,clMax=opts.clMax??ac.clMaxAssumed,structG=opts.structG??7,rating=opts.rating||ac.defaultRating,gear=opts.gear||'auto';if(!(weight>0&&clMax>0&&e>0&&e<=1&&Number.isFinite(storesWeightLb)&&storesWeightLb>=0&&Number.isFinite(addedDragAreaM2)&&addedDragAreaM2>=0)||opts.engineCondition&&opts.engineModel)return {status:'invalid-input'};
  if(polar&&(opts.e!==undefined||opts.refit||!(polar.cd0>.005&&polar.cd0<.085)||typeof polar.source!=='string'||!polar.source.trim()))return {status:'invalid-polar-input',reason:'Explicit polar requires sourced CD0 and e; do not simultaneously refit or override e'};
- const shaft=opts.engineCondition?shaftPowerAtMeasuredBoost(ac,alt,rating,gear,opts.engineCondition):opts.engineModel==='ram-critical'?shaftPowerAtRamSpeed(ac,alt,tasMph,rating,gear,{recovery:opts.ramRecovery??1}):opts.engineModel===undefined?shaftPower(ac,alt,rating,gear):null;
+ const shaft=opts.engineCondition?shaftPowerAtMeasuredBoost(ac,alt,rating,gear,opts.engineCondition,{chargeExponent:opts.chargeExponent}):opts.engineModel==='ram-critical'?shaftPowerAtRamSpeed(ac,alt,tasMph,rating,gear,{recovery:opts.ramRecovery??1}):opts.engineModel===undefined?shaftPower(ac,alt,rating,gear):null;
  if(!shaft)return {status:'no-engine-source',aircraft:ac.name,altFt:alt,reason:opts.engineCondition?'No sourced same-condition boost data for power correction':'No source-bounded engine power at selected altitude/rating/gear'};
  const cdData=polar?{cd0:polar.cd0,valid:true,origin:polar.source}:cd0FromAnchor(ac,opts.refit?profile:'C',opts.refit?e:.78);
  if(!cdData||!cdData.valid)return {status:'no-credible-drag-anchor'};

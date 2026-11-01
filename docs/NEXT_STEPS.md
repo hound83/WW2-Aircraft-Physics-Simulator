@@ -1,11 +1,11 @@
 # Next steps
 
-## v3.0.0-rc.1 completed: supported conditions and scenario ranges
+## v3.1 completed: condition-aware P47/Spitfire climb
 
-The release candidate retains the v2.8 working model, exposes live input-domain coverage and gaps, separates historical evidence from numerical scenarios, and shows five exact Mustang chart-power ranges. Legacy panels and simulator/worksheet comparisons are explicitly qualified. See V3_RELEASE_CANDIDATE.md and the executed regression/browser records.
+The accepted engineering model reduces original reserved climb MAE by 39.5% for P47 and 29.3% for Spitfire, with unchanged clean speed and Mustang predictions. It uses recorded climb boost, a shared fitted power-response law and nonnegative configuration drag. The new application table uses fixed matched source conditions, not exploratory generic-flight controls. See V31_CLIMB_IMPROVEMENT.md for the fair refit comparisons, unfavorable alternate case and stress limits.
 
-## Next cohesive milestone: release-candidate acceptance review
+## Next cohesive milestone: high-altitude source-condition validation
 
-Review the four-aircraft output under a small set of agreed operational cases, especially practical speed/climb ordering and the remaining P47/Spitfire tradeoffs. Resolve any UI interpretation or comparison-policy issue before a stable working release. Keep source-independent turn/stall and historical 5:1 accuracy unresolved unless supported evidence is added. Do not expand aircraft scope or alter the Atlas.
+Test the fixed v3.1 law against additional compatible high-altitude climb conditions before extending it to general climb predictions. Prioritize the existing P47 30000-ft deficit and Spitfire reference/climb boost gaps, especially 14000 ft. Use retained source scans and indexed evidence first; acquire only the specific missing power/configuration records that could distinguish the remaining hypotheses. Keep the selected law fixed during validation and separate any subsequent recalibration.
 
-Acceptance: reviewed operational examples, explicit loading/rating/configuration policy, no silent unavailable results, regression/browser checks and a clear decision on whether to publish a stable practical v3.0. A stable software version must not be described as historical accuracy certification.
+Acceptance: source-matched identities, rating/gear, actual or explicitly qualified mass, airspeed and cooling state; before/after residuals and unresolved input gaps; no invented source interpolation; npm run check and the conditioned-climb browser smoke. No Atlas work, new aircraft or unsupported turn/stall claims.
