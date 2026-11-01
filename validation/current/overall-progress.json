@@ -1,0 +1,87 @@
+{
+  "version": "3.2.0",
+  "baselineCommit": "1400a07cf715b474a645ee48e49bb9e445c356ce",
+  "pr1Merge": "3394602fb4d5fdb23c85071892e9ca98d429f00a",
+  "policy": "Common observations and identical currently registered comparison conditions applied to both engines. This isolates model differences; it does not claim the old interface exposed all qualified comparisons. P47 climb data are 41-5931, not speed specimen 41-5902.",
+  "rows": [
+    {
+      "id": "p51b",
+      "metric": "speed",
+      "unit": "mph",
+      "count": 11,
+      "before": 2.487484812169896,
+      "now": 3.720416911238648,
+      "reductionPercent": -49.56541213987289
+    },
+    {
+      "id": "p51b",
+      "metric": "climb",
+      "unit": "ft/min",
+      "count": 2,
+      "before": 410.1877613998802,
+      "rawBefore": 410.1877613998802,
+      "now": 9.301218108906596,
+      "reductionPercent": 97.73244865298672
+    },
+    {
+      "id": "p47b",
+      "metric": "speed",
+      "unit": "mph",
+      "count": 5,
+      "before": 3.649356289075695,
+      "now": 0.8051874391452657,
+      "reductionPercent": 77.93617900352496
+    },
+    {
+      "id": "p47b",
+      "metric": "climb",
+      "unit": "ft/min",
+      "count": 5,
+      "before": 44.825541161507815,
+      "rawBefore": 546.3921695312317,
+      "now": 40.96463037504286,
+      "reductionPercent": 8.613193921193218
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "metric": "speed",
+      "unit": "mph",
+      "count": 20,
+      "before": 4.990090793307081,
+      "now": 4.632370329594323,
+      "reductionPercent": 7.168616334447209
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "metric": "climb",
+      "unit": "ft/min",
+      "count": 16,
+      "before": 103.88205168821466,
+      "rawBefore": 103.88205168821466,
+      "now": 77.45458661043963,
+      "reductionPercent": 25.43987594420336
+    },
+    {
+      "id": "bf109f4",
+      "metric": "speed",
+      "unit": "mph",
+      "count": 1,
+      "before": 3.374100244874171,
+      "now": 3.100364798036935,
+      "reductionPercent": 8.112842742389958
+    },
+    {
+      "id": "bf109f4",
+      "metric": "climb",
+      "unit": "ft/min",
+      "count": 0,
+      "before": null,
+      "rawBefore": null,
+      "now": null,
+      "reductionPercent": null
+    }
+  ],
+  "independentHistoricalAccuracy": null,
+  "turnStallAccuracyGain": null,
+  "qualification": "Common source checkpoints, including fitted and previously exposed checks. P47 climb uses different specimens; no pooled accuracy score."
+}

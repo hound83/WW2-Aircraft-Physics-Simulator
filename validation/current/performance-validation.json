@@ -852,7 +852,7 @@
       "id": "p47b-climb-rate-0",
       "aircraftId": "p47b",
       "variant": "P-47B",
-      "specimen": "41-5902",
+      "specimen": "41-5931",
       "metric": "climb-rate",
       "unit": "ft/min",
       "altFt": 15000,
@@ -869,26 +869,27 @@
       },
       "weight": {
         "valueLb": 12565,
-        "kind": "nominal-test",
-        "source": "PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables"
+        "kind": "scenario",
+        "source": "FS-M-19-1469-A pp.1-2, 7 September 1942, P-47B 41-5931"
       },
       "airspeed": {
         "kind": "TAS",
         "valueMph": 207,
         "verified": true,
-        "source": "PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables"
+        "source": "FS-M-19-1469-A pp.1-2, 7 September 1942, P-47B 41-5931"
       },
       "fitRole": "non-anchor-checkpoint",
       "independent": false,
       "errorBound": null,
       "source": {
-        "kind": "primary-transcription",
-        "reference": "PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables",
-        "url": "https://wwiiaircraftperformance.com/org/p-47/p-47.html",
-        "dependencyGroup": "p47b-415902-acceptance",
-        "inspection": "HTML transcription rechecked; earlier original scan inspection covered stall/loading/calibration, not a fresh visual verification of these performance tables"
+        "kind": "primary-scan",
+        "reference": "FS-M-19-1469-A pp.1-2, 7 September 1942, P-47B 41-5931",
+        "url": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5931_FS-M-19-1469-A.pdf",
+        "dependencyGroup": "p47b-415931-performance",
+        "inspection": "Original cover and climb table visually checked; distinct from 41-5902 acceptance report",
+        "specimen": "41-5931"
       },
-      "sourceNote": "Original intake duct/no dust screen additional climb table; 15,000-ft aggregate-loss fit is retained only as a separate conditional experiment",
+      "sourceNote": "Cross-specimen engineering comparison: 41-5931 climb, 41-5902 level-speed/power reference. Source gross 12560 lb; old 12565-lb calibration scenario retained. No climb torque meter.",
       "inputPath": "aircraft/cases.json:aircraft.p47b.observedClimb[0]",
       "prediction": {
         "aircraftId": "p47b",
@@ -925,6 +926,7 @@
       },
       "conditionStatus": "excluded",
       "exclusions": [
+        "specimen-not-matched",
         "point-weight-not-established",
         "gear-not-matched",
         "configuration-cooling-not-matched"
@@ -948,7 +950,7 @@
       "id": "p47b-climb-rate-1",
       "aircraftId": "p47b",
       "variant": "P-47B",
-      "specimen": "41-5902",
+      "specimen": "41-5931",
       "metric": "climb-rate",
       "unit": "ft/min",
       "altFt": 20000,
@@ -965,26 +967,27 @@
       },
       "weight": {
         "valueLb": 12565,
-        "kind": "nominal-test",
-        "source": "PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables"
+        "kind": "scenario",
+        "source": "FS-M-19-1469-A pp.1-2, 7 September 1942, P-47B 41-5931"
       },
       "airspeed": {
         "kind": "TAS",
         "valueMph": 233,
         "verified": true,
-        "source": "PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables"
+        "source": "FS-M-19-1469-A pp.1-2, 7 September 1942, P-47B 41-5931"
       },
       "fitRole": "non-anchor-checkpoint",
       "independent": false,
       "errorBound": null,
       "source": {
-        "kind": "primary-transcription",
-        "reference": "PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables",
-        "url": "https://wwiiaircraftperformance.com/org/p-47/p-47.html",
-        "dependencyGroup": "p47b-415902-acceptance",
-        "inspection": "HTML transcription rechecked; earlier original scan inspection covered stall/loading/calibration, not a fresh visual verification of these performance tables"
+        "kind": "primary-scan",
+        "reference": "FS-M-19-1469-A pp.1-2, 7 September 1942, P-47B 41-5931",
+        "url": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5931_FS-M-19-1469-A.pdf",
+        "dependencyGroup": "p47b-415931-performance",
+        "inspection": "Original cover and climb table visually checked; distinct from 41-5902 acceptance report",
+        "specimen": "41-5931"
       },
-      "sourceNote": "Original intake duct/no dust screen additional climb table; 15,000-ft aggregate-loss fit is retained only as a separate conditional experiment",
+      "sourceNote": "Cross-specimen engineering comparison: 41-5931 climb, 41-5902 level-speed/power reference. Source gross 12560 lb; old 12565-lb calibration scenario retained. No climb torque meter.",
       "inputPath": "aircraft/cases.json:aircraft.p47b.observedClimb[1]",
       "prediction": {
         "aircraftId": "p47b",
@@ -1021,6 +1024,7 @@
       },
       "conditionStatus": "excluded",
       "exclusions": [
+        "specimen-not-matched",
         "point-weight-not-established",
         "gear-not-matched",
         "configuration-cooling-not-matched"
@@ -1044,7 +1048,7 @@
       "id": "p47b-climb-rate-2",
       "aircraftId": "p47b",
       "variant": "P-47B",
-      "specimen": "41-5902",
+      "specimen": "41-5931",
       "metric": "climb-rate",
       "unit": "ft/min",
       "altFt": 23400,
@@ -1061,26 +1065,27 @@
       },
       "weight": {
         "valueLb": 12565,
-        "kind": "nominal-test",
-        "source": "PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables"
+        "kind": "scenario",
+        "source": "FS-M-19-1469-A pp.1-2, 7 September 1942, P-47B 41-5931"
       },
       "airspeed": {
         "kind": "TAS",
         "valueMph": 245,
         "verified": true,
-        "source": "PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables"
+        "source": "FS-M-19-1469-A pp.1-2, 7 September 1942, P-47B 41-5931"
       },
       "fitRole": "non-anchor-checkpoint",
       "independent": false,
       "errorBound": null,
       "source": {
-        "kind": "primary-transcription",
-        "reference": "PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables",
-        "url": "https://wwiiaircraftperformance.com/org/p-47/p-47.html",
-        "dependencyGroup": "p47b-415902-acceptance",
-        "inspection": "HTML transcription rechecked; earlier original scan inspection covered stall/loading/calibration, not a fresh visual verification of these performance tables"
+        "kind": "primary-scan",
+        "reference": "FS-M-19-1469-A pp.1-2, 7 September 1942, P-47B 41-5931",
+        "url": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5931_FS-M-19-1469-A.pdf",
+        "dependencyGroup": "p47b-415931-performance",
+        "inspection": "Original cover and climb table visually checked; distinct from 41-5902 acceptance report",
+        "specimen": "41-5931"
       },
-      "sourceNote": "Original intake duct/no dust screen additional climb table; 15,000-ft aggregate-loss fit is retained only as a separate conditional experiment",
+      "sourceNote": "Cross-specimen engineering comparison: 41-5931 climb, 41-5902 level-speed/power reference. Source gross 12560 lb; old 12565-lb calibration scenario retained. No climb torque meter.",
       "inputPath": "aircraft/cases.json:aircraft.p47b.observedClimb[2]",
       "prediction": {
         "aircraftId": "p47b",
@@ -1117,6 +1122,7 @@
       },
       "conditionStatus": "excluded",
       "exclusions": [
+        "specimen-not-matched",
         "point-weight-not-established",
         "gear-not-matched",
         "configuration-cooling-not-matched"
@@ -1140,7 +1146,7 @@
       "id": "p47b-climb-rate-3",
       "aircraftId": "p47b",
       "variant": "P-47B",
-      "specimen": "41-5902",
+      "specimen": "41-5931",
       "metric": "climb-rate",
       "unit": "ft/min",
       "altFt": 25000,
@@ -1157,26 +1163,27 @@
       },
       "weight": {
         "valueLb": 12565,
-        "kind": "nominal-test",
-        "source": "PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables"
+        "kind": "scenario",
+        "source": "FS-M-19-1469-A pp.1-2, 7 September 1942, P-47B 41-5931"
       },
       "airspeed": {
         "kind": "TAS",
         "valueMph": 252,
         "verified": true,
-        "source": "PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables"
+        "source": "FS-M-19-1469-A pp.1-2, 7 September 1942, P-47B 41-5931"
       },
       "fitRole": "non-anchor-checkpoint",
       "independent": false,
       "errorBound": null,
       "source": {
-        "kind": "primary-transcription",
-        "reference": "PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables",
-        "url": "https://wwiiaircraftperformance.com/org/p-47/p-47.html",
-        "dependencyGroup": "p47b-415902-acceptance",
-        "inspection": "HTML transcription rechecked; earlier original scan inspection covered stall/loading/calibration, not a fresh visual verification of these performance tables"
+        "kind": "primary-scan",
+        "reference": "FS-M-19-1469-A pp.1-2, 7 September 1942, P-47B 41-5931",
+        "url": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5931_FS-M-19-1469-A.pdf",
+        "dependencyGroup": "p47b-415931-performance",
+        "inspection": "Original cover and climb table visually checked; distinct from 41-5902 acceptance report",
+        "specimen": "41-5931"
       },
-      "sourceNote": "Original intake duct/no dust screen additional climb table; 15,000-ft aggregate-loss fit is retained only as a separate conditional experiment",
+      "sourceNote": "Cross-specimen engineering comparison: 41-5931 climb, 41-5902 level-speed/power reference. Source gross 12560 lb; old 12565-lb calibration scenario retained. No climb torque meter.",
       "inputPath": "aircraft/cases.json:aircraft.p47b.observedClimb[3]",
       "prediction": {
         "aircraftId": "p47b",
@@ -1213,6 +1220,7 @@
       },
       "conditionStatus": "excluded",
       "exclusions": [
+        "specimen-not-matched",
         "point-weight-not-established",
         "gear-not-matched",
         "configuration-cooling-not-matched"
@@ -1236,7 +1244,7 @@
       "id": "p47b-climb-rate-4",
       "aircraftId": "p47b",
       "variant": "P-47B",
-      "specimen": "41-5902",
+      "specimen": "41-5931",
       "metric": "climb-rate",
       "unit": "ft/min",
       "altFt": 30000,
@@ -1253,26 +1261,27 @@
       },
       "weight": {
         "valueLb": 12565,
-        "kind": "nominal-test",
-        "source": "PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables"
+        "kind": "scenario",
+        "source": "FS-M-19-1469-A pp.1-2, 7 September 1942, P-47B 41-5931"
       },
       "airspeed": {
         "kind": "TAS",
         "valueMph": 265,
         "verified": true,
-        "source": "PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables"
+        "source": "FS-M-19-1469-A pp.1-2, 7 September 1942, P-47B 41-5931"
       },
       "fitRole": "non-anchor-checkpoint",
       "independent": false,
       "errorBound": null,
       "source": {
-        "kind": "primary-transcription",
-        "reference": "PHQ-M-19-1417-A, 18 June 1942, A.1 and B test-result tables",
-        "url": "https://wwiiaircraftperformance.com/org/p-47/p-47.html",
-        "dependencyGroup": "p47b-415902-acceptance",
-        "inspection": "HTML transcription rechecked; earlier original scan inspection covered stall/loading/calibration, not a fresh visual verification of these performance tables"
+        "kind": "primary-scan",
+        "reference": "FS-M-19-1469-A pp.1-2, 7 September 1942, P-47B 41-5931",
+        "url": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5931_FS-M-19-1469-A.pdf",
+        "dependencyGroup": "p47b-415931-performance",
+        "inspection": "Original cover and climb table visually checked; distinct from 41-5902 acceptance report",
+        "specimen": "41-5931"
       },
-      "sourceNote": "Original intake duct/no dust screen additional climb table; 15,000-ft aggregate-loss fit is retained only as a separate conditional experiment",
+      "sourceNote": "Cross-specimen engineering comparison: 41-5931 climb, 41-5902 level-speed/power reference. Source gross 12560 lb; old 12565-lb calibration scenario retained. No climb torque meter.",
       "inputPath": "aircraft/cases.json:aircraft.p47b.observedClimb[4]",
       "prediction": {
         "aircraftId": "p47b",
@@ -1309,6 +1318,7 @@
       },
       "conditionStatus": "excluded",
       "exclusions": [
+        "specimen-not-matched",
         "point-weight-not-established",
         "gear-not-matched",
         "configuration-cooling-not-matched"

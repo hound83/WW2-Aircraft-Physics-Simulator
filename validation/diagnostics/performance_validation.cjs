@@ -9,12 +9,12 @@ function boostAt(nodes,alt){
  return null;
 }
 function observation(id,metric,index,point,condition){
- const ac=D.aircraft[id],entry=ledger.aircraft[id],identity=ac.stallIdentity;
- return {id:id+'-'+metric+'-'+index,aircraftId:id,variant:identity.variant,specimen:identity.specimen,metric,unit:metric==='level-speed'?'mph-TAS':'ft/min',altFt:point.altFt,value:metric==='level-speed'?point.mphTas:point.fpm,
+ const ac=D.aircraft[id],entry=ledger.aircraft[id],identity=ac.stallIdentity,source=condition.source||entry.source;
+ return {id:id+'-'+metric+'-'+index,aircraftId:id,variant:identity.variant,specimen:condition.specimen||identity.specimen,metric,unit:metric==='level-speed'?'mph-TAS':'ft/min',altFt:point.altFt,value:metric==='level-speed'?point.mphTas:point.fpm,
   rating:point.rating,gear:point.gear??null,engineRpm:condition.rpmByRating?.[point.rating]??point.engineRpm??null,atmosphere:'standard',configuration:condition.configuration,
-  weight:{valueLb:condition.weightLb??null,kind:condition.weightKind??'unknown',source:entry.source.reference},
-  airspeed:{kind:'TAS',valueMph:metric==='level-speed'?point.mphTas:point.tasMph??null,verified:entry.source.kind==='primary-transcription',source:entry.source.reference},
-  fitRole:metric==='level-speed'?G.anchorRole(ac,point):'non-anchor-checkpoint',independent:false,errorBound:null,source:entry.source,sourceNote:condition.note,
+  weight:{valueLb:condition.weightLb??null,kind:condition.weightKind??'unknown',source:source.reference},
+  airspeed:{kind:'TAS',valueMph:metric==='level-speed'?point.mphTas:point.tasMph??null,verified:['primary-transcription','primary-scan'].includes(source.kind),source:source.reference},
+  fitRole:metric==='level-speed'?G.anchorRole(ac,point):'non-anchor-checkpoint',independent:false,errorBound:null,source,sourceNote:condition.note,
   inputPath:'aircraft/cases.json:aircraft.'+id+'.'+(metric==='level-speed'?'observedSpeed':'observedClimb')+'['+index+']'};
 }
 function prediction(o,value,extra={}){

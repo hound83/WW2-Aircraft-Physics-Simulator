@@ -1,5 +1,13 @@
 # Current decisions
 
+## v3.2: fixed-model high-altitude validation and corrected P47 identity
+
+Keep calibration/v3.1-climb-model.json unchanged. Register six additional source observations; evaluate Spitfire 32000/34000 ft within existing engine inputs. The 32000-ft boost transcription is suspect and remains diagnostic-only. The 34000-ft prediction misses low by 261.8 ft/min. No extrapolation or correction curve is accepted.
+
+Original FS-M-19-1469-A pp.1-2 identifies the five existing P47 climb points as 41-5931, gross 12560 lb, eight guns and no torque meter. They were mislabeled as speed/power specimen 41-5902, 12565 lb, six guns with torque meter. Correct active metadata and the per-metric validation gate. Keep the old 12565-lb calibration scenario for reproducibility and require explicit cross-specimen engineering transfer; strict source matching rejects it. Earlier gains remain numerical engineering results, not same-specimen validation. Sources and hashes are in references/high-altitude-validation-v32.json.
+
+Use the actual first parent of PR1, 1400a07cf715b474a645ee48e49bb9e445c356ce, for overall progress. Compare the stronger pre-existing P47 conditional climb fit, report the Mustang speed regression, and avoid a pooled accuracy claim. See OVERALL_PROGRESS_PRE_PR1_TO_NOW.md.
+
 ## 2026-10-29: GitHub-first setup
 
 1. Use a separate physics repository, `hound83/WW2-Aircraft-Physics-Simulator`. The Atlas website remains separate.
