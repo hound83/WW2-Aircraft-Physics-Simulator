@@ -1,5 +1,8 @@
 # Known limitations
 
+- **v3.2 new high-altitude check:** Spitfire 34000 ft predicts 1288 vs 1550 ft/min. The 32000-ft boost is a suspect transcription and diagnostic-only. Original Spitfire pixels remain unverified; 14000-ft high-gear reference boost remains absent. Higher engine-domain gaps are not extrapolated.
+- **P47 climb provenance corrected:** 41-5931 climb versus 41-5902 speed/power reference, different guns, equipment and source gross weights. Existing 12565-lb calibration is an explicitly qualified transfer scenario. Earlier numerical gains are not same-specimen historical validation. Original same-specimen 41-5902 high-altitude torque points use 2550 rpm rather than level 2700 rpm; an RPM transfer remains unresolved.
+
 - **v3.0 is not built or historically validated.** Passing tests preserve behavior and evidence guardrails.
 - No verified, aircraft-matched low-speed IAS-to-CAS correction currently supports a precise clean historical CLmax for any of the four benchmark aircraft. Sensitivity offsets are hypothetical, not measurements.
 - P-51B at 2,200 ft: candidate C predicts about 3,401 and 3,979 ft/min versus reported 3,820 and 4,380, a deficit of approximately 419 and 401 ft/min. Reported climb airspeed is missing; do not silently treat optimized model speed as matched.

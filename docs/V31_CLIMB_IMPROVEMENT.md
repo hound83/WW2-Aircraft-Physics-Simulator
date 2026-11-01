@@ -1,5 +1,7 @@
 # v3.1 condition-aware climb improvement
 
+Provenance correction in v3.2: the P47 climb rows are 41-5931, not speed/power specimen 41-5902. Numbers below remain reproducible cross-specimen engineering benchmarks. The calibration scenario remains 12565 lb; the original report says 12560 lb. No coefficients were refitted.
+
 A shared charge-density power proxy improves P47 and Spitfire matched-source climb calculations. The new API is UniversalClimbConditions.evaluate(physics, aircraft, sourceState, calibration, optionalScenario). The application computes these same fixed report-state predictions. Generic clean speed/power/turn controls retain their previous calibration.
 
 ## Before and after, original reserved rows

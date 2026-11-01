@@ -2,7 +2,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs');
 const M=require('../src/physics.js'),D=require('../aircraft/cases.json'),C=require('../src/climb-conditions.js'),R=require('../validation/diagnostics/climb_improvement_v31.cjs');
 const states=require('../references/climb-condition-states.json').states,model=require('../calibration/v3.1-climb-model.json'),report=require('../validation/current/v31-climb-improvement.json');
-assert.equal(model.version,require('../package.json').version);assert.equal(report.acceptance.pass,true);
+assert.equal(model.version,'3.1.0','v3.2 retains the fixed v3.1 calibration');assert.equal(report.acceptance.pass,true);
 for(const p of report.acceptance.primary)assert.ok(p.reduction>=.2,p.id+' reserved target');assert.ok(report.acceptance.cleanSpeedMaxDeltaMph<1e-7);assert.ok(report.acceptance.mustangMaxDeltaFpm<1e-7);
 assert.equal(model.chargeExponent,report.selected.model.chargeExponent);assert.equal(model.heatFraction,report.selected.model.heatFraction);assert.deepEqual(Object.keys(model.aircraft),Object.keys(report.selected.model.aircraft));for(const id of Object.keys(model.aircraft)){const a=model.aircraft[id],b=report.selected.model.aircraft[id];for(const key of ['deltaCd0','unbounded'])assert.ok(Math.abs(a[key]-b[key])<1e-12,id+' fitted coefficient across runtimes');assert.equal(a.clipped,b.clipped);assert.deepEqual(a.reference,b.reference);}
 const close=(a,b,label)=>assert.ok(Math.abs(a-b)<1e-6,label+': '+a+' versus '+b);

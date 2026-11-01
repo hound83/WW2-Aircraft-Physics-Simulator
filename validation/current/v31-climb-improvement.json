@@ -60,10 +60,15 @@
           "engineCondition": {
             "referenceBoostPsi": 10.352961763729999,
             "observedBoostPsi": 10.745885085513999,
-            "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription); absolute inHg converted to gauge psi for common MAP-ratio calculation"
+            "source": "41-5931 recorded climb MAP combined with 41-5902 level-power/MAP curve; cross-specimen engineering proxy, not measured climb torque"
           },
-          "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription)",
+          "source": "FS-M-19-1469-A pp.1-2, P-47B 41-5931, 7 September 1942; no torque meter installed; eight guns, original duct, open cooling",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "41-5931",
+          "targetSpecimen": "41-5902",
+          "transferPolicy": "same-variant-engineering",
+          "reportedGrossWeightLb": 12560,
+          "massQualification": "Calibration scenario 12565 lb retained; source gross as tested was 12560 lb, instantaneous climb mass unverified",
           "stateId": "p47b-15000",
           "predictedFpm": 2383.466890771822,
           "error": 53.46689077182191,
@@ -85,10 +90,15 @@
           "engineCondition": {
             "referenceBoostPsi": 10.5248657170105,
             "observedBoostPsi": 10.844115915959998,
-            "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription); absolute inHg converted to gauge psi for common MAP-ratio calculation"
+            "source": "41-5931 recorded climb MAP combined with 41-5902 level-power/MAP curve; cross-specimen engineering proxy, not measured climb torque"
           },
-          "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription)",
+          "source": "FS-M-19-1469-A pp.1-2, P-47B 41-5931, 7 September 1942; no torque meter installed; eight guns, original duct, open cooling",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "41-5931",
+          "targetSpecimen": "41-5902",
+          "transferPolicy": "same-variant-engineering",
+          "reportedGrossWeightLb": 12560,
+          "massQualification": "Calibration scenario 12565 lb retained; source gross as tested was 12560 lb, instantaneous climb mass unverified",
           "stateId": "p47b-20000",
           "predictedFpm": 2146.6139743723843,
           "error": -3.386025627615709,
@@ -110,10 +120,15 @@
           "engineCondition": {
             "referenceBoostPsi": 10.641760405241238,
             "observedBoostPsi": 10.942346746406,
-            "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription); absolute inHg converted to gauge psi for common MAP-ratio calculation"
+            "source": "41-5931 recorded climb MAP combined with 41-5902 level-power/MAP curve; cross-specimen engineering proxy, not measured climb torque"
           },
-          "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription)",
+          "source": "FS-M-19-1469-A pp.1-2, P-47B 41-5931, 7 September 1942; no torque meter installed; eight guns, original duct, open cooling",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "41-5931",
+          "targetSpecimen": "41-5902",
+          "transferPolicy": "same-variant-engineering",
+          "reportedGrossWeightLb": 12560,
+          "massQualification": "Calibration scenario 12565 lb retained; source gross as tested was 12560 lb, instantaneous climb mass unverified",
           "stateId": "p47b-23400",
           "predictedFpm": 2040.6644254584887,
           "error": 40.66442545848872,
@@ -135,10 +150,15 @@
           "engineCondition": {
             "referenceBoostPsi": 10.696769670291,
             "observedBoostPsi": 9.468884289716,
-            "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription); absolute inHg converted to gauge psi for common MAP-ratio calculation"
+            "source": "41-5931 recorded climb MAP combined with 41-5902 level-power/MAP curve; cross-specimen engineering proxy, not measured climb torque"
           },
-          "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription)",
+          "source": "FS-M-19-1469-A pp.1-2, P-47B 41-5931, 7 September 1942; no torque meter installed; eight guns, original duct, open cooling",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "41-5931",
+          "targetSpecimen": "41-5902",
+          "transferPolicy": "same-variant-engineering",
+          "reportedGrossWeightLb": 12560,
+          "massQualification": "Calibration scenario 12565 lb retained; source gross as tested was 12560 lb, instantaneous climb mass unverified",
           "stateId": "p47b-25000",
           "predictedFpm": 1768.3882875741754,
           "error": -41.611712425824635,
@@ -160,10 +180,15 @@
           "engineCondition": {
             "referenceBoostPsi": 8.633922230925,
             "observedBoostPsi": 5.44142024143,
-            "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription); absolute inHg converted to gauge psi for common MAP-ratio calculation"
+            "source": "41-5931 recorded climb MAP combined with 41-5902 level-power/MAP curve; cross-specimen engineering proxy, not measured climb torque"
           },
-          "source": "Wright Field PHQ-M-19-1417-A, same P-47B 41-5902, climb with original intake duct (HTML transcription)",
+          "source": "FS-M-19-1469-A pp.1-2, P-47B 41-5931, 7 September 1942; no torque meter installed; eight guns, original duct, open cooling",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "41-5931",
+          "targetSpecimen": "41-5902",
+          "transferPolicy": "same-variant-engineering",
+          "reportedGrossWeightLb": 12560,
+          "massQualification": "Calibration scenario 12565 lb retained; source gross as tested was 12560 lb, instantaneous climb mass unverified",
           "stateId": "p47b-30000",
           "predictedFpm": 979.9780782399142,
           "error": -210.02192176008577,
@@ -213,6 +238,8 @@
           },
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-2000",
           "predictedFpm": 4569.625336455533,
           "error": -70.37466354446678,
@@ -238,6 +265,8 @@
           },
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-4000",
           "predictedFpm": 4662.273695703259,
           "error": 2.2736957032593637,
@@ -263,6 +292,8 @@
           },
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-6000",
           "predictedFpm": 4741.098293173969,
           "error": 51.09829317396907,
@@ -288,6 +319,8 @@
           },
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-7000",
           "predictedFpm": 4722.7122813983415,
           "error": 22.712281398341474,
@@ -313,6 +346,8 @@
           },
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-8000",
           "predictedFpm": 4522.741169520127,
           "error": -37.25883047987281,
@@ -338,6 +373,8 @@
           },
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-10000",
           "predictedFpm": 4136.27854625432,
           "error": -143.72145374568026,
@@ -363,6 +400,8 @@
           },
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-12000",
           "predictedFpm": 3781.5265630414315,
           "error": -218.47343695856853,
@@ -384,6 +423,8 @@
           "engineCondition": null,
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "No matched reference boost at this row; retain source engine law without charge correction",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-14000",
           "predictedFpm": 4025.928952918563,
           "error": 165.92895291856303,
@@ -409,6 +450,8 @@
           },
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-16000",
           "predictedFpm": 4011.2297457392447,
           "error": 151.22974573924466,
@@ -434,6 +477,8 @@
           },
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-18000",
           "predictedFpm": 3979.5802597092265,
           "error": 119.58025970922654,
@@ -459,6 +504,8 @@
           },
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-20000",
           "predictedFpm": 3595.7155965377665,
           "error": 35.71559653776649,
@@ -484,6 +531,8 @@
           },
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-22000",
           "predictedFpm": 3239.974198929459,
           "error": -30.025801070541092,
@@ -509,6 +558,8 @@
           },
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-24000",
           "predictedFpm": 2898.0800573295087,
           "error": -71.91994267049131,
@@ -534,6 +585,8 @@
           },
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-26000",
           "predictedFpm": 2563.4577420244614,
           "error": -136.54225797553863,
@@ -559,6 +612,8 @@
           },
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-28000",
           "predictedFpm": 2235.4071799442004,
           "error": -164.59282005579962,
@@ -584,6 +639,8 @@
           },
           "source": "A&AEE BS.543 Table II climb, Table V level-flight boost; existing qualified transcription",
           "powerQualification": "Observed boost-ratio proxy; not measured climb torque",
+          "sourceSpecimen": "BS.543",
+          "targetSpecimen": "BS.543",
           "stateId": "spitfire_lfix_bs543-30000",
           "predictedFpm": 1887.7766942215223,
           "error": -232.22330577847765,
@@ -903,8 +960,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.0037216416204347218,
-          "unbounded": 0.0037216416204347218,
+          "deltaCd0": 0.003721641620434722,
+          "unbounded": 0.003721641620434722,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -918,6 +975,9 @@
     },
     "rows": [
       {
+        "sourceSpecimen": "41-5931",
+        "targetSpecimen": "41-5902",
+        "validationEligibility": "cross-specimen engineering only",
         "stateId": "p47b-15000",
         "aircraftId": "p47b",
         "altFt": 15000,
@@ -938,6 +998,9 @@
         "split": "fit"
       },
       {
+        "sourceSpecimen": "41-5931",
+        "targetSpecimen": "41-5902",
+        "validationEligibility": "cross-specimen engineering only",
         "stateId": "p47b-20000",
         "aircraftId": "p47b",
         "altFt": 20000,
@@ -958,6 +1021,9 @@
         "split": "check"
       },
       {
+        "sourceSpecimen": "41-5931",
+        "targetSpecimen": "41-5902",
+        "validationEligibility": "cross-specimen engineering only",
         "stateId": "p47b-23400",
         "aircraftId": "p47b",
         "altFt": 23400,
@@ -978,6 +1044,9 @@
         "split": "check"
       },
       {
+        "sourceSpecimen": "41-5931",
+        "targetSpecimen": "41-5902",
+        "validationEligibility": "cross-specimen engineering only",
         "stateId": "p47b-25000",
         "aircraftId": "p47b",
         "altFt": 25000,
@@ -998,6 +1067,9 @@
         "split": "fit"
       },
       {
+        "sourceSpecimen": "41-5931",
+        "targetSpecimen": "41-5902",
+        "validationEligibility": "cross-specimen engineering only",
         "stateId": "p47b-30000",
         "aircraftId": "p47b",
         "altFt": 30000,
@@ -1018,6 +1090,9 @@
         "split": "check"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-2000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 2000,
@@ -1030,7 +1105,7 @@
         "error": -118.53440812876124,
         "shaftHp": 1636.5217391304348,
         "propulsiveHp": 1385.7003390346692,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 4661.787202228519,
         "dragSlopeFpmPerCd0": 37704.22422539443,
@@ -1038,6 +1113,9 @@
         "split": "fit"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-4000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 4000,
@@ -1050,7 +1128,7 @@
         "error": -47.46703092482858,
         "shaftHp": 1673.0434782608695,
         "propulsiveHp": 1417.7216917660098,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 4757.4610396254175,
         "dragSlopeFpmPerCd0": 38941.97376061319,
@@ -1058,6 +1136,9 @@
         "split": "check"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-6000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 6000,
@@ -1070,7 +1151,7 @@
         "error": 0.3173097418712132,
         "shaftHp": 1705,
         "propulsiveHp": 1444.9949287231154,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 4838.2763454931155,
         "dragSlopeFpmPerCd0": 39756.38995258018,
@@ -1078,6 +1159,9 @@
         "split": "check"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-7000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 7000,
@@ -1090,7 +1174,7 @@
         "error": -28.94533208872963,
         "shaftHp": 1705,
         "propulsiveHp": 1446.8489440378823,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 4821.567914488654,
         "dragSlopeFpmPerCd0": 40442.70289798104,
@@ -1098,6 +1182,9 @@
         "split": "check"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-8000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 8000,
@@ -1110,7 +1197,7 @@
         "error": -44.89621070786234,
         "shaftHp": 1665.73812936611,
         "propulsiveHp": 1417.6369844013423,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 4668.066882658788,
         "dragSlopeFpmPerCd0": 41100.9733698289,
@@ -1118,6 +1205,9 @@
         "split": "fit"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-10000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 10000,
@@ -1130,7 +1220,7 @@
         "error": -69.41378425533912,
         "shaftHp": 1590.273390267474,
         "propulsiveHp": 1360.6912969247867,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 4368.122501149266,
         "dragSlopeFpmPerCd0": 42329.78379743004,
@@ -1138,6 +1228,9 @@
         "split": "check"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-12000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 12000,
@@ -1150,7 +1243,7 @@
         "error": -131.7504901061293,
         "shaftHp": 1505.2019247626636,
         "propulsiveHp": 1294.896543343583,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 4029.903538593608,
         "dragSlopeFpmPerCd0": 43436.21577256921,
@@ -1158,6 +1251,9 @@
         "split": "check"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-14000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 14000,
@@ -1170,7 +1266,7 @@
         "error": 108.79371770050966,
         "shaftHp": 1546.6666666666667,
         "propulsiveHp": 1330.7586641784153,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 4135.266947223279,
         "dragSlopeFpmPerCd0": 44731.12842327328,
@@ -1178,6 +1274,9 @@
         "split": "check"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-16000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 16000,
@@ -1190,14 +1289,17 @@
         "error": 113.24897428965369,
         "shaftHp": 1562.1175929036096,
         "propulsiveHp": 1346.006130204116,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 4145.209190576201,
-        "dragSlopeFpmPerCd0": 46205.47424026106,
+        "dragSlopeFpmPerCd0": 46205.474240261065,
         "chargeLawApplied": true,
         "split": "fit"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-18000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 18000,
@@ -1210,7 +1312,7 @@
         "error": 81.88841514670321,
         "shaftHp": 1562.1175929036096,
         "propulsiveHp": 1345.5644315098482,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 4112.971596275063,
         "dragSlopeFpmPerCd0": 45969.81609627561,
@@ -1218,6 +1320,9 @@
         "split": "check"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-20000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 20000,
@@ -1230,7 +1335,7 @@
         "error": 90.74669143200026,
         "shaftHp": 1482.6028900629838,
         "propulsiveHp": 1276.9368814328975,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 3812.853251608744,
         "dragSlopeFpmPerCd0": 43557.81035970839,
@@ -1238,6 +1343,9 @@
         "split": "check"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-22000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 22000,
@@ -1250,7 +1358,7 @@
         "error": 105.09253583769578,
         "shaftHp": 1409.0634012686899,
         "propulsiveHp": 1213.2730174208361,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 3528.518196180947,
         "dragSlopeFpmPerCd0": 41225.26448194369,
@@ -1258,6 +1366,9 @@
         "split": "check"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-24000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 24000,
@@ -1270,7 +1381,7 @@
         "error": 27.758654333543745,
         "shaftHp": 1308.6527046109286,
         "propulsiveHp": 1128.0958781644558,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 3142.797531126525,
         "dragSlopeFpmPerCd0": 38971.74724604466,
@@ -1278,6 +1389,9 @@
         "split": "fit"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-26000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 26000,
@@ -1290,7 +1404,7 @@
         "error": -42.060432844566094,
         "shaftHp": 1220.6975090594335,
         "propulsiveHp": 1053.0879675779704,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 2794.8838736504363,
         "dragSlopeFpmPerCd0": 36796.74731021072,
@@ -1298,6 +1412,9 @@
         "split": "check"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-28000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 28000,
@@ -1310,7 +1427,7 @@
         "error": -79.65977914957102,
         "shaftHp": 1136.433633405245,
         "propulsiveHp": 981.990741601233,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 2451.18664480597,
         "dragSlopeFpmPerCd0": 35158.2546362555,
@@ -1318,6 +1435,9 @@
         "split": "check"
       },
       {
+        "sourceSpecimen": "BS.543",
+        "targetSpecimen": "BS.543",
+        "validationEligibility": "same-specimen qualified source scenario",
         "stateId": "spitfire_lfix_bs543-30000",
         "aircraftId": "spitfire_lfix_bs543",
         "altFt": 30000,
@@ -1330,7 +1450,7 @@
         "error": -148.69961907926927,
         "shaftHp": 1049.985645172587,
         "propulsiveHp": 908.3594756624482,
-        "configurationDeltaCd0": 0.0037216416204347218,
+        "configurationDeltaCd0": 0.003721641620434722,
         "configurationFactor": 1,
         "rawFpm": 2094.5233919352418,
         "dragSlopeFpmPerCd0": 33109.85403595241,
@@ -1374,8 +1494,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.0037216416204347218,
-          "unbounded": 0.0037216416204347218,
+          "deltaCd0": 0.003721641620434722,
+          "unbounded": 0.003721641620434722,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -1403,8 +1523,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.003347566989241203,
-          "unbounded": 0.003347566989241203,
+          "deltaCd0": 0.0033475669892412034,
+          "unbounded": 0.0033475669892412034,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -1490,8 +1610,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.0038763274976181777,
-          "unbounded": 0.0038763274976181777,
+          "deltaCd0": 0.003876327497618178,
+          "unbounded": 0.003876327497618178,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -1519,8 +1639,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.002564046681371671,
-          "unbounded": 0.002564046681371671,
+          "deltaCd0": 0.0025640466813716713,
+          "unbounded": 0.0025640466813716713,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -1577,8 +1697,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.0024443379400155814,
-          "unbounded": 0.0024443379400155814,
+          "deltaCd0": 0.002444337940015582,
+          "unbounded": 0.002444337940015582,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -1606,8 +1726,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.0026714348205896265,
-          "unbounded": 0.0026714348205896265,
+          "deltaCd0": 0.002671434820589627,
+          "unbounded": 0.002671434820589627,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -1617,7 +1737,7 @@
         }
       },
       "split": "original",
-      "score": 0.094271819545786
+      "score": 0.09427181954578615
     },
     {
       "version": "3.1.0",
@@ -1664,8 +1784,8 @@
           }
         },
         "spitfire_lfix_bs543": {
-          "deltaCd0": 0.0040094848935747045,
-          "unbounded": 0.0040094848935747045,
+          "deltaCd0": 0.004009484893574704,
+          "unbounded": 0.004009484893574704,
           "clipped": false,
           "reference": {
             "altFt": 2000,
@@ -1742,6 +1862,9 @@
         },
         "rows": [
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-15000",
             "aircraftId": "p47b",
             "altFt": 15000,
@@ -1762,6 +1885,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-20000",
             "aircraftId": "p47b",
             "altFt": 20000,
@@ -1782,6 +1908,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-23400",
             "aircraftId": "p47b",
             "altFt": 23400,
@@ -1802,6 +1931,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-25000",
             "aircraftId": "p47b",
             "altFt": 25000,
@@ -1822,6 +1954,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-30000",
             "aircraftId": "p47b",
             "altFt": 30000,
@@ -1842,6 +1977,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-2000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 2000,
@@ -1862,6 +2000,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-4000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 4000,
@@ -1882,6 +2023,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-6000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 6000,
@@ -1902,6 +2046,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-7000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 7000,
@@ -1922,6 +2069,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-8000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 8000,
@@ -1942,6 +2092,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-10000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 10000,
@@ -1962,6 +2115,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-12000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 12000,
@@ -1982,6 +2138,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-14000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 14000,
@@ -2002,6 +2161,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-16000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 16000,
@@ -2017,11 +2179,14 @@
             "configurationDeltaCd0": 0.0039221730787364385,
             "configurationFactor": 1,
             "rawFpm": 4152.237502869326,
-            "dragSlopeFpmPerCd0": 46205.47424026106,
+            "dragSlopeFpmPerCd0": 46205.474240261065,
             "chargeLawApplied": true,
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-18000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 18000,
@@ -2042,6 +2207,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-20000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 20000,
@@ -2062,6 +2230,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-22000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 22000,
@@ -2082,6 +2253,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-24000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 24000,
@@ -2102,6 +2276,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-26000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 26000,
@@ -2122,6 +2299,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-28000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 28000,
@@ -2142,6 +2322,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-30000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 30000,
@@ -2213,6 +2396,9 @@
         },
         "rows": [
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-15000",
             "aircraftId": "p47b",
             "altFt": 15000,
@@ -2233,6 +2419,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-20000",
             "aircraftId": "p47b",
             "altFt": 20000,
@@ -2253,6 +2442,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-23400",
             "aircraftId": "p47b",
             "altFt": 23400,
@@ -2273,6 +2465,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-25000",
             "aircraftId": "p47b",
             "altFt": 25000,
@@ -2293,6 +2488,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-30000",
             "aircraftId": "p47b",
             "altFt": 30000,
@@ -2313,6 +2511,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-2000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 2000,
@@ -2333,6 +2534,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-4000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 4000,
@@ -2353,6 +2557,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-6000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 6000,
@@ -2373,6 +2580,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-7000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 7000,
@@ -2393,6 +2603,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-8000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 8000,
@@ -2413,6 +2626,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-10000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 10000,
@@ -2433,6 +2649,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-12000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 12000,
@@ -2453,6 +2672,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-14000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 14000,
@@ -2473,6 +2695,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-16000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 16000,
@@ -2488,11 +2713,14 @@
             "configurationDeltaCd0": 0.001629287526532074,
             "configurationFactor": 1,
             "rawFpm": 4124.171539461127,
-            "dragSlopeFpmPerCd0": 46205.47424026106,
+            "dragSlopeFpmPerCd0": 46205.474240261065,
             "chargeLawApplied": true,
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-18000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 18000,
@@ -2513,6 +2741,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-20000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 20000,
@@ -2533,6 +2764,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-22000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 22000,
@@ -2553,6 +2787,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-24000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 24000,
@@ -2573,6 +2810,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-26000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 26000,
@@ -2593,6 +2833,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-28000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 28000,
@@ -2613,6 +2856,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-30000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 30000,
@@ -2715,6 +2961,9 @@
         },
         "rows": [
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-15000",
             "aircraftId": "p47b",
             "altFt": 15000,
@@ -2735,6 +2984,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-20000",
             "aircraftId": "p47b",
             "altFt": 20000,
@@ -2755,6 +3007,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-23400",
             "aircraftId": "p47b",
             "altFt": 23400,
@@ -2775,6 +3030,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-25000",
             "aircraftId": "p47b",
             "altFt": 25000,
@@ -2795,6 +3053,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-30000",
             "aircraftId": "p47b",
             "altFt": 30000,
@@ -2815,6 +3076,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-2000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 2000,
@@ -2835,6 +3099,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-4000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 4000,
@@ -2855,6 +3122,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-6000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 6000,
@@ -2875,6 +3145,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-7000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 7000,
@@ -2895,6 +3168,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-8000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 8000,
@@ -2915,6 +3191,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-10000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 10000,
@@ -2935,6 +3214,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-12000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 12000,
@@ -2955,6 +3237,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-14000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 14000,
@@ -2975,6 +3260,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-16000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 16000,
@@ -2990,11 +3278,14 @@
             "configurationDeltaCd0": 0.003829536128810593,
             "configurationFactor": 1,
             "rawFpm": 4152.237502869326,
-            "dragSlopeFpmPerCd0": 46205.47424026106,
+            "dragSlopeFpmPerCd0": 46205.474240261065,
             "chargeLawApplied": true,
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-18000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 18000,
@@ -3015,6 +3306,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-20000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 20000,
@@ -3035,6 +3329,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-22000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 22000,
@@ -3055,6 +3352,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-24000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 24000,
@@ -3075,6 +3375,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-26000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 26000,
@@ -3095,6 +3398,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-28000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 28000,
@@ -3115,6 +3421,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-30000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 30000,
@@ -3186,6 +3495,9 @@
         },
         "rows": [
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-15000",
             "aircraftId": "p47b",
             "altFt": 15000,
@@ -3206,6 +3518,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-20000",
             "aircraftId": "p47b",
             "altFt": 20000,
@@ -3226,6 +3541,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-23400",
             "aircraftId": "p47b",
             "altFt": 23400,
@@ -3246,6 +3564,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-25000",
             "aircraftId": "p47b",
             "altFt": 25000,
@@ -3266,6 +3587,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "41-5931",
+            "targetSpecimen": "41-5902",
+            "validationEligibility": "cross-specimen engineering only",
             "stateId": "p47b-30000",
             "aircraftId": "p47b",
             "altFt": 30000,
@@ -3286,6 +3610,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-2000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 2000,
@@ -3306,6 +3633,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-4000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 4000,
@@ -3326,6 +3656,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-6000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 6000,
@@ -3346,6 +3679,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-7000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 7000,
@@ -3366,6 +3702,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-8000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 8000,
@@ -3386,6 +3725,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-10000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 10000,
@@ -3406,6 +3748,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-12000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 12000,
@@ -3426,6 +3771,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-14000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 14000,
@@ -3446,6 +3794,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-16000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 16000,
@@ -3461,11 +3812,14 @@
             "configurationDeltaCd0": 0.0006734124814142817,
             "configurationFactor": 1,
             "rawFpm": 4124.171539461127,
-            "dragSlopeFpmPerCd0": 46205.47424026106,
+            "dragSlopeFpmPerCd0": 46205.474240261065,
             "chargeLawApplied": true,
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-18000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 18000,
@@ -3486,6 +3840,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-20000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 20000,
@@ -3506,6 +3863,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-22000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 22000,
@@ -3526,6 +3886,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-24000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 24000,
@@ -3546,6 +3909,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-26000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 26000,
@@ -3566,6 +3932,9 @@
             "split": "check"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-28000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 28000,
@@ -3586,6 +3955,9 @@
             "split": "fit"
           },
           {
+            "sourceSpecimen": "BS.543",
+            "targetSpecimen": "BS.543",
+            "validationEligibility": "same-specimen qualified source scenario",
             "stateId": "spitfire_lfix_bs543-30000",
             "aircraftId": "spitfire_lfix_bs543",
             "altFt": 30000,

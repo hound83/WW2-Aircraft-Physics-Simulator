@@ -1,0 +1,646 @@
+{
+  "schema": 1,
+  "baselineCommit": "1400a07cf715b474a645ee48e49bb9e445c356ce",
+  "pr1Merge": "3394602fb4d5fdb23c85071892e9ca98d429f00a",
+  "engineSha256": "9a1be490a03cbf2bf0b7fe6a7740d3a8a4e1fbf8b5aaeea8a1fa58eba73e258b",
+  "casesSha256": "f26c3b115a265c9ed3a3db4e80380f00ccc2e0dae9b78fd2456257ef9f871f95",
+  "policy": "Common observations and identical currently registered comparison conditions applied to both engines. This isolates model differences; it does not claim the old interface exposed all qualified comparisons. P47 climb data are 41-5931, not speed specimen 41-5902.",
+  "regressionScripts": 31,
+  "summary": [
+    {
+      "id": "p51b",
+      "speedCount": 11,
+      "speedMae": 2.487484812169896,
+      "climbCount": 2,
+      "rawClimbMae": 410.1877613998802,
+      "conditionalClimbMae": null
+    },
+    {
+      "id": "p47b",
+      "speedCount": 5,
+      "speedMae": 3.649356289075695,
+      "climbCount": 5,
+      "rawClimbMae": 546.3921695312317,
+      "conditionalClimbMae": 44.825541161507815
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "speedCount": 20,
+      "speedMae": 4.990090793307081,
+      "climbCount": 16,
+      "rawClimbMae": 103.88205168821466,
+      "conditionalClimbMae": null
+    },
+    {
+      "id": "bf109f4",
+      "speedCount": 1,
+      "speedMae": 3.374100244874171,
+      "climbCount": 0,
+      "rawClimbMae": null,
+      "conditionalClimbMae": null
+    }
+  ],
+  "rows": [
+    {
+      "id": "p51b",
+      "kind": "speed",
+      "altFt": 4000,
+      "rating": "67inHg",
+      "gear": "low",
+      "observed": 380,
+      "predicted": 377.98763003052863,
+      "error": -2.012369969471365
+    },
+    {
+      "id": "p51b",
+      "kind": "speed",
+      "altFt": 7400,
+      "rating": "67inHg",
+      "gear": "low",
+      "observed": 395.5,
+      "predicted": 392.734579732748,
+      "error": -2.7654202672520114
+    },
+    {
+      "id": "p51b",
+      "kind": "speed",
+      "altFt": 10300,
+      "rating": "67inHg",
+      "gear": "low",
+      "observed": 409,
+      "predicted": 405.8958576063642,
+      "error": -3.1041423936358115
+    },
+    {
+      "id": "p51b",
+      "kind": "speed",
+      "altFt": 18000,
+      "rating": "67inHg",
+      "gear": "high",
+      "observed": 408,
+      "predicted": 407.120145413056,
+      "error": -0.8798545869440204
+    },
+    {
+      "id": "p51b",
+      "kind": "speed",
+      "altFt": 20800,
+      "rating": "67inHg",
+      "gear": "high",
+      "observed": 417,
+      "predicted": 417.6059663299684,
+      "error": 0.6059663299683962
+    },
+    {
+      "id": "p51b",
+      "kind": "speed",
+      "altFt": 24000,
+      "rating": "67inHg",
+      "gear": "high",
+      "observed": 426,
+      "predicted": 429.83799510290646,
+      "error": 3.8379951029064614
+    },
+    {
+      "id": "p51b",
+      "kind": "speed",
+      "altFt": 28000,
+      "rating": "67inHg",
+      "gear": "high",
+      "observed": 419,
+      "predicted": 422.8539732156414,
+      "error": 3.8539732156414175
+    },
+    {
+      "id": "p51b",
+      "kind": "speed",
+      "altFt": 32000,
+      "rating": "67inHg",
+      "gear": "high",
+      "observed": 410,
+      "predicted": 413.81948381330676,
+      "error": 3.8194838133067606
+    },
+    {
+      "id": "p51b",
+      "kind": "speed",
+      "altFt": 0,
+      "rating": "75inHg",
+      "gear": "low",
+      "observed": 376.5,
+      "predicted": 376.9190564865303,
+      "error": 0.4190564865302804
+    },
+    {
+      "id": "p51b",
+      "kind": "speed",
+      "altFt": 18000,
+      "rating": "75inHg",
+      "gear": "high",
+      "observed": 423,
+      "predicted": 424.83596752601716,
+      "error": 1.835967526017157
+    },
+    {
+      "id": "p51b",
+      "kind": "speed",
+      "altFt": 20800,
+      "rating": "75inHg",
+      "gear": "high",
+      "observed": 431,
+      "predicted": 435.2281032421952,
+      "error": 4.228103242195175
+    },
+    {
+      "id": "p51b",
+      "altFt": 2200,
+      "rating": "67inHg",
+      "observed": 3820,
+      "predicted": 3401.0861529653166,
+      "error": -418.9138470346834,
+      "kind": "climb"
+    },
+    {
+      "id": "p51b",
+      "altFt": 2200,
+      "rating": "75inHg",
+      "observed": 4380,
+      "predicted": 3978.538324234923,
+      "error": -401.46167576507696,
+      "kind": "climb"
+    },
+    {
+      "id": "p47b",
+      "kind": "speed",
+      "altFt": 15000,
+      "rating": "military",
+      "gear": "turbo",
+      "observed": 386,
+      "predicted": 386.0511311975233,
+      "error": 0.051131197523318406
+    },
+    {
+      "id": "p47b",
+      "kind": "speed",
+      "altFt": 25000,
+      "rating": "military",
+      "gear": "turbo",
+      "observed": 420,
+      "predicted": 423.26229896231507,
+      "error": 3.2622989623150715
+    },
+    {
+      "id": "p47b",
+      "kind": "speed",
+      "altFt": 27800,
+      "rating": "military",
+      "gear": "turbo",
+      "observed": 429,
+      "predicted": 434.0999065944643,
+      "error": 5.099906594464301
+    },
+    {
+      "id": "p47b",
+      "kind": "speed",
+      "altFt": 30000,
+      "rating": "military",
+      "gear": "turbo",
+      "observed": 426,
+      "predicted": 429.8896967333412,
+      "error": 3.889696733341225
+    },
+    {
+      "id": "p47b",
+      "kind": "speed",
+      "altFt": 34000,
+      "rating": "military",
+      "gear": "turbo",
+      "observed": 412,
+      "predicted": 417.94374795773456,
+      "error": 5.943747957734558
+    },
+    {
+      "id": "p47b",
+      "altFt": 15000,
+      "observed": 2330,
+      "predicted": 2804.2288476069457,
+      "error": 474.2288476069457,
+      "kind": "climb"
+    },
+    {
+      "id": "p47b",
+      "altFt": 20000,
+      "observed": 2150,
+      "predicted": 2708.9037058620147,
+      "error": 558.9037058620147,
+      "kind": "climb"
+    },
+    {
+      "id": "p47b",
+      "altFt": 23400,
+      "observed": 2000,
+      "predicted": 2650.282108510186,
+      "error": 650.2821085101859,
+      "kind": "climb"
+    },
+    {
+      "id": "p47b",
+      "altFt": 25000,
+      "observed": 1810,
+      "predicted": 2406.6400935517145,
+      "error": 596.6400935517145,
+      "kind": "climb"
+    },
+    {
+      "id": "p47b",
+      "altFt": 30000,
+      "observed": 1190,
+      "predicted": 1641.9060921252978,
+      "error": 451.90609212529785,
+      "kind": "climb"
+    },
+    {
+      "id": "p47b",
+      "altFt": 15000,
+      "observed": 2330,
+      "predicted": 2330.0000000000005,
+      "error": 4.547473508864641e-13,
+      "deltaCd0": 0.01581898059383988,
+      "kind": "conditional-climb"
+    },
+    {
+      "id": "p47b",
+      "altFt": 20000,
+      "observed": 2150,
+      "predicted": 2136.235012718354,
+      "error": -13.764987281645972,
+      "deltaCd0": 0.01581898059383988,
+      "kind": "conditional-climb"
+    },
+    {
+      "id": "p47b",
+      "altFt": 23400,
+      "observed": 2000,
+      "predicted": 2057.976558280857,
+      "error": 57.97655828085681,
+      "deltaCd0": 0.01581898059383988,
+      "kind": "conditional-climb"
+    },
+    {
+      "id": "p47b",
+      "altFt": 25000,
+      "observed": 1810,
+      "predicted": 1797.303536205323,
+      "error": -12.696463794676902,
+      "deltaCd0": 0.01581898059383988,
+      "kind": "conditional-climb"
+    },
+    {
+      "id": "p47b",
+      "altFt": 30000,
+      "observed": 1190,
+      "predicted": 1050.310303549641,
+      "error": -139.68969645035895,
+      "deltaCd0": 0.01581898059383988,
+      "kind": "conditional-climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 2000,
+      "rating": "combat+18",
+      "gear": "low",
+      "observed": 345,
+      "predicted": 344.8227718631033,
+      "error": -0.17722813689670147
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 4000,
+      "rating": "combat+18",
+      "gear": "low",
+      "observed": 353,
+      "predicted": 353.8236101067059,
+      "error": 0.823610106705928
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 6000,
+      "rating": "combat+18",
+      "gear": "low",
+      "observed": 363,
+      "predicted": 362.68530427898895,
+      "error": -0.3146957210110486
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 8000,
+      "rating": "combat+18",
+      "gear": "low",
+      "observed": 372,
+      "predicted": 369.4867173524881,
+      "error": -2.5132826475119145
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 10000,
+      "rating": "combat+18",
+      "gear": "low",
+      "observed": 380,
+      "predicted": 376.4499465487488,
+      "error": -3.5500534512511877
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 10800,
+      "rating": "combat+18",
+      "gear": "low",
+      "observed": 384,
+      "predicted": 379.28088514691535,
+      "error": -4.719114853084648
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 12000,
+      "rating": "combat+18",
+      "gear": "low",
+      "observed": 384,
+      "predicted": 378.1734494198563,
+      "error": -5.826550580143703
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 14000,
+      "rating": "combat+18",
+      "gear": "low",
+      "observed": 383.5,
+      "predicted": 375.8896089907639,
+      "error": -7.610391009236082
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 16000,
+      "rating": "combat+18",
+      "gear": "low",
+      "observed": 383,
+      "predicted": 374.65504459020394,
+      "error": -8.344955409796057
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 18000,
+      "rating": "combat+18",
+      "gear": "low",
+      "observed": 382,
+      "predicted": 374.2520401712909,
+      "error": -7.747959828709099
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 16000,
+      "rating": "combat+18",
+      "gear": "high",
+      "observed": 381.5,
+      "predicted": 388.6790648348824,
+      "error": 7.179064834882411
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 18000,
+      "rating": "combat+18",
+      "gear": "high",
+      "observed": 390.5,
+      "predicted": 396.15648027063526,
+      "error": 5.656480270635257
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 20000,
+      "rating": "combat+18",
+      "gear": "high",
+      "observed": 399,
+      "predicted": 403.78399693181836,
+      "error": 4.783996931818365
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 22000,
+      "rating": "combat+18",
+      "gear": "high",
+      "observed": 407,
+      "predicted": 411.5577047354882,
+      "error": 4.557704735488187
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 24000,
+      "rating": "combat+18",
+      "gear": "high",
+      "observed": 406,
+      "predicted": 407.4950194012936,
+      "error": 1.4950194012935754
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 26000,
+      "rating": "combat+18",
+      "gear": "high",
+      "observed": 403,
+      "predicted": 406.28828559446174,
+      "error": 3.2882855944617404
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 28000,
+      "rating": "combat+18",
+      "gear": "high",
+      "observed": 399.5,
+      "predicted": 404.28151734581206,
+      "error": 4.781517345812063
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 30000,
+      "rating": "combat+18",
+      "gear": "high",
+      "observed": 395,
+      "predicted": 401.90027654770984,
+      "error": 6.9002765477098364
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 32000,
+      "rating": "combat+18",
+      "gear": "high",
+      "observed": 389,
+      "predicted": 397.6930930415665,
+      "error": 8.693093041566499
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "kind": "speed",
+      "altFt": 34000,
+      "rating": "combat+18",
+      "gear": "high",
+      "observed": 381,
+      "predicted": 391.8385354181273,
+      "error": 10.838535418127321
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 2000,
+      "observed": 4640,
+      "predicted": 4470.913582494568,
+      "error": -169.0864175054321,
+      "kind": "climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 4000,
+      "observed": 4660,
+      "predicted": 4587.874517839786,
+      "error": -72.12548216021423,
+      "kind": "climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 6000,
+      "observed": 4690,
+      "predicted": 4692.292001007585,
+      "error": 2.292001007584986,
+      "kind": "climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 7000,
+      "observed": 4700,
+      "predicted": 4685.4123634602165,
+      "error": -14.587636539783489,
+      "kind": "climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 8000,
+      "observed": 4560,
+      "predicted": 4493.643963763508,
+      "error": -66.3560362364924,
+      "kind": "climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 10000,
+      "observed": 4280,
+      "predicted": 4125.785547412963,
+      "error": -154.21445258703716,
+      "kind": "climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 12000,
+      "observed": 4000,
+      "predicted": 3791.863946743443,
+      "error": -208.1360532565568,
+      "kind": "climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 14000,
+      "observed": 3860,
+      "predicted": 4061.4005372706183,
+      "error": 201.40053727061832,
+      "kind": "climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 16000,
+      "observed": 3860,
+      "predicted": 4069.7590022830755,
+      "error": 209.75900228307546,
+      "kind": "climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 18000,
+      "observed": 3860,
+      "predicted": 4060.8446400273565,
+      "error": 200.8446400273565,
+      "kind": "climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 20000,
+      "observed": 3560,
+      "predicted": 3695.8133137077275,
+      "error": 135.8133137077275,
+      "kind": "climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 22000,
+      "observed": 3270,
+      "predicted": 3359.752187388094,
+      "error": 89.75218738809417,
+      "kind": "climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 24000,
+      "observed": 2970,
+      "predicted": 3038.3083453062986,
+      "error": 68.30834530629863,
+      "kind": "climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 26000,
+      "observed": 2700,
+      "predicted": 2724.9702188357173,
+      "error": 24.970218835717333,
+      "kind": "climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 28000,
+      "observed": 2400,
+      "predicted": 2418.655039018238,
+      "error": 18.655039018237858,
+      "kind": "climb"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 30000,
+      "observed": 2120,
+      "predicted": 2094.1885361187924,
+      "error": -25.8114638812076,
+      "kind": "climb"
+    },
+    {
+      "id": "bf109f4",
+      "kind": "speed",
+      "altFt": 0,
+      "rating": "emergency",
+      "gear": "fluid",
+      "observed": 336,
+      "predicted": 339.37410024487417,
+      "error": 3.374100244874171
+    }
+  ]
+}

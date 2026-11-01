@@ -2,7 +2,7 @@
 
 A separate research repository for the shared WWII flight-performance engine. The Atlas website in [hound83/ww2-airwar](https://github.com/hound83/ww2-airwar) is outside this repository's scope.
 
-**Current version: v3.1.0 condition-aware climb improvement.** A shared boost-response proxy and refitted nonnegative configuration drag reduce reserved-point climb MAE from 84.7 to 51.3 ft/min for P47 and 110.2 to 77.9 for Spitfire. The new application panel evaluates documented report climb states; generic clean curves retain the v2.8 calibration. See [results and tradeoffs](docs/V31_CLIMB_IMPROVEMENT.md) and [release notes](releases/v3.1.0.md). These are already-exposed engineering checks, not independent historical accuracy.
+**Current version: v3.2.0 high-altitude validation and provenance correction.** The v3.1 coefficients remain fixed. A new Spitfire 34000-ft check is underpredicted by 262 ft/min; unsupported higher points remain unavailable. Original scans establish that P47 climb data are 41-5931 while the speed/power reference is 41-5902, so earlier climb gains are cross-specimen engineering benchmarks. See [new checks](docs/V32_HIGH_ALTITUDE_VALIDATION.md), [overall improvements since before PR1](docs/OVERALL_PROGRESS_PRE_PR1_TO_NOW.md) and [release notes](releases/v3.2.0.md). Historical accuracy remains unresolved.
 
 Initial benchmarks: **Bf 109 F-4, P-47B, P-51B-15 and Spitfire LF Mk IX**. Greg's worksheets and the controlled P-47 2,000/2,600 hp comparison are retained. The 2,600 hp scenario is not a verified P-47B engine rating.
 

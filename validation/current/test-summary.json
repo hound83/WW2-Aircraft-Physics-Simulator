@@ -1,8 +1,8 @@
 {
-  "node": "v22.23.4",
-  "discoveredScripts": 45,
-  "reportedScripts": 45,
-  "passed": 45,
+  "node": "v24.19.0",
+  "discoveredScripts": 47,
+  "reportedScripts": 47,
+  "passed": 47,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -64,6 +64,10 @@
       "status": "pass"
     },
     {
+      "script": "test_high_altitude_v32.cjs",
+      "status": "pass"
+    },
+    {
       "script": "test_html_static_v15.cjs",
       "status": "pass"
     },
@@ -117,6 +121,10 @@
     },
     {
       "script": "test_naca_v23.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_overall_progress.cjs",
       "status": "pass"
     },
     {

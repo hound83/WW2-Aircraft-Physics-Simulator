@@ -9,11 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - run: node validation/diagnostics/joint_calibration_v28.cjs
       - run: npm run check
+      - run: node scripts/verify-pre-pr1.cjs
       - run: npm run test:browser
       - name: Record generated validation
         run: |
@@ -37,3 +40,5 @@ jobs:
             docs/V29_ROBUSTNESS.md
             docs/V3_RELEASE_CANDIDATE.md
             docs/V31_CLIMB_IMPROVEMENT.md
+            docs/V32_HIGH_ALTITUDE_VALIDATION.md
+            docs/OVERALL_PROGRESS_PRE_PR1_TO_NOW.md
