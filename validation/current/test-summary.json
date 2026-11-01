@@ -1,8 +1,8 @@
 {
   "node": "v24.19.0",
-  "discoveredScripts": 47,
-  "reportedScripts": 47,
-  "passed": 47,
+  "discoveredScripts": 48,
+  "reportedScripts": 48,
+  "passed": 48,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -109,6 +109,10 @@
     },
     {
       "script": "test_lift_v09.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_measured_climb_v33.cjs",
       "status": "pass"
     },
     {

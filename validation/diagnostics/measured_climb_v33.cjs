@@ -1,0 +1,30 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const M=require('../../src/physics.js'),F=require('../../src/measured-climb.js'),D=require('../../aircraft/cases.json'),L=require('../../references/p47b-measured-climb-v33.json'),fit=require('../../calibration/v3.1-climb-model.json');
+const root=path.resolve(__dirname,'../..');
+function run(){
+ for(const s of [L.source,L.gearing])if(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,s.path))).digest('hex')!==s.sha256)throw Error('Source hash mismatch: '+s.path);
+ const a=D.aircraft.p47b,rows=L.states.map(s=>{
+  const clean=F.evaluate(M,a,L,s.id),transferred=F.evaluate(M,a,L,s.id,{deltaCd0:fit.aircraft.p47b.deltaCd0});
+  const fixedRpm=structuredClone(L);fixedRpm.states.find(x=>x.id===s.id).engineRpm=2700;
+  const control=F.evaluate(M,a,fixedRpm,s.id,{deltaCd0:fit.aircraft.p47b.deltaCd0});
+  const masses=[12365,12565,12765].map(weightLb=>F.evaluate(M,a,L,s.id,{deltaCd0:fit.aircraft.p47b.deltaCd0,weightLb}));
+  return {id:s.id,clean,transferred,fixed2700RpmControl:control.predictedFpm,rpmCorrectionDeltaFpm:transferred.predictedFpm-control.predictedFpm,massScenarios:masses.map(x=>({weightLb:x.weightLb,predictedFpm:x.predictedFpm,errorFpm:x.errorFpm}))};
+ });
+ const mae=key=>rows.reduce((n,r)=>n+Math.abs(r[key].errorFpm),0)/rows.length;
+ return {version:'3.3.0',coefficientChanges:0,rows,summary:{count:rows.length,cleanMaeFpm:mae('clean'),transferredDragMaeFpm:mae('transferred'),highAltitudeCount:rows.filter(r=>r.clean.altFt>=30000).length},sourceHashesVerified:true,independentHistoricalAccuracy:null,policy:'No fitting. Transfer existing 41-5931-derived configuration drag only as an explicitly qualified scenario. Clean-column residuals are not open-cooling performance predictions. No new altitude interpolation or default engine curve.'};
+}
+function writeReport(){const r=run(),f=n=>n.toFixed(1);fs.writeFileSync(path.join(root,'validation/current/v33-measured-climb.json'),JSON.stringify(r,null,2)+'\n');
+ const lines=['# v3.3: same-specimen recorded-power climb replay','','Ten exact states from P-47B 41-5902 now replay through the shared physical solver using report BHP, TAS and engine RPM. The independent original P-47B handbook scan establishes a propeller/crankshaft ratio of 0.5, so 2550 engine RPM means 1275 propeller RPM. No coefficient or generic-flight output changes.','','## Fixed-input comparison','','The zero-additional-drag column isolates the clean polar and is not an open-cooling prediction. The transferred column applies the existing v3.1 P47 aggregate drag, fitted earlier with 41-5931 observations; this remains a transfer assumption. These new 41-5902 climb observations are never fitted.','','| Altitude ft | Engine / prop RPM | Report BHP | Report climb | Clean polar only | Transferred open drag | Residual ft/min | RPM correction ft/min |','|---|---|---|---|---|---|---|---|'];
+ for(const row of r.rows){const x=row.transferred;lines.push(`| ${x.altFt} | ${x.engineRpm} / ${x.propRpm} | ${x.shaftHp} | ${x.observedFpm} | ${f(row.clean.predictedFpm)} | ${f(x.predictedFpm)} | ${f(x.errorFpm)} | ${f(row.rpmCorrectionDeltaFpm)} |`);}
+ lines.push('',`Across ten exact rows, MAE is ${f(r.summary.cleanMaeFpm)} ft/min with the clean polar and ${f(r.summary.transferredDragMaeFpm)} ft/min with transferred configuration drag. This compares two scenarios, not a before/after historical-accuracy claim. The fixed-2700-RPM control changes only propeller RPM, holding each recorded BHP fixed.`,
+ '', 'The 35000-ft record supplies an exact 1365-BHP/2550-RPM state beyond the old 34000-ft generic power domain. This does not fill any intermediate altitude or extend the generic engine curve. Its observed 450 ft/min versus the transferred scenario reveals a substantial remaining configuration/propeller mismatch. Keep that failure visible. Mass scenarios of 12365/12565/12765 lb are assumptions, not measured uncertainty.',
+ '', '## Evidence and limits','',
+ `[PHQ-M-19-1417-A](${L.source.url}), printed p.2 section 6; original table and cover inspected. Existing archived PDF SHA256 ${L.source.sha256}. Report BHP is from a torque-meter-equipped specimen; pointwise torque calibration and standard-atmosphere corrections are not established. Gross 12565-lb test weight is not instantaneous climb mass.`,
+ '',`[Preliminary P-47B handbook](${L.gearing.url}), 25 April 1942, Section V.1.a, printed p.16 / PDF p.18; original pixels inspected. Original PDF SHA256 ${L.gearing.originalSha256}. The rendered page is archived at ${L.gearing.path} with SHA256 ${L.gearing.sha256}.`,
+ '', '## Spitfire source audit','', 'The mirrored BS.543 HTML repeats +6.7 psi at 32000 ft. Its linked original header and climb graph do not show the Table II row. The original spitfireperformance.com report endpoint timed out; a targeted original-report search found no accessible table scan. No +4.7 guess, new coefficient, or eligibility promotion is accepted. The 32000-ft row remains diagnostic-only and the 34000-ft -261.8 ft/min discrepancy stays exposed.',
+ '', '## Reproduction and next milestone','', 'Run npm run diagnose:measured-climb or npm run check. The application adds a fixed report replay and an explicit clean/transferred-drag selector, independent of exploratory controls. Tests require exact identity/node/configuration, observed-rate exclusion, source hashes, correct RPM response, fixed polar, immutable inputs and unchanged generic outputs.',
+ '', 'Next: test a source-bounded open-cooling drag shape against these newly exposed same-specimen rows, with explicit fit/check assignment and retained high-altitude failures. Do not present these already-inspected rows as blind validation. Spitfire source verification remains open.');
+ fs.writeFileSync(path.join(root,'docs/V33_MEASURED_POWER_CLIMB.md'),lines.join('\n')+'\n');return r;
+}
+if(require.main===module)console.log(JSON.stringify(writeReport().summary,null,2));module.exports={run,writeReport};

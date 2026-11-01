@@ -2,7 +2,7 @@
 
 A separate research repository for the shared WWII flight-performance engine. The Atlas website in [hound83/ww2-airwar](https://github.com/hound83/ww2-airwar) is outside this repository's scope.
 
-**Current version: v3.2.0 high-altitude validation and provenance correction.** The v3.1 coefficients remain fixed. A new Spitfire 34000-ft check is underpredicted by 262 ft/min; unsupported higher points remain unavailable. Original scans establish that P47 climb data are 41-5931 while the speed/power reference is 41-5902, so earlier climb gains are cross-specimen engineering benchmarks. See [new checks](docs/V32_HIGH_ALTITUDE_VALIDATION.md), [overall improvements since before PR1](docs/OVERALL_PROGRESS_PRE_PR1_TO_NOW.md) and [release notes](releases/v3.2.0.md). Historical accuracy remains unresolved.
+**Current version: v3.3.0 same-specimen recorded-power climb replay.** Ten P-47B 41-5902 report states now use recorded BHP, TAS and engine RPM through the shared solver, including an exact 35000-ft state. Original P-47B handbook pixels verify 0.5 propeller gearing. The application lets you compare clean-polar and transferred open-cooling-drag scenarios; the latter misses the 35000-ft climb low by 432 ft/min. No coefficient changes or new generic altitude interpolation. Spitfire 32000-ft boost remains unresolved. See [results and source audit](docs/V33_MEASURED_POWER_CLIMB.md), [overall improvements since before PR1](docs/OVERALL_PROGRESS_PRE_PR1_TO_NOW.md) and [release notes](releases/v3.3.0.md). Historical accuracy remains unresolved.
 
 Initial benchmarks: **Bf 109 F-4, P-47B, P-51B-15 and Spitfire LF Mk IX**. Greg's worksheets and the controlled P-47 2,000/2,600 hp comparison are retained. The 2,600 hp scenario is not a verified P-47B engine rating.
 

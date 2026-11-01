@@ -1,0 +1,22 @@
+{
+ "schema":1,
+ "identity":{"aircraftId":"p47b","variant":"P-47B","specimen":"41-5902"},
+ "powerKind":"report-recorded-shaft-bhp",
+ "source":{"reference":"PHQ-M-19-1417-A, 18 June 1942, printed p.2 section 6 climb table; cover specifies R-2800-21 with torque meter","path":"references/sources/p47b-41-5902-phq-m-19-1417-a.pdf","sha256":"3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97","url":"https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf","inspection":"Original cover and printed page 2 pixels inspected. Table BHP preserved literally; no claim of pointwise torque calibration uncertainty or atmosphere correction."},
+ "configuration":{"gearState":"up","flaps":"up","cooling":"cowl, oil cooler and intercooler flaps wide open","stores":"none","guns":6,"mixture":"auto rich"},
+ "mass":{"valueLb":12565,"kind":"gross-as-tested scenario","qualification":"Cover gross weight, not established instantaneous or normalized mass at each climb row."},
+ "gearing":{"propPerEngine":0.5,"source":"T.O. 01-65BC-1, preliminary P-47B handbook, 25 April 1942, Section V.1.a, printed p.16, PDF page 18","url":"https://www.si.edu/media/NASM/NASM-Manual-000027958.pdf","originalSha256":"451fd7aed91419dabc1bf78c872993d0ad5c9ed0d4f8352c8ddb902ffbc1c36b","path":"references/sources/p47b-manual-gearing-18.jpg","sha256":"b892ca4c2c875cebfb10cfd365f5b2c4bec33a9d26bf3096ab75d564e986119e","inspection":"Original PDF page 18 pixels inspected: propeller gear ratio 0.5:1 crankshaft speed. Archived rendered page retains the statement and 2700/2550 engine rating table."},
+ "states":[
+  {"id":"p47-5902-0","altFt":0,"tasMph":172,"engineRpm":2700,"shaftHp":2000,"observedFpm":2560,"rating":"military","gear":"turbo","sourceLocation":"printed p.2 section 6, sea-level row"},
+  {"id":"p47-5902-5000","altFt":5000,"tasMph":183,"engineRpm":2700,"shaftHp":2000,"observedFpm":2545,"rating":"military","gear":"turbo","sourceLocation":"printed p.2 section 6, 5000-ft row"},
+  {"id":"p47-5902-10000","altFt":10000,"tasMph":196,"engineRpm":2700,"shaftHp":2000,"observedFpm":2465,"rating":"military","gear":"turbo","sourceLocation":"printed p.2 section 6, 10000-ft row"},
+  {"id":"p47-5902-12600","altFt":12600,"tasMph":204,"engineRpm":2700,"shaftHp":2000,"observedFpm":2410,"rating":"military","gear":"turbo","sourceLocation":"printed p.2 section 6, 12600-ft row"},
+  {"id":"p47-5902-12600-normal","altFt":12600,"tasMph":195,"engineRpm":2550,"shaftHp":1625,"observedFpm":1800,"rating":"normal","gear":"turbo","sourceLocation":"printed p.2 section 6, second 12600-ft row, rated-power transition"},
+  {"id":"p47-5902-15000","altFt":15000,"tasMph":200,"engineRpm":2550,"shaftHp":1625,"observedFpm":1725,"rating":"normal","gear":"turbo","sourceLocation":"printed p.2 section 6, 15000-ft row"},
+  {"id":"p47-5902-20000","altFt":20000,"tasMph":217,"engineRpm":2550,"shaftHp":1625,"observedFpm":1565,"rating":"normal","gear":"turbo","sourceLocation":"printed p.2 section 6, 20000-ft row"},
+  {"id":"p47-5902-25000","altFt":25000,"tasMph":236,"engineRpm":2550,"shaftHp":1625,"observedFpm":1380,"rating":"normal","gear":"turbo","sourceLocation":"printed p.2 section 6, 25000-ft row"},
+  {"id":"p47-5902-30000","altFt":30000,"tasMph":270,"engineRpm":2550,"shaftHp":1625,"observedFpm":1140,"rating":"normal","gear":"turbo","sourceLocation":"printed p.2 section 6, 30000-ft critical-altitude row"},
+  {"id":"p47-5902-35000","altFt":35000,"tasMph":305,"engineRpm":2550,"shaftHp":1365,"observedFpm":450,"rating":"normal","gear":"turbo","sourceLocation":"printed p.2 section 6, 35000-ft row"}
+ ],
+ "policy":"No parameters fitted to these rows. Distinct from 41-5931 boost-proxy climb data. Exact nodes include a separate military/normal transition at 12600 ft. No interpolation, power-law extension, or transfer of normalized performance claims. Printed corrected MAP is not used to derive power."
+}

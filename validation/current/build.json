@@ -1,5 +1,5 @@
 {
-  "version": "3.1.0",
+  "version": "3.3.0",
   "researchStatus": "v3.1 explicit source-climb calibration; v2.8 clean profile P and legacy C behavior retained",
   "workingCalibration": "2.8.0",
   "climbConditionCalibration": "3.1.0",
@@ -8,9 +8,9 @@
   "legacyProfile": "C",
   "template": "releases/baseline-v2.5.html",
   "physicsSha256": "67558157176b73a8799eb8eaecfec971b0c22d850802c1e1acd34afb1edcf667",
-  "casesSha256": "8ea49d8a787fc68093f313e6a405e00a7a2dcdade542de7e4501b52021c50649",
+  "casesSha256": "c0e5f628496af2ca50c3dd181ddb97bd9257c1b20ec358e98aa86b4a1ebd78e1",
   "storesSha256": "49f4eb05a187ec57b331bdcff360eacca8d591194f9ed6b3c842bcfae296ddd8",
-  "htmlSha256": "c86e8a5fb7b416f2fa2336fc01d2c743c574d187c258e19b91d5f9265f8a0ce4",
-  "bytes": 4885214,
+  "htmlSha256": "398d6d68a6bb1577cd585b5e590e263bc485a2076131f89bf3e65ae4815329b0",
+  "bytes": 4918410,
   "browserInteractionTested": true
 }
