@@ -33,3 +33,7 @@ Historical turn/stall accuracy and a 5:1 comparative-accuracy target remain unpr
 Resolve the Spitfire 32000-ft transcription against original pixels, obtain same-specimen engine/propeller conditions for P47, then evaluate a physically bounded high-altitude power model against reserved observations. Accept new coefficients only if they improve those checks while preserving clean-speed performance. More unrelated observations would not resolve these specific missing inputs.
 
 See [v3.2 evidence and new checks](V32_HIGH_ALTITUDE_VALIDATION.md) and [v3.1 reserved-point comparisons](V31_CLIMB_IMPROVEMENT.md). Run node validation/diagnostics/overall_progress.cjs or npm run check to regenerate the current comparison.
+
+## v3.4: additional same-specimen climb benchmark
+
+The original common-observation table above stays comparable to pre-PR1. A separate ten-row 41-5902 recorded-power package now uses source-matched configuration loss: five reserved-row MAE improves 130.44 to 34.15 ft/min, versus 99.52 for constant drag refitted on identical training rows. All ten-row MAE improves 114.13 to 38.27 ft/min. This is a v3.3-to-v3.4 conditional benchmark; it is not an additional before-PR1 data set or independent accuracy proof. See [v3.4 model, stress tests and laboratory](V34_CONFIGURATION_MODEL.md).

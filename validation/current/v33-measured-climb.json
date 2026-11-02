@@ -16,6 +16,7 @@
         "propEta": 0.848550185046041,
         "weightLb": 12565,
         "deltaCd0": 0,
+        "retainedPowerScale": 1,
         "predictedFpm": 3172.7007523554526,
         "observedFpm": 2560,
         "errorFpm": 612.7007523554526,
@@ -26,7 +27,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "transferred": {
         "status": "qualified-measured-power-scenario",
@@ -40,6 +41,7 @@
         "propEta": 0.848550185046041,
         "weightLb": 12565,
         "deltaCd0": 0.018868610875495496,
+        "retainedPowerScale": 1,
         "predictedFpm": 2656.986562663061,
         "observedFpm": 2560,
         "errorFpm": 96.9865626630608,
@@ -50,7 +52,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "fixed2700RpmControl": 2656.986562663061,
       "rpmCorrectionDeltaFpm": 0,
@@ -86,6 +88,7 @@
         "propEta": 0.8508704499515946,
         "weightLb": 12565,
         "deltaCd0": 0,
+        "retainedPowerScale": 1,
         "predictedFpm": 3099.8986329667055,
         "observedFpm": 2545,
         "errorFpm": 554.8986329667055,
@@ -96,7 +99,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "transferred": {
         "status": "qualified-measured-power-scenario",
@@ -110,6 +113,7 @@
         "propEta": 0.8508704499515946,
         "weightLb": 12565,
         "deltaCd0": 0.018868610875495496,
+        "retainedPowerScale": 1,
         "predictedFpm": 2564.696034974454,
         "observedFpm": 2545,
         "errorFpm": 19.69603497445405,
@@ -120,7 +124,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "fixed2700RpmControl": 2564.696034974454,
       "rpmCorrectionDeltaFpm": 0,
@@ -156,6 +160,7 @@
         "propEta": 0.8540143026728697,
         "weightLb": 12565,
         "deltaCd0": 0,
+        "retainedPowerScale": 1,
         "predictedFpm": 3016.5230080707547,
         "observedFpm": 2465,
         "errorFpm": 551.5230080707547,
@@ -166,7 +171,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "transferred": {
         "status": "qualified-measured-power-scenario",
@@ -180,6 +185,7 @@
         "propEta": 0.8540143026728697,
         "weightLb": 12565,
         "deltaCd0": 0.018868610875495496,
+        "retainedPowerScale": 1,
         "predictedFpm": 2452.975979172062,
         "observedFpm": 2465,
         "errorFpm": -12.024020827937875,
@@ -190,7 +196,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "fixed2700RpmControl": 2452.975979172062,
       "rpmCorrectionDeltaFpm": 0,
@@ -226,6 +232,7 @@
         "propEta": 0.8562392558119923,
         "weightLb": 12565,
         "deltaCd0": 0,
+        "retainedPowerScale": 1,
         "predictedFpm": 2967.804438084149,
         "observedFpm": 2410,
         "errorFpm": 557.8044380841488,
@@ -236,7 +243,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "transferred": {
         "status": "qualified-measured-power-scenario",
@@ -250,6 +257,7 @@
         "propEta": 0.8562392558119923,
         "weightLb": 12565,
         "deltaCd0": 0.018868610875495496,
+        "retainedPowerScale": 1,
         "predictedFpm": 2382.7090153631457,
         "observedFpm": 2410,
         "errorFpm": -27.29098463685432,
@@ -260,7 +268,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "fixed2700RpmControl": 2382.7090153631457,
       "rpmCorrectionDeltaFpm": 0,
@@ -296,6 +304,7 @@
         "propEta": 0.860381699717816,
         "weightLb": 12565,
         "deltaCd0": 0,
+        "retainedPowerScale": 1,
         "predictedFpm": 2188.511362520282,
         "observedFpm": 1800,
         "errorFpm": 388.5113625202821,
@@ -306,7 +315,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "transferred": {
         "status": "qualified-measured-power-scenario",
@@ -320,6 +329,7 @@
         "propEta": 0.860381699717816,
         "weightLb": 12565,
         "deltaCd0": 0.018868610875495496,
+        "retainedPowerScale": 1,
         "predictedFpm": 1677.488850610694,
         "observedFpm": 1800,
         "errorFpm": -122.51114938930596,
@@ -330,7 +340,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "fixed2700RpmControl": 1677.488850610694,
       "rpmCorrectionDeltaFpm": 0,
@@ -366,6 +376,7 @@
         "propEta": 0.86028985261612,
         "weightLb": 12565,
         "deltaCd0": 0,
+        "retainedPowerScale": 1,
         "predictedFpm": 2141.202482102011,
         "observedFpm": 1725,
         "errorFpm": 416.2024821020109,
@@ -376,7 +387,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "transferred": {
         "status": "qualified-measured-power-scenario",
@@ -390,6 +401,7 @@
         "propEta": 0.86028985261612,
         "weightLb": 12565,
         "deltaCd0": 0.018868610875495496,
+        "retainedPowerScale": 1,
         "predictedFpm": 1631.016695859787,
         "observedFpm": 1725,
         "errorFpm": -93.98330414021302,
@@ -400,7 +412,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "fixed2700RpmControl": 1631.016695859787,
       "rpmCorrectionDeltaFpm": 0,
@@ -436,6 +448,7 @@
         "propEta": 0.864577709813273,
         "weightLb": 12565,
         "deltaCd0": 0,
+        "retainedPowerScale": 1,
         "predictedFpm": 2028.205891216382,
         "observedFpm": 1565,
         "errorFpm": 463.20589121638204,
@@ -446,7 +459,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "transferred": {
         "status": "qualified-measured-power-scenario",
@@ -460,6 +473,7 @@
         "propEta": 0.864577709813273,
         "weightLb": 12565,
         "deltaCd0": 0.018868610875495496,
+        "retainedPowerScale": 1,
         "predictedFpm": 1476.4127274687703,
         "observedFpm": 1565,
         "errorFpm": -88.5872725312297,
@@ -470,7 +484,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "fixed2700RpmControl": 1476.4127274687703,
       "rpmCorrectionDeltaFpm": 0,
@@ -506,6 +520,7 @@
         "propEta": 0.8686666899588351,
         "weightLb": 12565,
         "deltaCd0": 0,
+        "retainedPowerScale": 1,
         "predictedFpm": 1897.9482385927201,
         "observedFpm": 1380,
         "errorFpm": 517.9482385927201,
@@ -516,7 +531,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "transferred": {
         "status": "qualified-measured-power-scenario",
@@ -530,6 +545,7 @@
         "propEta": 0.8686666899588351,
         "weightLb": 12565,
         "deltaCd0": 0.018868610875495496,
+        "retainedPowerScale": 1,
         "predictedFpm": 1300.9774826542157,
         "observedFpm": 1380,
         "errorFpm": -79.02251734578431,
@@ -540,7 +556,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "fixed2700RpmControl": 1300.9774826542157,
       "rpmCorrectionDeltaFpm": 0,
@@ -576,6 +592,7 @@
         "propEta": 0.8791452346978598,
         "weightLb": 12565,
         "deltaCd0": 0,
+        "retainedPowerScale": 1,
         "predictedFpm": 1717.3738914633982,
         "observedFpm": 1140,
         "errorFpm": 577.3738914633982,
@@ -586,7 +603,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "transferred": {
         "status": "qualified-measured-power-scenario",
@@ -600,6 +617,7 @@
         "propEta": 0.8791452346978598,
         "weightLb": 12565,
         "deltaCd0": 0.018868610875495496,
+        "retainedPowerScale": 1,
         "predictedFpm": 971.0279424111851,
         "observedFpm": 1140,
         "errorFpm": -168.9720575888149,
@@ -610,7 +628,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "fixed2700RpmControl": 963.4082320851625,
       "rpmCorrectionDeltaFpm": 7.619710326022641,
@@ -646,6 +664,7 @@
         "propEta": 0.890258273411913,
         "weightLb": 12565,
         "deltaCd0": 0,
+        "retainedPowerScale": 1,
         "predictedFpm": 908.8793331299538,
         "observedFpm": 450,
         "errorFpm": 458.8793331299538,
@@ -656,7 +675,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "transferred": {
         "status": "qualified-measured-power-scenario",
@@ -670,6 +689,7 @@
         "propEta": 0.890258273411913,
         "weightLb": 12565,
         "deltaCd0": 0.018868610875495496,
+        "retainedPowerScale": 1,
         "predictedFpm": 17.81360187469243,
         "observedFpm": 450,
         "errorFpm": -432.18639812530756,
@@ -680,7 +700,7 @@
         },
         "sourceSpecimen": "41-5902",
         "historicalAccuracy": null,
-        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. No climb fitting."
+        "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
       },
       "fixed2700RpmControl": -11.093223537467438,
       "rpmCorrectionDeltaFpm": 28.90682541215987,

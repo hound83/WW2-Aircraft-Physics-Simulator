@@ -1,0 +1,20 @@
+{
+ "version":"3.4.0",
+ "registeredBeforeSearch":true,
+ "scope":"P47 41-5902 recorded-power climb configuration only; retain clean v2.8 and all previous source-climb coefficients",
+ "data":"references/p47b-measured-climb-v33.json",
+ "baseline":"v3.3 fixed transferred deltaCd0 from 41-5931; also refit a constant-Cd control on identical fit rows",
+ "referenceStateId":"p47-5902-0",
+ "heatFractions":[0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1],
+ "deltaBounds":[0,0.03],
+ "splits":[
+  {"name":"primary","fit":["p47-5902-0","p47-5902-10000","p47-5902-12600-normal","p47-5902-20000","p47-5902-30000"]},
+  {"name":"alternate-interleaved","fit":["p47-5902-5000","p47-5902-12600","p47-5902-15000","p47-5902-25000","p47-5902-30000"]},
+  {"name":"lower-altitude-training","fit":["p47-5902-0","p47-5902-10000","p47-5902-12600-normal","p47-5902-15000","p47-5902-20000"]}
+ ],
+ "selection":"Lowest mean squared fit residual only; break exact ties by fewer heat assumptions (lower heatFraction). Do not use check residuals to select candidates. New fit/check declarations occur after the v3.3 results were exposed; this is not blind validation.",
+ "acceptance":{"primaryCheckReductionVsTransferred":0.3,"primaryCheckReductionVsRefittedConstant":0.2,"maximumPrimaryCheckDegradationFpm":100,"maximum35000AbsErrorFpm":200,"alternateCheckMayNotWorsenVsRefittedControl":true,"minimumImprovedStressCases":7},
+ "stress":{"weightLb":[12365,12565,12765],"retainedPowerScale":[0.97,1,1.03],"policy":"Paired fixed-coefficient scenarios; both model and controls use identical mass and retained-power assumptions, fixed clean polar and recorded shaft BHP. Not historical uncertainty intervals."},
+ "mechanism":"Blend constant additional drag coefficient with a shaft-power-proportional loss. The latter is represented by deltaCd scaling as P/(rho*V^3), so added drag POWER is proportional to recorded shaft power. This is an aggregate configuration-loss hypothesis, not identified cooling physics or an installed heat-flow measurement.",
+ "exclusions":"No new aircraft, Atlas changes, generic engine-curve extension, coefficient transfer to Spitfire, or historical turn/stall accuracy claims. Keep Spitfire 32000-ft boost unresolved."
+}

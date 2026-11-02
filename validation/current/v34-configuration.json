@@ -1,0 +1,4106 @@
+{
+  "version": "3.4.0",
+  "policy": {
+    "version": "3.4.0",
+    "registeredBeforeSearch": true,
+    "scope": "P47 41-5902 recorded-power climb configuration only; retain clean v2.8 and all previous source-climb coefficients",
+    "data": "references/p47b-measured-climb-v33.json",
+    "baseline": "v3.3 fixed transferred deltaCd0 from 41-5931; also refit a constant-Cd control on identical fit rows",
+    "referenceStateId": "p47-5902-0",
+    "heatFractions": [
+      0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1
+    ],
+    "deltaBounds": [
+      0,
+      0.03
+    ],
+    "splits": [
+      {
+        "name": "primary",
+        "fit": [
+          "p47-5902-0",
+          "p47-5902-10000",
+          "p47-5902-12600-normal",
+          "p47-5902-20000",
+          "p47-5902-30000"
+        ]
+      },
+      {
+        "name": "alternate-interleaved",
+        "fit": [
+          "p47-5902-5000",
+          "p47-5902-12600",
+          "p47-5902-15000",
+          "p47-5902-25000",
+          "p47-5902-30000"
+        ]
+      },
+      {
+        "name": "lower-altitude-training",
+        "fit": [
+          "p47-5902-0",
+          "p47-5902-10000",
+          "p47-5902-12600-normal",
+          "p47-5902-15000",
+          "p47-5902-20000"
+        ]
+      }
+    ],
+    "selection": "Lowest mean squared fit residual only; break exact ties by fewer heat assumptions (lower heatFraction). Do not use check residuals to select candidates. New fit/check declarations occur after the v3.3 results were exposed; this is not blind validation.",
+    "acceptance": {
+      "primaryCheckReductionVsTransferred": 0.3,
+      "primaryCheckReductionVsRefittedConstant": 0.2,
+      "maximumPrimaryCheckDegradationFpm": 100,
+      "maximum35000AbsErrorFpm": 200,
+      "alternateCheckMayNotWorsenVsRefittedControl": true,
+      "minimumImprovedStressCases": 7
+    },
+    "stress": {
+      "weightLb": [
+        12365,
+        12565,
+        12765
+      ],
+      "retainedPowerScale": [
+        0.97,
+        1,
+        1.03
+      ],
+      "policy": "Paired fixed-coefficient scenarios; both model and controls use identical mass and retained-power assumptions, fixed clean polar and recorded shaft BHP. Not historical uncertainty intervals."
+    },
+    "mechanism": "Blend constant additional drag coefficient with a shaft-power-proportional loss. The latter is represented by deltaCd scaling as P/(rho*V^3), so added drag POWER is proportional to recorded shaft power. This is an aggregate configuration-loss hypothesis, not identified cooling physics or an installed heat-flow measurement.",
+    "exclusions": "No new aircraft, Atlas changes, generic engine-curve extension, coefficient transfer to Spitfire, or historical turn/stall accuracy claims. Keep Spitfire 32000-ft boost unresolved."
+  },
+  "selected": {
+    "model": {
+      "version": "3.4.0",
+      "identity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
+      "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+      "configuration": {
+        "gearState": "up",
+        "flaps": "up",
+        "cooling": "cowl, oil cooler and intercooler flaps wide open",
+        "stores": "none",
+        "guns": 6,
+        "mixture": "auto rich"
+      },
+      "reference": {
+        "stateId": "p47-5902-0",
+        "altFt": 0,
+        "tasMph": 172,
+        "shaftHp": 2000
+      },
+      "deltaCd0": 0.019924999007313732,
+      "heatFraction": 0.7,
+      "split": "primary",
+      "fitStateIds": [
+        "p47-5902-0",
+        "p47-5902-10000",
+        "p47-5902-12600-normal",
+        "p47-5902-20000",
+        "p47-5902-30000"
+      ],
+      "policy": "calibration/v3.4-policy.json",
+      "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+      "unbounded": 0.019924999007313732,
+      "clipped": false,
+      "fitMse": 2608.6548785290456
+    },
+    "scenario": {},
+    "rows": [
+      {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-0",
+        "altFt": 0,
+        "tasMph": 172,
+        "engineRpm": 2700,
+        "propRpm": 1350,
+        "shaftHp": 2000,
+        "propulsiveHp": 1697.100370092082,
+        "propEta": 0.848550185046041,
+        "weightLb": 12565,
+        "deltaCd0": 0.019924999007313732,
+        "retainedPowerScale": 1,
+        "predictedFpm": 2628.1135124424527,
+        "observedFpm": 2560,
+        "errorFpm": 68.1135124424527,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+        "configurationModelVersion": "3.4.0",
+        "heatFraction": 0.7,
+        "configurationFactor": 1,
+        "referenceDeltaCd0": 0.019924999007313732,
+        "fitRole": "fit"
+      },
+      {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-5000",
+        "altFt": 5000,
+        "tasMph": 183,
+        "engineRpm": 2700,
+        "propRpm": 1350,
+        "shaftHp": 2000,
+        "propulsiveHp": 1701.740899903189,
+        "propEta": 0.8508704499515946,
+        "weightLb": 12565,
+        "deltaCd0": 0.019417126731955097,
+        "retainedPowerScale": 1,
+        "predictedFpm": 2549.137544031256,
+        "observedFpm": 2545,
+        "errorFpm": 4.137544031255857,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+        "configurationModelVersion": "3.4.0",
+        "heatFraction": 0.7,
+        "configurationFactor": 0.974510800468687,
+        "referenceDeltaCd0": 0.019924999007313732,
+        "fitRole": "reserved engineering check"
+      },
+      {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-10000",
+        "altFt": 10000,
+        "tasMph": 196,
+        "engineRpm": 2700,
+        "propRpm": 1350,
+        "shaftHp": 2000,
+        "propulsiveHp": 1708.0286053457394,
+        "propEta": 0.8540143026728697,
+        "weightLb": 12565,
+        "deltaCd0": 0.01874116082277828,
+        "retainedPowerScale": 1,
+        "predictedFpm": 2456.782517926595,
+        "observedFpm": 2465,
+        "errorFpm": -8.21748207340488,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+        "configurationModelVersion": "3.4.0",
+        "heatFraction": 0.7,
+        "configurationFactor": 0.9405852826340965,
+        "referenceDeltaCd0": 0.019924999007313732,
+        "fitRole": "fit"
+      },
+      {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-12600",
+        "altFt": 12600,
+        "tasMph": 204,
+        "engineRpm": 2700,
+        "propRpm": 1350,
+        "shaftHp": 2000,
+        "propulsiveHp": 1712.4785116239848,
+        "propEta": 0.8562392558119923,
+        "weightLb": 12565,
+        "deltaCd0": 0.018271089812545795,
+        "retainedPowerScale": 1,
+        "predictedFpm": 2401.2375038257114,
+        "observedFpm": 2410,
+        "errorFpm": -8.762496174288572,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+        "configurationModelVersion": "3.4.0",
+        "heatFraction": 0.7,
+        "configurationFactor": 0.9169932608698828,
+        "referenceDeltaCd0": 0.019924999007313732,
+        "fitRole": "reserved engineering check"
+      },
+      {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-12600-normal",
+        "altFt": 12600,
+        "tasMph": 195,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1625,
+        "propulsiveHp": 1398.120262041451,
+        "propEta": 0.860381699717816,
+        "weightLb": 12565,
+        "deltaCd0": 0.01741388468911157,
+        "retainedPowerScale": 1,
+        "predictedFpm": 1716.8875024145755,
+        "observedFpm": 1800,
+        "errorFpm": -83.11249758542453,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+        "configurationModelVersion": "3.4.0",
+        "heatFraction": 0.7,
+        "configurationFactor": 0.8739716716030739,
+        "referenceDeltaCd0": 0.019924999007313732,
+        "fitRole": "fit"
+      },
+      {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-15000",
+        "altFt": 15000,
+        "tasMph": 200,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1625,
+        "propulsiveHp": 1397.971010501195,
+        "propEta": 0.86028985261612,
+        "weightLb": 12565,
+        "deltaCd0": 0.017432640830733797,
+        "retainedPowerScale": 1,
+        "predictedFpm": 1669.8436933076205,
+        "observedFpm": 1725,
+        "errorFpm": -55.15630669237953,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+        "configurationModelVersion": "3.4.0",
+        "heatFraction": 0.7,
+        "configurationFactor": 0.8749130087451908,
+        "referenceDeltaCd0": 0.019924999007313732,
+        "fitRole": "reserved engineering check"
+      },
+      {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-20000",
+        "altFt": 20000,
+        "tasMph": 217,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1625,
+        "propulsiveHp": 1404.9387784465687,
+        "propEta": 0.864577709813273,
+        "weightLb": 12565,
+        "deltaCd0": 0.01656887807935138,
+        "retainedPowerScale": 1,
+        "predictedFpm": 1543.6660533088038,
+        "observedFpm": 1565,
+        "errorFpm": -21.33394669119616,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+        "configurationModelVersion": "3.4.0",
+        "heatFraction": 0.7,
+        "configurationFactor": 0.8315623038811473,
+        "referenceDeltaCd0": 0.019924999007313732,
+        "fitRole": "fit"
+      },
+      {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-25000",
+        "altFt": 25000,
+        "tasMph": 236,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1625,
+        "propulsiveHp": 1411.5833711831071,
+        "propEta": 0.8686666899588351,
+        "weightLb": 12565,
+        "deltaCd0": 0.01576734304886164,
+        "retainedPowerScale": 1,
+        "predictedFpm": 1399.0963219821144,
+        "observedFpm": 1380,
+        "errorFpm": 19.096321982114432,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+        "configurationModelVersion": "3.4.0",
+        "heatFraction": 0.7,
+        "configurationFactor": 0.7913346968335623,
+        "referenceDeltaCd0": 0.019924999007313732,
+        "fitRole": "reserved engineering check"
+      },
+      {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-30000",
+        "altFt": 30000,
+        "tasMph": 270,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1625,
+        "propulsiveHp": 1428.6110063840222,
+        "propEta": 0.8791452346978598,
+        "weightLb": 12565,
+        "deltaCd0": 0.013807983930856828,
+        "retainedPowerScale": 1,
+        "predictedFpm": 1171.200517102451,
+        "observedFpm": 1140,
+        "errorFpm": 31.20051710245093,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+        "configurationModelVersion": "3.4.0",
+        "heatFraction": 0.7,
+        "configurationFactor": 0.6929979733393425,
+        "referenceDeltaCd0": 0.019924999007313732,
+        "fitRole": "fit"
+      },
+      {
+        "status": "qualified-measured-power-scenario",
+        "stateId": "p47-5902-35000",
+        "altFt": 35000,
+        "tasMph": 305,
+        "engineRpm": 2550,
+        "propRpm": 1275,
+        "shaftHp": 1365,
+        "propulsiveHp": 1215.2025432072612,
+        "propEta": 0.890258273411913,
+        "weightLb": 12565,
+        "deltaCd0": 0.011486824078248024,
+        "retainedPowerScale": 1,
+        "predictedFpm": 366.4167552208726,
+        "observedFpm": 450,
+        "errorFpm": -83.58324477912743,
+        "polar": {
+          "e": 0.7,
+          "cd0": 0.02182668614955703,
+          "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+        },
+        "sourceSpecimen": "41-5902",
+        "historicalAccuracy": null,
+        "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+        "configurationModelVersion": "3.4.0",
+        "heatFraction": 0.7,
+        "configurationFactor": 0.576503119223827,
+        "referenceDeltaCd0": 0.019924999007313732,
+        "fitRole": "reserved engineering check"
+      }
+    ],
+    "summary": {
+      "all": {
+        "count": 10,
+        "mae": 38.271386955409504,
+        "rmse": 48.5079596473158,
+        "maxAbs": 83.58324477912743
+      },
+      "fit": {
+        "count": 5,
+        "mae": 42.39559117898584,
+        "rmse": 51.07499269240324,
+        "maxAbs": 83.11249758542453
+      },
+      "check": {
+        "count": 5,
+        "mae": 34.14718273183316,
+        "rmse": 45.79726432618209,
+        "maxAbs": 83.58324477912743
+      }
+    },
+    "transferred": {
+      "rows": [
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-0",
+          "altFt": 0,
+          "tasMph": 172,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1697.100370092082,
+          "propEta": 0.848550185046041,
+          "weightLb": 12565,
+          "deltaCd0": 0.018868610875495496,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2656.986562663061,
+          "observedFpm": 2560,
+          "errorFpm": 96.9865626630608,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-5000",
+          "altFt": 5000,
+          "tasMph": 183,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1701.740899903189,
+          "propEta": 0.8508704499515946,
+          "weightLb": 12565,
+          "deltaCd0": 0.018868610875495496,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2564.696034974454,
+          "observedFpm": 2545,
+          "errorFpm": 19.69603497445405,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-10000",
+          "altFt": 10000,
+          "tasMph": 196,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1708.0286053457394,
+          "propEta": 0.8540143026728697,
+          "weightLb": 12565,
+          "deltaCd0": 0.018868610875495496,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2452.975979172062,
+          "observedFpm": 2465,
+          "errorFpm": -12.024020827937875,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-12600",
+          "altFt": 12600,
+          "tasMph": 204,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1712.4785116239848,
+          "propEta": 0.8562392558119923,
+          "weightLb": 12565,
+          "deltaCd0": 0.018868610875495496,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2382.7090153631457,
+          "observedFpm": 2410,
+          "errorFpm": -27.29098463685432,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-12600-normal",
+          "altFt": 12600,
+          "tasMph": 195,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1398.120262041451,
+          "propEta": 0.860381699717816,
+          "weightLb": 12565,
+          "deltaCd0": 0.018868610875495496,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1677.488850610694,
+          "observedFpm": 1800,
+          "errorFpm": -122.51114938930596,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-15000",
+          "altFt": 15000,
+          "tasMph": 200,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1397.971010501195,
+          "propEta": 0.86028985261612,
+          "weightLb": 12565,
+          "deltaCd0": 0.018868610875495496,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1631.016695859787,
+          "observedFpm": 1725,
+          "errorFpm": -93.98330414021302,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-20000",
+          "altFt": 20000,
+          "tasMph": 217,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1404.9387784465687,
+          "propEta": 0.864577709813273,
+          "weightLb": 12565,
+          "deltaCd0": 0.018868610875495496,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1476.4127274687703,
+          "observedFpm": 1565,
+          "errorFpm": -88.5872725312297,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-25000",
+          "altFt": 25000,
+          "tasMph": 236,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1411.5833711831071,
+          "propEta": 0.8686666899588351,
+          "weightLb": 12565,
+          "deltaCd0": 0.018868610875495496,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1300.9774826542157,
+          "observedFpm": 1380,
+          "errorFpm": -79.02251734578431,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-30000",
+          "altFt": 30000,
+          "tasMph": 270,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1428.6110063840222,
+          "propEta": 0.8791452346978598,
+          "weightLb": 12565,
+          "deltaCd0": 0.018868610875495496,
+          "retainedPowerScale": 1,
+          "predictedFpm": 971.0279424111851,
+          "observedFpm": 1140,
+          "errorFpm": -168.9720575888149,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-35000",
+          "altFt": 35000,
+          "tasMph": 305,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1365,
+          "propulsiveHp": 1215.2025432072612,
+          "propEta": 0.890258273411913,
+          "weightLb": 12565,
+          "deltaCd0": 0.018868610875495496,
+          "retainedPowerScale": 1,
+          "predictedFpm": 17.81360187469243,
+          "observedFpm": 450,
+          "errorFpm": -432.18639812530756,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+        }
+      ],
+      "summary": {
+        "all": {
+          "count": 10,
+          "mae": 114.12603022229625,
+          "rmse": 162.46674961497285,
+          "maxAbs": 432.18639812530756
+        },
+        "fit": {
+          "count": 5,
+          "mae": 97.81621260006985,
+          "rmse": 110.41667739891061,
+          "maxAbs": 168.9720575888149
+        },
+        "check": {
+          "count": 5,
+          "mae": 130.43584784452264,
+          "rmse": 201.4920514886219,
+          "maxAbs": 432.18639812530756
+        }
+      }
+    },
+    "refittedConstant": {
+      "model": {
+        "version": "3.4.0",
+        "identity": {
+          "aircraftId": "p47b",
+          "variant": "P-47B",
+          "specimen": "41-5902"
+        },
+        "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+        "configuration": {
+          "gearState": "up",
+          "flaps": "up",
+          "cooling": "cowl, oil cooler and intercooler flaps wide open",
+          "stores": "none",
+          "guns": 6,
+          "mixture": "auto rich"
+        },
+        "reference": {
+          "stateId": "p47-5902-0",
+          "altFt": 0,
+          "tasMph": 172,
+          "shaftHp": 2000
+        },
+        "deltaCd0": 0.01671923082221864,
+        "heatFraction": 0,
+        "split": "primary",
+        "fitStateIds": [
+          "p47-5902-0",
+          "p47-5902-10000",
+          "p47-5902-12600-normal",
+          "p47-5902-20000",
+          "p47-5902-30000"
+        ],
+        "policy": "calibration/v3.4-policy.json",
+        "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+        "unbounded": 0.01671923082221864,
+        "clipped": false,
+        "fitMse": 7763.858194260686
+      },
+      "rows": [
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-0",
+          "altFt": 0,
+          "tasMph": 172,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1697.100370092082,
+          "propEta": 0.848550185046041,
+          "weightLb": 12565,
+          "deltaCd0": 0.01671923082221864,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2715.7331126783683,
+          "observedFpm": 2560,
+          "errorFpm": 155.73311267836834,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0,
+          "configurationFactor": 1,
+          "referenceDeltaCd0": 0.01671923082221864,
+          "fitRole": "fit"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-5000",
+          "altFt": 5000,
+          "tasMph": 183,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1701.740899903189,
+          "propEta": 0.8508704499515946,
+          "weightLb": 12565,
+          "deltaCd0": 0.01671923082221864,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2625.6625680264688,
+          "observedFpm": 2545,
+          "errorFpm": 80.66256802646876,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0,
+          "configurationFactor": 1,
+          "referenceDeltaCd0": 0.01671923082221864,
+          "fitRole": "reserved engineering check"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-10000",
+          "altFt": 10000,
+          "tasMph": 196,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1708.0286053457394,
+          "propEta": 0.8540143026728697,
+          "weightLb": 12565,
+          "deltaCd0": 0.01671923082221864,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2517.171311355809,
+          "observedFpm": 2465,
+          "errorFpm": 52.17131135580894,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0,
+          "configurationFactor": 1,
+          "referenceDeltaCd0": 0.01671923082221864,
+          "fitRole": "fit"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-12600",
+          "altFt": 12600,
+          "tasMph": 204,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1712.4785116239848,
+          "propEta": 0.8562392558119923,
+          "weightLb": 12565,
+          "deltaCd0": 0.01671923082221864,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2449.358989712521,
+          "observedFpm": 2410,
+          "errorFpm": 39.35898971252118,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0,
+          "configurationFactor": 1,
+          "referenceDeltaCd0": 0.01671923082221864,
+          "fitRole": "reserved engineering check"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-12600-normal",
+          "altFt": 12600,
+          "tasMph": 195,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1398.120262041451,
+          "propEta": 0.860381699717816,
+          "weightLb": 12565,
+          "deltaCd0": 0.01671923082221864,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1735.700957539051,
+          "observedFpm": 1800,
+          "errorFpm": -64.29904246094907,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0,
+          "configurationFactor": 1,
+          "referenceDeltaCd0": 0.01671923082221864,
+          "fitRole": "fit"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-15000",
+          "altFt": 15000,
+          "tasMph": 200,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1397.971010501195,
+          "propEta": 0.86028985261612,
+          "weightLb": 12565,
+          "deltaCd0": 0.01671923082221864,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1689.1334888579681,
+          "observedFpm": 1725,
+          "errorFpm": -35.86651114203187,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0,
+          "configurationFactor": 1,
+          "referenceDeltaCd0": 0.01671923082221864,
+          "fitRole": "reserved engineering check"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-20000",
+          "altFt": 20000,
+          "tasMph": 217,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1404.9387784465687,
+          "propEta": 0.864577709813273,
+          "weightLb": 12565,
+          "deltaCd0": 0.01671923082221864,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1539.2691416223906,
+          "observedFpm": 1565,
+          "errorFpm": -25.730858377609366,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0,
+          "configurationFactor": 1,
+          "referenceDeltaCd0": 0.01671923082221864,
+          "fitRole": "fit"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-25000",
+          "altFt": 25000,
+          "tasMph": 236,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1411.5833711831071,
+          "propEta": 0.8686666899588351,
+          "weightLb": 12565,
+          "deltaCd0": 0.01671923082221864,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1368.9802118254554,
+          "observedFpm": 1380,
+          "errorFpm": -11.019788174544601,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0,
+          "configurationFactor": 1,
+          "referenceDeltaCd0": 0.01671923082221864,
+          "fitRole": "reserved engineering check"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-30000",
+          "altFt": 30000,
+          "tasMph": 270,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1428.6110063840222,
+          "propEta": 0.8791452346978598,
+          "weightLb": 12565,
+          "deltaCd0": 0.01671923082221864,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1056.0464478179688,
+          "observedFpm": 1140,
+          "errorFpm": -83.95355218203122,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0,
+          "configurationFactor": 1,
+          "referenceDeltaCd0": 0.01671923082221864,
+          "fitRole": "fit"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-35000",
+          "altFt": 35000,
+          "tasMph": 305,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1365,
+          "propulsiveHp": 1215.2025432072612,
+          "propEta": 0.890258273411913,
+          "weightLb": 12565,
+          "deltaCd0": 0.01671923082221864,
+          "retainedPowerScale": 1,
+          "predictedFpm": 119.31757169824297,
+          "observedFpm": 450,
+          "errorFpm": -330.682428301757,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0,
+          "configurationFactor": 1,
+          "referenceDeltaCd0": 0.01671923082221864,
+          "fitRole": "reserved engineering check"
+        }
+      ],
+      "summary": {
+        "all": {
+          "count": 10,
+          "mae": 87.94781624120904,
+          "rmse": 125.55221290904342,
+          "maxAbs": 330.682428301757
+        },
+        "fit": {
+          "count": 5,
+          "mae": 76.37757541095338,
+          "rmse": 88.11275840796574,
+          "maxAbs": 155.73311267836834
+        },
+        "check": {
+          "count": 5,
+          "mae": 99.51805707146468,
+          "rmse": 154.1520617392288,
+          "maxAbs": 330.682428301757
+        }
+      }
+    }
+  },
+  "alternatives": [
+    {
+      "version": "3.4.0",
+      "identity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
+      "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+      "configuration": {
+        "gearState": "up",
+        "flaps": "up",
+        "cooling": "cowl, oil cooler and intercooler flaps wide open",
+        "stores": "none",
+        "guns": 6,
+        "mixture": "auto rich"
+      },
+      "reference": {
+        "stateId": "p47-5902-0",
+        "altFt": 0,
+        "tasMph": 172,
+        "shaftHp": 2000
+      },
+      "deltaCd0": 0.019924999007313732,
+      "heatFraction": 0.7,
+      "split": "primary",
+      "fitStateIds": [
+        "p47-5902-0",
+        "p47-5902-10000",
+        "p47-5902-12600-normal",
+        "p47-5902-20000",
+        "p47-5902-30000"
+      ],
+      "policy": "calibration/v3.4-policy.json",
+      "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+      "unbounded": 0.019924999007313732,
+      "clipped": false,
+      "fitMse": 2608.6548785290456
+    },
+    {
+      "version": "3.4.0",
+      "identity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
+      "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+      "configuration": {
+        "gearState": "up",
+        "flaps": "up",
+        "cooling": "cowl, oil cooler and intercooler flaps wide open",
+        "stores": "none",
+        "guns": 6,
+        "mixture": "auto rich"
+      },
+      "reference": {
+        "stateId": "p47-5902-0",
+        "altFt": 0,
+        "tasMph": 172,
+        "shaftHp": 2000
+      },
+      "deltaCd0": 0.02040966765263774,
+      "heatFraction": 0.8,
+      "split": "primary",
+      "fitStateIds": [
+        "p47-5902-0",
+        "p47-5902-10000",
+        "p47-5902-12600-normal",
+        "p47-5902-20000",
+        "p47-5902-30000"
+      ],
+      "policy": "calibration/v3.4-policy.json",
+      "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+      "unbounded": 0.02040966765263774,
+      "clipped": false,
+      "fitMse": 2729.1173335941257
+    },
+    {
+      "version": "3.4.0",
+      "identity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
+      "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+      "configuration": {
+        "gearState": "up",
+        "flaps": "up",
+        "cooling": "cowl, oil cooler and intercooler flaps wide open",
+        "stores": "none",
+        "guns": 6,
+        "mixture": "auto rich"
+      },
+      "reference": {
+        "stateId": "p47-5902-0",
+        "altFt": 0,
+        "tasMph": 172,
+        "shaftHp": 2000
+      },
+      "deltaCd0": 0.019443059558343002,
+      "heatFraction": 0.6,
+      "split": "primary",
+      "fitStateIds": [
+        "p47-5902-0",
+        "p47-5902-10000",
+        "p47-5902-12600-normal",
+        "p47-5902-20000",
+        "p47-5902-30000"
+      ],
+      "policy": "calibration/v3.4-policy.json",
+      "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+      "unbounded": 0.019443059558343002,
+      "clipped": false,
+      "fitMse": 2771.0868428497224
+    },
+    {
+      "version": "3.4.0",
+      "identity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
+      "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+      "configuration": {
+        "gearState": "up",
+        "flaps": "up",
+        "cooling": "cowl, oil cooler and intercooler flaps wide open",
+        "stores": "none",
+        "guns": 6,
+        "mixture": "auto rich"
+      },
+      "reference": {
+        "stateId": "p47-5902-0",
+        "altFt": 0,
+        "tasMph": 172,
+        "shaftHp": 2000
+      },
+      "deltaCd0": 0.020893946000939845,
+      "heatFraction": 0.9,
+      "split": "primary",
+      "fitStateIds": [
+        "p47-5902-0",
+        "p47-5902-10000",
+        "p47-5902-12600-normal",
+        "p47-5902-20000",
+        "p47-5902-30000"
+      ],
+      "policy": "calibration/v3.4-policy.json",
+      "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+      "unbounded": 0.020893946000939845,
+      "clipped": false,
+      "fitMse": 3175.873732270627
+    },
+    {
+      "version": "3.4.0",
+      "identity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
+      "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+      "configuration": {
+        "gearState": "up",
+        "flaps": "up",
+        "cooling": "cowl, oil cooler and intercooler flaps wide open",
+        "stores": "none",
+        "guns": 6,
+        "mixture": "auto rich"
+      },
+      "reference": {
+        "stateId": "p47-5902-0",
+        "altFt": 0,
+        "tasMph": 172,
+        "shaftHp": 2000
+      },
+      "deltaCd0": 0.01896638687397897,
+      "heatFraction": 0.5,
+      "split": "primary",
+      "fitStateIds": [
+        "p47-5902-0",
+        "p47-5902-10000",
+        "p47-5902-12600-normal",
+        "p47-5902-20000",
+        "p47-5902-30000"
+      ],
+      "policy": "calibration/v3.4-policy.json",
+      "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+      "unbounded": 0.01896638687397897,
+      "clipped": false,
+      "fitMse": 3177.240111934533
+    },
+    {
+      "version": "3.4.0",
+      "identity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
+      "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+      "configuration": {
+        "gearState": "up",
+        "flaps": "up",
+        "cooling": "cowl, oil cooler and intercooler flaps wide open",
+        "stores": "none",
+        "guns": 6,
+        "mixture": "auto rich"
+      },
+      "reference": {
+        "stateId": "p47-5902-0",
+        "altFt": 0,
+        "tasMph": 172,
+        "shaftHp": 2000
+      },
+      "deltaCd0": 0.018497012800661065,
+      "heatFraction": 0.4,
+      "split": "primary",
+      "fitStateIds": [
+        "p47-5902-0",
+        "p47-5902-10000",
+        "p47-5902-12600-normal",
+        "p47-5902-20000",
+        "p47-5902-30000"
+      ],
+      "policy": "calibration/v3.4-policy.json",
+      "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+      "unbounded": 0.018497012800661065,
+      "clipped": false,
+      "fitMse": 3792.0119778073395
+    },
+    {
+      "version": "3.4.0",
+      "identity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
+      "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+      "configuration": {
+        "gearState": "up",
+        "flaps": "up",
+        "cooling": "cowl, oil cooler and intercooler flaps wide open",
+        "stores": "none",
+        "guns": 6,
+        "mixture": "auto rich"
+      },
+      "reference": {
+        "stateId": "p47-5902-0",
+        "altFt": 0,
+        "tasMph": 172,
+        "shaftHp": 2000
+      },
+      "deltaCd0": 0.02137405315377487,
+      "heatFraction": 1,
+      "split": "primary",
+      "fitStateIds": [
+        "p47-5902-0",
+        "p47-5902-10000",
+        "p47-5902-12600-normal",
+        "p47-5902-20000",
+        "p47-5902-30000"
+      ],
+      "policy": "calibration/v3.4-policy.json",
+      "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+      "unbounded": 0.02137405315377487,
+      "clipped": false,
+      "fitMse": 3996.596155509485
+    },
+    {
+      "version": "3.4.0",
+      "identity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
+      "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+      "configuration": {
+        "gearState": "up",
+        "flaps": "up",
+        "cooling": "cowl, oil cooler and intercooler flaps wide open",
+        "stores": "none",
+        "guns": 6,
+        "mixture": "auto rich"
+      },
+      "reference": {
+        "stateId": "p47-5902-0",
+        "altFt": 0,
+        "tasMph": 172,
+        "shaftHp": 2000
+      },
+      "deltaCd0": 0.018036534404090622,
+      "heatFraction": 0.3,
+      "split": "primary",
+      "fitStateIds": [
+        "p47-5902-0",
+        "p47-5902-10000",
+        "p47-5902-12600-normal",
+        "p47-5902-20000",
+        "p47-5902-30000"
+      ],
+      "policy": "calibration/v3.4-policy.json",
+      "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+      "unbounded": 0.018036534404090622,
+      "clipped": false,
+      "fitMse": 4584.141725680355
+    },
+    {
+      "version": "3.4.0",
+      "identity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
+      "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+      "configuration": {
+        "gearState": "up",
+        "flaps": "up",
+        "cooling": "cowl, oil cooler and intercooler flaps wide open",
+        "stores": "none",
+        "guns": 6,
+        "mixture": "auto rich"
+      },
+      "reference": {
+        "stateId": "p47-5902-0",
+        "altFt": 0,
+        "tasMph": 172,
+        "shaftHp": 2000
+      },
+      "deltaCd0": 0.01758617855312153,
+      "heatFraction": 0.2,
+      "split": "primary",
+      "fitStateIds": [
+        "p47-5902-0",
+        "p47-5902-10000",
+        "p47-5902-12600-normal",
+        "p47-5902-20000",
+        "p47-5902-30000"
+      ],
+      "policy": "calibration/v3.4-policy.json",
+      "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+      "unbounded": 0.01758617855312153,
+      "clipped": false,
+      "fitMse": 5525.938836959309
+    },
+    {
+      "version": "3.4.0",
+      "identity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
+      "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+      "configuration": {
+        "gearState": "up",
+        "flaps": "up",
+        "cooling": "cowl, oil cooler and intercooler flaps wide open",
+        "stores": "none",
+        "guns": 6,
+        "mixture": "auto rich"
+      },
+      "reference": {
+        "stateId": "p47-5902-0",
+        "altFt": 0,
+        "tasMph": 172,
+        "shaftHp": 2000
+      },
+      "deltaCd0": 0.017146859695792608,
+      "heatFraction": 0.1,
+      "split": "primary",
+      "fitStateIds": [
+        "p47-5902-0",
+        "p47-5902-10000",
+        "p47-5902-12600-normal",
+        "p47-5902-20000",
+        "p47-5902-30000"
+      ],
+      "policy": "calibration/v3.4-policy.json",
+      "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+      "unbounded": 0.017146859695792608,
+      "clipped": false,
+      "fitMse": 6592.989627116767
+    },
+    {
+      "version": "3.4.0",
+      "identity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
+      "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+      "configuration": {
+        "gearState": "up",
+        "flaps": "up",
+        "cooling": "cowl, oil cooler and intercooler flaps wide open",
+        "stores": "none",
+        "guns": 6,
+        "mixture": "auto rich"
+      },
+      "reference": {
+        "stateId": "p47-5902-0",
+        "altFt": 0,
+        "tasMph": 172,
+        "shaftHp": 2000
+      },
+      "deltaCd0": 0.01671923082221864,
+      "heatFraction": 0,
+      "split": "primary",
+      "fitStateIds": [
+        "p47-5902-0",
+        "p47-5902-10000",
+        "p47-5902-12600-normal",
+        "p47-5902-20000",
+        "p47-5902-30000"
+      ],
+      "policy": "calibration/v3.4-policy.json",
+      "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+      "unbounded": 0.01671923082221864,
+      "clipped": false,
+      "fitMse": 7763.858194260686
+    }
+  ],
+  "folds": [
+    {
+      "split": "alternate-interleaved",
+      "model": {
+        "version": "3.4.0",
+        "identity": {
+          "aircraftId": "p47b",
+          "variant": "P-47B",
+          "specimen": "41-5902"
+        },
+        "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+        "configuration": {
+          "gearState": "up",
+          "flaps": "up",
+          "cooling": "cowl, oil cooler and intercooler flaps wide open",
+          "stores": "none",
+          "guns": 6,
+          "mixture": "auto rich"
+        },
+        "reference": {
+          "stateId": "p47-5902-0",
+          "altFt": 0,
+          "tasMph": 172,
+          "shaftHp": 2000
+        },
+        "deltaCd0": 0.019369299446598938,
+        "heatFraction": 0.6,
+        "split": "alternate-interleaved",
+        "fitStateIds": [
+          "p47-5902-5000",
+          "p47-5902-12600",
+          "p47-5902-15000",
+          "p47-5902-25000",
+          "p47-5902-30000"
+        ],
+        "policy": "calibration/v3.4-policy.json",
+        "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+        "unbounded": 0.019369299446598938,
+        "clipped": false,
+        "fitMse": 665.3823911525085
+      },
+      "scenario": {},
+      "rows": [
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-0",
+          "altFt": 0,
+          "tasMph": 172,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1697.100370092082,
+          "propEta": 0.848550185046041,
+          "weightLb": 12565,
+          "deltaCd0": 0.019369299446598938,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2643.3018138260286,
+          "observedFpm": 2560,
+          "errorFpm": 83.30181382602859,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0.6,
+          "configurationFactor": 1,
+          "referenceDeltaCd0": 0.019369299446598938,
+          "fitRole": "reserved engineering check"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-5000",
+          "altFt": 5000,
+          "tasMph": 183,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1701.740899903189,
+          "propEta": 0.8508704499515946,
+          "weightLb": 12565,
+          "deltaCd0": 0.01894612121370513,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2562.4974770278845,
+          "observedFpm": 2545,
+          "errorFpm": 17.497477027884543,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0.6,
+          "configurationFactor": 0.978152114687446,
+          "referenceDeltaCd0": 0.019369299446598938,
+          "fitRole": "fit"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-10000",
+          "altFt": 10000,
+          "tasMph": 196,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1708.0286053457394,
+          "propEta": 0.8540143026728697,
+          "weightLb": 12565,
+          "deltaCd0": 0.01838288105900303,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2467.4832259820187,
+          "observedFpm": 2465,
+          "errorFpm": 2.4832259820186664,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0.6,
+          "configurationFactor": 0.9490730994006541,
+          "referenceDeltaCd0": 0.019369299446598938,
+          "fitRole": "reserved engineering check"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-12600",
+          "altFt": 12600,
+          "tasMph": 204,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1712.4785116239848,
+          "propEta": 0.8562392558119923,
+          "weightLb": 12565,
+          "deltaCd0": 0.0179912002583444,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2409.9165792548065,
+          "observedFpm": 2410,
+          "errorFpm": -0.08342074519350717,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0.6,
+          "configurationFactor": 0.9288513664598995,
+          "referenceDeltaCd0": 0.019369299446598938,
+          "fitRole": "fit"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-12600-normal",
+          "altFt": 12600,
+          "tasMph": 195,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1398.120262041451,
+          "propEta": 0.860381699717816,
+          "weightLb": 12565,
+          "deltaCd0": 0.017276944791049475,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1720.596274149288,
+          "observedFpm": 1800,
+          "errorFpm": -79.40372585071191,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0.6,
+          "configurationFactor": 0.8919757185169204,
+          "referenceDeltaCd0": 0.019369299446598938,
+          "fitRole": "reserved engineering check"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-15000",
+          "altFt": 15000,
+          "tasMph": 200,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1397.971010501195,
+          "propEta": 0.86028985261612,
+          "weightLb": 12565,
+          "deltaCd0": 0.017292573111894506,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1673.6309651812478,
+          "observedFpm": 1725,
+          "errorFpm": -51.3690348187522,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0.6,
+          "configurationFactor": 0.8927825789244492,
+          "referenceDeltaCd0": 0.019369299446598938,
+          "fitRole": "fit"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-20000",
+          "altFt": 20000,
+          "tasMph": 217,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1404.9387784465687,
+          "propEta": 0.864577709813273,
+          "weightLb": 12565,
+          "deltaCd0": 0.016572853582980687,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1543.5497937844764,
+          "observedFpm": 1565,
+          "errorFpm": -21.45020621552362,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0.6,
+          "configurationFactor": 0.8556248318981263,
+          "referenceDeltaCd0": 0.019369299446598938,
+          "fitRole": "reserved engineering check"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-25000",
+          "altFt": 25000,
+          "tasMph": 236,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1411.5833711831071,
+          "propEta": 0.8686666899588351,
+          "weightLb": 12565,
+          "deltaCd0": 0.015904984525616582,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1394.7415797613392,
+          "observedFpm": 1380,
+          "errorFpm": 14.741579761339153,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0.6,
+          "configurationFactor": 0.821144025857339,
+          "referenceDeltaCd0": 0.019369299446598938,
+          "fitRole": "fit"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-30000",
+          "altFt": 30000,
+          "tasMph": 270,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1428.6110063840222,
+          "propEta": 0.8791452346978598,
+          "weightLb": 12565,
+          "deltaCd0": 0.014272373002224916,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1152.831655478948,
+          "observedFpm": 1140,
+          "errorFpm": 12.83165547894805,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0.6,
+          "configurationFactor": 0.7368554057194364,
+          "referenceDeltaCd0": 0.019369299446598938,
+          "fitRole": "fit"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-35000",
+          "altFt": 35000,
+          "tasMph": 305,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1365,
+          "propulsiveHp": 1215.2025432072612,
+          "propEta": 0.890258273411913,
+          "weightLb": 12565,
+          "deltaCd0": 0.012338295533638107,
+          "retainedPowerScale": 1,
+          "predictedFpm": 326.20621507848796,
+          "observedFpm": 450,
+          "errorFpm": -123.79378492151204,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 0.6,
+          "configurationFactor": 0.6370026736204232,
+          "referenceDeltaCd0": 0.019369299446598938,
+          "fitRole": "reserved engineering check"
+        }
+      ],
+      "summary": {
+        "all": {
+          "count": 10,
+          "mae": 40.695592462791225,
+          "rmse": 56.887814832882945,
+          "maxAbs": 123.79378492151204
+        },
+        "fit": {
+          "count": 5,
+          "mae": 19.30463356642349,
+          "rmse": 25.795007097353526,
+          "maxAbs": 51.3690348187522
+        },
+        "check": {
+          "count": 5,
+          "mae": 62.08655135915897,
+          "rmse": 76.20409806413456,
+          "maxAbs": 123.79378492151204
+        }
+      },
+      "transferred": {
+        "rows": [
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-0",
+            "altFt": 0,
+            "tasMph": 172,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1697.100370092082,
+            "propEta": 0.848550185046041,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2656.986562663061,
+            "observedFpm": 2560,
+            "errorFpm": 96.9865626630608,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-5000",
+            "altFt": 5000,
+            "tasMph": 183,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1701.740899903189,
+            "propEta": 0.8508704499515946,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2564.696034974454,
+            "observedFpm": 2545,
+            "errorFpm": 19.69603497445405,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-10000",
+            "altFt": 10000,
+            "tasMph": 196,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1708.0286053457394,
+            "propEta": 0.8540143026728697,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2452.975979172062,
+            "observedFpm": 2465,
+            "errorFpm": -12.024020827937875,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-12600",
+            "altFt": 12600,
+            "tasMph": 204,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1712.4785116239848,
+            "propEta": 0.8562392558119923,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2382.7090153631457,
+            "observedFpm": 2410,
+            "errorFpm": -27.29098463685432,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-12600-normal",
+            "altFt": 12600,
+            "tasMph": 195,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1398.120262041451,
+            "propEta": 0.860381699717816,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1677.488850610694,
+            "observedFpm": 1800,
+            "errorFpm": -122.51114938930596,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-15000",
+            "altFt": 15000,
+            "tasMph": 200,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1397.971010501195,
+            "propEta": 0.86028985261612,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1631.016695859787,
+            "observedFpm": 1725,
+            "errorFpm": -93.98330414021302,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-20000",
+            "altFt": 20000,
+            "tasMph": 217,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1404.9387784465687,
+            "propEta": 0.864577709813273,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1476.4127274687703,
+            "observedFpm": 1565,
+            "errorFpm": -88.5872725312297,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-25000",
+            "altFt": 25000,
+            "tasMph": 236,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1411.5833711831071,
+            "propEta": 0.8686666899588351,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1300.9774826542157,
+            "observedFpm": 1380,
+            "errorFpm": -79.02251734578431,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-30000",
+            "altFt": 30000,
+            "tasMph": 270,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1428.6110063840222,
+            "propEta": 0.8791452346978598,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 971.0279424111851,
+            "observedFpm": 1140,
+            "errorFpm": -168.9720575888149,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-35000",
+            "altFt": 35000,
+            "tasMph": 305,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1365,
+            "propulsiveHp": 1215.2025432072612,
+            "propEta": 0.890258273411913,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 17.81360187469243,
+            "observedFpm": 450,
+            "errorFpm": -432.18639812530756,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          }
+        ],
+        "summary": {
+          "all": {
+            "count": 10,
+            "mae": 114.12603022229625,
+            "rmse": 162.46674961497285,
+            "maxAbs": 432.18639812530756
+          },
+          "fit": {
+            "count": 5,
+            "mae": 77.79297973722412,
+            "rmse": 94.61681413653524,
+            "maxAbs": 168.9720575888149
+          },
+          "check": {
+            "count": 5,
+            "mae": 150.45908070736837,
+            "rmse": 209.3765697100822,
+            "maxAbs": 432.18639812530756
+          }
+        }
+      },
+      "refittedConstant": {
+        "model": {
+          "version": "3.4.0",
+          "identity": {
+            "aircraftId": "p47b",
+            "variant": "P-47B",
+            "specimen": "41-5902"
+          },
+          "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+          "configuration": {
+            "gearState": "up",
+            "flaps": "up",
+            "cooling": "cowl, oil cooler and intercooler flaps wide open",
+            "stores": "none",
+            "guns": 6,
+            "mixture": "auto rich"
+          },
+          "reference": {
+            "stateId": "p47-5902-0",
+            "altFt": 0,
+            "tasMph": 172,
+            "shaftHp": 2000
+          },
+          "deltaCd0": 0.016495883083333964,
+          "heatFraction": 0,
+          "split": "alternate-interleaved",
+          "fitStateIds": [
+            "p47-5902-5000",
+            "p47-5902-12600",
+            "p47-5902-15000",
+            "p47-5902-25000",
+            "p47-5902-30000"
+          ],
+          "policy": "calibration/v3.4-policy.json",
+          "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+          "unbounded": 0.016495883083333964,
+          "clipped": false,
+          "fitMse": 3251.8136654801406
+        },
+        "rows": [
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-0",
+            "altFt": 0,
+            "tasMph": 172,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1697.100370092082,
+            "propEta": 0.848550185046041,
+            "weightLb": 12565,
+            "deltaCd0": 0.016495883083333964,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2721.8376213217743,
+            "observedFpm": 2560,
+            "errorFpm": 161.83762132177435,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.016495883083333964,
+            "fitRole": "reserved engineering check"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-5000",
+            "altFt": 5000,
+            "tasMph": 183,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1701.740899903189,
+            "propEta": 0.8508704499515946,
+            "weightLb": 12565,
+            "deltaCd0": 0.016495883083333964,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2631.9977609506077,
+            "observedFpm": 2545,
+            "errorFpm": 86.9977609506077,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.016495883083333964,
+            "fitRole": "fit"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-10000",
+            "altFt": 10000,
+            "tasMph": 196,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1708.0286053457394,
+            "propEta": 0.8540143026728697,
+            "weightLb": 12565,
+            "deltaCd0": 0.016495883083333964,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2523.8420172964966,
+            "observedFpm": 2465,
+            "errorFpm": 58.84201729649658,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.016495883083333964,
+            "fitRole": "reserved engineering check"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-12600",
+            "altFt": 12600,
+            "tasMph": 204,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1712.4785116239848,
+            "propEta": 0.8562392558119923,
+            "weightLb": 12565,
+            "deltaCd0": 0.016495883083333964,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2456.2847639816923,
+            "observedFpm": 2410,
+            "errorFpm": 46.28476398169232,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.016495883083333964,
+            "fitRole": "fit"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-12600-normal",
+            "altFt": 12600,
+            "tasMph": 195,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1398.120262041451,
+            "propEta": 0.860381699717816,
+            "weightLb": 12565,
+            "deltaCd0": 0.016495883083333964,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1741.749930794544,
+            "observedFpm": 1800,
+            "errorFpm": -58.25006920545593,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.016495883083333964,
+            "fitRole": "reserved engineering check"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-15000",
+            "altFt": 15000,
+            "tasMph": 200,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1397.971010501195,
+            "propEta": 0.86028985261612,
+            "weightLb": 12565,
+            "deltaCd0": 0.016495883083333964,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1695.1725577920936,
+            "observedFpm": 1725,
+            "errorFpm": -29.827442207906415,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.016495883083333964,
+            "fitRole": "fit"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-20000",
+            "altFt": 20000,
+            "tasMph": 217,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1404.9387784465687,
+            "propEta": 0.864577709813273,
+            "weightLb": 12565,
+            "deltaCd0": 0.016495883083333964,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1545.8007170662988,
+            "observedFpm": 1565,
+            "errorFpm": -19.19928293370117,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.016495883083333964,
+            "fitRole": "reserved engineering check"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-25000",
+            "altFt": 25000,
+            "tasMph": 236,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1411.5833711831071,
+            "propEta": 0.8686666899588351,
+            "weightLb": 12565,
+            "deltaCd0": 0.016495883083333964,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1376.046554408856,
+            "observedFpm": 1380,
+            "errorFpm": -3.953445591143918,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.016495883083333964,
+            "fitRole": "fit"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-30000",
+            "altFt": 30000,
+            "tasMph": 270,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1428.6110063840222,
+            "propEta": 0.8791452346978598,
+            "weightLb": 12565,
+            "deltaCd0": 0.016495883083333964,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1064.8809444985395,
+            "observedFpm": 1140,
+            "errorFpm": -75.11905550146048,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.016495883083333964,
+            "fitRole": "fit"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-35000",
+            "altFt": 35000,
+            "tasMph": 305,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1365,
+            "propulsiveHp": 1215.2025432072612,
+            "propEta": 0.890258273411913,
+            "weightLb": 12565,
+            "deltaCd0": 0.016495883083333964,
+            "retainedPowerScale": 1,
+            "predictedFpm": 129.86511637902,
+            "observedFpm": 450,
+            "errorFpm": -320.13488362097996,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.016495883083333964,
+            "fitRole": "reserved engineering check"
+          }
+        ],
+        "summary": {
+          "all": {
+            "count": 10,
+            "mae": 86.04463426112189,
+            "rmse": 123.3535138294155,
+            "maxAbs": 320.13488362097996
+          },
+          "fit": {
+            "count": 5,
+            "mae": 48.43649364656217,
+            "rmse": 57.02467593489625,
+            "maxAbs": 86.9977609506077
+          },
+          "check": {
+            "count": 5,
+            "mae": 123.6527748756816,
+            "rmse": 164.8646871911862,
+            "maxAbs": 320.13488362097996
+          }
+        }
+      }
+    },
+    {
+      "split": "lower-altitude-training",
+      "model": {
+        "version": "3.4.0",
+        "identity": {
+          "aircraftId": "p47b",
+          "variant": "P-47B",
+          "specimen": "41-5902"
+        },
+        "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+        "configuration": {
+          "gearState": "up",
+          "flaps": "up",
+          "cooling": "cowl, oil cooler and intercooler flaps wide open",
+          "stores": "none",
+          "guns": 6,
+          "mixture": "auto rich"
+        },
+        "reference": {
+          "stateId": "p47-5902-0",
+          "altFt": 0,
+          "tasMph": 172,
+          "shaftHp": 2000
+        },
+        "deltaCd0": 0.020170381586968926,
+        "heatFraction": 1,
+        "split": "lower-altitude-training",
+        "fitStateIds": [
+          "p47-5902-0",
+          "p47-5902-10000",
+          "p47-5902-12600-normal",
+          "p47-5902-15000",
+          "p47-5902-20000"
+        ],
+        "policy": "calibration/v3.4-policy.json",
+        "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+        "unbounded": 0.020170381586968926,
+        "clipped": false,
+        "fitMse": 1708.1708767829718
+      },
+      "scenario": {},
+      "rows": [
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-0",
+          "altFt": 0,
+          "tasMph": 172,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1697.100370092082,
+          "propEta": 0.848550185046041,
+          "weightLb": 12565,
+          "deltaCd0": 0.020170381586968926,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2621.4067506640404,
+          "observedFpm": 2560,
+          "errorFpm": 61.40675066404037,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 1,
+          "configurationFactor": 1,
+          "referenceDeltaCd0": 0.020170381586968926,
+          "fitRole": "fit"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-5000",
+          "altFt": 5000,
+          "tasMph": 183,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1701.740899903189,
+          "propEta": 0.8508704499515946,
+          "weightLb": 12565,
+          "deltaCd0": 0.01943591461426468,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2548.604631275293,
+          "observedFpm": 2545,
+          "errorFpm": 3.6046312752928316,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 1,
+          "configurationFactor": 0.9635868578124099,
+          "referenceDeltaCd0": 0.020170381586968926,
+          "fitRole": "reserved engineering check"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-10000",
+          "altFt": 10000,
+          "tasMph": 196,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1708.0286053457394,
+          "propEta": 0.8540143026728697,
+          "weightLb": 12565,
+          "deltaCd0": 0.01845835655675152,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2465.229006379342,
+          "observedFpm": 2465,
+          "errorFpm": 0.22900637934208135,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 1,
+          "configurationFactor": 0.9151218323344235,
+          "referenceDeltaCd0": 0.020170381586968926,
+          "fitRole": "fit"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-12600",
+          "altFt": 12600,
+          "tasMph": 204,
+          "engineRpm": 2700,
+          "propRpm": 1350,
+          "shaftHp": 2000,
+          "propulsiveHp": 1712.4785116239848,
+          "propEta": 0.8562392558119923,
+          "weightLb": 12565,
+          "deltaCd0": 0.017778556440476854,
+          "retainedPowerScale": 1,
+          "predictedFpm": 2416.5104363927367,
+          "observedFpm": 2410,
+          "errorFpm": 6.510436392736665,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 1,
+          "configurationFactor": 0.8814189440998325,
+          "referenceDeltaCd0": 0.020170381586968926,
+          "fitRole": "reserved engineering check"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-12600-normal",
+          "altFt": 12600,
+          "tasMph": 195,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1398.120262041451,
+          "propEta": 0.860381699717816,
+          "weightLb": 12565,
+          "deltaCd0": 0.016538896623349165,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1740.5849861460097,
+          "observedFpm": 1800,
+          "errorFpm": -59.41501385399033,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 1,
+          "configurationFactor": 0.8199595308615341,
+          "referenceDeltaCd0": 0.020170381586968926,
+          "fitRole": "fit"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-15000",
+          "altFt": 15000,
+          "tasMph": 200,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1397.971010501195,
+          "propEta": 0.86028985261612,
+          "weightLb": 12565,
+          "deltaCd0": 0.016566021093861287,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1693.2761057277382,
+          "observedFpm": 1725,
+          "errorFpm": -31.72389427226176,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 1,
+          "configurationFactor": 0.8213042982074155,
+          "referenceDeltaCd0": 0.020170381586968926,
+          "fitRole": "fit"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-20000",
+          "altFt": 20000,
+          "tasMph": 217,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1404.9387784465687,
+          "propEta": 0.864577709813273,
+          "weightLb": 12565,
+          "deltaCd0": 0.015316877866472964,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1580.2795148421094,
+          "observedFpm": 1565,
+          "errorFpm": 15.279514842109393,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 1,
+          "configurationFactor": 0.7593747198302104,
+          "referenceDeltaCd0": 0.020170381586968926,
+          "fitRole": "fit"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-25000",
+          "altFt": 25000,
+          "tasMph": 236,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1411.5833711831071,
+          "propEta": 0.8686666899588351,
+          "weightLb": 12565,
+          "deltaCd0": 0.014157726174358062,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1450.021862218448,
+          "observedFpm": 1380,
+          "errorFpm": 70.02186221844795,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 1,
+          "configurationFactor": 0.7019067097622318,
+          "referenceDeltaCd0": 0.020170381586968926,
+          "fitRole": "reserved engineering check"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-30000",
+          "altFt": 30000,
+          "tasMph": 270,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1625,
+          "propulsiveHp": 1428.6110063840222,
+          "propEta": 0.8791452346978598,
+          "weightLb": 12565,
+          "deltaCd0": 0.011324170121657113,
+          "retainedPowerScale": 1,
+          "predictedFpm": 1269.447515089125,
+          "observedFpm": 1140,
+          "errorFpm": 129.4475150891251,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 1,
+          "configurationFactor": 0.5614256761990607,
+          "referenceDeltaCd0": 0.020170381586968926,
+          "fitRole": "reserved engineering check"
+        },
+        {
+          "status": "qualified-measured-power-scenario",
+          "stateId": "p47-5902-35000",
+          "altFt": 35000,
+          "tasMph": 305,
+          "engineRpm": 2550,
+          "propRpm": 1275,
+          "shaftHp": 1365,
+          "propulsiveHp": 1215.2025432072612,
+          "propEta": 0.890258273411913,
+          "weightLb": 12565,
+          "deltaCd0": 0.007967390606759647,
+          "retainedPowerScale": 1,
+          "predictedFpm": 532.6211769755648,
+          "observedFpm": 450,
+          "errorFpm": 82.62117697556482,
+          "polar": {
+            "e": 0.7,
+            "cd0": 0.02182668614955703,
+            "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+          },
+          "sourceSpecimen": "41-5902",
+          "historicalAccuracy": null,
+          "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+          "configurationModelVersion": "3.4.0",
+          "heatFraction": 1,
+          "configurationFactor": 0.39500445603403855,
+          "referenceDeltaCd0": 0.020170381586968926,
+          "fitRole": "reserved engineering check"
+        }
+      ],
+      "summary": {
+        "all": {
+          "count": 10,
+          "mae": 46.02598019629113,
+          "rmse": 60.89516628492447,
+          "maxAbs": 129.4475150891251
+        },
+        "fit": {
+          "count": 5,
+          "mae": 33.61083600234879,
+          "rmse": 41.330023914619616,
+          "maxAbs": 61.40675066404037
+        },
+        "check": {
+          "count": 5,
+          "mae": 58.44112439023347,
+          "rmse": 75.55310501199916,
+          "maxAbs": 129.4475150891251
+        }
+      },
+      "transferred": {
+        "rows": [
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-0",
+            "altFt": 0,
+            "tasMph": 172,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1697.100370092082,
+            "propEta": 0.848550185046041,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2656.986562663061,
+            "observedFpm": 2560,
+            "errorFpm": 96.9865626630608,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-5000",
+            "altFt": 5000,
+            "tasMph": 183,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1701.740899903189,
+            "propEta": 0.8508704499515946,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2564.696034974454,
+            "observedFpm": 2545,
+            "errorFpm": 19.69603497445405,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-10000",
+            "altFt": 10000,
+            "tasMph": 196,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1708.0286053457394,
+            "propEta": 0.8540143026728697,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2452.975979172062,
+            "observedFpm": 2465,
+            "errorFpm": -12.024020827937875,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-12600",
+            "altFt": 12600,
+            "tasMph": 204,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1712.4785116239848,
+            "propEta": 0.8562392558119923,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2382.7090153631457,
+            "observedFpm": 2410,
+            "errorFpm": -27.29098463685432,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-12600-normal",
+            "altFt": 12600,
+            "tasMph": 195,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1398.120262041451,
+            "propEta": 0.860381699717816,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1677.488850610694,
+            "observedFpm": 1800,
+            "errorFpm": -122.51114938930596,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-15000",
+            "altFt": 15000,
+            "tasMph": 200,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1397.971010501195,
+            "propEta": 0.86028985261612,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1631.016695859787,
+            "observedFpm": 1725,
+            "errorFpm": -93.98330414021302,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-20000",
+            "altFt": 20000,
+            "tasMph": 217,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1404.9387784465687,
+            "propEta": 0.864577709813273,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1476.4127274687703,
+            "observedFpm": 1565,
+            "errorFpm": -88.5872725312297,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-25000",
+            "altFt": 25000,
+            "tasMph": 236,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1411.5833711831071,
+            "propEta": 0.8686666899588351,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1300.9774826542157,
+            "observedFpm": 1380,
+            "errorFpm": -79.02251734578431,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-30000",
+            "altFt": 30000,
+            "tasMph": 270,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1428.6110063840222,
+            "propEta": 0.8791452346978598,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 971.0279424111851,
+            "observedFpm": 1140,
+            "errorFpm": -168.9720575888149,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-35000",
+            "altFt": 35000,
+            "tasMph": 305,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1365,
+            "propulsiveHp": 1215.2025432072612,
+            "propEta": 0.890258273411913,
+            "weightLb": 12565,
+            "deltaCd0": 0.018868610875495496,
+            "retainedPowerScale": 1,
+            "predictedFpm": 17.81360187469243,
+            "observedFpm": 450,
+            "errorFpm": -432.18639812530756,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Same-specimen report power/RPM/TAS; gross test mass is a scenario, installed propeller efficiency and open-cooling drag remain unverified. This replay API does not fit observations; supplied drag assumptions may be calibrated separately."
+          }
+        ],
+        "summary": {
+          "all": {
+            "count": 10,
+            "mae": 114.12603022229625,
+            "rmse": 162.46674961497285,
+            "maxAbs": 432.18639812530756
+          },
+          "fit": {
+            "count": 5,
+            "mae": 82.81846191034947,
+            "rmse": 90.81907118044039,
+            "maxAbs": 122.51114938930596
+          },
+          "check": {
+            "count": 5,
+            "mae": 145.43359853424303,
+            "rmse": 211.05161873539532,
+            "maxAbs": 432.18639812530756
+          }
+        }
+      },
+      "refittedConstant": {
+        "model": {
+          "version": "3.4.0",
+          "identity": {
+            "aircraftId": "p47b",
+            "variant": "P-47B",
+            "specimen": "41-5902"
+          },
+          "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+          "configuration": {
+            "gearState": "up",
+            "flaps": "up",
+            "cooling": "cowl, oil cooler and intercooler flaps wide open",
+            "stores": "none",
+            "guns": 6,
+            "mixture": "auto rich"
+          },
+          "reference": {
+            "stateId": "p47-5902-0",
+            "altFt": 0,
+            "tasMph": 172,
+            "shaftHp": 2000
+          },
+          "deltaCd0": 0.017313082782287822,
+          "heatFraction": 0,
+          "split": "lower-altitude-training",
+          "fitStateIds": [
+            "p47-5902-0",
+            "p47-5902-10000",
+            "p47-5902-12600-normal",
+            "p47-5902-15000",
+            "p47-5902-20000"
+          ],
+          "policy": "calibration/v3.4-policy.json",
+          "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+          "unbounded": 0.017313082782287822,
+          "clipped": false,
+          "fitMse": 6332.272397634171
+        },
+        "rows": [
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-0",
+            "altFt": 0,
+            "tasMph": 172,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1697.100370092082,
+            "propEta": 0.848550185046041,
+            "weightLb": 12565,
+            "deltaCd0": 0.017313082782287822,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2699.5020353401815,
+            "observedFpm": 2560,
+            "errorFpm": 139.50203534018146,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.017313082782287822,
+            "fitRole": "fit"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-5000",
+            "altFt": 5000,
+            "tasMph": 183,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1701.740899903189,
+            "propEta": 0.8508704499515946,
+            "weightLb": 12565,
+            "deltaCd0": 0.017313082782287822,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2608.818131838292,
+            "observedFpm": 2545,
+            "errorFpm": 63.818131838292175,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.017313082782287822,
+            "fitRole": "reserved engineering check"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-10000",
+            "altFt": 10000,
+            "tasMph": 196,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1708.0286053457394,
+            "propEta": 0.8540143026728697,
+            "weightLb": 12565,
+            "deltaCd0": 0.017313082782287822,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2499.4347906383628,
+            "observedFpm": 2465,
+            "errorFpm": 34.434790638362756,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.017313082782287822,
+            "fitRole": "fit"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-12600",
+            "altFt": 12600,
+            "tasMph": 204,
+            "engineRpm": 2700,
+            "propRpm": 1350,
+            "shaftHp": 2000,
+            "propulsiveHp": 1712.4785116239848,
+            "propEta": 0.8562392558119923,
+            "weightLb": 12565,
+            "deltaCd0": 0.017313082782287822,
+            "retainedPowerScale": 1,
+            "predictedFpm": 2430.9442762021786,
+            "observedFpm": 2410,
+            "errorFpm": 20.94427620217857,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.017313082782287822,
+            "fitRole": "reserved engineering check"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-12600-normal",
+            "altFt": 12600,
+            "tasMph": 195,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1398.120262041451,
+            "propEta": 0.860381699717816,
+            "weightLb": 12565,
+            "deltaCd0": 0.017313082782287822,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1719.6175414179895,
+            "observedFpm": 1800,
+            "errorFpm": -80.38245858201049,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.017313082782287822,
+            "fitRole": "fit"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-15000",
+            "altFt": 15000,
+            "tasMph": 200,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1397.971010501195,
+            "propEta": 0.86028985261612,
+            "weightLb": 12565,
+            "deltaCd0": 0.017313082782287822,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1673.0764070113735,
+            "observedFpm": 1725,
+            "errorFpm": -51.923592988626524,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.017313082782287822,
+            "fitRole": "fit"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-20000",
+            "altFt": 20000,
+            "tasMph": 217,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1404.9387784465687,
+            "propEta": 0.864577709813273,
+            "weightLb": 12565,
+            "deltaCd0": 0.017313082782287822,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1521.9025504087333,
+            "observedFpm": 1565,
+            "errorFpm": -43.097449591266695,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.017313082782287822,
+            "fitRole": "fit"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-25000",
+            "altFt": 25000,
+            "tasMph": 236,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1411.5833711831071,
+            "propEta": 0.8686666899588351,
+            "weightLb": 12565,
+            "deltaCd0": 0.017313082782287822,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1350.1917458457756,
+            "observedFpm": 1380,
+            "errorFpm": -29.808254154224414,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.017313082782287822,
+            "fitRole": "reserved engineering check"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-30000",
+            "altFt": 30000,
+            "tasMph": 270,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1625,
+            "propulsiveHp": 1428.6110063840222,
+            "propEta": 0.8791452346978598,
+            "weightLb": 12565,
+            "deltaCd0": 0.017313082782287822,
+            "retainedPowerScale": 1,
+            "predictedFpm": 1032.5566950397204,
+            "observedFpm": 1140,
+            "errorFpm": -107.44330496027965,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.017313082782287822,
+            "fitRole": "reserved engineering check"
+          },
+          {
+            "status": "qualified-measured-power-scenario",
+            "stateId": "p47-5902-35000",
+            "altFt": 35000,
+            "tasMph": 305,
+            "engineRpm": 2550,
+            "propRpm": 1275,
+            "shaftHp": 1365,
+            "propulsiveHp": 1215.2025432072612,
+            "propEta": 0.890258273411913,
+            "weightLb": 12565,
+            "deltaCd0": 0.017313082782287822,
+            "retainedPowerScale": 1,
+            "predictedFpm": 91.27305191095807,
+            "observedFpm": 450,
+            "errorFpm": -358.7269480890419,
+            "polar": {
+              "e": 0.7,
+              "cd0": 0.02182668614955703,
+              "source": "v2.8 joint engineering calibration; source speed anchor; not measured drag"
+            },
+            "sourceSpecimen": "41-5902",
+            "historicalAccuracy": null,
+            "qualification": "Source-matched aggregate configuration-loss fit; pressure/airflow and shaft-power mixture is an engineering approximation, not isolated measured cooling drag. Gross test mass and installed propeller losses remain assumptions.",
+            "configurationModelVersion": "3.4.0",
+            "heatFraction": 0,
+            "configurationFactor": 1,
+            "referenceDeltaCd0": 0.017313082782287822,
+            "fitRole": "reserved engineering check"
+          }
+        ],
+        "summary": {
+          "all": {
+            "count": 10,
+            "mae": 93.00812423844647,
+            "rmse": 133.15044037738724,
+            "maxAbs": 358.7269480890419
+          },
+          "fit": {
+            "count": 5,
+            "mae": 69.86806542808958,
+            "rmse": 79.57557664028589,
+            "maxAbs": 139.50203534018146
+          },
+          "check": {
+            "count": 5,
+            "mae": 116.14818304880335,
+            "rmse": 170.6628464187513,
+            "maxAbs": 358.7269480890419
+          }
+        }
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "weightLb": 12365,
+      "retainedPowerScale": 0.97,
+      "selected": {
+        "all": {
+          "count": 10,
+          "mae": 68.89109002611681,
+          "rmse": 80.18909504412676,
+          "maxAbs": 131.53818296430677
+        },
+        "fit": {
+          "count": 5,
+          "mae": 59.65461842605214,
+          "rmse": 74.07823110779331,
+          "maxAbs": 131.53818296430677
+        },
+        "check": {
+          "count": 5,
+          "mae": 78.12756162618146,
+          "rmse": 85.86616099449395,
+          "maxAbs": 131.24762976058736
+        }
+      },
+      "transferred": {
+        "all": {
+          "count": 10,
+          "mae": 153.03270438339007,
+          "rmse": 196.8949124667029,
+          "maxAbs": 485.4893298652981
+        },
+        "fit": {
+          "count": 5,
+          "mae": 128.6537213061843,
+          "rmse": 145.25755961168582,
+          "maxAbs": 224.56604298768036
+        },
+        "check": {
+          "count": 5,
+          "mae": 177.41168746059583,
+          "rmse": 237.5614751726355,
+          "maxAbs": 485.4893298652981
+        }
+      },
+      "refittedConstant": {
+        "all": {
+          "count": 10,
+          "mae": 99.56461116035746,
+          "rmse": 142.80965613573247,
+          "maxAbs": 382.3435651396278
+        },
+        "fit": {
+          "count": 5,
+          "mae": 85.6622544921493,
+          "rmse": 96.33120460207422,
+          "maxAbs": 138.1723898994278
+        },
+        "check": {
+          "count": 5,
+          "mae": 113.46696782856561,
+          "rmse": 177.50914002136793,
+          "maxAbs": 382.3435651396278
+        }
+      },
+      "improvesBoth": true
+    },
+    {
+      "weightLb": 12365,
+      "retainedPowerScale": 1,
+      "selected": {
+        "all": {
+          "count": 10,
+          "mae": 58.54026191145592,
+          "rmse": 68.00312979361371,
+          "maxAbs": 132.69855335787634
+        },
+        "fit": {
+          "count": 5,
+          "mae": 68.27363898474145,
+          "rmse": 78.33937068786918,
+          "maxAbs": 132.69855335787634
+        },
+        "check": {
+          "count": 5,
+          "mae": 48.806884838170404,
+          "rmse": 55.78345923015862,
+          "maxAbs": 77.63053222814438
+        }
+      },
+      "transferred": {
+        "all": {
+          "count": 10,
+          "mae": 100.53173119807882,
+          "rmse": 145.6388756944193,
+          "maxAbs": 391.7224221420874
+        },
+        "fit": {
+          "count": 5,
+          "mae": 86.0419091143724,
+          "rmse": 97.9911522784011,
+          "maxAbs": 162.03861611743514
+        },
+        "check": {
+          "count": 5,
+          "mae": 115.02155328178523,
+          "rmse": 181.160421456289,
+          "maxAbs": 391.7224221420874
+        }
+      },
+      "refittedConstant": {
+        "all": {
+          "count": 10,
+          "mae": 102.05260748594716,
+          "rmse": 135.73237105834346,
+          "maxAbs": 288.5766574164171
+        },
+        "fit": {
+          "count": 5,
+          "mae": 81.94690280495483,
+          "rmse": 114.27647789584063,
+          "maxAbs": 221.73537316897819
+        },
+        "check": {
+          "count": 5,
+          "mae": 122.15831216693948,
+          "rmse": 154.2317726863085,
+          "maxAbs": 288.5766574164171
+        }
+      },
+      "improvesBoth": true
+    },
+    {
+      "weightLb": 12365,
+      "retainedPowerScale": 1.03,
+      "selected": {
+        "all": {
+          "count": 10,
+          "mae": 158.58068524284104,
+          "rmse": 169.18711200268348,
+          "maxAbs": 258.2103396002899
+        },
+        "fit": {
+          "count": 5,
+          "mae": 171.76692839720968,
+          "rmse": 181.93002140945532,
+          "maxAbs": 258.2103396002899
+        },
+        "check": {
+          "count": 5,
+          "mae": 145.3944420884724,
+          "rmse": 155.4027832619875,
+          "maxAbs": 195.55581799329957
+        }
+      },
+      "transferred": {
+        "all": {
+          "count": 10,
+          "mae": 141.35268208067,
+          "rmse": 171.7549743063122,
+          "maxAbs": 298.1496249276837
+        },
+        "fit": {
+          "count": 5,
+          "mae": 117.33519793620853,
+          "rmse": 156.36694165481896,
+          "maxAbs": 287.5504023598487
+        },
+        "check": {
+          "count": 5,
+          "mae": 165.3701662251315,
+          "rmse": 185.87340303400688,
+          "maxAbs": 298.1496249276837
+        }
+      },
+      "refittedConstant": {
+        "all": {
+          "count": 10,
+          "mae": 188.84152980099196,
+          "rmse": 205.5424210074105,
+          "maxAbs": 347.2471594113922
+        },
+        "fit": {
+          "count": 5,
+          "mae": 181.37402025555326,
+          "rmse": 207.686016987328,
+          "maxAbs": 347.2471594113922
+        },
+        "check": {
+          "count": 5,
+          "mae": 196.30903934643072,
+          "rmse": 203.37623267017824,
+          "maxAbs": 273.3186102698746
+        }
+      },
+      "improvesBoth": true
+    },
+    {
+      "weightLb": 12565,
+      "retainedPowerScale": 0.97,
+      "selected": {
+        "all": {
+          "count": 10,
+          "mae": 125.21198578873855,
+          "rmse": 131.5819251662813,
+          "maxAbs": 186.27514509141406
+        },
+        "fit": {
+          "count": 5,
+          "mae": 115.4099867165834,
+          "rmse": 124.21707862861199,
+          "maxAbs": 186.27514509141406
+        },
+        "check": {
+          "count": 5,
+          "mae": 135.0139848608937,
+          "rmse": 138.55584952611324,
+          "maxAbs": 175.85764302803318
+        }
+      },
+      "transferred": {
+        "all": {
+          "count": 10,
+          "mae": 202.23968863977703,
+          "rmse": 237.92824325163906,
+          "maxAbs": 524.4607963742133
+        },
+        "fit": {
+          "count": 5,
+          "mae": 171.76159489040433,
+          "rmse": 191.77179461006858,
+          "maxAbs": 276.12804618380756
+        },
+        "check": {
+          "count": 5,
+          "mae": 232.7177823891497,
+          "rmse": 276.4837728794512,
+          "maxAbs": 524.4607963742133
+        }
+      },
+      "refittedConstant": {
+        "all": {
+          "count": 10,
+          "mae": 140.16177926008822,
+          "rmse": 175.73949412136025,
+          "maxAbs": 422.9568265506627
+        },
+        "fit": {
+          "count": 5,
+          "mae": 118.6537760098989,
+          "rmse": 132.49148328258025,
+          "maxAbs": 191.109540777024
+        },
+        "check": {
+          "count": 5,
+          "mae": 161.66978251027754,
+          "rmse": 210.27302833612538,
+          "maxAbs": 422.9568265506627
+        }
+      },
+      "improvesBoth": true
+    },
+    {
+      "weightLb": 12565,
+      "retainedPowerScale": 1,
+      "selected": {
+        "all": {
+          "count": 10,
+          "mae": 38.271386955409504,
+          "rmse": 48.5079596473158,
+          "maxAbs": 83.58324477912743
+        },
+        "fit": {
+          "count": 5,
+          "mae": 42.39559117898584,
+          "rmse": 51.07499269240324,
+          "maxAbs": 83.11249758542453
+        },
+        "check": {
+          "count": 5,
+          "mae": 34.14718273183316,
+          "rmse": 45.79726432618209,
+          "maxAbs": 83.58324477912743
+        }
+      },
+      "transferred": {
+        "all": {
+          "count": 10,
+          "mae": 114.12603022229625,
+          "rmse": 162.46674961497285,
+          "maxAbs": 432.18639812530756
+        },
+        "fit": {
+          "count": 5,
+          "mae": 97.81621260006985,
+          "rmse": 110.41667739891061,
+          "maxAbs": 168.9720575888149
+        },
+        "check": {
+          "count": 5,
+          "mae": 130.43584784452264,
+          "rmse": 201.4920514886219,
+          "maxAbs": 432.18639812530756
+        }
+      },
+      "refittedConstant": {
+        "all": {
+          "count": 10,
+          "mae": 87.94781624120904,
+          "rmse": 125.55221290904342,
+          "maxAbs": 330.682428301757
+        },
+        "fit": {
+          "count": 5,
+          "mae": 76.37757541095338,
+          "rmse": 88.11275840796574,
+          "maxAbs": 155.73311267836834
+        },
+        "check": {
+          "count": 5,
+          "mae": 99.51805707146468,
+          "rmse": 154.1520617392288,
+          "maxAbs": 330.682428301757
+        }
+      },
+      "improvesBoth": true
+    },
+    {
+      "weightLb": 12565,
+      "retainedPowerScale": 1.03,
+      "selected": {
+        "all": {
+          "count": 10,
+          "mae": 97.31943794846097,
+          "rmse": 111.47756716875521,
+          "maxAbs": 191.62749866509057
+        },
+        "fit": {
+          "count": 5,
+          "mae": 109.68870827618453,
+          "rmse": 123.75071413422405,
+          "maxAbs": 191.62749866509057
+        },
+        "check": {
+          "count": 5,
+          "mae": 84.9501676207374,
+          "rmse": 97.67423772417277,
+          "maxAbs": 128.2369055382851
+        }
+      },
+      "transferred": {
+        "all": {
+          "count": 10,
+          "mae": 104.67282857685309,
+          "rmse": 145.79118524734565,
+          "maxAbs": 340.1030206835168
+        },
+        "fit": {
+          "count": 5,
+          "mae": 86.05807878781812,
+          "rmse": 114.74690221393658,
+          "maxAbs": 220.50054888569912
+        },
+        "check": {
+          "count": 5,
+          "mae": 123.2875783658881,
+          "rmse": 171.29882610209853,
+          "maxAbs": 340.1030206835168
+        }
+      },
+      "refittedConstant": {
+        "all": {
+          "count": 10,
+          "mae": 136.43843607763336,
+          "rmse": 160.21136587175536,
+          "maxAbs": 279.2470989010062
+        },
+        "fit": {
+          "count": 5,
+          "mae": 119.14288183992645,
+          "rmse": 153.24498865106327,
+          "maxAbs": 279.2470989010062
+        },
+        "check": {
+          "count": 5,
+          "mae": 153.73399031534026,
+          "rmse": 166.88719831767327,
+          "maxAbs": 238.5990508599662
+        }
+      },
+      "improvesBoth": true
+    },
+    {
+      "weightLb": 12765,
+      "retainedPowerScale": 0.97,
+      "selected": {
+        "all": {
+          "count": 10,
+          "mae": 181.5411427360111,
+          "rmse": 185.55967684895367,
+          "maxAbs": 239.74194375716775
+        },
+        "fit": {
+          "count": 5,
+          "mae": 172.47423878314936,
+          "rmse": 178.21547521336015,
+          "maxAbs": 239.74194375716775
+        },
+        "check": {
+          "count": 5,
+          "mae": 190.60804668887286,
+          "rmse": 192.62406843136827,
+          "maxAbs": 219.69418995442496
+        }
+      },
+      "transferred": {
+        "all": {
+          "count": 10,
+          "mae": 257.3619877280438,
+          "rmse": 283.42160488039593,
+          "maxAbs": 562.835484258753
+        },
+        "fit": {
+          "count": 5,
+          "mae": 227.9429388774745,
+          "rmse": 241.95165521505407,
+          "maxAbs": 326.65853478774443
+        },
+        "check": {
+          "count": 5,
+          "mae": 286.78103657861305,
+          "rmse": 319.55439093314635,
+          "maxAbs": 562.835484258753
+        }
+      },
+      "refittedConstant": {
+        "all": {
+          "count": 10,
+          "mae": 190.0071986167824,
+          "rmse": 218.28960929542154,
+          "maxAbs": 462.92186257188166
+        },
+        "fit": {
+          "count": 5,
+          "mae": 163.16819171472662,
+          "rmse": 179.781142873539,
+          "maxAbs": 242.97208586990405
+        },
+        "check": {
+          "count": 5,
+          "mae": 216.8462055188382,
+          "rmse": 250.95706349847922,
+          "maxAbs": 462.92186257188166
+        }
+      },
+      "improvesBoth": true
+    },
+    {
+      "weightLb": 12765,
+      "retainedPowerScale": 1,
+      "selected": {
+        "all": {
+          "count": 10,
+          "mae": 72.87898404125215,
+          "rmse": 83.86414423711109,
+          "maxAbs": 138.19563228730863
+        },
+        "fit": {
+          "count": 5,
+          "mae": 63.58429501954961,
+          "rmse": 78.77571696504273,
+          "maxAbs": 138.19563228730863
+        },
+        "check": {
+          "count": 5,
+          "mae": 82.17367306295469,
+          "rmse": 88.66101620153825,
+          "maxAbs": 128.86553237530234
+        }
+      },
+      "transferred": {
+        "all": {
+          "count": 10,
+          "mae": 154.38396340103952,
+          "rmse": 195.31825833344655,
+          "maxAbs": 472.0068266796304
+        },
+        "fit": {
+          "count": 5,
+          "mae": 130.42126384938408,
+          "rmse": 146.9279945395479,
+          "maxAbs": 221.18144926513685
+        },
+        "check": {
+          "count": 5,
+          "mae": 178.346662952695,
+          "rmse": 233.9029895007939,
+          "maxAbs": 472.0068266796304
+        }
+      },
+      "refittedConstant": {
+        "all": {
+          "count": 10,
+          "mae": 101.75925191697216,
+          "rmse": 141.76002752058827,
+          "maxAbs": 372.09320499275907
+        },
+        "fit": {
+          "count": 5,
+          "mae": 88.77696403304712,
+          "rmse": 98.50366906379155,
+          "maxAbs": 137.49500034729658
+        },
+        "check": {
+          "count": 5,
+          "mae": 114.7415398008972,
+          "rmse": 174.61053228899718,
+          "maxAbs": 372.09320499275907
+        }
+      },
+      "improvesBoth": true
+    },
+    {
+      "weightLb": 12765,
+      "retainedPowerScale": 1.03,
+      "selected": {
+        "all": {
+          "count": 10,
+          "mae": 54.514554285919395,
+          "rmse": 62.72060358577926,
+          "maxAbs": 126.78796612519136
+        },
+        "fit": {
+          "count": 5,
+          "mae": 63.89587796880382,
+          "rmse": 73.67720683096577,
+          "maxAbs": 126.78796612519136
+        },
+        "check": {
+          "count": 5,
+          "mae": 45.13323060303496,
+          "rmse": 49.39045881459315,
+          "maxAbs": 64.7770553080934
+        }
+      },
+      "transferred": {
+        "all": {
+          "count": 10,
+          "mae": 100.67330147369083,
+          "rmse": 142.50728267228345,
+          "maxAbs": 381.3661970238449
+        },
+        "fit": {
+          "count": 5,
+          "mae": 87.12059020513266,
+          "rmse": 97.18376055360812,
+          "maxAbs": 155.20863796396452
+        },
+        "check": {
+          "count": 5,
+          "mae": 114.22601274224898,
+          "rmse": 176.55584927703515,
+          "maxAbs": 381.3661970238449
+        }
+      },
+      "refittedConstant": {
+        "all": {
+          "count": 10,
+          "mae": 95.48343874607673,
+          "rmse": 129.7380625673986,
+          "maxAbs": 281.4525753369736
+        },
+        "fit": {
+          "count": 5,
+          "mae": 78.7142639273815,
+          "rmse": 108.84185775058542,
+          "maxAbs": 213.03475632999152
+        },
+        "check": {
+          "count": 5,
+          "mae": 112.25261356477196,
+          "rmse": 147.70707416669592,
+          "maxAbs": 281.4525753369736
+        }
+      },
+      "improvesBoth": true
+    }
+  ],
+  "acceptance": {
+    "primaryVsTransferred": true,
+    "primaryVsRefittedConstant": true,
+    "noLargeCheckDegradation": true,
+    "highAltitude": true,
+    "alternateSplits": true,
+    "pairedStress": true,
+    "pass": true,
+    "maxCheckDegradationFpm": -15.558490943198194,
+    "improvedStressCases": 9,
+    "highAltitudeResidualFpm": -83.58324477912743
+  },
+  "independentHistoricalAccuracy": null,
+  "scope": "Exact source-matched P47 climb states only; no generic clean, turn or other-aircraft coefficient change"
+}

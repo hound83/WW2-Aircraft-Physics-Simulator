@@ -1,0 +1,38 @@
+{
+  "version": "3.4.0",
+  "identity": {
+    "aircraftId": "p47b",
+    "variant": "P-47B",
+    "specimen": "41-5902"
+  },
+  "sourceSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+  "configuration": {
+    "gearState": "up",
+    "flaps": "up",
+    "cooling": "cowl, oil cooler and intercooler flaps wide open",
+    "stores": "none",
+    "guns": 6,
+    "mixture": "auto rich"
+  },
+  "reference": {
+    "stateId": "p47-5902-0",
+    "altFt": 0,
+    "tasMph": 172,
+    "shaftHp": 2000
+  },
+  "deltaCd0": 0.019924999007313732,
+  "heatFraction": 0.7,
+  "split": "primary",
+  "fitStateIds": [
+    "p47-5902-0",
+    "p47-5902-10000",
+    "p47-5902-12600-normal",
+    "p47-5902-20000",
+    "p47-5902-30000"
+  ],
+  "policy": "calibration/v3.4-policy.json",
+  "calibrationMeaning": "Source-conditioned aggregate configuration loss; not isolated measured cooling drag",
+  "unbounded": 0.019924999007313732,
+  "clipped": false,
+  "fitMse": 2608.6548785290456
+}
