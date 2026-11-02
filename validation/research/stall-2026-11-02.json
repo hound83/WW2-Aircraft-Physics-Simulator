@@ -1,0 +1,117 @@
+{
+  "date": "2026-11-02",
+  "activePhysicsChanged": false,
+  "targetStallCalibrationsCompleted": [],
+  "baseline": [
+    {
+      "aircraftId": "spitfire_lfix_bs543",
+      "weightLb": 7110,
+      "clMax": 1.6,
+      "stallEasMph": 84.75121646336908,
+      "status": "existing-provisional-model-not-observation"
+    },
+    {
+      "aircraftId": "bf109f4",
+      "weightLb": 6371,
+      "clMax": 1.5,
+      "stallEasMph": 98.06509011620857,
+      "status": "existing-provisional-model-not-observation"
+    },
+    {
+      "aircraftId": "p47b",
+      "weightLb": 12565,
+      "clMax": 1.3,
+      "stallEasMph": 112.26070296569274,
+      "status": "existing-provisional-model-not-observation"
+    },
+    {
+      "aircraftId": "p51b",
+      "weightLb": 9240,
+      "clMax": 1.6,
+      "stallEasMph": 98.46385799361909,
+      "status": "existing-provisional-model-not-observation"
+    }
+  ],
+  "p51": {
+    "status": "source-informed-P51B-candidate-not-exact-specimen-calibration",
+    "sourceId": "naca-tn1044",
+    "weightLb": 9240,
+    "areaFt2": 233.2,
+    "clMax": 1.45,
+    "clMaxEngineeringBracket": [
+      1.4,
+      1.48
+    ],
+    "at8000Ft": {
+      "altFt": 8000,
+      "easMph": 103.3871410242965,
+      "casMph": 103.46925811981934,
+      "tasMph": 116.6140122684872,
+      "mach": 0.15758976880225736
+    },
+    "stallEasBracketMph": [
+      102.33393385603426,
+      105.21714399723137
+    ],
+    "sameLiftAt9270Lb": {
+      "altFt": 8000,
+      "easMph": 103.5548412821622,
+      "casMph": 103.63735721031952,
+      "tasMph": 116.8031673194387,
+      "mach": 0.15784538903320008
+    }
+  },
+  "spit": {
+    "status": "older-mark-transfer-sensitivity-only-not-measured-IX",
+    "sourceId": "rae-aero1106",
+    "weightLb": 7110,
+    "areaFt2": 242,
+    "clMax": 1.36,
+    "at8000Ft": {
+      "altFt": 8000,
+      "easMph": 91.92560094043341,
+      "casMph": 91.98338698116801,
+      "tasMph": 103.68613591255561,
+      "mach": 0.1401193035776767
+    }
+  },
+  "conversionExample": [
+    {
+      "altFt": 0,
+      "iasMph": 100,
+      "installationCorrectionMph": 5,
+      "casMph": 105,
+      "easMph": 105.00000077675651,
+      "tasMph": 105.00000000000132,
+      "status": "P51D-conversion-example-not-stall-measurement"
+    },
+    {
+      "altFt": 8000,
+      "iasMph": 100,
+      "installationCorrectionMph": 5,
+      "casMph": 105,
+      "easMph": 104.9142036688239,
+      "tasMph": 118.33644022422126,
+      "status": "P51D-conversion-example-not-stall-measurement"
+    },
+    {
+      "altFt": 20000,
+      "iasMph": 100,
+      "installationCorrectionMph": 5,
+      "casMph": 105,
+      "easMph": 104.71014177266228,
+      "tasMph": 143.45049708491862,
+      "status": "P51D-conversion-example-not-stall-measurement"
+    },
+    {
+      "altFt": 30000,
+      "iasMph": 100,
+      "installationCorrectionMph": 5,
+      "casMph": 105,
+      "easMph": 104.42084837531553,
+      "tasMph": 170.71616281514588,
+      "status": "P51D-conversion-example-not-stall-measurement"
+    }
+  ],
+  "warning": "No IAS correction has been recovered for the exact four targets at stall. Candidate lift measurements can constrain engineering choices but cannot be reported as the missing cockpit corrections. Constant CLmax is not established across altitude/Mach."
+}

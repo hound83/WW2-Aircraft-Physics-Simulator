@@ -96,10 +96,10 @@ These are derived one-g scenarios, not observations on the target specimens. Pre
 
 Current active provisional model, evaluated at its default weights: P51B98.464 EAS/CL1.6/9240lb; Spitfire84.751/1.6/7110lb; P47B112.261/1.3/12565lb; Bf109F4 98.065/1.5/6371lb. These are model outputs, not calibrated historical stall targets.
 
-## Persistence and verification status
+## Integration and verification status
 
-No active coefficient or solver changes were made. Before the Windows workspace became unavailable, the local research branch contained a structured register, ten selected-page PDF excerpts with SHA256 manifest, and a calculation diagnostic. The diagnostic ran and produced the numbers above. Its P51D worked-example output omitted EAS because of a property-name typo (.EAS instead of .eas); the attempted fix did not apply before disconnect. Do not use that local diagnostic as a completed checked deliverable until fixed.
+The v3.5 stall laboratory now integrates the candidate through the shared solver, preserves CL times area, exposes source altitude/Mach limits and separates manual correction outcomes. The interrupted diagnostic property-name error is fixed. Ten selected-page source excerpts and their SHA256/page-mapping manifest are preserved under references/sources/stall-2026-11-02. The Spitfire manual reproduction is correctly distinguished from an original-print scan.
 
-The local Markdown report/writeback, full npm check, git commit and PDF upload were interrupted by environment loss. This report was therefore saved directly to a separate GitHub research branch to preserve the findings. Do not claim the local excerpt bundle was pushed, tests passed, or anything was merged/deployed.
+See [v3.5 delivered behavior and validation](V35_STALL_LAB.md), [structured register](../references/stall-calibration-research-2026-11-02.json), [source manifest](../references/sources/stall-2026-11-02/manifest.json), and [calculation sweep](../validation/current/v35-stall-lab.json). No active general coefficient or solver changes were made and no exact-target historical stall calibration is claimed.
 
-Next complete milestone: integrate and stress-test the calibrated P51B lift candidate, including Figure6 Mach dependence, propeller/finish transfer and source-conditioned scenarios, while targeting missing F4/B/IX near-stall calibration. Keep exact-specimen gates and unresolved cases visible. Stall calibration remains ahead of unrelated climb fitting.
+Next complete milestone: recover matching low-speed records for the remaining F4/P47B/IX cases and validate a suitable altitude/Mach-dependent lift model. Stall calibration remains ahead of unrelated climb fitting.

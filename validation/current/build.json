@@ -1,6 +1,6 @@
 {
-  "version": "3.4.0",
-  "researchStatus": "v3.4 same-specimen configuration model; v3.1 prior climb and v2.8 clean behavior retained",
+  "version": "3.5.0",
+  "researchStatus": "v3.5 source-bounded stall laboratory; v3.4 climb and prior general-flight behavior retained",
   "workingCalibration": "2.8.0",
   "climbConditionCalibration": "3.1.0",
   "sourceConfigurationCalibration": "3.4.0",
@@ -11,7 +11,7 @@
   "physicsSha256": "67558157176b73a8799eb8eaecfec971b0c22d850802c1e1acd34afb1edcf667",
   "casesSha256": "c0e5f628496af2ca50c3dd181ddb97bd9257c1b20ec358e98aa86b4a1ebd78e1",
   "storesSha256": "49f4eb05a187ec57b331bdcff360eacca8d591194f9ed6b3c842bcfae296ddd8",
-  "htmlSha256": "acd197a1d4f457f44161302e3af5e424792e03ef1390e73a998a10cb4e58ff27",
-  "bytes": 5084914,
+  "htmlSha256": "aed8a39b1444e40e3e9c1552da34701b692c33098c13c5f67d6245b86a807d42",
+  "bytes": 5109534,
   "browserInteractionTested": true
 }

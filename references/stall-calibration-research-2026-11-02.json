@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "date": "2026-11-02",
+  "purpose": "Find usable aerodynamic stall inputs, keeping cockpit IAS corrections and direct calibrated maximum-lift measurements distinct.",
+  "activePhysicsChanged": false,
+  "targetStallCalibrationsCompleted": [],
+  "sources": [
+    {
+      "id": "naca-tn1044",
+      "tier": "primary-scan-verified",
+      "title": "Effect of Mach and Reynolds Numbers on Maximum Lift Coefficient",
+      "date": "1946-03-28",
+      "url": "https://ntrs.nasa.gov/citations/19930084610",
+      "download": "https://ntrs.nasa.gov/api/citations/19930084610/downloads/19930084610.pdf",
+      "pages": "printed 3-5; Figure 1; Figure 6 (PDF pages 3-5, 21, 29)",
+      "aircraft": "P-51B; not identified here as Wright Field 43-24777",
+      "configuration": "clean; gradual stalls in turns/pull-ups; engine throttled, propeller high pitch; carefully filled, waxed and polished surfaces",
+      "measurement": "Swivelling probes about a chord or more ahead of wing leading edge, calibrated for position error. CLmax uses stall-time weight, measured normal acceleration, area and dynamic pressure. Lift/normal-force approximation error stated as less than 2 percent.",
+      "geometry": {"areaFt2": 233.2, "macFt": 6.65, "spanFt": 37, "grossWeightLbInFigure1": 9300},
+      "lowMachRead": {"machApprox": [0.14, 0.18], "clMaxApprox": 1.45, "engineeringBracket": [1.4, 1.48], "altFt": [5100, 9300], "bracketMeaning": "Rounded visual graph reading plus nearby test variation, not a published uncertainty interval or universal bound."},
+      "decision": "A useful P-51B low-Mach candidate independent of cockpit IAS. Do not present it as a recovered correction of 84/86 IAS, exact-specimen validation, or a constant CLmax valid to 35000 ft. Figure 6 shows substantial Mach/altitude variation."
+    },
+    {
+      "id": "rae-aero1106",
+      "tier": "primary-scan-verified",
+      "title": "RAE Technical Note Aero 1106 (Misc.) (Revised), comments on NACA Spitfire VA reports",
+      "author": "M. B. Morgan",
+      "date": "1943-03",
+      "url": "https://web.archive.org/web/20160313134537id_/http://www.spitfireperformance.com/rae1106.pdf",
+      "pages": "page 2 sections 2.3 and 2.5",
+      "aircraft": "Spitfire I, as identified in section 2.5; not LF IX BS.543",
+      "measurement": "Swivelling pitot and trailing static head; flaps-up CLmax 1.36 in glide and 1.89 full throttle. RAE considered formation-derived stall calibration unreliable and the NACA 1.1-1.2 values unduly low.",
+      "decision": "Preserve both institutions' measurements and criticism. Older-mark transfer at CLmax 1.36 is a sensitivity case only; not a measured IX coefficient. Do not average the incompatible results."
+    },
+    {
+      "id": "naca-l353",
+      "tier": "primary-scan-verified",
+      "title": "Stalling Characteristics of the Supermarine Spitfire VA Airplane",
+      "date": "1942-09",
+      "url": "https://ntrs.nasa.gov/citations/19930092581",
+      "download": "https://ntrs.nasa.gov/api/citations/19930092581/downloads/19930092581.pdf",
+      "pages": "printed 2, 7; Figure 5 (PDF pages 4, 9, 15)",
+      "weightLbApprox": 6184,
+      "cgMacPercentApprox": 31.4,
+      "configuration": "Glide clean throttle closed; gun ports covered versus open; other power/configuration cases separate.",
+      "results": [{"gunPorts": "covered", "tableIndicatedStallMph": 90, "publishedClMax": 1.18}, {"gunPorts": "open", "tableIndicatedStallMph": 91, "publishedClMax": 1.15}],
+      "calibration": "Recorder formation-calibrated against pacer calibrated with trailing head. Figure 5 x-axis is correct indicated airspeed; y-axis is pilot meter reading; cruise/glide/landing symbols separate.",
+      "decision": "Do not mistake axes or assume the table's indicated speed is the pilot meter reading and correct it again. Do not force one-g lift balance onto a descending time history without acceleration. RAE Aero 1106 explicitly disputes this method. No automatic transfer to IX."
+    },
+    {
+      "id": "ap2025g-mustangiii",
+      "tier": "primary-scan-verified",
+      "title": "AP 2025G-P.N. Pilot's Notes Mustang III",
+      "date": "1944-06",
+      "url": "https://drive.google.com/file/d/1reJrEW9CZ6kMD5n6lbmCs3tNJ0E7ACKC/view",
+      "pages": "printed 24 paragraph 43 and 31 paragraph 54 (PDF pages 26, 33)",
+      "stall": {"basis": "IAS", "power": "engine off", "cleanMph": 90, "gearDownFlaps20Mph": 85, "gearDownFullFlapsMph": 75, "matchedStallWeightLb": null},
+      "positionErrorBands": [{"iasMph": [120,150], "addMph": 6}, {"iasMph": [150,190], "addMph": 3}, {"iasMph": [190,240], "addMph": 0}, {"iasMph": [240,300], "addMph": -3}, {"iasMph": [300,350], "addMph": -6}, {"iasMph": [350,400], "addMph": -9}],
+      "decision": "Band corrections, not interpolation nodes. No coverage at the 90 IAS stall. Do not extend +6 to 90; table is position correction and does not establish the particular indicator's instrument error."
+    },
+    {
+      "id": "to1f51d1",
+      "tier": "primary-scan-verified",
+      "title": "TO 1F-51D-1, Appendix I Figure A-1",
+      "url": "https://stephentaylorhistorian.com/wp-content/uploads/2020/04/p-51d-manual-b.pdf",
+      "pages": "printed 96-97 (PDF pages 100-101)",
+      "configuration": "gear and flaps up; canopy closed",
+      "installationCorrectionPoints": [{"iasMph":100,"addMph":5},{"iasMph":120,"addMph":5},{"iasMph":140,"addMph":4},{"iasMph":160,"addMph":4},{"iasMph":180,"addMph":3},{"iasMph":200,"addMph":3},{"iasMph":220,"addMph":2},{"iasMph":240,"addMph":2},{"iasMph":260,"addMph":2},{"iasMph":280,"addMph":2},{"iasMph":300,"addMph":2},{"iasMph":350,"addMph":3},{"iasMph":400,"addMph":4}],
+      "decision": "Concrete installation correction 100 IAS to 105 CAS. This is a conversion example, not a claim that the D stalls at 100, and not a B/C calibration. No extrapolation below 100."
+    },
+    {
+      "id": "ap1565jpl-1946",
+      "tier": "historical-manual-reproduction-pages-visually-checked",
+      "url": "https://zenoswarbirdvideos.com/Images/spit/SPIT9MANUAL.pdf",
+      "pages": "printed 24 paragraph 42 and 32 paragraph 53 (PDF pages 16, 20)",
+      "positionErrorBands": [{"iasMph":[120,150],"addMph":4},{"iasMph":[150,170],"addMph":2},{"iasMph":[170,210],"addMph":0},{"iasMph":[210,240],"addMph":-2},{"iasMph":[240,290],"addMph":-4},{"iasMph":[290,350],"addMph":-6}],
+      "decision": "Reproduced manual pages visually checked, not verified against original printing; apparent typesetting/transcription errors exist in other cells. Lower bound 120 does not cover clean stall at 90 IAS; full-span versus clipped wings and stores remain separate. BF274 calibration used for BS543 was measured over 130-320 ASI only."
+    },
+    {
+      "id": "bf109f1f2-kennblatt",
+      "tier": "primary-scan-verified",
+      "url": "https://stephentaylorhistorian.com/wp-content/uploads/2020/04/109_f1f2_kennblatt.pdf",
+      "pages": "Blatt 6 (PDF page 6)",
+      "aircraft": "Bf109 F-1/F-2 DB601N; not F-4",
+      "landing": {"weightKg":2700,"indicatedKmh":140,"trueKmh":150},
+      "takeoffUnstick": {"weightKg":2780,"indicatedKmh":130,"trueKmh":140},
+      "decision": "Explicit indication/true distinction in original F-series document. Landing and unstick are not clean one-g stalls. +10 km/h cannot be transplanted to F-4 stall or called a CAS table."
+    },
+    {
+      "id": "naca-rm-l8a06",
+      "tier": "primary-scan-verified",
+      "url": "https://ntrs.nasa.gov/citations/20090022749",
+      "download": "https://ntrs.nasa.gov/api/citations/20090022749/downloads/20090022749.pdf",
+      "aircraft": "P-47D-30 43-3441",
+      "pages": "Figures 49-51 (PDF pages 72-74)",
+      "decision": "Gliding stall time histories at 5000 and 24000 ft exist with mass and CG, but speed trace says SERVICE INDICATED AIRSPEED. Do not relabel it CAS because the related NACA TN2675 used a calibrated boom. Different D/B variants also block transfer."
+    },
+    {
+      "id": "naca-tn2675",
+      "tier": "primary-scan-verified",
+      "url": "https://ntrs.nasa.gov/citations/19930083825",
+      "download": "https://ntrs.nasa.gov/api/citations/19930083825/downloads/19930083825.pdf",
+      "pages": "printed 4 (PDF page 5)",
+      "decision": "Calibrated swivelling static and shielded total head on boom, low-speed formation/pacer calibration, explicit CAS definition. Does not supply a cockpit near-stall correction for B 41-5902. Download has a binary prefix; extracted PDF starts at %PDF."
+    },
+    {
+      "id": "naca-tr829",
+      "tier": "primary-scan-verified",
+      "url": "https://ntrs.nasa.gov/citations/19930091906",
+      "download": "https://ntrs.nasa.gov/api/citations/19930091906/downloads/19930091906.pdf",
+      "pages": "Table I printed 6 and Figure 4 printed 9 (PDF pages 10, 13)",
+      "decision": "Airplane 1 has 233.2 sqft NACA-NAA compromise wing, Mustang-shaped planform, approximate maximum lift 1.4, complete airplane less propeller at about 60 mph. Supports order of magnitude for Mustang, not exact flight CLmax or a P47B calibration; aircraft names not printed in table."
+    },
+    {
+      "id": "naca-tr792",
+      "tier": "primary-scan-inspected",
+      "url": "https://ntrs.nasa.gov/citations/19930091869",
+      "decision": "Abrupt maneuvers/tail loads. Do not use transient peak lift as a gradual one-g stall calibration. Distinct from RM L8A06, which a forum link also led to."
+    }
+  ],
+  "secondaryDiscoveryTrail": [
+    {"url":"https://forum.il2sturmovik.com/topic/25323-p-40-turn-rateflight-model-check/page/14/","use":"Led to RAE Aero1106 original. TN1106 is not CP1106 about the Vulcan."},
+    {"url":"https://ww2aircraft.net/forum/threads/the-zeros-maneuverability.64084/page-15","use":"Led to TN1044/TR829 and B/D correction-table comparison. Secondary claim that TN1044 Mustang tests were power-on is contradicted by original printed page 4; use primary."},
+    {"url":"https://forum.il2sturmovik.com/topic/74337-p-47-maneuverability-or-lack-thereof/page/6/","use":"Led to TN2675, RM L8A06 and TR792; preserve IAS label and abrupt/gradual distinction."},
+    {"url":"https://ww2aircraft.net/forum/threads/f6f-5-vs-109.16319/page-6","use":"Led to F1/F2 indication/true landing-speed distinction, checked against original Blatt6."}
+  ],
+  "remainingTargets": [
+    {"aircraftId":"p51b","finding":"New calibrated P51B direct-lift candidate exists; exact 43-24777 cockpit stall correction still unresolved."},
+    {"aircraftId":"spitfire_lfix_bs543","finding":"RAE earlier-mark measured CLmax recovered, but no IX near-stall calibration recovered."},
+    {"aircraftId":"p47b","finding":"41-5902 original calibration starts at 170 IAS versus 105 IAS stall. D/N and research boom evidence do not close B target."},
+    {"aircraftId":"bf109f4","finding":"F1/F2 primary recovered; F4 historical clean stall and near-stall correction remain unresolved. The retrieved F2/F4 Wa manual is weapons-only and US evaluation lacks a stall calibration."}
+  ]
+}

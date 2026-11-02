@@ -1,6 +1,6 @@
 # Model input coverage and source scenario ranges
 
-Version 3.4.0; working calibration 2.8.0. The solver and aircraft inputs retain v2.8 behavior. This is a usable working approximation with explicit gaps, not historical accuracy certification.
+Version 3.5.0; working calibration 2.8.0. The solver and aircraft inputs retain v2.8 behavior. This is a usable working approximation with explicit gaps, not historical accuracy certification.
 
 ## Calculation domain versus evidence
 

@@ -1,8 +1,8 @@
 {
   "node": "v24.19.0",
-  "discoveredScripts": 49,
-  "reportedScripts": 49,
-  "passed": 49,
+  "discoveredScripts": 50,
+  "reportedScripts": 50,
+  "passed": 50,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -189,6 +189,10 @@
     },
     {
       "script": "test_stall_gate.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_stall_lab.cjs",
       "status": "pass"
     },
     {
