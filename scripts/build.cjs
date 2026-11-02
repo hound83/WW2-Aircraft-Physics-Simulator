@@ -65,10 +65,16 @@ function build(){
  for(const text of measuredSources)if(/<\/script/i.test(text))throw Error('Unsafe measured climb embed');
  const measuredEmbed='<script>'+measuredSources[0]+'</script><script>'+measuredSources[3]+'</script><script type="application/json" id="measured-climb-source">'+measuredSources[2]+'</script><script type="application/json" id="source-configuration-model">'+measuredSources[4]+'</script><script type="application/json" id="source-configuration-report">'+measuredSources[5]+'</script><script>'+measuredSources[1]+'</script>';
  html=html.replace(/(<section\b[^>]*\bid="release-support"[^>]*>)/,measuredPanel+'$1');
- html=html.replace('</body>','<script>'+source+'</script><script type="application/json" id="robustness-data">'+audit+'</script><script>'+ui+'</script>'+conditionEmbed+measuredEmbed+'</body>');
+ const stallParts=[read('src/stall-lab.js'),read('src/stall-lab-ui.js'),read('references/stall-calibration-research-2026-11-02.json')];
+ for(const text of stallParts)if(/<\/script/i.test(text))throw Error('Unsafe stall laboratory embed');
+ const stallPanel=read('src/stall-lab-panel.html');
+ html=html.replace(/(<section\b[^>]*\bid="release-support"[^>]*>)/,stallPanel+'$1');
+ html=html.replace("for(const input of document.querySelectorAll('input,select'))input.addEventListener('input',render)","for(const input of document.querySelectorAll('input,select'))if(!input.closest('#stall-lab'))input.addEventListener('input',render)");
+ const stallEmbed='<script>'+stallParts[0]+'</script><script type="application/json" id="stall-research-data">'+stallParts[2]+'</script><script>'+stallParts[1]+'</script>';
+ html=html.replace('</body>','<script>'+source+'</script><script type="application/json" id="robustness-data">'+audit+'</script><script>'+ui+'</script>'+conditionEmbed+measuredEmbed+stallEmbed+'</body>');
  fs.mkdirSync(path.join(root,'dist'),{recursive:true});
  fs.writeFileSync(path.join(root,'dist/model.html'),html);
- const metadata={version,researchStatus:'v3.4 same-specimen configuration model; v3.1 prior climb and v2.8 clean behavior retained',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'engineering-increment',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
+ const metadata={version,researchStatus:'v3.5 source-bounded stall laboratory; v3.4 climb and prior general-flight behavior retained',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'engineering-increment',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
  fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify(metadata,null,2)+'\n');
  return metadata;
 }

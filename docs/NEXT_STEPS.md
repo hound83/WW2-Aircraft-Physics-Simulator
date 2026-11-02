@@ -1,5 +1,11 @@
 # Next steps
 
+## First priority: actual stall calibration, v3.5 laboratory delivered
+
+Michael prioritises actual corrected stall speed ahead of the prior Spitfire climb assignment. The simulator now evaluates a conditional P51B calibrated-lift candidate and manual airspeed corrections with no extrapolation. Preserve its source bounds and the four unresolved exact-target gates.
+
+Next complete milestone: retrieve the remaining F4/P47B/IX low-speed correction or direct calibrated lift records, then build and validate applicable Mach/altitude lift dependence. Follow the specific primary leads in STALL_ACTUAL_AIRSPEED_RESEARCH.md. Do not substitute simulator specifications, landing speed or a different pitot installation. The default full-envelope coefficients remain provisional.
+
 ## v3.4 completed: model improvement plus interactive climb laboratory
 
 Same-specimen P47 reserved-row MAE improves 130.4 to 34.1 ft/min; refitting constant Cd0 on identical training rows scores 99.5. The 35000-ft residual improves -432.2 to -83.6 ft/min. Both alternate splits and 9/9 paired mass/retention scenarios improve versus fair controls. The application integrates the accepted shape, report/previous/current curves, per-row fit/check roles, mass/retention controls, reset and a responsive layout. Original clean solver, source values, generic power domains and earlier aircraft calibrations are preserved. See V34_CONFIGURATION_MODEL.md for failures, parameter ambiguity and assumption ranges.

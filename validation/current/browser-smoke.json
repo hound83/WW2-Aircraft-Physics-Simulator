@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "browser": "Edg/154.0.4258.53",
   "checks": [
     "P default, current UI version, four live rows, no render error",
@@ -23,9 +23,17 @@
     "Weight/e/EAS controls render without exceptions",
     "Source-climb report states remain fixed when exploratory controls change",
     "Measured-power report states remain independent of exploratory controls",
-    "Climb laboratory controls fit mobile width and the detailed table scrolls locally"
+    "Climb laboratory controls fit mobile width and the detailed table scrolls locally",
+    "Stall laboratory shows four unresolved targets, nominal source-lift candidate and blocked 90-IAS extrapolation",
+    "Candidate altitude extension is blocked and stale numerical values are removed",
+    "Mass/lift controls recalculate shared-solver candidate with source-area normalization",
+    "D-manual 100 IAS becomes 105 CAS and rejects correction below table",
+    "Band boundaries remain ambiguous and position-only correction is not promoted to CAS",
+    "Stall reset and finite EAS/CAS bracket plot render",
+    "Stall research controls preserve accepted climb predictions",
+    "Stall controls fit mobile width with locally scrolling evidence table"
   ],
   "errors": [],
   "scope": "Headless Chromium interactive smoke; not cross-browser or historical validation",
-  "htmlSha256": "acd197a1d4f457f44161302e3af5e424792e03ef1390e73a998a10cb4e58ff27"
+  "htmlSha256": "aed8a39b1444e40e3e9c1552da34701b692c33098c13c5f67d6245b86a807d42"
 }

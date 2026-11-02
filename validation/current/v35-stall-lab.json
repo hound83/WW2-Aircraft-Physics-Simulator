@@ -1,0 +1,1261 @@
+{
+  "version": "3.5.0",
+  "method": "Source-informed low-Mach lift transfer; no parameter fitting, withheld historical observations or independent historical accuracy score.",
+  "nominal": {
+    "status": "source-informed-candidate",
+    "sourceId": "naca-tn1044",
+    "altFt": 8000,
+    "weightLb": 9240,
+    "sourceClMax": 1.45,
+    "sourceAreaFt2": 233.2,
+    "modelAreaFt2": 233,
+    "clMax": 1.451244635193133,
+    "air": {
+      "easMph": 103.3871410242965,
+      "casMph": 103.46925811981934,
+      "tasMph": 116.6140122684872,
+      "mach": 0.15758976880225736
+    },
+    "baselineEasMph": 98.46385799361909,
+    "deltaEasMph": 4.9232830306774105,
+    "sharedSolverStallEasMph": 103.3871410242965,
+    "correctedIasMph": null,
+    "historicalResidualMph": null,
+    "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+  },
+  "rows": [
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 5100,
+      "weightLb": 8800,
+      "sourceClMax": 1.4,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4012017167381972,
+      "air": {
+        "easMph": 102.68141850233442,
+        "casMph": 102.72935716023427,
+        "tasMph": 110.78463210396951,
+        "mach": 0.1481571815343289
+      },
+      "baselineEasMph": 96.09088619876687,
+      "deltaEasMph": 6.5905323035675565,
+      "sharedSolverStallEasMph": 102.68141850233442,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 5100,
+      "weightLb": 8800,
+      "sourceClMax": 1.45,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.451244635193133,
+      "air": {
+        "easMph": 100.89551846755124,
+        "casMph": 100.94100732878873,
+        "tasMph": 108.8577958641349,
+        "mach": 0.14558033832827677
+      },
+      "baselineEasMph": 96.09088619876687,
+      "deltaEasMph": 4.804632268784374,
+      "sharedSolverStallEasMph": 100.89551846755124,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 5100,
+      "weightLb": 8800,
+      "sourceClMax": 1.48,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4812703862660943,
+      "air": {
+        "easMph": 99.8676935152142,
+        "casMph": 99.91181086446635,
+        "tasMph": 107.74885901000145,
+        "mach": 0.14409730809486165
+      },
+      "baselineEasMph": 96.09088619876687,
+      "deltaEasMph": 3.776807316447332,
+      "sharedSolverStallEasMph": 99.8676935152142,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 5100,
+      "weightLb": 9240,
+      "sourceClMax": 1.4,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4012017167381972,
+      "air": {
+        "easMph": 105.21714399723137,
+        "casMph": 105.26870900042901,
+        "tasMph": 113.52046707943227,
+        "mach": 0.1518159344805607
+      },
+      "baselineEasMph": 98.46385799361909,
+      "deltaEasMph": 6.753286003612288,
+      "sharedSolverStallEasMph": 105.21714399723137,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 5100,
+      "weightLb": 9240,
+      "sourceClMax": 1.45,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.451244635193133,
+      "air": {
+        "easMph": 103.3871410242965,
+        "casMph": 103.4360713617015,
+        "tasMph": 111.54604747106707,
+        "mach": 0.1491754559341593
+      },
+      "baselineEasMph": 98.46385799361909,
+      "deltaEasMph": 4.9232830306774105,
+      "sharedSolverStallEasMph": 103.3871410242965,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 5100,
+      "weightLb": 9240,
+      "sourceClMax": 1.48,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4812703862660943,
+      "air": {
+        "easMph": 102.33393385603426,
+        "casMph": 102.38138916538188,
+        "tasMph": 110.40972533638073,
+        "mach": 0.1476558021555359
+      },
+      "baselineEasMph": 98.46385799361909,
+      "deltaEasMph": 3.8700758624151774,
+      "sharedSolverStallEasMph": 102.33393385603426,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 5100,
+      "weightLb": 9270,
+      "sourceClMax": 1.4,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4012017167381972,
+      "air": {
+        "easMph": 105.38781263169996,
+        "casMph": 105.43962803319533,
+        "tasMph": 113.70460421112624,
+        "mach": 0.15206218919955447
+      },
+      "baselineEasMph": 98.62357238568357,
+      "deltaEasMph": 6.764240246016385,
+      "sharedSolverStallEasMph": 105.38781263169996,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 5100,
+      "weightLb": 9270,
+      "sourceClMax": 1.45,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.451244635193133,
+      "air": {
+        "easMph": 103.5548412821622,
+        "casMph": 103.60400925461589,
+        "tasMph": 111.7269819735542,
+        "mach": 0.14941742763566437
+      },
+      "baselineEasMph": 98.62357238568357,
+      "deltaEasMph": 4.9312688964786275,
+      "sharedSolverStallEasMph": 103.5548412821622,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 5100,
+      "weightLb": 9270,
+      "sourceClMax": 1.48,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4812703862660943,
+      "air": {
+        "easMph": 102.49992574754073,
+        "casMph": 102.54761154517693,
+        "tasMph": 110.58881665495622,
+        "mach": 0.14789530888578808
+      },
+      "baselineEasMph": 98.62357238568357,
+      "deltaEasMph": 3.8763533618571557,
+      "sharedSolverStallEasMph": 102.49992574754073,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 5100,
+      "weightLb": 9600,
+      "sourceClMax": 1.4,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4012017167381972,
+      "air": {
+        "easMph": 107.2472438585544,
+        "casMph": 107.30183975858773,
+        "tasMph": 115.71077443544019,
+        "mach": 0.15474512924699266
+      },
+      "baselineEasMph": 100.36365736912232,
+      "deltaEasMph": 6.883586489432076,
+      "sharedSolverStallEasMph": 107.2472438585544,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 5100,
+      "weightLb": 9600,
+      "sourceClMax": 1.45,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.451244635193133,
+      "air": {
+        "easMph": 105.38193210759685,
+        "casMph": 105.43373886803865,
+        "tasMph": 113.69825961919477,
+        "mach": 0.1520537042965431
+      },
+      "baselineEasMph": 100.36365736912232,
+      "deltaEasMph": 5.018274738474531,
+      "sharedSolverStallEasMph": 105.38193210759685,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 5100,
+      "weightLb": 9600,
+      "sourceClMax": 1.48,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4812703862660943,
+      "air": {
+        "easMph": 104.30840395698321,
+        "casMph": 104.35864919137728,
+        "tasMph": 112.54001285017218,
+        "mach": 0.15050472973607715
+      },
+      "baselineEasMph": 100.36365736912232,
+      "deltaEasMph": 3.944746587860891,
+      "sharedSolverStallEasMph": 104.30840395698321,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 8000,
+      "weightLb": 8800,
+      "sourceClMax": 1.4,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4012017167381972,
+      "air": {
+        "easMph": 102.68141850233442,
+        "casMph": 102.76187122359639,
+        "tasMph": 115.81800288067666,
+        "mach": 0.15651405814837235
+      },
+      "baselineEasMph": 96.09088619876687,
+      "deltaEasMph": 6.5905323035675565,
+      "sharedSolverStallEasMph": 102.68141850233442,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 8000,
+      "weightLb": 8800,
+      "sourceClMax": 1.45,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.451244635193133,
+      "air": {
+        "easMph": 100.89551846755124,
+        "casMph": 100.97185961421509,
+        "tasMph": 113.80362307963782,
+        "mach": 0.15379186687006546
+      },
+      "baselineEasMph": 96.09088619876687,
+      "deltaEasMph": 4.804632268784374,
+      "sharedSolverStallEasMph": 100.89551846755124,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 8000,
+      "weightLb": 8800,
+      "sourceClMax": 1.48,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4812703862660943,
+      "air": {
+        "easMph": 99.8676935152142,
+        "casMph": 99.94173281709665,
+        "tasMph": 112.64430297063585,
+        "mach": 0.15222518560774173
+      },
+      "baselineEasMph": 96.09088619876687,
+      "deltaEasMph": 3.776807316447332,
+      "sharedSolverStallEasMph": 99.8676935152142,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 8000,
+      "weightLb": 9240,
+      "sourceClMax": 1.4,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4012017167381972,
+      "air": {
+        "easMph": 105.21714399723137,
+        "casMph": 105.3036829708328,
+        "tasMph": 118.67813733300606,
+        "mach": 0.16037918480269092
+      },
+      "baselineEasMph": 98.46385799361909,
+      "deltaEasMph": 6.753286003612288,
+      "sharedSolverStallEasMph": 105.21714399723137,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 8000,
+      "weightLb": 9240,
+      "sourceClMax": 1.45,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.451244635193133,
+      "air": {
+        "easMph": 103.3871410242965,
+        "casMph": 103.46925811981934,
+        "tasMph": 116.6140122684872,
+        "mach": 0.15758976880225736
+      },
+      "baselineEasMph": 98.46385799361909,
+      "deltaEasMph": 4.9232830306774105,
+      "sharedSolverStallEasMph": 103.3871410242965,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 8000,
+      "weightLb": 9240,
+      "sourceClMax": 1.48,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4812703862660943,
+      "air": {
+        "easMph": 102.33393385603426,
+        "casMph": 102.41357535584028,
+        "tasMph": 115.42606266059421,
+        "mach": 0.15598439822615914
+      },
+      "baselineEasMph": 98.46385799361909,
+      "deltaEasMph": 3.8700758624151774,
+      "sharedSolverStallEasMph": 102.33393385603426,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 8000,
+      "weightLb": 9270,
+      "sourceClMax": 1.4,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4012017167381972,
+      "air": {
+        "easMph": 105.38781263169996,
+        "casMph": 105.47477186122714,
+        "tasMph": 118.87064052089369,
+        "mach": 0.16063932963677022
+      },
+      "baselineEasMph": 98.62357238568357,
+      "deltaEasMph": 6.764240246016385,
+      "sharedSolverStallEasMph": 105.38781263169996,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 8000,
+      "weightLb": 9270,
+      "sourceClMax": 1.45,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.451244635193133,
+      "air": {
+        "easMph": 103.5548412821622,
+        "casMph": 103.63735721031952,
+        "tasMph": 116.8031673194387,
+        "mach": 0.15784538903320008
+      },
+      "baselineEasMph": 98.62357238568357,
+      "deltaEasMph": 4.9312688964786275,
+      "sharedSolverStallEasMph": 103.5548412821622,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 8000,
+      "weightLb": 9270,
+      "sourceClMax": 1.48,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4812703862660943,
+      "air": {
+        "easMph": 102.49992574754073,
+        "casMph": 102.57995408412415,
+        "tasMph": 115.613290784719,
+        "mach": 0.15623741444796765
+      },
+      "baselineEasMph": 98.62357238568357,
+      "deltaEasMph": 3.8763533618571557,
+      "sharedSolverStallEasMph": 102.49992574754073,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 8000,
+      "weightLb": 9600,
+      "sourceClMax": 1.4,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4012017167381972,
+      "air": {
+        "easMph": 107.2472438585544,
+        "casMph": 107.33886975099868,
+        "tasMph": 120.96795875363073,
+        "mach": 0.1634736021994947
+      },
+      "baselineEasMph": 100.36365736912232,
+      "deltaEasMph": 6.883586489432076,
+      "sharedSolverStallEasMph": 107.2472438585544,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 8000,
+      "weightLb": 9600,
+      "sourceClMax": 1.45,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.451244635193133,
+      "air": {
+        "easMph": 105.38193210759685,
+        "casMph": 105.46887683441483,
+        "tasMph": 118.86400766981463,
+        "mach": 0.16063036613875045
+      },
+      "baselineEasMph": 100.36365736912232,
+      "deltaEasMph": 5.018274738474531,
+      "sharedSolverStallEasMph": 105.38193210759685,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 8000,
+      "weightLb": 9600,
+      "sourceClMax": 1.48,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4812703862660943,
+      "air": {
+        "easMph": 104.30840395698321,
+        "casMph": 104.39272790035831,
+        "tasMph": 117.65313730735045,
+        "mach": 0.1589940209281003
+      },
+      "baselineEasMph": 100.36365736912232,
+      "deltaEasMph": 3.944746587860891,
+      "sharedSolverStallEasMph": 104.30840395698321,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 9300,
+      "weightLb": 8800,
+      "sourceClMax": 1.4,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4012017167381972,
+      "air": {
+        "easMph": 102.68141850233442,
+        "casMph": 102.77789574295005,
+        "tasMph": 118.18402938922483,
+        "mach": 0.16047217562020447
+      },
+      "baselineEasMph": 96.09088619876687,
+      "deltaEasMph": 6.5905323035675565,
+      "sharedSolverStallEasMph": 102.68141850233442,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 9300,
+      "weightLb": 8800,
+      "sourceClMax": 1.45,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.451244635193133,
+      "air": {
+        "easMph": 100.89551846755124,
+        "casMph": 100.98706505763892,
+        "tasMph": 116.12849816190511,
+        "mach": 0.15768114226478447
+      },
+      "baselineEasMph": 96.09088619876687,
+      "deltaEasMph": 4.804632268784374,
+      "sharedSolverStallEasMph": 100.89551846755124,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 9300,
+      "weightLb": 8800,
+      "sourceClMax": 1.48,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4812703862660943,
+      "air": {
+        "easMph": 99.8676935152142,
+        "casMph": 99.95647971028433,
+        "tasMph": 114.94549449731103,
+        "mach": 0.15607484086513532
+      },
+      "baselineEasMph": 96.09088619876687,
+      "deltaEasMph": 3.776807316447332,
+      "sharedSolverStallEasMph": 99.8676935152142,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 9300,
+      "weightLb": 9240,
+      "sourceClMax": 1.4,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4012017167381972,
+      "air": {
+        "easMph": 105.21714399723137,
+        "casMph": 105.32091996827535,
+        "tasMph": 121.10259304741089,
+        "mach": 0.1644350482886657
+      },
+      "baselineEasMph": 98.46385799361909,
+      "deltaEasMph": 6.753286003612288,
+      "sharedSolverStallEasMph": 105.21714399723137,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 9300,
+      "weightLb": 9240,
+      "sourceClMax": 1.45,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.451244635193133,
+      "air": {
+        "easMph": 103.3871410242965,
+        "casMph": 103.48561420633999,
+        "tasMph": 118.99630031898714,
+        "mach": 0.16157509015075175
+      },
+      "baselineEasMph": 98.46385799361909,
+      "deltaEasMph": 4.9232830306774105,
+      "sharedSolverStallEasMph": 103.3871410242965,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 9300,
+      "weightLb": 9240,
+      "sourceClMax": 1.48,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4812703862660943,
+      "air": {
+        "easMph": 102.33393385603426,
+        "casMph": 102.4294382689962,
+        "tasMph": 117.78408228828262,
+        "mach": 0.1599291210150021
+      },
+      "baselineEasMph": 98.46385799361909,
+      "deltaEasMph": 3.8700758624151774,
+      "sharedSolverStallEasMph": 102.33393385603426,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 9300,
+      "weightLb": 9270,
+      "sourceClMax": 1.4,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4012017167381972,
+      "air": {
+        "easMph": 105.38781263169996,
+        "casMph": 105.4920925812859,
+        "tasMph": 121.29902885055863,
+        "mach": 0.16470177198106076
+      },
+      "baselineEasMph": 98.62357238568357,
+      "deltaEasMph": 6.764240246016385,
+      "sharedSolverStallEasMph": 105.38781263169996,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 9300,
+      "weightLb": 9270,
+      "sourceClMax": 1.45,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.451244635193133,
+      "air": {
+        "easMph": 103.5548412821622,
+        "casMph": 103.65379275030192,
+        "tasMph": 119.18931958667217,
+        "mach": 0.1618371748163543
+      },
+      "baselineEasMph": 98.62357238568357,
+      "deltaEasMph": 4.9312688964786275,
+      "sharedSolverStallEasMph": 103.5548412821622,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 9300,
+      "weightLb": 9270,
+      "sourceClMax": 1.48,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4812703862660943,
+      "air": {
+        "easMph": 102.49992574754073,
+        "casMph": 102.5958940602977,
+        "tasMph": 117.97513526427679,
+        "mach": 0.16018853581812686
+      },
+      "baselineEasMph": 98.62357238568357,
+      "deltaEasMph": 3.8763533618571557,
+      "sharedSolverStallEasMph": 102.49992574754073,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 9300,
+      "weightLb": 9600,
+      "sourceClMax": 1.4,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4012017167381972,
+      "air": {
+        "easMph": 107.2472438585544,
+        "casMph": 107.35712016330518,
+        "tasMph": 123.43919284485338,
+        "mach": 0.16760772106845767
+      },
+      "baselineEasMph": 100.36365736912232,
+      "deltaEasMph": 6.883586489432076,
+      "sharedSolverStallEasMph": 107.2472438585544,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 9300,
+      "weightLb": 9600,
+      "sourceClMax": 1.45,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.451244635193133,
+      "air": {
+        "easMph": 105.38193210759685,
+        "casMph": 105.48619466526534,
+        "tasMph": 121.29226049808004,
+        "mach": 0.16469258180322355
+      },
+      "baselineEasMph": 100.36365736912232,
+      "deltaEasMph": 5.018274738474531,
+      "sharedSolverStallEasMph": 105.38193210759685,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "source-informed-candidate",
+      "sourceId": "naca-tn1044",
+      "altFt": 9300,
+      "weightLb": 9600,
+      "sourceClMax": 1.48,
+      "sourceAreaFt2": 233.2,
+      "modelAreaFt2": 233,
+      "clMax": 1.4812703862660943,
+      "air": {
+        "easMph": 104.30840395698321,
+        "casMph": 104.40952362558039,
+        "tasMph": 120.05665346856283,
+        "mach": 0.16301485470876792
+      },
+      "baselineEasMph": 100.36365736912232,
+      "deltaEasMph": 3.944746587860891,
+      "sharedSolverStallEasMph": 104.30840395698321,
+      "correctedIasMph": null,
+      "historicalResidualMph": null,
+      "qualification": "P-51B gradual throttled-engine/high-pitch tests, exceptional finish; transfer to 43-24777 is conditional. Bracket is not a confidence interval. No cockpit IAS correction recovered."
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    },
+    {
+      "status": "unavailable",
+      "reason": "Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.",
+      "correctedIasMph": null,
+      "clMax": null,
+      "air": null
+    }
+  ],
+  "accepted": 36,
+  "blocked": 48,
+  "sharedSolverMaxDiscrepancyMph": 0,
+  "targets": [
+    {
+      "id": "p51b",
+      "name": "P-51B",
+      "weightLb": 9240,
+      "assumedClMax": 1.6,
+      "model": {
+        "easMph": 98.46385799361909,
+        "casMph": 98.53482842487982,
+        "tasMph": 111.06086724433253,
+        "mach": 0.15008536325563143
+      },
+      "targetStatus": "unresolved",
+      "historicalStallCasMph": null,
+      "historicalStallEasMph": null,
+      "finding": "New calibrated P51B direct-lift candidate exists; exact 43-24777 cockpit stall correction still unresolved."
+    },
+    {
+      "id": "p47b",
+      "name": "P-47B",
+      "weightLb": 12565,
+      "assumedClMax": 1.3,
+      "model": {
+        "easMph": 112.26070296569274,
+        "casMph": 112.36573149228812,
+        "tasMph": 126.62281656317202,
+        "mach": 0.1711154603045354
+      },
+      "targetStatus": "unresolved",
+      "historicalStallCasMph": null,
+      "historicalStallEasMph": null,
+      "finding": "41-5902 original calibration starts at 170 IAS versus 105 IAS stall. D/N and research boom evidence do not close B target."
+    },
+    {
+      "id": "bf109f4",
+      "name": "Bf 109 F-4",
+      "weightLb": 6371,
+      "assumedClMax": 1.5,
+      "model": {
+        "easMph": 98.06509011620857,
+        "casMph": 98.13520447755212,
+        "tasMph": 110.61108285443726,
+        "mach": 0.14947753391646706
+      },
+      "targetStatus": "unresolved",
+      "historicalStallCasMph": null,
+      "historicalStallEasMph": null,
+      "finding": "F1/F2 primary recovered; F4 historical clean stall and near-stall correction remain unresolved. The retrieved F2/F4 Wa manual is weapons-only and US evaluation lacks a stall calibration."
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "name": "Spitfire LF IX",
+      "weightLb": 7110,
+      "assumedClMax": 1.6,
+      "model": {
+        "easMph": 84.75121646336908,
+        "casMph": 84.79652944542721,
+        "tasMph": 95.59389396507191,
+        "mach": 0.12918361486593088
+      },
+      "targetStatus": "unresolved",
+      "historicalStallCasMph": null,
+      "historicalStallEasMph": null,
+      "finding": "RAE earlier-mark measured CLmax recovered, but no IX near-stall calibration recovered."
+    }
+  ],
+  "conversions": [
+    {
+      "status": "manual-cas-conversion",
+      "sourceId": "to1f51d1",
+      "iasMph": 100,
+      "altFt": 8000,
+      "casMph": 105,
+      "easMph": 104.9142036688239,
+      "tasMph": 118.33644022422126,
+      "method": "Linear interpolation between manual installation-correction nodes; not a B/C stall measurement."
+    },
+    {
+      "status": "unavailable",
+      "reason": "Position-error table does not cover this indication. No low-speed extrapolation.",
+      "casMph": null,
+      "easMph": null,
+      "tasMph": null
+    },
+    {
+      "status": "band-boundary-ambiguous",
+      "sourceId": "ap2025g-mustangiii",
+      "iasMph": 150,
+      "altFt": 8000,
+      "positionCorrectedMph": null,
+      "positionCorrectedRangeMph": [
+        153,
+        156
+      ],
+      "casMph": null,
+      "easMph": null,
+      "tasMph": null,
+      "reason": "Adjacent published bands give different corrections at this shared boundary; do not choose silently."
+    }
+  ],
+  "activeDefaultInputsChanged": false,
+  "exactTargetStallCalibrationsCompleted": 0
+}

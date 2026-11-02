@@ -1,0 +1,141 @@
+{
+  "date": "2026-11-02",
+  "note": "Selected original PDF pages without image re-encoding. Page order below maps excerpt pages to original PDF page numbers. Some NASA downloads had a binary prefix; -clean files start at first %PDF, original download hashes preserved separately below.",
+  "excerpts": [
+    {
+      "sourceId": "naca-tn1044",
+      "localDownloadedName": "naca-tn1044-p51b-clean.pdf",
+      "downloadedSha256": "69f8a73cc37d70a863219f653f57fd83b9ea33683cc915548b0afc6666c3e18a",
+      "excerptFile": "references/sources/stall-2026-11-02/naca-tn1044-excerpts.pdf",
+      "originalPdfPages": [
+        3,
+        4,
+        5,
+        21,
+        29
+      ],
+      "excerptSha256": "d3692daf47ad49b990485c83849a94ffb557e4af1319f2abb6238755edd97265",
+      "bytes": 3121193
+    },
+    {
+      "sourceId": "rae-aero1106",
+      "localDownloadedName": "rae-aero1106-archived.pdf",
+      "downloadedSha256": "2474dedb0dbff19619e27b0adda73eb4161daa6fe54a2ccad695981461ef0a54",
+      "excerptFile": "references/sources/stall-2026-11-02/rae-aero1106-excerpts.pdf",
+      "originalPdfPages": [
+        1,
+        2
+      ],
+      "excerptSha256": "2eeeda6689017f8d429b77d41ba9370e0444df4b400c0913f95726ca4356c623",
+      "bytes": 313952
+    },
+    {
+      "sourceId": "bf109f1f2-kennblatt",
+      "localDownloadedName": "bf109f1f2-kennblatt.pdf",
+      "downloadedSha256": "f1aed6cfcca400d81cd3dc51a7b24dd49d879568bcf737f543f65088af0c3722",
+      "excerptFile": "references/sources/stall-2026-11-02/bf109f1f2-kennblatt-excerpts.pdf",
+      "originalPdfPages": [
+        1,
+        6
+      ],
+      "excerptSha256": "beb0fa95423ffe98d82e8f7c2c1a0b4e905cd27c97ae579e2923f5fc1a4eba39",
+      "bytes": 90162
+    },
+    {
+      "sourceId": "ap2025g-mustangiii",
+      "localDownloadedName": "mustang-iii-pilot-notes.pdf",
+      "downloadedSha256": "310935e5915efcbbe200a8847a846ae154a81885a66a2058497c0ebd08432b00",
+      "excerptFile": "references/sources/stall-2026-11-02/ap2025g-mustangiii-excerpts.pdf",
+      "originalPdfPages": [
+        5,
+        26,
+        33
+      ],
+      "excerptSha256": "69f48d397c8ea111df72b4746c071d54611ae2f699c65345cfae641970b98e71",
+      "bytes": 2903305
+    },
+    {
+      "sourceId": "to1f51d1",
+      "localDownloadedName": "p51d-manual-b.pdf",
+      "downloadedSha256": "e38d213f0ff85055efddf4cc44314cf9a46fc1c1b22000d55d100ec2528fe6b5",
+      "excerptFile": "references/sources/stall-2026-11-02/to1f51d1-excerpts.pdf",
+      "originalPdfPages": [
+        100,
+        101
+      ],
+      "excerptSha256": "916bae00d084493cd90222d58107bfded9f4ceb0d84c81f75ae19fcd8c63782b",
+      "bytes": 1157788
+    },
+    {
+      "sourceId": "ap1565jpl-1946",
+      "localDownloadedName": "spitfire-ix-pilot-notes.pdf",
+      "downloadedSha256": "89439b4fd539b29821a10908b75109586ead761b53487d18cfc26717fa8d1aff",
+      "excerptFile": "references/sources/stall-2026-11-02/ap1565jpl-1946-excerpts.pdf",
+      "originalPdfPages": [
+        5,
+        16,
+        20
+      ],
+      "excerptSha256": "449c91f5e430fbac502cb1169f994caaea01953566214b0dc8e90e2faebdd141",
+      "bytes": 22678
+    },
+    {
+      "sourceId": "naca-l353",
+      "localDownloadedName": "naca-spitfire-stall.pdf",
+      "downloadedSha256": "f6ffbddc3bbcf1325bd08553ffbd068278fdd50447fd80ff5dd0d4c5f3edc48b",
+      "excerptFile": "references/sources/stall-2026-11-02/naca-l353-excerpts.pdf",
+      "originalPdfPages": [
+        1,
+        4,
+        9,
+        15
+      ],
+      "excerptSha256": "090aef2fde9ba548e9a51701facd1a9616f7187da3fc7425f034845fd54a21d8",
+      "bytes": 1995876
+    },
+    {
+      "sourceId": "naca-rm-l8a06",
+      "localDownloadedName": "naca-report792.pdf",
+      "downloadedSha256": "95c68467065e3a68394581c7b8c20b4e0578224bde9710e3bde05b6c89961075",
+      "excerptFile": "references/sources/stall-2026-11-02/naca-rm-l8a06-excerpts.pdf",
+      "originalPdfPages": [
+        2,
+        72,
+        73,
+        74
+      ],
+      "excerptSha256": "d419fa465f75da8904acf933a59c6f41999f6e86cf79202ac89058c4d4fe75bb",
+      "bytes": 285017
+    },
+    {
+      "sourceId": "naca-tn2675",
+      "localDownloadedName": "naca-tn2675-p47d-trimmed.pdf",
+      "downloadedSha256": "09f59b6e1ec60a70deae1f2eb62f4ebb37a9be434bff783077924ad396e052d8",
+      "excerptFile": "references/sources/stall-2026-11-02/naca-tn2675-excerpts.pdf",
+      "originalPdfPages": [
+        1,
+        5
+      ],
+      "excerptSha256": "25aea67fc058ad8386191e403b1b758cd6aab46666e99910d295cbc0406854d5",
+      "bytes": 1138120
+    },
+    {
+      "sourceId": "naca-tr829",
+      "localDownloadedName": "naca-tr829-lift-clean.pdf",
+      "downloadedSha256": "0ab0ac879356d8e9c72e229ba0a043e94caa1dbdb713894d519250b1ade0a6e9",
+      "excerptFile": "references/sources/stall-2026-11-02/naca-tr829-excerpts.pdf",
+      "originalPdfPages": [
+        1,
+        10,
+        13
+      ],
+      "excerptSha256": "1bbe200a49dcdfdfafbbf022e52f4b02a6f312af6ce4e690b343ae806d770d00",
+      "bytes": 2851097
+    }
+  ],
+  "wrappedOriginalHashes": {
+    "naca-tn1044-p51b.pdf": "5e7b76bf05efa1f3ba1092edad1da5c4e4ab68bbfab0010d09f0fea8d4e30312",
+    "naca-tn2675-p47d.pdf": "2f57cd54c9aad8c464fdb336bbc70e8105d9b8dd742e495cb93715364e489b5f",
+    "naca-tr829-lift.pdf": "125be2f8a3f67e2d946628e2016aaac518a791af87dfd8d090c36893fa18c351"
+  }
+}

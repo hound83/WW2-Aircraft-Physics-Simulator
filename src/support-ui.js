@@ -18,5 +18,5 @@ function render(){
  $('supportNodeRange').textContent=n(named.minClimbFpm)+' to '+n(named.maxClimbFpm)+' ft/min; assumed masses '+named.weightsLb.join('/')+' lb; lower/midpoint/upper assigned BHP. Low blower, 3000 RPM, report climb configuration. Optimized climb, not current fixed-speed power. Scenario range, not historical error bounds.';
  window.UniversalReleaseSupport={rows,pairwise,currentRange:band,selectedRange:named,render};
 }
-for(const el of document.querySelectorAll('input,select')){el.addEventListener('input',render);el.addEventListener('change',render);}render();
+for(const el of document.querySelectorAll('input,select')){if(el.closest('#stall-lab'))continue;el.addEventListener('input',render);el.addEventListener('change',render);}render();
 })();
