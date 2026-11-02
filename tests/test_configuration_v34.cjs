@@ -4,6 +4,8 @@ const M=require('../src/physics.js'),F=require('../src/measured-climb.js'),C=req
 const D=require('../aircraft/cases.json'),L=require('../references/p47b-measured-climb-v33.json'),P=require('../calibration/v3.4-policy.json'),active=require('../calibration/v3.4-configuration-model.json');
 const a=D.aircraft.p47b,before=JSON.stringify({D,L,P,active}),close=(a,b,t=1e-6)=>assert.ok(Math.abs(a-b)<t,a+' vs '+b);
 const report=R.run();assert.equal(report.acceptance.pass,true);assert.equal(report.selected.summary.fit.count,5);assert.equal(report.selected.summary.check.count,5);
+for(const change of [{errorFpm:null},{predictedFpm:null},{status:'blocked-measured-climb'}])assert.throws(()=>R.summarize(report.selected.rows.map((r,i)=>i?{...r}:{...r,...change}),P.splits[0]),/Unscorable/,'missing/blocked evidence must never score as zero error');
+assert.throws(()=>R.summarize([],P.splits[0]),/Unscorable/);
 assert.ok(report.selected.summary.check.mae<.7*report.selected.transferred.summary.check.mae);assert.ok(report.selected.summary.check.mae<.8*report.selected.refittedConstant.summary.check.mae);
 assert.equal(report.acceptance.improvedStressCases,9);assert.ok(report.folds.every(f=>f.summary.check.mae<f.refittedConstant.summary.check.mae));
 assert.ok(report.selected.rows.at(-1).errorFpm<0,'retain remaining high-altitude deficit');assert.ok(Math.abs(report.selected.rows.at(-1).errorFpm)<200);

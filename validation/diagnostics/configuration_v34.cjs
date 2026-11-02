@@ -10,7 +10,12 @@ function fit(heatFraction,split){
  const fitted=makeModel(delta,heatFraction,split);return {...fitted,unbounded,clipped:delta!==unbounded,fitMse:mean(rows.map(r=>(r.raw-r.slope*delta-r.target)**2))};
 }
 function predict(model,scenario={}){return L.states.map(s=>Q.evaluate(M,F,C,a,L,s.id,model,scenario));}
-function summarize(rows,split){const subset=kind=>rows.filter(r=>split.fit.includes(r.stateId)===(kind==='fit'));const score=rs=>({count:rs.length,mae:mean(rs.map(r=>Math.abs(r.errorFpm))),rmse:Math.sqrt(mean(rs.map(r=>r.errorFpm**2))),maxAbs:Math.max(...rs.map(r=>Math.abs(r.errorFpm)))});return {all:score(rows),fit:score(subset('fit')),check:score(subset('check'))};}
+function summarize(rows,split){
+ if(rows.some(r=>r.status!=='qualified-measured-power-scenario'||!Number.isFinite(r.predictedFpm)||!Number.isFinite(r.errorFpm)))throw Error('Unscorable source state: blocked or missing observation/prediction');
+ const subset=kind=>rows.filter(r=>split.fit.includes(r.stateId)===(kind==='fit'));
+ const score=rs=>{if(!rs.length)throw Error('Unscorable empty fit/check set');return {count:rs.length,mae:mean(rs.map(r=>Math.abs(r.errorFpm))),rmse:Math.sqrt(mean(rs.map(r=>r.errorFpm**2))),maxAbs:Math.max(...rs.map(r=>Math.abs(r.errorFpm)))}};
+ return {all:score(rows),fit:score(subset('fit')),check:score(subset('check'))};
+}
 function control(split,scenario={}){const rows=L.states.map(s=>F.evaluate(M,a,L,s.id,{...scenario,deltaCd0:old.aircraft.p47b.deltaCd0}));return {rows,summary:summarize(rows,split)};}
 function search(split){return P.heatFractions.map(h=>fit(h,split)).sort((a,b)=>a.fitMse-b.fitMse||a.heatFraction-b.heatFraction);}
 function compare(model,split,scenario={}){const rows=predict(model,scenario),baseline=control(split,scenario),constantModel=fit(0,split),constantRows=predict(constantModel,scenario);return {model,scenario,rows,summary:summarize(rows,split),transferred:baseline,refittedConstant:{model:constantModel,rows:constantRows,summary:summarize(constantRows,split)}};}
