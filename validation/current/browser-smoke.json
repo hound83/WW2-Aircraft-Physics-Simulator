@@ -1,13 +1,17 @@
 {
   "status": "passed",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "browser": "Edg/154.0.4258.53",
   "checks": [
     "P default, current UI version, four live rows, no render error",
     "21 source-climb states reproduce active v3.1 model",
     "P47 source specimen and cross-specimen qualification are visible and computed",
-    "Ten measured-power states reproduce report, correct RPM and retained high-altitude failure",
-    "Measured-climb drag selector recalculates both scenarios",
+    "Ten calibrated source states reproduce accepted model with correct BHP/RPM and retained residual",
+    "Previous v3.3 control remains reproducible, including its high-altitude failure",
+    "Three model choices recalculate the live report",
+    "All nine mass/retained-power browser scenarios match shared-solver validation and preserve shaft BHP",
+    "Reset restores the accepted nominal comparison",
+    "Report/before/selected curves and five fit/five check markers render with finite coordinates",
     "Coverage uses exact card engine/options",
     "Simulator Bf109 excluded from historical-style pairwise output",
     "P47 sea-level gap returns unavailable/null",
@@ -18,9 +22,10 @@
     "Reference Bf109 enables qualified scenario comparison",
     "Weight/e/EAS controls render without exceptions",
     "Source-climb report states remain fixed when exploratory controls change",
-    "Measured-power report states remain independent of exploratory controls"
+    "Measured-power report states remain independent of exploratory controls",
+    "Climb laboratory controls fit mobile width and the detailed table scrolls locally"
   ],
   "errors": [],
   "scope": "Headless Chromium interactive smoke; not cross-browser or historical validation",
-  "htmlSha256": "398d6d68a6bb1577cd585b5e590e263bc485a2076131f89bf3e65ae4815329b0"
+  "htmlSha256": "acd197a1d4f457f44161302e3af5e424792e03ef1390e73a998a10cb4e58ff27"
 }

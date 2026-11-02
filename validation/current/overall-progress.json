@@ -1,5 +1,5 @@
 {
-  "version": "3.2.0",
+  "version": "3.4.0",
   "baselineCommit": "1400a07cf715b474a645ee48e49bb9e445c356ce",
   "pr1Merge": "3394602fb4d5fdb23c85071892e9ca98d429f00a",
   "policy": "Common observations and identical currently registered comparison conditions applied to both engines. This isolates model differences; it does not claim the old interface exposed all qualified comparisons. P47 climb data are 41-5931, not speed specimen 41-5902.",
@@ -81,7 +81,17 @@
       "reductionPercent": null
     }
   ],
+  "sourceMatchedP47": {
+    "comparison": "Separate v3.3-to-v3.4 benchmark; not spliced into pre-PR1 observations",
+    "checkCount": 5,
+    "previousCheckMae": 130.43584784452264,
+    "refittedControlCheckMae": 99.51805707146468,
+    "currentCheckMae": 34.14718273183316,
+    "previousAllMae": 114.12603022229625,
+    "currentAllMae": 38.271386955409504,
+    "qualification": "Recorded-power 41-5902 report states; gross mass and installed propeller assumptions remain qualified. Observations previously exposed."
+  },
   "independentHistoricalAccuracy": null,
   "turnStallAccuracyGain": null,
-  "qualification": "Common source checkpoints, including fitted and previously exposed checks. P47 climb uses different specimens; no pooled accuracy score."
+  "qualification": "Common source checkpoints, including fitted and previously exposed checks. Original P47 climb uses different specimens; new same-specimen checks are reported separately; no pooled accuracy score."
 }

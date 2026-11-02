@@ -1,5 +1,7 @@
 # Known limitations
 
+- **v3.4 is a conditional configuration-loss fit:** five 41-5902 fit states and five reserved states were all exposed in v3.3 before the new split. A 34.1-ft/min nominal check MAE is not an accuracy bound: paired mass/retention scenarios span 34.1-190.6 ft/min. The 0.7 power-linked mixture is not measured cooling heat; alternate fits choose 0.6-1.0. Gross test mass, installed propeller losses, torque calibration and atmosphere corrections remain qualified. The 35000-ft residual is still -83.6 ft/min. Coefficients apply only to exact matched report states, not generic flight or other aircraft.
+
 - **v3.3 recorded-power replay is conditional:** same-specimen 41-5902 report BHP/RPM/TAS with verified gearing improves input identity, but 12565-lb gross weight is not instantaneous climb mass, installed propeller eta remains fitted, and pointwise torque/atmosphere correction uncertainty is unknown. Existing open-cooling drag transfers from 41-5931. The 35000-ft residual is -432 ft/min; do not interpret scenario MAE as a validated historical accuracy bound. Spitfire original Table II remains unavailable.
 
 - **v3.2 new high-altitude check:** Spitfire 34000 ft predicts 1288 vs 1550 ft/min. The 32000-ft boost is a suspect transcription and diagnostic-only. Original Spitfire pixels remain unverified; 14000-ft high-gear reference boost remains absent. Higher engine-domain gaps are not extrapolated.

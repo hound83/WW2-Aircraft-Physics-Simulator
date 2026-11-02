@@ -1,5 +1,15 @@
 # Next steps
 
+## v3.4 completed: model improvement plus interactive climb laboratory
+
+Same-specimen P47 reserved-row MAE improves 130.4 to 34.1 ft/min; refitting constant Cd0 on identical training rows scores 99.5. The 35000-ft residual improves -432.2 to -83.6 ft/min. Both alternate splits and 9/9 paired mass/retention scenarios improve versus fair controls. The application integrates the accepted shape, report/previous/current curves, per-row fit/check roles, mass/retention controls, reset and a responsive layout. Original clean solver, source values, generic power domains and earlier aircraft calibrations are preserved. See V34_CONFIGURATION_MODEL.md for failures, parameter ambiguity and assumption ranges.
+
+## Next complete milestone: Spitfire high-altitude power and envelope consistency
+
+Resolve the source-bounded BS.543 high-altitude engine/boost inputs, test a correction against explicitly declared fit/check conditions, integrate it if supported, and review the four-aircraft input envelope and comparison consistency. Reuse existing source indexes; retrieve only the missing original table/engine records needed for this assignment. Keep the suspect 32000-ft boost diagnostic-only until verified; do not invent +4.7 or transfer P47 configuration coefficients.
+
+Acceptance: a meaningful source-supported reserved-point improvement with retained unfavorable cases, matched source identity/RPM/configuration, fixed clean-speed guardrails, mass/propeller sensitivity and fair alternate splits, application integration, npm run check and browser tests. One PR and merge for the whole tested milestone. No Atlas work, additional aircraft, broad unrelated research or unsupported turn/stall claims. Michael requested larger end-to-end milestones, not another chain of small audit releases.
+
 ## v3.3 completed: same-specimen recorded-power climb replay
 
 Ten exact 41-5902 states use report BHP/TAS/RPM and independently verified 0.5 propeller gearing. The app exposes clean versus transferred open-cooling drag. No coefficient changes. Transferred-drag scenario MAE is 114.1 ft/min; at 35000 ft it underpredicts by 432.2 ft/min. These are newly exposed conditional checks with gross-as-tested mass, not certified historical accuracy. Spitfire Table II pixels remain unavailable; 32000 ft stays diagnostic-only.

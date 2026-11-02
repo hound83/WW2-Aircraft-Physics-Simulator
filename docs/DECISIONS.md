@@ -1,5 +1,13 @@
 # Current decisions
 
+## v3.4: integrate a tested same-specimen configuration-loss model
+
+Register training/check splits, 11 heat-mixture candidates, Cd0 bounds and replacement thresholds before this search. Select by training MSE only. Fit five 41-5902 exact report states and reserve five, including 35000 ft. Reuse the shared nonnegative airflow/shaft-power configuration factor from v3.1, with reference Cd0 0.0199249990 and power-linked mixture 0.7. This is an aggregate empirical loss model, not a measured cooling heat fraction.
+
+Reserved MAE improves 130.4 to 34.1 ft/min versus transferred v3.3 drag and beats a constant-drag control refitted on identical training rows (99.5). Every primary check improves. Both alternate splits beat fair refitted controls; all nine paired mass/propeller-retention scenarios improve against both controls. Alternate selected mixtures vary 0.6 to 1.0, so the coefficient is not uniquely identified. The 35000-ft residual remains -83.6 ft/min. Preserve all candidates and stress ranges.
+
+Activate the new model only in exact source-matched recorded-power states. Keep original report values, clean v2.8 coefficients, generic engine curves and v3.1 cross-specimen/Spitfire calibrations. The application laboratory defaults to the new model, retains both controls, and exposes curves, fit/check roles, mass/propeller scenarios and reset. Observations were already exposed in v3.3; do not claim independent accuracy. See V34_CONFIGURATION_MODEL.md.
+
 ## v3.3: recorded-power replay before another coefficient fit
 
 Original 41-5902 printed p.2 supplies ten exact climb states with BHP, TAS and engine RPM, separate from the 41-5931 boost-proxy observations. Verify 0.5 propeller/crankshaft gearing from original preliminary P-47B handbook p.16/PDF p.18. Clone only engine/propeller inputs per exact state, hold the original clean-anchor polar fixed, and run the same shared evaluated solver. Keep generic engine domains and all v3.1/v2.8 coefficients unchanged. UI clean/transferred-drag selector exposes the remaining configuration uncertainty; neither scenario certifies installed eta or instantaneous mass. Keep the 35000-ft transferred-drag residual of -432 ft/min visible. Source power at one altitude does not authorize interpolation or a curve extension.

@@ -66,3 +66,9 @@ The strict scope, stop-condition and Plus-usage rules above govern **Work execut
 - The current authorized deliverable is the source-bounded climb power/cooling diagnosis, continuing the four-aircraft evidence and validation packages. Preserve existing physics assumptions unless matched evidence supports a change.
 - Interrupt only for a material scope/goal decision or an action that lacks authorization. Report progress while continuing routine work in the background; do not change the user's desktop view.
 - The next substantial assignment should also be a complete deliverable with stated acceptance checks, rather than a sequence of permission requests for small substeps.
+
+## Larger milestones requested (2 November 2026)
+
+- Michael explicitly requests more work and a larger useful result per prompt. Combine the source diagnosis, bounded candidate fit, fair reserved-point controls, sensitivity/alternate-split checks, application integration, regression/browser verification and PR/merge into one milestone where the evidence permits it.
+- Do not stop at another small audit or validation-only release when the available conditions support testing and shipping a better approximation within the assigned scope. Preserve failed candidates and unresolved source gaps instead of hiding them.
+- Report the complete before/after result and practical limits. Keep unrelated aircraft, Atlas work, broad source hunts and speculative rewrites outside the agreed milestone.

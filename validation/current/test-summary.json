@@ -1,8 +1,8 @@
 {
   "node": "v24.19.0",
-  "discoveredScripts": 48,
-  "reportedScripts": 48,
-  "passed": 48,
+  "discoveredScripts": 49,
+  "reportedScripts": 49,
+  "passed": 49,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -37,6 +37,10 @@
     },
     {
       "script": "test_comparison_v10.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_configuration_v34.cjs",
       "status": "pass"
     },
     {

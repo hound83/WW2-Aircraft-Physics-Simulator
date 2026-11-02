@@ -21,5 +21,5 @@ const source=S.bands(audit,{altFt:8000,rating:'75inHg'});assert.equal(source.sta
 assert.equal(S.bands(audit,{altFt:6000,rating:'75inHg'}).minClimbFpm,null);assert.equal(S.bands(audit,{altFt:8000,rating:'67inHg'}).maxClimbFpm,null);
 const report=R.run();assert.equal(report.releaseStage,'engineering-increment');assert.equal(report.chartRanges.length,5);assert.equal(report.historicalTurnStallAccuracy,null);
 const html=fs.readFileSync(path.join(__dirname,'../dist/model.html'),'utf8');assert.ok(html.includes('id="release-support"'));assert.ok(html.includes('Legacy A/B/C diagnostic'));assert.ok(html.includes('conditions:key,optionsFor:optFor'));assert.ok(html.includes('id="robustness-data"'));
-assert.equal(require('../package.json').version,'3.3.0');
+assert.equal(require('../package.json').version,'3.4.0');
 console.log('PASS release coverage: input domains, exact-node ranges, no gap extrapolation, explicit pairwise policy, provisional stall/turn and UI integration');
