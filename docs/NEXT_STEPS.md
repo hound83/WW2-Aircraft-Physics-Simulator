@@ -2,7 +2,7 @@
 
 ## Next release milestone
 
-Establish independent four-aircraft validation across climb and level flight. The priority gap is matched Bf 109 F-4 DB 601 E engine and flight-test data around and above rated altitude. Obtain original test conditions for the 7,000 m secondary figures and separately reserve runs for checking any power extension. Add independent source checks for the Mustang and Spitfire fast-flight corrections and seek matched clean stall measurements across all four. See [v3.8 results and failed pressure-ratio challenger](FLIGHT_ENVELOPE.md).
+Recover an original F-4 flight or engine sheet for the DB 601 E above rated altitude, including the 1.42-ata setting and inlet/installation state. Check it separately against the combat-only archival transfer. For the other aircraft, prioritise independent matched-specimen runs over transferring the fast-flight corrections to different engines, intakes or cooling installations. Establish corrected clean stall points with documented CAS/EAS, weight and aircraft configuration. See [separate archival checks](INDEPENDENT_FLIGHT_CHECKS.md).
 
 ## v3.4 completed: model improvement plus interactive climb laboratory
 

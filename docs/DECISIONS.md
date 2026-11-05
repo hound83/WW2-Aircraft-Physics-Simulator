@@ -1,5 +1,9 @@
 # Current decisions
 
+## Separate source reports and inlet transfer
+
+Offer the DB 601 E G-1 inlet reference only as an explicit combat-power F-4 sensitivity. Hold nominal F-4 power and the aerodynamic/propeller model fixed. Preserve the 41-5942 production P-47B results as a separate report check and keep the Mustang and Spitfire fast-flight terms specimen-specific. See [archival results](INDEPENDENT_FLIGHT_CHECKS.md).
+
 ## Condition-aware envelope
 
 Apply the bounded level-flight installation residual in the working profile for the Mustang and Spitfire. Keep shaft power and configuration scenarios separate from that calibration. Use recorded 41-5902 BHP and verified gearing for the supplemental P-47B rating branches. Retain the F-4 evidence gate after the pressure-ratio continuation failed the secondary speed comparison. See [model checks and assumptions](FLIGHT_ENVELOPE.md).

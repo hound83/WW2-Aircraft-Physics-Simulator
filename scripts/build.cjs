@@ -53,7 +53,10 @@ function build(){
  if(/<\/script/i.test(flightEnvelope))throw Error('Unsafe flight envelope embed');
  html=html.replace('</header>','</header><script type="application/json" id="flight-envelope-data">'+flightEnvelope+'</script>');
  html=html.replace('function optFor(id,conf){','const flightEnvelope=JSON.parse(document.getElementById("flight-envelope-data").textContent);\nfunction optFor(id,conf){');
- html=html.replace('o.e=Math.min(1,(isSim109?', "if(!isSim109){o.flightEnvelope=flightEnvelope;if(id==='p47b')o.rating=$('p47rating').value;if(id==='p47b'||id==='spitfire_lfix_bs543')o.flightCooling=$('flightCooling').value==='open';}o.e=Math.min(1,(isSim109?");
+ html=html.replace('o.e=Math.min(1,(isSim109?', "if(!isSim109){o.flightEnvelope=flightEnvelope;if(id==='bf109f4'&&$('f4scenario').value==='db601e')o.engineModel='inlet-transfer';if(id==='p47b')o.rating=$('p47rating').value;if(id==='p47b'||id==='spitfire_lfix_bs543')o.flightCooling=$('flightCooling').value==='open';}o.e=Math.min(1,(isSim109?");
+ html=html.replace('Bf 109 F-4 induced-drag scenario','Bf 109 F-4 model basis');
+ html=html.replace('<option value="global">Use exploratory shared e slider</option>',
+  '<option value="global">Use exploratory shared e slider</option><option value="db601e">DB 601 E inlet transfer · combat only (P)</option>');
  html=html.replace('id="alt" type="range" min="0" max="34000"', 'id="alt" type="range" min="0" max="35000"');
  html=html.replace('<div class="control"><label for="p51mode">','<div class="control"><label for="p47rating">P-47B rating (profile P)</label><select id="p47rating"><option value="military">Military · 2,700 rpm</option><option value="normal">Normal · 2,550 rpm</option></select></div><div class="control"><label for="flightCooling">P-47B / Spitfire cooling (profile P)</label><select id="flightCooling"><option value="reference">Reference configuration</option><option value="open">Open-shutter climb drag</option></select></div><div class="control"><label for="p51mode">');
  html=html.replace("const invalid=r.status==='no-engine-source'||r.status==='no-credible-drag-anchor';","const invalid=!r.power;");
@@ -83,7 +86,7 @@ function build(){
  html=html.replace('</body>','<script>'+source+'</script><script type="application/json" id="robustness-data">'+audit+'</script><script>'+ui+'</script>'+conditionEmbed+measuredEmbed+stallEmbed+'</body>');
  fs.mkdirSync(path.join(root,'dist'),{recursive:true});
  fs.writeFileSync(path.join(root,'dist/model.html'),html);
- const metadata={version,researchStatus:'v3.8 condition-aware installed performance and report-bounded power coverage',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'engineering-increment',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
+ const metadata={version,researchStatus:'v3.9 archival flight checks and conditional DB 601 E inlet transfer',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'engineering-increment',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
  fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify(metadata,null,2)+'\n');
  return metadata;
 }

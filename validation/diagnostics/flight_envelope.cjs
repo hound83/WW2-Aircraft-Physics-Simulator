@@ -3,6 +3,7 @@ const fs=require('node:fs'),path=require('node:path');
 const M=require('../../src/physics.js'),D=require('../../aircraft/cases.json');
 const ledger=require('../../references/p47b-measured-climb-v33.json');
 const evidence=require('../../references/performance-evidence.json');
+const inletSource=require('../../references/independent-flight-checks.json').db601e;
 const p47Cooling=require('../../calibration/v3.4-configuration-model.json');
 const spitCooling=require('../../calibration/v3.1-climb-model.json');
 const climbStates=require('../../references/climb-condition-states.json');
@@ -76,6 +77,15 @@ function coolingEnvelope(fit,heatFraction,states){
 function run(){
  const aircraft=Object.fromEntries(Object.entries(D.aircraft).map(([id,ac])=>[id,{identity:ac.stallIdentity}]));
  aircraft.p47b.power=buildPower();
+ // Hold the F-4 nominal power, drag and propeller settings fixed. The G-1
+ // record supplies only a combat-rating inlet-pressure reference.
+ const combat=M.shaftPower(D.aircraft.bf109f4,0,'combat','fluid');
+ if(inletSource.rpm!==2500||inletSource.boostAta!==1.3||!combat?.bhp)throw Error('DB 601 E source rating mismatch');
+ aircraft.bf109f4.inletTransfer={rating:'combat',gear:'fluid',engineRpm:inletSource.rpm,
+  boostAta:inletSource.boostAta,referenceAltFt:inletSource.fullThrottleM/.3048,
+  referenceTasMph:inletSource.fullThrottleMph,nominalBhp:combat.bhp,maxAltFt:23000,
+  recovery:.85,chargeExponent:2/3,source:inletSource.report+'; G-1 installation transfer'};
+
  if(p47Cooling.sourceSha256!==ledger.source.sha256)throw Error('P-47B cooling calibration belongs to a different report');
  aircraft.p47b.cooling=coolingEnvelope(p47Cooling,p47Cooling.heatFraction,ledger.states);
  const spitStates=climbStates.states.filter(s=>s.aircraftId==='spitfire_lfix_bs543'&&s.sourceSpecimen==='BS.543'&&s.engineCondition);
@@ -174,4 +184,3 @@ if(require.main===module){
  console.log(report.speeds.map(s=>s.id+': '+s.beforeMae.toFixed(2)+' → '+s.afterMae.toFixed(2)+' mph').join('\n'));
 }
 module.exports={run,writeReport};
-

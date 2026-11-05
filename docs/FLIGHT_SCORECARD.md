@@ -47,7 +47,7 @@ The table excludes speed anchor rows. Counts show scored pairs and available obs
 ## Bf 109 F-4 source leads
 
 The secondary Rechlin attribution lists 645 km/h at 7,000 m in combat (outside working engine domain) and 670 km/h at 7,000 m in emergency (outside working engine domain). Original test sheet, specimen, loading, cooling state, airspeed basis and rating details still require verification. The rounded values share a dependency group with the sea-level citations.
-The same article attributes a 17 m/s climb figure to Vogt without the test state needed for scoring. These are retrieval leads outside the frozen benchmark. [Source](https://info.eduard.com/en/06-2023-1)
+The same article attributes a 17 m/s climb figure to Vogt without the test state needed for scoring. These are retrieval leads outside the frozen benchmark. The [archival inlet transfer](INDEPENDENT_FLIGHT_CHECKS.md) separately tests combat power. [Source](https://info.eduard.com/en/06-2023-1)
 
 ## Power and comparison coverage
 
@@ -58,4 +58,3 @@ The Mustang has separately documented [power-required and propeller audits](P51_
 No aircraft pair has independently validated uncertainty bounds under a common comparison policy. All 5:1 claims remain unresolved.
 
 See the [source-condition ledger](../references/performance-evidence.json), [stall research](STALL_ACTUAL_AIRSPEED_RESEARCH.md), [machine-readable v3.6 baseline](../validation/baseline/v36-flight-scorecard.json) and [validation workflow](CURRENT_VALIDATION.md). The full JSON report is produced by `npm run diagnose:flight-scorecard` and included in the GitHub Actions validation artifact.
-
