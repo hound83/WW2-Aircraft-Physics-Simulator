@@ -1,0 +1,286 @@
+{
+  "commit": "992bd3054fdd42842fa93f653e376240f9bc5118",
+  "profile": "P",
+  "tuple": [
+    "observed",
+    "predicted"
+  ],
+  "predictions": {
+    "bf109f4-level-speed-0": [
+      325,
+      324.9999999999991
+    ],
+    "bf109f4-level-speed-1": [
+      336,
+      339.10036479803694
+    ],
+    "bf109f4-climb-rate-unavailable": [
+      null,
+      null
+    ],
+    "p47b-level-speed-0": [
+      352,
+      352.0000000000009
+    ],
+    "p47b-level-speed-1": [
+      386,
+      386.05627094353895
+    ],
+    "p47b-level-speed-2": [
+      420,
+      421.4593039827314
+    ],
+    "p47b-level-speed-3": [
+      429,
+      431.26380175044596
+    ],
+    "p47b-level-speed-4": [
+      426,
+      426.04756579512923
+    ],
+    "p47b-level-speed-5": [
+      412,
+      411.8010052761192
+    ],
+    "p47b-climb-rate-0": [
+      2330,
+      2383.4668863151505
+    ],
+    "p47b-climb-rate-1": [
+      2150,
+      2146.613970105576
+    ],
+    "p47b-climb-rate-2": [
+      2000,
+      2040.6644213190164
+    ],
+    "p47b-climb-rate-3": [
+      1810,
+      1768.38828382005
+    ],
+    "p47b-climb-rate-4": [
+      1190,
+      979.9780757181618
+    ],
+    "p51b-level-speed-0": [
+      361.5,
+      361.4999999999991
+    ],
+    "p51b-level-speed-1": [
+      380,
+      378.53546040788115
+    ],
+    "p51b-level-speed-2": [
+      395.5,
+      393.8666327670826
+    ],
+    "p51b-level-speed-3": [
+      409,
+      407.46804186286954
+    ],
+    "p51b-level-speed-4": [
+      408,
+      409.3534584967574
+    ],
+    "p51b-level-speed-5": [
+      417,
+      419.97748018441143
+    ],
+    "p51b-level-speed-6": [
+      426,
+      432.2070258665981
+    ],
+    "p51b-level-speed-7": [
+      419,
+      425.78652884846724
+    ],
+    "p51b-level-speed-8": [
+      410,
+      417.9959013063026
+    ],
+    "p51b-level-speed-9": [
+      376.5,
+      377.06800415658745
+    ],
+    "p51b-level-speed-10": [
+      423,
+      426.98694713219174
+    ],
+    "p51b-level-speed-11": [
+      431,
+      437.41937507014245
+    ],
+    "p51b-climb-rate-wright-1944-05-20-0": [
+      3820,
+      3807.762999031239
+    ],
+    "p51b-climb-rate-wright-1944-05-20-1": [
+      4380,
+      4386.365435249052
+    ],
+    "p51b-climb-rate-wright-1944-05-15-0": [
+      3920,
+      3699.3905862641823
+    ],
+    "p51b-climb-rate-wright-1944-05-15-1": [
+      4380,
+      4197.007164444778
+    ],
+    "p51b-climb-rate-wright-1944-05-15-2": [
+      3170,
+      2836.8016396977214
+    ],
+    "p51b-climb-rate-wright-1944-05-15-3": [
+      3700,
+      null
+    ],
+    "spitfire_lfix_bs543-level-speed-0": [
+      336,
+      336.0000000000009
+    ],
+    "spitfire_lfix_bs543-level-speed-1": [
+      345,
+      344.9775467110767
+    ],
+    "spitfire_lfix_bs543-level-speed-2": [
+      353,
+      354.1787527770239
+    ],
+    "spitfire_lfix_bs543-level-speed-3": [
+      363,
+      363.2787592416453
+    ],
+    "spitfire_lfix_bs543-level-speed-4": [
+      372,
+      370.2677236848349
+    ],
+    "spitfire_lfix_bs543-level-speed-5": [
+      380,
+      377.45193813979404
+    ],
+    "spitfire_lfix_bs543-level-speed-6": [
+      384,
+      380.3814559761531
+    ],
+    "spitfire_lfix_bs543-level-speed-7": [
+      384,
+      379.1376553060809
+    ],
+    "spitfire_lfix_bs543-level-speed-8": [
+      383.5,
+      376.5827461962681
+    ],
+    "spitfire_lfix_bs543-level-speed-9": [
+      383,
+      375.0951350520909
+    ],
+    "spitfire_lfix_bs543-level-speed-10": [
+      382,
+      374.430608251786
+    ],
+    "spitfire_lfix_bs543-level-speed-11": [
+      381.5,
+      389.87736727518586
+    ],
+    "spitfire_lfix_bs543-level-speed-12": [
+      390.5,
+      397.5141803249944
+    ],
+    "spitfire_lfix_bs543-level-speed-13": [
+      399,
+      405.24312662387365
+    ],
+    "spitfire_lfix_bs543-level-speed-14": [
+      407,
+      413.05043157943237
+    ],
+    "spitfire_lfix_bs543-level-speed-15": [
+      406,
+      408.301944236463
+    ],
+    "spitfire_lfix_bs543-level-speed-16": [
+      403,
+      406.48329818627917
+    ],
+    "spitfire_lfix_bs543-level-speed-17": [
+      399.5,
+      403.7246517448375
+    ],
+    "spitfire_lfix_bs543-level-speed-18": [
+      395,
+      400.45091340386625
+    ],
+    "spitfire_lfix_bs543-level-speed-19": [
+      389,
+      395.09526490755434
+    ],
+    "spitfire_lfix_bs543-level-speed-20": [
+      381,
+      387.77352560881536
+    ],
+    "spitfire_lfix_bs543-climb-rate-0": [
+      4640,
+      4661.787202228519
+    ],
+    "spitfire_lfix_bs543-climb-rate-1": [
+      4660,
+      4757.4610396254175
+    ],
+    "spitfire_lfix_bs543-climb-rate-2": [
+      4690,
+      4838.2763454931155
+    ],
+    "spitfire_lfix_bs543-climb-rate-3": [
+      4700,
+      4821.567914488654
+    ],
+    "spitfire_lfix_bs543-climb-rate-4": [
+      4560,
+      4623.20583809957
+    ],
+    "spitfire_lfix_bs543-climb-rate-5": [
+      4280,
+      4239.7468427830345
+    ],
+    "spitfire_lfix_bs543-climb-rate-6": [
+      4000,
+      3887.699353225026
+    ],
+    "spitfire_lfix_bs543-climb-rate-7": [
+      3860,
+      4135.266947223279
+    ],
+    "spitfire_lfix_bs543-climb-rate-8": [
+      3860,
+      4124.171539461127
+    ],
+    "spitfire_lfix_bs543-climb-rate-9": [
+      3860,
+      4091.946025288892
+    ],
+    "spitfire_lfix_bs543-climb-rate-10": [
+      3560,
+      3702.1856049840053
+    ],
+    "spitfire_lfix_bs543-climb-rate-11": [
+      3270,
+      3340.7426769898507
+    ],
+    "spitfire_lfix_bs543-climb-rate-12": [
+      2970,
+      2993.3401777117133
+    ],
+    "spitfire_lfix_bs543-climb-rate-13": [
+      2700,
+      2653.401427543976
+    ],
+    "spitfire_lfix_bs543-climb-rate-14": [
+      2400,
+      2321.3458356563283
+    ],
+    "spitfire_lfix_bs543-climb-rate-15": [
+      2120,
+      1968.7083666299789
+    ]
+  }
+}

@@ -2,7 +2,7 @@
 
 A separate research repository for the shared WWII flight-performance engine. The Atlas website in [hound83/ww2-airwar](https://github.com/hound83/ww2-airwar) is outside this repository's scope.
 
-**Current version v3.6.0.** Compare clean one-g stall estimates for all four fighters at the same pressure altitude and individual loaded weights. The comparison separates EAS, CAS, TAS and the unresolved historical corrections. The P-51B low-Mach candidate remains a separate, source-bounded result. See [stall comparison and limits](releases/v3.6.0.md) and [primary-source research](docs/STALL_ACTUAL_AIRSPEED_RESEARCH.md).
+**Current version v3.7.0.** The [four-aircraft scorecard](docs/FLIGHT_SCORECARD.md) compares working-profile predictions with historical speed and climb observations by altitude. The clean-stall comparison uses a bounded NACA-derived lift estimate for the P-51B and labels the evidence basis for all four fighters. See [release notes](releases/v3.7.0.md).
 
 Initial benchmarks: **Bf 109 F-4, P-47B, P-51B-15 and Spitfire LF Mk IX**. Greg's worksheets and the controlled P-47 2,000/2,600 hp comparison are retained. The 2,600 hp scenario is not a verified P-47B engine rating.
 

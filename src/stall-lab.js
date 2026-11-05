@@ -50,5 +50,18 @@
     finding:register.remainingTargets.find(r=>r.aircraftId===id)?.finding};
   });
  }
- return Object.freeze({air,eas,p51Candidate,correct,targets});
+ // This entry point represents a clean, steady one-g stall with the engine throttled.
+ // The source lift transfer is independent of the cockpit IAS correction.
+ function cleanStalls(M,D,register,altFt=8000,weightsLb={}){
+  const source=register.sources.find(s=>s.id==='naca-tn1044');
+  return targets(M,D,register,altFt,weightsLb).map(row=>{
+   const candidate=row.id==='p51b'&&row.model
+    ?p51Candidate(M,D.aircraft[row.id],source,{altFt,weightLb:row.weightLb}):null;
+   const supported=candidate?.status==='source-informed-candidate';
+   return {...row,baseline:row.model,model:supported?candidate.air:row.model,
+    liftBasis:supported?'source-informed-transfer':row.model?'provisional-lift':'unavailable',
+    liftSourceId:supported?candidate.sourceId:null};
+  });
+ }
+ return Object.freeze({air,eas,p51Candidate,correct,targets,cleanStalls});
 });

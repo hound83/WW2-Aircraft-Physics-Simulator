@@ -58,6 +58,12 @@ async function run(){
   const stall=()=>evaluate('({candidate:UniversalStallLabUI.candidate,correction:UniversalStallLabUI.correction,targets:UniversalStallLabUI.targets,chart:document.getElementById("stall-chart").innerHTML})');
   let t=await stall();assert.equal(t.candidate.status,'source-informed-candidate');assert.ok(Math.abs(t.candidate.air.easMph-103.3871410243)<1e-7);assert.equal(t.targets.length,4);assert.ok(t.targets.every(x=>x.historicalStallEasMph===null));assert.equal(t.correction.status,'unavailable');checks.push('Stall laboratory shows four unresolved targets, nominal source-lift candidate and blocked 90-IAS extrapolation');
   const initialTargets=t.targets;
+  const initialMustang=initialTargets.find(r=>r.id==='p51b');
+  assert.equal(initialMustang.liftBasis,'source-informed-transfer');
+  assert.deepEqual(initialMustang.model,t.candidate.air);
+  assert.ok(initialMustang.model.easMph>initialMustang.baseline.easMph+4);
+  assert.ok(initialTargets.filter(r=>r.id!=='p51b').every(r=>r.liftBasis==='provisional-lift'));
+  checks.push('Clean stall table applies the bounded Mustang lift and labels the three provisional models');
   await change('stall-weight-p47b','10178');t=await stall();
   assert.equal(t.targets.find(x=>x.id==='p47b').weightLb,10178);
   assert.ok(t.targets.find(x=>x.id==='p47b').model.easMph<initialTargets.find(x=>x.id==='p47b').model.easMph);
@@ -66,8 +72,8 @@ async function run(){
   await evaluate('document.getElementById("stall-reset").click()');t=await stall();assert.deepEqual(t.targets,initialTargets);
   checks.push('Separate loaded weights, empty altitude handling and four-fighter reset');
   await change('stall-alt','20000');t=await stall();assert.equal(t.candidate.status,'unavailable');assert.equal(t.candidate.air,null);assert.ok((await evaluate('document.getElementById("stall-metrics").textContent')).includes('No candidate'));checks.push('Candidate altitude extension is blocked and stale numerical values are removed');
-  assert.ok(t.targets.every((row,i)=>row.model.easMph===initialTargets[i].model.easMph&&row.model.tasMph>initialTargets[i].model.tasMph));
-  checks.push('Changing pressure altitude increases TAS while fixed-coefficient EAS stays constant');
+  assert.ok(t.targets.every((row,i)=>row.liftBasis==='provisional-lift'&&row.model.easMph===initialTargets[i].baseline.easMph&&row.model.tasMph>initialTargets[i].baseline.tasMph));
+  checks.push('Outside the Mustang transfer window, the table falls back to provisional lift and converts to TAS at altitude');
   await change('stall-alt','8000');await change('stall-weight','9270');await change('stall-cl','1.40');t=await stall();assert.ok(t.candidate.air.easMph>105);assert.ok(Math.abs(t.candidate.clMax*233-1.4*233.2)<1e-8);checks.push('Mass/lift controls recalculate shared-solver candidate with source-area normalization');
   await select('stall-correction','to1f51d1');await change('stall-ias','100');t=await stall();assert.equal(t.correction.casMph,105);assert.ok(Number.isFinite(t.correction.easMph));await change('stall-ias','90');assert.equal((await stall()).correction.status,'unavailable');checks.push('D-manual 100 IAS becomes 105 CAS and rejects correction below table');
   await select('stall-correction','ap2025g-mustangiii');await change('stall-ias','150');assert.equal((await stall()).correction.status,'band-boundary-ambiguous');await change('stall-ias','130');t=await stall();assert.equal(t.correction.positionCorrectedMph,136);assert.equal(t.correction.casMph,null);checks.push('Band boundaries remain ambiguous and position-only correction is not promoted to CAS');

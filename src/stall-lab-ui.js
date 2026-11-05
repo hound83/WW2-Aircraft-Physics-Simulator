@@ -19,14 +19,15 @@ function render(){
  const weightsLb=Object.fromEntries(Object.entries(weightInputs).map(([id,input])=>[id,inputNumber(input)]));
  const weightLb=weightsLb.p51b;
  const candidate=F.p51Candidate(M,D.aircraft.p51b,source,{altFt,weightLb,sourceClMax});
- const targets=F.targets(M,D,R,altFt,weightsLb);
+ const targets=F.cleanStalls(M,D,R,altFt,weightsLb);
  $('stall-input-status').textContent=targets.every(r=>r.model)?'Model estimates in mph at '+altFt.toLocaleString()+' ft.':
   'Enter an altitude from 0 to 35,000 ft and weights from 1,000 to 20,000 lb. Results for invalid inputs are unavailable.';
- $('stall-targets').innerHTML='<table><thead><tr><th scope="col">Fighter</th><th scope="col">EAS</th><th scope="col">CAS</th><th scope="col">TAS</th><th scope="col">Historical corrected stall</th></tr></thead><tbody>'+
+ $('stall-targets').innerHTML='<table><thead><tr><th scope="col">Fighter</th><th scope="col">EAS</th><th scope="col">CAS</th><th scope="col">TAS</th><th scope="col">Lift basis</th><th scope="col">Historical corrected stall</th></tr></thead><tbody>'+
   targets.map(r=>'<tr><th scope="row">'+esc(r.name)+'</th>'+['easMph','casMph','tasMph'].map(key=>'<td>'+n(r.model?.[key])+'</td>').join('')+
+   '<td>'+(r.liftBasis==='source-informed-transfer'?'NACA low-Mach transfer':r.model?'Provisional assumption':'Unavailable')+'</td>'+
    '<td><strong>Unresolved</strong> · '+esc(r.finding)+'</td></tr>').join('')+'</tbody></table>';
  $('stall-status').className=candidate.status==='unavailable'?'stall-unavailable':'';$('stall-status').textContent=candidate.status==='unavailable'?candidate.reason:candidate.qualification;
- $('stall-metrics').innerHTML=candidate.air?[['Candidate EAS',candidate.air.easMph],['Candidate CAS',candidate.air.casMph],['Candidate TAS',candidate.air.tasMph],['Current model EAS',candidate.baselineEasMph],['Change in EAS',candidate.deltaEasMph]].map(([label,v])=>'<div><strong>'+n(v)+' mph</strong>'+label+'</div>').join(''):'<p>No candidate number is displayed outside its declared source window.</p>';
+ $('stall-metrics').innerHTML=candidate.air?[['Candidate EAS',candidate.air.easMph],['Candidate CAS',candidate.air.casMph],['Candidate TAS',candidate.air.tasMph],['v3.6 general model EAS',candidate.baselineEasMph],['Change in EAS',candidate.deltaEasMph]].map(([label,v])=>'<div><strong>'+n(v)+' mph</strong>'+label+'</div>').join(''):'<p>No candidate number is displayed outside its declared source window.</p>';
  const plot=chart(weightLb);$('stall-chart').innerHTML=plot.svg;
  const correction=F.correct(M,R,$('stall-correction').value,inputNumber('stall-ias'),inputNumber('stall-correction-alt'));
  $('stall-correction-result').textContent=correction.status==='manual-cas-conversion'?n(correction.iasMph)+' IAS → '+n(correction.casMph)+' CAS → '+n(correction.easMph)+' EAS; '+n(correction.tasMph)+' TAS (mph). '+correction.method:correction.status==='position-only'?'Position-corrected indication: '+n(correction.positionCorrectedMph)+' mph. '+correction.reason:correction.status==='band-boundary-ambiguous'?'Position-corrected range: '+correction.positionCorrectedRangeMph.map(n).join('–')+' mph. '+correction.reason:correction.reason;
