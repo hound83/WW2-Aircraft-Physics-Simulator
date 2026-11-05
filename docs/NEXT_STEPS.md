@@ -2,9 +2,7 @@
 
 ## Next release milestone
 
-Close the Bf 109 F-4 benchmark gap with original or traceable test records for climb and level speed above sea level, plus any matched clean near-stall evidence. Identify variant, weight, rating, gear, configuration and speed basis before changing inputs. Reserve whole test runs or a separate report before tuning. Re-run the four-aircraft scorecard and show absolute residuals for reserved rows. Keep the other three aircraft's known missing stall calibrations visible.
-
-The [v3.7 scorecard](FLIGHT_SCORECARD.md) freezes working-profile v3.6 results. The P-51B clean-stall workflow applies the existing TN1044 low-Mach transfer at supported states. Recovering calibrated stall observations and separating Mach and Reynolds effects remain necessary before extending that lift model to other flight states.
+Establish independent four-aircraft validation across climb and level flight. The priority gap is matched Bf 109 F-4 DB 601 E engine and flight-test data around and above rated altitude. Obtain original test conditions for the 7,000 m secondary figures and separately reserve runs for checking any power extension. Add independent source checks for the Mustang and Spitfire fast-flight corrections and seek matched clean stall measurements across all four. See [v3.8 results and failed pressure-ratio challenger](FLIGHT_ENVELOPE.md).
 
 ## v3.4 completed: model improvement plus interactive climb laboratory
 

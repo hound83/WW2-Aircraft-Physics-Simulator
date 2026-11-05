@@ -19,9 +19,9 @@ The table excludes speed anchor rows. Counts show scored pairs and available obs
 
 | Aircraft | Metric | Altitude ft | Paired / observed | v3.6 MAE | Working MAE |
 |---|---|---|---:|---:|---:|
-| P-51B | level-speed | 0–10,000 | 3 / 3 | 1.2 | 1.2 |
-| P-51B | level-speed | >10,000–25,000 | 6 / 6 | 3.7 | 3.7 |
-| P-51B | level-speed | >25,000 | 2 / 2 | 7.4 | 7.4 |
+| P-51B | level-speed | 0–10,000 | 3 / 3 | 1.2 | 0.2 |
+| P-51B | level-speed | >10,000–25,000 | 6 / 6 | 3.7 | 1.2 |
+| P-51B | level-speed | >25,000 | 2 / 2 | 7.4 | 0.3 |
 | P-51B | climb-rate | 0–10,000 | 4 / 4 | 105.6 | 105.6 |
 | P-51B | climb-rate | >10,000–25,000 | 1 / 2 | 333.2 | 333.2 |
 | P-51B | climb-rate | >25,000 | 0 / 0 | — | — |
@@ -37,9 +37,9 @@ The table excludes speed anchor rows. Counts show scored pairs and available obs
 | Bf 109 F-4 | climb-rate | 0–10,000 | 0 / 0 | — | — |
 | Bf 109 F-4 | climb-rate | >10,000–25,000 | 0 / 0 | — | — |
 | Bf 109 F-4 | climb-rate | >25,000 | 0 / 0 | — | — |
-| Spitfire LF Mk IX | level-speed | 0–10,000 | 5 / 5 | 1.2 | 1.2 |
-| Spitfire LF Mk IX | level-speed | >10,000–25,000 | 10 / 10 | 6.1 | 6.1 |
-| Spitfire LF Mk IX | level-speed | >25,000 | 5 / 5 | 5.2 | 5.2 |
+| Spitfire LF Mk IX | level-speed | 0–10,000 | 5 / 5 | 1.2 | 0.5 |
+| Spitfire LF Mk IX | level-speed | >10,000–25,000 | 10 / 10 | 6.1 | 1.2 |
+| Spitfire LF Mk IX | level-speed | >25,000 | 5 / 5 | 5.2 | 1.1 |
 | Spitfire LF Mk IX | climb-rate | 0–10,000 | 6 / 6 | 82.1 | 82.1 |
 | Spitfire LF Mk IX | climb-rate | >10,000–25,000 | 7 / 7 | 160.0 | 160.0 |
 | Spitfire LF Mk IX | climb-rate | >25,000 | 3 / 3 | 92.2 | 92.2 |
@@ -58,3 +58,4 @@ The Mustang has separately documented [power-required and propeller audits](P51_
 No aircraft pair has independently validated uncertainty bounds under a common comparison policy. All 5:1 claims remain unresolved.
 
 See the [source-condition ledger](../references/performance-evidence.json), [stall research](STALL_ACTUAL_AIRSPEED_RESEARCH.md), [machine-readable v3.6 baseline](../validation/baseline/v36-flight-scorecard.json) and [validation workflow](CURRENT_VALIDATION.md). The full JSON report is produced by `npm run diagnose:flight-scorecard` and included in the GitHub Actions validation artifact.
+

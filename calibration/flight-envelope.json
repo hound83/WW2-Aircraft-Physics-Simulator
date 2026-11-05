@@ -1,0 +1,200 @@
+{
+  "schema": 1,
+  "policy": {
+    "machStart": 0.36,
+    "machFull": 0.46,
+    "edgeFt": 2000,
+    "limitCd0": 0.003
+  },
+  "sourcePowerSha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97",
+  "aircraft": {
+    "spitfire_lfix_bs543": {
+      "identity": {
+        "aircraftId": "spitfire_lfix_bs543",
+        "variant": "Spitfire LF Mk IXc",
+        "specimen": "BS.543"
+      },
+      "cooling": {
+        "deltaCd0": 0.003721641620434722,
+        "heatFraction": 0,
+        "reference": {
+          "altFt": 2000,
+          "tasMph": 176.5,
+          "shaftHp": 1636.5217391304348
+        },
+        "minAltFt": 2000,
+        "maxAltFt": 30000,
+        "minTasMph": 176.5,
+        "maxTasMph": 230
+      },
+      "fastFlight": {
+        "low": {
+          "ratings": [
+            "combat+18"
+          ],
+          "shape": "anchored-ramp",
+          "minAltFt": 0,
+          "maxAltFt": 18000,
+          "originFt": 5750,
+          "spanFt": 12250,
+          "offset": 0,
+          "slope": -0.0015255892652893503,
+          "machStart": 0.36,
+          "machFull": 0.46,
+          "machFade": 0.5510978527024681,
+          "machEnd": 0.5910978527024682,
+          "edgeFt": 2000
+        },
+        "high": {
+          "ratings": [
+            "combat+18"
+          ],
+          "shape": "constant",
+          "minAltFt": 16000,
+          "maxAltFt": 34000,
+          "originFt": 25000,
+          "spanFt": 9000,
+          "offset": 0.0010025767874944963,
+          "slope": 0,
+          "machStart": 0.36,
+          "machFull": 0.46,
+          "machFade": 0.5992026045810447,
+          "machEnd": 0.6392026045810447,
+          "edgeFt": 2000
+        }
+      }
+    },
+    "bf109f4": {
+      "identity": {
+        "aircraftId": "bf109f4",
+        "variant": "Bf 109 F-4",
+        "specimen": "unspecified"
+      }
+    },
+    "p47b": {
+      "identity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
+      "power": {
+        "military": {
+          "gear": "turbo",
+          "source": "PHQ-M-19-1417-A, 18 June 1942, printed p.2 section 6 climb table; cover specifies R-2800-21 with torque meter; interpolated only between same-rating 41-5902 report nodes",
+          "engineRpm": 2700,
+          "reductionRatioEnginePerProp": 2,
+          "nodes": [
+            {
+              "altFt": 0,
+              "bhp": 2000,
+              "sourceStateId": "p47-5902-0"
+            },
+            {
+              "altFt": 5000,
+              "bhp": 2000,
+              "sourceStateId": "p47-5902-5000"
+            }
+          ]
+        },
+        "normal": {
+          "gear": "turbo",
+          "source": "PHQ-M-19-1417-A, 18 June 1942, printed p.2 section 6 climb table; cover specifies R-2800-21 with torque meter; interpolated only between same-rating 41-5902 report nodes",
+          "engineRpm": 2550,
+          "reductionRatioEnginePerProp": 2,
+          "nodes": [
+            {
+              "altFt": 12600,
+              "bhp": 1625,
+              "sourceStateId": "p47-5902-12600-normal"
+            },
+            {
+              "altFt": 15000,
+              "bhp": 1625,
+              "sourceStateId": "p47-5902-15000"
+            },
+            {
+              "altFt": 20000,
+              "bhp": 1625,
+              "sourceStateId": "p47-5902-20000"
+            },
+            {
+              "altFt": 25000,
+              "bhp": 1625,
+              "sourceStateId": "p47-5902-25000"
+            },
+            {
+              "altFt": 30000,
+              "bhp": 1625,
+              "sourceStateId": "p47-5902-30000"
+            },
+            {
+              "altFt": 35000,
+              "bhp": 1365,
+              "sourceStateId": "p47-5902-35000"
+            }
+          ]
+        }
+      },
+      "cooling": {
+        "deltaCd0": 0.019924999007313732,
+        "heatFraction": 0.7,
+        "reference": {
+          "stateId": "p47-5902-0",
+          "altFt": 0,
+          "tasMph": 172,
+          "shaftHp": 2000
+        },
+        "minAltFt": 0,
+        "maxAltFt": 35000,
+        "minTasMph": 172,
+        "maxTasMph": 305
+      }
+    },
+    "p51b": {
+      "identity": {
+        "aircraftId": "p51b",
+        "variant": "P-51B-15",
+        "specimen": "43-24777"
+      },
+      "fastFlight": {
+        "low": {
+          "ratings": [
+            "67inHg",
+            "75inHg"
+          ],
+          "shape": "anchored-ramp",
+          "minAltFt": 0,
+          "maxAltFt": 10300,
+          "originFt": 0,
+          "spanFt": 4000,
+          "offset": 0,
+          "slope": -0.0002206687779208169,
+          "machStart": 0.36,
+          "machFull": 0.46,
+          "machFade": 0.5723976664887311,
+          "machEnd": 0.6123976664887312,
+          "edgeFt": 2000
+        },
+        "high": {
+          "ratings": [
+            "67inHg",
+            "75inHg"
+          ],
+          "shape": "linear",
+          "minAltFt": 18000,
+          "maxAltFt": 32000,
+          "originFt": 25000,
+          "spanFt": 7000,
+          "offset": 0.0007592547359755491,
+          "slope": 0.00048655628655390026,
+          "machStart": 0.36,
+          "machFull": 0.46,
+          "machFade": 0.6275467994431716,
+          "machEnd": 0.6675467994431716,
+          "edgeFt": 2000
+        }
+      }
+    }
+  }
+}
+

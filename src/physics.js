@@ -318,20 +318,72 @@ function workingOptions(ac,opts={}){
  return out;
 }
 
+// The optional envelope is calibrated separately from the compatibility solver.
+function envelopeEntry(ac,opts){
+ const identity=ac.stallIdentity,entry=opts.flightEnvelope?.aircraft?.[identity?.aircraftId];
+ return opts.profile==='P'&&entry&&['aircraftId','variant','specimen'].every(k=>identity[k]===entry.identity?.[k])?entry:null;
+}
+
+function supplementalPower(entry,alt,rating,gear){
+ const curve=entry?.power?.[rating];
+ if(!curve||(gear!=='auto'&&gear!==curve.gear))return null;
+ const node=interp(curve.nodes,alt);
+ return node&&{...node,rating,gear:curve.gear,engineRpm:curve.engineRpm,
+  reductionRatioEnginePerProp:curve.reductionRatioEnginePerProp,notes:curve.source};
+}
+
+function installedDelta(entry,opts,alt,tas,shaft){
+ if(opts.engineCondition||opts.engineModel||opts.coolingState||opts.flightCooling)return 0;
+ const curve=entry?.fastFlight?.[shaft.gear];
+ if(!curve||!curve.ratings.includes(shaft.rating))return 0;
+ const at=Math.min(curve.maxAltFt,Math.max(curve.minAltFt,alt));
+ const edge=Math.max(0,1-Math.abs(alt-at)/curve.edgeFt);
+ const mach=tas*MPH/isa(alt).a;
+ const t=Math.min(1,Math.max(0,(mach-curve.machStart)/(curve.machFull-curve.machStart)));
+ const high=Math.min(1,Math.max(0,(curve.machEnd-mach)/(curve.machEnd-curve.machFade)));
+ if(edge===0||t===0||high===0)return 0;
+ const x=(at-curve.originFt)/curve.spanFt;
+ const basis=curve.shape==='anchored-ramp'?Math.min(1,Math.max(0,x)):x;
+ const delta=curve.offset+curve.slope*basis;
+ return edge*t*t*(3-2*t)*high*high*(3-2*high)*delta;
+}
+
+function flightCoolingDelta(entry,opts,alt,tas,shaft){
+ if(!opts.flightCooling)return 0;
+ const cooling=entry?.cooling;
+ if(!cooling||opts.coolingState||opts.addedDragAreaM2||opts.storesWeightLb
+    ||alt<cooling.minAltFt||alt>cooling.maxAltFt||tas<cooling.minTasMph||tas>cooling.maxTasMph)return null;
+ const ref=cooling.reference;
+ const ratio=shaft.bhp/ref.shaftHp*isa(ref.altFt).rho/isa(alt).rho*(ref.tasMph/tas)**3;
+ const delta=cooling.deltaCd0*(1-cooling.heatFraction+cooling.heatFraction*ratio);
+ return Number.isFinite(delta)&&delta>=0&&delta<=.03?delta:null;
+}
+
 function evaluated(ac,alt,tasMph,opts={}){if(opts.profile==='P'&&!opts.polar)opts=workingOptions(ac,opts);const profile=opts.profile||'C',polar=opts.polar,e=polar?polar.e:(opts.e??.78),storesWeightLb=opts.storesWeightLb??0,addedDragAreaM2=opts.addedDragAreaM2??0,weight=(opts.weightLb??ac.weightLb)+storesWeightLb,clMax=opts.clMax??ac.clMaxAssumed,structG=opts.structG??7,rating=opts.rating||ac.defaultRating,gear=opts.gear||'auto';if(!(weight>0&&clMax>0&&e>0&&e<=1&&Number.isFinite(storesWeightLb)&&storesWeightLb>=0&&Number.isFinite(addedDragAreaM2)&&addedDragAreaM2>=0)||opts.engineCondition&&opts.engineModel)return {status:'invalid-input'};
  if(polar&&(opts.e!==undefined||opts.refit||!(polar.cd0>.005&&polar.cd0<.085)||typeof polar.source!=='string'||!polar.source.trim()))return {status:'invalid-polar-input',reason:'Explicit polar requires sourced CD0 and e; do not simultaneously refit or override e'};
- const shaft=opts.engineCondition?shaftPowerAtMeasuredBoost(ac,alt,rating,gear,opts.engineCondition,{chargeExponent:opts.chargeExponent}):opts.engineModel==='ram-critical'?shaftPowerAtRamSpeed(ac,alt,tasMph,rating,gear,{recovery:opts.ramRecovery??1}):opts.engineModel===undefined?shaftPower(ac,alt,rating,gear):null;
+ const entry=envelopeEntry(ac,opts);
+ const gears=Object.keys(ac.powerRatings[rating]?.gears??{});
+ if(entry&&gear==='auto'&&gears.length>1&&!opts.engineCondition){
+  const results=gears.map(forcedGear=>evaluated(ac,alt,tasMph,{...opts,gear:forcedGear}));
+  const viable=results.filter(r=>Number.isFinite(r.power?.excessHp));
+  return viable.length?viable.reduce((best,r)=>r.power.excessHp>best.power.excessHp?r:best):(results.find(r=>r.status!=='no-engine-source')??results[0]);
+ }
+ const shaft=opts.engineCondition?shaftPowerAtMeasuredBoost(ac,alt,rating,gear,opts.engineCondition,{chargeExponent:opts.chargeExponent}):opts.engineModel==='ram-critical'?shaftPowerAtRamSpeed(ac,alt,tasMph,rating,gear,{recovery:opts.ramRecovery??1}):opts.engineModel===undefined?(shaftPower(ac,alt,rating,gear)??supplementalPower(entry,alt,rating,gear)):null;
  if(!shaft)return {status:'no-engine-source',aircraft:ac.name,altFt:alt,reason:opts.engineCondition?'No sourced same-condition boost data for power correction':'No source-bounded engine power at selected altitude/rating/gear'};
  const cdData=polar?{cd0:polar.cd0,valid:true,origin:polar.source}:cd0FromAnchor(ac,opts.refit?profile:'C',opts.refit?e:.78);
  if(!cdData||!cdData.valid)return {status:'no-credible-drag-anchor'};
- const prop=propEta(ac,alt,tasMph,shaft.bhp,profile,rating);if(!prop)return {status:'no-prop-input'};
- const effectiveCd0=cdData.cd0+addedDragAreaM2/ac.wingAreaM2;
+ const propAircraft=shaft.reductionRatioEnginePerProp?{...ac,propGeometry:{...ac.propGeometry,reductionRatioEnginePerProp:shaft.reductionRatioEnginePerProp}}:ac;
+ const prop=propEta(propAircraft,alt,tasMph,shaft.bhp,profile,rating,{engineRpmOverride:shaft.engineRpm});if(!prop)return {status:'no-prop-input'};
+ const installedDeltaCd0=installedDelta(entry,opts,alt,tasMph,shaft);
+ const coolingDeltaCd0=flightCoolingDelta(entry,opts,alt,tasMph,shaft);
+ if(coolingDeltaCd0===null)return {status:'no-cooling-source',reason:'Outside the open-shutter speed/altitude or configuration envelope'};
+ const effectiveCd0=cdData.cd0+installedDeltaCd0+coolingDeltaCd0+addedDragAreaM2/ac.wingAreaM2;
  const D=dragBreakdown(ac,alt,tasMph,weight,effectiveCd0,e,1),V=tasMph*MPH,W=weight*LBF,geo=geometry(ac),q=D.q;
  const Pav=prop.eta*shaft.bhp*HP,Ps=(Pav-D.drag*V)/W,stallEas=Math.sqrt(2*W/(RHO0*geo.S*clMax))/MPH,air=airspeeds(tasMph,alt),nLift=q*geo.S*clMax/W;
  const feasible=nLift>=1;const nPower2=(Pav/V-D.dParasite)/Math.max(1e-9,D.dInd),powerOk=feasible&&nPower2>=1;const nInst=feasible?Math.min(nLift,structG):null;
  const nSust=powerOk?Math.min(nInst,Math.sqrt(nPower2)):null;
  const turn=n=>n!=null&&n>=1?G*Math.sqrt(Math.max(0,n*n-1))/V*180/Math.PI:null;
- return {status:feasible?'modelled':'below-provisional-stall',aircraft:ac.name,altFt:alt,tasMph,air,weightLb:weight,engine:shaft,prop,cd0:effectiveCd0,cleanCd0:cdData.cd0,dragPolarSource:cdData.origin,externalDragAreaM2:addedDragAreaM2,storesWeightLb,oswald:e,clMax,stallEasMph:stallEas,drag:D,
+ return {status:feasible?'modelled':'below-provisional-stall',aircraft:ac.name,altFt:alt,tasMph,air,weightLb:weight,engine:shaft,prop,cd0:effectiveCd0,cleanCd0:cdData.cd0,...(entry?{installedDeltaCd0,coolingDeltaCd0}:{}),dragPolarSource:cdData.origin,externalDragAreaM2:addedDragAreaM2,storesWeightLb,oswald:e,clMax,stallEasMph:stallEas,drag:D,
    power:{shaftHp:shaft.bhp,propulsiveHp:Pav/HP,requiredHp:D.requiredHp,excessHp:(Pav-D.drag*V)/HP,psMps:Ps,climbFpm:feasible?Ps*196.850394:null},
    limits:{nLift,nPower:powerOk?Math.sqrt(nPower2):null,nInst,nSust,instantDegSec:turn(nInst),sustDegSec:turn(nSust),structG},
    provenance:polar?'scenario using an explicitly supplied drag polar plus engine/prop assumptions; polar source is not necessarily an independent measurement':'modeled from sourced geometry/engine nodes, per-aircraft CD0 anchor fit and assumed e/CLmax/prop profile; not an independently validated turn curve'};
@@ -488,7 +540,8 @@ function stallSensitivity(ac,scenario,altFt,easMph,opts={}){
 // drag/power refitting to the target climb results. This is a *model* maximum,
 // not a documented climbing IAS or flight procedure.
 function bestClimb(ac,altFt,opts={}){
- const lo=opts.minTasMph??100,hi=opts.maxTasMph??290,step=opts.stepMph??1;
+ const cooling=opts.flightCooling?envelopeEntry(ac,opts)?.cooling:null;
+ const lo=opts.minTasMph??100,hi=opts.maxTasMph??Math.max(290,cooling?.maxTasMph??0),step=opts.stepMph??1;
  if(!(step>0&&lo>0&&hi>lo))throw Error('Invalid climb-search speed range');
  let best=null,viable=0;
  for(let tas=lo;tas<=hi+1e-9;tas+=step){
@@ -585,3 +638,4 @@ function matchedPowerClimb(ac,altFt,ratingA,ratingB,opts={}){
 }
 return Object.freeze({isa,airspeeds,tasFrom,trueFromCAS,casFromTrue,casFromIAS,resolveAirspeed,resolveStallEvidence,stallSensitivity,shaftPower,shaftPowerAtMeasuredBoost,inletPressureAtSpeed,ramManifoldAtSpeed,referenceLevelTas,shaftPowerAtRamSpeed,nacaLowSpeedPropChart,nacaMachResearch,propEta,dragBreakdown,cd0FromAnchor,workingOptions,evaluated,maxSpeed,greg109At,inferredGregF4,inferredGregP47,climbConditionEngine,climbPrediction,equivalentClimbDrag,gregP47PowerPoint,gregP47MaxSpeed,bestClimb,sourceChartClimb,matchedPowerClimb});
 });
+
