@@ -340,11 +340,12 @@ function installedDelta(entry,opts,alt,tas,shaft){
  const edge=Math.max(0,1-Math.abs(alt-at)/curve.edgeFt);
  const mach=tas*MPH/isa(alt).a;
  const t=Math.min(1,Math.max(0,(mach-curve.machStart)/(curve.machFull-curve.machStart)));
- if(edge===0||t===0)return 0;
+ const high=Math.min(1,Math.max(0,(curve.machEnd-mach)/(curve.machEnd-curve.machFade)));
+ if(edge===0||t===0||high===0)return 0;
  const x=(at-curve.originFt)/curve.spanFt;
  const basis=curve.shape==='anchored-ramp'?Math.min(1,Math.max(0,x)):x;
  const delta=curve.offset+curve.slope*basis;
- return edge*t*t*(3-2*t)*delta;
+ return edge*t*t*(3-2*t)*high*high*(3-2*high)*delta;
 }
 
 function flightCoolingDelta(entry,opts,alt,tas,shaft){
@@ -637,3 +638,4 @@ function matchedPowerClimb(ac,altFt,ratingA,ratingB,opts={}){
 }
 return Object.freeze({isa,airspeeds,tasFrom,trueFromCAS,casFromTrue,casFromIAS,resolveAirspeed,resolveStallEvidence,stallSensitivity,shaftPower,shaftPowerAtMeasuredBoost,inletPressureAtSpeed,ramManifoldAtSpeed,referenceLevelTas,shaftPowerAtRamSpeed,nacaLowSpeedPropChart,nacaMachResearch,propEta,dragBreakdown,cd0FromAnchor,workingOptions,evaluated,maxSpeed,greg109At,inferredGregF4,inferredGregP47,climbConditionEngine,climbPrediction,equivalentClimbDrag,gregP47PowerPoint,gregP47MaxSpeed,bestClimb,sourceChartClimb,matchedPowerClimb});
 });
+

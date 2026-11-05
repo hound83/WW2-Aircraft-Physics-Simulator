@@ -7,6 +7,7 @@ const fit=report.fits;
 for(const row of fit){
  const actual=envelope.aircraft[row.id].fastFlight[row.gear],generated=report.calibration.aircraft[row.id].fastFlight[row.gear];
  assert.equal(actual.shape,generated.shape);
+ close(actual.machEnd,generated.machEnd,1e-12);
  close(actual.slope,generated.slope,1e-12);close(actual.offset,generated.offset,1e-12);
  assert.ok(row.folds.filter(f=>f.shape===row.shape).every(f=>f.beforeMae>f.afterMae));
  assert.ok(row.blocks.every(f=>f.beforeMae>f.afterMae));
@@ -40,6 +41,7 @@ const edge1=at(p51,10300,400,forced),edge2=at(p51,10300.1,400,forced);
 close(edge1.installedDeltaCd0,edge2.installedDeltaCd0,1e-7);
 assert.equal(at(p51,13000,400,forced).installedDeltaCd0,0);
 assert.equal(at(p51,8000,170,forced).installedDeltaCd0,0);
+assert.equal(at(p51,32000,550,{gear:"high"}).installedDeltaCd0,0);
 const unloaded=at(p51,22000,400,{gear:'high'}),loaded=at(p51,22000,400,{gear:'high',storesWeightLb:500,addedDragAreaM2:.10});
 assert.ok(loaded.power.requiredHp>unloaded.power.requiredHp);
 close(loaded.installedDeltaCd0,unloaded.installedDeltaCd0);
@@ -64,3 +66,4 @@ assert.ok(M.bestClimb(p47,35000,{...opts,...normal}).best);
 assert.equal(at(spit,10000,190,{flightCooling:true}).coolingDeltaCd0,envelope.aircraft.spitfire_lfix_bs543.cooling.deltaCd0);
 assert.equal(at(spit,34000,220,{flightCooling:true}).status,'no-cooling-source');
 console.log('PASS altitude-block and rating checks, mass/e stress, frozen anchors, gear selection, historical P-47B power/RPM/cooling and F-4 evidence gates');
+

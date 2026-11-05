@@ -1,19 +1,18 @@
 # Current validation
 
-v3.7: [four-aircraft flight scorecard](FLIGHT_SCORECARD.md) and [bounded Mustang clean-stall lift](../releases/v3.7.0.md).
+v3.8: [condition-aware flight envelope](FLIGHT_ENVELOPE.md) and [four-aircraft scorecard](FLIGHT_SCORECARD.md).
 
-Validated with Node.js 22 and headless Chromium. The GitHub Actions workflow produces the runnable HTML and point-by-point flight scorecard in its physics-validation artifact.
+Validated with Node.js 22 and headless Chromium. The GitHub Actions physics-validation artifact contains the standalone HTML, four-aircraft scorecard and flight envelope checks.
 
 | Check | Result |
 |---|---|
-| Research version | 3.7.0 |
-| Node regression scripts | 51/51 pass |
+| Research version | 3.8.0 |
+| Node regression scripts | 52/52 pass |
 | Numeric values compared with v2.5 setup | 3628 |
 | Exact floating-point differences | 38 |
 | Legacy C changes above numeric tolerance | 0 |
 | Missing / added numeric paths | 0 / 0 |
-| Engine SHA256 | 67558157176b73a8799eb8eaecfec971b0c22d850802c1e1acd34afb1edcf667 |
-| Interactive browser tests | Passed 32 headless checks |
+| Interactive browser tests | Passed 34 headless checks |
 | Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |
 | 5:1 comparative accuracy | Unresolved |
 

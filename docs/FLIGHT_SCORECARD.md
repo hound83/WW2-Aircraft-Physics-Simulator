@@ -58,3 +58,4 @@ The Mustang has separately documented [power-required and propeller audits](P51_
 No aircraft pair has independently validated uncertainty bounds under a common comparison policy. All 5:1 claims remain unresolved.
 
 See the [source-condition ledger](../references/performance-evidence.json), [stall research](STALL_ACTUAL_AIRSPEED_RESEARCH.md), [machine-readable v3.6 baseline](../validation/baseline/v36-flight-scorecard.json) and [validation workflow](CURRENT_VALIDATION.md). The full JSON report is produced by `npm run diagnose:flight-scorecard` and included in the GitHub Actions validation artifact.
+

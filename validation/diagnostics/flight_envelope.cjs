@@ -43,8 +43,12 @@ function fit(ac,rows,shape,fitRows,scenario=policy){
  for(const altFt of [minAltFt,maxAltFt]){
   if(Math.abs(offset+slope*x({altFt}))>policy.limitCd0)throw Error('Installation correction exceeds the declared limit');
  }
+ const maxMach=Math.max(...rows.map(r=>r.mphTas*.44704/M.isa(r.altFt).a));
+ // Keep the search around the highest reference speed active, then
+ // fade back to the base solver at unsupported high Mach numbers.
+ const machFade=maxMach+.015,machEnd=machFade+.04;
  return {ratings:[...new Set(rows.map(r=>r.rating))],shape,minAltFt,maxAltFt,originFt,spanFt,offset,slope,
-  machStart:scenario.machStart,machFull:scenario.machFull,edgeFt:policy.edgeFt};
+  machStart:scenario.machStart,machFull:scenario.machFull,machFade,machEnd,edgeFt:policy.edgeFt};
 }
 
 function buildPower(){
@@ -170,3 +174,4 @@ if(require.main===module){
  console.log(report.speeds.map(s=>s.id+': '+s.beforeMae.toFixed(2)+' → '+s.afterMae.toFixed(2)+' mph').join('\n'));
 }
 module.exports={run,writeReport};
+
