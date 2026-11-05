@@ -1,10 +1,10 @@
 # Next steps
 
-## First priority: actual stall calibration, v3.5 laboratory delivered
+## First priority for the next physics milestone
 
-Michael prioritises actual corrected stall speed ahead of the prior Spitfire climb assignment. The simulator now evaluates a conditional P51B calibrated-lift candidate and manual airspeed corrections with no extrapolation. Preserve its source bounds and the four unresolved exact-target gates.
+Find a clean, matched-specimen low-speed test with measured CAS/EAS or an applicable stall-region IAS correction for one of the four fighters. Record configuration, loaded weight, altitude, stall method and source pages. For a Mach/Reynolds-dependent Mustang model, digitise the gradual-stall points in TN1044 Figure 6 by altitude and test against reserved measured points within the observed domain. Keep accelerated and one-g applicability distinct. Promote a candidate only if the evidence supports the intended flight state.
 
-Next complete milestone: retrieve the remaining F4/P47B/IX low-speed correction or direct calibrated lift records, then build and validate applicable Mach/altitude lift dependence. Follow the specific primary leads in STALL_ACTUAL_AIRSPEED_RESEARCH.md. Do not substitute simulator specifications, landing speed or a different pitot installation. The default full-envelope coefficients remain provisional.
+The [v3.6 comparison](../releases/v3.6.0.md) provides a runnable, four-aircraft stall workflow while that evidence is sought. General-model CLmax and four exact-target historical stalls remain provisional.
 
 ## v3.4 completed: model improvement plus interactive climb laboratory
 

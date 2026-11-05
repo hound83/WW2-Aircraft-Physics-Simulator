@@ -318,6 +318,10 @@ function workingOptions(ac,opts={}){
  return out;
 }
 
+function oneGStallEasMph(weightLb,wingAreaM2,clMax){
+ return Math.sqrt(2*weightLb*LBF/(RHO0*wingAreaM2*clMax))/MPH;
+}
+
 function evaluated(ac,alt,tasMph,opts={}){if(opts.profile==='P'&&!opts.polar)opts=workingOptions(ac,opts);const profile=opts.profile||'C',polar=opts.polar,e=polar?polar.e:(opts.e??.78),storesWeightLb=opts.storesWeightLb??0,addedDragAreaM2=opts.addedDragAreaM2??0,weight=(opts.weightLb??ac.weightLb)+storesWeightLb,clMax=opts.clMax??ac.clMaxAssumed,structG=opts.structG??7,rating=opts.rating||ac.defaultRating,gear=opts.gear||'auto';if(!(weight>0&&clMax>0&&e>0&&e<=1&&Number.isFinite(storesWeightLb)&&storesWeightLb>=0&&Number.isFinite(addedDragAreaM2)&&addedDragAreaM2>=0)||opts.engineCondition&&opts.engineModel)return {status:'invalid-input'};
  if(polar&&(opts.e!==undefined||opts.refit||!(polar.cd0>.005&&polar.cd0<.085)||typeof polar.source!=='string'||!polar.source.trim()))return {status:'invalid-polar-input',reason:'Explicit polar requires sourced CD0 and e; do not simultaneously refit or override e'};
  const shaft=opts.engineCondition?shaftPowerAtMeasuredBoost(ac,alt,rating,gear,opts.engineCondition,{chargeExponent:opts.chargeExponent}):opts.engineModel==='ram-critical'?shaftPowerAtRamSpeed(ac,alt,tasMph,rating,gear,{recovery:opts.ramRecovery??1}):opts.engineModel===undefined?shaftPower(ac,alt,rating,gear):null;
@@ -327,7 +331,7 @@ function evaluated(ac,alt,tasMph,opts={}){if(opts.profile==='P'&&!opts.polar)opt
  const prop=propEta(ac,alt,tasMph,shaft.bhp,profile,rating);if(!prop)return {status:'no-prop-input'};
  const effectiveCd0=cdData.cd0+addedDragAreaM2/ac.wingAreaM2;
  const D=dragBreakdown(ac,alt,tasMph,weight,effectiveCd0,e,1),V=tasMph*MPH,W=weight*LBF,geo=geometry(ac),q=D.q;
- const Pav=prop.eta*shaft.bhp*HP,Ps=(Pav-D.drag*V)/W,stallEas=Math.sqrt(2*W/(RHO0*geo.S*clMax))/MPH,air=airspeeds(tasMph,alt),nLift=q*geo.S*clMax/W;
+ const Pav=prop.eta*shaft.bhp*HP,Ps=(Pav-D.drag*V)/W,stallEas=oneGStallEasMph(weight,geo.S,clMax),air=airspeeds(tasMph,alt),nLift=q*geo.S*clMax/W;
  const feasible=nLift>=1;const nPower2=(Pav/V-D.dParasite)/Math.max(1e-9,D.dInd),powerOk=feasible&&nPower2>=1;const nInst=feasible?Math.min(nLift,structG):null;
  const nSust=powerOk?Math.min(nInst,Math.sqrt(nPower2)):null;
  const turn=n=>n!=null&&n>=1?G*Math.sqrt(Math.max(0,n*n-1))/V*180/Math.PI:null;
@@ -583,5 +587,5 @@ function matchedPowerClimb(ac,altFt,ratingA,ratingB,opts={}){
    deltaClimbFpm:b.climbFpm-a.climbFpm,deltaShaftHp:high.bhp-low.bhp,
    provenance:opts.profile==='P'?'v2.8 joint engineering fit; 67-inHg fitted, 75-inHg out of fit':'calculated from frozen speed-calibrated polar; NO climb-rate calibration'};
 }
-return Object.freeze({isa,airspeeds,tasFrom,trueFromCAS,casFromTrue,casFromIAS,resolveAirspeed,resolveStallEvidence,stallSensitivity,shaftPower,shaftPowerAtMeasuredBoost,inletPressureAtSpeed,ramManifoldAtSpeed,referenceLevelTas,shaftPowerAtRamSpeed,nacaLowSpeedPropChart,nacaMachResearch,propEta,dragBreakdown,cd0FromAnchor,workingOptions,evaluated,maxSpeed,greg109At,inferredGregF4,inferredGregP47,climbConditionEngine,climbPrediction,equivalentClimbDrag,gregP47PowerPoint,gregP47MaxSpeed,bestClimb,sourceChartClimb,matchedPowerClimb});
+return Object.freeze({isa,airspeeds,tasFrom,trueFromCAS,casFromTrue,casFromIAS,resolveAirspeed,resolveStallEvidence,stallSensitivity,shaftPower,shaftPowerAtMeasuredBoost,inletPressureAtSpeed,ramManifoldAtSpeed,referenceLevelTas,shaftPowerAtRamSpeed,nacaLowSpeedPropChart,nacaMachResearch,propEta,dragBreakdown,cd0FromAnchor,workingOptions,oneGStallEasMph,evaluated,maxSpeed,greg109At,inferredGregF4,inferredGregP47,climbConditionEngine,climbPrediction,equivalentClimbDrag,gregP47PowerPoint,gregP47MaxSpeed,bestClimb,sourceChartClimb,matchedPowerClimb});
 });

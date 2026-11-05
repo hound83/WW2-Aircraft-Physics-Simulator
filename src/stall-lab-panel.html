@@ -2,19 +2,24 @@
 <style>
 #stall-lab .stall-controls{display:flex;flex-wrap:wrap;gap:16px;align-items:end}#stall-lab label{display:flex;flex-direction:column;gap:6px;max-width:100%}#stall-lab select,#stall-lab input,#stall-lab button{font:inherit;padding:8px;border-radius:6px;max-width:100%;box-sizing:border-box}#stall-lab .stall-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:18px 0}#stall-lab .stall-metrics div{padding:16px;background:#19303a;border:1px solid #46606d;border-radius:8px}#stall-lab .stall-metrics strong{display:block;color:#8cddfb;font-size:1.5rem}#stall-lab svg{width:100%;height:auto}#stall-lab .table-scroll{overflow-x:auto}#stall-lab .stall-unavailable{color:#f2ba68}#stall-lab summary{cursor:pointer;padding:12px 0}
 </style>
-<h2>Stall and airspeed calibration laboratory</h2>
-<p>The lift calculation needs equivalent airspeed (EAS). Cockpit IAS first needs the correct instrument and installation corrections to obtain CAS. TAS then depends on altitude. Published indications and model predictions are shown separately below.</p>
-<style>#stall-targets td,#stall-targets th{text-align:left;vertical-align:top}#stall-targets th:nth-child(4){width:55%}</style><div class="table-scroll" id="stall-targets"></div>
-<h3>P-51B: calibrated lift candidate</h3>
-<p>NACA TN1044 used position-calibrated probes in gradual stalls with engine throttled and propeller in high pitch. Its low-Mach lift measurements support a candidate near 103 mph EAS at 9,240 lb. This panel tests that candidate through the shared solver; it does not change the general flight-model assumptions above.</p>
+<h2>Compare clean one-g stall speeds</h2>
+<p>Choose a common pressure altitude and a loaded weight for each fighter. The table shows model estimates for a clean, steady one-g stall. EAS sets the lift requirement. CAS and TAS show that same result on different airspeed scales. Historical cockpit readings require their own installation-specific correction.</p>
 <div class="stall-controls">
-<label>Altitude, ft<input id="stall-alt" type="number" min="0" max="35000" step="100" value="8000"></label>
-<label>Weight, lb<input id="stall-weight" type="number" min="1000" max="15000" step="10" value="9240"></label>
-<label>Source lift coefficient<select id="stall-cl"><option value="1.45">1.45 nominal graph reading</option><option value="1.40">1.40 engineering bracket</option><option value="1.48">1.48 engineering bracket</option></select></label>
+<label>Pressure altitude, ft<input id="stall-alt" type="number" min="0" max="35000" step="any" value="8000"></label>
+<label>P-51B weight, lb<input id="stall-weight" type="number" min="1000" max="20000" step="any" value="9240"></label>
+<label>P-47B weight, lb<input id="stall-weight-p47b" type="number" min="1000" max="20000" step="any" value="12565"></label>
+<label>Bf 109 F-4 weight, lb<input id="stall-weight-bf109f4" type="number" min="1000" max="20000" step="any" value="6371"></label>
+<label>Spitfire LF IX weight, lb<input id="stall-weight-spitfire_lfix_bs543" type="number" min="1000" max="20000" step="any" value="7110"></label>
 <button type="button" id="stall-reset">Reset stall comparison</button>
 </div>
+<p id="stall-input-status" aria-live="polite"></p>
+<style>#stall-targets td,#stall-targets th{text-align:left;vertical-align:top}</style>
+<div class="table-scroll" id="stall-targets" tabindex="0" role="region" aria-label="Four-aircraft stall comparison"></div>
+<h3>P-51B low-Mach lift candidate</h3>
+<p>NACA TN1044 used position-calibrated probes in gradual stalls with the engine throttled and propeller in high pitch. Compare its low-Mach lift estimate with the general P-51B model at the altitude and weight selected above.</p>
+<div class="stall-controls"><label>Source lift coefficient<select id="stall-cl"><option value="1.45">1.45 nominal graph reading</option><option value="1.40">1.40 engineering bracket</option><option value="1.48">1.48 engineering bracket</option></select></label></div>
 <p id="stall-status" aria-live="polite"></p><div class="stall-metrics" id="stall-metrics"></div>
-<div id="stall-chart"></div><p>Lines below show only the declared 5,100-9,300 ft transfer window, subject to Mach 0.14-0.18. The range is an engineering bracket, not historical accuracy bounds. No stall IAS is inferred.</p>
+<div id="stall-chart"></div><p>The chart holds each lift coefficient fixed and shows the resulting EAS and CAS within 5,100–9,300 ft and Mach 0.14–0.18. The bracket varies the assumed lift coefficient. Figure 6 also shows changes with Mach and Reynolds number outside this low-Mach application.</p>
 <h3>Check an indicated-speed correction</h3>
 <div class="stall-controls"><label>Manual / installation<select id="stall-correction"><option value="ap2025g-mustangiii">Mustang III, position-error bands</option><option value="to1f51d1">P-51D, gear/flaps up, canopy closed</option><option value="ap1565jpl-1946">Spitfire IX notes, position-error bands</option></select></label><label>Cockpit IAS, mph<input id="stall-ias" type="number" min="1" max="500" step="1" value="90"></label><label>Pressure altitude, ft<input id="stall-correction-alt" type="number" min="0" max="35000" step="100" value="8000"></label></div>
 <p id="stall-correction-result" aria-live="polite"></p>

@@ -1,5 +1,9 @@
 # Current decisions
 
+## v3.6 clean stall comparisons
+
+Use the same one-g lift balance as the general solver. Stall speed in this clean, steady scenario depends on wing area, loaded weight and assumed maximum lift. The calculation can therefore run at standard-atmosphere pressure altitudes where engine power is unavailable. Show EAS, CAS and TAS together, keep exact historical results unresolved and evaluate the separate TN1044 transfer only within its declared test bounds. Keep the general flight coefficients pending condition-matched measurements. See [v3.6 checks and source dispositions](../releases/v3.6.0.md).
+
 ## v3.5: integrate a bounded calibrated-lift candidate and correction checker
 
 Use TN1044 P-51B CLmax about 1.45 only in a separate source-informed laboratory at 5100-9300 ft and solved Mach 0.14-0.18, with 1.40-1.48 engineering bracket. Preserve CL times area when transferring the source 233.2 sqft to the model 233 sqft. General coefficients stay unchanged because exact 43-24777 installation/propeller/finish matching remains unresolved. Do not export this low-Mach coefficient into unrestricted turn predictions. Manual correction bands retain ambiguous edges and missing instrument-error qualification; block stall extrapolation. Keep source excerpts/hashes and explicit unresolved targets. See V35_STALL_LAB.md.

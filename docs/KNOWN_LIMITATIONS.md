@@ -1,5 +1,7 @@
 # Known limitations
 
+The v3.6 stall comparison covers pressure altitudes 0–35,000 ft and user-entered weights from 1,000 to 20,000 lb. These are input limits for the one-g calculation. Each aircraft's real loading envelope and attainable altitudes depend on its configuration and available power. Fixed model CLmax gives constant EAS at fixed weight. Conversion to CAS and TAS changes with altitude. The TN1044 candidate remains bounded, and calibrated historical stalls for the four target cases remain unresolved.
+
 - **v3.5 lift candidate is conditional:** the new P51B laboratory transfers calibrated low-Mach NACA lift measurements, not a recovered cockpit correction on 43-24777. Its altitude/Mach limits and smooth finish/high-pitch propeller condition matter. The engineering bracket is not a confidence interval. No exact F4/P47B/P51B15/BS543 historical stall gate has been closed.
 
 - **v3.4 is a conditional configuration-loss fit:** five 41-5902 fit states and five reserved states were all exposed in v3.3 before the new split. A 34.1-ft/min nominal check MAE is not an accuracy bound: paired mass/retention scenarios span 34.1-190.6 ft/min. The 0.7 power-linked mixture is not measured cooling heat; alternate fits choose 0.6-1.0. Gross test mass, installed propeller losses, torque calibration and atmosphere corrections remain qualified. The 35000-ft residual is still -83.6 ft/min. Coefficients apply only to exact matched report states, not generic flight or other aircraft.
