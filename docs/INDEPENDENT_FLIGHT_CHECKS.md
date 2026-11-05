@@ -15,6 +15,10 @@ Profile P now offers a separate **DB 601 E inlet transfer** option. It caps boos
 
 The 645 km/h value is a check outside the power derivation. The model is 11.8 km/h low and needs about 47 more propulsive hp to hold the source speed at the assumed weight and drag. Recovery 0.65–1.00 and charge exponents 2/3–1 give 622.2–633.5 km/h with the translated reference. Substituting the disputed OCR reading gives 641.4 km/h at the nominal assumptions. The closer fit does not settle the reading. The 670 km/h emergency figure remains outside this evidence. [Secondary F-4 data](https://info.eduard.com/en/06-2023-1)
 
+### Emergency-power challenger
+
+A secondary transcription attributed to a DB data sheet gives 1,320 PS at 4,800 m/1.42 ata and 700 PS at 10,000 m/0.80 ata, both at 2,700 rpm. A power-vs-static-pressure fit to those two endpoints, followed by the same inlet calculation, gives **655.0 km/h at 7,000 m** against the separate 670 km/h figure. Recovery 0.65–1.00 gives 646.0–661.9 km/h. The simple pressure proxy gives 0.68 ata at the second static point, against the transcribed 0.80. The underlying sheet and its inlet conditions need verification. The challenger remains diagnostic and does not enter the emergency flight model. The inventory lists the May 1942 DB 601 E–G manual starting at frame 4587517. [Transcription](https://forum-marinearchiv.de/smf/index.php?topic=4926.285) · [Archive inventory](https://www.maparchive.ru/nara-doc/Field_and_Technica_Manuals/Field_and_Technical_Manuals.pdf)
+
 ## Tests on separate airframes
 
 The references below were excluded from the v3.8 fast-flight fit and the 41-5902 cooling fit. The tests preserve both gains and failures. Only the production P-47B comparison has the same type, engine, propeller, rating and known shaft power. It still compares two different production aircraft.

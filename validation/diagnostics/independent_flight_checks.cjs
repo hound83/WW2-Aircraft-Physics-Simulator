@@ -40,6 +40,22 @@ function f4Check(){
   status:'conditional same-engine installation transfer; secondary check'};
 }
 
+function emergencyChallenger(){
+ const source=S.db601eEmergency,ac=D.bf109f4;
+ const rating='emergency',gear='fluid',lead=f4Lead.speed.find(row=>row.rating===rating);
+ const referenceAltFt=source.ratedM*ftPerM,highAltFt=source.highM*ftPerM;
+ const pressureRatio=M.isa(highAltFt).p/M.isa(referenceAltFt).p;
+ const chargeExponent=Math.log(source.highPS/source.ratedPS)/Math.log(pressureRatio);
+ const nominalBhp=source.ratedPS*.98632;
+ const rated={rating,gear,engineRpm:source.rpm,boostAta:source.ratedAta,referenceAltFt,
+  referenceTasMph:0,maxAltFt:23000,nominalBhp,chargeExponent,source:source.kind};
+ const flightEnvelope={aircraft:{bf109f4:{identity:ac.stallIdentity,inletTransfer:rated}}};
+ const altFt=lead.altM*ftPerM,observed=lead.speedKph/kphPerMph;
+ const sensitivity=[.65,.85,1].map(ramRecovery=>({ramRecovery,predicted:M.maxSpeed(ac,altFt,
+  {profile:'P',rating,gear,engineModel:'inlet-transfer',flightEnvelope,ramRecovery})}));
+ return {source,chargeExponent,altFt,observed,sensitivity,highStaticPressureProxyAta:source.ratedAta*pressureRatio,promoted:false};
+}
+
 function withReportedSpitfireBoost(ac,altFt,gear,weightLb,observedBoostPsi){
  const rows=ac.boostComparison.referenceLevelSpeedBoostPsi[gear];
  const idx=rows.findIndex(([height])=>height>=altFt);
@@ -82,7 +98,7 @@ function run(){
    fixedCd0:predict({addedDragAreaM2:p47.workingModel.openCoolingDeltaCd0*p47.wingAreaM2}),
    open:predict({flightEnvelope:envelope,flightCooling:true})};
  });
- return {policy:S.policy,exactSpecimenIndependentCases:0,calibrationTargetCount:0,f4:f4Check(),
+ return {policy:S.policy,exactSpecimenIndependentCases:0,calibrationTargetCount:0,f4:f4Check(),emergencyChallenger:emergencyChallenger(),
   spitfire:{source:s.report,url:s.url,qualification:s.qualification,rows:spitRows,comparisonPeaks,
    scored:spitRows.filter(r=>Number.isFinite(r.working)).length,baseMae:mae(spitRows,'base'),workingMae:mae(spitRows,'working'),boostOnlyMae:mae(spitRows,'boostOnly')},
   mustang,thunderbolt:{source:t.report,url:t.url,qualification:t.qualification,rows:p47Rows,

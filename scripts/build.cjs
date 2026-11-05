@@ -53,7 +53,8 @@ function build(){
  if(/<\/script/i.test(flightEnvelope))throw Error('Unsafe flight envelope embed');
  html=html.replace('</header>','</header><script type="application/json" id="flight-envelope-data">'+flightEnvelope+'</script>');
  html=html.replace('function optFor(id,conf){','const flightEnvelope=JSON.parse(document.getElementById("flight-envelope-data").textContent);\nfunction optFor(id,conf){');
- html=html.replace('o.e=Math.min(1,(isSim109?', "if(!isSim109){o.flightEnvelope=flightEnvelope;if(id==='bf109f4'&&$('f4scenario').value==='db601e')o.engineModel='inlet-transfer';if(id==='p47b')o.rating=$('p47rating').value;if(id==='p47b'||id==='spitfire_lfix_bs543')o.flightCooling=$('flightCooling').value==='open';}o.e=Math.min(1,(isSim109?");
+ html=html.replace('o.e=Math.min(1,(isSim109?', "if(!isSim109){o.flightEnvelope=flightEnvelope;if(id==='p47b')o.rating=$('p47rating').value;if(id==='p47b'||id==='spitfire_lfix_bs543')o.flightCooling=$('flightCooling').value==='open';}o.e=Math.min(1,(isSim109?");
+ html=html.replace("if(conf.profile==='P'){if(isGreg109)", "if(id==='bf109f4'&&$('f4scenario').value==='db601e')o.engineModel='inlet-transfer';if(conf.profile==='P'){if(isGreg109)");
  html=html.replace('Bf 109 F-4 induced-drag scenario','Bf 109 F-4 model basis');
  html=html.replace('<option value="global">Use exploratory shared e slider</option>',
   '<option value="global">Use exploratory shared e slider</option><option value="db601e">DB 601 E inlet transfer · combat only (P)</option>');

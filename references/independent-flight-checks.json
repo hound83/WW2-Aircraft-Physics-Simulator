@@ -16,6 +16,20 @@
     "transferQualification": "Same engine rating and F-series propeller; G-1 airframe, radiator and intake installation differ. The source gives critical height and speed, not calibrated F-4 shaft horsepower.",
     "archiveLead": "Air Documents Division, Wright Field microfilm R 2448 F/015. F-4 W.Nr. 7640 was catalogued as EB-1; no usable matched speed/power sheet was recovered."
   },
+  "db601eEmergency": {
+    "kind": "unverified secondary transcription attributed to a DB data sheet",
+    "url": "https://forum-marinearchiv.de/smf/index.php?topic=4926.285",
+    "archiveInventory": "https://www.maparchive.ru/nara-doc/Field_and_Technica_Manuals/Field_and_Technical_Manuals.pdf",
+    "archiveLead": "D.(Luft) T. 3601 E-G, Teil 0 u. 1, May 1942; starts at frame 4587517 in the inventory",
+    "rpm": 2700,
+    "ratedM": 4800,
+    "ratedAta": 1.42,
+    "ratedPS": 1320,
+    "highM": 10000,
+    "highAta": 0.8,
+    "highPS": 700,
+    "qualification": "The engine-sheet image and reference intake conditions were not verified. Treat heights as static standard-atmosphere inputs only in the rejected-for-production sensitivity. No F-4 speed target was used to determine the pressure exponent."
+  },
   "spitfire": {
     "report": "A&AEE MA.648, Table I and §4.2 comparison",
     "url": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLFMkIX_MA648.html",

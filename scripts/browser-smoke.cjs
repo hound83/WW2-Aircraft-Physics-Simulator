@@ -67,6 +67,9 @@ async function run(){
   await change('bfmode','emergency');s=await state();
   assert.equal(s.rows.find(r=>r.id==='bf109f4').calculationStatus,'unavailable');
   assert.equal(s.errorsVisible,false);
+  await change('bfmode','combat');await change('alt','5000');await change('profile','C');
+  assert.equal((await state()).rows.find(r=>r.id==='bf109f4').calculationStatus,'unavailable');
+  await change('profile','P');
   await change('f4scenario','global');await change('bfmode','combat');await change('alt','5000');
   checks.push('The archival DB 601 E option exposes combat-only power and retains its transfer qualification');
   await change('weight','105');await change('e','0.80');await change('speed','250');s=await state();assert.ok(s.rows.every(r=>Number.isFinite(r.weightLb)));assert.equal(s.errorsVisible,false);checks.push('Weight/e/EAS controls render without exceptions');

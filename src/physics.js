@@ -337,7 +337,7 @@ function transferredInletPower(entry,alt,tas,rating,gear,opts){
  if(!ref||rating!==ref.rating||(gear!=='auto'&&gear!==ref.gear)||alt<0||alt>ref.maxAltFt)return null;
  const recovery=opts.ramRecovery??ref.recovery,exponent=opts.chargeExponent??ref.chargeExponent;
  if(!(exponent>=2/3&&exponent<=1))return null;
- const reference=inletPressureAtSpeed(ref.referenceAltFt,ref.referenceTasMph,recovery);
+ const reference=ref.referenceTasMph===0?{pressurePa:isa(ref.referenceAltFt).p}:inletPressureAtSpeed(ref.referenceAltFt,ref.referenceTasMph,recovery);
  const actual=inletPressureAtSpeed(alt,tas,recovery);
  if(!reference||!actual)return null;
  const ratio=Math.min(1,actual.pressurePa/reference.pressurePa);
@@ -383,7 +383,7 @@ function evaluated(ac,alt,tasMph,opts={}){if(opts.profile==='P'&&!opts.polar)opt
   return viable.length?viable.reduce((best,r)=>r.power.excessHp>best.power.excessHp?r:best):(results.find(r=>r.status!=='no-engine-source')??results[0]);
  }
  const shaft=opts.engineCondition?shaftPowerAtMeasuredBoost(ac,alt,rating,gear,opts.engineCondition,{chargeExponent:opts.chargeExponent}):opts.engineModel==='ram-critical'?shaftPowerAtRamSpeed(ac,alt,tasMph,rating,gear,{recovery:opts.ramRecovery??1}):opts.engineModel==='inlet-transfer'?transferredInletPower(entry,alt,tasMph,rating,gear,opts):opts.engineModel===undefined?(shaftPower(ac,alt,rating,gear)??supplementalPower(entry,alt,rating,gear)):null;
- if(!shaft)return {status:'no-engine-source',aircraft:ac.name,altFt:alt,reason:opts.engineCondition?'No sourced same-condition boost data for power correction':opts.engineModel==='inlet-transfer'?'DB 601 E transfer is available for combat power only, through 23,000 ft':'No source-bounded engine power at selected altitude/rating/gear'};
+ if(!shaft)return {status:'no-engine-source',aircraft:ac.name,altFt:alt,reason:opts.engineCondition?'No sourced same-condition boost data for power correction':opts.engineModel==='inlet-transfer'?'DB 601 E transfer requires profile P and combat power at or below 23,000 ft':'No source-bounded engine power at selected altitude/rating/gear'};
  const cdData=polar?{cd0:polar.cd0,valid:true,origin:polar.source}:cd0FromAnchor(ac,opts.refit?profile:'C',opts.refit?e:.78);
  if(!cdData||!cdData.valid)return {status:'no-credible-drag-anchor'};
  const propAircraft=shaft.reductionRatioEnginePerProp?{...ac,propGeometry:{...ac.propGeometry,reductionRatioEnginePerProp:shaft.reductionRatioEnginePerProp}}:ac;
