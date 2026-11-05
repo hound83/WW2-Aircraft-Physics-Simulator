@@ -44,6 +44,11 @@ The table excludes speed anchor rows. Counts show scored pairs and available obs
 | Spitfire LF Mk IX | climb-rate | >10,000–25,000 | 7 / 7 | 160.0 | 160.0 |
 | Spitfire LF Mk IX | climb-rate | >25,000 | 3 / 3 | 92.2 | 92.2 |
 
+## Bf 109 F-4 source leads
+
+The secondary Rechlin attribution lists 645 km/h at 7,000 m in combat (outside working engine domain) and 670 km/h at 7,000 m in emergency (outside working engine domain). Original test sheet, specimen, loading, cooling state, airspeed basis and rating details still require verification. The rounded values share a dependency group with the sea-level citations.
+The same article attributes a 17 m/s climb figure to Vogt without the test state needed for scoring. These are retrieval leads outside the frozen benchmark. [Source](https://info.eduard.com/en/06-2023-1)
+
 ## Power and comparison coverage
 
 The P-47B 41-5902 replay uses ten reported shaft-power states with measured TAS and RPM. Shaft power is a model input there. Propulsive power is calculated. Five previously exposed check rows give 34.1 ft/min climb MAE with the accepted configuration model.

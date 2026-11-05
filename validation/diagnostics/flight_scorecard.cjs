@@ -3,6 +3,7 @@ const fs=require('node:fs'),path=require('node:path');
 const M=require('../../src/physics.js'),D=require('../../aircraft/cases.json');
 const Stall=require('../../src/stall-lab.js'),R=require('../../references/stall-calibration-research-2026-11-02.json');
 const G=require('../lib/performance_gate.cjs'),legacy=require('./performance_validation.cjs');
+const supplementalF4=require('../../references/performance-evidence.json').supplementalF4;
 
 const root=path.resolve(__dirname,'../..');
 const aircraftIds=['p51b','p47b','bf109f4','spitfire_lfix_bs543'];
@@ -62,8 +63,14 @@ function run(){
  });
  const p47=require('../current/v34-configuration.json').selected;
  const spitfire=require('../current/v32-high-altitude.json').rows;
+ const f4Lead={...supplementalF4,speed:supplementalF4.speed.map(row=>{
+  const altFt=row.altM/.3048;
+  const working=M.maxSpeed(D.aircraft.bf109f4,altFt,{profile:'P',rating:row.rating,gear:'fluid'});
+  return {...row,altFt,sourceMph:row.speedKph/1.609344,working,
+   status:working===null?'outside working engine domain':'unmatched secondary comparison'};
+ })};
  return {baselineCommit:baseline.commit,policy:'Source-conditioned diagnostics from previously exposed evidence. No independent matched-condition accuracy or 5:1 claim.',
-  rows,summary,stall,independentChecks:0,pairwise5to1:'unresolved',
+  rows,summary,stall,f4Lead,independentChecks:0,pairwise5to1:'unresolved',
   conditionedChecks:{p47b:{check:p47.summary.check,rows:p47.rows.map(r=>({altFt:r.altFt,role:r.fitRole,
    tasMph:r.tasMph,engineRpm:r.engineRpm,shaftHp:r.shaftHp,propulsiveHp:r.propulsiveHp,observedFpm:r.observedFpm,predictedFpm:r.predictedFpm}))},
    spitfireHighAltitude:spitfire}};
@@ -83,6 +90,9 @@ function writeReport(){
   'The table excludes speed anchor rows. Counts show scored pairs and available observations. Empty cells mark missing or unscored evidence. Speed uses mph TAS and climb uses ft/min. One Mustang climb observation at 15,700 ft and 75 inHg falls outside the working power domain. The machine-readable report includes every point, source reference, signed residual and condition exclusion.', '',
   '| Aircraft | Metric | Altitude ft | Paired / observed | v3.6 MAE | Working MAE |','|---|---|---|---:|---:|---:|');
  for(const s of r.summary)lines.push(`| ${names[s.aircraftId]} | ${s.metric} | ${s.band} | ${s.paired} / ${s.observations} | ${fmt(s.v36Mae)} | ${fmt(s.workingMae)} |`);
+ lines.push('', '## Bf 109 F-4 source leads', '',
+  'The secondary Rechlin attribution lists '+r.f4Lead.speed.map(row=>row.speedKph+' km/h at '+row.altM.toLocaleString('en-US')+' m in '+row.rating+' ('+row.status+')').join(' and ')+'. '+r.f4Lead.qualification,
+  'The same article attributes a '+r.f4Lead.climb.rateMps+' m/s climb figure to Vogt without the test state needed for scoring. These are retrieval leads outside the frozen benchmark. [Source]('+r.f4Lead.url+')');
  lines.push('', '## Power and comparison coverage','',
   'The P-47B 41-5902 replay uses ten reported shaft-power states with measured TAS and RPM. Shaft power is a model input there. Propulsive power is calculated. Five previously exposed check rows give '+fmt(r.conditionedChecks.p47b.check.mae)+' ft/min climb MAE with the accepted configuration model.',
   'The Spitfire high-altitude replay retains the 32,000 ft boost discrepancy as diagnostic and blocks the 36,000 ft point outside the engine domain. The 34,000 ft residual is '+fmt(r.conditionedChecks.spitfireHighAltitude.find(x=>x.altFt===34000).error)+' ft/min.',

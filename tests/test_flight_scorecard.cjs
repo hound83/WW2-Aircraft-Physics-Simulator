@@ -7,6 +7,9 @@ assert.equal(score.rows.length,69);
 assert.equal(new Set(score.rows.map(r=>r.id)).size,69);
 assert.equal(score.independentChecks,0);
 assert.equal(score.pairwise5to1,'unresolved');
+assert.equal(score.f4Lead.kind,'secondary');
+assert.equal(score.f4Lead.climb.altM,null);
+assert.ok(score.f4Lead.speed.every(row=>row.working===null&&row.status==='outside working engine domain'));
 for(const row of score.rows){
  const v=row.prediction.value;
  if(v===null)assert.equal(row.workingError.absolute,null);
