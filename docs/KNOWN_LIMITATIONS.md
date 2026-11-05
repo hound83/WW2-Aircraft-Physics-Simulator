@@ -1,5 +1,7 @@
 # Known limitations
 
+The v3.8 fast-flight term corrects a net installation residual. The data do not isolate propeller losses, shaft power or airframe drag. The fitted cases and reserved checks share previously exposed historical reports. Open-shutter scenarios are bounded by the report altitude and speed ranges. The Bf 109 F-4 rated-altitude power gap and independent four-aircraft accuracy remain open. [Results and controls](FLIGHT_ENVELOPE.md)
+
 The v3.7 flight scorecard compares the working profile with already-exposed historical records. Its error figures include condition mismatches. There are zero independent matched checks in the frozen cohort. The P-51B lift transfer applies to clean, steady, throttled one-g estimates inside 5,100–9,300 ft and Mach 0.14–0.18. Exact corrected stall and 5:1 comparative accuracy remain open. [Scorecard](FLIGHT_SCORECARD.md)
 
 The v3.6 stall comparison covers pressure altitudes 0–35,000 ft and user-entered weights from 1,000 to 20,000 lb. These are input limits for the one-g calculation. Each aircraft's real loading envelope and attainable altitudes depend on its configuration and available power. Fixed model CLmax gives constant EAS at fixed weight. Conversion to CAS and TAS changes with altitude. The TN1044 candidate remains bounded, and calibrated historical stalls for the four target cases remain unresolved.

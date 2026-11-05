@@ -1,5 +1,9 @@
 # Current decisions
 
+## Condition-aware envelope
+
+Apply the bounded level-flight installation residual in the working profile for the Mustang and Spitfire. Keep shaft power and configuration scenarios separate from that calibration. Use recorded 41-5902 BHP and verified gearing for the supplemental P-47B rating branches. Retain the F-4 evidence gate after the pressure-ratio continuation failed the secondary speed comparison. See [model checks and assumptions](FLIGHT_ENVELOPE.md).
+
 ## v3.7 working flight scorecard
 
 Freeze v3.6 profile-P results against the inherited historical observations by aircraft and altitude band. Keep the compatibility-profile audit separately. Use the TN1044 low-Mach coefficient in the clean, steady, throttled one-g Mustang stall comparison within its source transfer window. The data justify an estimate for this defined state. Exact historical stall residuals and independent paired accuracy remain unresolved. See [scorecard](FLIGHT_SCORECARD.md) and [release notes](../releases/v3.7.0.md).

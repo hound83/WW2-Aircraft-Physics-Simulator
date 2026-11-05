@@ -3,6 +3,7 @@ const fs=require('node:fs'),path=require('node:path');
 const M=require('../../src/physics.js'),D=require('../../aircraft/cases.json');
 const Stall=require('../../src/stall-lab.js'),R=require('../../references/stall-calibration-research-2026-11-02.json');
 const G=require('../lib/performance_gate.cjs'),legacy=require('./performance_validation.cjs');
+const flightEnvelope=require('../../calibration/flight-envelope.json');
 const supplementalF4=require('../../references/performance-evidence.json').supplementalF4;
 
 const root=path.resolve(__dirname,'../..');
@@ -16,7 +17,7 @@ function workingPrediction(row){
  const ac=D.aircraft[row.aircraftId];
  const {e,profile,...prior}=row.prediction.options;
  const opts={...prior,profile:'P'};
- if(row.metric==='level-speed')return {value:M.maxSpeed(ac,row.altFt,opts),options:opts,method:'Level-speed equilibrium at benchmark aircraft weight'};
+ if(row.metric==='level-speed')return {value:M.maxSpeed(ac,row.altFt,{...opts,flightEnvelope}),options:opts,method:'Condition-aware level-speed equilibrium at benchmark aircraft weight'};
  if(row.aircraftId==='p51b')return {value:M.bestClimb(ac,row.altFt,opts).climbFpm??null,options:opts,method:'Best-climb search at report takeoff weight with ram-critical power'};
  if(row.aircraftId==='p47b'){
   const point=ac.observedClimb.find(p=>p.altFt===row.altFt&&p.rating===row.rating);
