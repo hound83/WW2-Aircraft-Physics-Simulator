@@ -172,5 +172,17 @@
   },
   "modelConfigurationCaution": "These are the speed-anchor research-polar labels, not independently measured configuration drag corrections. No cooling drag increment is implicitly supplied.",
   "crossAircraftComparisonEstablished": false,
-  "uncertainty": "No validated individual/differential upper bounds supplied. Null bounds must remain null; no uncertainty inferred from residuals, fitting or source rounding."
+  "uncertainty": "No validated individual/differential upper bounds supplied. Null bounds must remain null; no uncertainty inferred from residuals, fitting or source rounding.",
+  "supplementalF4": {
+    "kind": "secondary",
+    "source": "Jan Bobek, Info EDUARD 06/2023, Bf 109 F-4 section, citing Michael Baumgartl's Rechlin-attributed tables and Harald Helmut Vogt",
+    "url": "https://info.eduard.com/en/06-2023-1",
+    "dependencyGroup": "f4-secondary-rechlin-attribution",
+    "speed": [
+      {"altM": 7000, "rating": "combat", "speedKph": 645},
+      {"altM": 7000, "rating": "emergency", "speedKph": 670}
+    ],
+    "climb": {"rateMps": 17, "altM": null, "rating": null, "note": "Vogt is quoted as giving the same rate as the F-1. Test state and direct F-4 measurement are unresolved."},
+    "qualification": "Original test sheet, specimen, loading, cooling state, airspeed basis and rating details still require verification. The rounded values share a dependency group with the sea-level citations."
+  }
 }

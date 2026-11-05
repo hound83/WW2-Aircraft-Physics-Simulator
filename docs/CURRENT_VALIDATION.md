@@ -1,19 +1,19 @@
 # Current validation
 
-v3.6: [four-aircraft stall comparison](../releases/v3.6.0.md); retained [v3.5 lift candidate](V35_STALL_LAB.md) and [v3.4 configuration model](V34_CONFIGURATION_MODEL.md).
+v3.7: [four-aircraft flight scorecard](FLIGHT_SCORECARD.md) and [bounded Mustang clean-stall lift](../releases/v3.7.0.md).
 
-Validated on GitHub Actions with Node.js 22 and headless Chromium. The [verified v3.6 build and full validation records](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/runs/42036623124) are in the physics-validation artifact.
+Validated with Node.js 22 and headless Chromium. The GitHub Actions workflow produces the runnable HTML and point-by-point flight scorecard in its physics-validation artifact.
 
 | Check | Result |
 |---|---|
-| Research version | 3.6.0 |
-| Node regression scripts | 50/50 pass |
+| Research version | 3.7.0 |
+| Node regression scripts | 51/51 pass |
 | Numeric values compared with v2.5 setup | 3628 |
 | Exact floating-point differences | 38 |
 | Legacy C changes above numeric tolerance | 0 |
 | Missing / added numeric paths | 0 / 0 |
 | Engine SHA256 | 67558157176b73a8799eb8eaecfec971b0c22d850802c1e1acd34afb1edcf667 |
-| Interactive browser tests | Passed 31 headless checks |
+| Interactive browser tests | Passed 32 headless checks |
 | Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |
 | 5:1 comparative accuracy | Unresolved |
 

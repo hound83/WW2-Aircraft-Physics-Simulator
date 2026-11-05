@@ -1,5 +1,9 @@
 # Current decisions
 
+## v3.7 working flight scorecard
+
+Freeze v3.6 profile-P results against the inherited historical observations by aircraft and altitude band. Keep the compatibility-profile audit separately. Use the TN1044 low-Mach coefficient in the clean, steady, throttled one-g Mustang stall comparison within its source transfer window. The data justify an estimate for this defined state. Exact historical stall residuals and independent paired accuracy remain unresolved. See [scorecard](FLIGHT_SCORECARD.md) and [release notes](../releases/v3.7.0.md).
+
 ## v3.6 clean stall comparisons
 
 Use the same one-g lift balance as the general solver. Stall speed in this clean, steady scenario depends on wing area, loaded weight and assumed maximum lift. The calculation can therefore run at standard-atmosphere pressure altitudes where engine power is unavailable. Show EAS, CAS and TAS together, keep exact historical results unresolved and evaluate the separate TN1044 transfer only within its declared test bounds. Keep the general flight coefficients pending condition-matched measurements. See [v3.6 checks and source dispositions](../releases/v3.6.0.md).

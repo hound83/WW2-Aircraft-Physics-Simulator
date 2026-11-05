@@ -1,10 +1,10 @@
 # Next steps
 
-## First priority for the next physics milestone
+## Next release milestone
 
-Find a clean, matched-specimen low-speed test with measured CAS/EAS or an applicable stall-region IAS correction for one of the four fighters. Record configuration, loaded weight, altitude, stall method and source pages. For a Mach/Reynolds-dependent Mustang model, digitise the gradual-stall points in TN1044 Figure 6 by altitude and test against reserved measured points within the observed domain. Keep accelerated and one-g applicability distinct. Promote a candidate only if the evidence supports the intended flight state.
+Close the Bf 109 F-4 benchmark gap with original or traceable test records for climb and level speed above sea level, plus any matched clean near-stall evidence. Identify variant, weight, rating, gear, configuration and speed basis before changing inputs. Reserve whole test runs or a separate report before tuning. Re-run the four-aircraft scorecard and show absolute residuals for reserved rows. Keep the other three aircraft's known missing stall calibrations visible.
 
-The [v3.6 comparison](../releases/v3.6.0.md) provides a runnable, four-aircraft stall workflow while that evidence is sought. General-model CLmax and four exact-target historical stalls remain provisional.
+The [v3.7 scorecard](FLIGHT_SCORECARD.md) freezes working-profile v3.6 results. The P-51B clean-stall workflow applies the existing TN1044 low-Mach transfer at supported states. Recovering calibrated stall observations and separating Mach and Reynolds effects remain necessary before extending that lift model to other flight states.
 
 ## v3.4 completed: model improvement plus interactive climb laboratory
 

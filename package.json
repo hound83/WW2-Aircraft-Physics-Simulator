@@ -1,6 +1,6 @@
 {
   "name": "european-air-war-physics",
-  "version": "3.6.0",
+  "version": "3.7.0",
   "private": true,
   "description": "Four-aircraft research flight-performance engine; evidence and validation increment, v3.0 unresolved",
   "engines": {
@@ -20,6 +20,7 @@
     "diagnose:high-altitude": "node validation/diagnostics/high_altitude_v32.cjs",
     "diagnose:overall": "node validation/diagnostics/overall_progress.cjs",
     "diagnose:measured-climb": "node validation/diagnostics/measured_climb_v33.cjs",
+    "diagnose:flight-scorecard": "node validation/diagnostics/flight_scorecard.cjs",
     "diagnose:configuration": "node validation/diagnostics/configuration_v34.cjs"
   }
 }

@@ -3,7 +3,7 @@
 #stall-lab .stall-controls{display:flex;flex-wrap:wrap;gap:16px;align-items:end}#stall-lab label{display:flex;flex-direction:column;gap:6px;max-width:100%}#stall-lab select,#stall-lab input,#stall-lab button{font:inherit;padding:8px;border-radius:6px;max-width:100%;box-sizing:border-box}#stall-lab .stall-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:18px 0}#stall-lab .stall-metrics div{padding:16px;background:#19303a;border:1px solid #46606d;border-radius:8px}#stall-lab .stall-metrics strong{display:block;color:#8cddfb;font-size:1.5rem}#stall-lab svg{width:100%;height:auto}#stall-lab .table-scroll{overflow-x:auto}#stall-lab .stall-unavailable{color:#f2ba68}#stall-lab summary{cursor:pointer;padding:12px 0}
 </style>
 <h2>Compare clean one-g stall speeds</h2>
-<p>Choose a common pressure altitude and a loaded weight for each fighter. The table shows model estimates for a clean, steady one-g stall. EAS sets the lift requirement. CAS and TAS show that same result on different airspeed scales. Historical cockpit readings require their own installation-specific correction.</p>
+<p>Choose a common pressure altitude and a loaded weight for each fighter. The table shows model estimates for a clean, steady one-g stall with the engine throttled. The P-51B uses the NACA lift estimate within its tested low-Mach transfer window. EAS sets the lift requirement. CAS and TAS show that same result on different airspeed scales. Historical cockpit readings require their own installation-specific correction.</p>
 <div class="stall-controls">
 <label>Pressure altitude, ft<input id="stall-alt" type="number" min="0" max="35000" step="any" value="8000"></label>
 <label>P-51B weight, lb<input id="stall-weight" type="number" min="1000" max="20000" step="any" value="9240"></label>
@@ -16,7 +16,7 @@
 <style>#stall-targets td,#stall-targets th{text-align:left;vertical-align:top}</style>
 <div class="table-scroll" id="stall-targets" tabindex="0" role="region" aria-label="Four-aircraft stall comparison"></div>
 <h3>P-51B low-Mach lift candidate</h3>
-<p>NACA TN1044 used position-calibrated probes in gradual stalls with the engine throttled and propeller in high pitch. Compare its low-Mach lift estimate with the general P-51B model at the altitude and weight selected above.</p>
+<p>NACA TN1044 used position-calibrated probes in gradual stalls with the engine throttled and propeller in high pitch. Compare its low-Mach lift estimate with the v3.6 general P-51B model at the altitude and weight selected above. The lift coefficient selector varies the comparison below.</p>
 <div class="stall-controls"><label>Source lift coefficient<select id="stall-cl"><option value="1.45">1.45 nominal graph reading</option><option value="1.40">1.40 engineering bracket</option><option value="1.48">1.48 engineering bracket</option></select></label></div>
 <p id="stall-status" aria-live="polite"></p><div class="stall-metrics" id="stall-metrics"></div>
 <div id="stall-chart"></div><p>The chart holds each lift coefficient fixed and shows the resulting EAS and CAS within 5,100–9,300 ft and Mach 0.14–0.18. The bracket varies the assumed lift coefficient. Figure 6 also shows changes with Mach and Reynolds number outside this low-Mach application.</p>
