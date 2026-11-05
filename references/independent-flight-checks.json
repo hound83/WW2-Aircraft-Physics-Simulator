@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "policy": "Separate archival reports; specimen and installation transfers are scored separately from exact historical checks. No observation in this ledger is a fitted level-speed target.",
+  "db601e": {
+    "report": "Messerschmitt V.B. 109 19 L 42, 19 September 1942, pp. 1–3 and 7",
+    "url": "https://wwiiaircraftperformance.com/org/me109/g/me109g-14026.html",
+    "scan": "https://www.wwiiaircraftperformance.org/me109/VB-109-19-L-42.pdf",
+    "testAirframe": "Bf 109 G-1 W.Nr. 14026",
+    "engine": "DB 601 E",
+    "propeller": "Production Me 109 F installation, three-blade VDM, 3 m",
+    "rpm": 2500,
+    "boostAta": 1.3,
+    "fullThrottleM": 6000,
+    "fullThrottleMph": 386,
+    "readingQualification": "Use the HTML translation's 386 mph at 19,685 ft. Searchable scan text reads 522 km/h, inconsistent with that translation; the numerical speed is transcription-qualified.",
+    "transferQualification": "Same engine rating and F-series propeller; G-1 airframe, radiator and intake installation differ. The source gives critical height and speed, not calibrated F-4 shaft horsepower.",
+    "archiveLead": "Air Documents Division, Wright Field microfilm R 2448 F/015. F-4 W.Nr. 7640 was catalogued as EB-1; no usable matched speed/power sheet was recovered."
+  },
+  "db601eEmergency": {
+    "kind": "unverified secondary transcription attributed to a DB data sheet",
+    "url": "https://forum-marinearchiv.de/smf/index.php?topic=4926.285",
+    "archiveInventory": "https://www.maparchive.ru/nara-doc/Field_and_Technica_Manuals/Field_and_Technical_Manuals.pdf",
+    "archiveLead": "D.(Luft) T. 3601 E-G, Teil 0 u. 1, May 1942; starts at frame 4587517 in the inventory",
+    "rpm": 2700,
+    "ratedM": 4800,
+    "ratedAta": 1.42,
+    "ratedPS": 1320,
+    "highM": 10000,
+    "highAta": 0.8,
+    "highPS": 700,
+    "qualification": "The engine-sheet image and reference intake conditions were not verified. Treat heights as static standard-atmosphere inputs only in the rejected-for-production sensitivity. No F-4 speed target was used to determine the pressure exponent."
+  },
+  "spitfire": {
+    "report": "A&AEE MA.648, Table I and §4.2 comparison",
+    "url": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLFMkIX_MA648.html",
+    "specimen": "MA.648",
+    "engine": "Merlin 66",
+    "rpm": 3000,
+    "weightLb": 7000,
+    "qualification": "Same mark and engine, different aircraft, SU injection pump, intake and propeller type from BS.543. Radiator flaps minimum drag.",
+    "rows": [
+      [0, "low", 18, 340],
+      [4000, "low", 18, 357],
+      [8000, "low", 18, 373],
+      [9400, "low", 18, 379],
+      [10000, "low", 17.2, 379],
+      [12000, "low", 14.4, 378],
+      [16000, "high", 18, 389],
+      [20000, "high", 18, 407],
+      [21000, "high", 18, 411],
+      [22000, "high", 16.9, 410],
+      [24000, "high", 14.5, 409],
+      [26000, "high", 12.3, 407],
+      [28000, "high", 10.1, 404],
+      [30000, "high", 8.1, 401],
+      [32000, "high", 6.2, 397],
+      [34000, "high", 4.4, 392],
+      [36000, "high", 2.7, 386]
+    ],
+    "comparisonPeaks": [
+      ["BS.310", 7260, 8000, 372, 19500, 404],
+      ["JL.165", 7000, 8600, 364, 19300, 388]
+    ]
+  },
+  "mustang": {
+    "report": "A&AEE Mustang IV TK589 §§2.4–2.5 and 4.2–5.1",
+    "url": "https://www.wwiiaircraftperformance.com/org/p-51/tk589.html",
+    "specimen": "TK589",
+    "engine": "Packard Merlin V-1650-7",
+    "propellerBlade": "K.6523A-24",
+    "altFt": 10300,
+    "rpm": 3000,
+    "boostPsi": 18,
+    "weightLb": 9000,
+    "observedMph": 396,
+    "qualification": "P-51D/Mustang IV, same engine and blade drawing, different airframe and cooling configuration. +18 lb boost is close to the model's 67 inHg, not the same rating.",
+    "excluded": "Mustang III FX.953 has V-1650-3 and cannot validate the V-1650-7 altitude schedule. NACA L4L18 uses a different P-51B and did not provide a validated installed power map."
+  },
+  "thunderbolt": {
+    "report": "Wright Field PHQ-M-19-1288-A, 28 August 1941, §B",
+    "url": "https://www.wwiiaircraftperformance.com/org/p-47/p-47.html",
+    "specimen": "XP-47B 40-3051",
+    "engine": "R-2800-35",
+    "propellerBlade": "Curtiss 714-1C2-12 with cuffs",
+    "rpm": 2700,
+    "weightLb": 12400,
+    "qualification": "Prototype rather than production P-47B. Compare at reported torque-meter BHP with the frozen production polar. Cowl closed, oil and intercooler shutters neutral.",
+    "rows": [[5425, 1975, 344.5], [15600, 1970, 382], [25800, 1960, 412]]
+  },
+  "thunderboltProduction": {
+    "report": "Wright Field FS-M-19-1523-A, 26 December 1942, §B.1–2",
+    "url": "https://www.wwiiaircraftperformance.com/org/p-47/p-47.html",
+    "specimen": "P-47B 41-5942",
+    "engine": "R-2800-21",
+    "propellerBlade": "Curtiss 714-1C2-12 with cuffs, 12 ft 2 in",
+    "rpm": 2700,
+    "weightLb": 12620,
+    "qualification": "Independent report on a separate production P-47B with the same engine and propeller. Eight guns versus six on 41-5902. TAS and torque BHP are report-table inputs; the report gives a common TAS row for the propeller climb comparison. Closed cowl/neutral shutters for speed; all shutters wide open for climb.",
+    "level": [[5000, 2000, 353], [25000, 2000, 419], [28000, 2000, 428]],
+    "climb": [
+      [10000, 2000, 185, 2420],
+      [15000, 2000, 201, 2350],
+      [20000, 2000, 218, 2180],
+      [24000, 2000, 233, 1960],
+      [30000, 1645, 250, 1180]
+    ]
+  }
+}

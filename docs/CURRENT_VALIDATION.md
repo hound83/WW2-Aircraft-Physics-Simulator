@@ -1,18 +1,18 @@
 # Current validation
 
-v3.8: [condition-aware flight envelope](FLIGHT_ENVELOPE.md) and [four-aircraft scorecard](FLIGHT_SCORECARD.md).
+v3.9: [archival flight checks](INDEPENDENT_FLIGHT_CHECKS.md) and [four-aircraft scorecard](FLIGHT_SCORECARD.md).
 
-Validated with Node.js 22 and headless Chromium. The GitHub Actions physics-validation artifact contains the standalone HTML, four-aircraft scorecard and flight envelope checks.
+Validated with Node.js 22 and headless Chromium. The GitHub Actions physics-validation artifact contains the standalone HTML, scorecard and separate archival checks.
 
 | Check | Result |
 |---|---|
-| Research version | 3.8.0 |
-| Node regression scripts | 52/52 pass |
+| Research version | 3.9.0 |
+| Node regression scripts | 53/53 pass |
 | Numeric values compared with v2.5 setup | 3628 |
 | Exact floating-point differences | 38 |
 | Legacy C changes above numeric tolerance | 0 |
 | Missing / added numeric paths | 0 / 0 |
-| Interactive browser tests | Passed 34 headless checks |
+| Interactive browser tests | Passed 35 headless checks |
 | Historical stall/CLmax validation | Unresolved; executable source gate and four-aircraft sensitivity tested |
 | 5:1 comparative accuracy | Unresolved |
 

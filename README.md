@@ -2,7 +2,7 @@
 
 A separate research repository for the shared WWII flight-performance engine. The Atlas website in [hound83/ww2-airwar](https://github.com/hound83/ww2-airwar) is outside this repository's scope.
 
-**Current version v3.8.0.** The condition-aware working profile improves historical level-speed agreement for the P-51B and Spitfire, extends report-bounded P-47B power coverage and exposes open-shutter climb configurations. See [results and evidence gates](docs/FLIGHT_ENVELOPE.md), [four-aircraft scorecard](docs/FLIGHT_SCORECARD.md) and [release notes](releases/v3.8.0.md).
+**Current version v3.9.0.** An archival DB 601 E inlet transfer adds a conditional combat-power option for the F-4. Separate flight reports check the P-47B, Spitfire and Mustang models without refitting them. See [external checks](docs/INDEPENDENT_FLIGHT_CHECKS.md) and the [four-aircraft scorecard](docs/FLIGHT_SCORECARD.md).
 
 Initial benchmarks: **Bf 109 F-4, P-47B, P-51B-15 and Spitfire LF Mk IX**. Greg's worksheets and the controlled P-47 2,000/2,600 hp comparison are retained. The 2,600 hp scenario is not a verified P-47B engine rating.
 

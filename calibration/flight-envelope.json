@@ -69,6 +69,19 @@
         "aircraftId": "bf109f4",
         "variant": "Bf 109 F-4",
         "specimen": "unspecified"
+      },
+      "inletTransfer": {
+        "rating": "combat",
+        "gear": "fluid",
+        "engineRpm": 2500,
+        "boostAta": 1.3,
+        "referenceAltFt": 19685.03937007874,
+        "referenceTasMph": 386,
+        "nominalBhp": 1183.584,
+        "maxAltFt": 23000,
+        "recovery": 0.85,
+        "chargeExponent": 0.6666666666666666,
+        "source": "Messerschmitt V.B. 109 19 L 42, 19 September 1942, pp. 1–3 and 7; G-1 installation transfer"
       }
     },
     "p47b": {
@@ -197,4 +210,3 @@
     }
   }
 }
-
