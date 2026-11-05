@@ -2,7 +2,7 @@
 
 A separate research repository for the shared WWII flight-performance engine. The Atlas website in [hound83/ww2-airwar](https://github.com/hound83/ww2-airwar) is outside this repository's scope.
 
-**Current version: v3.5.0 stall and airspeed calibration laboratory.** The interactive laboratory tests a source-informed P-51B low-Mach lift candidate (103.4 mph EAS at 9240 lb/8000 ft versus the retained model's 98.5), separates IAS/CAS/EAS/TAS, and blocks unsupported correction-table extrapolation. Four exact-target historical stall calibrations remain unresolved. General flight-model inputs and the accepted v3.4 climb model are retained. See [laboratory, assumptions and validation](docs/V35_STALL_LAB.md), [primary-source research](docs/STALL_ACTUAL_AIRSPEED_RESEARCH.md) and [release notes](releases/v3.5.0.md).
+**Current version v3.6.0.** Compare clean one-g stall estimates for all four fighters at the same pressure altitude and individual loaded weights. The comparison separates EAS, CAS, TAS and the unresolved historical corrections. The P-51B low-Mach candidate remains a separate, source-bounded result. See [stall comparison and limits](releases/v3.6.0.md) and [primary-source research](docs/STALL_ACTUAL_AIRSPEED_RESEARCH.md).
 
 Initial benchmarks: **Bf 109 F-4, P-47B, P-51B-15 and Spitfire LF Mk IX**. Greg's worksheets and the controlled P-47 2,000/2,600 hp comparison are retained. The 2,600 hp scenario is not a verified P-47B engine rating.
 
@@ -11,6 +11,10 @@ Initial benchmarks: **Bf 109 F-4, P-47B, P-51B-15 and Spitfire LF Mk IX**. Greg'
 GitHub setup is complete. The frozen import is on branch **baseline/v2.5-import**. See [setup verification](docs/SETUP_VERIFICATION.md).
 
 ## Start here
+
+For the browser simulator, open [Physics regression](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/regression.yml), choose the latest successful run for `main`, and download its **physics-validation** artifact. Extract the ZIP and open `dist/model.html` in a browser. The HTML runs offline. Choose **Compare clean stall speeds** at the top to open the stall comparison. GitHub requires a signed-in account to download Actions artifacts.
+
+For a local build with Node.js 22 or newer, run `npm run build` and open `dist/model.html`. For development and validation, follow the instructions below.
 
 Read [decisions](docs/DECISIONS.md), [known limitations](docs/KNOWN_LIMITATIONS.md), [next steps](docs/NEXT_STEPS.md), [workflow](docs/WORKFLOW.md) and the [current validation report](docs/CURRENT_VALIDATION.md). Repository instructions for development agents are in [AGENTS.md](AGENTS.md).
 

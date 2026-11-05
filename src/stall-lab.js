@@ -10,7 +10,7 @@
   if(!Number.isFinite(altFt)||altFt<5100||altFt>9300)return fail('Outside the declared 5,100-9,300 ft low-Mach transfer window; no altitude extrapolation.');
   if(!Number.isFinite(weightLb)||weightLb<=0)return fail('Invalid scenario weight.');
   if(!Number.isFinite(sourceClMax)||sourceClMax<1.40||sourceClMax>1.48)return fail('Outside the 1.40-1.48 engineering lift bracket.');
-  if(source.id!=='naca-tn1044'||source.geometry?.areaFt2!==233.2||!(ac.wingAreaM2>0))return fail('Missing or incompatible source/area convention.');
+  if(source?.id!=='naca-tn1044'||source.geometry?.areaFt2!==233.2||!(ac.wingAreaM2>0))return fail('Missing or incompatible source/area convention.');
   const areaFt2=source.geometry.areaFt2,at=air(M,eas(weightLb,areaFt2,sourceClMax),altFt);
   if(at.mach<.14||at.mach>.18)return fail('Solved stall falls outside Mach 0.14-0.18; the source shows lift changing with Mach.');
   // Preserve CL*S: source uses 233.2 sqft, current P51B model uses 233 sqft.
@@ -38,6 +38,17 @@
   }
   return fail('This source does not supply an applicable cockpit correction table.');
  }
- function targets(M,D,register,altFt=8000){return Object.entries(names).map(([id,name])=>{const ac=D.aircraft[id],pred=eas(ac.weightLb,ac.wingAreaM2/FT2,ac.clMaxAssumed);return {id,name,weightLb:ac.weightLb,assumedClMax:ac.clMaxAssumed,model:air(M,pred,altFt),targetStatus:'unresolved',historicalStallCasMph:null,historicalStallEasMph:null,finding:register.remainingTargets.find(r=>r.aircraftId===id)?.finding};});}
+ function targets(M,D,register,altFt=8000,weightsLb={}){
+  return Object.entries(names).map(([id,name])=>{
+   const ac=D.aircraft[id],weightLb=Object.hasOwn(weightsLb,id)?weightsLb[id]:ac.weightLb;
+   const validWeight=Number.isFinite(weightLb)&&weightLb>=1000&&weightLb<=20000;
+   const validAltitude=Number.isFinite(altFt)&&altFt>=0&&altFt<=35000;
+   const predicted=validWeight&&validAltitude
+    ?air(M,eas(weightLb,ac.wingAreaM2/FT2,ac.clMaxAssumed),altFt):null;
+   return {id,name,weightLb,assumedClMax:ac.clMaxAssumed,model:predicted,
+    targetStatus:'unresolved',historicalStallCasMph:null,historicalStallEasMph:null,
+    finding:register.remainingTargets.find(r=>r.aircraftId===id)?.finding};
+  });
+ }
  return Object.freeze({air,eas,p51Candidate,correct,targets});
 });

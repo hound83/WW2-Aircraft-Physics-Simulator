@@ -18,6 +18,23 @@ const boundary=F.correct(M,R,'ap2025g-mustangiii',150,8000);assert.equal(boundar
 const position=F.correct(M,R,'ap2025g-mustangiii',130,8000);assert.equal(position.positionCorrectedMph,136);assert.equal(position.casMph,null);assert.equal(position.easMph,null);
 assert.equal(F.correct(M,R,'to1f51d1',100,40000).status,'unavailable');
 assert.ok(F.targets(M,D,R).every(r=>r.historicalStallEasMph===null&&r.historicalStallCasMph===null));assert.equal(JSON.stringify(D),original);
+// A pure lift comparison stays available when an engine source does not.
+for(const altFt of [0,8000,20000,35000]){
+ for(const row of F.targets(M,D,R,altFt)){
+  const ac=D.aircraft[row.id];
+  const lift=.5*M.isa(altFt).rho*(row.model.tasMph*.44704)**2*ac.wingAreaM2*row.assumedClMax;
+  near(lift,ac.weightLb*4.4482216153,1e-6);
+  const working=M.evaluated(ac,altFt,row.model.tasMph,{profile:'P'});
+  if(Number.isFinite(working.stallEasMph))near(row.model.easMph,working.stallEasMph);
+  near(M.trueFromCAS(row.model.casMph,altFt),row.model.tasMph,1e-6);
+ }
+}
+const [stock]=F.targets(M,D,R);
+const [lighter]=F.targets(M,D,R,8000,{p51b:stock.weightLb*.81});
+near(lighter.model.easMph,stock.model.easMph*.9);
+assert.equal(F.targets(M,D,R,8000,{p51b:NaN})[0].model,null);
+assert.ok(F.targets(M,D,R,8000,{p51b:NaN}).slice(1).every(r=>r.model));
+for(const altitude of [NaN,-1,35001])assert.ok(F.targets(M,D,R,altitude).every(r=>r.model===null));
 const manifest=require('../references/sources/stall-2026-11-02/manifest.json');for(const s of manifest.excerpts){const bytes=fs.readFileSync(path.join(__dirname,'..',s.excerptFile));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),s.excerptSha256,s.sourceId);}
 const diagnostics=require('../validation/diagnostics/stall_research_20261102.cjs').run();assert.ok(diagnostics.conversionExample.every(r=>Number.isFinite(r.easMph)));
 console.log('PASS source-area lift balance, 36 conditional mass/altitude/lift cases, no extrapolation, correction boundaries, IAS separation, source hashes and unchanged inputs');
