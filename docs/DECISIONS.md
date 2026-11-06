@@ -1,5 +1,9 @@
 # Current decisions
 
+## November archival replays and precision
+
+Keep the November audit as a source supplement to the four-fighter comparison. Figure 5 uses chart RPM and BHP with the reference polar and profile P propeller; BS.543 climb uses the existing boost-conditioned replay. Both are qualified engineering checks. Preserve source-only entries where a solver or sufficient test conditions are unavailable. Practical 3:1 and high-precision 5:1 use the same independent evidence gate and do not determine solver settings.
+
 ## Fixed four-fighter comparison
 
 Use profile P, reference loads and ratings, and the same 175 mph EAS at 8,000, 15,000 and 27,000 ft. The build and CLI call the same scorecard. Preserve unavailable outputs, and keep the workbook and Greg graph diagnostics separate from historical residuals. The CAS/EAS graph selector changes the interpretation of its horizontal axis only. Retain the 120 mph EAS stall replay as a separate engineering scenario. [Results and limits](FOUR_FIGHTER_COMPARISON.md).

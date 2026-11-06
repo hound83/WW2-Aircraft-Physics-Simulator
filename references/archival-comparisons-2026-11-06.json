@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "audit": "docs/WW2_Three_Comparisons_Primary_Source_Audit_2026-11-06.md",
+  "sources": {
+    "wright-p51": {"report": "Eng-47-1749-A, 20 May 1944", "url": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html", "kind": "primary-transcription", "dependencyGroup": "Eng-47-1749-A/43-24777"},
+    "wright-p51-figure5": {"report": "Eng-47-1749-A, Figure 5", "url": "https://www.wwiiaircraftperformance.com/org/p-51/p-51_files/P-51B_24777_Power_Required.jpg", "localPath": "references/import/01_COMPLETE_V2_5_BASELINE/06_SOURCE_AND_SCIENTIFIC_EVIDENCE/P51B_24777_ORIGINAL_SCANS/Fig_5_power_required.jpg", "sha256": "c306de7b236b86f3c30db53fa4563a7d70c8c9e6ebbe542ffcc4a93ab6499f75", "kind": "primary-scan", "dependencyGroup": "Eng-47-1749-A/43-24777"},
+    "aaee-bs543": {"report": "A&AEE BS.543, Tables II and V", "url": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html", "localPath": "references/sources/spitfire-lf-hf-ix-transcription.html", "kind": "primary-transcription", "dependencyGroup": "A&AEE/BS.543"},
+    "fw783-5": {"report": "Flugbericht Fw 190/783 Nr. 5, 9 April 1943", "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr5.pdf", "sha256": "808b8d87cf11f18fd93c9dcc37ef25cfc12fdaaee17c49bf2f72b33e5fc6543f", "kind": "primary-scan", "dependencyGroup": "Focke-Wulf/783"},
+    "fw619-2": {"report": "Flugbericht Fw 190/619 Nr. 2, 11 January 1943", "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_619_Nr2.pdf", "sha256": "1897fc97081ea5c8f9d2715a42c06575609992dda98ba70d85c1c9d433156608", "kind": "primary-scan", "dependencyGroup": "Focke-Wulf/619"},
+    "fw619-3": {"report": "Flugbericht Fw 190/619 Nr. 3, 20 January 1943", "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_619_Nr3.pdf", "sha256": "5afabbc097628c345a479783b57810b4c350e6296f7e311c02ade8dc07af31f7", "kind": "primary-scan", "dependencyGroup": "Focke-Wulf/619"},
+    "wright-p38g": {"report": "FS-M-19-1538-A, 10 February 1943", "url": "https://www.wwiiaircraftperformance.com/org/p-38/p-38_files/P-38G-1_42-12687_FS-M-19-1538-A.pdf", "sha256": "9e192df3f0b12e2218cdc35235e1f6210ec7c1fb136d0219e878140e9d15b9a0", "kind": "primary-scan", "dependencyGroup": "Wright Field/42-12687"},
+    "lr495-4": {"report": "A&AEE/767,h 4th Part, 11 June 1943", "url": "https://www.wwiiaircraftperformance.com/org/mosquito/mosquito_files/lr495.pdf", "sha256": "b7ef31da5c25df7c6038b2c5390ab85aa2cb67260ef832c8d6d7b6a558031769", "kind": "primary-scan", "dependencyGroup": "A&AEE/LR495"},
+    "lr495-8": {"report": "A&AEE/767,h 8th Part, 20 February 1944", "url": "https://www.wwiiaircraftperformance.com/org/mosquito/mosquito_files/lr495-b.pdf", "sha256": "7fd5e6eaade49228ffffddebfa190249e930d330d2657bdfcd2f5622e9b36989", "kind": "primary-scan", "dependencyGroup": "A&AEE/LR495"},
+    "greg-p38-correction": {"report": "P 38G Lightning vs. Mosquito FB Mk VI, video description correction", "url": "https://www.youtube.com/watch?v=HWvERh_eK6M", "kind": "secondary-correction", "dependencyGroup": "Greg/HWvERh_eK6M"}
+  },
+  "p51Speed": {"altitudesFt": [18000, 20800, 24000], "engineRpm": 3000, "shaftBhp": 1390, "manifoldInHg": 67, "configuration": "High blower, auto rich, oil and coolant shutters automatic", "weightKind": "corrected-to-altitude-curve", "weightLb": null, "qualification": "Faired source curve with high-blower scatter; report Fig. 4 altitude weight schedule has not been digitized for these points. Standard BHP comes from a Packard chart."},
+  "spitfireLevel": {"altFt": 22000, "engineRpm": 2995, "boostPsi": 18.5, "weightLb": 7110, "weightKind": "normalized", "configuration": "High blower, radiator closed", "qualification": "Reference speed is already in the speed dataset. Profile P uses 3,000 RPM and its nominal engine curve; retain the reported condition without an exact-match residual."},
+  "spitfireClimbAltitudesFt": [7000, 20000],
+  "p38g": {"engineRpm": 3000, "weightLb": 13500, "weightKind": "approximate at altitude", "configuration": "No external bombs, coolant and oil shutters faired, gear up, flaps neutral", "qualification": "Published BHP is chart-derived per engine. No matching loaded flight or supported P-38G solver."},
+  "mosquito": {
+    "engineRpm": 3000, "engines": "2 × Merlin 72", "internalBombsLb": 2000,
+    "clean": {"weightLb": 20800, "externalBombsLb": 0, "boostPsi": [18.4, 18.2], "configuration": "Four internal 500-lb bombs; no external racks; radiator closed"},
+    "loaded": {"weightLb": 21700, "externalBombsLb": 1000, "boostPsi": [18.0, 18.0], "configuration": "Four internal 500-lb bombs plus two external 500-lb bombs on faired racks; radiator closed"},
+    "sameAltitude": [{"altFt": 20000, "cleanMph": 385, "loadedMph": 364}, {"altFt": 24000, "cleanMph": 399, "loadedMph": 379}],
+    "qualification": "Different normalized weights, boost and airframe condition. The 15–18 mph A&AEE estimate includes racks and is not a measured bomb-only penalty."
+  },
+  "fw190": {"specimen": "W.Nr. 783", "altFt": 0, "speedKph": 607, "weightKg": 3870, "engineRpm": 2700, "boostAta": 1.7, "configuration": "Clean, narrow cowl; specially adjusted boost limiter", "qualification": "Special test rating. Keep separate from W.Nr. 619 stores and the unidentified Greg polar."}
+}

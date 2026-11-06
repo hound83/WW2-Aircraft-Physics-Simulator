@@ -37,6 +37,18 @@ async function run(){
   const comparisonReport=require('../validation/current/fighter-comparison.json');
   const embeddedComparison=await evaluate('JSON.parse(document.getElementById("fighter-comparison-data").textContent)');
   assert.deepEqual(embeddedComparison,comparisonReport);
+  const archival=await evaluate(`(()=>({
+    rows:document.querySelectorAll("#comparison-archival tbody tr").length,
+    linkedSources:document.querySelectorAll("#comparison-archival tbody a").length,
+    summary:document.getElementById("comparison-archival-summary").textContent,
+    exclusions:document.getElementById("comparison-archival-exclusions").textContent
+  }))()`);
+  assert.equal(archival.rows,25);
+  assert.equal(archival.linkedSources,25);
+  assert.ok(archival.summary.includes("8 qualified replays")&&archival.summary.includes("5:1 are unresolved"));
+  assert.ok(archival.exclusions.includes("2 × 1,100 lb"));
+  checks.push('Archival points and original source links render with qualified replays, load correction and unresolved precision');
+
   assert.equal(await evaluate('document.querySelectorAll("#comparison-fighters tbody tr").length'),4);
   assert.ok((await evaluate('document.getElementById("comparison-mustang").textContent')).includes('+114.7'));
   checks.push('Browser and CLI share the complete four-fighter scorecard and exact Mustang workbook comparison');

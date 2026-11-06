@@ -53,9 +53,13 @@ function pair(a,b,{comparisonEstablished=false}={}){
  if(bound===null)reasons.push('validated-differential-error-bound-missing');
  const comparable=reasons.filter(x=>x!=='validated-differential-error-bound-missing').length===0;
  const signed=comparable?(a.prediction.value-b.prediction.value)-referenceGap:null;
- const status=reasons.length?'UNRESOLVED':bound<=requiredBound&&Math.abs(signed)<=bound?'PASS':'FAIL';
+ const boundConsistent=comparable&&bound!==null&&Math.abs(signed)<=bound;
+ const status=reasons.length?'UNRESOLVED':bound<=requiredBound&&boundConsistent?'PASS':'FAIL';
+ const practical3to1=reasons.length?'UNRESOLVED':bound<=Math.abs(referenceGap)/3&&boundConsistent?'PASS':'FAIL';
+ const modelGap=comparable?a.prediction.value-b.prediction.value:null;
+ const differentialRange=boundConsistent?[modelGap-bound,modelGap+bound]:null;
  if(status==='FAIL'&&Math.abs(signed)>bound)reasons.push('observed-differential-residual-exceeds-claimed-bound');
- return {a:a.id,b:b.id,metric:a.metric,unit:a.unit,altFt:a.altFt,referenceGap,requiredCombinedErrorBound:requiredBound,validatedCombinedErrorBound:bound,signedDifferentialResidual:signed,absoluteDifferentialResidual:signed===null?null:Math.abs(signed),status,reasons,
+ return {a:a.id,b:b.id,metric:a.metric,unit:a.unit,altFt:a.altFt,referenceGap,requiredCombinedErrorBound:requiredBound,validatedCombinedErrorBound:bound,modelGap,differentialRange,practical3to1,signedDifferentialResidual:signed,absoluteDifferentialResidual:signed===null?null:Math.abs(signed),status,reasons,
   method:'Conservative sum of validated individual upper bounds; no assumed error cancellation. A residual from one pair is not a validated bound.'};
 }
 module.exports={errors,anchorRole,assess,aggregate,pair};

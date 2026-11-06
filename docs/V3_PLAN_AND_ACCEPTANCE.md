@@ -8,6 +8,10 @@ One shared engine for P-51B-15, P-47B, Bf 109F-4 and Spitfire LF Mk IX, capable 
 
 For two aircraft compared in matched conditions and whose reference performance gap is Δ, require a validated upper bound on the absolute *pairwise error of the difference* **≤ |Δ|/5**. If two individual absolute errors each bounded by `E` can oppose, conservative worst-case pair error is `2 E`; for Δ=1.3 s, total allowed 0.26 s and individual equal bound 0.13 s. Evaluate error correlations using evidence, not assumed cancellation. Independently check the conditions, observed spread and uncertainties in the historical reference (measurement error may already exceed this). A model can validly report 'unresolved' if 5:1 cannot be demonstrated. Speed/climb and non-turn comparisons need corresponding metric-dependent differential budgets, not a blanket ±5%.
 
+## Practical comparison precision
+
+Report the predicted difference in native units and a band only when independent, matched evidence supports a differential error bound. Use 3:1 as the practical precision target (bound at most one third of the nonzero historical gap). Retain 5:1 as the high-precision criterion. Report both separately. A valid band that crosses zero leaves direction unresolved. A predicted gap without a defensible bound remains a model estimate. Also retain individual aircraft errors.
+
 ## Five steps (do in this order)
 
 ### 1 — Matched stall/weight data gate

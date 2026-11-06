@@ -42,3 +42,12 @@ const mustang=r.rows.filter(x=>x.reportId==='wright-1944-05-20');for(const x of 
 assert.ok(Math.abs(r.p47Conditional.rows[0].signed)<1e-6);assert.equal(r.p47Conditional.rows[0].role,'aggregate-loss-fit');
 assert.equal(r.controlledP47[0].at200.requiredHp,r.controlledP47[1].at200.requiredHp);assert.ok(r.controlledP47[1].maxSpeedMph>r.controlledP47[0].maxSpeedMph);
 console.log('PASS performance conditions/units/weights/cooling/rating, anchor leakage, source dependence, uncertainty bounds, 69-case shared-solver parity and preserved failures');
+
+const moderate=G.pair(a,{...b,errorBound:{...b.errorBound,upper:2}},{comparisonEstablished:true});
+assert.equal(moderate.practical3to1,'PASS');
+assert.equal(moderate.status,'FAIL');
+assert.deepEqual(moderate.differentialRange,[7,13]);
+assert.equal(violated.practical3to1,'FAIL');
+assert.equal(violated.differentialRange,null);
+assert.equal(G.pair(a,b).practical3to1,'UNRESOLVED');
+assert.equal(G.pair(a,b).differentialRange,null);
