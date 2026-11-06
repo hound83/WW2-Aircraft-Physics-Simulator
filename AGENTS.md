@@ -1,74 +1,46 @@
-# European Air War development instructions
+# Coding-agent instructions — European Air War Physics
 
-## Scope and continuity
+These instructions apply to `hound83/WW2-Aircraft-Physics-Simulator`, the **scientific flight model**, not the Atlas website. The current user request determines the release objective and limits.
 
-- GitHub repository `hound83/WW2-Aircraft-Physics-Simulator` is the authoritative project history.
-- At each assignment start inspect git status, remote branches, latest commits/tags, README.md, docs/DECISIONS.md, docs/NEXT_STEPS.md and current validation results.
-- Fetch remote state when connected; inspect divergence and preserve uncommitted user work. Never overwrite it or force-push.
-- Continue the same Work conversation across assignments where practical. A new conversation must be able to continue from repository records alone.
-- Do not modify `hound83/ww2-airwar` without explicit user permission.
-- Do not make new handover ZIPs per assignment. Keep source, tests, decisions and results in Git.
+## Mission and substantial milestones
 
-## Work and commits
+- Aim for a usable, physically consistent and historically evidence-bounded shared solver covering the **four benchmark aircraft/configurations identified by the current repository**. Preserve meaningful differences between aircraft; do not tune them into artificially identical behavior.
+- A substantial implementation assignment owns one **substantial end-to-end scientific milestone**: source diagnosis where needed, a bounded model candidate, integration, fair validation, regression and browser checks, and concise evidence-backed reporting. Do not stop after a small audit if the approved objective also calls for a tested improvement. Keep explicitly narrow requests narrow.
+- Agree the user-visible/scientific outcome, relevant baseline, non-goals and reasonable acceptance gates. When exact error thresholds are unknown, derive provisional tolerances from source quality and report them as judgments. A target like **5:1 discrimination** is not automatically a 5% historical-residual tolerance or proof that every matchup is supported.
+- Make routine technical decisions autonomously and finish necessary in-scope steps without another "GO". Do not invent evidence, add new aircraft, rewrite unrelated architecture, or widen research indefinitely. Stop for a material decision, permission blocker, or environment limit; leave an exact checkpoint when interrupted.
+- For standalone source-research requests, follow relevant archival leads as long as they improve the assigned investigation, retain original citations and uncertainty, and return to the core question. This does not authorize unrequested model changes.
 
-- Use feature branches for substantial or experimental physics changes. Keep main runnable.
-- Preserve the imported baseline, Greg's original numerical material and negative tests. Do not rewrite `references/import/` or frozen baseline records to make new results pass.
-- Run `npm run check`. Inspect failures and numerical differences, not only the exit code.
-- Update README, decisions, known limitations, next priorities and validation records with each meaningful change.
-- Commit completed, tested milestones with descriptive messages and push when authentication is available. Disclose local-only commits.
-- Tag and publish major stable releases only when the milestone's documented acceptance gates are met. Never tag this setup as v3.0.
-- Git tags permit source rollback. Avoid altering history or deleting prior accepted results.
+## Current sources of truth
 
-## Scientific rules
+- Inspect git status, remote refs/PRs when available, `README.md` and the task-relevant portions of `docs/DECISIONS.md`, `docs/NEXT_STEPS.md`, `docs/CURRENT_VALIDATION.md`, `docs/KNOWN_LIMITATIONS.md`, `docs/WORKFLOW.md` and source registers under `references/`. Current branch outputs and evidence supersede historical descriptions in old release notes.
+- One shared physical solver lives in `src/` with aircraft/configuration-specific source-bounded inputs under `aircraft/`. Preserve frozen import/baseline records and Greg's original numerical material. Never modify old snapshots or test expectations merely to erase unfavorable results.
+- Never modify `hound83/ww2-airwar` without an explicit cross-repository task. Pin and audit an accepted physics release before Atlas integration.
 
-- One shared physical solver with aircraft-specific source-bounded input states. No silent variant fudge factors.
-- Keep shaft horsepower, propulsive horsepower and thrust separate.
-- IAS needs aircraft/configuration-specific calibration; CAS, EAS and TAS are distinct. Never extrapolate a high-speed calibration to stall as verified evidence or double-correct.
-- Derive measured CLmax only from matched corrected stall EAS, actual mass, wing area and configuration. Label bounded assumptions as assumptions.
-- Separate historical observations, internal Greg arithmetic, fitted points, withheld observations and simulator comparisons.
-- Preserve the controlled P-47 2000/2600 hp case as a sensitivity experiment; do not call 2600 hp a verified P-47B rating.
-- Report absolute residuals and matched-condition pairwise differential errors. Mark unsupported 5:1 matchups unresolved.
-- The imported P-47C run 20-1 OCR says 0.799; the handover reports the scan correction as 0.779. Preserve the original fixture and audit the original table before updating active evidence. Do not report its passing regression as scan verification.
+## Physics and evidence integrity
 
-## Adaptive reasoning and subscription efficiency
+- Separate historical observation, digitized/transcribed source, derived quantity, interpolation, engineering assumption, fitted training point, reserved/independent check, Greg arithmetic, and IL-2/DCS comparison. Game simulations can corroborate behavior but are not independent primary historical truth.
+- Match aircraft variant, mass, installation/configuration, engine rating, RPM, gear, altitude, atmosphere and speed definition before treating a residual as valid evidence. Keep shaft power, propulsive power and thrust distinct; use aircraft-specific IAS→CAS calibration and preserve CAS/EAS/TAS differences without double correction or unjustified stall extrapolation.
+- Derive CLmax only from matched, corrected stall EAS, actual weight, wing area and configuration; mark inferred bounds as such. Keep provisional lift or drag transfers inside their supported source envelope. Preserve documented sensitivity analyses and unresolved source disputes; never present diagnostic scenarios or uncertain transcriptions as accepted historical facts.
+- Evaluate speed, climb, stall and turn behavior **throughout relevant flight envelopes**, not just on chosen fit points. Use withheld conditions or independent sources, fair comparisons against the previous model, sensitivity/alternate splits and physically plausible parameter limits. Never tune on withheld points then call them independent.
+- Report absolute residuals, altitude/configuration bands, negative regressions, and supported pairwise aircraft differences. Mark unsupported matchups and the 5:1 criterion unresolved rather than manufacturing a passing score.
 
-- User's preferred default: GPT-6.1 Sol, Medium reasoning, standard speed. The agent cannot switch these settings itself.
-- Medium: routine research, extraction, coding, calculations and regression testing.
-- Recommend High before complex aerodynamic calculations, conflicting historical evidence, difficult debugging or significant model-design decisions when it would materially improve accuracy or avoid wasted iterations.
-- Explain briefly why Medium may be insufficient, the recommended level and the specific expected benefit.
-- Extra High only for particularly difficult scientific/mathematical problems that cannot reasonably be resolved at High.
-- Do not recommend an increase for routine work. Prioritize meaningful validated milestones over exhaustive research and minor releases.
+## Implement, validate and test
 
-## Standing scope and subscription rules for every Work run
+1. Freeze a reproducible before-scorecard and identify which observations are fit, reserved, or diagnostic only.
+2. Test a physics-motivated bounded candidate in the **shared solver**. Reject artificial variant fudge factors and improvements that sacrifice other aircraft without an explicit, evidenced tradeoff.
+3. Run `npm run check`; inspect numerical reports and test differences, not only exit code. Run `npm run test:browser` after the build where available and relevant. Keep expected regression changes explicit and justified.
+4. Check that the real interactive app exposes the accepted model and sensible states; repeat the four-aircraft scorecard, not just the one aircraft being tuned.
+5. Preserve source hashes, failed candidates, uncertainties and known unsupported regions. Update relevant decisions, current validation, limitations and next steps with meaningful accepted changes.
 
-These rules apply to **every future Work assignment and generated handover/export**, not just the current milestone. The user's objective is a meaningful, tested result within their standard approximately €20/month ChatGPT Plus allowance.
+Passing CI proves reproducibility of the checked behavior, **not** that its historical accuracy has been established. Do not claim a major version, real-world validation or a stable release without its documented scientific acceptance evidence.
 
-1. **Agree and obey the scope:** state the one assigned deliverable, explicit out-of-scope work, acceptance tests and stop condition at the start. Deliver the assignment instead of starting open-ended research, extra features, additional aircraft, architectural rewrites or another project's work. Log tangent discoveries for later; do not act on them now.
-2. **Budget-aware execution:** default to an economical available model at Medium reasoning; read only relevant sources and files. Prefer existing source indexes, tests and earlier research over large repeated searches. Do not load or paste huge archives, entire repositories, all screenshots or lengthy test output into the chat. The agent may not know the user's remaining allowance and must not promise a precise cost.
-3. **Escalate only if it matters:** recommend High reasoning in one or two sentences only when a specific difficult scientific, historical or technical blocker warrants it. The user must select a different effort level; never auto-escalate or recommend Extra High for routine work.
-4. **Keep Work sessions short:** long sessions caused size errors after roughly two assignments. Use a fresh Work run for each next substantial milestone; use current GitHub commits, PRs and documented next steps for continuity rather than a growing conversation transcript.
-5. **Stop with a deliverable:** record what actually changed, before/after impact, tests actually run, PR/commit link, unresolved issues and exactly one suggested next milestone. Do not claim unrun tests passed or an unmerged branch is deployed. Stop after completing the task.
-6. **Handover filenames:** use descriptive, human-readable names like `Project_Component_Milestone_Handover_YYYY-MM-DD.md`, **not `ZZZ_` prefixes** (those were a temporary file-finding trick). Future handovers should be short Markdown links to GitHub and the shared Hobby research Library, not duplicate multi-gigabyte ZIP exports unless explicitly requested.
+## Git, autonomous merge, scientific release and delivery
 
-## Chat-based research and source discovery (deliberate exception)
+- Use a feature branch and reviewable PR for substantial or experimental work. Keep `main` runnable, frozen import intact and previous tags recoverable. No force-push, hidden baseline changes or unvalidated stable release.
+- **Standing owner authorization:** for an authorized implementation milestone, **autonomously merge the PR** when the scoped scientific acceptance checks and engineering release gates are verified. No separate GO is needed for routine in-scope completion. Do not treat an evidence-gathering-only task as authorization to change the solver.
+- **Merge gates:** the four-aircraft scorecard, fit/held-out separation and uncertainty are reported; `npm run check` and applicable browser checks pass; source provenance, protected baselines, observed regressions and model plausibility have been reviewed; required GitHub CI checks pass on the exact PR revision; no unresolved **milestone-blocking** scientific or technical defect or unauthorized assumption change remains. Preserve a recoverable earlier commit and respect branch protection/reviews/permissions.
+- **Stable release/publication gate is stricter than merge:** an accepted engineering or research milestone may merge without proving complete real-world historical accuracy. Only tag, publish or describe a **validated/stable flight-model release** when the separately documented historical accuracy and 5:1 evidence requirements are actually met for the claimed scope. Otherwise publish only the accurately labelled research/beta artifacts that the established workflow already generates; never invent a production deployment.
+- After merging, verify the resulting main-branch CI run and accessible generated simulation artifact. For a stable release, additionally verify the actual tag, release artifacts and user-facing access path. If checks, approvals or evidence are unavailable, leave the PR ready and report exactly why merge or stable publication is blocked. Never bypass protections or change a frozen baseline to pass the gate.
+- Use focused source retrieval and existing indexes rather than repeated broad searches or huge handover archives. If source research reveals relevant side evidence, record its provenance, then return to the assigned milestone.
+- Report in compact form: accepted model change, **before/after per-aircraft metrics**, regressions, independent validation status, actual test/browser results, PR/merge/artifact status and unresolved source gaps. Do not present a merged research change as a validated flight-model release.
 
-The strict scope, stop-condition and Plus-usage rules above govern **Work execution**, not normal **Chat** discussions or deliberately assigned document/source research in Chat. Do not transfer the Work budgeting constraints into Chat handovers.
-
-- In Chat, when asked to research historical evidence, **actively follow relevant new leads**: footnotes, bibliographies, archival catalog references, scanned reports, citations to other original documents and meaningful contradictions. Continue expanding the search while the newly found material remains relevant and has a reasonable prospect of improving the answer or source coverage. Do not impose an arbitrary document count, search-depth cap, or requirement to stop at the first answer.
-- A research trail may reveal a better primary source or a necessary related question; investigate it, explain why it matters and keep the provenance clear. Preserve original dates, variants/configurations, archival identifiers, exact report pages and evidence levels where available; distinguish verified scans from secondary transcriptions or speculation.
-- **Relevant cross-aircraft branching and return:** for example, while researching Bf 109 stall speeds, if a historical report references stall speeds of other relevant fighters, follow and verify those leads too. Save *all* useful original figures, test configurations, citations/page numbers, correction status, reliability and unresolved conflicts in a durable research register and/or the shared Hobby research Library. Label side discoveries so they can be reused later. Then explicitly return to the original Bf 109 investigation and complete its findings. Do not silently import other variants' values into the Bf 109 model. For the Atlas, use `research/` source ledgers; for Physics, use `references/` registers and relevant `docs/` notes. If you cannot persist a finding, report that limitation and provide a copyable, sourced register instead.
-- Chat exploration need **not** produce a GitHub code change or a Work-style milestone. Its natural stopping point is when relevant leads are reasonably exhausted, no longer productive or the user redirects the inquiry.
-- Keep Work different: if source research is necessary to implement an agreed Work milestone, research only what is needed for that deliverable. Record additional promising sources and return to implementation rather than expanding into a new unassigned investigation.
-
-## Cohesive milestone authorization (30 October 2026)
-
-- Batch related research, evidence updates, shared-solver fixes, tests and documentation into one useful end-to-end milestone. Do not require another user GO for each small audit, commit or routine step within the agreed scope.
-- The current authorized deliverable is the source-bounded climb power/cooling diagnosis, continuing the four-aircraft evidence and validation packages. Preserve existing physics assumptions unless matched evidence supports a change.
-- Interrupt only for a material scope/goal decision or an action that lacks authorization. Report progress while continuing routine work in the background; do not change the user's desktop view.
-- The next substantial assignment should also be a complete deliverable with stated acceptance checks, rather than a sequence of permission requests for small substeps.
-
-## Larger milestones requested (2 November 2026)
-
-- Michael explicitly requests more work and a larger useful result per prompt. Combine the source diagnosis, bounded candidate fit, fair reserved-point controls, sensitivity/alternate-split checks, application integration, regression/browser verification and PR/merge into one milestone where the evidence permits it.
-- Do not stop at another small audit or validation-only release when the available conditions support testing and shipping a better approximation within the assigned scope. Preserve failed candidates and unresolved source gaps instead of hiding them.
-- Report the complete before/after result and practical limits. Keep unrelated aircraft, Atlas work, broad source hunts and speculative rewrites outside the agreed milestone.
