@@ -7,8 +7,8 @@ const path = require('node:path');
 const {run} = require('../validation/diagnostics/archival_comparisons.cjs');
 
 const report = run();
-assert.equal(report.rows.length, 25);
-assert.equal(new Set(report.rows.map(r => r.id)).size, 25);
+assert.equal(report.rows.length, 28);
+assert.equal(new Set(report.rows.map(r => r.id)).size, 28);
 assert.equal(report.rows.filter(r => r.evidence === 'digitized').length, 6);
 assert.equal(report.rows.filter(r => r.status === 'qualified replay').length, 8);
 assert.ok(report.rows.every(r => r.historicalValidationEligible === false));
@@ -23,7 +23,14 @@ assert.equal(report.precision.differentialBound, null);
 const byId = id => report.rows.find(row => row.id === id);
 assert.equal(byId('p51-speed-20800').conditions.weightLb, null);
 assert.equal(byId('p51-fig5-1').conditions.engineRpm, 2100);
-assert.equal(byId('bs543-level-22000').conditions.engineRpm, 2995);
+assert.match(byId('p51-speed-20800').conditions.configuration, /wing racks installed/);
+assert.match(byId('p51-fig5-1').conditions.configuration, /wing racks installed/);
+const tableV = report.rows.filter(row => row.location === 'Table V');
+assert.deepEqual(tableV.map(row => [row.altFt, row.value, row.conditions.gear, row.conditions.boostPsi]), [
+  [0, 336, 'low', 18], [10800, 384, 'low', 18], [20000, 399, 'high', 18.5], [22000, 407, 'high', 18.5]
+]);
+assert.ok(tableV.every(row => row.conditions.engineRpm === 2995 && row.conditions.weightLb === 7110
+  && row.status === 'source-only'));
 assert.equal(byId('bs543-climb-20000').conditions.tasMph, 224);
 assert.equal(byId('bs543-climb-20000').fitRole, 'exposed calibration programme');
 assert.equal(byId('p38g-clean-22600').conditions.bhpPerEngine, 1225);
