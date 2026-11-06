@@ -1,5 +1,9 @@
 # Next steps
 
+## Four-fighter comparison milestone
+
+The [fixed scenario comparison](FOUR_FIGHTER_COMPARISON.md) is the baseline for incoming evidence. Use the isolated Mustang power budget to test source-backed engine or propeller inputs, and the P-47B turn comparison to keep power and stall limitations distinct. Retain the 12-state comparison and original archival checks when evaluating future candidates.
+
 ## Next release milestone
 
 Recover an original F-4 flight or engine sheet for the DB 601 E above rated altitude, including the 1.42-ata setting and inlet/installation state. Check it separately against the combat-only archival transfer. For the other aircraft, prioritise independent matched-specimen runs over transferring the fast-flight corrections to different engines, intakes or cooling installations. Establish corrected clean stall points with documented CAS/EAS, weight and aircraft configuration. See [separate archival checks](INDEPENDENT_FLIGHT_CHECKS.md).

@@ -22,6 +22,7 @@
     "diagnose:measured-climb": "node validation/diagnostics/measured_climb_v33.cjs",
     "diagnose:independent-flight": "node validation/diagnostics/independent_flight_checks.cjs",
     "diagnose:flight-envelope": "node validation/diagnostics/flight_envelope.cjs",
+    "diagnose:fighter-comparison": "node validation/diagnostics/fighter_comparison.cjs",
     "diagnose:flight-scorecard": "node validation/diagnostics/flight_scorecard.cjs",
     "diagnose:configuration": "node validation/diagnostics/configuration_v34.cjs"
   }

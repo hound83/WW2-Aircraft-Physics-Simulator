@@ -1,0 +1,243 @@
+{
+  "commit": "64fcaa255dca319aa9404e978d512db1fe059bf6",
+  "scenarios": [
+    {
+      "altFt": 8000,
+      "rows": [
+        {
+          "id": "p51b",
+          "status": "modelled",
+          "gear": "low",
+          "shaftHp": 1667.2413793103449,
+          "propulsiveHp": 1432.9814501253888,
+          "requiredHp": 321.72712257519356,
+          "climbFpm": 3968.7654616280547,
+          "maxLevelTasMph": 398.21171198330285,
+          "instantG": 3.158801975391128,
+          "sustainedG": 2.94281589388901,
+          "sustainedDegSec": 17.623563829113785,
+          "sustainedLimit": "Power"
+        },
+        {
+          "id": "p47b",
+          "status": "modelled",
+          "gear": "turbo",
+          "shaftHp": 2000,
+          "propulsiveHp": 1717.7992916002909,
+          "requiredHp": 560.2166905127374,
+          "climbFpm": 3040.2089848406404,
+          "maxLevelTasMph": 361.96884723312814,
+          "instantG": 2.430080064035997,
+          "sustainedG": 2.2330673893479296,
+          "sustainedDegSec": 12.713802107510382,
+          "sustainedLimit": "Power"
+        },
+        {
+          "id": "bf109f4",
+          "status": "modelled",
+          "gear": "fluid",
+          "shaftHp": 1183.584,
+          "propulsiveHp": 1023.150475544313,
+          "requiredHp": 286.17943563290476,
+          "climbFpm": 3817.3040895315053,
+          "maxLevelTasMph": 350.2243091700266,
+          "instantG": 3.1845438537468547,
+          "sustainedG": 2.8301446187909254,
+          "sustainedDegSec": 16.858733810275346,
+          "sustainedLimit": "Power"
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "status": "modelled",
+          "gear": "low",
+          "shaftHp": 1705,
+          "propulsiveHp": 1455.6396244610125,
+          "requiredHp": 355.6245351823618,
+          "climbFpm": 5105.555274530657,
+          "maxLevelTasMph": 371.8131102930738,
+          "instantG": 4.263676210821121,
+          "sustainedG": 3.045807827026305,
+          "sustainedDegSec": 18.31933504872879,
+          "sustainedLimit": "Power"
+        }
+      ]
+    },
+    {
+      "altFt": 15000,
+      "rows": [
+        {
+          "id": "p51b",
+          "status": "modelled",
+          "gear": "low",
+          "shaftHp": 1452.9850746268658,
+          "propulsiveHp": 1267.7147387149412,
+          "requiredHp": 359.5805112042089,
+          "climbFpm": 3243.336531802229,
+          "maxLevelTasMph": 404.17676865770864,
+          "instantG": 3.158801975391128,
+          "sustainedG": 2.5692428452222265,
+          "sustainedDegSec": 13.483396920613943,
+          "sustainedLimit": "Power"
+        },
+        {
+          "id": "p47b",
+          "status": "modelled",
+          "gear": "turbo",
+          "shaftHp": 2000,
+          "propulsiveHp": 1730.0315105579214,
+          "requiredHp": 626.130002181023,
+          "climbFpm": 2899.224021675447,
+          "maxLevelTasMph": 386.05627094353895,
+          "instantG": 2.430080064035997,
+          "sustainedG": 2.0979770053168663,
+          "sustainedDegSec": 10.50756074373145,
+          "sustainedLimit": "Power"
+        },
+        {
+          "id": "bf109f4",
+          "status": "modelled",
+          "gear": "fluid",
+          "shaftHp": 1183.584,
+          "propulsiveHp": 1029.9288772997988,
+          "requiredHp": 319.85039662598285,
+          "climbFpm": 3678.0081460057327,
+          "maxLevelTasMph": 374.641474159268,
+          "instantG": 3.1845438537468547,
+          "sustainedG": 2.653853166893632,
+          "sustainedDegSec": 14.005228922617043,
+          "sustainedLimit": "Power"
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "status": "modelled",
+          "gear": "high",
+          "shaftHp": 1563.3333333333333,
+          "propulsiveHp": 1352.2033298447977,
+          "requiredHp": 397.4661854247179,
+          "climbFpm": 4431.269453477016,
+          "maxLevelTasMph": 382.54273565858875,
+          "instantG": 4.263676210821121,
+          "sustainedG": 2.7253567950173054,
+          "sustainedDegSec": 14.444070116851943,
+          "sustainedLimit": "Power"
+        }
+      ]
+    },
+    {
+      "altFt": 27000,
+      "rows": [
+        {
+          "id": "p51b",
+          "status": "modelled",
+          "gear": "high",
+          "shaftHp": 1247.5,
+          "propulsiveHp": 1107.3509244894256,
+          "requiredHp": 444.78516950945965,
+          "climbFpm": 2366.3062714176267,
+          "maxLevelTasMph": 421.56164744748,
+          "instantG": 3.158801975391128,
+          "sustainedG": 2.0803410752687204,
+          "sustainedDegSec": 8.463705426435158,
+          "sustainedLimit": "Power"
+        },
+        {
+          "id": "p47b",
+          "status": "modelled",
+          "gear": "turbo",
+          "shaftHp": 2000,
+          "propulsiveHp": 1748.9383140987547,
+          "requiredHp": 768.8648634561638,
+          "climbFpm": 2574.0090665219077,
+          "maxLevelTasMph": 428.47944880458545,
+          "instantG": 2.430080064035997,
+          "sustainedG": 1.859923498022125,
+          "sustainedDegSec": 7.275918204539166,
+          "sustainedLimit": "Power"
+        },
+        {
+          "id": "bf109f4",
+          "status": "no-engine-source",
+          "gear": null,
+          "shaftHp": null,
+          "propulsiveHp": null,
+          "requiredHp": null,
+          "climbFpm": null,
+          "maxLevelTasMph": null,
+          "instantG": null,
+          "sustainedG": null,
+          "sustainedDegSec": null,
+          "sustainedLimit": null
+        },
+        {
+          "id": "spitfire_lfix_bs543",
+          "status": "modelled",
+          "gear": "high",
+          "shaftHp": 1300.1799999999998,
+          "propulsiveHp": 1148.2002071281354,
+          "requiredHp": 491.8222524289674,
+          "climbFpm": 3046.479963195376,
+          "maxLevelTasMph": 399.60050699506155,
+          "instantG": 4.263676210821121,
+          "sustainedG": 2.1444305680910314,
+          "sustainedDegSec": 8.801291827966534,
+          "sustainedLimit": "Power"
+        }
+      ]
+    }
+  ],
+  "mustang": {
+    "status": "modelled",
+    "reason": null,
+    "gear": "high",
+    "engineRpm": 3000,
+    "shaftHp": 1390,
+    "propulsiveHp": 1226.7003756375266,
+    "requiredHp": 410.39350621594906,
+    "excessHp": 816.3068694215776,
+    "climbFpm": 2915.3816809804425,
+    "propEta": 0.8825182558543357,
+    "instantG": 3.3425237083141623,
+    "liftG": 3.3425237083141623,
+    "structuralG": 7,
+    "sustainedG": 2.3877270823772214,
+    "powerG": 2.3877270823772214,
+    "sustainedDegSec": 10.900920060097917,
+    "sustainedLimit": "Power"
+  },
+  "gregP47": [
+    {
+      "basis": "CAS",
+      "errors": {
+        "workingG": {
+          "paired": 7,
+          "mae": 0.1528110963964345
+        },
+        "gregStallG": {
+          "paired": 7,
+          "mae": 0.1907463958797114
+        },
+        "powerG": {
+          "paired": 7,
+          "mae": 0.1338936004989488
+        }
+      }
+    },
+    {
+      "basis": "EAS",
+      "errors": {
+        "workingG": {
+          "paired": 7,
+          "mae": 0.11123437299772886
+        },
+        "gregStallG": {
+          "paired": 7,
+          "mae": 0.14206852585136578
+        },
+        "powerG": {
+          "paired": 7,
+          "mae": 0.09293475332807273
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+<section class="panel" id="fighter-comparison" aria-labelledby="comparison-title">
+  <style>
+    #fighter-comparison .comparison-controls { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin:12px 0; }
+    #fighter-comparison .comparison-scroll { overflow-x:auto; }
+    #fighter-comparison table { min-width:0; }
+    #fighter-comparison .comparison-wide { min-width:680px; }
+    #fighter-comparison .comparison-plot { display:block; width:100%; max-width:760px; min-width:410px; height:auto; }
+    #fighter-comparison select, #fighter-comparison button { max-width:100%; font:inherit; padding:6px 10px; }
+    #fighter-comparison a { color:var(--blue); }
+  </style>
+  <h2 id="comparison-title">Compare four fighters</h2>
+  <p>Fixed research scenarios using profile P, standard atmosphere, clean reference configurations and each aircraft’s reference weight and default rating. These controls are independent of the exploratory flight controls.</p>
+  <div class="comparison-controls">
+    <label for="comparison-altitude">Pressure altitude</label>
+    <select id="comparison-altitude"></select>
+    <button type="button" id="comparison-export">Download complete scorecard (JSON)</button>
+  </div>
+  <p id="comparison-condition" aria-live="polite"></p>
+  <div id="comparison-fighters" class="comparison-scroll" tabindex="0" role="region" aria-label="Four-fighter scenario results"></div>
+  <p>Climb is calculated at the selected comparison speed. Top speed is a separate level-flight equilibrium at the same altitude. One-g stall and turn limits use the solver’s provisional lift coefficients. The clean stall laboratory shows the separate bounded Mustang lift estimate.</p>
+
+  <details>
+    <summary>Inspect weights, engine settings and power budget</summary>
+    <div id="comparison-power" class="comparison-scroll" tabindex="0" role="region" aria-label="Four-fighter engine settings and power budget"></div>
+  </details>
+
+  <h3>Historical checkpoints in this altitude band</h3>
+  <p>Non-anchor speed and climb observations already exposed during development. Differences in test conditions limit these residuals to diagnostic use. Historical 5:1 accuracy remains unresolved.</p>
+  <div id="comparison-historical" class="comparison-scroll" tabindex="0" role="region" aria-label="Historical speed and climb scorecard"></div>
+  <p><a id="comparison-history-source">Historical scorecard and test conditions</a> · <a id="comparison-independent-source">Separate archival checks</a></p>
+
+  <h3>Mustang power budget at 20,800 ft</h3>
+  <p id="comparison-mustang-note"></p>
+  <div id="comparison-mustang" class="comparison-scroll" tabindex="0" role="region" aria-label="Mustang workbook comparison"></div>
+  <p><a id="comparison-mustang-source">Frozen engineering workbook</a></p>
+
+  <h3>Greg’s P-47B turn curve at 27,000 ft</h3>
+  <p id="comparison-greg-note"></p>
+  <div class="comparison-controls">
+    <label for="comparison-greg-axis">Interpret graph speed as</label>
+    <select id="comparison-greg-axis"><option>CAS</option><option>EAS</option></select>
+  </div>
+  <p id="comparison-greg-errors" aria-live="polite"></p>
+  <div id="comparison-greg-plot" class="comparison-scroll" tabindex="0" role="region" aria-label="P-47B turn comparison plot"></div>
+  <div id="comparison-greg" class="comparison-scroll" tabindex="0" role="region" aria-label="P-47B turn comparison values"></div>
+  <p><a id="comparison-greg-source">27,000-ft source graph</a> · <a id="comparison-stall-source">Sea-level lift curve</a></p>
+</section>

@@ -34,6 +34,53 @@ async function run(){
   const measured=await evaluate('({rows:UniversalMeasuredClimbUI.rows,mode:UniversalMeasuredClimbUI.mode,text:document.getElementById("measured-climb").textContent})');
   assert.equal(measured.rows.length,10);assert.equal(measured.mode,'calibrated');assert.equal(measured.rows.at(-1).propRpm,1275);assert.equal(measured.rows.at(-1).shaftHp,1365);assert.ok(measured.rows.at(-1).errorFpm<0&&measured.rows.at(-1).errorFpm>-200);assert.ok(measured.text.includes('41-5902'));const configurationReport=require('../validation/current/v34-configuration.json');for(const row of measured.rows)assert.ok(Math.abs(row.predictedFpm-configurationReport.selected.rows.find(r=>r.stateId===row.stateId).predictedFpm)<1e-6);checks.push('Ten calibrated source states reproduce accepted model with correct BHP/RPM and retained residual');
   const select=async(id,value)=>evaluate(`(()=>{const e=document.getElementById(${JSON.stringify(id)});e.value=${JSON.stringify(value)};e.dispatchEvent(new Event('change',{bubbles:true}));})()`);
+  const comparisonReport=require('../validation/current/fighter-comparison.json');
+  const embeddedComparison=await evaluate('JSON.parse(document.getElementById("fighter-comparison-data").textContent)');
+  assert.deepEqual(embeddedComparison,comparisonReport);
+  assert.equal(await evaluate('document.querySelectorAll("#comparison-fighters tbody tr").length'),4);
+  assert.ok((await evaluate('document.getElementById("comparison-mustang").textContent')).includes('+114.7'));
+  checks.push('Browser and CLI share the complete four-fighter scorecard and exact Mustang workbook comparison');
+  const comparisonRows=()=>evaluate('Array.from(document.querySelectorAll("#comparison-fighters tbody tr"), r=>r.textContent)');
+  const initialComparison=await comparisonRows();
+  await select('comparison-altitude','15000');
+  assert.ok((await comparisonRows())[0].includes('3,243'));
+  assert.equal(await evaluate('document.querySelectorAll("#comparison-historical tbody tr").length'),4);
+  await select('comparison-altitude','27000');
+  assert.ok((await comparisonRows())[2].includes('No source-bounded engine power'));
+  assert.ok((await comparisonRows())[2].includes('98.1'));
+  await select('comparison-altitude','8000');
+  assert.deepEqual(await comparisonRows(),initialComparison);
+  checks.push('Three altitude presets redraw the four fighters and preserve the F-4 stall estimate when power is unavailable');
+  assert.ok((await evaluate('document.getElementById("comparison-greg-errors").textContent')).includes('0.191'));
+  await select('comparison-greg-axis','EAS');
+  assert.ok((await evaluate('document.getElementById("comparison-greg-errors").textContent')).includes('0.142'));
+  assert.equal(await evaluate('document.querySelectorAll("#comparison-greg tbody tr").length'),7);
+  assert.equal(await evaluate('document.querySelectorAll("#comparison-greg-plot path").length'),4);
+  assert.equal(await evaluate('/NaN|Infinity/.test(document.getElementById("comparison-greg-plot").innerHTML)'),false);
+  await select('comparison-greg-axis','CAS');
+  checks.push('Greg chart, seven rows and diagnostic residuals respond to the CAS/EAS interpretation');
+  const download=await evaluate(`(async()=>{
+    const originalUrl=URL.createObjectURL, originalClick=HTMLAnchorElement.prototype.click;
+    let blob, filename;
+    URL.createObjectURL=value=>{blob=value;return originalUrl.call(URL,value);};
+    HTMLAnchorElement.prototype.click=function(){filename=this.download;};
+    try{document.getElementById("comparison-export").click();return {filename,data:JSON.parse(await blob.text())};}
+    finally{URL.createObjectURL=originalUrl;HTMLAnchorElement.prototype.click=originalClick;}
+  })()`);
+  assert.equal(download.filename,'fighter-comparison.json');
+  assert.deepEqual(download.data,comparisonReport);
+  checks.push('JSON download exports the entire scorecard');
+  await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
+  const comparisonMobile=await evaluate(`(()=>{
+    const panel=document.getElementById("fighter-comparison"),table=document.getElementById("comparison-fighters");
+    return {width:panel.getBoundingClientRect().width,scroll:getComputedStyle(table).overflowX,
+      content:table.scrollWidth,available:table.clientWidth};
+  })()`);
+  assert.ok(comparisonMobile.width<=390);
+  assert.equal(comparisonMobile.scroll,'auto');
+  assert.ok(comparisonMobile.content>comparisonMobile.available);
+  await send('Emulation.clearDeviceMetricsOverride');
+  checks.push('Comparison controls fit mobile width and wide data scrolls inside its own region');
   await select('measured-drag','transferred');const previous=await evaluate('UniversalMeasuredClimbUI.rows');const measuredReport=require('../validation/current/v33-measured-climb.json');for(const row of previous)assert.ok(Math.abs(row.predictedFpm-measuredReport.rows.find(r=>r.id===row.stateId).transferred.predictedFpm)<1e-6);assert.ok(previous.at(-1).errorFpm<-400);checks.push('Previous v3.3 control remains reproducible, including its high-altitude failure');
   await select('measured-drag','clean');const measuredClean=await evaluate('UniversalMeasuredClimbUI.rows');assert.ok(measuredClean.at(-1).predictedFpm>measured.rows.at(-1).predictedFpm);assert.equal(await evaluate('UniversalMeasuredClimbUI.mode'),'clean');await select('measured-drag','calibrated');checks.push('Three model choices recalculate the live report');
   for(const sample of configurationReport.scenarios){await select('measured-weight',String(sample.weightLb));await select('measured-prop',String(sample.retainedPowerScale));const actual=await evaluate('({mae:UniversalMeasuredClimbUI.checkMae,bhp:UniversalMeasuredClimbUI.rows.at(-1).shaftHp})');assert.ok(Math.abs(actual.mae-sample.selected.check.mae)<1e-6);assert.equal(actual.bhp,1365);}checks.push('All nine mass/retained-power browser scenarios match shared-solver validation and preserve shaft BHP');

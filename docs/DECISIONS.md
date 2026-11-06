@@ -1,5 +1,9 @@
 # Current decisions
 
+## Fixed four-fighter comparison
+
+Use profile P, reference loads and ratings, and the same 175 mph EAS at 8,000, 15,000 and 27,000 ft. The build and CLI call the same scorecard. Preserve unavailable outputs, and keep the workbook and Greg graph diagnostics separate from historical residuals. The CAS/EAS graph selector changes the interpretation of its horizontal axis only. Retain the 120 mph EAS stall replay as a separate engineering scenario. [Results and limits](FOUR_FIGHTER_COMPARISON.md).
+
 ## Separate source reports and inlet transfer
 
 Offer the DB 601 E G-1 inlet reference only as an explicit combat-power F-4 sensitivity. Hold nominal F-4 power and the aerodynamic/propeller model fixed. Preserve the 41-5942 production P-47B results as a separate report check and keep the Mustang and Spitfire fast-flight terms specimen-specific. See [archival results](INDEPENDENT_FLIGHT_CHECKS.md).
