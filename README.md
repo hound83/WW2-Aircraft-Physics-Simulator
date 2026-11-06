@@ -12,7 +12,7 @@ GitHub setup is complete. The frozen import is on branch **baseline/v2.5-import*
 
 ## Start here
 
-For the browser simulator, open [Physics regression](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/regression.yml), choose the latest successful run for `main`, and download its **physics-validation** artifact. Extract the ZIP and open `dist/model.html` in a browser. The HTML runs offline. Choose **Compare clean stall speeds** at the top to open the stall comparison. GitHub requires a signed-in account to download Actions artifacts.
+For the browser simulator, open [Physics regression](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/regression.yml), choose the latest successful run for `main`, and download its **physics-validation** artifact. Extract the ZIP and open `dist/model.html` in a browser. The HTML runs offline. Choose **Compare four fighters** for the fixed altitude scenarios, workbook checks and JSON export. Choose **Compare clean stall speeds** at the top to open the stall comparison. GitHub requires a signed-in account to download Actions artifacts.
 
 For a local build with Node.js 22 or newer, run `npm run build` and open `dist/model.html`. For development and validation, follow the instructions below.
 

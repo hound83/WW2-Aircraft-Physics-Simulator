@@ -42,8 +42,11 @@ try{
  require('../validation/diagnostics/flight_scorecard.cjs').writeReport();
  require('../validation/diagnostics/flight_envelope.cjs').writeReport();
  require('../validation/diagnostics/independent_flight_checks.cjs').writeReport();
+ require('../validation/diagnostics/fighter_comparison.cjs').writeReport();
  const md=[
  '# Current validation',
+ '',
+ 'Fixed browser scenarios and downloadable evidence comparisons: [four-fighter comparison](FOUR_FIGHTER_COMPARISON.md).',
  '',
  'v3.9: [archival flight checks](INDEPENDENT_FLIGHT_CHECKS.md) and [four-aircraft scorecard](FLIGHT_SCORECARD.md).',
  '',

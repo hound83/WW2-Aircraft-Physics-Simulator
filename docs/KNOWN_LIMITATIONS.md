@@ -1,5 +1,7 @@
 # Known limitations
 
+The fixed four-fighter comparison uses default reference ratings and weights and provisional lift. The F-4 default engine domain omits the 27,000-ft state. The Mustang workbook and Greg graph have their own evidence qualifications. The numeric comparisons do not change the historical stall or 5:1 status. [Scenario definitions](FOUR_FIGHTER_COMPARISON.md).
+
 The DB 601 E inlet option is a G-1-to-F-4 installation transfer at 1.3 ata, using an assumed pressure recovery and charge law. The translated critical speed conflicts with the scan OCR. Independent production P-47B checks cover one propeller and defined flight states. The Spitfire and Mustang specimen transfers show material discrepancies. See [archival checks](INDEPENDENT_FLIGHT_CHECKS.md).
 
 The v3.8 fast-flight term corrects a net installation residual. The data do not isolate propeller losses, shaft power or airframe drag. The fitted cases and reserved checks share previously exposed historical reports. Open-shutter scenarios are bounded by the report altitude and speed ranges. The Bf 109 F-4 rated-altitude power gap and independent four-aircraft accuracy remain open. [Results and controls](FLIGHT_ENVELOPE.md)

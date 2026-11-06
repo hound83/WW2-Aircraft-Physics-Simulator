@@ -46,7 +46,7 @@ function build(){
  });
  for(const [key,n]of Object.entries(replacements))if(n!==1)throw Error('Expected one '+key+' block; got '+n);
  html=html.replace(/<title>[^<]*<\/title>/,'<title>European Air War Physics v'+version+' | Research</title>');
- html=html.replace('<header>','<header><p class="status" id="research-version">Research v'+version+' · Historical accuracy remains unresolved</p><p><a href="#stall-lab">Compare clean stall speeds</a> · <a href="#measured-climb">Inspect the P-47B climb test</a></p><p class="status">Profile P: the e slider at 0.78 uses each aircraft’s fitted base e. Moving it changes an effective-drag scenario and reanchors speed drag; this is not measured wing efficiency.</p>');
+ html=html.replace('<header>','<header><p class="status" id="research-version">Research v'+version+' · Historical accuracy remains unresolved</p><p><a href="#fighter-comparison">Compare four fighters</a> · <a href="#stall-lab">Compare clean stall speeds</a> · <a href="#measured-climb">Inspect the P-47B climb test</a></p><p class="status">Profile P: the e slider at 0.78 uses each aircraft’s fitted base e. Moving it changes an effective-drag scenario and reanchors speed drag; this is not measured wing efficiency.</p>');
  html=patchWorkingUI(html);
  html=html.replace("if(conf.profile==='P'){o.e=", "if(conf.profile==='P'){if(isGreg109){const gp=M.inferredGregF4(ac,D.greg.bf109f4);o.polar={e:gp.oswald,cd0:gp.cd0,source:gp.source};return o;}o.e=");
  const flightEnvelope=read('calibration/flight-envelope.json');
@@ -82,9 +82,15 @@ function build(){
  for(const text of stallParts)if(/<\/script/i.test(text))throw Error('Unsafe stall laboratory embed');
  const stallPanel=read('src/stall-lab-panel.html');
  html=html.replace(/(<section\b[^>]*\bid="release-support"[^>]*>)/,stallPanel+'$1');
- html=html.replace("for(const input of document.querySelectorAll('input,select'))input.addEventListener('input',render)","for(const input of document.querySelectorAll('input,select'))if(!input.closest('#stall-lab'))input.addEventListener('input',render)");
+ html=html.replace("for(const input of document.querySelectorAll('input,select'))input.addEventListener('input',render)","for(const input of document.querySelectorAll('input,select'))if(!input.closest('#stall-lab, #fighter-comparison'))input.addEventListener('input',render)");
  const stallEmbed='<script>'+stallParts[0]+'</script><script type="application/json" id="stall-research-data">'+stallParts[2]+'</script><script>'+stallParts[1]+'</script>';
- html=html.replace('</body>','<script>'+source+'</script><script type="application/json" id="robustness-data">'+audit+'</script><script>'+ui+'</script>'+conditionEmbed+measuredEmbed+stallEmbed+'</body>');
+ const comparisonPanel=read('src/fighter-comparison-panel.html');
+ const comparisonUI=read('src/fighter-comparison-ui.js');
+ const comparisonData=JSON.stringify(require('../validation/diagnostics/fighter_comparison.cjs').run());
+ if([comparisonUI,comparisonData].some(text=>/<\/script/i.test(text)))throw Error('Unsafe fighter comparison embed');
+ const comparisonEmbed='<script type="application/json" id="fighter-comparison-data">'+comparisonData+'</script><script>'+comparisonUI+'</script>';
+ html=html.replace('<main>',()=>'<main>'+comparisonPanel);
+ html=html.replace('</body>','<script>'+source+'</script><script type="application/json" id="robustness-data">'+audit+'</script><script>'+ui+'</script>'+conditionEmbed+measuredEmbed+stallEmbed+comparisonEmbed+'</body>');
  fs.mkdirSync(path.join(root,'dist'),{recursive:true});
  fs.writeFileSync(path.join(root,'dist/model.html'),html);
  const metadata={version,researchStatus:'v3.9 archival flight checks and conditional DB 601 E inlet transfer',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'engineering-increment',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
