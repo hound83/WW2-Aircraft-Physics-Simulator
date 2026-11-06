@@ -1,0 +1,35 @@
+{
+  "bandFt": [20000, 30000],
+  "spitfire": {
+    "specimen": "BS.543",
+    "reference": "A&AEE LF/HF Mk IX comparison, §2.4, §3–4 and Table II",
+    "url": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html",
+    "path": "references/sources/spitfire-lf-hf-ix-transcription.html",
+    "sha256": "0e87414547c6747835b4f8cdf654464e5c0712a3dff62ab4671f0e3c44bea690",
+    "timesMin": [4.75, 8.4],
+    "evidence": "Primary report transcription; Table II corrected to standard atmosphere. Original table scan outstanding.",
+    "conditions": "7,485 lb takeoff, Merlin 66, F.S. gear, 3,000 rpm, radiators open; combat climb under test concession. Boost declines from +15.8 to +6.6 psi. Speed schedule borrowed from BS.354 and position error from BF.274."
+  },
+  "thunderbolt": {
+    "timesMin": [9.75, 17.1],
+    "conditions": "12,565 lb reported gross, Curtiss 714-1C2-12, open cowl/oil/intercooler flaps; 1,625 torque bhp at 2,550 rpm after the five-minute military segment. Pointwise mass and measurement uncertainty are unreported."
+  },
+  "spitfireAlternate": {
+    "specimen": "JL.165",
+    "reference": "A&AEE Spitfire IX +25 boost trial, Table I",
+    "url": "https://wwiiaircraftperformance.com/org/spitcom/mk9/spitIX_25boost_JL165.html",
+    "timesMin": [4.97, 9.19],
+    "endpointFpm": [3130, 1730],
+    "evidence": "Primary report transcription; published F.S.-gear climb rates and elapsed times.",
+    "conditions": "7,400 lb takeoff, Merlin 66, different propeller, radiators fully open, 3,000 rpm, full throttle in F.S. gear, +14.8 to +4.6 psi within the band."
+  },
+  "thunderboltAlternate": {
+    "specimen": "41-5931",
+    "reference": "Wright Field FS-M-19-1469-A, p. 2, §2",
+    "url": "https://wwiiaircraftperformance.com/org/p-47/p-47.html",
+    "path": "references/sources/p47b-41-5931-fs-m-19-1469-a.pdf",
+    "sha256": "4351e12c396754267cb26751f9c647fc6f2504247c756edd6b35ea479496f16e",
+    "evidence": "Original report scan; climb rates reported, elapsed time derived by integration.",
+    "conditions": "12,560 lb gross, eight guns, open cooling, 2,700 rpm, military setting subject to turbo limit. No torquemeter. Flown 15 mph above best climb speed through 25,000 ft for cooling."
+  }
+}

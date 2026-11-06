@@ -1,5 +1,9 @@
 # Next steps
 
+## Climb comparison follow-up
+
+The [20,000–30,000 ft Spitfire and Thunderbolt comparison](CLIMB_BAND_COMPARISON.md) establishes the measured test-profile difference and a reproducible replay. Seek independent curves with comparable rating policy, mass and cooling to bound the differential error. Prioritise original BS.543 Table II and independent same-installation climbs at comparable settings.
+
 ## Four-fighter comparison milestone
 
 The [fixed scenario comparison](FOUR_FIGHTER_COMPARISON.md) is the baseline for incoming evidence. Use the isolated Mustang power budget to test source-backed engine or propeller inputs, and the P-47B turn comparison to keep power and stall limitations distinct. Retain the 12-state comparison and original archival checks when evaluating future candidates.

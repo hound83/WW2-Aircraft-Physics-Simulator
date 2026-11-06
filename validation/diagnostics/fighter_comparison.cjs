@@ -8,6 +8,7 @@ const D = require('../../aircraft/cases.json');
 const flightEnvelope = require('../../calibration/flight-envelope.json');
 const historical = require('./flight_scorecard.cjs');
 const archival = require('./archival_comparisons.cjs');
+const climbBand = require('./climb_band.cjs');
 
 const root = path.resolve(__dirname, '../..');
 const baseline = require('../baseline/v39-fighter-comparison.json');
@@ -141,7 +142,7 @@ function run() {
     pairwise5to1: 'unresolved',
     scenarios: flightScenarios, differencesFromV39: baselineDifferences(flightScenarios),
     mustang: mustang(), gregP47: gregP47(),
-    archival: archival.run(),
+    archival: archival.run(), climbBand: climbBand.run(),
     historical: {
       policy: 'Non-anchor speed and climb checkpoints from already exposed sources. Condition mismatches make residuals diagnostic. No historical ranking follows from the scenario rows.',
       summary: historical.run().summary,
