@@ -94,7 +94,9 @@ function writeReport(){
  lines.push('', '## Bf 109 F-4 source leads', '',
   'The secondary Rechlin attribution lists '+r.f4Lead.speed.map(row=>row.speedKph+' km/h at '+row.altM.toLocaleString('en-US')+' m in '+row.rating+' ('+row.status+')').join(' and ')+'. '+r.f4Lead.qualification,
   'The same article attributes a '+r.f4Lead.climb.rateMps+' m/s climb figure to Vogt without the test state needed for scoring. These are retrieval leads outside the frozen benchmark. The [archival inlet transfer](INDEPENDENT_FLIGHT_CHECKS.md) separately tests combat power. [Source]('+r.f4Lead.url+')');
- lines.push('', '## Power and comparison coverage','',
+ lines.push('', '## Archival comparison supplement', '',
+  'The [November archival audit](WW2_Three_Comparisons_Primary_Source_Audit_2026-11-06.md) supplies source conditions and qualified replays in the [four-fighter comparison](FOUR_FIGHTER_COMPARISON.md). They are reported separately from the frozen speed and climb cohort.',
+  '', '## Power and comparison coverage','',
   'The P-47B 41-5902 replay uses ten reported shaft-power states with measured TAS and RPM. Shaft power is a model input there. Propulsive power is calculated. Five previously exposed check rows give '+fmt(r.conditionedChecks.p47b.check.mae)+' ft/min climb MAE with the accepted configuration model.',
   'The Spitfire high-altitude replay retains the 32,000 ft boost discrepancy as diagnostic and blocks the 36,000 ft point outside the engine domain. The 34,000 ft residual is '+fmt(r.conditionedChecks.spitfireHighAltitude.find(x=>x.altFt===34000).error)+' ft/min.',
   'The Mustang has separately documented [power-required and propeller audits](P51_PROPELLER_EFFICIENCY_AUDIT.md). Bf 109 F-4 climb is missing from the established benchmark. Full-envelope independent power-required and propulsive-power validation is open for the four aircraft.',

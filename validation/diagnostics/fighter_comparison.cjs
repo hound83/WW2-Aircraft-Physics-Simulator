@@ -7,6 +7,7 @@ const Stall = require('../../src/stall-lab.js');
 const D = require('../../aircraft/cases.json');
 const flightEnvelope = require('../../calibration/flight-envelope.json');
 const historical = require('./flight_scorecard.cjs');
+const archival = require('./archival_comparisons.cjs');
 
 const root = path.resolve(__dirname, '../..');
 const baseline = require('../baseline/v39-fighter-comparison.json');
@@ -81,7 +82,7 @@ function mustang() {
   return {
     source: sourceRoot + '01_GREG_ORIGINAL/Expanded/Europe_Air_War_Research_Handoff_v0.2/data/WWII_Aircraft_Complete_Data_Table_v0.2.xlsx',
     sourceLocation: 'Greg Speed Table, row 31 (AC–AF, AN)',
-    evidence: 'Frozen engineering workbook in Greg format. Its fixed efficiency is an assumption.',
+    evidence: 'Later engineering reconstruction in Greg format. Its fixed efficiency is an assumption.',
     altFt, air, weightLb: options.weightLb, rating: options.rating, gear: options.gear,
     workbook, working, delta
   };
@@ -140,6 +141,7 @@ function run() {
     pairwise5to1: 'unresolved',
     scenarios: flightScenarios, differencesFromV39: baselineDifferences(flightScenarios),
     mustang: mustang(), gregP47: gregP47(),
+    archival: archival.run(),
     historical: {
       policy: 'Non-anchor speed and climb checkpoints from already exposed sources. Condition mismatches make residuals diagnostic. No historical ranking follows from the scenario rows.',
       summary: historical.run().summary,

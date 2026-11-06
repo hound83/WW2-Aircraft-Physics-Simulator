@@ -4,31 +4,31 @@
   "sources": {
     "raf_mosquito_clean": {
       "title": "A&AEE Mosquito B Mk IX LR495, no external bombs or tanks, 11 June 1943",
-      "url": "https://www.wwiiaircraftperformance.com/org/mosquito/mosquito.html",
-      "provenance": "transcription_of_period_test_report",
-      "verification": "secondary_html_of_primary_report; original_scan_not_independently_audited",
+      "url": "https://www.wwiiaircraftperformance.com/org/mosquito/mosquito_files/lr495.pdf",
+      "provenance": "original_period_test_report_scan",
+      "verification": "see archival source audit for pages, test conditions and caveats",
       "testCondition": "Merlin 72 ×2, 3000 RPM, +18 lb/sq.in all-out, four internal 500-lb bombs, no external stores, takeoff 21910 lb; report gives speed at peak altitudes"
     },
     "raf_mosquito_loaded": {
       "title": "A&AEE Mosquito B Mk IX LR495, 2 × external 500-lb bombs, 20 February 1944",
-      "url": "https://www.wwiiaircraftperformance.com/org/mosquito/mosquito.html",
-      "provenance": "transcription_of_period_test_report",
-      "verification": "secondary_html_of_primary_report; original_scan_not_independently_audited",
-      "testCondition": "Merlin 72 ×2, 3000 RPM, +18 lb/sq.in all-out, 2 × external 500-lb bombs on faired racks, takeoff 22850 lb; report warns aircraft deterioration between tests"
+      "url": "https://www.wwiiaircraftperformance.com/org/mosquito/mosquito_files/lr495-b.pdf",
+      "provenance": "original_period_test_report_scan",
+      "verification": "see archival source audit for pages, test conditions and caveats",
+      "testCondition": "Merlin 72 ×2, 3000 RPM, +18 lb/sq.in all-out, four internal 500-lb bombs plus 2 × external 500-lb bombs on faired racks, takeoff 22850 lb; report warns aircraft deterioration between tests"
     },
     "usaaf_p38g_clean": {
       "title": "Wright Field P-38G-1 42-12687, FS-M-19-1538-A, 10 February 1943",
-      "url": "https://www.wwiiaircraftperformance.com/org/p-38/p-38.html",
-      "provenance": "transcription_of_period_test_report",
-      "verification": "secondary_html_of_primary_report; original_scan_not_independently_audited",
+      "url": "https://www.wwiiaircraftperformance.com/org/p-38/p-38_files/P-38G-1_42-12687_FS-M-19-1538-A.pdf",
+      "provenance": "original_period_test_report_scan",
+      "verification": "see archival source audit for pages, test conditions and caveats",
       "testCondition": "Level-flight speed TAS, 3000 RPM, source reports 44.7 inHg 1220/1225 bhp per engine in selected rows, cooling shutters faired. Turbo limits at height. NO sourced bomb-loaded P-38G trial imported."
     },
     "greg_p38_chart": {
-      "title": "User-provided Greg comparative screenshot: P-38G clean / 1100 lb bombs / Mosquito with 2×500 lb",
-      "url": null,
+      "title": "Greg comparison screenshot: P-38G clean / 2 × 1,100 lb bombs (corrected by Greg) / Mosquito FB Mk VI with 2 × 500 lb",
+      "url": "https://www.youtube.com/watch?v=HWvERh_eK6M",
       "provenance": "user_supplied_secondary_graph",
-      "verification": "visual_only_no_underlying_report_or_conditions; no_numeric_digitalization_adopted",
-      "testCondition": "Axis appears altitude (ft) versus speed (mph); no source report, engine settings, actual store drag area or airspeed convention. Graph is qualitative only, NOT independent flight-test observations."
+      "verification": "video_description_corrects_load_and_FB_VI_speed; no_underlying_report_or_matched_conditions",
+      "testCondition": "Altitude versus mph, speed basis unknown. The corrected P-38G load is 2,200 lb of bombs excluding racks. The original Mosquito FB Mk VI speeds were too high according to Greg. No matched loaded P-38G trial or basis for fitting either curve."
     },
     "fw190a4_619_report1": {
       "title": "Focke-Wulf Fw 190 A-4 W.Nr. 619 Flight Report No. 1 (4 November 1942)",

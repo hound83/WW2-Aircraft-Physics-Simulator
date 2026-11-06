@@ -28,7 +28,11 @@
       label.scope = 'row';
       label.textContent = values[0];
       row.append(label);
-      for (const value of values.slice(1)) row.insertCell().textContent = value;
+      for (const value of values.slice(1)) {
+        const cell = row.insertCell();
+        if (value instanceof Node) cell.append(value);
+        else cell.textContent = value;
+      }
     }
     byId(id).replaceChildren(t);
   }
@@ -62,6 +66,35 @@
       return [aircraft.name, speed.paired + ' / ' + speed.observations, fmt(speed.workingMae, 1),
         climb.paired + ' / ' + climb.observations, fmt(climb.workingMae, 1)];
     }));
+  }
+
+  function renderArchival() {
+    const {rows, sources, exclusions, precision, sourceAssessment, audit} = report.archival;
+    const replays = rows.filter(row => row.status === 'qualified replay').length;
+    byId('comparison-archival-summary').textContent =
+      rows.length + ' reference points · ' + replays + ' qualified replays · ' +
+      precision.historicalEligibleCount + ' independent matched validation points in this set. ' +
+      'Practical 3:1 and high-precision 5:1 are unresolved. A&AEE assessed the LR495 rack-and-bomb penalty at ' +
+      sourceAssessment.rangeMph.join('–') + ' mph; the airframe deteriorated between trials.';
+    byId('comparison-archival-exclusions').textContent = Object.values(exclusions).join(' ');
+    byId('comparison-archival-source').href = repo + audit;
+    const reading = (value, unit) => Number.isFinite(value) ? fmt(value, 1) + ' ' + unit : '—';
+    table('comparison-archival', ['Aircraft / test', 'Altitude ft', 'Historical reference', 'Model replay',
+      'Model − reference', 'Evidence / status', 'Source', 'Conditions and limits'], rows.map(row => {
+      const source = document.createElement('a');
+      source.href = sources[row.sourceId].url;
+      source.textContent = row.location;
+      source.title = sources[row.sourceId].report;
+      const c = row.conditions;
+      const conditions = [c.configuration, c.engineRpm && c.engineRpm + ' rpm',
+        c.tasMph && c.tasMph + ' mph TAS', c.weightLb && fmt(c.weightLb) + ' lb (' + c.weightKind + ')',
+        c.weightKg && fmt(c.weightKg) + ' kg', c.boostPsi && '+' + c.boostPsi + ' psi',
+        c.boostAta && c.boostAta + ' ata', c.manifoldInHg && c.manifoldInHg + ' inHg',
+        c.bhpPerEngine && c.bhpPerEngine + ' bhp per engine', c.shaftBhp && c.shaftBhp + ' bhp (chart)'].filter(Boolean).join(' · ');
+      return [row.label, fmt(row.altFt), reading(row.value,row.unit), reading(row.model,row.unit),
+        Number.isFinite(row.difference) ? signed(row.difference,1) + ' ' + row.unit : '—',
+        row.evidence + ' / ' + row.status, source, conditions + '. ' + row.qualification];
+    }), true);
   }
 
   function renderMustang() {
@@ -162,5 +195,6 @@
   });
   renderFighters();
   renderMustang();
+  renderArchival();
   renderGreg();
 })();

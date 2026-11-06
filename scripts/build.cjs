@@ -89,6 +89,13 @@ function build(){
  const comparisonData=JSON.stringify(require('../validation/diagnostics/fighter_comparison.cjs').run());
  if([comparisonUI,comparisonData].some(text=>/<\/script/i.test(text)))throw Error('Unsafe fighter comparison embed');
  const comparisonEmbed='<script type="application/json" id="fighter-comparison-data">'+comparisonData+'</script><script>'+comparisonUI+'</script>';
+ // The archived stores panel predates the scan audit and Greg's correction.
+ html=html.replace('Higher-altitude independent reported curve NOT used in the drag fit',
+  'Higher-altitude comparison within the same aircraft programme; diagnostic only');
+ html=html.replace('High-alt model error','High-alt diagnostic difference');
+ html=html.replace('RAF A&amp;AEE Mosquito LR495 1943/1944 report transcriptions','RAF A&amp;AEE Mosquito LR495 report index');
+ html=html.replace("<strong>We have not recovered the underlying report for Greg's bomb-loaded P-38 curve</strong>, so it is not added as measured performance.",
+  'Greg corrected the bomb load to two 1,100-lb bombs excluding racks and said his Mosquito FB Mk VI curve was too fast. The scorecard preserves LR495 B Mk IX as a separate aircraft and records the P-38G loaded curve as unverified.');
  html=html.replace('<main>',()=>'<main>'+comparisonPanel);
  html=html.replace('</body>','<script>'+source+'</script><script type="application/json" id="robustness-data">'+audit+'</script><script>'+ui+'</script>'+conditionEmbed+measuredEmbed+stallEmbed+comparisonEmbed+'</body>');
  fs.mkdirSync(path.join(root,'dist'),{recursive:true});
