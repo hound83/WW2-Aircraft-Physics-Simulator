@@ -40,11 +40,14 @@ async function run(){
   const archival=await evaluate(`(()=>({
     rows:document.querySelectorAll("#comparison-archival tbody tr").length,
     linkedSources:document.querySelectorAll("#comparison-archival tbody a").length,
+    details:document.getElementById("comparison-archival").textContent,
     summary:document.getElementById("comparison-archival-summary").textContent,
     exclusions:document.getElementById("comparison-archival-exclusions").textContent
   }))()`);
-  assert.equal(archival.rows,25);
-  assert.equal(archival.linkedSources,25);
+  assert.equal(archival.rows,28);
+  assert.equal(archival.linkedSources,28);
+  assert.ok(archival.details.includes("wing racks installed"));
+  assert.ok(archival.details.includes("Required propulsive power divided by efficiency at that test state"));
   assert.ok(archival.summary.includes("8 qualified replays")&&archival.summary.includes("5:1 are unresolved"));
   assert.ok(archival.exclusions.includes("2 × 1,100 lb"));
   checks.push('Archival points and original source links render with qualified replays, load correction and unresolved precision');

@@ -36,7 +36,7 @@ function mustangRows() {
     const row = observation('p51-fig5-' + (index + 1), 'P-51B 43-24777 required shaft power', 'wright-p51-figure5',
       'Figure 5, circle ' + (index + 1), figure.altitudeFt, testBhp, 'bhp', {...point,
         speedBasis: 'TAS', weightLb: figure.nominalWeightLb, weightKind: 'source nominal',
-        configuration: 'Level flight; point-specific cooling setting unknown',
+        configuration: 'Level flight, wing racks installed; point-specific cooling setting unknown',
         shaftPowerEvidence: 'derived from Packard chart, then digitized'}, figure.uncertainties, 'digitized');
     return replay(row, prop && drag.requiredHp / prop.eta,
       'Reference polar and profile P propeller at chart BHP and RPM. Required propulsive power divided by efficiency at that test state; no independent propeller calibration or fast-flight correction.');
@@ -47,9 +47,12 @@ function mustangRows() {
 function spitfireRows() {
   const ac = A.spitfire_lfix_bs543;
   const level = archive.spitfireLevel;
-  const point = ac.observedSpeed.find(p => p.altFt === level.altFt && p.gear === 'high');
-  const speed = observation('bs543-level-22000', 'Spitfire BS.543 level speed', 'aaee-bs543', 'Table V',
-    level.altFt, point.mphTas, 'mph TAS', level, level.qualification);
+  const {points, qualification, ...levelConditions} = level;
+  const speeds = points.map(({altFt, gear, boostPsi}) => {
+    const point = ac.observedSpeed.find(p => p.altFt === altFt && p.gear === gear);
+    return observation('bs543-level-' + altFt, 'Spitfire BS.543 level speed', 'aaee-bs543', 'Table V',
+      altFt, point.mphTas, 'mph TAS', {...levelConditions, gear, boostPsi}, qualification);
+  });
   const climbs = archive.spitfireClimbAltitudesFt.map(altFt => {
     const state = climbStates.states.find(p => p.aircraftId === 'spitfire_lfix_bs543' && p.altFt === altFt);
     const result = Climb.evaluate(M, ac, state, climbModel, {requireMatchedSpecimen:true});
@@ -60,7 +63,7 @@ function spitfireRows() {
     return {...replay(row, result.predictedFpm, 'Existing v3.1 source-climb replay at reported TAS, boost and gear.'),
       fitRole: 'exposed calibration programme'};
   });
-  return [speed, ...climbs];
+  return [...speeds, ...climbs];
 }
 
 function externalReferences() {

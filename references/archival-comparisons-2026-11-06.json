@@ -13,8 +13,12 @@
     "lr495-8": {"report": "A&AEE/767,h 8th Part, 20 February 1944", "url": "https://www.wwiiaircraftperformance.com/org/mosquito/mosquito_files/lr495-b.pdf", "sha256": "7fd5e6eaade49228ffffddebfa190249e930d330d2657bdfcd2f5622e9b36989", "kind": "primary-scan", "dependencyGroup": "A&AEE/LR495"},
     "greg-p38-correction": {"report": "P 38G Lightning vs. Mosquito FB Mk VI, video description correction", "url": "https://www.youtube.com/watch?v=HWvERh_eK6M", "kind": "secondary-correction", "dependencyGroup": "Greg/HWvERh_eK6M"}
   },
-  "p51Speed": {"altitudesFt": [18000, 20800, 24000], "engineRpm": 3000, "shaftBhp": 1390, "manifoldInHg": 67, "configuration": "High blower, auto rich, oil and coolant shutters automatic", "weightKind": "corrected-to-altitude-curve", "weightLb": null, "qualification": "Faired source curve with high-blower scatter; report Fig. 4 altitude weight schedule has not been digitized for these points. Standard BHP comes from a Packard chart."},
-  "spitfireLevel": {"altFt": 22000, "engineRpm": 2995, "boostPsi": 18.5, "weightLb": 7110, "weightKind": "normalized", "configuration": "High blower, radiator closed", "qualification": "Reference speed is already in the speed dataset. Profile P uses 3,000 RPM and its nominal engine curve; retain the reported condition without an exact-match residual."},
+  "p51Speed": {"altitudesFt": [18000, 20800, 24000], "engineRpm": 3000, "shaftBhp": 1390, "manifoldInHg": 67, "configuration": "High blower, wing racks installed, gear and flaps up, auto rich, oil and coolant shutters automatic", "weightKind": "corrected-to-altitude-curve", "weightLb": null, "qualification": "Faired source curve with high-blower scatter; report Fig. 4 altitude weight schedule has not been digitized for these points. Standard BHP comes from a Packard chart."},
+  "spitfireLevel": {
+    "engineRpm": 2995, "weightLb": 7110, "weightKind": "normalized", "configuration": "Radiator flaps closed",
+    "points": [{"altFt": 0, "gear": "low", "boostPsi": 18}, {"altFt": 10800, "gear": "low", "boostPsi": 18}, {"altFt": 20000, "gear": "high", "boostPsi": 18.5}, {"altFt": 22000, "gear": "high", "boostPsi": 18.5}],
+    "qualification": "Profile P uses 3,000 RPM and its nominal engine curve. Retain the reported condition without an exact-match residual."
+  },
   "spitfireClimbAltitudesFt": [7000, 20000],
   "p38g": {"engineRpm": 3000, "weightLb": 13500, "weightKind": "approximate at altitude", "configuration": "No external bombs, coolant and oil shutters faired, gear up, flaps neutral", "qualification": "Published BHP is chart-derived per engine. No matching loaded flight or supported P-38G solver."},
   "mosquito": {

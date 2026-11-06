@@ -86,14 +86,15 @@
       source.textContent = row.location;
       source.title = sources[row.sourceId].report;
       const c = row.conditions;
-      const conditions = [c.configuration, c.engineRpm && c.engineRpm + ' rpm',
+      const conditions = [c.configuration, c.gear && c.gear + ' gear', c.engineRpm && c.engineRpm + ' rpm',
         c.tasMph && c.tasMph + ' mph TAS', c.weightLb && fmt(c.weightLb) + ' lb (' + c.weightKind + ')',
         c.weightKg && fmt(c.weightKg) + ' kg', c.boostPsi && '+' + c.boostPsi + ' psi',
         c.boostAta && c.boostAta + ' ata', c.manifoldInHg && c.manifoldInHg + ' inHg',
         c.bhpPerEngine && c.bhpPerEngine + ' bhp per engine', c.shaftBhp && c.shaftBhp + ' bhp (chart)'].filter(Boolean).join(' · ');
+      const detail = [conditions + '.', row.qualification, row.method].filter(Boolean).join(' ');
       return [row.label, fmt(row.altFt), reading(row.value,row.unit), reading(row.model,row.unit),
         Number.isFinite(row.difference) ? signed(row.difference,1) + ' ' + row.unit : '—',
-        row.evidence + ' / ' + row.status, source, conditions + '. ' + row.qualification];
+        row.evidence + ' / ' + row.status, source, detail];
     }), true);
   }
 
