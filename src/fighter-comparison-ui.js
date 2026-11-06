@@ -68,6 +68,46 @@
     }));
   }
 
+  function renderClimbBand() {
+    const {bandFt, spitfire, thunderbolt, endpoints, time, scenarios, alternates, report: reportPath} = report.climbBand;
+    const aircraft = [spitfire, thunderbolt];
+    const duration = seconds => {
+      const rounded = Math.round(seconds);
+      return Math.floor(rounded / 60) + ':' + String(rounded % 60).padStart(2, '0');
+    };
+    byId('comparison-climb-summary').textContent = 'From ' + bandFt.map(n => fmt(n)).join(' to ') +
+      ' ft, the reports give ' + duration(spitfire.reportedSeconds) + ' for BS.543 and ' +
+      duration(thunderbolt.reportedSeconds) + ' for 41-5902. The Spitfire took ' +
+      fmt(time.sourcePercentLessTime, 1) + '% less time.';
+    table('comparison-climb-band', ['Spitfire advantage', 'Historical reports', 'Conditioned replay',
+      'Replay − reports', 'Required bound for 3:1 / 5:1'], [
+      ...endpoints.map(row => [fmt(row.altFt) + ' ft · climb rate', signed(row.sourceGapFpm, 0) + ' ft/min',
+        signed(row.modelGapFpm, 0) + ' ft/min', signed(row.precision.residual, 0) + ' ft/min',
+        fmt(row.precision.required3to1, 1) + ' / ' + fmt(row.precision.required5to1, 1) + ' ft/min']),
+      [bandFt.map(n => fmt(n)).join('–') + ' ft · time saved', fmt(time.sourceTimeLeadSeconds) + ' s', fmt(time.modelTimeLeadSeconds, 1) + ' s',
+        signed(time.precision.residual, 1) + ' s',
+        fmt(time.precision.required3to1, 1) + ' / ' + fmt(time.precision.required5to1, 1) + ' s']
+    ], true);
+    byId('comparison-climb-conditions').textContent = aircraft.map(a => a.specimen + ' · ' + a.conditions).join(' ');
+    table('comparison-climb-rates', ['Specimen', 'Altitude ft', 'TAS mph / rpm', 'Source ft/min',
+      'Replay ft/min', 'Replay − source ft/min', 'Calibration role'], aircraft.flatMap(a => a.rows.map(r => [
+      a.specimen, fmt(r.altFt), fmt(r.tasMph) + ' / ' + fmt(r.engineRpm), fmt(r.sourceFpm),
+      fmt(r.modelFpm), signed(r.modelFpm - r.sourceFpm, 0), r.fitRole
+    ])), true);
+    table('comparison-climb-alternates', ['Spitfire', 'P-47B', 'Gap at ' + fmt(bandFt[0]) + ' ft', 'Time saved over band', 'Time evidence'],
+      scenarios.map(r => [r.spitfire, r.thunderbolt, signed(r.sourceGapFpm, 0) + ' ft/min',
+        fmt(r.timeLeadSeconds, 1) + ' s', r.durationEvidence]), true);
+    for (const source of [...aircraft, alternates.spitfire, alternates.thunderbolt]) {
+      const item = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = source.url;
+      link.textContent = source.specimen + ' · ' + source.reference;
+      item.append(link, ' · ' + source.evidence + ' ' + source.conditions);
+      byId('comparison-climb-sources').append(item);
+    }
+    byId('comparison-climb-report').href = repo + reportPath;
+  }
+
   function renderArchival() {
     const {rows, sources, exclusions, precision, sourceAssessment, audit} = report.archival;
     const replays = rows.filter(row => row.status === 'qualified replay').length;
@@ -197,5 +237,6 @@
   renderFighters();
   renderMustang();
   renderArchival();
+  renderClimbBand();
   renderGreg();
 })();

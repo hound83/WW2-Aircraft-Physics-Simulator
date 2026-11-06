@@ -1,5 +1,7 @@
 # Research and imported evidence
 
+The [climb band source ledger](climb-band-evidence.json) indexes the published times and alternate trials used in the [20,000–30,000 ft comparison](../docs/CLIMB_BAND_COMPARISON.md). It reuses the existing P-47B scans and BS.543 transcript.
+
 - `IMPORT_MANIFEST.json`: every original handover file, byte length, SHA256, storage decision and recovery information.
 - `import/`: frozen unmodified handover contents, except the explicit exclusions. Preserve these as provenance; active code lives elsewhere.
 - `stall_evidence_register.csv`: active copy of the latest stall/weight evidence gate; update with future source-backed findings.

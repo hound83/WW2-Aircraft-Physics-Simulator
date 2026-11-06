@@ -1,5 +1,7 @@
 # Known limitations
 
+The [Spitfire and Thunderbolt climb-band report](CLIMB_BAND_COMPARISON.md) compares independent historical reports at different test ratings. The replays use already-exposed observations. The alternate profile spread does not bound prediction error.
+
 The fixed four-fighter comparison uses default reference ratings and weights and provisional lift. The F-4 default engine domain omits the 27,000-ft state. The Mustang workbook and Greg graph have their own evidence qualifications. The numeric comparisons do not change the historical stall or 5:1 status. [Scenario definitions](FOUR_FIGHTER_COMPARISON.md).
 
 The DB 601 E inlet option is a G-1-to-F-4 installation transfer at 1.3 ata, using an assumed pressure recovery and charge law. The translated critical speed conflicts with the scan OCR. Independent production P-47B checks cover one propeller and defined flight states. The Spitfire and Mustang specimen transfers show material discrepancies. See [archival checks](INDEPENDENT_FLIGHT_CHECKS.md).

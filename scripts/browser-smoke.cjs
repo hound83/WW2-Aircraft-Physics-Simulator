@@ -37,6 +37,17 @@ async function run(){
   const comparisonReport=require('../validation/current/fighter-comparison.json');
   const embeddedComparison=await evaluate('JSON.parse(document.getElementById("fighter-comparison-data").textContent)');
   assert.deepEqual(embeddedComparison,comparisonReport);
+  const band=await evaluate(`(()=>({
+    summary:document.getElementById("comparison-climb-summary").textContent,
+    metrics:document.getElementById("comparison-climb-band").textContent,
+    rates:document.querySelectorAll("#comparison-climb-rates tbody tr").length,
+    alternatives:document.querySelectorAll("#comparison-climb-alternates tbody tr").length,
+    sources:document.querySelectorAll("#comparison-climb-sources a").length
+  }))()`);
+  assert.ok(band.summary.includes('3:39')&&band.summary.includes('7:21'));
+  assert.ok(band.metrics.includes('+1,995 ft/min')&&band.metrics.includes('219.4 s'));
+  assert.deepEqual([band.rates,band.alternatives,band.sources],[9,4,4]);
+  checks.push('Climb band reports published durations, conditioned replay, alternatives and source links');
   const archival=await evaluate(`(()=>({
     rows:document.querySelectorAll("#comparison-archival tbody tr").length,
     linkedSources:document.querySelectorAll("#comparison-archival tbody a").length,

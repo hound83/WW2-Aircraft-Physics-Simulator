@@ -1,5 +1,9 @@
 # Current decisions
 
+## Climb band comparison
+
+Compare published rates and elapsed times for the two explicitly named test profiles, and integrate model rates over the same source altitude band. Exposed calibration points and alternate test profiles cannot supply a validated differential error bound. See [results and source conditions](CLIMB_BAND_COMPARISON.md).
+
 ## November archival replays and precision
 
 Keep the November audit as a source supplement to the four-fighter comparison. Figure 5 uses chart RPM and BHP with the reference polar and profile P propeller; BS.543 climb uses the existing boost-conditioned replay. Both are qualified engineering checks. Preserve source-only entries where a solver or sufficient test conditions are unavailable. Practical 3:1 and high-precision 5:1 use the same independent evidence gate and do not determine solver settings.
