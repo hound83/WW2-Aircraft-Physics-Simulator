@@ -36,3 +36,5 @@ The active per-aircraft audits and `stall-calibration.json` are summarized in [t
 - Mustang Figure 5 already exists in the frozen import. The audit links the Wright Field report, A&AEE TK589 and related NACA sources. The primary Spitfire Tables II/V survive here as a historical transcription; an original table scan remains outstanding.
 
 The wider fighter evidence from the Smithsonian NASM and Bundesarchiv is documented in [the four-benchmark source audit](../docs/research/FOUR_BENCHMARK_FIGHTERS_PRIMARY_SOURCE_AUDIT_2026-11-06.md) and [the November archive-expansion report](../docs/research/WW2_FIGHTER_ARCHIVE_EXPANSION_2026-11-06.md). The [multi-aircraft archive source register](archive_fighter_source_register.csv) tracks scan-versus-catalogue verification, exact archive locators and further fighter-family leads. These are research references, not accepted new flight-model measurements.
+
+- [Mustang maneuver-power evidence](p51-maneuver-power.json) records the Figure 6 climb readings paired with existing Figure 7 power brackets and indexes the separate NAA, Eglin and Wright Field reports.

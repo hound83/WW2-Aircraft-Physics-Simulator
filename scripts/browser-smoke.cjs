@@ -60,6 +60,18 @@ async function run(){
   await select('comparison-p38-altitude','5000');
   assert.ok((await p38Table()).includes('346.5'));
   checks.push('P-38G and P-47B altitude comparison shows total and per-engine power and 14 Wright Field rows');
+  const maneuverTable=id=>evaluate('document.getElementById('+JSON.stringify(id)+').textContent');
+  assert.equal(await evaluate('document.querySelectorAll("#comparison-maneuver-climb tbody tr").length'),5);
+  const initialManeuverClimb=await maneuverTable('comparison-maneuver-climb');
+  assert.ok(initialManeuverClimb.includes('1,381'));
+  await select('comparison-maneuver-climb-speed','185');
+  assert.notEqual(await maneuverTable('comparison-maneuver-climb'),initialManeuverClimb);
+  await select('comparison-maneuver-turn-altitude','20800');
+  const maneuverTurn=await maneuverTable('comparison-maneuver-turn');
+  assert.ok(maneuverTurn.includes('180.0 / 250.0'));
+  assert.ok(maneuverTurn.includes('2.29 to 2.44'));
+  assert.ok((await maneuverTable('comparison-maneuver-decision')).includes('retain v3.12 propulsion'));
+  checks.push('Mustang climb speed and turn altitude update chart-state power and sampled sustained-turn ranges');
   const band=await evaluate(`(()=>({
     summary:document.getElementById("comparison-climb-summary").textContent,
     metrics:document.getElementById("comparison-climb-band").textContent,
