@@ -96,6 +96,36 @@
     byId('comparison-fw-report').href = repo + fw.report;
   }
 
+  function renderP38G() {
+    const p38 = report.p38g;
+    const selector = byId('comparison-p38-altitude');
+    for (const point of p38.comparison) selector.add(new Option(fmt(point.altFt) + ' ft', point.altFt));
+    function render() {
+      const point = p38.comparison.find(row => row.altFt === Number(selector.value));
+      table('comparison-p38-flight', ['Aircraft', 'Speed weight lb', 'Climb weight lb', 'Level speed mph TAS',
+        'Climb ft/min', 'Climb shaft hp total / per engine', 'Climb prop rpm', 'Estimated prop efficiency'],
+        [['P-38G-1 42-12687', point.lightning], ['P-47B 41-5902', point.thunderbolt]].map(([name, row]) =>
+          [name, fmt(row.levelWeightLb), fmt(row.climbWeightLb), fmt(row.speedMph, 1), fmt(row.climbFpm),
+            fmt(row.totalShaftHp) + ' / ' + fmt(row.shaftHpPerEngine), fmt(row.propRpm), fmt(row.propEta * 100, 1) + '%']), true);
+    }
+    selector.addEventListener('change', render);
+    render();
+    const {levelMph, climbFpm} = p38.metrics;
+    byId('comparison-p38-metrics').textContent =
+      'Reserved Wright Field points, mean absolute error with two propellers versus one disk at the same total shaft power: ' +
+      fmt(levelMph.twin, 1) + ' vs ' + fmt(levelMph.single, 1) + ' mph TAS (' + levelMph.count + ' speeds), ' +
+      fmt(climbFpm.twin) + ' vs ' + fmt(climbFpm.single) + ' ft/min (' + climbFpm.count + ' climbs). ' + p38.validation;
+    table('comparison-p38-speed', ['Altitude ft', 'Report mph TAS', 'Twin mph TAS', 'One-disk mph TAS',
+      'Estimated weight lb', 'BHP per engine', 'MAP inHg', 'Evidence role'], p38.level.map(row => [
+      fmt(row.altFt), fmt(row.observedMph, 1), fmt(row.twinMph, 1), fmt(row.singleMph, 1),
+      fmt(row.weightLb), fmt(row.bhpPerEngine), fmt(row.mapInHg, 1), row.role]), true);
+    table('comparison-p38-climb', ['Altitude ft', 'Report mph TAS', 'Report ft/min', 'Twin ft/min',
+      'One-disk ft/min', 'BHP per engine', 'MAP inHg', 'Evidence role'], p38.climbs.map(row => [
+      fmt(row.altFt), fmt(row.tasMph), fmt(row.observedFpm), fmt(row.twinFpm), fmt(row.singleFpm),
+      fmt(row.bhpPerEngine), fmt(row.mapInHg, 1), row.role]), true);
+    byId('comparison-p38-report').href = repo + p38.report;
+  }
+
   function renderOperationalClimb() {
     const {scenarios, policy, donorCheck} = report.operationalClimb;
     const input = byId('comparison-climb-budget');
@@ -300,5 +330,6 @@
   renderClimbBand();
   renderOperationalClimb();
   renderFw190();
+  renderP38G();
   renderGreg();
 })();

@@ -2,7 +2,7 @@
 
 ## v3.12: prepare the first twin-engine aircraft
 
-v3.11 adds Fw 190 A-4 W.Nr. 783 and tests the reusable speed-dependent power model. See [v3.11 results](V311_FW190A4.md). For the next aircraft, audit the clean P-38G Wright Field points and establish a per-engine power and propeller contract before modelling the twin-engine aircraft.
+v3.12 adds the clean P-38G-1 at full engine count and a reusable per-engine propulsion calculation. Next, seek an independent P-38G speed/climb trial with matched installation, a better installed propeller model and climb weight/cooling data. These are prerequisites to a historical error bound for the clean comparison. For fleet expansion, [aircraft intake](../references/aircraft-intake.json) lists the P-47D as a candidate pending exact specimen and configuration. [v3.12 results](V312_P38G.md)
 
 
 ## Climb comparison follow-up

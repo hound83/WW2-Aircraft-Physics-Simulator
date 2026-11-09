@@ -52,6 +52,8 @@ try{
  '',
  'v3.10: [Operational climb policies and intake criteria](V310_OPERATIONAL_CLIMB.md).',
  '',
+ 'v3.12: [P-38G and symmetric multi-engine propulsion](V312_P38G.md).',
+ '',
  'v3.11: [Fw 190 A-4 and speed-dependent rated power](V311_FW190A4.md).',
  '',
  'v3.9: [archival flight checks](INDEPENDENT_FLIGHT_CHECKS.md) and [four-aircraft scorecard](FLIGHT_SCORECARD.md).',

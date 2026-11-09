@@ -1,0 +1,35 @@
+{
+  "name": "P-38G-1 Lightning (42-12687)",
+  "engineCount": 2,
+  "weightLb": 13550,
+  "wingAreaM2": 30.425745600000003,
+  "spanM": 15.8496,
+  "clMaxAssumed": 1.4,
+  "defaultRating": "level",
+  "defaultGear": "turbo",
+  "propGeometry": {
+    "diameterFt": 11.5,
+    "bladeCount": 3,
+    "reductionRatioEnginePerProp": 2,
+    "engineRpmByRating": {
+      "level": 3000,
+      "climb": 3000,
+      "level-48": 3000
+    },
+    "momentumModel": {
+      "retainedPowerFraction": 0.9,
+      "machPenalty": 2,
+      "machOnset": 0.92,
+      "advanceLoss": 0.06
+    }
+  },
+  "workingModel": {
+    "e": 0.78
+  },
+  "calibration": {
+    "altFt": 5000,
+    "tasMph": 346.5,
+    "rating": "level",
+    "gear": "turbo"
+  }
+}

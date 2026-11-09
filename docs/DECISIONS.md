@@ -177,3 +177,7 @@ Keep the thermodynamic interpretation provisional: NASA ideal-flow pressure/dens
 The initial alternate-fold comparison used the fixed old coefficients, which had fitted some alternate check rows. Refit both model forms on identical rows for model-form comparisons, and disclose the change after the first exploratory probe. Preserve the stricter retained-coefficient comparison too: one P47 alternate set favors retained coefficients (45.2 vs 59.2 ft/min). The high-power/light Spitfire stress also worsens (224.7 vs 252.4). These failures are not removed from acceptance records.
 
 Deploy the accepted source-climb model in a fixed-condition application panel and reusable library, retaining the same shared physical solver. Generic scenario controls and clean speed curves are unchanged. Tests must exclude observed climb rates from prediction, isolate check observations from fitting, cap power at source availability, preserve source gaps and inputs, and keep legacy numerical parity.
+
+## v3.12 symmetric multi-engine propulsion
+
+Treat rated BHP and propeller geometry as per-engine inputs. Evaluate the identical propeller load once, sum its output across engines and subtract whole-airframe drag once. Admit the clean P-38G-1 as a bounded research comparison. The one-disk control scores slightly better on reserved rows, so retain those residuals and treat the physical correction and historical accuracy as separate decisions. [v3.12 report](V312_P38G.md)
