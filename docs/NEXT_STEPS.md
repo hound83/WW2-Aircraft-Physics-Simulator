@@ -1,5 +1,9 @@
 # Next steps
 
+## v3.13: Mustang maneuver power
+
+The [climb and turn-power report](V313_MANEUVER_POWER.md) extends exact chart replays and rejects the global propeller change. Seek climb TAS, in-flight weight, installed efficiency or thrust and comparable independent climb/turn observations before refitting. Keep 5:1 separate from the practical size of the performance difference and leave close historical rankings unresolved without valid bounds.
+
 ## v3.12: prepare the first twin-engine aircraft
 
 v3.12 adds the clean P-38G-1 at full engine count and a reusable per-engine propulsion calculation. Next, seek an independent P-38G speed/climb trial with matched installation, a better installed propeller model and climb weight/cooling data. These are prerequisites to a historical error bound for the clean comparison. For fleet expansion, [aircraft intake](../references/aircraft-intake.json) lists the P-47D as a candidate pending exact specimen and configuration. [v3.12 results](V312_P38G.md)

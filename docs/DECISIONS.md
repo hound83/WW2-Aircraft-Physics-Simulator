@@ -181,3 +181,7 @@ Deploy the accepted source-climb model in a fixed-condition application panel an
 ## v3.12 symmetric multi-engine propulsion
 
 Treat rated BHP and propeller geometry as per-engine inputs. Evaluate the identical propeller load once, sum its output across engines and subtract whole-airframe drag once. Admit the clean P-38G-1 as a bounded research comparison. The one-disk control scores slightly better on reserved rows, so retain those residuals and treat the physical correction and historical accuracy as separate decisions. [v3.12 report](V312_P38G.md)
+
+## v3.13 Mustang maneuver power
+
+Admit five source-conditioned chart replays and the sampled turn range. Keep the v3.12 coefficients after the alternative fails the withheld low-altitude Mustang check, non-anchor speed and P-47B production donor. Treat 5:1 as a pairwise precision goal requiring independent error bounds. [v3.13 report](V313_MANEUVER_POWER.md)

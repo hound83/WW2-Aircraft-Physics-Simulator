@@ -107,3 +107,7 @@ Targets pass on the original reserved data and fair same-training-data refits. A
 ## P-38G-1 42-12687
 
 The clean all-engine comparison uses chart-derived per-engine BHP, assumed propeller efficiency and effective cooling drag fitted at one climb point. The reserved rows share the fitting report and are not independent evidence. No historical bound supports 5:1 discrimination against the P-47B. Climb rates are replayed at reported TAS and takeoff weight. Historical lift and turn remain open. [v3.12 report](V312_P38G.md)
+
+## Mustang maneuver power
+
+Figures 6-7 do not identify climb TAS or instantaneous mass, and their shaft BHP comes from engine charts. Chart replay uses the takeoff mass and modeled speeds. The sampled sustained-turn range is sensitivity to propeller assumptions and speed-anchor reanchoring. It does not bound historical turn accuracy. [v3.13 report](V313_MANEUVER_POWER.md)

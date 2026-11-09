@@ -1,0 +1,44 @@
+{
+  "specimen": "P-51B-15 43-24777",
+  "source": "Wright Field Eng-47-1749-A, section V.D and Figures 6-7",
+  "url": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+  "figure6RateAxis": {
+    "ticks": [[200, 0], [784, 4000]],
+    "pixelAllowance": 5,
+    "roundOut": 25,
+    "basis": "Approximate local rate axis read against 0 and 4000 ft/min, with broad boxes around the faired low-blower climb trace."
+  },
+  "rpm": 3000,
+  "takeoffWeightLb": 9335,
+  "observedTasMph": null,
+  "instantaneousWeightLb": null,
+  "configuration": "Wing racks fitted, gear and flaps up, auto-rich, automatic oil and coolant shutters. Report data reduced to NACA standard conditions.",
+  "points": [
+    {"altFt": 2200, "rating": "67inHg", "reportedFpm": 3820},
+    {"altFt": 2200, "rating": "75inHg", "reportedFpm": 4380},
+    {"altFt": 4000, "rating": "75inHg", "ratePixelBox": [791, 1290, 811, 1303]},
+    {"altFt": 8000, "rating": "75inHg", "ratePixelBox": [704, 1166, 725, 1178]},
+    {"altFt": 12000, "rating": "75inHg", "ratePixelBox": [635, 1050, 657, 1064]}
+  ],
+  "ratingNote": "67/75 inHg identify the commanded test schedule. Beyond its critical altitude the branch follows the falling full-throttle curve. They are not claims of 75 inHg actually held at 4000-12000 ft.",
+  "powerSource": "p51-climb-state-reconstruction.json, Figure 7. Chart-assigned Packard BHP, not torque.",
+  "separateSources": [
+    {
+      "source": "AAF Proving Ground Command, Eglin, 7 July 1944, P-51B-15 43-24755/57/75",
+      "url": "https://www.wwiiaircraftperformance.org/mustang/mustangtest.html",
+      "chart": "https://www.wwiiaircraftperformance.org/mustang/eglin-p51b-climb.jpg",
+      "finding": "Independent V-1650-7 specimens. 75-inHg climb to 30000 ft about one minute faster than 67 inHg. Reset aneroid shifted at about 7500 ft, flights with full military load and no standard-temperature reduction. Aggregate time retained as a qualitative cross-check, not an absolute-rate or power calibration target."
+    },
+    {
+      "source": "North American Aviation, Preliminary Results of Performance Tests on a P-51B Airplane with 44-1 Fuel, 25 April 1944",
+      "url": "https://www.wwiiaircraftperformance.org/mustang/mustangtest.html",
+      "chart": "https://www.wwiiaircraftperformance.org/mustang/na-p51b-150grade-climb.jpg",
+      "finding": "P-51B-5-NA V-1650-7, rates corrected to 8460 lb. Published low-blower rates 4300-4370 ft/min at 6500 ft and 67 inHg, 4650-4670 at 3500 ft and 75 inHg. TAS and installed torque for those summary states unavailable. Distinct mass and installation; not pooled."
+    },
+    {
+      "source": "Wright Field P-51B-5-NA 43-6883, section VI.D",
+      "url": "https://www.wwiiaircraftperformance.org/mustang/p-51b-6883.html",
+      "finding": "9205 lb takeoff, V-1650-3, 3000 rpm, automatic shutters. Reports climb BHP from charts and shutter positions, with documented mixture inconsistency. No matched V-1650-7 propulsion check."
+    }
+  ]
+}

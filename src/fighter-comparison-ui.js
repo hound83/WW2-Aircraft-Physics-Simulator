@@ -96,6 +96,53 @@
     byId('comparison-fw-report').href = repo + fw.report;
   }
 
+  function renderManeuverPower() {
+    const {climbs, coverage, turn, candidate, report: reportPath} = report.maneuverPower;
+    const interval = (values, digits = 0) => values ? values.map(value => fmt(value, digits)).join(' to ') : '-';
+    const speed = byId('comparison-maneuver-climb-speed');
+    const altitude = byId('comparison-maneuver-turn-altitude');
+    for (const row of climbs[0].speeds) {
+      const eas = row.chart.easMph;
+      speed.add(new Option(eas + ' mph EAS', eas, eas === 160, eas === 160));
+    }
+    for (const row of turn) altitude.add(new Option(fmt(row.altFt) + ' ft', row.altFt));
+    function renderClimb() {
+      table('comparison-maneuver-climb', ['Altitude ft', 'Test schedule', 'Historical ft/min', 'Evidence', 'Scenario TAS mph',
+        'Chart shaft BHP', 'Propulsive / required / excess hp', 'Fixed-speed climb ft/min',
+        'Best climb generic / chart ft/min'], climbs.map(row => {
+        const {chart, chartClimbFpm} = row.speeds.find(point => point.chart.easMph === Number(speed.value));
+        return [fmt(row.altFt), row.rating, row.reportedFpm ? fmt(row.reportedFpm) : interval(row.observedFpm),
+          row.evidence, fmt(chart.tasMph, 1), interval(row.shaftBhp),
+          [chart.propulsiveHp, chart.requiredHp, chart.excessHp].map(value => fmt(value)).join(' / '),
+          interval(chartClimbFpm), fmt(row.bestGenericClimbFpm) + ' / ' + fmt(row.bestChartClimbFpm)];
+      }), true);
+    }
+    function renderTurn() {
+      const {gear, rows} = turn.find(point => point.altFt === Number(altitude.value));
+      table('comparison-maneuver-turn', ['mph EAS / TAS', 'Gear', 'Nominal eta', 'Nominal sustained g',
+        'Sampled sustained g', 'Sampled sustained deg/s'], rows.map(row =>
+        [fmt(row.easMph, 1) + ' / ' + fmt(row.tasMph, 1), gear, fmt(100 * row.nominal.eta, 1) + '%',
+          fmt(row.nominal.sustainedG, 2), interval(row.sustainedG, 2), interval(row.sustainedDegSec, 2)]));
+    }
+    speed.addEventListener('change', renderClimb);
+    altitude.addEventListener('change', renderTurn);
+    renderClimb();
+    renderTurn();
+    byId('comparison-maneuver-coverage').textContent = 'Exact chart points cover ' + coverage.chartCount +
+      ' states versus ' + coverage.genericCount + ' on the generic engine schedule. The test schedule label does not imply that the requested MAP was maintained above critical altitude.';
+    byId('comparison-maneuver-decision').textContent =
+      'Decision: ' + candidate.decision + '. Each altitude was withheld in turn. Figure 5, non-anchor speed observations and the separate P-47B report were kept out of this fit.';
+    const {donor, powerMaeBhp, heldSpeed} = candidate;
+    table('comparison-maneuver-checks', ['Check', 'Unit', 'Baseline MAE', 'Candidate MAE'],
+      [...candidate.splits.map(row => ['Mustang ' + fmt(row.altFt) + ' ft (' + fmt(row.fraction, 2) + ' retained)', 'ft/min',
+        fmt(row.baselineMae), fmt(row.candidateMae)]),
+      ['Mustang Figure 5', 'BHP', fmt(powerMaeBhp.baseline, 1), fmt(powerMaeBhp.challenger, 1)],
+      ['Mustang non-anchor level speed', 'mph TAS', fmt(heldSpeed.baseline.maeMph, 2), fmt(heldSpeed.challenger.maeMph, 2)],
+      ['P-47B 41-5942 climb', 'ft/min', fmt(donor.baseline.climbMaeFpm), fmt(donor.challenger.climbMaeFpm)],
+      ['P-47B 41-5942 level speed', 'mph TAS', fmt(donor.baseline.speedMaeMph, 2), fmt(donor.challenger.speedMaeMph, 2)]]);
+    byId('comparison-maneuver-report').href = repo + reportPath;
+  }
+
   function renderP38G() {
     const p38 = report.p38g;
     const selector = byId('comparison-p38-altitude');
@@ -331,5 +378,6 @@
   renderOperationalClimb();
   renderFw190();
   renderP38G();
+  renderManeuverPower();
   renderGreg();
 })();
