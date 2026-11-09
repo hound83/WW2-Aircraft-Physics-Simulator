@@ -1,0 +1,83 @@
+{
+  "baseline": [
+    "p51b",
+    "p47b",
+    "bf109f4",
+    "spitfire_lfix_bs543"
+  ],
+  "admission": [
+    {
+      "gate": "Specimen and configuration",
+      "requires": "Exact variant/serial or explicit representative configuration, engine and propeller identity, wing geometry, gross weight, cooling and stores state."
+    },
+    {
+      "gate": "Power and atmosphere",
+      "requires": "Sourced shaft-power nodes per rating and gear with RPM, boost, altitude domain and source unit. Record ram, temperature and atmospheric basis. Keep boost distinct from shaft power."
+    },
+    {
+      "gate": "Checks across altitude",
+      "requires": "Speed and climb source rows across more than one altitude. Identify fit and reserved rows before calibration and keep separate specimens or configurations explicitly labelled."
+    },
+    {
+      "gate": "Shared solver and usable build",
+      "requires": "Use shared physics, expose supported metrics in the app and export with sources, preserve the four-aircraft benchmark, and pass numerical and browser checks. Mark unverified lift and turn estimates."
+    }
+  ],
+  "firstCandidate": {
+    "variant": "Fw 190 A-4",
+    "specimen": "W.Nr. 783",
+    "status": "Combat-rating source series located; intake pending",
+    "blockers": [
+      "Digitize Graphs 1 and 2 with reading uncertainty for the long external intake.",
+      "Source BMW 801 D-2 shaft power and propeller inputs for this installation and verify weight, external stores and rating details before scoring."
+    ],
+    "sources": [
+      {
+        "reference": "Flugbericht Fw 190/783 Nr. 1, Results 2a and 3",
+        "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-783-nr1.html",
+        "role": "candidate calibration and reserved-curve material",
+        "data": {
+          "weightKg": 3870,
+          "peakSpeedKmh": 652,
+          "peakHeightM": 6950,
+          "climbFullThrottleHeightM": 6100
+        },
+        "qualification": "BMW 801 D-2/20208, long external intake, combat power. Speed with split cowl flaps closed, climb curves for open and closed flaps. Weight is takeoff. Short intake has large scatter and stays separate."
+      },
+      {
+        "reference": "W.Nr. 783 Nr. 1 Graph 1 and Graph 2",
+        "speedUrl": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr1-level-speed.jpg",
+        "climbUrl": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr1-climb.jpg",
+        "role": "original charts, not digitized",
+        "scanUrl": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr1.pdf"
+      },
+      {
+        "reference": "Flugbericht Fw 190/665 Nr. 3, Results 1 and 2",
+        "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-665-nr3.html",
+        "role": "separate specimen sensitivity",
+        "data": {
+          "seaLevelKmh": 532,
+          "peakSpeedKmh": 640
+        },
+        "qualification": "Combat power, closed split flaps for speed; measured climb with open flaps. Engine trouble and different installation prevent unqualified pooling."
+      },
+      {
+        "reference": "BMW 801 C/D engine handbook, Part 1; Fw 190/528 high-altitude report",
+        "url": "https://www.airwar.ru/other/manuals/%5Baviation%5D%20-%20%5Bmanuals%5D%20-%20%5Bengine%5D%20-%20BMW%20801C%20and%20D%20engine%20Part%201.pdf",
+        "relatedUrl": "https://www.wwiiaircraftperformance.org/fw190/Fw_190_528.pdf",
+        "role": "engine rating and power-map retrieval leads",
+        "qualification": "Identify the dated BMW 801 D schedule and installation corrections before using it. The 528 airframe is a separate comparison."
+      }
+    ]
+  },
+  "nextCandidates": [
+    {
+      "variant": "P-47D",
+      "role": "Fallback single-engine variant; exact specimen and installation to select."
+    },
+    {
+      "variant": "P-38G",
+      "role": "Later shared multi-engine work, with clean historical Wright Field points already indexed."
+    }
+  ]
+}

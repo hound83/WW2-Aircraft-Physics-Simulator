@@ -1,0 +1,23 @@
+{
+  "budgetsSeconds": [0, 120, 300],
+  "startCondition": "Already climbing at 20,000 ft in standard atmosphere, cooling open. The selected short-rating allowance is unused time remaining per aircraft at band entry.",
+  "spitfire": {
+    "specimen": "BS.543",
+    "weightLb": 7485,
+    "sustainedBoostPsi": 12,
+    "sustainedRpm": 2850,
+    "nominalChargeExponent": 0.75,
+    "source": "A&AEE LF/HF Mk IX comparison, section 2.4 and Table II",
+    "url": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html",
+    "qualification": "The +12 psi cap and 2850 rpm are sourced. At lower available boost use the combat test boost as an availability proxy. Shaft power uses absolute MAP scaling and an assumed proportional RPM term. Climb TAS and open-cooling coefficient carry over from the combat replay."
+  },
+  "thunderbolt": {
+    "specimen": "41-5902",
+    "weightLb": 12565,
+    "source": "Wright Field PHQ-M-19-1417-A, printed page 2, section 6",
+    "url": "https://www.wwiiaircraftperformance.com/org/p-47/p-47.html",
+    "qualification": "Normal power uses 1625 measured bhp at 2550 rpm. Short rating uses a cross-specimen 41-5942 measured military BHP/TAS schedule at 2700 rpm with the 41-5902 weight and cooling model. Donor altitude and turbo limits are retained."
+  },
+  "sensitivity": "Vary the Spitfire charge exponent from 2/3 to 1 and compare constant-torque RPM scaling with no shaft-power RPM scaling. Propeller RPM follows the rating in both cases. This range covers only those assumptions.",
+  "method": "Integrate piecewise-linear climb rates, switch at the exact remaining time limit, and assume no acceleration penalty for the change of climb speed."
+}

@@ -1,5 +1,9 @@
 # Current decisions
 
+## Operational climb and expansion baseline
+
+Use matched remaining short-power allowance and type-specific documented ratings in the operational comparison. Keep engineering scenarios separate from historical replays and their uncertainty gates. Use the four-aircraft baseline and [intake criteria](../references/aircraft-intake.json) when adding a new type and a measurable optimization in each subsequent milestone. [v3.10 report](V310_OPERATIONAL_CLIMB.md)
+
 ## Climb band comparison
 
 Compare published rates and elapsed times for the two explicitly named test profiles, and integrate model rates over the same source altitude band. Exposed calibration points and alternate test profiles cannot supply a validated differential error bound. See [results and source conditions](CLIMB_BAND_COMPARISON.md).
