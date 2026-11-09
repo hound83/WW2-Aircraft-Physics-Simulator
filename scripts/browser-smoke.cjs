@@ -48,6 +48,18 @@ async function run(){
   await select('comparison-fw-eas','175');
   await select('comparison-fw-altitude','0');
   checks.push('Fw 190 is selectable by altitude and EAS with reserved evidence and separate level speed');
+  const p38Table=()=>evaluate('document.getElementById("comparison-p38-flight").textContent');
+  assert.ok((await p38Table()).includes('346.5'));
+  await select('comparison-p38-altitude','20000');
+  const p38Comparison=await p38Table();
+  for(const value of ['399.5','403.7','3,243','2,162','2,390 / 1,195','1,500']){
+    assert.ok(p38Comparison.includes(value),value);
+  }
+  assert.equal(await evaluate('document.querySelectorAll("#comparison-p38-speed tbody tr").length'),6);
+  assert.equal(await evaluate('document.querySelectorAll("#comparison-p38-climb tbody tr").length'),8);
+  await select('comparison-p38-altitude','5000');
+  assert.ok((await p38Table()).includes('346.5'));
+  checks.push('P-38G and P-47B altitude comparison shows total and per-engine power and 14 Wright Field rows');
   const band=await evaluate(`(()=>({
     summary:document.getElementById("comparison-climb-summary").textContent,
     metrics:document.getElementById("comparison-climb-band").textContent,

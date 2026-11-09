@@ -321,9 +321,18 @@ function propEta(ac,alt,tasMph,bhp,profile='C',rating=ac.defaultRating,options={
    inducedVelocityMps:vi,machFactor,advanceFactor,...fit,
    note:'v2.8 joint engineering calibration: shared loss parameters; geometry-specific loading. Not measured installed eta.'};
  }else throw Error('Unknown profile');return {eta:Math.max(.05,Math.min(profile==='P'?1:.91,eta)),...debug,method:profile==='P'?'v2.8 momentum/loss working approximation, jointly calibrated':profile==='M'?'1941 NACA chart plus 1938/1945 source-bounded Mach research scenario (not yet validated for aircraft)':profile==='N'?'NACA 1941 FIGURE-DIGITIZED TRANSFER: approximate 3-/4-blade research data, not installed aircraft flight measurement':profile==='D'?'ideal momentum disk plus assumed global loss fraction; NOT flight-calibrated':profile==='G'?'Greg P-47D worksheet speed-shaped 0.85 plateau, transferred ONLY as an unvalidated test':'heuristic; not a NACA measured propeller map'};}
+// Shaft curves remain per engine. Symmetric installations evaluate one physical
+// disk at its own loading, then add identical propulsors before airframe drag.
+function propulsionAt(ac,alt,tasMph,bhp,profile,rating,options={}){
+ const count=ac.engineCount??1;
+ if(!Number.isSafeInteger(count)||count<1)return null;
+ const prop=propEta(ac,alt,tasMph,bhp,profile,rating,options);
+ if(!prop)return null;
+ return {count,prop,shaftHp:bhp*count,propulsiveW:prop.eta*bhp*HP*count};
+}
 function geometry(ac){const S=ac.wingAreaM2,b=ac.spanM;if(!(S>0&&b>0))throw Error('Geometry unavailable');return {S,b,AR:b*b/S};}
 function dragBreakdown(ac,alt,tasMph,weightLb,cd0,e,n=1){const v=tasMph*MPH,at=isa(alt),geo=geometry(ac),W=weightLb*LBF,q=.5*at.rho*v*v,CL=n*W/(q*geo.S),dParasite=q*geo.S*cd0,dInd=n*n*W*W/(q*Math.PI*e*geo.b*geo.b),drag=dParasite+dInd;return {q,CL,parasiteLbf:dParasite/LBF,inducedLbf:dInd/LBF,totalLbf:drag/LBF,dParasite,dInd,drag,requiredHp:drag*v/HP,parasiteHp:dParasite*v/HP,inducedHp:dInd*v/HP};}
-function cd0FromAnchor(ac,profile,e,sourceOnly=false){const ref=ac.calibration,at=ref.altFt,sp=ref.tasMph,sh=shaftPower(ac,at,ref.rating,ref.gear);if(!sh)return null;const prop=propEta(ac,at,sp,sh.bhp,profile,ref.rating);if(!prop)return null;const V=sp*MPH,q=.5*isa(at).rho*V*V,W=ac.weightLb*LBF,b=ac.spanM,S=ac.wingAreaM2;const total=prop.eta*sh.bhp*HP/V,ind=W*W/(q*Math.PI*e*b*b),cd0=(total-ind)/(q*S);return {cd0,etaAtAnchor:prop.eta,anchorSpeed:sp,anchorAlt:at,origin:'calibrated from one speed anchor; NOT a measured drag polar',valid:cd0>.005&&cd0<.085};}
+function cd0FromAnchor(ac,profile,e,sourceOnly=false){const ref=ac.calibration,at=ref.altFt,sp=ref.tasMph,sh=shaftPower(ac,at,ref.rating,ref.gear);if(!sh)return null;const propulsion=propulsionAt(ac,at,sp,sh.bhp,profile,ref.rating);if(!propulsion)return null;const {prop}=propulsion;const V=sp*MPH,q=.5*isa(at).rho*V*V,W=ac.weightLb*LBF,b=ac.spanM,S=ac.wingAreaM2;const total=propulsion.propulsiveW/V,ind=W*W/(q*Math.PI*e*b*b),cd0=(total-ind)/(q*S);return {cd0,etaAtAnchor:prop.eta,anchorSpeed:sp,anchorAlt:at,origin:'calibrated from one speed anchor; NOT a measured drag polar',valid:cd0>.005&&cd0<.085};}
 function workingOptions(ac,opts={}){
  const fit=ac.workingModel;
  if(!fit||!ac.propGeometry?.momentumModel)throw Error('No v2.8 working inputs for this aircraft');
@@ -406,18 +415,20 @@ function evaluated(ac,alt,tasMph,opts={}){if(opts.profile==='P'&&!opts.polar)opt
  const cdData=polar?{cd0:polar.cd0,valid:true,origin:polar.source}:cd0FromAnchor(ac,opts.refit?profile:'C',opts.refit?e:.78);
  if(!cdData||!cdData.valid)return {status:'no-credible-drag-anchor'};
  const propAircraft=shaft.reductionRatioEnginePerProp?{...ac,propGeometry:{...ac.propGeometry,reductionRatioEnginePerProp:shaft.reductionRatioEnginePerProp}}:ac;
- const prop=propEta(propAircraft,alt,tasMph,shaft.bhp,profile,rating,{engineRpmOverride:shaft.engineRpm});if(!prop)return {status:'no-prop-input'};
+ const propulsion=propulsionAt(propAircraft,alt,tasMph,shaft.bhp,profile,rating,{engineRpmOverride:shaft.engineRpm});if(!propulsion)return {status:'no-prop-input'};
+ const {prop}=propulsion;
  const installedDeltaCd0=installedDelta(entry,opts,alt,tasMph,shaft);
  const coolingDeltaCd0=flightCoolingDelta(entry,opts,alt,tasMph,shaft);
  if(coolingDeltaCd0===null)return {status:'no-cooling-source',reason:'Outside the open-shutter speed/altitude or configuration envelope'};
  const effectiveCd0=cdData.cd0+installedDeltaCd0+coolingDeltaCd0+addedDragAreaM2/ac.wingAreaM2;
  const D=dragBreakdown(ac,alt,tasMph,weight,effectiveCd0,e,1),V=tasMph*MPH,W=weight*LBF,geo=geometry(ac),q=D.q;
- const Pav=prop.eta*shaft.bhp*HP,Ps=(Pav-D.drag*V)/W,stallEas=Math.sqrt(2*W/(RHO0*geo.S*clMax))/MPH,air=airspeeds(tasMph,alt),nLift=q*geo.S*clMax/W;
+ const Pav=propulsion.propulsiveW,Ps=(Pav-D.drag*V)/W,stallEas=Math.sqrt(2*W/(RHO0*geo.S*clMax))/MPH,air=airspeeds(tasMph,alt),nLift=q*geo.S*clMax/W;
  const feasible=nLift>=1;const nPower2=(Pav/V-D.dParasite)/Math.max(1e-9,D.dInd),powerOk=feasible&&nPower2>=1;const nInst=feasible?Math.min(nLift,structG):null;
  const nSust=powerOk?Math.min(nInst,Math.sqrt(nPower2)):null;
  const turn=n=>n!=null&&n>=1?G*Math.sqrt(Math.max(0,n*n-1))/V*180/Math.PI:null;
  return {status:feasible?'modelled':'below-provisional-stall',aircraft:ac.name,altFt:alt,tasMph,air,weightLb:weight,engine:shaft,prop,cd0:effectiveCd0,cleanCd0:cdData.cd0,...(entry?{installedDeltaCd0,coolingDeltaCd0}:{}),dragPolarSource:cdData.origin,externalDragAreaM2:addedDragAreaM2,storesWeightLb,oswald:e,clMax,stallEasMph:stallEas,drag:D,
-   power:{shaftHp:shaft.bhp,propulsiveHp:Pav/HP,requiredHp:D.requiredHp,excessHp:(Pav-D.drag*V)/HP,psMps:Ps,climbFpm:feasible?Ps*196.850394:null},
+   power:{shaftHp:propulsion.shaftHp,propulsiveHp:Pav/HP,
+   ...(propulsion.count>1?{engineCount:propulsion.count,shaftHpPerEngine:shaft.bhp,propulsiveHpPerEngine:Pav/HP/propulsion.count}:{}),requiredHp:D.requiredHp,excessHp:(Pav-D.drag*V)/HP,psMps:Ps,climbFpm:feasible?Ps*196.850394:null},
    limits:{nLift,nPower:powerOk?Math.sqrt(nPower2):null,nInst,nSust,instantDegSec:turn(nInst),sustDegSec:turn(nSust),structG},
    provenance:polar?'scenario using an explicitly supplied drag polar plus engine/prop assumptions; polar source is not necessarily an independent measurement':'modeled from sourced geometry/engine nodes, per-aircraft CD0 anchor fit and assumed e/CLmax/prop profile; not an independently validated turn curve'};
 }
@@ -442,17 +453,18 @@ function climbPrediction(ac,point,opts={}){
  if(baseline.status!=='modelled')return {status:baseline.status,reason:baseline.reason};
  const engine=climbConditionEngine(ac,point);
  if(engine.status!=='estimated')return {status:engine.status};
- const prop=propEta(ac,point.altFt,point.tasMph,engine.climbBhP,opts.profile||'C',point.rating||ac.defaultRating);
- if(!prop)return {status:'no-prop-model'};
+ const propulsion=propulsionAt(ac,point.altFt,point.tasMph,engine.climbBhP,opts.profile||'C',point.rating||ac.defaultRating);
+ if(!propulsion)return {status:'no-prop-model'};
+ const {prop}=propulsion;
  const weight=(opts.weightLb??ac.weightLb)+(opts.storesWeightLb??0),e=baseline.oswald,addedCd0=opts.addedCd0??(opts.profile==='P'&&/open/i.test(point.cooling||'')?(ac.workingModel?.openCoolingDeltaCd0??0):0);
  if(!Number.isFinite(addedCd0)||addedCd0<0)return {status:'invalid-added-drag'};
  const drag=dragBreakdown(ac,point.altFt,point.tasMph,weight,baseline.cd0+addedCd0,e,1);
- const W=weight*LBF,V=point.tasMph*MPH,power=prop.eta*engine.climbBhP*HP;
+ const W=weight*LBF,V=point.tasMph*MPH,power=propulsion.propulsiveW;
  const fpm=(power-drag.drag*V)/W*196.8503937;
  return {status:'estimated',altFt:point.altFt,tasMph:point.tasMph,observedFpm:point.fpm,
     baselineFpm:baseline.power.climbFpm,predictedFpm:fpm,residualFpm:fpm-point.fpm,
     engine,prop,addedCd0,extraDragLbf:dragBreakdown(ac,point.altFt,point.tasMph,weight,addedCd0,e,1).parasiteLbf,
-    dynamicPressure:drag.q,shaftHp:engine.climbBhP,propulsiveHp:power/HP,
+    dynamicPressure:drag.q,shaftHp:propulsion.shaftHp,propulsiveHp:power/HP,
     note:'Derived using observed climb MAP, approximated climb BHP, and optional equivalent configuration drag. Not a measured cooling-drag coefficient.'};
 }
 function equivalentClimbDrag(ac,point,opts={}){
@@ -582,18 +594,20 @@ function bestClimb(ac,altFt,opts={}){
    if(r.status==='no-engine-source')return {status:'no-engine-source'};
    if(r.status!=='modelled'||!Number.isFinite(r.power?.climbFpm))continue;
    // If a specific report records a different climb MAP, use it explicitly.
-   let shaftHp=r.engine.bhp,prop=r.prop,engineMethod='rating curve, no climb MAP correction';
+   let shaftHp=r.power.shaftHp,prop=r.prop,engineMethod='rating curve, no climb MAP correction';
    if(opts.climbMapInHg!=null){
      if(!(opts.climbMapInHg>0&&r.engine.mapInHg>0))return {status:'missing-climb-map'};
-     shaftHp=Math.min(r.engine.bhp,r.engine.bhp*opts.climbMapInHg/r.engine.mapInHg);
-     prop=propEta(ac,altFt,tas,shaftHp,opts.profile||'C',opts.rating||ac.defaultRating);
+     const perEngineHp=Math.min(r.engine.bhp,r.engine.bhp*opts.climbMapInHg/r.engine.mapInHg);
+     const adjusted=propulsionAt(ac,altFt,tas,perEngineHp,opts.profile||'C',opts.rating||ac.defaultRating);
+     if(!adjusted)continue;
+     ({shaftHp,prop}=adjusted);
      engineMethod='climb MAP / level MAP proxy (not measured torque)';
    }
    const added=opts.addedCd0??0;
    if(!(Number.isFinite(added)&&added>=0))return {status:'invalid-added-drag'};
    const V=tas*MPH,weightLb=(opts.weightLb??ac.weightLb)+(opts.storesWeightLb??0),W=weightLb*LBF;
    const additionalPower=.5*isa(altFt).rho*V*V*ac.wingAreaM2*added*V;
-   const oldPropPower=r.prop.eta*r.engine.bhp*HP;
+   const oldPropPower=r.prop.eta*r.power.shaftHp*HP;
    const newPropPower=prop.eta*shaftHp*HP;
    const newExcess=(r.power.excessHp*HP)-(oldPropPower-newPropPower)-additionalPower;
    const fpm=newExcess/W*196.8503937;

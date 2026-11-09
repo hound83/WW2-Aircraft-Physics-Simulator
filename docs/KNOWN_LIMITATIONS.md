@@ -103,3 +103,7 @@ The local Windows Edge CDP automation timed out while changing altitude and did 
 The fitted 0.75 MAP-ratio exponent is an engineering proxy for net shaft-power availability under documented climb boost, not an identified engine temperature, volumetric-efficiency or intercooler model. It is active for explicit matched source-climb states; it does not improve arbitrary clean-flight power or turn curves. Configuration drag is aggregate and fitted, not measured isolated cooling drag.
 
 Targets pass on the original reserved data and fair same-training-data refits. All observations were already exposed. One alternate P47 comparison against retained coefficients is worse, and Spitfire improves in 8 of 9 assumed power/mass stress scenarios. Parameter fits can move to the exploratory search boundary. The missing Spitfire 14000-ft reference boost is not filled. Source-weight and airspeed qualifications remain. No independent historical accuracy, measured turn/stall or 5:1 proof follows.
+
+## P-38G-1 42-12687
+
+The clean all-engine comparison uses chart-derived per-engine BHP, assumed propeller efficiency and effective cooling drag fitted at one climb point. The reserved rows share the fitting report and are not independent evidence. No historical bound supports 5:1 discrimination against the P-47B. Climb rates are replayed at reported TAS and takeoff weight. Historical lift and turn remain open. [v3.12 report](V312_P38G.md)

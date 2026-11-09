@@ -69,14 +69,16 @@
       }
     ]
   },
+  "admittedFollowup": {
+    "variant": "P-38G-1",
+    "specimen": "42-12687",
+    "status": "Admitted as a bounded v3.12 research model",
+    "source": "p38g-42-12687.json"
+  },
   "nextCandidates": [
     {
       "variant": "P-47D",
       "role": "Fallback single-engine variant; exact specimen and installation to select."
-    },
-    {
-      "variant": "P-38G",
-      "role": "Later shared multi-engine work, with clean historical Wright Field points already indexed."
     }
   ]
 }

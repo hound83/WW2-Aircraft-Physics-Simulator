@@ -1,0 +1,204 @@
+{
+  "report": "Wright Field FS-M-19-1538-A, 10 Feb 1943, §B.1 and §B.4",
+  "url": "https://www.wwiiaircraftperformance.com/org/p-38/p-38_files/P-38G-1_42-12687_FS-M-19-1538-A.pdf",
+  "sha256": "9e192df3f0b12e2218cdc35235e1f6210ec7c1fb136d0219e878140e9d15b9a0",
+  "specimen": "P-38G-1 42-12687",
+  "engineRpm": 3000,
+  "takeoffWeightLb": 13900,
+  "levelFields": [
+    "altFt",
+    "tasMph",
+    "bhpPerEngine",
+    "estimatedWeightLb",
+    "mapInHg",
+    "role"
+  ],
+  "level": [
+    [
+      5000,
+      346.5,
+      1220,
+      13550,
+      44.7,
+      "drag-anchor"
+    ],
+    [
+      5000,
+      355.5,
+      1320,
+      13550,
+      48,
+      "separate-rating-check"
+    ],
+    [
+      14700,
+      378,
+      1220,
+      13525,
+      44.7,
+      "check"
+    ],
+    [
+      22600,
+      404,
+      1225,
+      13500,
+      44.7,
+      "check"
+    ],
+    [
+      24400,
+      403,
+      1175,
+      13450,
+      43.2,
+      "check"
+    ],
+    [
+      30000,
+      396,
+      980,
+      13400,
+      36,
+      "check"
+    ]
+  ],
+  "climbFields": [
+    "altFt",
+    "tasMph",
+    "bhpPerEngine",
+    "climbFpm",
+    "elapsedMin",
+    "mapInHg",
+    "role"
+  ],
+  "climb": [
+    [
+      0,
+      156,
+      1200,
+      3300,
+      0,
+      44.7,
+      "check"
+    ],
+    [
+      6000,
+      171,
+      1210,
+      3660,
+      1.71,
+      44.7,
+      "check"
+    ],
+    [
+      10000,
+      181,
+      1210,
+      3630,
+      2.81,
+      44.7,
+      "cooling-anchor"
+    ],
+    [
+      15000,
+      196,
+      1210,
+      3500,
+      4.21,
+      44.7,
+      "check"
+    ],
+    [
+      20000,
+      219,
+      1195,
+      3280,
+      5.68,
+      44.7,
+      "check"
+    ],
+    [
+      25000,
+      230,
+      1090,
+      2680,
+      7.36,
+      40.6,
+      "check"
+    ],
+    [
+      30000,
+      246,
+      985,
+      2100,
+      9.46,
+      36,
+      "check"
+    ],
+    [
+      35000,
+      264,
+      690,
+      1200,
+      12.48,
+      27.2,
+      "check"
+    ]
+  ],
+  "sources": [
+    [
+      "Allison specification 146-C, §E-18, V-1710-51/-55 propeller reduction 2.00:1.",
+      "https://www.enginehistory.org/Piston/Allison/AllisonSpecs/AllisonSpec146-C%2CV-1710-F10R%2C-F10L%28V-1710-51%2C-55%29.pdf"
+    ],
+    [
+      "T.O. 03-20-1 Table II, Curtiss 88996-18 / 89303-18 family diameter 11 ft 6 in.",
+      "https://pubs.st.aero/library/books/ocr/91107070-cb64-4353-8504-7792de2111c3.pdf"
+    ],
+    [
+      "P-38 family span 52 ft and area 327.5 ft².",
+      "https://ntrs.nasa.gov/api/citations/19740023386/downloads/19740023386_Update.pdf"
+    ]
+  ],
+  "qualification": "Gear up, flaps neutral, auto-rich. Coolant and oil shutters faired for level speed and wide open for climb. BHP per engine is derived from engine power curves, not measured torque. The climb table gives takeoff mass only. Above critical altitude carburetor temperature and turbo RPM limit available power. The report table does not specify atmospheric profiles for the replay; the solver uses ISA.",
+  "installation": {
+    "engines": [
+      "Allison V-1710-51",
+      "Allison V-1710-55"
+    ],
+    "propellerDesigns": [
+      "Curtiss 88996-18",
+      "Curtiss 89303-18"
+    ],
+    "bladeAngleDegAt42In": [
+      22.7,
+      57.7
+    ],
+    "wheelsUpCgPercentMac": 30.9,
+    "fuelGallons": 180,
+    "armament": "One 20 mm cannon (50 rounds) and two .50 caliber guns (400 rounds)",
+    "radioAntenna": "Three-wire"
+  },
+  "reportedLimits": {
+    "level14700Ft": "1320 bhp per engine prohibited by 57 C carburetor air temperature limit",
+    "level22600Ft": "Turbo critical altitude for 44.7 inHg, carburetor temperature limiting",
+    "level24400Ft": "Carburetor air temperature",
+    "level30000Ft": "Turbo RPM",
+    "climb20000And25000Ft": "Carburetor air temperature",
+    "climb30000Ft": "Carburetor air temperature and turbo RPM",
+    "climb35000Ft": "Turbo RPM"
+  },
+  "ceilings": {
+    "service": {
+      "altFt": 35000,
+      "tasMph": 280,
+      "climbFpm": 100,
+      "elapsedMin": 22.04
+    },
+    "absolute": {
+      "altFt": 39700,
+      "climbFpm": 0
+    },
+    "qualification": "Separate reported ceiling rows. Per-engine BHP unavailable, omitted from scoring."
+  }
+}

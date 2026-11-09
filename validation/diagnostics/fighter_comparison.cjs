@@ -11,6 +11,7 @@ const archival = require('./archival_comparisons.cjs');
 const climbBand = require('./climb_band.cjs');
 const operational = require('./operational_climb.cjs');
 const fw190a4 = require('./fw190a4.cjs');
+const p38g = require('./p38g.cjs');
 const intake = require('../../references/aircraft-intake.json');
 
 const root = path.resolve(__dirname, '../..');
@@ -147,7 +148,7 @@ function run() {
     scenarios: flightScenarios, differencesFromV39: baselineDifferences(flightScenarios),
     mustang: mustang(), gregP47: gregP47(),
     archival: archival.run(), climbBand: historicalClimb,
-    operationalClimb: operational.run(historicalClimb), intake, fw190a4: fw190a4.run(),
+    operationalClimb: operational.run(historicalClimb), intake, fw190a4: fw190a4.run(), p38g: p38g.run(),
     historical: {
       policy: 'Non-anchor speed and climb checkpoints from already exposed sources. Condition mismatches make residuals diagnostic. No historical ranking follows from the scenario rows.',
       summary: historical.run().summary,
