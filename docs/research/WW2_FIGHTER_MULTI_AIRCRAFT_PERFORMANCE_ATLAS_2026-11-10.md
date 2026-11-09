@@ -1,0 +1,61 @@
+# WWII fighter original-report atlas: multi-aircraft expansion (10 Nov 2026)
+
+**Status: research capture, not simulator calibration or release.** This package is deliberately broader than the four active benchmark fighters. It preserves a large set of contemporary measurements and a separate intake of original documents for future aircraft additions. No flight-model code, fitted coefficient, release score or historical acceptance gate changes here.
+
+## Delivered datasets and how to read them
+
+1. [`references/ww2_fighter_archival_reports_2026-11-10.json`](../../references/ww2_fighter_archival_reports_2026-11-10.json): **61 report/source records**, direct original-report PDF URLs when available, historical chart image URLs, verified catalogue links, serial numbers, test purpose, caveats and four source-access classes (**42 scanned-report links, 11 original-report transcriptions, seven catalogue/index-only entries, one archival graph**).
+2. [`references/ww2_fighter_archival_numeric_series_2026-11-10.json`](../../references/ww2_fighter_archival_numeric_series_2026-11-10.json): **44 historical numerical series** with **289 row conditions** tied by `report_id` to the source list, covering **28 distinct specimen/installation labels** and **27 source records**. Each series has its original quantity/units, source table or section, engine/gear/rating/radiator/mass notes where established, column definitions and compact row arrays. Some rows contain multiple related historical fields (for instance speed, climb and boost) and multiple series use one report. **289 rows do not mean 289 independent flights or 289 independent validation cases.**
+3. Existing [`references/archive_fighter_source_register.csv`](../../references/archive_fighter_source_register.csv) stays authoritative for the earlier 36 NASM, Bundesarchiv and NACA archival leads. This extension adds *report-level usable source URLs and numerical series*. No prior entry was deleted; overlapping sources remain cross-traceable.
+
+Each numerical series is **raw research transcription**. `mph_TAS` means the historical source explicitly labels the value as true airspeed; `mph_reported` does *not* certify IAS/CAS/EAS/TAS. `mph_IAS` in stall reports must not be used as CAS. Unknown specifications remain unknown. Numeric source rows have **not** been declared fitting data, independent holdouts or measured aerodynamic coefficients.
+
+## Coverage by aircraft family
+
+| Family | Specific specimens / reports | Numerically preserved now | Important restriction |
+|---|---|---|---|
+| **Spitfire LF/HF IX** | BS543 Merlin 66; BS551 Merlin 70 (A&AEE) | 83 altitude-condition rows, speed in separate supercharger gears + climb/boost/IAS/TAS | Level speeds weight-corrected to 95% takeoff mass, climb flown at takeoff mass. Summary boost normalisation differs from some original table entries. Two serials belong to **one** A&AEE comparative report. |
+| **Hawker Typhoon IB** | R7700 and R8762 | 48 rows: two speed ratings, climb and full altitude traces | R8762 airframe finish deteriorated; +7/+9 psi pairing is *same aircraft but different engine setting*. R7700 had different mass/rating. |
+| **Bf 109 G** | Rechlin G-1 card, G-1 WNr14026 engine comparison, G-2 production surfaces | 19 rows: 0–12 km tabulated card, 601E/605A test and 4-vs-4 surface averages | Keep German km/h, m/s and ata; card points are not 13 independent flight sorties. G-2 surface result compares eight different examples. |
+| **Fw 190 A-5 and experimental subtypes** | Standard A-5 chart; /1286, /1083 U8, /812 U9, V-45 original Flugberichte | Four A-5 graph-summary rows; original PDFs indexed for deeper extraction | 1.42 ata level speed and 1.32 ata climb belong to *different ratings*; V-45 is not an A-5 production reference. |
+| **Mustang Allison** | XP-51 41-38; P-51A-1 43-6007 | 27 rows: original AAF speed/climb/prop/weight tables | XP-51 covered vs open gun ports differ by drag; P-51A BHP and mass vary by speed point. |
+| **Mustang Merlin** | P-51B-5 43-6883; P-51B-15 43-24777; NACA 43-12105 drag polars | 18 tabulated level/climb summary rows plus NASA original-source leads | Do not conflate V-1650-3 vs V-1650-7, 67 vs 75 inHg, installed racks, 9680 vs 9335 lb, or flight vs NACA drag section. |
+| **P-40F** | 41-13635 matched empty-belly-braces trials; 41-13601 separate performance test; 41-13635 separate prop trials | Nine rows including seven **paired** speed measurements at identical height/rpm/BHP | Only the brace state changes within the seven matched pairs. These do not establish P-38/P-51 or generalized drag increments. |
+| **F4U-1 / Corsair / F3A** | BuAer02155, 17930, 50030; British JT259; Brewster 04691; separate postwar F4U-4 NACA report | 47 rows, multiple power/gear/weight cases | Three F4U-1s are separate airframes. JT259 reduced-RPM experiment used JT257 and is *not* entered as JT259. BuAer02155 neutral-blower 14,400-ft text inconsistent with its climb summary and omitted. F3A 86.5mph stall-row configuration ambiguous. |
+| **F6F / Hellcat** | FN322, FN360, BuAer40164, 42633, 58310; NACA BuAer04776 stall | 26 rows across corrected-weight British and US Navy series | F6F-3 and -5, full/overload weights, mixture ratings and power-on/off stall speeds not interchangeable; NACA 04776 is separate. |
+| **F4F-3** | NACA ACR-239 aileron report and WR-L-247 stall/fairings | Three helix-angle conditions; follow-up lead for fairing/stall tests | Roll `pb/2V` in radians is **not** directly degrees/second. |
+| **Ki-84-I** | Captured T-2 serial302, original US interim and TSFTE reports, TAIC card | Three measured stall IAS values at ~8,000–8,500ft, 7,900lb | Original explicitly states that **no performance climb was attempted**. TAIC figures should not be counted as measured climbs from this aircraft. |
+| **P-38, P-39, P-47, P-63; Japanese A6M/Ki/J2M/N1K** | Original USAAF/NACA PDFs and captured Japanese TAIC cards | Two distinct P-47D **sectional** drag coefficients; many linked scans awaiting quantitative extraction | NACA wing *section* drag is not whole-airplane drag. Japanese intelligence sheets may be estimates rather than captured-flight tests. |
+
+**Important:** Counts are row counts, not precision or validity scores. Long Spitfire/Typhoon altitude tables contribute a large share. Broad source coverage is already useful; broad *equally strong* validation coverage is not yet achieved.
+
+## Evidence sources and why the two archives still matter
+
+The crosslinked capture includes actual original scans indexed by [NASA NTRS](https://ntrs.nasa.gov/), USAAF/US Navy and RAF historical scans catalogued at [WWII Aircraft Performance](https://www.wwiiaircraftperformance.org/), and several German original `Flugbericht` scans. The latter hosting site is a curator/mirror: the **original document** is primary evidence, the website's searchable transcription is a secondary rendition of that primary document and has possible OCR/table transcription errors.
+
+Institutional archival work is also retained, separately from directly inspectable reports:
+
+- **Smithsonian NASM**: [captured German and Japanese air technical records](https://airandspace.si.edu/archives/archival-collections/captured-german-japanese-air-technical-documents) and [NASM.XXXX.0428](https://sova.si.edu/record/nasm.xxxx.0428); exact Bf 109 F and Ki-84 leads in prior `AR-002`, `AR-020`, plus this atlas `R58`. The [digitized P-47B pilot handbook](https://www.si.edu/media/NASM/NASM-Manual-000027958.pdf) is `AR-004/R60`. The [Curtiss-Wright collection finding aid](https://sirismm.si.edu/EADpdfs/NASM.XXXX.0067.pdf), `AR-026/27`, preserves the P-40 report provenance and a **catalogue error**: the document listed as P-40E under Box84/Folder19 actually identifies P-40F **41-13601** in its original scan. These are catalogue/handbook sources unless the exact flight table is inspected.
+- **Bundesarchiv**: Fw 190 original multi-variant operating instructions [RL 3/7781](https://www.deutsche-digitale-bibliothek.de/item/LZ2IYLFKLOZPPHSL2DUHLEH4NILSDFYQ) (`AR-033/R59`), plus `AR-030` Bf 109 F-4 leaf and `AR-031/32` Fw 190 A family manuals. These determine installation/ratings but should **not** be passed off as measured drag or flight tests.
+- **NACA/NASA**: P-51B drag polars `R01/R02`; P-47D wing-section aerodynamic samples `R08/R09`; P-63A `R26`; F6F-3 stall `R23`; F4F-3 roll `R24`; and 13-fighter **composite**, not 13 independent sorties, [Report 868](https://ntrs.nasa.gov/api/citations/19930090943/downloads/19930090943.pdf) (`AR-036/R57`).
+
+## Cross-source checks and explicitly preserved pitfalls
+
+1. **Typhoon R7700** original Table II records **394.5 mph at 20,200ft** while one summary rounds the maximum to **394 mph**. The table figure, its exact units and boost are preserved; no covert rounding to make summaries agree.
+2. **Spitfire BS551** original Table VI is **331 mph TAS at sea level / +18.5 psi**, whereas the report summary corrected to **+18.0 psi** gives **329 mph**. The numerical series follows the *table* and labels actual boost, not the rounded/renormalized summary.
+3. **Mustang P-51B-15** source May 1944 reports differ in loading and rack conditions. The rows here use the May 15 **9,680-lb** set; the May 20 **9,335-lb** report is a separate validation problem. A 444mph rack-free datum cannot be compared against the 431mph rack-equipped datum without that installation difference.
+4. **P-40F** seven pairs at 18,100ft show an empty-sway-brace penalty of **6.0–8.5 mph TAS** for one aircraft, dependent on BHP/rpm. Evidence originates in the already inspected source `AR-028` and is now in a reusable machine-readable series `S43`.
+5. **F4U-1 BuAer02155** the historical transcript appears internally inconsistent about neutral-blower speed-test altitude (14,400ft versus climb-critical altitude 700ft). That suspect speed row is deliberately not imported. **F3A-1 04691** the last 86.5mph minimum-speed row has contradictory configuration labels; its configuration is saved as `ambiguous`, not silently repaired.
+6. **Ki-84** captured test 102mph IAS clean/power-off at 8,000ft and 90mph IAS landing/power-off at 8,500ft, versus 79mph IAS landing/power-on at 8,000ft, are not a common CAS stall comparison; engine and flap differences remain visible.
+7. **P-47D** original NACA reports' sectional `Cd,min` **0.0062** (smooth wing) and **0.0097** (production/camouflage) involve different tested sections and conditions. They are neither aircraft whole-airframe Cd nor a controlled identical-aircraft before/after difference.
+
+## Measurement status and next large research step
+
+This expands the *number of referenced aircraft families* substantially and preserves hundreds of numerical conditions in a reproducible low-storage format (JSON plus report-page URLs, no large scanned PDFs committed). It does **not** prove the curves can be pasted wholesale into the simulator. Before simulation acceptance, the next effort should:
+
+1. Visually cross-check original PDF **pages/tables** for the heavily transcribed Spitfire, Typhoon and Corsair numeric rows; resolve ambiguous F4U and F3A values. Link scanned page/figure index or stable screenshot when available.
+2. Read and digitize the **14 linked Japanese aircraft scan records** (including three overlapping Ki-84 records) and related NACA/USAAF reports. For each, first classify actual flight-test observation versus intelligence/manufacturer estimate; confirm ASI correction and weight. This is the largest opportunity to turn catalogue breadth into measured new fighter curves.
+3. Extract full **P-38G/P-38J, P-47D, Fw 190 A-5 and P-39/P-63** speed and climb altitude tables from already linked original scans, and look for matched Bf 109 F-4 primary documents at NASM/Bundesarchiv; prioritize relevant performance evidence, not further catalogue-only entries.
+4. Add *normalised sidecar fields* with conversions and uncertainty **as derived metadata**, leaving historical raw units and exact source reports intact; reserve independent conditions before any fit.
+
+No additional GitHub binaries, copied copyrighted document bodies or speculative/estimated historical observations were stored. Original report PDFs and charts remain linked at their host archives. The data license/reuse terms of each hosting archive still apply.
