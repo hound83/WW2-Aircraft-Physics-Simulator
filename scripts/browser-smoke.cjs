@@ -37,6 +37,17 @@ async function run(){
   const comparisonReport=require('../validation/current/fighter-comparison.json');
   const embeddedComparison=await evaluate('JSON.parse(document.getElementById("fighter-comparison-data").textContent)');
   assert.deepEqual(embeddedComparison,comparisonReport);
+  const fwTable=()=>evaluate('document.getElementById("comparison-fw-flight").textContent');
+  assert.ok((await fwTable()).includes('Fw 190 A-4'));
+  await select('comparison-fw-altitude','6000');
+  assert.ok((await fwTable()).includes('633.2'));
+  await select('comparison-fw-eas','225');
+  assert.ok((await fwTable()).includes('225 mph EAS'));
+  assert.ok((await fwTable()).includes('633.2'));
+  assert.equal(await evaluate('document.querySelectorAll("#comparison-fw-speed tbody tr").length'),10);
+  await select('comparison-fw-eas','175');
+  await select('comparison-fw-altitude','0');
+  checks.push('Fw 190 is selectable by altitude and EAS with reserved evidence and separate level speed');
   const band=await evaluate(`(()=>({
     summary:document.getElementById("comparison-climb-summary").textContent,
     metrics:document.getElementById("comparison-climb-band").textContent,

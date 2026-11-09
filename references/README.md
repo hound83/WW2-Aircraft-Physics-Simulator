@@ -1,5 +1,7 @@
 # Research and imported evidence
 
+The [Fw 190/783 graph extraction](fw190a4-783.json) retains digitized speed, climb and boost, their roles and reading tolerances, and the engine and propeller references.
+
 The [operational climb ledger](operational-climb.json) and [aircraft intake ledger](aircraft-intake.json) capture rating limits, modelling assumptions and original Fw 190 candidate chart links.
 
 The [climb band source ledger](climb-band-evidence.json) indexes the published times and alternate trials used in the [20,000–30,000 ft comparison](../docs/CLIMB_BAND_COMPARISON.md). It reuses the existing P-47B scans and BS.543 transcript.

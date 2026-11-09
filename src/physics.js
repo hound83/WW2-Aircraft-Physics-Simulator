@@ -83,6 +83,25 @@ function inletPressureAtSpeed(altFt,tasMph,recovery=1){
  const pitot=at.p*Math.pow(1+.2*mach*mach,3.5);
  return {pressurePa:at.p+recovery*(pitot-at.p),staticPa:at.p,pitotPa:pitot,mach,recovery};
 }
+function ratedInletPower(ac, altFt, tasMph, rating, gear, mode) {
+ const curve=ac.ratedInlet?.[rating];
+ if(!curve||!['rated-inlet','rated-static'].includes(mode))return null;
+ const {gears,manifoldAta,recovery,engineRpm,source}=curve;
+ const branch=gears.find((row,i)=>(gear==='auto'||gear===row.gear)&&altFt>=row.minFt&&
+   (altFt<row.maxFt||i===gears.length-1&&altFt===row.maxFt));
+ if(!branch)return null;
+ const {bhp,staticCriticalFt,criticalFt,criticalTasMph}=branch;
+ const reference=mode==='rated-static'?isa(staticCriticalFt).p:
+   inletPressureAtSpeed(criticalFt,criticalTasMph,recovery)?.pressurePa;
+ const pressure=mode==='rated-static'?isa(altFt).p:inletPressureAtSpeed(altFt,tasMph,recovery)?.pressurePa;
+ const exponent=mode==='rated-inlet'?curve.chargeExponent??1:1;
+ if(!(reference>0&&pressure>0&&bhp>0&&engineRpm>0&&manifoldAta>0&&exponent>=2/3&&exponent<=1))return null;
+ const ratio=Math.min(1,pressure/reference);
+ return {altFt, rating, gear:branch.gear, bhp:bhp*ratio**exponent, engineRpm, estimatedManifoldAta:manifoldAta*ratio,
+   powerCondition:mode==='rated-inlet'?'Flight critical point and speed-dependent inlet pressure':'Static engine rating control',
+   notes:source};
+}
+
 function ramManifoldAtSpeed(ac,altFt,tasMph,rating,gear,options={}){
  const rated=rating||ac.defaultRating,selectedGear=gear||ac.defaultGear;
  const point=ac.inletRam?.ratings?.[rated]?.[selectedGear];
@@ -347,7 +366,7 @@ function transferredInletPower(entry,alt,tas,rating,gear,opts){
 }
 
 function installedDelta(entry,opts,alt,tas,shaft){
- if(opts.engineCondition||opts.engineModel||opts.coolingState||opts.flightCooling)return 0;
+ if(opts.engineCondition||(opts.engineModel&&!['rated-inlet','rated-static'].includes(opts.engineModel))||opts.coolingState||opts.flightCooling)return 0;
  const curve=entry?.fastFlight?.[shaft.gear];
  if(!curve||!curve.ratings.includes(shaft.rating))return 0;
  const at=Math.min(curve.maxAltFt,Math.max(curve.minAltFt,alt));
@@ -382,7 +401,7 @@ function evaluated(ac,alt,tasMph,opts={}){if(opts.profile==='P'&&!opts.polar)opt
   const viable=results.filter(r=>Number.isFinite(r.power?.excessHp));
   return viable.length?viable.reduce((best,r)=>r.power.excessHp>best.power.excessHp?r:best):(results.find(r=>r.status!=='no-engine-source')??results[0]);
  }
- const shaft=opts.engineCondition?shaftPowerAtMeasuredBoost(ac,alt,rating,gear,opts.engineCondition,{chargeExponent:opts.chargeExponent}):opts.engineModel==='ram-critical'?shaftPowerAtRamSpeed(ac,alt,tasMph,rating,gear,{recovery:opts.ramRecovery??1}):opts.engineModel==='inlet-transfer'?transferredInletPower(entry,alt,tasMph,rating,gear,opts):opts.engineModel===undefined?(shaftPower(ac,alt,rating,gear)??supplementalPower(entry,alt,rating,gear)):null;
+ const shaft=['rated-inlet','rated-static'].includes(opts.engineModel)?ratedInletPower(ac,alt,tasMph,rating,gear,opts.engineModel):opts.engineCondition?shaftPowerAtMeasuredBoost(ac,alt,rating,gear,opts.engineCondition,{chargeExponent:opts.chargeExponent}):opts.engineModel==='ram-critical'?shaftPowerAtRamSpeed(ac,alt,tasMph,rating,gear,{recovery:opts.ramRecovery??1}):opts.engineModel==='inlet-transfer'?transferredInletPower(entry,alt,tasMph,rating,gear,opts):opts.engineModel===undefined?(shaftPower(ac,alt,rating,gear)??supplementalPower(entry,alt,rating,gear)):null;
  if(!shaft)return {status:'no-engine-source',aircraft:ac.name,altFt:alt,reason:opts.engineCondition?'No sourced same-condition boost data for power correction':opts.engineModel==='inlet-transfer'?'DB 601 E transfer requires profile P and combat power at or below 23,000 ft':'No source-bounded engine power at selected altitude/rating/gear'};
  const cdData=polar?{cd0:polar.cd0,valid:true,origin:polar.source}:cd0FromAnchor(ac,opts.refit?profile:'C',opts.refit?e:.78);
  if(!cdData||!cdData.valid)return {status:'no-credible-drag-anchor'};
@@ -650,5 +669,5 @@ function matchedPowerClimb(ac,altFt,ratingA,ratingB,opts={}){
    deltaClimbFpm:b.climbFpm-a.climbFpm,deltaShaftHp:high.bhp-low.bhp,
    provenance:opts.profile==='P'?'v2.8 joint engineering fit; 67-inHg fitted, 75-inHg out of fit':'calculated from frozen speed-calibrated polar; NO climb-rate calibration'};
 }
-return Object.freeze({isa,airspeeds,tasFrom,trueFromCAS,casFromTrue,casFromIAS,resolveAirspeed,resolveStallEvidence,stallSensitivity,shaftPower,shaftPowerAtMeasuredBoost,inletPressureAtSpeed,ramManifoldAtSpeed,referenceLevelTas,shaftPowerAtRamSpeed,nacaLowSpeedPropChart,nacaMachResearch,propEta,dragBreakdown,cd0FromAnchor,workingOptions,evaluated,maxSpeed,greg109At,inferredGregF4,inferredGregP47,climbConditionEngine,climbPrediction,equivalentClimbDrag,gregP47PowerPoint,gregP47MaxSpeed,bestClimb,sourceChartClimb,matchedPowerClimb});
+return Object.freeze({isa,airspeeds,tasFrom,trueFromCAS,casFromTrue,casFromIAS,resolveAirspeed,resolveStallEvidence,stallSensitivity,shaftPower,shaftPowerAtMeasuredBoost,ratedInletPower,inletPressureAtSpeed,ramManifoldAtSpeed,referenceLevelTas,shaftPowerAtRamSpeed,nacaLowSpeedPropChart,nacaMachResearch,propEta,dragBreakdown,cd0FromAnchor,workingOptions,evaluated,maxSpeed,greg109At,inferredGregF4,inferredGregP47,climbConditionEngine,climbPrediction,equivalentClimbDrag,gregP47PowerPoint,gregP47MaxSpeed,bestClimb,sourceChartClimb,matchedPowerClimb});
 });

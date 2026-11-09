@@ -2,7 +2,7 @@
 
 A separate research repository for the shared WWII flight-performance engine. The Atlas website in [hound83/ww2-airwar](https://github.com/hound83/ww2-airwar) is outside this repository's scope.
 
-**Current research version v3.10.0.** [Operational climb and aircraft intake](docs/V310_OPERATIONAL_CLIMB.md) add matched rating policies and prepare the Fw 190 A-4. In v3.9, an archival DB 601 E inlet transfer adds a conditional combat-power option for the F-4. Separate flight reports check the P-47B, Spitfire and Mustang models without refitting them. See [external checks](docs/INDEPENDENT_FLIGHT_CHECKS.md) and the [four-aircraft scorecard](docs/FLIGHT_SCORECARD.md).
+**Current research version v3.11.0.** [Fw 190 A-4 and the new altitude-power model](docs/V311_FW190A4.md) are available in the fifth-aircraft comparison. In v3.10, [Operational climb and aircraft intake](docs/V310_OPERATIONAL_CLIMB.md) add matched rating policies and prepare the Fw 190 A-4. In v3.9, an archival DB 601 E inlet transfer adds a conditional combat-power option for the F-4. Separate flight reports check the P-47B, Spitfire and Mustang models without refitting them. See [external checks](docs/INDEPENDENT_FLIGHT_CHECKS.md) and the [four-aircraft scorecard](docs/FLIGHT_SCORECARD.md).
 
 Initial benchmarks: **Bf 109 F-4, P-47B, P-51B-15 and Spitfire LF Mk IX**. Greg's worksheets and the controlled P-47 2,000/2,600 hp comparison are retained. The 2,600 hp scenario is not a verified P-47B engine rating.
 

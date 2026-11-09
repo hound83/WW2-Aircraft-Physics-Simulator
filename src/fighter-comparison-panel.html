@@ -24,6 +24,23 @@
     <div id="comparison-power" class="comparison-scroll" tabindex="0" role="region" aria-label="Four-fighter engine settings and power budget"></div>
   </details>
 
+  <h3 id="fw190-comparison">Fw 190 A-4 W.Nr. 783 vs Spitfire LF Mk IX</h3>
+  <p>Combat ratings at report reference weights. Fixed-speed climb and turn use the selected EAS in reference configuration. Turns use provisional lift inputs. Best-climb historical checks below use open cooling and model-selected speed.</p>
+  <div class="comparison-controls">
+    <label for="comparison-fw-altitude">Altitude for Fw 190 comparison</label>
+    <select id="comparison-fw-altitude"></select>
+    <label for="comparison-fw-eas">Comparison speed</label>
+    <select id="comparison-fw-eas"><option value="150">150 mph EAS</option><option value="175" selected>175 mph EAS</option><option value="225">225 mph EAS</option></select>
+  </div>
+  <div id="comparison-fw-flight" class="comparison-scroll" tabindex="0" role="region" aria-label="Fw 190 and Spitfire flight comparison"></div>
+  <p id="comparison-fw-metrics"></p>
+  <details>
+    <summary>Inspect reserved results and calibration anchors</summary>
+    <div id="comparison-fw-speed" class="comparison-scroll" tabindex="0" role="region" aria-label="Fw 190 level-speed checks"></div>
+    <div id="comparison-fw-climb" class="comparison-scroll" tabindex="0" role="region" aria-label="Fw 190 climb checks"></div>
+  </details>
+  <p><a id="comparison-fw-report">v3.11 model, original charts and limitations</a></p>
+
   <h3>Operational climb comparison | 20,000-30,000 ft</h3>
   <p>Same remaining short-rating allowance for both aircraft at band entry. Each follows its own documented rating limits, weight and climb schedule. Results are engineering estimates.</p>
   <div class="comparison-controls">
