@@ -1,0 +1,203 @@
+{
+  "source": "Focke-Wulf Flugbericht 190/783 Nr. 1, Graphs 1 and 2, long external intake, BMW 801 D-2/20208, combat 2400 rpm, 3870 kg takeoff",
+  "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-783-nr1.html",
+  "speed": {
+    "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr1-level-speed.jpg",
+    "sha256": "fa37dfe18a08c5df12da8d522acc35c4476ac72a7ae4ae9b6b453c6deeb2d1c0",
+    "readingToleranceKmh": 4,
+    "fields": [
+      "m",
+      "km/h TAS",
+      "role"
+    ],
+    "rows": [
+      [
+        0,
+        523,
+        "drag-anchor"
+      ],
+      [
+        1000,
+        549,
+        "check"
+      ],
+      [
+        2000,
+        575,
+        "low-gear inlet anchor"
+      ],
+      [
+        4000,
+        583,
+        "check"
+      ],
+      [
+        5000,
+        606,
+        "check"
+      ],
+      [
+        6000,
+        631,
+        "check"
+      ],
+      [
+        6950,
+        652,
+        "high-gear inlet anchor"
+      ],
+      [
+        8000,
+        647,
+        "check"
+      ],
+      [
+        9000,
+        636,
+        "check"
+      ],
+      [
+        10000,
+        618,
+        "check"
+      ]
+    ]
+  },
+  "climb": {
+    "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr1-climb.jpg",
+    "sha256": "6b9510dbba2ed1d46bb5e942fd10869c8ec4921610aa1b96dbf96199604ced07",
+    "readingToleranceMps": 0.35,
+    "fields": [
+      "m",
+      "open m/s",
+      "closed m/s or null",
+      "role"
+    ],
+    "rows": [
+      [
+        0,
+        14.55,
+        null,
+        "check"
+      ],
+      [
+        2000,
+        13.7,
+        null,
+        "check"
+      ],
+      [
+        4000,
+        12.1,
+        null,
+        "check"
+      ],
+      [
+        5000,
+        12.1,
+        13.15,
+        "cooling-anchor"
+      ],
+      [
+        6000,
+        12.05,
+        null,
+        "check"
+      ],
+      [
+        7000,
+        9.95,
+        null,
+        "check"
+      ],
+      [
+        8000,
+        7.3,
+        null,
+        "check"
+      ],
+      [
+        9000,
+        4.8,
+        null,
+        "check"
+      ],
+      [
+        10000,
+        2.15,
+        null,
+        "check"
+      ]
+    ]
+  },
+  "boost": {
+    "readingToleranceAta": 0.025,
+    "fields": [
+      "m",
+      "level ata",
+      "climb ata"
+    ],
+    "rows": [
+      [
+        4000,
+        1.32,
+        1.32
+      ],
+      [
+        5000,
+        1.32,
+        1.32
+      ],
+      [
+        6000,
+        1.32,
+        1.32
+      ],
+      [
+        8000,
+        1.16,
+        1.045
+      ],
+      [
+        9000,
+        1.01,
+        0.93
+      ],
+      [
+        10000,
+        0.91,
+        0.8
+      ]
+    ]
+  },
+  "references": [
+    [
+      "Static rated power and altitude, BMW 801 D in Fw 190 A-5/A-6 manual, p. 11. Engine-type transfer; installed shaft power not measured.",
+      "https://spruemaster.com/wp-content/gallery/manual/Focke-Wulf-Fw190_A5-A6_Pilot-manual.pdf"
+    ],
+    [
+      "Combat limit 1.32 ata, 2400 rpm and caveat on historical cooling restrictions, BMW 801 C/D engine handbook, Part 1.",
+      "https://www.airwar.ru/other/manuals/%5Baviation%5D%20-%20%5Bmanuals%5D%20-%20%5Bengine%5D%20-%20BMW%20801C%20and%20D%20engine%20Part%201.pdf"
+    ],
+    [
+      "Alternate intake on same airframe reaches 645 km/h at 6000 m. Separate configuration, not pooled.",
+      "https://www.wwiiaircraftperformance.org/fw190/fw190-783-nr2.html"
+    ],
+    [
+      "Separate aircraft 665/3 saw engine trouble and 35–40 km/h open-flap speed loss at low altitude. Not a direct validation point.",
+      "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-665-nr3.html"
+    ],
+    [
+      "A-4 production VDM 9-12067 A, three blades, 3.3 m. Specimen-specific propeller efficiency unavailable.",
+      "https://zbiam.pl/artykuly/focke-wulf-fw-190/"
+    ],
+    [
+      "BMW 801D gearing 0.54 propeller rev per engine rev.",
+      "https://aviationarchaeology.gr/wp-content/uploads/2015/01/P09-VDM-Electric.pdf"
+    ],
+    [
+      "A-series wing geometry 18.30 m² and 10.506 m.",
+      "https://www.cyberaerobreton.fr/famille/fw190.pdf"
+    ]
+  ]
+}

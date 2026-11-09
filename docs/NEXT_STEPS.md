@@ -1,8 +1,9 @@
 # Next steps
 
-## v3.11: one aircraft and one measured optimization
+## v3.12: prepare the first twin-engine aircraft
 
-The [v3.10 research build](V310_OPERATIONAL_CLIMB.md) freezes the four-aircraft comparison and adds a reusable intake checklist. Prioritize Fw 190 A-4 W.Nr. 783 once its long-intake data and power inputs pass the [intake criteria](../references/aircraft-intake.json). Pair the addition with a measurable improvement to rating-specific power coverage, evaluated on reserved points and the four-aircraft baseline. If that specimen cannot be bounded, assess a source-ready P-47D variant. Plan P-38G and generic multi-engine support as a subsequent milestone.
+v3.11 adds Fw 190 A-4 W.Nr. 783 and tests the reusable speed-dependent power model. See [v3.11 results](V311_FW190A4.md). For the next aircraft, audit the clean P-38G Wright Field points and establish a per-engine power and propeller contract before modelling the twin-engine aircraft.
+
 
 ## Climb comparison follow-up
 

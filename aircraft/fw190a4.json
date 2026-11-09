@@ -1,0 +1,78 @@
+{
+  "name": "Fw 190 A-4 W.Nr. 783",
+  "weightLb": 8531.889546554761,
+  "wingAreaM2": 18.3,
+  "spanM": 10.506,
+  "clMaxAssumed": 1.4,
+  "defaultRating": "combat",
+  "defaultGear": "auto",
+  "propGeometry": {
+    "diameterFt": 10.826771653543306,
+    "bladeCount": 3,
+    "reductionRatioEnginePerProp": 1.8518518518518516,
+    "engineRpmByRating": {
+      "combat": 2400
+    },
+    "momentumModel": {
+      "retainedPowerFraction": 0.9,
+      "machPenalty": 2,
+      "machOnset": 0.92,
+      "advanceLoss": 0.06
+    }
+  },
+  "workingModel": {
+    "e": 0.78
+  },
+  "calibration": {
+    "altFt": 0,
+    "tasMph": 324.97713354012564,
+    "rating": "combat",
+    "gear": "low"
+  },
+  "powerRatings": {
+    "combat": {
+      "gears": {
+        "low": [
+          {
+            "altFt": 0,
+            "bhp": 1499.2065073060417
+          }
+        ]
+      }
+    }
+  },
+  "ratedInlet": {
+    "combat": {
+      "engineRpm": 2400,
+      "manifoldAta": 1.32,
+      "recovery": 0.85,
+      "source": "BMW 801 D manual ratings and 783/1 long-intake flight critical points",
+      "gears": [
+        {
+          "gear": "low",
+          "minFt": 0,
+          "maxFt": 9842.51968503937,
+          "staticCriticalFt": 2296.587926509186,
+          "criticalFt": 6561.679790026246,
+          "criticalTasMph": 357.28843553646703,
+          "bhp": 1499.2065073060417
+        },
+        {
+          "gear": "high",
+          "minFt": 9842.51968503937,
+          "maxFt": 32808.39895013123,
+          "staticCriticalFt": 17388.451443569553,
+          "criticalFt": 22801.837270341206,
+          "criticalTasMph": 405.1340173387417,
+          "bhp": 1301.942493186826
+        }
+      ],
+      "chargeExponent": 1
+    }
+  },
+  "stallIdentity": {
+    "aircraftId": "fw190a4",
+    "variant": "Fw 190 A-4",
+    "specimen": "W.Nr. 783"
+  }
+}

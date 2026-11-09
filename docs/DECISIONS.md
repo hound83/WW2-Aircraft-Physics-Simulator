@@ -1,5 +1,9 @@
 # Current decisions
 
+## Fw 190 research admission
+
+Keep the frozen four-aircraft benchmark and add the Fw 190 A-4 W.Nr. 783 as a selectable fifth model. Enable the shared rated-inlet power method within its documented domain. Use the static-power comparison with the same drag configuration, hold graph checks out of the fit, and keep the residual and lift uncertainty visible. [v3.11 report](V311_FW190A4.md)
+
 ## Operational climb and expansion baseline
 
 Use matched remaining short-power allowance and type-specific documented ratings in the operational comparison. Keep engineering scenarios separate from historical replays and their uncertainty gates. Use the four-aircraft baseline and [intake criteria](../references/aircraft-intake.json) when adding a new type and a measurable optimization in each subsequent milestone. [v3.10 report](V310_OPERATIONAL_CLIMB.md)

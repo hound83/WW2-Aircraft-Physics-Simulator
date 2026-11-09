@@ -26,10 +26,9 @@
   "firstCandidate": {
     "variant": "Fw 190 A-4",
     "specimen": "W.Nr. 783",
-    "status": "Combat-rating source series located; intake pending",
+    "status": "Admitted as a bounded v3.11 research model",
     "blockers": [
-      "Digitize Graphs 1 and 2 with reading uncertainty for the long external intake.",
-      "Source BMW 801 D-2 shaft power and propeller inputs for this installation and verify weight, external stores and rating details before scoring."
+      "Independent installed torque, propeller and lift evidence remain open. See the v3.11 scorecard for reserved-check errors."
     ],
     "sources": [
       {
@@ -48,7 +47,7 @@
         "reference": "W.Nr. 783 Nr. 1 Graph 1 and Graph 2",
         "speedUrl": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr1-level-speed.jpg",
         "climbUrl": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr1-climb.jpg",
-        "role": "original charts, not digitized",
+        "role": "original charts, digitized in references/fw190a4-783.json",
         "scanUrl": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr1.pdf"
       },
       {

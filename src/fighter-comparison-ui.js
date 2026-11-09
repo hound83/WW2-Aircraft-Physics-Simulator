@@ -68,6 +68,34 @@
     }));
   }
 
+  function renderFw190() {
+    const fw = report.fw190a4;
+    const selector = byId('comparison-fw-altitude');
+    const speedSelector = byId('comparison-fw-eas');
+    for (const point of fw.comparison) selector.add(new Option(fmt(point.altM) + ' m', point.altM));
+    function render() {
+      const point = fw.comparison.find(row => row.altM === Number(selector.value));
+      const state = point.speeds.find(row => row.easMph === Number(speedSelector.value));
+      table('comparison-fw-flight', ['Aircraft', 'Weight lb', 'Level speed km/h TAS', 'Climb ft/min at ' + state.easMph + ' mph EAS',
+        'Shaft hp', 'Gear', 'Estimated sustained g'], state.aircraft.map(row =>
+        [row.name, fmt(row.weightLb), fmt(row.speedKmh, 1), fmt(row.fixedSpeedClimbFpm), fmt(row.shaftHp),
+          row.gear ?? '-', fmt(row.sustainedG, 2)]), true);
+    }
+    selector.addEventListener('change', render);
+    speedSelector.addEventListener('change', render);
+    render();
+    const {speedKmh, climbFpm} = fw.metrics;
+    byId('comparison-fw-metrics').textContent =
+      'Mean absolute error on reserved points, static to speed-dependent power: ' +
+      fmt(speedKmh.static, 1) + ' to ' + fmt(speedKmh.installed, 1) + ' km/h level speed; ' +
+      fmt(climbFpm.static) + ' to ' + fmt(climbFpm.installed) + ' ft/min open-cooling climb. ' + fw.validation;
+    table('comparison-fw-speed', ['Altitude m', 'Chart km/h', 'Static power km/h', 'Installed power km/h', 'Evidence role'],
+      fw.speed.map(row => [fmt(row.altM), fmt(row.observed, 1), fmt(row.static, 1), fmt(row.installed, 1), row.role]), true);
+    table('comparison-fw-climb', ['Altitude m', 'Chart m/s', 'Static power m/s', 'Installed power m/s', 'Evidence role'],
+      fw.climbs.map(row => [fmt(row.altM), fmt(row.observed, 2), fmt(row.static, 2), fmt(row.installed, 2), row.role]), true);
+    byId('comparison-fw-report').href = repo + fw.report;
+  }
+
   function renderOperationalClimb() {
     const {scenarios, policy, donorCheck} = report.operationalClimb;
     const input = byId('comparison-climb-budget');
@@ -95,7 +123,7 @@
     ].join(' ');
     byId('comparison-operational-donor').textContent = 'Separate P-47B donor check: ' +
       fmt(donorCheck.maeFpm, 1) + ' ft/min MAE across ' + donorCheck.rows.length + ' 41-5942 points at reported TAS and torque BHP.';
-    byId('comparison-intake').textContent = 'First expansion candidate: ' + report.intake.firstCandidate.variant +
+    byId('comparison-intake').textContent = 'Fifth aircraft: ' + report.intake.firstCandidate.variant +
       '. ' + report.intake.firstCandidate.status + '. ' + report.intake.firstCandidate.blockers.join(' ');
     byId('comparison-operational-report').href = repo + 'docs/V310_OPERATIONAL_CLIMB.md';
   }
@@ -271,5 +299,6 @@
   renderArchival();
   renderClimbBand();
   renderOperationalClimb();
+  renderFw190();
   renderGreg();
 })();
