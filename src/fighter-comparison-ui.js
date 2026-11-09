@@ -68,6 +68,38 @@
     }));
   }
 
+  function renderOperationalClimb() {
+    const {scenarios, policy, donorCheck} = report.operationalClimb;
+    const input = byId('comparison-climb-budget');
+    for (const scenario of scenarios) {
+      const seconds = scenario.budgetSeconds;
+      input.add(new Option(seconds === 0 ? 'Sustained only' : seconds / 60 + ' min short power', seconds));
+    }
+    function render() {
+      const scenario = scenarios.find(row => row.budgetSeconds === Number(input.value));
+      const [low, high] = scenario.sensitivity.leadSeconds;
+      byId('comparison-operational-summary').textContent =
+        'Spitfire time advantage: ' + fmt(scenario.leadSeconds, 1) + ' s. Spitfire power-assumption sensitivity: ' +
+        fmt(low, 1) + ' to ' + fmt(high, 1) + ' s. There is no validated historical error bound. 3:1 and 5:1 remain unresolved.';
+      table('comparison-operational-times', ['Aircraft', 'Band time (s)', 'Short power used (s)', 'Switch to sustained power'],
+        [['Spitfire BS.543', scenario.spitfire], ['P-47B 41-5902', scenario.thunderbolt]].map(([name, row]) =>
+          [name, fmt(row.seconds, 1), fmt(row.shortSeconds, 1),
+            row.switchAltFt === null ? 'No switch in band' : fmt(row.switchAltFt) + ' ft']), true);
+      table('comparison-operational-rates', ['Altitude', 'Spitfire (ft/min)', 'P-47B (ft/min)', 'Spitfire lead (ft/min)'],
+        scenario.endpoints.map(row => [fmt(row.altFt) + ' ft', fmt(row.spitfireFpm), fmt(row.thunderboltFpm), signed(row.leadFpm, 0)]));
+    }
+    input.addEventListener('change', render);
+    render();
+    byId('comparison-operational-assumptions').textContent = [
+      policy.startCondition, policy.spitfire.qualification, policy.thunderbolt.qualification, policy.method
+    ].join(' ');
+    byId('comparison-operational-donor').textContent = 'Separate P-47B donor check: ' +
+      fmt(donorCheck.maeFpm, 1) + ' ft/min MAE across ' + donorCheck.rows.length + ' 41-5942 points at reported TAS and torque BHP.';
+    byId('comparison-intake').textContent = 'First expansion candidate: ' + report.intake.firstCandidate.variant +
+      '. ' + report.intake.firstCandidate.status + '. ' + report.intake.firstCandidate.blockers.join(' ');
+    byId('comparison-operational-report').href = repo + 'docs/V310_OPERATIONAL_CLIMB.md';
+  }
+
   function renderClimbBand() {
     const {bandFt, spitfire, thunderbolt, endpoints, time, scenarios, alternates, report: reportPath} = report.climbBand;
     const aircraft = [spitfire, thunderbolt];
@@ -238,5 +270,6 @@
   renderMustang();
   renderArchival();
   renderClimbBand();
+  renderOperationalClimb();
   renderGreg();
 })();

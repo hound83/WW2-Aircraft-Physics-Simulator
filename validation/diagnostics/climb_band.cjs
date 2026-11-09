@@ -49,7 +49,7 @@ function spitfireReplay() {
     const model = conditioned.evaluate(physics, ac, state, boostModel, {requireMatchedSpecimen: true});
     return {altFt: state.altFt, tasMph: state.tasMph, sourceFpm: state.observedFpm,
       modelFpm: model.predictedFpm, cleanControlFpm: model.rawFpm, engineRpm: 3000,
-      shaftHp: model.shaftHp, boostPsi: state.engineCondition.observedBoostPsi,
+      shaftHp: model.shaftHp, coolingCd0: model.configurationDeltaCd0, boostPsi: state.engineCondition.observedBoostPsi,
       fitRole: inFit('climb', state.aircraftId, state.index, boostModel.split) ? 'fit' : 'reserved engineering check'};
   });
   return replay(rows, source.spitfire);

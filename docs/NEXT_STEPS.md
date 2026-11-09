@@ -1,5 +1,9 @@
 # Next steps
 
+## v3.11: one aircraft and one measured optimization
+
+The [v3.10 research build](V310_OPERATIONAL_CLIMB.md) freezes the four-aircraft comparison and adds a reusable intake checklist. Prioritize Fw 190 A-4 W.Nr. 783 once its long-intake data and power inputs pass the [intake criteria](../references/aircraft-intake.json). Pair the addition with a measurable improvement to rating-specific power coverage, evaluated on reserved points and the four-aircraft baseline. If that specimen cannot be bounded, assess a source-ready P-47D variant. Plan P-38G and generic multi-engine support as a subsequent milestone.
+
 ## Climb comparison follow-up
 
 The [20,000–30,000 ft Spitfire and Thunderbolt comparison](CLIMB_BAND_COMPARISON.md) establishes the measured test-profile difference and a reproducible replay. Seek independent curves with comparable rating policy, mass and cooling to bound the differential error. Prioritise original BS.543 Table II and independent same-installation climbs at comparable settings.

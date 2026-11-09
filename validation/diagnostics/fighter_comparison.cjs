@@ -9,6 +9,8 @@ const flightEnvelope = require('../../calibration/flight-envelope.json');
 const historical = require('./flight_scorecard.cjs');
 const archival = require('./archival_comparisons.cjs');
 const climbBand = require('./climb_band.cjs');
+const operational = require('./operational_climb.cjs');
+const intake = require('../../references/aircraft-intake.json');
 
 const root = path.resolve(__dirname, '../..');
 const baseline = require('../baseline/v39-fighter-comparison.json');
@@ -136,13 +138,15 @@ function baselineDifferences(current) {
 
 function run() {
   const flightScenarios = scenarios();
+  const historicalClimb = climbBand.run();
   return {
     schema: 1, baselineCommit: baseline.commit, profile,
     scenario: 'ISA, reference configurations and model weights, nominal default ratings. IAS requires a matched instrument correction.',
     pairwise5to1: 'unresolved',
     scenarios: flightScenarios, differencesFromV39: baselineDifferences(flightScenarios),
     mustang: mustang(), gregP47: gregP47(),
-    archival: archival.run(), climbBand: climbBand.run(),
+    archival: archival.run(), climbBand: historicalClimb,
+    operationalClimb: operational.run(historicalClimb), intake,
     historical: {
       policy: 'Non-anchor speed and climb checkpoints from already exposed sources. Condition mismatches make residuals diagnostic. No historical ranking follows from the scenario rows.',
       summary: historical.run().summary,

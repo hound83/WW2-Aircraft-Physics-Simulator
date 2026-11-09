@@ -1,5 +1,7 @@
 # Research and imported evidence
 
+The [operational climb ledger](operational-climb.json) and [aircraft intake ledger](aircraft-intake.json) capture rating limits, modelling assumptions and original Fw 190 candidate chart links.
+
 The [climb band source ledger](climb-band-evidence.json) indexes the published times and alternate trials used in the [20,000–30,000 ft comparison](../docs/CLIMB_BAND_COMPARISON.md). It reuses the existing P-47B scans and BS.543 transcript.
 
 - `IMPORT_MANIFEST.json`: every original handover file, byte length, SHA256, storage decision and recovery information.

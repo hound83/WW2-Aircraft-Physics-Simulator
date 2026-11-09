@@ -48,6 +48,16 @@ async function run(){
   assert.ok(band.metrics.includes('+1,995 ft/min')&&band.metrics.includes('219.4 s'));
   assert.deepEqual([band.rates,band.alternatives,band.sources],[9,4,4]);
   checks.push('Climb band reports published durations, conditioned replay, alternatives and source links');
+  const operationalText=()=>evaluate('document.getElementById("comparison-operational-summary").textContent');
+  assert.ok((await operationalText()).includes('193.7 s'));
+  await select('comparison-climb-budget','120');
+  const switchTable=await evaluate('document.getElementById("comparison-operational-times").textContent');
+  assert.ok(switchTable.includes('26,248 ft')&&switchTable.includes('24,394 ft'));
+  await select('comparison-climb-budget','300');
+  assert.ok((await operationalText()).includes('106.4 s'));
+  await select('comparison-climb-budget','0');
+  assert.ok((await operationalText()).includes('193.7 s'));
+  checks.push('Operational climb budget switches both aircraft at their own altitudes and resets');
   const archival=await evaluate(`(()=>({
     rows:document.querySelectorAll("#comparison-archival tbody tr").length,
     linkedSources:document.querySelectorAll("#comparison-archival tbody a").length,
