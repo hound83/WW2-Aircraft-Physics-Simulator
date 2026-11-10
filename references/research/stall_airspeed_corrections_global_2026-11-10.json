@@ -1,0 +1,253 @@
+{
+  "schema": "ww2-fighter-evidence-pack/v1",
+  "pack_version": "1.0.0",
+  "compiled": "2026-11-10",
+  "scope": "Period airspeed correction audit for British, German and captured Japanese WW2 fighter stall observations; retains original speed basis and prohibits extrapolation.",
+  "ingestion_policy": {
+    "principle": "CAS* is provisional and permitted only when the actual measured IAS has an independently documented instrument calibration and installation/position correction (or a primary source's combined IAS-to-correct-indicated mapping) from a matched aircraft, pitot-static system, flap/gear configuration, valid speed domain and power/sideslip regime.",
+    "interpolation": "Only between original numerical points from a matched, monotonic, in-range calibration series. If corrections are specified as discrete intervals, honor interval boundaries separately; do not interpolate across a jump. No extrapolation below the first original speed or above the last.",
+    "instrument_position_separation": "If the original report gives water-column airspeed and position correction, apply the instrument correction first; do not add position correction directly to cockpit IAS. Use the source's final calibrated speed when provided.",
+    "speed_labels": "Keep original report's explicit IAS, indicated, calibrated and correct-indicated nomenclature. NACA 'correct indicated' is not an authority to silently relabel separately reported 'indicated' stall points without checking which instrument the plot/record used.",
+    "variant_guard": "No borrowed PEC from Spitfire VA to IX/XVI, Hurricane II Z2963 to another Hurricane, Bf109 E to F/G, Fw190 A3 to A4/D9, or A6M3 EB-201 to A6M2/A6M5 unless original equipment and installation are documented identical and cross-checked."
+  },
+  "sources": [
+    {
+      "id": "UK-SIX-46",
+      "aircraft": "Spitfire F/LF/HF IX; manual also XI/XVI",
+      "report": "UK Air Ministry AP1565J P&L Pilot Notes, 3rd ed, 1946",
+      "pdf": "https://zenoswarbirdvideos.com/Images/spit/SPIT9MANUAL.pdf",
+      "locators": ["printed page 32, paragraph 53 PEC; PDF page 20 (zero-based pageno19)", "printed page 24 paragraph 42 stall table"],
+      "verification": "Original PDF and high-resolution rendered page 20 inspected; 6 correction intervals verified"
+    },
+    {
+      "id": "UK-HI-PN",
+      "aircraft": "Hurricane I",
+      "report": "Air Ministry AP1564A Merlin II/III Pilot Notes",
+      "pdf": "https://www.t6harvard.com/wp-content/uploads/2020/01/Hurricane1-Merlin-III.pdf",
+      "locators": ["position error table, paragraph 29", "pilot's stall table, section 2 paragraph 13"],
+      "verification": "Original complete 37-page manual obtained, para29 PEC source previously identified; lowest calibration point 100 mph IAS"
+    },
+    {
+      "id": "UK-HII-PN",
+      "aircraft": "Hurricane II family",
+      "report": "Air Ministry AP1564B&D Hurricane II and IV Pilot Notes",
+      "pdf": "https://aviationarchaeology.gr/wp-content/uploads/2014/07/Hurricane.pdf",
+      "locators": ["section 2, paragraph 3 PEC", "section 2, paragraph 14 stall data"],
+      "verification": "Original PDF scanned; pilot-note PEC begins IAS 100 mph, so is inapplicable to low-speed stall records"
+    },
+    {
+      "id": "NACA-HUR-II-1942",
+      "aircraft": "Hurricane II, serial Z2963, Merlin XX, 7014 lb as flown",
+      "report": "NACA WR-L-565 / Memorandum Report Apr 1942; Nissen & Phillips, Measurements of the Flying Qualities of a Hawker Hurricane Airplane",
+      "pdf": "https://digital.library.unt.edu/ark:/67531/metadc61076/m2/1/high_res_d/19930092603.pdf",
+      "nasa_pdf": "https://ntrs.nasa.gov/api/citations/19930092603/downloads/19930092603.pdf",
+      "locators": ["PDF page 6 (pageno5): airspeed calibration method, 7014 lb weight", "PDF page 17 (pageno16): 8 observed stall speeds and maximum-lift coefficients", "PDF page 30 (pageno29): fig 7 flap-up/down cockpit airspeed calibration"],
+      "verification": "Original original report downloaded and graph/8-point stall table inspected visually",
+      "instrument_note": "NACA recording airspeed connected to a swiveling pitot-static head on a boom ahead of the RIGHT wingtip; cockpit IAS installation under LEFT wing. Calibration in figure 7 relates pilot cockpit indication to 'correct indicated' determined through formation with trailing-head-reference Brewster XSBA-1. Do not apply cockpit correction to a stall recorded on calibrated NACA recorder without showing source signal provenance."
+    },
+    {
+      "id": "NACA-SPIT-VA-1942",
+      "aircraft": "Spitfire VA, 6184 lb (NOT IX/XVI)",
+      "report": "NACA WR-L-353, Vensel & Phillips, Stalling Characteristics of the Supermarine Spitfire VA Airplane, Sep 1942",
+      "pdf": "https://digital.library.unt.edu/ark:/67531/metadc61033/m2/1/high_res_d/19930092581.pdf",
+      "nasa_pdf": "https://ntrs.nasa.gov/api/citations/19930092581/downloads/19930092581.pdf",
+      "locators": ["PDF page 4 (pageno3): independent trailing-head-reference formation calibration method", "PDF page 17 (pageno16): figure 5 cockpit indicated versus correct indicated, low-speed curves for cruise/glide/landing"],
+      "verification": "Full original NACA report and high-resolution 2800px fig 5 inspected; all 3 curves genuinely extend into low speed",
+      "instrument_note": "Measured low-speed pilot-indicator PEC is pronounced: companion NACA flying-qualities report explicitly notes approximately 10 mph *under-reading* near minimum speed. Strong warning against assuming pilot IAS equals CAS. Do not transfer this Spitfire VA installation's correction to IX/XVI."
+    },
+    {
+      "id": "US-A6M3-201",
+      "aircraft": "Captured A6M3 (Hamp), AAF EB-201",
+      "report": "USAAF Wright Field ENG-47-1726-A, 28 Mar 1944, Performance Flight Test Japanese Hamp EB-201",
+      "pdf": null,
+      "transcript": "https://www.wwiiaircraftperformance.com/org/japan/hamp-eb201.html",
+      "locators": ["paragraph IV.G: 72/76 mph IAS power-off stalls", "paragraph VI.A: separate indicated, water-column, calibrated, and position-error table"],
+      "verification": "Period original report transcription inspected; source includes full ten-row calibration table, lowest IAS 120 mph"
+    },
+    {
+      "id": "UK-TE-JN731",
+      "aircraft": "Tempest V production serial JN731",
+      "report": "A&AEE Boscombe Down 1 May 1944, Performance and Position Error Measurements",
+      "pdf": null,
+      "transcript": "https://www.wwiiaircraftperformance.com/org/tempest/tp.html",
+      "locators": ["3 Tests made, position error method with flaps/gear UP", "4.2 fig 3 position correction", "Table III corrected speed trials 276-398 mph IAS"],
+      "verification": "Original report transcript inspected; observed PEC chart exists but no independently verified near-stall numerical points; gear-UP PEC cannot be applied to landing stall"
+    },
+    {
+      "id": "UK-BFE-RAE",
+      "aircraft": "Bf109E captured RAF",
+      "report": "Morgan & Smelt RAF/Royal Aeronautical Society flight report, 1944",
+      "pdf": "https://www.docdroid.com/file/download/izDPSwr/flying-the-messerschmitt-bf-109e-pilot-report-pdf.pdf",
+      "locators": ["stalling test; installation of 60-ft trailing static head and swiveling pitot"],
+      "verification": "Original report reproduced in scan; discusses alternative trailing-head measurement but original numeric speed-pair table not established; 95.5 mph claimed in secondary forum excluded"
+    },
+    {
+      "id": "UK-FW-A3",
+      "aircraft": "Captured Fw190 A3 RAF WNr313",
+      "report": "AFDU/RAE tests July 1942",
+      "pdf": null,
+      "transcript": "https://www.wwiiaircraftperformance.com/com/gb/documents/fw190a3_RAE-Test-Jul42-new.html",
+      "locators": ["stall paragraph 31: approx 110 mph clean /105 mph landing, basis unspecified"],
+      "verification": "Original period report transcription; no verified applicable numeric low-speed calibration points"
+    },
+    {
+      "id": "US-FW190-EB104",
+      "aircraft": "Captured Fw190 fighter-bomber EB-104 (not RAF Fw190 A3 WNr313)",
+      "report": "USAAF Engineering Division ENG-47-1743-A, 26 May 1944",
+      "pdf": null,
+      "transcript": "https://www.wwiiaircraftperformance.org/fw190/eb-104.html",
+      "figure_1_image": "https://www.wwiiaircraftperformance.org/fw190/eb104-fig1.jpg",
+      "locators": ["section VI.A/Figure 1 airspeed installation calibration chart"],
+      "verification": "Original period report transcript and figure1 picture identified; no confirmed in-domain points at 105–110 mph, test airframe differs from RAF captive"
+    },
+    {
+      "id": "UK-BFG2-209",
+      "aircraft": "Captured Bf109 G2 Trop",
+      "report": "RAF Air Fighting Development Unit no 209 1943",
+      "pdf": null,
+      "transcript": "https://www.wwiiaircraftperformance.org/me109/me-109g2-trop.html",
+      "locators": ["stall paragraph: 112 mph cockpit indicated clean /102 mph landing"],
+      "verification": "Period original report transcription; no matching low-speed calibration established"
+    },
+    {
+      "id": "US-KI84-302",
+      "aircraft": "Captured Ki-84 Frank I",
+      "report": "USAAF Technical Intelligence T-2 Report Frank I",
+      "pdf": "https://www.wwiiaircraftperformance.org/japan/T-2_Report_on_Frank_I_Ki-84.pdf",
+      "locators": ["captured aircraft handling/stall section in 19-page PDF"],
+      "verification": "Original period scan inspected including performance/stall sections; original low-speed instrument and installation calibration not found"
+    }
+  ],
+  "calibration_curves": [
+    {
+      "id": "SPIT-IX-PEC-120-150",
+      "source_id": "UK-SIX-46",
+      "aircraft": "Spitfire IX/XI/XVI manual family",
+      "applies_to_source_ids": ["UK-SIX-46"],
+      "configuration": {"gear": "unspecified", "flaps": "unspecified"},
+      "mapping": "IAS_to_CAS",
+      "unit": "mph",
+      "columns": ["ias_mph", "cas_mph"],
+      "rows": [[120, 124], [150, 154]],
+      "original_bin": {"ias_from_inclusive": 120, "ias_to_exclusive": 150, "ias_to_calibrated_offset_mph": 4},
+      "row_derivation": "Bin endpoints algebraically constructed from original published constant +4 mph offset; interval bins, not independently measured point pairs",
+      "source_location": "AP1565J p32 para53, 120-150 mph bin",
+      "notes": "Not applicable to any IX/XVI pilot-note stall row, all below IAS 120; avoid use at gear/flaps down unless configuration applicability established."
+    },
+    {
+      "id": "SPIT-IX-PEC-150-170",
+      "source_id": "UK-SIX-46",
+      "aircraft": "Spitfire IX/XI/XVI manual family",
+      "applies_to_source_ids": ["UK-SIX-46"],
+      "configuration": {"gear": "unspecified", "flaps": "unspecified"},
+      "mapping": "IAS_to_CAS", "unit": "mph", "columns": ["ias_mph", "cas_mph"],
+      "rows": [[150, 152], [170, 172]],
+      "original_bin": {"ias_from_inclusive": 150, "ias_to_exclusive": 170, "ias_to_calibrated_offset_mph": 2},
+      "row_derivation": "Published constant +2 mph bin translated algebraically, not independent points",
+      "source_location": "AP1565J p32 para53", "notes": "At 150 mph use this interval when reproducing printed table; lower-bound-inclusive convention."
+    },
+    {
+      "id": "SPIT-IX-PEC-170-210",
+      "source_id": "UK-SIX-46", "aircraft": "Spitfire IX/XI/XVI manual family", "applies_to_source_ids": ["UK-SIX-46"],
+      "configuration": {"gear": "unspecified", "flaps": "unspecified"},
+      "mapping": "IAS_to_CAS", "unit": "mph", "columns": ["ias_mph", "cas_mph"], "rows": [[170, 170], [210, 210]],
+      "original_bin": {"ias_from_inclusive": 170, "ias_to_exclusive": 210, "ias_to_calibrated_offset_mph": 0},
+      "row_derivation": "Published constant zero offset translated algebraically, not independent points",
+      "source_location": "AP1565J p32 para53", "notes": "Not applicable below 120 mph."
+    },
+    {
+      "id": "SPIT-IX-PEC-210-240",
+      "source_id": "UK-SIX-46", "aircraft": "Spitfire IX/XI/XVI manual family", "applies_to_source_ids": ["UK-SIX-46"],
+      "configuration": {"gear": "unspecified", "flaps": "unspecified"},
+      "mapping": "IAS_to_CAS", "unit": "mph", "columns": ["ias_mph", "cas_mph"], "rows": [[210, 208], [240, 238]],
+      "original_bin": {"ias_from_inclusive": 210, "ias_to_exclusive": 240, "ias_to_calibrated_offset_mph": -2},
+      "row_derivation": "Published constant -2 mph bin translated algebraically, not independent points",
+      "source_location": "AP1565J p32 para53"
+    },
+    {
+      "id": "SPIT-IX-PEC-240-290",
+      "source_id": "UK-SIX-46", "aircraft": "Spitfire IX/XI/XVI manual family", "applies_to_source_ids": ["UK-SIX-46"],
+      "configuration": {"gear": "unspecified", "flaps": "unspecified"},
+      "mapping": "IAS_to_CAS", "unit": "mph", "columns": ["ias_mph", "cas_mph"], "rows": [[240, 236], [290, 286]],
+      "original_bin": {"ias_from_inclusive": 240, "ias_to_exclusive": 290, "ias_to_calibrated_offset_mph": -4},
+      "row_derivation": "Published constant -4 mph bin translated algebraically, not independent points",
+      "source_location": "AP1565J p32 para53"
+    },
+    {
+      "id": "SPIT-IX-PEC-290-350",
+      "source_id": "UK-SIX-46", "aircraft": "Spitfire IX/XI/XVI manual family", "applies_to_source_ids": ["UK-SIX-46"],
+      "configuration": {"gear": "unspecified", "flaps": "unspecified"},
+      "mapping": "IAS_to_CAS", "unit": "mph", "columns": ["ias_mph", "cas_mph"], "rows": [[290, 284], [350, 344]],
+      "original_bin": {"ias_from_inclusive": 290, "ias_to_inclusive": 350, "ias_to_calibrated_offset_mph": -6},
+      "row_derivation": "Published constant -6 mph bin translated algebraically, not independent points",
+      "source_location": "AP1565J p32 para53"
+    },
+    {
+      "id": "A6M3-EB201-IAS-INSTRUMENT",
+      "source_id": "US-A6M3-201", "aircraft": "A6M3 Hamp EB-201", "applies_to_source_ids": ["US-A6M3-201"],
+      "configuration": {"gear": "up", "flaps": "up", "pitot_static_head": "4586"},
+      "mapping": "IAS_to_instrument_corrected_IAS", "unit": "mph", "columns": ["ias_mph", "instrument_corrected_mph"],
+      "rows": [[120, 119], [140, 139.5], [160, 159.5], [180, 180], [200, 199.5], [220, 221], [240, 240.5], [260, 260.5], [280, 282], [300, 301.5]],
+      "source_location": "ENG-47-1726-A section VI.A original indication and water-column table",
+      "notes": "Original numeric report table; all calibration points >=120 mph; no valid IAS-to-instrument interpolation at 72/76 mph stall."
+    },
+    {
+      "id": "A6M3-EB201-IAS-CAS",
+      "source_id": "US-A6M3-201", "aircraft": "A6M3 Hamp EB-201", "applies_to_source_ids": ["US-A6M3-201"],
+      "configuration": {"gear": "up", "flaps": "up", "pitot_static_head": "4586"},
+      "mapping": "IAS_to_CAS", "unit": "mph", "columns": ["ias_mph", "cas_mph"],
+      "rows": [[120, 121.5], [140, 143], [180, 185.5], [200, 205.5], [220, 228], [240, 248.5], [260, 269], [280, 291.5], [300, 312]],
+      "omitted_transcription_inconsistency": {"ias_mph": 160, "water_column_mph": 159.5, "printed_cas_mph": 164.8, "printed_position_correction_mph": 4.5, "sum_water_column_plus_position_mph": 164.0, "action": "Omit 160 from machine curve until original facsimile confirms transcription"},
+      "source_location": "ENG-47-1726-A section VI.A; full published numerical table",
+      "notes": "No extrapolation below IAS120; undercarriage/flap effect not measured in calibration table. Original transcript contains 160mph arithmetic inconsistency; omitted until source scan checked."
+    },
+    {
+      "id": "NACA-HURRICANE-II-COCKPIT-LOW-SPEED",
+      "source_id": "NACA-HUR-II-1942", "aircraft": "Hurricane II Z2963", "applies_to_source_ids": ["NACA-HUR-II-1942"],
+      "configuration": {"gear": "as test; depends on flaps", "flaps": "separate original plotted up/down branches"},
+      "mapping": "IAS_to_CAS", "unit": "mph", "columns": ["ias_mph", "cas_mph"], "rows": [],
+      "digitization_status": "Original measured low-speed graph verified; graph points require explicit separate curve digitization; do not manufacture numbers by reading a one-line summary or wrong curve.",
+      "source_location": "NACA WR-L-565 Fig7, PDF page30/pageno29; calibrated in formation against Brewster XSBA-1 with trailing-head reference",
+      "notes": "Original graph axes x=correct indicated mph/y=pilot's meter mph, reverse mapping for IAS-to-CAS; lines for flaps up and flaps down. Graph reaches near 80 mph. Dataset's separate NACA recording head may not be the pilot's indicator."
+    },
+    {
+      "id": "NACA-SPIT-VA-COCKPIT-LOW-SPEED",
+      "source_id": "NACA-SPIT-VA-1942", "aircraft": "Spitfire VA W3119", "applies_to_source_ids": ["NACA-SPIT-VA-1942"],
+      "configuration": {"gear": "cruise/glide/land separately", "flaps": "cruise/glide/land separately"},
+      "mapping": "IAS_to_CAS", "unit": "mph", "columns": ["ias_mph", "cas_mph"], "rows": [],
+      "digitization_status": "Original low-speed plot verified but point-by-point symbols for cruise/glide/land require measured digitization and correct inverse orientation; do not promote unquantified approximately 10 mph remark to aircraft-variant-general correction.",
+      "source_location": "NACA WR-L-353 Fig5, PDF page17/pageno16; horizontal axis correct indicated, vertical axis pilot's meter; original flight calibration against trailing-head reference",
+      "notes": "Separate companion NACA VA flying-qualities paper says cockpit IAS under-reads by ~10 mph near minimum speed. The effect is NOT transportable to Spitfire IX."
+    }
+  ],
+  "observations": [
+    {"id":"HUR-II-NACA-7014-open-gliding","source_id":"NACA-HUR-II-1942","aircraft":"Hurricane II Z2963","quantity":"stall_speed","value":{"speed_mph":89.5,"speed_basis":"IAS","weight_lb":7014,"config":"clean","gear":"up","flaps":"up","power":"closed throttle","gun_ports":"open"},"corrections":{"instrument":"unknown","position":"unknown"},"source_location":"NACA WR-L-565 p17 stall table, gun ports open, 4 stalls averaged","confidence":"period_measured_not_yet_calibrated"},
+    {"id":"HUR-II-NACA-7014-open-climbing","source_id":"NACA-HUR-II-1942","aircraft":"Hurricane II Z2963","quantity":"stall_speed","value":{"speed_mph":74,"speed_basis":"IAS","weight_lb":7014,"config":"clean","gear":"up","flaps":"up","power":"42 inHg manifold pressure/3000 rpm","gun_ports":"open"},"corrections":{"instrument":"unknown","position":"unknown"},"source_location":"NACA WR-L-565 p17 stall table, gun ports open, 2 stalls averaged","confidence":"period_measured_not_yet_calibrated"},
+    {"id":"HUR-II-NACA-7014-open-landing","source_id":"NACA-HUR-II-1942","aircraft":"Hurricane II Z2963","quantity":"stall_speed","value":{"speed_mph":72.6,"speed_basis":"IAS","weight_lb":7014,"config":"gear_flaps_down","gear":"down","flaps":"down","power":"closed throttle","gun_ports":"open"},"corrections":{"instrument":"unknown","position":"unknown"},"source_location":"NACA WR-L-565 p17 stall table, gun ports open, 8 stalls averaged","confidence":"period_measured_not_yet_calibrated"},
+    {"id":"HUR-II-NACA-7014-open-waveoff","source_id":"NACA-HUR-II-1942","aircraft":"Hurricane II Z2963","quantity":"stall_speed","value":{"speed_mph":66.2,"speed_basis":"IAS","weight_lb":7014,"config":"gear_flaps_down","gear":"down","flaps":"down","power":"38 inHg manifold pressure/2800 rpm","gun_ports":"open"},"corrections":{"instrument":"unknown","position":"unknown"},"source_location":"NACA WR-L-565 p17 stall table, gun ports open, 1 stall","confidence":"period_measured_not_yet_calibrated"},
+    {"id":"HUR-II-NACA-7014-covered-gliding","source_id":"NACA-HUR-II-1942","aircraft":"Hurricane II Z2963","quantity":"stall_speed","value":{"speed_mph":86.5,"speed_basis":"IAS","weight_lb":7014,"config":"clean","gear":"up","flaps":"up","power":"closed throttle","gun_ports":"covered"},"corrections":{"instrument":"unknown","position":"unknown"},"source_location":"NACA WR-L-565 p17 stall table, gun ports covered, 1 stall","confidence":"period_measured_not_yet_calibrated"},
+    {"id":"HUR-II-NACA-7014-covered-climbing","source_id":"NACA-HUR-II-1942","aircraft":"Hurricane II Z2963","quantity":"stall_speed","value":{"speed_mph":70.3,"speed_basis":"IAS","weight_lb":7014,"config":"clean","gear":"up","flaps":"up","power":"42 inHg manifold pressure/3000 rpm","gun_ports":"covered"},"corrections":{"instrument":"unknown","position":"unknown"},"source_location":"NACA WR-L-565 p17 stall table, gun ports covered, 1 stall","confidence":"period_measured_not_yet_calibrated"},
+    {"id":"HUR-II-NACA-7014-covered-landing","source_id":"NACA-HUR-II-1942","aircraft":"Hurricane II Z2963","quantity":"stall_speed","value":{"speed_mph":70.3,"speed_basis":"IAS","weight_lb":7014,"config":"gear_flaps_down","gear":"down","flaps":"down","power":"closed throttle","gun_ports":"covered"},"corrections":{"instrument":"unknown","position":"unknown"},"source_location":"NACA WR-L-565 p17 stall table, gun ports covered, 2 stalls averaged","confidence":"period_measured_not_yet_calibrated"},
+    {"id":"HUR-II-NACA-7014-covered-waveoff","source_id":"NACA-HUR-II-1942","aircraft":"Hurricane II Z2963","quantity":"stall_speed","value":{"speed_mph":64.2,"speed_basis":"IAS","weight_lb":7014,"config":"gear_flaps_down","gear":"down","flaps":"down","power":"38 inHg manifold pressure/2800 rpm","gun_ports":"covered"},"corrections":{"instrument":"unknown","position":"unknown"},"source_location":"NACA WR-L-565 p17 stall table, gun ports covered, 2 stalls averaged","confidence":"period_measured_not_yet_calibrated"}
+  ],
+  "rejected_cas_conversions": [
+    {"stall_source_id":"UK-SIX-46","aircraft":"Spitfire IX/XI/XVI","stall_ias_range_mph":[75,117],"correction_ias_min_mph":120,"reason":"No original PEC below 120mph IAS; cannot extrapolate +4 mph interval to stall; VA NACA data is wrong variant."},
+    {"stall_source_id":"UK-HI-PN","aircraft":"Hurricane I","stall_ias_range_mph":[60,80],"correction_ias_min_mph":100,"reason":"Pilot-note PEC at 100mph and above; no documented correction for IAS60–80. NACA Hurricane II has different variant/airframe."},
+    {"stall_source_id":"UK-HII-PN","aircraft":"Hurricane II pilot-note variants","stall_ias_range_mph":[60,90],"correction_ias_min_mph":100,"reason":"Pilot-note PEC starts 100mph; Z2963 NACA calibration cannot be silently transferred to other Hurricane II airframes; original OCR 60-90 versus 80-90 unresolved."},
+    {"stall_source_id":"US-A6M3-201","aircraft":"A6M3 Hamp EB201","stall_ias_range_mph":[72,76],"correction_ias_min_mph":120,"reason":"Instrument and PEC components available only for IAS>=120, so both power-off stalls remain IAS."},
+    {"stall_source_id":"UK-TE-JN731","aircraft":"Tempest V","reason":"Report's PEC measurements were with gear/flaps up at speed range used for high-speed test; no independently verified low-speed points near IAS75–85 and cannot apply to gear/flaps down."},
+    {"stall_source_id":"UK-BFE-RAE","aircraft":"Bf109E","reason":"Original trailing-head method documented, but cockpit-75 versus trailing-head-95.5 claim currently only secondhand and meaning of TAS/IAS/CAS not verified against original numerical table."},
+    {"stall_source_id":"UK-FW-A3","aircraft":"Fw190 A3 WNr313","reason":"Separate Fw190 EB104 calibration exists, but source says neither A3 RAF nor A4 USAAF PEC reaches exact stall 110 mph IAS; forum's assumed 100–106mph CAS is an extrapolation, reject."},
+    {"stall_source_id":"UK-BFG2-209","aircraft":"Bf109 G2 Trop","reason":"112/102 IAS measured, no matched numerical low-speed PEC; Bf109E trailing-head data cannot transfer."},
+    {"stall_source_id":"US-KI84-302","aircraft":"Ki84 Frank I","reason":"Original 102/90/79 mph IAS test points but no matched numerical instrument + position correction at IAS79–102 established."}
+  ],
+  "pending_source_leads": [
+    {"aircraft":"Tempest V JN731","report":"A&AEE 1 May 1944","target":"Locate original Fig3 position error plot; confirm minimum speed axis and cockpit instrument/calibration provenance. Original transcript Table III only has ~276–398 mph IAS."},
+    {"aircraft":"Hurricane II Z2963","report":"NACA WR-L-565","target":"Digitize Fig7 independently for separate flap-up and flap-down flight configurations; trace whether NACA stall table 'indicated' already comes from calibrated right-wingtip recorder before correction, to avoid double correction."},
+    {"aircraft":"Spitfire VA W3119","report":"NACA WR-L-353","target":"Digitize Fig5 independently for cruise, glide and landing; use only VA data and match source signal before applying to stalls."},
+    {"aircraft":"Fw190 A3 WNr313 / EB104","report":"RAF 1942 AFDU and USAAF ENG-47-1743-A","target":"Original RAF A3 low-speed PEC numerical measurement and verify Fw190 EB104 Fig1 range. Any below-stall extension requires fresh original test data, not forum extrapolation."},
+    {"aircraft":"Bf109 E","report":"Morgan/Smelt original RAE report 1944","target":"Recover original 60-foot trailing-head versus cockpit IAS stall paired numerical data, including static corrections and actual test weight."},
+    {"aircraft":"A6M3 Hamp EB201","report":"ENG-47-1726-A","target":"Recover original facsimile and inspect 160mph transcription inconsistency (159.5 + 4.5 != 164.8)."}
+  ],
+  "bottom_line": "No existing RAF Spitfire IX/Hurricane I/II pilot-note, A6M3 Hamp EB201, Tempest V, Fw190 A3, Bf109 G2 or Ki84 stall IAS may be converted to CAS solely using the currently authenticated above-stall-speed PEC tables. Original NACA near-stall cockpit curves for Spitfire VA and Hurricane II are genuine new primary leads; direct NACA Hurricane II 7014lb 8-point measured stall series is captured. The numerical conversions remain gated on source-specific graph digitization and measured instrument provenance."
+}

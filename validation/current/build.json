@@ -1,6 +1,6 @@
 {
-  "version": "3.5.0",
-  "researchStatus": "v3.5 source-bounded stall laboratory; v3.4 climb and prior general-flight behavior retained",
+  "version": "3.14.0",
+  "researchStatus": "v3.14 source-backed research explorer and stall evidence",
   "workingCalibration": "2.8.0",
   "climbConditionCalibration": "3.1.0",
   "sourceConfigurationCalibration": "3.4.0",
@@ -8,10 +8,15 @@
   "workingProfile": "P",
   "legacyProfile": "C",
   "template": "releases/baseline-v2.5.html",
-  "physicsSha256": "67558157176b73a8799eb8eaecfec971b0c22d850802c1e1acd34afb1edcf667",
+  "researchSchema": "ww2-fighter-research-catalog/v1",
+  "researchFingerprint": "29d25b3c3fa1887d0825bc11264040f5fc87025c559f430ff64e9bb4bbf7371e",
+  "researchObservations": 726,
+  "researchSources": 134,
+  "flightEnvelopeSha256": "5952efc453f34849810c9447e36f89b826933fa5c3b3314a8c0ecde1b6f3716a",
+  "physicsSha256": "c68531e9fddac984c6c12f9f006ea833ac7786ac74cabb7de909786505da7192",
   "casesSha256": "c0e5f628496af2ca50c3dd181ddb97bd9257c1b20ec358e98aa86b4a1ebd78e1",
-  "storesSha256": "49f4eb05a187ec57b331bdcff360eacca8d591194f9ed6b3c842bcfae296ddd8",
-  "htmlSha256": "aed8a39b1444e40e3e9c1552da34701b692c33098c13c5f67d6245b86a807d42",
-  "bytes": 5109534,
-  "browserInteractionTested": true
+  "storesSha256": "5014404874d651b096288bc61695cbacc83b96039acfb82cd50fb635f6142edb",
+  "htmlSha256": "0151d0b81bdd73994b60d5399c19845dd82f44e1354a2b31b7f3040f5a9354d6",
+  "bytes": 6023597,
+  "browserInteractionTested": false
 }

@@ -1,14 +1,18 @@
 {
-  "node": "v24.19.0",
-  "discoveredScripts": 50,
-  "reportedScripts": 50,
-  "passed": 50,
+  "node": "v24.22.1",
+  "discoveredScripts": 61,
+  "reportedScripts": 61,
+  "passed": 61,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
   "scripts": [
     {
       "script": "test.mjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_archival_comparisons.cjs",
       "status": "pass"
     },
     {
@@ -25,6 +29,10 @@
     },
     {
       "script": "test_clean_v08.mjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_climb_band.cjs",
       "status": "pass"
     },
     {
@@ -56,7 +64,23 @@
       "status": "pass"
     },
     {
+      "script": "test_fighter_comparison.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_flight_envelope.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_flight_scorecard.cjs",
+      "status": "pass"
+    },
+    {
       "script": "test_fw190.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_fw190a4.cjs",
       "status": "pass"
     },
     {
@@ -104,6 +128,10 @@
       "status": "pass"
     },
     {
+      "script": "test_independent_flight_checks.cjs",
+      "status": "pass"
+    },
+    {
       "script": "test_installed_power_v19.cjs",
       "status": "pass"
     },
@@ -113,6 +141,10 @@
     },
     {
       "script": "test_lift_v09.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_maneuver_power.cjs",
       "status": "pass"
     },
     {
@@ -132,7 +164,15 @@
       "status": "pass"
     },
     {
+      "script": "test_operational_climb.cjs",
+      "status": "pass"
+    },
+    {
       "script": "test_overall_progress.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_p38g.cjs",
       "status": "pass"
     },
     {
@@ -173,6 +213,10 @@
     },
     {
       "script": "test_release_support.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_research_layer.cjs",
       "status": "pass"
     },
     {
