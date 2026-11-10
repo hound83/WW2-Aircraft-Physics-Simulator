@@ -77,8 +77,54 @@
   },
   "nextCandidates": [
     {
-      "variant": "P-47D",
-      "role": "Fallback single-engine variant; exact specimen and installation to select."
+      "variant": "F4U-4",
+      "specimen": "USN BuNo 80765",
+      "research_status": "Research dossier added; candidate only, not admitted into the physics roster",
+      "priority": 1,
+      "source": "https://www.wwiiaircraftperformance.org/f4u/f4u-4-80765.pdf",
+      "primary_gap": "Additional exact-weight CAS stalls and installed power/drag/independent sustained-turn data; original fourth stall-power label conflicts."
+    },
+    {
+      "variant": "F6F-3",
+      "specimen": "NACA BuAer 04776 (plus separately labelled USN BuNo 25820 and multi-serial tests)",
+      "research_status": "Research dossier added; candidate only, not admitted into the physics roster",
+      "priority": 2,
+      "source": "https://ntrs.nasa.gov/citations/19930092602",
+      "primary_gap": "Same-run instrument and position correction to near-stall CAS and precisely burned-fuel-adjusted stall weight; independent sustained-turn energy and propulsive power."
+    },
+    {
+      "variant": "P-47D-30",
+      "specimen": "AAF 43-3441",
+      "research_status": "Research dossier added; candidate only, not admitted into the physics roster",
+      "priority": 3,
+      "source": "https://ntrs.nasa.gov/citations/20090022749",
+      "primary_gap": "Original 1g stalled speed with near-stall CAS, matched trial mass and drag/power; published lb/g stick-force measurements are not turn-rate measurements."
+    },
+    {
+      "variant": "P-40F",
+      "specimen": "AAF 41-13635 (A&AEE Kittyhawk II FL220 is a different specimen)",
+      "research_status": "Research dossier added; candidate only, not admitted into the physics roster",
+      "priority": 4,
+      "source": "https://www.wwiiaircraftperformance.com/org/p-40/p-40_files/P-40F_41-13635_FS-M-19-1549-A.pdf",
+      "primary_gap": "Original near-stall IAS/CAS and mass/CG, independent turn limits; preserve five exact propeller designs and incompatible printed blade IDs."
+    },
+    {
+      "variant": "Fw 190 D-9",
+      "specimen": "WNr 210002",
+      "research_status": "Research dossier added; candidate only, not admitted into the physics roster",
+      "priority": 5,
+      "source": "https://www.wwiiaircraftperformance.org/fw190/Fw_190_D-9_210002_FB_Nr1.pdf",
+      "primary_gap": "Digitize original correction curve with demonstrated low-speed coverage, original 4300kg climb graph and direct clean stall/turn evidence."
+    },
+    {
+      "variant": "Ki-84-I",
+      "specimen": "Captured T-2 serial 302, Nakajima Ha-45 Model 21",
+      "research_status": "Research dossier added; candidate only, not admitted into the physics roster",
+      "priority": 6,
+      "source": "https://www.wwiiaircraftperformance.org/japan/T-2_Report_on_Frank_I_Ki-84.pdf",
+      "primary_gap": "Original near-stall IAS->CAS measurement or full correction table; 7900lb takeoff vs actual flight mass and independently measured speed/climb/power; reported climb table is not from completed T-2 performance climbs."
     }
-  ]
+  ],
+  "candidateReadinessRegister": "references/aircraft-supergoodenough-readiness-2026-11-10.json",
+  "candidateResearchOnly": true
 }
