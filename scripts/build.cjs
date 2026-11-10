@@ -49,7 +49,7 @@ function build(){
  });
  for(const [key,n]of Object.entries(replacements))if(n!==1)throw Error('Expected one '+key+' block; got '+n);
  html=html.replace(/<title>[^<]*<\/title>/,'<title>European Air War Physics v'+version+' | Research</title>');
- html=html.replace('<header>','<header><p class="status" id="research-version">Research v'+version+' · Historical accuracy remains unresolved</p><p><a href="#historical-evidence">Historical evidence library</a> · <a href="#fighter-comparison">Compare four fighters</a> · <a href="#fw190-comparison">Fw 190 A-4 vs Spitfire</a> · <a href="#p38g-comparison">P-38G vs P-47B</a> &middot; <a href="#mustang-maneuver-power">Mustang climb and turn power</a> &middot; <a href="#stall-lab">Compare clean stall speeds</a> · <a href="#measured-climb">Inspect the P-47B climb test</a></p><p class="status">Profile P: the e slider at 0.78 uses each aircraft’s fitted base e. Moving it changes an effective-drag scenario and reanchors speed drag; this is not measured wing efficiency.</p>');
+ html=html.replace('<header>','<header><p class="status" id="research-version">Research v'+version+' · Historical accuracy remains unresolved</p><p><a href="#historical-evidence">Historical evidence library</a> · <a href="#fighter-comparison">Compare four fighters</a> · <a href="#fw190-comparison">Fw 190 A-4 vs Spitfire</a> · <a href="#p38g-comparison">P-38G vs P-47B</a> &middot; <a href="#mustang-maneuver-power">Mustang climb and turn power</a> &middot; <a href="#turn-stall-correction">Turn and stall correction</a> &middot; <a href="#stall-lab">Compare clean stall speeds</a> · <a href="#measured-climb">Inspect the P-47B climb test</a></p><p class="status">Profile P: the e slider at 0.78 uses each aircraft’s fitted base e. Moving it changes an effective-drag scenario and reanchors speed drag; this is not measured wing efficiency.</p>');
  html=patchWorkingUI(html);
  html=html.replace("if(conf.profile==='P'){o.e=", "if(conf.profile==='P'){if(isGreg109){const gp=M.inferredGregF4(ac,D.greg.bf109f4);o.polar={e:gp.oswald,cd0:gp.cd0,source:gp.source};return o;}o.e=");
  const flightEnvelope=read('calibration/flight-envelope.json');
@@ -87,6 +87,14 @@ function build(){
  html=html.replace(/(<section\b[^>]*\bid="release-support"[^>]*>)/,stallPanel+'$1');
  html=html.replace("for(const input of document.querySelectorAll('input,select'))input.addEventListener('input',render)","for(const input of document.querySelectorAll('input,select'))if(!input.closest('#stall-lab, #fighter-comparison, #historical-evidence'))input.addEventListener('input',render)");
  const stallEmbed='<script>'+stallParts[0]+'</script><script type="application/json" id="stall-research-data">'+stallParts[2]+'</script><script>'+stallParts[1]+'</script>';
+ const turnLift=read('src/turn-lift.js'),turnLiftSource=read('references/p51-turn-lift-tn1044.json');
+ if([turnLift,turnLiftSource].some(value=>/<\/script/i.test(value)))throw Error('Unsafe turn lift embed');
+ html=html.replace('</header>', '</header><script>'+turnLift+'</script><script type="application/json" id="turn-lift-source">'+turnLiftSource+'</script>');
+ html=html.replace('function optFor(id,conf){','const turnLiftSource=JSON.parse(document.getElementById("turn-lift-source").textContent);\nfunction optFor(id,conf){');
+ html=html.replace('return M.workingOptions(ac,o);}', 'return UniversalTurnLift.optionsFor(M,ac,turnLiftSource,conf.alt,M.tasFrom(conf.speed,"EAS",conf.alt),M.workingOptions(ac,o));}');
+ html=html.replace("M.tasFrom(eas,'EAS',alt),optFor(id,c)", "M.tasFrom(eas,'EAS',alt),optFor(id,{...c,speed:eas})");
+ html=html.replace('<span>Assumed CLmax</span>', '<span>Stall / maneuver CLmax</span>');
+ html=html.replace('n(r.clMax,2)', 'n(r.clMax,2)+" / "+n(r.limits.maneuverClMax??r.clMax,2)');
  const comparisonPanel=read('src/fighter-comparison-panel.html');
  const comparisonUI=read('src/fighter-comparison-ui.js');
  const comparisonData=JSON.stringify(require('../validation/diagnostics/fighter_comparison.cjs').run());
@@ -107,7 +115,7 @@ function build(){
  fs.mkdirSync(path.join(root,'dist'),{recursive:true});
  fs.writeFileSync(path.join(root,'dist/model.html'),html);
  fs.writeFileSync(path.join(root,'dist/research-catalog.json'),researchData+'\n');
- const metadata={version,researchStatus:'v3.14 source-backed research explorer and stall evidence',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'engineering-increment',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
+ const metadata={version,researchStatus:'v3.15 turn/stall correction with bounded Mustang lift',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'engineering-increment',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
  fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify(metadata,null,2)+'\n');
  return metadata;
 }

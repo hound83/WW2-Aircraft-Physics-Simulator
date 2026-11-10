@@ -96,6 +96,35 @@
     byId('comparison-fw-report').href = repo + fw.report;
   }
 
+  function renderTurnCorrection() {
+    const correction = report.turnCorrection;
+    const altitude = byId('comparison-turn-correction-alt');
+    for (const row of correction.mustang) {
+      altitude.add(new Option(fmt(row.altFt) + ' ft', row.altFt, row.altFt === 8000, row.altFt === 8000));
+    }
+    function render() {
+      const {rows} = correction.mustang.find(row => row.altFt === Number(altitude.value));
+      table('comparison-turn-correction', ['mph EAS', 'Mach', 'Stall mph EAS prior / corrected', 'Sustained g prior / corrected',
+        'Lift reading sensitivity (g)', 'Maneuver lift basis'], rows.map(row => [
+        fmt(row.easMph), fmt(row.corrected.mach, 3),
+        fmt(row.baseline.stallEasMph, 1) + ' / ' + fmt(row.corrected.stallEasMph, 1),
+        fmt(row.baseline.nSust, 2) + ' / ' + fmt(row.corrected.nSust, 2),
+        row.bracket ? row.bracket.map(value => fmt(value, 2)).join(' to ') : '-', row.liftSource]), true);
+    }
+    altitude.addEventListener('change', render);
+    render();
+    table('comparison-turn-f4', ['Altitude m', 'Reference s/circle', 'Greg polar only s/circle', 'IL-2 s/circle',
+      'Stall EAS needed if lift alone (mph)', 'Excess hp at IL-2 load'], correction.f4.map(row => [
+      fmt(row.altM), fmt(row.baseline.seconds, 1), fmt(row.gregPolarOnly.seconds, 1), fmt(row.observedSeconds, 1),
+      fmt(row.equivalentStallEasMph, 1), fmt(row.baseline.propulsiveHp - row.requiredHp)]), true);
+    table('comparison-turn-games', ['Aircraft and source', 'Altitude m', 'Corrected build deg/s', 'Published deg/s'],
+      [...correction.p51Il2.map(row => ['Mustang B / IL-2', fmt(row.altM), fmt(row.corrected.degSec, 1), fmt(360 / row.observedSeconds, 1)]),
+        ...correction.spitIl2.map(row => ['Spitfire / IL-2', fmt(row.altM), fmt(row.corrected.degSec, 1), fmt(360 / row.observedSeconds, 1)]),
+        ...correction.dcs.map(row => [row.id === 'p51b' ? 'Mustang B vs D / DCS' : 'Spitfire / DCS', '0',
+          fmt(row.corrected.degSec, 1), fmt(row.observedDegSec, 1)])]);
+    byId('comparison-turn-correction-report').href = repo + correction.report;
+  }
+
   function renderManeuverPower() {
     const {climbs, coverage, turn, candidate, report: reportPath} = report.maneuverPower;
     const interval = (values, digits = 0) => values ? values.map(value => fmt(value, digits)).join(' to ') : '-';
@@ -379,5 +408,6 @@
   renderFw190();
   renderP38G();
   renderManeuverPower();
+  renderTurnCorrection();
   renderGreg();
 })();

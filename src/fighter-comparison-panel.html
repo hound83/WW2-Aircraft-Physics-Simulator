@@ -9,7 +9,7 @@
     #fighter-comparison a { color:var(--blue); }
   </style>
   <h2 id="comparison-title">Compare four fighters</h2>
-  <p>Fixed research scenarios using profile P, standard atmosphere, clean reference configurations and each aircraft’s reference weight and default rating. These controls are independent of the exploratory flight controls.</p>
+  <p>Fixed v3.13 benchmark scenarios using profile P, standard atmosphere, clean reference configurations and each aircraft’s reference weight and default rating. These controls are independent of the exploratory flight controls.</p>
   <div class="comparison-controls">
     <label for="comparison-altitude">Pressure altitude</label>
     <select id="comparison-altitude"></select>
@@ -102,6 +102,21 @@
     <div id="comparison-archival" class="comparison-scroll" tabindex="0" role="region" aria-label="Archival points and qualified model replays"></div>
   </details>
   <p><a id="comparison-archival-source">Full archival audit and original reports</a></p>
+
+  <h3 id="turn-stall-correction">Sustained turn and clean stall correction</h3>
+  <p>The live profile P explorer applies a conditional NACA TN1044 transfer for the Mustang where supported. It separates one-g stall lift from maneuver lift at the actual Mach. The cases below preserve the previous result and the approximate chart-reading spread.</p>
+  <div class="comparison-controls">
+    <label for="comparison-turn-correction-alt">Mustang comparison altitude</label>
+    <select id="comparison-turn-correction-alt"></select>
+  </div>
+  <div id="comparison-turn-correction" class="comparison-scroll" tabindex="0" role="region" aria-label="Mustang lift and turn correction"></div>
+  <details>
+    <summary>Bf 109 F-4 diagnosis and IL-2 / DCS cross-checks</summary>
+    <p>The IAS values are treated as CAS for these calculations. The sources do not independently establish historical turning accuracy.</p>
+    <div id="comparison-turn-f4" class="comparison-scroll" tabindex="0" role="region" aria-label="F-4 turn power and lift"></div>
+    <div id="comparison-turn-games" class="comparison-scroll" tabindex="0" role="region" aria-label="External simulator turn checks"></div>
+  </details>
+  <p><a id="comparison-turn-correction-report">Source readings, book checks, Greg and candidate decisions</a></p>
 
   <h3 id="mustang-maneuver-power">Mustang climb and sustained-turn power</h3>
   <p>The Mustang climb report gives a rate and chart-assigned shaft power. Climb TAS and mass at each point are unknown. Replays use takeoff mass and the selected EAS with the existing reference polar. The best-climb column searches 135-185 mph EAS.</p>

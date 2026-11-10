@@ -185,3 +185,7 @@ Treat rated BHP and propeller geometry as per-engine inputs. Evaluate the identi
 ## v3.13 Mustang maneuver power
 
 Admit five source-conditioned chart replays and the sampled turn range. Keep the v3.12 coefficients after the alternative fails the withheld low-altitude Mustang check, non-anchor speed and P-47B production donor. Treat 5:1 as a pairwise precision goal requiring independent error bounds. [v3.13 report](V313_MANEUVER_POWER.md)
+
+## Turn/stall correction
+
+Apply separate bounded P-51B stall and maneuver lift to the live profile P explorer using NACA TN1044. Keep the F-4 game-conditioned scenario separate, and reject the game-fit nonlinear drag candidate for historical use. [Turn/stall review](TURN_STALL_CORRECTION.md)
