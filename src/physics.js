@@ -449,7 +449,7 @@ function evaluated(ac,alt,tasMph,opts={}){if(opts.profile==='P'&&!opts.polar)opt
  const effectiveCd0=cdData.cd0+installedDeltaCd0+coolingDeltaCd0+addedDragAreaM2/ac.wingAreaM2;
  const D=dragBreakdown(ac,alt,tasMph,weight,effectiveCd0,e,1),V=tasMph*MPH,W=weight*LBF,geo=geometry(ac),q=D.q;
  const propulsivePowerScale=opts.propulsivePowerScale??1;
- if(!(propulsivePowerScale>=.9&&propulsivePowerScale<=1.1))return {status:'invalid-propulsive-power-scenario'};
+ if(!(propulsivePowerScale>=.9&&propulsivePowerScale<=1.15))return {status:'invalid-propulsive-power-scenario'};
  const Pav=Math.min(propulsion.propulsiveW*propulsivePowerScale,propulsion.shaftHp*HP),Ps=(Pav-D.drag*V)/W,stallEas=Math.sqrt(2*W/(RHO0*geo.S*clMax))/MPH,air=airspeeds(tasMph,alt),nLift=q*geo.S*maneuverClMax/W;
  const feasible=q*geo.S*clMax/W>=1;const nPower2=(Pav/V-D.dParasite)/Math.max(1e-9,D.dInd),powerOk=feasible&&nPower2>=1;const nInst=feasible&&nLift>=1?Math.min(nLift,structG):null;
  const nSust=powerOk&&nInst!==null?Math.min(nInst,Math.sqrt(nPower2)):null;

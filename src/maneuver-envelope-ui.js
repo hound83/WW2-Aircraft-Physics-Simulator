@@ -32,16 +32,31 @@
   }
   byId('v4-first').value = 'f4u4';
   byId('v4-second').value = 'p47b';
+  function activeModel(id, altitude = value('v4-alt')) {
+    const model = models[id];
+    if (byId('v41-mode').value === 'energy') {
+      const selected = {p51b:'v4-p51-rating',bf109f4:'v4-f4-rating',f4u4:'v4-rating'}[id];
+      const selectedRating = selected ? byId(selected).value : model.energyRating;
+      const supported = !model.energyConfiguration || model.energyConfiguration.branches.some(branch =>
+        altitude >= branch.minFt && altitude <= branch.maxFt &&
+        (selectedRating === 'source-schedule' || selectedRating === branch.rating));
+      return supported ? model : {...model, energyConfiguration:undefined, energyFallback:true};
+    }
+    return {...model, energyConfiguration: undefined, energyRating: undefined, parameterCandidates: undefined};
+  }
+  const weight = model => byId('v41-mode').value === 'energy'
+    ? model.energyWeightLb ?? model.ac.weightLb : model.ac.weightLb;
   function rating(id, model) {
     const control = {f4u4: 'v4-rating', bf109f4: 'v4-f4-rating', p51b: 'v4-p51-rating'}[id];
-    return control ? byId(control).value : model.ac.defaultRating;
+    return control ? byId(control).value : model.energyConfiguration ? model.energyRating : model.ac.defaultRating;
   }
   function renderClimb() {
     const mass = value('v4-mass');
-    const rows = Object.entries(models).map(([id, model]) => {
-      const configured = {...model, options: {...model.options, ...model.climbOptions}};
-      const selected = model.climbOptions?.rating ?? rating(id, model);
-      const start = mass * model.ac.weightLb;
+    const rows = Object.keys(models).map(id => {
+      const model = activeModel(id, 7500);
+      const configured = {...model, options: {...model.options, ...(model.energyConfiguration ? {} : model.climbOptions)}};
+      const selected = model.energyConfiguration ? rating(id, model) : model.climbOptions?.rating ?? rating(id, model);
+      const start = mass * weight(model);
       const fixed = E.climbBand(M, configured, 5000, 10000, selected, start, 0);
       const fuel = E.climbBand(M, configured, 5000, 10000, selected, start, .5);
       return [model.ac.name, selected, fmt(start, 0), fmt(fixed?.minutes * 60, 2), fmt(fuel?.minutes * 60, 2),
@@ -53,17 +68,19 @@
     const alt = value('v4-alt');
     const eas = value('v4-eas');
     const mass = value('v4-mass');
-    const results = Object.fromEntries(Object.entries(models).map(([id, model]) => {
+    const results = Object.fromEntries(Object.keys(models).map(id => {
+      const model = activeModel(id);
       const chosen = id === 'f4u4' && byId('v4-lift').value === 'on'
         ? {...model, options: {...model.options, clMax: model.poweredClMax}} : model;
-      return [id, E.state(M, UniversalTurnLift, source, chosen, alt, eas, rating(id, model), model.ac.weightLb * mass)];
+      return [id, E.state(M, UniversalTurnLift, source, chosen, alt, eas, rating(id, model), weight(model) * mass)];
     }));
     table('v4-flight', ['Aircraft', 'Mass lb', 'Rating / gear', 'Stall mph EAS', 'Instant g', 'Sustained g',
-      'Turn °/s', 'Scenario °/s', 'Limit', 'Shaft / useful hp', 'Climb ft/min at selected speed'],
+      'Turn °/s', 'Scenario °/s', 'Limit', 'Configuration basis', 'Shaft / useful hp', 'Climb ft/min at selected speed'],
       Object.values(results).map(row => [row.name, fmt(row.weightLb, 0), row.rating + ' / ' + (row.gear ?? '—'),
         fmt(row.stallEasMph), fmt(row.instantG, 2), fmt(row.sustainedG, 2), fmt(row.sustainedDegSec),
-        row.band.map(v => fmt(v)).join(' to ') || '—', row.limit,
+        row.band.map(v => fmt(v)).join(' to ') || '—', row.limit, row.configuration,
         fmt(row.shaftHp, 0) + ' / ' + fmt(row.propulsiveHp, 0), fmt(row.climbFpm, 0)]));
+    globalThis.EnergyFlightState = results;
     const a = byId('v4-first').value;
     const b = byId('v4-second').value;
     const gap = a === b ? null : E.separation(results[a], results[b]);
@@ -76,7 +93,7 @@
     renderPlot(alt, mass, a, b);
     if (byId('v4-climb').parentElement.open) renderClimb();
   }
-  for (const id of ['v4-alt', 'v4-eas', 'v4-mass', 'v4-rating', 'v4-lift', 'v4-f4-rating', 'v4-p51-rating', 'v4-first', 'v4-second']) {
+  for (const id of ['v41-mode', 'v4-alt', 'v4-eas', 'v4-mass', 'v4-rating', 'v4-lift', 'v4-f4-rating', 'v4-p51-rating', 'v4-first', 'v4-second']) {
     byId(id).addEventListener('change', render);
   }
   byId('v4-climb').parentElement.addEventListener('toggle', event => {
@@ -85,12 +102,12 @@
   function renderPlot(alt, mass, first, second) {
     const colors = ['#70d7fa', '#ffbf69'];
     const sets = [first, second].map(id => {
-      const model = models[id];
+      const model = activeModel(id);
       const chosen = id === 'f4u4' && byId('v4-lift').value === 'on'
         ? {...model, options: {...model.options, clMax: model.poweredClMax}} : model;
       const points = [];
       for (let eas = 110; eas <= 250; eas += 5) {
-        const row = E.state(M, UniversalTurnLift, source, chosen, alt, eas, rating(id, model), model.ac.weightLb * mass);
+        const row = E.state(M, UniversalTurnLift, source, chosen, alt, eas, rating(id, model), weight(model) * mass);
         points.push({eas, ...row});
       }
       return points;
@@ -155,6 +172,10 @@
         'P-51B racks, mph TAS at ' + row.inHg + ' inHg', mustang.alt,
         fmt(row.observed), fmt(row.baseline), fmt(row.candidate), i ? 'reserved' : 'fit'])));
   byId('v4-p51-note').textContent = mustang.limitations;
+  table('v41-checks', ['Aircraft', 'Height ft', 'Observed ft/min', 'Evidence basis', 'v4.0', 'v4.1', 'Signed error', 'Derived excess hp', 'Role'],
+    Object.entries(scorecard.energy).flatMap(([id, report]) => report.rows.map(row => [
+      models[id].ac.name, fmt(row.altFt,0), fmt(row.observed), row.observationKind, fmt(row.before), fmt(row.candidate),
+      fmt(row.candidate-row.observed), fmt(row.observedExcessHp), row.role])));
   byId('v4-game-note').textContent = scorecard.il2.qualification;
   table('v4-game', ['Altitude m', 'Mass kg', 'IL-2 turn sec', 'Model at IAS=CAS sec', 'CAS offset ±5 mph sec',
     'Limiting factor', 'Conditional lift coefficient at IL-2 turn'],

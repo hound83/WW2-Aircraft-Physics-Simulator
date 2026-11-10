@@ -1,0 +1,257 @@
+{
+  "schema": 1,
+  "version": "4.1.0-rc.1",
+  "baseline": "36871080678e90c47056b86de851afcf50fff64c",
+  "modelParameters": "calibration/v4.1-energy.json",
+  "scorecard": "validation/current/energy-v41.json",
+  "equation": "excess shaft-to-flight energy = gross weight times vertical velocity; equivalent installed adjustment = area*q*V + fraction*propulsive power",
+  "roles": "Fit/check roles below were all previously exposed; check means omitted from numerical fitting, not newly independent data.",
+  "sources": {
+    "p47b": {
+      "url": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf",
+      "identity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
+      "massLb": 12565,
+      "conditions": [
+        {
+          "rating": "military",
+          "gear": "turbo",
+          "minFt": 0,
+          "maxFt": 12600,
+          "rpm": 2700,
+          "powerBasis": "report torque-meter BHP; gross test mass"
+        },
+        {
+          "rating": "normal",
+          "gear": "turbo",
+          "minFt": 12600,
+          "maxFt": 35000,
+          "rpm": 2550,
+          "powerBasis": "report torque-meter BHP; gross test mass"
+        }
+      ],
+      "fit": [
+        "p47-5902-0",
+        "p47-5902-10000",
+        "p47-5902-12600-normal",
+        "p47-5902-20000",
+        "p47-5902-30000"
+      ],
+      "check": [
+        "p47-5902-5000",
+        "p47-5902-12600",
+        "p47-5902-15000",
+        "p47-5902-25000",
+        "p47-5902-35000"
+      ]
+    },
+    "spitfire_lfix_bs543": {
+      "url": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html",
+      "identity": {
+        "aircraftId": "spitfire_lfix_bs543",
+        "variant": "Spitfire LF Mk IXc",
+        "specimen": "BS.543"
+      },
+      "massLb": 7485,
+      "conditions": [
+        {
+          "rating": "combat+18",
+          "gear": "low",
+          "minFt": 2000,
+          "maxFt": 13000,
+          "rpm": 3000,
+          "powerBasis": "engine-chart BHP corrected by recorded climb/level boost ratio; transition uses native engine node"
+        },
+        {
+          "rating": "combat+18",
+          "gear": "high",
+          "minFt": 13000,
+          "maxFt": 30000,
+          "rpm": 3000,
+          "powerBasis": "engine-chart BHP corrected by recorded climb/level boost ratio; transition uses native engine node"
+        }
+      ],
+      "fit": [
+        "spitfire_lfix_bs543-2000",
+        "spitfire_lfix_bs543-6000",
+        "spitfire_lfix_bs543-10000",
+        "spitfire_lfix_bs543-16000",
+        "spitfire_lfix_bs543-22000",
+        "spitfire_lfix_bs543-28000"
+      ],
+      "check": [
+        "spitfire_lfix_bs543-4000",
+        "spitfire_lfix_bs543-7000",
+        "spitfire_lfix_bs543-8000",
+        "spitfire_lfix_bs543-12000",
+        "spitfire_lfix_bs543-14000",
+        "spitfire_lfix_bs543-18000",
+        "spitfire_lfix_bs543-20000",
+        "spitfire_lfix_bs543-24000",
+        "spitfire_lfix_bs543-26000",
+        "spitfire_lfix_bs543-30000"
+      ]
+    },
+    "p38g": {
+      "url": "https://www.wwiiaircraftperformance.com/org/p-38/p-38_files/P-38G-1_42-12687_FS-M-19-1538-A.pdf",
+      "identity": {
+        "aircraftId": "p38g",
+        "variant": "P-38G-1",
+        "specimen": "42-12687"
+      },
+      "massLb": 13900,
+      "conditions": [
+        {
+          "rating": "climb",
+          "gear": "turbo",
+          "minFt": 0,
+          "maxFt": 35000,
+          "rpm": 3000,
+          "powerBasis": "per-engine chart BHP from same trial"
+        }
+      ],
+      "fit": [
+        "p38-0",
+        "p38-10000",
+        "p38-20000",
+        "p38-30000"
+      ],
+      "check": [
+        "p38-6000",
+        "p38-15000",
+        "p38-25000",
+        "p38-35000"
+      ]
+    },
+    "fw190a4": {
+      "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-783-nr1.html",
+      "identity": {
+        "aircraftId": "fw190a4",
+        "variant": "Fw 190 A-4",
+        "specimen": "W.Nr. 783"
+      },
+      "massLb": 8531.889546554761,
+      "conditions": [
+        {
+          "rating": "combat",
+          "gear": "auto",
+          "minFt": 0,
+          "maxFt": 32808.39895013123,
+          "powerBasis": "existing speed-dependent source inlet model"
+        }
+      ],
+      "fit": [
+        "fw-0",
+        "fw-4000",
+        "fw-6000",
+        "fw-8000"
+      ],
+      "check": [
+        "fw-2000",
+        "fw-5000",
+        "fw-7000",
+        "fw-9000",
+        "fw-10000"
+      ]
+    },
+    "p51b": {
+      "url": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+      "identity": {
+        "aircraftId": "p51b",
+        "variant": "P-51B-15",
+        "specimen": "43-24777"
+      },
+      "massLb": 9335,
+      "conditions": [
+        {
+          "rating": "75inHg",
+          "gear": "low",
+          "minFt": 2200,
+          "maxFt": 12000,
+          "rpm": 3000,
+          "powerBasis": "Figure 7 chart BHP midpoint"
+        },
+        {
+          "rating": "67inHg",
+          "gear": "low",
+          "minFt": 2200,
+          "maxFt": 12000,
+          "rpm": 3000,
+          "powerBasis": "native rating curve; independent lower-boost check"
+        }
+      ],
+      "fit": [
+        "p51-75inHg-2200",
+        "p51-75inHg-8000",
+        "p51-75inHg-12000"
+      ],
+      "check": [
+        "p51-67inHg-2200",
+        "p51-75inHg-4000"
+      ]
+    }
+  },
+  "evidence": {
+    "p47b": {
+      "register": "references/p47b-measured-climb-v33.json",
+      "kind": "Original table transcription; torque-meter BHP, recorded TAS/RPM/rates",
+      "mass": "Cover gross mass; instantaneous mass unestablished",
+      "gearing": "Original handbook engine:prop 2:1"
+    },
+    "spitfire_lfix_bs543": {
+      "register": "references/climb-condition-states.json",
+      "kind": "A&AEE Tables II/V transcription, radiator-open climb",
+      "derived": "Shaft BHP from existing engine curve times recorded boost ratio to exponent 0.75",
+      "assumed": "13,000-ft high-gear transition native engine node; preceding low-gear power flat from 12,000 to 13,000 ft",
+      "mass": "7485 lb trial load; not 7110 lb clean reference"
+    },
+    "p38g": {
+      "register": "references/p38g-42-12687.json",
+      "kind": "Original chart transcription; BHP per engine, 3000 RPM, TAS",
+      "assumed": "13,900 lb takeoff scenario; instantaneous climb mass not established",
+      "loss": "Bounded advance-ratio/loading candidate; high-J penalty tapers to zero beyond training maximum over 0.05 J"
+    },
+    "fw190a4": {
+      "register": "references/fw190a4-783.json",
+      "kind": "Digitized factory open-cooling climb curve; original reading tolerances retained in register",
+      "unknown": "Exact climb TAS",
+      "derived": "Model-best climb; fractional equivalent installed loss interpolated by altitude",
+      "extrapolation": "8-10 km bounded linear extension; 9/10 km excluded from fitting"
+    },
+    "p51b": {
+      "register": "references/p51-maneuver-power.json",
+      "kind": "Original reported rate and digitized Figure 6 rate / Figure 7 power",
+      "unknown": "Exact climb TAS and instantaneous mass",
+      "assumed": "9335 lb takeoff scenario; Figure 7 BHP interval midpoint",
+      "loss": "75-inHg-only 3% net useful-power gain; 67-inHg native branch unchanged"
+    }
+  },
+  "f4Original": {
+    "url": "https://stephentaylorhistorian.com/wp-content/uploads/2020/04/bf-109f-evaluation.pdf",
+    "sha256": "db43c5e8f8be5fe1bb61657878aee8fe073e8ada00b2e237ad3f06046fbd4dac",
+    "pagesReviewed": "All 8 pages, including original engine flight-calibration plate and synoptic estimate",
+    "reportedF4NormalWeightLb": 6200,
+    "estimatedF4ClimbFpm": 3400,
+    "estimatedF4TimeTo15000Min": 4.8,
+    "qualification": "USAAF Report 110 is an intelligence compilation. Its speed chart explicitly says estimated performance. No serial, flown loading or calibrated stall is identified. Engine plate is a useful original prior but no numerically qualified altitude map was admitted from the small axis labels."
+  },
+  "separateReportTransfer": {
+    "register": "references/independent-flight-checks.json",
+    "specimen": "P-47B 41-5942",
+    "qualification": "Different specimen/report, same engine/prop family; previously exposed observations, excluded from v4.1 fit; not historical sustained-turn certification"
+  },
+  "rejectedCandidates": [
+    "P-38 constant useful-power/area fit worsened held-out behavior; use bounded off-design candidate with alternate-split sensitivity",
+    "Bf109 Report 110 small engine-plate axes not qualified numerically; no reconstructed altitude engine map",
+    "No CLmax selection or installed power fitting against IL-2/DCS"
+  ],
+  "uncertainty": "No statistical confidence interval or independent 5:1 aircraft-difference bound. Gross masses, inferred power, chart digitization and model-best-speed substitutions remain explicit.",
+  "latestResearchReview": {
+    "commit": "a492a4e67eb7a353e108897ba98805aecc19faf7",
+    "report": "docs/research/WW2_TWELVE_FIGHTER_DUAL_LANE_RESEARCH_2026-11-10.md",
+    "result": "New research pack retained in build. No new exact-variant near-stall CAS or independent sustained-turn observation qualifies a further CLmax fit."
+  }
+}

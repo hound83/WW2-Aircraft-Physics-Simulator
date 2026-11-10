@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.1 energy configuration
+
+Five configurations improve source-matched climb; corrections represent aggregate installed energy, not separately measured propeller/cooling/drag components. Source masses, derived Spitfire boost power, graph readings and unknown optimum TAS retain their uncertainty. P-38 and Fw190 each have a worsened individual check, and P-38 alternate fits are sensitive. F-4 gains a conditional inlet/parameter ensemble, while Corsair accuracy is unchanged. Source/reference modes expose different physical configurations. Historical stall/turn and 5:1 remain unresolved. [Exact bounds and regressions](V41_ENERGY_RESULTS.md).
+
 ## v4.0 candidate scope
 
 The F4U-4 uses a 1948 trial, static engine-rating transfer, assumed gear scheduling/inlet recovery, and a source-fitted equivalent low-J correction. Its high-altitude speed and climb deficits remain. P-47B 41-5942 prop and P-51B rack changes are bounded source-conditioned experiments. Existing Spitfire, F-4, Fw190 A-4 and P-38G parameters retain their earlier qualifications. Seven-aircraft turn bands use selected perturbations and an assumed 7g structural cap. Fuel burn uses illustrative 0.50 lb/hp-hour. [Exact limitations and v4.1 gaps](V4_MILESTONE.md).

@@ -1,0 +1,404 @@
+{
+  "schema": 1,
+  "version": "4.1.0-rc.1",
+  "baseline": "36871080678e90c47056b86de851afcf50fff64c",
+  "interpretation": "Source-conditioned equivalent installed energy models. Same-report checks were exposed previously and excluded from numerical fit. No independent historical turn accuracy claim.",
+  "configurations": {
+    "p47b": {
+      "id": "p47b-energy-v41",
+      "identity": {
+        "aircraftId": "p47b",
+        "variant": "P-47B",
+        "specimen": "41-5902"
+      },
+      "source": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf",
+      "weightLb": 12565,
+      "branches": [
+        {
+          "rating": "military",
+          "gear": "turbo",
+          "minFt": 0,
+          "maxFt": 12600,
+          "engineRpm": 2700,
+          "reductionRatioEnginePerProp": 2,
+          "powerBasis": "report torque-meter BHP; gross test mass",
+          "powerNodes": [
+            {
+              "altFt": 0,
+              "bhp": 2000
+            },
+            {
+              "altFt": 5000,
+              "bhp": 2000
+            },
+            {
+              "altFt": 10000,
+              "bhp": 2000
+            },
+            {
+              "altFt": 12600,
+              "bhp": 2000
+            }
+          ],
+          "loss": {
+            "areaM2": 0.145,
+            "powerFraction": 0.09
+          }
+        },
+        {
+          "rating": "normal",
+          "gear": "turbo",
+          "minFt": 12600,
+          "maxFt": 35000,
+          "engineRpm": 2550,
+          "reductionRatioEnginePerProp": 2,
+          "powerBasis": "report torque-meter BHP; gross test mass",
+          "powerNodes": [
+            {
+              "altFt": 12600,
+              "bhp": 1625
+            },
+            {
+              "altFt": 15000,
+              "bhp": 1625
+            },
+            {
+              "altFt": 20000,
+              "bhp": 1625
+            },
+            {
+              "altFt": 25000,
+              "bhp": 1625
+            },
+            {
+              "altFt": 30000,
+              "bhp": 1625
+            },
+            {
+              "altFt": 35000,
+              "bhp": 1365
+            }
+          ],
+          "loss": {
+            "areaM2": 0.145,
+            "powerFraction": 0.09
+          }
+        }
+      ],
+      "minTasMph": 110,
+      "maxTasMph": 320
+    },
+    "spitfire_lfix_bs543": {
+      "id": "spitfire_lfix_bs543-energy-v41",
+      "identity": {
+        "aircraftId": "spitfire_lfix_bs543",
+        "variant": "Spitfire LF Mk IXc",
+        "specimen": "BS.543"
+      },
+      "source": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html",
+      "weightLb": 7485,
+      "branches": [
+        {
+          "rating": "combat+18",
+          "gear": "low",
+          "minFt": 2000,
+          "maxFt": 13000,
+          "engineRpm": 3000,
+          "powerBasis": "engine-chart BHP corrected by recorded climb/level boost ratio; transition uses native engine node",
+          "powerNodes": [
+            {
+              "altFt": 2000,
+              "bhp": 1636.5217391304348
+            },
+            {
+              "altFt": 4000,
+              "bhp": 1673.0434782608695
+            },
+            {
+              "altFt": 6000,
+              "bhp": 1705
+            },
+            {
+              "altFt": 7000,
+              "bhp": 1705
+            },
+            {
+              "altFt": 8000,
+              "bhp": 1665.73812936611
+            },
+            {
+              "altFt": 10000,
+              "bhp": 1590.273390267474
+            },
+            {
+              "altFt": 12000,
+              "bhp": 1505.2019247626636
+            },
+            {
+              "altFt": 13000,
+              "bhp": 1505.2019247626636
+            }
+          ],
+          "loss": {
+            "areaM2": 0.32,
+            "powerFraction": -0.075
+          }
+        },
+        {
+          "rating": "combat+18",
+          "gear": "high",
+          "minFt": 13000,
+          "maxFt": 30000,
+          "engineRpm": 3000,
+          "powerBasis": "engine-chart BHP corrected by recorded climb/level boost ratio; transition uses native engine node",
+          "powerNodes": [
+            {
+              "altFt": 13000,
+              "bhp": 1530
+            },
+            {
+              "altFt": 16000,
+              "bhp": 1562.1175929036096
+            },
+            {
+              "altFt": 18000,
+              "bhp": 1562.1175929036096
+            },
+            {
+              "altFt": 20000,
+              "bhp": 1482.6028900629838
+            },
+            {
+              "altFt": 22000,
+              "bhp": 1409.0634012686899
+            },
+            {
+              "altFt": 24000,
+              "bhp": 1308.6527046109286
+            },
+            {
+              "altFt": 26000,
+              "bhp": 1220.6975090594335
+            },
+            {
+              "altFt": 28000,
+              "bhp": 1136.433633405245
+            },
+            {
+              "altFt": 30000,
+              "bhp": 1049.985645172587
+            }
+          ],
+          "loss": {
+            "areaM2": 0.32,
+            "powerFraction": -0.075
+          }
+        }
+      ],
+      "minTasMph": 110,
+      "maxTasMph": 320
+    },
+    "p38g": {
+      "id": "p38g-energy-v41",
+      "identity": {
+        "aircraftId": "p38g",
+        "variant": "P-38G-1",
+        "specimen": "42-12687"
+      },
+      "source": "https://www.wwiiaircraftperformance.com/org/p-38/p-38_files/P-38G-1_42-12687_FS-M-19-1538-A.pdf",
+      "weightLb": 13900,
+      "branches": [
+        {
+          "rating": "climb",
+          "gear": "turbo",
+          "minFt": 0,
+          "maxFt": 35000,
+          "engineRpm": 3000,
+          "powerBasis": "per-engine chart BHP from same trial",
+          "powerNodes": [
+            {
+              "altFt": 0,
+              "bhp": 1200
+            },
+            {
+              "altFt": 6000,
+              "bhp": 1210
+            },
+            {
+              "altFt": 10000,
+              "bhp": 1210
+            },
+            {
+              "altFt": 15000,
+              "bhp": 1210
+            },
+            {
+              "altFt": 20000,
+              "bhp": 1195
+            },
+            {
+              "altFt": 25000,
+              "bhp": 1090
+            },
+            {
+              "altFt": 30000,
+              "bhp": 985
+            },
+            {
+              "altFt": 35000,
+              "bhp": 690
+            }
+          ],
+          "loss": {
+            "areaM2": 0.02,
+            "powerFraction": 0,
+            "offDesign": {
+              "center": 0.985,
+              "strength": 0.22,
+              "maxJ": 1.2549565217391303,
+              "fadeJ": 0.05
+            }
+          }
+        }
+      ],
+      "minTasMph": 110,
+      "maxTasMph": 320
+    },
+    "fw190a4": {
+      "id": "fw190a4-energy-v41",
+      "identity": {
+        "aircraftId": "fw190a4",
+        "variant": "Fw 190 A-4",
+        "specimen": "W.Nr. 783"
+      },
+      "source": "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-783-nr1.html",
+      "weightLb": 8531.889546554761,
+      "branches": [
+        {
+          "rating": "combat",
+          "gear": "auto",
+          "minFt": 0,
+          "maxFt": 32808.39895013123,
+          "powerBasis": "existing speed-dependent source inlet model",
+          "loss": {
+            "areaM2": 0,
+            "powerFraction": 0,
+            "fractionNodes": [
+              {
+                "altFt": 0,
+                "fraction": 0.13769501668866724
+              },
+              {
+                "altFt": 13123.359580052493,
+                "fraction": 0.0873757250374183
+              },
+              {
+                "altFt": 19685.03937007874,
+                "fraction": 0.04524807713460177
+              },
+              {
+                "altFt": 26246.719160104985,
+                "fraction": 0.014760549762286246
+              }
+            ]
+          }
+        }
+      ],
+      "minTasMph": 130,
+      "maxTasMph": 320
+    },
+    "p51b": {
+      "id": "p51b-energy-v41",
+      "identity": {
+        "aircraftId": "p51b",
+        "variant": "P-51B-15",
+        "specimen": "43-24777"
+      },
+      "source": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+      "weightLb": 9335,
+      "branches": [
+        {
+          "rating": "75inHg",
+          "gear": "low",
+          "minFt": 2200,
+          "maxFt": 12000,
+          "engineRpm": 3000,
+          "powerBasis": "Figure 7 chart BHP midpoint",
+          "powerNodes": [
+            {
+              "altFt": 2200,
+              "bhp": 1805
+            },
+            {
+              "altFt": 4000,
+              "bhp": 1645
+            },
+            {
+              "altFt": 8000,
+              "bhp": 1450
+            },
+            {
+              "altFt": 12000,
+              "bhp": 1280
+            }
+          ],
+          "loss": {
+            "areaM2": 0,
+            "powerFraction": -0.03
+          }
+        },
+        {
+          "rating": "67inHg",
+          "gear": "low",
+          "minFt": 2200,
+          "maxFt": 12000,
+          "engineRpm": 3000,
+          "powerBasis": "native rating curve; withheld lower-boost condition, previously exposed",
+          "loss": {
+            "areaM2": 0,
+            "powerFraction": 0
+          }
+        }
+      ],
+      "minTasMph": 110,
+      "maxTasMph": 320
+    },
+    "bf109f4": {
+      "id": "bf109f4-inlet-v41",
+      "identity": {
+        "aircraftId": "bf109f4",
+        "variant": "Bf 109 F-4",
+        "specimen": "unspecified"
+      },
+      "weightLb": 6371,
+      "source": "Messerschmitt V.B.109 19 L42 DB601E installation, transferred from G-1 as an explicit F-4 scenario",
+      "minTasMph": 110,
+      "maxTasMph": 320,
+      "branches": [
+        {
+          "rating": "combat",
+          "gear": "fluid",
+          "minFt": 0,
+          "maxFt": 23000,
+          "engineModel": "inlet-transfer",
+          "powerBasis": "same engine, cross-installation inlet transfer",
+          "loss": {
+            "areaM2": 0,
+            "powerFraction": 0
+          }
+        },
+        {
+          "rating": "emergency",
+          "gear": "fluid",
+          "minFt": 0,
+          "maxFt": 15748,
+          "powerBasis": "retained DB601E emergency reference",
+          "loss": {
+            "areaM2": 0,
+            "powerFraction": 0
+          }
+        }
+      ]
+    }
+  }
+}

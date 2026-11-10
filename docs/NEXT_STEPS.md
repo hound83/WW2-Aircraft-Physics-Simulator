@@ -1,5 +1,9 @@
 # Next steps
 
+## After v4.1 energy integration
+
+Five existing profiles now improve in the live source-configuration comparison. [Results, regressions and next scientific gate](V41_ENERGY_RESULTS.md) supersede the earlier v4.1 wish list. Prioritize independent joint speed/climb/power constraints, the Corsair high-altitude deficit, P-38 sparse-fit sensitivity and exact low-speed polar/stall conditions. Preserve achieved source-check reductions; do not treat a newly fitted climb as independent turn validation.
+
 ## v4.0 implementation and v4.1 priorities
 
 The major research candidate adds seven-profile live maneuver curves, Corsair normal/military/stall-state choices, bounded P-47B prop and P-51B rack tests and fuel-changing climb integration. Follow the [v4.0 report](V4_MILESTONE.md) for exact fit/check roles and remaining failures. Prioritize Corsair high-altitude propulsion/drag separation, P-47 installed thrust-loading residuals, source-matched Mustang propellers, and calibrated BS.543/F-4/P-38G/Fw190 near-stall evidence before comparative accuracy claims.

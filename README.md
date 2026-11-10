@@ -1,5 +1,7 @@
 # European Air War Physics
 
+The [v4.1 installed-energy candidate](docs/V41_ENERGY_RESULTS.md) improves matched-source climb checks for P-47B, Spitfire IX, P-38G, Fw 190 A-4 and P-51B in the live comparison. Source/reference switching, 48 energy checks and a separate-report P-47 transfer make the changes inspectable. Version 4.1.0-rc.1 remains a research candidate; historical sustained-turn 5:1 accuracy is unresolved.
+
 The [v4.0 research candidate](docs/V4_MILESTONE.md) adds a live seven-aircraft maneuver envelope, F4U-4 Corsair profile, paired P-47B propeller and P-51B rack checks, and climb-time integration with changing fuel mass. Download the main CI artifact and open `dist/model.html`. Full historical sustained-turn accuracy remains unresolved.
 
 The [v3.15 turn/stall correction](docs/TURN_STALL_CORRECTION.md) adds bounded Mustang lift to the live explorer.

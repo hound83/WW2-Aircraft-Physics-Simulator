@@ -297,6 +297,28 @@ async function run(){
   await until(()=>evaluate('document.querySelectorAll("#v4-climb tbody tr").length===7'),'v4 fuel integration');
   assert.ok((await evaluate('document.getElementById("v4-climb").textContent')).includes('12500'));
   checks.push('v4 seven-aircraft envelope, pair curves, rating/lift/mass controls, explicit engine gaps and fuel-mass integration');
+  await select('v41-mode','energy');
+  await select('v4-alt','5000');
+  await select('v4-eas','170');
+  await select('v4-mass','1');
+  const energyRows=await evaluate('EnergyFlightState');
+  assert.ok(energyRows.p47b.climbFpm>2400&&energyRows.p47b.climbFpm<2700);
+  assert.equal(energyRows.spitfire_lfix_bs543.weightLb,7485);
+  assert.ok(energyRows.p38g.configuration.includes('energy-v41'));
+  await select('v41-mode','reference');
+  const priorRows=await evaluate('EnergyFlightState');
+  assert.ok(priorRows.p47b.climbFpm>energyRows.p47b.climbFpm+400);
+  assert.equal(priorRows.spitfire_lfix_bs543.weightLb,7110);
+  await select('v41-mode','energy');
+  assert.equal((await evaluate('EnergyFlightState.p47b')).climbFpm,energyRows.p47b.climbFpm);
+  assert.equal(await evaluate('document.querySelectorAll("#v41-checks tbody tr").length'),48);
+  await select('v4-alt','20800');
+  assert.ok((await evaluate('EnergyFlightState.p51b.configuration')).includes('outside source range'));
+  await select('v4-alt','5000');
+  await evaluate('document.getElementById("maneuver-envelope").scrollIntoView({behavior:"instant",block:"start"})');
+  const energyImage=await send('Page.captureScreenshot',{format:'png'});
+  fs.writeFileSync(path.join(root,'validation/current/energy-v41-browser.png'),Buffer.from(energyImage.data,'base64'));
+  checks.push('v4.1 source energy mode changes live P47 climb/turn, uses report masses, switches reference/source reproducibly and labels bounded fallback');
   assert.equal(errors.length,0,'Browser JavaScript exceptions');record.status='passed';
   for(const file of ['dist/build.json','validation/current/build.json']){const p=path.join(root,file),info=JSON.parse(fs.readFileSync(p,'utf8'));assert.equal(info.htmlSha256,record.htmlSha256);info.browserInteractionTested=true;fs.writeFileSync(p,JSON.stringify(info,null,2)+'\n');}
   const doc=path.join(root,'docs/CURRENT_VALIDATION.md');fs.writeFileSync(doc,fs.readFileSync(doc,'utf8').replace('| Interactive browser tests | See browser-smoke.json; run separately on the current build |','| Interactive browser tests | Passed '+checks.length+' headless checks; see browser-smoke.json |'));
