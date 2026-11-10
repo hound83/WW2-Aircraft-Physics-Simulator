@@ -1,5 +1,7 @@
 # Research and imported evidence
 
+The [v4.1 energy audit](v4.1-energy-audit.json) indexes original engine/climb registers, fit/check identities, derived excess power, interpolation/extrapolation and a newly inspected original Bf109 Report 110. [Accepted research candidate and numerical results](../docs/V41_ENERGY_RESULTS.md).
+
 The [v4 source audit](v4-source-audit.json) records Corsair original chart hashes, confirmed TAS axes, approximate chart BHP, geometry/engine provenance, source roles and installation/fuel assumptions. [Results and v4.1 priorities](../docs/V4_MILESTONE.md).
 
 **New 2026-11-10 four-track deepening:** The [multi-axis original-source audit](../docs/research/WW2_FIGHTERS_MULTIAXIS_PRIMARY_SOURCE_DEEPENING_2026-11-10.md) integrates 200 additional *source* observations from original P-47B six-propeller, P-40F five-propeller, F4U-4, F6F-3, P-38, Spitfire IX, P-51B-15, Bf109 and Fw190 reports, plus compact source-level quality reviews and independently cross-referenced secondary leads. The two auto-ingested, semantically versioned files are [propulsion trials](research/ww2_multiaxis_propulsion_trials_2026-11-10.json) and [low-speed and turn/calibration](research/ww2_low_speed_turn_calibration_2026-11-10.json). Catalog: **955 observations, 208 stall rows, 163 sources, 26 source-dependency groups and 11 chart reviews**. No automatic physics fit or unjustified CAS upgrade. The earlier four-track pack was patched to v1.0.1 to correct original serial and conflicting figure-altitude metadata.

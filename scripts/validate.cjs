@@ -45,8 +45,11 @@ try{
  require('../validation/diagnostics/independent_flight_checks.cjs').writeReport();
  require('../validation/diagnostics/fighter_comparison.cjs').writeReport();
  require('../validation/diagnostics/v4_envelope.cjs').writeReport();
+ require('../validation/diagnostics/energy_v41.cjs').writeReport();
  const md=[
  '# Current validation',
+ '',
+ '[v4.1 live energy correction and results](V41_ENERGY_RESULTS.md).',
  '',
  '[v4.0 maneuver and propulsion milestone](V4_MILESTONE.md).',
  '',

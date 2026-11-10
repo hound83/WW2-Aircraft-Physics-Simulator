@@ -1,0 +1,304 @@
+{
+  "commit": "36871080678e90c47056b86de851afcf50fff64c",
+  "scope": "v4.0 predictions at common report mass/rating/TAS, or model-best TAS where report speed is unknown",
+  "rows": {
+    "p47b": [
+      {
+        "id": "p47-5902-0",
+        "observed": 2560,
+        "before": 3172.7007523554526,
+        "role": "fit"
+      },
+      {
+        "id": "p47-5902-5000",
+        "observed": 2545,
+        "before": 3099.8986329667055,
+        "role": "check"
+      },
+      {
+        "id": "p47-5902-10000",
+        "observed": 2465,
+        "before": 3016.5230080707547,
+        "role": "fit"
+      },
+      {
+        "id": "p47-5902-12600",
+        "observed": 2410,
+        "before": 2967.804438084149,
+        "role": "check"
+      },
+      {
+        "id": "p47-5902-12600-normal",
+        "observed": 1800,
+        "before": 2188.511362520282,
+        "role": "fit"
+      },
+      {
+        "id": "p47-5902-15000",
+        "observed": 1725,
+        "before": 2141.202482102011,
+        "role": "check"
+      },
+      {
+        "id": "p47-5902-20000",
+        "observed": 1565,
+        "before": 2028.205891216382,
+        "role": "fit"
+      },
+      {
+        "id": "p47-5902-25000",
+        "observed": 1380,
+        "before": 1897.9482385927201,
+        "role": "check"
+      },
+      {
+        "id": "p47-5902-30000",
+        "observed": 1140,
+        "before": 1717.3738914633982,
+        "role": "fit"
+      },
+      {
+        "id": "p47-5902-35000",
+        "observed": 450,
+        "before": 908.8793331299538,
+        "role": "check"
+      }
+    ],
+    "spitfire_lfix_bs543": [
+      {
+        "id": "spitfire_lfix_bs543-2000",
+        "observed": 4640,
+        "before": 4661.787202228519,
+        "role": "fit"
+      },
+      {
+        "id": "spitfire_lfix_bs543-4000",
+        "observed": 4660,
+        "before": 4757.4610396254175,
+        "role": "check"
+      },
+      {
+        "id": "spitfire_lfix_bs543-6000",
+        "observed": 4690,
+        "before": 4838.2763454931155,
+        "role": "fit"
+      },
+      {
+        "id": "spitfire_lfix_bs543-7000",
+        "observed": 4700,
+        "before": 4821.567914488654,
+        "role": "check"
+      },
+      {
+        "id": "spitfire_lfix_bs543-8000",
+        "observed": 4560,
+        "before": 4804.493003148968,
+        "role": "check"
+      },
+      {
+        "id": "spitfire_lfix_bs543-10000",
+        "observed": 4280,
+        "before": 4769.35770644662,
+        "role": "fit"
+      },
+      {
+        "id": "spitfire_lfix_bs543-12000",
+        "observed": 4000,
+        "before": 4477.451149496039,
+        "role": "check"
+      },
+      {
+        "id": "spitfire_lfix_bs543-14000",
+        "observed": 3860,
+        "before": 4135.266947223279,
+        "role": "check"
+      },
+      {
+        "id": "spitfire_lfix_bs543-16000",
+        "observed": 3860,
+        "before": 4208.74888225925,
+        "role": "fit"
+      },
+      {
+        "id": "spitfire_lfix_bs543-18000",
+        "observed": 3860,
+        "before": 4176.474633994345,
+        "role": "check"
+      },
+      {
+        "id": "spitfire_lfix_bs543-20000",
+        "observed": 3560,
+        "before": 4157.615341130579,
+        "role": "check"
+      },
+      {
+        "id": "spitfire_lfix_bs543-22000",
+        "observed": 3270,
+        "before": 4131.452611673832,
+        "role": "fit"
+      },
+      {
+        "id": "spitfire_lfix_bs543-24000",
+        "observed": 2970,
+        "before": 3617.9556395312843,
+        "role": "check"
+      },
+      {
+        "id": "spitfire_lfix_bs543-26000",
+        "observed": 2700,
+        "before": 3245.071502753057,
+        "role": "check"
+      },
+      {
+        "id": "spitfire_lfix_bs543-28000",
+        "observed": 2400,
+        "before": 2863.9580304684073,
+        "role": "fit"
+      },
+      {
+        "id": "spitfire_lfix_bs543-30000",
+        "observed": 2120,
+        "before": 2495.6349244848752,
+        "role": "check"
+      }
+    ],
+    "p38g": [
+      {
+        "id": "p38-0",
+        "observed": 3300,
+        "before": 3710.874114318908,
+        "role": "fit"
+      },
+      {
+        "id": "p38-6000",
+        "observed": 3660,
+        "before": 3679.942643199111,
+        "role": "check"
+      },
+      {
+        "id": "p38-10000",
+        "observed": 3630,
+        "before": 3630,
+        "role": "fit"
+      },
+      {
+        "id": "p38-15000",
+        "observed": 3500,
+        "before": 3555.4091619326014,
+        "role": "check"
+      },
+      {
+        "id": "p38-20000",
+        "observed": 3280,
+        "before": 3384.2338296118314,
+        "role": "fit"
+      },
+      {
+        "id": "p38-25000",
+        "observed": 2680,
+        "before": 2907.47006225459,
+        "role": "check"
+      },
+      {
+        "id": "p38-30000",
+        "observed": 2100,
+        "before": 2385.280378184683,
+        "role": "fit"
+      },
+      {
+        "id": "p38-35000",
+        "observed": 1200,
+        "before": 1090.01541137361,
+        "role": "check"
+      }
+    ],
+    "fw190a4": [
+      {
+        "id": "fw-0",
+        "observed": 2864.173228346457,
+        "before": 3512.875432425888,
+        "role": "fit"
+      },
+      {
+        "id": "fw-2000",
+        "observed": 2696.850393700787,
+        "before": 2995.524819766814,
+        "role": "check"
+      },
+      {
+        "id": "fw-4000",
+        "observed": 2381.8897637795276,
+        "before": 2743.4070661379506,
+        "role": "fit"
+      },
+      {
+        "id": "fw-5000",
+        "observed": 2381.8897637795276,
+        "before": 2683.013106898678,
+        "role": "check"
+      },
+      {
+        "id": "fw-6000",
+        "observed": 2372.047244094488,
+        "before": 2559.568540660466,
+        "role": "fit"
+      },
+      {
+        "id": "fw-7000",
+        "observed": 1958.6614173228345,
+        "before": 2002.4545277050545,
+        "role": "check"
+      },
+      {
+        "id": "fw-8000",
+        "observed": 1437.0078740157478,
+        "before": 1484.211684553416,
+        "role": "fit"
+      },
+      {
+        "id": "fw-9000",
+        "observed": 944.8818897637794,
+        "before": 1000.1223681353836,
+        "role": "check"
+      },
+      {
+        "id": "fw-10000",
+        "observed": 423.22834645669286,
+        "before": 545.812292436027,
+        "role": "check"
+      }
+    ],
+    "p51b": [
+      {
+        "id": "p51-67inHg-2200",
+        "observed": 3820,
+        "before": 3807.7016649924412,
+        "role": "check"
+      },
+      {
+        "id": "p51-75inHg-2200",
+        "observed": 4380,
+        "before": 4386.365441933873,
+        "role": "fit"
+      },
+      {
+        "id": "p51-75inHg-4000",
+        "observed": 4112.5,
+        "before": 4421.308013377222,
+        "role": "check"
+      },
+      {
+        "id": "p51-75inHg-8000",
+        "observed": 3525,
+        "before": null,
+        "role": "fit"
+      },
+      {
+        "id": "p51-75inHg-12000",
+        "observed": 3050,
+        "before": null,
+        "role": "fit"
+      }
+    ]
+  }
+}

@@ -1,7 +1,8 @@
 <section class="panel" id="maneuver-envelope">
-  <h2>v4 maneuver envelope and source checks</h2>
+  <h2>v4.1 energy-constrained flight comparison</h2>
   <p>Seven source-conditioned research profiles. Match EAS and altitude, with each aircraft's reference mass and rating. Stall and turn predictions are model scenarios.</p>
   <div style="display:flex;flex-wrap:wrap;gap:1rem">
+    <label>Flight model <select id="v41-mode"><option value="energy">v4.1 source climb configuration</option><option value="reference">v4.0 reference configuration</option></select></label>
     <label>Altitude <select id="v4-alt"><option value="0">Sea level</option><option value="5000" selected>5,000 ft</option><option value="15000">15,000 ft</option><option value="20800">20,800 ft</option><option value="27000">27,000 ft</option></select></label>
     <label>Speed <select id="v4-eas"><option>110</option><option>130</option><option>150</option><option selected>170</option><option>200</option><option>225</option><option>250</option></select> mph EAS</label>
     <label>Reference mass <select id="v4-mass"><option value=".95">95%</option><option value="1" selected>100%</option><option value="1.05">105%</option></select></label>
@@ -10,8 +11,9 @@
     <label>Corsair rating <select id="v4-rating"><option value="military">Military</option><option value="normal">Normal</option></select></label>
     <label>Corsair lift scenario <select id="v4-lift"><option value="off">Power-off stall anchor</option><option value="on">Powered stall anchor</option></select></label>
   </div>
+<p id="v41-context">Source mode uses report climb mass, engine inputs and equivalent installed energy loss. P-47B follows the report military/normal schedule. Reference mode preserves the previous clean configuration. F-4 uses the declared DB601E inlet transfer at combat power. Scenario bands include engineering assumptions.</p>
   <div id="v4-flight" style="overflow-x:auto" aria-live="polite"></div>
-  <p>Turn bands vary maneuver lift by at least ±5% and useful propulsive power by ±3%. The Corsair band also considers both clean stall anchors. These scenario limits are not historical error bounds.</p>
+  <p>F-4 additionally spans 27 engineering lift/drag/propulsion candidates. Turn bands vary maneuver lift by at least ±5% and useful propulsive power by ±3%. The Corsair band also considers both clean stall anchors. These scenario limits are not historical error bounds.</p>
   <div style="display:flex;flex-wrap:wrap;gap:1rem">
     <label>Compare <select id="v4-first"></select></label>
     <label>against <select id="v4-second"></select></label>
@@ -21,7 +23,8 @@
     <p>Model-best climb at each step. Compare constant mass with an illustrative 0.50 lb fuel per shaft hp-hour. This is a mass scenario, not a measured fuel-flow schedule.</p>
     <div id="v4-climb" style="overflow-x:auto"></div>
   </details>
-  <details open><summary>Corsair 80765: source, model and reserved checks</summary>
+  <details open><summary>v4.1 energy checks across existing aircraft</summary><div id="v41-checks" style="overflow-x:auto"></div></details>
+  <details><summary>Corsair 80765: source, model and reserved checks</summary>
     <p id="v4-corsair-note"></p><div id="v4-stall-source" style="overflow-x:auto"></div><div id="v4-corsair-source" style="overflow-x:auto"></div>
   </details>
   <details><summary>Thunderbolt propeller and Mustang rack experiments</summary>

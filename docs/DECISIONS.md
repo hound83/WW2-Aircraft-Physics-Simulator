@@ -1,5 +1,9 @@
 # Current decisions
 
+## v4.1 installed-energy candidate
+
+Use source masses/power and bounded aggregate installation adjustments in the live seven-aircraft panel, preserving explicit v4.0 reference mode and frozen benchmark outputs. Accept five matched-source climb improvements and a separate-report P-47 transfer as a research milestone. Keep exposed same-report checks, alternate splits, point regressions, F-4 engineering candidates and unvalidated historical turn accuracy explicit. [Results and assumptions](V41_ENERGY_RESULTS.md).
+
 ## v4.0 research candidate
 
 Accept a source-conditioned F4U-4 profile and bounded equivalent installation scenarios in the shared solver. Keep 41-5942 propeller and 43-24777 rack checks separate from default cross-aircraft calibration. Expose all seven profiles with turn-limit/scenario-order and fuel-mass calculations. Preserve previous benchmark values and unfavorable high-altitude residuals. The numerical fit excludes the reported reserved rows; same-report exposed checks do not establish independent turn accuracy. [Milestone and acceptance](V4_MILESTONE.md).

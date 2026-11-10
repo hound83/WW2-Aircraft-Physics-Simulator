@@ -112,9 +112,9 @@ function build(){
   'Greg corrected the bomb load to two 1,100-lb bombs excluding racks and said his Mosquito FB Mk VI curve was too fast. The scorecard preserves LR495 B Mk IX as a separate aircraft and records the P-38G loaded curve as unverified.');
  html=html.replace('<main>',()=>'<main>'+evidencePanel+calibrationPanel+lineagePanel+comparisonPanel);
  const maneuverParts=[read('src/maneuver-envelope.js'),read('src/maneuver-envelope-ui.js'),
-  JSON.stringify(require('../validation/diagnostics/v4_envelope.cjs').buildData())];
+  JSON.stringify(require('../validation/diagnostics/energy_v41.cjs').buildData())];
  if(maneuverParts.some(text=>/<\/script/i.test(text)))throw Error('Unsafe maneuver envelope embed');
- const maneuverEmbed='<script>'+maneuverParts[0]+'</script><script type="application/json" id="v4-envelope-data">'+
+ const maneuverEmbed='<script>'+read('src/energy-configuration.js')+'</script><script>'+maneuverParts[0]+'</script><script type="application/json" id="v4-envelope-data">'+
   maneuverParts[2]+'</script><script>'+maneuverParts[1]+'</script>';
  html=html.replace('<main>',()=>'<main>'+read('src/maneuver-envelope-panel.html'));
  html=html.replace('<a href="#historical-evidence">','<a href="#maneuver-envelope">Seven-aircraft maneuver envelope</a> · <a href="#historical-evidence">');
@@ -122,7 +122,7 @@ function build(){
  fs.mkdirSync(path.join(root,'dist'),{recursive:true});
  fs.writeFileSync(path.join(root,'dist/model.html'),html);
  fs.writeFileSync(path.join(root,'dist/research-catalog.json'),researchData+'\n');
- const metadata={version,researchStatus:'v4.0 research candidate: Corsair, installed propulsion and maneuver envelopes',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
+ const metadata={version,researchStatus:'v4.1 source-constrained energy models active for existing aircraft',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
  fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify(metadata,null,2)+'\n');
  return metadata;
 }
