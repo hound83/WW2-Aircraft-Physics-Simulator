@@ -42,7 +42,7 @@
       for (const candidate of model.parameterCandidates) {
         const isolated = {...ac, propGeometry: {...ac.propGeometry,
           momentumModel: {...ac.propGeometry.momentumModel, retainedPowerFraction: candidate.retained}}};
-        const opts = {...M.workingOptions(isolated, {e: candidate.e}), rating, weightLb, clMax: candidate.clMax};
+        const opts = {...model.options, ...M.workingOptions(isolated, {e: candidate.e}), rating, weightLb, clMax: candidate.clMax};
         const predicted = model.energyConfiguration
           ? Energy.evaluate(M, {ac: isolated, options: opts}, altFt, tas, rating, weightLb, model.energyConfiguration)
           : M.evaluated(isolated, altFt, tas, opts);

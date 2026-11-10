@@ -67,3 +67,9 @@ for (const [id, rows] of Object.entries(frozen.rows)) for (const old of rows) {
   if(old.before===null) assert.equal(now.before,null);
   else assert.ok(Math.abs(now.before-old.before)<1e-8,'Same-condition v4.0 before-scorecard stays frozen');
 }
+
+// Engine installation context must reach every physical candidate, not just the central result.
+const f4Band=Envelope.state(M,turn,lift,models.bf109f4,5000,170,'combat',models.bf109f4.ac.weightLb);
+const f4Central=Envelope.state(M,turn,lift,{...models.bf109f4,parameterCandidates:undefined},5000,170,'combat',models.bf109f4.ac.weightLb);
+assert.ok(f4Band.band[0]<16 && f4Band.band[1]>19);
+assert.ok(f4Band.band[0]<f4Central.band[0]-2 && f4Band.band[1]>f4Central.band[1]);

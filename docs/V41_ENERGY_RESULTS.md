@@ -46,6 +46,8 @@ The original 69-record four-aircraft scorecard stays available unchanged. Source
 
 The subsequently merged [twelve-fighter research tranche](research/WW2_TWELVE_FIGHTER_DUAL_LANE_RESEARCH_2026-11-10.md) is included in this build and its evidence browser. Its additional stall/position-error rows preserve their variant and speed-domain limits; they do not supply new same-variant calibrated stall coefficients for these five corrections. No evidence-coverage percentage is treated as a performance-accuracy percentage.
 
+A final live-band check found that the F-4 candidate calls initially omitted the inlet-transfer source context and were skipped. The corrected shared calls preserve that context. At 5,000 ft and 170 mph EAS the resulting engineering band is approximately **15.00–19.45 deg/s**, versus **18.14–18.89 deg/s** for the narrow central perturbations. The central prediction is unchanged. Both regression and browser checks now require the wider physical ensemble to reach the live panel.
+
 ## Evidence and reproducibility
 
 The [source audit](../references/v4.1-energy-audit.json) links existing original registers rather than duplicating scans. The [parameters](../calibration/v4.1-energy.json), [before-scorecard](../validation/baseline/v40-energy-checks.json) and executable diagnostics preserve source identities, observed/derived inputs, fit roles, alternatives and negative results. Generated numerical details are in `validation/current/energy-v41.json` in the CI artifact.
