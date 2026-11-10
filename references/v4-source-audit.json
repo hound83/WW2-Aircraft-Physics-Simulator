@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "baseline": "7caa9a867f7477fd31487cd0fcd29e27b2ff0c8f",
+  "corsair": {
+    "trial": "USN TED BIS-2157, 25 March 1948, BuNo 80765",
+    "weightLb": 12500,
+    "stallReference": "research/stall_us_2026-11-10.json US20",
+    "performanceReference": "research/ww2_multiaxis_propulsion_trials_2026-11-10.json F4U4-80765",
+    "originalLevelChart": {
+      "url": "https://www.wwiiaircraftperformance.com/org/f4u/f4u_files/80765-level.jpg",
+      "sha256": "dfacc134da86c38d3f1847daa0c9ce1738c957118cc903a5e67c52dbf9539477",
+      "location": "Appendix A, Plate 3, VF-96 2-10-48",
+      "speedBasis": "Original horizontal axis explicitly TRUE AIRSPEED - KNOTS",
+      "bhpReadingUncertainty": 50,
+      "columns": [
+        "rating",
+        "altFt",
+        "chartBhpApprox"
+      ],
+      "rows": [
+        [
+          "normal",
+          0,
+          1700
+        ],
+        [
+          "normal",
+          8700,
+          1700
+        ],
+        [
+          "normal",
+          24600,
+          1630
+        ],
+        [
+          "normal",
+          31900,
+          1550
+        ],
+        [
+          "military",
+          0,
+          2100
+        ],
+        [
+          "military",
+          4600,
+          2100
+        ],
+        [
+          "military",
+          23100,
+          1900
+        ],
+        [
+          "military",
+          29000,
+          1800
+        ]
+      ]
+    },
+    "originalClimbChart": {
+      "url": "https://www.wwiiaircraftperformance.com/org/f4u/f4u_files/80765-climb.jpg",
+      "sha256": "d1f2fda8d6857f2f16004cc58ea1131e2d673ec3c1790bc0ede1847cc46ee63d",
+      "location": "Appendix A, Plate 4",
+      "note": "Gross weight 12,500 lb. Normal and military rate and time-to-climb curves confirmed. No numeric time curve extracted."
+    },
+    "geometrySource": "https://www.vought.org/products/html/f4u-4spec.html",
+    "propellerSource": "https://www.vought.org/products/html/f4u-4.html",
+    "engineSpecification": "https://pubs.st.aero/library/books/ocr/1c256ac5-7aee-4c4e-bad0-0ee906eccf3b.pdf",
+    "engineRatingsLead": "https://www.aahs-online.org/images/Navy_SAC/F4U-4.pdf",
+    "engineQualification": "Rating altitudes are a secondary transcription of the March 1946 Navy chart, with manufacturer normal-power/rpm and 20:9 gearing corroboration. Original AAHS PDF located but rating cells not independently digitized. Generic inlet recovery 0.85 and fixed gear-transition heights are assumptions. Power-on stall throttle setting and exact stall pressure altitude unknown.",
+    "fit": "Normal sea-level speed for drag and normal sea-level maximum climb for equivalent low-J installation loss. Clean off/on stall CAS values are lift anchors.",
+    "check": "All military points and normal altitude points excluded from numerical fitting. Same report, exposed before tuning, not independent.",
+    "calibrationMeaning": "Equivalent propulsive loss adjustment with full-shaft ideal-disk bound. Does not isolate blade efficiency, engine-chart error, cooling or airframe interaction.",
+    "geometryQualification": "Manufacturer F4U-4 page gives 40.90 ft span; 314 sqft from USN naval aircraft appendix. Generic profile geometry, not a measured span of 80765."
+  },
+  "p47": {
+    "fit": "December 41-5942 5,000-ft speed difference and 10,000-ft climb difference. No January cuff/CG/speed-basis transfer.",
+    "check": "December climb differences at 15,000, 20,000 and 24,000 ft and speed at 25,000 ft; same-report held-out conditions.",
+    "identity": "Separate 41-5942 comparison scenario, not default 41-5902",
+    "reference": "research/ww2_multiaxis_propulsion_trials_2026-11-10.json"
+  },
+  "mustang": {
+    "fit": "Same 43-24777 clean and racked 75-inHg 20,800-ft speed pair.",
+    "check": "67-inHg racked 20,800-ft speed, same report and previously exposed.",
+    "reference": "research/ww2_multiaxis_propulsion_trials_2026-11-10.json",
+    "qualification": "Packard chart BHP. Mass changes due to rack removal unknown, equivalent drag-area fit holds model mass constant."
+  },
+  "fuel": {
+    "bsfcLbPerHpHour": 0.5,
+    "status": "Engineering scenario, not a measured fuel curve",
+    "method": "Midpoint integration, 10 altitude segments with midpoint weight iteration; generic best-climb speed reoptimized at each segment."
+  }
+}

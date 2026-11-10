@@ -44,8 +44,11 @@ try{
  require('../validation/diagnostics/flight_envelope.cjs').writeReport();
  require('../validation/diagnostics/independent_flight_checks.cjs').writeReport();
  require('../validation/diagnostics/fighter_comparison.cjs').writeReport();
+ require('../validation/diagnostics/v4_envelope.cjs').writeReport();
  const md=[
  '# Current validation',
+ '',
+ '[v4.0 maneuver and propulsion milestone](V4_MILESTONE.md).',
  '',
  'Fixed browser scenarios and downloadable evidence comparisons: [four-fighter comparison](FOUR_FIGHTER_COMPARISON.md).',
  '',
@@ -57,7 +60,7 @@ try{
  '',
  'v3.13: [Mustang climb and sustained-turn power](V313_MANEUVER_POWER.md).',
  '',
- 'v3.14: [Versioned evidence and international stall archive](research/WW2_STALL_EVIDENCE_LAYER_2026-11-10.md). '+buildInfo.researchObservations+' source-backed rows are available in the simulator research explorer, linked through '+buildInfo.researchSources+' source records. Fingerprint: `'+buildInfo.researchFingerprint+'`. No change to the flight model or source-independent accuracy claim.',
+ 'v3.14: [Versioned evidence and international stall archive](research/WW2_STALL_EVIDENCE_LAYER_2026-11-10.md). '+buildInfo.researchObservations+' source-backed rows are available in the simulator research explorer, linked through '+buildInfo.researchSources+' source records. Fingerprint: `'+buildInfo.researchFingerprint+'`. Evidence ingestion does not fit physics; see the current v4 milestone for solver changes and accuracy qualifications.',
  '',
  'v3.12: [P-38G and symmetric multi-engine propulsion](V312_P38G.md).',
  '',

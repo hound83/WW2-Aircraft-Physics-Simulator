@@ -1,5 +1,9 @@
 # Current decisions
 
+## v4.0 research candidate
+
+Accept a source-conditioned F4U-4 profile and bounded equivalent installation scenarios in the shared solver. Keep 41-5942 propeller and 43-24777 rack checks separate from default cross-aircraft calibration. Expose all seven profiles with turn-limit/scenario-order and fuel-mass calculations. Preserve previous benchmark values and unfavorable high-altitude residuals. The numerical fit excludes the reported reserved rows; same-report exposed checks do not establish independent turn accuracy. [Milestone and acceptance](V4_MILESTONE.md).
+
 ## Fw 190 research admission
 
 Keep the frozen four-aircraft benchmark and add the Fw 190 A-4 W.Nr. 783 as a selectable fifth model. Enable the shared rated-inlet power method within its documented domain. Use the static-power comparison with the same drag configuration, hold graph checks out of the fit, and keep the residual and lift uncertainty visible. [v3.11 report](V311_FW190A4.md)

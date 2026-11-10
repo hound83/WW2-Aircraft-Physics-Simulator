@@ -85,7 +85,7 @@ function build(){
  for(const text of stallParts)if(/<\/script/i.test(text))throw Error('Unsafe stall laboratory embed');
  const stallPanel=read('src/stall-lab-panel.html');
  html=html.replace(/(<section\b[^>]*\bid="release-support"[^>]*>)/,stallPanel+'$1');
- html=html.replace("for(const input of document.querySelectorAll('input,select'))input.addEventListener('input',render)","for(const input of document.querySelectorAll('input,select'))if(!input.closest('#stall-lab, #fighter-comparison, #historical-evidence'))input.addEventListener('input',render)");
+ html=html.replace("for(const input of document.querySelectorAll('input,select'))input.addEventListener('input',render)","for(const input of document.querySelectorAll('input,select'))if(!input.closest('#stall-lab, #fighter-comparison, #historical-evidence, #maneuver-envelope'))input.addEventListener('input',render)");
  const stallEmbed='<script>'+stallParts[0]+'</script><script type="application/json" id="stall-research-data">'+stallParts[2]+'</script><script>'+stallParts[1]+'</script>';
  const turnLift=read('src/turn-lift.js'),turnLiftSource=read('references/p51-turn-lift-tn1044.json');
  if([turnLift,turnLiftSource].some(value=>/<\/script/i.test(value)))throw Error('Unsafe turn lift embed');
@@ -111,11 +111,18 @@ function build(){
  html=html.replace("<strong>We have not recovered the underlying report for Greg's bomb-loaded P-38 curve</strong>, so it is not added as measured performance.",
   'Greg corrected the bomb load to two 1,100-lb bombs excluding racks and said his Mosquito FB Mk VI curve was too fast. The scorecard preserves LR495 B Mk IX as a separate aircraft and records the P-38G loaded curve as unverified.');
  html=html.replace('<main>',()=>'<main>'+evidencePanel+calibrationPanel+lineagePanel+comparisonPanel);
- html=html.replace('</body>','<script>'+source+'</script><script type="application/json" id="robustness-data">'+audit+'</script><script>'+ui+'</script>'+conditionEmbed+measuredEmbed+stallEmbed+comparisonEmbed+'<script type="application/json" id="historical-research-data">'+researchData+'</script><script>'+researchUI+'</script></body>');
+ const maneuverParts=[read('src/maneuver-envelope.js'),read('src/maneuver-envelope-ui.js'),
+  JSON.stringify(require('../validation/diagnostics/v4_envelope.cjs').buildData())];
+ if(maneuverParts.some(text=>/<\/script/i.test(text)))throw Error('Unsafe maneuver envelope embed');
+ const maneuverEmbed='<script>'+maneuverParts[0]+'</script><script type="application/json" id="v4-envelope-data">'+
+  maneuverParts[2]+'</script><script>'+maneuverParts[1]+'</script>';
+ html=html.replace('<main>',()=>'<main>'+read('src/maneuver-envelope-panel.html'));
+ html=html.replace('<a href="#historical-evidence">','<a href="#maneuver-envelope">Seven-aircraft maneuver envelope</a> · <a href="#historical-evidence">');
+ html=html.replace('</body>','<script>'+source+'</script><script type="application/json" id="robustness-data">'+audit+'</script><script>'+ui+'</script>'+conditionEmbed+measuredEmbed+stallEmbed+comparisonEmbed+'<script type="application/json" id="historical-research-data">'+researchData+'</script><script>'+researchUI+'</script>'+maneuverEmbed+'</body>');
  fs.mkdirSync(path.join(root,'dist'),{recursive:true});
  fs.writeFileSync(path.join(root,'dist/model.html'),html);
  fs.writeFileSync(path.join(root,'dist/research-catalog.json'),researchData+'\n');
- const metadata={version,researchStatus:'v3.15 turn/stall correction with bounded Mustang lift',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'engineering-increment',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
+ const metadata={version,researchStatus:'v4.0 research candidate: Corsair, installed propulsion and maneuver envelopes',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
  fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify(metadata,null,2)+'\n');
  return metadata;
 }
