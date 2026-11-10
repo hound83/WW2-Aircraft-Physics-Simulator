@@ -1,0 +1,170 @@
+{
+  "schema": "ww2-fighter-evidence-pack/v1",
+  "pack_version": "1.0.0",
+  "compiled": "2026-11-10",
+  "purpose": "Four-track follow-up: original low-speed calibration; direct CAS/EAS hunt; test-by-test airborne weights and lift data; document and specimen deduplication. Raw historical evidence, not an approved simulator fit.",
+  "sources": [
+    {
+      "id": "spitfire-va-wr-l353",
+      "aircraft": "Supermarine Spitfire VA, NACA 1942 Langley specimen (photographed R7347)",
+      "report": "NACA ACR / Wartime Report L-353, Stalling Characteristics of the Supermarine Spitfire VA Airplane (Vensel and Phillips, September 1942)",
+      "pdf": "https://ntrs.nasa.gov/api/citations/19930092581/downloads/19930092581.pdf",
+      "scan_mirror": "https://digital.library.unt.edu/ark:/67531/metadc61033/m2/1/high_res_d/19930092581.pdf",
+      "location": "Printed pp. 2-3 apparatus and figure 5 calibration; printed p. 7 stall IAS and CLmax table; figs 8-19 source time histories",
+      "verification": "Original PDF table text and page captions reviewed. The report calls speeds indicated; Figure 5 is explicitly the pilot's meter correction, not proof that the separate NACA recorder used that signal."
+    },
+    {
+      "id": "p47d30-rm-l8a06",
+      "aircraft": "P-47D-30 AAF 43-3441",
+      "report": "NACA RM L8A06, Flight Measurements of Flying Qualities of a P-47D-30 Airplane (Kraft, Goranson and Reeder, February 1948)",
+      "pdf": "https://ntrs.nasa.gov/api/citations/20090022749/downloads/20090022749.pdf",
+      "location": "PDF pp. 19-20 figure legends and PDF pp. 69-81 figs. 47-59; PDF pp. 2-3 power, CG and loading; figs. 28-32 controlled turns",
+      "verification": "Original NASA PDF figure legends inspected. Gross weights are per flight-run caption, not proven instantaneous weight at the precise onset of stall; no CAS/EAS inferred."
+    },
+    {
+      "id": "p47d30-tn2899-reprint",
+      "aircraft": "P-47D-30 AAF 43-3441",
+      "report": "NACA TN 2899, 1953 publication superseding NACA RM L8A06, same tested airframe and experiment",
+      "pdf": "https://ntrs.nasa.gov/api/citations/19930083857/downloads/19930083857.pdf",
+      "location": "Introductory supersession footnote, not a new independent flight experiment",
+      "verification": "Catalogued as reprint/supersession only; no extra data points counted."
+    },
+    {
+      "id": "f6f3-04776-wr-l717",
+      "aircraft": "F6F-3 BuAer 04776",
+      "report": "NACA MR L5B13B / WR L-717, Flight Measurements of the Flying Qualities of an F6F-3 Airplane III: Stalling Characteristics (Reeder, February 1945)",
+      "pdf": "https://ntrs.nasa.gov/api/citations/19930092602/downloads/19930092602.pdf",
+      "location": "Conclusions and figures 4-13, flight-derived peak normal-force coefficient CN; gross-weight correction for fuel consumed",
+      "verification": "Original NASA primary report and original text transcription cross-referenced; ranges are published approximate bands, not newly digitized exact points."
+    },
+    {
+      "id": "f6f3-04776-part1-instruments",
+      "aircraft": "F6F-3 BuAer 04776",
+      "report": "NACA MR L5B13 / WR L-715, Flight Measurements of the Flying Qualities of an F6F-3 Airplane I: Longitudinal Stability and Control (Reeder, February 1945)",
+      "pdf": "https://ntrs.nasa.gov/api/citations/19930092600/downloads/19930092600.pdf",
+      "scan_mirror": "https://digital.library.unt.edu/ark:/67531/metadc61068/m1/5/",
+      "location": "Apparatus and definition of service indicated airspeed: swiveling static and shielded total head one chord ahead of left wingtip; nominal standard service meter free from position error",
+      "verification": "Same BuAer serial and NACA test program as Parts II and III; establishes measurement-chain lead but does not relabel Part III's figures direct CAS."
+    }
+  ],
+  "series": [
+    {
+      "id": "spitfire-va-reported-stalls-and-clmax",
+      "source_id": "spitfire-va-wr-l353",
+      "aircraft": "Spitfire VA NACA Langley 1942, about 6184 lb",
+      "quantity": "stall_speed",
+      "speed_basis": "IAS",
+      "corrections": {"instrument": "unestablished", "position": "not-established"},
+      "source_class": "original-naca-flight-test-table",
+      "source_location": "NACA WR L-353, printed p. 7, table Maximum Lift Coefficients for Various Flight Conditions",
+      "notes": "Source column literally says indicated stalling speed; paired CLmax is original report-derived coefficient. Figure 5 corrects a pilot meter and must not automatically be imposed on a different NACA recorded-speed channel. This is Spitfire VA, NOT the modeled full-span BS.543 LF Mk IX.",
+      "columns": ["speed_mph", "weight_lb", "gear", "flaps", "power", "gun_ports", "clmax_reported", "manifold_inhg", "rpm"],
+      "rows": [
+        [90, 6184, "up", "up", "gliding-throttle-closed", "covered", 1.18, null, null],
+        [91, 6184, "up", "up", "gliding-throttle-closed", "open", 1.15, null, null],
+        [77, 6184, "up", "up", "cruising", "covered", 1.63, 36.9, 2650],
+        [76, 6184, "up", "up", "cruising", "open", 1.68, 36.9, 2650],
+        [80, 6184, "down", "down", "landing-throttle-closed", "covered", 1.51, null, null],
+        [81, 6184, "down", "down", "landing-throttle-closed", "open", 1.46, null, null],
+        [69, 6184, "down", "down", "landing-approach", "covered", 1.99, 21.4, 2300],
+        [75, 6184, "down", "down", "landing-approach", "open", 1.72, 21.4, 2300],
+        [80, 6184, "down", "up", "takeoff", "covered", 1.49, 43.9, 2850],
+        [76, 6184, "up", "up", "climbing", "covered", 1.64, 43.9, 2850]
+      ]
+    },
+    {
+      "id": "p47d30-naca-figure-specific-flight-weights",
+      "source_id": "p47d30-rm-l8a06",
+      "aircraft": "P-47D-30 43-3441",
+      "quantity": "stall_trial_metadata",
+      "speed_basis": "unestablished",
+      "source_class": "original-naca-figure-legend",
+      "source_location": "NACA RM L8A06, PDF pp.19-20 figure legends 47-59; individual plots PDF pp.69-81",
+      "notes": "Weight is reported gross weight of the run in the original figure caption; it must not be overclaimed as an independently measured instantaneous mass at the exact stall moment. Power, canopy and CG vary. These are NOT 14 extracted stall speeds, and wave-off runs 56-57 did NOT reach a complete stall. Figure 58 3000ft, not 5000ft.",
+      "columns": ["figure", "weight_lb", "alt_ft", "cg_percent_mac", "test_condition", "controls", "complete_stall", "weight_basis"],
+      "rows": [
+        ["47", 12660, 5000, 26.4, "power-on-clean", "elevator-only", "not-established", "flight-run-gross"],
+        ["48", 12570, 5000, 26.4, "power-on-clean", "hold-wings-level", "not-established", "flight-run-gross"],
+        ["49", 12400, 5000, 26.3, "glide-clean-off", "elevator-only", "not-established", "flight-run-gross"],
+        ["50", 12400, 5000, 26.3, "glide-clean-off", "hold-wings-level", "not-established", "flight-run-gross"],
+        ["51a", 12770, 24000, 26.4, "glide-clean-off", "hold-wings-level", "not-established", "flight-run-gross"],
+        ["51b", 12570, 26500, 26.4, "power-on-clean", "hold-wings-level", "not-established", "flight-run-gross"],
+        ["52", 12860, 5000, 28.9, "approach", "elevator-only", "not-established", "flight-run-gross"],
+        ["53", 12860, 5000, 28.9, "approach", "hold-wings-level", "not-established", "flight-run-gross"],
+        ["54", 13170, 5000, 29.0, "landing-gear-flaps-down-off", "elevator-only", "not-established", "flight-run-gross"],
+        ["55", 13170, 5000, 29.0, "landing-gear-flaps-down-off", "hold-wings-level", "not-established", "flight-run-gross"],
+        ["56", 13210, 5000, 28.8, "wave-off", "elevator-only", false, "flight-run-gross"],
+        ["57", 13219, 5000, 28.8, "wave-off", "hold-wings-level", false, "flight-run-gross"],
+        ["58", 12690, 3000, 26.3, "low-speed-left-turn", "elevator-only", "not-established", "flight-run-gross"],
+        ["59", 12680, 5000, 26.4, "landing-left-turn", "elevator-only", "not-established", "flight-run-gross"]
+      ]
+    },
+    {
+      "id": "f6f3-04776-naca-corrected-peak-cn",
+      "source_id": "f6f3-04776-wr-l717",
+      "aircraft": "F6F-3 BuAer 04776",
+      "quantity": "maximum_normal_force_coefficient",
+      "speed_basis": "unestablished",
+      "source_class": "original-naca-reduced-flight-data",
+      "source_location": "NACA WR L-717, original figs.4-13, approximate discussion bands",
+      "notes": "Normal-force coefficient CN is not unconditionally wing aerodynamic CL; original corrected gross weight for fuel used. IAS measurement used dedicated wingtip head (Part I), position-error-free service IAS concept, but no direct numeric CAS/EAS stall speed is transcribed. Powered values include slipstream and must not be transplanted into power-off clean CLmax.",
+      "columns": ["condition", "cn_min", "cn_max", "gear", "flaps", "power", "figure_pair", "weight_handling"],
+      "rows": [
+        ["clean-glide", 1.35, 1.45, "up", "up", "off", "4-5", "original-fuel-consumption-corrected"],
+        ["clean-climb", 2.1, 2.2, "up", "up", "2550rpm-43inHg", "6-7", "original-fuel-consumption-corrected"],
+        ["landing", 2.15, 2.25, "down", "down", "off", "8-9", "original-fuel-consumption-corrected"],
+        ["approach", 2.35, 2.45, "down", "down", "2550rpm-23inHg", "10-11", "original-fuel-consumption-corrected"],
+        ["wave-off", 3.0, 3.0, "down", "down", "2550rpm-43inHg", "12-13", "approximate-single-value-not-a-measured-precision" ]
+      ]
+    }
+  ],
+  "calibration_reviews": [
+    {
+      "id": "spitfire-va-figure5",
+      "source_id": "spitfire-va-wr-l353",
+      "figure": "5",
+      "status": "original-low-speed-chart-inspected-not-fit-ready",
+      "axes": "pilot's airspeed meter reading (mph) vs correct indicated airspeed (mph); different cruise, glide and landing marks",
+      "method": "NACA recorder calibrated by formation with trailing-head-calibrated comparison aircraft",
+      "finding": "Original chart genuinely includes the low-speed region. It corrects the pilot meter; the table's NACA recording signal is not proven identical to this meter; in addition, corrected indicated does not explicitly establish modern calibrated CAS. Keep original source table IAS. Preliminary figure reading only, NOT released as a numerical correction table.",
+      "approximate_figure_readings_not_for_calibration": {
+        "pilot_meter_ias_mph": 80,
+        "estimated_reading_uncertainty_mph": 2,
+        "correct_indicated_mph_by_condition": {"cruise": 87, "glide": 92, "landing_approx_range": [86, 87]},
+        "status": "rough_visual_readings_not_traced_to_recorded_stall_airspeed_channel"
+      },
+      "next": "Digitize original image to source-point/pixel axis precision; establish whether table IAS is recorder or pilot-meter basis and source-level error definition before CAS*."
+    },
+    {
+      "id": "hurricane-ii-figure7",
+      "original_other_source": "stall_airspeed_corrections_global_2026-11-10:NACA-HUR-II-1942",
+      "original_report": "NACA WR L-565, Hurricane II Z2963, figure 7",
+      "status": "original-low-speed-chart-inspected-not-fit-ready",
+      "finding": "Chart relates the separate underwing cockpit pitot/indicator to a trailing-head reference. NACA flight-dynamics time histories used a separate right-wingtip head. Near-stall applicability to recorded stall numbers must be explicitly established before applying correction.",
+      "next": "Resolve the signal path and digitize true measured anchors with documented per-point visual error."
+    }
+  ],
+  "document_lineage": [
+    {"id": "p51b5-eng47-1734", "relationship": "same_original_report", "members": ["archival-2026-11-10:R03", "stall_us_2026-11-10:P51B5"], "independent_test_groups": 1, "note": "43-6883, instrument-corrected IAS; archival listing and new stall rows point to one Eng-47-1734-A campaign."},
+    {"id": "p51b15-eng47-1749", "relationship": "same_original_report", "members": ["archival-2026-11-10:R04", "stall_us_2026-11-10:P51B15", "stall_airspeed_corrections_us_2026-11-10:p51b15-4324777"], "independent_test_groups": 1, "note": "43-24777 source family; correction graph cannot be extrapolated down to the 67.5-86 mph stall rows."},
+    {"id": "p47b-415902", "relationship": "same_original_report", "members": ["balanced-2026-11-10:B04", "stall_us_2026-11-10:P47B", "stall_airspeed_corrections_us_2026-11-10:p47b-415902"], "independent_test_groups": 1, "note": "One 1942 P-47B specimen and PHQ-M-19-1417-A report; fast-flight PEC not low-speed calibration."},
+    {"id": "p47d-4226167", "relationship": "same_original_report", "members": ["balanced-2026-11-10:B05", "stall_us_2026-11-10:P47D"], "independent_test_groups": 1, "note": "44-1 fuel flight report, not the new NACA P-47D-30 43-3441 experiment."},
+    {"id": "p38g-4212687", "relationship": "same_original_report", "members": ["archival-2026-11-10:R11", "balanced-2026-11-10:B01"], "independent_test_groups": 1, "note": "One Wright Field FS-M-19-1538-A; do not double-score the two transcriptions."},
+    {"id": "p38j15-4328392", "relationship": "same_specimen_report_identity_to_verify", "members": ["archival-2026-11-10:R12", "balanced-2026-11-10:B03", "stall_us_2026-11-10:P38J_28392"], "independent_test_groups": null, "note": "Same airframe; original programme/report references overlap, but confirm exact pages before labeling every trial same experiment."},
+    {"id": "fm2-15953", "relationship": "same_original_report", "members": ["balanced-2026-11-10:B10", "stall_us_2026-11-10:FM2_15953"], "independent_test_groups": 1, "note": "Minimum-speed records must not be upgraded automatically to 1g power-off stall."},
+    {"id": "a6m3-eb201", "relationship": "same_original_report", "members": ["balanced-2026-11-10:B06", "stall_global_2026-11-10:US-A6M3-201", "stall_airspeed_corrections_global_2026-11-10:US-A6M3-201"], "independent_test_groups": 1, "note": "Original ENG-47-1726-A; water-column speed correction is not generic cockpit IAS to CAS."},
+    {"id": "hurricane-l2026", "relationship": "same_original_campaign", "members": ["balanced-2026-11-10:B07", "stall_global_2026-11-10:UK-H-L2026"], "independent_test_groups": 1, "note": "Comparison text also mentions L1547 and multiple installations; separate individual flights/configurations before weighting."},
+    {"id": "spit-ix-1946-ap1565j", "relationship": "same_original_manual", "members": ["stall_global_2026-11-10:UK-SIX-46", "stall_airspeed_corrections_global_2026-11-10:UK-SIX-46"], "independent_test_groups": 0, "note": "One 1946 pilot manual; manual table and its PEC are not independent experiment repeats, nor the A&AEE BS.543 measured trials."},
+    {"id": "hurricane-ii-1942-naca-z2963", "relationship": "same_original_report", "members": ["stall_airspeed_corrections_global_2026-11-10:NACA-HUR-II-1942"], "independent_test_groups": 1, "note": "Eight indexed configurations and original correction Fig7 are one NACA campaign; distinct from Hurricane I L2026 and Z3564."},
+    {"id": "spitfire-va-1942-naca", "relationship": "same_original_report", "members": ["stall_airspeed_corrections_global_2026-11-10:NACA-SPIT-VA-1942", "stall_four_track_followup_2026-11-10:spitfire-va-wr-l353"], "independent_test_groups": 1, "note": "Pre-existing Fig5 lead plus ten newly transcribed table conditions refer to the same original trial."},
+    {"id": "f6f3-04776-1945-naca", "relationship": "same_specimen_related_parts", "members": ["archival-2026-11-10:R23", "stall_four_track_followup_2026-11-10:f6f3-04776-wr-l717", "stall_four_track_followup_2026-11-10:f6f3-04776-part1-instruments"], "independent_test_groups": 1, "note": "NACA WR L-715 and -717 (Parts I and III) same BuNo 04776; Part I defines instrumentation used by Part III. No independent replication implied."},
+    {"id": "p47d30-433441-naca-1948-1953", "relationship": "same_experiment_superseded_report", "members": ["stall_four_track_followup_2026-11-10:p47d30-rm-l8a06", "stall_four_track_followup_2026-11-10:p47d30-tn2899-reprint"], "independent_test_groups": 1, "note": "1953 TN2899 explicitly supersedes 1948 RM L8A06; never use reprint as independent holdout."},
+    {"id": "f6f3-40164-comparison-repeats", "relationship": "same_airframe_repeated_comparison_columns", "members": ["archival-2026-11-10:R19", "stall_us_2026-11-10:F6F3_40164", "archival-2026-11-10:R20", "archival-2026-11-10:R22"], "independent_test_groups": null, "note": "R20 42633 and R22 F6F5 58310 are INDEPENDENT airframes, but their 40164 comparison columns can repeat earlier 40164 numbers. Deduplicate only those explicitly identified comparison rows, not entire reports."}
+  ],
+  "source_policy": [
+    "Zero newly validated direct near-stall CAS or EAS rows in this follow-up; original direct F4U-4 CAS observations and one 1945 Corsair CAS* remain the current supported classifications.",
+    "The F6F-3 Part I position-error-free service indicated speed is a major physically stronger anchor but must retain its period label until measured Part III stall speeds, standardized instrument scale and EAS/CAS semantics have been matched.",
+    "Do not equate the number of documents, observations, aircraft labels, flight runs, airframes and independent validation groups.",
+    "Do not use powered stall CNmax as power-off aerodynamic wing CLmax; nor transfer Spitfire VA data to the BS.543 IX or P-47D-30 to P-47B."
+  ]
+}
