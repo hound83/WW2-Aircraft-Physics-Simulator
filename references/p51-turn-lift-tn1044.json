@@ -1,0 +1,22 @@
+{
+  "source": "NACA TN 1044, Figure 6, centre panel, right ordinate",
+  "url": "https://ntrs.nasa.gov/citations/19930084610",
+  "excerpt": "references/sources/stall-2026-11-02/naca-tn1044-excerpts.pdf",
+  "excerptPage": 5,
+  "sourceAreaFt2": 233.2,
+  "altitudeWindowFt": [5100, 9300],
+  "cleanStallMachWindow": [0.14, 0.18],
+  "cleanStallClMax": 1.45,
+  "cleanStallBracket": [1.4, 1.48],
+  "columns": ["mach", "nominalClMax", "lowerReading", "upperReading"],
+  "nodes": [
+    [0.14, 1.45, 1.40, 1.48],
+    [0.18, 1.45, 1.40, 1.48],
+    [0.22, 1.35, 1.29, 1.41],
+    [0.26, 1.29, 1.23, 1.35],
+    [0.30, 1.22, 1.15, 1.29],
+    [0.34, 1.17, 1.08, 1.24]
+  ],
+  "readingMethod": "Manual rounded engineering readings from the overlapping P-51B traces, preserving a broad visual spread. Near the top of this window the curve assignment by altitude is less clear. No claims about measured confidence or a fully identified altitude-dependent surface.",
+  "qualification": "Gradual accelerated stalls, engine throttled, high propeller pitch, carefully finished P-51B. Conditional transfer to 43-24777 and to powered turn use. No extrapolation, no recovery of its cockpit IAS correction."
+}

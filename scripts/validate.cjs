@@ -52,6 +52,8 @@ try{
  '',
  'v3.10: [Operational climb policies and intake criteria](V310_OPERATIONAL_CLIMB.md).',
  '',
+ '[Turn and stall correction](TURN_STALL_CORRECTION.md).',
+ '',
  'v3.13: [Mustang climb and sustained-turn power](V313_MANEUVER_POWER.md).',
  '',
  'v3.14: [Versioned evidence and international stall archive](research/WW2_STALL_EVIDENCE_LAYER_2026-11-10.md). '+buildInfo.researchObservations+' source-backed rows are available in the simulator research explorer, linked through '+buildInfo.researchSources+' source records. Fingerprint: `'+buildInfo.researchFingerprint+'`. No change to the flight model or source-independent accuracy claim.',
