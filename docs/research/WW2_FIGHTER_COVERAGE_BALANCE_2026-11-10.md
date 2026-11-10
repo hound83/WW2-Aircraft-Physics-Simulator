@@ -5,8 +5,8 @@
 ## Deliverable and scope
 
 - [`references/ww2_fighter_balanced_reports_2026-11-10.json`](../../references/ww2_fighter_balanced_reports_2026-11-10.json): 14 source entries identifying **13 individual test airframes** (Fw 190 D-9 WNr 210002 occurs in two separate Flugberichte). One source (P-38G report B01) was already catalogued as R11; P-38J-15 serial 43-28392 also appears in the previous catalog under a distinct report, R12. **Do not count source entries as independent trials or airframes.**
-- [`references/ww2_fighter_balanced_observations_2026-11-10.json`](../../references/ww2_fighter_balanced_observations_2026-11-10.json): **32 additional compact numeric series, 263 reported conditions**. Each series records units, aircraft serial, report location and equipment/power constraints.
-- The previous historical dataset was 44 series / 289 rows from 61 source records. The **combined reference library** now holds **76 series / 552 observation rows** (+32 series, +263 rows, **+91.0% rows**), pending source-image rechecks. These are cumulative historical-record counts, not 552 independent test flights and not 552 accepted solver validation points.
+- [`references/ww2_fighter_balanced_observations_2026-11-10.json`](../../references/ww2_fighter_balanced_observations_2026-11-10.json): **32 additional compact numeric series, 264 reported conditions**. Each series records units, aircraft serial, report location and equipment/power constraints.
+- The previous historical dataset was 44 series / 289 rows from 61 source records. The **combined reference library** now holds **76 series / 553 observation rows** (+32 series, +264 rows, **+91.3% rows**), pending source-image rechecks. These are cumulative historical-record counts, not 553 independent test flights and not 553 accepted solver validation points.
 - No simulator numerical coefficients, model code, acceptance gates, site UI, source PDFs or scanned figures were modified/committed.
 
 ## Coverage: before vs after
@@ -19,10 +19,10 @@ The first milestone concentrated on Spitfire IX (83 rows), Typhoon IB (48), P-51
 | P-47B / P-47D | 2* | **36** | **38*** | 11 speed, 14 climb, 11 stall IAS with flap/gear states |
 | A6M3 Zero/Hamp | 0 | **32** | **32** | 10 IAS/CAS calibration, 10 speed, 10 climb, 2 stalls |
 | Hurricane Mk I / IIB | 0 | **83** | **83** | IAS/TAS/boost, two weights (different engine), compressor settings, ROC |
-| F4F/FM-2 Wildcat | 3* | **25** | **28*** | 10 speeds, 7 climbs, 8 minimum-speed configuration rows |
+| F4F/FM-2 Wildcat | 3* | **26** | **29*** | 10 speeds, 8 climbs, 8 minimum-speed configuration rows |
 | Fw 190 A-5 / D-9 | 4* | **16** | **20*** | WNr 210001/210002 speed at combat/takeoff/MW50, equipment states |
 | Mustang III / P-51 family | 45* | **47** | **92*** | 22 climb/time, 21 paired TAS/IAS, four PEC anchors; +25 boost |
-| **All pre-existing + new types** | **289** | **263** | **552** | **44 → 76 series** |
+| **All pre-existing + new types** | **289** | **264** | **553** | **44 → 76 series** |
 
 * Prior row counts shown for a **related aircraft family** (P-47D drag-section data, F4F-3 roll, Fw 190 A-5, early P-51s), **not an identical subvariant, operating point or aircraft**. These cannot be blended into a single speed/climb curve. The table deliberately distinguishes archival breadth from true per-variant completeness.
 
@@ -38,7 +38,7 @@ The first milestone concentrated on Spitfire IX (83 rows), Typhoon IB (48), P-51
 | A6M3 captured EB-201 | 32 | B06 | [1944 test transcription](https://www.wwiiaircraftperformance.com/org/japan/hamp-eb201.html), scanned original not linked |
 | Hurricane I L2026 | 51 | B07 | [RAF A&AEE detailed tables](https://www.wwiiaircraftperformance.org/hurricane/l2026.html), normal/overload |
 | Hurricane IIB Z3564 | 32 | B08 | [RAF A&AEE detailed tables](https://www.wwiiaircraftperformance.org/hurricane/z3564.html), all performance on Z3564 |
-| FM-2 BuAer 16169 | 13 | B09 | Original Patuxent [PDF](https://www.wwiiaircraftperformance.org/f4f/fm-2-16169.pdf) |
+| FM-2 BuAer 16169 | 14 | B09 | Original Patuxent [PDF](https://www.wwiiaircraftperformance.org/f4f/fm-2-16169.pdf) |
 | FM-2 BuAer 15953 | 12 | B10 | Original Patuxent [PDF](https://www.wwiiaircraftperformance.org/f4f/fm-2-15953.pdf) |
 | Fw 190 D-9 WNr 210001 | 4 | B11 | Original German [Flugbericht PDF](https://www.wwiiaircraftperformance.org/fw190/Fw_190_D-9_210001_FB_Nr1.pdf) |
 | Fw 190 D-9 WNr 210002 | 12 | B12 + B14 | Original German [Nr 1](https://www.wwiiaircraftperformance.org/fw190/Fw_190_D-9_210002_FB_Nr1.pdf), [Nr 2](https://www.wwiiaircraftperformance.org/fw190/Fw_190_D-9_210002_FB_Nr2.pdf) |
@@ -60,9 +60,10 @@ The FX858 RAF trials are unusually useful because Table I gives **22 climb-rate/
 - **P-47B:** the climb presentation changes from military 2700rpm/2000BHP to rated 2550rpm/1625BHP at 12,600ft. The paired points at the transition are two settings, not contradictory duplicate tests. **P-47D** 31,400ft summary / 31,900ft section V differs for the 412mph point: BS08 marks it disputed rather than normalizing it away.
 - **A6M3 EB-201:** the original reported airspeed *position* correction is CAS minus the water-column reading, **not** necessarily CAS minus cockpit IAS. The dataset preserves all columns; low-airspeed stall IAS cannot be converted to CAS by extrapolating a 120–300mph calibration table. The wartime report explicitly could not reconcile engine horsepower charts and therefore provided no BHP.
 - **Hurricane I:** L2026's 6,316lb vs 6,750lb runs used different engine installations, so the nominal weight delta does not isolate mass effects. The normal-loading **57mph stall is IAS** but incompletely described; must not replace the P-51 or Bf 109 calibrated stall tests. **Hurricane II:** an abbreviated summary prints 8.8 min at 25,000ft, inconsistent with its detailed table giving 12.7 min at 26,000ft. Detailed source conditions are retained; suspect summary is excluded. Z2346 only supplied handling trials.
-- **FM-2:** Patuxent 16169 reports 2,430ft/min at 2,600rpm military vs 3,480ft/min at 2,700rpm, despite nearly identical BHP. The suspicious 2,430 figure is **deliberately not included** in BS23 until its PDF figure is checked. BuAer 15953 'minimum speed' does **not** explicitly establish IAS or CAS, so it remains basis-unknown.
+- **FM-2 original-scan correction:** the online HTML transcription prints **2,430ft/min** at 2,600rpm military, vs 3,480ft/min at 2,700rpm. The actual **Patuxent PDF, first page** shows **3,430ft/min**, resolving the discrepancy. BS23 preserves **3,430 as the scanned primary source's value**, explicitly documenting this significant HTML transcription error. BuAer 15953 'minimum speed' does **not** explicitly establish IAS or CAS, so it remains basis-unknown.
 - **Fw 190 D-9:** WNr 210001 had repeated engine replacements; WNr 210002's with/without ETC rack comparison also changes wheel doors, preventing isolation of rack drag. In the latter airframe's separate Nr 2 report, increased boost and MW50 are not routine combat power.
 - **Source status:** scans are linked when located; transcribed historic reports are clearly labeled as such and warrant scan-to-table review before physics validation. Digital OCR errors and period-report arithmetic errors are *recorded*, not silently fixed.
+- **Ki-84 archival trap:** original USAAF [F-IM-1119C-NDT-2](https://www.wwiiaircraftperformance.org/japan/T-2_Report_on_Frank_I_Ki-84.pdf) contains a full performance summary near its front, but the headings/normal-vs-overload speed relationship require provenance verification; earlier archival audit R48 explicitly separated **measured handling/stall** from **performance predictions**. Those summary speed and climb figures are deliberately *not* added as flight-tested rows to improve coverage artificially.
 
 ## Coverage matrix for next milestone (genuine gaps, not filler counts)
 
