@@ -29,7 +29,7 @@ function speedBasis(series){
 }
 function buildCatalog(options={}){
  const base=options.root||root;
- const sourcePacks=[],observations=[],sources=[],calibrationCurves=[],sourceKeys=new Set(),observationKeys=new Set();
+ const sourcePacks=[],observations=[],sources=[],calibrationCurves=[],documentLineage=[],calibrationReviews=[],sourceKeys=new Set(),observationKeys=new Set();
  const addSource=(record,packId,foreignId)=>{
   const id=packId+':'+foreignId;
   if(sourceKeys.has(id))throw Error('Duplicate research source: '+id);
@@ -99,6 +99,17 @@ function buildCatalog(options={}){
     calibrationCurves.push({...curve,id:packId+':'+curve.id,source_id:packId+':'+curve.source_id,
      applies_to_source_ids:(curve.applies_to_source_ids||[]).map(id=>id.includes(':')?id:packId+':'+id)});
    }
+   for(const lineage of pack.document_lineage||[]){
+    if(!lineage.id||!Array.isArray(lineage.members)||lineage.members.length===0||!lineage.relationship)throw Error('Incomplete source lineage: '+relative);
+    documentLineage.push({...lineage,id:packId+':'+lineage.id,pack_id:packId,
+     members:lineage.members.map(id=>id.includes(':')?id:packId+':'+id)});
+   }
+   for(const review of pack.calibration_reviews||[]){
+    if(!review.id||!review.status||(!review.source_id&&!review.original_other_source))throw Error('Incomplete chart review: '+relative);
+    calibrationReviews.push({...review,id:packId+':'+review.id,pack_id:packId,
+     source_id:review.source_id?(review.source_id.includes(':')?review.source_id:packId+':'+review.source_id):null,
+     original_other_source:review.original_other_source?(review.original_other_source.includes(':')?review.original_other_source:packId+':'+review.original_other_source):null});
+   }
    const entries=pack.observations?.length?pack.observations:(!Array.isArray(pack.series)?[]:pack.series.flatMap(series=>{
     if(!Array.isArray(series.columns)||!Array.isArray(series.rows))throw Error(relative+': compact series without columns/rows');
     return series.rows.map((row,i)=>{
@@ -166,6 +177,17 @@ function buildCatalog(options={}){
  }
  observations.sort((a,b)=>a.id.localeCompare(b.id));sources.sort((a,b)=>a.id.localeCompare(b.id));
  for(const curve of calibrationCurves)validateCurve(curve,sourceKeys);
+ const lineageIds=new Set();
+ for(const lineage of documentLineage){
+  if(lineageIds.has(lineage.id))throw Error('Duplicate document lineage '+lineage.id);
+  lineageIds.add(lineage.id);
+  if(new Set(lineage.members).size!==lineage.members.length)throw Error('Repeated lineage member '+lineage.id);
+  for(const id of lineage.members)if(!sourceKeys.has(id))throw Error('Unresolved document lineage source '+id);
+ }
+ for(const review of calibrationReviews){
+  const id=review.source_id||review.original_other_source;
+  if(!sourceKeys.has(id))throw Error('Unresolved reviewed calibration source '+id);
+ }
  for(const record of observations)if(record.quantity==='stall_speed')record.preferred_airspeed=applyCorrections(record,calibrationCurves);
  const metrics={},aircraft=new Set(),quantities={};
  for(const record of observations){
@@ -181,7 +203,9 @@ function buildCatalog(options={}){
  const manifest={schema:SCHEMA,schema_version:'1.0.0',version:options.version||require(path.join(base,'package.json')).version,
   source_packs:sourcePacks,summary:{source_count:sources.length,series_count:imports.reduce((n,[, ,f])=>n+parseJson(path.join(base,f)).series.length,0),
    observation_count:observations.length,stall_count:observations.filter(x=>x.quantity==='stall_speed').length,
-   stall_quality_tiers:stallTier,airframe_labels:aircraft.size,quantities,metrics},sources,observations,calibration_curves:calibrationCurves};
+   stall_quality_tiers:stallTier,airframe_labels:aircraft.size,quantities,metrics,
+   lineage_groups:documentLineage.length,calibration_reviews:calibrationReviews.length},
+  sources,observations,calibration_curves:calibrationCurves,document_lineage:documentLineage,calibration_reviews:calibrationReviews};
  manifest.fingerprint=sha256(JSON.stringify(manifest));
  return manifest;
 }

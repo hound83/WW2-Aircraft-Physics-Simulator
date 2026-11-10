@@ -83,6 +83,31 @@
   row.appendChild(cell);correctionRows.appendChild(row);
  }
  $('historical-correction-count').textContent=(catalog.calibration_curves||[]).length+' original airspeed correction curves; unpaired curves remain research evidence until matching stall conditions are verified.';
+ const sourceLink=(cell,id)=>{
+  const source=byId.get(id),url=safeUrl(source?.primary_url)||safeUrl(source?.catalog_url);
+  if(url){const a=textNode('a',source?.report||id);a.href=url;a.target='_blank';a.rel='noopener noreferrer';cell.appendChild(a);}
+  else cell.appendChild(textNode('span',source?.report||id));
+ };
+ for(const review of catalog.calibration_reviews||[]){
+  const row=document.createElement('tr');
+  for(const value of [review.id+' · '+(review.figure||''),review.status,review.finding||'',review.next||''])row.appendChild(textNode('td',value));
+  const cell=document.createElement('td');sourceLink(cell,review.source_id||review.original_other_source);row.appendChild(cell);
+  $('historical-review-rows').appendChild(row);
+ }
+ for(const lineage of catalog.document_lineage||[]){
+  const row=document.createElement('tr');
+  for(const value of [lineage.id,lineage.relationship])row.appendChild(textNode('td',value));
+  const cell=document.createElement('td');
+  for(const [index,member]of lineage.members.entries()){
+   if(index)cell.appendChild(textNode('span',' · '));
+   sourceLink(cell,member);
+  }
+  row.appendChild(cell);
+  row.appendChild(textNode('td',lineage.independent_test_groups===null?'Not yet resolved':lineage.independent_test_groups));
+  row.appendChild(textNode('td',lineage.note||''));
+  $('historical-lineage-rows').appendChild(row);
+ }
+ $('historical-audit-count').textContent=(catalog.calibration_reviews||[]).length+' reviewed original low-speed charts · '+(catalog.document_lineage||[]).length+' report/airframe lineage groups. Linked reports are not necessarily independent test campaigns.';
  for(const selector of Object.values(selectors))selector.addEventListener('change',()=>{limit=40;render();});
  $('historical-more').addEventListener('click',()=>{limit+=80;render();});
  window.UniversalResearchEvidence={catalog,selection:null,rerender:render,

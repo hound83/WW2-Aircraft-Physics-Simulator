@@ -1,8 +1,8 @@
 {
   "node": "v24.22.1",
-  "discoveredScripts": 61,
-  "reportedScripts": 61,
-  "passed": 61,
+  "discoveredScripts": 62,
+  "reportedScripts": 62,
+  "passed": 62,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -229,6 +229,10 @@
     },
     {
       "script": "test_spitfire_v20.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_stall_four_track_research.cjs",
       "status": "pass"
     },
     {

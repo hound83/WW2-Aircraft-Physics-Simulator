@@ -1,5 +1,9 @@
 # Known limitations
 
+## 2026-11-10 original-source stall follow-up
+
+The [four-track research report](research/WW2_STALL_FOUR_TRACK_FOLLOWUP_2026-11-10.md) documents 29 additional archive rows, **not** 29 new independently qualified CAS stall speeds. Spitfire VA's ten original IAS/CLmax measurements are **not Spitfire LF IX BS.543** stall tests. Its Fig. 5, and the Hurricane II Z2963 Fig. 7, describe cockpit-airspeed corrections, while NACA stall instrumentation uses separately documented recording heads; reapplying those figures to the stall table without the signal mapping risks wrong or double correction. New P-47D-30 source-caption weights characterize test flight runs but do not prove mass at the exact stall instant; the 1953 report supersedes the 1948 test, and the two wave-off figures did not reach full stall. F6F-3 BuAer 04776 normal-force coefficient depends on slipstream/configuration and is not automatically power-off wing CLmax; the report's position-error-free *service indicated* reference does not justify reporting its untranscribed stall figure speeds as original direct CAS/EAS. No baseline model coefficients, 5:1 or historical sustained-turn certification changed.
+
 The [Spitfire and Thunderbolt climb-band report](CLIMB_BAND_COMPARISON.md) compares independent historical reports at different test ratings. The replays use already-exposed observations. The alternate profile spread does not bound prediction error.
 
 The fixed four-fighter comparison uses default reference ratings and weights and provisional lift. The F-4 default engine domain omits the 27,000-ft state. The Mustang workbook and Greg graph have their own evidence qualifications. The numeric comparisons do not change the historical stall or 5:1 status. [Scenario definitions](FOUR_FIGHTER_COMPARISON.md).

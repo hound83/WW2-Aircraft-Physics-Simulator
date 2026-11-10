@@ -1,5 +1,11 @@
 # Next steps
 
+## Four-track original stall follow-up and six-profile readiness (research-only)
+
+The [primary-source follow-up](research/WW2_STALL_FOUR_TRACK_FOLLOWUP_2026-11-10.md) adds ten **Spitfire VA** IAS/CLmax pairs, fourteen **P-47D-30 43-3441** flight-run gross masses and configurations, five **F6F-3 04776** fuel-adjusted original peak-normal-force coefficient bands, and fifteen explicit duplicate/dependency groups. Source registry now counts **755 rows / 200 stalls / 139 source records**. The one confirmed in-range `CAS*` remains the original Corsair handbook correction; four F4U-4 source-direct CAS rows remain four. Original NACA low-speed cockpit figures are promising, but the NACA stall recorders' airspeed instrument channel differs, so no unqualified correction is applied.
+
+**Next data/physics gate:** (1) instrument-channel-correct original **near-stall CAS/EAS**, prioritizing P-51B-15, P-47B, Spitfire BS.543 and F4; (2) original stall figure digitization on NACA F6F-3 04776 and P-47D-30 43-3441 with per-test gross mass and configuration and retained visual error; (3) verify original F6F service IAS position-error-free definition and P-47D original instrument report; (4) independent source family splits, not row-random fit/check; (5) source-bounded new model candidate(s), especially P-47D-30 and F6F-3, after engine, propeller, drag and speed/climb intake. **No existing aircraft is yet full historical stall+sustained-turn "super good enough".** Keep hunting direct CAS as actively as correction charts. Changes in this research-only pack do not establish v3.15 physical-model validity.
+
 ## v3.14: source-ingesting historical research layer (completed)
 
 [Source and stall evidence release](research/WW2_STALL_EVIDENCE_LAYER_2026-11-10.md) makes 726 primary/secondary-corroborated historical rows and 19 correction-curve records browsable within the sim, with six source packs, preserved original IAS/CAS, varied tested weights and automatic future ingestion. The best available airspeed candidate is labelled CAS, CAS*, corrected IAS*, plain IAS or unestablished. User priority: **continue searching for direct near-stall CAS/EAS just as aggressively as for source-original low-speed IAS correction tables**; provisional corrections are not a reason to stop looking. No historic CLmax refit has been made on these mixed-source rows.
