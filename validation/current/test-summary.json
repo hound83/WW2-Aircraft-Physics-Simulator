@@ -1,8 +1,8 @@
 {
   "node": "v24.22.1",
-  "discoveredScripts": 62,
-  "reportedScripts": 62,
-  "passed": 62,
+  "discoveredScripts": 65,
+  "reportedScripts": 65,
+  "passed": 65,
   "failed": 0,
   "exitCode": 0,
   "executionError": null,
@@ -152,6 +152,10 @@
       "status": "pass"
     },
     {
+      "script": "test_multiaxis_research_2026_11_10.cjs",
+      "status": "pass"
+    },
+    {
       "script": "test_naca_holdout_v23.cjs",
       "status": "pass"
     },
@@ -244,7 +248,15 @@
       "status": "pass"
     },
     {
+      "script": "test_stall_test_replay.cjs",
+      "status": "pass"
+    },
+    {
       "script": "test_stores.cjs",
+      "status": "pass"
+    },
+    {
+      "script": "test_turn_stall_correction.cjs",
       "status": "pass"
     },
     {

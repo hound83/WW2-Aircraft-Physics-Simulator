@@ -8,16 +8,16 @@ const {buildCatalog}=require('../scripts/research-layer.cjs');
 const catalog=buildCatalog({root:path.resolve(__dirname,'..')});
 const prefix='stall_four_track_followup_2026-11-10';
 const rows=catalog.observations.filter(row=>row.pack_id===prefix);
-assert.equal(pack.pack_version,'1.0.0');
+assert.equal(pack.pack_version,'1.0.1');
 assert.equal(rows.length,29);
-assert.equal(catalog.summary.observation_count,755);
-assert.equal(catalog.summary.stall_count,200);
-assert.equal(catalog.summary.source_count,139);
+assert.equal(catalog.summary.observation_count,955);
+assert.equal(catalog.summary.stall_count,208);
+assert.equal(catalog.summary.source_count,163);
 assert.equal(catalog.calibration_curves.length,19,'Unsafe chart digitization must not silently produce a correction curve');
-assert.equal(catalog.summary.lineage_groups,15);
-assert.equal(catalog.summary.calibration_reviews,2);
-assert.equal(catalog.document_lineage.length,15);
-assert.equal(catalog.calibration_reviews.length,2);
+assert.equal(catalog.summary.lineage_groups,26);
+assert.equal(catalog.summary.calibration_reviews,11);
+assert.equal(catalog.document_lineage.length,26);
+assert.equal(catalog.calibration_reviews.length,11);
 
 const va=rows.filter(row=>row.quantity==='stall_speed');
 assert.equal(va.length,10);
@@ -28,7 +28,8 @@ assert.equal(va.find(row=>row.values.power==='gliding-throttle-closed'&&row.valu
 
 const p47=rows.filter(row=>row.quantity==='stall_trial_metadata');
 assert.equal(p47.length,14);
-assert.equal(p47.find(row=>row.values.figure==='58').values.alt_ft,3000);
+assert.equal(p47.find(row=>row.values.figure==='58').values.alt_ft,null,'Contradictory original altitude captions cannot be preferred without proof');
+assert.match(p47.find(row=>row.values.figure==='58').values.test_condition,/altitude labels conflict/);
 assert.equal(p47.find(row=>row.values.figure==='52').values.weight_lb,12860);
 assert.equal(p47.filter(row=>row.values.complete_stall===false).length,2);
 assert.ok(p47.every(row=>row.speed_basis==='unestablished'&&!row.preferred_airspeed));

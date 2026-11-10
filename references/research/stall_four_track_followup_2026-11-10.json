@@ -1,17 +1,17 @@
 {
   "schema": "ww2-fighter-evidence-pack/v1",
-  "pack_version": "1.0.0",
+  "pack_version": "1.0.1",
   "compiled": "2026-11-10",
   "purpose": "Four-track follow-up: original low-speed calibration; direct CAS/EAS hunt; test-by-test airborne weights and lift data; document and specimen deduplication. Raw historical evidence, not an approved simulator fit.",
   "sources": [
     {
       "id": "spitfire-va-wr-l353",
-      "aircraft": "Supermarine Spitfire VA, NACA 1942 Langley specimen (photographed R7347)",
+      "aircraft": "Supermarine Spitfire VA, NACA Langley program: W3119 confirmed in original companion report; R7347 photograph is not proved test identity",
       "report": "NACA ACR / Wartime Report L-353, Stalling Characteristics of the Supermarine Spitfire VA Airplane (Vensel and Phillips, September 1942)",
       "pdf": "https://ntrs.nasa.gov/api/citations/19930092581/downloads/19930092581.pdf",
       "scan_mirror": "https://digital.library.unt.edu/ark:/67531/metadc61033/m2/1/high_res_d/19930092581.pdf",
       "location": "Printed pp. 2-3 apparatus and figure 5 calibration; printed p. 7 stall IAS and CLmax table; figs 8-19 source time histories",
-      "verification": "Original PDF table text and page captions reviewed. The report calls speeds indicated; Figure 5 is explicitly the pilot's meter correction, not proof that the separate NACA recorder used that signal."
+      "verification": "Original PDF table text and page captions reviewed. NACA flying-qualities companion report 19930092582 identifies test airplane W3119 (not an assumed R7347 photograph). The report calls speeds indicated; Figure 5 is explicitly the pilot's meter correction, not proof that the separate NACA recorder used that signal."
     },
     {
       "id": "p47d30-rm-l8a06",
@@ -80,7 +80,7 @@
       "speed_basis": "unestablished",
       "source_class": "original-naca-figure-legend",
       "source_location": "NACA RM L8A06, PDF pp.19-20 figure legends 47-59; individual plots PDF pp.69-81",
-      "notes": "Weight is reported gross weight of the run in the original figure caption; it must not be overclaimed as an independently measured instantaneous mass at the exact stall moment. Power, canopy and CG vary. These are NOT 14 extracted stall speeds, and wave-off runs 56-57 did NOT reach a complete stall. Figure 58 3000ft, not 5000ft.",
+      "notes": "Weight is reported gross weight of the run in each original figure caption, not instantaneous weight at stall. These are NOT 14 extracted stall speeds; wave-off runs 56-57 did NOT reach complete stall. Figure 58 has CONFLICTING source labels: figure list says 3000ft, plotted graphic caption says 5000ft; altitude unresolved, stored null instead of asserting either.",
       "columns": ["figure", "weight_lb", "alt_ft", "cg_percent_mac", "test_condition", "controls", "complete_stall", "weight_basis"],
       "rows": [
         ["47", 12660, 5000, 26.4, "power-on-clean", "elevator-only", "not-established", "flight-run-gross"],
@@ -95,7 +95,7 @@
         ["55", 13170, 5000, 29.0, "landing-gear-flaps-down-off", "hold-wings-level", "not-established", "flight-run-gross"],
         ["56", 13210, 5000, 28.8, "wave-off", "elevator-only", false, "flight-run-gross"],
         ["57", 13219, 5000, 28.8, "wave-off", "hold-wings-level", false, "flight-run-gross"],
-        ["58", 12690, 3000, 26.3, "low-speed-left-turn", "elevator-only", "not-established", "flight-run-gross"],
+        ["58", 12690, null, 26.3, "low-speed-left-turn; altitude labels conflict 3000ft vs 5000ft", "elevator-only", "not-established", "flight-run-gross"],
         ["59", 12680, 5000, 26.4, "landing-left-turn", "elevator-only", "not-established", "flight-run-gross"]
       ]
     },
