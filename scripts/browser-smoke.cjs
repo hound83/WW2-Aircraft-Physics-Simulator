@@ -304,6 +304,7 @@ async function run(){
   const energyRows=await evaluate('EnergyFlightState');
   assert.ok(energyRows.p47b.climbFpm>2400&&energyRows.p47b.climbFpm<2700);
   assert.equal(energyRows.spitfire_lfix_bs543.weightLb,7485);
+  assert.ok(energyRows.bf109f4.band[0]<16&&energyRows.bf109f4.band[1]>19,'F4 inlet context reaches live parameter ensemble');
   assert.ok(energyRows.p38g.configuration.includes('energy-v41'));
   await select('v41-mode','reference');
   const priorRows=await evaluate('EnergyFlightState');
