@@ -1,0 +1,26 @@
+{
+  "sourceId": "p47d30-rm-l8a06",
+  "scanSha256": "95c68467065e3a68394581c7b8c20b4e0578224bde9710e3bde05b6c89961075",
+  "speedBasis": "service indicated airspeed",
+  "areaFt2": 300,
+  "areaSource": "RM L8A06, Table I, PDF page 14 (one-based)",
+  "instrumentLead": {
+    "url": "https://ntrs.nasa.gov/api/citations/19930083825/downloads/19930083825.pdf",
+    "location": "NACA TN 2675, printed pp. 3-4, fig. 2",
+    "status": "Same-airframe companion report describes a right-wingtip swiveling static head and shielded total head, low-speed formation calibration against a trailing-head reference, and position-corrected CAS. No numerical near-stall correction table or proof of correction applied to the plotted RM L8A06 channel was recovered."
+  },
+  "method": "Visual reading of the speed and normal-acceleration traces on a common time axis near the first sustained response in load or roll. Bounds combine event choice and reading precision, and are not statistical intervals or definitive stall points. Reported speed is not converted to CAS in the observations.",
+  "windows": [
+    { "figure": "48", "pdfPage": 71, "timeSec": [14, 17], "indicatedMph": [98, 104], "normalG": [0.80, 0.94], "event": "Low-speed plateau through initial roll excursion, before the speed recovery." },
+    { "figure": "49", "pdfPage": 72, "timeSec": [18, 19], "indicatedMph": [113, 119], "normalG": [0.95, 1.07], "event": "Onset of roll and subsequent unloading in the elevator-only run." },
+    { "figure": "50", "pdfPage": 73, "timeSec": [6.5, 7.5], "indicatedMph": [109, 119], "normalG": [0.85, 1.00], "event": "First marked roll excursion. Later lower speed at about 12 seconds is not used as the initial stall." },
+    { "figure": "51a", "pdfPage": 74, "timeSec": [3.8, 5], "indicatedMph": [120, 127], "normalG": [0.90, 1.05], "event": "First sustained unloading and roll excursion at high altitude. Comparison is exploratory because altitude and Mach differ." }
+  ],
+  "excluded": {
+    "47": "Power-on trace shows multiple disturbances and no clear isolated onset; no point selected.",
+    "51b": "High-altitude power-on trace shows multiple roll departures with no clear onset; no point selected.",
+    "52-55": "Gear and flaps down; separate configurations outside this clean replay.",
+    "56-57": "Wave-off trials were not carried to complete stall.",
+    "58-59": "Accelerated stall traces, not steady maximum sustained turns; no numerical window used in this replay."
+  }
+}
