@@ -1,0 +1,118 @@
+{
+  "schema": "ww2-fighter-supergoodenough-readiness/v1",
+  "version": "1.0.0",
+  "as_of": "2026-11-10",
+  "scope": "Historical evidence coverage of exact variants; not percentage predictive accuracy or percentage likelihood of correct performance. Six modeled + six proposed research-intake variants. Source search and rank only; no physics roster admission.",
+  "weights": {
+    "identity_configuration_weight": 10,
+    "stall_mass_and_lift": 25,
+    "stall_domain_airspeed_calibration": 20,
+    "installed_engine_prop_cooling": 15,
+    "measured_speed_and_climb": 10,
+    "independent_sustained_turn_drag": 20
+  },
+  "method": {
+    "scoring": "Expert-audited coverage points / 100. Category points require usable source identity, directness and condition match; 0=none, full points=well-supported over relevant flight envelope. Nominal engine tables, unrelated airframes and simulations receive deliberately limited credit. Human judgment, not statistical error bars.",
+    "super_good_enough_threshold_percent": 85,
+    "hard_gates": ["Original-source stall or CLmax at controlled flight mass and correct configuration", "CAS/EAS or demonstrably corrected* near the actual stall with documented measurement domain, while explicitly separating instrument error", "Installed power/prop/cooling and independent measured speed/climb", "Independent or adequately bounded sustained-turn energy/drag evidence with uncertainty"],
+    "qualification": "Reaching 85% alone never bypasses a hard gate. CAS* only provisional. No extrapolation outside original correction source range, no cross-airframe transfer without method justification, no double-count of identical trial represented in multiple packs."
+  },
+  "variants": [
+    {
+      "id":"f4u4_80765","variant":"F4U-4","specimen":"BuNo 80765","role":"candidate","percent":78,
+      "points":[10,22,20,11,10,5],"stall_basis":"4 explicitly labelled original CAS stalls at 12500lb, 3 unambiguous condition labels + 1 originally repeated 'power on' label",
+      "verified_near_stall_cas":true,"sustained_turn_historical_verified":false,"super_good_enough":false,
+      "primary_sources":["https://www.wwiiaircraftperformance.org/f4u/f4u-4-80765.pdf","https://ntrs.nasa.gov/citations/20050081862"],
+      "chief_gaps":["More direct CAS points versus actual flight weight, power and configuration", "Resolve original repeated fourth power-on condition without rewriting primary source", "Exact R-2800 installed power, propulsive efficiency/cooling versus speed and independent maximum sustained-turn/drag, with separate 1947 NACA test-airframe provenance"],
+      "research_update":"Second, different-airframe original NACA 1947 flying-quality source located: corroborates inadequate warning in straight/turning stalls but does not supply independent 80765 sustained-turn times."
+    },
+    {
+      "id":"p51b_4324777","variant":"P-51B-15","specimen":"AAF 43-24777","role":"modeled","percent":66,
+      "points":[10,21,8,12,10,5],"stall_basis":"9 source-matched IAS stall tests at recorded individual flight weights, 67–86mph IAS; original same-serial Fig.1 found but low end not numerically validated",
+      "verified_near_stall_cas":false,"sustained_turn_historical_verified":false,"super_good_enough":false,
+      "primary_sources":["https://www.wwiiaircraftperformance.org/mustang/p51b-24777.html","https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html"],
+      "chief_gaps":["Digitize and verify same-serial Fig.1 specifically at 67–86mph IAS and preserve signed instrument/position correction", "Measured installed shaft/propulsive power, drag versus low speeds, actual flight mass at turns", "Independent maximum sustained-turn or CLmax envelope over altitude"],
+      "research_update":"Original 20 May 1944 43-24777 source reconfirmed: 9335lb at takeoff only; reports motor-maker-chart BHP, not on-airplane torque. Different B-5 serial 43-6883 cannot silently supply stall-CAS."
+    },
+    {
+      "id":"f6f3_04776","variant":"F6F-3","specimen":"NACA BuAer 04776; supplementary BuNo 25820 and separately numbered production trials","role":"candidate","percent":59,
+      "points":[9,20,10,8,5,7],"stall_basis":"Original NACA near-stall normal-force/CL response and methods plus original 25820 IAS stalls; multiple original weights, but separate trials and no exact 04776 stall-run CAS/mass pairing",
+      "verified_near_stall_cas":false,"sustained_turn_historical_verified":false,"super_good_enough":false,
+      "primary_sources":["https://ntrs.nasa.gov/citations/19930092600","https://ntrs.nasa.gov/citations/19930092602","https://www.wwiiaircraftperformance.org/f6f/f6f-3-25820.pdf"],
+      "chief_gaps":["Demonstrate NACA position-free service IAS -> fully CAS/EAS including instrument error and near-stall coverage", "Actual fuel-burn-corrected weight/CG at each Part III stall-run, not Part I departure weights", "Same-variant installed R-2800 power/prop and independent sustained-turn drag or turn rate"],
+      "research_update":"Re-identified all three matched NACA 04776 report parts and their calibration context; no basis to convert 25820 IAS or separate serial stall values automatically into same-airframe CAS."
+    },
+    {
+      "id":"spitfire_lfix_bs543","variant":"Spitfire LF Mk IX","specimen":"BS.543, Merlin 66","role":"modeled","percent":58,
+      "points":[10,13,10,11,10,4],"stall_basis":"Original A&AEE performance and weights; same pressure-head manufacturer/position authorizes transfer of BF.274 PEC, measured only from 130mph IAS",
+      "verified_near_stall_cas":false,"sustained_turn_historical_verified":false,"super_good_enough":false,
+      "primary_sources":["https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html","https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitFmkIX_BF274.html"],
+      "chief_gaps":["Recover original BS543 or properly transferred BF274 corrected airspeed below 130mph at actual 1g stall", "Source-matched stall weight/configurations/CLmax (7485lb is departure mass)", "Independent low-speed Merlin66/Rotol/cooling and sustained-turn lift/drag"],
+      "research_update":"Confirmed the authors' deliberate BF274 pressure-head PEC transfer, but table corrections printed below 130mph remain author extrapolations; not measurement at stall."
+    },
+    {
+      "id":"p47b_415902","variant":"P-47B","specimen":"AAF 41-5902; separate six-prop trials on 41-5942","role":"modeled","percent":57,
+      "points":[10,14,4,14,10,5],"stall_basis":"Original 41-5902 clean IAS stall approximately 105mph and ~12565lb; original calibration available only 170–310mph",
+      "verified_near_stall_cas":false,"sustained_turn_historical_verified":false,"super_good_enough":false,
+      "primary_sources":["https://www.wwiiaircraftperformance.org/p-47/p-47.html","https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5942_FS-M-19-1523-A.pdf"],
+      "chief_gaps":["Same-serial 41-5902 IAS->CAS below 170mph at 105mph stall", "Low-speed propeller efficiency with torque and cooling on the exact 41-5902 configuration rather than importing 41-5942", "Maximum sustainable turn rate or independently constrained power-required/induced drag"],
+      "research_update":"Reconfirmed 41-5942 68 controlled prop/torque speed-and-climb data cannot be counted as 41-5902 stall calibration. Original 41-5902 report still lacks verified low-speed CAS."
+    },
+    {
+      "id":"p38g_4212687","variant":"P-38G-1","specimen":"AAF 42-12687","role":"modeled","percent":53,
+      "points":[10,11,3,12,10,7],"stall_basis":"Original G-model speed/climb plus F/G tactical turn-stall context; H/J/L handbook stall/correction belongs to a different installation",
+      "verified_near_stall_cas":false,"sustained_turn_historical_verified":false,"super_good_enough":false,
+      "primary_sources":["https://www.wwiiaircraftperformance.com/org/p-38/p-38.html","https://wwiiaircraftperformance.com/org/p-38/p-38g-tactical-trials.html","https://wwiiaircraftperformance.com/org/p-38/p-38-67869.html"],
+      "chief_gaps":["Original same-G low-speed 1g stall at documented actual mass, gear/flaps/power and G-specific CAS correction", "1944 P-38J IAS->CAS original chart measures only 150–360mph, cannot correct G stall ~100mph", "G-variant prop/cooling power/turn-drag and maximum sustained rate with weight/altitude"],
+      "research_update":"NEW 8-pair original P-38J 42-67869 IAS/water-column/CAS/installation/altimeter table, strictly confined to 150–360mph and P-38J. This is not the G-series solution, but gives a verified related measurement method."
+    },
+    {
+      "id":"fw190d9_210002","variant":"Fw 190 D-9","specimen":"WNr 210002","role":"candidate","percent":46,
+      "points":[10,3,11,11,9,2],"stall_basis":"Original Flugbericht Nr1 correction-graph lead and multiple speed/boost records; no exact-weight clean stall CAS or sustained-turn source",
+      "verified_near_stall_cas":false,"sustained_turn_historical_verified":false,"super_good_enough":false,
+      "primary_sources":["https://www.wwiiaircraftperformance.org/fw190/Fw_190_D-9_210002_FB_Nr1.pdf","https://www.wwiiaircraftperformance.org/fw190/Fw_190_D-9_210002_FB_Nr2.pdf"],
+      "chief_gaps":["Read and digitize exact low-speed validity domain of original Fahrtmesserkorrektur incl. compressibility", "Same-airframe 1g stall and flight weight; distinguish 4300kg climb from speed-test states", "Detailed original Jumo213 cooling/prop and full corrected climb graph; independent sustained turn"],
+      "research_update":"Original German WNr210002 10-page Flugbericht located and inspected; calibration graphics are image-only and not certified at low-speed stall. 210001 separate-machine results remain disallowed as direct transfer."
+    },
+    {
+      "id":"fw190a4_783","variant":"Fw 190 A-4","specimen":"WNr 783","role":"modeled","percent":43,
+      "points":[10,6,3,10,10,4],"stall_basis":"Original 783 speed/climb and three pitot error checks at unspecified speeds, unrelated captured 190A clean stall ~110mph without proven exact airframe match",
+      "verified_near_stall_cas":false,"sustained_turn_historical_verified":false,"super_good_enough":false,
+      "primary_sources":["https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-783-nr1.html","https://www.wwiiaircraftperformance.org/fw190/fw190-619-nr5.html"],
+      "chief_gaps":["Same-783 measured near-stall IAS->CAS, flight mass and clean 1g stall/CLmax", "Original 619 tank/rack 6–7km/h additional IAS error proves configuration sensitivity, not same-783 clean calibration", "BMW801D installed shaft power/prop/cowl versus speed and independent sustained-turn drag"],
+      "research_update":"NEW original WNr619 Flugbericht Nr5 shows wing tanks increase IAS under-reading by 6–7km/h, and rack/tank speed losses 22–24/54–59km/h. Different airframe and stores; do not infer 783 stall CAS."
+    },
+    {
+      "id":"p40f_4113635","variant":"P-40F","specimen":"AAF 41-13635","role":"candidate","percent":40,
+      "points":[10,2,2,14,10,2],"stall_basis":"No matched exact P-40F 41-13635 1g stall original or low-speed IAS/CAS chart established",
+      "verified_near_stall_cas":false,"sustained_turn_historical_verified":false,"super_good_enough":false,
+      "primary_sources":["https://www.wwiiaircraftperformance.com/org/p-40/p-40_files/P-40F_41-13635_FS-M-19-1549-A.pdf","https://www.wwiiaircraftperformance.com/org/p-40/p-40.html"],
+      "chief_gaps":["Recover exact-aircraft clean and landing 1g stall with weight/CG and original IAS->CAS", "Archive different A&AEE Kittyhawk II FL220 separately; don't import another P-40 variant's near-stall IAS as 41-13635", "Measured sustained-turn envelope at combat mass; reconcile originally inconsistent 89303-23W/24W blade-design captions"],
+      "research_update":"Original five-prop same-airframe 25-point trial preserved; additional FL220 original A&AEE stall/PEC scan was sought, not established. Secondary narrative alone cannot set the 41-13635 CLmax."
+    },
+    {
+      "id":"ki84_302","variant":"Ki-84-I","specimen":"Captured T-2 no.302","role":"candidate","percent":40,
+      "points":[10,15,1,9,2,3],"stall_basis":"3 actual original 1g IAS clean/landing power conditions (102/90/79mph) at 8000–8500ft, 7900lb departure mass; 1 separately aborted estimated-3g bank trial",
+      "verified_near_stall_cas":false,"sustained_turn_historical_verified":false,"super_good_enough":false,
+      "primary_sources":["https://www.wwiiaircraftperformance.org/japan/T-2_Report_on_Frank_I_Ki-84.pdf","https://www.wwiiaircraftperformance.org/japan/Ki-84-TSFTE-2001.pdf"],
+      "chief_gaps":["Original correction chart claimed previously at p8 DOES NOT EXIST in the cited interim report; find actual IAS->CAS near 79–102mph", "Actual burn-adjusted 1g stall mass; 7900lb flown vs 7940lb published normal and 9194lb overload specification", "Actual measured climb/speed (report explicitly says no performance climb attempted), measured installed Ha-45/prop/turn energy"],
+      "research_update":"CRITICAL CORRECTION: original interim report p8 is written stall narrative, not a calibration plot. Source pack v1.0.1 retracts graph claim. 7 Ha-45 horsepower rating points recorded as specifications, NOT observed T-2 shaft power; 3 IAS stalls already archived before this research and were not double-counted."
+    },
+    {
+      "id":"p47d30_433441","variant":"P-47D-30","specimen":"AAF 43-3441","role":"candidate","percent":39,
+      "points":[10,12,1,7,1,8],"stall_basis":"Detailed NACA tested configurations and accelerated stall dynamics; figures 56–57 incomplete stalls, figure 58 contradictory 3000/5000ft label; no validated 1g stall CAS",
+      "verified_near_stall_cas":false,"sustained_turn_historical_verified":false,"super_good_enough":false,
+      "primary_sources":["https://ntrs.nasa.gov/citations/20090022749","https://digital.library.unt.edu/ark:/67531/metadc65259/"],
+      "chief_gaps":["Numerical fully developed 1g near-stall CAS, weight, CG and clean/power configuration", "Independent sustained-turn power/drag; NACA 7.5 and 11lb/g are stick-force gradients and do NOT yield deg/s turn", "Matching R-2800/prop speed/climb validation at this serial, resolve Figure 58 altitude conflict from primary record"],
+      "research_update":"NACA RM L8A06 retrieved from NASA and independent UNT archive; no claim of a directly measured sustained-turn maximum can be made from its elevator control-force plots."
+    },
+    {
+      "id":"bf109f4_representative","variant":"Bf 109 F-4","specimen":"Representative DB601E F-4; exact wartime test serial not yet anchored","role":"modeled","percent":34,
+      "points":[9,4,0,9,7,5],"stall_basis":"Contemporary game gives broad 154–171km/h simulated IAS clean stall at variable mass, but no verified original F-4 instrument-corrected stall at documented actual flight mass",
+      "verified_near_stall_cas":false,"sustained_turn_historical_verified":false,"super_good_enough":false,
+      "primary_sources":["https://wwiiaircraftperformance.org/me109/Diving_Test_109F_W.Nr.9228_ger_eng.pdf","https://il2sturmovik.com/museum/fighters/bf-109-f-4/"],
+      "chief_gaps":["Find F-4 German original serial-specific stall IAS, low-speed Fahrtmesserkorrektur or CAS and actual test mass", "Independently measured DB601E/VDM F-series installed power and prop efficiency, auto-slats and radiators", "Independent wartime maximum sustained-turn envelope; IL-2 20.3/26.1s at 270km/h IAS and 2890kg is a GAME benchmark only"],
+      "research_update":"NEW official IL-2 F-4 benchmark states 20.3s sea-level and 26.1s at 3000m (270km/h IAS, emergency power, standard 2890kg). Useful simulator cross-check, absolutely not original F-4 sustained-turn proof."
+    }
+  ]
+}
