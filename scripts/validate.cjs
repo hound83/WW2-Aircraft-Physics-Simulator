@@ -25,6 +25,7 @@ try{
  const digest=sha256(JSON.stringify(current));
  const stall=require('../validation/diagnostics/stall_gate.cjs').writeReport();
  require('../validation/diagnostics/stall_readiness.cjs').writeReport(stall);
+ require('../validation/diagnostics/stall_test_replay.cjs').writeReport();
  require('../validation/diagnostics/performance_validation.cjs').writeReport();
  require('../validation/diagnostics/climb_power_cooling.cjs').writeReport();
  require('../validation/diagnostics/p51_climb_states.cjs').writeReport();

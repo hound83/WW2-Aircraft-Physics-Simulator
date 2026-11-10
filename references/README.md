@@ -2,6 +2,8 @@
 
 The [four-track original stall follow-up](../docs/research/WW2_STALL_FOUR_TRACK_FOLLOWUP_2026-11-10.md) adds the compact, automatically ingested [`research/stall_four_track_followup_2026-11-10.json`](research/stall_four_track_followup_2026-11-10.json) with original NACA Spitfire VA stall+CLmax, P-47D-30 trial weight/turn source locators, F6F-3 fuel-adjusted CN bands, two low-speed calibration chart audits and cross-pack source lineage. These observations are **not automatic model fits**; same-document repeats do not count as independent tests.
 
+The [stall trace replay](../docs/research/STALL_TEST_REPLAY.md) indexes [four P-47D-30 scan windows](p47d30-stall-replay.json), the companion airspeed instrumentation report and the corresponding validation scenarios.
+
 The [Fw 190/783 graph extraction](fw190a4-783.json) retains digitized speed, climb and boost, their roles and reading tolerances, and the engine and propeller references.
 
 The [operational climb ledger](operational-climb.json) and [aircraft intake ledger](aircraft-intake.json) capture rating limits, modelling assumptions and original Fw 190 candidate chart links.
