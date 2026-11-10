@@ -1,0 +1,102 @@
+{
+  "name": "F4U-4 Corsair (BuNo 80765)",
+  "weightLb": 12500,
+  "wingAreaM2": 29.17155456,
+  "spanM": 12.46632,
+  "defaultRating": "military",
+  "defaultGear": "auto",
+  "propGeometry": {
+    "diameterFt": 13.166666666666666,
+    "bladeCount": 4,
+    "reductionRatioEnginePerProp": 2.2222222222222223,
+    "engineRpmByRating": {
+      "normal": 2600,
+      "military": 2800
+    },
+    "momentumModel": {
+      "retainedPowerFraction": 0.9,
+      "machPenalty": 2,
+      "machOnset": 0.92,
+      "advanceLoss": 0.06
+    }
+  },
+  "workingModel": {
+    "e": 0.78
+  },
+  "calibration": {
+    "altFt": 0,
+    "tasMph": 322.21824544,
+    "rating": "normal",
+    "gear": "neutral"
+  },
+  "powerRatings": {
+    "normal": {
+      "gears": {
+        "neutral": [
+          {
+            "altFt": 0,
+            "bhp": 1700
+          }
+        ]
+      }
+    }
+  },
+  "ratedInlet": {
+    "normal": {
+      "engineRpm": 2600,
+      "recovery": 0.85,
+      "source": "1946 Navy F4U-4 characteristics; R-2800-18W nominal rating transfer",
+      "gears": [
+        {
+          "gear": "neutral",
+          "minFt": 0,
+          "maxFt": 11000,
+          "staticCriticalFt": 9000,
+          "bhp": 1700
+        },
+        {
+          "gear": "low",
+          "minFt": 11000,
+          "maxFt": 22300,
+          "staticCriticalFt": 20000,
+          "bhp": 1630
+        },
+        {
+          "gear": "high",
+          "minFt": 22300,
+          "maxFt": 31900,
+          "staticCriticalFt": 26600,
+          "bhp": 1550
+        }
+      ]
+    },
+    "military": {
+      "engineRpm": 2800,
+      "recovery": 0.85,
+      "source": "1946 Navy F4U-4 characteristics; R-2800-18W nominal rating transfer",
+      "gears": [
+        {
+          "gear": "neutral",
+          "minFt": 0,
+          "maxFt": 9200,
+          "staticCriticalFt": 4300,
+          "bhp": 2100
+        },
+        {
+          "gear": "low",
+          "minFt": 9200,
+          "maxFt": 21500,
+          "staticCriticalFt": 18000,
+          "bhp": 1885
+        },
+        {
+          "gear": "high",
+          "minFt": 21500,
+          "maxFt": 31900,
+          "staticCriticalFt": 25000,
+          "bhp": 1710
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<section class="panel" id="maneuver-envelope">
+  <h2>v4 maneuver envelope and source checks</h2>
+  <p>Seven source-conditioned research profiles. Match EAS and altitude, with each aircraft's reference mass and rating. Stall and turn predictions are model scenarios.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:1rem">
+    <label>Altitude <select id="v4-alt"><option value="0">Sea level</option><option value="5000" selected>5,000 ft</option><option value="15000">15,000 ft</option><option value="20800">20,800 ft</option><option value="27000">27,000 ft</option></select></label>
+    <label>Speed <select id="v4-eas"><option>110</option><option>130</option><option>150</option><option selected>170</option><option>200</option><option>225</option><option>250</option></select> mph EAS</label>
+    <label>Reference mass <select id="v4-mass"><option value=".95">95%</option><option value="1" selected>100%</option><option value="1.05">105%</option></select></label>
+<label>Bf 109 F-4 rating <select id="v4-f4-rating"><option value="combat">Combat</option><option value="emergency">Emergency</option></select></label>
+    <label>P-51B boost <select id="v4-p51-rating"><option value="67inHg">67 inHg</option><option value="75inHg">75 inHg</option></select></label>
+    <label>Corsair rating <select id="v4-rating"><option value="military">Military</option><option value="normal">Normal</option></select></label>
+    <label>Corsair lift scenario <select id="v4-lift"><option value="off">Power-off stall anchor</option><option value="on">Powered stall anchor</option></select></label>
+  </div>
+  <div id="v4-flight" style="overflow-x:auto" aria-live="polite"></div>
+  <p>Turn bands vary maneuver lift by at least ±5% and useful propulsive power by ±3%. The Corsair band also considers both clean stall anchors. These scenario limits are not historical error bounds.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:1rem">
+    <label>Compare <select id="v4-first"></select></label>
+    <label>against <select id="v4-second"></select></label>
+  </div>
+  <p id="v4-order" aria-live="polite"></p><div id="v4-plot" style="overflow-x:auto"></div>
+  <details><summary>Climb from 5,000 to 10,000 ft with fuel burn</summary>
+    <p>Model-best climb at each step. Compare constant mass with an illustrative 0.50 lb fuel per shaft hp-hour. This is a mass scenario, not a measured fuel-flow schedule.</p>
+    <div id="v4-climb" style="overflow-x:auto"></div>
+  </details>
+  <details open><summary>Corsair 80765: source, model and reserved checks</summary>
+    <p id="v4-corsair-note"></p><div id="v4-stall-source" style="overflow-x:auto"></div><div id="v4-corsair-source" style="overflow-x:auto"></div>
+  </details>
+  <details><summary>Thunderbolt propeller and Mustang rack experiments</summary>
+    <p id="v4-p47-note"></p><div id="v4-installation-source" style="overflow-x:auto"></div><p id="v4-p51-note"></p>
+  </details>
+  <details><summary>Bf 109 F-4 vs official IL-2 reference</summary><p id="v4-game-note"></p><div id="v4-game" style="overflow-x:auto"></div></details>
+</section>

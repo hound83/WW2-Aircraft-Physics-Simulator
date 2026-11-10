@@ -1,5 +1,7 @@
 # European Air War Physics
 
+The [v4.0 research candidate](docs/V4_MILESTONE.md) adds a live seven-aircraft maneuver envelope, F4U-4 Corsair profile, paired P-47B propeller and P-51B rack checks, and climb-time integration with changing fuel mass. Download the main CI artifact and open `dist/model.html`. Full historical sustained-turn accuracy remains unresolved.
+
 The [v3.15 turn/stall correction](docs/TURN_STALL_CORRECTION.md) adds bounded Mustang lift to the live explorer.
 
 A separate research repository for the shared WWII flight-performance engine. The Atlas website in [hound83/ww2-airwar](https://github.com/hound83/ww2-airwar) is outside this repository's scope.

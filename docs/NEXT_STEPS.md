@@ -1,5 +1,9 @@
 # Next steps
 
+## v4.0 implementation and v4.1 priorities
+
+The major research candidate adds seven-profile live maneuver curves, Corsair normal/military/stall-state choices, bounded P-47B prop and P-51B rack tests and fuel-changing climb integration. Follow the [v4.0 report](V4_MILESTONE.md) for exact fit/check roles and remaining failures. Prioritize Corsair high-altitude propulsion/drag separation, P-47 installed thrust-loading residuals, source-matched Mustang propellers, and calibrated BS.543/F-4/P-38G/Fw190 near-stall evidence before comparative accuracy claims.
+
 ## 2026-11-10 four-track source deepening: 200 verified/qualified source rows (research completed)
 
 The [complete new audit and variant-readiness matrix](research/WW2_FIGHTERS_MULTIAXIS_PRIMARY_SOURCE_DEEPENING_2026-11-10.md) records a **955-row / 208-stall / 163-source** catalog (previously 755 / 200 / 139), original torque-meter P-47B prop comparisons, F4U-4 direct-CAS companion speed/climb, five-prop P-40F tests, original Spitfire IX BF274→BS543 position-error transfer, 17 P-38 installation-only corrections and three clearly **corrected* (not CAS)** derived clean-stall candidates, independent F6F-3 IAS stalls, actual P-51B-15 source boost/rack comparisons, and new variants with explicit source exclusions. Existing CAS gate remains four direct plus one provisional CAS*. Historical full sustained-turn evidence is still missing for every modeled variant. Read this **current** report rather than interpreting old 755-row/15-lineage counts below as live.

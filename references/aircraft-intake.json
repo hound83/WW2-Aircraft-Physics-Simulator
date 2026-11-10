@@ -79,7 +79,7 @@
     {
       "variant": "F4U-4",
       "specimen": "USN BuNo 80765",
-      "research_status": "Research dossier added; candidate only, not admitted into the physics roster",
+      "research_status": "Admitted as v4.0 source-conditioned research profile; independent historical turn/power gate unresolved",
       "priority": 1,
       "source": "https://www.wwiiaircraftperformance.org/f4u/f4u-4-80765.pdf",
       "primary_gap": "Additional exact-weight CAS stalls and installed power/drag/independent sustained-turn data; original fourth stall-power label conflicts."
@@ -126,5 +126,5 @@
     }
   ],
   "candidateReadinessRegister": "references/aircraft-supergoodenough-readiness-2026-11-10.json",
-  "candidateResearchOnly": true
+  "candidateResearchOnly": false
 }

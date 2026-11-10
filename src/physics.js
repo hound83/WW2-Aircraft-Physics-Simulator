@@ -91,14 +91,14 @@ function ratedInletPower(ac, altFt, tasMph, rating, gear, mode) {
    (altFt<row.maxFt||i===gears.length-1&&altFt===row.maxFt));
  if(!branch)return null;
  const {bhp,staticCriticalFt,criticalFt,criticalTasMph}=branch;
- const reference=mode==='rated-static'?isa(staticCriticalFt).p:
+ const reference=mode==='rated-static'||criticalTasMph===undefined?isa(staticCriticalFt).p:
    inletPressureAtSpeed(criticalFt,criticalTasMph,recovery)?.pressurePa;
  const pressure=mode==='rated-static'?isa(altFt).p:inletPressureAtSpeed(altFt,tasMph,recovery)?.pressurePa;
  const exponent=mode==='rated-inlet'?curve.chargeExponent??1:1;
- if(!(reference>0&&pressure>0&&bhp>0&&engineRpm>0&&manifoldAta>0&&exponent>=2/3&&exponent<=1))return null;
+ if(!(reference>0&&pressure>0&&bhp>0&&engineRpm>0&&(manifoldAta===undefined||manifoldAta>0)&&exponent>=2/3&&exponent<=1))return null;
  const ratio=Math.min(1,pressure/reference);
- return {altFt, rating, gear:branch.gear, bhp:bhp*ratio**exponent, engineRpm, estimatedManifoldAta:manifoldAta*ratio,
-   powerCondition:mode==='rated-inlet'?'Flight critical point and speed-dependent inlet pressure':'Static engine rating control',
+ return {altFt, rating, gear:branch.gear, bhp:bhp*ratio**exponent, engineRpm, estimatedManifoldAta:manifoldAta===undefined?null:manifoldAta*ratio,
+   powerCondition:mode==='rated-inlet'?(criticalTasMph===undefined?'Static critical point with assumed inlet recovery':'Flight critical point and speed-dependent inlet pressure'):'Static engine rating control',
    notes:source};
 }
 
@@ -317,7 +317,33 @@ function propEta(ac,alt,tasMph,bhp,profile='C',rating=ac.defaultRating,options={
   const machFactor=Math.exp(-fit.machPenalty*Math.max(0,tipMach-fit.machOnset)**2);
   const advanceFactor=Math.exp(-fit.advanceLoss*Math.max(0,J-1.65)**2);
   eta=fit.retainedPowerFraction*v/(v+vi)*machFactor*advanceFactor;
-  debug={J,Cp:bhp*HP/(at.rho*n**3*diameter**5),tipMach,propRpm,engineRpm:hasRpm?rpm:null,
+  const installed=p.installedEfficiency;
+  if(installed){
+   const finite=['minFt','maxFt','minJ','climbJ','levelJ','maxJ','climbDeltaEta','levelDeltaEta'];
+   const minHp=installed.minShaftHp??installed.shaftHp,maxHp=installed.maxShaftHp??installed.shaftHp;
+   if(!finite.every(key=>Number.isFinite(installed[key]))||!(installed.minFt<=installed.maxFt&&
+      installed.minJ<installed.climbJ&&installed.climbJ<installed.levelJ&&installed.levelJ<installed.maxJ&&
+      minHp>0&&maxHp>=minHp&&(installed.engineRpm===undefined||installed.engineRpm>0)))return null;
+  }
+  let installedDeltaEta=0;
+  if(installed&&alt>=installed.minFt&&alt<=installed.maxFt&&(installed.engineRpm===undefined||rpm===installed.engineRpm)&&
+     bhp>=(installed.minShaftHp??installed.shaftHp)-1e-6&&bhp<=(installed.maxShaftHp??installed.shaftHp)+1e-6&&J>=installed.minJ&&J<=installed.maxJ){
+   const position=Math.max(0,Math.min(1,(J-installed.climbJ)/(installed.levelJ-installed.climbJ)));
+   const taper=Math.min(1,(J-installed.minJ)/(installed.climbJ-installed.minJ),
+    (installed.maxJ-J)/(installed.maxJ-installed.levelJ));
+   const adjustment=taper*(installed.climbDeltaEta+(installed.levelDeltaEta-installed.climbDeltaEta)*position);
+   // Bound the equivalent correction by the ideal disk using the full shaft power.
+   const shaft=bhp*HP;
+   let lower=0,upper=Math.cbrt(shaft/(2*at.rho*area));
+   for(let i=0;i<35;i++){
+    const mid=(lower+upper)/2;
+    if(2*at.rho*area*mid*(v+mid)**2>shaft)upper=mid;else lower=mid;
+   }
+   const fittedEta=Math.min(v/(v+(lower+upper)/2),Math.max(.05,eta+adjustment));
+   installedDeltaEta=fittedEta-eta;
+   eta=fittedEta;
+  }
+  debug={...(installed?{installedDeltaEta}:{}),J,Cp:bhp*HP/(at.rho*n**3*diameter**5),tipMach,propRpm,engineRpm:hasRpm?rpm:null,
    inducedVelocityMps:vi,machFactor,advanceFactor,...fit,
    note:'v2.8 joint engineering calibration: shared loss parameters; geometry-specific loading. Not measured installed eta.'};
  }else throw Error('Unknown profile');return {eta:Math.max(.05,Math.min(profile==='P'?1:.91,eta)),...debug,method:profile==='P'?'v2.8 momentum/loss working approximation, jointly calibrated':profile==='M'?'1941 NACA chart plus 1938/1945 source-bounded Mach research scenario (not yet validated for aircraft)':profile==='N'?'NACA 1941 FIGURE-DIGITIZED TRANSFER: approximate 3-/4-blade research data, not installed aircraft flight measurement':profile==='D'?'ideal momentum disk plus assumed global loss fraction; NOT flight-calibrated':profile==='G'?'Greg P-47D worksheet speed-shaped 0.85 plateau, transferred ONLY as an unvalidated test':'heuristic; not a NACA measured propeller map'};}
@@ -422,12 +448,15 @@ function evaluated(ac,alt,tasMph,opts={}){if(opts.profile==='P'&&!opts.polar)opt
  if(coolingDeltaCd0===null)return {status:'no-cooling-source',reason:'Outside the open-shutter speed/altitude or configuration envelope'};
  const effectiveCd0=cdData.cd0+installedDeltaCd0+coolingDeltaCd0+addedDragAreaM2/ac.wingAreaM2;
  const D=dragBreakdown(ac,alt,tasMph,weight,effectiveCd0,e,1),V=tasMph*MPH,W=weight*LBF,geo=geometry(ac),q=D.q;
- const Pav=propulsion.propulsiveW,Ps=(Pav-D.drag*V)/W,stallEas=Math.sqrt(2*W/(RHO0*geo.S*clMax))/MPH,air=airspeeds(tasMph,alt),nLift=q*geo.S*maneuverClMax/W;
+ const propulsivePowerScale=opts.propulsivePowerScale??1;
+ if(!(propulsivePowerScale>=.9&&propulsivePowerScale<=1.1))return {status:'invalid-propulsive-power-scenario'};
+ const Pav=Math.min(propulsion.propulsiveW*propulsivePowerScale,propulsion.shaftHp*HP),Ps=(Pav-D.drag*V)/W,stallEas=Math.sqrt(2*W/(RHO0*geo.S*clMax))/MPH,air=airspeeds(tasMph,alt),nLift=q*geo.S*maneuverClMax/W;
  const feasible=q*geo.S*clMax/W>=1;const nPower2=(Pav/V-D.dParasite)/Math.max(1e-9,D.dInd),powerOk=feasible&&nPower2>=1;const nInst=feasible&&nLift>=1?Math.min(nLift,structG):null;
  const nSust=powerOk&&nInst!==null?Math.min(nInst,Math.sqrt(nPower2)):null;
  const turn=n=>n!=null&&n>=1?G*Math.sqrt(Math.max(0,n*n-1))/V*180/Math.PI:null;
  return {status:feasible?'modelled':'below-provisional-stall',aircraft:ac.name,altFt:alt,tasMph,air,weightLb:weight,engine:shaft,prop,cd0:effectiveCd0,cleanCd0:cdData.cd0,...(entry?{installedDeltaCd0,coolingDeltaCd0}:{}),dragPolarSource:cdData.origin,externalDragAreaM2:addedDragAreaM2,storesWeightLb,oswald:e,clMax,stallEasMph:stallEas,drag:D,
    power:{shaftHp:propulsion.shaftHp,propulsiveHp:Pav/HP,
+   ...(opts.propulsivePowerScale!==undefined?{propulsivePowerScale}:{}),
    ...(propulsion.count>1?{engineCount:propulsion.count,shaftHpPerEngine:shaft.bhp,propulsiveHpPerEngine:Pav/HP/propulsion.count}:{}),requiredHp:D.requiredHp,excessHp:(Pav-D.drag*V)/HP,psMps:Ps,climbFpm:feasible?Ps*196.850394:null},
    limits:{...(opts.maneuverClMax!==undefined?{maneuverClMax}:{}),nLift,nPower:powerOk?Math.sqrt(nPower2):null,nInst,nSust,instantDegSec:turn(nInst),sustDegSec:turn(nSust),structG},
    provenance:polar?'scenario using an explicitly supplied drag polar plus engine/prop assumptions; polar source is not necessarily an independent measurement':'modeled from sourced geometry/engine nodes, per-aircraft CD0 anchor fit and assumed e/CLmax/prop profile; not an independently validated turn curve'};
