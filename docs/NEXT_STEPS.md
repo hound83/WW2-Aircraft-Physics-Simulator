@@ -1,5 +1,11 @@
 # Next steps
 
+## v3.14: source-ingesting historical research layer (completed)
+
+[Source and stall evidence release](research/WW2_STALL_EVIDENCE_LAYER_2026-11-10.md) makes 726 primary/secondary-corroborated historical rows and 19 correction-curve records browsable within the sim, with six source packs, preserved original IAS/CAS, varied tested weights and automatic future ingestion. The best available airspeed candidate is labelled CAS, CAS*, corrected IAS*, plain IAS or unestablished. User priority: **continue searching for direct near-stall CAS/EAS just as aggressively as for source-original low-speed IAS correction tables**; provisional corrections are not a reason to stop looking. No historic CLmax refit has been made on these mixed-source rows.
+
+The next complete milestone should (a) recover near-stall numeric position-error charts and source-matched engine-off tests for several additional fighter variants, (b) use the evidence registry to identify same-variant/same-configuration comparisons and correctable IAS ranges, (c) admit only scientifically validated source-conditioned inputs into the physical solver and score them against prior/withheld benchmarks, and (d) bring another genuinely sourced aircraft profile into the simulation if its power/drag/lift envelopes are adequate. Never silently extend model validity to every archival speed/altitude/weight; those ranges are unconstrained **only in the evidence layer**.
+
 ## v3.13: Mustang maneuver power
 
 The [climb and turn-power report](V313_MANEUVER_POWER.md) extends exact chart replays and rejects the global propeller change. Seek climb TAS, in-flight weight, installed efficiency or thrust and comparable independent climb/turn observations before refitting. Keep 5:1 separate from the practical size of the performance difference and leave close historical rankings unresolved without valid bounds.

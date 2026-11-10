@@ -2,7 +2,7 @@
 
 A separate research repository for the shared WWII flight-performance engine. The Atlas website in [hound83/ww2-airwar](https://github.com/hound83/ww2-airwar) is outside this repository's scope.
 
-**Current research version v3.13.0.** [Mustang climb and sustained-turn power](docs/V313_MANEUVER_POWER.md) adds exact report-state replays, turn sensitivity and a separate Thunderbolt control. In v3.12, [P-38G-1 and symmetric multi-engine propulsion](docs/V312_P38G.md) add a sixth aircraft, a clean P-38G vs P-47B comparison and Wright Field replays. In v3.11, [Fw 190 A-4 and the new altitude-power model](docs/V311_FW190A4.md) are available in the fifth-aircraft comparison. In v3.10, [Operational climb and aircraft intake](docs/V310_OPERATIONAL_CLIMB.md) add matched rating policies and prepare the Fw 190 A-4. In v3.9, an archival DB 601 E inlet transfer adds a conditional combat-power option for the F-4. Separate flight reports check the P-47B, Spitfire and Mustang models without refitting them. See [external checks](docs/INDEPENDENT_FLIGHT_CHECKS.md) and the [four-aircraft scorecard](docs/FLIGHT_SCORECARD.md).
+**Current research version v3.14.0.** The new [versioned historical research layer](docs/research/WW2_STALL_EVIDENCE_LAYER_2026-11-10.md) exposes **726 source-linked report rows**, including **190 stall/minimum-speed entries** and **19 calibration curves**, with explicit IAS, corrected IAS*, CAS/CAS* provenance, weights, limits and original PDFs. [Mustang climb and sustained-turn power](docs/V313_MANEUVER_POWER.md) remains the v3.13 physical-model baseline. In v3.12, [P-38G-1 and symmetric multi-engine propulsion](docs/V312_P38G.md) add a sixth aircraft, a clean P-38G vs P-47B comparison and Wright Field replays. In v3.11, [Fw 190 A-4 and the new altitude-power model](docs/V311_FW190A4.md) are available in the fifth-aircraft comparison. In v3.10, [Operational climb and aircraft intake](docs/V310_OPERATIONAL_CLIMB.md) add matched rating policies and prepare the Fw 190 A-4. Separate flight reports check the P-47B, Spitfire and Mustang models without refitting them. See [external checks](docs/INDEPENDENT_FLIGHT_CHECKS.md) and the [four-aircraft scorecard](docs/FLIGHT_SCORECARD.md).
 
 Initial benchmarks: **Bf 109 F-4, P-47B, P-51B-15 and Spitfire LF Mk IX**. Greg's worksheets and the controlled P-47 2,000/2,600 hp comparison are retained. The 2,600 hp scenario is not a verified P-47B engine rating.
 
@@ -12,7 +12,7 @@ GitHub setup is complete. The frozen import is on branch **baseline/v2.5-import*
 
 ## Start here
 
-For the browser simulator, open [Physics regression](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/regression.yml), choose the latest successful run for `main`, and download its **physics-validation** artifact. Extract the ZIP and open `dist/model.html` in a browser. The HTML runs offline. Choose **Compare four fighters** for the fixed altitude scenarios, [historical climb-band comparison](docs/CLIMB_BAND_COMPARISON.md), workbook checks and JSON export. Choose **Compare clean stall speeds** at the top to open the stall comparison. GitHub requires a signed-in account to download Actions artifacts.
+For the browser simulator, open [Physics regression](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/regression.yml), choose the latest successful run for `main`, and download its **physics-validation** artifact. Extract the ZIP and open `dist/model.html` in a browser. The HTML runs offline. Choose **Historical evidence library** to filter source data and IAS/CAS status or **Compare four fighters** for the current model. Choose **Compare clean stall speeds** for exploratory numerical stall calculations. New versioned research packs are embedded automatically when the simulator is rebuilt. GitHub requires a signed-in account to download Actions artifacts.
 
 For a local build with Node.js 22 or newer, run `npm run build` and open `dist/model.html`. For development and validation, follow the instructions below.
 
@@ -34,7 +34,7 @@ Open `dist/model.html` after building. The unchanged original interface is [rele
 |---|---|
 | src/ | Shared physics engine |
 | aircraft/ | Aircraft, engine, Greg and external-store records |
-| references/ | Source register, original Greg material, research and frozen import |
+| references/ | Source registers, compact versioned `research/*.json` packs and frozen import |
 | validation/ | Diagnostic scripts, baseline snapshots and current results |
 | tests/ | Portable regression scripts |
 | scripts/ | Build, validation and import-integrity commands |
