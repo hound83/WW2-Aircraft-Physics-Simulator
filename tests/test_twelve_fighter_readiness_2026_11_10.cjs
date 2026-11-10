@@ -13,9 +13,10 @@ assert.equal(new Set(readiness.variants.map(v=>v.id)).size,12,'Unique versioned 
 assert.equal(readiness.variants.filter(v=>v.role==='modeled').length,6);
 assert.equal(readiness.variants.filter(v=>v.role==='candidate').length,6);
 assert.equal(intake.nextCandidates.length,6);
-assert.equal(intake.candidateResearchOnly,true);
+assert.equal(intake.candidateResearchOnly,false,'v4.0 admits source-conditioned Corsair while remaining candidates stay research-only');
 assert.deepEqual(intake.nextCandidates.map(v=>v.variant),['F4U-4','F6F-3','P-47D-30','P-40F','Fw 190 D-9','Ki-84-I']);
-assert.ok(intake.nextCandidates.every(v=>v.research_status.includes('not admitted')));
+assert.ok(intake.nextCandidates[0].research_status.includes('v4.0 source-conditioned'));
+assert.ok(intake.nextCandidates.slice(1).every(v=>v.research_status.includes('not admitted')));
 const max=Object.values(readiness.weights).reduce((s,v)=>s+v,0);
 assert.equal(max,100,'Scoring weights must add to 100');
 for(const [i,v]of readiness.variants.entries()){
