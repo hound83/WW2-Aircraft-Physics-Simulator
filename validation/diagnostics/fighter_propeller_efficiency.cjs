@@ -15,7 +15,7 @@ function buildEfficiencyData(full = false) {
   const data = browserData();
   return {
     schema: 'ww2-fighter-propeller-efficiency/v1',
-    version: '1.0.0',
+    version: '1.0.1',
     replay_base: { version: '4.9.0-rc.1', commit: baselineCommit },
     as_of: '2026-11-11',
     ...sourceEvidence(data, buildCatalog()),
