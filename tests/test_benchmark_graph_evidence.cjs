@@ -2,7 +2,8 @@
 
 const assert=require('node:assert/strict');
 const E=require('../src/benchmark-graph-evidence.js');
-const V45=require('../validation/diagnostics/operating_benchmark_v45.cjs');
+const V46=require('../validation/diagnostics/operating_benchmark_v46.cjs');
+const P=require('../src/turn-performance.js');
 const M=require('../src/physics.js');
 const B=require('../src/operating-benchmark.js');
 const T=require('../src/turn-lift.js');
@@ -31,13 +32,13 @@ assert.equal(E.sample(150,19.4,false,[14,18]).outsideRange,true);
 assert.equal(gap.rate,null);
 assert.equal(gap.range,null);
 
-const data=V45.browserData();
+const data=V46.browserData();
 function at(id,eas,kind,alt=10000,mode='combat'){
  const settings={mode,fuelFraction:.5,extension:true};
  const spec=data.specification.aircraft[id];
  const mass=B.load(spec,data.specification.policy,settings).weightLb;
  const flight=B.evaluate(M,T,L,data.models[id],spec,settings,alt,eas,mass,undefined,kind==='climb');
- return E.describe(flight,kind,data.graphEvidence[id]);
+ return E.describe(flight,kind,data.graphEvidence[id],P.state(flight)?.limiting);
 }
 const spit='spitfire_lfix_bs543';
 assert.equal(at(spit,170,'climb').covered,true);
@@ -47,8 +48,26 @@ assert.equal(at(spit,170,'climb',40000).covered,false);
 assert.equal(at(spit,170,'climb',10000,'normal').covered,false);
 assert.equal(at(spit,170,'turn').covered,false);
 assert.equal(at('p47b',170,'climb').source.label,'Primary report');
-assert.equal(at('p51b',155,'turn').covered,false);
+assert.equal(at('p51b',110,'turn').covered,false);
+assert.equal(at('p51b',155,'turn').covered,true);
 assert.equal(at('p51b',155,'turn').source.label,'Primary lift report');
+assert.equal(at('p51b',250,'turn').label,'Calculated · table-supported power');
+assert.equal(at('f4u4',250,'turn').covered,true);
+assert.equal(at('f4u4',250,'turn',29000).covered,false);
+
+const spitReference=at(spit,170,'climb').reference;
+assert.equal(spitReference.observed,4280);
+assert.equal(spitReference.tasMph,199);
+assert.equal(spitReference.weightLb,7485);
+assert.ok(Math.abs(spitReference.bounds[0]-4508.3694247038175)<1e-6);
+assert.ok(Math.abs(spitReference.bounds[1]-4558.3694247038175)<1e-6);
+assert.equal(at(spit,170,'climb',10000,'normal').reference,null);
+assert.equal(at(spit,155,'climb').reference,null);
+assert.equal(at(spit,170,'climb',40000).reference,null);
+const p47Reference=at('p47b',170,'climb').reference;
+assert.equal(p47Reference.observed,2465);
+assert.equal(p47Reference.weightLb,12565);
+assert.ok(Math.abs(p47Reference.bounds[1]-p47Reference.bounds[0]-50)<1e-9);
 for(const id of Object.keys(data.models)){
  assert.match(data.graphEvidence[id].related.url,/WW2_FIGHTER_CALCULATED_EVIDENCE/);
 }

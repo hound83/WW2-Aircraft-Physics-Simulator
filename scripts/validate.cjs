@@ -57,6 +57,8 @@ try{
  const md=[
  '# Current validation',
  '',
+ 'v4.6 [Table-supported curves, climb ranges and pinned tooltips](V46_CHART_DATA.md).',
+ '',
  'v4.5 [Graph evidence, country colours and speed lock](V45_GRAPH_EVIDENCE.md).',
  '',
  'v4.4 [Sustained-turn performance and flight evidence](V44_TURN_PERFORMANCE.md). [Numerical replay](../validation/current/turn-performance-v44.json).',

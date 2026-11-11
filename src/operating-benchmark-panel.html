@@ -33,6 +33,8 @@
  #operating-benchmark .bench-probe-metrics dt{font-size:.8rem;color:#b7cad5}
  #operating-benchmark .bench-probe-metrics dd{margin:.2rem 0 0;font-weight:700}
  #operating-benchmark .bench-probe-tooltip{position:absolute;z-index:2;pointer-events:none;box-sizing:border-box;width:max-content;max-width:min(24rem,calc(100% - 16px));padding:.7rem;background:#10212d;border:1px solid #607b8a;border-radius:8px;box-shadow:0 6px 18px #0006;font-size:.83rem}
+ #operating-benchmark .bench-probe-tooltip[data-locked="true"]{pointer-events:auto;z-index:4;border-color:#a8c7da}
+ #operating-benchmark .bench-probe-tooltip p{margin:.25rem 0 0}
  #operating-benchmark .bench-probe-tooltip div{margin-top:.4rem}
  #operating-benchmark .bench-probe-tooltip div span{display:block}
  #operating-benchmark .bench-table-scroll{overflow-x:auto}
@@ -110,11 +112,11 @@
  <p id="bench-matchup" aria-live="polite"></p>
  <p class="bench-note">Approximate WWII service windows. Contemporaries filters by years of main service.</p>
  <p id="bench-comparison" aria-live="polite"></p>
- <div class="bench-toolbar"><label>Chart speed range<select id="bench-turn-focus"><option value="3" selected>Focus on 3°/s and above</option><option value="full">Full envelope</option></select></label><p id="bench-range-status" class="bench-note"></p></div>
+ <div class="bench-toolbar"><label>Turn curves<select id="bench-turn-focus"><option value="3" selected>Show 3°/s and above</option><option value="full">Full envelope</option></select></label><p id="bench-range-status" class="bench-note"></p></div>
  <div id="bench-curve-names" class="bench-curve-key"></div>
- <p class="bench-curve-key bench-note"><span><i class="bench-key-solid"></i> Near flight-test schedule</span><span><i class="bench-key-dotted"></i> Provisional calculation</span><span><i class="bench-key-band"></i> Tested range</span></p>
+ <p class="bench-curve-key bench-note"><span><i class="bench-key-solid"></i> Table-supported calculation</span><span><i class="bench-key-dotted"></i> Provisional calculation</span><span><i class="bench-key-band"></i> Input or report range</span></p>
  <div id="bench-turn-plot" class="bench-chart"></div>
- <p class="bench-note">Triangles mark 1 G stall and circles mark maximum level speed. Squares mark peak turn rate and Vy. The grey guide shows a 3°/s turn.</p>
+ <p class="bench-note">Squares mark peak turn rate and best climb speed (Vy). The grey guide shows 3°/s.</p>
  <div class="bench-probe-slider">
   <label>Speed to compare<input id="bench-probe-speed" type="range" aria-describedby="bench-probe-help"></label>
   <output id="bench-probe-value" for="bench-probe-speed">—</output>

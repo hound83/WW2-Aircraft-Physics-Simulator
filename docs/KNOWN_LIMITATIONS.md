@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.6 graph inputs
+
+The power-supported turn curves still use modeled lift, propeller efficiency and drag. Report-adjusted climb bands incorporate the model’s correction for the selected weight and speed near the matched test schedule. The bands describe the source reading or interpolation margin carried through that correction. [Graph coverage and the 10,000 ft example](V46_CHART_DATA.md).
+
 ## v4.5 graph evidence
 
 Solid climb sections show calculations near a matched report schedule at the selected altitude and engine branch. The selected load can differ from the test load. The sustained-turn curves are model calculations, and the shaded Mustang–Spitfire range shows sensitivity to the declared input bounds. [Coverage and graph controls](V45_GRAPH_EVIDENCE.md).

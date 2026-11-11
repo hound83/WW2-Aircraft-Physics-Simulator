@@ -26,19 +26,46 @@
    tasMph<=Math.max(lower.tasMph,upper.tasMph);
  }
 
- function describe(flight,kind,record){
+ function interpolate(rows,altFt){
+  const i=rows.findIndex(row=>row[0]>=altFt);
+  if(i<0)return null;
+  const next=rows[i];
+  if(next[0]===altFt)return next.slice(1);
+  if(i===0)return null;
+  const previous=rows[i-1],fraction=(altFt-previous[0])/(next[0]-previous[0]);
+  return previous.slice(1).map((value,j)=>value+(next[j+1]-value)*fraction);
+ }
+
+ function climbReference(fit,flight){
+  const alt=flight.altFt,rate=flight.power?.climbFpm;
+  if(!fit?.envelopes||!(rate>0))return null;
+  const data=fit.envelopes.map(rows=>interpolate(rows,alt)).find(Boolean);
+  const replay=interpolate(fit.replays,alt);
+  if(!data||!replay)return null;
+  const [observed,low,high]=data,[replayed,tasMph,weightLb]=replay;
+  const delta=rate-replayed;
+  return {observed,replayed,tasMph,weightLb,bounds:[low+delta,high+delta]};
+ }
+
+ function describe(flight,kind,record,limiting){
   const state=flight.benchmark;
-  const fit=state&&!state.estimated&&flight.status==='modelled'&&(record.regions??[]).find(region=>
-   region.metric===kind&&nearSchedule(region.anchors,flight.altFt,flight.tasMph)&&
-   (region.phase===undefined||state.phase===region.phase)&&
-   (region.cooling===undefined||state.cooling===region.cooling));
-  const source=fit?.source??(kind==='turn'&&state?.maneuverLift?record.maneuverLift:record.source);
+  const inDomain=state&&!state.estimated&&flight.status==='modelled';
+  const fit=inDomain&&(record.regions??[]).find(region=>
+   region.metric===kind&&state.phase===region.phase&&state.cooling===region.cooling&&
+   nearSchedule(region.anchors,flight.altFt,flight.tasMph));
+  const cleanTurn=inDomain&&kind==='turn'&&state.cooling==='clean';
+  const lift=cleanTurn&&limiting==='lift'&&state.maneuverLift&&record.maneuverLift;
+  const power=cleanTurn&&limiting==='power'&&(record.turnPower??[]).find(t=>
+   t.phase===state.phase&&t.gear===flight.engine?.gear&&flight.altFt>=t.minFt&&flight.altFt<=t.maxFt);
+  const source=fit?.source||lift||power?.source||
+   (kind==='turn'&&state?.maneuverLift?record.maneuverLift:record.source);
   let label='Calculated · model estimate';
   if(fit)label='Calculated · near flight-test schedule';
+  else if(lift)label='Calculated · NACA maneuver-lift data';
+  else if(power)label='Calculated · table-supported power';
   else if(state?.estimated)label='Calculated · extrapolated power';
-  else if(kind==='turn'&&state?.maneuverLift)label='Calculated · measured lift input';
   else if(kind==='climb'&&state?.cooling==='report-conditioned')label='Calculated · report fit transferred';
-  return {covered:Boolean(fit),label,source,related:record.related};
+  return {covered:Boolean(fit||lift||power),label,source,related:record.related,reference:climbReference(fit,flight)};
  }
 
  function sample(eas,estimate,covered,range){

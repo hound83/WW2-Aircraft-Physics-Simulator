@@ -5,7 +5,7 @@
  const fmt=(x,n=1)=>Number.isFinite(x)?x.toLocaleString('en-US',{minimumFractionDigits:n,maximumFractionDigits:n}):'—';
  const Chart=OperatingBenchmarkChart,History=BenchmarkServiceContext,Evidence=BenchmarkGraphEvidence;
  const sides=['a','b'];
- const api=globalThis.OperatingBenchmarkUI={data,settings:{},rows:{},altitudeRows:[],climbs:null,probe:null,probeLocked:false};
+ const api=globalThis.OperatingBenchmarkUI={data,settings:{},rows:{},altitudeRows:[],climbs:null,probe:null,probeLocked:false,probeLock:null};
  const speed=(value,kind)=>Chart.speed(value,$('bench-speed-unit').value,kind);
  const text=(tag,value,className)=>{const e=document.createElement(tag);if(value!==undefined)e.textContent=value;if(className)e.className=className;return e;};
  const shortName=id=>service.aircraft[id].displayName;
@@ -76,15 +76,12 @@
   for(const side of sides)panel.style.setProperty('--bench-'+side,colors[side]);
   $('bench-curve-names').replaceChildren(...sides.map((side,i)=>
    text('span',(i+1)+' · '+names[side],'bench-aircraft-key bench-'+side)));
-  const pair=new Set(sides.map(side=>api.settings[side].id));
-  const policy=pair.has('p51b')&&pair.has('spitfire_lfix_bs543')?data.turnEvidence.sensitivity:null;
-  $('bench-advantage-key').hidden=!policy;
-  const series=['a','b'].map(side=>{
-   const row=api.rows[side];
+  const series=sides.map(side=>{
+   const row=api.rows[side],evidence=data.graphEvidence[api.settings[side].id];
    return {
     side,
     name:'Aircraft '+(side==='a'?'1':'2')+' · '+names[side],
-    color:colors[side],evidence:data.graphEvidence[api.settings[side].id],
+    color:colors[side],evidence,turnPolicy:evidence.turnSensitivity?data.turnEvidence.sensitivity:null,
     range:row.turnRange,
     stallEasMph:row.stallEasMph,
     levelEasMph:row.level?.easMph??null,
@@ -95,6 +92,8 @@
     scanMaxEasMph:M.airspeeds(590,alt).eas
    };
   });
+  const policy=series.every(a=>a.turnPolicy)?data.turnEvidence.sensitivity:null;
+  $('bench-advantage-key').hidden=!policy;
   const samples=new Map();
   function evaluateAt(side,eas,climbing){
    const key=side+':'+eas+':'+Boolean(climbing);
@@ -110,9 +109,9 @@
    results:$('bench-probe-results'),climbResults:$('bench-climb-at-speed'),
    rangeStatus:$('bench-range-status'),focus:$('bench-turn-focus').value==='3',
    unit:$('bench-speed-unit').value,altFt:alt,series,
-   selectedEasMph:api.probe?.easMph,policy,
-   lockButton:$('bench-probe-lock'),lockStatus:$('bench-probe-lock-status'),locked:api.probeLocked,
-   onLock(value){api.probeLocked=value;},
+   selectedEasMph:api.probe?.easMph,
+   lockButton:$('bench-probe-lock'),lockStatus:$('bench-probe-lock-status'),lock:api.probeLock,
+   onLock(anchor){api.probeLock=anchor;api.probeLocked=Boolean(anchor);},
    evaluateAt,
    makeAdvantage(domain){
     return OperatingTurnComparison.advantage({...domain,host:advantage,readout,limits,names,colors,policy,

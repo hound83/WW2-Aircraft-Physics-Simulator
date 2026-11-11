@@ -368,44 +368,47 @@ async function run(){
     const first=paths[0].getPointAtLength(0),tail=paths.at(-1);
     const last=tail.getPointAtLength(tail.getTotalLength());
     const guide=plot.querySelector('.bench-turn-reference');
-    const level=plot.querySelector('[data-bench-level="'+side+'"]');
-    return {startX:first.x,startY:first.y,endX:last.x,endY:last.y,guideY:Number(guide.getAttribute('y1')),
-      levelX:Number(level?.getAttribute('cx')),levelY:Number(level?.getAttribute('cy'))};
+    return {startX:first.x,startY:first.y,endX:last.x,endY:last.y,guideY:Number(guide.getAttribute('y1'))};
   })`);
   const axes=()=>evaluate('["turn","climb","advantage"].map(kind=>{const s=document.querySelector("#bench-"+kind+"-plot svg");return [Number(s.dataset.minEas),Number(s.dataset.maxEas)];})');
   assert.equal(await evaluate('document.getElementById("bench-turn-focus").value'),'3');
   const focusAxes=await axes();
-  assert.ok(focusAxes.every(a=>a[0]===focusAxes[0][0]&&a[1]===focusAxes[0][1]));
+  assert.deepEqual(focusAxes,[[0,360],[0,360],[0,360]]);
+  assert.ok(bm.rows.a.level.easMph>350&&bm.rows.a.level.easMph<360);
   for(const point of await curveEnds()){
     assert.ok(Math.abs(point.startY-point.guideY)<.01,'Turn curve enters at 3°/s');
     assert.ok(Math.abs(point.endY-point.guideY)<.01,'Turn curve exits at 3°/s');
+    assert.ok(point.startX>76&&point.endX<758,'The axis has room on both sides of the modeled envelope');
   }
+  assert.equal(await evaluate('document.querySelectorAll("#bench-turn-plot [data-bench-best-turn]").length'),2);
+  assert.equal(await evaluate('document.querySelectorAll("#bench-turn-plot [data-bench-stall],#bench-turn-plot [data-bench-level]").length'),0);
+  assert.match(await evaluate('document.getElementById("bench-turn-plot").nextElementSibling.textContent'),/^Squares mark/);
   assert.ok(await evaluate('document.querySelectorAll("#bench-turn-plot [data-bench-tested-range]").length>0'));
-  const climbStyles=await evaluate(`(()=>{
-    const paths=[...document.querySelectorAll('[data-bench-climb-curve="b"] path')];
+  const joinedStyles=kind=>evaluate(`(()=>{
+    const paths=[...document.querySelectorAll('${kind} path')];
     return {styles:paths.map(p=>p.dataset.benchStyle),joined:paths.slice(1).every((p,i)=>{
       const last=paths[i].getPointAtLength(paths[i].getTotalLength()),first=p.getPointAtLength(0);
       return Math.hypot(last.x-first.x,last.y-first.y)<.03;
     })};
   })()`);
-  assert.ok(climbStyles.styles.includes('solid')&&climbStyles.styles.includes('dotted'));
-  assert.equal(climbStyles.joined,true,'Evidence styles meet at identical speeds and rates');
-  assert.ok(await evaluate('[...document.querySelectorAll("[data-bench-curve] path")].every(p=>p.dataset.benchStyle==="dotted")'));
-  checks.push('v4.5 default 3 degree per second endpoints, joined evidence styles and bounded turn shading');
+  for(const selector of ['[data-bench-curve="a"]','[data-bench-climb-curve="b"]']){
+    const result=await joinedStyles(selector);
+    assert.ok(result.styles.includes('solid')&&result.styles.includes('dotted'));
+    assert.equal(result.joined,true,'Evidence styles meet at identical speeds and rates');
+  }
+  checks.push('v4.6 default 3 degree per second endpoints, connected table-supported paths and square-only curve markers');
   await select('bench-turn-focus','full');
   const envelope=await curveEnds();
+  const easToX=eas=>76+(758-76)*eas/focusAxes[0][1];
   assert.ok(envelope[0].startX>envelope[1].startX+1,'The curves start at their own stall speeds');
-  assert.ok(envelope[0].endX>envelope[1].endX+1,'The faster aircraft extends further along the shared axis');
-  for(const end of envelope){
-    assert.ok(Math.abs(end.endX-end.levelX)<.01,'The curve reaches the modeled maximum level speed');
-    assert.ok(Math.abs(end.endY-end.levelY)<.01,'Sustained turn reaches zero at maximum level speed');
+  for(const [i,side] of ['a','b'].entries()){
+    const point=envelope[i];
+    assert.ok(Math.abs(point.endX-easToX(bm.rows[side].level.easMph))<.01,'The curve reaches its own modeled maximum level speed');
+    assert.ok(Math.abs(point.endY-256)<.01,'Sustained turn reaches zero at maximum level speed');
   }
   assert.match(await evaluate('document.getElementById("bench-probe-results").textContent'),/1 G stall 97 mph EAS.*1 G stall 85 mph EAS/s);
-  const fullAxes=await axes();
-  assert.ok(fullAxes.every(a=>a[0]===fullAxes[0][0]&&a[1]===fullAxes[0][1]));
-  assert.ok(Math.abs(fullAxes[0][0]-Math.min(bm.rows.a.stallEasMph,bm.rows.b.stallEasMph))<1e-8);
-  assert.ok(focusAxes[0][0]>fullAxes[0][0]&&focusAxes[0][1]<fullAxes[0][1]);
-  checks.push('v4.4 turn, advantage and climb axes use the exact lower stall in the full envelope and share the 3 degree per second speed focus');
+  assert.deepEqual(await axes(),focusAxes);
+  checks.push('v4.6 a shared zero-to-next-ten axis preserves physical turn endpoints in both curve views');
   const probe=()=>evaluate('OperatingBenchmarkUI.probe');
   const setProbe=eas=>evaluate(`(()=>{const s=document.getElementById('bench-probe-speed');s.value='${eas}';s.dispatchEvent(new Event('input',{bubbles:true}));})()`);
   await setProbe(150);
@@ -471,29 +474,67 @@ async function run(){
     await send('Input.dispatchMouseEvent',{type:'mousePressed',...point,button:'left',clickCount:1});
     await send('Input.dispatchMouseEvent',{type:'mouseReleased',...point,button:'left',clickCount:1});
   };
+  const locked=()=>evaluate('OperatingBenchmarkUI.probeLocked');
+  const tipState=id=>evaluate(`(()=>{const e=document.getElementById('${id}');return {visible:!e.hidden,locked:e.dataset.locked,text:e.textContent};})()`);
+  const graphPoint=(kind,x,y)=>evaluate(`(()=>{const s=document.querySelector("#bench-${kind}-plot svg");s.scrollIntoView({block:"center",behavior:"instant"});const p=new DOMPoint(${x},${y}).matrixTransform(s.getScreenCTM());return {x:p.x,y:p.y};})()`);
   await clickPlot(climbHover);
-  assert.equal(await evaluate('OperatingBenchmarkUI.probeLocked'),true);
+  assert.equal(await locked(),true);
   assert.equal(await evaluate('document.getElementById("bench-probe-lock").getAttribute("aria-pressed")'),'true');
-  const pinned=await probe();
-  assert.ok(await evaluate('[...document.querySelectorAll("#bench-probe-results a")].some(a=>a.textContent==="Primary lift report"&&a.href.startsWith("https://")&&a.target==="_blank")'));
-  assert.ok(await evaluate('[...document.querySelectorAll("#bench-climb-at-speed a")].some(a=>a.textContent==="Related calculations"&&a.href.includes("WW2_FIGHTER_CALCULATED_EVIDENCE"))'));
-  await setProbe(pinned.easMph);
-  const pinnedTurn=await evaluate('(()=>{const s=document.querySelector("#bench-turn-plot svg");s.scrollIntoView({block:"center",behavior:"instant"});const p=new DOMPoint(445,105).matrixTransform(s.getScreenCTM());return {x:p.x,y:p.y};})()');
+  const pinned=await probe(),climbId='bench-climb-hover-readout';
+  const pinnedTip=await tipState(climbId);
+  assert.equal(pinnedTip.visible,true);
+  assert.equal(pinnedTip.locked,'true');
+  assert.ok(pinnedTip.text.startsWith(pinned.easMph+' mph EAS'));
+  const linkPoint=await evaluate(`(()=>{
+    const a=[...document.querySelectorAll('#bench-climb-hover-readout a')].find(a=>a.href.includes('WW2_FIGHTER_CALCULATED_EVIDENCE'));
+    a.scrollIntoView({block:'center',behavior:'instant'});
+    const r=a.getBoundingClientRect(),x=(r.left+r.right)/2,y=(r.top+r.bottom)/2;
+    return {x,y,hit:document.elementFromPoint(x,y)===a};
+  })()`);
+  assert.equal(linkPoint.hit,true,'Pinned source link is interactive');
+  await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:linkPoint.x,y:linkPoint.y});
+  assert.deepEqual(await probe(),pinned);
+  assert.equal((await tipState(climbId)).visible,true);
+  const pinnedTurn=await graphPoint('turn',445,105);
   await send('Input.dispatchMouseEvent',{type:'mouseMoved',...pinnedTurn});
   assert.deepEqual(await probe(),pinned,'Moving to another graph preserves the locked speed');
   await select('bench-speed-unit','knots');
   assert.deepEqual(await probe(),pinned);
-  assert.equal(await evaluate('OperatingBenchmarkUI.probeLocked'),true);
+  assert.equal(await locked(),true);
+  assert.equal((await tipState(climbId)).visible,true);
+  assert.ok((await axes()).every(([lo,hi])=>lo===0&&Math.abs(hi*1609.344/1852-310)<1e-8));
   await select('bench-speed-unit','mph');
+
+  await clickPlot(await graphPoint('turn',445,105));
+  assert.equal(await locked(),false);
+  const turnId='bench-hover-readout';
+  assert.equal((await tipState(turnId)).visible,true);
+  assert.notEqual((await probe()).easMph,pinned.easMph);
+  await clickPlot(await graphPoint('turn',445,105));
+  assert.equal(await locked(),true);
+  assert.equal((await tipState(turnId)).locked,'true');
+  const drag=await graphPoint('turn',185,135);
+  await send('Input.dispatchMouseEvent',{type:'mousePressed',...drag,button:'left',clickCount:1});
+  await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:drag.x+4,y:drag.y,buttons:1});
+  assert.equal(await locked(),true,'Small pointer jitter keeps the lock');
+  await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:drag.x+44,y:drag.y,buttons:1});
+  assert.equal(await locked(),false,'A deliberate drag clears the lock');
+  await send('Input.dispatchMouseEvent',{type:'mouseReleased',x:drag.x+44,y:drag.y,button:'left',clickCount:1});
+  assert.equal(await locked(),false,'The drag release does not pin the tooltip again');
+  assert.equal((await tipState(turnId)).visible,true);
+
+  await clickPlot(await graphPoint('advantage',325,95));
+  assert.equal(await locked(),true);
+  assert.equal((await tipState('bench-advantage-hover-readout')).visible,true);
   await send('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',code:'Escape',windowsVirtualKeyCode:27});
   await send('Input.dispatchKeyEvent',{type:'keyUp',key:'Escape',code:'Escape',windowsVirtualKeyCode:27});
-  assert.equal(await evaluate('OperatingBenchmarkUI.probeLocked'),false);
+  assert.equal(await locked(),false);
   const lockButton=()=>evaluate('document.getElementById("bench-probe-lock").click()');
   await lockButton();
-  assert.equal(await evaluate('OperatingBenchmarkUI.probeLocked'),true);
+  assert.equal(await locked(),true);
   await lockButton();
-  assert.equal(await evaluate('OperatingBenchmarkUI.probeLocked'),false);
-  checks.push('v4.5 click locks the shared probe, source links remain reachable, unit switches preserve speed and Escape or the button unlocks');
+  assert.equal(await locked(),false);
+  checks.push('v4.6 pinned tooltip persists with clickable links and unit changes, then click, drag, Escape or button releases it');
   const curveColors=()=>evaluate(`['a','b'].map(side=>document.querySelector('[data-bench-curve="'+side+'"] path').getAttribute('stroke'))`);
   assert.deepEqual(await curveColors(),['#83d3ff','#7ce5cc']);
   await select('bench-aircraft-a','fw190a4');
@@ -502,6 +543,26 @@ async function run(){
   await select('bench-aircraft-a','p51b');
   await select('bench-aircraft-b','spitfire_lfix_bs543');
   checks.push('v4.5 country colors follow the selected variant and same-country aircraft use separate shades');
+  await select('bench-aircraft-b','f4u4');
+  await select('bench-turn-focus','3');
+  assert.deepEqual(await axes(),[[0,360],[0,360],[0,360]]);
+  for(const side of ['a','b']){
+    const lengths=await evaluate(`[...document.querySelectorAll('[data-bench-curve="${side}"] path')].map(p=>[p.dataset.benchStyle,p.getTotalLength()])`);
+    const solid=lengths.filter(([s])=>s==='solid').reduce((n,[,l])=>n+l,0);
+    const dotted=lengths.filter(([s])=>s==='dotted').reduce((n,[,l])=>n+l,0);
+    assert.ok(solid>dotted&&dotted>0,'The screenshot matchup uses both styles, with solid curves over most of the range');
+  }
+  assert.equal(await evaluate('document.querySelectorAll("#bench-turn-plot [data-bench-tested-range=a]").length>0'),true);
+  assert.equal(await evaluate('document.querySelectorAll("#bench-turn-plot [data-bench-tested-range=b]").length'),0);
+  checks.push('v4.6 the Mustang and Corsair comparison uses mostly solid lines and a Mustang input band');
+  await select('bench-aircraft-a','p47b');
+  await select('bench-aircraft-b','spitfire_lfix_bs543');
+  await setProbe(170);
+  assert.deepEqual(await evaluate('[...document.querySelectorAll("#bench-climb-plot [data-bench-tested-range]")].map(p=>p.dataset.benchTestedRange)'),['a','b']);
+  assert.match(await evaluate('document.getElementById("bench-climb-at-speed").textContent'),/2,728–2,778 ft\/min.*4,508–4,558 ft\/min.*outside the report-adjusted range/s);
+  checks.push('v4.6 matching P-47B and Spitfire climbs show numerical bands imported from the 13-fighter pack');
+  await select('bench-aircraft-a','p51b');
+  await select('bench-turn-focus','full');
   const bInitial=bm.rows.b;
   await select('bench-power-a','normal');
   await select('bench-fuel-a','0.75');bm=await benchmark();assert.deepEqual(bm.rows.b,bInitial);assert.equal(bm.settings.a.settings.mode,'normal');assert.equal(bm.settings.a.settings.fuelFraction,.75);
