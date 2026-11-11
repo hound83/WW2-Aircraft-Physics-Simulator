@@ -11,9 +11,9 @@ const prop=take('ww2_multiaxis_propulsion_trials_2026-11-10');
 const low=take('ww2_low_speed_turn_calibration_2026-11-10');
 assert.equal(prop.length,143,'All 143 independently sourced scalar propeller/power/altitude observations survive ingestion');
 assert.equal(low.length,57,'All 57 low-speed, turn/control and correction entries survive ingestion');
-assert.equal(c.summary.observation_count,1205);
-assert.equal(c.summary.stall_count,240);
-assert.equal(c.summary.source_count,214);
+assert.equal(c.summary.observation_count,1275);
+assert.equal(c.summary.stall_count,250);
+assert.equal(c.summary.source_count,238);
 assert.equal(c.calibration_curves.length,19,'No unapproved CAS curve was fitted from installation-only data');
 
 const p47Dec=prop.filter(x=>x.id.includes('p47b-dec-props-level'));
