@@ -55,4 +55,5 @@ The wider fighter evidence from the Smithsonian NASM and Bundesarchiv is documen
 
 - [International fighter flight tests and operating data](../docs/research/WW2_FIGHTER_FLIGHT_TESTS_2026-11-11.md) records the trace digitization and source search across all thirteen research variants. The [data series](research/ww2_fighter_flight_tests_2026-11-11.json) and [coverage scorecard](aircraft-readiness-flight-tests-2026-11-11.json) retain page-level provenance and open gaps.
 
-- [Measured fighter test conditions](../docs/research/WW2_FIGHTER_MEASURED_CONDITIONS_2026-11-11.md) adds the [flight-test evidence pack](research/ww2_fighter_measured_conditions_2026-11-11.json) and the [latest before/after scorecard](aircraft-readiness-measured-conditions-2026-11-11.json) for the thirteen research variants.
+- [Measured fighter test conditions](../docs/research/WW2_FIGHTER_MEASURED_CONDITIONS_2026-11-11.md) adds the [flight-test evidence pack](research/ww2_fighter_measured_conditions_2026-11-11.json) and its [before/after scorecard](aircraft-readiness-measured-conditions-2026-11-11.json).
+- [German fighter archive recovery](../docs/research/WW2_GERMAN_FIGHTER_ARCHIVE_2026-11-11.md) adds [German and Allied flight-test data](research/ww2_german_fighter_archive_2026-11-11.json) and the [current thirteen-variant scorecard](aircraft-readiness-german-archive-2026-11-11.json).
