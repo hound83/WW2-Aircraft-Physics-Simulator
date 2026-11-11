@@ -1,5 +1,7 @@
 # Current validation
 
+v4.7 [Comparison controls, historical source agreement and four-aircraft regression](V47_BENCHMARK_AND_GOLD.md).
+
 v4.6 [Table-supported curves, climb ranges and pinned tooltips](V46_CHART_DATA.md).
 
 v4.5 [Graph evidence, country colours and speed lock](V45_GRAPH_EVIDENCE.md).

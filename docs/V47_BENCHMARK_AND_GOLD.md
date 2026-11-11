@@ -38,7 +38,7 @@ Dry Combat at 10,000 ft, 50% fuel, clean turn and level cooling, climb cooling f
 | Bf 109 F-4 | 95.59 → 95.59 | 18.76 → 18.76 | 4,763 → 4,763 | 373.55 → 373.55 |
 | Spitfire LF Mk IX | 85.16 → 85.16 | 19.26 → 19.26 | 4,705 → 4,705 | 380.32 → 380.32 |
 
-The generated four-aircraft scorecard and separate historical checks match v4.6 byte for byte. The protected comparison reports zero differences across 3,628 numerical values. The Mustang lift calibration and withheld Mach sections and the P-47B and Spitfire climb fit/check split are recorded in their original reports. The same-report timing checks measure source agreement. Powered sustained-turn validation and 5:1 discrimination remain open. [Four-aircraft scorecard](FLIGHT_SCORECARD.md) · [Climb fit and check rows](V43_MODEL_CHECKS.md) · [Turn and lift uncertainty](V44_TURN_PERFORMANCE.md).
+The locally generated four-aircraft scorecard and separate historical checks match v4.6 byte for byte. The hosted protected comparison finds zero material differences across 3,628 numerical values and reproduces v4.6’s 38 below-tolerance rounding differences exactly. A separate comparison of 252 aircraft, altitude, rating and power-domain combinations reproduced every existing metric, including 30 source-limited states. The Mustang lift calibration and withheld Mach sections and the P-47B and Spitfire climb fit/check split are recorded in their original reports. The same-report timing checks measure source agreement. Powered sustained-turn validation and 5:1 discrimination remain open. [Four-aircraft scorecard](FLIGHT_SCORECARD.md) · [Climb fit and check rows](V43_MODEL_CHECKS.md) · [Turn and lift uncertainty](V44_TURN_PERFORMANCE.md).
 
 ## Acceleration display
 
