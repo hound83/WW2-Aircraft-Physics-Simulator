@@ -477,6 +477,7 @@ async function run(){
     }
   };
   const openLimits=open=>evaluate(`document.getElementById("bench-turn-limits").closest("details").open=${open}`);
+  const comparisonViewport=await evaluate('({width:innerWidth,height:innerHeight,deviceScaleFactor:devicePixelRatio,mobile:false})');
   await select('bench-altitude','25000');
   await openLimits(true);
   const hoverSpeeds=[250,280,290,280,250,90,250];
@@ -509,7 +510,7 @@ async function run(){
     assert.match(await evaluate('document.getElementById("bench-climb-at-speed").textContent'),/Report-adjusted range/);
     await assertStableLayout(before,`when climb evidence appears at ${width}px`);
   }
-  await send('Emulation.clearDeviceMetricsOverride');
+  await send('Emulation.setDeviceMetricsOverride',comparisonViewport);
   await openLimits(false);
   checks.push('Hover crosses stalls and both level-speed limits without moving the linked charts at desktop and narrow widths');
   await select('bench-altitude','40000');
