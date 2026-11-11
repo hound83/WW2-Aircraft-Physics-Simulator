@@ -1,5 +1,7 @@
 # Current validation
 
+[v4.3 original-flight climb checks and operating replay](V43_MODEL_CHECKS.md).
+
 [v4.2 Normal/Combat benchmark, independent fuel/injection controls and altitude presets](V42_OPERATING_BENCHMARK.md).
 
 [v4.1 live energy correction and results](V41_ENERGY_RESULTS.md).

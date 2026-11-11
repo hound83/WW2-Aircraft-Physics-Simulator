@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "aircraftId": "spitfire_lfix_bs543",
+  "specimen": "BS.543",
+  "source": {
+    "url": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html",
+    "location": "A&AEE BS.543 Table II, above 30,000 ft; §3(ii), §4.1"
+  },
+  "condition": {
+    "grossWeightLb": 7485,
+    "engineRpm": 3000,
+    "cooling": "radiator flaps fully open",
+    "gear": "high",
+    "rating": "combat+18"
+  },
+  "qualification": "Report TAS preserves the report’s BF.274 position-error and compressibility corrections. At 34,000 ft and above, report IAS is below the independently verified BF.274 source curve range. Special test permission allowed a complete climb at Combat power. These rows test the extrapolation and stay outside the v4.1 fit.",
+  "columns": [
+    "altFt",
+    "timeMin",
+    "climbFpm",
+    "reportedTasMph",
+    "reportedIasMph",
+    "reportedPositionErrorMph",
+    "reportedCompressibilityCorrectionMph",
+    "boostPsi"
+  ],
+  "rows": [
+    [
+      32000,
+      9.4,
+      1830,
+      231,
+      133,
+      4,
+      -1.6,
+      6.7
+    ],
+    [
+      34000,
+      10.6,
+      1550,
+      232,
+      128,
+      4.8,
+      -1.4,
+      3.4
+    ],
+    [
+      36000,
+      12,
+      1260,
+      232.5,
+      123,
+      5.3,
+      -1.4,
+      1.8
+    ],
+    [
+      38000,
+      13.95,
+      800,
+      236,
+      118,
+      5.7,
+      -1.4,
+      0.4
+    ],
+    [
+      40000,
+      17.55,
+      300,
+      237.5,
+      113,
+      6.1,
+      -1.4,
+      -1.2
+    ]
+  ]
+}

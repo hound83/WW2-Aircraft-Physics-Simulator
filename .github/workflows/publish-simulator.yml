@@ -1,10 +1,10 @@
 name: Publish simulator
 on:
   pull_request:
-    paths: [.github/workflows/publish-simulator.yml]
+    paths: [.github/workflows/publish-simulator.yml, package.json]
   push:
     branches: [main]
-    paths: [.github/workflows/publish-simulator.yml]
+    paths: [.github/workflows/publish-simulator.yml, package.json]
   workflow_dispatch:
 permissions:
   contents: read

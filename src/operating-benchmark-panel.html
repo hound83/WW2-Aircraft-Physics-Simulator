@@ -35,6 +35,17 @@
  #operating-benchmark .bench-probe-tooltip{position:absolute;z-index:2;pointer-events:none;box-sizing:border-box;width:max-content;max-width:min(24rem,calc(100% - 16px));padding:.7rem;background:#10212d;border:1px solid #607b8a;border-radius:8px;box-shadow:0 6px 18px #0006;font-size:.83rem}
  #operating-benchmark .bench-probe-tooltip div{margin-top:.4rem}
  #operating-benchmark .bench-probe-tooltip div span{display:block}
+ #operating-benchmark .bench-table-scroll{overflow-x:auto}
+ #operating-benchmark .bench-altitude-table{min-width:610px}
+ #operating-benchmark .bench-altitude-table tr[data-altitude]{cursor:pointer}
+ #operating-benchmark .bench-altitude-table tr[data-altitude]:hover{background:#1f3947}
+ #operating-benchmark .bench-altitude-table tr[aria-selected="true"]{background:#233e4d}
+ #operating-benchmark .bench-altitude-table td small{display:block;margin-top:.25rem}
+ #operating-benchmark .bench-altitude-table button{padding:.4rem .55rem;background:#142b37;color:inherit}
+ #operating-benchmark .bench-altitude-table [aria-current="true"]{border-color:var(--bench-a);color:var(--bench-a)}
+ #operating-benchmark .bench-a{color:var(--bench-a)}
+ #operating-benchmark .bench-b{color:var(--bench-b)}
+ #operating-benchmark #bench-matchup{margin-top:1rem;font-weight:700}
  @media(max-width:740px){#operating-benchmark .bench-sides{grid-template-columns:1fr}#operating-benchmark .bench-numbers{grid-template-columns:repeat(2,minmax(0,1fr))}#operating-benchmark .bench-toolbar{align-items:stretch}}
  @media(max-width:740px){#operating-benchmark .bench-probe-cards{grid-template-columns:1fr}#operating-benchmark .bench-chart text{font-size:23px}#operating-benchmark .bench-probe-slider output{text-align:left}}
  </style>
@@ -47,19 +58,26 @@
  </div>
  <p class="bench-note">Independent tests at the selected altitude start at the chosen fuel load with fresh power allowance. Full climbs below carry fuel use and allowance forward. These remain research estimates of performance.</p>
  <div class="bench-sides">
-  <article class="bench-side"><div class="bench-title" id="bench-title-a">Aircraft 1</div><label>Aircraft<select id="bench-aircraft-a"></select></label><div class="bench-controls"><label>Power<select id="bench-power-a"><option value="normal">Normal</option><option value="combat" selected>Combat</option></select></label><label>Internal fuel<select id="bench-fuel-a"><option value="0.25">25%</option><option value="0.5" selected>50%</option><option value="0.75">75%</option></select></label></div><label class="bench-injection" style="flex-direction:row"><input id="bench-injection-a" type="checkbox"><span id="bench-injection-label-a">Injection</span></label><p id="bench-setting-a" class="bench-setting"></p><div id="bench-result-a"></div></article>
-  <article class="bench-side"><div class="bench-title" id="bench-title-b">Aircraft 2</div><label>Aircraft<select id="bench-aircraft-b"></select></label><div class="bench-controls"><label>Power<select id="bench-power-b"><option value="normal">Normal</option><option value="combat" selected>Combat</option></select></label><label>Internal fuel<select id="bench-fuel-b"><option value="0.25">25%</option><option value="0.5" selected>50%</option><option value="0.75">75%</option></select></label></div><label class="bench-injection" style="flex-direction:row"><input id="bench-injection-b" type="checkbox"><span id="bench-injection-label-b">Injection</span></label><p id="bench-setting-b" class="bench-setting"></p><div id="bench-result-b"></div></article>
+  <article class="bench-side"><div class="bench-title" id="bench-title-a">Aircraft 1</div><label>Aircraft<select id="bench-aircraft-a"></select></label><p class="bench-note" id="bench-service-a"></p><div class="bench-controls"><label>Power<select id="bench-power-a"><option value="normal">Normal</option><option value="combat" selected>Combat</option></select></label><label>Internal fuel<select id="bench-fuel-a"><option value="0.25">25%</option><option value="0.5" selected>50%</option><option value="0.75">75%</option></select></label></div><label class="bench-injection" style="flex-direction:row"><input id="bench-injection-a" type="checkbox"><span id="bench-injection-label-a">Injection</span></label><label>Turn and level cooling<select id="bench-cooling-a"><option value="clean">Clean</option><option value="open">Climb cooling scenario</option></select></label><p id="bench-setting-a" class="bench-setting"></p><div id="bench-result-a"></div></article>
+  <article class="bench-side"><div class="bench-title" id="bench-title-b">Aircraft 2</div><label>Aircraft<select id="bench-aircraft-b"></select></label><label>Aircraft 2 list<select id="bench-aircraft-filter"><option value="all">All aircraft</option><option value="contemporaries">Contemporaries</option></select></label><p class="bench-note" id="bench-service-b"></p><div class="bench-controls"><label>Power<select id="bench-power-b"><option value="normal">Normal</option><option value="combat" selected>Combat</option></select></label><label>Internal fuel<select id="bench-fuel-b"><option value="0.25">25%</option><option value="0.5" selected>50%</option><option value="0.75">75%</option></select></label></div><label class="bench-injection" style="flex-direction:row"><input id="bench-injection-b" type="checkbox"><span id="bench-injection-label-b">Injection</span></label><label>Turn and level cooling<select id="bench-cooling-b"><option value="clean">Clean</option><option value="open">Climb cooling scenario</option></select></label><p id="bench-setting-b" class="bench-setting"></p><div id="bench-result-b"></div></article>
  </div>
+ <p id="bench-matchup" aria-live="polite"></p>
+ <p class="bench-note">Approximate WWII service windows. Contemporaries filters by years of main service.</p>
  <p id="bench-comparison" aria-live="polite"></p>
  <div id="bench-turn-plot" class="bench-chart"></div>
- <p class="bench-note">Triangles mark 1 G stall. Circles mark maximum level speed. The grey guide shows 3°/s, a two-minute circle.</p>
+ <div id="bench-climb-plot" class="bench-chart"></div>
+ <p class="bench-note">Triangles mark 1 G stall and circles mark maximum level speed. Squares mark peak turn rate and Vy. The grey guide shows a 3°/s turn.</p>
  <div class="bench-probe-slider">
   <label>Speed to compare<input id="bench-probe-speed" type="range" aria-describedby="bench-probe-help"></label>
   <output id="bench-probe-value" for="bench-probe-speed">—</output>
  </div>
- <p class="bench-note" id="bench-probe-help">Hover over either curve or move the slider to compare both aircraft at the same equivalent airspeed. Climb is evaluated in straight flight with the climb cooling configuration.</p>
+ <p class="bench-note" id="bench-probe-help">Hover over either chart or move the slider to compare both aircraft at the same equivalent airspeed. Climb is evaluated in straight flight with the climb cooling configuration.</p>
  <div id="bench-probe-results" class="bench-probe-cards"></div>
+ <h3>Performance across altitude</h3>
+ <p class="bench-note">Select a row to compare both aircraft at that altitude. Δ is aircraft 1 minus aircraft 2. * includes estimated power.</p>
+ <div id="bench-altitude-overview" class="bench-table-scroll"></div>
  <details><summary>Full climb to the shared altitude</summary><p>Start already airborne at the chosen start height. Normal follows the recorded routine climb-speed schedule. Combat searches where a single permitted higher-power window saves the most time, then replays fuel and injection use. No allowance resets at intermediate altitudes.</p><div class="bench-toolbar"><label>Climb from<select id="bench-climb-from"><option value="0">Sea level</option><option value="10000">10,000 ft</option><option value="20000">20,000 ft</option><option value="30000">30,000 ft</option><option value="35000">35,000 ft</option></select></label><button id="bench-climb-calculate" type="button">Calculate both climbs</button></div><div id="bench-climb-result" aria-live="polite">Calculate a climb with the current settings.</div><p class="bench-note">Climb fuel flow uses a shared illustrative 0.50 lb/shaft-hp-hour. The optimized window is the quickest tested schedule under this model, not a reconstruction of a pilot's tactical choices. Acceleration during speed changes and a dynamic thermal model are not included.</p></details>
+ <details id="bench-flight-checks"><summary>Flight-test checks for this model update</summary><div id="bench-flight-check-results"></div></details>
  <details><summary>Aircraft settings, load assumptions and sources</summary><div id="bench-sources"></div></details>
  <p class="bench-note">Normal and Combat use the same service-load reconstruction. No bombs, rockets, external tanks or optional gun pods; removable racks excluded. A charged injection reservoir is carried in dry and injected cases. Full-ammo weights and some lower-rating/altitude power conversions remain qualified engineering reconstructions. Original source-test replays follow below.</p>
 </section>

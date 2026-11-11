@@ -1,5 +1,9 @@
 # Current decisions
 
+## v4.3 report-conditioned benchmark climb
+
+Use the existing P-47B 41-5902 and Spitfire BS.543 energy models in the benchmark's open-cooling climb path at the applicable ratings, RPM, speeds and altitudes. Offer climb cooling for turn and level flight as an optional scenario. Evaluate original fit and held-out rows and the separate 41-5942 report. Retain the Corsair loss sensitivity in the report and keep the adopted propeller model. [Checks and replay conditions](V43_MODEL_CHECKS.md).
+
 ## v4.2 Normal/Combat, fuel, injection and co-altitude policy
 
 Michael approved two per-aircraft operating profiles, three internal-fuel choices (25/50/75%) and a separate fitted-injection switch. Each side can use a different configuration; altitude is always shared at 0/10000/20000/30000/35000/40000 ft. Normal means the recommended routine climb rating used consistently for all Normal metrics. Combat admits the selected higher rating and its finite allowance. Air-to-air loading retains fixed guns/full ammo and service equipment, excludes removable racks and external stores, and exposes reconstructed mass assumptions.

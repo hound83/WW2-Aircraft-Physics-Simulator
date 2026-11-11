@@ -60,6 +60,10 @@
   function evaluate(M, model, altFt, tasMph, rating, weightLb, configuration) {
     const prepared = prepare(M, model, altFt, rating, weightLb, configuration);
     if (!prepared) return {status: 'outside-energy-configuration'};
+    return evaluatePrepared(M, altFt, tasMph, prepared, configuration);
+  }
+
+  function evaluatePrepared(M, altFt, tasMph, prepared, configuration) {
     const {ac, options, branch} = prepared;
     const raw = M.evaluated(ac, altFt, tasMph, options);
     if (!raw.power || !branch?.loss) return raw;
@@ -92,5 +96,5 @@
     }
     return best ?? {status: 'outside-energy-configuration'};
   }
-  return Object.freeze({interpolate, fractionAt, prepare, evaluate, bestClimb});
+  return Object.freeze({interpolate, fractionAt, prepare, evaluate, evaluatePrepared, bestClimb});
 });
