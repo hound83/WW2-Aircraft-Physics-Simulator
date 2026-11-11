@@ -1,5 +1,9 @@
 # Current decisions
 
+## v4.5 graph evidence and speed lock
+
+Default to 3°/s for the shared graph view and retain Full envelope. Use aircraft country colours, joined evidence styles and shading for quantified bounds. Show source links on the locked readouts. Keep calculated results at their recorded conditions and link related research from the benchmark. [Graph controls and evidence](V45_GRAPH_EVIDENCE.md).
+
 ## v4.4 maneuver lift and turn comparison
 
 Admit the TN 1044 pooled P-51B maneuver-lift curve in the bounded clean-turn benchmark scenario. Keep fit and withheld Mach sections in the source ledger and verify the 90-state replay. Expose matched-speed differences, the active turn limit and the tested sensitivity range for the Mustang and Spitfire. Filter injection by the recorded engine and airframe installation. [Evidence, regression and qualification](V44_TURN_PERFORMANCE.md).

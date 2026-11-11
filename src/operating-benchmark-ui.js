@@ -3,9 +3,9 @@
  const $=id=>document.getElementById(id),B=OperatingBenchmark,M=UniversalAirPhysics,T=UniversalTurnLift,L=JSON.parse($('turn-lift-source').textContent);
  const data=JSON.parse($('benchmark-operating-data').textContent),{models,specification:specs,service}=data;
  const fmt=(x,n=1)=>Number.isFinite(x)?x.toLocaleString('en-US',{minimumFractionDigits:n,maximumFractionDigits:n}):'—';
- const Chart=OperatingBenchmarkChart,History=BenchmarkServiceContext;
+ const Chart=OperatingBenchmarkChart,History=BenchmarkServiceContext,Evidence=BenchmarkGraphEvidence;
  const sides=['a','b'];
- const api=globalThis.OperatingBenchmarkUI={data,settings:{},rows:{},altitudeRows:[],climbs:null,probe:null};
+ const api=globalThis.OperatingBenchmarkUI={data,settings:{},rows:{},altitudeRows:[],climbs:null,probe:null,probeLocked:false};
  const speed=(value,kind)=>Chart.speed(value,$('bench-speed-unit').value,kind);
  const text=(tag,value,className)=>{const e=document.createElement(tag);if(value!==undefined)e.textContent=value;if(className)e.className=className;return e;};
  const shortName=id=>service.aircraft[id].displayName;
@@ -71,6 +71,11 @@
   const advantage=$('bench-advantage-plot'),readout=$('bench-advantage-readout'),limits=$('bench-turn-limits');
   advantage.replaceChildren();readout.replaceChildren();limits.replaceChildren();
   const names=Object.fromEntries(sides.map(side=>[side,shortName(api.settings[side].id)]));
+  const colors=Evidence.colors(...sides.map(side=>service.aircraft[api.settings[side].id].country));
+  const panel=$('operating-benchmark');
+  for(const side of sides)panel.style.setProperty('--bench-'+side,colors[side]);
+  $('bench-curve-names').replaceChildren(...sides.map((side,i)=>
+   text('span',(i+1)+' · '+names[side],'bench-aircraft-key bench-'+side)));
   const pair=new Set(sides.map(side=>api.settings[side].id));
   const policy=pair.has('p51b')&&pair.has('spitfire_lfix_bs543')?data.turnEvidence.sensitivity:null;
   $('bench-advantage-key').hidden=!policy;
@@ -79,6 +84,7 @@
    return {
     side,
     name:'Aircraft '+(side==='a'?'1':'2')+' · '+names[side],
+    color:colors[side],evidence:data.graphEvidence[api.settings[side].id],
     range:row.turnRange,
     stallEasMph:row.stallEasMph,
     levelEasMph:row.level?.easMph??null,
@@ -89,20 +95,27 @@
     scanMaxEasMph:M.airspeeds(590,alt).eas
    };
   });
+  const samples=new Map();
   function evaluateAt(side,eas,climbing){
-   const chosen=api.settings[side],row=api.rows[side];
-   return B.evaluate(M,T,L,models[chosen.id],specs.aircraft[chosen.id],chosen.settings,
-    alt,eas,row.loading.weightLb,row.phase,climbing);
+   const key=side+':'+eas+':'+Boolean(climbing);
+   if(!samples.has(key)){
+    const chosen=api.settings[side],row=api.rows[side];
+    samples.set(key,B.evaluate(M,T,L,models[chosen.id],specs.aircraft[chosen.id],chosen.settings,
+     alt,eas,row.loading.weightLb,row.phase,climbing));
+   }
+   return samples.get(key);
   }
   Chart.render({
    chart:$('bench-turn-plot'),climbChart:$('bench-climb-plot'),slider:$('bench-probe-speed'),value:$('bench-probe-value'),
    results:$('bench-probe-results'),climbResults:$('bench-climb-at-speed'),
    rangeStatus:$('bench-range-status'),focus:$('bench-turn-focus').value==='3',
    unit:$('bench-speed-unit').value,altFt:alt,series,
-   selectedEasMph:api.probe?.easMph,
+   selectedEasMph:api.probe?.easMph,policy,
+   lockButton:$('bench-probe-lock'),lockStatus:$('bench-probe-lock-status'),locked:api.probeLocked,
+   onLock(value){api.probeLocked=value;},
    evaluateAt,
    makeAdvantage(domain){
-    return OperatingTurnComparison.advantage({...domain,host:advantage,readout,limits,names,policy,evaluateAt,
+    return OperatingTurnComparison.advantage({...domain,host:advantage,readout,limits,names,colors,policy,
      unit:$('bench-speed-unit').value});
    },
    onProbe(probe){api.probe=probe;}
@@ -214,6 +227,9 @@
   render();
  });
  $('bench-turn-focus').addEventListener('change',()=>plot(Number($('bench-altitude').value)));
+ document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&api.probeLocked)$('bench-probe-lock').click();
+ });
  $('bench-speed-unit').addEventListener('change',()=>{
   for(const side of ['a','b'])renderSide(side);
   const alt=Number($('bench-altitude').value);

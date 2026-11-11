@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.5 graph evidence
+
+Solid climb sections show calculations near a matched report schedule at the selected altitude and engine branch. The selected load can differ from the test load. The sustained-turn curves are model calculations, and the shaded Mustang–Spitfire range shows sensitivity to the declared input bounds. [Coverage and graph controls](V45_GRAPH_EVIDENCE.md).
+
 ## v4.4 maneuver lift and sensitivity
 
 The P-51B lift transfer uses a throttled, carefully finished NACA aircraft and pooled chart readings. The power and incremental drag tests describe declared engineering perturbations. The displayed range has no probability interpretation. Historical powered sustained-turn validation and the five-to-one discrimination target require matched reports. A performance state can also lie outside the recorded power envelope. [Flight evidence and bounds](V44_TURN_PERFORMANCE.md).

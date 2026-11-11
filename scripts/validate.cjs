@@ -57,6 +57,8 @@ try{
  const md=[
  '# Current validation',
  '',
+ 'v4.5 [Graph evidence, country colours and speed lock](V45_GRAPH_EVIDENCE.md).',
+ '',
  'v4.4 [Sustained-turn performance and flight evidence](V44_TURN_PERFORMANCE.md). [Numerical replay](../validation/current/turn-performance-v44.json).',
  '',
  'v4.3 [Report-conditioned operating benchmark checks](V43_MODEL_CHECKS.md). [Full numeric replays](../validation/current/operating-benchmark-v43.json).',

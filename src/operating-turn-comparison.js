@@ -1,9 +1,9 @@
 'use strict';
 
 (()=>{
- const P=TurnPerformance;
+ const P=TurnPerformance,Evidence=BenchmarkGraphEvidence;
  const svgNs='http://www.w3.org/2000/svg';
- const paint={a:'#75dbff',b:'#ffc077'};
+ const paint=Evidence.colors('us','germany');
  const sides=['a','b'];
  const fmt=(n,d=1)=>Number.isFinite(n)?n.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}):'—';
  const signed=(n,d=1)=>(n<0?'−':n>0?'+':'')+fmt(Math.abs(n),d);
@@ -26,15 +26,6 @@
   if(text!==undefined)node.textContent=text;
   parent.append(node);
   return node;
- }
- function chartPath(rows,x,y,value){
-  let d='',previous=false;
-  for(const row of rows){
-   const v=value(row);
-   if(Number.isFinite(v)){d+=(previous?'L':'M')+x(row.eas)+','+y(v);previous=true;}
-   else previous=false;
-  }
-  return d;
  }
 
  function limitsCard(name,assessment,side){
@@ -70,13 +61,15 @@
   return card;
  }
 
- function advantage({host,readout,limits,minEas,maxEas,unit,names,evaluateAt,policy,selectSpeed}){
+ function advantage({host,readout,limits,minEas,maxEas,unit,names,colors,pointAt,policy,selectSpeed}){
   const width=780,height=214,left=76,right=758,top=23,bottom=160;
   const cache=new Map();
   function sample(eas){
    if(!cache.has(eas)){
-    const aircraft=Object.fromEntries(sides.map(side=>[side,P.assessment(evaluateAt(side,eas,false),policy)]));
-    cache.set(eas,{eas,aircraft,difference:P.difference(aircraft.a,aircraft.b)});
+    const [a,b]=sides.map(side=>pointAt(side,eas,'turn'));
+    const aircraft={a:a.assessment,b:b.assessment};
+    const difference=P.difference(aircraft.a,aircraft.b);
+    cache.set(eas,{...Evidence.sample(eas,difference?.rateDegSec,a.covered&&b.covered,difference?.range),aircraft,difference});
    }
    return cache.get(eas);
   }
@@ -98,8 +91,8 @@
   const y=rate=>top+(bottom-top)*(bound-rate)/(2*bound);
   const g=svg(width,height,'Sustained-turn advantage in degrees per second at the shared airspeed. Positive values favour aircraft 1.');
   const zero=y(0);
-  draw(g,'rect',{x:left,y:top,width:right-left,height:zero-top,fill:paint.a,opacity:.045});
-  draw(g,'rect',{x:left,y:zero,width:right-left,height:bottom-zero,fill:paint.b,opacity:.045});
+  draw(g,'rect',{x:left,y:top,width:right-left,height:zero-top,fill:colors.a,opacity:.045});
+  draw(g,'rect',{x:left,y:zero,width:right-left,height:bottom-zero,fill:colors.b,opacity:.045});
   g.dataset.minEas=minEas;
   g.dataset.maxEas=maxEas;
   for(const {eas,label} of OperatingBenchmarkChart.ticks(minEas,maxEas,unit)){
@@ -127,29 +120,33 @@
   }
   for(const row of rows){if(row.difference?.range)segment.push(row);else band();}
   band();
-  draw(g,'path',{d:chartPath(rows,x,y,r=>r.difference?.rateDegSec),fill:'none',
-   stroke:'#f1f3f7','stroke-width':2.6,'data-turn-difference':''});
+  for(const segment of Evidence.lineSegments(rows)){
+   const d=segment.points.map((p,i)=>(i?'L':'M')+x(p.eas)+','+y(p.rate)).join('');
+   draw(g,'path',{d,fill:'none',stroke:'#f1f3f7','stroke-width':2.6,'stroke-linecap':'round',
+    'data-turn-difference':'','data-bench-style':segment.solid?'solid':'dotted',
+    ...(segment.solid?{}:{'stroke-dasharray':'1 6'})});
+  }
   for(const [i,r] of rows.entries()){
    const side=r.difference?.side,next=rows[i+1];
    if(side&&next?.difference?.side===side){
     const bar=draw(g,'line',{x1:x(r.eas),x2:x(next.eas),y1:bottom+7,y2:bottom+7,
-     stroke:paint[side]??'#84919e','stroke-width':4});
+     stroke:colors[side]??'#84919e','stroke-width':4});
     draw(bar,'title',{},side==='uncertain'?'Lead depends on the tested inputs':names[side]+' leads across the tested inputs');
    }
   }
   const crosshair=draw(g,'line',{y1:top,y2:bottom,class:'bench-crosshair','data-advantage-crosshair':''});
   const marker=draw(g,'circle',{r:4.5,class:'bench-probe-dot'});
   host.replaceChildren(g);
-  function pointer(event){
+  function pointer(event,pin){
    const transform=g.getScreenCTM();
    if(!transform)return;
    const at=new DOMPoint(event.clientX,event.clientY).matrixTransform(transform.inverse());
    if(at.x>=left&&at.x<=right&&at.y>=top&&at.y<=bottom+11){
-    selectSpeed(minEas+(maxEas-minEas)*(at.x-left)/(right-left));
+    selectSpeed(minEas+(maxEas-minEas)*(at.x-left)/(right-left),pin);
    }
   }
-  g.addEventListener('pointermove',e=>{if(e.pointerType!=='touch')pointer(e);});
-  g.addEventListener('pointerdown',pointer);
+  g.addEventListener('pointermove',e=>{if(e.pointerType!=='touch')pointer(e,false);});
+  g.addEventListener('click',e=>pointer(e,true));
 
   function update(eas){
    const {aircraft,difference:d}=sample(eas);
@@ -161,7 +158,7 @@
     readout.append(el('strong','Difference unavailable'),el('span','Both aircraft need a sustained turn at the selected speed.','bench-note'));
    }else{
     const leader=d.rateDegSec>=0?'a':'b';
-    marker.setAttribute('cx',at);marker.setAttribute('cy',y(d.rateDegSec));marker.setAttribute('fill',paint[leader]);
+    marker.setAttribute('cx',at);marker.setAttribute('cy',y(d.rateDegSec));marker.setAttribute('fill',colors[leader]);
     const title=Math.abs(d.rateDegSec)<.05?'Similar modeled turn rates':names[leader]+' +'+fmt(Math.abs(d.rateDegSec))+'°/s';
     readout.append(el('strong',title,'bench-'+leader),
      el('span',fmt(Math.abs(d.g),2)+' G difference · '+OperatingBenchmarkChart.speed(eas,unit,'EAS'),'bench-note'));
