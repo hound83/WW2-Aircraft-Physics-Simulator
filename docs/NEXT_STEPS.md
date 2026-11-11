@@ -1,5 +1,9 @@
 # Next steps
 
+## After v4.8 level acceleration
+
+Candidate major milestone is a timed acceleration comparison with historical checks. Integrate through selected speed intervals and available power time. Seek condition-matched speed-time and powered steady-turn observations and preserve whole runs as independent checks. Use the Mustang and Spitfire around 200 mph EAS to assess where a comparative ranking survives uncertainty. [Current acceleration plot and proposed milestone](V48_LEVEL_ACCELERATION.md#proposed-major-milestone).
+
 ## After v4.7 source agreement
 
 Resolve the two Mustang 444 mph transcriptions against the original program records, with particular attention to altitude and the weight convention. Seek separate matched trials for the GOLD* cases and retain the recorded source ranges. Continue the powered-turn work below, starting with the Mustang and Spitfire speed range where the modeled lead depends on inputs. [Reviewed benchmarks and current comparison](V47_BENCHMARK_AND_GOLD.md).

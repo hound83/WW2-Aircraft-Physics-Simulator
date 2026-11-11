@@ -74,7 +74,7 @@
  #operating-benchmark .bench-advantage-readout span:last-child{flex-basis:100%}
  #operating-benchmark #bench-advantage-key[hidden]{display:none}
  #operating-benchmark .bench-advantage-band{fill:#beb2f2;opacity:.25}
- #operating-benchmark .bench-advantage-zero{stroke:#c1cad5;stroke-width:1.5}
+ #operating-benchmark .bench-advantage-zero,#operating-benchmark .bench-acceleration-zero{stroke:#c1cad5;stroke-width:1.5}
  #operating-benchmark .bench-evidence-legend{display:flex;gap:.5rem 1rem;flex-wrap:wrap}
  #operating-benchmark .bench-turn-limits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:.65rem 0}
  #operating-benchmark .bench-limit-card{background:#182f3d;border:1px solid #405969;border-radius:8px;padding:.75rem;--side-color:var(--bench-a)}
@@ -124,7 +124,7 @@
  <div class="bench-probe-slider">
   <label>Speed to compare<input id="bench-probe-speed" type="range" aria-describedby="bench-probe-help"></label>
   <output id="bench-probe-value" for="bench-probe-speed">—</output>
-  <button id="bench-probe-lock" type="button" aria-pressed="false" aria-controls="bench-probe-results bench-climb-at-speed">Lock speed</button>
+  <button id="bench-probe-lock" type="button" aria-pressed="false" aria-controls="bench-probe-results bench-climb-at-speed bench-acceleration-at-speed">Lock speed</button>
  </div>
  <p class="bench-note" id="bench-probe-lock-status" aria-live="polite"></p>
  <p class="bench-note" id="bench-probe-help">Move the slider or hover over a chart to compare at one speed. Lock the reading to inspect its sources.</p>
@@ -144,6 +144,9 @@
  <div id="bench-climb-plot" class="bench-chart"></div>
  <div id="bench-climb-at-speed" class="bench-probe-cards"></div>
  <p class="bench-note">The climb chart uses straight flight with climb cooling.</p>
+ <div id="bench-acceleration-plot" class="bench-chart"></div>
+ <div id="bench-acceleration-at-speed" class="bench-probe-cards"></div>
+ <p class="bench-note">Modeled change in true airspeed per second in straight, level flight. Each ring marks maximum level speed. Negative values indicate deceleration.</p>
  <h3>Performance across altitude</h3>
  <p class="bench-note">Select a row to compare both aircraft at that altitude. Δ is aircraft 1 minus aircraft 2. * includes estimated power.</p>
  <div id="bench-altitude-overview" class="bench-table-scroll"></div>

@@ -66,7 +66,7 @@
   if(r.status!=='modelled')box.append(text('p','This model cannot sustain level flight at this load, power and altitude.','bench-warning'));
   if(r.sustained?.estimatedPower||r.level?.estimatedPower||r.climb?.estimatedPower)box.append(text('p','High-altitude power estimate beyond the last source node.','bench-warning'));
   if(r.climb?.cooling==='report-conditioned')box.append(text('p','Climb uses report-conditioned power and open-cooling losses.','bench-note'));
-  if(chosen.settings.openCooling)box.append(text('p','Turn and level speed use the modeled climb cooling scenario.','bench-note'));
+  if(chosen.settings.openCooling)box.append(text('p','Turn, level speed and acceleration use the modeled climb cooling scenario.','bench-note'));
   const grid=document.createElement('div');grid.className='bench-numbers';
   const metric=turnUnit(),peak=r[metric.peak];
   grid.append(number(metric.key==='g'?'Peak sustained load':'Maximum sustained turn',fmt(peak?.[metric.field],metric.digits)+' '+metric.label,
@@ -121,8 +121,9 @@
    return samples.get(key);
   }
   Chart.render({
-   chart:$('bench-turn-plot'),climbChart:$('bench-climb-plot'),slider:$('bench-probe-speed'),value:$('bench-probe-value'),
-   results:$('bench-probe-results'),climbResults:$('bench-climb-at-speed'),
+   chart:$('bench-turn-plot'),climbChart:$('bench-climb-plot'),accelerationChart:$('bench-acceleration-plot'),
+   slider:$('bench-probe-speed'),value:$('bench-probe-value'),results:$('bench-probe-results'),
+   climbResults:$('bench-climb-at-speed'),accelerationResults:$('bench-acceleration-at-speed'),
    rangeStatus:$('bench-range-status'),focus:$('bench-turn-focus').value==='3',
    unit:$('bench-speed-unit').value,turnUnit:turnUnit(),altFt:alt,series,
    selectedEasMph:api.probe?.easMph,

@@ -1,5 +1,9 @@
 # Current decisions
 
+## v4.8 level acceleration
+
+Plot instantaneous change in true airspeed per second at the selected altitude and 1 G configuration. Use the solver's specific excess power, the shared EAS probe and signed curves through the maximum-level-speed equilibrium. [Calculation and validation](V48_LEVEL_ACCELERATION.md).
+
 ## v4.7 comparison and source agreement
 
 Share the comparison altitude in 5,000-ft steps and set the common airspeed origin below the lower modeled stall. Show the remaining sustained capability above the slower aircraft’s level limit. Give timed climbs an independent interval and allow sustained turns in G or degrees per second. Grade reviewed historical central values at matched conditions and retain the source uncertainty and GOLD* qualifications. [Comparison and acceptance report](V47_BENCHMARK_AND_GOLD.md).

@@ -370,6 +370,7 @@ async function run(){
   assert.match(await evaluate('document.getElementById("bench-altitude-value").value'),/15,000 ft/);
   assert.equal(await evaluate('document.getElementById("bench-climb-to").value'),'10000');
   assert.match(await evaluate('document.querySelector("#bench-climb-plot svg").getAttribute("aria-label")'),/15,000 ft/);
+  assert.match(await evaluate('document.querySelector("#bench-acceleration-plot svg").getAttribute("aria-label")'),/Level acceleration.*15,000 ft/);
   await select('bench-altitude','10000');
   checks.push('v4.7 chart altitude slider synchronizes plots and aircraft at 5,000 ft steps independently of timed climb');
   const curveEnds=()=>evaluate(`['a','b'].map(side=>{
@@ -445,6 +446,37 @@ async function run(){
   assert.ok(await evaluate('document.querySelector("#bench-advantage-plot [data-turn-solo=b]").getTotalLength()>0'));
   await setProbe(335);
   assert.match(await evaluate('document.getElementById("bench-advantage-readout").textContent'),/Only P-51B.*above maximum level speed/s);
+  const accelAxes=await evaluate('(()=>{const s=document.querySelector("#bench-acceleration-plot svg");return [+s.dataset.minEas,+s.dataset.maxEas];})()');
+  assert.deepEqual(accelAxes,(await axes())[0]);
+  const accelAt335=await probe();
+  assert.ok(Math.abs(accelAt335.aircraft.a.accelerationMphPerSecond+.49920)<.0001);
+  assert.ok(Math.abs(accelAt335.aircraft.b.accelerationMphPerSecond-.45504)<.0001);
+  assert.match(await evaluate('document.getElementById("bench-acceleration-at-speed").textContent'),/-0\.50 mph\/s.*\+0\.46 mph\/s/s);
+  const accelerationPlot=await evaluate('(()=>{'+
+   'const s=document.querySelector("#bench-acceleration-plot svg"),zero=Number(s.querySelector(".bench-acceleration-zero").getAttribute("y1"));'+
+   'const equilibria=[...s.querySelectorAll("[data-bench-level-equilibrium]")].map(e=>[+e.getAttribute("cx"),+e.getAttribute("cy")]);'+
+   'const dots=[...s.querySelectorAll(".bench-probe-dot")].map(e=>+e.getAttribute("cy"));'+
+   'const cursors=[...document.querySelectorAll("#bench-turn-plot .bench-crosshair,#bench-climb-plot .bench-crosshair,[data-advantage-crosshair],#bench-acceleration-plot .bench-crosshair")].map(e=>e.getAttribute("x1"));'+
+   'return {zero,equilibria,dots,cursors};})()');
+  assert.equal(accelerationPlot.equilibria.length,2);
+  const accelerationX=eas=>76+682*(eas-accelAxes[0])/(accelAxes[1]-accelAxes[0]);
+  for(const [i,[x,y]] of accelerationPlot.equilibria.entries()){
+   assert.ok(Math.abs(x-accelerationX(corsairMatch.rows[i===0?'a':'b'].level.easMph))<.01);
+   assert.equal(y,accelerationPlot.zero);
+  }
+  assert.ok(accelerationPlot.dots[0]>accelerationPlot.zero&&accelerationPlot.dots[1]<accelerationPlot.zero);
+  assert.equal(accelerationPlot.cursors.length,4);
+  assert.equal(new Set(accelerationPlot.cursors).size,1);
+  await select('bench-speed-unit','kph');
+  assert.deepEqual(await probe(),accelAt335);
+  assert.match(await evaluate('document.getElementById("bench-acceleration-at-speed").textContent'),/-0\.80 km\/h\/s.*\+0\.73 km\/h\/s/s);
+  await select('bench-speed-unit','mph');
+  await setProbe(accelAxes[0]);
+  assert.ok(Object.values((await probe()).aircraft).every(a=>a.accelerationMphPerSecond===null));
+  await setProbe(360);
+  assert.ok(Object.values((await probe()).aircraft).every(a=>a.accelerationMphPerSecond<0));
+  await setProbe(335);
+  checks.push('v4.8 level acceleration shares the four-plot EAS probe, crosses zero at each maximum level speed, converts units and stops at stall');
   await select('bench-turn-unit','g');
   assert.match(await evaluate('document.querySelector("#bench-turn-plot svg").getAttribute("aria-label")'),/Sustained turn \(G\)/);
   assert.match(await evaluate('document.querySelector("#bench-advantage-plot svg").getAttribute("aria-label")'),/advantage in G/);
@@ -566,6 +598,15 @@ async function run(){
   await lockButton();
   assert.equal(await locked(),false);
   checks.push('v4.6 pinned tooltip persists with clickable links and unit changes, then click, drag, Escape or button releases it');
+  await clickPlot(await graphPoint('acceleration',400,110));
+  assert.equal(await locked(),true);
+  const accelTip=await tipState('bench-acceleration-hover-readout');
+  assert.equal(accelTip.visible,true);
+  assert.match(accelTip.text,/mph\/s/);
+  assert.ok(await evaluate('document.querySelector("#bench-acceleration-hover-readout a").href.startsWith("https://")'));
+  await lockButton();
+  assert.equal(await locked(),false);
+  checks.push('v4.8 the acceleration plot pins the linked probe and exposes the model source links');
   const curveColors=()=>evaluate(`['a','b'].map(side=>document.querySelector('[data-bench-curve="'+side+'"] path').getAttribute('stroke'))`);
   assert.deepEqual(await curveColors(),['#83d3ff','#7ce5cc']);
   await select('bench-aircraft-a','fw190a4');
@@ -611,6 +652,8 @@ async function run(){
   await evaluate('(()=>{const c=document.getElementById("bench-extension");c.checked=false;c.dispatchEvent(new Event("change",{bubbles:true}));})()');
   bm=await benchmark();assert.equal(bm.rows.a.status,'source-power-unavailable');assert.equal(bm.rows.b.status,'source-power-unavailable');assert.equal(bm.rows.a.sustained,null);assert.ok((await evaluate('document.getElementById("bench-result-a").textContent')).includes('Power source does not cover'));
   assert.equal(await probe(),null);assert.equal(await evaluate('document.getElementById("bench-probe-speed").disabled'),true);
+  assert.match(await evaluate('document.getElementById("bench-acceleration-plot").textContent'),/Level acceleration is unavailable/);
+  assert.equal(await evaluate('document.getElementById("bench-acceleration-at-speed").childElementCount'),0);
   await evaluate('(()=>{const c=document.getElementById("bench-extension");c.checked=true;c.dispatchEvent(new Event("change",{bubbles:true}));})()');
   await select('bench-aircraft-a','p51b');assert.equal(await evaluate('document.getElementById("bench-injection-a").disabled'),true);assert.equal(await evaluate('document.getElementById("bench-injection-a").checked'),false);
   await select('bench-aircraft-a','spitfire_lfix_bs543');await select('bench-power-a','combat');await select('bench-fuel-a','0.5');await select('bench-altitude','30000');
