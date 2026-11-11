@@ -168,7 +168,7 @@ Secondary/derived route: Use MT215 table atactual2540RPM as a disclosedcondition
 
 ## Verification and delivery
 
-Local checks on the final data revision: **70/70 regression scripts passed; 367 frozen-import SHA256 checks passed; all 3,628 baseline numerical values unchanged; 50 interactive browser checks passed** in headless Edge. This validates ingestion, provenance safeguards, unchanged model outputs and research-explorer behavior. It does not prove historical flight accuracy.
+Local checks after integrating main commit756301f23730acaca1ac568d2148740224951196 (the independently developedv4.2 operating-settings update): **71/71 regression scripts passed; 367 frozen-import SHA256 checks passed; all 3,628 baseline numerical values unchanged; 53 interactive browser checks passed** in headless Edge. This validates ingestion, provenance safeguards, unchanged model outputs and research-explorer behavior. It does not prove historical flight accuracy.
 
 The separate pre-PR1 Git-history check cannot run in this local archive extraction because its historical commit objects are absent; the required CI checkout uses full history and runs that check before merge.
 

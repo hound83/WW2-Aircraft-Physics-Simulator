@@ -46,8 +46,12 @@ try{
  require('../validation/diagnostics/fighter_comparison.cjs').writeReport();
  require('../validation/diagnostics/v4_envelope.cjs').writeReport();
  require('../validation/diagnostics/energy_v41.cjs').writeReport();
+ require('../validation/diagnostics/operating_benchmark_v42.cjs').writeReport();
+ require('./write-v42-report.cjs');
  const md=[
  '# Current validation',
+ '',
+ '[v4.2 Normal/Combat benchmark, independent fuel/injection controls and altitude presets](V42_OPERATING_BENCHMARK.md).',
  '',
  '[v4.1 live energy correction and results](V41_ENERGY_RESULTS.md).',
  '',

@@ -1,5 +1,11 @@
 # Current decisions
 
+## v4.2 Normal/Combat, fuel, injection and co-altitude policy
+
+Michael approved two per-aircraft operating profiles, three internal-fuel choices (25/50/75%) and a separate fitted-injection switch. Each side can use a different configuration; altitude is always shared at 0/10000/20000/30000/35000/40000 ft. Normal means the recommended routine climb rating used consistently for all Normal metrics. Combat admits the selected higher rating and its finite allowance. Air-to-air loading retains fixed guns/full ammo and service equipment, excludes removable racks and external stores, and exposes reconstructed mass assumptions.
+
+Snapshots start independently at selected fuel and a fresh allowance. Full climbs carry fuel/fluid consumption and common high-power time throughout; wet and dry Combat cannot stack separate fresh allowances. Normal follows a qualified manual speed schedule. Combat reports the quickest tested contiguous higher-power window, not an assumed universal boost-first doctrine or a proven global minimum. The shared solver and original aerodynamic polars are retained; high-altitude engine extrapolation and pressure/RPM power conversion remain labelled engineering scenarios. See [results and scientific limits](V42_OPERATING_BENCHMARK.md) and [the source register](../references/benchmark-operating-profiles.json). This is an engineering research milestone, not a stable historical turn-model release.
+
 ## v4.1 installed-energy candidate
 
 Use source masses/power and bounded aggregate installation adjustments in the live seven-aircraft panel, preserving explicit v4.0 reference mode and frozen benchmark outputs. Accept five matched-source climb improvements and a separate-report P-47 transfer as a research milestone. Keep exposed same-report checks, alternate splits, point regressions, F-4 engineering candidates and unvalidated historical turn accuracy explicit. [Results and assumptions](V41_ENERGY_RESULTS.md).
