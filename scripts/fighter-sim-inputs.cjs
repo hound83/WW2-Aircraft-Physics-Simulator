@@ -131,7 +131,7 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
   const packs = new Set([...originalIds].map(id => observations.get(id).pack_id));
   const baseline = JSON.parse(read(baselinePath));
   return {
-    schema: 'ww2-fighter-sim-inputs/v1', version: '1.0.0', as_of: evidence.as_of,
+    schema: 'ww2-fighter-sim-inputs/v1', version: '1.0.1', as_of: evidence.as_of,
     scope: 'Historical inputs and conditional estimates for source-case lookups and evidence graphs.',
     originals: {
       catalog: 'research-catalog.json',

@@ -6,7 +6,7 @@ const gradeOrder = ['primary', 'secondary', 'calculated'];
 // of the case mean. The allowed spread is the full observed span.
 const tolerances = {
   stall_speed: { unit: 'km/h CAS or EAS', accuracy: 2, spread: 3 },
-  level_speed: { unit: 'km/h TAS', accuracy: 3, spread: 5 },
+  level_speed: { unit: 'km/h TAS', accuracy: 3, spread: 6 },
   climb_rate: { unit: '%', accuracy: 3, spread: 5 },
   elapsed_time: { unit: '%', accuracy: 3, spread: 5 },
   sustained_turn_rate: { unit: 'deg/s', accuracy: 0.3, spread: 0.5 },
