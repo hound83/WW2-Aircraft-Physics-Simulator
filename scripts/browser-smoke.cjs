@@ -12,7 +12,8 @@ async function run(){
   console.log('Smoke: opening isolated loopback test server');
   const html=fs.readFileSync(path.join(root,'dist/model.html'));record.htmlSha256=require('node:crypto').createHash('sha256').update(html).digest('hex');
   const {buildEvidence,renderExplorer}=require('./derive-fighter-evidence.cjs');
-  const evidenceHtml=renderExplorer(buildEvidence());
+  const inputs=JSON.parse(fs.readFileSync(path.join(root,'dist/fighter-sim-inputs.json'),'utf8'));
+  const evidenceHtml=renderExplorer(buildEvidence(),inputs);
   fs.writeFileSync(path.join(root,'dist/fighter-evidence-curves.html'),evidenceHtml);
   const pages={'/model.html':html,'/fighter-evidence-curves.html':evidenceHtml};
   server=http.createServer((req,res)=>{
@@ -596,22 +597,28 @@ async function run(){
   await send('Emulation.setDeviceMetricsOverride',{width:1280,height:980,deviceScaleFactor:1,mobile:false});
   await send('Page.navigate',{url:'http://127.0.0.1:'+server.address().port+'/fighter-evidence-curves.html'});
   await until(()=>evaluate('!!document.querySelector("#plot .curve-segment")'),'fighter evidence explorer startup');
-  const joined=await evaluate('(()=>{const a=[...document.querySelectorAll(".curve-segment")].filter(e=>e.dataset.series==="0"),i=a.findIndex(e=>e.dataset.style==="calculated"),p=a[i-1],n=a[i];return i>0&&p.dataset.style==="primary"&&p.getAttribute("x2")===n.getAttribute("x1")&&p.getAttribute("y2")===n.getAttribute("y1");})()');
+  const joined=await evaluate('(()=>{const a=[...document.querySelectorAll(".curve-segment")].filter(e=>e.dataset.series==="0"),i=a.findIndex(e=>e.dataset.style==="dotted"),p=a[i-1],n=a[i];return i>0&&p.dataset.style==="solid"&&p.getAttribute("x2")===n.getAttribute("x1")&&p.getAttribute("y2")===n.getAttribute("y1");})()');
   assert.equal(joined,true,'A-4 calculated tail meets the original trace at the exact plotted endpoint');
   assert.equal(await evaluate('document.querySelectorAll("#coverage tbody tr").length'),13);
+  assert.match(await evaluate('document.querySelector("#coverage tfoot").textContent'),/0\/156/);
   assert.ok(await evaluate('document.querySelectorAll("#plot polygon").length')>0);
   await evaluate('document.getElementById("bands").click()');
   assert.equal(await evaluate('document.querySelectorAll("#plot polygon").length'),0);
   await evaluate('document.getElementById("bands").click()');
   const evidenceImage=await send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(root,'validation/current/fighter-evidence-curves.png'),Buffer.from(evidenceImage.data,'base64'));
   await select('aircraft','bf109g2_db605a');
+  await select('curve','g2-known-setting-speed');
+  assert.ok(await evaluate('[...document.querySelectorAll("#plot .curve-segment")].some(e=>e.dataset.series==="0"&&e.dataset.style==="solid")'));
+  assert.ok(await evaluate('[...document.querySelectorAll("#plot .curve-segment")].some(e=>e.dataset.series==="2"&&e.dataset.style==="dotted")'));
+  assert.equal(await evaluate('(()=>{const a=[...document.querySelectorAll("#plot .curve-segment")],b=a.filter(e=>e.dataset.series==="1").at(-1),c=a.find(e=>e.dataset.series==="2");return +b.getAttribute("x2")<+c.getAttribute("x1");})()'),true);
+  assert.match(await evaluate('document.getElementById("value-cases").textContent'),/518\.75.*Combined mean/);
   await select('curve','g2-finnish-climb-rate');
   assert.match(await evaluate('document.getElementById("plot-title").textContent'),/MT-215 upper climb-rate/);
   assert.ok(await evaluate('document.querySelectorAll("#source-list a").length')>=2);
   assert.match(await evaluate('document.getElementById("checks").textContent'),/Outside tolerance/);
   await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
   assert.equal(await evaluate('document.documentElement.scrollWidth<=window.innerWidth'),true);
-  checks.push('Fighter evidence explorer joins solid and calculated curves, displays bounds and conflicts, and fits a 390px viewport');
+  checks.push('Fighter evidence explorer renders Gold coverage, solid secondary evidence, open gaps, joined estimates and ranges at desktop and mobile widths');
   assert.equal(errors.length,0,'Browser JavaScript exceptions');record.status='passed';
   for(const file of ['dist/build.json','validation/current/build.json']){const p=path.join(root,file),info=JSON.parse(fs.readFileSync(p,'utf8'));assert.equal(info.htmlSha256,record.htmlSha256);info.browserInteractionTested=true;fs.writeFileSync(p,JSON.stringify(info,null,2)+'\n');}
   const doc=path.join(root,'docs/CURRENT_VALIDATION.md');fs.writeFileSync(doc,fs.readFileSync(doc,'utf8').replace('| Interactive browser tests | See browser-smoke.json; run separately on the current build |','| Interactive browser tests | Passed '+checks.length+' headless checks; see browser-smoke.json |'));

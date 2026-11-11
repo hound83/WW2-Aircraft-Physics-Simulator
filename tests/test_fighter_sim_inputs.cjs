@@ -1,0 +1,123 @@
+'use strict';
+
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const { buildCatalog } = require('../scripts/research-layer.cjs');
+const { resolveCase } = require('../scripts/fighter-value-selection.cjs');
+const { buildSimInputs, encodeSimInputs, releasePath } = require('../scripts/fighter-sim-inputs.cjs');
+const derived = require('../references/analysis/fighter-derived-evidence-2026-11-11.json');
+const baseline = require('../references/aircraft-readiness-german-archive-2026-11-11.json');
+
+const catalog = buildCatalog();
+const pack = buildSimInputs(catalog);
+const committed = fs.readFileSync(path.join(__dirname, '..', releasePath), 'utf8');
+assert.equal(encodeSimInputs(pack), committed, 'The release JSON must reproduce from the retained original data');
+const observations = new Map(catalog.observations.map(row => [row.id, row]));
+for (const [id, ref] of Object.entries(pack.observations)) {
+  const original = observations.get(id);
+  assert.equal(original.source_id, ref.source);
+  assert.equal(original.source_location, ref.locator);
+  assert.ok(pack.sources[ref.source]);
+}
+
+const byId = id => pack.cases.find(row => row.id === id);
+const production = byId('g2-wnf-250m-production-vnk');
+assert.equal(production.preferred.value, 518.75);
+assert.equal(production.preferred.grade, 'primary');
+assert.equal(production.preferred.method, 'mean');
+assert.equal(production.preferred.observation_ids.length, 4);
+assert.deepEqual(production.preferred.observed_span, [518, 520]);
+assert.deepEqual(production.preferred.range, [511, 527]);
+assert.equal(production.conditions.reported_absolute_tolerance_kmh, 7);
+assert.equal(byId('g2-wnf-250m-production-vn').preferred.value, 517.25);
+const treated = byId('g2-wnf-250m-treated-vnk');
+assert.equal(treated.status, 'conflict');
+assert.equal(treated.preferred, null);
+assert.equal(treated.candidates.find(row => row.method === 'reported-summary').value, 527);
+assert.equal(treated.by_grade.primary.candidate_ids.length, 4, 'The repeated flight is retained and only counted once');
+assert.deepEqual(treated.by_grade.primary.observed_span, [520, 529]);
+assert.equal(byId('g2-mt215-140m-speed').preferred.grade, 'secondary');
+assert.equal(byId('a4-783-open-1000-10000m-time').preferred.grade, 'calculated');
+assert.equal(byId('f4u4-80765-clean-1g').preferred.range, null);
+const finnish = byId('g2-mt215-10000m-climb');
+assert.equal(finnish.preferred.value, 5.3);
+assert.equal(finnish.candidates[1].value, 2.1);
+assert.equal(finnish.candidates[1].use, 'comparison-only');
+
+const candidates = (grade, values) => values.map((value, i) => ({
+  id: grade + i, case_id: 'exact', grade, value, method: grade === 'calculated' ? 'estimate' : 'original',
+  use: 'eligible', sample_id: grade + i, combine_group: grade + '-condition',
+  range: [value - 1, value + 1], lineage: [grade + '-trial'], accuracy_reviewed: true, observation_ids: [grade + i],
+}));
+const resolve = (rows, options) => resolveCase({ id: 'exact', metric: 'level_speed', unit: 'km/h TAS', candidates: rows, ...options });
+const primary = candidates('primary', [450, 455]);
+const secondary = candidates('secondary', [451, 452]);
+const calculated = candidates('calculated', [451, 453]);
+const all = resolve([...primary, ...secondary, ...calculated]);
+assert.equal(all.preferred.value, 452.5);
+assert.equal(all.preferred.grade, 'primary');
+assert.equal(all.by_grade.secondary.method, 'mean');
+assert.equal(all.by_grade.calculated.method, 'mean');
+assert.equal(all.gold, false, 'Tight replicate spread alone cannot certify absolute accuracy');
+assert.equal(resolve([primary[0], ...secondary]).preferred.method, 'original', 'One primary outranks a secondary mean');
+assert.equal(resolve([...secondary, ...calculated]).preferred.grade, 'secondary');
+assert.equal(resolve(calculated).preferred.method, 'mean');
+assert.equal(resolve([calculated[0]]).preferred.method, 'estimate');
+assert.equal(resolve([{ ...primary[0], case_id: 'different-rating' }, ...secondary]).preferred.grade, 'secondary');
+assert.equal(resolve(candidates('primary', [450, 454, 458])).status, 'conflict');
+assert.equal(resolve([...candidates('primary', [400, 500]), ...secondary]).preferred, null);
+assert.equal(resolve(primary, { unit: 'mph TAS' }).status, 'conflict', 'A five-mph span exceeds five km/h');
+assert.equal(resolve(candidates('primary', [90, 91]), { metric: 'stall_speed', unit: 'mph IAS' }).status, 'conflict');
+const duplicate = { ...primary[0], id: 'same-reading-in-reprint' };
+assert.deepEqual(resolve([...primary, duplicate]).preferred.candidate_ids, ['primary0', 'primary1']);
+const priorMean = { ...primary[0], id: 'old-mean', value: 452.5, method: 'mean' };
+assert.equal(resolve([...primary, priorMean]).preferred.value, 452.5);
+assert.equal(resolve([{ ...primary[0], method: 'reported-summary' }]).preferred.method, 'reported-summary');
+
+const triple = [...candidates('primary', [451]), ...candidates('secondary', [452]), ...candidates('calculated', [453])];
+assert.equal(resolve(triple).gold, true);
+assert.equal(resolve([triple[0], { ...triple[1], lineage: triple[0].lineage }, triple[2]]).gold, false);
+assert.equal(resolve([triple[0], triple[1], { ...triple[2], lineage: null }]).gold, false);
+assert.equal(resolve([triple[0], triple[1], { ...triple[2], range: null }]).gold, false);
+assert.equal(resolve([...candidates('primary', [450]), ...candidates('secondary', [453]), ...candidates('calculated', [456])]).gold, false);
+
+const series = id => pack.charts.find(row => row.id === id).series;
+const a4 = series('a4-timed-cooling-climb')[0];
+assert.equal(a4.segments.at(-2).to, a4.segments.at(-1).from);
+assert.equal(a4.points[a4.segments.at(-1).from].x, 9000);
+assert.equal(a4.segments.at(-2).style, 'solid');
+assert.equal(a4.segments.at(-1).style, 'dotted');
+assert.ok(a4.segments.at(-1).band);
+const speed = series('g2-known-setting-speed');
+assert.equal(speed[0].points[0].grade, 'secondary');
+assert.ok(speed[0].segments.every(segment => segment.style === 'solid' && segment.band));
+assert.ok(speed[2].segments.every(segment => segment.style === 'dotted'));
+assert.deepEqual([speed[1].points.at(-1).x, speed[2].points[0].x], [6420, 7110]);
+const disagreement = series('g2-finnish-climb-rate')[1];
+assert.equal(disagreement.role, 'comparison');
+assert.ok(disagreement.segments.every(segment => segment.style === 'dotted' && !segment.band));
+
+for (const [i, chart] of pack.charts.entries()) for (const [j, branch] of chart.series.entries()) {
+  const legacy = derived.charts[i].series[j];
+  assert.deepEqual(branch.observations, legacy.observations);
+  for (const [k, point] of branch.points.entries()) {
+    const original = legacy.points[k];
+    assert.deepEqual([point.x, point.value], original.slice(0, 2));
+    if (point.range) assert.deepEqual(point.range, original.slice(2, 4));
+  }
+  for (const segment of branch.segments) {
+    assert.equal(segment.to, segment.from + 1);
+    if (segment.band) assert.ok(branch.points[segment.from].range && branch.points[segment.to].range);
+  }
+}
+assert.equal(pack.coverage.rows.length, 13);
+assert.equal(pack.coverage.fleet.planned_count, 156);
+assert.equal(pack.coverage.fleet.gold_count, 0);
+for (const [i, row] of pack.coverage.rows.entries()) {
+  assert.equal(row.primary_percent, baseline.variants[i].primary_percent);
+  assert.equal(row.with_calculations_percent + row.legacy_context_points + row.overlapping_legacy_points, row.previous_total_percent);
+  assert.equal(row.benchmarks.length, row.planned_count);
+}
+assert.equal(pack.coverage.rows.find(row => row.id === 'p40f_4113635').overlapping_legacy_points, 3);
+console.log('PASS fighter sim inputs: reproducible release, preserved originals, grade selection, Gold, graph ranges and coverage reconciliation');

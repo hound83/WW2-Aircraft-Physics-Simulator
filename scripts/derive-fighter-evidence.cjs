@@ -235,9 +235,11 @@ function encode(data) {
   return '{\n' + sections.join(',\n') + '\n}\n';
 }
 
-function renderExplorer(data) {
+function renderExplorer(data, inputs = require('./fighter-sim-inputs.cjs').buildSimInputs(undefined, data)) {
   const template = load('scripts/fighter-evidence-view.html');
-  const embedded = JSON.stringify(data).replace(/</g, '\\u003c');
+  const { charts, cases, coverage, observations, sources } = inputs;
+  const { checks, tables } = data;
+  const embedded = JSON.stringify({ charts, cases, coverage, observations, sources, checks, tables }).replace(/</g, '\\u003c');
   return template.replace('/* EVIDENCE_DATA */ null', () => embedded);
 }
 

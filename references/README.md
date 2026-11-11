@@ -1,5 +1,7 @@
 # Research and imported evidence
 
+**Fighter sim inputs v1.0.0.** The [versioned data pack](analysis/fighter-sim-inputs-v1.json) provides preferred source-case values, original observation links, curve styles, ranges and Gold coverage for thirteen variants. Build output includes the data pack and the full research catalog. [Coverage changes and simulator handoff](../docs/research/WW2_FIGHTER_SIM_INPUTS_V1.md)
+
 **Calculated evidence for 13 fighters.** The [coverage and conflict review](../docs/research/WW2_FIGHTER_CALCULATED_EVIDENCE_2026-11-11.md) and [machine-readable evidence pack](analysis/fighter-derived-evidence-2026-11-11.json) include a third coverage column, bounded flight calculations and source checks. The standalone curves ship in the Physics regression artifact. The historical research catalog also carries the original Finnish upper-climb readings and corrected Corsair mph conversions.
 
 The [v4.4 turn evidence](v44-turn-evidence.json) records the NACA chart readings, fit and check sections, bounded transfer, sensitivity inputs and original report links. [Frozen operating comparison](analysis/v44-operating-before.json).
