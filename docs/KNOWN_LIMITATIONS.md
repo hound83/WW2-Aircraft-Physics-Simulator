@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.8 acceleration evidence
+
+Level acceleration inherits the installed-power, propeller and drag assumptions of the selected state. Near maximum level speed, small differences in those inputs can change its sign. Historical validation requires matched speed-time observations, and a timed run also needs to track changing speed and rating allowance. [Acceleration method and comparison](V48_LEVEL_ACCELERATION.md).
+
 ## v4.7 source and comparison scope
 
 The dashed high-speed continuation shows remaining sustained capability at the selected rating and load. GOLD* records central agreement with stated source or test-condition qualifications. Same-report elapsed time and rate integration can share trials. The current exact stall and powered-turn evidence gaps still constrain historical rankings. [Source grades and four-aircraft regression](V47_BENCHMARK_AND_GOLD.md).

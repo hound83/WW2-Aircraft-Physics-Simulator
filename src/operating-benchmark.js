@@ -5,7 +5,7 @@
   node?require('./turn-performance.js'):root.TurnPerformance);
  if(node)module.exports=api;else root.OperatingBenchmark=api;
 })(globalThis,function(Energy,Turn){
- const MPH=.44704,HP=745.6998716;
+ const MPH=.44704,HP=745.6998716,G=9.80665;
  const interpolate=(rows,x,key)=>{if(!rows?.length||x<rows[0][0]||x>rows.at(-1)[0])return null;const i=rows.findIndex(r=>r[0]>=x);if(rows[i][0]===x)return rows[i][key];const a=rows[i-1],b=rows[i];return a[key]+(b[key]-a[key])*(x-a[0])/(b[0]-a[0]);};
  const nodeAt=(nodes,x)=>{const a=nodes.map(r=>[r.altFt,r]);const i=a.findIndex(r=>r[0]>=x);if(i<0||x<a[0][0])return null;if(a[i][0]===x)return a[i][1];const lo=a[i-1],hi=a[i],f=(x-lo[0])/(hi[0]-lo[0]);return Object.fromEntries(Object.keys(lo[1]).map(k=>[k,typeof lo[1][k]==='number'&&typeof hi[1][k]==='number'?lo[1][k]+f*(hi[1][k]-lo[1][k]):lo[1][k]]));};
  function fittedInjection(model,spec){
@@ -120,6 +120,13 @@
   return {...r,benchmark:{phase:phase.key??s.mode,label:phase.label,estimated:p.estimated,sourceMaxFt:p.sourceMaxFt,
    rpm:phase.rpm,map:phase.map,mapUnit:spec.mapUnit,cooling:installed?'report-conditioned':open?'climb-estimate':'clean',
    ...(maneuverLift?{maneuverLift}:{})}};
+ }
+ function levelAccelerationMphPerSecond(flight){
+  const {status,tasMph,power}=flight;
+  if(status!=='modelled'||!Number.isFinite(tasMph)||tasMph<=0||!Number.isFinite(power?.psMps))return null;
+  // Specific excess power is energy rate per weight. At fixed altitude it goes into speed.
+  const tasMps=tasMph*MPH;
+  return G*power.psMps/tasMps/MPH;
  }
  function summary(r,eas,kind){
   const g=kind==='instant'?r.limits.nInst:r.limits.nSust,rate=kind==='instant'?r.limits.instantDegSec:r.limits.sustDegSec;
@@ -251,5 +258,5 @@
   for(const h of [best.boostStartFt-500,best.boostStartFt+500].filter(h=>h>=from&&h<to)){const r=replay(h);candidates.push(r);if(r.status==='reached'&&r.seconds<best.seconds)best=r;}
   return {...best,candidateWindows:candidates.length,frontLoadedSeconds:candidates[0].seconds,policy:'Quickest tested contiguous boost window, 1000-ft grid plus local 500-ft refinement; shared-solver midpoint mass replay. Not a proof of global optimal control; no thermal or speed-change acceleration model.'};
  }
- return Object.freeze({validateSettings,fittedInjection,load,phaseFor,nativePower,evaluate,bestClimb,metrics,climb,interpolate});
+ return Object.freeze({validateSettings,fittedInjection,load,phaseFor,nativePower,evaluate,levelAccelerationMphPerSecond,bestClimb,metrics,climb,interpolate});
 });
