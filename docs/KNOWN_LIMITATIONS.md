@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.9 timed run evidence
+
+The timed acceleration replay uses steady level-flight states at the selected altitude. Its elapsed times depend on the documented power schedule and estimated installed power and drag. Matched historical speed-time and powered-turn records remain open. [Historical checks](V49_TIMED_MATCHUPS.md#historical-checks).
+
 ## v4.8 acceleration evidence
 
 Level acceleration inherits the installed-power, propeller and drag assumptions of the selected state. Near maximum level speed, small differences in those inputs can change its sign. Historical validation requires matched speed-time observations, and a timed run also needs to track changing speed and rating allowance. [Acceleration method and comparison](V48_LEVEL_ACCELERATION.md).

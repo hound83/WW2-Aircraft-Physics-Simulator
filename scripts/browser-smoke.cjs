@@ -372,7 +372,28 @@ async function run(){
   assert.match(await evaluate('document.querySelector("#bench-climb-plot svg").getAttribute("aria-label")'),/15,000 ft/);
   assert.match(await evaluate('document.querySelector("#bench-acceleration-plot svg").getAttribute("aria-label")'),/Level acceleration.*15,000 ft/);
   await select('bench-altitude','10000');
-  checks.push('v4.7 chart altitude slider synchronizes plots and aircraft at 5,000 ft steps independently of timed climb');
+  await select('bench-altitude-acceleration','25000');
+  assert.equal((await benchmark()).rows.a.altFt,25000);
+  assert.deepEqual(await evaluate('[...document.querySelectorAll("[data-bench-altitude]")].map(e=>[+e.value,getComputedStyle(e).writingMode])'),Array.from({length:4},()=>[25000,'vertical-lr']));
+  await select('bench-altitude','10000');
+  assert.equal(await evaluate('document.getElementById("bench-climb-run").open'),true);
+  await evaluate('document.getElementById("bench-acceleration-calculate").click()');
+  const accelRun=await evaluate('OperatingBenchmarkUI.accelerations');
+  assert.equal(accelRun.a.altFt,10000);assert.equal(accelRun.b.reachedEasMph,300);
+  assert.ok(Math.abs(accelRun.a.seconds-49.53)<.02&&Math.abs(accelRun.b.seconds-49.34)<.02);
+  assert.match(await evaluate('document.getElementById("bench-acceleration-result").textContent'),/Effectively tied.*49\.53 s.*49\.34 s/s);
+  assert.equal(await evaluate('document.querySelectorAll("#bench-acceleration-trace [data-bench-time-trace]").length'),2);
+  assert.ok(await evaluate('document.querySelector("#bench-acceleration-plot [data-bench-acceleration-curve=a] [data-bench-style=solid]")!==null'));
+  await select('bench-speed-unit','kph');
+  assert.equal(await evaluate('document.getElementById("bench-acceleration-to").value'),'482.8');
+  assert.equal((await evaluate('OperatingBenchmarkUI.accelerations')).a.seconds,accelRun.a.seconds);
+  await select('bench-speed-unit','mph');
+  await select('bench-altitude-climb','15000');
+  assert.equal(await evaluate('OperatingBenchmarkUI.accelerations'),null);
+  await select('bench-altitude','10000');
+  assert.deepEqual(await evaluate('[...document.querySelectorAll("#bench-altitude-overview [data-altitude=\\"10000\\"] [data-lead]")].map(e=>e.dataset.lead)'),['b','b','a']);
+  assert.equal(await evaluate('document.querySelector("#bench-altitude-overview [data-altitude=\\"40000\\"] td:nth-child(3) [data-lead]").dataset.lead'),'tie');
+  checks.push('v4.9 synchronized vertical sliders, timed acceleration traces and practical tie margins');
   const curveEnds=()=>evaluate(`['a','b'].map(side=>{
     const plot=document.getElementById('bench-turn-plot');
     const paths=[...plot.querySelectorAll('[data-bench-curve="'+side+'"] path')];
@@ -395,7 +416,7 @@ async function run(){
   }
   assert.equal(await evaluate('document.querySelectorAll("#bench-turn-plot [data-bench-best-turn]").length'),2);
   assert.equal(await evaluate('document.querySelectorAll("#bench-turn-plot [data-bench-stall],#bench-turn-plot [data-bench-level]").length'),0);
-  assert.match(await evaluate('document.getElementById("bench-turn-plot").nextElementSibling.textContent'),/^Squares mark/);
+  assert.match(await evaluate('document.getElementById("bench-plot-note").textContent'),/^Squares mark/);
   assert.ok(await evaluate('document.querySelectorAll("#bench-turn-plot [data-bench-tested-range]").length>0'));
   const joinedStyles=kind=>evaluate(`(()=>{
     const paths=[...document.querySelectorAll('${kind} path')];
@@ -404,12 +425,15 @@ async function run(){
       return Math.hypot(last.x-first.x,last.y-first.y)<.03;
     })};
   })()`);
-  for(const selector of ['[data-bench-curve="a"]','[data-bench-climb-curve="b"]']){
+  for(const selector of ['[data-bench-curve="a"]']){
     const result=await joinedStyles(selector);
     assert.ok(result.styles.includes('solid')&&result.styles.includes('dotted'));
     assert.equal(result.joined,true,'Evidence styles meet at identical speeds and rates');
   }
-  checks.push('v4.6 default 3 degree per second endpoints, connected table-supported paths and square-only curve markers');
+  assert.deepEqual((await joinedStyles('[data-bench-climb-curve="b"]')).styles,['dotted']);
+  assert.equal(await evaluate('document.querySelector("#bench-climb-plot [data-bench-measured-climb=b] title").textContent.includes("4,280 ft/min")'),true);
+  checks.push('v4.9 primary flight observations stay visible while a boost-derived input renders dotted');
+  checks.push('v4.6 default 3 degree per second endpoints and connected table-supported paths');
   await select('bench-turn-focus','full');
   const envelope=await curveEnds();
   const easToX=eas=>76+(758-76)*(eas-focusAxes[0][0])/(focusAxes[0][1]-focusAxes[0][0]);
@@ -425,12 +449,12 @@ async function run(){
   const probe=()=>evaluate('OperatingBenchmarkUI.probe');
   const setProbe=eas=>evaluate(`(()=>{const s=document.getElementById('bench-probe-speed');s.value='${eas}';s.dispatchEvent(new Event('input',{bubbles:true}));})()`);
   await setProbe(150);
-  assert.match(await evaluate('document.getElementById("bench-advantage-readout").textContent'),/Spitfire.*\+6\.5°\/s.*leads across tested inputs/s);
+  assert.match(await evaluate('document.getElementById("bench-advantage-readout").textContent'),/Spitfire.*\+6\.5°\/s.*has a clear lead across tested inputs/s);
   assert.ok(await evaluate('document.querySelectorAll("#bench-advantage-plot [data-turn-range]").length>0'));
   assert.equal(await evaluate('document.querySelectorAll("#bench-turn-evidence [data-lift-check]").length'),5);
   assert.match(await evaluate('document.getElementById("bench-turn-limits").textContent'),/Lift.*Available power.*hp for level flight.*TN 1044|TN 1044.*hp for level flight/s);
   await setProbe(200);
-  assert.match(await evaluate('document.getElementById("bench-advantage-readout").textContent'),/P-51B.*\+0\.3°\/s.*lead can change/s);
+  assert.match(await evaluate('document.getElementById("bench-advantage-readout").textContent'),/Effectively tied.*Outcome depends on tested inputs/s);
   const turnCursors=await evaluate('[...document.querySelectorAll("#bench-turn-plot .bench-crosshair,#bench-climb-plot .bench-crosshair,[data-advantage-crosshair]")].map(e=>e.getAttribute("x1"))');
   assert.equal(turnCursors.length,3);
   assert.equal(new Set(turnCursors).size,1);
@@ -660,6 +684,9 @@ async function run(){
   await select('bench-climb-from','5000');await select('bench-climb-to','30000');
   await evaluate('document.getElementById("bench-climb-calculate").parentElement.parentElement.open=true;document.getElementById("bench-climb-calculate").click()');bm=await benchmark();assert.equal(bm.climbs.a.status,'reached');assert.ok(bm.climbs.a.combatSeconds<=300+1e-6);assert.ok(bm.climbs.a.schedule.some(p=>p.phase==='normal'));assert.equal(bm.climbs.b.combatSeconds,0);assert.ok(bm.climbs.a.fuelUsedLb>0);
   assert.match(await evaluate('document.getElementById("bench-climb-result").textContent'),/5,000 ft to 30,000 ft/);
+  assert.equal(await evaluate('document.querySelectorAll("#bench-climb-trace [data-bench-time-trace]").length'),2);
+  assert.ok(bm.climbs.a.trace.length>10);
+  checks.push('v4.9 timed climb opens by default and graphs the actual integration trace');
   await select('bench-altitude','15000');assert.deepEqual((await benchmark()).climbs,bm.climbs,'Changing comparison altitude keeps the separate climb result');
   await select('bench-climb-to','5000');assert.equal((await benchmark()).climbs,null);
   await evaluate('document.getElementById("bench-climb-calculate").click()');

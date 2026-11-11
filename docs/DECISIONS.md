@@ -1,5 +1,9 @@
 # Current decisions
 
+## v4.9 equal-start comparisons
+
+Compare timed acceleration at a shared altitude and EAS interval, accounting for rating, fuel and injection use. Use the established 0.5°/s, 5%, and 6 km/h TAS boundaries for practical matchup ties. Line styles follow operating-input provenance and measured climb points identify original report conditions. [Timed runs and comparison rules](V49_TIMED_MATCHUPS.md).
+
 ## v4.8 level acceleration
 
 Plot instantaneous change in true airspeed per second at the selected altitude and 1 G configuration. Use the solver's specific excess power, the shared EAS probe and signed curves through the maximum-level-speed equilibrium. [Calculation and validation](V48_LEVEL_ACCELERATION.md).

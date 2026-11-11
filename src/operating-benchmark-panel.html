@@ -96,10 +96,13 @@
  @media(max-width:740px){#operating-benchmark .bench-sides{grid-template-columns:1fr}#operating-benchmark .bench-numbers{grid-template-columns:repeat(2,minmax(0,1fr))}#operating-benchmark .bench-toolbar{align-items:stretch}}
  @media(max-width:740px){#operating-benchmark .bench-probe-cards{grid-template-columns:1fr}#operating-benchmark .bench-chart text{font-size:23px}#operating-benchmark .bench-probe-slider output{text-align:left}}
  #operating-benchmark .bench-chart-controls{align-items:end}
- #operating-benchmark .bench-height{flex:1;min-width:min(14rem,100%)}
- #operating-benchmark .bench-height input{width:100%}
- #operating-benchmark .bench-height output{color:#eef5fb;font-weight:650}
  #operating-benchmark #bench-source-grade-results article{min-width:0}
+
+ #operating-benchmark .bench-plot-row{display:grid;grid-template-columns:minmax(3.25rem,4.65rem) minmax(0,1fr);gap:.45rem;align-items:center}
+ #operating-benchmark .bench-plot-height{align-items:center;font-size:.77rem;text-align:center;min-width:0;gap:.25rem}
+ #operating-benchmark .bench-plot-height output{font-weight:650;color:#eef5fb}
+ #operating-benchmark .bench-plot-height input{writing-mode:vertical-lr;direction:rtl;width:1.5rem;height:clamp(5rem,12vw,10rem);margin:0}
+ #operating-benchmark .bench-time-verdict{margin:.7rem 0}
  </style>
  <h2>Compare flight performance</h2>
  <p>Air-to-air loads. Choose power, fuel and injection for each aircraft independently. Both aircraft always share the same altitude.</p>
@@ -116,10 +119,10 @@
  <p id="bench-matchup" aria-live="polite"></p>
  <p class="bench-note">Approximate WWII service windows. Contemporaries filters by years of main service.</p>
  <p id="bench-comparison" aria-live="polite"></p>
- <div class="bench-toolbar bench-chart-controls"><label class="bench-height">Comparison altitude <output id="bench-altitude-value" for="bench-altitude">10,000 ft</output><input id="bench-altitude" type="range" min="0" max="40000" step="5000" value="10000" aria-valuetext="10,000 ft"></label><label>Turn units<select id="bench-turn-unit"><option value="rate">Degrees per second</option><option value="g">Load factor (G)</option></select></label><label>Turn curves<select id="bench-turn-focus"><option value="3" selected>Show 3°/s and above</option><option value="full">Full envelope</option></select></label><p id="bench-range-status" class="bench-note"></p></div>
+ <div class="bench-toolbar bench-chart-controls"><label>Turn units<select id="bench-turn-unit"><option value="rate">Degrees per second</option><option value="g">Load factor (G)</option></select></label><label>Turn curves<select id="bench-turn-focus"><option value="3" selected>Show 3°/s and above</option><option value="full">Full envelope</option></select></label><p id="bench-range-status" class="bench-note"></p></div>
  <div id="bench-curve-names" class="bench-curve-key"></div>
- <p class="bench-curve-key bench-note"><span><i class="bench-key-solid"></i> Table-supported calculation</span><span><i class="bench-key-dotted"></i> Provisional calculation</span><span><i class="bench-key-band"></i> Input or report range</span></p>
- <div id="bench-turn-plot" class="bench-chart"></div>
+ <p class="bench-curve-key bench-note"><span><i class="bench-key-solid"></i> Primary or combined secondary input</span><span><i class="bench-key-dotted"></i> Calculated or provisional input</span><span><i class="bench-key-band"></i> Input or report range</span></p>
+ <div class="bench-plot-row"><label class="bench-plot-height">Altitude<output data-bench-altitude-value id="bench-altitude-value">10,000 ft</output><input id="bench-altitude" data-bench-altitude type="range" min="0" max="40000" step="5000" value="10000" aria-valuetext="10,000 ft"></label><div id="bench-turn-plot" class="bench-chart"></div></div>
  <p id="bench-plot-note" class="bench-note"></p>
  <div class="bench-probe-slider">
   <label>Speed to compare<input id="bench-probe-speed" type="range" aria-describedby="bench-probe-help"></label>
@@ -132,8 +135,8 @@
  <section class="bench-advantage" aria-labelledby="bench-advantage-title">
   <h3 id="bench-advantage-title">Sustained-turn advantage</h3>
   <div id="bench-advantage-readout" class="bench-advantage-readout"></div>
-  <div id="bench-advantage-plot" class="bench-chart"></div>
-  <p id="bench-advantage-key" class="bench-note bench-evidence-legend"><span>White line · Modeled difference</span><span>Shading · Tested range</span><span>Aircraft colour · Same aircraft leads across inputs</span><span>Grey strip · Lead depends on inputs</span></p>
+  <div class="bench-plot-row"><label class="bench-plot-height">Altitude<output data-bench-altitude-value>10,000 ft</output><input id="bench-altitude-advantage" data-bench-altitude type="range" min="0" max="40000" step="5000" value="10000" aria-valuetext="10,000 ft"></label><div id="bench-advantage-plot" class="bench-chart"></div></div>
+  <p id="bench-advantage-key" class="bench-note bench-evidence-legend"><span>White line · Modeled difference</span><span>Shading · Tested range</span><span>Aircraft colour · Clear lead across tested inputs</span><span>Grey strip · Outcome depends on inputs</span></p>
   <p id="bench-solo-key" class="bench-note" hidden>Colored dashed line · only one aircraft can sustain flight at this speed. It shows remaining turn rate, or load above 1 G in G view.</p>
   <details><summary>What limits each aircraft at this speed?</summary>
    <p class="bench-note">The lowest of lift, power and the model’s G cap sets the turn. Extra drag in a turn uses power above what the aircraft needs for level flight.</p>
@@ -141,16 +144,23 @@
   </details>
   <details><summary>Flight-test evidence and sensitivity assumptions</summary><div id="bench-turn-evidence"></div></details>
  </section>
- <div id="bench-climb-plot" class="bench-chart"></div>
+ <div class="bench-plot-row"><label class="bench-plot-height">Altitude<output data-bench-altitude-value>10,000 ft</output><input id="bench-altitude-climb" data-bench-altitude type="range" min="0" max="40000" step="5000" value="10000" aria-valuetext="10,000 ft"></label><div id="bench-climb-plot" class="bench-chart"></div></div>
  <div id="bench-climb-at-speed" class="bench-probe-cards"></div>
- <p class="bench-note">The climb chart uses straight flight with climb cooling.</p>
- <div id="bench-acceleration-plot" class="bench-chart"></div>
+ <p class="bench-note">The climb chart uses straight flight with climb cooling. Open markers show original flight-test points at their report conditions.</p>
+ <div class="bench-plot-row"><label class="bench-plot-height">Altitude<output data-bench-altitude-value>10,000 ft</output><input id="bench-altitude-acceleration" data-bench-altitude type="range" min="0" max="40000" step="5000" value="10000" aria-valuetext="10,000 ft"></label><div id="bench-acceleration-plot" class="bench-chart"></div></div>
  <div id="bench-acceleration-at-speed" class="bench-probe-cards"></div>
  <p class="bench-note">Modeled change in true airspeed per second in straight, level flight. Each ring marks maximum level speed. Negative values indicate deceleration.</p>
  <h3>Performance across altitude</h3>
- <p class="bench-note">Select a row to compare both aircraft at that altitude. Δ is aircraft 1 minus aircraft 2. * includes estimated power.</p>
+ <p id="bench-tie-margins" class="bench-note"></p>
  <div id="bench-altitude-overview" class="bench-table-scroll"></div>
- <details><summary>Time to climb</summary><p>Start already airborne at the chosen start height. Normal follows the recorded routine climb-speed schedule. Combat searches where a single permitted higher-power window saves the most time, then replays fuel and injection use. No allowance resets at intermediate altitudes.</p><div class="bench-toolbar"><label>Start altitude<select id="bench-climb-from"></select></label><label>Target altitude<select id="bench-climb-to"></select></label><button id="bench-climb-calculate" type="button">Calculate both climbs</button></div><div id="bench-climb-result" aria-live="polite">Calculate a climb with the current settings.</div><p class="bench-note">Climb fuel flow uses a shared illustrative 0.50 lb/shaft-hp-hour. The optimized window is the quickest tested schedule under this model, not a reconstruction of a pilot's tactical choices. Acceleration during speed changes and a dynamic thermal model are not included.</p></details>
+ <details open id="bench-climb-run"><summary>Time to climb</summary><p>Start already airborne at the chosen start height. Normal follows the recorded routine climb-speed schedule. Combat searches where a single permitted higher-power window saves the most time, then replays fuel and injection use. No allowance resets at intermediate altitudes.</p><div class="bench-toolbar"><label>Start altitude<select id="bench-climb-from"></select></label><label>Target altitude<select id="bench-climb-to"></select></label><button id="bench-climb-calculate" type="button">Calculate both climbs</button></div><div id="bench-climb-trace" class="bench-chart"></div><div id="bench-climb-result" aria-live="polite">Calculate a climb with the current settings.</div><p class="bench-note">Climb fuel flow uses a shared illustrative 0.50 lb/shaft-hp-hour. The optimized window is the quickest tested schedule under this model, not a reconstruction of a pilot's tactical choices. Acceleration during speed changes and a dynamic thermal model are not included.</p></details>
+
+ <details open id="bench-acceleration-run"><summary>Time to accelerate</summary>
+  <p class="bench-note">Straight, level flight from the same starting speed. Combat power starts immediately and returns to the next available rating when its allowance runs out.</p>
+  <p class="bench-note"><span id="bench-acceleration-altitude"></span> · <span id="bench-acceleration-unit">mph EAS</span></p>
+  <div class="bench-toolbar"><label>Start airspeed<input id="bench-acceleration-from" type="number" min="1" step="any" value="180"></label><label>Target airspeed<input id="bench-acceleration-to" type="number" min="1" step="any" value="300"></label><button id="bench-acceleration-calculate" type="button">Calculate both runs</button></div>
+  <div id="bench-acceleration-trace" class="bench-chart"></div><div id="bench-acceleration-result" aria-live="polite"></div>
+ </details>
  <details id="bench-source-grades"><summary>Historical source agreement (GOLD)</summary><div id="bench-source-grade-results"></div></details>
  <details id="bench-flight-checks"><summary>Flight-test checks for this model update</summary><div id="bench-flight-check-results"></div></details>
  <details><summary>Aircraft settings, load assumptions and sources</summary><div id="bench-sources"></div></details>

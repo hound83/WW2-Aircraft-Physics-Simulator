@@ -19,15 +19,16 @@ function powerTables(id,model,sources){
  return (turnPowerSources[id]??[]).flatMap(({phase,rating,source})=>{
   const report=sources[source];
   const link={label:'Primary power source',title:report.title,url:report.url};
+  const input={grade:'primary',method:'table'};
   const inlet=model.ac.ratedInlet?.[rating];
   if(inlet){
    // The Corsair's high-blower transfer has a documented level-speed residual.
-   return inlet.gears.filter(g=>g.gear!=='high').map(({gear,minFt,maxFt})=>({phase,gear,minFt,maxFt,source:link}));
+   return inlet.gears.filter(g=>g.gear!=='high').map(({gear,minFt,maxFt})=>({phase,gear,minFt,maxFt,source:link,input}));
   }
   const supplemental=model.options.flightEnvelope?.aircraft?.[id]?.power?.[rating];
   const branches=model.ac.powerRatings[rating]?.gears??(supplemental?{[supplemental.gear]:supplemental.nodes}:{});
   return Object.entries(branches).filter(([,rows])=>rows.length>1).map(([gear,rows])=>({
-   phase,gear,minFt:rows[0].altFt,maxFt:rows.at(-1).altFt,source:link
+   phase,gear,minFt:rows[0].altFt,maxFt:rows.at(-1).altFt,source:link,input
   }));
  });
 }
@@ -51,9 +52,12 @@ function browserData(){
  const graphEvidence=Object.fromEntries(Object.entries(data.graphEvidence).map(([id,record])=>{
   const chart=pack.charts.find(c=>c.id===climbCharts[id]);
   const check=data.flightChecks.find(r=>r.id===id);
+  const spitfire=id==='spitfire_lfix_bs543';
+  const input=spitfire?{grade:'calculated',method:'boost-to-bhp'}:{grade:'primary',method:'table'};
   return [id,{...record,turnPower:powerTables(id,data.models[id],data.specification.sources),
-   turnSensitivity:id==='p51b'||id==='spitfire_lfix_bs543',
-   regions:chart?record.regions.map(r=>climbBounds(r,check,chart)):record.regions}];
+   ...(spitfire&&{calculatedPower:'boost-derived power input'}),
+   turnSensitivity:id==='p51b'||spitfire,
+   regions:chart?record.regions.map(r=>({...climbBounds(r,check,chart),input})):record.regions}];
  }));
  return {...data,graphEvidence};
 }

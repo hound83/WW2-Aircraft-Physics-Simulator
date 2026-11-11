@@ -33,7 +33,8 @@ function graphEvidence(data){
   const source=link(data.specification.sources[spec.sources[0]]);
   const chartTitles=pack.charts.filter(chart=>chart.aircraft===coverageIds[id]).map(chart=>chart.title);
   const related=chartTitles.length?{label:'Related calculations',title:chartTitles.join(' · '),url:relatedUrl}:null;
-  const maneuverLift=id==='p51b'?{label:'Primary lift report',title:data.turnEvidence.mustang.title,url:data.turnEvidence.mustang.url}:null;
+  const maneuverLift=id==='p51b'?{label:'Primary lift report',title:data.turnEvidence.mustang.title,url:data.turnEvidence.mustang.url,
+   input:{grade:'primary',method:'table'}}:null;
   const regions=climbRegions(model,data.flightChecks.find(check=>check.id===id));
   return [id,{source,related,maneuverLift,regions}];
  });

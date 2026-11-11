@@ -1,7 +1,7 @@
 'use strict';
 
 (()=>{
- const P=TurnPerformance,Evidence=BenchmarkGraphEvidence;
+ const P=TurnPerformance,Evidence=BenchmarkGraphEvidence,Match=BenchmarkMatchup;
  const svgNs='http://www.w3.org/2000/svg';
  const paint=Evidence.colors('us','germany');
  const sides=['a','b'];
@@ -61,15 +61,19 @@
   return card;
  }
 
- function advantage({host,readout,limits,minEas,maxEas,unit,turnUnit,names,colors,pointAt,policy,series,soloKey}){
+ function advantage({host,readout,limits,minEas,maxEas,unit,turnUnit,names,colors,pointAt,policy,series,soloKey,tolerances}){
   const width=780,height=214,left=76,right=758,top=23,bottom=160;
   const cache=new Map(),levels=series.map(a=>a.levelEasMph),load=turnUnit.key==='g';
-  const referenceLoad=load?1:0;
+  const referenceLoad=load?1:0,turnMargin=tolerances.sustained_turn_rate.spread;
   function sample(eas){
    if(cache.has(eas))return cache.get(eas);
    const points=sides.map(side=>pointAt(side,eas,'turn'));
    const [a,b]=points,aircraft={a:a.assessment,b:b.assessment};
-   const difference=Number.isFinite(a.rate)&&Number.isFinite(b.rate)?P.difference(aircraft.a,aircraft.b,turnUnit.field):null;
+   const comparable=Number.isFinite(a.rate)&&Number.isFinite(b.rate);
+   const rateDifference=comparable?P.difference(aircraft.a,aircraft.b):null;
+   const difference=load&&rateDifference?P.difference(aircraft.a,aircraft.b,'g'):rateDifference;
+   const nominal=rateDifference?Match.compare('sustained_turn_rate',rateDifference.rateDegSec,0,tolerances):null;
+   const verdict=Match.turnVerdict(rateDifference?.range,turnMargin);
    let solo=null;
    for(const [i,point] of points.entries()){
     const opposite=levels[1-i],own=levels[i],turn=point.assessment.nominal?.turn;
@@ -77,7 +81,7 @@
      solo={side:sides[i],rate:(i===0?1:-1)*(turn[turnUnit.field]-referenceLoad)};
     }
    }
-   const row={...Evidence.sample(eas,difference?.[turnUnit.field],a.covered&&b.covered,difference?.range),aircraft,difference,solo};
+   const row={...Evidence.sample(eas,difference?.[turnUnit.field],a.covered&&b.covered,difference?.range),aircraft,difference,solo,nominal,verdict};
    cache.set(eas,row);
    return row;
   }
@@ -96,7 +100,7 @@
   const tickCount=Math.ceil(maxRate/step),bound=tickCount*step;
   const x=eas=>left+(right-left)*(eas-minEas)/(maxEas-minEas);
   const y=rate=>top+(bottom-top)*(bound-rate)/(2*bound);
-  const g=svg(width,height,'Sustained-turn advantage in '+turnUnit.label+' at the shared airspeed. Positive values favour aircraft 1.');
+  const g=svg(width,height,'Sustained-turn advantage in '+turnUnit.label+' at the shared airspeed. Positive values favour '+names.a+'. Negative values favour '+names.b+'.');
   const zero=y(0);
   draw(g,'rect',{x:left,y:top,width:right-left,height:zero-top,fill:colors.a,opacity:.045});
   draw(g,'rect',{x:left,y:zero,width:right-left,height:bottom-zero,fill:colors.b,opacity:.045});
@@ -112,7 +116,11 @@
    draw(g,'line',{x1:left,x2:right,y1:at,y2:at,class:n===0?'bench-advantage-zero':'bench-grid-line'});
    draw(g,'text',{x:left-11,y:at+5,'text-anchor':'end'},signed(n,step<.1||step===.25?2:step<1?1:0));
   }
-  draw(g,'text',{x:left,y:16},'Aircraft 1 − Aircraft 2 ('+turnUnit.label+')');
+  const title=draw(g,'text',{x:left,y:16});
+  draw(title,'tspan',{fill:colors.a},names.a);
+  draw(title,'tspan',{},' − ');
+  draw(title,'tspan',{fill:colors.b},names.b);
+  draw(title,'tspan',{},' ('+turnUnit.label+')');
   const unitLabel=OperatingBenchmarkChart.speed(1,unit,'EAS').replace(/^[\d,.]+ /,'');
   draw(g,'text',{x:(left+right)/2,y:height-2,'text-anchor':'middle'},'Equivalent airspeed ('+unitLabel+')');
 
@@ -133,40 +141,47 @@
     draw(g,'path',{d:path(segment),fill:'none',stroke:colors[side],'stroke-width':3,'stroke-dasharray':'7 5','data-turn-solo':side});
    }
   }
-  for(const [i,r] of rows.entries()){
-   const side=r.difference?.side,next=rows[i+1];
-   if(side&&next?.difference?.side===side){
-    const bar=draw(g,'line',{x1:x(r.eas),x2:x(next.eas),y1:bottom+7,y2:bottom+7,
-     stroke:colors[side]??'#84919e','stroke-width':4});
-    draw(bar,'title',{},side==='uncertain'?'Lead depends on the tested inputs':names[side]+' leads across the tested inputs');
+  function verdictLabel(verdict){
+   if(verdict==='tie')return 'Effectively tied across tested inputs';
+   if(verdict==='uncertain')return 'Outcome depends on tested inputs';
+   return names[verdict]+' has a clear lead across tested inputs';
+  }
+  for(let i=0;i<rows.length-1;){
+   const verdict=rows[i].verdict;let end=i+1;
+   while(end<rows.length&&rows[end].verdict===verdict)end++;
+   if(verdict&&end>i+1){
+    const bar=draw(g,'line',{x1:x(rows[i].eas),x2:x(rows[end-1].eas),y1:bottom+8,y2:bottom+8,
+     stroke:colors[verdict]??(verdict==='tie'?'#e0e5eb':'#84919e'),'stroke-width':7,'data-bench-lead':verdict});
+    draw(bar,'title',{},verdictLabel(verdict));
    }
+   i=end;
   }
   const crosshair=draw(g,'line',{y1:top,y2:bottom,class:'bench-crosshair','data-advantage-crosshair':''});
   const marker=draw(g,'circle',{r:4.5,class:'bench-probe-dot'});
   host.replaceChildren(g);
-  function summary({difference,solo}){
+  function summary({difference,solo,nominal}){
    if(!difference)return solo?'Only '+names[solo.side]+' can sustain flight':'Difference unavailable';
    const value=difference[turnUnit.field];
-   if(Math.abs(value)<.5*10**-turnUnit.digits)return 'Similar modeled '+(load?'sustained loads':'turn rates');
-   return names[value>=0?'a':'b']+' +'+fmt(Math.abs(value),turnUnit.digits)+(load?' G':'°/s');
+   if(nominal.lead==='tie')return 'Effectively tied';
+   return names[nominal.lead]+' +'+fmt(Math.abs(value),turnUnit.digits)+(load?' G':'°/s');
   }
 
   function update(eas){
-   const row=sample(eas),{aircraft,difference:d,solo}=row;
+   const row=sample(eas),{aircraft,difference:d,solo,nominal,verdict}=row;
    const at=x(eas),value=d?.[turnUnit.field]??solo?.rate;
-   const leader=d?(value>=0?'a':'b'):solo?.side;
+   const leader=d?nominal.lead:solo?.side;
    crosshair.setAttribute('x1',at);crosshair.setAttribute('x2',at);
    marker.style.display=Number.isFinite(value)?'':'none';
-   readout.replaceChildren(el('strong',summary(row),leader?'bench-'+leader:undefined));
+   readout.replaceChildren(el('strong',summary(row),colors[leader]?'bench-'+leader:undefined));
    if(Number.isFinite(value)){
-    marker.setAttribute('cx',at);marker.setAttribute('cy',y(value));marker.setAttribute('fill',colors[leader]);
+    marker.setAttribute('cx',at);marker.setAttribute('cy',y(value));marker.setAttribute('fill',colors[leader]??'#c1cad5');
    }
    const speed=OperatingBenchmarkChart.speed(eas,unit,'EAS');
    if(d){
     const alternate=load?fmt(Math.abs(d.rateDegSec))+'°/s':fmt(Math.abs(d.g),2)+' G';
     readout.append(el('span',alternate+' difference · '+speed,'bench-note'));
     if(d.range){
-     const message=d.side==='uncertain'?'The lead can change across tested inputs.':names[d.side]+' leads across tested inputs.';
+     const message=verdict?verdictLabel(verdict)+'.':'';
      readout.append(el('span','Tested difference '+d.range.map(n=>signed(n,turnUnit.digits)).join(' to ')+' '+turnUnit.label+'. '+message,'bench-note'));
     }else if(policy)readout.append(el('span','The tested range includes a case outside sustained flight.','bench-note'));
    }else if(solo){

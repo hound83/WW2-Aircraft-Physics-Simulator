@@ -86,5 +86,5 @@
    range,side:range?(range[0]>.001?'a':range[1]<-.001?'b':'uncertain'):null};
  }
 
- return Object.freeze({liftRead,maneuverLift,state,assessment,difference});
+ return Object.freeze({liftRead,maneuverLift,turnFromLoad,state,assessment,difference});
 });
