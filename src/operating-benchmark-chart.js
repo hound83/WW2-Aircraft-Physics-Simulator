@@ -98,17 +98,31 @@
    metrics.append(entry);
   }
   card.append(metrics);
-  if(!point.turnStatus)appendEvidence(card,evidence,locked,turnUnit.label,turnUnit.digits);
-  if (point.turnStatus) card.append(element('p', point.turnStatus, 'bench-note'));
+  appendReadoutDetails(card,point.turnStatus?null:evidence,locked,turnUnit.label,turnUnit.digits,point.turnStatus);
   return card;
  }
 
- function appendEvidence(parent, point, locked, unit, digits) {
+ function appendReadoutDetails(card, point, locked, unit, digits, status) {
+  const notes=element('div',null,'bench-note bench-probe-notes');
+  if(status)notes.append(element('p',status,'bench-note'));
+  if(point)appendEvidence(notes,point,unit,digits);
+  card.append(notes);
+  if(locked){
+   const sources=element('div',null,'bench-note bench-probe-sources');
+   if(point)appendEvidenceSources(sources,point);
+   card.append(sources);
+  }
+ }
+
+ function appendEvidence(parent, point, unit, digits) {
   parent.append(element('p',point.evidence.label,'bench-note'));
   const reference=point.evidence.reference;
   if(point.range)parent.append(element('p',(reference?'Report-adjusted range ':'Tested input range ')+point.range.map(v=>format(v,digits)).join('–')+' '+unit,'bench-note'));
   if(point.outsideRange)parent.append(element('p','The estimate falls outside the '+(reference?'report-adjusted':'tested input')+' range.','bench-note'));
-  if(!locked)return;
+ }
+
+ function appendEvidenceSources(parent, point) {
+  const reference=point.evidence.reference;
   if(reference)parent.append(element('p','Report '+format(reference.observed)+' ft/min at '+format(reference.weightLb)+' lb','bench-note'));
   const links=element('div',null,'bench-probe-links');
   for(const source of [point.evidence.source,point.evidence.related].filter(Boolean)){
@@ -242,7 +256,11 @@
       readout=accelerationLabel(rate,unit);
      }
      row.append(element('span',readout));
-     if(Number.isFinite(rate))appendEvidence(row,sources[aircraft.side][metric],pinned,rateUnit,digits);
+     if(Number.isFinite(rate)){
+      const point=sources[aircraft.side][metric];
+      appendEvidence(row,point,rateUnit,digits);
+      if(pinned)appendEvidenceSources(row,point);
+     }
      tooltip.append(row);
     }
     lastSpeed=probe.easMph;lastPinned=pinned;
@@ -535,14 +553,15 @@
    results.replaceChildren(...series.map(a=>readoutCard(a,probe.aircraft[a.side],unit,sources[a.side].turn,Boolean(lock),turnUnit)));
    climbResults.replaceChildren(...series.map(a=>{
     const card=probeCard(a);
-    card.append(element('p',climbLabel(probe.aircraft[a.side].climbFpm)+' · '+label));
-    if(probe.aircraft[a.side].climbFpm>0)appendEvidence(card,sources[a.side].climb,Boolean(lock),'ft/min',0);
+    const rate=probe.aircraft[a.side].climbFpm;
+    card.append(element('p',climbLabel(rate)+' · '+label,'bench-probe-at-speed'));
+    appendReadoutDetails(card,rate>0?sources[a.side].climb:null,Boolean(lock),'ft/min',0);
     return card;
    }));
    accelerationResults.replaceChildren(...series.map(a=>{
     const card=probeCard(a),point=sources[a.side].acceleration;
-    card.append(element('p',accelerationLabel(point.rate,unit)+' · '+label));
-    if(Number.isFinite(point.rate))appendEvidence(card,point,Boolean(lock),accelerationUnit(unit),2);
+    card.append(element('p',accelerationLabel(point.rate,unit)+' · '+label,'bench-probe-at-speed'));
+    appendReadoutDetails(card,Number.isFinite(point.rate)?point:null,Boolean(lock),accelerationUnit(unit),2);
     return card;
    }));
    if(lock)tips.find(t=>t.kind===lock.kind).show(lock.y,true);
