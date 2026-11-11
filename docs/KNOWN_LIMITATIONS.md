@@ -1,5 +1,9 @@
 # Known limitations
 
+## 11 November 2026 data-collection checkpoint
+
+[Thirteen-aircraft source recovery](research/WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md) supersedes older source-count and retrieval-status statements below, without changing physics. The80/90 targets are evidence-coverage judgments and remain unmet for most aircraft. P38D-G printed32B is now numeric, but clean correction starts125mph and excludes unestablished instrument error. F6F04776 pressure-derived speed/calibration method is now confirmed, but its figure speeds remain undigitized. Five new NACA F4U4 CAS-equivalent stalls have approximate12100lb mass and an unmatched serial. P47D30 Figure52 mass12860lb is now legible; NACA/service trace mapping remains unqualified. G2 MT215 numeric data are secondary at actual2540RPM and1.30-1.32ata; Soviet compiled turn times have unknown per-run power/energy criteria. No complete sustained-turn validation or aircraft admission follows from this source update.
+
 ## v4.1 energy configuration
 
 Five configurations improve source-matched climb; corrections represent aggregate installed energy, not separately measured propeller/cooling/drag components. Source masses, derived Spitfire boost power, graph readings and unknown optimum TAS retain their uncertainty. P-38 and Fw190 each have a worsened individual check, and P-38 alternate fits are sensitive. F-4 gains a conditional inlet/parameter ensemble, while Corsair accuracy is unchanged. Source/reference modes expose different physical configurations. Historical stall/turn and 5:1 remain unresolved. [Exact bounds and regressions](V41_ENERGY_RESULTS.md).

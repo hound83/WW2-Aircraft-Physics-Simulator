@@ -1,5 +1,7 @@
 # Research and imported evidence
 
+**Current data checkpoint:** [thirteen-fighter source recovery](../docs/research/WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md), [versioned numeric pack](research/ww2_thirteen_fighter_source_recovery_2026-11-11.json), [80/90 scorecard](aircraft-readiness-thirteen-2026-11-11.json), and [download hashes / inspected pages / failed leads](source-recovery-manifest-2026-11-11.json). Catalog:1,205 records,214 source entries,240 stall rows,35 lineage groups,16 chart reviews. The152 added rows include calculations, secondary evidence and documentary metadata; they are not152 new independent flight tests. Nine reported CAS/CAS-equivalent stall rows include five newly transcribed NACA F4U-4 rows on a serial unmatched to80765. No new correction curve or physics fit.
+
 The [v4.1 energy audit](v4.1-energy-audit.json) indexes original engine/climb registers, fit/check identities, derived excess power, interpolation/extrapolation and a newly inspected original Bf109 Report 110. [Accepted research candidate and numerical results](../docs/V41_ENERGY_RESULTS.md).
 
 The [v4 source audit](v4-source-audit.json) records Corsair original chart hashes, confirmed TAS axes, approximate chart BHP, geometry/engine provenance, source roles and installation/fuel assumptions. [Results and v4.1 priorities](../docs/V4_MILESTONE.md).

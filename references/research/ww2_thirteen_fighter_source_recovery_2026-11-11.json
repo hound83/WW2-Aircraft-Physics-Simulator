@@ -1,0 +1,2082 @@
+{
+  "schema": "ww2-fighter-evidence-pack/v1",
+  "pack_version": "1.0.0",
+  "compiled": "2026-11-11",
+  "purpose": "Thirteen-variant source recovery. Data and provenance only. Targets: >=80 primary evidence coverage and >=90 augmented; these are ambitions, not achieved scores or prediction accuracy. Known engine settings are mandatory for quantitative G-2 performance verification.",
+  "sources": [
+    {
+      "id": "P38DG-TO0175F1",
+      "aircraft": "P-38D through G including G-1; installation-specific",
+      "report": "USAAF T.O.01-75F-1, 1Oct1942, mixed revisions through30Sep1944",
+      "source": "https://drive.google.com/file/d/0Bw4FNWq6qRgqek5WMngzdG13UDA/view",
+      "location": "Public scan via xtrmntr.com document repository; PDF37-38, duplicate printed32B, revision20Aug1944",
+      "classification": "period-original-scan",
+      "notes": "Recovered full96-page scan. Earlier research had only a contents entry. Clean correction starts125mph wing-pitot reading; do not extrapolate to clean stall. Later revision does not prove the original42-12687 installation unchanged."
+    },
+    {
+      "id": "G2-NIIVVS-14513",
+      "aircraft": "Bf109G-2 WNr14513 DB605A/1 with underwing cannon",
+      "report": "NII VVS stability/control report, tests4-22Jun1943; approval23Jul1943",
+      "source": "https://wwiiaircraftperformance.com/org/me109/g/g_files/Me-109_G2_14513_Russian.pdf",
+      "location": "Original53-page scan; pp10,43",
+      "classification": "period-original-scan",
+      "notes": "Independent test program; 10flights8h06. Loaded mass3206kg explicitly EXCLUDES29kg instrumentation. Do not use its gunpod configuration as a clean G-2 benchmark."
+    },
+    {
+      "id": "G2-MT215-SCAN",
+      "aircraft": "Bf109G-2 WNr14783 MT-215, fixed tailwheel",
+      "report": "Finnish test curves,5Apr1943",
+      "source": "https://wwiiaircraftperformance.com/org/me109/g/g_files/me-109g2-finn.pdf",
+      "location": "Original two-page scan; corresponding original chart images at Kurfurst",
+      "classification": "period-original-scan",
+      "notes": "Primary curves confirm altitude dependence; exact table values and actualRPM below are secondary transcription until original tables recovered. Same experiment, not independent from the transcription."
+    },
+    {
+      "id": "G2-MT215-TRANSCRIPTION",
+      "aircraft": "Bf109G-2 WNr14783 MT-215, fixed tailwheel",
+      "report": "Finnish MT-215 trial, English transcription by Hkuusela with editorial commentary",
+      "source": "https://kurfurst.org/Performance_tests/109G_MT215/109G2_MT215_en.html",
+      "location": "Original report tables transcribed on public page; retrieved via HTTP",
+      "classification": "secondary-transcription-of-period-report",
+      "notes": "Records actual2540RPM versus2580indicated, MAP1.30-1.32ata then altitude-dependent reduction. Do not replace these with nominal2600RPM. Radiators closed in speed runs, thermostatic during climb, first fully open2500m."
+    },
+    {
+      "id": "F4-DB601E-MANUAL",
+      "aircraft": "Bf109F-1 throughF-4; DB601E-specific table",
+      "report": "D.(Luft)T.2109F-1 bisF-4, Teil6, p607,24Feb1942",
+      "source": "https://kurfurst.org/Performance_tests/109F4_Datenblatts/F1-F4_triebweks_Feb42.jpg",
+      "location": "Inspected original engine-installation manual page607",
+      "classification": "period-original-scan",
+      "notes": "DB601E column is distinct from DB601N. Emergency duration not printed in this table; do not invent a one-minute or three-minute limit."
+    },
+    {
+      "id": "F4-DATASHEET-TRANSCRIPTION",
+      "aircraft": "Bf109F-4 DB601E",
+      "report": "Messerschmitt flown29Nov1941 and calculated1Jul1942 sheets, secondary transcription",
+      "source": "https://kurfurst.org/Performance_tests/109F4_Datenblatts/109F4_dblatt_calculated.html",
+      "location": "Transcribed comparison table, source sheets IV/43/42 and IV/78/42",
+      "classification": "secondary-transcription-of-period-report",
+      "notes": "Corrects earlier provisional dating: flown sheet says29Nov1941, not29Nov1942. Calculated sheet has inconsistent identifiers IV/78/42 and IV/56/42 on page; retain ambiguity. No original performance-sheet scan inspected, so no primary upgrade."
+    },
+    {
+      "id": "F6F04776-NACA-METHOD",
+      "aircraft": "F6F-3 BuAer04776",
+      "report": "NACA MR L5B13 PartI,1945",
+      "source": "https://ntrs.nasa.gov/citations/19930092600",
+      "location": "Original PDF5-6 instrumentation; original PartIII PDF4 test conditions",
+      "classification": "period-original-scan",
+      "notes": "Low-speed position calibration was flown in formation with an aircraft calibrated by trailing bomb; high speed by fly-by. Service indicated is explicitly standard sea-level compressible speed using position-corrected static pressure. This supports the NACA recorder; it does not calibrate the ship meter of another Hellcat."
+    },
+    {
+      "id": "F6F04776-NACA-STALL-CONDITIONS",
+      "aircraft": "F6F-3 BuAer04776",
+      "report": "NACA MR L5B13b PartIII,1945",
+      "source": "https://ntrs.nasa.gov/citations/19930092602",
+      "location": "Original PDF4 condition table, PDF5-6 coefficient discussion, figs4-13",
+      "classification": "period-original-scan",
+      "notes": "Same program as existing coefficient bands, which are NOT duplicated as new measurements. Takeoff~11200lb; source says fuel consumption was accounted for when calculating normal-force coefficient."
+    },
+    {
+      "id": "F4U4-NACA-A7C05",
+      "aircraft": "F4U-4, NACA Ames trial; serial not established as80765",
+      "report": "NACA RM A7C05, Measurements in Flight of Flying Qualities,1947",
+      "source": "https://ntrs.nasa.gov/citations/20050081862",
+      "location": "Original PDF8 speed definition; PDF9 configuration/stall table",
+      "classification": "period-original-scan",
+      "notes": "Original report contains numeric corrected stall evidence, beyond the earlier abstract-only intake. Corrected indicated speeds use measured pressure, position correction and standard sea-level adiabatic indicator formula (CAS definition). Approximate run weight12100lb, altitude8000ft unless otherwise stated. Different airframe from Navy80765."
+    },
+    {
+      "id": "KI84-TSFTE2001",
+      "aircraft": "Ki84-I T2 serial302",
+      "report": "USAAF Memorandum TSFTE-2001,15Jul1946",
+      "source": "https://www.wwiiaircraftperformance.org/japan/Ki-84-TSFTE-2001.pdf",
+      "location": "Original pp2,5,8",
+      "classification": "period-original-scan",
+      "notes": "Independent report number but overlapping aircraft/handling program with earlier interim report; no new independent replication of existing102/90/79mph stalls counted. Section5 explicitly says performance none obtained."
+    },
+    {
+      "id": "P47D-NACA-L6B21",
+      "aircraft": "P-47D wing, production camouflage surfaces; not proven43-3441",
+      "report": "NACA ACR L6B21 / WR L-98,1946",
+      "source": "https://ntrs.nasa.gov/citations/19930092751",
+      "location": "Original summary and test description, printed1-4",
+      "classification": "period-original-scan",
+      "notes": "Measured WING SECTION profile drag outboard of flap, not whole-aircraftCD0 or induced drag. Different specimen/finish limits transfer toD-30."
+    },
+    {
+      "id": "G2-NIIVVS-1944-SUMMARY",
+      "aircraft": "Bf109G-2 clean and underwing-cannon configurations; serials not supplied in summary table",
+      "report": "NII VVS 1944 Me109G2 technical booklet",
+      "source": "https://www.wwiiaircraftperformance.org/me109/VVS-Me_109_G2.pdf",
+      "location": "Inspected pp8,22-23",
+      "classification": "period-original-compilation",
+      "notes": "Period compilation has no per-run engine/cooling/airspeed-calibration log. Table nominal engine values do not prove actual turn-test settings. Quarantine from G2 verification benchmarks until full test provenance recovered."
+    },
+    {
+      "id": "G2-DB605-RESTRICTION-1942",
+      "aircraft": "DB605A in earlyBf109G",
+      "report": "Contemporary British AI(T) translation of Technical Sheet on DB605, German issue18June1942, translated22December1942 (GL/C-TT1374/42 archive file)",
+      "source": "https://wwiiaircraftperformance.com/org/me109/g/g_files/GLC-TT-1374-42.jpg",
+      "location": "Original restriction order image",
+      "classification": "period-original-scan",
+      "notes": "Early1.42ata/2800RPM rating barred; operating1.30ata/2600RPM retained subject to engine-specific restrictions. No universal lifting date inferred. This source describes allowed settings, not the settings of every performance test."
+    },
+    {
+      "id": "USAAF-POWERREQUIRED-1943",
+      "aircraft": "P-51B V1650-3, P-47B R2800-21; no test serial specified",
+      "report": "AAF Materiel Center inter-office memorandum, Power Required and Power Available,11Dec1943",
+      "source": "https://www.wwiiaircraftperformance.org/mustang/Power_required_available_P-51A_P-51B_P-47B.pdf",
+      "location": "Original cover memo and appended P51B/P47B graphs",
+      "classification": "period-original-calculation",
+      "notes": "Memo explicitly says power-required curves CALCULATED from airplane drag characteristics; power available from chart BHP and calculated propeller efficiencies. Period calculation is not an independent measured sustained turn or engine dynamometer run."
+    },
+    {
+      "id": "LEDNICER-1999",
+      "aircraft": "SpitfireIX, P51B, Fw190A8/D9; mixed secondary and computational provenance",
+      "report": "David Lednicer, World WarII Fighter Aerodynamics, Sport Aviation January1999,pp85-91",
+      "source": "https://www.wwiiaircraftperformance.org/mustang/Lednicer_Fighter_Aerodynamics.pdf",
+      "location": "Original modern article p90 Table1, notes pp89-91",
+      "classification": "secondary-technical-synthesis",
+      "notes": "Equivalent flat-plate values are source-traced synthesis, wetted areas calculated usingVSAERO excluding cooling ducts. Not wartime measured maxsustainedturn. FwA8 transfer toA4 is secondary family context only. Source varies materially from1943AAF P51B f3.35; preserve disagreement."
+    },
+    {
+      "id": "SPITIX-AP1946-SCAN",
+      "aircraft": "SpitfireIX/XI/XVI family; Merlin66 forLFIX",
+      "report": "AirMinistry AP1565J,P&L Pilot Notes thirdedition,September1946",
+      "source": "https://stephentaylorhistorian.com/wp-content/uploads/2020/04/spitfire-ix-xi-xvi.pdf",
+      "location": "Original printed30,32-33; PDF18-19",
+      "classification": "period-original-scan",
+      "notes": "Same manual already indexed, now numericalPEC intervals and completeMerlin66 normal/climb/combat policy captured. Later family manual is not a new trial onBS543."
+    },
+    {
+      "id": "P47B-TO1942",
+      "aircraft": "P-47B R2800-21",
+      "report": "T.O.01-65BC-1 Preliminary handbook,25Apr1942",
+      "source": "https://www.si.edu/media/NASM/NASM-Manual-000027958.pdf",
+      "location": "Original printed16, PDF18",
+      "classification": "period-original-scan",
+      "notes": "Smithsonian public scan. Same-family manual crosscheck; approximate105/98/95/85mph stalls already known and not counted again. Table MAP cells are blank: do not fill them from a laterP47D rating."
+    },
+    {
+      "id": "F4U4-SAC-1948",
+      "aircraft": "F4U-4 R2800-18W service family, not identified80765",
+      "report": "Navy StandardAircraftCharacteristics,15Aug1948",
+      "source": "https://www.aahs-online.org/images/Navy_SAC/F4U-4.pdf",
+      "location": "Original PDF3 powerplant,4 performance,6 notes",
+      "classification": "period-original-flight-based-compilation",
+      "notes": "Notes say flight-test based. Two capped pylons aboard combat condition; no rockets, tanks or bombs in combat rows. Clean means pylons removed. Generic service compilation is not an independently identified80765 test."
+    },
+    {
+      "id": "KI84-MATSC",
+      "aircraft": "Ki84-I FrankI and Homare engine, MATSC intelligence compilation; serial not specified",
+      "report": "Middletown AirTechnicalServiceCommand T2 technical manual",
+      "source": "https://www.wwiiaircraftperformance.org/japan/K-84_MATSC.pdf",
+      "location": "177-page original scan, PDF1 attribution,108 printed85 engine specification",
+      "classification": "period-original-technical-compilation",
+      "notes": "US technical intelligence compilation includes operating notes and component examination; not an independent flight performance report on302. Fuel specification91 in engine table must not be generalized to every US Ki84 flight."
+    },
+    {
+      "id": "P40F-NACA-L5A29A",
+      "aircraft": "P-40F AAF41-14119, not41-13635",
+      "report": "NACA MR L5A29a/WR L649,January1945, aileron hinge/control flight tests",
+      "source": "https://ntrs.nasa.gov/citations/19930092941",
+      "location": "Original printed1-3, PDF3-5",
+      "classification": "period-original-scan",
+      "notes": "Direct flight measurements include actual average mass7870lb andCG28%MAC. Production pitot used and calibrated forpositionerror. Neither108mph testminimum nor estimatedlift-slope is a measured1gstall."
+    },
+    {
+      "id": "P47D30-L8A06-RECHECK",
+      "aircraft": "P-47D-30 AAF43-3441",
+      "report": "NACA RM L8A06,18Feb1948, original scan reinspection",
+      "source": "https://ntrs.nasa.gov/api/citations/20090022749/downloads/20090022749.pdf",
+      "location": "Original PDF3 conditions, PDF75 Figure52",
+      "classification": "period-original-scan",
+      "notes": "Same report as prior packs. Newly recoveredFigure52mass12860lb and pairedNACA/service indicatedspeedtraces are enrichment, not new independentexperiment. Reference1identifierasprintedL6L13 conflicts with indexedflyingboat report; do not silently substituteunrelatedreport. FurtherprimaryinspectionofTN2675PDF2footnoteresolvesoriginalidentifierasL6L31;L8A06referenceL6L13isatransposition. TN2675printed4definesposition-correctedpressure-derivedCAS. TN2899printed3referstothesameinstrumentation. NeitheraloneexplicitlymapsbothL8A06NACA/serviceindicatedtracechannels,soCASupgradeisstillwithheld."
+    },
+    {
+      "id": "FW190A4-783-NR2",
+      "aircraft": "Fw190A4 WNr783 BMW801D2 engine20208",
+      "report": "FockeWulf flightreport783Nr2,15March1943",
+      "source": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr2.pdf",
+      "location": "Original manufacturer report, supporting transcription fw190-783-nr2.html",
+      "classification": "period-original-scan",
+      "notes": "Internalintake versus longexternalintakes atsame3870kg,2400RPMcombat. NotNr5higher2700RPMspecialrating. This source must not inherit testsettings fromNr5."
+    },
+    {
+      "id": "FW190D9-210002-NR2",
+      "aircraft": "Fw190D9 WNr210002 Jumo213",
+      "report": "FockeWulf flightreport210002Nr2,19October1944",
+      "source": "https://www.wwiiaircraftperformance.org/fw190/Fw_190_D-9_210002_FB_Nr2.pdf",
+      "location": "Original scan and period report transcription fw190d9test.html",
+      "classification": "period-original-scan",
+      "notes": "Flight3corrected dryboostto1.7ata/1900PS, flights1-2wrong1.75/1.77ata. MW50condition1.8ata. No lumpingdryincreasedboostandMW50."
+    }
+  ],
+  "series": [
+    {
+      "id": "p38dg-clean-wing-nose-correction",
+      "source_id": "P38DG-TO0175F1",
+      "aircraft": "P-38D-G manual",
+      "quantity": "manual_airspeed_installation_correction",
+      "speed_basis": "IAS",
+      "source_location": "Printed32B b; PDF37",
+      "conditions": "Original corrected-indicated table for wing or nose pitot installations. Includes installation effects but independent ship-instrument error correction is not established here. Preserve original corrected-indicated label; do not relabel fully calibrated CAS. No automatic curve activation. PDF37 and38 duplicate the same printed32B, counted once.",
+      "columns": [
+        "wing_pitot_ship_ias_mph",
+        "nose_pitot_ship_ias_mph",
+        "source_corrected_indicated_mph"
+      ],
+      "rows": [
+        [
+          125,
+          131,
+          136
+        ],
+        [
+          150,
+          154,
+          158
+        ],
+        [
+          175,
+          176,
+          180
+        ],
+        [
+          200,
+          197,
+          200
+        ],
+        [
+          225,
+          218,
+          220
+        ],
+        [
+          250,
+          240,
+          242
+        ],
+        [
+          275,
+          264,
+          265
+        ],
+        [
+          300,
+          289,
+          290
+        ]
+      ],
+      "source_class": "inspected-original-numerical-evidence",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "p38dg-gear-down-flaps-up-correction",
+      "source_id": "P38DG-TO0175F1",
+      "aircraft": "P-38D-G manual",
+      "quantity": "manual_airspeed_installation_correction",
+      "speed_basis": "IAS",
+      "source_location": "Printed32B c; PDF37",
+      "conditions": "Original corrected-indicated table for wing or nose pitot installations. Includes installation effects but independent ship-instrument error correction is not established here. Preserve original corrected-indicated label; do not relabel fully calibrated CAS. No automatic curve activation. PDF37 and38 duplicate the same printed32B, counted once.",
+      "columns": [
+        "wing_pitot_ship_ias_mph",
+        "nose_pitot_ship_ias_mph",
+        "source_corrected_indicated_mph"
+      ],
+      "rows": [
+        [
+          100,
+          101,
+          115
+        ],
+        [
+          110,
+          110,
+          123
+        ],
+        [
+          120,
+          119,
+          132
+        ],
+        [
+          130,
+          128,
+          140
+        ],
+        [
+          140,
+          137,
+          149
+        ],
+        [
+          150,
+          146,
+          158
+        ],
+        [
+          160,
+          155,
+          166
+        ]
+      ],
+      "source_class": "inspected-original-numerical-evidence",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "p38dg-gear-flaps-down-correction",
+      "source_id": "P38DG-TO0175F1",
+      "aircraft": "P-38D-G manual",
+      "quantity": "manual_airspeed_installation_correction",
+      "speed_basis": "IAS",
+      "source_location": "Printed32B d; PDF37",
+      "conditions": "Original corrected-indicated table for wing or nose pitot installations. Includes installation effects but independent ship-instrument error correction is not established here. Preserve original corrected-indicated label; do not relabel fully calibrated CAS. No automatic curve activation. PDF37 and38 duplicate the same printed32B, counted once.",
+      "columns": [
+        "wing_pitot_ship_ias_mph",
+        "nose_pitot_ship_ias_mph",
+        "source_corrected_indicated_mph"
+      ],
+      "rows": [
+        [
+          80,
+          80,
+          94
+        ],
+        [
+          90,
+          85,
+          100
+        ],
+        [
+          100,
+          94,
+          108
+        ],
+        [
+          110,
+          102,
+          116
+        ],
+        [
+          120,
+          110,
+          124
+        ],
+        [
+          130,
+          119,
+          132
+        ],
+        [
+          140,
+          128,
+          140
+        ]
+      ],
+      "source_class": "inspected-original-numerical-evidence",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "g2-14513-measured-loading",
+      "source_id": "G2-NIIVVS-14513",
+      "aircraft": "Bf109G-2 WNr14513 gunpod configuration",
+      "quantity": "measured_test_loading",
+      "speed_basis": "unestablished",
+      "source_location": "Original p10",
+      "conditions": "Gear-down CG. Reported loaded3206kg excludes29kg test instruments; no instantaneous stall mass inferred. Gunpod armament149.5kg; ammunition133.5kg.",
+      "columns": [
+        "empty_mass_kg",
+        "loaded_mass_excluding_instruments_kg",
+        "test_instrument_mass_kg",
+        "loaded_cg_percent_mac",
+        "fuel_kg",
+        "oil_kg",
+        "pilot_parachute_kg",
+        "armament_kg",
+        "ammunition_kg",
+        "radio_kg"
+      ],
+      "rows": [
+        [
+          2461,
+          3206,
+          29,
+          23.5,
+          300,
+          35,
+          90,
+          149.5,
+          133.5,
+          37
+        ]
+      ],
+      "source_class": "inspected-original-numerical-evidence",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "g2-14513-minimum-controlled-speed",
+      "source_id": "G2-NIIVVS-14513",
+      "aircraft": "Bf109G-2 WNr14513 gunpod configuration",
+      "quantity": "minimum_controlled_speed",
+      "speed_basis": "IAS",
+      "source_location": "Original p43 Table2",
+      "conditions": "Control-loss/minimum-speed tests, not certified1gCLmax or sustained turns. Second speed column is retained as source Vi; exact true/calibrated convention and per-run altitude/engine/mass require further qualification. The report does NOT justify assigning full combat power to the powered row.",
+      "columns": [
+        "condition",
+        "flaps",
+        "indicated_kmh",
+        "source_vi_kmh"
+      ],
+      "rows": [
+        [
+          "glide",
+          "up",
+          180,
+          186
+        ],
+        [
+          "horizontal_powered",
+          "up",
+          170,
+          176
+        ],
+        [
+          "glide",
+          "down",
+          165,
+          171
+        ]
+      ],
+      "source_class": "inspected-original-numerical-evidence",
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "g2-mt215-speed-power-table",
+      "source_id": "G2-MT215-TRANSCRIPTION",
+      "aircraft": "Bf109G-2 WNr14783 MT-215",
+      "quantity": "level_speed_with_recorded_engine_setting",
+      "speed_basis": "TAS",
+      "source_location": "Transcribed MT-215 Level speed tests table",
+      "conditions": "Secondary transcription, crosschecked qualitatively against original speed graph. Corrected TAS v, not v1 (before compressibility correction). ActualRPM2540, indicated2580. Full400L fuel/fuselage weapons+ammo at departure; actual run mass not listed. Fixed tailwheel. No other G variant substituted.",
+      "columns": [
+        "altimeter_m",
+        "corrected_altitude_m",
+        "cockpit_ias_kmh",
+        "pre_compressibility_tas_kmh",
+        "corrected_tas_kmh",
+        "actual_rpm",
+        "indicated_rpm",
+        "actual_map_ata"
+      ],
+      "rows": [
+        [
+          10,
+          140,
+          515,
+          523,
+          522,
+          2540,
+          2580,
+          1.3
+        ],
+        [
+          1000,
+          1130,
+          518,
+          547,
+          546,
+          2540,
+          2580,
+          1.31
+        ],
+        [
+          2000,
+          2130,
+          520,
+          575,
+          572,
+          2540,
+          2580,
+          1.32
+        ],
+        [
+          3000,
+          3120,
+          500,
+          589,
+          584,
+          2540,
+          2580,
+          1.31
+        ],
+        [
+          4000,
+          4120,
+          480,
+          596,
+          589,
+          2540,
+          2580,
+          1.3
+        ],
+        [
+          5000,
+          5120,
+          465,
+          610,
+          600,
+          2540,
+          2580,
+          1.3
+        ],
+        [
+          6000,
+          6120,
+          463,
+          639,
+          626,
+          2540,
+          2580,
+          1.3
+        ],
+        [
+          6300,
+          6420,
+          465,
+          652,
+          636,
+          2540,
+          2580,
+          1.3
+        ],
+        [
+          7000,
+          7110,
+          432,
+          629,
+          614,
+          2540,
+          2580,
+          1.19
+        ],
+        [
+          8000,
+          8110,
+          408,
+          630,
+          614,
+          2540,
+          2580,
+          1.04
+        ],
+        [
+          9000,
+          9110,
+          380,
+          628,
+          610,
+          2540,
+          2580,
+          0.94
+        ],
+        [
+          10000,
+          10100,
+          320,
+          566,
+          552,
+          2540,
+          2580,
+          0.74
+        ]
+      ],
+      "source_class": "SECONDARY-original-table-transcription",
+      "evidence_kind": "secondary"
+    },
+    {
+      "id": "g2-mt215-climb-speed-map",
+      "source_id": "G2-MT215-TRANSCRIPTION",
+      "aircraft": "Bf109G-2 WNr14783 MT-215",
+      "quantity": "climb_speed_and_manifold_pressure",
+      "speed_basis": "IAS",
+      "source_location": "Transcribed MT-215 climb speed and manifold pressure table",
+      "conditions": "ActualRPM2540 from report instrumentation check, indicated2580. No special flight-test instrumentation, report regards climb less accurate than speed. Faster-than-optimum climb deliberately used for cooling. Measured altitude and CINA-reduced climb curves are distinct data products.",
+      "columns": [
+        "altimeter_m",
+        "corrected_altitude_m",
+        "ias_kmh",
+        "tas_kmh",
+        "map_ata",
+        "actual_rpm"
+      ],
+      "rows": [
+        [
+          0,
+          140,
+          300,
+          313,
+          1.3,
+          2540
+        ],
+        [
+          1000,
+          1130,
+          300,
+          325,
+          1.31,
+          2540
+        ],
+        [
+          2000,
+          2130,
+          300,
+          341,
+          1.31,
+          2540
+        ],
+        [
+          3000,
+          3120,
+          290,
+          351,
+          1.3,
+          2540
+        ],
+        [
+          4000,
+          4120,
+          285,
+          364,
+          1.31,
+          2540
+        ],
+        [
+          5000,
+          5120,
+          285,
+          383,
+          1.31,
+          2540
+        ],
+        [
+          6000,
+          6120,
+          280,
+          396,
+          1.21,
+          2540
+        ],
+        [
+          7000,
+          7110,
+          270,
+          403,
+          1.1,
+          2540
+        ],
+        [
+          8000,
+          8110,
+          250,
+          397,
+          0.94,
+          2540
+        ],
+        [
+          9000,
+          9110,
+          230,
+          391,
+          0.8,
+          2540
+        ],
+        [
+          10000,
+          10100,
+          210,
+          383,
+          0.68,
+          2540
+        ]
+      ],
+      "source_class": "SECONDARY-original-table-transcription",
+      "evidence_kind": "secondary"
+    },
+    {
+      "id": "g2-mt215-cina-climb",
+      "source_id": "G2-MT215-TRANSCRIPTION",
+      "aircraft": "Bf109G-2 WNr14783 MT-215",
+      "quantity": "standard_atmosphere_climb_rate_and_elapsed_time",
+      "speed_basis": "unestablished",
+      "source_location": "Transcribed MT-215 Time to Altitude table and original climb chart",
+      "conditions": "CINA-reduced values, actual2540RPM. Secondary table has12 rate values for13 heights;11000m rate and elapsed time are blank. The0.8 belongs to elapsed time at1000m, NOT to climb rate at11000m. No invented sea-level elapsed-time datum. First full radiator opening2500m; cooling policy and lack of special flight-test instrumentation limit representativeness.",
+      "columns": [
+        "cina_altitude_m",
+        "climb_rate_mps",
+        "elapsed_min"
+      ],
+      "rows": [
+        [
+          0,
+          21.6,
+          null
+        ],
+        [
+          1000,
+          23.5,
+          0.8
+        ],
+        [
+          1900,
+          21.2,
+          1.4
+        ],
+        [
+          3000,
+          19,
+          2.3
+        ],
+        [
+          4000,
+          18.1,
+          3.2
+        ],
+        [
+          5000,
+          16.6,
+          4.1
+        ],
+        [
+          5600,
+          16.2,
+          4.7
+        ],
+        [
+          6000,
+          14.5,
+          5.1
+        ],
+        [
+          7000,
+          11.9,
+          6.2
+        ],
+        [
+          8000,
+          9.3,
+          7.6
+        ],
+        [
+          9000,
+          6.7,
+          9.4
+        ],
+        [
+          10000,
+          2.1,
+          10.9
+        ],
+        [
+          11000,
+          null,
+          null
+        ]
+      ],
+      "source_class": "SECONDARY-original-table-transcription",
+      "evidence_kind": "secondary"
+    },
+    {
+      "id": "f4-db601e-original-operating-ratings",
+      "source_id": "F4-DB601E-MANUAL",
+      "aircraft": "Bf109F-4 DB601E",
+      "quantity": "original_engine_operating_rating",
+      "speed_basis": "unestablished",
+      "source_location": "Original manual p607",
+      "conditions": "Table states boost tolerance +/-0.01ata. Only climb/combat duration is printed. These are operating ratings, not installed propulsive power measurements.",
+      "columns": [
+        "rating",
+        "rpm",
+        "map_ata",
+        "documented_duration_min"
+      ],
+      "rows": [
+        [
+          "takeoff_emergency",
+          2700,
+          1.42,
+          null
+        ],
+        [
+          "climb_combat",
+          2500,
+          1.3,
+          30
+        ],
+        [
+          "maximum_continuous",
+          2300,
+          1.15,
+          null
+        ]
+      ],
+      "source_class": "inspected-original-numerical-evidence",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "f4-datasheet-flown-vs-calculated",
+      "source_id": "F4-DATASHEET-TRANSCRIPTION",
+      "aircraft": "Bf109F-4 DB601E",
+      "quantity": "manufacturer_flown_vs_calculated_performance",
+      "speed_basis": "TAS",
+      "source_location": "Transcribed comparative datasheet tables",
+      "conditions": "Same2500RPM climb/combat setting according to secondary commentary and corroborating manual; historical altitude/ram/compressibility treatment of flown sheet disputed. Calculated values are not observations.",
+      "columns": [
+        "status",
+        "altitude_m",
+        "shaft_power_ps",
+        "speed_kmh",
+        "sheet_nominal_mass_kg",
+        "rpm"
+      ],
+      "rows": [
+        [
+          "claimed_flown",
+          0,
+          1170,
+          526,
+          2890,
+          2500
+        ],
+        [
+          "claimed_flown",
+          2000,
+          1250,
+          586,
+          2890,
+          2500
+        ],
+        [
+          "claimed_flown",
+          4000,
+          1260,
+          614,
+          2890,
+          2500
+        ],
+        [
+          "claimed_flown",
+          6200,
+          1180,
+          660,
+          2890,
+          2500
+        ],
+        [
+          "claimed_flown",
+          8000,
+          950,
+          649,
+          2890,
+          2500
+        ],
+        [
+          "calculated",
+          0,
+          1165,
+          523,
+          2900,
+          2500
+        ],
+        [
+          "calculated",
+          2000,
+          1250,
+          572,
+          2900,
+          2500
+        ],
+        [
+          "calculated",
+          4000,
+          1250,
+          611,
+          2900,
+          2500
+        ],
+        [
+          "calculated",
+          6000,
+          1185,
+          635,
+          2900,
+          2500
+        ],
+        [
+          "calculated",
+          8000,
+          940,
+          620,
+          2900,
+          2500
+        ]
+      ],
+      "source_class": "SECONDARY-transcribed-period-manufacturer-data",
+      "evidence_kind": "secondary"
+    },
+    {
+      "id": "f6f04776-original-stall-engine-settings",
+      "source_id": "F6F04776-NACA-STALL-CONDITIONS",
+      "aircraft": "F6F-3 BuAer04776",
+      "quantity": "experimental_configuration",
+      "speed_basis": "unestablished",
+      "source_location": "Original PartIII PDF4, printed2",
+      "conditions": "Source configurations for existing stall/CN evidence. These five rows are experimental metadata, not five new independent flight-test observations. Flight-moment weight not numerically listed in table.",
+      "columns": [
+        "condition",
+        "flaps",
+        "gear",
+        "rpm",
+        "map_inhg",
+        "cowl",
+        "oil_intercooler",
+        "takeoff_weight_lb"
+      ],
+      "rows": [
+        [
+          "glide",
+          "up",
+          "up",
+          null,
+          null,
+          "closed",
+          "closed",
+          11200
+        ],
+        [
+          "climb",
+          "up",
+          "up",
+          2550,
+          43,
+          "closed",
+          "closed",
+          11200
+        ],
+        [
+          "landing",
+          "down",
+          "down",
+          null,
+          null,
+          "closed",
+          "closed",
+          11200
+        ],
+        [
+          "approach",
+          "down",
+          "down",
+          2350,
+          23,
+          "closed",
+          "closed",
+          11200
+        ],
+        [
+          "waveoff",
+          "down",
+          "down",
+          2550,
+          43,
+          "open",
+          "open",
+          11200
+        ]
+      ],
+      "source_class": "inspected-original-numerical-evidence",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "f4u4-naca-corrected-stalls",
+      "source_id": "F4U4-NACA-A7C05",
+      "aircraft": "F4U-4 NACA Ames, serial unmatched to80765",
+      "quantity": "stall_speed",
+      "speed_basis": "CAS",
+      "source_location": "NACA RM A7C05 PDF8-9, printed7-8",
+      "conditions": "Approximate source table speeds, +/-3mph reading/rounding judgment; default approximate test weight12100lb at8000ft. Correct indicated explicitly position-corrected using standard sea-level adiabatic formula. Glide is15inHg/2150RPM, NOT a stopped propeller; landing says throttled2400RPM. No80765 identity or exact instantaneous weight claimed.",
+      "columns": [
+        "condition",
+        "speed_mph",
+        "approx_test_weight_lb",
+        "pressure_altitude_ft",
+        "map_inhg",
+        "rpm",
+        "approx_bhp"
+      ],
+      "rows": [
+        [
+          "glide_clean",
+          105,
+          12100,
+          8000,
+          15,
+          2150,
+          null
+        ],
+        [
+          "power_on_clean",
+          95,
+          12100,
+          8000,
+          48,
+          2600,
+          1750
+        ],
+        [
+          "landing",
+          92,
+          12100,
+          8000,
+          null,
+          2400,
+          null
+        ],
+        [
+          "approach",
+          82,
+          12100,
+          8000,
+          21,
+          2400,
+          950
+        ],
+        [
+          "waveoff",
+          80,
+          12100,
+          8000,
+          48,
+          2600,
+          1750
+        ]
+      ],
+      "source_class": "original-NACA-position-corrected-standard-indicator-speed",
+      "corrections": {
+        "position": "applied",
+        "instrument": "standard-pressure-derived-indicator-definition",
+        "basis_evidence": "CAS-equivalent-definition-in-original-report"
+      },
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "ki84-original-powered-landing-control-limits",
+      "source_id": "KI84-TSFTE2001",
+      "aircraft": "Ki84-I T2 serial302",
+      "quantity": "powered_low_speed_control_limit",
+      "speed_basis": "IAS",
+      "source_location": "Original p5 power-on landing condition",
+      "conditions": "8000ftPA2200RPM20inHg, flaps/gear down. Source says aircraft does NOT stall at this initial setting; control inadequacy must not be mislabeled as1gstall or CAS.",
+      "columns": [
+        "altitude_ft",
+        "rpm",
+        "map_inhg",
+        "rudder_inadequate_below_ias_mph",
+        "aileron_inadequate_below_ias_mph"
+      ],
+      "rows": [
+        [
+          8000,
+          2200,
+          20,
+          81,
+          74
+        ]
+      ],
+      "source_class": "inspected-original-numerical-evidence",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "p47d-measured-wing-profile-drag-domain",
+      "source_id": "P47D-NACA-L6B21",
+      "aircraft": "P-47D camouflage wing section",
+      "quantity": "existing_experiment_domain_enrichment",
+      "speed_basis": "unestablished",
+      "source_location": "Original summary and printed2-4",
+      "conditions": "Wake surveys in level flight/dives/turns at20000ft. Minimumsectioncd0.0097 forCL0.16-0.25 belowMach0.67. Do not substitute as total-aircraft parasite or turn polar. Sameexperiment as archival-2026-11-10:S41. The0.0097 result was already recorded; new information is the experiment domain/conditions, not an independent drag measurement.",
+      "columns": [
+        "test_altitude_ft",
+        "mach_min",
+        "mach_max",
+        "airplane_cl_min",
+        "airplane_cl_max",
+        "section_cd_min",
+        "cl_at_cdmin_low",
+        "cl_at_cdmin_high",
+        "cdmin_mach_upper",
+        "reynolds_min",
+        "reynolds_max"
+      ],
+      "rows": [
+        [
+          20000,
+          0.25,
+          0.78,
+          0.06,
+          0.69,
+          0.0097,
+          0.16,
+          0.25,
+          0.67,
+          8400000,
+          23100000
+        ]
+      ],
+      "source_class": "inspected-original-numerical-evidence",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "g2-soviet-clean-vs-gunpod-summary",
+      "source_id": "G2-NIIVVS-1944-SUMMARY",
+      "aircraft": "Bf109G-2 clean versus gunpods, NII VVS summary",
+      "quantity": "period_compiled_configuration_comparison",
+      "speed_basis": "unestablished",
+      "source_location": "Original table pp22-23",
+      "conditions": "Normal engine reference2600RPM1.30-1.32kg/cm2 absolute appears p8. This is nominal context, NOT known per-run turn settings. Turn times at1000m are reported left/right360deg; constant-altitude/energy and maximum sustained criterion are not established. Gunpod configuration is not the clean3023kg aircraft. Do not equate summary3235kg automatically to14513 loaded3206kg plus29kg instruments.",
+      "columns": [
+        "configuration",
+        "flying_mass_kg",
+        "empty_mass_kg",
+        "speed_sl_kmh",
+        "speed_3000m_kmh",
+        "speed_7000m_kmh",
+        "climb_sl_mps",
+        "climb_3000m_mps",
+        "time_5000m_min",
+        "turn_left_1000m_sec",
+        "turn_right_1000m_sec"
+      ],
+      "rows": [
+        [
+          "clean",
+          3023,
+          2428,
+          524,
+          602,
+          666,
+          19,
+          18.9,
+          4.4,
+          20,
+          21.5
+        ],
+        [
+          "underwing_cannons",
+          3235,
+          2490,
+          505,
+          586,
+          650,
+          16.8,
+          16.2,
+          5.1,
+          22.6,
+          22.8
+        ]
+      ],
+      "source_class": "period-compilation-per-run-power-not-qualified",
+      "evidence_kind": "period_performance_summary"
+    },
+    {
+      "id": "g2-early-restriction-policy",
+      "source_id": "G2-DB605-RESTRICTION-1942",
+      "aircraft": "Bf109G DB605A restriction-era policy",
+      "quantity": "documented_engine_rating_status",
+      "speed_basis": "unestablished",
+      "source_location": "Order18Jun1942 and original G2 July1942 operating manual p22",
+      "conditions": "Separate allowed combat rating from prohibited initial emergency rating. MT215 actual2540RPM must remain actual2540, not be replaced by allowed2600. No MW50/GM1 assumed on clean G2. AlloweddoesNOTmeanunrestricted:forolderengines1.30ata/2600RPMwaspermittedonlywhenoperationallyessential;reinforcedpistonsstilldidnotpermit1.42ata/2800RPMundertheorder.",
+      "columns": [
+        "rating",
+        "rpm",
+        "map_ata",
+        "allowed_under_order"
+      ],
+      "rows": [
+        [
+          "initial_emergency",
+          2800,
+          1.42,
+          false
+        ],
+        [
+          "climb_combat",
+          2600,
+          1.3,
+          true
+        ]
+      ],
+      "source_class": "period-original-operating-restriction",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "p51b-p47b-period-drag-assumption-labels",
+      "source_id": "USAAF-POWERREQUIRED-1943",
+      "aircraft": "P-51B andP-47B, AAF December1943 calculation",
+      "quantity": "period_calculation_input_labels",
+      "speed_basis": "TAS",
+      "source_location": "Original PDF2 and4 graph headings",
+      "conditions": "Graph label e is retained as e and f as f; usual interpretation is span efficiency and equivalent flat-plate area(ft2), but formula/geometry definitions are not supplied in memo. Do not silently install these as calibrated solver coefficients or identify graph aircraft with43-24777/41-5902. Curves shown atSL and5000ft.",
+      "columns": [
+        "aircraft",
+        "engine",
+        "graph_gross_weight_lb",
+        "source_symbol_e",
+        "source_symbol_f",
+        "altitude_1_ft",
+        "altitude_2_ft"
+      ],
+      "rows": [
+        [
+          "P-51B",
+          "Packard V1650-3",
+          8600,
+          0.78,
+          3.35,
+          0,
+          5000
+        ],
+        [
+          "P-47B",
+          "PrattWhitney R2800-21",
+          12563,
+          0.9,
+          6,
+          0,
+          5000
+        ]
+      ],
+      "source_class": "original-period-calculated-drag-reference-not-flight-observation",
+      "evidence_kind": "period_calculation"
+    },
+    {
+      "id": "p51b-period-required-thrust-power",
+      "source_id": "USAAF-POWERREQUIRED-1943",
+      "aircraft": "P-51B V1650-3 at8600lb",
+      "quantity": "period_calculated_power_required",
+      "speed_basis": "TAS",
+      "source_location": "Original PDF2 lower pair of curves",
+      "conditions": "Approximate manual graph readings, uncertainty+/-10thp and+/-2mph. SolidSL versus dashed5000ft as legend. Reconstructed source curve, not shaft BHP, flight measurement, or maximum-turn observation.",
+      "columns": [
+        "tas_mph",
+        "altitude_ft",
+        "approx_thrust_hp",
+        "reading_uncertainty_thp"
+      ],
+      "rows": [
+        [
+          100,
+          0,
+          280,
+          10
+        ],
+        [
+          120,
+          0,
+          255,
+          10
+        ],
+        [
+          140,
+          0,
+          250,
+          10
+        ],
+        [
+          160,
+          0,
+          270,
+          10
+        ],
+        [
+          180,
+          0,
+          295,
+          10
+        ],
+        [
+          200,
+          0,
+          325,
+          10
+        ],
+        [
+          100,
+          5000,
+          315,
+          10
+        ],
+        [
+          120,
+          5000,
+          280,
+          10
+        ],
+        [
+          140,
+          5000,
+          250,
+          10
+        ],
+        [
+          160,
+          5000,
+          255,
+          10
+        ],
+        [
+          180,
+          5000,
+          280,
+          10
+        ],
+        [
+          200,
+          5000,
+          310,
+          10
+        ]
+      ],
+      "source_class": "original-period-calculation-approximate-graph-reading",
+      "evidence_kind": "period_calculation"
+    },
+    {
+      "id": "lednicer-equivalent-flat-plate-synthesis",
+      "source_id": "LEDNICER-1999",
+      "aircraft": "SpitfireIX, P51B, Fw190A8/D9",
+      "quantity": "secondary_drag_synthesis",
+      "speed_basis": "unestablished",
+      "source_location": "SportAviation p90 Table1",
+      "conditions": "Calculated wetted area excludes cooling ducts. f is equivalent flat-plate area, CDswet uses wetted area, NOT reference-wing-area CD0. No induced drag or powered-turn polar is supplied. Values are not exact benchmark serials.",
+      "columns": [
+        "aircraft",
+        "equivalent_flat_plate_ft2",
+        "calculated_wetted_area_ft2",
+        "cd_wetted",
+        "article_reference"
+      ],
+      "rows": [
+        [
+          "SpitfireIX",
+          5.4,
+          831.2,
+          0.0065,
+          16
+        ],
+        [
+          "P-51B",
+          4.61,
+          874,
+          0.0053,
+          21
+        ],
+        [
+          "Fw190A8",
+          5.22,
+          735,
+          0.0071,
+          26
+        ],
+        [
+          "Fw190D9",
+          4.77,
+          761.6,
+          0.0063,
+          26
+        ]
+      ],
+      "source_class": "SECONDARY-technical-source-synthesis-and-computational-geometry",
+      "evidence_kind": "secondary"
+    },
+    {
+      "id": "spitix-original-pec-intervals",
+      "source_id": "SPITIX-AP1946-SCAN",
+      "aircraft": "SpitfireIX/XI/XVI pilot-notes family",
+      "quantity": "manual_position_error_intervals",
+      "speed_basis": "IAS",
+      "source_location": "Printed32 para53",
+      "conditions": "MPH table, clean configuration presumed from generic operating-data section but not separately qualified. Position correction ONLY, independent instrument error not established. Do not extrapolate below120mphIAS to90-100mph stalls. Interval instruction retained as interval, not fabricated point at a midpoint.",
+      "columns": [
+        "ias_from_mph",
+        "ias_to_mph",
+        "add_position_correction_mph"
+      ],
+      "rows": [
+        [
+          120,
+          150,
+          4
+        ],
+        [
+          150,
+          170,
+          2
+        ],
+        [
+          170,
+          210,
+          0
+        ],
+        [
+          210,
+          240,
+          -2
+        ],
+        [
+          240,
+          290,
+          -4
+        ],
+        [
+          290,
+          350,
+          -6
+        ]
+      ],
+      "source_class": "inspected-original-numerical-evidence",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "spitix-merlin66-operating-policy",
+      "source_id": "SPITIX-AP1946-SCAN",
+      "aircraft": "SpitfireLFIX Merlin66",
+      "quantity": "documented_engine_operating_policy",
+      "speed_basis": "unestablished",
+      "source_location": "Printed30 para51 and33 para54",
+      "conditions": "100octane. Climb1h2850RPM+12lb; maxcontinuous2650RPM+7lb; combat3000RPM+18lb5min. MS andFS allowed; takeoffMS to1000ft+18lb, no separate minute limit on this page. Other61/63 footnotes are different and must not replace66 values.",
+      "columns": [
+        "rating",
+        "rpm",
+        "boost_lb_gauge",
+        "limit_min",
+        "coolant_max_c",
+        "oil_max_c"
+      ],
+      "rows": [
+        [
+          "takeoff_to1000ft",
+          3000,
+          18,
+          null,
+          135,
+          null
+        ],
+        [
+          "maximum_climb",
+          2850,
+          12,
+          60,
+          125,
+          90
+        ],
+        [
+          "maximum_continuous",
+          2650,
+          7,
+          null,
+          105,
+          90
+        ],
+        [
+          "combat",
+          3000,
+          18,
+          5,
+          135,
+          105
+        ]
+      ],
+      "source_class": "period-original-operating-ratings-not-engine-power-measurement",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "spitix-climb-speed-policy",
+      "source_id": "SPITIX-AP1946-SCAN",
+      "aircraft": "SpitfireIX/XI/XVI pilot-notes family",
+      "quantity": "documented_climb_speed_policy",
+      "speed_basis": "IAS",
+      "source_location": "Printed33 para54",
+      "conditions": "Maximum-rate schedule. At normalclimb2850/+12 delayMS-toFS change until lowgear boost falls to+8lb; AUTO is optimum for combat rating. Family schedule not a BS543 measured rate.",
+      "columns": [
+        "from_altitude_ft",
+        "to_altitude_ft",
+        "ias_mph"
+      ],
+      "rows": [
+        [
+          0,
+          26000,
+          160
+        ],
+        [
+          26000,
+          30000,
+          150
+        ],
+        [
+          30000,
+          33000,
+          140
+        ],
+        [
+          33000,
+          37000,
+          130
+        ],
+        [
+          37000,
+          40000,
+          120
+        ],
+        [
+          40000,
+          null,
+          110
+        ]
+      ],
+      "source_class": "inspected-original-numerical-evidence",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "p47b-original-rating-duration-table",
+      "source_id": "P47B-TO1942",
+      "aircraft": "P-47B R2800-21",
+      "quantity": "documented_engine_operating_policy",
+      "speed_basis": "unestablished",
+      "source_location": "Original printed16 ratings table",
+      "conditions": "100octane. Takeoff and military5min; continuous/rich duration not printed for normal. Table MAP entries blank. Above25000ft avoidfullpower; reduceMAP2inHgper1000ft above25000. No water injection assumed.",
+      "columns": [
+        "rating",
+        "shaft_bhp",
+        "rpm",
+        "altitude_ft",
+        "duration_min",
+        "map_inhg"
+      ],
+      "rows": [
+        [
+          "takeoff",
+          2000,
+          2700,
+          0,
+          5,
+          null
+        ],
+        [
+          "military",
+          2000,
+          2700,
+          25000,
+          5,
+          null
+        ],
+        [
+          "normal",
+          1625,
+          2550,
+          null,
+          null,
+          null
+        ],
+        [
+          "desired_cruise",
+          1100,
+          2250,
+          null,
+          null,
+          null
+        ]
+      ],
+      "source_class": "period-original-operating-ratings",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "f4u4-sac-flight-rating-altitudes",
+      "source_id": "F4U4-SAC-1948",
+      "aircraft": "F4U-4 R2800-18W service compilation",
+      "quantity": "flight_based_engine_rating_altitudes",
+      "speed_basis": "unestablished",
+      "source_location": "Original PDF6 Engine ratings from Flight Test",
+      "conditions": "Flight-derived installed rating critical-altitude labels differ from nominal engine specification onPDF3. Prop6501A-0,4blades13ft2in,gearratio20:9(engine/prop). No MAP or measured prop efficiency given. No WEP2800bhp assumption.",
+      "columns": [
+        "rating",
+        "shaft_bhp",
+        "rpm",
+        "flight_critical_altitude_ft",
+        "nominal_spec_altitude_ft"
+      ],
+      "rows": [
+        [
+          "takeoff",
+          2100,
+          2800,
+          0,
+          0
+        ],
+        [
+          "military_low",
+          2100,
+          2800,
+          3000,
+          1000
+        ],
+        [
+          "military_intermediate",
+          1900,
+          2800,
+          19000,
+          14000
+        ],
+        [
+          "military_high",
+          1800,
+          2800,
+          25500,
+          23000
+        ],
+        [
+          "normal_low",
+          1700,
+          2600,
+          6800,
+          7000
+        ],
+        [
+          "normal_intermediate",
+          1630,
+          2600,
+          20000,
+          18000
+        ],
+        [
+          "normal_high",
+          1550,
+          2600,
+          28000,
+          26000
+        ]
+      ],
+      "source_class": "period-original-flight-based-compilation-not-serial-matched",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "f4u4-sac-combat-pylon-condition",
+      "source_id": "F4U4-SAC-1948",
+      "aircraft": "F4U-4 12480lb service combat loading",
+      "quantity": "flight_based_service_performance_summary",
+      "speed_basis": "TAS",
+      "source_location": "Original PDF4 lower table andPDF6 notes",
+      "conditions": "Combat load includes1404lb internalfuel, two cappedpylons, NOrockets/bombs/droptanks. Maximum versusnormal source power labels retained; maximum not assigned a numericalWEP rating because table lacksMAP. Time20k is integrated source policy not constant sea-level rate.",
+      "columns": [
+        "power_label",
+        "gross_weight_lb",
+        "sl_speed_knots",
+        "max_speed_knots",
+        "max_speed_altitude_ft",
+        "sl_climb_fpm",
+        "time_to20000ft_min"
+      ],
+      "rows": [
+        [
+          "maximum",
+          12480,
+          325,
+          393,
+          20500,
+          4770,
+          4.9
+        ],
+        [
+          "normal",
+          12480,
+          280,
+          372,
+          31800,
+          2910,
+          7.5
+        ]
+      ],
+      "source_class": "period-original-flight-based-service-summary",
+      "evidence_kind": "period_performance_summary"
+    },
+    {
+      "id": "f4u4-sac-pylon-drag-comparison",
+      "source_id": "F4U4-SAC-1948",
+      "aircraft": "F4U-4 service combat family",
+      "quantity": "configuration_drag_speed_comparison",
+      "speed_basis": "TAS",
+      "source_location": "PDF4 and6 notes",
+      "conditions": "Same combat-power context; combattwo cappedpylons versuscleanpylonsremoved versuscombatwith8Mk5-1rocketlaunchers. Grossweight for clean/launchers not separately stated; speed increments alone do not define a drag polar.",
+      "columns": [
+        "configuration",
+        "sl_speed_knots",
+        "critical_speed_knots",
+        "critical_altitude_ft"
+      ],
+      "rows": [
+        [
+          "two_capped_pylons",
+          325,
+          393,
+          20500
+        ],
+        [
+          "pylons_removed",
+          333,
+          403,
+          20600
+        ],
+        [
+          "eight_rocket_launchers",
+          318,
+          384,
+          20400
+        ]
+      ],
+      "source_class": "period-original-service-configuration-comparison",
+      "evidence_kind": "period_performance_summary"
+    },
+    {
+      "id": "ki84-matsc-engine-specification",
+      "source_id": "KI84-MATSC",
+      "aircraft": "Ki84-I Homare engine, MATSC specification",
+      "quantity": "period_engine_specification",
+      "speed_basis": "unestablished",
+      "source_location": "Original printed85 PDF108",
+      "conditions": "Engine table lists ratings, not measured installed horsepower in302. Identical1970takeoff/WEP sourceentries retained withsource labels. Absolute49.6inHg, not49.6inHg gauge boost. No duration, superchargerstage or wet/dry qualification on this table.",
+      "columns": [
+        "source_rating",
+        "shaft_hp",
+        "rpm",
+        "absolute_map_inhg",
+        "altitude_ft"
+      ],
+      "rows": [
+        [
+          "takeoff",
+          1970,
+          3000,
+          49.6,
+          0
+        ],
+        [
+          "WEP_SL",
+          1970,
+          3000,
+          49.6,
+          0
+        ],
+        [
+          "WEP_altitude",
+          2050,
+          3000,
+          49.6,
+          2500
+        ]
+      ],
+      "source_class": "period-original-technical-specification-not-measured-flight-power",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "p40f-original-aileron-flight-points",
+      "source_id": "P40F-NACA-L5A29A",
+      "aircraft": "P-40F AAF41-14119",
+      "quantity": "measured_roll_helix_angle",
+      "speed_basis": "IAS",
+      "source_location": "Original summary printed1; testdescription printed2-3",
+      "conditions": "NACA synchronousrecords,productionpitot positioncalibrated. Mean testmass7870lb,CG~28%MAC wheelsretracted. pb/2V isdimensionlessradians, NOTrollrate inrad/s ordeg/s. V indefinitionisTAS; source200/300mph areindicated, so no unqualifiedangular-rate conversion.",
+      "columns": [
+        "source_indicated_speed_mph",
+        "helix_angle_pb_over2v_rad",
+        "mean_test_weight_lb",
+        "cg_percent_mac",
+        "wing_span_ft",
+        "wing_area_sqft"
+      ],
+      "rows": [
+        [
+          200,
+          0.08,
+          7870,
+          28,
+          37.3,
+          236
+        ],
+        [
+          300,
+          0.06,
+          7870,
+          28,
+          37.3,
+          236
+        ]
+      ],
+      "source_class": "inspected-original-flight-measurement-other-same-variant-specimen",
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "p47d30-figure52-loading-and-power",
+      "source_id": "P47D30-L8A06-RECHECK",
+      "aircraft": "P-47D-30 AAF43-3441",
+      "quantity": "stall_run_metadata_completion",
+      "speed_basis": "unestablished",
+      "source_location": "Original PDF75Figure52 andPDF3 conditiontable",
+      "conditions": "PreviouslyunreadableFigure52caption nowvisuallyconfirmed. Approachat21inHg2550RPM,gearflapsdown. Elevator-aloneexperiment; no certifiedstallCAS inferred from controlbreak.",
+      "columns": [
+        "figure",
+        "actual_run_weight_lb",
+        "cg_percent_mac",
+        "altitude_ft",
+        "map_inhg",
+        "rpm"
+      ],
+      "rows": [
+        [
+          52,
+          12860,
+          28.9,
+          5000,
+          21,
+          2550
+        ]
+      ],
+      "source_class": "existing-experiment-newly-recovered-run-metadata",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "p47d30-near-stall-paired-recorders",
+      "source_id": "P47D30-L8A06-RECHECK",
+      "aircraft": "P-47D-30 AAF43-3441",
+      "quantity": "paired_airspeed_trace_review",
+      "speed_basis": "IAS",
+      "source_location": "OriginalFigure52bottom panel",
+      "conditions": "Figure52plots serviceindicated andNACAindicated separately around80-100mph. Chart confirms simultaneousdifferentreadings,but recorderposition/instrumentdefinition and tracealignmentmustbeestablishedbeforenumericconversion; no points guessedfromcompressedtrace. Figure52mass12860lband5000ftknown.",
+      "columns": [
+        "figure",
+        "naca_and_ship_traces_present",
+        "usable_as_cas_curve",
+        "minimum_visible_scale_mph",
+        "maximum_visible_scale_mph"
+      ],
+      "rows": [
+        [
+          52,
+          true,
+          false,
+          80,
+          100
+        ]
+      ],
+      "source_class": "inspected-original-trace-presence-not-digitized-speed-curve",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "fw190a4-783-intake-controlled-comparison",
+      "source_id": "FW190A4-783-NR2",
+      "aircraft": "Fw190A4 WNr783 engine20208",
+      "quantity": "same_airframe_intake_cooling_performance",
+      "speed_basis": "TAS",
+      "source_location": "ReportNr2 summary andNr1 baseline",
+      "conditions": "Originalscan independentlyretrieved; numericalsummary checked againstperiodreporttranscription. BMW801D2,3870kg,reducedarmament2MG17+2MG151. Internalintake645kmh@6000m versus longexternal652@6950 fromNr1; differentcriticalheight, do notcomparemaxspeedsasidenticalaltitude. Internal10-14kmhfasterbelowcritical; externalcoolingpressure+8-9%.",
+      "columns": [
+        "configuration",
+        "test_mass_kg",
+        "rpm",
+        "max_speed_kmh",
+        "max_speed_altitude_m",
+        "climb_critical_altitude_m"
+      ],
+      "rows": [
+        [
+          "internal_intake",
+          3870,
+          2400,
+          645,
+          6000,
+          5500
+        ],
+        [
+          "long_external_intake",
+          3870,
+          2400,
+          652,
+          6950,
+          6150
+        ]
+      ],
+      "source_class": "original-manufacturer-comparative-trial",
+      "evidence_kind": "period_performance_summary"
+    },
+    {
+      "id": "fw190d9-210002-boost-intervention",
+      "source_id": "FW190D9-210002-NR2",
+      "aircraft": "Fw190D9 WNr210002",
+      "quantity": "existing_experiment_engine_condition_enrichment",
+      "speed_basis": "unestablished",
+      "source_location": "ReportNr2 paragraph3 andresults",
+      "conditions": "DryincreasedboostversusMW50, sourcePSnotbhp. RPM not stated intheseextractedparagraphs; retainnullpendingcurveheaderqualification. Factorytestinterventionnotrepresentativeunmodifiedproductionbaseline. MW50reducessuperchargerairtemperatureabout35C.",
+      "columns": [
+        "condition",
+        "actual_map_ata",
+        "source_shaft_ps",
+        "rpm",
+        "speed_gain_lower_kmh",
+        "speed_gain_upper_kmh",
+        "charge_temp_change_c"
+      ],
+      "rows": [
+        [
+          "corrected_dry_boost_flight3",
+          1.7,
+          1900,
+          null,
+          16,
+          18,
+          null
+        ],
+        [
+          "MW50",
+          1.8,
+          null,
+          null,
+          33,
+          35,
+          -35
+        ]
+      ],
+      "source_class": "original-factory-intervention-known-boost-rpm-unqualified",
+      "evidence_kind": "conditions_or_documentary_data"
+    }
+  ],
+  "calibration_reviews": [
+    {
+      "id": "p38dg-numeric-page-recovered",
+      "source_id": "P38DG-TO0175F1",
+      "status": "numeric-installation-table-recovered-not-stall-CAS",
+      "domain": "Clean125-300mphwingIAS; gear/flapsdown80-140; printed32B not earlierOCRpage28.",
+      "decision": "Do not extrapolateclean125minimumto100mphstall; duplicatePDF37/38countonce."
+    },
+    {
+      "id": "f6f04776-standard-pressure-speed-method",
+      "source_id": "F6F04776-NACA-METHOD",
+      "status": "original-low-speed-position-calibration-and-standard-pressure-definition-confirmed",
+      "decision": "NACArecorder standardsealevelcompressibleposition-correctedspeed supportsCAS-equivalent interpretation. Individualstall-speedpoints and explicitcalibrationdomainstillneedseparateextraction. No calibrationtransfer tootherF6Fserials."
+    },
+    {
+      "id": "f4u4-naca-cas-equivalent",
+      "source_id": "F4U4-NACA-A7C05",
+      "status": "original-position-corrected-standard-indicator-speed",
+      "decision": "FiveapproximateCAS-equivalentstalls at~12100lb; serialunmatchedto80765. No universal shipmetercurve."
+    },
+    {
+      "id": "spitix-original-manual-intervals",
+      "source_id": "SPITIX-AP1946-SCAN",
+      "status": "original-position-error-intervals-above-stall",
+      "decision": "120-350mphIASmanualintervals; originalinstrumenterror andspecificBS543installationnotestablished. Noextensionbelow120."
+    },
+    {
+      "id": "p47d30-figure52-paired-traces",
+      "source_id": "P47D30-L8A06-RECHECK",
+      "status": "paired-near-stall-traces-method-unresolved",
+      "decision": "Recordersdifferaround80-100mph; definitionandtracealignmentstillopen. NoautomaticIAS-toCAScurve."
+    }
+  ],
+  "document_lineage": [
+    {
+      "id": "mt215-scan-transcription",
+      "members": [
+        "G2-MT215-SCAN",
+        "G2-MT215-TRANSCRIPTION"
+      ],
+      "relationship": "same-original-test-primary-curves-and-secondary-transcription",
+      "note": "OneFinnishtrial, never two independent experiments."
+    },
+    {
+      "id": "p38dg-manual-recovered",
+      "members": [
+        "P38DG-TO0175F1",
+        "ww2_twelve_fighter_dual_lane_2026-11-10:P38-D-G-TO-0175F1"
+      ],
+      "relationship": "same-original-manual-newly-recovered-numeric-page",
+      "note": "Printed32BcorrectsearlierOCRcontentsleadpage28."
+    },
+    {
+      "id": "f6f-naca-overlapping-program",
+      "members": [
+        "F6F04776-NACA-METHOD",
+        "F6F04776-NACA-STALL-CONDITIONS",
+        "stall_four_track_followup_2026-11-10:f6f3-04776-part1-instruments",
+        "stall_four_track_followup_2026-11-10:f6f3-04776-wr-l717"
+      ],
+      "relationship": "same-flight-program-method-and-condition-enrichment",
+      "note": "PreviouslyrecordedCNbandsnotrepeatedasnewmeasurements."
+    },
+    {
+      "id": "f4u4-naca-full-original",
+      "members": [
+        "F4U4-NACA-A7C05",
+        "archival-2026-11-10:R53",
+        "ww2_twelve_fighter_gap_followup_2026-11-10:F4U4-NACA-FLYING-QUALITIES"
+      ],
+      "relationship": "same-report-newly-recovered-numeric-table",
+      "note": "Abstractwasalreadyknown;fivecorrectedstallswerenotdigitized."
+    },
+    {
+      "id": "ki84-handling-overlap",
+      "members": [
+        "KI84-TSFTE2001",
+        "archival-2026-11-10:R49",
+        "ww2_twelve_fighter_gap_followup_2026-11-10:KI84-302-AAF-SPECS"
+      ],
+      "relationship": "overlapping-specimen-and-handling-program",
+      "note": "Existing8000ft2200RPM20inHg160/130mphturn-abortrownotrepeated."
+    },
+    {
+      "id": "p47-wing-drag-existing-result",
+      "members": [
+        "P47D-NACA-L6B21",
+        "archival-2026-11-10:R09"
+      ],
+      "relationship": "same-original-experiment-domain-enrichment",
+      "note": "cdmin0.0097alreadyinS41;notanewmeasurement."
+    },
+    {
+      "id": "p47d30-existing-stall-program",
+      "members": [
+        "P47D30-L8A06-RECHECK",
+        "stall_four_track_followup_2026-11-10:p47d30-rm-l8a06",
+        "stall_four_track_followup_2026-11-10:p47d30-tn2899-reprint"
+      ],
+      "relationship": "same-experiment-figure52-metadata-completion",
+      "note": "1953TN2899reprintnotindependent;originalFigure52nowlegible."
+    },
+    {
+      "id": "spitix-existing-manual",
+      "members": [
+        "SPITIX-AP1946-SCAN",
+        "stall_airspeed_corrections_global_2026-11-10:UK-SIX-46",
+        "ww2_twelve_fighter_dual_lane_2026-11-10:SPIT-IX-AIRMINISTRY-1946"
+      ],
+      "relationship": "same-manual-further-numeric-extraction",
+      "note": "Noindependent1946teston1943BS543claimed."
+    },
+    {
+      "id": "d9-nr2-existing-speed-points",
+      "members": [
+        "FW190D9-210002-NR2",
+        "ww2_multiaxis_propulsion_trials_2026-11-10:FW190D9-210002-N2"
+      ],
+      "relationship": "same-experiment-newly-qualified-boost-and-temperature-context",
+      "note": "Existing359/367mphSLand383/390mph1800mpointsnotrepeated. Currentrowsqualifyactualboostflightsandchargecooling."
+    }
+  ]
+}

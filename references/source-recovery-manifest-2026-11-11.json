@@ -1,0 +1,347 @@
+{
+  "schema": "ww2-source-recovery-manifest/v1",
+  "retrieved": "2026-11-11",
+  "method": "PublicdownloadbytesSHA256; sourceinspectionislimitedtothelistedpages. Rawscansnotcommitted. PubliccanonicalURLretainedinevidencepack.",
+  "files": [
+    {
+      "source_id": "P38DG-TO0175F1",
+      "download_name": "p38dg-manual.pdf",
+      "source_or_download_url": "https://drive.google.com/file/d/0Bw4FNWq6qRgqek5WMngzdG13UDA/view",
+      "bytes": 13585815,
+      "sha256": "0b64f8d6809a261324964f61eb41f30a411618155e323d75331e0ea889aa3df8",
+      "inspected_pdf_pages_or_image_page": [
+        37,
+        38
+      ],
+      "disposition": "Numericprinted32Brecovered;duplicatepagescountedonce"
+    },
+    {
+      "source_id": "G2-NIIVVS-14513",
+      "download_name": "g2_14513_original.pdf",
+      "source_or_download_url": "https://wwiiaircraftperformance.com/org/me109/g/g_files/Me-109_G2_14513_Russian.pdf",
+      "bytes": 62563456,
+      "sha256": "2017627bf2666d12a32226d783d48d97f59fecfb389d5d8f0d668207365b7ad8",
+      "inspected_pdf_pages_or_image_page": [
+        10,
+        43
+      ],
+      "disposition": "Gunpodloadingandcontrolspeedtable"
+    },
+    {
+      "source_id": "G2-NIIVVS-1944-SUMMARY",
+      "download_name": "VVS-Me_109_G2.pdf",
+      "source_or_download_url": "https://www.wwiiaircraftperformance.org/me109/VVS-Me_109_G2.pdf",
+      "bytes": 14555836,
+      "sha256": "93464c4a43524cc284b277774e4503b8131ba76fccb59dc5f56ad8a87c20a505",
+      "inspected_pdf_pages_or_image_page": [
+        8,
+        22,
+        23
+      ],
+      "disposition": "Originalperiodcompilation;per-runpowerunqualified"
+    },
+    {
+      "source_id": "G2-MT215-TRANSCRIPTION",
+      "download_name": "g2-finnish-live.html",
+      "source_or_download_url": "http://kurfurst.org/Performance_tests/109G_MT215/109G2_MT215_en.html",
+      "bytes": 42552,
+      "sha256": "b220d4f0dabdd8691cb896d057532f2aef4314e9c0ef3fcf1021b8f21f9b9be1",
+      "inspected_pdf_pages_or_image_page": [],
+      "disposition": "Secondarytranscription;tableblankschecked"
+    },
+    {
+      "source_id": "G2-MT215-SCAN",
+      "download_name": "g2-finn-speed.jpg",
+      "source_or_download_url": "http://kurfurst.org/Performance_tests/109G_MT215/MT-215_speed_comp-corrected.jpg",
+      "bytes": 77292,
+      "sha256": "86cefc264f91f36c256187cf4b015ca90ed5d20060d752b2a0d99ec99624b51f",
+      "inspected_pdf_pages_or_image_page": [
+        1
+      ],
+      "disposition": "Originalspeedgraph"
+    },
+    {
+      "source_id": "G2-MT215-SCAN",
+      "download_name": "g2-finn-climb.jpg",
+      "source_or_download_url": "http://kurfurst.org/Performance_tests/109G_MT215/MT-215_climb.jpg",
+      "bytes": 110801,
+      "sha256": "930d7a74207250a1cc8445ffe0a60ad60160ec6d9d810a96faea923e8b1fa4b0",
+      "inspected_pdf_pages_or_image_page": [
+        1
+      ],
+      "disposition": "Originalclimbgraph"
+    },
+    {
+      "source_id": "G2-DB605-RESTRICTION-1942",
+      "download_name": "g2-restriction.jpg",
+      "source_or_download_url": "https://wwiiaircraftperformance.com/org/me109/g/g_files/GLC-TT-1374-42.jpg",
+      "bytes": 257877,
+      "sha256": "e068b0d6486f629eee5b32daa4d3b2b64bea8f2494d0260314032a39cc113d05",
+      "inspected_pdf_pages_or_image_page": [
+        1
+      ],
+      "disposition": "PeriodBritishtranslationofthe18June1942technicalsheet;older-enginecombatpoweralsorestrictedtooperationalnecessity."
+    },
+    {
+      "source_id": "F4-DB601E-MANUAL",
+      "download_name": "f4-power-manual.jpg",
+      "source_or_download_url": "http://kurfurst.org/Performance_tests/109F4_Datenblatts/F1-F4_triebweks_Feb42.jpg",
+      "bytes": 92069,
+      "sha256": "dc1c1546ebf8f63b4dcc845cdd1928073f33fd0fdf36d77727ac3cf03adc3bd0",
+      "inspected_pdf_pages_or_image_page": [
+        607
+      ],
+      "disposition": "Originalmanualenginecolumn"
+    },
+    {
+      "source_id": "F6F04776-NACA-METHOD",
+      "download_name": "f6f04776long.pdf",
+      "source_or_download_url": "https://ntrs.nasa.gov/citations/19930092600",
+      "bytes": 14924261,
+      "sha256": "906fa4ec476655dc9277bcc2f07b896fd87fa6c2340259b3e7216eb711523247",
+      "inspected_pdf_pages_or_image_page": [
+        5,
+        6
+      ],
+      "disposition": "Low-speedcalibrationmethodandstandardpressurespeeddefinition"
+    },
+    {
+      "source_id": "F6F04776-NACA-STALL-CONDITIONS",
+      "download_name": "f6f04776stall.pdf",
+      "source_or_download_url": "https://ntrs.nasa.gov/citations/19930092602",
+      "bytes": 17523879,
+      "sha256": "2cddc4f507ef61bd0fc8e238b334cde82e563a1e0b5e30eb126e2e30245fd7ce",
+      "inspected_pdf_pages_or_image_page": [
+        4,
+        5,
+        6,
+        14,
+        16
+      ],
+      "disposition": "Conditiontableandstallfigureinspection;nospeedpointsguessed"
+    },
+    {
+      "source_id": "F4U4-NACA-A7C05",
+      "download_name": "f4u4-naca.pdf",
+      "source_or_download_url": "https://ntrs.nasa.gov/citations/20050081862",
+      "bytes": 21710785,
+      "sha256": "831765508ce532607156be7ebb4cc76d32fdecb2a2723141061ac433f2405826",
+      "inspected_pdf_pages_or_image_page": [
+        8,
+        9
+      ],
+      "disposition": "Correctedstalltableanddefinition"
+    },
+    {
+      "source_id": "F4U4-SAC-1948",
+      "download_name": "f4u4-sac.pdf",
+      "source_or_download_url": "https://www.aahs-online.org/images/Navy_SAC/F4U-4.pdf",
+      "bytes": 1874272,
+      "sha256": "f3e85284a4dea072990b95d9244c512f4ead556d40fc21db15786e02fe2303c8",
+      "inspected_pdf_pages_or_image_page": [
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "disposition": "Flight-basedratingandcombatconfigurationtables"
+    },
+    {
+      "source_id": "P47B-TO1942",
+      "download_name": "p47b-manual.pdf",
+      "source_or_download_url": "https://www.si.edu/media/NASM/NASM-Manual-000027958.pdf",
+      "bytes": 1867787,
+      "sha256": "451fd7aed91419dabc1bf78c872993d0ad5c9ed0d4f8352c8ddb902ffbc1c36b",
+      "inspected_pdf_pages_or_image_page": [
+        18
+      ],
+      "disposition": "Operatingratings5minandblankMAPcells"
+    },
+    {
+      "source_id": "SPITIX-AP1946-SCAN",
+      "download_name": "spitix-manual.pdf",
+      "source_or_download_url": "https://stephentaylorhistorian.com/wp-content/uploads/2020/04/spitfire-ix-xi-xvi.pdf",
+      "bytes": 2430906,
+      "sha256": "ff9842b7f91eb6dd93f3f835e2eaca661fc45da47a2266471f7d7fa1002beb23",
+      "inspected_pdf_pages_or_image_page": [
+        18,
+        19
+      ],
+      "disposition": "Enginepolicy,PECintervalsandclimbspeeds"
+    },
+    {
+      "source_id": "USAAF-POWERREQUIRED-1943",
+      "download_name": "p51-p47-power-required.pdf",
+      "source_or_download_url": "https://www.wwiiaircraftperformance.org/mustang/Power_required_available_P-51A_P-51B_P-47B.pdf",
+      "bytes": 2999962,
+      "sha256": "a7d6d3ac5932b33a1ae6869d4b62a670320a7c41e4ce64c474f5ffa79e2f6d3a",
+      "inspected_pdf_pages_or_image_page": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "disposition": "Periodcalculatedpowercurves;notmeasuredflight"
+    },
+    {
+      "source_id": "LEDNICER-1999",
+      "download_name": "lednicer-aerodynamics.pdf",
+      "source_or_download_url": "https://www.wwiiaircraftperformance.org/mustang/Lednicer_Fighter_Aerodynamics.pdf",
+      "bytes": 3095967,
+      "sha256": "23ec00b253870fcbf9b20ef2cdb702c66ad7b34c7d8ee6e063a406b457b9de67",
+      "inspected_pdf_pages_or_image_page": [
+        1,
+        5,
+        6
+      ],
+      "disposition": "Modernsecondary/computationalsynthesis"
+    },
+    {
+      "source_id": "KI84-TSFTE2001",
+      "download_name": "ki84-tsfte2001.pdf",
+      "source_or_download_url": "https://www.wwiiaircraftperformance.org/japan/Ki-84-TSFTE-2001.pdf",
+      "bytes": 3762578,
+      "sha256": "32c1d21c1dd86b93a35dd22057018c75a1eb188e8e8a282fd3efe4d187870298",
+      "inspected_pdf_pages_or_image_page": [
+        2,
+        5,
+        8
+      ],
+      "disposition": "Control-limitsandexplicitno-performanceclause"
+    },
+    {
+      "source_id": "KI84-MATSC",
+      "download_name": "ki84-matsc.pdf",
+      "source_or_download_url": "https://www.wwiiaircraftperformance.org/japan/K-84_MATSC.pdf",
+      "bytes": 54770779,
+      "sha256": "0b0d0147937ef0b7f3249335e9f6e2139521a9a72db7add3507c58e645bd2263",
+      "inspected_pdf_pages_or_image_page": [
+        1,
+        108
+      ],
+      "disposition": "177pagesrecovered;thumbnailsareonlynavigation,notfull177pageverification"
+    },
+    {
+      "source_id": "P47D-NACA-L6B21",
+      "download_name": "p47d-wing-drag.pdf",
+      "source_or_download_url": "https://ntrs.nasa.gov/citations/19930092751",
+      "bytes": 6553671,
+      "sha256": "c0fd6ba01bd61180e0e471c0486928deb1be0977501ced0cf5ffaf253e4edf69",
+      "inspected_pdf_pages_or_image_page": [
+        1,
+        3,
+        4
+      ],
+      "disposition": "Existingsectiondragresult,newdomaincontext"
+    },
+    {
+      "source_id": "P47D30-L8A06-RECHECK",
+      "download_name": "p47d30-naca.pdf",
+      "source_or_download_url": "https://ntrs.nasa.gov/api/citations/20090022749/downloads/20090022749.pdf",
+      "bytes": 6514626,
+      "sha256": "95c68467065e3a68394581c7b8c20b4e0578224bde9710e3bde05b6c89961075",
+      "inspected_pdf_pages_or_image_page": [
+        3,
+        13,
+        75
+      ],
+      "disposition": "Figure52massandpairedspeedtraces"
+    },
+    {
+      "source_id": "P47D30-L8A06-RECHECK",
+      "download_name": "p47d30-tn2675.pdf",
+      "source_or_download_url": "https://ntrs.nasa.gov/api/citations/19930083825/downloads/19930083825.pdf",
+      "bytes": 56896070,
+      "sha256": "2f57cd54c9aad8c464fdb336bbc70e8105d9b8dd742e495cb93715364e489b5f",
+      "inspected_pdf_pages_or_image_page": [
+        2,
+        4,
+        5
+      ],
+      "disposition": "Sameairframecompanion;footnoteidentifiesoriginalL6L31,nottransposedL6L13. PressurederivedCASdefinitionnotdirectlyassignedtoRMstalltrace."
+    },
+    {
+      "source_id": "P47D30-L8A06-RECHECK",
+      "download_name": "p47d30-tn2899.pdf",
+      "source_or_download_url": "https://ntrs.nasa.gov/api/citations/19930083857/downloads/19930083857.pdf",
+      "bytes": 43936224,
+      "sha256": "99e90787abfdd1c15c4bffd06260dce317c992fd9276746cea063a5138edb542",
+      "inspected_pdf_pages_or_image_page": [
+        2,
+        3,
+        4
+      ],
+      "disposition": "Samestallexperimentreprint;refersinstrumentationtoTN2675,butdoesnotexplicitlyresolveNACAversusserviceindicatedtrace."
+    },
+    {
+      "source_id": "P40F-NACA-L5A29A",
+      "download_name": "p40f-aileron.pdf",
+      "source_or_download_url": "https://ntrs.nasa.gov/citations/19930092941",
+      "bytes": 30797387,
+      "sha256": "bf7e2fbd9803c29d73e14256f8969a1665c88541b808cf7e706548605a9e89a3",
+      "inspected_pdf_pages_or_image_page": [
+        3,
+        4,
+        5
+      ],
+      "disposition": "Originalserial,mass,rollhelixandpitotmethod"
+    },
+    {
+      "source_id": "FW190A4-783-NR2",
+      "download_name": "a4-783-nr2.pdf",
+      "source_or_download_url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr2.pdf",
+      "bytes": 3045514,
+      "sha256": "79696ca2d594f9098bd9eee7d19eb3264a3b5e29e4c9f67ce35c4875a26222d7",
+      "inspected_pdf_pages_or_image_page": [
+        1,
+        2
+      ],
+      "disposition": "Originalreport15March1943"
+    },
+    {
+      "source_id": "FW190D9-210002-NR2",
+      "download_name": "d9-210002-nr2.pdf",
+      "source_or_download_url": "https://www.wwiiaircraftperformance.org/fw190/Fw_190_D-9_210002_FB_Nr2.pdf",
+      "bytes": 2382664,
+      "sha256": "1c0daeff5feae89d3145104c6ee1cb87d7dd654a7e870e8918eef38e18b512e7",
+      "inspected_pdf_pages_or_image_page": [
+        1,
+        2
+      ],
+      "disposition": "Originalreport19Oct1944boostcorrection"
+    }
+  ],
+  "failed_or_unclosed_leads": [
+    {
+      "aircraft": "P40F",
+      "url": "https://www.p40warhawk.com/Models/Technical/MikeHalbrook/33143169-Pilot-s-Flight-Operating-Instructions-for-Army-Model-P-40F-and-P-40L.pdf",
+      "result": "LiveURLredirectedtounrelatedretailHTML(630151bytes),notPDF. Cachedwebtextnotpromotedtoscannedprimaryevidence.",
+      "next": "Findanotherpublicoriginalmanualmirror;cached44.2inHg2650RPMclimbscheduleisleadonly."
+    },
+    {
+      "aircraft": "P47D30",
+      "url": "https://ntrs.nasa.gov/api/citations/19930083825/downloads/19930083825.pdf",
+      "result": "TN2675companionretrievedandtextreviewed. ItsfootnotecorrectlyidentifiesoriginalL6L31;L8A06reference1transposesittoL6L13(anunrelatedflyingboat). TN2675definesposition-correctedpressure-derivedCAS,butL8A06pairedNACA/servicechannelmappingstillrequiresqualification.",
+      "next": "UseTN2675sametestinstrumentationandtracelegends;do notapplyshipPECtwice."
+    },
+    {
+      "aircraft": "Bf109F4",
+      "url": "https://kurfurst.org/Performance_tests/109F4_Datenblatts/109F4_dblatt_calculated.html",
+      "result": "Performanceoriginalsnotpresentininspectedpage;onlysecondarytranscription.Manualenginepageisprimary,butdoesnotupgradetranscribedperformance.",
+      "next": "OriginalMesserschmittsheetsIV43/42andIV78/42; resolvealternativeIV56/42identifierandEB100report."
+    },
+    {
+      "aircraft": "Ki84",
+      "url": "https://www.wwiiaircraftperformance.org/japan/Ki-84-156A.pdf",
+      "result": "OriginalMarch1945TAICfour-pagecardretrievedandpage1inspected;7940lbnormalfighterandmilitary/WEPcurvesarenotanidentified302measuredtrial. ExistingcatalogR50alreadyindexesit.",
+      "next": "Establishcalculated/measuredsourceofthecardbeforeusingasindependentvalidation."
+    },
+    {
+      "aircraft": "P51B/P47/P38",
+      "url": "https://www.wwiiaircraftperformance.org/mustang/Performance_Data_on_Fighter_Aircraft.pdf",
+      "result": "Original26Jun1944AAFmemosays4gturnradiicomputedfromestimatedpoweredCLmaxandNOTnecessarilyconstantaltitude. Noindependentsustainedturncredit.",
+      "next": "Useasperiodcalculationonly;inspecttablevaluesseparatelyifneeded."
+    }
+  ]
+}
