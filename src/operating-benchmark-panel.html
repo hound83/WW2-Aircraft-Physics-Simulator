@@ -58,6 +58,15 @@
   #operating-benchmark .bench-result > p{margin:0}
  }
  #operating-benchmark .bench-advantage{margin:1rem 0;border:1px solid #405969;border-radius:12px;background:#142733;padding:.9rem 1rem}
+ #operating-benchmark .bench-curve-key{display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin:.55rem 0;align-items:center}
+ #operating-benchmark .bench-curve-key span{display:inline-flex;align-items:center;gap:.4rem}
+ #operating-benchmark .bench-aircraft-key::before,#operating-benchmark .bench-key-solid,#operating-benchmark .bench-key-dotted{width:1.55rem;border-top:3px solid currentColor;display:inline-block}
+ #operating-benchmark .bench-aircraft-key::before{content:""}
+ #operating-benchmark .bench-key-dotted{border-top-style:dotted}
+ #operating-benchmark .bench-key-band{display:inline-block;width:1.55rem;height:.55rem;background:#b7cad5;opacity:.45}
+ #operating-benchmark #bench-probe-lock[aria-pressed="true"]{border-color:#b8c9d6;background:#254250;color:#fff}
+ #operating-benchmark #bench-probe-lock-status{min-height:1.5em}
+ #operating-benchmark .bench-probe-links{display:flex;flex-wrap:wrap;gap:.35rem .8rem;margin-top:.35rem;font-size:.86rem}
  #operating-benchmark .bench-advantage h3{margin:0 0 .65rem}
  #operating-benchmark .bench-advantage-readout{display:flex;flex-wrap:wrap;gap:.45rem 1rem;align-items:baseline;margin:.3rem 0 .8rem}
  #operating-benchmark .bench-advantage-readout span:last-child{flex-basis:100%}
@@ -101,20 +110,24 @@
  <p id="bench-matchup" aria-live="polite"></p>
  <p class="bench-note">Approximate WWII service windows. Contemporaries filters by years of main service.</p>
  <p id="bench-comparison" aria-live="polite"></p>
- <div class="bench-toolbar"><label>Chart speed range<select id="bench-turn-focus"><option value="full">Full envelope</option><option value="3">Focus on 3°/s and above</option></select></label><p id="bench-range-status" class="bench-note"></p></div>
+ <div class="bench-toolbar"><label>Chart speed range<select id="bench-turn-focus"><option value="3" selected>Focus on 3°/s and above</option><option value="full">Full envelope</option></select></label><p id="bench-range-status" class="bench-note"></p></div>
+ <div id="bench-curve-names" class="bench-curve-key"></div>
+ <p class="bench-curve-key bench-note"><span><i class="bench-key-solid"></i> Near flight-test schedule</span><span><i class="bench-key-dotted"></i> Provisional calculation</span><span><i class="bench-key-band"></i> Tested range</span></p>
  <div id="bench-turn-plot" class="bench-chart"></div>
  <p class="bench-note">Triangles mark 1 G stall and circles mark maximum level speed. Squares mark peak turn rate and Vy. The grey guide shows a 3°/s turn.</p>
  <div class="bench-probe-slider">
   <label>Speed to compare<input id="bench-probe-speed" type="range" aria-describedby="bench-probe-help"></label>
   <output id="bench-probe-value" for="bench-probe-speed">—</output>
+  <button id="bench-probe-lock" type="button" aria-pressed="false" aria-controls="bench-probe-results bench-climb-at-speed">Lock speed</button>
  </div>
- <p class="bench-note" id="bench-probe-help">Hover over a chart or move the slider to compare both aircraft at the same equivalent airspeed.</p>
+ <p class="bench-note" id="bench-probe-lock-status" aria-live="polite"></p>
+ <p class="bench-note" id="bench-probe-help">Move the slider or hover over a chart to compare at one speed. Lock the reading to inspect its sources.</p>
  <div id="bench-probe-results" class="bench-probe-cards"></div>
  <section class="bench-advantage" aria-labelledby="bench-advantage-title">
   <h3 id="bench-advantage-title">Sustained-turn advantage</h3>
   <div id="bench-advantage-readout" class="bench-advantage-readout"></div>
   <div id="bench-advantage-plot" class="bench-chart"></div>
-  <p id="bench-advantage-key" class="bench-note bench-evidence-legend"><span>White line · Modeled difference</span><span>Shading · Tested range</span><span><span class="bench-a">Blue</span> or <span class="bench-b">amber</span> strip · Same aircraft leads across inputs</span><span>Grey strip · Lead depends on inputs</span></p>
+  <p id="bench-advantage-key" class="bench-note bench-evidence-legend"><span>White line · Modeled difference</span><span>Shading · Tested range</span><span>Aircraft colour · Same aircraft leads across inputs</span><span>Grey strip · Lead depends on inputs</span></p>
   <details><summary>What limits each aircraft at this speed?</summary>
    <p class="bench-note">The lowest of lift, power and the model’s G cap sets the turn. Extra drag in a turn uses power above what the aircraft needs for level flight.</p>
    <div id="bench-turn-limits" class="bench-turn-limits"></div>
@@ -122,7 +135,7 @@
   <details><summary>Flight-test evidence and sensitivity assumptions</summary><div id="bench-turn-evidence"></div></details>
  </section>
  <div id="bench-climb-plot" class="bench-chart"></div>
- <div id="bench-climb-at-speed" class="bench-advantage-readout"></div>
+ <div id="bench-climb-at-speed" class="bench-probe-cards"></div>
  <p class="bench-note">The climb chart uses straight flight with climb cooling.</p>
  <h3>Performance across altitude</h3>
  <p class="bench-note">Select a row to compare both aircraft at that altitude. Δ is aircraft 1 minus aircraft 2. * includes estimated power.</p>

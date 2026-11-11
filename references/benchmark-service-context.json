@@ -31,7 +31,8 @@
         "Mediterranean"
       ],
       "source": "https://ingenium.ca/aviation/en/collection-highlight/messerschmitt-bf-109f-4/",
-      "displayName": "Bf 109 F-4"
+      "displayName": "Bf 109 F-4",
+      "country": "germany"
     },
     "fw190a4": {
       "group": "mid",
@@ -44,7 +45,8 @@
         "Eastern Front",
         "Mediterranean"
       ],
-      "displayName": "Fw 190 A-4"
+      "displayName": "Fw 190 A-4",
+      "country": "germany"
     },
     "p38g": {
       "group": "mid",
@@ -56,7 +58,8 @@
         "Mediterranean",
         "Pacific"
       ],
-      "displayName": "P-38G-1 Lightning"
+      "displayName": "P-38G-1 Lightning",
+      "country": "us"
     },
     "spitfire_lfix_bs543": {
       "group": "mid",
@@ -68,7 +71,8 @@
         "Western Europe",
         "Mediterranean"
       ],
-      "displayName": "Spitfire LF Mk IXc"
+      "displayName": "Spitfire LF Mk IXc",
+      "country": "uk"
     },
     "p51b": {
       "group": "late",
@@ -80,7 +84,8 @@
         "Western Europe",
         "China–Burma–India"
       ],
-      "displayName": "P-51B-15 Mustang"
+      "displayName": "P-51B-15 Mustang",
+      "country": "us"
     },
     "f4u4": {
       "group": "late",
@@ -92,7 +97,8 @@
         "Pacific"
       ],
       "source": "https://www.history.navy.mil/content/history/museums/nnam/explore/collections/aircraft/f/f4u-4-corsair.html",
-      "displayName": "F4U-4 Corsair"
+      "displayName": "F4U-4 Corsair",
+      "country": "us"
     },
     "p47b": {
       "group": "trials",
@@ -103,7 +109,8 @@
       "theatres": [],
       "note": "1942 US test and training variant",
       "source": "https://www.aircorpsaviation.com/wp-content/uploads/P-47_NovDec-2018.pdf",
-      "displayName": "P-47B Thunderbolt"
+      "displayName": "P-47B Thunderbolt",
+      "country": "us"
     }
   }
 }
