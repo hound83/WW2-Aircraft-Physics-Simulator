@@ -12,12 +12,37 @@
  #operating-benchmark .bench-number{padding:.7rem;border:1px solid #354f5e;border-radius:7px}#operating-benchmark .bench-number strong{display:block;font-size:1.3rem;margin:.25rem 0}#operating-benchmark .bench-number small{display:block;color:#b6c8d1;line-height:1.4}
  #operating-benchmark .bench-note{font-size:.86rem;line-height:1.5;color:#b7cad5}#operating-benchmark .bench-warning{padding:.7rem;border-left:3px solid #ffc077;background:#3a3226;border-radius:4px}
  #operating-benchmark .bench-chart svg{width:100%;display:block}#operating-benchmark table{width:100%;border-collapse:collapse}#operating-benchmark td,#operating-benchmark th{padding:.6rem;border-bottom:1px solid #405969;text-align:left;vertical-align:top}#operating-benchmark summary{cursor:pointer;padding:.6rem 0}
+ #operating-benchmark .bench-chart{position:relative}
+ #operating-benchmark .bench-chart svg{touch-action:pan-y}
+ #operating-benchmark .bench-chart text{fill:currentColor;font-size:15px}
+ #operating-benchmark .bench-grid-line{stroke:#425b6b;stroke-width:1}
+ #operating-benchmark .bench-turn-reference{stroke:#9baeb8;stroke-dasharray:4 6}
+ #operating-benchmark .bench-crosshair{stroke:#e4eef4;stroke-width:1;pointer-events:none}
+ #operating-benchmark .bench-probe-dot{stroke:#142b37;stroke-width:2;pointer-events:none}
+ #operating-benchmark .bench-probe-slider{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin:1rem 0}
+ #operating-benchmark .bench-probe-slider label{flex:1;min-width:12rem}
+ #operating-benchmark .bench-probe-slider input{width:100%;margin:0;accent-color:var(--bench-a)}
+ #operating-benchmark .bench-probe-slider output{font-weight:700;min-width:7rem;text-align:right}
+ #operating-benchmark .bench-probe-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:.8rem 0}
+ #operating-benchmark .bench-probe-card{background:#142b37;border:1px solid #486272;border-left:4px solid var(--bench-a);border-radius:8px;padding:.8rem}
+ #operating-benchmark .bench-probe-card[data-side="b"]{border-left-color:var(--bench-b)}
+ #operating-benchmark [data-side="a"] .bench-probe-name{color:var(--bench-a)}
+ #operating-benchmark [data-side="b"] .bench-probe-name{color:var(--bench-b)}
+ #operating-benchmark .bench-probe-card p{margin:.35rem 0}
+ #operating-benchmark .bench-probe-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;margin:.7rem 0 .1rem}
+ #operating-benchmark .bench-probe-metrics dt{font-size:.8rem;color:#b7cad5}
+ #operating-benchmark .bench-probe-metrics dd{margin:.2rem 0 0;font-weight:700}
+ #operating-benchmark .bench-probe-tooltip{position:absolute;z-index:2;pointer-events:none;box-sizing:border-box;width:max-content;max-width:min(24rem,calc(100% - 16px));padding:.7rem;background:#10212d;border:1px solid #607b8a;border-radius:8px;box-shadow:0 6px 18px #0006;font-size:.83rem}
+ #operating-benchmark .bench-probe-tooltip div{margin-top:.4rem}
+ #operating-benchmark .bench-probe-tooltip div span{display:block}
  @media(max-width:740px){#operating-benchmark .bench-sides{grid-template-columns:1fr}#operating-benchmark .bench-numbers{grid-template-columns:repeat(2,minmax(0,1fr))}#operating-benchmark .bench-toolbar{align-items:stretch}}
+ @media(max-width:740px){#operating-benchmark .bench-probe-cards{grid-template-columns:1fr}#operating-benchmark .bench-chart text{font-size:23px}#operating-benchmark .bench-probe-slider output{text-align:left}}
  </style>
  <h2>Compare flight performance</h2>
  <p>Air-to-air loads. Choose power, fuel and injection for each aircraft independently. Both aircraft always share the same altitude.</p>
  <div class="bench-toolbar">
   <label>Shared altitude<select id="bench-altitude"><option value="0">Sea level</option><option value="10000" selected>10,000 ft · 3.0 km</option><option value="20000">20,000 ft · 6.1 km</option><option value="30000">30,000 ft · 9.1 km</option><option value="35000">35,000 ft · 10.7 km</option><option value="40000">40,000 ft · 12.2 km</option></select></label>
+  <label>Speed units<select id="bench-speed-unit"><option value="mph">mph</option><option value="kph">km/h</option><option value="knots">Knots</option></select></label>
   <label style="flex-direction:row;align-items:center"><input id="bench-extension" type="checkbox" checked> Include labelled high-altitude power estimates</label>
  </div>
  <p class="bench-note">Independent tests at the selected altitude start at the chosen fuel load with fresh power allowance. Full climbs below carry fuel use and allowance forward. These remain research estimates of performance.</p>
@@ -25,7 +50,15 @@
   <article class="bench-side"><div class="bench-title" id="bench-title-a">Aircraft 1</div><label>Aircraft<select id="bench-aircraft-a"></select></label><div class="bench-controls"><label>Power<select id="bench-power-a"><option value="normal">Normal</option><option value="combat" selected>Combat</option></select></label><label>Internal fuel<select id="bench-fuel-a"><option value="0.25">25%</option><option value="0.5" selected>50%</option><option value="0.75">75%</option></select></label></div><label class="bench-injection" style="flex-direction:row"><input id="bench-injection-a" type="checkbox"><span id="bench-injection-label-a">Injection</span></label><p id="bench-setting-a" class="bench-setting"></p><div id="bench-result-a"></div></article>
   <article class="bench-side"><div class="bench-title" id="bench-title-b">Aircraft 2</div><label>Aircraft<select id="bench-aircraft-b"></select></label><div class="bench-controls"><label>Power<select id="bench-power-b"><option value="normal">Normal</option><option value="combat" selected>Combat</option></select></label><label>Internal fuel<select id="bench-fuel-b"><option value="0.25">25%</option><option value="0.5" selected>50%</option><option value="0.75">75%</option></select></label></div><label class="bench-injection" style="flex-direction:row"><input id="bench-injection-b" type="checkbox"><span id="bench-injection-label-b">Injection</span></label><p id="bench-setting-b" class="bench-setting"></p><div id="bench-result-b"></div></article>
  </div>
- <p id="bench-comparison" aria-live="polite"></p><div id="bench-turn-plot" class="bench-chart"></div>
+ <p id="bench-comparison" aria-live="polite"></p>
+ <div id="bench-turn-plot" class="bench-chart"></div>
+ <p class="bench-note">Triangles mark 1 G stall. Circles mark maximum level speed. The grey guide shows 3°/s, a two-minute circle.</p>
+ <div class="bench-probe-slider">
+  <label>Speed to compare<input id="bench-probe-speed" type="range" aria-describedby="bench-probe-help"></label>
+  <output id="bench-probe-value" for="bench-probe-speed">—</output>
+ </div>
+ <p class="bench-note" id="bench-probe-help">Hover over either curve or move the slider to compare both aircraft at the same equivalent airspeed. Climb is evaluated in straight flight with the climb cooling configuration.</p>
+ <div id="bench-probe-results" class="bench-probe-cards"></div>
  <details><summary>Full climb to the shared altitude</summary><p>Start already airborne at the chosen start height. Normal follows the recorded routine climb-speed schedule. Combat searches where a single permitted higher-power window saves the most time, then replays fuel and injection use. No allowance resets at intermediate altitudes.</p><div class="bench-toolbar"><label>Climb from<select id="bench-climb-from"><option value="0">Sea level</option><option value="10000">10,000 ft</option><option value="20000">20,000 ft</option><option value="30000">30,000 ft</option><option value="35000">35,000 ft</option></select></label><button id="bench-climb-calculate" type="button">Calculate both climbs</button></div><div id="bench-climb-result" aria-live="polite">Calculate a climb with the current settings.</div><p class="bench-note">Climb fuel flow uses a shared illustrative 0.50 lb/shaft-hp-hour. The optimized window is the quickest tested schedule under this model, not a reconstruction of a pilot's tactical choices. Acceleration during speed changes and a dynamic thermal model are not included.</p></details>
  <details><summary>Aircraft settings, load assumptions and sources</summary><div id="bench-sources"></div></details>
  <p class="bench-note">Normal and Combat use the same service-load reconstruction. No bombs, rockets, external tanks or optional gun pods; removable racks excluded. A charged injection reservoir is carried in dry and injected cases. Full-ammo weights and some lower-rating/altitude power conversions remain qualified engineering reconstructions. Original source-test replays follow below.</p>

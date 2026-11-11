@@ -11,6 +11,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      html_sha256: ${{ steps.stage.outputs.html_sha256 }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -23,9 +25,12 @@ jobs:
       - run: node scripts/verify-pre-pr1.cjs
       - run: npm run test:browser
       - name: Stage the tested simulator
+        id: stage
         run: |
           mkdir -p "$RUNNER_TEMP/simulator-pages"
           cp dist/model.html "$RUNNER_TEMP/simulator-pages/index.html"
+          sha=$(sha256sum "$RUNNER_TEMP/simulator-pages/index.html")
+          printf 'html_sha256=%s\n' "${sha%% *}" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-pages-artifact@v5
         with:
           path: ${{ runner.temp }}/simulator-pages
@@ -45,3 +50,21 @@ jobs:
     steps:
       - uses: actions/deploy-pages@v5
         id: deployment
+      - name: Verify the live simulator
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+          HTML_SHA256: ${{ needs.build.outputs.html_sha256 }}
+        run: |
+          live_html="$RUNNER_TEMP/published-simulator.html"
+          for attempt in {1..12}; do
+            if curl --fail --silent --show-error --max-time 12 --compressed \
+              "${PAGE_URL}?build=${GITHUB_SHA}" --output "$live_html" && \
+              printf '%s  %s\n' "$HTML_SHA256" "$live_html" | sha256sum --check --status; then
+              printf 'Verified the tested simulator at %s\n' "$PAGE_URL"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo 'The public simulator did not match the tested build.' >&2
+          exit 1
+

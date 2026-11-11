@@ -120,12 +120,14 @@ function build(){
  html=html.replace('<a href="#historical-evidence">','<a href="#maneuver-envelope">Seven-aircraft maneuver envelope</a> · <a href="#historical-evidence">');
  html=html.replace('</body>','<script>'+source+'</script><script type="application/json" id="robustness-data">'+audit+'</script><script>'+ui+'</script>'+conditionEmbed+measuredEmbed+stallEmbed+comparisonEmbed+'<script type="application/json" id="historical-research-data">'+researchData+'</script><script>'+researchUI+'</script>'+maneuverEmbed+'</body>');
  const benchmarkData=JSON.stringify(require('../validation/diagnostics/operating_benchmark_v42.cjs').buildData());
- const benchmarkSource=read('src/operating-benchmark.js'),benchmarkUI=read('src/operating-benchmark-ui.js');
- if([benchmarkData,benchmarkSource,benchmarkUI].some(text=>/<\/script/i.test(text)))throw Error('Unsafe operating benchmark embed');
+ const benchmarkSource=read('src/operating-benchmark.js');
+ const benchmarkChart=read('src/operating-benchmark-chart.js');
+ const benchmarkUI=read('src/operating-benchmark-ui.js');
+ if([benchmarkData,benchmarkSource,benchmarkChart,benchmarkUI].some(text=>/<\/script/i.test(text)))throw Error('Unsafe operating benchmark embed');
  html=html.replace('<main>',()=>'<main>'+read('src/operating-benchmark-panel.html'));
  html=html.replace('<a href="#maneuver-envelope">','<a href="#operating-benchmark">Normal / Combat benchmark</a> &middot; <a href="#maneuver-envelope">');
  html=html.replace('#stall-lab, #fighter-comparison, #historical-evidence, #maneuver-envelope','#stall-lab, #fighter-comparison, #historical-evidence, #maneuver-envelope, #operating-benchmark');
- html=html.replace('</body>',()=>'<script>'+benchmarkSource+'</script><script type="application/json" id="benchmark-operating-data">'+benchmarkData+'</script><script>'+benchmarkUI+'</script></body>');
+ html=html.replace('</body>',()=>'<script>'+benchmarkSource+'</script><script type="application/json" id="benchmark-operating-data">'+benchmarkData+'</script><script>'+benchmarkChart+'</script><script>'+benchmarkUI+'</script></body>');
  fs.mkdirSync(path.join(root,'dist'),{recursive:true});
  fs.writeFileSync(path.join(root,'dist/model.html'),html);
  fs.writeFileSync(path.join(root,'dist/research-catalog.json'),researchData+'\n');
