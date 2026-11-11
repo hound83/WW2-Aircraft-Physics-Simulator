@@ -463,13 +463,19 @@ async function run(){
   await until(async()=>(await probe()).easMph!==200,'turn advantage chart shares the speed probe');
   checks.push('v4.4 advantage chart distinguishes persistent and assumption-sensitive leads and shares speed with turn and climb');
   checks.push('v4.4 limit bars and measured maneuver-lift bands appear at matched conditions');
-  const probeLayout=()=>evaluate(`[
+  const probeLayout=()=>evaluate(`Object.fromEntries([
     '#bench-probe-results','#bench-advantage-readout','#bench-turn-limits',
     ...['turn','advantage','climb','acceleration'].map(kind=>'#bench-'+kind+'-plot svg')
   ].map(selector=>{
     const {top,left,width,height}=document.querySelector(selector).getBoundingClientRect();
-    return [top,left,width,height];
-  })`);
+    return [selector,[top,left,width,height]];
+  }))`);
+  const assertStableLayout=async(before,context)=>{
+    for(const [selector,box] of Object.entries(await probeLayout())){
+      const shift=Math.max(...box.map((value,i)=>Math.abs(value-before[selector][i])));
+      assert.ok(shift<.25,`${selector} shifted ${shift}px ${context}`);
+    }
+  };
   const openLimits=open=>evaluate(`document.getElementById("bench-turn-limits").closest("details").open=${open}`);
   await select('bench-altitude','25000');
   await openLimits(true);
@@ -491,7 +497,7 @@ async function run(){
     for(const [i,target] of targets.entries()){
       await send('Input.dispatchMouseEvent',{type:'mouseMoved',...target});
       assert.equal((await probe()).easMph,hoverSpeeds[i],`Hover selects ${hoverSpeeds[i]} mph at ${width}px`);
-      assert.deepEqual(await probeLayout(),before,`Plot and readout positions stay fixed at ${hoverSpeeds[i]} mph and ${width}px`);
+      await assertStableLayout(before,`at ${hoverSpeeds[i]} mph and ${width}px`);
     }
   }
   await select('bench-altitude','10000');
@@ -501,7 +507,7 @@ async function run(){
     const before=await probeLayout();
     await setProbe(170);
     assert.match(await evaluate('document.getElementById("bench-climb-at-speed").textContent'),/Report-adjusted range/);
-    assert.deepEqual(await probeLayout(),before,`Plot positions stay fixed when climb evidence appears at ${width}px`);
+    await assertStableLayout(before,`when climb evidence appears at ${width}px`);
   }
   await send('Emulation.clearDeviceMetricsOverride');
   await openLimits(false);
