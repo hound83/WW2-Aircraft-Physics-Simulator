@@ -1,0 +1,628 @@
+{
+  "schema": "ww2-fighter-dual-lane-readiness/v1",
+  "version": "1.3.0",
+  "as_of": "2026-11-11",
+  "baseline_file": "references/aircraft-readiness-flight-tests-2026-11-11.json",
+  "research_pack": "references/research/ww2_fighter_measured_conditions_2026-11-11.json",
+  "scope": "Fixed thirteen-variant coverage rubric. The ten variants initially below 70% primary receive priority.",
+  "weights": [
+    10,
+    25,
+    20,
+    15,
+    10,
+    20
+  ],
+  "dimensions": [
+    "variant_identity",
+    "stall_and_actual_mass",
+    "near_stall_calibration",
+    "installed_engine_prop_cooling",
+    "independent_speed_climb",
+    "sustained_turn_drag"
+  ],
+  "targets": {
+    "primary_percent": 80,
+    "augmented_percent": 90,
+    "super_good_enough_hard_gate_override": false
+  },
+  "primary_definition": "Only independently inspected wartime/period source evidence, including scans reproduced by websites, with deductions for nonmatching specimens, untested operating points or design rather than measured figures. Published original source without measured numeric applicable data receives only limited qualitative coverage.",
+  "augmented_definition": "Primary plus explicitly attributed historical-secondary findings, same-variant but different-specimen comparisons and transparent physical derivations confined to their stated assumptions. Modern game flight models are cross-checks, NOT historical flight-test measurements. Categories remain capped; no inference can manufacture source-matched measured CAS or sustained-turn data.",
+  "score_policy": "Expert-judgment evidence-coverage checklist, 0..100 points. Incremental scores are conservative; recovering a citation or identifying a report without its numbers does not itself close the missing-performance category. Reprint is same original source, not another independent measurement. Two lanes are not probabilities and may remain below target. Achieving 80 is an ambition, NOT a release gate override.",
+  "variants": [
+    {
+      "id": "f4u4_80765",
+      "label": "F4U-4 80765",
+      "previous_primary_points": [
+        10,
+        23,
+        20,
+        13,
+        10,
+        7
+      ],
+      "previous_augmented_points": [
+        10,
+        24,
+        20,
+        14,
+        10,
+        10
+      ],
+      "primary_points": [
+        10,
+        23,
+        20,
+        13,
+        10,
+        7
+      ],
+      "augmented_points": [
+        10,
+        24,
+        20,
+        14,
+        10,
+        10
+      ],
+      "primary_percent": 83,
+      "augmented_percent": 88,
+      "delta_primary": 0,
+      "delta_augmented": 0,
+      "primary_target_met": true,
+      "augmented_target_met": false,
+      "credit": "Earlier coverage retained.",
+      "next": "Exact operating handbook pages and independent BuNo 80765 turn or drag evidence. Recovered NACA A7C05 stays in its separate specimen."
+    },
+    {
+      "id": "p51b_4324777",
+      "label": "P-51B-15 43-24777",
+      "previous_primary_points": [
+        10,
+        21,
+        11,
+        12,
+        10,
+        8
+      ],
+      "previous_augmented_points": [
+        10,
+        22,
+        11,
+        14,
+        10,
+        12
+      ],
+      "primary_points": [
+        10,
+        21,
+        11,
+        12,
+        10,
+        8
+      ],
+      "augmented_points": [
+        10,
+        22,
+        11,
+        14,
+        10,
+        12
+      ],
+      "primary_percent": 72,
+      "augmented_percent": 79,
+      "delta_primary": 0,
+      "delta_augmented": 0,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "credit": "Earlier coverage retained.",
+      "next": "Find matching 43-24777 low-speed PEC below 140 mph IAS. MR L4L18 Fig. 9 is a different test rig and serial."
+    },
+    {
+      "id": "f6f3_04776",
+      "label": "F6F-3 04776",
+      "previous_primary_points": [
+        10,
+        24,
+        19,
+        11,
+        7,
+        8
+      ],
+      "previous_augmented_points": [
+        10,
+        25,
+        19,
+        12,
+        8,
+        10
+      ],
+      "primary_points": [
+        10,
+        24,
+        19,
+        11,
+        7,
+        8
+      ],
+      "augmented_points": [
+        10,
+        25,
+        19,
+        12,
+        8,
+        10
+      ],
+      "primary_percent": 79,
+      "augmented_percent": 84,
+      "delta_primary": 0,
+      "delta_augmented": 0,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "credit": "Earlier coverage retained.",
+      "next": "Resolve whether Part III plots include the correction described in Part I and recover run weight/fuel. The A&AEE FN322 trial already exists in the earlier pack."
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "label": "Spitfire LF IX BS543",
+      "previous_primary_points": [
+        10,
+        13,
+        11,
+        13,
+        10,
+        5
+      ],
+      "previous_augmented_points": [
+        10,
+        15,
+        11,
+        14,
+        10,
+        10
+      ],
+      "primary_points": [
+        10,
+        13,
+        11,
+        13,
+        10,
+        5
+      ],
+      "augmented_points": [
+        10,
+        15,
+        11,
+        14,
+        10,
+        13
+      ],
+      "primary_percent": 62,
+      "augmented_percent": 73,
+      "delta_primary": 0,
+      "delta_augmented": 3,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "credit": "The JL165 paired 7400-lb radiator trials quantify the impact on rate of climb over 0–30,000 ft at +25 lb/sq.in. initially. BS543 +18 remains a separate configuration.",
+      "next": "Recover BF274 A&AEE 692/m Figure 3 or a matched near-stall correction and BS543 radiator A/B test."
+    },
+    {
+      "id": "p47b_415902",
+      "label": "P-47B 41-5902",
+      "previous_primary_points": [
+        10,
+        14,
+        4,
+        14,
+        10,
+        8
+      ],
+      "previous_augmented_points": [
+        10,
+        14,
+        4,
+        14,
+        10,
+        12
+      ],
+      "primary_points": [
+        10,
+        14,
+        4,
+        15,
+        10,
+        11
+      ],
+      "augmented_points": [
+        10,
+        14,
+        4,
+        15,
+        10,
+        15
+      ],
+      "primary_percent": 64,
+      "augmented_percent": 68,
+      "delta_primary": 4,
+      "delta_augmented": 4,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "credit": "Same-specimen cooler and windshield A/B speed runs and a torque-based level power point expand configuration drag coverage. A measured climb-cooling trade improves operating context.",
+      "next": "Find the same pitot installation below 170 mph and high-lift drag/turn data."
+    },
+    {
+      "id": "p38g_4212687",
+      "label": "P-38G-1 42-12687",
+      "previous_primary_points": [
+        10,
+        11,
+        7,
+        12,
+        10,
+        7
+      ],
+      "previous_augmented_points": [
+        10,
+        13,
+        7,
+        14,
+        10,
+        10
+      ],
+      "primary_points": [
+        10,
+        11,
+        7,
+        14,
+        10,
+        10
+      ],
+      "augmented_points": [
+        10,
+        13,
+        7,
+        15,
+        10,
+        14
+      ],
+      "primary_percent": 62,
+      "augmented_percent": 69,
+      "delta_primary": 5,
+      "delta_augmented": 5,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "credit": "Part-power TAS, RPM and chart BHP at two altitudes extend the installed power/drag evidence. Distinct induction and coolant results narrow the cooling constraint.",
+      "next": "Recover actual torque or propulsive efficiency and the Eglin enclosure for maneuver flap turns. The chart-power points alone cannot resolve propeller efficiency from drag."
+    },
+    {
+      "id": "fw190d9_210002",
+      "label": "Fw 190 D-9 210002",
+      "previous_primary_points": [
+        10,
+        3,
+        11,
+        14,
+        10,
+        2
+      ],
+      "previous_augmented_points": [
+        10,
+        4,
+        11,
+        15,
+        10,
+        8
+      ],
+      "primary_points": [
+        10,
+        3,
+        11,
+        14,
+        10,
+        2
+      ],
+      "augmented_points": [
+        10,
+        4,
+        11,
+        15,
+        10,
+        12
+      ],
+      "primary_percent": 50,
+      "augmented_percent": 62,
+      "delta_primary": 0,
+      "delta_augmented": 4,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "credit": "Rechlin WNr 210006 adds a D-9 comparison with measured radiator-position response and a tank penalty curve. Same-serial WNr 210002 coverage does not change.",
+      "next": "Recover a WNr 210002 low-speed Bruhn calibration and matched clean or tank drag test."
+    },
+    {
+      "id": "fw190a4_783",
+      "label": "Fw 190 A-4 783",
+      "previous_primary_points": [
+        10,
+        8,
+        3,
+        12,
+        10,
+        6
+      ],
+      "previous_augmented_points": [
+        10,
+        9,
+        4,
+        13,
+        10,
+        10
+      ],
+      "primary_points": [
+        10,
+        8,
+        3,
+        15,
+        10,
+        8
+      ],
+      "augmented_points": [
+        10,
+        9,
+        4,
+        15,
+        10,
+        12
+      ],
+      "primary_percent": 54,
+      "augmented_percent": 60,
+      "delta_primary": 5,
+      "delta_augmented": 4,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "credit": "Exact WNr 783 flight cooling-pressure runs add separate climb and level thresholds plus a matched flap-angle, speed and pressure curve. The factory GM 1 extrapolation is kept conditional.",
+      "next": "Find WNr 783 clean, armed stall and turn data. The Soviet WNr 2310 / 2362 narrative locates separate comparison specimens."
+    },
+    {
+      "id": "p40f_4113635",
+      "label": "P-40F 41-13635",
+      "previous_primary_points": [
+        10,
+        8,
+        3,
+        15,
+        10,
+        3
+      ],
+      "previous_augmented_points": [
+        10,
+        9,
+        3,
+        15,
+        10,
+        8
+      ],
+      "primary_points": [
+        10,
+        8,
+        3,
+        15,
+        10,
+        3
+      ],
+      "augmented_points": [
+        10,
+        9,
+        3,
+        15,
+        10,
+        11
+      ],
+      "primary_percent": 49,
+      "augmented_percent": 58,
+      "delta_primary": 0,
+      "delta_augmented": 3,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "credit": "The seven existing rack pairs were rechecked and the 1100 bhp value corrected. A transparent sensitivity calculation bounds the size of the brace penalty under stated power and drag assumptions.",
+      "next": "Recover configuration-matched sub-108 mph calibration and a clean power-off or high-lift polar. Search the Kittyhawk II engine-cooling trial for a clearly identified installation."
+    },
+    {
+      "id": "ki84_302",
+      "label": "Ki-84-I 302",
+      "previous_primary_points": [
+        10,
+        18,
+        1,
+        14,
+        4,
+        3
+      ],
+      "previous_augmented_points": [
+        10,
+        19,
+        1,
+        15,
+        4,
+        5
+      ],
+      "primary_points": [
+        10,
+        18,
+        1,
+        14,
+        4,
+        3
+      ],
+      "augmented_points": [
+        10,
+        19,
+        1,
+        15,
+        4,
+        5
+      ],
+      "primary_percent": 50,
+      "augmented_percent": 54,
+      "delta_primary": 0,
+      "delta_augmented": 0,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "credit": "Verified original manifold-pressure transcription conflict and removed the unsupported conversion in the three earlier datasets. The IAS observations remain useful.",
+      "next": "Find a second original test record with MAP convention, actual maneuver conditions and calibrated stall speed. Obtain the Japanese performance originals."
+    },
+    {
+      "id": "p47d30_433441",
+      "label": "P-47D-30 43-3441",
+      "previous_primary_points": [
+        10,
+        21,
+        6,
+        8,
+        1,
+        8
+      ],
+      "previous_augmented_points": [
+        10,
+        23,
+        7,
+        10,
+        2,
+        11
+      ],
+      "primary_points": [
+        10,
+        23,
+        7,
+        10,
+        1,
+        13
+      ],
+      "augmented_points": [
+        10,
+        25,
+        8,
+        13,
+        2,
+        17
+      ],
+      "primary_percent": 64,
+      "augmented_percent": 75,
+      "delta_primary": 10,
+      "delta_augmented": 12,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "credit": "Independent lateral instrumentation and additional longitudinal runs resolve service IAS versus calibrated boom speed. Clean steady-turn force data expand the maneuver evidence. The experimental Hamilton Standard propeller informs only augmented coverage.",
+      "next": "Seek paired service/boom IAS-CAS around the break and a Curtiss SPA-5 thrust curve. The steady turns have no maximum sustained-turn or shaft-power measurement."
+    },
+    {
+      "id": "bf109f4_representative",
+      "label": "Bf 109 F-4 DB601E",
+      "previous_primary_points": [
+        9,
+        4,
+        0,
+        12,
+        7,
+        5
+      ],
+      "previous_augmented_points": [
+        9,
+        6,
+        0,
+        13,
+        9,
+        8
+      ],
+      "primary_points": [
+        9,
+        4,
+        0,
+        12,
+        7,
+        5
+      ],
+      "augmented_points": [
+        9,
+        6,
+        0,
+        13,
+        9,
+        8
+      ],
+      "primary_percent": 37,
+      "augmented_percent": 45,
+      "delta_primary": 0,
+      "delta_augmented": 0,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "credit": "EB-100 / possible WNr 7640 remains a locator. The aircraft identity and flight report were not verified together.",
+      "next": "Recover the original EB-100 and A.I.2(g) 2076 flight notes. Check the F-4 serial and whether the pitot and power settings are documented."
+    },
+    {
+      "id": "bf109g2_db605a",
+      "label": "Bf109G-2 DB605A (research intake)",
+      "previous_primary_points": [
+        9,
+        10,
+        3,
+        14,
+        8,
+        5
+      ],
+      "previous_augmented_points": [
+        10,
+        13,
+        4,
+        15,
+        10,
+        8
+      ],
+      "primary_points": [
+        9,
+        10,
+        3,
+        14,
+        8,
+        5
+      ],
+      "augmented_points": [
+        10,
+        13,
+        4,
+        15,
+        10,
+        10
+      ],
+      "primary_percent": 49,
+      "augmented_percent": 62,
+      "delta_primary": 0,
+      "delta_augmented": 2,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "credit": "Original G-1 WNr 14001 cooling trial supplies a qualified early DB 605 A configuration comparison at Kampfleistung. The G-2 engine schedule is scored from separately documented settings.",
+      "next": "Find a clean production G-2 cooling comparison with serial, manifold pressure and RPM documented, plus clean low-speed position error."
+    }
+  ],
+  "summary": {
+    "fleet": {
+      "variant_count": 13,
+      "primary_before": 57.77,
+      "primary_after": 59.62,
+      "primary_delta_pp": 1.85,
+      "augmented_before": 64.62,
+      "augmented_after": 67.46,
+      "augmented_delta_pp": 2.85
+    },
+    "initially_below_70_primary": {
+      "variant_count": 10,
+      "primary_before": 51.7,
+      "primary_after": 54.1,
+      "primary_delta_pp": 2.4,
+      "augmented_before": 58.9,
+      "augmented_after": 62.6,
+      "augmented_delta_pp": 3.7
+    },
+    "primary_target_met": 1,
+    "augmented_target_met": 0
+  }
+}
