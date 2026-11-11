@@ -1,6 +1,6 @@
 # Fighter operating data and international flight-test reports
 
-11 November 2026. This research checkpoint covers thirteen fighter variants. It records 70 data rows in 13 series and tracks 23 source entries, including companion reports, prior sources rechecked, and unclosed leads. The ten visually digitized windows come from two existing NACA test programs. Archived links and scan hashes identify the sources.
+11 November 2026. This research checkpoint covers thirteen fighter variants. It records 70 data rows in 13 series and tracks 24 source entries, including companion reports, prior sources rechecked, and unclosed leads. The ten visually digitized windows come from two existing NACA test programs. Archived links and scan hashes identify the sources.
 
 ## What the reports establish
 

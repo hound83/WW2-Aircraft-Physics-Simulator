@@ -226,6 +226,15 @@
       "location": "中央-軍隊教育典範航空関係-387 and -388",
       "classification": "archive-catalogue",
       "notes": "Japanese originals still to retrieve. No confirmed equivalence to the six translated leaflets."
+    },
+    {
+      "id": "KI84-ADVATIS-92-LOCATOR",
+      "aircraft": "Ki-84",
+      "report": "ADVATIS Translation 92, cited by PACMIRS Air Translations No. 8",
+      "source": "https://www.si.edu/media/NASM/NASM-Manual-000033269.pdf",
+      "location": "PACMIRS printed 1, PDF 5, translator note",
+      "classification": "original-reference-to-unrecovered-translation",
+      "notes": "The translator reports overlapping tables. Separate ADVATIS document was not obtained. The link is the original cross-reference rather than the earlier report."
     }
   ],
   "series": [
@@ -234,7 +243,7 @@
       "source_id": "F6F04776-NACA-L5B13B-TRACE",
       "aircraft": "F6F-3 BuAer 04776",
       "quantity": "first_departure_window",
-      "speed_basis": "indicated mph, exact correction status unverified",
+      "speed_basis": "IAS",
       "source_location": "PDF 14, 16, 18, 20, 22, and condition table on PDF 4",
       "conditions": "Window bracketed visually from initial roll departure and change in normal-force trace. Published take-off weight approximately 11200 lb. Run weight, altitude and fuel are unavailable in these figure captions. Speed spread is an approximate reading/selection bound. Normal acceleration band is approximate around the first break. Powered and flap-down traces represent their stated propwash and configuration.",
       "columns": [
@@ -354,14 +363,15 @@
         ]
       ],
       "source_class": "inspected-original-digitized-window",
-      "evidence_kind": "digitized_primary_flight_trace"
+      "evidence_kind": "digitized_primary_flight_trace",
+      "notes": "indicated mph, exact correction status unverified"
     },
     {
       "id": "p47d30-433441-stall-traces",
       "source_id": "P47D30-L8A06-STALL-TRACE",
       "aircraft": "P-47D-30 AAF 43-3441",
       "quantity": "stall_or_closest_approach_trace_window",
-      "speed_basis": "service indicated mph, explicitly labeled, CAS mapping pending",
+      "speed_basis": "IAS",
       "source_location": "PDF 70, 72, 75, 77, 78 and configuration table on PDF 3",
       "conditions": "Near-break or minimum approach window. The approach trace has no clear full-break marker. All rows are observed trace readings with visual bounds, same flight-test program. Power off is the report condition, not an assumed zero shaft torque.",
       "columns": [
@@ -481,20 +491,21 @@
         ]
       ],
       "source_class": "inspected-original-digitized-window",
-      "evidence_kind": "digitized_primary_flight_trace"
+      "evidence_kind": "digitized_primary_flight_trace",
+      "notes": "service indicated mph, explicitly labeled, CAS mapping pending"
     },
     {
       "id": "p40fl-manual-stall",
       "source_id": "P40FL-TO01-25CH-1-1943",
       "aircraft": "P-40F/L",
-      "quantity": "approximate_stall_speed",
-      "speed_basis": "IAS mph",
+      "quantity": "stall_speed",
+      "speed_basis": "IAS",
       "source_location": "Printed 28, 32",
       "conditions": "Normal operational loads. The table does not give test weight, serial or a correction curve. The landing section says the approximate 82 mph figure can vary by 2 mph with load.",
       "columns": [
         "gear",
         "flaps",
-        "stall_mph_ias",
+        "stall_ias_mph",
         "load_sensitivity_mph"
       ],
       "rows": [
@@ -524,7 +535,11 @@
         ]
       ],
       "source_class": "original-handbook",
-      "evidence_kind": "period_handbook_values"
+      "evidence_kind": "period_handbook_values",
+      "corrections": {
+        "instrument": "unestablished",
+        "position": "unestablished"
+      }
     },
     {
       "id": "p40fl-engine-chart",
@@ -730,16 +745,17 @@
       "source_id": "KI84-PACMIRS-8",
       "aircraft": "Ki-84 handbook configuration",
       "quantity": "stall_speed",
-      "speed_basis": "km/h, basis unspecified in stall table",
+      "speed_basis": "unestablished",
       "source_location": "Printed 28, PDF 32, section 1 II E",
-      "conditions": "Fully equipped at 2000 m. Exact weight, serial and power unavailable. Final column is suspiciously labeled as elevator-tab turns despite values 1000–1200 and translator sic marks, so it is retained without reinterpretation.",
+      "conditions": "Fully equipped at 2000 m. Exact weight, serial and power unavailable. Final column is suspiciously labeled as elevator-tab turns despite values 1000–1200 and translator sic marks, so it is retained without reinterpretation. The source km/h is preserved. The mph column is a unit conversion rounded to one decimal with no airspeed correction.",
       "columns": [
         "alt_m",
         "stall_kmh",
         "flaps_deg",
         "gear",
         "elevator_tab",
-        "printed_last_column_sic"
+        "printed_last_column_sic",
+        "speed_mph"
       ],
       "rows": [
         [
@@ -748,7 +764,8 @@
           0,
           "up",
           0,
-          1200
+          1200,
+          102.5
         ],
         [
           2000,
@@ -756,7 +773,8 @@
           15,
           "up",
           0,
-          1100
+          1100,
+          92.6
         ],
         [
           2000,
@@ -764,7 +782,8 @@
           30,
           "up",
           2,
-          1000
+          1000,
+          86.4
         ],
         [
           2000,
@@ -772,7 +791,8 @@
           0,
           "down",
           0,
-          1200
+          1200,
+          104.4
         ],
         [
           2000,
@@ -780,7 +800,8 @@
           15,
           "down",
           2,
-          1100
+          1100,
+          101.3
         ],
         [
           2000,
@@ -788,7 +809,8 @@
           30,
           "down",
           4,
-          1000
+          1000,
+          85.7
         ]
       ],
       "source_class": "period-translation-original-handbook",
@@ -1189,7 +1211,7 @@
       "members": [
         "F6F04776-NACA-L5B13B-TRACE",
         "F6F04776-NACA-L5B13-INSTRUMENTS",
-        "F6F04776-NACA-STALL-CONDITIONS"
+        "ww2_thirteen_fighter_source_recovery_2026-11-11:F6F04776-NACA-STALL-CONDITIONS"
       ],
       "relationship": "same campaign and companion instruments",
       "note": "Correct prior approach condition from 2350 to 2550 rpm after enlarged scan inspection. No extra trial credit."
@@ -1199,7 +1221,7 @@
       "members": [
         "P47D30-L8A06-STALL-TRACE",
         "P47D30-TN2675-INSTRUMENTS",
-        "P47D30-L8A06-RECHECK"
+        "ww2_thirteen_fighter_source_recovery_2026-11-11:P47D30-L8A06-RECHECK"
       ],
       "relationship": "same aircraft and test-program lineage",
       "note": "Prior paired interpretation withdrawn. Do not infer independently measured CAS from a second channel."
@@ -1208,7 +1230,7 @@
       "id": "ki84-pacmirs-advatis",
       "members": [
         "KI84-PACMIRS-8",
-        "ADVATIS Translation 92"
+        "KI84-ADVATIS-92-LOCATOR"
       ],
       "relationship": "explicitly overlapping Japanese source tables",
       "note": "PACMIRS introduction calls out overlap. No independent confirmation of 624 km/h from repetition. The PACMIRS row gives no boost."
@@ -1226,10 +1248,10 @@
       "id": "g2-specifications-versus-trials",
       "members": [
         "G2-MESSERSCHMITT-BVFL-1942",
-        "G2-DB605-RESTRICTION-1942",
-        "G2-MT215-SCAN",
-        "G2-MT215-TRANSCRIPTION",
-        "G2-NIIVVS-14513"
+        "ww2_thirteen_fighter_source_recovery_2026-11-11:G2-DB605-RESTRICTION-1942",
+        "ww2_thirteen_fighter_source_recovery_2026-11-11:G2-MT215-SCAN",
+        "ww2_thirteen_fighter_source_recovery_2026-11-11:G2-MT215-TRANSCRIPTION",
+        "ww2_thirteen_fighter_source_recovery_2026-11-11:G2-NIIVVS-14513"
       ],
       "relationship": "manual and order linked to distinct test specimens",
       "note": "Preserve actual recorded boost/rpm and cooling for each tested run. Manual limits alone never establish actual settings."
