@@ -146,7 +146,7 @@
  function metrics(M,T,L,model,spec,policy,settings,alt){
   const s=validateSettings(spec,settings,model),loading=load(spec,policy,s),phase=phaseFor(spec,s,0,0,loading.injectionLb);
   const out={altFt:alt,settings:s,loading,phase,sourceQualification:spec.loadQualification,powerQualification:phase.qualification??'Existing source power plus documented rating inputs; lower-rating shaft power may use an explicit pressure/RPM conversion.',
-   sustained:null,instantaneous:null,minSustainedRadius:null,climb:null,level:null,stallEasMph:null,turnRange:null};
+   sustained:null,sustainedLoad:null,instantaneous:null,minSustainedRadius:null,climb:null,level:null,stallEasMph:null,turnRange:null};
   const atSpeed=eas=>evaluate(M,T,L,model,spec,s,alt,eas,loading.weightLb,phase);
   let last=null,crossing=null,engineSeen=false;
   let firstSustained=null,lastSustained=null;
@@ -159,6 +159,7 @@
    if(Number.isFinite(r.limits.nSust)){
     firstSustained??=eas;
     lastSustained=eas;
+    if(r.limits.nSust>(out.sustainedLoad?.g??1))out.sustainedLoad=summary(r,eas,'sust');
    }
    const su=r.limits.sustDegSec,ins=r.limits.instantDegSec;
    if(su>0&&(!out.sustained||su>out.sustained.rateDegSec))out.sustained=summary(r,eas,'sust');
@@ -166,11 +167,12 @@
    if(su>0){const p=summary(r,eas,'sust');if(!out.minSustainedRadius||p.radiusM<out.minSustainedRadius.radiusM)out.minSustainedRadius=p;}
   }
   if(!engineSeen){out.status='source-power-unavailable';return out;}
-  for(const [key,kind]of [['sustained','sust'],['instantaneous','instant'],['minSustainedRadius','sust']]){
+  for(const [key,kind]of [['sustained','sust'],['sustainedLoad','sust'],['instantaneous','instant'],['minSustainedRadius','sust']]){
    if(!out[key])continue;const center=out[key].easMph;
    for(let eas=center-1;eas<=center+1;eas+=.05){const r=atSpeed(eas);if(r.status!=='modelled')continue;
     const value=kind==='instant'?r.limits.instantDegSec:r.limits.sustDegSec;if(!(value>0))continue;const p=summary(r,eas,kind);
-    if(key==='minSustainedRadius'?p.radiusM<out[key].radiusM:value>out[key].rateDegSec)out[key]=p;}
+    if(key==='minSustainedRadius'?p.radiusM<out[key].radiusM:
+     key==='sustainedLoad'?p.g>out[key].g:value>out[key].rateDegSec)out[key]=p;}
   }
   if(crossing){
    let [lo,hi]=crossing;

@@ -5,6 +5,15 @@
  const fmt=(x,n=1)=>Number.isFinite(x)?x.toLocaleString('en-US',{minimumFractionDigits:n,maximumFractionDigits:n}):'—';
  const Chart=OperatingBenchmarkChart,History=BenchmarkServiceContext,Evidence=BenchmarkGraphEvidence;
  const sides=['a','b'];
+ const height=$('bench-altitude'),fromHeight=$('bench-climb-from'),toHeight=$('bench-climb-to');
+ const altitudes=Array.from({length:9},(_,i)=>i*5000);
+ const heightLabel=alt=>alt===0?'Sea level':fmt(alt,0)+' ft';
+ for(const alt of altitudes){
+  if(alt<40000)fromHeight.add(new Option(heightLabel(alt),alt));
+  if(alt>0)toHeight.add(new Option(heightLabel(alt),alt));
+ }
+ toHeight.value='10000';
+ const turnUnit=()=>Chart.turnUnits[$('bench-turn-unit').value];
  const api=globalThis.OperatingBenchmarkUI={data,settings:{},rows:{},altitudeRows:[],climbs:null,probe:null,probeLocked:false,probeLock:null};
  const speed=(value,kind)=>Chart.speed(value,$('bench-speed-unit').value,kind);
  const text=(tag,value,className)=>{const e=document.createElement(tag);if(value!==undefined)e.textContent=value;if(className)e.className=className;return e;};
@@ -59,7 +68,9 @@
   if(r.climb?.cooling==='report-conditioned')box.append(text('p','Climb uses report-conditioned power and open-cooling losses.','bench-note'));
   if(chosen.settings.openCooling)box.append(text('p','Turn and level speed use the modeled climb cooling scenario.','bench-note'));
   const grid=document.createElement('div');grid.className='bench-numbers';
-  grid.append(number('Maximum sustained turn',fmt(r.sustained?.rateDegSec)+'°/s',fmt(r.sustained?.seconds360)+' s / 360° · '+speed(r.sustained?.easMph,'EAS')),
+  const metric=turnUnit(),peak=r[metric.peak];
+  grid.append(number(metric.key==='g'?'Peak sustained load':'Maximum sustained turn',fmt(peak?.[metric.field],metric.digits)+' '+metric.label,
+   fmt(peak?.seconds360)+' s / 360° · '+speed(peak?.easMph,'EAS')),
    number('Sustained load / radius',fmt(r.sustained?.g,2)+' g',fmt(r.sustained?.radiusM,0)+' m radius at peak rate'),
    number('Best climb rate',fmt(r.climb?.climbFpm,0)+' ft/min','Vy '+speed(r.climb?.easMph,'EAS')+' / '+speed(r.climb?.tasMph,'TAS')),
    number('Maximum level speed',speed(r.level?.tasMph,'TAS'),speed(r.level?.easMph,'EAS')+' · steady equilibrium'),
@@ -87,6 +98,7 @@
     levelEasMph:row.level?.easMph??null,
     peakEasMph:row.sustained?.easMph,
     peakRate:row.sustained?.rateDegSec,
+    peakLoad:row.sustainedLoad,
     climbFpm:row.climb?.climbFpm,
     vyEasMph:row.climb?.easMph,
     scanMaxEasMph:M.airspeeds(590,alt).eas
@@ -94,6 +106,10 @@
   });
   const policy=series.every(a=>a.turnPolicy)?data.turnEvidence.sensitivity:null;
   $('bench-advantage-key').hidden=!policy;
+  $('bench-solo-key').hidden=true;
+  $('bench-plot-note').textContent=turnUnit().key==='g'?
+   'Squares mark peak sustained G and best climb speed (Vy). The grey guide shows the load needed for 3°/s at each speed.':
+   'Squares mark peak turn rate and best climb speed (Vy). The grey guide shows 3°/s.';
   const samples=new Map();
   function evaluateAt(side,eas,climbing){
    const key=side+':'+eas+':'+Boolean(climbing);
@@ -108,17 +124,74 @@
    chart:$('bench-turn-plot'),climbChart:$('bench-climb-plot'),slider:$('bench-probe-speed'),value:$('bench-probe-value'),
    results:$('bench-probe-results'),climbResults:$('bench-climb-at-speed'),
    rangeStatus:$('bench-range-status'),focus:$('bench-turn-focus').value==='3',
-   unit:$('bench-speed-unit').value,altFt:alt,series,
+   unit:$('bench-speed-unit').value,turnUnit:turnUnit(),altFt:alt,series,
    selectedEasMph:api.probe?.easMph,
    lockButton:$('bench-probe-lock'),lockStatus:$('bench-probe-lock-status'),lock:api.probeLock,
    onLock(anchor){api.probeLock=anchor;api.probeLocked=Boolean(anchor);},
    evaluateAt,
    makeAdvantage(domain){
     return OperatingTurnComparison.advantage({...domain,host:advantage,readout,limits,names,colors,policy,
-     unit:$('bench-speed-unit').value});
+     soloKey:$('bench-solo-key'),turnUnit:turnUnit(),unit:$('bench-speed-unit').value});
    },
    onProbe(probe){api.probe=probe;}
   });
+ }
+ function renderSourceGrades(){
+  const {cases,coverage,observations,sources,tolerances}=data.sourceGrades;
+  const aircraftIds={p51b:'p51b_4324777',p47b:'p47b_415902',bf109f4:'bf109f4_representative',
+   fw190a4:'fw190a4_783',p38g:'p38g_4212687',f4u4:'f4u4_80765'};
+  const output=$('bench-source-grade-results'),panels=text('div',undefined,'bench-probe-cards');
+  const value=new Intl.NumberFormat('en-US',{maximumFractionDigits:3});
+  const range=bounds=>bounds?.map(n=>value.format(n)).join('–');
+  for(const side of sides){
+   const {id}=api.settings[side],specimen=aircraftIds[id]??id;
+   const row=coverage.find(item=>item.id===specimen);
+   const panel=text('article',undefined,'bench-probe-card');panel.dataset.side=side;
+   panel.append(text('strong',shortName(id),'bench-probe-name'),
+    text('p',row.gold_count+' GOLD · '+row.gold_qualified_count+' GOLD* of '+row.planned_count+' planned benchmarks','bench-note'));
+   const reviewed=cases.filter(item=>item.aircraft===specimen);
+   if(!reviewed.length)panel.append(text('p','No reviewed benchmark cases yet.','bench-note'));
+   for(const item of reviewed){
+    const details=text('details'),{agreement,preferred,unit}=item;
+    const badge=item.gold_status==='gold'?'GOLD':item.gold_status==='gold-qualified'?'GOLD*':'Open';
+    details.dataset.caseGrade=item.gold_status;
+    details.append(text('summary',badge+' · '+item.conditions.specimen+' · '+item.metric.replaceAll('_',' ')),
+     text('p',item.conditions.scope,'bench-note'));
+    if(preferred)details.append(text('p','Preferred '+value.format(preferred.value)+' '+unit+' · '+preferred.grade+
+     (preferred.range?' · source range '+range(preferred.range)+' '+unit:''),'bench-note'));
+    const policy=tolerances[item.metric];
+    const spread=agreement.spread===null?'Agreement unscored':'Central spread '+value.format(agreement.spread)+' '+unit+
+     (agreement.percent===null?'':' ('+value.format(agreement.percent)+'%)');
+    let limit='';
+    if(agreement.limit_percent!==null)limit=' · limit '+value.format(agreement.limit_percent)+'%'+
+     (agreement.spread===null?'':' ('+value.format(agreement.limit)+' '+unit+')');
+    else if(agreement.limit!==null)limit=' · limit '+value.format(agreement.limit)+' '+unit+
+     (unit===policy.unit?'':' ('+value.format(policy.spread)+' '+policy.unit+')');
+    const center=agreement.spread===null?'':' · comparison mean '+value.format(agreement.center)+' '+unit;
+    details.append(text('p',spread+limit+center+'. '+agreement.reason,'bench-note'));
+    const list=text('ul',undefined,'bench-evidence-sources');
+    for(const candidate of item.candidates){
+     const valueLabel=Number.isFinite(candidate.value)?value.format(candidate.value):range(candidate.range);
+     const sourceLinks=new Map();
+     for(const obs of candidate.observation_ids){
+      const record=observations[obs],source=sources[record?.source];
+      if(source?.url&&/^https?:\/\//i.test(source.url))sourceLinks.set(source.url,source.name??record.source);
+     }
+     const original=candidate.original_reading;
+     const li=text('li',valueLabel+' '+unit+' · '+candidate.grade+' · '+candidate.method.replaceAll('-',' ')+
+      (original?' from '+value.format(original.value)+' '+original.unit:'')+
+      (Number.isFinite(candidate.value)&&candidate.range?' · range '+range(candidate.range)+' '+unit:''));
+     if(candidate.reason)li.append(text('small',candidate.reason));
+     const links=text('div',undefined,'bench-probe-links');
+     for(const [url,label] of sourceLinks){const link=text('a',label);link.href=url;link.target='_blank';link.rel='noopener';links.append(link);}
+     if(links.childElementCount)li.append(links);
+     list.append(li);
+    }
+    details.append(list);panel.append(details);
+   }
+   panels.append(panel);
+  }
+  output.replaceChildren(text('p','GOLD* marks agreement with a source or condition qualification. These grades apply to the original test cases listed below.','bench-note'),panels);
  }
  function sourceDetails(){
   const box=$('bench-sources');box.replaceChildren();
@@ -139,7 +212,7 @@
  function readAltitudes(side,chosen){
   const key=JSON.stringify(chosen);
   if(altitudeCache[side]?.key!==key){
-   const rows=specs.altitudesFt.map(alt=>B.metrics(M,T,L,models[chosen.id],specs.aircraft[chosen.id],specs.policy,chosen.settings,alt));
+   const rows=altitudes.map(alt=>B.metrics(M,T,L,models[chosen.id],specs.aircraft[chosen.id],specs.policy,chosen.settings,alt));
    altitudeCache[side]={key,rows};
   }
   return altitudeCache[side].rows;
@@ -150,7 +223,8 @@
   head.append(headers);table.append(head,body);return {table,body};
  }
  function renderAltitudeOverview(alt){
-  const {table,body}=makeTable(['Altitude','Peak sustained turn (°/s)','Best climb (ft/min)','Top level speed (TAS)'],'bench-altitude-table');
+  const turn=turnUnit();
+  const {table,body}=makeTable(['Altitude','Peak sustained turn ('+turn.label+')','Best climb (ft/min)','Top level speed (TAS)'],'bench-altitude-table');
   const unit=$('bench-speed-unit').value;
   const speedFactor={mph:1,kph:1.609344,knots:1609.344/1852}[unit];
   function pair(a,b,format,delta,estimated){
@@ -162,18 +236,18 @@
   }
   for(const {altFt,a,b} of api.altitudeRows){
    const tr=text('tr');tr.dataset.altitude=altFt;
-   const label=altFt===0?'Sea level':fmt(altFt,0)+' ft';
+   const label=heightLabel(altFt);
    const th=text('th');th.scope='row';
    const button=text('button',label);button.type='button';
    if(altFt===alt){tr.setAttribute('aria-selected','true');button.setAttribute('aria-current','true');}
    tr.addEventListener('click',()=>{
-    $('bench-altitude').value=altFt;render();
+    height.value=altFt;renderAltitude();
     $('bench-altitude-overview').querySelector('button[aria-current="true"]').focus();
    });
    th.append(button);
    const positive=row=>row.climb?.climbFpm>0?row.climb.climbFpm:null;
    tr.append(th,
-    pair(a.sustained?.rateDegSec,b.sustained?.rateDegSec,fmt,fmt,[a.sustained?.estimatedPower,b.sustained?.estimatedPower]),
+    pair(a[turn.peak]?.[turn.field],b[turn.peak]?.[turn.field],v=>fmt(v,turn.digits),v=>fmt(v,turn.digits),[a.sustained?.estimatedPower,b.sustained?.estimatedPower]),
     pair(positive(a),positive(b),v=>fmt(v,0),v=>fmt(v,0),[a.climb?.estimatedPower&&positive(a),b.climb?.estimatedPower&&positive(b)]),
     pair(a.level?.tasMph,b.level?.tasMph,v=>speed(v,'TAS'),v=>fmt(v*speedFactor,0),[a.level?.estimatedPower,b.level?.estimatedPower]));
    body.append(tr);
@@ -206,26 +280,38 @@
   const speedCheck=data.spitfireBestSpeedSensitivity;
   target.append(text('p','Spitfire sensitivity at each model’s own best climb speed. Mean error '+fmt(speedCheck.beforeMae,0)+' → '+fmt(speedCheck.afterMae,0)+' ft/min. Largest increase '+fmt(speedCheck.largestRegression,0)+' ft/min.','bench-note'));
  }
- function render(){
-  const alt=Number($('bench-altitude').value);
-  for(const side of sides){
-   const chosen=read(side);api.settings[side]=chosen;readAltitudes(side,chosen);
-  }
-  api.altitudeRows=specs.altitudesFt.map((altFt,i)=>({altFt,a:altitudeCache.a.rows[i],b:altitudeCache.b.rows[i]}));
+ function invalidateClimbs(message){
+  api.climbs=null;
+  $('bench-climb-result').textContent=message;
+ }
+ function renderAltitude(){
+  const alt=Number(height.value),label=heightLabel(alt);
+  height.setAttribute('aria-valuetext',label);
+  $('bench-altitude-value').value=label;
   const current=api.altitudeRows.find(row=>row.altFt===alt);
   for(const side of sides){api.rows[side]=current[side];renderSide(side);}
-  plot(alt);renderAltitudeOverview(alt);sourceDetails();api.climbs=null;
-  $('bench-matchup').textContent=History.compare(service.aircraft[api.settings.a.id],service.aircraft[api.settings.b.id]);$('bench-climb-result').replaceChildren(text('p','Settings updated. Calculate both climbs for the current choices.'));
-  const a=api.rows.a.sustained?.rateDegSec,b=api.rows.b.sustained?.rateDegSec;
-  $('bench-comparison').textContent=Number.isFinite(a)&&Number.isFinite(b)?'Modeled sustained-turn difference (aircraft 1 − aircraft 2): '+fmt(a-b,2)+'°/s. Historical ranking uncertainty remains unresolved.':'A sustained-turn comparison is unavailable for one or both selected states.';
+  plot(alt);renderAltitudeOverview(alt);
+  const turn=turnUnit(),a=api.rows.a[turn.peak]?.[turn.field],b=api.rows.b[turn.peak]?.[turn.field];
+  $('bench-comparison').textContent=Number.isFinite(a)&&Number.isFinite(b)?'Modeled peak difference (aircraft 1 − aircraft 2): '+fmt(a-b,turn.digits)+' '+turn.label+'. Historical ranking uncertainty remains unresolved.':'A sustained-turn comparison is unavailable for one or both selected states.';
  }
- for(const id of ['bench-altitude','bench-extension',...sides.flatMap(s=>['power','fuel','injection','cooling'].map(k=>'bench-'+k+'-'+s))])$(id).addEventListener('change',render);
+ function render(){
+  for(const side of sides){const chosen=read(side);api.settings[side]=chosen;readAltitudes(side,chosen);}
+  api.altitudeRows=altitudes.map((altFt,i)=>({altFt,a:altitudeCache.a.rows[i],b:altitudeCache.b.rows[i]}));
+  renderAltitude();sourceDetails();renderSourceGrades();
+  $('bench-matchup').textContent=History.compare(service.aircraft[api.settings.a.id],service.aircraft[api.settings.b.id]);
+  invalidateClimbs('Calculate both climbs for the current aircraft and settings.');
+ }
+ function changeHeight(){if(Number(height.value)!==api.rows.a?.altFt)renderAltitude();}
+ height.addEventListener('input',changeHeight);
+ height.addEventListener('change',changeHeight);
+ for(const id of ['bench-extension',...sides.flatMap(s=>['power','fuel','injection','cooling'].map(k=>'bench-'+k+'-'+s))])$(id).addEventListener('change',render);
  for(const id of ['bench-aircraft-a','bench-aircraft-filter'])$(id).addEventListener('change',()=>{updateSecondAircraft();render();});
  $('bench-aircraft-b').addEventListener('change',()=>{
   if($('bench-aircraft-filter').value==='all')allAircraftChoice=$('bench-aircraft-b').value;
   render();
  });
- $('bench-turn-focus').addEventListener('change',()=>plot(Number($('bench-altitude').value)));
+ $('bench-turn-focus').addEventListener('change',()=>plot(Number(height.value)));
+ $('bench-turn-unit').addEventListener('change',renderAltitude);
  document.addEventListener('keydown',event=>{
   if(event.key==='Escape'&&api.probeLocked)$('bench-probe-lock').click();
  });
@@ -234,10 +320,10 @@
   const alt=Number($('bench-altitude').value);
   plot(alt);renderAltitudeOverview(alt);
  });
- $('bench-climb-from').addEventListener('change',()=>{api.climbs=null;$('bench-climb-result').textContent='Start altitude changed. Recalculate both climbs.';});
- $('bench-climb-calculate').addEventListener('click',()=>{const from=Number($('bench-climb-from').value),to=Number($('bench-altitude').value),box=$('bench-climb-result');box.replaceChildren();if(to<=from){box.append(text('p','Choose a target altitude above the climb start.'));return;}
+ for(const input of [fromHeight,toHeight])input.addEventListener('change',()=>invalidateClimbs('Climb altitude changed. Recalculate both climbs.'));
+ $('bench-climb-calculate').addEventListener('click',()=>{const from=Number(fromHeight.value),to=Number(toHeight.value),box=$('bench-climb-result');box.replaceChildren();if(to<=from){box.append(text('p','Choose a target altitude above the climb start.'));return;}
   const results={};for(const side of ['a','b']){const c=api.settings[side];results[side]=B.climb(M,T,L,models[c.id],specs.aircraft[c.id],specs.policy,c.settings,from,to);const r=results[side];
-   box.append(text('h3','Aircraft '+(side==='a'?'1':'2')+' · '+shortName(c.id)),text('p',r.status==='reached'?'Time to '+fmt(to,0)+' ft: '+fmt(r.seconds/60,2)+' min':'Target not reached: '+r.status+' at '+fmt(r.reachedFt,0)+' ft'),text('p','Combat used '+fmt(r.combatSeconds/60,2)+' min · remaining '+fmt(r.combatRemainingSeconds/60,2)+' min · fuel used '+fmt(r.fuelUsedLb,1)+' lb · arrival mass '+fmt(r.endWeightLb,0)+' lb · injection fluid remaining '+fmt(r.injectionRemainingLb,1)+' lb'));
+   box.append(text('h3','Aircraft '+(side==='a'?'1':'2')+' · '+shortName(c.id)),text('p',r.status==='reached'?heightLabel(from)+' to '+heightLabel(to)+': '+fmt(r.seconds/60,2)+' min':'Target not reached: '+r.status+' at '+fmt(r.reachedFt,0)+' ft'),text('p','Combat used '+fmt(r.combatSeconds/60,2)+' min · remaining '+fmt(r.combatRemainingSeconds/60,2)+' min · fuel used '+fmt(r.fuelUsedLb,1)+' lb · arrival mass '+fmt(r.endWeightLb,0)+' lb · injection fluid remaining '+fmt(r.injectionRemainingLb,1)+' lb'));
    for(const p of r.schedule)box.append(text('p',p.label+': '+fmt(p.fromFt,0)+' → '+fmt(p.toFt,0)+' ft · '+fmt(p.seconds/60,2)+' min','bench-note'));
    box.append(text('p',r.policy,'bench-note'));
   }api.climbs=results;

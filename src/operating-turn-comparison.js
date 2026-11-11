@@ -61,35 +61,42 @@
   return card;
  }
 
- function advantage({host,readout,limits,minEas,maxEas,unit,names,colors,pointAt,policy,threshold}){
+ function advantage({host,readout,limits,minEas,maxEas,unit,turnUnit,names,colors,pointAt,policy,series,soloKey}){
   const width=780,height=214,left=76,right=758,top=23,bottom=160;
-  const cache=new Map();
+  const cache=new Map(),levels=series.map(a=>a.levelEasMph),load=turnUnit.key==='g';
+  const referenceLoad=load?1:0;
   function sample(eas){
-   if(!cache.has(eas)){
-    const [a,b]=sides.map(side=>pointAt(side,eas,'turn'));
-    const aircraft={a:a.assessment,b:b.assessment};
-    const difference=(!threshold||a.rate>=threshold&&b.rate>=threshold)?P.difference(aircraft.a,aircraft.b):null;
-    cache.set(eas,{...Evidence.sample(eas,difference?.rateDegSec,a.covered&&b.covered,difference?.range),aircraft,difference});
+   if(cache.has(eas))return cache.get(eas);
+   const points=sides.map(side=>pointAt(side,eas,'turn'));
+   const [a,b]=points,aircraft={a:a.assessment,b:b.assessment};
+   const difference=Number.isFinite(a.rate)&&Number.isFinite(b.rate)?P.difference(aircraft.a,aircraft.b,turnUnit.field):null;
+   let solo=null;
+   for(const [i,point] of points.entries()){
+    const opposite=levels[1-i],own=levels[i],turn=point.assessment.nominal?.turn;
+    if(Number.isFinite(own)&&Number.isFinite(opposite)&&own>opposite&&eas>=opposite&&eas<=own&&Number.isFinite(point.rate)&&turn){
+     solo={side:sides[i],rate:(i===0?1:-1)*(turn[turnUnit.field]-referenceLoad)};
+    }
    }
-   return cache.get(eas);
+   const row={...Evidence.sample(eas,difference?.[turnUnit.field],a.covered&&b.covered,difference?.range),aircraft,difference,solo};
+   cache.set(eas,row);
+   return row;
   }
-  const rows=[];
-  for(let eas=minEas;eas<=maxEas;eas+=2)rows.push(sample(eas));
-  if(rows.at(-1).eas<maxEas)rows.push(sample(maxEas));
-  const supported=rows.filter(r=>r.difference);
+  const speeds=new Set([minEas,maxEas,...levels.filter(Number.isFinite)]);
+  for(let eas=minEas;eas<maxEas;eas+=2)speeds.add(eas);
+  const rows=[...speeds].filter(eas=>eas>=minEas&&eas<=maxEas).sort((a,b)=>a-b).map(sample);
+  const supported=rows.filter(r=>r.difference||r.solo);
   if(!supported.length){
-   host.replaceChildren(el('p','The selected aircraft have no shared sustained-turn speed range.','bench-note'));
-   return {update(eas){
-    readout.replaceChildren();
-    limits.replaceChildren(...sides.map(side=>limitsCard(names[side],sample(eas).aircraft[side],side)));
-   }};
+   host.replaceChildren(el('p','Turn advantage is unavailable at this altitude.','bench-note'));
+   return {update(eas){limits.replaceChildren(...sides.map(side=>limitsCard(names[side],sample(eas).aircraft[side],side)));}};
   }
-  const maxRate=Math.max(1,...supported.flatMap(r=>[Math.abs(r.difference.rateDegSec),...(r.difference.range??[]).map(Math.abs)]));
-  const step=[.5,1,2,3,5,10].find(n=>maxRate<=3*n)??10;
-  const bound=Math.ceil(maxRate/step)*step;
+  soloKey.hidden=!rows.some(r=>r.solo&&r.solo.rate!==0);
+  const maxRate=Math.max(load ? .1 : 1,...supported.flatMap(r=>[
+   Math.abs(r.rate??0),Math.abs(r.solo?.rate??0),...(r.range??[]).map(Math.abs)]));
+  const step=[.05,.1,.2,.25,.5,1,2,3,5,10,20].find(n=>maxRate<=3*n)??25;
+  const tickCount=Math.ceil(maxRate/step),bound=tickCount*step;
   const x=eas=>left+(right-left)*(eas-minEas)/(maxEas-minEas);
   const y=rate=>top+(bottom-top)*(bound-rate)/(2*bound);
-  const g=svg(width,height,'Sustained-turn advantage in degrees per second at the shared airspeed. Positive values favour aircraft 1.');
+  const g=svg(width,height,'Sustained-turn advantage in '+turnUnit.label+' at the shared airspeed. Positive values favour aircraft 1.');
   const zero=y(0);
   draw(g,'rect',{x:left,y:top,width:right-left,height:zero-top,fill:colors.a,opacity:.045});
   draw(g,'rect',{x:left,y:zero,width:right-left,height:bottom-zero,fill:colors.b,opacity:.045});
@@ -100,31 +107,31 @@
    draw(g,'line',{x1:at,x2:at,y1:top,y2:bottom,class:'bench-grid-line'});
    draw(g,'text',{x:at,y:bottom+28,'text-anchor':'middle'},label);
   }
-  for(let n=-bound;n<=bound;n+=step){
-   const at=y(n);
+  for(let tick=-tickCount;tick<=tickCount;tick++){
+   const n=tick*step,at=y(n);
    draw(g,'line',{x1:left,x2:right,y1:at,y2:at,class:n===0?'bench-advantage-zero':'bench-grid-line'});
-   draw(g,'text',{x:left-11,y:at+5,'text-anchor':'end'},signed(n,step<1?1:0));
+   draw(g,'text',{x:left-11,y:at+5,'text-anchor':'end'},signed(n,step<.1||step===.25?2:step<1?1:0));
   }
-  draw(g,'text',{x:left,y:16},'Aircraft 1 − Aircraft 2 (°/s)');
+  draw(g,'text',{x:left,y:16},'Aircraft 1 − Aircraft 2 ('+turnUnit.label+')');
   const unitLabel=OperatingBenchmarkChart.speed(1,unit,'EAS').replace(/^[\d,.]+ /,'');
   draw(g,'text',{x:(left+right)/2,y:height-2,'text-anchor':'middle'},'Equivalent airspeed ('+unitLabel+')');
 
-  let segment=[];
-  function band(){
-   if(segment.length>1){
-    const upper=segment.map(r=>[x(r.eas),y(r.difference.range[1])]);
-    const lower=segment.slice().reverse().map(r=>[x(r.eas),y(r.difference.range[0])]);
-    draw(g,'polygon',{points:[...upper,...lower].map(a=>a.join(',')).join(' '),class:'bench-advantage-band','data-turn-range':''});
-   }
-   segment=[];
+  for(const band of Evidence.bands(rows)){
+   const upper=band.map(r=>[x(r.eas),y(r.range[1])]);
+   const lower=band.slice().reverse().map(r=>[x(r.eas),y(r.range[0])]);
+   draw(g,'polygon',{points:[...upper,...lower].map(a=>a.join(',')).join(' '),class:'bench-advantage-band','data-turn-range':''});
   }
-  for(const row of rows){if(row.difference?.range)segment.push(row);else band();}
-  band();
+  const path=segment=>segment.points.map((p,i)=>(i?'L':'M')+x(p.eas)+','+y(p.rate)).join('');
   for(const segment of Evidence.lineSegments(rows)){
-   const d=segment.points.map((p,i)=>(i?'L':'M')+x(p.eas)+','+y(p.rate)).join('');
-   draw(g,'path',{d,fill:'none',stroke:'#f1f3f7','stroke-width':2.6,'stroke-linecap':'round',
+   draw(g,'path',{d:path(segment),fill:'none',stroke:'#f1f3f7','stroke-width':2.6,'stroke-linecap':'round',
     'data-turn-difference':'','data-bench-style':segment.solid?'solid':'dotted',
     ...(segment.solid?{}:{'stroke-dasharray':'1 6'})});
+  }
+  for(const side of sides){
+   const points=rows.map(r=>({eas:r.eas,rate:r.solo?.side===side?r.solo.rate:null}));
+   for(const segment of Evidence.lineSegments(points)){
+    draw(g,'path',{d:path(segment),fill:'none',stroke:colors[side],'stroke-width':3,'stroke-dasharray':'7 5','data-turn-solo':side});
+   }
   }
   for(const [i,r] of rows.entries()){
    const side=r.difference?.side,next=rows[i+1];
@@ -137,33 +144,38 @@
   const crosshair=draw(g,'line',{y1:top,y2:bottom,class:'bench-crosshair','data-advantage-crosshair':''});
   const marker=draw(g,'circle',{r:4.5,class:'bench-probe-dot'});
   host.replaceChildren(g);
-  function summary(d){
-   if(!d)return 'Difference unavailable';
-   if(Math.abs(d.rateDegSec)<.05)return 'Similar modeled turn rates';
-   return names[d.rateDegSec>=0?'a':'b']+' +'+fmt(Math.abs(d.rateDegSec))+'°/s';
+  function summary({difference,solo}){
+   if(!difference)return solo?'Only '+names[solo.side]+' can sustain flight':'Difference unavailable';
+   const value=difference[turnUnit.field];
+   if(Math.abs(value)<.5*10**-turnUnit.digits)return 'Similar modeled '+(load?'sustained loads':'turn rates');
+   return names[value>=0?'a':'b']+' +'+fmt(Math.abs(value),turnUnit.digits)+(load?' G':'°/s');
   }
 
   function update(eas){
-   const {aircraft,difference:d}=sample(eas);
-   const at=x(eas);
+   const row=sample(eas),{aircraft,difference:d,solo}=row;
+   const at=x(eas),value=d?.[turnUnit.field]??solo?.rate;
+   const leader=d?(value>=0?'a':'b'):solo?.side;
    crosshair.setAttribute('x1',at);crosshair.setAttribute('x2',at);
-   marker.style.display=d?'':'none';
-   readout.replaceChildren();
-   if(!d){
-    readout.append(el('strong','Difference unavailable'),el('span','Both aircraft need a sustained turn at the selected speed.','bench-note'));
-   }else{
-    const leader=d.rateDegSec>=0?'a':'b';
-    marker.setAttribute('cx',at);marker.setAttribute('cy',y(d.rateDegSec));marker.setAttribute('fill',colors[leader]);
-    readout.append(el('strong',summary(d),'bench-'+leader),
-     el('span',fmt(Math.abs(d.g),2)+' G difference · '+OperatingBenchmarkChart.speed(eas,unit,'EAS'),'bench-note'));
+   marker.style.display=Number.isFinite(value)?'':'none';
+   readout.replaceChildren(el('strong',summary(row),leader?'bench-'+leader:undefined));
+   if(Number.isFinite(value)){
+    marker.setAttribute('cx',at);marker.setAttribute('cy',y(value));marker.setAttribute('fill',colors[leader]);
+   }
+   const speed=OperatingBenchmarkChart.speed(eas,unit,'EAS');
+   if(d){
+    const alternate=load?fmt(Math.abs(d.rateDegSec))+'°/s':fmt(Math.abs(d.g),2)+' G';
+    readout.append(el('span',alternate+' difference · '+speed,'bench-note'));
     if(d.range){
      const message=d.side==='uncertain'?'The lead can change across tested inputs.':names[d.side]+' leads across tested inputs.';
-     readout.append(el('span','Tested difference '+d.range.map(n=>signed(n)).join(' to ')+'°/s. '+message,'bench-note'));
+     readout.append(el('span','Tested difference '+d.range.map(n=>signed(n,turnUnit.digits)).join(' to ')+' '+turnUnit.label+'. '+message,'bench-note'));
     }else if(policy)readout.append(el('span','The tested range includes a case outside sustained flight.','bench-note'));
-   }
+   }else if(solo){
+    const turn=aircraft[solo.side].nominal.turn;
+    readout.append(el('span',fmt(turn[turnUnit.field],turnUnit.digits)+' '+turnUnit.label+' sustained · '+speed+' · other aircraft above maximum level speed','bench-note'));
+   }else readout.append(el('span','Both aircraft need supported flight at this speed for a difference.','bench-note'));
    limits.replaceChildren(...sides.map(side=>limitsCard(names[side],aircraft[side],side)));
   }
-  return {kind:'advantage',host,svg:g,left,right,top,bottom,x,update,tipText:eas=>summary(sample(eas).difference)};
+  return {kind:'advantage',host,svg:g,left,right,top,bottom,x,update,tipText:eas=>summary(sample(eas))};
  }
 
  function evidence(host,source,checks,policy,direct){

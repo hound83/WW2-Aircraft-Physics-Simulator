@@ -1,5 +1,9 @@
 # Current decisions
 
+## v4.7 comparison and source agreement
+
+Share the comparison altitude in 5,000-ft steps and set the common airspeed origin below the lower modeled stall. Show the remaining sustained capability above the slower aircraft’s level limit. Give timed climbs an independent interval and allow sustained turns in G or degrees per second. Grade reviewed historical central values at matched conditions and retain the source uncertainty and GOLD* qualifications. [Comparison and acceptance report](V47_BENCHMARK_AND_GOLD.md).
+
 ## v4.6 table-supported curves and pinned tooltips
 
 Use applicable tables for the limiting input to identify solid turn segments. Match the climb bounds to the two original test schedules and carry their reading or interpolation margins through the current load and airspeed correction. Use a common zero-to-next-ten axis and retain the 3°/s turn-curve focus. Pin the tooltip in place, with click or drag to release it. [Evidence and graph controls](V46_CHART_DATA.md).

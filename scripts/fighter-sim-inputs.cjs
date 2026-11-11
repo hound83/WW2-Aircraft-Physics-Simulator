@@ -27,8 +27,9 @@ function scoreCoverage(baseline, evidence, cases) {
     if (prior.id !== variant.id) throw Error('Coverage variant mismatch');
     const credits = legacyCredits.filter(credit => credit.aircraft === variant.id);
     const slots = Object.keys(benchmarks).map(id => {
-      const current = cases.find(item => item.aircraft === variant.id && item.benchmark === id);
-      return { id, case_id: current?.id ?? null, status: current?.gold ? 'gold' : current ? 'reviewed-open' : 'open' };
+      const matching = cases.filter(item => item.aircraft === variant.id && item.benchmark === id);
+      const current = matching.find(item => item.gold) ?? matching.find(item => item.gold_status === 'gold-qualified') ?? matching[0];
+      return { id, case_id: current?.id ?? null, status: current?.gold_status !== 'open' ? current?.gold_status ?? 'open' : 'reviewed-open' };
     });
     const dimensions = baseline.dimensions.map((id, j) => {
       const primary = variant.primary_points[j];
@@ -53,7 +54,8 @@ function scoreCoverage(baseline, evidence, cases) {
       id: variant.id, label: variant.label, primary_percent: primary, with_secondary_percent: withSecondary,
       with_calculations_percent: withCalculations, previous_total_percent: prior.with_calculations_percent,
       legacy_context_points: unallocated, overlapping_legacy_points: overlap, delta_total_points: -(unallocated + overlap),
-      gold_count: slots.filter(slot => slot.status === 'gold').length, planned_count: slots.length,
+      gold_count: slots.filter(slot => slot.status === 'gold').length,
+      gold_qualified_count: slots.filter(slot => slot.status === 'gold-qualified').length, planned_count: slots.length,
       dimensions, legacy_credits: credits, calculation_credits: prior.credits, benchmarks: slots,
     };
   });
@@ -64,7 +66,10 @@ function scoreCoverage(baseline, evidence, cases) {
       .map(key => [key, percent(sum(group.map(row => row[key])), group.length)]));
     const gold_count = sum(group.map(row => row.gold_count));
     const planned_count = sum(group.map(row => row.planned_count));
-    return { ...averages, gold_count, planned_count, gold_percent: percent(gold_count * 100, planned_count) };
+    const gold_qualified_count = sum(group.map(row => row.gold_qualified_count));
+    return { ...averages, gold_count, gold_qualified_count, planned_count,
+      gold_percent: percent(gold_count * 100, planned_count),
+      gold_qualified_percent: percent(gold_qualified_count * 100, planned_count) };
   }
 
   return {
@@ -72,7 +77,8 @@ function scoreCoverage(baseline, evidence, cases) {
     targets: { primary_percent: baseline.targets.primary_percent, with_secondary_percent: baseline.targets.augmented_percent },
     planned_benchmarks: benchmarks,
     fleet: summary(rows), german: summary(rows.filter(row => /^(bf109|fw190)/.test(row.id))),
-    rows: rows.map(row => ({ ...row, gold_percent: percent(row.gold_count * 100, row.planned_count) })),
+    rows: rows.map(row => ({ ...row, gold_percent: percent(row.gold_count * 100, row.planned_count),
+      gold_qualified_percent: percent(row.gold_qualified_count * 100, row.planned_count) })),
   };
 }
 
@@ -93,12 +99,13 @@ function curveSeries(chart, series, i, cases) {
     if (resolved && (resolved.preferred?.value !== value || resolved.preferred.grade !== grade ||
       JSON.stringify(resolved.preferred.range) !== JSON.stringify(range))) throw Error('Curve and preferred case disagree ' + resolved.id);
     return { x, value, grade, method: resolved?.preferred.method ?? method, range, range_kind,
-      ...(resolved && { case_id: resolved.id, gold: resolved.gold }) };
+      ...(resolved && { case_id: resolved.id, gold: resolved.gold, gold_status: resolved.gold_status }) };
   });
 
   const segments = points.slice(1).map((point, index) => {
     const previous = points[index];
-    const recorded = series.solidHistory && previous.method === 'original' && point.method === 'original';
+    const recorded = series.solidHistory && [previous, point].every(p =>
+      ['original', 'reported-interval'].includes(p.method));
     const withinBranch = checkedInterpolation && [previous, point].every(p => ['original', 'interpolation'].includes(p.method));
     return {
       from: index, to: index + 1,
@@ -113,7 +120,7 @@ function curveSeries(chart, series, i, cases) {
 function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catalog)) {
   const observations = new Map(catalog.observations.map(row => [row.id, row]));
   const originalIds = new Set(Object.keys(evidence.observations));
-  const cases = reviewedCases(observations, evidence.charts).map(item => ({ ...item, ...resolveCase(item) }));
+  const cases = reviewedCases(observations, evidence).map(item => ({ ...item, ...resolveCase(item) }));
   for (const id of [...cases.flatMap(item => item.candidates.flatMap(row => row.observation_ids)),
     ...rejectedPairs.flatMap(row => row.observation_ids), ...legacyCredits.map(row => row.observation)]) {
     if (!observations.has(id)) throw Error('Unresolved original observation ' + id);
@@ -131,7 +138,7 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
   const packs = new Set([...originalIds].map(id => observations.get(id).pack_id));
   const baseline = JSON.parse(read(baselinePath));
   return {
-    schema: 'ww2-fighter-sim-inputs/v1', version: '1.0.1', as_of: evidence.as_of,
+    schema: 'ww2-fighter-sim-inputs/v1', version: '1.1.0', as_of: evidence.as_of,
     scope: 'Historical inputs and conditional estimates for source-case lookups and evidence graphs.',
     originals: {
       catalog: 'research-catalog.json',

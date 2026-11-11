@@ -59,7 +59,7 @@ assert.equal(all.preferred.value, 452.5);
 assert.equal(all.preferred.grade, 'primary');
 assert.equal(all.by_grade.secondary.method, 'mean');
 assert.equal(all.by_grade.calculated.method, 'mean');
-assert.equal(all.gold, false, 'Tight replicate spread alone cannot certify absolute accuracy');
+assert.equal(all.gold, true, 'Comparable central values agree across independent sources');
 assert.equal(resolve([primary[0], ...secondary]).preferred.method, 'original', 'One primary outranks a secondary mean');
 assert.equal(resolve([...secondary, ...calculated]).preferred.grade, 'secondary');
 assert.equal(resolve(calculated).preferred.method, 'mean');
@@ -82,9 +82,24 @@ assert.equal(resolve([{ ...primary[0], method: 'reported-summary' }]).preferred.
 
 const triple = [...candidates('primary', [451]), ...candidates('secondary', [452]), ...candidates('calculated', [453])];
 assert.equal(resolve(triple).gold, true);
-assert.equal(resolve([triple[0], { ...triple[1], lineage: triple[0].lineage }, triple[2]]).gold, false);
-assert.equal(resolve([triple[0], triple[1], { ...triple[2], lineage: null }]).gold, false);
-assert.equal(resolve([triple[0], triple[1], { ...triple[2], range: null }]).gold, false);
+assert.equal(resolve([triple[0], { ...triple[1], lineage: triple[0].lineage }, triple[2]]).gold, true);
+assert.equal(resolve([triple[0], { ...triple[1], lineage: null }]).gold, false);
+const wide = resolve([triple[0], triple[1], { ...triple[2], range: [400, 500] }]);
+assert.equal(wide.gold, true, 'Source uncertainty is displayed independently of central agreement');
+assert.deepEqual(wide.by_grade.calculated.range, [400, 500]);
+const rangeOnly = resolve([triple[0], { ...triple[1], value: null, range: [440, 464] }]);
+assert.equal(rangeOnly.by_grade.secondary.value, 452, 'Use the midpoint when the source gives a range only');
+assert.equal(rangeOnly.gold, true);
+const primaryPair = candidates('primary', [450, 456]);
+primaryPair[1].lineage = ['independent-primary-trial'];
+assert.equal(resolve(primaryPair).gold_status, 'gold');
+assert.equal(resolve(primaryPair, { qualification: 'RPM unreported.' }).gold_status, 'gold-qualified');
+assert.equal(resolve(candidates('primary', [450, 456])).gold_status, 'open');
+const shared = { ...triple[2], lineage: triple[0].lineage };
+assert.equal(resolve([triple[0], shared]).gold_status, 'open');
+assert.equal(resolve([triple[0], shared], {qualification:'Same report, rate versus timing.'}).gold_status, 'gold-qualified');
+assert.equal(resolve([triple[0], { ...triple[1], value: 470, range: null }], {qualification:'Unknown RPM.'}).gold_status, 'open');
+
 assert.equal(resolve([...candidates('primary', [450]), ...candidates('secondary', [453]), ...candidates('calculated', [456])]).gold, true);
 assert.equal(resolve([...candidates('primary', [450]), ...candidates('secondary', [453]), ...candidates('calculated', [456.01])]).gold, false);
 
@@ -120,6 +135,15 @@ for (const [i, chart] of pack.charts.entries()) for (const [j, branch] of chart.
 assert.equal(pack.coverage.rows.length, 13);
 assert.equal(pack.coverage.fleet.planned_count, 156);
 assert.equal(pack.coverage.fleet.gold_count, 0);
+assert.equal(pack.coverage.fleet.gold_qualified_count, 5);
+assert.equal(pack.coverage.fleet.gold_qualified_percent, 3.21);
+assert.equal(production.agreement.spread, 2);
+assert.equal(production.agreement.limit, 6);
+assert.equal(treated.agreement.spread, 9);
+assert.equal(byId('p51b-4324777-clean-75in-level').gold_status, 'open');
+assert.equal(byId('p47b-415902-military-elapsed').agreement.limit_percent, 5);
+assert.deepEqual(byId('p47b-415902-military-elapsed').candidates[0].original_reading, { value: 5, unit: 'min' });
+assert.equal(byId('f4-factory-rechlin-1000-5000m').agreement.spread, 0);
 for (const [i, row] of pack.coverage.rows.entries()) {
   assert.equal(row.primary_percent, baseline.variants[i].primary_percent);
   assert.equal(row.with_calculations_percent + row.legacy_context_points + row.overlapping_legacy_points, row.previous_total_percent);

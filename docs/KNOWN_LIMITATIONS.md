@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.7 source and comparison scope
+
+The dashed high-speed continuation shows remaining sustained capability at the selected rating and load. GOLD* records central agreement with stated source or test-condition qualifications. Same-report elapsed time and rate integration can share trials. The current exact stall and powered-turn evidence gaps still constrain historical rankings. [Source grades and four-aircraft regression](V47_BENCHMARK_AND_GOLD.md).
+
 ## v4.6 graph inputs
 
 The power-supported turn curves still use modeled lift, propeller efficiency and drag. Report-adjusted climb bands incorporate the model’s correction for the selected weight and speed near the matched test schedule. The bands describe the source reading or interpolation margin carried through that correction. [Graph coverage and the 10,000 ft example](V46_CHART_DATA.md).
