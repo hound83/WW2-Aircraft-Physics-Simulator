@@ -1,5 +1,9 @@
 # Next steps
 
+## After v4.2 independent operating benchmarks
+
+The [operating benchmark milestone](V42_OPERATING_BENCHMARK.md) implements independent power, fuel and injection settings, co-altitude presets, full performance outputs and rating-limited climb schedules. Next, strengthen the **comparative turn-performance evidence**: verify exact service-load/fuel/armament and rating-duration cells for each variant, replace the declared power/BSFC/injection transfers with original installation data, and constrain low-speed lift, drag and installed thrust jointly against matched speed/climb observations. Seek independent same-condition turn measurements before assigning a historical ranking or 5:1 pass. Prioritize provisional F-4 and P-38G operating cells, Corsair water flow/altitude behavior, and the known high-altitude propulsion gaps. Coordinate incoming source data with the separate research stream; no additional aircraft is part of this milestone.
+
 ## After v4.1 energy integration
 
 Five existing profiles now improve in the live source-configuration comparison. [Results, regressions and next scientific gate](V41_ENERGY_RESULTS.md) supersede the earlier v4.1 wish list. Prioritize independent joint speed/climb/power constraints, the Corsair high-altitude deficit, P-38 sparse-fit sensitivity and exact low-speed polar/stall conditions. Preserve achieved source-check reductions; do not treat a newly fitted climb as independent turn validation.

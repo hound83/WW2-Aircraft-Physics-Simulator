@@ -1,0 +1,506 @@
+{
+  "schema": 1,
+  "baselineCommit": "8198a22c750c91aeb65b320ef16466e6503ce906",
+  "altitudesFt": [
+    0,
+    10000,
+    20000,
+    30000,
+    35000,
+    40000
+  ],
+  "policy": {
+    "fuelFraction": 0.5,
+    "fuelDensityLbPerUSGal": 6,
+    "bsfcLbPerHpHour": 0.5,
+    "bsfcStatus": "engineering fuel-consumption scenario, not an historical engine map",
+    "load": "Standard fixed air-to-air guns, full ammunition, pilot, oil and service equipment; no bombs, rockets, external tanks or optional gun pods. Removable racks excluded; standard fixed fittings retained.",
+    "powerExtension": "Optional pressure-lapse engineering continuation above the last source node, through 40000 ft. Never presented as measured or source-supported power.",
+    "normal": "Recommended routine climb rating. The same engine rating is used for all Normal metrics; its documented time limit remains active.",
+    "combat": "Highest admitted combat rating and its documented allowance; return to the approved Normal rating when exhausted. Overlapping limits use a common high-power clock, not additive timer resets.",
+    "climb": "Normal follows the manual speed schedule. Combat compares legal contiguous boost-use windows and retains the quickest modeled window, then replays it with changing fuel mass. Selected-altitude tests start independently with fresh allowance; full climbs never reset it.",
+    "qualification": "Operational benchmark scenarios, not historical turn validation. Source/variant transfers, load reconstructions and rating conversions remain explicitly qualified. The historical replay panels stay unchanged.",
+    "injection": "Separate per-aircraft toggle at Combat power, disabled where not fitted. Dry Combat is always available independently of injection; a charged reservoir is carried in either state. Injection uses the same high-power clock as dry Combat, not a new additive allowance.",
+    "fuelPresets": [
+      0.25,
+      0.5,
+      0.75
+    ]
+  },
+  "sources": {
+    "spit": {
+      "title": "A&AEE BS.543 Merlin 66 report, sections 2.4/3 and Table II",
+      "url": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html",
+      "kind": "primary-transcription",
+      "facts": "2850 rpm/+12 climb for 60 min; 3000 rpm/+18 combat for 5 min. Original long combat climbs had a special test concession. 7485-lb takeoff mass."
+    },
+    "spit-notes": {
+      "title": "AP 1565J P & L PN, September 1946, paras 40/51/54",
+      "url": "https://www.scribd.com/doc/50297586/SPIT9MANUAL",
+      "kind": "primary-manual-transcription",
+      "facts": "Normal +12/2850; combat +18/3000 for Merlin 66. Recommended routine climb 180 mph IAS. Normal supercharger change differs from combat. Later manual is procedural corroboration, not a BS.543 flight measurement."
+    },
+    "p51": {
+      "title": "AAF Manual 51-127-5, 15 August 1945, printed pp.52/55",
+      "url": "https://www.scribd.com/doc/34811808/North-American-P-51-Mustang-Pilot-Training-Manual",
+      "kind": "primary-manual-transcription",
+      "facts": "Normal 46inHg/2700 rpm after takeoff; military 61/3000; WEP 67/3000. D/K procedure with V-1650-3/-7, transferred explicitly to B-15 engine, not its airframe mass."
+    },
+    "p51-trial": {
+      "title": "Wright Field Eng-47-1749-A, 20 May 1944, 43-24777",
+      "url": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+      "kind": "primary-transcription",
+      "facts": "9335 lb with 265 US gal; 125 lb heavier than combat load with 1260 rounds and rear tank empty. 67inHg present WEP, 75 proposed with 44-1 fuel. Rack-free speed observations separate from racked climb."
+    },
+    "p47": {
+      "title": "P-47B original torquemeter trials and preliminary handbook",
+      "url": "https://www.wwiiaircraftperformance.com/org/p-47/p-47.html",
+      "kind": "primary-index-and-existing-registers",
+      "facts": "R-2800-21 normal 1625 bhp/2550 rpm; military 2000/2700, five-minute policy in 41-5902 report. No later-variant ADI rating admitted. 41-5942 is eight-gun donor; 41-5902 had six guns."
+    },
+    "p47-notes": {
+      "title": "AAF Manual 50-5, printed pp.44-45",
+      "url": "https://spruemaster.com/wp-content/gallery/manual/Republic-P-47-AAF-Manual.pdf",
+      "kind": "primary-scan-reviewed",
+      "facts": "Normal and military climbs separately prescribed; use later manual for policy corroboration only, not a D-model injection transfer to the B."
+    },
+    "p38": {
+      "title": "TO 01-75F-1, P-38D-G, revised 30 September 1944",
+      "url": "https://www.scribd.com/document/456916773/Pilot-s-Flight-Operating-Instructions-for-Army-Models-P-38D-through-P-38G-Series-F-4-F-4A-and-F-5A-Series-Airplanes-T-O-NO-01-75F-1-Revised-30-Se",
+      "kind": "primary-OCR-qualified",
+      "facts": "Normal maximum 2600 rpm; military 3000 rpm time-limited. OCR renders the minute figure ambiguously: a conservative five-minute engineering allowance is selected pending original-page verification. Later J/L 54inHg is excluded."
+    },
+    "p38-trial": {
+      "title": "FS-M-19-1538-A, 42-12687, 10 February 1943",
+      "url": "https://www.wwiiaircraftperformance.com/org/p-38/p-38.html",
+      "kind": "primary-transcription",
+      "facts": "13900 lb with 180 US gal, two .50 guns/400 rounds and 20mm/50 rounds; 44.7inHg/3000 rpm climb. Turbo/carburetor restrictions preserved. Standard four-gun/full-ammo load requires reconstruction."
+    },
+    "fw": {
+      "title": "D(Luft)T 2190 A-2/A-3/A-4, October 1942 status, July 1943 edition",
+      "url": "https://www.degnans.com/markd/Fw%20190%20A-2%20bis%20A-4%20Teil%2000.pdf",
+      "kind": "primary-scan-reviewed",
+      "facts": "BMW 801 D2: climb/combat 2400 rpm/1.32 ata, 30 min; emergency 2700/1.42, 3 min. Generic rating transfer to 783 remains an engineering scenario, not proof that its earlier test used emergency power."
+    },
+    "fw-trial": {
+      "title": "Flugbericht Fw190/783 Nr.1",
+      "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-783-nr1.html",
+      "kind": "primary-transcription",
+      "facts": "3870 kg takeoff, BMW801D2, combat power and long intake; source flight power and inlet model retained."
+    },
+    "bf": {
+      "title": "Bf109 F1-F4 handbook May 1941, DB601E installation; source register v4.1",
+      "url": "https://de.scribd.com/document/388936153/Bf-109-F-1-Bis-F-4-Flugzeughandbuch",
+      "kind": "primary-installation-plus-qualified-rating-transfer",
+      "facts": "DB601E F4 installation confirmed. Numerical 1.30/2500 and 1.42/2700 curves and duration limits remain the existing qualified secondary inputs; this handbook OCR did not independently verify the rating cells. No GM1 or later DB605 rating admitted."
+    },
+    "f4u": {
+      "title": "US Navy F4U-4 Standard Aircraft Characteristics, March 1946, pp.5-6",
+      "url": "https://www.aahs-online.org/images/Navy_SAC/F4U-4.pdf",
+      "kind": "primary-scan-reviewed",
+      "facts": "R-2800-18W normal 1700/2600; military 2100/2800; combat with water injection 2450/2800. WEP-altitude shape is an engineering manifold/critical-height transfer, not newly digitized original engine curves."
+    },
+    "f4u-maker": {
+      "title": "Vought F4U-4 specification",
+      "url": "https://www.vought.org/products/html/f4u-4spec.html",
+      "kind": "manufacturer-history",
+      "facts": "Six .50 guns; R2800-18W water-injected 2450 hp; 534 US gal includes two 150-gal external tanks, leaving 234 internal."
+    },
+    "f4u-duration": {
+      "title": "F4U-4 type history: five-minute 2450hp water rating",
+      "url": "https://www.historyofwar.org/articles/weapons_F4U-4.html",
+      "kind": "secondary-corroboration",
+      "facts": "Corroborates the five-minute water/methanol rating; does not establish installed fluid mass, flow, cooling or altitude-specific power."
+    }
+  },
+  "aircraft": {
+    "spitfire_lfix_bs543": {
+      "sources": [
+        "spit",
+        "spit-notes"
+      ],
+      "fuelCapacityUSGal": 102.08,
+      "referenceFuelUSGal": 102.08,
+      "referenceWeightLb": 7485,
+      "serviceLoadDeltaLb": 0,
+      "armament": "2 x 20mm (120 rounds/gun), 4 x .303 (350 rounds/gun)",
+      "racks": "removed",
+      "loadQualification": "Full-ammo service fit assumed in source gross mass; 85 Imperial gal converted to US gallons. Not an independently weighed standard combat specimen.",
+      "baseRating": "combat+18",
+      "baseRpm": 3000,
+      "baseMap": 32.6959,
+      "mapUnit": "absolute psi",
+      "pressureExponent": 0.75,
+      "normal": {
+        "label": "Climb +12 psi / 2850 rpm",
+        "rpm": 2850,
+        "map": 26.6959,
+        "seconds": 3600
+      },
+      "combat": {
+        "label": "Combat +18 psi / 3000 rpm",
+        "rpm": 3000,
+        "map": 32.6959,
+        "seconds": 300
+      },
+      "climbIAS": [
+        [
+          0,
+          180
+        ],
+        [
+          40000,
+          180
+        ]
+      ],
+      "speedQualification": "Later manual routine IAS schedule; existing BF274 position-error correction used only within its source speed range.",
+      "continuous": {
+        "label": "Continuous +7 psi / 2650 rpm",
+        "rpm": 2650,
+        "map": 21.6959,
+        "seconds": null
+      },
+      "ratingEvidence": "Rating limits corroborated by the matched trial and pilot notes; Normal BHP uses a pressure/RPM proxy."
+    },
+    "bf109f4": {
+      "sources": [
+        "bf"
+      ],
+      "fuelCapacityUSGal": 105.67,
+      "referenceFuelUSGal": 105.67,
+      "referenceWeightLb": 6371,
+      "serviceLoadDeltaLb": 0,
+      "armament": "1 x MG151/20 (200 rounds), 2 x MG17 (500 rounds/gun)",
+      "racks": "removed",
+      "loadQualification": "Existing 2890-kg full-service reference with assumed full 400-L fuel. Full ammunition and equipment are a declared service-load reconstruction.",
+      "baseRating": "combat",
+      "baseRpm": 2500,
+      "baseMap": 1.3,
+      "mapUnit": "ata",
+      "pressureExponent": 0.75,
+      "normal": {
+        "label": "Climb 1.30 ata / 2500 rpm",
+        "rpm": 2500,
+        "map": 1.3,
+        "seconds": 1800
+      },
+      "combat": {
+        "label": "Emergency 1.42 ata / 2700 rpm",
+        "rpm": 2700,
+        "map": 1.42,
+        "seconds": 60,
+        "powerFactor": 1.125,
+        "qualification": "Existing secondary rating curve and one-minute limit; original clearance cells unresolved."
+      },
+      "climbIAS": [
+        [
+          0,
+          161.6
+        ],
+        [
+          16400,
+          155.3
+        ],
+        [
+          32800,
+          136.7
+        ],
+        [
+          40000,
+          124.3
+        ]
+      ],
+      "speedQualification": "250-260km/h low-altitude climb, decreasing aloft: engineering schedule pending exact F4 manual extraction. IAS=CAS scenario, explicitly uncalibrated.",
+      "continuous": {
+        "label": "Continuous 1.15 ata / 2300 rpm",
+        "rpm": 2300,
+        "map": 1.15,
+        "seconds": null
+      },
+      "ratingEvidence": "Provisional rating/clearance scenario: existing secondary DB601E inputs; original limit cells not independently verified."
+    },
+    "p47b": {
+      "sources": [
+        "p47",
+        "p47-notes"
+      ],
+      "fuelCapacityUSGal": 305,
+      "referenceFuelUSGal": 305,
+      "referenceWeightLb": 12620,
+      "serviceLoadDeltaLb": 0,
+      "armament": "8 x .50 (425 rounds/gun)",
+      "racks": "removed",
+      "loadQualification": "Eight-gun 41-5942 gross mass transferred to same-engine 41-5902 aerodynamic reference; full 305-gal fuel/full-ammo attribution is an explicit loading assumption, not a recovered weighing sheet.",
+      "baseRating": "military",
+      "baseRpm": 2700,
+      "baseMap": 52,
+      "mapUnit": "inHg",
+      "pressureExponent": 0.75,
+      "normal": {
+        "label": "Normal dry / 2550 rpm",
+        "rpm": 2550,
+        "map": 42,
+        "seconds": null,
+        "nativeRating": "normal"
+      },
+      "combat": {
+        "label": "Military dry / 2700 rpm",
+        "rpm": 2700,
+        "map": 52,
+        "seconds": 300
+      },
+      "climbIAS": [
+        [
+          0,
+          160
+        ],
+        [
+          25000,
+          150
+        ],
+        [
+          35000,
+          140
+        ],
+        [
+          40000,
+          135
+        ]
+      ],
+      "speedQualification": "AAF manual 155-160mph low-altitude range; altitude reduction is an engineering schedule, not a new exact B-model manual transcription.",
+      "ratingEvidence": "Source dry ratings and verified 2:1 gearing; no later water-injected engine transferred."
+    },
+    "p51b": {
+      "sources": [
+        "p51",
+        "p51-trial"
+      ],
+      "fuelCapacityUSGal": 265,
+      "referenceFuelUSGal": 180,
+      "referenceWeightLb": 9210,
+      "serviceLoadDeltaLb": 0,
+      "maneuverFuelLimitUSGal": 205,
+      "armament": "4 x .50 (1260 rounds total)",
+      "racks": "removed",
+      "loadQualification": "Source combat mass 9335-125=9210 lb with rear tank empty and 180 US gal. 50% of total 265-gal capacity fits wing tanks; rear tank remains empty for maneuvering. Original clean calibration is used, not subtraction of the local rack fit at every speed.",
+      "baseRating": "67inHg",
+      "baseRpm": 3000,
+      "baseMap": 67,
+      "mapUnit": "inHg",
+      "pressureExponent": 0.75,
+      "normal": {
+        "label": "Normal 46inHg / 2700 rpm",
+        "rpm": 2700,
+        "map": 46,
+        "seconds": null
+      },
+      "combat": {
+        "label": "WEP 67inHg / 3000 rpm",
+        "rpm": 3000,
+        "map": 67,
+        "seconds": 300
+      },
+      "climbIAS": [
+        [
+          0,
+          175
+        ],
+        [
+          15000,
+          175
+        ],
+        [
+          25000,
+          165
+        ],
+        [
+          35000,
+          155
+        ],
+        [
+          40000,
+          145
+        ]
+      ],
+      "speedQualification": "Normal manual family schedule, with engineering continuation above 25000 ft. V1650-7 transfer explicit; proposed 75inHg excluded.",
+      "ratingEvidence": "Manual-family 46/2700 and 67/3000 transfer to the modeled V1650-7; experimental 75inHg excluded."
+    },
+    "fw190a4": {
+      "sources": [
+        "fw",
+        "fw-trial"
+      ],
+      "fuelCapacityUSGal": 138.43,
+      "referenceFuelUSGal": 138.43,
+      "referenceWeightLb": 8531.889546554761,
+      "serviceLoadDeltaLb": 0,
+      "armament": "2 x MG151/20, 2 x MGFF/M, 2 x MG17; full standard ammunition",
+      "racks": "removed",
+      "loadQualification": "3870-kg source gross and assumed full 524-L internal fuel/full-ammo service fit; exact trial ammunition not recovered.",
+      "baseRating": "combat",
+      "baseRpm": 2400,
+      "baseMap": 1.32,
+      "mapUnit": "ata",
+      "pressureExponent": 0.75,
+      "normal": {
+        "label": "Climb 1.32 ata / 2400 rpm",
+        "rpm": 2400,
+        "map": 1.32,
+        "seconds": 1800
+      },
+      "combat": {
+        "label": "Emergency 1.42 ata / 2700 rpm",
+        "rpm": 2700,
+        "map": 1.42,
+        "seconds": 180,
+        "powerFactor": 1.138157894736842,
+        "qualification": "1730/1520 PS manual rating ratio, same BMW801D2, transferred to trial intake model."
+      },
+      "climbIAS": [
+        [
+          0,
+          167.8
+        ],
+        [
+          19685,
+          161.6
+        ],
+        [
+          32808,
+          136.7
+        ],
+        [
+          40000,
+          124.3
+        ]
+      ],
+      "speedQualification": "270km/h low-altitude climb scenario, decreasing aloft; exact manual speed graph remains untranscribed.",
+      "continuous": {
+        "label": "Continuous 1.20 ata / 2300 rpm",
+        "rpm": 2300,
+        "map": 1.2,
+        "seconds": null
+      },
+      "ratingEvidence": "BMW801D2 manual rating transfer to the trial aircraft; emergency altitude shape is an engineering conversion."
+    },
+    "p38g": {
+      "sources": [
+        "p38",
+        "p38-trial"
+      ],
+      "fuelCapacityUSGal": 306,
+      "referenceFuelUSGal": 180,
+      "referenceWeightLb": 13900,
+      "serviceLoadDeltaLb": 595,
+      "armament": "4 x .50 (500 rounds/gun), 1 x 20mm (150 rounds)",
+      "racks": "removed",
+      "loadQualification": "Source underarmed test converted by engineering +595 lb: two guns 122 lb, 1600 extra .50 rounds at .26 lb, 100 extra 20mm rounds at .57 lb. Source 400-round interpretation and ammunition masses are assumptions; 306-gal capacity needs exact weighing-chart corroboration. No false full-service test identity.",
+      "baseRating": "climb",
+      "baseRpm": 3000,
+      "baseMap": 44.7,
+      "mapUnit": "inHg",
+      "pressureExponent": 0.75,
+      "normal": {
+        "label": "Normal 37inHg / 2600 rpm",
+        "rpm": 2600,
+        "map": 37,
+        "seconds": null,
+        "qualification": "37inHg normal limit from qualified early-model manual OCR; original engine chart still needs confirmation. Lower-rating BHP uses the declared pressure/RPM proxy."
+      },
+      "combat": {
+        "label": "Military 44.7inHg / 3000 rpm",
+        "rpm": 3000,
+        "map": 44.7,
+        "seconds": 300,
+        "qualification": "Report power curve; conservative five-minute allowance pending original manual restriction cell. 48inHg single-point trial and later 54inHg excluded."
+      },
+      "climbIAS": [
+        [
+          0,
+          160
+        ],
+        [
+          20000,
+          160
+        ],
+        [
+          30000,
+          145
+        ],
+        [
+          40000,
+          130
+        ]
+      ],
+      "speedQualification": "Family normal-climb schedule; exact G-model correction not established. IAS=CAS scenario.",
+      "ratingEvidence": "Qualified early-model manual OCR: normal MAP and military duration still require original-cell verification; later J/L boost excluded."
+    },
+    "f4u4": {
+      "sources": [
+        "f4u",
+        "f4u-maker",
+        "f4u-duration"
+      ],
+      "fuelCapacityUSGal": 234,
+      "referenceFuelUSGal": 234,
+      "referenceWeightLb": 12500,
+      "serviceLoadDeltaLb": 0,
+      "armament": "6 x .50 (400 rounds/gun)",
+      "racks": "standard fixed service fittings only",
+      "loadQualification": "12500-lb clean normal-fighter trial; full 234-gal/internal ammunition attribution is a reconstruction. Standard fixed fittings remain in the source polar; no detachable bomb racks, bombs or rockets added.",
+      "baseRating": "military",
+      "baseRpm": 2800,
+      "baseMap": 54,
+      "mapUnit": "inHg",
+      "pressureExponent": 0.75,
+      "normal": {
+        "label": "Normal dry / 2600 rpm",
+        "rpm": 2600,
+        "map": 42.5,
+        "seconds": null,
+        "nativeRating": "normal"
+      },
+      "combat": {
+        "label": "Military dry / 2800 rpm",
+        "rpm": 2800,
+        "map": 54,
+        "seconds": 300,
+        "powerFactor": 1
+      },
+      "climbIAS": [
+        [
+          0,
+          150
+        ],
+        [
+          10000,
+          150
+        ],
+        [
+          20000,
+          140
+        ],
+        [
+          30000,
+          130
+        ],
+        [
+          40000,
+          120
+        ]
+      ],
+      "speedQualification": "Normal-fighter climb-speed engineering schedule pending AN01-45HB-1 chart extraction.",
+      "injection": {
+        "label": "WEP water / 2800 rpm",
+        "type": "Water / methanol",
+        "map": 60,
+        "powerFactor": 1.1666666666666667,
+        "seconds": 300,
+        "fluidLb": 100,
+        "fluidLbPerMinute": 20,
+        "qualification": "2450/2100 source sea-level ratio. Above sea level, manifold/critical-height transfer is an engineering model; 5-min allowance/20lb per min are explicit conservative scenarios pending exact handbook water schedule."
+      },
+      "ratingEvidence": "Source sea-level dry/water ratings; injection altitude shape, fluid mass and flow remain engineering scenarios."
+    }
+  }
+}

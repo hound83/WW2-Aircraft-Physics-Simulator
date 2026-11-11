@@ -1,5 +1,11 @@
 # Known limitations
 
+## v4.2 operating benchmark
+
+Independent power/fuel/injection settings are calculation scenarios, not historical accuracy certification. Routine-climb rating definitions differ by type. Some lower-power curves use a pressure/RPM proxy; F-4 numerical manual cells and early P-38G MAP/duration remain provisional. Fw190 emergency clearance is transferred from its engine/manual family. Service-load masses, ammunition deltas and internal-fuel attribution include explicit reconstruction assumptions. Fuel burn uses a common illustrative BSFC, and the Corsair's fluid quantity/flow and injected altitude curve are engineering inputs. The optional 40000-ft engine continuation is a density-lapse estimate beyond source coverage; disabling it does not validate other transfers.
+
+Peak turn, maximum ROC and level-speed equilibrium do not model the time required to reach their speed within a short rating. Full climb respects common power time and fuel/fluid use, but tests only a bounded set of contiguous boost windows, approximates indicated climb speed as CAS, and excludes speed-change acceleration and dynamic thermal/cooldown behavior. The new panel retains existing low-speed aerodynamic uncertainty, including the unresolved historical sustained-turn and 5:1 gates. [Full qualifications and per-aircraft before/after scenarios](V42_OPERATING_BENCHMARK.md).
+
 ## v4.1 energy configuration
 
 Five configurations improve source-matched climb; corrections represent aggregate installed energy, not separately measured propeller/cooling/drag components. Source masses, derived Spitfire boost power, graph readings and unknown optimum TAS retain their uncertainty. P-38 and Fw190 each have a worsened individual check, and P-38 alternate fits are sensitive. F-4 gains a conditional inlet/parameter ensemble, while Corsair accuracy is unchanged. Source/reference modes expose different physical configurations. Historical stall/turn and 5:1 remain unresolved. [Exact bounds and regressions](V41_ENERGY_RESULTS.md).
