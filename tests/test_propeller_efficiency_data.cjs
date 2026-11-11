@@ -65,6 +65,15 @@ for (const row of cases) {
 assert.equal(evidence.equivalent_efficiency.level.find(row => row.aircraft === 'p38g')
   .rows.filter(row => !row.within_shaft_limit).length, 6);
 
+const thunderbolt = evidence.equivalent_efficiency.p47b.rows.find(row => row.alt_ft === 10000);
+const { fitted_loss_hp_in_drag: fittedLoss, eta_if_fitted_loss_is_in_useful_power: comparableEta } = thunderbolt.propeller_comparison;
+const donor = thunderbolt.donor_alternatives[0];
+assert.equal(fittedLoss, 153.72);
+assert.ok(Math.abs(thunderbolt.equivalent_eta - comparableEta - fittedLoss / thunderbolt.shaft_hp) < .00001);
+assert.equal(donor.eta, .765391);
+assert.ok(Math.abs(comparableEta - donor.eta - .0132) < .0001);
+assert.ok(Math.abs(donor.replay_fpm_if_fitted_loss_is_in_useful_power - 2395.63) < .03);
+
 // A known constant acceleration exercises force/mass conversion and the timed integral.
 const flight = tasMph => {
   const weightLb = 10000;

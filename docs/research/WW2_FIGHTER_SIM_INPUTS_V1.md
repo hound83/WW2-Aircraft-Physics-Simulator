@@ -1,4 +1,4 @@
-# Fighter sim inputs v1.2.0
+# Fighter sim inputs v1.2.1
 
 The data pack covers 13 variants and 23 evidence plots. It carries preferred readings and uncertainty for reviewed cases, pointers to the original observations, and the support level of each curve segment. The simulator can use it to look up a specific test case and draw the evidence behind it. [Versioned JSON](../../references/analysis/fighter-sim-inputs-v1.json) · [Underlying calculations and source checks](WW2_FIGHTER_CALCULATED_EVIDENCE_2026-11-11.md)
 
