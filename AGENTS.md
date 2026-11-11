@@ -13,6 +13,7 @@ These instructions apply to `hound83/WW2-Aircraft-Physics-Simulator`, the **scie
 ## Current sources of truth
 
 - Inspect git status, remote refs/PRs when available, `README.md` and the task-relevant portions of `docs/DECISIONS.md`, `docs/NEXT_STEPS.md`, `docs/CURRENT_VALIDATION.md`, `docs/KNOWN_LIMITATIONS.md`, `docs/WORKFLOW.md` and source registers under `references/`. Current branch outputs and evidence supersede historical descriptions in old release notes.
+- The [simulator data handoff](docs/SIMULATOR_DATA_HANDOFF.md) summarizes the current data pack, modeled roster and suggested aircraft candidates.
 - One shared physical solver lives in `src/` with aircraft/configuration-specific source-bounded inputs under `aircraft/`. Preserve frozen import/baseline records and Greg's original numerical material. Never modify old snapshots or test expectations merely to erase unfavorable results.
 - Never modify `hound83/ww2-airwar` without an explicit cross-repository task. Pin and audit an accepted physics release before Atlas integration.
 
