@@ -1,5 +1,9 @@
 # Next steps
 
+## After v4.4 maneuver lift and turn comparison
+
+Seek measured powered steady-turn states with TAS, weight, altitude, engine setting and energy balance for the modeled variants. Prioritize Spitfire LF IX usable lift under load and Mustang installed propulsive power and incremental turn drag. Reserve whole runs or airframes before fitting. The measured turn evidence is needed to test the speed ranges where the modeled ranking can change. [Current evidence and checks](V44_TURN_PERFORMANCE.md).
+
 ## After v4.3 report-conditioned climbs
 
 Use paired cooling-position tests to constrain drag and installed power jointly. Start with the 41-5902 same-power level-speed sweep and the JL165 radiator-open/shut climb curves. Verify the separate Spitfire configuration and rating before transferring it. For the Corsair, prioritize original installed power and propeller efficiency data near the high-gear critical heights. Reserve one condition or airframe before fitting. Check changes against matched level speed, climb and low-speed lift, then use independent turn evidence to bound historical differences. [v4.3 evidence](V43_MODEL_CHECKS.md).

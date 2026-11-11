@@ -1,12 +1,21 @@
 'use strict';
-(function(root,factory){const api=factory(typeof module==='object'&&module.exports?require('./energy-configuration.js'):root.EnergyConfiguration);if(typeof module==='object'&&module.exports)module.exports=api;else root.OperatingBenchmark=api;})(globalThis,function(Energy){
+(function(root,factory){
+ const node=typeof module==='object'&&module.exports;
+ const api=factory(node?require('./energy-configuration.js'):root.EnergyConfiguration,
+  node?require('./turn-performance.js'):root.TurnPerformance);
+ if(node)module.exports=api;else root.OperatingBenchmark=api;
+})(globalThis,function(Energy,Turn){
  const MPH=.44704,HP=745.6998716;
  const interpolate=(rows,x,key)=>{if(!rows?.length||x<rows[0][0]||x>rows.at(-1)[0])return null;const i=rows.findIndex(r=>r[0]>=x);if(rows[i][0]===x)return rows[i][key];const a=rows[i-1],b=rows[i];return a[key]+(b[key]-a[key])*(x-a[0])/(b[0]-a[0]);};
  const nodeAt=(nodes,x)=>{const a=nodes.map(r=>[r.altFt,r]);const i=a.findIndex(r=>r[0]>=x);if(i<0||x<a[0][0])return null;if(a[i][0]===x)return a[i][1];const lo=a[i-1],hi=a[i],f=(x-lo[0])/(hi[0]-lo[0]);return Object.fromEntries(Object.keys(lo[1]).map(k=>[k,typeof lo[1][k]==='number'&&typeof hi[1][k]==='number'?lo[1][k]+f*(hi[1][k]-lo[1][k]):lo[1][k]]));};
- function validateSettings(spec,s={}){
+ function fittedInjection(model,spec){
+  const fit=spec.injection?.installation,ac=model.ac;
+  return fit&&fit.variant===(ac.stallIdentity?.variant??ac.variant)&&fit.engine===ac.engine?spec.injection:null;
+ }
+ function validateSettings(spec,s={},model){
   const mode=s.mode??'combat',fuelFraction=s.fuelFraction??.5;
   if(!['normal','combat'].includes(mode)||![.25,.5,.75].includes(fuelFraction))throw Error('Choose Normal/Combat and 25%, 50% or 75% fuel');
-  if(s.injection&&!spec.injection)throw Error('Injection is not fitted to this aircraft');
+  if(s.injection&&!(model?fittedInjection(model,spec):spec.injection))throw Error('Injection is unavailable for this engine and variant');
   if(s.injection&&mode!=='combat')throw Error('Injection requires Combat power');
   return {mode,fuelFraction,injection:!!s.injection,extension:!!s.extension,openCooling:!!s.openCooling};
  }
@@ -87,6 +96,7 @@
   if(!(altFt>=0&&altFt<=40000&&eas>0&&weightLb>0))return {status:'invalid-benchmark-input'};
   phase=phase??phaseFor(spec,s);
   if(!phase)return {status:'rating-time-exhausted'};
+  if(phase.key==='injection'&&!fittedInjection(model,spec))return {status:'injection-unavailable'};
   const tas=M.tasFrom(eas,'EAS',altFt),p=nativePower(M,model,spec,phase,altFt,tas,s.extension);
   if(!p)return {status:'source-power-unavailable'};
   const rating=spec.baseRating,gear=p.gear??'benchmark';
@@ -97,16 +107,19 @@
   const open=climbing||s.openCooling;
   if(open&&model.climbCoolingAreaM2)opts.addedDragAreaM2=model.climbCoolingAreaM2;
   const installed=open?installedClimb(M,model,altFt,tas,weightLb,phase,p):null;
+  const turnOptions=turn.optionsFor(M,ac,lift,altFt,tas,opts);
+  const maneuverLift=!open?Turn.maneuverLift(M,ac,model.maneuverLiftSource,altFt,tas,turnOptions):null;
   let r;
   if(installed){
    const {prepared,configuration}=installed;
    prepared.options=turn.optionsFor(M,prepared.ac,lift,altFt,tas,prepared.options);
    r=Energy.evaluatePrepared(M,altFt,tas,prepared,configuration);
   }else{
-   r=M.evaluated(ac,altFt,tas,turn.optionsFor(M,ac,lift,altFt,tas,opts));
+   r=M.evaluated(ac,altFt,tas,maneuverLift?{...turnOptions,maneuverClMax:maneuverLift.clMax}:turnOptions);
   }
   return {...r,benchmark:{phase:phase.key??s.mode,label:phase.label,estimated:p.estimated,sourceMaxFt:p.sourceMaxFt,
-   rpm:phase.rpm,map:phase.map,mapUnit:spec.mapUnit,cooling:installed?'report-conditioned':open?'climb-estimate':'clean'}};
+   rpm:phase.rpm,map:phase.map,mapUnit:spec.mapUnit,cooling:installed?'report-conditioned':open?'climb-estimate':'clean',
+   ...(maneuverLift?{maneuverLift}:{})}};
  }
  function summary(r,eas,kind){
   const g=kind==='instant'?r.limits.nInst:r.limits.nSust,rate=kind==='instant'?r.limits.instantDegSec:r.limits.sustDegSec;
@@ -131,7 +144,7 @@
   return high;
  }
  function metrics(M,T,L,model,spec,policy,settings,alt){
-  const s=validateSettings(spec,settings),loading=load(spec,policy,s),phase=phaseFor(spec,s,0,0,loading.injectionLb);
+  const s=validateSettings(spec,settings,model),loading=load(spec,policy,s),phase=phaseFor(spec,s,0,0,loading.injectionLb);
   const out={altFt:alt,settings:s,loading,phase,sourceQualification:spec.loadQualification,powerQualification:phase.qualification??'Existing source power plus documented rating inputs; lower-rating shaft power may use an explicit pressure/RPM conversion.',
    sustained:null,instantaneous:null,minSustainedRadius:null,climb:null,level:null,stallEasMph:null,turnRange:null};
   const atSpeed=eas=>evaluate(M,T,L,model,spec,s,alt,eas,loading.weightLb,phase);
@@ -184,7 +197,7 @@
  }
  function climb(M,T,L,model,spec,policy,settings,from,to,options={}){
   if(!(from>=0&&to>from&&to<=40000))throw Error('Climb target must be above start, within 0-40000 ft');
-  const s=validateSettings(spec,settings),initial=load(spec,policy,s),stepFt=options.stepFt??500;
+  const s=validateSettings(spec,settings,model),initial=load(spec,policy,s),stepFt=options.stepFt??500;
   if(!(stepFt>=50&&stepFt<=1000))throw Error('Invalid climb integration step');
   // Reuse optimal speed at three load levels. Every replay re-evaluates the shared
   // force balance at actual midpoint fuel mass; interpolated speeds are not rates.
@@ -236,5 +249,5 @@
   for(const h of [best.boostStartFt-500,best.boostStartFt+500].filter(h=>h>=from&&h<to)){const r=replay(h);candidates.push(r);if(r.status==='reached'&&r.seconds<best.seconds)best=r;}
   return {...best,candidateWindows:candidates.length,frontLoadedSeconds:candidates[0].seconds,policy:'Quickest tested contiguous boost window, 1000-ft grid plus local 500-ft refinement; shared-solver midpoint mass replay. Not a proof of global optimal control; no thermal or speed-change acceleration model.'};
  }
- return Object.freeze({validateSettings,load,phaseFor,nativePower,evaluate,bestClimb,metrics,climb,interpolate});
+ return Object.freeze({validateSettings,fittedInjection,load,phaseFor,nativePower,evaluate,bestClimb,metrics,climb,interpolate});
 });
