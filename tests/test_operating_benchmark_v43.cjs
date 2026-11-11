@@ -32,10 +32,13 @@ assert.equal(report.coolingFlapCheck.rows.find(r=>r.oil==='wide open'&&r.interco
 
 const scoped=new Set(['p47b','spitfire_lfix_bs543']);
 for(const row of report.rows){
- for(const key of ['stallEasMph','turnDegSec','turnEasMph','turnG','levelTasMph']){
-  assert.equal(row.after[key],row.before[key],row.id+' '+row.altFt+' '+key+' clean benchmark');
+ const keys=scoped.has(row.id)?['stallEasMph','turnDegSec','turnEasMph','turnG','levelTasMph']:Object.keys(row.before);
+ for(const key of keys){
+  const before=row.before[key],after=row.after[key],label=row.id+' '+row.altFt+' '+key+' clean benchmark';
+  if(before===null)assert.equal(after,null,label);
+  // Apply the repository's cross-runtime numerical tolerance to the frozen snapshot.
+  else assert.ok(Number.isFinite(after)&&Math.abs(after-before)<=1e-9+1e-12*Math.abs(before),label);
  }
- if(!scoped.has(row.id))assert.deepEqual(row.after,row.before);
 }
 const {models,specification}=V.buildData();
 const sample=(id,alt,tas,settings={},climbing=true,changePhase={})=>{

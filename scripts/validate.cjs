@@ -47,7 +47,10 @@ try{
  require('../validation/diagnostics/v4_envelope.cjs').writeReport();
  require('../validation/diagnostics/energy_v41.cjs').writeReport();
  require('../validation/diagnostics/operating_benchmark_v42.cjs').writeReport();
- require('../validation/diagnostics/operating_benchmark_v43.cjs').writeReport();
+ const benchmark=require('../validation/diagnostics/operating_benchmark_v43.cjs').writeReport();
+ for(const trial of benchmark.flightChecks){
+  console.log(trial.name+' climb check MAE '+trial.checks.beforeMae.toFixed(2)+' -> '+trial.checks.afterMae.toFixed(2)+' ft/min ('+trial.checks.count+' points).');
+ }
  require('./write-v42-report.cjs');
  const md=[
  '# Current validation',
