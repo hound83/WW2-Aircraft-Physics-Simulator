@@ -119,19 +119,20 @@ function build(){
  html=html.replace('<main>',()=>'<main>'+read('src/maneuver-envelope-panel.html'));
  html=html.replace('<a href="#historical-evidence">','<a href="#maneuver-envelope">Seven-aircraft maneuver envelope</a> · <a href="#historical-evidence">');
  html=html.replace('</body>','<script>'+source+'</script><script type="application/json" id="robustness-data">'+audit+'</script><script>'+ui+'</script>'+conditionEmbed+measuredEmbed+stallEmbed+comparisonEmbed+'<script type="application/json" id="historical-research-data">'+researchData+'</script><script>'+researchUI+'</script>'+maneuverEmbed+'</body>');
- const benchmarkData=JSON.stringify(require('../validation/diagnostics/operating_benchmark_v42.cjs').buildData());
+ const benchmarkData=JSON.stringify(require('../validation/diagnostics/operating_benchmark_v43.cjs').browserData());
  const benchmarkSource=read('src/operating-benchmark.js');
  const benchmarkChart=read('src/operating-benchmark-chart.js');
+ const benchmarkService=read('src/benchmark-service-context.js');
  const benchmarkUI=read('src/operating-benchmark-ui.js');
- if([benchmarkData,benchmarkSource,benchmarkChart,benchmarkUI].some(text=>/<\/script/i.test(text)))throw Error('Unsafe operating benchmark embed');
+ if([benchmarkData,benchmarkSource,benchmarkChart,benchmarkService,benchmarkUI].some(text=>/<\/script/i.test(text)))throw Error('Unsafe operating benchmark embed');
  html=html.replace('<main>',()=>'<main>'+read('src/operating-benchmark-panel.html'));
  html=html.replace('<a href="#maneuver-envelope">','<a href="#operating-benchmark">Normal / Combat benchmark</a> &middot; <a href="#maneuver-envelope">');
  html=html.replace('#stall-lab, #fighter-comparison, #historical-evidence, #maneuver-envelope','#stall-lab, #fighter-comparison, #historical-evidence, #maneuver-envelope, #operating-benchmark');
- html=html.replace('</body>',()=>'<script>'+benchmarkSource+'</script><script type="application/json" id="benchmark-operating-data">'+benchmarkData+'</script><script>'+benchmarkChart+'</script><script>'+benchmarkUI+'</script></body>');
+ html=html.replace('</body>',()=>'<script>'+benchmarkSource+'</script><script type="application/json" id="benchmark-operating-data">'+benchmarkData+'</script><script>'+benchmarkChart+'</script><script>'+benchmarkService+'</script><script>'+benchmarkUI+'</script></body>');
  fs.mkdirSync(path.join(root,'dist'),{recursive:true});
  fs.writeFileSync(path.join(root,'dist/model.html'),html);
  fs.writeFileSync(path.join(root,'dist/research-catalog.json'),researchData+'\n');
- const metadata={version,researchStatus:'v4.2 independent Normal/Combat, fuel and injection benchmarks',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
+ const metadata={version,researchStatus:'v4.3 report-conditioned climbs, aircraft eras and linked performance curves',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
  fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify(metadata,null,2)+'\n');
  return metadata;
 }

@@ -1,5 +1,5 @@
 'use strict';
-(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.OperatingBenchmark=api;})(globalThis,function(){
+(function(root,factory){const api=factory(typeof module==='object'&&module.exports?require('./energy-configuration.js'):root.EnergyConfiguration);if(typeof module==='object'&&module.exports)module.exports=api;else root.OperatingBenchmark=api;})(globalThis,function(Energy){
  const MPH=.44704,HP=745.6998716;
  const interpolate=(rows,x,key)=>{if(!rows?.length||x<rows[0][0]||x>rows.at(-1)[0])return null;const i=rows.findIndex(r=>r[0]>=x);if(rows[i][0]===x)return rows[i][key];const a=rows[i-1],b=rows[i];return a[key]+(b[key]-a[key])*(x-a[0])/(b[0]-a[0]);};
  const nodeAt=(nodes,x)=>{const a=nodes.map(r=>[r.altFt,r]);const i=a.findIndex(r=>r[0]>=x);if(i<0||x<a[0][0])return null;if(a[i][0]===x)return a[i][1];const lo=a[i-1],hi=a[i],f=(x-lo[0])/(hi[0]-lo[0]);return Object.fromEntries(Object.keys(lo[1]).map(k=>[k,typeof lo[1][k]==='number'&&typeof hi[1][k]==='number'?lo[1][k]+f*(hi[1][k]-lo[1][k]):lo[1][k]]));};
@@ -8,7 +8,7 @@
   if(!['normal','combat'].includes(mode)||![.25,.5,.75].includes(fuelFraction))throw Error('Choose Normal/Combat and 25%, 50% or 75% fuel');
   if(s.injection&&!spec.injection)throw Error('Injection is not fitted to this aircraft');
   if(s.injection&&mode!=='combat')throw Error('Injection requires Combat power');
-  return {mode,fuelFraction,injection:!!s.injection,extension:!!s.extension};
+  return {mode,fuelFraction,injection:!!s.injection,extension:!!s.extension,openCooling:!!s.openCooling};
  }
  function load(spec,policy,s){
   const fuelLb=spec.fuelCapacityUSGal*s.fuelFraction*policy.fuelDensityLbPerUSGal;
@@ -56,6 +56,33 @@
   return {...shaft,bhp,engineRpm:phase.rpm,rating:spec.baseRating,estimated,sourceMaxFt:max,
    estimatedMap:Math.min(phase.map,spec.baseMap*(estimated?M.isa(altFt).rho/M.isa(max).rho:1))};
  }
+ // These configurations were derived from climbs with open cooling. Rating, RPM,
+ // airspeed and altitude checks keep them within the applicable test conditions.
+ function installedClimb(M,model,altFt,tas,weightLb,phase,native){
+  const configuration=model.benchmarkCooling;
+  const match=configuration?.ratings[phase.key];
+  if(!match||native.estimated||phase.map!==match.map)return null;
+  const {minTasMph,maxTasMph,fadeTasMph}=configuration;
+  const fraction=Math.min(1,(tas-minTasMph)/fadeTasMph,(maxTasMph-tas)/fadeTasMph);
+  if(fraction<=0)return null;
+  const prepared=Energy.prepare(M,model,altFt,match.rating,weightLb,configuration);
+  if(!prepared||prepared.branch.engineRpm!==phase.rpm)return null;
+  const {ac,options,branch}=prepared;
+  const nodes=ac.powerRatings[options.rating].gears[options.gear];
+  const power=nodes[0];
+  const areaM2=(model.climbCoolingAreaM2??0)*(1-fraction)+branch.loss.areaM2*fraction;
+  return {
+   configuration,
+   prepared:{
+    ...prepared,
+    ac:{...ac,powerRatings:{[options.rating]:{gears:{[options.gear]:[
+     {...power,bhp:native.bhp+(power.bhp-native.bhp)*fraction}
+    ]}}}},
+    options:{...options,polar:model.benchmarkPolar},
+    branch:{...branch,loss:{areaM2,powerFraction:branch.loss.powerFraction*fraction}}
+   }
+  };
+ }
  function evaluate(M,turn,lift,model,spec,s,altFt,eas,weightLb,phase,climbing=false){
   if(!(altFt>=0&&altFt<=40000&&eas>0&&weightLb>0))return {status:'invalid-benchmark-input'};
   phase=phase??phaseFor(spec,s);
@@ -67,21 +94,31 @@
    propGeometry:{...model.ac.propGeometry,...(model.benchmarkReductionRatio?{reductionRatioEnginePerProp:model.benchmarkReductionRatio}:{}),engineRpmByRating:{...model.ac.propGeometry.engineRpmByRating,[rating]:phase.rpm}}};
   const opts={...model.options,profile:'P',polar:model.benchmarkPolar,rating,gear,weightLb};
   delete opts.engineModel;delete opts.flightCooling;
-  if(climbing&&model.climbCoolingAreaM2)opts.addedDragAreaM2=model.climbCoolingAreaM2;
-  const r=M.evaluated(ac,altFt,tas,turn.optionsFor(M,ac,lift,altFt,tas,opts));
-  return {...r,benchmark:{phase:phase.key??s.mode,label:phase.label,estimated:p.estimated,sourceMaxFt:p.sourceMaxFt,rpm:phase.rpm,map:phase.map,mapUnit:spec.mapUnit}};
+  const open=climbing||s.openCooling;
+  if(open&&model.climbCoolingAreaM2)opts.addedDragAreaM2=model.climbCoolingAreaM2;
+  const installed=open?installedClimb(M,model,altFt,tas,weightLb,phase,p):null;
+  let r;
+  if(installed){
+   const {prepared,configuration}=installed;
+   prepared.options=turn.optionsFor(M,prepared.ac,lift,altFt,tas,prepared.options);
+   r=Energy.evaluatePrepared(M,altFt,tas,prepared,configuration);
+  }else{
+   r=M.evaluated(ac,altFt,tas,turn.optionsFor(M,ac,lift,altFt,tas,opts));
+  }
+  return {...r,benchmark:{phase:phase.key??s.mode,label:phase.label,estimated:p.estimated,sourceMaxFt:p.sourceMaxFt,
+   rpm:phase.rpm,map:phase.map,mapUnit:spec.mapUnit,cooling:installed?'report-conditioned':open?'climb-estimate':'clean'}};
  }
  function summary(r,eas,kind){
   const g=kind==='instant'?r.limits.nInst:r.limits.nSust,rate=kind==='instant'?r.limits.instantDegSec:r.limits.sustDegSec;
   return {rateDegSec:rate,seconds360:rate>0?360/rate:null,easMph:eas,tasMph:r.tasMph,g,
-   radiusM:rate>0?r.tasMph*MPH/(rate*Math.PI/180):null,estimatedPower:r.benchmark.estimated,
+   radiusM:rate>0?r.tasMph*MPH/(rate*Math.PI/180):null,estimatedPower:r.benchmark.estimated,cooling:r.benchmark.cooling,
    limiting:r.limits.nPower<=r.limits.nInst?'power':r.limits.nLift<=r.limits.structG?'lift':'structure'};
  }
  function bestClimb(M,T,L,model,spec,s,alt,w,phase,step=4){
   let best=null;
   for(let tas=100;tas<=340;tas+=step){const eas=M.airspeeds(tas,alt).eas,r=evaluate(M,T,L,model,spec,s,alt,eas,w,phase,true);
    if(r.status==='source-power-unavailable')return {status:r.status};
-   if(r.status==='modelled'&&Number.isFinite(r.power?.climbFpm)&&(!best||r.power.climbFpm>best.climbFpm))best={status:'modelled',climbFpm:r.power.climbFpm,easMph:eas,tasMph:tas,shaftHp:r.power.shaftHp,estimatedPower:r.benchmark.estimated};}
+   if(r.status==='modelled'&&Number.isFinite(r.power?.climbFpm)&&(!best||r.power.climbFpm>best.climbFpm))best={status:'modelled',climbFpm:r.power.climbFpm,easMph:eas,tasMph:tas,shaftHp:r.power.shaftHp,estimatedPower:r.benchmark.estimated,cooling:r.benchmark.cooling};}
   return best??{status:'no-level-flight'};
  }
  function firstSustainedSpeed(atSpeed, low, high){

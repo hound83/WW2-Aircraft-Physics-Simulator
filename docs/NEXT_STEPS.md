@@ -1,5 +1,9 @@
 # Next steps
 
+## After v4.3 report-conditioned climbs
+
+Use paired cooling-position tests to constrain drag and installed power jointly. Start with the 41-5902 same-power level-speed sweep and the JL165 radiator-open/shut climb curves. Verify the separate Spitfire configuration and rating before transferring it. For the Corsair, prioritize original installed power and propeller efficiency data near the high-gear critical heights. Reserve one condition or airframe before fitting. Check changes against matched level speed, climb and low-speed lift, then use independent turn evidence to bound historical differences. [v4.3 evidence](V43_MODEL_CHECKS.md).
+
 ## Data-only collection objective: thirteen variants, primary80 / augmented90
 
 [Current checkpoint and per-aircraft retrieval tasks](research/WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md). The agreed objective remains open:1/13 reaches80 primary;0/13 reaches90 augmented under the unchanged rubric. Prioritize F6F04776 original stall time-history digitization with matched fuel/mass; P47D30 recorder-channel qualification and existing paired near-stall traces; then original F4 performance/EB100 files and Ki84 actual measured performance/calibration records. Continue all thirteen dossiers, retaining same-variant transfer bounds and source-level independence. G2 verification requires actual RPM/MAP and separate clean/gunpod/radiator configurations. This thread authorizes data collection only; simulator settings, physics and aircraft admission belong to the separate implementation milestone.

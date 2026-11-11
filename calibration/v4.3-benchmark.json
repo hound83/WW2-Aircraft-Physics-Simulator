@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "baseline": "d4c24baa1fc376587d2deb08d21941765910fc31",
+  "fadeTasMph": 15,
+  "interpretation": "Reuse the v4.1 test-conditioned open-cooling installation fits at matched phase, MAP and RPM. The outer 15 mph of the 110–320 mph TAS study domain blend into the operational climb estimate.",
+  "ratings": {
+    "p47b": {
+      "normal": {
+        "map": 42,
+        "rating": "normal"
+      },
+      "combat": {
+        "map": 52,
+        "rating": "military"
+      }
+    },
+    "spitfire_lfix_bs543": {
+      "combat": {
+        "map": 32.6959,
+        "rating": "combat+18"
+      }
+    }
+  }
+}

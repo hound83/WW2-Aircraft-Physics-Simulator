@@ -1,6 +1,6 @@
 {
   "name": "european-air-war-physics",
-  "version": "4.2.0-rc.2",
+  "version": "4.3.0-rc.1",
   "private": true,
   "description": "Normal and Combat flight benchmarks with independent fuel/injection, co-altitude comparisons and timed climbs",
   "engines": {
@@ -24,6 +24,7 @@
     "diagnose:flight-envelope": "node validation/diagnostics/flight_envelope.cjs",
     "diagnose:fighter-comparison": "node validation/diagnostics/fighter_comparison.cjs",
     "diagnose:flight-scorecard": "node validation/diagnostics/flight_scorecard.cjs",
-    "diagnose:configuration": "node validation/diagnostics/configuration_v34.cjs"
+    "diagnose:configuration": "node validation/diagnostics/configuration_v34.cjs",
+    "diagnose:operating-benchmark": "node validation/diagnostics/operating_benchmark_v43.cjs"
   }
 }

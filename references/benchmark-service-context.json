@@ -1,0 +1,102 @@
+{
+  "scope": "Approximate main Second World War service windows for the modeled variants. These are navigation aids. A time and theatre overlap does not document an encounter.",
+  "groups": [
+    {
+      "id": "early",
+      "label": "1941 · Early war"
+    },
+    {
+      "id": "mid",
+      "label": "1942–43 · Mid-war"
+    },
+    {
+      "id": "late",
+      "label": "1944–45 · Late war"
+    },
+    {
+      "id": "trials",
+      "label": "Flight tests and training"
+    }
+  ],
+  "aircraft": {
+    "bf109f4": {
+      "group": "early",
+      "years": [
+        1941,
+        1942
+      ],
+      "theatres": [
+        "Western Europe",
+        "Eastern Front",
+        "Mediterranean"
+      ],
+      "source": "https://ingenium.ca/aviation/en/collection-highlight/messerschmitt-bf-109f-4/"
+    },
+    "fw190a4": {
+      "group": "mid",
+      "years": [
+        1942,
+        1943
+      ],
+      "theatres": [
+        "Western Europe",
+        "Eastern Front",
+        "Mediterranean"
+      ]
+    },
+    "p38g": {
+      "group": "mid",
+      "years": [
+        1942,
+        1944
+      ],
+      "theatres": [
+        "Mediterranean",
+        "Pacific"
+      ]
+    },
+    "spitfire_lfix_bs543": {
+      "group": "mid",
+      "years": [
+        1943,
+        1945
+      ],
+      "theatres": [
+        "Western Europe",
+        "Mediterranean"
+      ]
+    },
+    "p51b": {
+      "group": "late",
+      "years": [
+        1944,
+        1945
+      ],
+      "theatres": [
+        "Western Europe",
+        "China–Burma–India"
+      ]
+    },
+    "f4u4": {
+      "group": "late",
+      "years": [
+        1945,
+        1945
+      ],
+      "theatres": [
+        "Pacific"
+      ],
+      "source": "https://www.history.navy.mil/content/history/museums/nnam/explore/collections/aircraft/f/f4u-4-corsair.html"
+    },
+    "p47b": {
+      "group": "trials",
+      "years": [
+        1942,
+        1942
+      ],
+      "theatres": [],
+      "note": "1942 US test and training variant",
+      "source": "https://www.aircorpsaviation.com/wp-content/uploads/P-47_NovDec-2018.pdf"
+    }
+  }
+}
