@@ -113,8 +113,8 @@ test('current HTML embeds exactly the reviewed catalog and read-only browser exp
  assert.ok(html.includes('id="historical-audit"'));
  assert.ok(html.includes('id="historical-lineage-rows"'));
  assert.ok(html.includes('id="historical-review-rows"'));
- assert.equal(catalog.document_lineage.length,40);
- assert.equal(catalog.calibration_reviews.length,20);
+ assert.equal(catalog.document_lineage.length,43);
+ assert.equal(catalog.calibration_reviews.length,22);
  assert.ok(html.includes('id="historical-research-data"'));
  assert.ok(html.includes('window.UniversalResearchEvidence'));
  assert.ok(html.includes(catalog.fingerprint));

@@ -63,7 +63,7 @@ Do not treat a manual or a variant-development sketch as a measured drag polar. 
 
 | 18,100 ft, high blower, engine BHP / rpm | With empty sway braces, mph **TAS** | Braces removed, mph **TAS** | Braces penalty in original units and relative to clean speed | Evidence |
 |---|---:|---:|---:|---|
-| 1,100 BHP / 2,950 rpm | 365.5 | 374.0 | **−8.5 mph (−2.27%)** | Original report p.1, measured flight speeds, inspected |
+| 1,100 BHP / 2,950 rpm | 369.5 | 374.0 | **−4.5 mph (−1.20%)** | Original report p.1, measured flight speeds, inspected |
 | 890 BHP / 2,650 rpm | 336.0 | 342.0 | **−6.0 mph (−1.75%)** | Same |
 | 760 BHP / 2,400 rpm | 311.0 | 317.5 | **−6.5 mph (−2.05%)** | Same |
 | 635 BHP / 2,200 rpm | 283.5 | 291.5 | **−8.0 mph (−2.74%)** | Same |

@@ -133,7 +133,7 @@ Secondary/derived route: Treat US high-octane426mph folklore as unverified unles
 
 OriginalFigure52now legible:12860lb,CG28.9%,5000ft,approach21inHg2550RPM. PairedNACA/service traces near80-100mph recovered but not digitized/qualifiedasCAS. Wing-section drag domain enriched; existing0.0097minimum not counted again.
 
-Next primary-source work: ResolveRM/NACAvsservice channel mapping usingTN2675 and originalinstrumentation; digitize matchedstall windows withoutdoublecorrection. Recover43-3441 independent speed/climb and installedR2800-59/SPA-7propeller data; sectiondrag is not whole-aircraftpolar.
+Next primary-source work: ResolveRM/NACAvsservice channel mapping usingTN2675 and originalinstrumentation; digitize matchedstall windows withoutdoublecorrection. Recover43-3441 independent speed/climb and installedR2800-59/SPA-5propeller data; sectiondrag is not whole-aircraftpolar.
 
 Secondary/derived route: A D30 family speed/climb transfer must identifypropeller,waterinjection,storeloadandcooling before augmented-performance credit.
 

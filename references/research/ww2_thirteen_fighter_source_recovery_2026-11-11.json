@@ -1076,10 +1076,11 @@
       "quantity": "powered_low_speed_control_limit",
       "speed_basis": "IAS",
       "source_location": "Original p5 power-on landing condition",
-      "conditions": "8000ftPA2200RPM20inHg, flaps/gear down. Source says aircraft does NOT stall at this initial setting; control inadequacy must not be mislabeled as1gstall or CAS.",
+      "conditions": "8000 ft PA, 2200 rpm, flaps and gear down. Original prints '20 mm Hg' at both this setting and the subsequently reduced setting. Actual MAP is unresolved. Control inadequacy is distinct from a stall.",
       "columns": [
         "altitude_ft",
         "rpm",
+        "map_as_printed",
         "map_inhg",
         "rudder_inadequate_below_ias_mph",
         "aileron_inadequate_below_ias_mph"
@@ -1088,7 +1089,8 @@
         [
           8000,
           2200,
-          20,
+          "20 mm Hg",
+          null,
           81,
           74
         ]
@@ -2038,7 +2040,7 @@
         "ww2_twelve_fighter_gap_followup_2026-11-10:KI84-302-AAF-SPECS"
       ],
       "relationship": "overlapping-specimen-and-handling-program",
-      "note": "Existing8000ft2200RPM20inHg160/130mphturn-abortrownotrepeated."
+      "note": "Existing 8000 ft / 2200 rpm / 160 and 130 mph IAS turn-abort row is cross-referenced. MAP is unresolved."
     },
     {
       "id": "p47-wing-drag-existing-result",

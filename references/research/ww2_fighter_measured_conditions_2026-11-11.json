@@ -1,0 +1,727 @@
+{
+  "schema": "ww2-fighter-evidence-pack/v1",
+  "pack_version": "1.0.0",
+  "compiled": "2026-11-11",
+  "purpose": "Recover quantitative flight-test conditions and drag/propulsion constraints for the ten fighters below 70% primary coverage.",
+  "sources": [
+    {
+      "id": "D30-TN2899",
+      "aircraft": "P-47D-30 AAF 43-3441",
+      "report": "NACA TN 2899, superseding RM L8A06",
+      "source": "https://ntrs.nasa.gov/api/citations/19930083857/downloads/19930083857.pdf",
+      "location": "PDF 2, 4, 7, 13, 50, 68, 75–76",
+      "classification": "period-original-scan",
+      "notes": "Reprints the same longitudinal flight-test program. Table I specifies four-blade Curtiss SPA-5, as does RM L8A06 Table I. Low-speed traces are explicitly service indicated.",
+      "sha256": "99e90787abfdd1c15c4bffd06260dce317c992fd9276746cea063a5138edb542"
+    },
+    {
+      "id": "D30-TN2675",
+      "aircraft": "P-47D-30 AAF 43-3441",
+      "report": "NACA TN 2675, lateral and directional flight trials",
+      "source": "https://ntrs.nasa.gov/api/citations/19930083825/downloads/19930083825.pdf",
+      "location": "Printed pp. 3–4 and 11–12, figs. 13(a), 14(a), 15(a) and 21",
+      "classification": "period-original-scan",
+      "notes": "Corrected right-wing-tip boom speed. At low speed the formation reference had a trailing airspeed head. This does not supply service-indicator correction values.",
+      "sha256": "2f57cd54c9aad8c464fdb336bbc70e8105d9b8dd742e495cb93715364e489b5f"
+    },
+    {
+      "id": "D-PROP-WR594",
+      "aircraft": "P-47D with experimental Hamilton Standard 6507A-2",
+      "report": "NACA WR L-594 / MR L5G09a, blade loading tests",
+      "source": "https://ntrs.nasa.gov/api/citations/19930093653/downloads/19930093653.pdf",
+      "location": "PDF 4–6, Table I (PDF 9)",
+      "classification": "period-original-scan",
+      "notes": "R-2800-59 with 12 ft 10 in, three-blade propeller and 2:1 reduction. Airframe serial not stated. Thrust was evaluated by slipstream survey.",
+      "sha256": "87fb0ba5c1e1cbcadb4002b506f5e5c583c35aa2abae0bf4f05115b2ea81185f"
+    },
+    {
+      "id": "B-5902-COOLING",
+      "aircraft": "P-47B AAF 41-5902",
+      "report": "Wright Field PHQ-M-19-1417-A, 18 June 1942",
+      "source": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf",
+      "location": "Printed pp. 2–4, §§B.2–6, B.11–13",
+      "classification": "period-original-scan",
+      "notes": "Same acceptance trial already held. Newly transcribed controlled cooler positions and off-design power conditions. R-2800-21 with torque meter.",
+      "sha256": "3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97"
+    },
+    {
+      "id": "G-12687-PARTPOWER",
+      "aircraft": "P-38G-1 AAF 42-12687",
+      "report": "Wright Field FS-M-19-1538-A, 10 February 1943",
+      "source": "https://www.wwiiaircraftperformance.com/org/p-38/p-38_files/P-38G-1_42-12687_FS-M-19-1538-A.pdf",
+      "location": "Printed p. 2 §§B.2–3 and p. 3 §B.8",
+      "classification": "period-original-scan",
+      "notes": "Separate part-power points in the existing acceptance report. Engine power from power charts. The report explicitly says no Allison torque meters were available.",
+      "sha256": "9e192df3f0b12e2218cdc35235e1f6210ec7c1fb136d0219e878140e9d15b9a0"
+    },
+    {
+      "id": "F-13635-BRACES",
+      "aircraft": "P-40F AAF 41-13635",
+      "report": "Wright Field FS-M-19-1578-A, 3 April 1943",
+      "source": "https://www.wwiiaircraftperformance.com/org/p-40/p-40_files/P-40F_41-13635_FS-M-19-1578-A.pdf",
+      "location": "PDF 1 §B.1, R54/S43 in the existing archive",
+      "classification": "period-original-scan",
+      "notes": "Original row reads 369.5 mph with the braces, against 374 mph removed. Belly tank shackles are listed as fitted. The sway braces were the changed items.",
+      "sha256": "c7329bd918da6304581d819ee10aeb0ef0a5930311486165b2890de070cef11f"
+    },
+    {
+      "id": "A4-783-NR4",
+      "aircraft": "Fw 190 A-4 WNr 783",
+      "report": "Focke-Wulf Flugbericht 783 Nr. 4, 7 April 1943",
+      "source": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr4.pdf",
+      "location": "Blätter 1–3 and curve sheets 1–3",
+      "classification": "period-original-scan",
+      "notes": "BMW 801 D2/20208, tight cowl, internal/external intake trials, two MG 17 and two MG 151 with ammunition. Cooling differential pressure was compared with the engine manufacturer's requirement.",
+      "sha256": "2c63910f706120ee4c610ffdda13c3419ed95530e4fc9bc412122abe27997255"
+    },
+    {
+      "id": "D9-210006-RECHLIN",
+      "aircraft": "Fw 190 D-9 WNr 210006",
+      "report": "Rechlin Erpr. Nr. 9003 Teilber. 2, 2 March 1945",
+      "source": "https://www.wwiiaircraftperformance.com/org/fw190/d9/d9_files/Fw_190_D-9_006.pdf",
+      "location": "Blätter 1–4, 7–9",
+      "classification": "period-original-scan",
+      "notes": "Production specimen with ETC 504, Jumo 213 A on B4, Bruhn 5d, Heine 3.5 m three-blade prop. Separate aircraft from WNr 210002. Individual and production-range results have separate labels.",
+      "sha256": "9eb4cd9b6da1ba578c613796d96ad6ae10252534f9edfe53f4d5c68ad1144f39"
+    },
+    {
+      "id": "G1-14001-COOLING",
+      "aircraft": "Bf 109 G-1 WNr 14001",
+      "report": "Messerschmitt 109 18 L 42, 9 September 1942",
+      "source": "https://wwiiaircraftperformance.com/org/me109/g/g_files/VB-109-18-L-42.pdf",
+      "location": "Blatt 1–2",
+      "classification": "period-original-scan",
+      "notes": "Early DB 605 A G-1 cooling configuration. Original page gives 43 km/h at full flap opening while the web translation gives 48 km/h. The original governs. Applicable as a G-family comparison.",
+      "sha256": "68b08e3ce0557a7a81ddf242161c7f2e99c8026dbe04a8ebb73cf6a7e41d0d6e"
+    },
+    {
+      "id": "KI84-302-UNIT-REVIEW",
+      "aircraft": "Ki-84-I captured T-2 serial 302",
+      "report": "Air Materiel Command F-IM-1119C-NDT-2, Interim Report 2",
+      "source": "https://www.wwiiaircraftperformance.org/japan/T-2_Report_on_Frank_I_Ki-84.pdf",
+      "location": "Powered landing and turning-stall paragraphs",
+      "classification": "period-original-scan-unit-review",
+      "notes": "Facsimile types '20 mm Hg' for both powered landing settings while saying pressure was reduced between them. The actual values and pressure convention are unresolved. Existing IAS observations retained."
+    },
+    {
+      "id": "SPIT-JL165-COOLING",
+      "aircraft": "Spitfire LF Mk IX JL165, Merlin 66",
+      "report": "A&AEE 692/m 30th Part, JL165 increased-boost tests",
+      "source": "https://wwiiaircraftperformance.com/org/spitcom/mk9/spitIX_25boost_JL165.html",
+      "location": "Original Figure 1 and transcribed Tables I–II and §4.43",
+      "classification": "period-original-chart-and-linked-report-transcription",
+      "notes": "Same JL165 test already cited for climb. Newly registered matched radiator-open/shut series, checked against the original solid curves and report text. Separate serial, +25 lb/sq.in. rating and 7,400 lb takeoff.",
+      "pdf": "https://wwiiaircraftperformance.com/org/spitcom/mk9/spitIX_25boost_JL165_files/jl165climb.jpg",
+      "sha256": "b5b6bd5d7993f948bab00e80ea8c337559298f18a56501f43f1940cce973d245"
+    }
+  ],
+  "series": [
+    {
+      "id": "d30-longitudinal-installation",
+      "source_id": "D30-TN2899",
+      "aircraft": "P-47D-30 AAF 43-3441",
+      "quantity": "test_airframe_installation",
+      "speed_basis": "unestablished",
+      "source_location": "Table I (PDF 13); RM L8A06 Table I (PDF 14)",
+      "conditions": "Four-blade test installation. Confirmed reading of SPA-5 in the 1948 original and both later NACA reports.",
+      "columns": [
+        "engine",
+        "propeller_drawing",
+        "blade_count",
+        "wing_area_ft2"
+      ],
+      "rows": [
+        ["R-2800-59", "Curtiss SPA-5", 4, 300]
+      ],
+      "source_class": "original-test-configuration",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "d30-corrected-handling-test-speeds",
+      "source_id": "D30-TN2675",
+      "aircraft": "P-47D-30 AAF 43-3441",
+      "quantity": "calibrated_handling_test_condition",
+      "speed_basis": "CAS",
+      "source_location": "Printed p. 4 and Figures 13(a), 14(a), 15(a), 21",
+      "conditions": "Same-aircraft corrected NACA boom channel used in selected lateral tests. Each speed is explicitly identified as calibrated. These conditions do not give a paired service-ASI reading.",
+      "columns": [
+        "figure",
+        "test_condition",
+        "speed_cas_mph",
+        "altitude_ft"
+      ],
+      "rows": [
+        ["13(a)", "glide directional stability", 146, 6000],
+        ["14(a)", "glide directional stability", 149, 23000],
+        ["15(a)", "power-on clean directional stability", 149, 5000],
+        ["21", "power for level flight at stated speed, rolls from 45 deg bank", 148, null]
+      ],
+      "source_class": "original-flight-test",
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "d30-steady-turn-control",
+      "source_id": "D30-TN2899",
+      "aircraft": "P-47D-30 AAF 43-3441",
+      "quantity": "steady_turn_normal_force_and_elevator",
+      "speed_basis": "unestablished",
+      "source_location": "Printed p. 6 and Fig. 25(a) (PDF 50), highest plotted measured marker in each panel",
+      "conditions": "Clean, 42.5 inHg at 2550 rpm at low altitude. Speed basis not stated on Fig. 25; raw labels retained. Read to about ±0.02 CN and ±0.2 deg. These are constant-speed/acceleration test points. Run mass, thrust, drag and maximum sustained capacity are not supplied.",
+      "columns": [
+        "direction",
+        "labeled_speed_mph",
+        "altitude_ft",
+        "cg_fraction_mac",
+        "normal_force_coefficient",
+        "elevator_up_deg"
+      ],
+      "rows": [
+        ["left", 200, 7000, 0.264, 1.2, 6.0],
+        ["right", 200, 7000, 0.264, 1.25, 7.1],
+        ["left", 249, 7000, 0.263, 1.22, 7.3],
+        ["right", 250, 7000, 0.263, 1.23, 7.2],
+        ["left", 302, 6500, 0.262, 0.81, 4.8],
+        ["right", 301, 6500, 0.262, 0.8, 5.0],
+        ["left", 352, 7500, 0.263, 0.61, 3.7],
+        ["right", 353, 7500, 0.263, 0.65, 3.8]
+      ],
+      "source_class": "digitized-original-flight-chart",
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "d30-additional-stall-traces",
+      "source_id": "D30-TN2899",
+      "aircraft": "P-47D-30 AAF 43-3441",
+      "quantity": "stall_or_closest_approach_trace_window",
+      "speed_basis": "IAS",
+      "source_location": "Figures 35(a), 35(b), 39 and 40 (PDF 68, 75–76), printed p. 9",
+      "conditions": "Additional runs distinct from the five already digitized. Readings refer to visually selected end-of-run or near-peak normal acceleration windows, with approximate scan bounds of ±3 mph and ±0.15 g. The loaded approaches are transient. Service indicated airspeed, no CLmax inferred.",
+      "columns": [
+        "figure",
+        "condition",
+        "time_s",
+        "speed_ias_mph",
+        "normal_g",
+        "gross_weight_lb",
+        "cg_pct_mac",
+        "altitude_ft"
+      ],
+      "rows": [
+        ["35(a)", "glide, late approach", 6, 121, 0.9, 12770, 26.4, 24000],
+        ["35(b)", "power-on clean, late approach", 11, 104, 0.9, 12570, 26.4, 26500],
+        ["39", "power-on clean, loaded left turn", 12, 172, 2.2, 12690, 26.3, 5000],
+        ["40", "landing, wind-up left turn", 11, 173, 3.0, 12680, 26.4, 5000]
+      ],
+      "source_class": "digitized-original-flight-chart",
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "p47d-hamilton-standard-climb-coefficients",
+      "source_id": "D-PROP-WR594",
+      "aircraft": "P-47D with experimental Hamilton Standard 6507A-2",
+      "quantity": "propeller_climb_coefficients",
+      "speed_basis": "unestablished",
+      "source_location": "Table I (PDF 9), all runs",
+      "conditions": "Normal nominal 1625 bhp / 2550 engine rpm / 42 inHg, military nominal 2000 bhp / 2700 engine rpm / 52 inHg. n is propeller rev/s. Eta is retained as printed and rounded independently. Does not establish efficiency of the Curtiss SPA-5.",
+      "columns": [
+        "run",
+        "rating",
+        "advance_ratio",
+        "power_coefficient",
+        "thrust_coefficient",
+        "efficiency",
+        "prop_rev_per_sec",
+        "mach",
+        "tip_mach",
+        "density_ratio"
+      ],
+      "rows": [
+        ["3-1", "normal", 0.92, 0.107, 0.091, 0.778, 21.25, 0.228, 0.811, 0.905],
+        ["3-2", "normal", 0.957, 0.115, 0.0911, 0.758, 21.3, 0.239, 0.819, 0.864],
+        ["3-3", "normal", 0.957, 0.121, 0.0991, 0.783, 21.5, 0.242, 0.83, 0.815],
+        ["3-4", "normal", 0.978, 0.128, 0.1023, 0.779, 21.35, 0.247, 0.83, 0.794],
+        ["3-5", "normal", 0.99, 0.135, 0.1058, 0.784, 21.5, 0.255, 0.842, 0.747],
+        ["3-6", "normal", 1.029, 0.142, 0.1079, 0.781, 21.4, 0.263, 0.844, 0.711],
+        ["3-7", "normal", 1.059, 0.151, 0.1129, 0.794, 21.35, 0.271, 0.848, 0.674],
+        ["3-8", "normal", 1.076, 0.156, 0.1143, 0.789, 21.5, 0.279, 0.86, 0.642],
+        ["3-9", "normal", 1.096, 0.164, 0.1188, 0.795, 21.45, 0.285, 0.866, 0.612],
+        ["3-10", "normal", 1.128, 0.171, 0.1208, 0.795, 21.32, 0.294, 0.869, 0.585],
+        ["3-11", "normal", 1.154, 0.182, 0.1268, 0.803, 21.35, 0.302, 0.876, 0.557],
+        ["3-12", "normal", 1.201, 0.189, 0.1264, 0.801, 21.25, 0.315, 0.883, 0.533],
+        ["3-13", "normal", 1.217, 0.198, 0.1295, 0.797, 21.3, 0.322, 0.891, 0.508],
+        ["3-14", "normal", 1.239, 0.205, 0.1322, 0.799, 21.3, 0.33, 0.901, 0.49],
+        ["3-15", "normal", 1.251, 0.209, 0.1345, 0.807, 21.5, 0.339, 0.917, 0.471],
+        ["3-16", "normal", 1.277, 0.218, 0.1347, 0.789, 21.45, 0.348, 0.924, 0.453],
+        ["3-17", "normal", 1.287, 0.226, 0.1418, 0.808, 21.45, 0.352, 0.927, 0.432],
+        ["3-18", "normal", 1.331, 0.232, 0.1394, 0.8, 21.5, 0.367, 0.939, 0.414],
+        ["3-19", "normal", 1.355, 0.241, 0.143, 0.802, 21.42, 0.374, 0.944, 0.401],
+        ["3-20", "normal", 1.379, 0.249, 0.1449, 0.801, 21.45, 0.383, 0.958, 0.387],
+        ["3-21", "normal", 1.399, 0.256, 0.1456, 0.798, 21.5, 0.391, 0.961, 0.373],
+        ["3-22", "normal", 1.42, 0.263, 0.1482, 0.8, 21.5, 0.399, 0.969, 0.361],
+        ["5-1", "military", 0.974, 0.16, 0.1291, 0.786, 22.35, 0.257, 0.869, 0.748],
+        ["5-2", "military", 1.019, 0.172, 0.1311, 0.777, 22.45, 0.273, 0.884, 0.687],
+        ["5-3", "military", 1.061, 0.188, 0.1392, 0.786, 22.4, 0.285, 0.892, 0.629],
+        ["5-4", "military", 1.128, 0.2, 0.1402, 0.791, 22.5, 0.308, 0.912, 0.581],
+        ["5-5", "military", 1.156, 0.215, 0.1483, 0.797, 22.4, 0.314, 0.911, 0.535],
+        ["5-6", "military", 1.187, 0.23, 0.1517, 0.783, 22.47, 0.326, 0.924, 0.494],
+        ["5-7", "military", 1.235, 0.239, 0.1525, 0.788, 22.52, 0.343, 0.936, 0.463],
+        ["5-8", "military", 1.273, 0.25, 0.1566, 0.798, 22.5, 0.356, 0.948, 0.439],
+        ["5-9", "military", 1.297, 0.262, 0.158, 0.782, 22.5, 0.366, 0.959, 0.417],
+        ["5-10", "military", 1.322, 0.27, 0.1595, 0.781, 22.5, 0.376, 0.968, 0.399],
+        ["12-1", "military", 0.88, 0.125, 0.1102, 0.776, 22.3, 0.236, 0.874, 0.943],
+        ["12-2", "military", 0.916, 0.142, 0.1192, 0.769, 22.32, 0.246, 0.879, 0.853],
+        ["12-3", "military", 0.979, 0.15, 0.1202, 0.785, 22.23, 0.26, 0.874, 0.764],
+        ["12-4", "military", 1.025, 0.167, 0.1271, 0.78, 22.18, 0.272, 0.876, 0.704],
+        ["12-5", "military", 1.049, 0.182, 0.1347, 0.776, 22.19, 0.281, 0.888, 0.651],
+        ["12-6", "military", 1.102, 0.193, 0.1389, 0.793, 22.26, 0.296, 0.894, 0.597],
+        ["12-7", "military", 1.139, 0.206, 0.1401, 0.775, 22.27, 0.308, 0.903, 0.554],
+        ["12-8", "military", 1.175, 0.225, 0.151, 0.789, 22.28, 0.319, 0.909, 0.512],
+        ["12-9", "military", 1.213, 0.231, 0.1514, 0.795, 22.32, 0.334, 0.927, 0.487],
+        ["12-10", "military", 1.246, 0.248, 0.1565, 0.786, 22.31, 0.345, 0.936, 0.458],
+        ["12-11", "military", 1.27, 0.257, 0.1606, 0.794, 22.26, 0.354, 0.944, 0.432],
+        ["12-12", "military", 1.317, 0.261, 0.1562, 0.788, 22.35, 0.371, 0.959, 0.41]
+      ],
+      "source_class": "original-flight-test-different-propeller-installation",
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "p47b-cooling-flap-speed",
+      "source_id": "B-5902-COOLING",
+      "aircraft": "P-47B AAF 41-5902",
+      "quantity": "matched_cooling_position_level_speed",
+      "speed_basis": "TAS",
+      "source_location": "Printed p. 2 §B.2",
+      "conditions": "Five matched conditions at 5,000 ft, 1605 bhp and 2700 rpm. Delta from both neutral. The original holds shaft power; propeller efficiency is not measured at these points.",
+      "columns": [
+        "alt_ft",
+        "bhp",
+        "rpm",
+        "oil_flaps",
+        "intercooler_flaps",
+        "speed_tas_mph",
+        "delta_tas_mph"
+      ],
+      "rows": [
+        [5000, 1605, 2700, "neutral", "neutral", 323, 0],
+        [5000, 1605, 2700, "wide open", "neutral", 316, -7],
+        [5000, 1605, 2700, "neutral", "wide open", 315, -8],
+        [5000, 1605, 2700, "wide open", "wide open", 309, -14],
+        [5000, 1605, 2700, "closed", "closed", 324, 1]
+      ],
+      "source_class": "original-flight-test",
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "p47b-windshield-speed",
+      "source_id": "B-5902-COOLING",
+      "aircraft": "P-47B AAF 41-5902",
+      "quantity": "windshield_change_level_speed",
+      "speed_basis": "TAS",
+      "source_location": "Printed p. 2 §B.3",
+      "conditions": "Flat windshield trial, cowl closed, oil and intercooler flush. Report compares the pointed windshield.",
+      "columns": [
+        "alt_ft",
+        "bhp",
+        "rpm",
+        "flat_tas_mph",
+        "flat_minus_pointed_mph"
+      ],
+      "rows": [
+        [15000, 2000, 2700, 380, -6]
+      ],
+      "source_class": "original-flight-test",
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "p47b-cruise-power",
+      "source_id": "B-5902-COOLING",
+      "aircraft": "P-47B AAF 41-5902",
+      "quantity": "level_flight_shaft_power_point",
+      "speed_basis": "TAS",
+      "source_location": "Printed p. 2 §B.4",
+      "conditions": "One off-design power point with cowl closed, oil and intercooler flush. Installed shaft power, propulsive power unknown.",
+      "columns": [
+        "alt_ft",
+        "bhp",
+        "rpm",
+        "speed_mph"
+      ],
+      "rows": [
+        [24550, 665, 2100, 237]
+      ],
+      "source_class": "original-flight-test",
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "p47b-climb-cooling-trade",
+      "source_id": "B-5902-COOLING",
+      "aircraft": "P-47B AAF 41-5902",
+      "quantity": "climb_cooling_speed_tradeoff",
+      "speed_basis": "IAS",
+      "source_location": "Printed pp. 2–3 §B.6",
+      "conditions": "One normal-rated climb made 20 mph IAS faster than the best-rate schedule. Cowl, oil cooler and intercooler wide open. Cooling then satisfactory through 30,000 ft in the test. The quoted loss is a summary, not a full alternate climb curve.",
+      "columns": [
+        "ias_increase_mph",
+        "climb_loss_ft_min",
+        "highest_reported_satisfactory_alt_ft"
+      ],
+      "rows": [
+        [20, 130, 30000]
+      ],
+      "source_class": "original-flight-test",
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "p38g-part-power-level",
+      "source_id": "G-12687-PARTPOWER",
+      "aircraft": "P-38G-1 AAF 42-12687",
+      "quantity": "level_speed_part_power",
+      "speed_basis": "TAS",
+      "source_location": "Printed p. 2 §§B.2–3",
+      "conditions": "Gear up, wing flaps neutral and coolant/oil flaps faired in level flight. Per-engine BHP from engine charts rather than torque measurements; weights are report estimates. Keep individual RPM and BHP pairs.",
+      "columns": [
+        "alt_ft",
+        "speed_tas_mph",
+        "chart_bhp_per_engine",
+        "rpm",
+        "estimated_gross_lb"
+      ],
+      "rows": [
+        [5000, 346, 1150, 2800, 13270],
+        [5000, 332, 1000, 2600, 13410],
+        [5000, 310, 800, 2280, 13670],
+        [5000, 284, 600, 2000, 13540],
+        [5000, 266, 475, 1800, 13490],
+        [5000, 248, 360, 1600, 13460],
+        [5000, 236, 290, 1600, 13430],
+        [24400, 404, 1150, 2800, 13550],
+        [24400, 392, 1000, 2600, 13410],
+        [24400, 366, 800, 2280, 13330],
+        [24400, 352, 690, 2200, 13270],
+        [24400, 331, 525, 2000, 13210],
+        [24400, 316, 410, 2000, 13150]
+      ],
+      "source_class": "original-flight-test",
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "p38g-original-cooling-outcome",
+      "source_id": "G-12687-PARTPOWER",
+      "aircraft": "P-38G-1 AAF 42-12687",
+      "quantity": "test_cooling_compliance",
+      "speed_basis": "unestablished",
+      "source_location": "Printed p. 4 §B.9",
+      "conditions": "Original distinguishes induction intercooling from liquid coolant. Operation of the carburettor air system judged sufficient on the Air Corps hot day within tested conditions; the Prestone system did not meet the cooling requirement.",
+      "columns": [
+        "system",
+        "meets_hot_day_requirement"
+      ],
+      "rows": [
+        ["carburetor air intercooling", true],
+        ["Prestone coolant", false]
+      ],
+      "source_class": "original-test-summary",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "p40f-brace-power-equilibrium-sensitivity",
+      "source_id": "F-13635-BRACES",
+      "aircraft": "P-40F AAF 41-13635",
+      "quantity": "derived_configuration_drag_sensitivity",
+      "speed_basis": "TAS",
+      "source_location": "PDF 1 §B.1, S43 inputs",
+      "conditions": "Derived, conditional constant-altitude comparison. Let v=Vfitted/Vremoved, p=propulsive-power ratio, r=induced/parasite drag for the removed-brace case at Vremoved. Ratio of parasite coefficients = [p(1+r)−r/v]/v³ for fixed lift and induced coefficient. Midpoint assumes p=1,r=0; illustrative ends p=.98,r=.2 and p=1.02,r=0. These are scenarios, not measurement uncertainty or a clean absolute drag polar.",
+      "columns": [
+        "alt_ft",
+        "chart_bhp",
+        "rpm",
+        "tas_with_braces_mph",
+        "tas_removed_mph",
+        "loss_mph",
+        "parasite_only_increase_pct",
+        "lower_scenario_pct",
+        "upper_scenario_pct"
+      ],
+      "rows": [
+        [18100, 1100, 2950, 369.5, 374, 4.5, 3.7, 0.96, 5.77],
+        [18100, 890, 2650, 336, 342, 6, 5.45, 2.55, 7.56],
+        [18100, 760, 2400, 311, 317.5, 6.5, 6.4, 3.4, 8.53],
+        [18100, 635, 2200, 283.5, 291.5, 8.0, 8.71, 5.48, 10.88],
+        [18100, 530, 2000, 258, 266, 8, 9.59, 6.28, 11.79],
+        [18100, 445, 2000, 233, 240, 7, 9.29, 6.01, 11.47],
+        [18100, 360, 2000, 194, 200, 6, 9.57, 6.26, 11.76]
+      ],
+      "source_class": "derived-from-original-matched-flight-tests",
+      "evidence_kind": "derived_estimate"
+    },
+    {
+      "id": "a4-783-cooling-pressure-limits",
+      "source_id": "A4-783-NR4",
+      "aircraft": "Fw 190 A-4 WNr 783",
+      "quantity": "cooling_differential_pressure_envelope",
+      "speed_basis": "unestablished",
+      "source_location": "Blatt 2, derived in the period report from measured differential pressure compared with the required minimum",
+      "conditions": "BMW 801 D2/20208, combat power. These are pressure-adequacy boundaries for the hottest European summer day, not directly measured cylinder temperatures or drag. Internal/external intake and climb/level cases kept distinct.",
+      "columns": [
+        "condition",
+        "intake",
+        "cowl_flap_state",
+        "altitude_low_m",
+        "altitude_high_m",
+        "finding"
+      ],
+      "rows": [
+        ["climb", "internal and external", "cannot reduce opening", 7000, 8000, "onset range"],
+        ["level", "internal", "closed", 9300, 9300, "pressure inadequate above"],
+        ["level", "external", "closed", 9950, 9950, "pressure inadequate above"]
+      ],
+      "source_class": "original-flight-pressure-compared-with-period-requirement",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "a4-783-cowl-flap-pressure-and-speed",
+      "source_id": "A4-783-NR4",
+      "aircraft": "Fw 190 A-4 WNr 783",
+      "quantity": "cowl_flap_position_pressure_and_speed",
+      "speed_basis": "TAS",
+      "source_location": "Curve sheet 3 (PDF 6), common upper H_B = 8000 m curves",
+      "conditions": "Combat power, 2400 rpm, internal engine-air intake, level flight. Digitized curve readings to about ±8 mm water and ±4 km/h. The chart labels speed Vw. Pressure increase and speed loss are simultaneous configuration effects. Lower speed curve excluded because the scan annotation is less clear.",
+      "columns": [
+        "altitude_m",
+        "rpm",
+        "cowl_flap_angle_deg",
+        "pressure_difference_mm_water",
+        "speed_vw_kmh"
+      ],
+      "rows": [
+        [8000, 2400, 0, 255, 602],
+        [8000, 2400, 10, 305, 598],
+        [8000, 2400, 20, 323, 586],
+        [8000, 2400, 30, 332, 578],
+        [8000, 2400, 40, 334, 570]
+      ],
+      "source_class": "digitized-original-flight-chart",
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "a4-783-gm1-cooling-scenario",
+      "source_id": "A4-783-NR4",
+      "aircraft": "Fw 190 A-4 WNr 783",
+      "quantity": "period_calculated_cooling_scenario",
+      "speed_basis": "unestablished",
+      "source_location": "Blatt 2–3, GM 1 discussion",
+      "conditions": "Report's conditional engineering discussion, normal internal intake and existing fan. The GM 1 numbers are not established as a flown turn or timed climb.",
+      "columns": [
+        "scenario",
+        "altitude_m",
+        "speed_from_kmh",
+        "speed_to_kmh",
+        "gm1_g_per_sec"
+      ],
+      "rows": [
+        ["open flap climb pressure example", 8000, 260, 310, null],
+        ["theoretical climb/level speed intersection", 10300, null, null, 80]
+      ],
+      "source_class": "period-engineering-estimate",
+      "evidence_kind": "derived_estimate"
+    },
+    {
+      "id": "d9-006-radiator-speed",
+      "source_id": "D9-210006-RECHLIN",
+      "aircraft": "Fw 190 D-9 WNr 210006",
+      "quantity": "radiator_position_level_speed",
+      "speed_basis": "TAS",
+      "source_location": "Blatt 7 Fig. c, plotted Vw in km/h, report §III.3",
+      "conditions": "2,000 m, 2700 rpm, nominal 4.2 t, empty external tank. Position scale 0 shut to 10 open. Approximate chart reading ±2 km/h. Different serial, stores and prop installation from WNr 210002.",
+      "columns": [
+        "alt_m",
+        "rpm",
+        "nominal_mass_kg",
+        "flap_position_tenths",
+        "speed_vw_kmh"
+      ],
+      "rows": [
+        [2000, 2700, 4200, 0, 499],
+        [2000, 2700, 4200, 2, 503],
+        [2000, 2700, 4200, 3, 505],
+        [2000, 2700, 4200, 4, 501],
+        [2000, 2700, 4200, 6, 495],
+        [2000, 2700, 4200, 8, 489],
+        [2000, 2700, 4200, 10, 485]
+      ],
+      "source_class": "digitized-original-flight-chart-different-specimen",
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "d9-006-empty-tank-penalty",
+      "source_id": "D9-210006-RECHLIN",
+      "aircraft": "Fw 190 D-9 WNr 210006",
+      "quantity": "empty_tank_level_speed_penalty",
+      "speed_basis": "unestablished",
+      "source_location": "Blatt 7 Fig. b, plotted speed loss in Va",
+      "conditions": "Nominal 4.2 t, empty external tank. Report uses Va on both axes; leave the specific corrected-speed basis as printed. Approximate graph readings ±2 km/h.",
+      "columns": [
+        "nominal_mass_kg",
+        "reference_va_kmh",
+        "delta_va_kmh"
+      ],
+      "rows": [
+        [4200, 360, -27],
+        [4200, 380, -24],
+        [4200, 400, -21],
+        [4200, 420, -19],
+        [4200, 440, -17],
+        [4200, 460, -16],
+        [4200, 480, -15],
+        [4200, 500, -14]
+      ],
+      "source_class": "digitized-original-flight-chart-different-specimen",
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "d9-006-production-speed-bands",
+      "source_id": "D9-210006-RECHLIN",
+      "aircraft": "Fw 190 D-9 WNr 210006",
+      "quantity": "production_level_speed_range",
+      "speed_basis": "TAS",
+      "source_location": "Blatt 1 summary",
+      "conditions": "Ranges from Rechlin production checks. Preserve as report bands, not single WNr 210006 measurements. ETC 504 context.",
+      "columns": [
+        "rpm",
+        "altitude_m",
+        "tas_low_kmh",
+        "tas_high_kmh"
+      ],
+      "rows": [
+        [3000, 0, 520, 530],
+        [3000, 6500, 625, 635],
+        [3250, 0, 540, 550],
+        [3250, 6600, 645, 655]
+      ],
+      "source_class": "original-test-summary",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "d9-006-3250-climb-endpoints",
+      "source_id": "D9-210006-RECHLIN",
+      "aircraft": "Fw 190 D-9 WNr 210006",
+      "quantity": "climb_rate",
+      "speed_basis": "unestablished",
+      "source_location": "Blatt 1, measured-climb summary",
+      "conditions": "Report rates at takeoff weight 4,300 kg and 3250 rpm for separate WNr 210006. Wing area 18.3 m². Carbon recorder.",
+      "columns": [
+        "alt_m",
+        "rpm",
+        "takeoff_mass_kg",
+        "climb_m_s"
+      ],
+      "rows": [
+        [0, 3250, 4300, 17],
+        [10200, 3250, 4300, 2]
+      ],
+      "source_class": "original-flight-test",
+      "evidence_kind": "flight_measurement"
+    },
+    {
+      "id": "g1-14001-cooling-temperature-summary",
+      "source_id": "G1-14001-COOLING",
+      "aircraft": "Bf 109 G-1 WNr 14001",
+      "quantity": "level_speed_cooling_summary",
+      "speed_basis": "unestablished",
+      "source_location": "Blatt 1–2; actual trial at Kampfleistung and derived ambient-temperature behavior",
+      "conditions": "Early Bf 109 G-1 cooling trial. The cover says the flaps open fully at +42 °C with 43 km/h loss; coolant reaches 115 °C at +50 °C (source shows ±5 °C). The 102 °C control target in Blatt 2 is a thermostat reference. No transfer to exact G-2 engine limits or a 1.42 ata rating.",
+      "columns": [
+        "ambient_c",
+        "ambient_uncertainty_c",
+        "flap_state",
+        "speed_loss_kmh",
+        "coolant_c",
+        "thermostat_reference_c"
+      ],
+      "rows": [
+        [42, null, "fully open", 43, null, 102],
+        [50, 5, null, null, 115, 102]
+      ],
+      "source_class": "original-flight-test-summary-different-specimen",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "spit-jl165-radiator-climb-pairs",
+      "source_id": "SPIT-JL165-COOLING",
+      "aircraft": "Spitfire LF Mk IX JL165, Merlin 66",
+      "quantity": "radiator_position_paired_climb",
+      "speed_basis": "IAS",
+      "source_location": "A&AEE Tables I–II, original chart Fig. 1, §4.43",
+      "conditions": "Full throttle, FS blower, 3000 rpm, reported takeoff 7400 lb. Same reference ASI and boost schedule. The difference is the observed climb response to radiator setting in this trial, not a direct drag measurement or a BS543 calibration.",
+      "columns": [
+        "alt_ft",
+        "climb_open_ft_min",
+        "climb_shut_ft_min",
+        "boost_psi",
+        "speed_ias_mph"
+      ],
+      "rows": [
+        [0, 4250, 4720, 25, 170],
+        [2000, 4265, 4725, 25, 170],
+        [4000, 4280, 4730, 25, 170],
+        [6000, 4295, 4735, 25, 170],
+        [8000, 4310, 4740, 25, 170],
+        [10000, 4325, 4745, 25, 170],
+        [11400, 4335, 4750, 25, 170],
+        [12000, 4250, 4650, 24.3, 170],
+        [14000, 3970, 4350, 21.8, 170],
+        [16000, 3680, 4050, 19.4, 170],
+        [18000, 3410, 3750, 17.1, 166],
+        [20000, 3130, 3450, 14.8, 160],
+        [22000, 2850, 3150, 12.8, 156],
+        [24000, 2570, 2850, 10.6, 152],
+        [26000, 2290, 2550, 8.6, 148],
+        [28000, 2010, 2250, 6.5, 144],
+        [30000, 1730, 1950, 4.6, 140]
+      ],
+      "source_class": "original-chart-with-report-transcription-different-specimen",
+      "evidence_kind": "flight_measurement"
+    }
+  ],
+  "calibration_reviews": [
+    {
+      "id": "d30-service-trace-speed-basis",
+      "source_id": "D30-TN2899",
+      "status": "service-IAS-confirmed",
+      "decision": "The superseding report explicitly labels the stall traces service indicated. TN 2675 corrected boom speeds are separate. No IAS-to-CAS conversion for the stall traces."
+    },
+    {
+      "id": "ki84-map-unit-conflict",
+      "source_id": "KI84-302-UNIT-REVIEW",
+      "status": "unresolved-original-unit-and-value",
+      "decision": "The scan explicitly types 20 mm Hg in all three passages. Initial and reduced powered landing settings cannot both equal 20. Preserve IAS, leave MAP unresolved."
+    }
+  ],
+  "document_lineage": [
+    {
+      "id": "d30-rm-revision",
+      "relationship": "same_experiment_superseded_report",
+      "members": [
+        "D30-TN2899",
+        "stall_four_track_followup_2026-11-10:p47d30-tn2899-reprint",
+        "ww2_fighter_flight_tests_2026-11-11:P47D30-L8A06-STALL-TRACE"
+      ]
+    },
+    {
+      "id": "d30-lateral-repeat-citation",
+      "relationship": "same_report_additional_data",
+      "members": [
+        "D30-TN2675",
+        "ww2_fighter_flight_tests_2026-11-11:P47D30-TN2675-INSTRUMENTS"
+      ]
+    },
+    {
+      "id": "ki84-captured-original",
+      "relationship": "same_report_unit_reinspection",
+      "members": [
+        "KI84-302-UNIT-REVIEW",
+        "ww2_twelve_fighter_gap_followup_2026-11-10:KI84-302-AAF-SPECS"
+      ]
+    }
+  ]
+}
