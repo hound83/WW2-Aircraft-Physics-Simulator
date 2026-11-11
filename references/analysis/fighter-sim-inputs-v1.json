@@ -1,6 +1,6 @@
 {
   "schema": "ww2-fighter-sim-inputs/v1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "as_of": "2026-11-11",
   "scope": "Historical inputs and conditional estimates for source-case lookups and evidence graphs.",
   "originals": {
@@ -173,6 +173,12 @@
         ]
       }
     ]
+  },
+  "propeller_efficiency": {
+    "path": "references/analysis/fighter-propeller-efficiency-v1.json",
+    "build_file": "fighter-propeller-efficiency.json",
+    "sha256": "c5f8bfa9dfcb1ee147e9a82d9d70a900320732036114d8378e1de78cb52913a6",
+    "use": "original source observations, condition-specific replays and efficiency-only sensitivity"
   },
   "tolerances": {
     "stall_speed": {
