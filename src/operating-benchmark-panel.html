@@ -29,7 +29,7 @@
  #operating-benchmark [data-side="a"] .bench-probe-name{color:var(--bench-a)}
  #operating-benchmark [data-side="b"] .bench-probe-name{color:var(--bench-b)}
  #operating-benchmark .bench-probe-card p{margin:.35rem 0}
- #operating-benchmark .bench-probe-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;margin:.7rem 0 .1rem}
+ #operating-benchmark .bench-probe-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;margin:.7rem 0 .1rem}
  #operating-benchmark .bench-probe-metrics dt{font-size:.8rem;color:#b7cad5}
  #operating-benchmark .bench-probe-metrics dd{margin:.2rem 0 0;font-weight:700}
  #operating-benchmark .bench-probe-tooltip{position:absolute;z-index:2;pointer-events:none;box-sizing:border-box;width:max-content;max-width:min(24rem,calc(100% - 16px));padding:.7rem;background:#10212d;border:1px solid #607b8a;border-radius:8px;box-shadow:0 6px 18px #0006;font-size:.83rem}
@@ -46,6 +46,42 @@
  #operating-benchmark .bench-a{color:var(--bench-a)}
  #operating-benchmark .bench-b{color:var(--bench-b)}
  #operating-benchmark #bench-matchup{margin-top:1rem;font-weight:700}
+ #operating-benchmark .bench-result-header p{margin:.25rem 0 .6rem}
+ #operating-benchmark .bench-injection input[hidden]{display:none}
+ #operating-benchmark .bench-injection{min-height:2.75rem}
+ @media(min-width:741px){
+  #operating-benchmark .bench-sides{row-gap:.65rem}
+  #operating-benchmark .bench-side{display:grid;grid-template-rows:subgrid;grid-row:span 10}
+  #operating-benchmark .bench-side > p,#operating-benchmark .bench-side > .bench-controls{margin:0}
+  #operating-benchmark .bench-result{display:grid;grid-template-rows:subgrid;grid-row:span 3}
+  #operating-benchmark .bench-result .bench-numbers{grid-auto-rows:1fr}
+  #operating-benchmark .bench-result > p{margin:0}
+ }
+ #operating-benchmark .bench-advantage{margin:1rem 0;border:1px solid #405969;border-radius:12px;background:#142733;padding:.9rem 1rem}
+ #operating-benchmark .bench-advantage h3{margin:0 0 .65rem}
+ #operating-benchmark .bench-advantage-readout{display:flex;flex-wrap:wrap;gap:.45rem 1rem;align-items:baseline;margin:.3rem 0 .8rem}
+ #operating-benchmark .bench-advantage-readout span:last-child{flex-basis:100%}
+ #operating-benchmark #bench-advantage-key[hidden]{display:none}
+ #operating-benchmark .bench-advantage-band{fill:#beb2f2;opacity:.25}
+ #operating-benchmark .bench-advantage-zero{stroke:#c1cad5;stroke-width:1.5}
+ #operating-benchmark .bench-evidence-legend{display:flex;gap:.5rem 1rem;flex-wrap:wrap}
+ #operating-benchmark .bench-turn-limits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:.65rem 0}
+ #operating-benchmark .bench-limit-card{background:#182f3d;border:1px solid #405969;border-radius:8px;padding:.75rem;--side-color:var(--bench-a)}
+ #operating-benchmark .bench-limit-card[data-side="b"]{--side-color:var(--bench-b)}
+ #operating-benchmark .bench-limit-card h4{color:var(--side-color);margin:.15rem 0}
+ #operating-benchmark .bench-limit-stats{margin:.35rem 0}
+ #operating-benchmark .bench-limit-bars{display:grid;gap:.4rem;margin:.65rem 0 1rem}
+ #operating-benchmark .bench-limit-bars div{display:grid;grid-template-columns:minmax(6.6rem,.75fr) minmax(0,1fr);gap:.5rem;align-items:center;font-size:.84rem}
+ #operating-benchmark .bench-limit-bars dd{margin:0;display:grid;grid-template-columns:minmax(0,1fr) 4.6rem;gap:.55rem;align-items:center;text-align:right}
+ #operating-benchmark .bench-limit-track{height:6px;background:#344c5a;border-radius:3px;overflow:hidden}
+ #operating-benchmark .bench-limit-track span{display:block;height:100%;background:#8aa0af}
+ #operating-benchmark .bench-limit-bars [data-binding] dt{color:var(--side-color);font-weight:700}
+ #operating-benchmark .bench-limit-bars [data-binding] .bench-limit-track span{background:var(--side-color)}
+ #operating-benchmark .bench-power-budget{display:flex;overflow:hidden;height:9px;border-radius:4px;background:#344c5a}
+ #operating-benchmark .bench-power-level{background:#829ba9}#operating-benchmark .bench-power-turn{background:var(--side-color)}
+ #operating-benchmark .bench-evidence-sources small{display:block;color:#b7cad5}
+ #operating-benchmark .bench-evidence-sources li+li{margin-top:.6rem}
+ @media(max-width:740px){#operating-benchmark .bench-turn-limits{grid-template-columns:1fr}#operating-benchmark .bench-advantage{padding:.7rem}}
  @media(max-width:740px){#operating-benchmark .bench-sides{grid-template-columns:1fr}#operating-benchmark .bench-numbers{grid-template-columns:repeat(2,minmax(0,1fr))}#operating-benchmark .bench-toolbar{align-items:stretch}}
  @media(max-width:740px){#operating-benchmark .bench-probe-cards{grid-template-columns:1fr}#operating-benchmark .bench-chart text{font-size:23px}#operating-benchmark .bench-probe-slider output{text-align:left}}
  </style>
@@ -54,25 +90,40 @@
  <div class="bench-toolbar">
   <label>Shared altitude<select id="bench-altitude"><option value="0">Sea level</option><option value="10000" selected>10,000 ft · 3.0 km</option><option value="20000">20,000 ft · 6.1 km</option><option value="30000">30,000 ft · 9.1 km</option><option value="35000">35,000 ft · 10.7 km</option><option value="40000">40,000 ft · 12.2 km</option></select></label>
   <label>Speed units<select id="bench-speed-unit"><option value="mph">mph</option><option value="kph">km/h</option><option value="knots">Knots</option></select></label>
+  <label>Aircraft 2 choices<select id="bench-aircraft-filter" aria-controls="bench-aircraft-b"><option value="all">All aircraft</option><option value="contemporaries">Contemporaries</option></select></label>
   <label style="flex-direction:row;align-items:center"><input id="bench-extension" type="checkbox" checked> Include labelled high-altitude power estimates</label>
  </div>
  <p class="bench-note">Independent tests at the selected altitude start at the chosen fuel load with fresh power allowance. Full climbs below carry fuel use and allowance forward. These remain research estimates of performance.</p>
  <div class="bench-sides">
-  <article class="bench-side"><div class="bench-title" id="bench-title-a">Aircraft 1</div><label>Aircraft<select id="bench-aircraft-a"></select></label><p class="bench-note" id="bench-service-a"></p><div class="bench-controls"><label>Power<select id="bench-power-a"><option value="normal">Normal</option><option value="combat" selected>Combat</option></select></label><label>Internal fuel<select id="bench-fuel-a"><option value="0.25">25%</option><option value="0.5" selected>50%</option><option value="0.75">75%</option></select></label></div><label class="bench-injection" style="flex-direction:row"><input id="bench-injection-a" type="checkbox"><span id="bench-injection-label-a">Injection</span></label><label>Turn and level cooling<select id="bench-cooling-a"><option value="clean">Clean</option><option value="open">Climb cooling scenario</option></select></label><p id="bench-setting-a" class="bench-setting"></p><div id="bench-result-a"></div></article>
-  <article class="bench-side"><div class="bench-title" id="bench-title-b">Aircraft 2</div><label>Aircraft<select id="bench-aircraft-b"></select></label><label>Aircraft 2 list<select id="bench-aircraft-filter"><option value="all">All aircraft</option><option value="contemporaries">Contemporaries</option></select></label><p class="bench-note" id="bench-service-b"></p><div class="bench-controls"><label>Power<select id="bench-power-b"><option value="normal">Normal</option><option value="combat" selected>Combat</option></select></label><label>Internal fuel<select id="bench-fuel-b"><option value="0.25">25%</option><option value="0.5" selected>50%</option><option value="0.75">75%</option></select></label></div><label class="bench-injection" style="flex-direction:row"><input id="bench-injection-b" type="checkbox"><span id="bench-injection-label-b">Injection</span></label><label>Turn and level cooling<select id="bench-cooling-b"><option value="clean">Clean</option><option value="open">Climb cooling scenario</option></select></label><p id="bench-setting-b" class="bench-setting"></p><div id="bench-result-b"></div></article>
+  <article class="bench-side"><div class="bench-title" id="bench-title-a">Aircraft 1</div><label>Aircraft<select id="bench-aircraft-a"></select></label><p class="bench-note" id="bench-service-a"></p><div class="bench-controls"><label>Power<select id="bench-power-a"><option value="normal">Normal</option><option value="combat" selected>Combat</option></select></label><label>Internal fuel<select id="bench-fuel-a"><option value="0.25">25%</option><option value="0.5" selected>50%</option><option value="0.75">75%</option></select></label></div><label class="bench-injection" style="flex-direction:row"><input id="bench-injection-a" type="checkbox"><span id="bench-injection-label-a">Injection</span></label><label>Turn and level cooling<select id="bench-cooling-a"><option value="clean">Clean</option><option value="open">Climb cooling scenario</option></select></label><p id="bench-setting-a" class="bench-setting"></p><div id="bench-result-a" class="bench-result"></div></article>
+  <article class="bench-side"><div class="bench-title" id="bench-title-b">Aircraft 2</div><label>Aircraft<select id="bench-aircraft-b"></select></label><p class="bench-note" id="bench-service-b"></p><div class="bench-controls"><label>Power<select id="bench-power-b"><option value="normal">Normal</option><option value="combat" selected>Combat</option></select></label><label>Internal fuel<select id="bench-fuel-b"><option value="0.25">25%</option><option value="0.5" selected>50%</option><option value="0.75">75%</option></select></label></div><label class="bench-injection" style="flex-direction:row"><input id="bench-injection-b" type="checkbox"><span id="bench-injection-label-b">Injection</span></label><label>Turn and level cooling<select id="bench-cooling-b"><option value="clean">Clean</option><option value="open">Climb cooling scenario</option></select></label><p id="bench-setting-b" class="bench-setting"></p><div id="bench-result-b" class="bench-result"></div></article>
  </div>
  <p id="bench-matchup" aria-live="polite"></p>
  <p class="bench-note">Approximate WWII service windows. Contemporaries filters by years of main service.</p>
  <p id="bench-comparison" aria-live="polite"></p>
+ <div class="bench-toolbar"><label>Chart speed range<select id="bench-turn-focus"><option value="full">Full envelope</option><option value="3">Focus on 3°/s and above</option></select></label><p id="bench-range-status" class="bench-note"></p></div>
  <div id="bench-turn-plot" class="bench-chart"></div>
- <div id="bench-climb-plot" class="bench-chart"></div>
  <p class="bench-note">Triangles mark 1 G stall and circles mark maximum level speed. Squares mark peak turn rate and Vy. The grey guide shows a 3°/s turn.</p>
  <div class="bench-probe-slider">
   <label>Speed to compare<input id="bench-probe-speed" type="range" aria-describedby="bench-probe-help"></label>
   <output id="bench-probe-value" for="bench-probe-speed">—</output>
  </div>
- <p class="bench-note" id="bench-probe-help">Hover over either chart or move the slider to compare both aircraft at the same equivalent airspeed. Climb is evaluated in straight flight with the climb cooling configuration.</p>
+ <p class="bench-note" id="bench-probe-help">Hover over a chart or move the slider to compare both aircraft at the same equivalent airspeed.</p>
  <div id="bench-probe-results" class="bench-probe-cards"></div>
+ <section class="bench-advantage" aria-labelledby="bench-advantage-title">
+  <h3 id="bench-advantage-title">Sustained-turn advantage</h3>
+  <div id="bench-advantage-readout" class="bench-advantage-readout"></div>
+  <div id="bench-advantage-plot" class="bench-chart"></div>
+  <p id="bench-advantage-key" class="bench-note bench-evidence-legend"><span>White line · Modeled difference</span><span>Shading · Tested range</span><span><span class="bench-a">Blue</span> or <span class="bench-b">amber</span> strip · Same aircraft leads across inputs</span><span>Grey strip · Lead depends on inputs</span></p>
+  <details><summary>What limits each aircraft at this speed?</summary>
+   <p class="bench-note">The lowest of lift, power and the model’s G cap sets the turn. Extra drag in a turn uses power above what the aircraft needs for level flight.</p>
+   <div id="bench-turn-limits" class="bench-turn-limits"></div>
+  </details>
+  <details><summary>Flight-test evidence and sensitivity assumptions</summary><div id="bench-turn-evidence"></div></details>
+ </section>
+ <div id="bench-climb-plot" class="bench-chart"></div>
+ <div id="bench-climb-at-speed" class="bench-advantage-readout"></div>
+ <p class="bench-note">The climb chart uses straight flight with climb cooling.</p>
  <h3>Performance across altitude</h3>
  <p class="bench-note">Select a row to compare both aircraft at that altitude. Δ is aircraft 1 minus aircraft 2. * includes estimated power.</p>
  <div id="bench-altitude-overview" class="bench-table-scroll"></div>

@@ -74,8 +74,7 @@
   const metrics = element('dl', null, 'bench-probe-metrics');
   for (const [label, value] of [
    ['Sustained turn', point.turnRate === null ? '—' : format(point.turnRate, 1) + '°/s'],
-   ['Max sustained G', point.sustainedG === null ? '—' : format(point.sustainedG, 2) + ' G'],
-   ['Straight climb', climbLabel(point.climbFpm)]
+   ['Max sustained G', point.sustainedG === null ? '—' : format(point.sustainedG, 2) + ' G']
   ]) {
    const entry = element('div');
    entry.append(element('dt', label), element('dd', value));
@@ -90,7 +89,7 @@
   if (!Number.isFinite(aircraft.stallEasMph) || !(aircraft.climbFpm > 0)) return [];
   const low = aircraft.stallEasMph, high = aircraft.scanMaxEasMph;
   const rateAt = eas => {
-   const state = evaluateAt(aircraft.side, eas, true);
+   const state = evaluateAt(aircraft.side, Math.max(eas,low+1e-7), true);
    return state.status === 'modelled' ? state.power?.climbFpm : undefined;
   };
   const speeds = new Set([low, aircraft.vyEasMph, high]);
@@ -112,6 +111,43 @@
    result.push(point.rate >= 0 ? point : { eas: point.eas, rate: null });
   }
   return result;
+ }
+
+ function ticks(minEas,maxEas,unit){
+  const factor=units[unit].factor,span=(maxEas-minEas)*factor;
+  const step=[5,10,20,25,50,100,200].find(n=>n>=span/5)??200;
+  const result=[minEas];
+  for(let v=Math.ceil(minEas*factor/step)*step;v<maxEas*factor;v+=step){
+   const eas=v/factor;
+   if(eas-minEas>(maxEas-minEas)*.09&&maxEas-eas>(maxEas-minEas)*.09)result.push(eas);
+  }
+  result.push(maxEas);
+  return result.map(eas=>({eas,label:format(eas*factor,span<10?1:0)}));
+ }
+
+ function focusCurves(curves,evaluateAt,threshold){
+  const focused=[];
+  for(const {aircraft,points} of curves){
+   const first=points.findIndex(p=>p.rate>=threshold),last=points.findLastIndex(p=>p.rate>=threshold);
+   if(first<0)continue;
+   const meets=eas=>(evaluateAt(aircraft.side,eas).limits?.sustDegSec??0)>=threshold;
+   function crossing(a,b,aMeets){
+    for(let i=0;i<20;i++){
+     const mid=(a+b)/2;
+     if(meets(mid)===aMeets)a=mid;else b=mid;
+    }
+    return (a+b)/2;
+   }
+   const lo=first===0?points[first].eas:crossing(points[first-1].eas,points[first].eas,false);
+   const hi=last===points.length-1?points[last].eas:crossing(points[last].eas,points[last+1].eas,true);
+   if(hi>lo){
+    const clipped=points.slice(first,last+1).map(p=>({eas:p.eas,rate:p.rate>=threshold?p.rate:null}));
+    if(lo<points[first].eas)clipped.unshift({eas:lo,rate:threshold});
+    if(hi>points[last].eas)clipped.push({eas:hi,rate:threshold});
+    focused.push({aircraft,points:clipped,range:[lo,hi]});
+   }
+  }
+  return focused;
  }
 
  function drawPlot({ host, kind, curves, altFt, unit, minEas, maxEas, selectSpeed }) {
@@ -139,13 +175,17 @@
    parent.append(node);
    return node;
   }
-  const displayFactor = units[unit].factor;
-  const tick = [5, 10, 20, 25, 50, 100, 200].find(step => step >= (maxEas - minEas) * displayFactor / 5) ?? 200;
-  for (let label = Math.ceil(minEas * displayFactor / tick) * tick; label <= maxEas * displayFactor; label += tick) {
-   const tickX = x(label / displayFactor);
+  svg.dataset.minEas=minEas;
+  svg.dataset.maxEas=maxEas;
+  const clipId='bench-speed-window-'+kind;
+  const clip=add('clipPath',{id:clipId});
+  add('rect',{x:left,y:top,width:right-left,height:bottom-top+1},undefined,clip);
+  for (const {eas,label} of ticks(minEas,maxEas,unit)) {
+   const tickX = x(eas);
    add('line', { x1: tickX, x2: tickX, y1: top, y2: bottom, class: 'bench-grid-line' });
-   add('text', { x: tickX, y: bottom + 23, 'text-anchor': 'middle' }, format(label));
+   add('text', { x: tickX, y: bottom + 23, 'text-anchor': 'middle' }, label);
   }
+  const inView=eas=>Number.isFinite(eas)&&eas>=minEas&&eas<=maxEas;
   for (let rate = 0; rate <= peak; rate += yStep) {
    add('line', { x1: left, x2: right, y1: y(rate), y2: y(rate), class: 'bench-grid-line' });
    add('text', { x: left - 11, y: y(rate) + 5, 'text-anchor': 'end' }, format(rate));
@@ -170,10 +210,10 @@
     startSegment = false;
    }
    const stroke = colors[aircraft.side];
-   add('path', {d:path,fill:'none',stroke,'stroke-width':3,
+   add('path', {d:path,fill:'none',stroke,'stroke-width':3,'clip-path':'url(#'+clipId+')',
     [turn?'data-bench-curve':'data-bench-climb-curve']:aircraft.side,
     ...(aircraft.side === 'b' ? { 'stroke-dasharray': '8 4' } : {})});
-   if (turn && Number.isFinite(aircraft.stallEasMph)) {
+   if (turn && inView(aircraft.stallEasMph)) {
     const stallX = x(aircraft.stallEasMph);
     const marker = add('polygon', {
      points: (stallX - 5) + ',' + bottom + ' ' + stallX + ',' + (bottom - 9) + ' ' + (stallX + 5) + ',' + bottom,
@@ -181,7 +221,7 @@
     });
     add('title', {}, aircraft.name + ' 1 G stall ' + speed(aircraft.stallEasMph, unit, 'EAS'), marker);
    }
-   if (turn && Number.isFinite(aircraft.levelEasMph)) {
+   if (turn && inView(aircraft.levelEasMph)) {
     const marker = add('circle', {
      cx: x(aircraft.levelEasMph), cy: bottom, r: 5, fill: stroke, 'data-bench-level': aircraft.side
     });
@@ -189,7 +229,7 @@
    }
    const bestEas = turn ? aircraft.peakEasMph : aircraft.vyEasMph;
    const bestRate = turn ? aircraft.peakRate : aircraft.climbFpm;
-   if (Number.isFinite(bestEas) && bestRate > 0) {
+   if (inView(bestEas) && bestRate > 0) {
     const marker = add('rect', {x:x(bestEas)-4,y:y(bestRate)-4,width:8,height:8,fill:stroke,
      [turn?'data-bench-best-turn':'data-bench-vy']:aircraft.side});
     add('title', {}, aircraft.name + (turn ? ' best sustained turn ' : ' best climb, Vy ') + speed(bestEas, unit, 'EAS'), marker);
@@ -246,16 +286,18 @@
     const row = element('div');
     row.dataset.side = aircraft.side;
     row.append(element('strong', aircraft.name, 'bench-probe-name'));
-    const turning = point.turnStatus ?? format(point.turnRate, 1) + '°/s · ' + format(point.sustainedG, 2) + ' G';
-    const climb = point.climbFpm > 0 ? climbLabel(point.climbFpm) + ' climb' : climbLabel(point.climbFpm);
-    row.append(element('span', turning + ' · ' + climb));
+    const readout = turn
+     ? (point.turnStatus ?? format(point.turnRate, 1) + '°/s · ' + format(point.sustainedG, 2) + ' G')
+     : climbLabel(point.climbFpm);
+    row.append(element('span', readout));
     tooltip.append(row);
    }
   }
   return { update, hideTooltip:() => { tooltip.hidden = true; } };
  }
 
- function render({ chart, climbChart, slider, value, results, series, altFt, unit, evaluateAt, selectedEasMph, onProbe }) {
+ function render({ chart, climbChart, slider, value, results, climbResults, rangeStatus, focus, series, altFt, unit,
+  evaluateAt, selectedEasMph, onProbe, makeAdvantage }) {
   const turning = series.filter(aircraft => aircraft.range).map(aircraft => ({ aircraft, points:plotPoints(aircraft,evaluateAt) }));
   const climbing = series.map(aircraft => ({ aircraft, points:climbPoints(aircraft,evaluateAt) }))
    .filter(curve => curve.points.some(point => point.rate > 0));
@@ -268,25 +310,37 @@
    slider.removeAttribute('aria-valuetext');
    value.textContent = '—';
    results.replaceChildren();
+   climbResults.replaceChildren();
+   rangeStatus.textContent='';
    onProbe(null);
    return;
   }
-  const minEas = Math.floor(Math.min(...curves.map(c=>c.aircraft.stallEasMph ?? c.aircraft.range.minEasMph)) / probeStepMph) * probeStepMph;
+  const stall = Math.min(...curves.map(c=>c.aircraft.stallEasMph ?? c.aircraft.range.minEasMph));
   const topSpeeds = [...turning.map(c=>c.aircraft.range.maxEasMph),
    ...climbing.map(c=>c.points.findLast(p=>Number.isFinite(p.rate)).eas)];
-  const maxEas = Math.max(minEas + probeStepMph, Math.ceil(Math.max(...topSpeeds) / probeStepMph) * probeStepMph);
+  const visibleTurns=focus?focusCurves(turning,evaluateAt,3):[];
+  const focused=visibleTurns.length>0;
+  const [minEas,maxEas]=focused
+   ? [Math.min(...visibleTurns.map(c=>c.range[0])),Math.max(...visibleTurns.map(c=>c.range[1]))]
+   : [stall,Math.max(stall+.1,...topSpeeds)];
+  const minStep=Math.ceil(minEas/probeStepMph)*probeStepMph,maxStep=Math.floor(maxEas/probeStepMph)*probeStepMph;
+  const stepped=maxStep>minStep;
+  rangeStatus.textContent=focused?'Speeds where at least one aircraft sustains 3°/s.':
+   focus?'Neither aircraft reaches 3°/s. Showing the full envelope.':'The shared axis begins at the lower 1 G stall speed.';
   const plots = [
-   drawPlot({host:chart,kind:'turn',curves:turning,altFt,unit,minEas,maxEas,selectSpeed:update}),
+   drawPlot({host:chart,kind:'turn',curves:focused?visibleTurns:turning,altFt,unit,minEas,maxEas,selectSpeed:update}),
    drawPlot({host:climbChart,kind:'climb',curves:climbing,altFt,unit,minEas,maxEas,selectSpeed:update})
   ].filter(Boolean);
 
+  const advantage = makeAdvantage?.({minEas,maxEas,selectSpeed:update});
   slider.disabled = false;
-  slider.min = minEas;
-  slider.max = maxEas;
-  slider.step = probeStepMph;
+  slider.min = stepped?minStep:minEas;
+  slider.max = stepped?maxStep:maxEas;
+  slider.step = stepped?probeStepMph:'any';
   let probe;
   function update(rawEas) {
-   const easMph = Math.max(minEas, Math.min(maxEas, Math.round(rawEas / probeStepMph) * probeStepMph));
+   const easMph = stepped?Math.max(minStep,Math.min(maxStep,Math.round(rawEas/probeStepMph)*probeStepMph)):
+    Math.max(minEas,Math.min(maxEas,rawEas));
    if (probe?.easMph === easMph) return;
    const points = Object.fromEntries(series.map(a => [a.side, probeAircraft(a, easMph, evaluateAt)]));
    probe = { easMph, aircraft: points };
@@ -296,7 +350,10 @@
    slider.setAttribute('aria-valuetext', label);
    value.textContent = label;
    results.replaceChildren(...series.map(a => readoutCard(a, points[a.side], unit)));
+   climbResults.replaceChildren(element('strong',label),...series.map(a=>
+    element('span',a.name+' · '+climbLabel(points[a.side].climbFpm),'bench-'+a.side)));
    for (const plot of plots) plot.update(easMph, points, label, series);
+   advantage?.update(easMph);
   }
   slider.oninput = () => {
    for (const plot of plots) plot.hideTooltip();
@@ -305,6 +362,6 @@
   update(selectedEasMph ?? turning[0]?.aircraft.peakEasMph ?? climbing[0]?.aircraft.vyEasMph ?? (minEas + maxEas) / 2);
  }
 
- globalThis.OperatingBenchmarkChart = Object.freeze({ render, speed });
+ globalThis.OperatingBenchmarkChart = Object.freeze({ render, speed, ticks });
 })();
 

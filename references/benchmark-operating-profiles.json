@@ -491,6 +491,7 @@
       ],
       "speedQualification": "Normal-fighter climb-speed engineering schedule pending AN01-45HB-1 chart extraction.",
       "injection": {
+        "installation": {"variant":"F4U-4","engine":"Pratt & Whitney R-2800-18W","sources":["f4u","f4u-maker"]},
         "label": "WEP water / 2800 rpm",
         "type": "Water / methanol",
         "map": 60,

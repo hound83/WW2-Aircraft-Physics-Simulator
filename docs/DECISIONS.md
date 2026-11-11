@@ -1,5 +1,9 @@
 # Current decisions
 
+## v4.4 maneuver lift and turn comparison
+
+Admit the TN 1044 pooled P-51B maneuver-lift curve in the bounded clean-turn benchmark scenario. Keep fit and withheld Mach sections in the source ledger and verify the 90-state replay. Expose matched-speed differences, the active turn limit and the tested sensitivity range for the Mustang and Spitfire. Filter injection by the recorded engine and airframe installation. [Evidence, regression and qualification](V44_TURN_PERFORMANCE.md).
+
 ## v4.3 report-conditioned benchmark climb
 
 Use the existing P-47B 41-5902 and Spitfire BS.543 energy models in the benchmark's open-cooling climb path at the applicable ratings, RPM, speeds and altitudes. Offer climb cooling for turn and level flight as an optional scenario. Evaluate original fit and held-out rows and the separate 41-5942 report. Retain the Corsair loss sensitivity in the report and keep the adopted propeller model. [Checks and replay conditions](V43_MODEL_CHECKS.md).

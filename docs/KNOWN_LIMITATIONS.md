@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.4 maneuver lift and sensitivity
+
+The P-51B lift transfer uses a throttled, carefully finished NACA aircraft and pooled chart readings. The power and incremental drag tests describe declared engineering perturbations. The displayed range has no probability interpretation. Historical powered sustained-turn validation and the five-to-one discrimination target require matched reports. A performance state can also lie outside the recorded power envelope. [Flight evidence and bounds](V44_TURN_PERFORMANCE.md).
+
 ## v4.3 operating benchmark research candidate
 
 The improved climb replay uses gross test masses. BS.543's Table II TAS uses the report's airspeed corrections. Shaft power comes from a boost-conditioned chart. Searching each model's best climb speed gives a weaker improvement and a larger individual regression. Cooling losses are aggregate installed-energy fits. The cooling selector models that scenario for turns and level flight. Service labels describe approximate main WWII periods and theatre tags. The Corsair has a high-altitude speed residual. Independent historical sustained-turn accuracy remains unresolved. [v4.3 results and diagnostic limits](V43_MODEL_CHECKS.md).

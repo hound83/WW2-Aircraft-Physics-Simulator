@@ -8,7 +8,7 @@
  const api=globalThis.OperatingBenchmarkUI={data,settings:{},rows:{},altitudeRows:[],climbs:null,probe:null};
  const speed=(value,kind)=>Chart.speed(value,$('bench-speed-unit').value,kind);
  const text=(tag,value,className)=>{const e=document.createElement(tag);if(value!==undefined)e.textContent=value;if(className)e.className=className;return e;};
- const shortName=id=>models[id].ac.name.split(' / ')[0];
+ const shortName=id=>service.aircraft[id].displayName;
  let allAircraftChoice='spitfire_lfix_bs543';
  function aircraftOptions(select,ids,preferred){
   select.replaceChildren();
@@ -33,8 +33,9 @@
  }
  updateSecondAircraft();
  function read(side){const id=$('bench-aircraft-'+side).value,spec=specs.aircraft[id],input=$('bench-injection-'+side),combat=$('bench-power-'+side).value==='combat';
-  input.disabled=!spec.injection||!combat;if(input.disabled)input.checked=false;
-  $('bench-injection-label-'+side).textContent=spec.injection?(spec.injection.type+(combat?'':' · Combat only')):'Injection not fitted';
+  const injection=B.fittedInjection(models[id],spec);
+  input.hidden=!injection;input.disabled=!injection||!combat;if(input.disabled)input.checked=false;
+  $('bench-injection-label-'+side).textContent=injection?(injection.type+(combat?'':' · Combat only')):'Injection unavailable';
   const cooling=$('bench-cooling-'+side);
   cooling.disabled=!(models[id].benchmarkCooling||models[id].climbCoolingAreaM2);
   if(cooling.disabled)cooling.value='clean';
@@ -48,7 +49,7 @@
   $('bench-service-'+side).textContent=context.note??('c. '+History.yearLabel(context.years)+' · '+context.theatres.join(', '));
   $('bench-title-'+side).textContent='Aircraft '+(side==='a'?'1':'2')+' · '+fmt(r.altFt,0)+' ft';
   $('bench-setting-'+side).textContent=(chosen.settings.mode==='combat'?'COMBAT':'NORMAL')+' · '+fmt(chosen.settings.fuelFraction*100,0)+'% FUEL · '+(chosen.settings.injection?spec.injection.type.toUpperCase():'DRY');
-  const box=$('bench-result-'+side);box.replaceChildren();
+  const result=$('bench-result-'+side),box=text('div',undefined,'bench-result-header');result.replaceChildren(box);
   box.append(text('p',r.phase.label+' · '+(r.phase.seconds?fmt(r.phase.seconds/60,1)+' min limit':'no timed limit in selected profile')));
   box.append(text('p',fmt(r.loading.weightLb,0)+' lb · '+fmt(r.loading.fuelUSGal,1)+' US gal internal · '+spec.armament,'bench-note'));
   box.append(text('p',spec.ratingEvidence??'Source-based settings; installed-power and load reconstruction remain model estimates.','bench-note'));
@@ -64,14 +65,20 @@
    number('Maximum level speed',speed(r.level?.tasMph,'TAS'),speed(r.level?.easMph,'EAS')+' · steady equilibrium'),
    number('Minimum sustained radius',fmt(r.minSustainedRadius?.radiusM,0)+' m','At '+speed(r.minSustainedRadius?.easMph,'EAS')),
    number('Instantaneous turn scenario',fmt(r.instantaneous?.rateDegSec)+'°/s',fmt(r.instantaneous?.seconds360)+' s / 360° at '+speed(r.instantaneous?.easMph,'EAS')+' · 7 G cap · may lose energy'));
-  box.append(grid,text('p','At the scheduled climb speed of '+speed(r.manualClimb?.iasMph,'IAS≈CAS')+', the climb rate is '+fmt(r.manualClimb?.climbFpm,0)+' ft/min.','bench-note'));
+  result.append(grid,text('p','At the scheduled climb speed of '+speed(r.manualClimb?.iasMph,'IAS≈CAS')+', the climb rate is '+fmt(r.manualClimb?.climbFpm,0)+' ft/min.','bench-note'));
  }
  function plot(alt){
+  const advantage=$('bench-advantage-plot'),readout=$('bench-advantage-readout'),limits=$('bench-turn-limits');
+  advantage.replaceChildren();readout.replaceChildren();limits.replaceChildren();
+  const names=Object.fromEntries(sides.map(side=>[side,shortName(api.settings[side].id)]));
+  const pair=new Set(sides.map(side=>api.settings[side].id));
+  const policy=pair.has('p51b')&&pair.has('spitfire_lfix_bs543')?data.turnEvidence.sensitivity:null;
+  $('bench-advantage-key').hidden=!policy;
   const series=['a','b'].map(side=>{
-   const row=api.rows[side],model=models[api.settings[side].id];
+   const row=api.rows[side];
    return {
     side,
-    name:'Aircraft '+(side==='a'?'1':'2')+' · '+model.ac.name.split(' / ')[0],
+    name:'Aircraft '+(side==='a'?'1':'2')+' · '+names[side],
     range:row.turnRange,
     stallEasMph:row.stallEasMph,
     levelEasMph:row.level?.easMph??null,
@@ -82,14 +89,21 @@
     scanMaxEasMph:M.airspeeds(590,alt).eas
    };
   });
+  function evaluateAt(side,eas,climbing){
+   const chosen=api.settings[side],row=api.rows[side];
+   return B.evaluate(M,T,L,models[chosen.id],specs.aircraft[chosen.id],chosen.settings,
+    alt,eas,row.loading.weightLb,row.phase,climbing);
+  }
   Chart.render({
    chart:$('bench-turn-plot'),climbChart:$('bench-climb-plot'),slider:$('bench-probe-speed'),value:$('bench-probe-value'),
-   results:$('bench-probe-results'),unit:$('bench-speed-unit').value,altFt:alt,series,
+   results:$('bench-probe-results'),climbResults:$('bench-climb-at-speed'),
+   rangeStatus:$('bench-range-status'),focus:$('bench-turn-focus').value==='3',
+   unit:$('bench-speed-unit').value,altFt:alt,series,
    selectedEasMph:api.probe?.easMph,
-   evaluateAt(side,eas,climbing){
-    const chosen=api.settings[side],row=api.rows[side];
-    return B.evaluate(M,T,L,models[chosen.id],specs.aircraft[chosen.id],chosen.settings,
-     alt,eas,row.loading.weightLb,row.phase,climbing);
+   evaluateAt,
+   makeAdvantage(domain){
+    return OperatingTurnComparison.advantage({...domain,host:advantage,readout,limits,names,policy,evaluateAt,
+     unit:$('bench-speed-unit').value});
    },
    onProbe(probe){api.probe=probe;}
   });
@@ -98,7 +112,7 @@
   const box=$('bench-sources');box.replaceChildren();
   for(const side of sides){
    const c=api.settings[side],sp=specs.aircraft[c.id],context=service.aircraft[c.id];
-   box.append(text('h3',models[c.id].ac.name),text('p',sp.loadQualification),text('p',api.rows[side].powerQualification),text('p',sp.speedQualification));
+   box.append(text('h3',shortName(c.id)),text('p',sp.loadQualification),text('p',api.rows[side].powerQualification),text('p',sp.speedQualification));
    for(const id of sp.sources){
     const src=specs.sources[id],p=text('p'),a=text('a',src.title);a.href=src.url;a.target='_blank';a.rel='noopener';
     p.append(a,text('small',' · '+src.kind+' · '+src.facts));box.append(p);
@@ -199,6 +213,7 @@
   if($('bench-aircraft-filter').value==='all')allAircraftChoice=$('bench-aircraft-b').value;
   render();
  });
+ $('bench-turn-focus').addEventListener('change',()=>plot(Number($('bench-altitude').value)));
  $('bench-speed-unit').addEventListener('change',()=>{
   for(const side of ['a','b'])renderSide(side);
   const alt=Number($('bench-altitude').value);
@@ -207,11 +222,13 @@
  $('bench-climb-from').addEventListener('change',()=>{api.climbs=null;$('bench-climb-result').textContent='Start altitude changed. Recalculate both climbs.';});
  $('bench-climb-calculate').addEventListener('click',()=>{const from=Number($('bench-climb-from').value),to=Number($('bench-altitude').value),box=$('bench-climb-result');box.replaceChildren();if(to<=from){box.append(text('p','Choose a target altitude above the climb start.'));return;}
   const results={};for(const side of ['a','b']){const c=api.settings[side];results[side]=B.climb(M,T,L,models[c.id],specs.aircraft[c.id],specs.policy,c.settings,from,to);const r=results[side];
-   box.append(text('h3','Aircraft '+(side==='a'?'1':'2')+' · '+models[c.id].ac.name),text('p',r.status==='reached'?'Time to '+fmt(to,0)+' ft: '+fmt(r.seconds/60,2)+' min':'Target not reached: '+r.status+' at '+fmt(r.reachedFt,0)+' ft'),text('p','Combat used '+fmt(r.combatSeconds/60,2)+' min · remaining '+fmt(r.combatRemainingSeconds/60,2)+' min · fuel used '+fmt(r.fuelUsedLb,1)+' lb · arrival mass '+fmt(r.endWeightLb,0)+' lb · injection fluid remaining '+fmt(r.injectionRemainingLb,1)+' lb'));
+   box.append(text('h3','Aircraft '+(side==='a'?'1':'2')+' · '+shortName(c.id)),text('p',r.status==='reached'?'Time to '+fmt(to,0)+' ft: '+fmt(r.seconds/60,2)+' min':'Target not reached: '+r.status+' at '+fmt(r.reachedFt,0)+' ft'),text('p','Combat used '+fmt(r.combatSeconds/60,2)+' min · remaining '+fmt(r.combatRemainingSeconds/60,2)+' min · fuel used '+fmt(r.fuelUsedLb,1)+' lb · arrival mass '+fmt(r.endWeightLb,0)+' lb · injection fluid remaining '+fmt(r.injectionRemainingLb,1)+' lb'));
    for(const p of r.schedule)box.append(text('p',p.label+': '+fmt(p.fromFt,0)+' → '+fmt(p.toFt,0)+' ft · '+fmt(p.seconds/60,2)+' min','bench-note'));
    box.append(text('p',r.policy,'bench-note'));
   }api.climbs=results;
  });
  render();
  renderFlightChecks();
+ OperatingTurnComparison.evidence($('bench-turn-evidence'),data.turnEvidence,data.turnLiftChecks,
+  data.turnEvidence.sensitivity,data.turnEvidence.directTurns);
 })();
