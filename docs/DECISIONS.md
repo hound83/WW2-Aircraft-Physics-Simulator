@@ -1,5 +1,9 @@
 # Current decisions
 
+## v4.6 table-supported curves and pinned tooltips
+
+Use applicable tables for the limiting input to identify solid turn segments. Match the climb bounds to the two original test schedules and carry their reading or interpolation margins through the current load and airspeed correction. Use a common zero-to-next-ten axis and retain the 3°/s turn-curve focus. Pin the tooltip in place, with click or drag to release it. [Evidence and graph controls](V46_CHART_DATA.md).
+
 ## v4.5 graph evidence and speed lock
 
 Default to 3°/s for the shared graph view and retain Full envelope. Use aircraft country colours, joined evidence styles and shading for quantified bounds. Show source links on the locked readouts. Keep calculated results at their recorded conditions and link related research from the benchmark. [Graph controls and evidence](V45_GRAPH_EVIDENCE.md).

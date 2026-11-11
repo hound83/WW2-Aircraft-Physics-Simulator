@@ -61,14 +61,14 @@
   return card;
  }
 
- function advantage({host,readout,limits,minEas,maxEas,unit,names,colors,pointAt,policy,selectSpeed}){
+ function advantage({host,readout,limits,minEas,maxEas,unit,names,colors,pointAt,policy,threshold}){
   const width=780,height=214,left=76,right=758,top=23,bottom=160;
   const cache=new Map();
   function sample(eas){
    if(!cache.has(eas)){
     const [a,b]=sides.map(side=>pointAt(side,eas,'turn'));
     const aircraft={a:a.assessment,b:b.assessment};
-    const difference=P.difference(aircraft.a,aircraft.b);
+    const difference=(!threshold||a.rate>=threshold&&b.rate>=threshold)?P.difference(aircraft.a,aircraft.b):null;
     cache.set(eas,{...Evidence.sample(eas,difference?.rateDegSec,a.covered&&b.covered,difference?.range),aircraft,difference});
    }
    return cache.get(eas);
@@ -137,16 +137,11 @@
   const crosshair=draw(g,'line',{y1:top,y2:bottom,class:'bench-crosshair','data-advantage-crosshair':''});
   const marker=draw(g,'circle',{r:4.5,class:'bench-probe-dot'});
   host.replaceChildren(g);
-  function pointer(event,pin){
-   const transform=g.getScreenCTM();
-   if(!transform)return;
-   const at=new DOMPoint(event.clientX,event.clientY).matrixTransform(transform.inverse());
-   if(at.x>=left&&at.x<=right&&at.y>=top&&at.y<=bottom+11){
-    selectSpeed(minEas+(maxEas-minEas)*(at.x-left)/(right-left),pin);
-   }
+  function summary(d){
+   if(!d)return 'Difference unavailable';
+   if(Math.abs(d.rateDegSec)<.05)return 'Similar modeled turn rates';
+   return names[d.rateDegSec>=0?'a':'b']+' +'+fmt(Math.abs(d.rateDegSec))+'°/s';
   }
-  g.addEventListener('pointermove',e=>{if(e.pointerType!=='touch')pointer(e,false);});
-  g.addEventListener('click',e=>pointer(e,true));
 
   function update(eas){
    const {aircraft,difference:d}=sample(eas);
@@ -159,8 +154,7 @@
    }else{
     const leader=d.rateDegSec>=0?'a':'b';
     marker.setAttribute('cx',at);marker.setAttribute('cy',y(d.rateDegSec));marker.setAttribute('fill',colors[leader]);
-    const title=Math.abs(d.rateDegSec)<.05?'Similar modeled turn rates':names[leader]+' +'+fmt(Math.abs(d.rateDegSec))+'°/s';
-    readout.append(el('strong',title,'bench-'+leader),
+    readout.append(el('strong',summary(d),'bench-'+leader),
      el('span',fmt(Math.abs(d.g),2)+' G difference · '+OperatingBenchmarkChart.speed(eas,unit,'EAS'),'bench-note'));
     if(d.range){
      const message=d.side==='uncertain'?'The lead can change across tested inputs.':names[d.side]+' leads across tested inputs.';
@@ -169,7 +163,7 @@
    }
    limits.replaceChildren(...sides.map(side=>limitsCard(names[side],aircraft[side],side)));
   }
-  return {update};
+  return {kind:'advantage',host,svg:g,left,right,top,bottom,x,update,tipText:eas=>summary(sample(eas).difference)};
  }
 
  function evidence(host,source,checks,policy,direct){
