@@ -464,7 +464,7 @@ async function run(){
   checks.push('v4.4 advantage chart distinguishes persistent and assumption-sensitive leads and shares speed with turn and climb');
   checks.push('v4.4 limit bars and measured maneuver-lift bands appear at matched conditions');
   const probeLayout=()=>evaluate(`Object.fromEntries([
-    '#bench-probe-results','#bench-advantage-readout','#bench-turn-limits',
+    '#bench-probe-results','#bench-advantage-readout','#bench-turn-limits','#bench-climb-at-speed','#bench-acceleration-at-speed',
     ...['turn','advantage','climb','acceleration'].map(kind=>'#bench-'+kind+'-plot svg')
   ].map(selector=>{
     const {top,left,width,height}=document.querySelector(selector).getBoundingClientRect();
