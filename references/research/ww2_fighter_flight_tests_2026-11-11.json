@@ -1,0 +1,1238 @@
+{
+  "schema": "ww2-fighter-evidence-pack/v1",
+  "pack_version": "1.0.0",
+  "compiled": "2026-11-11",
+  "purpose": "Supplementary data-only checkpoint across US, British, German, Soviet and Japanese primary-source routes with Finnish cross-checks. Digitized trace points retain source speed labels and uncertainty. No values are activated in the solver.",
+  "sources": [
+    {
+      "id": "F6F04776-NACA-L5B13B-TRACE",
+      "aircraft": "F6F-3 BuAer 04776",
+      "report": "NACA MR L5B13b / WR L-717, stalling characteristics, 1945",
+      "source": "https://ntrs.nasa.gov/citations/19930092602",
+      "location": "PDF 4–6 and 14–23, including Figures 4, 6, 8, 10, 12",
+      "classification": "period-original-scan",
+      "notes": "Same campaign as the earlier coefficient and condition rows. Plots label speed indicated. Part I instrumentation supports a corrected speed definition in Part I, while the Part III trace processing and per-run fuel or weight remain unresolved.",
+      "sha256": "2cddc4f507ef61bd0fc8e238b334cde82e563a1e0b5e30eb126e2e30245fd7ce"
+    },
+    {
+      "id": "F6F04776-NACA-L5B13-INSTRUMENTS",
+      "aircraft": "F6F-3 BuAer 04776",
+      "report": "NACA MR L5B13 / WR L-715, longitudinal stability, 1945",
+      "source": "https://ntrs.nasa.gov/citations/19930092600",
+      "location": "Printed 4–5, PDF 5–6",
+      "classification": "period-original-scan",
+      "notes": "Position-corrected static pressure and standard sea-level compressibility for Part I service indicated speed. Low-speed formation against trailing-head-calibrated aircraft. No numerical error curve or proof of Part III processing in these pages.",
+      "sha256": "906fa4ec476655dc9277bcc2f07b896fd87fa6c2340259b3e7216eb711523247"
+    },
+    {
+      "id": "P47D30-L8A06-STALL-TRACE",
+      "aircraft": "P-47D-30 AAF 43-3441",
+      "report": "NACA RM L8A06, longitudinal stability and stalling, 1948",
+      "source": "https://ntrs.nasa.gov/citations/20090022749",
+      "location": "PDF 3–4, 9–10, 70, 72, 75, 77–78",
+      "classification": "period-original-scan",
+      "notes": "The bottom panel of Figure 52 has one service indicated airspeed trace and a NACA emblem. The earlier paired-channel record is superseded by this inspection.",
+      "sha256": "95c68467065e3a68394581c7b8c20b4e0578224bde9710e3bde05b6c89961075"
+    },
+    {
+      "id": "P47D30-TN2675-INSTRUMENTS",
+      "aircraft": "P-47D-30 AAF 43-3441",
+      "report": "NACA TN 2675, lateral/directional companion, reprint of RM L6L31",
+      "source": "https://ntrs.nasa.gov/citations/19930083825",
+      "location": "PDF 4–5, printed 3–4",
+      "classification": "period-original-scan",
+      "notes": "Identifies the calibrated NACA right-wing boom, low-speed formation method and pressure-based CAS definition. L8A06 cites the earlier lateral report for instrumentation. Keep the L8A06 traces under their published label pending an explicit processing link.",
+      "sha256": "2f57cd54c9aad8c464fdb336bbc70e8105d9b8dd742e495cb93715364e489b5f"
+    },
+    {
+      "id": "P40FL-TO01-25CH-1-1943",
+      "aircraft": "P-40F and P-40L, V-1650-1",
+      "report": "T.O. 01-25CH-1 Flight Operating Instructions, 20 June 1943",
+      "source": "https://aviationarchives.blogspot.com/2022/01/curtiss-p-40fl-warhawk-flight.html",
+      "location": "Printed 2, 25, 28, 32, 36–40. PDF 7, 30, 33, 37, 41–45",
+      "classification": "period-original-scan",
+      "notes": "Verified 63-page alternate PDF. Ratings, approximate IAS stall values and generic loading examples. The ratings are not specific to runs on 41-13635. 61 inHg requires the specified boost-control modification.",
+      "sha256": "1f8722753669132045095aeeaf385152bfc6932e219669c205dd49e0df875ec8"
+    },
+    {
+      "id": "G2-MESSERSCHMITT-BVFL-1942",
+      "aircraft": "Bf 109 G-2, DB 605",
+      "report": "Messerschmitt Bedienungsvorschrift-Fl, Reg. Nr. 249, June 1942",
+      "source": "https://stephentaylorhistorian.com/wp-content/uploads/2020/04/bf-109g-2.pdf",
+      "location": "Printed 12–15, PDF 19–22, and cooling procedure at printed 17",
+      "classification": "period-original-scan",
+      "notes": "The rating table lists emergency power. Pages 13 and 15 explicitly bar its use and say it is blocked. Printed sea-level best-climb 250 km/h is struck out and annotated 270 on this copy. No authorization for the handwritten change or numbers for the higher altitude cells are established.",
+      "sha256": "47796c9427af8e32a83ebfef506c288b02993d2cd3e710c9943c3171fad4844b"
+    },
+    {
+      "id": "KI84-PACMIRS-8",
+      "aircraft": "Ki-84, Japanese airframe documentation, no test serial stated",
+      "report": "PACMIRS Air Translations No. 8, captured Japanese Doc 1578, sections 1–6, 26 July 1945",
+      "source": "https://www.si.edu/media/NASM/NASM-Manual-000033269.pdf",
+      "location": "NASM.XXXX.0428 ref4016, Box D641 / Nakajima 21. PDF 3, 5–7, 27, 31–34, 38, 44, 46",
+      "classification": "period-original-translation-of-captured-document",
+      "notes": "Translated June–August 1944 Japanese instructions captured at Mabalacat on 27 January 1945. The translator explicitly notes overlap with ADVATIS Translation 92. No claim that handbook tables reproduce a documented flight by serial 302 or establish actual mass or calibrated stall speed.",
+      "sha256": "1e5c42557f1c7814ad5a2b25b158efc0886197d2ee2da6d72856b2b001147968"
+    },
+    {
+      "id": "D9-FW-210001-NR1-REVIEW",
+      "aircraft": "Fw 190 D-9 WNr 210001",
+      "report": "Focke-Wulf Flugbericht 210001 Nr. 1, 10 October 1944",
+      "source": "https://www.wwiiaircraftperformance.com/org/fw190/d9/d9_files/Fw_190_D-9_210001_FB_Nr1.pdf",
+      "location": "Blätter 1–2, curve sheet 1 (PDF 5)",
+      "classification": "period-original-scan",
+      "notes": "Existing report B11. Eltron and Bruhn comparison at level-flight speeds confirms installation dependence. The scan does not establish WNr 210002 near-stall correction.",
+      "sha256": "94362bc2f95c5904e552cb4715540b28e992d3309d1acda66c9a0d42039628af"
+    },
+    {
+      "id": "D9-FW-210002-NR4",
+      "aircraft": "Fw 190 D-9 WNr 210002 with alternate Jumo 213 A",
+      "report": "Focke-Wulf Flugbericht 210002 Nr. 4, 1 March 1945",
+      "source": "https://www.wwiiaircraftperformance.com/org/fw190/d9/d9_files/Fw_190_D-9_210002_FB_Nr4.pdf",
+      "location": "Blätter 1–2 (PDF 1–2)",
+      "classification": "period-original-scan",
+      "notes": "Polished surface, sealed engine gap, guns without ammunition. The replacement engine did not shift to the high blower. Table distinguishes WNr 210002 earlier and replacement engines and WNr 210001. Rows for earlier engines reproduce earlier flights.",
+      "sha256": "add03089e734bee5522ed3808711fd3d7aa42b603dfd4ec6861493ce1d671649"
+    },
+    {
+      "id": "SPIT-BS543-AAEE-CURVE",
+      "aircraft": "Spitfire LF Mk IX BS543, Merlin 66",
+      "report": "A&AEE comparison of combat climbs on Mk IX aircraft, 17 March 1943",
+      "source": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX_files/bs543climb.jpg",
+      "location": "Original Figure 1 and linked transcription of §§2–4, Table II",
+      "classification": "period-original-chart-with-secondary-text-transcription",
+      "notes": "Original plot verifies serial, 7,485 lb take-off and open radiators. The textual report explicitly transfers BF274 PEC for matching heads. No original Table II scan or sub-100 mph calibration recovered. Same BS543 test as prior values.",
+      "sha256": "d6ecfce1a9a9e7dcffac8956688ae23f8e50cb3f037a2ac9a3c0de18d8ff671e"
+    },
+    {
+      "id": "SPIT-BF274-AAEE-692M",
+      "aircraft": "Spitfire F Mk IX BF274, Merlin 61",
+      "report": "A&AEE/692,m 3rd Part, 22 October 1942, position error and performance",
+      "source": "https://wwiiaircraftperformance.com/org/spitcom/mk9/spitFmkIX_BF274.html",
+      "location": "§§3–4 reference Figures 3–5. Indexed links show climb and speed charts.",
+      "classification": "secondary-transcription-with-primary-chart-links",
+      "notes": "Target Figure 3 still absent. The earlier 130–320 mph measured domain and 109–127 mph source-applied extrapolations remain distinct."
+    },
+    {
+      "id": "SPIT-MA648-AAEE-SU-PUMP",
+      "aircraft": "Spitfire LF Mk IX MA648, Merlin 66",
+      "report": "A&AEE MA648 level-speed trial, S.U. Mk II injection pump",
+      "source": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLFMkIX_MA648.html",
+      "location": "Original Figure 1 linked on report page. Transcript §§2.1–4.2.",
+      "classification": "period-original-chart-with-secondary-text-transcription",
+      "notes": "Existing independent-check source, retained as separate fuel pump and long-intake configuration. Main test weight 7,380 lb. Comparison table reports a separate 7,000 lb figure. Summary and comparison table differ by 100 ft on the FS critical altitude."
+    },
+    {
+      "id": "UK-ARC-RAE-AERO1906",
+      "aircraft": "Spitfire, Mustang and Thunderbolt",
+      "report": "RAE Aero 1906 / ARC 7424, drag and trim changes at high Mach",
+      "source": "https://reports.aerade.cranfield.ac.uk/bitstream/handle/1826.2/3233/arc-rm-2222.pdf?isAllowed=y&sequence=1",
+      "location": "ARC R&M 2222 bibliography entry 98 and R&M 2748 reference 1",
+      "classification": "original-reference-to-unrecovered-report",
+      "notes": "High-Mach flight-test locator. R&M 2748 studies Meteor drag and is not a substitute for this report. Exact fighter specimens and usable domain await the original."
+    },
+    {
+      "id": "UK-ARC-RM2609-SPIT-PROTOTYPE",
+      "aircraft": "Spitfire prototype",
+      "report": "ARC R&M 2609, comparison of stalling characteristics",
+      "source": "https://reports.aerade.cranfield.ac.uk/bitstream/handle/1826.2/3147/arc-rm-2609.pdf?isAllowed=y&sequence=1",
+      "location": "Table 1K",
+      "classification": "period-original-research-report",
+      "notes": "Prototype flow breakaway and qualitative stall behavior only. No transfer to the LF IX benchmark.",
+      "sha256": "f2a7ab84844d64ac81f86985adfa2a748640613ad82989b2178051b3d945b75b"
+    },
+    {
+      "id": "P51B-NACA-L4L18-HEAD",
+      "aircraft": "P-51B AAF 43-12105, V-1650-3",
+      "report": "NACA MR L4L18 high-speed performance, 18 December 1944",
+      "source": "https://ntrs.nasa.gov/citations/19780078569",
+      "location": "Printed 4, PDF 5",
+      "classification": "period-original-scan",
+      "notes": "Earlier report R01. Kollsman head at 0.35 wing chord ahead and reference static at 0.94 chord. High-speed report on a different aircraft, not the correction for 43-24777.",
+      "sha256": "4ad0f57c41f062feaee15bd85887fb7f0f9481265bedebb10ebc427d4bfc6b54"
+    },
+    {
+      "id": "P40-NACA-L547-PITOT",
+      "aircraft": "P-40E/F/F-1 flight-test family",
+      "report": "NACA WR L-547 rudder and sideslip, October 1942",
+      "source": "https://ntrs.nasa.gov/citations/19930092648",
+      "location": "Printed 3, PDF 4",
+      "classification": "period-original-scan",
+      "notes": "Earlier source lead reviewed at page level. Pilot meter and recorder shared a research boom one chord ahead of the left tip. The boom is distinct from the service installation. Yaw calibration is not an IAS correction.",
+      "sha256": "feb6a19deb1b5f56e26d3ad27ddfe9962a613eaaa6ecbcd3dfab4ac3374e75b7"
+    },
+    {
+      "id": "A4-FW-665-NR1",
+      "aircraft": "Fw 190 A-4 WNr 665",
+      "report": "Focke-Wulf Flugbericht 665 Nr. 1, Eastern Front fairings",
+      "source": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_665_Nr1.pdf",
+      "location": "PDF 1 conditions and PDF 2 combat-power speed plot",
+      "classification": "period-original-scan",
+      "notes": "3827 kg fully fueled and 2400 rpm. Two MG 17 and two MG 151, ammunition ballast, tight cowling. Fixed wheel fairings and lower gear fairings removed for the Eastern Front tests. Tailwheel extended or retracted. Keep distinct from WNr 783.",
+      "sha256": "276a0a9151756289d3fb9f0909cadfde5611aaaa9b5a170520eb6ced31b913a0"
+    },
+    {
+      "id": "A4-FW-670-NR1",
+      "aircraft": "Fw 190 A-4 WNr 670 Jabo",
+      "report": "Focke-Wulf Flugbericht 670 Nr. 1, January 1943",
+      "source": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_670_Nr1.pdf",
+      "location": "PDF 1–2, test configuration and results",
+      "classification": "period-original-scan",
+      "notes": "ETC 501 and underwing Ju 87 racks. With tanks the aircraft developed strong aileron buffeting from 380 km/h indicated and the top speed could not be established. Separate report without tanks/bomb compared with WNr 669; neither is a clean WNr 783 result.",
+      "sha256": "c414d709347fd2dd9294d045623725cff084b84d15aefba5f11bd7b31a1f22b5"
+    },
+    {
+      "id": "USSR-NIIVVS-A4-2310-LOCATOR",
+      "aircraft": "Fw 190 A-4 WNr 2310",
+      "report": "NII VVS captured A-4 trial, period digest EI 23 (219), December 1943",
+      "source": "https://military.wikireading.ru/arjaMGGPIg",
+      "location": "Modern reproduction of the period digest text",
+      "classification": "secondary-reproduction-of-period-digest",
+      "notes": "Original run sheets and actual engine settings are unverified. Prior pack already identifies the airframe. A separate captured aircraft from the German 783 benchmark."
+    },
+    {
+      "id": "USSR-NIIVVS-G2-14513-DUPLICATE",
+      "aircraft": "Bf 109 G-2 WNr 14513",
+      "report": "NII VVS 1943 stability/control report",
+      "source": "https://wwiiaircraftperformance.com/org/me109/g/g_files/Me-109_G2_14513_Russian.pdf",
+      "location": "Original linked in earlier pack. Additional listing https://knigo.top/p/3phk",
+      "classification": "existing-original-scan-duplicate-locator",
+      "notes": "Already held. Underwing guns and instrumentation make this distinct from the Finnish clean benchmark. Additional listing adds no independent evidence."
+    },
+    {
+      "id": "F6F-AAND-AEE-FN322-REVIEW",
+      "aircraft": "Hellcat F Mk I FN322, R-2800-10",
+      "report": "A&AEE brief performance trials, 15 September 1943",
+      "source": "https://www.wwiiaircraftperformance.com/org/f6f/f6f_files/fn322.pdf",
+      "location": "Original report and climb/level-speed charts. Existing R18 and numeric-series entry.",
+      "classification": "existing-original-report-duplicate-locator",
+      "notes": "Useful independent specimen already counted in existing work. Recovered mirror does not raise scores.",
+      "sha256": "8b2209553c9616b300a41c029f982239e4fa0f6dfd9ae6a62a92f715b18296c1"
+    },
+    {
+      "id": "F4U4-AN01-45HB-1-1947-LOCATOR",
+      "aircraft": "F4U-4 and F4U-4B",
+      "report": "AN 01-45HB-1, pilot handbook, 15 April 1947",
+      "source": "https://aviationarchives.blogspot.com/2018/02/",
+      "location": "February 5 listing. Full link inaccessible during this pass.",
+      "classification": "catalogue-or-mirror-lead",
+      "notes": "1945 exact handbook is also catalogued. No checked new operating or measured-turn values."
+    },
+    {
+      "id": "KI84-NIDS-387-388",
+      "aircraft": "Ki-84 Japanese Army operating documents",
+      "report": "NIDS military education/aviation holdings 387 and 388, March–April 1944",
+      "source": "https://www.nids.mod.go.jp/military_archives/pdf/catalog/a2.pdf",
+      "location": "中央-軍隊教育典範航空関係-387 and -388",
+      "classification": "archive-catalogue",
+      "notes": "Japanese originals still to retrieve. No confirmed equivalence to the six translated leaflets."
+    }
+  ],
+  "series": [
+    {
+      "id": "f6f3-04776-early-stall-traces",
+      "source_id": "F6F04776-NACA-L5B13B-TRACE",
+      "aircraft": "F6F-3 BuAer 04776",
+      "quantity": "first_departure_window",
+      "speed_basis": "indicated mph, exact correction status unverified",
+      "source_location": "PDF 14, 16, 18, 20, 22, and condition table on PDF 4",
+      "conditions": "Window bracketed visually from initial roll departure and change in normal-force trace. Published take-off weight approximately 11200 lb. Run weight, altitude and fuel are unavailable in these figure captions. Speed spread is an approximate reading/selection bound. Normal acceleration band is approximate around the first break. Powered and flap-down traces represent their stated propwash and configuration.",
+      "columns": [
+        "figure",
+        "condition",
+        "first_t_low_s",
+        "first_t_high_s",
+        "figure_speed_mph",
+        "read_window_plus_minus_mph",
+        "normal_g_low",
+        "normal_g_high",
+        "flaps",
+        "gear",
+        "canopy",
+        "cowl_oil_intercooler",
+        "power",
+        "rpm",
+        "map_inhg",
+        "takeoff_weight_lb",
+        "actual_run_weight_lb"
+      ],
+      "rows": [
+        [
+          4,
+          "glide",
+          8.5,
+          9.5,
+          97,
+          2,
+          0.9,
+          1.1,
+          "up",
+          "up",
+          "closed",
+          "closed",
+          "idle",
+          null,
+          null,
+          11200,
+          null
+        ],
+        [
+          6,
+          "climb",
+          14.5,
+          15.5,
+          76,
+          2,
+          0.85,
+          1.05,
+          "up",
+          "up",
+          "closed",
+          "closed",
+          "climb",
+          2550,
+          43,
+          11200,
+          null
+        ],
+        [
+          8,
+          "landing",
+          7.5,
+          8.5,
+          80,
+          2,
+          0.85,
+          1.05,
+          "down",
+          "down",
+          "open",
+          "closed",
+          "idle",
+          null,
+          null,
+          11200,
+          null
+        ],
+        [
+          10,
+          "approach",
+          5,
+          6,
+          73,
+          3,
+          0.8,
+          1,
+          "down",
+          "down",
+          "open",
+          "closed",
+          "approach",
+          2550,
+          23,
+          11200,
+          null
+        ],
+        [
+          12,
+          "wave-off",
+          6.5,
+          7.25,
+          62,
+          3,
+          0.85,
+          1.05,
+          "down",
+          "down",
+          "open",
+          "open",
+          "wave-off",
+          2550,
+          43,
+          11200,
+          null
+        ]
+      ],
+      "source_class": "inspected-original-digitized-window",
+      "evidence_kind": "digitized_primary_flight_trace"
+    },
+    {
+      "id": "p47d30-433441-stall-traces",
+      "source_id": "P47D30-L8A06-STALL-TRACE",
+      "aircraft": "P-47D-30 AAF 43-3441",
+      "quantity": "stall_or_closest_approach_trace_window",
+      "speed_basis": "service indicated mph, explicitly labeled, CAS mapping pending",
+      "source_location": "PDF 70, 72, 75, 77, 78 and configuration table on PDF 3",
+      "conditions": "Near-break or minimum approach window. The approach trace has no clear full-break marker. All rows are observed trace readings with visual bounds, same flight-test program. Power off is the report condition, not an assumed zero shaft torque.",
+      "columns": [
+        "figure",
+        "condition",
+        "window_definition",
+        "t_low_s",
+        "t_high_s",
+        "figure_speed_mph",
+        "read_window_plus_minus_mph",
+        "normal_g_low",
+        "normal_g_high",
+        "gross_weight_lb",
+        "cg_pct_mac",
+        "alt_ft",
+        "flaps",
+        "gear",
+        "canopy",
+        "rpm",
+        "map_inhg"
+      ],
+      "rows": [
+        [
+          47,
+          "power-on clean",
+          "initial normal-acceleration disturbance",
+          10.5,
+          12,
+          106,
+          3,
+          0.8,
+          1.05,
+          12660,
+          26.4,
+          5000,
+          "up",
+          "up",
+          "closed",
+          2550,
+          42.5
+        ],
+        [
+          49,
+          "glide",
+          "roll and acceleration break",
+          18,
+          19.5,
+          116,
+          3,
+          0.85,
+          1.05,
+          12400,
+          26.3,
+          5000,
+          "up",
+          "up",
+          "closed",
+          null,
+          null
+        ],
+        [
+          52,
+          "approach",
+          "minimum-speed plateau, full break unclear",
+          4,
+          8,
+          91,
+          2,
+          0.85,
+          1,
+          12860,
+          28.9,
+          5000,
+          "down",
+          "down",
+          "open",
+          2550,
+          21
+        ],
+        [
+          54,
+          "landing",
+          "early minimum-speed window",
+          1.5,
+          3.5,
+          98,
+          2,
+          0.85,
+          1.05,
+          13170,
+          29,
+          5000,
+          "down",
+          "down",
+          "open",
+          null,
+          null
+        ],
+        [
+          55,
+          "landing",
+          "early minimum-speed window with all controls",
+          3,
+          5,
+          99,
+          2,
+          0.8,
+          1.05,
+          13170,
+          29,
+          5000,
+          "down",
+          "down",
+          "open",
+          null,
+          null
+        ]
+      ],
+      "source_class": "inspected-original-digitized-window",
+      "evidence_kind": "digitized_primary_flight_trace"
+    },
+    {
+      "id": "p40fl-manual-stall",
+      "source_id": "P40FL-TO01-25CH-1-1943",
+      "aircraft": "P-40F/L",
+      "quantity": "approximate_stall_speed",
+      "speed_basis": "IAS mph",
+      "source_location": "Printed 28, 32",
+      "conditions": "Normal operational loads. The table does not give test weight, serial or a correction curve. The landing section says the approximate 82 mph figure can vary by 2 mph with load.",
+      "columns": [
+        "gear",
+        "flaps",
+        "stall_mph_ias",
+        "load_sensitivity_mph"
+      ],
+      "rows": [
+        [
+          "up",
+          "up",
+          92,
+          null
+        ],
+        [
+          "down",
+          "up",
+          94,
+          null
+        ],
+        [
+          "up",
+          "down",
+          80,
+          null
+        ],
+        [
+          "down",
+          "down",
+          82,
+          2
+        ]
+      ],
+      "source_class": "original-handbook",
+      "evidence_kind": "period_handbook_values"
+    },
+    {
+      "id": "p40fl-engine-chart",
+      "source_id": "P40FL-TO01-25CH-1-1943",
+      "aircraft": "P-40F/L V-1650-1",
+      "quantity": "engine_operating_rating",
+      "speed_basis": "not applicable",
+      "source_location": "Printed 2 and 37–40",
+      "conditions": "100 octane chart. Critical altitudes are labeled with ram where given. Military chart rounds the printed text 48.24 to 48.2 inHg. WEP hardware must be modified to reach 61 inHg and WEP selection uses low blower below 8000 ft and high above. No WEP duration number in chart.",
+      "columns": [
+        "mode",
+        "blower",
+        "rpm",
+        "map_inhg_abs",
+        "bhp",
+        "critical_altitude_ft_with_ram",
+        "max_minutes",
+        "continuous"
+      ],
+      "rows": [
+        [
+          "take-off",
+          "low",
+          3000,
+          54.3,
+          1300,
+          null,
+          null,
+          false
+        ],
+        [
+          "war emergency",
+          "low",
+          3000,
+          61,
+          1300,
+          4600,
+          null,
+          false
+        ],
+        [
+          "war emergency",
+          "high",
+          3000,
+          61,
+          1300,
+          12000,
+          null,
+          false
+        ],
+        [
+          "military",
+          "low",
+          3000,
+          48.2,
+          1240,
+          11500,
+          5,
+          false
+        ],
+        [
+          "military",
+          "high",
+          3000,
+          48.2,
+          1120,
+          18500,
+          5,
+          false
+        ],
+        [
+          "maximum continuous",
+          "low",
+          2650,
+          44.2,
+          1080,
+          9500,
+          null,
+          true
+        ],
+        [
+          "maximum continuous",
+          "high",
+          2650,
+          44.2,
+          1010,
+          18000,
+          null,
+          true
+        ]
+      ],
+      "source_class": "original-handbook",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "p40fl-manual-loading",
+      "source_id": "P40FL-TO01-25CH-1-1943",
+      "aircraft": "P-40F/L",
+      "quantity": "weight_and_balance_examples",
+      "speed_basis": "not applicable",
+      "source_location": "Printed 36 and 40",
+      "conditions": "Generic worked configurations from the handbook, not a weigh sheet for 41-13635. Full internal example is distinct from the 8505 lb design load.",
+      "columns": [
+        "loading",
+        "gross_weight_lb"
+      ],
+      "rows": [
+        [
+          "total basic",
+          7027
+        ],
+        [
+          "design load",
+          8505
+        ],
+        [
+          "full internal",
+          8860
+        ],
+        [
+          "maximum fuel",
+          9116
+        ],
+        [
+          "ground attack",
+          9347
+        ]
+      ],
+      "source_class": "original-handbook",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "g2-june-1942-ratings",
+      "source_id": "G2-MESSERSCHMITT-BVFL-1942",
+      "aircraft": "Bf 109 G-2 DB 605",
+      "quantity": "engine_operating_rating",
+      "speed_basis": "not applicable",
+      "source_location": "Printed 13–15",
+      "conditions": "Emergency entries in the rating table were blocked under the instructions on pp.13 and 15. No time limit is supplied by this table. Apply the 18 June order and engine-specific restrictions where relevant. The Finnish April 1943 test remains 2540 actual rpm, 2580 indicated, per the existing secondary transcription.",
+      "columns": [
+        "rating",
+        "rpm",
+        "boost_ata",
+        "table_altitude_m",
+        "blocked_per_manual"
+      ],
+      "rows": [
+        [
+          "take-off/emergency",
+          2800,
+          1.42,
+          0,
+          true
+        ],
+        [
+          "climb/combat",
+          2600,
+          1.3,
+          0,
+          false
+        ],
+        [
+          "maximum continuous",
+          2300,
+          1.15,
+          0,
+          false
+        ],
+        [
+          "emergency",
+          2800,
+          1.42,
+          5700,
+          true
+        ],
+        [
+          "climb/combat",
+          2600,
+          1.3,
+          5800,
+          false
+        ],
+        [
+          "maximum continuous",
+          2300,
+          1.15,
+          5500,
+          false
+        ],
+        [
+          "economic continuous",
+          2100,
+          1,
+          5700,
+          false
+        ]
+      ],
+      "source_class": "original-handbook",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "ki84-pacmirs-stall",
+      "source_id": "KI84-PACMIRS-8",
+      "aircraft": "Ki-84 handbook configuration",
+      "quantity": "stall_speed",
+      "speed_basis": "km/h, basis unspecified in stall table",
+      "source_location": "Printed 28, PDF 32, section 1 II E",
+      "conditions": "Fully equipped at 2000 m. Exact weight, serial and power unavailable. Final column is suspiciously labeled as elevator-tab turns despite values 1000–1200 and translator sic marks, so it is retained without reinterpretation.",
+      "columns": [
+        "alt_m",
+        "stall_kmh",
+        "flaps_deg",
+        "gear",
+        "elevator_tab",
+        "printed_last_column_sic"
+      ],
+      "rows": [
+        [
+          2000,
+          165,
+          0,
+          "up",
+          0,
+          1200
+        ],
+        [
+          2000,
+          149,
+          15,
+          "up",
+          0,
+          1100
+        ],
+        [
+          2000,
+          139,
+          30,
+          "up",
+          2,
+          1000
+        ],
+        [
+          2000,
+          168,
+          0,
+          "down",
+          0,
+          1200
+        ],
+        [
+          2000,
+          163,
+          15,
+          "down",
+          2,
+          1100
+        ],
+        [
+          2000,
+          138,
+          30,
+          "down",
+          4,
+          1000
+        ]
+      ],
+      "source_class": "period-translation-original-handbook",
+      "evidence_kind": "period_handbook_values"
+    },
+    {
+      "id": "ki84-pacmirs-level",
+      "source_id": "KI84-PACMIRS-8",
+      "aircraft": "Ki-84 handbook configuration",
+      "quantity": "standard_maximum_level_speed",
+      "speed_basis": "source IAS and TAS km/h",
+      "source_location": "Printed 28, PDF 32, section 1 II E",
+      "conditions": "Handbook table, test method and exact specimen unestablished. Boost figures retained in source units, with blanks left blank. Blower/status text is recorded only where printed.",
+      "columns": [
+        "alt_m",
+        "ias_kmh",
+        "tas_kmh",
+        "rpm",
+        "manifold_pressure_mm_relative",
+        "source_summary"
+      ],
+      "rows": [
+        [
+          1000,
+          518,
+          544,
+          2900,
+          250,
+          "low blower"
+        ],
+        [
+          2000,
+          512,
+          565,
+          2900,
+          250,
+          "low blower"
+        ],
+        [
+          3000,
+          505,
+          585,
+          2900,
+          250,
+          "low blower"
+        ],
+        [
+          3370,
+          502,
+          594,
+          2900,
+          250,
+          "low blower high boost"
+        ],
+        [
+          4000,
+          488,
+          591,
+          2900,
+          185,
+          "high blower"
+        ],
+        [
+          4900,
+          452,
+          584,
+          2900,
+          95,
+          "high blower"
+        ],
+        [
+          5000,
+          454,
+          586,
+          2900,
+          250,
+          "high blower high boost"
+        ],
+        [
+          6000,
+          448,
+          610,
+          2900,
+          null,
+          "high blower"
+        ],
+        [
+          6550,
+          444,
+          624,
+          2900,
+          null,
+          null
+        ],
+        [
+          7000,
+          426,
+          615,
+          2900,
+          200,
+          null
+        ],
+        [
+          8000,
+          388,
+          594,
+          2900,
+          95,
+          null
+        ],
+        [
+          9000,
+          350,
+          569,
+          2900,
+          40,
+          null
+        ]
+      ],
+      "source_class": "period-translation-original-handbook",
+      "evidence_kind": "period_handbook_values"
+    },
+    {
+      "id": "ki84-pacmirs-full-power-climb",
+      "source_id": "KI84-PACMIRS-8",
+      "aircraft": "Ki-84 handbook configuration",
+      "quantity": "full_power_climb_schedule",
+      "speed_basis": "IAS km/h",
+      "source_location": "Printed 29, PDF 33, section 1 II F",
+      "conditions": "Instructions call for military power with boost override unused and cowl flaps ordinarily fully open, cylinder temperature at or below 230 C. The gear-change instruction says temporarily reduce to 2600 rpm. Table prints 2900 rpm throughout and an unresolved +80 at 9000 m. Climb ceiling blank in translation. Flight origin, run mass and airframe not established.",
+      "columns": [
+        "alt_m",
+        "elapsed_seconds_from_printed_min_sec",
+        "roc_m_s",
+        "ias_kmh",
+        "rpm",
+        "manifold_pressure_mm_relative"
+      ],
+      "rows": [
+        [
+          1000,
+          69,
+          14.4,
+          260,
+          2900,
+          250
+        ],
+        [
+          2000,
+          148,
+          14.3,
+          260,
+          2900,
+          250
+        ],
+        [
+          3000,
+          214,
+          12.8,
+          260,
+          2900,
+          190
+        ],
+        [
+          4000,
+          296,
+          11.7,
+          260,
+          2900,
+          250
+        ],
+        [
+          5000,
+          386,
+          11,
+          260,
+          2900,
+          250
+        ],
+        [
+          6000,
+          480,
+          10,
+          250,
+          2900,
+          200
+        ],
+        [
+          7000,
+          588,
+          8.3,
+          240,
+          2900,
+          100
+        ],
+        [
+          8000,
+          748,
+          6.3,
+          230,
+          2900,
+          0
+        ],
+        [
+          9000,
+          934,
+          3.8,
+          220,
+          2900,
+          80
+        ]
+      ],
+      "source_class": "period-translation-original-handbook",
+      "evidence_kind": "period_handbook_values"
+    },
+    {
+      "id": "ki84-pacmirs-operating-limits",
+      "source_id": "KI84-PACMIRS-8",
+      "aircraft": "Ki-84 handbook configuration",
+      "quantity": "operating_recommendations",
+      "speed_basis": "not applicable",
+      "source_location": "Printed 29–30 and 34, PDF 33–34 and 38",
+      "conditions": "Operational recommendations in the translated provisional handbook. The 3200 rpm restriction is a short-time low-boost limit, not a power rating.",
+      "columns": [
+        "condition",
+        "rpm",
+        "manifold_pressure_mm_relative",
+        "limit_seconds"
+      ],
+      "rows": [
+        [
+          "normal climb reference",
+          2600,
+          100,
+          null
+        ],
+        [
+          "combat cruise low blower",
+          2300,
+          -50,
+          null
+        ],
+        [
+          "combat cruise high blower",
+          2500,
+          -100,
+          null
+        ],
+        [
+          "short overspeed, boost must be below value shown",
+          3200,
+          -200,
+          30
+        ]
+      ],
+      "source_class": "period-translation-original-handbook",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "d9-nr4-low-blower-heights",
+      "source_id": "D9-FW-210002-NR4",
+      "aircraft": "Fw 190 D-9 210002 and 210001",
+      "quantity": "installed_critical_height_comparison",
+      "speed_basis": "not applicable",
+      "source_location": "Blatt 2 comparison table",
+      "conditions": "Values as reported. 210002 checked A engine had a sealed gap/polished finish and no ammunition in Nr.4. The first and third columns summarize earlier flights. Conditions and serials must stay separate.",
+      "columns": [
+        "airframe_wnr",
+        "jumo_engine_serial",
+        "tested_on_engine_stand",
+        "combat_climb_1_4_ata_falloff_m",
+        "combat_level_1_4_ata_fth_m",
+        "takeoff_level_1_5_ata_fth_m",
+        "origin"
+      ],
+      "rows": [
+        [
+          210002,
+          "1021521862",
+          false,
+          2550,
+          3200,
+          3400,
+          "earlier test"
+        ],
+        [
+          210002,
+          "1021523462",
+          true,
+          2550,
+          3350,
+          3600,
+          "Nr. 4 new flight"
+        ],
+        [
+          210001,
+          "1021520539",
+          false,
+          2900,
+          3400,
+          3450,
+          "earlier test"
+        ]
+      ],
+      "source_class": "inspected-original-test-report",
+      "evidence_kind": "period_primary_test_summary"
+    },
+    {
+      "id": "fw190a4-665-fairing-trial-condition",
+      "source_id": "A4-FW-665-NR1",
+      "aircraft": "Fw 190 A-4 WNr 665",
+      "quantity": "experimental_configuration",
+      "speed_basis": "not applicable",
+      "source_location": "PDF 1 conditions and PDF 2 combat-power speed plot",
+      "conditions": "Flight tests in Eastern Front fairing configurations. Fully fueled weight. Reported armament had ammunition ballast. Values qualify the existing high-speed curve for WNr 665.",
+      "columns": [
+        "fully_fueled_weight_kg",
+        "rpm",
+        "mg17_count",
+        "mg151_count"
+      ],
+      "rows": [
+        [
+          3827,
+          2400,
+          2,
+          2
+        ]
+      ],
+      "source_class": "inspected-original-test-report",
+      "evidence_kind": "conditions_or_documentary_data"
+    },
+    {
+      "id": "fw190a4-670-rack-comparison",
+      "source_id": "A4-FW-670-NR1",
+      "aircraft": "Fw 190 A-4 WNr 670 Jabo",
+      "quantity": "external_load_effects",
+      "speed_basis": "indicated speed for buffet, source-level speed difference for comparison",
+      "source_location": "PDF 1–2, test configuration and results",
+      "conditions": "Jabo configuration. Tanks installed caused buffet. The level speed difference compares separate aircraft and rack fairings without tanks or bomb.",
+      "columns": [
+        "metric",
+        "low_kmh",
+        "high_kmh",
+        "configuration"
+      ],
+      "rows": [
+        [
+          "aileron buffet onset",
+          380,
+          380,
+          "WNr 670 underwing tanks installed"
+        ],
+        [
+          "level speed increase near ground",
+          25,
+          30,
+          "WNr 670 smaller rack fairing versus WNr 669 prototype fairing"
+        ]
+      ],
+      "source_class": "inspected-original-test-report",
+      "evidence_kind": "period_primary_test_summary"
+    }
+  ],
+  "calibration_reviews": [
+    {
+      "id": "f6f3-part3-trace-basis",
+      "source_id": "F6F04776-NACA-L5B13B-TRACE",
+      "status": "plotted-basis-preserved",
+      "domain": "five first-departure windows",
+      "decision": "Part I corrected service-indicated definition is explicit there. Part III plot label and no run-weight or raw reduction record preclude labeling the digitized traces certified CAS. The apparent spread between same-condition Figures 6 and 7 (roughly 76 vs 66 mph at the first departure on visual inspection) also deserves investigation before an automatic mapping."
+    },
+    {
+      "id": "p47d30-single-fig52-trace",
+      "source_id": "P47D30-L8A06-STALL-TRACE",
+      "status": "supersedes-paired-channel-reading",
+      "domain": "Figures 47, 49, 52, 54, 55",
+      "decision": "One service-indicated trace per checked chart. The winged NACA emblem is a watermark. TN 2675 confirms corrected instrumentation method, but a numerical correction or explicit link to L8A06 processing is still absent. Do not apply handbook PEC to the NACA trace."
+    },
+    {
+      "id": "p40f-handbook-stall",
+      "source_id": "P40FL-TO01-25CH-1-1943",
+      "status": "operational-ias",
+      "domain": "four gear/flap states",
+      "decision": "No serial, exact test weight, pitot calibration or matched power established. The general weight-and-balance chart does not supply the weight at which the stall table was measured."
+    },
+    {
+      "id": "ki84-pacmirs-stall",
+      "source_id": "KI84-PACMIRS-8",
+      "status": "basis-unresolved",
+      "domain": "2000 m, six configurations",
+      "decision": "No explicit speed basis, mass, boost, or serial in stall table. Keep separate from 302 flight tests and TAIC estimates."
+    }
+  ],
+  "document_lineage": [
+    {
+      "id": "f6f-part1-part3",
+      "members": [
+        "F6F04776-NACA-L5B13B-TRACE",
+        "F6F04776-NACA-L5B13-INSTRUMENTS",
+        "F6F04776-NACA-STALL-CONDITIONS"
+      ],
+      "relationship": "same campaign and companion instruments",
+      "note": "Correct prior approach condition from 2350 to 2550 rpm after enlarged scan inspection. No extra trial credit."
+    },
+    {
+      "id": "p47d30-companion-instrumentation",
+      "members": [
+        "P47D30-L8A06-STALL-TRACE",
+        "P47D30-TN2675-INSTRUMENTS",
+        "P47D30-L8A06-RECHECK"
+      ],
+      "relationship": "same aircraft and test-program lineage",
+      "note": "Prior paired interpretation withdrawn. Do not infer independently measured CAS from a second channel."
+    },
+    {
+      "id": "ki84-pacmirs-advatis",
+      "members": [
+        "KI84-PACMIRS-8",
+        "ADVATIS Translation 92"
+      ],
+      "relationship": "explicitly overlapping Japanese source tables",
+      "note": "PACMIRS introduction calls out overlap. No independent confirmation of 624 km/h from repetition. The PACMIRS row gives no boost."
+    },
+    {
+      "id": "d9-factory-early-late",
+      "members": [
+        "D9-FW-210002-NR4",
+        "D9-FW-210001-NR1-REVIEW"
+      ],
+      "relationship": "new flight with historical comparison columns",
+      "note": "Only the checked engine column represents the new run set relative to reports 1 and 2."
+    },
+    {
+      "id": "g2-specifications-versus-trials",
+      "members": [
+        "G2-MESSERSCHMITT-BVFL-1942",
+        "G2-DB605-RESTRICTION-1942",
+        "G2-MT215-SCAN",
+        "G2-MT215-TRANSCRIPTION",
+        "G2-NIIVVS-14513"
+      ],
+      "relationship": "manual and order linked to distinct test specimens",
+      "note": "Preserve actual recorded boost/rpm and cooling for each tested run. Manual limits alone never establish actual settings."
+    }
+  ]
+}

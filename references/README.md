@@ -52,3 +52,5 @@ The wider fighter evidence from the Smithsonian NASM and Bundesarchiv is documen
 - [Mustang maneuver-power evidence](p51-maneuver-power.json) records the Figure 6 climb readings paired with existing Figure 7 power brackets and indexes the separate NAA, Eglin and Wright Field reports.
 
 - [Mustang maneuver lift readings](p51-turn-lift-tn1044.json) index the preserved original TN1044 Figure 6 and the explicit application bounds. [Book, Greg and simulation comparisons](../docs/TURN_STALL_CORRECTION.md)
+
+- [International fighter flight tests and operating data](../docs/research/WW2_FIGHTER_FLIGHT_TESTS_2026-11-11.md) records the trace digitization and source search across all thirteen research variants. The [data series](research/ww2_fighter_flight_tests_2026-11-11.json) and [coverage scorecard](aircraft-readiness-flight-tests-2026-11-11.json) retain page-level provenance and open gaps.
