@@ -2,7 +2,7 @@
 
 ## v4.3 operating benchmark research candidate
 
-The improved climb replay uses gross test masses. BS.543's climb TAS reconstruction and boost-conditioned shaft power carry uncertainty. Searching each model's best climb speed gives a weaker improvement and a larger individual regression. Cooling losses are aggregate installed-energy fits. The cooling selector models that scenario for turns and level flight. Service labels describe approximate main WWII periods and theatre tags. The Corsair has a high-altitude speed residual. Independent historical sustained-turn accuracy remains unresolved. [v4.3 results and diagnostic limits](V43_MODEL_CHECKS.md).
+The improved climb replay uses gross test masses. BS.543's Table II TAS uses the report's airspeed corrections. Shaft power comes from a boost-conditioned chart. Searching each model's best climb speed gives a weaker improvement and a larger individual regression. Cooling losses are aggregate installed-energy fits. The cooling selector models that scenario for turns and level flight. Service labels describe approximate main WWII periods and theatre tags. The Corsair has a high-altitude speed residual. Independent historical sustained-turn accuracy remains unresolved. [v4.3 results and diagnostic limits](V43_MODEL_CHECKS.md).
 
 ## 11 November 2026 data-collection checkpoint
 

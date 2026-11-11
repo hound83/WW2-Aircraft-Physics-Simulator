@@ -24,6 +24,14 @@ for(const row of thunderbolt.rows){
 }
 assert.ok(report.spitfireBestSpeedSensitivity.checks.afterMae<report.spitfireBestSpeedSensitivity.checks.beforeMae);
 assert.ok(report.spitfireBestSpeedSensitivity.checks.largestRegression>100,'The separate best-speed sensitivity retains the unfavorable row');
+assert.equal(report.spitfireCeiling.rows.length,5);
+const ceiling=report.spitfireCeiling.rows.at(-1);
+assert.equal(ceiling.altFt,40000);
+assert.equal(ceiling.observed,300);
+assert.equal(ceiling.tasMph,237.5);
+assert.equal(ceiling.estimatedPower,true);
+assert.equal(ceiling.cooling,'climb-estimate');
+assert.ok(Number.isFinite(ceiling.predicted));
 assert.equal(report.corsair.accepted,false);
 assert.ok(report.corsair.highSpeed.afterMae<report.corsair.highSpeed.beforeMae);
 const high=report.corsair.speedRows.find(r=>r.altFt===29000&&r.rating==='military');

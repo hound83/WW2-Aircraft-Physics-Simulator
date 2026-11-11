@@ -4,7 +4,7 @@
 
 ## Known climb results
 
-The comparison replays the same weights, rating requests and airspeeds before and after. The P-47B 41-5902 report provides torque-meter BHP and TAS. Its mass is the reported gross weight. BS.543 supplies the open-radiator climb rates and boost readings. Its TAS schedule is an existing reconstruction and its climb BHP comes from a boost-conditioned engine chart. The 41-5942 replay holds the separate report's recorded BHP, TAS and RPM fixed in both models and transfers only the equivalent installed loss. Both Thunderbolt replays use the documented 2:1 reduction gearing.
+The comparison replays the same weights, rating requests and airspeeds before and after. The P-47B 41-5902 report provides torque-meter BHP and TAS. Its mass is the reported gross weight. BS.543 supplies the open-radiator climb rates and boost readings. The replay uses the reported Table II TAS and a boost-conditioned engine chart for shaft BHP. The report transferred the climb speed schedule from BS.354 and applied BF.274 airspeed corrections. The 41-5942 replay holds the separate report's recorded BHP, TAS and RPM fixed in both models and transfers only the equivalent installed loss. Both Thunderbolt replays use the documented 2:1 reduction gearing.
 
 | Report and cohort | Rows | v4.2 MAE (ft/min) | v4.3 MAE (ft/min) | Largest increase in absolute error (ft/min) |
 |---|---:|---:|---:|---:|
@@ -16,7 +16,7 @@ The comparison replays the same weights, rating requests and airspeeds before an
 
 The v4.1 fits had previously seen the report datasets. The held-out rows were excluded from numerical fitting. The eight-gun 41-5942 test is a separate flight-test report and installation. Its 30,000-ft point has the largest worsening on transfer, from 32 to 98 ft/min absolute error. The provisional engineering gate requires each held-out or transfer cohort to improve on average and sets 100 ft/min as the maximum acceptable worsening for an individual row at the matched speed.
 
-When each model searches 110–320 mph TAS for its own best climb at the Spitfire test weight, the ten held-out rows improve from **317 to 198 ft/min MAE**. The 7,000-ft prediction worsens by **135 ft/min**. This sensitivity uses the same measured climb-rate target and shows how the unverified climb speed affects the comparison.
+When each model searches 110–320 mph TAS for its own best climb at the Spitfire test weight, the ten held-out rows improve from **317 to 198 ft/min MAE**. The 7,000-ft prediction worsens by **135 ft/min**. This sensitivity uses the same measured climb-rate target and shows the sensitivity to modeled Vy. The original climb used the reported schedule under a test concession that permitted more than five minutes of Combat power.
 
 [41-5902 original report, printed p. 2 §6](https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf) · [BS.543, Tables II and V](https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html) · [41-5942, FS-M-19-1523-A §B.1–2](https://www.wwiiaircraftperformance.com/org/p-47/p-47.html) · [BS.543 original plot and correction review](research/WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md)
 
@@ -53,7 +53,9 @@ The climb integration checks include sea level to 30,000 ft at 50% fuel for both
 
 [Original v4.2 scenario snapshot](../references/analysis/v43-benchmark-before.json) · [Generated v4.3 full replay](../validation/current/operating-benchmark-v43.json) · [Four-aircraft historical scorecard and evidence gaps](FLIGHT_SCORECARD.md)
 
-## Two diagnostic results
+## Additional diagnostic results
+
+**Spitfire above 30,000 ft.** Table II provides five further points through 40,000 ft. At 40,000 ft it gives 300 ft/min at 237.5 mph reported TAS and 17.55 minutes elapsed under the test concession. At the reported TAS and gross weight the existing high-altitude estimate gives 522 ft/min. These rows stay outside the adopted fit. The upper rows retain the original report's low-speed correction, whose independently verified range starts at 130 mph IAS. [Table II and test conditions](https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html) · [Recorded high-altitude rows](../references/bs543-high-altitude-climb-check.json)
 
 **Thunderbolt cooling sweep.** New same-specimen data holds 1,605 BHP and 2,700 RPM at 5,000 ft. Opening the oil-cooler and intercooler flaps from neutral to wide open reduces observed TAS from 323 to 309 mph. At modeled propulsive efficiency, the pair implies about 0.082 m² of equivalent added drag area. The climb fit combines broader cooling and propulsion effects. The sweep therefore constrains a future cooling model and remains outside this fit. [Printed p. 2 §B.2](https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf) · [Measured conditions archive](research/WW2_FIGHTER_MEASURED_CONDITIONS_2026-11-11.md)
 

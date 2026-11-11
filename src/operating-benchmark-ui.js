@@ -175,6 +175,8 @@
    }
    target.append(details);
   }
+  const ceiling=data.spitfireCeiling;
+  target.append(text('p','At 40,000 ft BS.543 recorded '+fmt(ceiling.observed,0)+' ft/min. The model’s high-altitude estimate is '+fmt(ceiling.predicted,0)+' ft/min at the reported speed and gross weight. This test used an extended Combat allowance.','bench-note'));
   const speedCheck=data.spitfireBestSpeedSensitivity;
   target.append(text('p','Spitfire sensitivity at each model’s own best climb speed. Mean error '+fmt(speedCheck.beforeMae,0)+' → '+fmt(speedCheck.afterMae,0)+' ft/min. Largest increase '+fmt(speedCheck.largestRegression,0)+' ft/min.','bench-note'));
  }

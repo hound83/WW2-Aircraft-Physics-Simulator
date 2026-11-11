@@ -11,6 +11,7 @@ const calibration=require('../../calibration/v4.3-benchmark.json');
 const energy=require('../../calibration/v4.1-energy.json').configurations;
 const p47=require('../../references/p47b-measured-climb-v33.json');
 const spit=require('../../references/climb-condition-states.json').states.filter(row=>row.aircraftId==='spitfire_lfix_bs543');
+const spitCeiling=require('../../references/bs543-high-altitude-climb-check.json');
 const donor=require('../../references/independent-flight-checks.json').thunderboltProduction;
 const service=require('../../references/benchmark-service-context.json');
 const baseline=require('../../references/analysis/v43-benchmark-before.json');
@@ -40,7 +41,7 @@ function reportClimbs(data=buildData(),searchSpitfireSpeed=false){
     tasMph:row.tasMph,bhp:row.shaftHp,rpm:row.engineRpm,
     mode:row.rating==='military'?'combat':'normal',role:p47Fit.has(i)?'fit':'check'}))},
   {id:'spitfire_lfix_bs543',name:'Spitfire LF IXc BS.543',url:energy.spitfire_lfix_bs543.source,
-   condition:'7,485 lb gross, radiator flaps open, +18 rating. Existing TAS reconstruction and boost-conditioned chart BHP are provisional. The report does not establish the true optimum TAS.',
+   condition:'7,485 lb gross, radiator flaps open, +18 rating. Uses Table II TAS at the flight-test schedule and boost-conditioned chart BHP. The report adopted the BS.354 climb schedule and had permission to exceed the routine five-minute Combat limit.',
    rows:spit.map(row=>({altFt:row.altFt,observed:row.observedFpm,weightLb:row.weightLb,
     tasMph:row.tasMph,mode:'combat',role:spitFit.has(row.altFt)?'fit':'check'}))}
  ];
@@ -125,10 +126,22 @@ function coolingFlapCheck(data=buildData()){
   qualification:'Equivalent area change inferred with the model propeller and test gross mass. The paired oil and intercooler flap sweep does not isolate the cowl-flap or propulsion changes in the climb fits.'};
 }
 
+function ceilingCheck(data=buildData()){
+ const {models,specification}=data,id=spitCeiling.aircraftId;
+ const model=models[id],spec=specification.aircraft[id],settings={mode:'combat',extension:true};
+ const rows=spitCeiling.rows.map(([altFt,minutes,observed,tasMph,iasMph, , ,boostPsi])=>{
+  const r=B.evaluate(M,T,L,model,spec,settings,altFt,M.airspeeds(tasMph,altFt).eas,spitCeiling.condition.grossWeightLb,undefined,true);
+  return {altFt,minutes,observed,tasMph,iasMph,boostPsi,predicted:r.power?.climbFpm??null,
+   cooling:r.benchmark?.cooling,estimatedPower:r.benchmark?.estimated};
+ });
+ return {source:spitCeiling.source,condition:spitCeiling.condition,qualification:spitCeiling.qualification,rows};
+}
+
 function browserData(){
  const data=buildData();
  return {...data,flightChecks:[...reportClimbs(data),independentThunderbolt(data)],
-  spitfireBestSpeedSensitivity:reportClimbs(data,true)[1].checks};
+  spitfireBestSpeedSensitivity:reportClimbs(data,true)[1].checks,
+  spitfireCeiling:ceilingCheck(data).rows.at(-1)};
 }
 
 function scenarioMetrics(row){
@@ -149,7 +162,7 @@ function run(){
  return {version:require('../../package.json').version,baseline:baseline.commit,
   flightChecks:[...reportClimbs(data),independentThunderbolt(data)],
   spitfireBestSpeedSensitivity:reportClimbs(data,true).find(check=>check.id==='spitfire_lfix_bs543'),
-  corsair:corsairChecks(),coolingFlapCheck:coolingFlapCheck(data),rows,
+  corsair:corsairChecks(),coolingFlapCheck:coolingFlapCheck(data),spitfireCeiling:ceilingCheck(data),rows,
   interpretation:'Report-conditioned climbs and operational model scenarios at 50% fuel. Historical sustained-turn discrimination remains unresolved.'};
 }
 function writeReport(){
