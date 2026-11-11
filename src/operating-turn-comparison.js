@@ -139,6 +139,9 @@
    const points=rows.map(r=>({eas:r.eas,rate:r.solo?.side===side?r.solo.rate:null}));
    for(const segment of Evidence.lineSegments(points)){
     draw(g,'path',{d:path(segment),fill:'none',stroke:colors[side],'stroke-width':3,'stroke-dasharray':'7 5','data-turn-solo':side});
+    const strip=draw(g,'line',{x1:x(segment.points[0].eas),x2:x(segment.points.at(-1).eas),y1:bottom+8,y2:bottom+8,
+     stroke:colors[side],'stroke-width':7,'stroke-dasharray':'6 3','data-turn-solo-lead':side});
+    draw(strip,'title',{},'Only '+names[side]+' can sustain flight at modeled power');
    }
   }
   function verdictLabel(verdict){

@@ -463,11 +463,68 @@ async function run(){
   await until(async()=>(await probe()).easMph!==200,'turn advantage chart shares the speed probe');
   checks.push('v4.4 advantage chart distinguishes persistent and assumption-sensitive leads and shares speed with turn and climb');
   checks.push('v4.4 limit bars and measured maneuver-lift bands appear at matched conditions');
+  const probeLayout=()=>evaluate(`[
+    '#bench-probe-results','#bench-advantage-readout','#bench-turn-limits',
+    ...['turn','advantage','climb','acceleration'].map(kind=>'#bench-'+kind+'-plot svg')
+  ].map(selector=>{
+    const {top,left,width,height}=document.querySelector(selector).getBoundingClientRect();
+    return [top,left,width,height];
+  })`);
+  const openLimits=open=>evaluate(`document.getElementById("bench-turn-limits").closest("details").open=${open}`);
+  await select('bench-altitude','25000');
+  await openLimits(true);
+  const hoverSpeeds=[250,280,290,280,250,90,250];
+  for(const width of [1440,390,320]){
+    await send('Emulation.setDeviceMetricsOverride',{width,height:1000,deviceScaleFactor:1,mobile:false});
+    await setProbe(250);
+    const targets=await evaluate(`(()=>{
+      const svg=document.querySelector('#bench-advantage-plot svg');
+      svg.scrollIntoView({block:'center',behavior:'instant'});
+      const {minEas,maxEas}=svg.dataset,matrix=svg.getScreenCTM();
+      return ${JSON.stringify(hoverSpeeds)}.map(eas=>{
+        const x=76+(758-76)*(eas-Number(minEas))/(Number(maxEas)-Number(minEas));
+        const point=new DOMPoint(Math.min(x,757),90).matrixTransform(matrix);
+        return {x:point.x,y:point.y};
+      });
+    })()`);
+    const before=await probeLayout();
+    for(const [i,target] of targets.entries()){
+      await send('Input.dispatchMouseEvent',{type:'mouseMoved',...target});
+      assert.equal((await probe()).easMph,hoverSpeeds[i],`Hover selects ${hoverSpeeds[i]} mph at ${width}px`);
+      assert.deepEqual(await probeLayout(),before,`Plot and readout positions stay fixed at ${hoverSpeeds[i]} mph and ${width}px`);
+    }
+  }
+  await send('Emulation.clearDeviceMetricsOverride');
+  await openLimits(false);
+  checks.push('Hover crosses stalls and both level-speed limits without moving the linked charts at desktop and narrow widths');
+  await select('bench-altitude','40000');
+  const soloLead=await evaluate(`(()=>{
+    const svg=document.querySelector('#bench-advantage-plot svg');
+    const strip=svg.querySelector('[data-turn-solo-lead=a]');
+    const {minEas,maxEas}=svg.dataset;
+    const eas=x=>Number(minEas)+(x-76)*(Number(maxEas)-Number(minEas))/(758-76);
+    return strip&&{from:eas(+strip.getAttribute('x1')),to:eas(+strip.getAttribute('x2')),
+      color:strip.getAttribute('stroke'),dashed:strip.hasAttribute('stroke-dasharray'),label:strip.textContent};
+  })()`);
+  const highMatch=await benchmark();
+  assert.ok(soloLead);
+  assert.ok(Math.abs(soloLead.from-highMatch.rows.b.level.easMph)<.01);
+  assert.ok(Math.abs(soloLead.to-highMatch.rows.a.level.easMph)<.01);
+  assert.equal(soloLead.color,'#83d3ff');
+  assert.equal(soloLead.dashed,true);
+  assert.match(soloLead.label,/Only P-51B.*can sustain flight/);
+  await setProbe(185);
+  assert.match(await evaluate('document.getElementById("bench-advantage-readout").textContent'),/Only P-51B.*can sustain flight/);
+  await setProbe(200);
+  assert.match(await evaluate('document.getElementById("bench-advantage-readout").textContent'),/Difference unavailable/);
+  await select('bench-altitude','10000');
+  checks.push('The 40,000-ft Mustang solo strip spans the two modeled level-speed limits');
   await select('bench-aircraft-a','f4u4');
   await select('bench-aircraft-b','p51b');
   const corsairMatch=await benchmark();
   assert.ok(corsairMatch.rows.a.level.easMph<335&&corsairMatch.rows.b.level.easMph>335);
   assert.ok(await evaluate('document.querySelector("#bench-advantage-plot [data-turn-solo=b]").getTotalLength()>0'));
+  assert.ok(await evaluate('document.querySelector("#bench-advantage-plot [data-turn-solo-lead=b]")'));
   await setProbe(335);
   assert.match(await evaluate('document.getElementById("bench-advantage-readout").textContent'),/Only P-51B.*above maximum level speed/s);
   const accelAxes=await evaluate('(()=>{const s=document.querySelector("#bench-acceleration-plot svg");return [+s.dataset.minEas,+s.dataset.maxEas];})()');
