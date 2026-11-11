@@ -23,10 +23,27 @@ async function run(){
   });
   await new Promise(r=>server.listen(0,'127.0.0.1',r));dir=fs.mkdtempSync(path.join(os.tmpdir(),'eaw-browser-'));
   console.log('Smoke: launching headless browser');
-  browser=spawn(executable,['--headless=new','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-first-run','--no-default-browser-check','--remote-debugging-port=0','--user-data-dir='+dir,'about:blank'],{windowsHide:true,stdio:'ignore'});
+  browser=spawn(executable,['--headless=new','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-first-run','--no-default-browser-check','--remote-debugging-port=0','--user-data-dir='+dir,'about:blank'],{windowsHide:true,stdio:['ignore','ignore','pipe']});
+  let startupOutput='';
+  let announcedPort;
+  browser.stderr.setEncoding('utf8');
+  browser.stderr.on('data',chunk=>{
+    startupOutput=(startupOutput+chunk).slice(-4096);
+    announcedPort??=startupOutput.match(/DevTools listening on ws:\/\/127\.0\.0\.1:(\d+)\//)?.[1];
+  });
   browser.on('error',e=>errors.push(e.message));
-  const port=await until(()=>{try{return Number(fs.readFileSync(path.join(dir,'DevToolsActivePort'),'utf8').split(/\r?\n/)[0]);}catch{return null;}},'browser debug port');
-  const tabs=await (await fetch('http://127.0.0.1:'+port+'/json/list')).json(),target=tabs.find(t=>t.type==='page');
+  const target=await until(async()=>{
+    if(errors.length)throw Error(errors[0]);
+    if(browser.exitCode!==null||browser.signalCode!==null)throw Error('Browser exited during startup: '+(browser.exitCode??browser.signalCode));
+    try{
+      const port=Number(announcedPort??fs.readFileSync(path.join(dir,'DevToolsActivePort'),'utf8').split(/\r?\n/)[0]);
+      if(!port)return null;
+      const tabs=await (await fetch('http://127.0.0.1:'+port+'/json/list',{signal:AbortSignal.timeout(1000)})).json();
+      return tabs.find(tab=>tab.type==='page'&&tab.webSocketDebuggerUrl);
+    }catch{return null;}
+  },'browser debug page',60000).catch(error=>{
+    throw Error([error.message,startupOutput.trim()].filter(Boolean).join('\n'),{cause:error});
+  });
   socket=new WebSocket(target.webSocketDebuggerUrl);await new Promise((resolve,reject)=>{socket.onopen=resolve;socket.onerror=reject;});let serial=0;const pending=new Map();
   socket.onmessage=evt=>{const m=JSON.parse(evt.data);if(m.method==='Runtime.exceptionThrown')errors.push(JSON.stringify(m.params.exceptionDetails));if(m.id){const p=pending.get(m.id);if(p){pending.delete(m.id);m.error?p.reject(Error(m.error.message)):p.resolve(m.result);}}};
   const send=(method,params={})=>new Promise((resolve,reject)=>{const id=++serial,timer=setTimeout(()=>{pending.delete(id);reject(Error('CDP timeout: '+method));},90000);pending.set(id,{resolve:x=>{clearTimeout(timer);resolve(x);},reject:e=>{clearTimeout(timer);reject(e);}});socket.send(JSON.stringify({id,method,params}));});
