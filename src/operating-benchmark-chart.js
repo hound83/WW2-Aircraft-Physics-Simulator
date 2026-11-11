@@ -104,7 +104,7 @@
 
  function appendReadoutDetails(card, point, locked, unit, digits, status) {
   const notes=element('div',null,'bench-note bench-probe-notes');
-  if(status)notes.append(element('p',status));
+  if(status)notes.append(element('p',status,'bench-note'));
   if(point)appendEvidence(notes,point,unit,digits);
   card.append(notes);
   if(locked){

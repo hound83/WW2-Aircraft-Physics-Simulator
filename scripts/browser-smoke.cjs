@@ -474,7 +474,7 @@ async function run(){
   await select('bench-altitude','25000');
   await openLimits(true);
   const hoverSpeeds=[250,280,290,280,250,90,250];
-  for(const width of [1440,390,320]){
+  for(const width of [1440,900,741,390,320]){
     await send('Emulation.setDeviceMetricsOverride',{width,height:1000,deviceScaleFactor:1,mobile:false});
     await setProbe(250);
     const targets=await evaluate(`(()=>{
@@ -493,6 +493,15 @@ async function run(){
       assert.equal((await probe()).easMph,hoverSpeeds[i],`Hover selects ${hoverSpeeds[i]} mph at ${width}px`);
       assert.deepEqual(await probeLayout(),before,`Plot and readout positions stay fixed at ${hoverSpeeds[i]} mph and ${width}px`);
     }
+  }
+  await select('bench-altitude','10000');
+  for(const width of [900,390,320]){
+    await send('Emulation.setDeviceMetricsOverride',{width,height:1000,deviceScaleFactor:1,mobile:false});
+    await setProbe(200);
+    const before=await probeLayout();
+    await setProbe(170);
+    assert.match(await evaluate('document.getElementById("bench-climb-at-speed").textContent'),/Report-adjusted range/);
+    assert.deepEqual(await probeLayout(),before,`Plot positions stay fixed when climb evidence appears at ${width}px`);
   }
   await send('Emulation.clearDeviceMetricsOverride');
   await openLimits(false);
