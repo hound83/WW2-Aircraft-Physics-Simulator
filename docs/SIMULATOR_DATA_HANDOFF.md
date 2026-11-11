@@ -1,14 +1,15 @@
 # Simulator data handoff
 
-**Fighter Sim Inputs v1.1.0**, dated **11 November 2026**, is the current pack. It covers 13 aircraft variants. The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
+**Fighter Sim Inputs v1.2.0**, dated **11 November 2026**, is the current pack. It covers 13 aircraft variants. The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 
 | File in the build | Use |
 | --- | --- |
 | `dist/fighter-sim-inputs.json` | Reviewed cases, preferred values, original observation IDs, GOLD and GOLD* agreement, and curve styles and bounds |
+| `dist/fighter-propeller-efficiency.json` | Original efficiency series, conditional flight replays and the seven-aircraft sensitivity sweep |
 | `dist/research-catalog.json` | Original observations, conditions, source links and report lineage |
 | `dist/fighter-evidence-curves.html` | Standalone evidence viewer for the full research roster |
 
-A local build produces both JSON files. The **physics-validation** artifact from a successful `main` run also includes the standalone viewer. [Physics regression builds](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/regression.yml)
+A local build produces the three JSON files. The **physics-validation** artifact from a successful `main` run also includes the standalone viewer. [Physics regression builds](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/regression.yml)
 
 ## Suggested aircraft
 
@@ -26,6 +27,8 @@ The Normal / Combat benchmark currently has seven modeled aircraft. They are the
 Coverage measures available evidence for the research dossier. The source conditions and supported metrics give a better guide to the initial comparison range. [Full coverage table](research/WW2_FIGHTER_SIM_INPUTS_V1.md#coverage-by-aircraft) · [Variant dossiers and retrieval targets](research/WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md)
 
 ## Notes for Simulator Work
+
+- The propeller study could support a paired replay of P-47B measured shaft power and open-cooling drag, a high-blower check for the F4U-4, and a part-power chart and drag check for the P-38G. The source brackets are scoped to each test condition. The fleet sweep gives separately labeled efficiency scenarios for graph comparisons. [Propeller-efficiency findings](research/WW2_PROPELLER_EFFICIENCY_2026-11-11.md)
 
 - An initial G-2 comparison could focus on level TAS and climb. MT-215 flew at about 2,540 rpm actual, with 1.30–1.32 ata on the documented level-speed branch below full-throttle height. The original Finnish graph covers upper climb from 5 to 10 km. The pack identifies service rating limits, the WNF standardized speed runs and the Soviet gun-pod test as separate evidence. [Finnish trial and climb chart](research/WW2_FIGHTER_CALCULATED_EVIDENCE_2026-11-11.md#findings-that-affect-how-the-data-should-be-used) · [G-2 rating and configuration records](research/WW2_GERMAN_FIGHTER_ARCHIVE_2026-11-11.md#bf-109-g-2)
 - The pack's accepted cases carry preferred values, conditions, source grades, original observation IDs and uncertainty. Connecting a new profile to its research ID would bring its source-agreement records into the comparison. The existing references describe profile intake and the graph conventions. [Aircraft intake](../references/aircraft-intake.json) · [Data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md#simulator-handoff)

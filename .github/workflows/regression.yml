@@ -36,6 +36,7 @@ jobs:
             dist/build.json
             dist/research-catalog.json
             dist/fighter-sim-inputs.json
+            dist/fighter-propeller-efficiency.json
             dist/fighter-evidence-curves.html
             references/analysis/fighter-derived-evidence-2026-11-11.json
             releases/*.md

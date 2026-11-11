@@ -10,6 +10,7 @@ const { benchmarks, legacyCredits, reviewedCases, rejectedPairs } = require('./f
 
 const root = path.resolve(__dirname, '..');
 const releasePath = 'references/analysis/fighter-sim-inputs-v1.json';
+const propellerPath = 'references/analysis/fighter-propeller-efficiency-v1.json';
 const evidencePath = 'references/analysis/fighter-derived-evidence-2026-11-11.json';
 const baselinePath = 'references/aircraft-readiness-german-archive-2026-11-11.json';
 const interpolatedCharts = new Set(['spitfire-climb-branches', 'p47b-climb-branches', 'p38g-part-power-speed',
@@ -137,14 +138,19 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
   }]));
   const packs = new Set([...originalIds].map(id => observations.get(id).pack_id));
   const baseline = JSON.parse(read(baselinePath));
+  const propeller = read(propellerPath);
   return {
-    schema: 'ww2-fighter-sim-inputs/v1', version: '1.1.0', as_of: evidence.as_of,
+    schema: 'ww2-fighter-sim-inputs/v1', version: '1.2.0', as_of: evidence.as_of,
     scope: 'Historical inputs and conditional estimates for source-case lookups and evidence graphs.',
     originals: {
       catalog: 'research-catalog.json',
       curve_pack: { path: evidencePath, sha256: sha256(read(evidencePath)) },
       coverage_baseline: evidence.baseline,
       source_packs: catalog.source_packs.filter(pack => packs.has(pack.id)),
+    },
+    propeller_efficiency: {
+      path: propellerPath, build_file: 'fighter-propeller-efficiency.json', sha256: sha256(propeller),
+      use: 'original source observations, condition-specific replays and efficiency-only sensitivity',
     },
     tolerances, coverage: scoreCoverage(baseline, evidence, cases),
     cases, rejected_pairs: rejectedPairs,
