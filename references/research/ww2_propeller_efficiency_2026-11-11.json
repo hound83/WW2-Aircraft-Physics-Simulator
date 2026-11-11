@@ -1,6 +1,6 @@
 {
   "schema": "ww2-fighter-evidence-pack/v1",
-  "pack_version": "1.0.0",
+  "pack_version": "1.1.0",
   "compiled": "2026-11-11",
   "purpose": "Original flight and full-scale tunnel propeller efficiency readings with operating conditions and installation identity.",
   "sources": [
@@ -9,8 +9,8 @@
       "aircraft": "Republic P-47C",
       "report": "NACA ACR L4L07 / WR L-177, A. W. Vogeley, December 1944",
       "source": "https://ntrs.nasa.gov/citations/19930093302",
-      "location": "Printed p. 12 Table I, Figures 4–6 and text pp. 4–6.",
-      "notes": "Four-blade Curtiss 714-1C2-12, 12 ft 2 in, engine:propeller reduction 2:1. The slipstream survey supplies thrust. Table I values are read from the retained original scan and include independent printed rounding.",
+      "location": "Printed pp. 12–13 Tables I–II, Figures 4–6 and text pp. 4–6.",
+      "notes": "Four-blade Curtiss 714-1C2-12, 12 ft 2 in, engine:propeller reduction 2:1. The slipstream survey supplies thrust. Table I values are read from the retained original scan and include independent printed rounding. Table II adds 11 indexed-text rows that pass two coefficient checks, with operating conditions retained.",
       "local_scan": "references/import/04_ADDITIONAL_USER_SUPPLIED_FIGURES/NACA_1944_P47C_Table_I_climb_scan_crop.png",
       "original_pdf": "https://ntrs.nasa.gov/api/citations/19930093302/downloads/19930093302.pdf?attachment=true"
     },
@@ -186,6 +186,40 @@
         [24,0.556,0.708,0.01194,0.0922,0.684],
         [25,0.634,0.711,0.01056,0.077,0.737],
         [26,0.676,0.713,0.00971,0.0682,0.76]
+      ]
+    },
+    {
+      "id": "p47c-high-speed",
+      "source_id": "NACA-L4L07",
+      "aircraft": "P-47C / Curtiss 714-1C2-12",
+      "quantity": "propeller_high_speed_coefficients",
+      "speed_basis": "TAS",
+      "source_location": "Table II, printed p. 13, selected runs; corroborating Fig. 11 and Fig. 12 data where available",
+      "source_class": "original-flight-test-table-arithmetic-checked",
+      "conditions": "Four cuffed Curtiss 714-1C2-12 blades. Runs 24-1 through 24-6 are the approximately 2700-engine-RPM, Cp about 0.35 high-load branch. The separate 21-series is Cp about 0.29 and run 12-1 is the reduced-RPM comparison.",
+      "notes": "Each retained indexed table reading passes the rounded eta = J*Ct/Cp and helical tip-Mach checks. Run 24-4 has ambiguous indexed digits and remains linked at the original page.",
+      "columns": [
+        "run",
+        "advance_ratio",
+        "power_coefficient",
+        "thrust_coefficient",
+        "efficiency",
+        "prop_rev_per_sec",
+        "mach",
+        "tip_mach"
+      ],
+      "rows": [
+        ["24-6",1.59,0.343,0.171,0.792,22.62,0.431,0.952],
+        ["24-5",1.84,0.347,0.151,0.801,22.47,0.495,0.979],
+        ["24-1",2.08,0.352,0.134,0.786,22.44,0.557,1.009],
+        ["24-2",2.21,0.351,0.121,0.759,22.46,0.594,1.035],
+        ["24-3",2.45,0.358,0.107,0.735,22.3,0.655,1.064],
+        ["21-13",1.95,0.295,0.122,0.803,22.49,0.508,0.96],
+        ["21-12",2.14,0.291,0.108,0.797,22.41,0.554,0.984],
+        ["21-11",2.32,0.292,0.096,0.758,22.41,0.604,1.015],
+        ["21-10",2.55,0.29,0.08,0.704,22.45,0.662,1.047],
+        ["21-9",2.68,0.282,0.071,0.672,22.42,0.695,1.071],
+        ["12-1",2.54,0.33,0.109,0.842,17.81,0.505,0.803]
       ]
     }
   ],

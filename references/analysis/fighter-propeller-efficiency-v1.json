@@ -1,11 +1,11 @@
 {
   "schema": "ww2-fighter-propeller-efficiency/v1",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "replay_base": {
     "version": "4.9.0-rc.1",
     "commit": "079d955d58425637cffcd84540198dde7f2a0a5d"
   },
-  "as_of": "2026-11-11",
+  "as_of": "2026-11-12",
   "primary_series": [
     {
       "id": "p47c-military-165",
@@ -1823,6 +1823,3222 @@
         ]
       }
     ]
+  },
+  "working_reference": {
+    "date": "2026-11-12",
+    "test_base": {
+      "version": "4.9.0-rc.2",
+      "commit": "2863e95a9fc0f571c7f5078f5ebedd3d12c82019"
+    },
+    "reference_values": {
+      "grade": "calculated",
+      "baseline_eta": 0.8,
+      "p47b_military_climb_eta": 0.76,
+      "p47b_military_climb_donor_span": [
+        0.751863,
+        0.765391
+      ],
+      "rule": "Use 80% as the fixed shaft-to-useful-power starting value. At the documented Curtiss 714 P-47B military climb condition, use 76% and one fixed open-cooling drag area.",
+      "basis": "80% is Greg’s provisional constant. 76% rounds the average of the three close military-climb matches to NACA L4L07 at 5000, 10000 and 12600 ft. Values transferred to another installation are calculated reference inputs.",
+      "p47b_military_level_tip_mach_eta": [
+        [
+          0.979,
+          0.8
+        ],
+        [
+          1.035,
+          0.76
+        ]
+      ],
+      "p47b_military_level_basis": "The high-load Curtiss runs 24-5 and 24-2 give 0.801 and 0.759. The 41-5902 level checks support holding the rounded 0.76 through its high-altitude test points. Interpolate within the two nodes and hold the nearest endpoint over the checked P-47B domain.",
+      "constant_level_cases": [
+        {
+          "aircraft": "f4u4",
+          "conditions": "80765 clean level, Normal and Military chart conditions"
+        },
+        {
+          "aircraft": "p51b",
+          "conditions": "43-24777, wing racks fitted, 67 inHg, low blower, 0–10300 ft"
+        },
+        {
+          "aircraft": "spitfire_lfix_bs543",
+          "conditions": "BS.543, radiator shutters closed, +18 lb, low blower, 0–10800 ft"
+        }
+      ]
+    },
+    "flight_efficiency": {
+      "method": "The 80% constant comes from Greg’s worksheet. Compare it and the current momentum/loss equation at each NACA test’s J, Cp and helical tip Mach. The two reports have separate installations.",
+      "curtiss_military_climb_reference_mae_pp": 1.1,
+      "summaries": [
+        {
+          "id": "all retained direct flight readings",
+          "n": 103,
+          "observed_eta": [
+            0.664,
+            0.852
+          ],
+          "mean_eta": 0.7881,
+          "simple_mae_pp": 2.16,
+          "current_mae_pp": 8.15
+        },
+        {
+          "id": "Curtiss military climb",
+          "n": 11,
+          "observed_eta": [
+            0.736,
+            0.783
+          ],
+          "mean_eta": 0.7555,
+          "simple_mae_pp": 4.45,
+          "current_mae_pp": 9.91
+        },
+        {
+          "id": "Curtiss normal climb",
+          "n": 31,
+          "observed_eta": [
+            0.764,
+            0.847
+          ],
+          "mean_eta": 0.8074,
+          "simple_mae_pp": 1.51,
+          "current_mae_pp": 6.35
+        },
+        {
+          "id": "Hamilton climb",
+          "n": 44,
+          "observed_eta": [
+            0.758,
+            0.808
+          ],
+          "mean_eta": 0.789,
+          "simple_mae_pp": 1.2,
+          "current_mae_pp": 8.2
+        },
+        {
+          "id": "fast flight, J 1.55–2.15 and tip Mach 0.94–1.02",
+          "n": 7,
+          "observed_eta": [
+            0.786,
+            0.852
+          ],
+          "mean_eta": 0.8064,
+          "simple_mae_pp": 1.36,
+          "current_mae_pp": 8.68
+        },
+        {
+          "id": "fast flight, tip Mach above 1.02",
+          "n": 7,
+          "observed_eta": [
+            0.664,
+            0.819
+          ],
+          "mean_eta": 0.7304,
+          "simple_mae_pp": 7.5,
+          "current_mae_pp": 12.14
+        }
+      ],
+      "rows": [
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-military-165:0001",
+          "donor": "p47c",
+          "condition": "military",
+          "J": 0.94,
+          "Cp": 0.146,
+          "tipMach": 0.812,
+          "eta": 0.783,
+          "simple_eta": 0.8,
+          "current_eta": 0.854835
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-military-165:0002",
+          "donor": "p47c",
+          "condition": "military",
+          "J": 0.96,
+          "Cp": 0.179,
+          "tipMach": 0.818,
+          "eta": 0.75,
+          "simple_eta": 0.8,
+          "current_eta": 0.846109
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-military-165:0003",
+          "donor": "p47c",
+          "condition": "military",
+          "J": 0.99,
+          "Cp": 0.187,
+          "tipMach": 0.823,
+          "eta": 0.764,
+          "simple_eta": 0.8,
+          "current_eta": 0.849207
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-military-165:0004",
+          "donor": "p47c",
+          "condition": "military",
+          "J": 1.02,
+          "Cp": 0.2,
+          "tipMach": 0.825,
+          "eta": 0.768,
+          "simple_eta": 0.8,
+          "current_eta": 0.850603
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-military-165:0005",
+          "donor": "p47c",
+          "condition": "military",
+          "J": 1.05,
+          "Cp": 0.212,
+          "tipMach": 0.834,
+          "eta": 0.761,
+          "simple_eta": 0.8,
+          "current_eta": 0.852367
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-military-165:0006",
+          "donor": "p47c",
+          "condition": "military",
+          "J": 1.08,
+          "Cp": 0.23,
+          "tipMach": 0.845,
+          "eta": 0.75,
+          "simple_eta": 0.8,
+          "current_eta": 0.852551
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-military-165:0007",
+          "donor": "p47c",
+          "condition": "military",
+          "J": 1.12,
+          "Cp": 0.238,
+          "tipMach": 0.85,
+          "eta": 0.758,
+          "simple_eta": 0.8,
+          "current_eta": 0.857008
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-military-165:0008",
+          "donor": "p47c",
+          "condition": "military",
+          "J": 1.13,
+          "Cp": 0.253,
+          "tipMach": 0.869,
+          "eta": 0.736,
+          "simple_eta": 0.8,
+          "current_eta": 0.854984
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-military-165:0009",
+          "donor": "p47c",
+          "condition": "military",
+          "J": 1.19,
+          "Cp": 0.273,
+          "tipMach": 0.865,
+          "eta": 0.744,
+          "simple_eta": 0.8,
+          "current_eta": 0.859569
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-military-165:0010",
+          "donor": "p47c",
+          "condition": "military",
+          "J": 1.22,
+          "Cp": 0.289,
+          "tipMach": 0.882,
+          "eta": 0.749,
+          "simple_eta": 0.8,
+          "current_eta": 0.860567
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-military-165:0011",
+          "donor": "p47c",
+          "condition": "military",
+          "J": 1.26,
+          "Cp": 0.302,
+          "tipMach": 0.896,
+          "eta": 0.748,
+          "simple_eta": 0.8,
+          "current_eta": 0.863468
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-160:0001",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 0.94,
+          "Cp": 0.14,
+          "tipMach": 0.782,
+          "eta": 0.779,
+          "simple_eta": 0.8,
+          "current_eta": 0.857299
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-160:0002",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 0.99,
+          "Cp": 0.15,
+          "tipMach": 0.79,
+          "eta": 0.798,
+          "simple_eta": 0.8,
+          "current_eta": 0.862178
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-160:0003",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1,
+          "Cp": 0.165,
+          "tipMach": 0.793,
+          "eta": 0.799,
+          "simple_eta": 0.8,
+          "current_eta": 0.858527
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-160:0004",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.06,
+          "Cp": 0.191,
+          "tipMach": 0.792,
+          "eta": 0.81,
+          "simple_eta": 0.8,
+          "current_eta": 0.860141
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-160:0005",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.08,
+          "Cp": 0.189,
+          "tipMach": 0.812,
+          "eta": 0.798,
+          "simple_eta": 0.8,
+          "current_eta": 0.863804
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-160:0006",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.09,
+          "Cp": 0.195,
+          "tipMach": 0.828,
+          "eta": 0.802,
+          "simple_eta": 0.8,
+          "current_eta": 0.86361
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-160:0007",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.15,
+          "Cp": 0.213,
+          "tipMach": 0.825,
+          "eta": 0.806,
+          "simple_eta": 0.8,
+          "current_eta": 0.867428
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-160:0008",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.17,
+          "Cp": 0.228,
+          "tipMach": 0.833,
+          "eta": 0.799,
+          "simple_eta": 0.8,
+          "current_eta": 0.866583
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-160:0009",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.2,
+          "Cp": 0.24,
+          "tipMach": 0.849,
+          "eta": 0.79,
+          "simple_eta": 0.8,
+          "current_eta": 0.867855
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-160:0010",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.26,
+          "Cp": 0.261,
+          "tipMach": 0.852,
+          "eta": 0.813,
+          "simple_eta": 0.8,
+          "current_eta": 0.870985
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-160:0011",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.28,
+          "Cp": 0.272,
+          "tipMach": 0.852,
+          "eta": 0.791,
+          "simple_eta": 0.8,
+          "current_eta": 0.871277
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-160:0012",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.36,
+          "Cp": 0.303,
+          "tipMach": 0.861,
+          "eta": 0.799,
+          "simple_eta": 0.8,
+          "current_eta": 0.874799
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-160:0013",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.41,
+          "Cp": 0.318,
+          "tipMach": 0.874,
+          "eta": 0.808,
+          "simple_eta": 0.8,
+          "current_eta": 0.877526
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-160:0014",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.44,
+          "Cp": 0.337,
+          "tipMach": 0.891,
+          "eta": 0.786,
+          "simple_eta": 0.8,
+          "current_eta": 0.877753
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-160:0015",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.46,
+          "Cp": 0.346,
+          "tipMach": 0.92,
+          "eta": 0.787,
+          "simple_eta": 0.8,
+          "current_eta": 0.878416
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0001",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1,
+          "Cp": 0.145,
+          "tipMach": 0.78,
+          "eta": 0.816,
+          "simple_eta": 0.8,
+          "current_eta": 0.86562
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0002",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.01,
+          "Cp": 0.158,
+          "tipMach": 0.788,
+          "eta": 0.809,
+          "simple_eta": 0.8,
+          "current_eta": 0.862618
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0003",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.07,
+          "Cp": 0.171,
+          "tipMach": 0.786,
+          "eta": 0.838,
+          "simple_eta": 0.8,
+          "current_eta": 0.867598
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0004",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.11,
+          "Cp": 0.184,
+          "tipMach": 0.794,
+          "eta": 0.82,
+          "simple_eta": 0.8,
+          "current_eta": 0.869465
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0005",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.15,
+          "Cp": 0.196,
+          "tipMach": 0.799,
+          "eta": 0.847,
+          "simple_eta": 0.8,
+          "current_eta": 0.871589
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0006",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.16,
+          "Cp": 0.205,
+          "tipMach": 0.818,
+          "eta": 0.845,
+          "simple_eta": 0.8,
+          "current_eta": 0.870663
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0007",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.2,
+          "Cp": 0.22,
+          "tipMach": 0.825,
+          "eta": 0.833,
+          "simple_eta": 0.8,
+          "current_eta": 0.872178
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0008",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.24,
+          "Cp": 0.237,
+          "tipMach": 0.833,
+          "eta": 0.819,
+          "simple_eta": 0.8,
+          "current_eta": 0.873323
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0009",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.28,
+          "Cp": 0.252,
+          "tipMach": 0.843,
+          "eta": 0.822,
+          "simple_eta": 0.8,
+          "current_eta": 0.874912
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0010",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.32,
+          "Cp": 0.269,
+          "tipMach": 0.851,
+          "eta": 0.822,
+          "simple_eta": 0.8,
+          "current_eta": 0.876152
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0011",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.34,
+          "Cp": 0.279,
+          "tipMach": 0.874,
+          "eta": 0.819,
+          "simple_eta": 0.8,
+          "current_eta": 0.876543
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0012",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.37,
+          "Cp": 0.296,
+          "tipMach": 0.875,
+          "eta": 0.811,
+          "simple_eta": 0.8,
+          "current_eta": 0.876871
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0013",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.42,
+          "Cp": 0.32,
+          "tipMach": 0.882,
+          "eta": 0.791,
+          "simple_eta": 0.8,
+          "current_eta": 0.878187
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0014",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.48,
+          "Cp": 0.332,
+          "tipMach": 0.922,
+          "eta": 0.808,
+          "simple_eta": 0.8,
+          "current_eta": 0.881906
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0015",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.54,
+          "Cp": 0.366,
+          "tipMach": 0.922,
+          "eta": 0.801,
+          "simple_eta": 0.8,
+          "current_eta": 0.882797
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-normal-165:0016",
+          "donor": "p47c",
+          "condition": "normal",
+          "J": 1.56,
+          "Cp": 0.379,
+          "tipMach": 0.952,
+          "eta": 0.764,
+          "simple_eta": 0.8,
+          "current_eta": 0.881152
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0001",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 0.92,
+          "Cp": 0.107,
+          "tipMach": 0.811,
+          "eta": 0.778,
+          "simple_eta": 0.8,
+          "current_eta": 0.8684
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0002",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 0.957,
+          "Cp": 0.115,
+          "tipMach": 0.819,
+          "eta": 0.758,
+          "simple_eta": 0.8,
+          "current_eta": 0.87071
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0003",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 0.957,
+          "Cp": 0.121,
+          "tipMach": 0.83,
+          "eta": 0.783,
+          "simple_eta": 0.8,
+          "current_eta": 0.868163
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0004",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 0.978,
+          "Cp": 0.128,
+          "tipMach": 0.83,
+          "eta": 0.779,
+          "simple_eta": 0.8,
+          "current_eta": 0.868614
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0005",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 0.99,
+          "Cp": 0.135,
+          "tipMach": 0.842,
+          "eta": 0.784,
+          "simple_eta": 0.8,
+          "current_eta": 0.867765
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0006",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.029,
+          "Cp": 0.142,
+          "tipMach": 0.844,
+          "eta": 0.781,
+          "simple_eta": 0.8,
+          "current_eta": 0.87104
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0007",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.059,
+          "Cp": 0.151,
+          "tipMach": 0.848,
+          "eta": 0.794,
+          "simple_eta": 0.8,
+          "current_eta": 0.872244
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0008",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.076,
+          "Cp": 0.156,
+          "tipMach": 0.86,
+          "eta": 0.789,
+          "simple_eta": 0.8,
+          "current_eta": 0.872972
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0009",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.096,
+          "Cp": 0.164,
+          "tipMach": 0.866,
+          "eta": 0.795,
+          "simple_eta": 0.8,
+          "current_eta": 0.873222
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0010",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.128,
+          "Cp": 0.171,
+          "tipMach": 0.869,
+          "eta": 0.795,
+          "simple_eta": 0.8,
+          "current_eta": 0.875305
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0011",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.154,
+          "Cp": 0.182,
+          "tipMach": 0.876,
+          "eta": 0.803,
+          "simple_eta": 0.8,
+          "current_eta": 0.875582
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0012",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.201,
+          "Cp": 0.189,
+          "tipMach": 0.883,
+          "eta": 0.801,
+          "simple_eta": 0.8,
+          "current_eta": 0.879237
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0013",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.217,
+          "Cp": 0.198,
+          "tipMach": 0.891,
+          "eta": 0.797,
+          "simple_eta": 0.8,
+          "current_eta": 0.878941
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0014",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.239,
+          "Cp": 0.205,
+          "tipMach": 0.901,
+          "eta": 0.799,
+          "simple_eta": 0.8,
+          "current_eta": 0.879762
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0015",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.251,
+          "Cp": 0.209,
+          "tipMach": 0.917,
+          "eta": 0.807,
+          "simple_eta": 0.8,
+          "current_eta": 0.880172
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0016",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.277,
+          "Cp": 0.218,
+          "tipMach": 0.924,
+          "eta": 0.789,
+          "simple_eta": 0.8,
+          "current_eta": 0.880971
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0017",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.287,
+          "Cp": 0.226,
+          "tipMach": 0.927,
+          "eta": 0.808,
+          "simple_eta": 0.8,
+          "current_eta": 0.880379
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0018",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.331,
+          "Cp": 0.232,
+          "tipMach": 0.939,
+          "eta": 0.8,
+          "simple_eta": 0.8,
+          "current_eta": 0.882907
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0019",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.355,
+          "Cp": 0.241,
+          "tipMach": 0.944,
+          "eta": 0.802,
+          "simple_eta": 0.8,
+          "current_eta": 0.883147
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0020",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.379,
+          "Cp": 0.249,
+          "tipMach": 0.958,
+          "eta": 0.801,
+          "simple_eta": 0.8,
+          "current_eta": 0.882401
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0021",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.399,
+          "Cp": 0.256,
+          "tipMach": 0.961,
+          "eta": 0.798,
+          "simple_eta": 0.8,
+          "current_eta": 0.882582
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0022",
+          "donor": "p47d",
+          "condition": "normal",
+          "J": 1.42,
+          "Cp": 0.263,
+          "tipMach": 0.969,
+          "eta": 0.8,
+          "simple_eta": 0.8,
+          "current_eta": 0.881989
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0023",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 0.974,
+          "Cp": 0.16,
+          "tipMach": 0.869,
+          "eta": 0.786,
+          "simple_eta": 0.8,
+          "current_eta": 0.855725
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0024",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.019,
+          "Cp": 0.172,
+          "tipMach": 0.884,
+          "eta": 0.777,
+          "simple_eta": 0.8,
+          "current_eta": 0.859376
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0025",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.061,
+          "Cp": 0.188,
+          "tipMach": 0.892,
+          "eta": 0.786,
+          "simple_eta": 0.8,
+          "current_eta": 0.861183
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0026",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.128,
+          "Cp": 0.2,
+          "tipMach": 0.912,
+          "eta": 0.791,
+          "simple_eta": 0.8,
+          "current_eta": 0.867686
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0027",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.156,
+          "Cp": 0.215,
+          "tipMach": 0.911,
+          "eta": 0.797,
+          "simple_eta": 0.8,
+          "current_eta": 0.867749
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0028",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.187,
+          "Cp": 0.23,
+          "tipMach": 0.924,
+          "eta": 0.783,
+          "simple_eta": 0.8,
+          "current_eta": 0.868331
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0029",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.235,
+          "Cp": 0.239,
+          "tipMach": 0.936,
+          "eta": 0.788,
+          "simple_eta": 0.8,
+          "current_eta": 0.871896
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0030",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.273,
+          "Cp": 0.25,
+          "tipMach": 0.948,
+          "eta": 0.798,
+          "simple_eta": 0.8,
+          "current_eta": 0.873147
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0031",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.297,
+          "Cp": 0.262,
+          "tipMach": 0.959,
+          "eta": 0.782,
+          "simple_eta": 0.8,
+          "current_eta": 0.872285
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0032",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.322,
+          "Cp": 0.27,
+          "tipMach": 0.968,
+          "eta": 0.781,
+          "simple_eta": 0.8,
+          "current_eta": 0.872162
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0033",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 0.88,
+          "Cp": 0.125,
+          "tipMach": 0.874,
+          "eta": 0.776,
+          "simple_eta": 0.8,
+          "current_eta": 0.85227
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0034",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 0.916,
+          "Cp": 0.142,
+          "tipMach": 0.879,
+          "eta": 0.769,
+          "simple_eta": 0.8,
+          "current_eta": 0.851827
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0035",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 0.979,
+          "Cp": 0.15,
+          "tipMach": 0.874,
+          "eta": 0.785,
+          "simple_eta": 0.8,
+          "current_eta": 0.860318
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0036",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.025,
+          "Cp": 0.167,
+          "tipMach": 0.876,
+          "eta": 0.78,
+          "simple_eta": 0.8,
+          "current_eta": 0.862006
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0037",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.049,
+          "Cp": 0.182,
+          "tipMach": 0.888,
+          "eta": 0.776,
+          "simple_eta": 0.8,
+          "current_eta": 0.861089
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0038",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.102,
+          "Cp": 0.193,
+          "tipMach": 0.894,
+          "eta": 0.793,
+          "simple_eta": 0.8,
+          "current_eta": 0.865905
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0039",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.139,
+          "Cp": 0.206,
+          "tipMach": 0.903,
+          "eta": 0.775,
+          "simple_eta": 0.8,
+          "current_eta": 0.867663
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0040",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.175,
+          "Cp": 0.225,
+          "tipMach": 0.909,
+          "eta": 0.789,
+          "simple_eta": 0.8,
+          "current_eta": 0.867925
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0041",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.213,
+          "Cp": 0.231,
+          "tipMach": 0.927,
+          "eta": 0.795,
+          "simple_eta": 0.8,
+          "current_eta": 0.871294
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0042",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.246,
+          "Cp": 0.248,
+          "tipMach": 0.936,
+          "eta": 0.786,
+          "simple_eta": 0.8,
+          "current_eta": 0.871396
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0043",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.27,
+          "Cp": 0.257,
+          "tipMach": 0.944,
+          "eta": 0.794,
+          "simple_eta": 0.8,
+          "current_eta": 0.871876
+        },
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47d-hamilton-standard-climb-coefficients:0044",
+          "donor": "p47d",
+          "condition": "military",
+          "J": 1.317,
+          "Cp": 0.261,
+          "tipMach": 0.959,
+          "eta": 0.788,
+          "simple_eta": 0.8,
+          "current_eta": 0.874542
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-high-speed:0001",
+          "donor": "p47c",
+          "condition": "high-speed",
+          "J": 1.59,
+          "Cp": 0.343,
+          "tipMach": 0.952,
+          "eta": 0.792,
+          "simple_eta": 0.8,
+          "current_eta": 0.887146
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-high-speed:0002",
+          "donor": "p47c",
+          "condition": "high-speed",
+          "J": 1.84,
+          "Cp": 0.347,
+          "tipMach": 0.979,
+          "eta": 0.801,
+          "simple_eta": 0.8,
+          "current_eta": 0.89382
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-high-speed:0003",
+          "donor": "p47c",
+          "condition": "high-speed",
+          "J": 2.08,
+          "Cp": 0.352,
+          "tipMach": 1.009,
+          "eta": 0.786,
+          "simple_eta": 0.8,
+          "current_eta": 0.885653
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-high-speed:0004",
+          "donor": "p47c",
+          "condition": "high-speed",
+          "J": 2.21,
+          "Cp": 0.351,
+          "tipMach": 1.035,
+          "eta": 0.759,
+          "simple_eta": 0.8,
+          "current_eta": 0.872647
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-high-speed:0005",
+          "donor": "p47c",
+          "condition": "high-speed",
+          "J": 2.45,
+          "Cp": 0.358,
+          "tipMach": 1.064,
+          "eta": 0.735,
+          "simple_eta": 0.8,
+          "current_eta": 0.846739
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-high-speed:0006",
+          "donor": "p47c",
+          "condition": "high-speed",
+          "J": 1.95,
+          "Cp": 0.295,
+          "tipMach": 0.96,
+          "eta": 0.803,
+          "simple_eta": 0.8,
+          "current_eta": 0.901722
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-high-speed:0007",
+          "donor": "p47c",
+          "condition": "high-speed",
+          "J": 2.14,
+          "Cp": 0.291,
+          "tipMach": 0.984,
+          "eta": 0.797,
+          "simple_eta": 0.8,
+          "current_eta": 0.894024
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-high-speed:0008",
+          "donor": "p47c",
+          "condition": "high-speed",
+          "J": 2.32,
+          "Cp": 0.292,
+          "tipMach": 1.015,
+          "eta": 0.758,
+          "simple_eta": 0.8,
+          "current_eta": 0.877267
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-high-speed:0009",
+          "donor": "p47c",
+          "condition": "high-speed",
+          "J": 2.55,
+          "Cp": 0.29,
+          "tipMach": 1.047,
+          "eta": 0.704,
+          "simple_eta": 0.8,
+          "current_eta": 0.849145
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-high-speed:0010",
+          "donor": "p47c",
+          "condition": "high-speed",
+          "J": 2.68,
+          "Cp": 0.282,
+          "tipMach": 1.071,
+          "eta": 0.672,
+          "simple_eta": 0.8,
+          "current_eta": 0.826696
+        },
+        {
+          "id": "ww2_propeller_efficiency_2026-11-11:p47c-high-speed:0011",
+          "donor": "p47c",
+          "condition": "high-speed",
+          "J": 2.54,
+          "Cp": 0.33,
+          "tipMach": 0.803,
+          "eta": 0.842,
+          "simple_eta": 0.8,
+          "current_eta": 0.876622
+        },
+        {
+          "id": "NACA L5G09a Table II 5-29",
+          "donor": "p47d",
+          "condition": "high-speed",
+          "J": 1.152,
+          "Cp": 0.184,
+          "tipMach": 0.91,
+          "eta": 0.761,
+          "simple_eta": 0.8,
+          "current_eta": 0.874838
+        },
+        {
+          "id": "NACA L5G09a Table II 5-26",
+          "donor": "p47d",
+          "condition": "high-speed",
+          "J": 1.945,
+          "Cp": 0.185,
+          "tipMach": 0.996,
+          "eta": 0.814,
+          "simple_eta": 0.8,
+          "current_eta": 0.901491
+        },
+        {
+          "id": "NACA L5G09a Table II 5-24",
+          "donor": "p47d",
+          "condition": "high-speed",
+          "J": 2.486,
+          "Cp": 0.175,
+          "tipMach": 1.079,
+          "eta": 0.664,
+          "simple_eta": 0.8,
+          "current_eta": 0.842232
+        },
+        {
+          "id": "NACA L5G09a Table II 5-12",
+          "donor": "p47d",
+          "condition": "high-speed",
+          "J": 2.252,
+          "Cp": 0.245,
+          "tipMach": 1.084,
+          "eta": 0.76,
+          "simple_eta": 0.8,
+          "current_eta": 0.851784
+        },
+        {
+          "id": "NACA L5G09a Table II 15-24",
+          "donor": "p47d",
+          "condition": "high-speed",
+          "J": 1.694,
+          "Cp": 0.246,
+          "tipMach": 1.052,
+          "eta": 0.819,
+          "simple_eta": 0.8,
+          "current_eta": 0.873302
+        },
+        {
+          "id": "NACA L5G09a Table II 17-19",
+          "donor": "p47d",
+          "condition": "high-speed",
+          "J": 1.845,
+          "Cp": 0.256,
+          "tipMach": 1.02,
+          "eta": 0.852,
+          "simple_eta": 0.8,
+          "current_eta": 0.889009
+        }
+      ]
+    },
+    "level_method": "Condition both calculations on the same shaft power and weight. The 80% model sets one clean drag coefficient from the designated speed anchor. The other rows check the transfer. Induced drag uses the existing geometry and e.",
+    "level": [
+      {
+        "aircraft": "spitfire_lfix_bs543",
+        "cd0": 0.01947279,
+        "current_cd0": 0.022332693217227445,
+        "e": 0.6,
+        "anchor": {
+          "altFt": 0,
+          "tasMph": 336,
+          "weightLb": 7110,
+          "rating": "combat+18",
+          "gear": "low",
+          "bhp": 1600,
+          "rpm": 3000,
+          "anchor": true,
+          "role": "source checkpoint"
+        },
+        "summary_mph": {
+          "count": 20,
+          "current_mae": 0.98,
+          "simple_mae": 6.01
+        },
+        "low_blower_mph": {
+          "count": 6,
+          "current_mae": 0.39,
+          "simple_mae": 1.13
+        },
+        "rows": [
+          {
+            "altFt": 0,
+            "tasMph": 336,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "low",
+            "bhp": 1600,
+            "rpm": 3000,
+            "anchor": true,
+            "role": "source checkpoint",
+            "observed": 336,
+            "current": 336,
+            "simple": 336,
+            "implied_eta_at_reference_drag": 0.8
+          },
+          {
+            "altFt": 2000,
+            "tasMph": 345,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "low",
+            "bhp": 1636.5217391304348,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 345,
+            "current": 344.978,
+            "simple": 345.199,
+            "implied_eta_at_reference_drag": 0.79871
+          },
+          {
+            "altFt": 4000,
+            "tasMph": 353,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "low",
+            "bhp": 1673.0434782608695,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 353,
+            "current": 354.179,
+            "simple": 354.68,
+            "implied_eta_at_reference_drag": 0.789427
+          },
+          {
+            "altFt": 6000,
+            "tasMph": 363,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "low",
+            "bhp": 1705,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 363,
+            "current": 363.447,
+            "simple": 364.111,
+            "implied_eta_at_reference_drag": 0.793185
+          },
+          {
+            "altFt": 8000,
+            "tasMph": 372,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "low",
+            "bhp": 1705,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 372,
+            "current": 371.813,
+            "simple": 371.374,
+            "implied_eta_at_reference_drag": 0.803774
+          },
+          {
+            "altFt": 10000,
+            "tasMph": 380,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "low",
+            "bhp": 1705,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 380,
+            "current": 380.437,
+            "simple": 378.878,
+            "implied_eta_at_reference_drag": 0.806614
+          },
+          {
+            "altFt": 10800,
+            "tasMph": 384,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "low",
+            "bhp": 1705,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 384,
+            "current": 383.961,
+            "simple": 381.95,
+            "implied_eta_at_reference_drag": 0.812004
+          },
+          {
+            "altFt": 12000,
+            "tasMph": 384,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "low",
+            "bhp": 1632.03,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 384,
+            "current": 383.582,
+            "simple": 380.572,
+            "implied_eta_at_reference_drag": 0.820079
+          },
+          {
+            "altFt": 14000,
+            "tasMph": 383.5,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "low",
+            "bhp": 1512.01,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 383.5,
+            "current": 382.472,
+            "simple": 377.75,
+            "implied_eta_at_reference_drag": 0.833686
+          },
+          {
+            "altFt": 16000,
+            "tasMph": 383,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "low",
+            "bhp": 1412.99,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 383,
+            "current": 382.446,
+            "simple": 376.049,
+            "implied_eta_at_reference_drag": 0.84043
+          },
+          {
+            "altFt": 18000,
+            "tasMph": 382,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "low",
+            "bhp": 1329.59,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 382,
+            "current": 383.271,
+            "simple": 375.225,
+            "implied_eta_at_reference_drag": 0.838838
+          },
+          {
+            "altFt": 16000,
+            "tasMph": 381.5,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "high",
+            "bhp": 1580,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 381.5,
+            "current": 384.331,
+            "simple": 391.908,
+            "implied_eta_at_reference_drag": 0.743673
+          },
+          {
+            "altFt": 18000,
+            "tasMph": 390.5,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "high",
+            "bhp": 1580,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 390.5,
+            "current": 391.917,
+            "simple": 400.207,
+            "implied_eta_at_reference_drag": 0.748674
+          },
+          {
+            "altFt": 20000,
+            "tasMph": 399,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "high",
+            "bhp": 1580,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 399,
+            "current": 399.6,
+            "simple": 408.793,
+            "implied_eta_at_reference_drag": 0.749548
+          },
+          {
+            "altFt": 22000,
+            "tasMph": 407,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "high",
+            "bhp": 1580,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 407,
+            "current": 407.365,
+            "simple": 417.678,
+            "implied_eta_at_reference_drag": 0.746541
+          },
+          {
+            "altFt": 24000,
+            "tasMph": 406,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "high",
+            "bhp": 1442.95,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 406,
+            "current": 402.649,
+            "simple": 412.502,
+            "implied_eta_at_reference_drag": 0.767432
+          },
+          {
+            "altFt": 26000,
+            "tasMph": 403,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "high",
+            "bhp": 1347.77,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 403,
+            "current": 400.843,
+            "simple": 410.642,
+            "implied_eta_at_reference_drag": 0.762518
+          },
+          {
+            "altFt": 28000,
+            "tasMph": 399.5,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "high",
+            "bhp": 1252.59,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 399.5,
+            "current": 398.097,
+            "simple": 407.721,
+            "implied_eta_at_reference_drag": 0.760589
+          },
+          {
+            "altFt": 30000,
+            "tasMph": 395,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "high",
+            "bhp": 1162.65,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 395,
+            "current": 394.834,
+            "simple": 404.208,
+            "implied_eta_at_reference_drag": 0.75713
+          },
+          {
+            "altFt": 32000,
+            "tasMph": 389,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "high",
+            "bhp": 1067.47,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 389,
+            "current": 389.488,
+            "simple": 398.277,
+            "implied_eta_at_reference_drag": 0.75825
+          },
+          {
+            "altFt": 34000,
+            "tasMph": 381,
+            "weightLb": 7110,
+            "rating": "combat+18",
+            "gear": "high",
+            "bhp": 972.29,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 381,
+            "current": 382.167,
+            "simple": 390.004,
+            "implied_eta_at_reference_drag": 0.761279
+          }
+        ]
+      },
+      {
+        "aircraft": "bf109f4",
+        "cd0": 0.02217837,
+        "current_cd0": 0.02542899193686372,
+        "e": 0.78,
+        "anchor": {
+          "altFt": 0,
+          "tasMph": 325,
+          "weightLb": 6371,
+          "rating": "combat",
+          "gear": "fluid",
+          "bhp": 1183.584,
+          "rpm": 2500,
+          "anchor": true,
+          "role": "source checkpoint"
+        },
+        "summary_mph": {
+          "count": 1,
+          "current_mae": 3.1,
+          "simple_mae": 2.94
+        },
+        "rows": [
+          {
+            "altFt": 0,
+            "tasMph": 325,
+            "weightLb": 6371,
+            "rating": "combat",
+            "gear": "fluid",
+            "bhp": 1183.584,
+            "rpm": 2500,
+            "anchor": true,
+            "role": "source checkpoint",
+            "observed": 325,
+            "current": 325,
+            "simple": 325,
+            "implied_eta_at_reference_drag": 0.8
+          },
+          {
+            "altFt": 0,
+            "tasMph": 336,
+            "weightLb": 6371,
+            "rating": "emergency",
+            "gear": "fluid",
+            "bhp": 1331.532,
+            "rpm": 2700,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 336,
+            "current": 339.1,
+            "simple": 338.942,
+            "implied_eta_at_reference_drag": 0.780595
+          }
+        ]
+      },
+      {
+        "aircraft": "p47b",
+        "cd0": 0.01888452,
+        "current_cd0": 0.02182668614955703,
+        "e": 0.7,
+        "anchor": {
+          "altFt": 5000,
+          "tasMph": 352,
+          "weightLb": 12565,
+          "rating": "military",
+          "gear": "turbo",
+          "bhp": 2000,
+          "rpm": 2700,
+          "anchor": true,
+          "role": "source checkpoint"
+        },
+        "summary_mph": {
+          "count": 5,
+          "current_mae": 0.81,
+          "simple_mae": 8.47
+        },
+        "same_blade_curve_mph": {
+          "count": 5,
+          "current_mae": 0.81,
+          "simple_mae": 1.49
+        },
+        "rows": [
+          {
+            "altFt": 5000,
+            "tasMph": 352,
+            "weightLb": 12565,
+            "rating": "military",
+            "gear": "turbo",
+            "bhp": 2000,
+            "rpm": 2700,
+            "anchor": true,
+            "role": "source checkpoint",
+            "observed": 352,
+            "current": 352,
+            "simple": 352,
+            "implied_eta_at_reference_drag": 0.8,
+            "same_blade_curve": 352
+          },
+          {
+            "altFt": 15000,
+            "tasMph": 386,
+            "weightLb": 12565,
+            "rating": "military",
+            "gear": "turbo",
+            "bhp": 2000,
+            "rpm": 2700,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 386,
+            "current": 386.056,
+            "simple": 387.612,
+            "implied_eta_at_reference_drag": 0.791592,
+            "same_blade_curve": 387.612
+          },
+          {
+            "altFt": 25000,
+            "tasMph": 420,
+            "weightLb": 12565,
+            "rating": "military",
+            "gear": "turbo",
+            "bhp": 2000,
+            "rpm": 2700,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 420,
+            "current": 421.459,
+            "simple": 428.908,
+            "implied_eta_at_reference_drag": 0.760818,
+            "same_blade_curve": 419.81
+          },
+          {
+            "altFt": 27800,
+            "tasMph": 429,
+            "weightLb": 12565,
+            "rating": "military",
+            "gear": "turbo",
+            "bhp": 2000,
+            "rpm": 2700,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 429,
+            "current": 431.264,
+            "simple": 441.588,
+            "implied_eta_at_reference_drag": 0.747664,
+            "same_blade_curve": 432.043
+          },
+          {
+            "altFt": 30000,
+            "tasMph": 426,
+            "weightLb": 12565,
+            "rating": "military",
+            "gear": "turbo",
+            "bhp": 1845,
+            "rpm": 2700,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 426,
+            "current": 426.048,
+            "simple": 436.288,
+            "implied_eta_at_reference_drag": 0.75868,
+            "same_blade_curve": 426.338
+          },
+          {
+            "altFt": 34000,
+            "tasMph": 412,
+            "weightLb": 12565,
+            "rating": "military",
+            "gear": "turbo",
+            "bhp": 1575,
+            "rpm": 2700,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 412,
+            "current": 411.801,
+            "simple": 420.949,
+            "implied_eta_at_reference_drag": 0.767815,
+            "same_blade_curve": 409.75
+          }
+        ]
+      },
+      {
+        "aircraft": "p51b",
+        "cd0": 0.01601467,
+        "current_cd0": 0.018397874493288696,
+        "e": 0.92,
+        "anchor": {
+          "altFt": 0,
+          "tasMph": 361.5,
+          "weightLb": 9240,
+          "rating": "67inHg",
+          "gear": "low",
+          "bhp": 1580,
+          "rpm": 3000,
+          "anchor": true,
+          "role": "source checkpoint"
+        },
+        "summary_mph": {
+          "count": 11,
+          "current_mae": 0.79,
+          "simple_mae": 7.3
+        },
+        "low_blower_mph": {
+          "count": 3,
+          "current_mae": 0.06,
+          "simple_mae": 0.69
+        },
+        "rows": [
+          {
+            "altFt": 0,
+            "tasMph": 361.5,
+            "weightLb": 9240,
+            "rating": "67inHg",
+            "gear": "low",
+            "bhp": 1580,
+            "rpm": 3000,
+            "anchor": true,
+            "role": "source checkpoint",
+            "observed": 361.5,
+            "current": 361.5,
+            "simple": 361.5,
+            "implied_eta_at_reference_drag": 0.8
+          },
+          {
+            "altFt": 4000,
+            "tasMph": 380,
+            "weightLb": 9240,
+            "rating": "67inHg",
+            "gear": "low",
+            "bhp": 1622,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 380,
+            "current": 380.045,
+            "simple": 379.09,
+            "implied_eta_at_reference_drag": 0.805377
+          },
+          {
+            "altFt": 7400,
+            "tasMph": 395.5,
+            "weightLb": 9240,
+            "rating": "67inHg",
+            "gear": "low",
+            "bhp": 1660,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 395.5,
+            "current": 395.414,
+            "simple": 395.161,
+            "implied_eta_at_reference_drag": 0.801915
+          },
+          {
+            "altFt": 10300,
+            "tasMph": 409,
+            "weightLb": 9240,
+            "rating": "67inHg",
+            "gear": "low",
+            "bhp": 1695,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 409,
+            "current": 409.041,
+            "simple": 409.826,
+            "implied_eta_at_reference_drag": 0.795528
+          },
+          {
+            "altFt": 18000,
+            "tasMph": 408,
+            "weightLb": 9240,
+            "rating": "67inHg",
+            "gear": "high",
+            "bhp": 1390,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 408,
+            "current": 407.443,
+            "simple": 412.316,
+            "implied_eta_at_reference_drag": 0.778008
+          },
+          {
+            "altFt": 20800,
+            "tasMph": 417,
+            "weightLb": 9240,
+            "rating": "67inHg",
+            "gear": "high",
+            "bhp": 1390,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 417,
+            "current": 416.693,
+            "simple": 424.616,
+            "implied_eta_at_reference_drag": 0.762951
+          },
+          {
+            "altFt": 24000,
+            "tasMph": 426,
+            "weightLb": 9240,
+            "rating": "67inHg",
+            "gear": "high",
+            "bhp": 1390,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 426,
+            "current": 427.349,
+            "simple": 439.39,
+            "implied_eta_at_reference_drag": 0.738602
+          },
+          {
+            "altFt": 28000,
+            "tasMph": 419,
+            "weightLb": 9240,
+            "rating": "67inHg",
+            "gear": "high",
+            "bhp": 1200,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 419,
+            "current": 419.071,
+            "simple": 432.932,
+            "implied_eta_at_reference_drag": 0.738865
+          },
+          {
+            "altFt": 32000,
+            "tasMph": 410,
+            "weightLb": 9240,
+            "rating": "67inHg",
+            "gear": "high",
+            "bhp": 1038,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 410,
+            "current": 409.45,
+            "simple": 424.93,
+            "implied_eta_at_reference_drag": 0.738901
+          },
+          {
+            "altFt": 0,
+            "tasMph": 376.5,
+            "weightLb": 9240,
+            "rating": "75inHg",
+            "gear": "low",
+            "bhp": 1788,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 376.5,
+            "current": 377.068,
+            "simple": 377.715,
+            "implied_eta_at_reference_drag": 0.792733
+          },
+          {
+            "altFt": 18000,
+            "tasMph": 423,
+            "weightLb": 9240,
+            "rating": "75inHg",
+            "gear": "high",
+            "bhp": 1577,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 423,
+            "current": 425.042,
+            "simple": 432.173,
+            "implied_eta_at_reference_drag": 0.755003
+          },
+          {
+            "altFt": 20800,
+            "tasMph": 431,
+            "weightLb": 9240,
+            "rating": "75inHg",
+            "gear": "high",
+            "bhp": 1572,
+            "rpm": 3000,
+            "anchor": false,
+            "role": "source checkpoint",
+            "observed": 431,
+            "current": 434.082,
+            "simple": 444.706,
+            "implied_eta_at_reference_drag": 0.735827
+          }
+        ]
+      },
+      {
+        "aircraft": "fw190a4",
+        "cd0": 0.02428186,
+        "current_cd0": 0.026837102706126808,
+        "e": 0.78,
+        "anchor": {
+          "altFt": 0,
+          "tasMph": 324.97713354012564,
+          "weightLb": 8531.889546554761,
+          "rating": "combat",
+          "gear": "low",
+          "bhp": 1499.2065073060417,
+          "rpm": 2400,
+          "anchor": true,
+          "role": "drag-anchor"
+        },
+        "summary_mph": {
+          "count": 7,
+          "current_mae": 6.83,
+          "simple_mae": 22.47
+        },
+        "rows": [
+          {
+            "altFt": 0,
+            "tasMph": 324.97713354012564,
+            "weightLb": 8531.889546554761,
+            "rating": "combat",
+            "gear": "low",
+            "bhp": 1499.2065073060417,
+            "rpm": 2400,
+            "anchor": true,
+            "role": "drag-anchor",
+            "observed": 324.97713354012564,
+            "current": 324.977,
+            "simple": 324.977,
+            "implied_eta_at_reference_drag": 0.8
+          },
+          {
+            "altFt": 3280.839895013123,
+            "tasMph": 341.13278453829633,
+            "weightLb": 8531.889546554761,
+            "rating": "combat",
+            "gear": "low",
+            "bhp": 1499.2065073060417,
+            "rpm": 2400,
+            "anchor": false,
+            "role": "check",
+            "observed": 341.13278453829633,
+            "current": 340.377,
+            "simple": 335.116,
+            "implied_eta_at_reference_drag": 0.839721
+          },
+          {
+            "altFt": 6561.679790026246,
+            "tasMph": 357.28843553646703,
+            "weightLb": 8531.889546554761,
+            "rating": "combat",
+            "gear": "low",
+            "bhp": 1499.2065073060417,
+            "rpm": 2400,
+            "anchor": false,
+            "role": "low-gear inlet anchor",
+            "observed": 357.28843553646703,
+            "current": 357.288,
+            "simple": 345.775,
+            "implied_eta_at_reference_drag": 0.874309
+          },
+          {
+            "altFt": 13123.359580052493,
+            "tasMph": 362.2594050743657,
+            "weightLb": 8531.889546554761,
+            "rating": "combat",
+            "gear": "high",
+            "bhp": 1301.942493186826,
+            "rpm": 2400,
+            "anchor": false,
+            "role": "check",
+            "observed": 362.2594050743657,
+            "current": 370.063,
+            "simple": 349.385,
+            "implied_eta_at_reference_drag": 0.878854
+          },
+          {
+            "altFt": 16404.199475065616,
+            "tasMph": 376.55094249582436,
+            "weightLb": 8531.889546554761,
+            "rating": "combat",
+            "gear": "high",
+            "bhp": 1301.942493186826,
+            "rpm": 2400,
+            "anchor": false,
+            "role": "check",
+            "observed": 376.55094249582436,
+            "current": 381.538,
+            "simple": 360.932,
+            "implied_eta_at_reference_drag": 0.892065
+          },
+          {
+            "altFt": 19685.03937007874,
+            "tasMph": 392.0852223017577,
+            "weightLb": 8531.889546554761,
+            "rating": "combat",
+            "gear": "high",
+            "bhp": 1301.942493186826,
+            "rpm": 2400,
+            "anchor": false,
+            "role": "check",
+            "observed": 392.0852223017577,
+            "current": 393.44,
+            "simple": 373.063,
+            "implied_eta_at_reference_drag": 0.90784
+          },
+          {
+            "altFt": 22801.837270341206,
+            "tasMph": 405.1340173387417,
+            "weightLb": 8531.889546554761,
+            "rating": "combat",
+            "gear": "high",
+            "bhp": 1301.942493186826,
+            "rpm": 2400,
+            "anchor": false,
+            "role": "high-gear inlet anchor",
+            "observed": 405.1340173387417,
+            "current": 405.134,
+            "simple": 385.152,
+            "implied_eta_at_reference_drag": 0.908179
+          },
+          {
+            "altFt": 26246.719160104985,
+            "tasMph": 402.02716137755505,
+            "weightLb": 8531.889546554761,
+            "rating": "combat",
+            "gear": "high",
+            "bhp": 1123.7328222868716,
+            "rpm": 2400,
+            "anchor": false,
+            "role": "check",
+            "observed": 402.02716137755505,
+            "current": 396.154,
+            "simple": 374.923,
+            "implied_eta_at_reference_drag": 0.942974
+          },
+          {
+            "altFt": 29527.55905511811,
+            "tasMph": 395.1920782629444,
+            "weightLb": 8531.889546554761,
+            "rating": "combat",
+            "gear": "high",
+            "bhp": 969.1993185976976,
+            "rpm": 2400,
+            "anchor": false,
+            "role": "check",
+            "observed": 395.1920782629444,
+            "current": 384.469,
+            "simple": 361.366,
+            "implied_eta_at_reference_drag": 0.969364
+          },
+          {
+            "altFt": 32808.39895013123,
+            "tasMph": 384.00739680267236,
+            "weightLb": 8531.889546554761,
+            "rating": "combat",
+            "gear": "high",
+            "bhp": 828.864595135577,
+            "rpm": 2400,
+            "anchor": false,
+            "role": "check",
+            "observed": 384.00739680267236,
+            "current": 367.683,
+            "simple": 341.15,
+            "implied_eta_at_reference_drag": 0.993726
+          }
+        ]
+      },
+      {
+        "aircraft": "p38g",
+        "cd0": 0.02318012,
+        "current_cd0": 0.025885854343933527,
+        "e": 0.78,
+        "anchor": {
+          "altFt": 5000,
+          "tasMph": 346.5,
+          "bhp": 1220,
+          "weightLb": 13550,
+          "rating": "level",
+          "gear": "turbo",
+          "rpm": 3000,
+          "anchor": true,
+          "role": "drag-anchor"
+        },
+        "summary_mph": {
+          "count": 5,
+          "current_mae": 4.99,
+          "simple_mae": 10.28
+        },
+        "rows": [
+          {
+            "altFt": 5000,
+            "tasMph": 346.5,
+            "bhp": 1220,
+            "weightLb": 13550,
+            "rating": "level",
+            "gear": "turbo",
+            "rpm": 3000,
+            "anchor": true,
+            "role": "drag-anchor",
+            "observed": 346.5,
+            "current": 346.5,
+            "simple": 346.5,
+            "implied_eta_at_reference_drag": 0.8
+          },
+          {
+            "altFt": 5000,
+            "tasMph": 355.5,
+            "bhp": 1320,
+            "weightLb": 13550,
+            "rating": "level",
+            "gear": "turbo",
+            "rpm": 3000,
+            "anchor": false,
+            "role": "separate-rating-check",
+            "observed": 355.5,
+            "current": 356.09,
+            "simple": 356.345,
+            "implied_eta_at_reference_drag": 0.794658
+          },
+          {
+            "altFt": 14700,
+            "tasMph": 378,
+            "bhp": 1220,
+            "weightLb": 13525,
+            "rating": "level",
+            "gear": "turbo",
+            "rpm": 3000,
+            "anchor": false,
+            "role": "check",
+            "observed": 378,
+            "current": 379.868,
+            "simple": 382.018,
+            "implied_eta_at_reference_drag": 0.777058
+          },
+          {
+            "altFt": 22600,
+            "tasMph": 404,
+            "bhp": 1225,
+            "weightLb": 13500,
+            "rating": "level",
+            "gear": "turbo",
+            "rpm": 3000,
+            "anchor": false,
+            "role": "check",
+            "observed": 404,
+            "current": 409.341,
+            "simple": 416.207,
+            "implied_eta_at_reference_drag": 0.738331
+          },
+          {
+            "altFt": 24400,
+            "tasMph": 403,
+            "bhp": 1175,
+            "weightLb": 13450,
+            "rating": "level",
+            "gear": "turbo",
+            "rpm": 3000,
+            "anchor": false,
+            "role": "check",
+            "observed": 403,
+            "current": 410.428,
+            "simple": 418.095,
+            "implied_eta_at_reference_drag": 0.725426
+          },
+          {
+            "altFt": 30000,
+            "tasMph": 396,
+            "bhp": 980,
+            "weightLb": 13400,
+            "rating": "level",
+            "gear": "turbo",
+            "rpm": 3000,
+            "anchor": false,
+            "role": "check",
+            "observed": 396,
+            "current": 405.735,
+            "simple": 415.212,
+            "implied_eta_at_reference_drag": 0.710813
+          }
+        ]
+      },
+      {
+        "aircraft": "f4u4",
+        "cd0": 0.01726788,
+        "current_cd0": 0.01934187399493825,
+        "e": 0.78,
+        "anchor": {
+          "altFt": 0,
+          "tasMph": 322.218245,
+          "bhp": 1700,
+          "weightLb": 12500,
+          "rating": "normal",
+          "gear": "test",
+          "rpm": 2600,
+          "anchor": true,
+          "role": "chart power checkpoint",
+          "observation": "ww2_multiaxis_propulsion_trials_2026-11-10:f4u4-normal-military-speed:0001",
+          "chartHpSpan": [
+            1650,
+            1750
+          ]
+        },
+        "summary_mph": {
+          "count": 7,
+          "current_mae": 7.38,
+          "simple_mae": 3.1
+        },
+        "rows": [
+          {
+            "altFt": 0,
+            "tasMph": 322.218245,
+            "bhp": 1700,
+            "weightLb": 12500,
+            "rating": "normal",
+            "gear": "test",
+            "rpm": 2600,
+            "anchor": true,
+            "role": "chart power checkpoint",
+            "observation": "ww2_multiaxis_propulsion_trials_2026-11-10:f4u4-normal-military-speed:0001",
+            "chartHpSpan": [
+              1650,
+              1750
+            ],
+            "observed": 322.218245,
+            "current": 322.218,
+            "simple": 322.218,
+            "implied_eta_at_reference_drag": 0.8,
+            "chart_reading_eta_at_reference_drag": [
+              0.777143,
+              0.824242
+            ]
+          },
+          {
+            "altFt": 8700,
+            "tasMph": 349.836952,
+            "bhp": 1700,
+            "weightLb": 12500,
+            "rating": "normal",
+            "gear": "test",
+            "rpm": 2600,
+            "anchor": false,
+            "role": "chart power checkpoint",
+            "observation": "ww2_multiaxis_propulsion_trials_2026-11-10:f4u4-normal-military-speed:0002",
+            "chartHpSpan": [
+              1650,
+              1750
+            ],
+            "observed": 349.836952,
+            "current": 348.908,
+            "simple": 349.337,
+            "implied_eta_at_reference_drag": 0.80294,
+            "chart_reading_eta_at_reference_drag": [
+              0.779999,
+              0.827272
+            ]
+          },
+          {
+            "altFt": 24600,
+            "tasMph": 406.225145,
+            "bhp": 1630,
+            "weightLb": 12500,
+            "rating": "normal",
+            "gear": "test",
+            "rpm": 2600,
+            "anchor": false,
+            "role": "chart power checkpoint",
+            "observation": "ww2_multiaxis_propulsion_trials_2026-11-10:f4u4-normal-military-speed:0003",
+            "chartHpSpan": [
+              1580,
+              1680
+            ],
+            "observed": 406.225145,
+            "current": 397.827,
+            "simple": 401.339,
+            "implied_eta_at_reference_drag": 0.823022,
+            "chart_reading_eta_at_reference_drag": [
+              0.798527,
+              0.849067
+            ]
+          },
+          {
+            "altFt": 31900,
+            "tasMph": 430.391514,
+            "bhp": 1550,
+            "weightLb": 12500,
+            "rating": "normal",
+            "gear": "test",
+            "rpm": 2600,
+            "anchor": false,
+            "role": "chart power checkpoint",
+            "observation": "ww2_multiaxis_propulsion_trials_2026-11-10:f4u4-normal-military-speed:0004",
+            "chartHpSpan": [
+              1500,
+              1600
+            ],
+            "observed": 430.391514,
+            "current": 414.676,
+            "simple": 422.208,
+            "implied_eta_at_reference_drag": 0.833778,
+            "chart_reading_eta_at_reference_drag": [
+              0.807723,
+              0.861571
+            ]
+          },
+          {
+            "altFt": 0,
+            "tasMph": 348.686173,
+            "bhp": 2100,
+            "weightLb": 12500,
+            "rating": "military",
+            "gear": "test",
+            "rpm": 2800,
+            "anchor": false,
+            "role": "chart power checkpoint",
+            "observation": "ww2_multiaxis_propulsion_trials_2026-11-10:f4u4-normal-military-speed:0005",
+            "chartHpSpan": [
+              2050,
+              2150
+            ],
+            "observed": 348.686173,
+            "current": 348.303,
+            "simple": 348.604,
+            "implied_eta_at_reference_drag": 0.800516,
+            "chart_reading_eta_at_reference_drag": [
+              0.7819,
+              0.820041
+            ]
+          },
+          {
+            "altFt": 4600,
+            "tasMph": 364.796643,
+            "bhp": 2100,
+            "weightLb": 12500,
+            "rating": "military",
+            "gear": "test",
+            "rpm": 2800,
+            "anchor": false,
+            "role": "chart power checkpoint",
+            "observation": "ww2_multiaxis_propulsion_trials_2026-11-10:f4u4-normal-military-speed:0006",
+            "chartHpSpan": [
+              2050,
+              2150
+            ],
+            "observed": 364.796643,
+            "current": 363.439,
+            "simple": 363.994,
+            "implied_eta_at_reference_drag": 0.804775,
+            "chart_reading_eta_at_reference_drag": [
+              0.786059,
+              0.824404
+            ]
+          },
+          {
+            "altFt": 23100,
+            "tasMph": 423.486837,
+            "bhp": 1900,
+            "weightLb": 12500,
+            "rating": "military",
+            "gear": "test",
+            "rpm": 2800,
+            "anchor": false,
+            "role": "chart power checkpoint",
+            "observation": "ww2_multiaxis_propulsion_trials_2026-11-10:f4u4-normal-military-speed:0007",
+            "chartHpSpan": [
+              1850,
+              1950
+            ],
+            "observed": 423.486837,
+            "current": 414.629,
+            "simple": 421.188,
+            "implied_eta_at_reference_drag": 0.810899,
+            "chart_reading_eta_at_reference_drag": [
+              0.790107,
+              0.832815
+            ]
+          },
+          {
+            "altFt": 29000,
+            "tasMph": 443.050088,
+            "bhp": 1800,
+            "weightLb": 12500,
+            "rating": "military",
+            "gear": "test",
+            "rpm": 2800,
+            "anchor": false,
+            "role": "chart power checkpoint",
+            "observation": "ww2_multiaxis_propulsion_trials_2026-11-10:f4u4-normal-military-speed:0008",
+            "chartHpSpan": [
+              1750,
+              1850
+            ],
+            "observed": 443.050088,
+            "current": 427.022,
+            "simple": 438.078,
+            "implied_eta_at_reference_drag": 0.821617,
+            "chart_reading_eta_at_reference_drag": [
+              0.799411,
+              0.845092
+            ]
+          }
+        ]
+      }
+    ],
+    "p47b_independent_level": {
+      "source": "https://www.wwiiaircraftperformance.com/org/p-47/p-47.html",
+      "specimen": "41-5942",
+      "summary_mph": {
+        "count": 3,
+        "current_mae": 2.37,
+        "simple_mae": 2.11
+      },
+      "rows": [
+        {
+          "altFt": 5000,
+          "tasMph": 353,
+          "bhp": 2000,
+          "rpm": 2700,
+          "weightLb": 12620,
+          "rating": "military",
+          "gear": "turbo",
+          "observed": 353,
+          "current": 351.906,
+          "simple": 351.891
+        },
+        {
+          "altFt": 25000,
+          "tasMph": 419,
+          "bhp": 2000,
+          "rpm": 2700,
+          "weightLb": 12620,
+          "rating": "military",
+          "gear": "turbo",
+          "observed": 419,
+          "current": 421.274,
+          "simple": 419.564
+        },
+        {
+          "altFt": 28000,
+          "tasMph": 428,
+          "bhp": 2000,
+          "rpm": 2700,
+          "weightLb": 12620,
+          "rating": "military",
+          "gear": "turbo",
+          "observed": 428,
+          "current": 431.747,
+          "simple": 432.656
+        }
+      ]
+    },
+    "climb_method": "Hold the 80% level drag reference and fit one nonnegative added drag area at the named climb anchor. In the P-47B military replay use the 76% same-blade transfer. Test on the common rows excluded from the older fit and the separate P-47B airframe.",
+    "climb": {
+      "same_airframe": [
+        {
+          "aircraft": "p47b",
+          "fitted_area_m2": 0.13584,
+          "unconstrained_anchor_area_m2": 0.13584,
+          "anchor_alt_ft": 10000,
+          "shared_check_fpm": {
+            "count": 5,
+            "current_mae": 32.41,
+            "simple_mae": 68.98
+          },
+          "rows": [
+            {
+              "altFt": 0,
+              "tasMph": 172,
+              "bhp": 2000,
+              "weightLb": 12565,
+              "observed": 2560,
+              "eta": 0.76,
+              "current": 2629.36,
+              "simple": 2654.78,
+              "role": "fit",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 5000,
+              "tasMph": 183,
+              "bhp": 2000,
+              "weightLb": 12565,
+              "observed": 2545,
+              "eta": 0.76,
+              "current": 2550.09,
+              "simple": 2567.79,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 10000,
+              "tasMph": 196,
+              "bhp": 2000,
+              "weightLb": 12565,
+              "observed": 2465,
+              "eta": 0.76,
+              "current": 2457.41,
+              "simple": 2465,
+              "role": "fit",
+              "candidateAnchor": true
+            },
+            {
+              "altFt": 12600,
+              "tasMph": 204,
+              "bhp": 2000,
+              "weightLb": 12565,
+              "observed": 2410,
+              "eta": 0.76,
+              "current": 2401.7,
+              "simple": 2402.39,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 12600,
+              "tasMph": 195,
+              "bhp": 1625,
+              "weightLb": 12565,
+              "observed": 1800,
+              "eta": 0.8,
+              "current": 1717.13,
+              "simple": 1878.5,
+              "role": "fit",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 15000,
+              "tasMph": 200,
+              "bhp": 1625,
+              "weightLb": 12565,
+              "observed": 1725,
+              "eta": 0.8,
+              "current": 1670.09,
+              "simple": 1831.66,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 20000,
+              "tasMph": 217,
+              "bhp": 1625,
+              "weightLb": 12565,
+              "observed": 1565,
+              "eta": 0.8,
+              "current": 1543.98,
+              "simple": 1696.11,
+              "role": "fit",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 25000,
+              "tasMph": 236,
+              "bhp": 1625,
+              "weightLb": 12565,
+              "observed": 1380,
+              "eta": 0.8,
+              "current": 1399.69,
+              "simple": 1543.77,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 30000,
+              "tasMph": 270,
+              "bhp": 1625,
+              "weightLb": 12565,
+              "observed": 1140,
+              "eta": 0.8,
+              "current": 1173.91,
+              "simple": 1303.19,
+              "role": "fit",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 35000,
+              "tasMph": 305,
+              "bhp": 1365,
+              "weightLb": 12565,
+              "observed": 450,
+              "eta": 0.8,
+              "current": 375.95,
+              "simple": 494.08,
+              "role": "check",
+              "candidateAnchor": false
+            }
+          ]
+        },
+        {
+          "aircraft": "spitfire_lfix_bs543",
+          "fitted_area_m2": 0,
+          "unconstrained_anchor_area_m2": -0.096069,
+          "anchor_alt_ft": 10000,
+          "shared_check_fpm": {
+            "count": 10,
+            "current_mae": 64.52,
+            "simple_mae": 119.83
+          },
+          "rows": [
+            {
+              "altFt": 2000,
+              "tasMph": 176.5,
+              "bhp": 1636.5217391304348,
+              "weightLb": 7485,
+              "observed": 4640,
+              "eta": 0.8,
+              "current": 4583.33,
+              "simple": 4432.42,
+              "role": "fit",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 4000,
+              "tasMph": 182,
+              "bhp": 1673.0434782608695,
+              "weightLb": 7485,
+              "observed": 4660,
+              "eta": 0.8,
+              "current": 4671.98,
+              "simple": 4519.27,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 6000,
+              "tasMph": 187,
+              "bhp": 1705,
+              "weightLb": 7485,
+              "observed": 4690,
+              "eta": 0.8,
+              "current": 4750.22,
+              "simple": 4594.88,
+              "role": "fit",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 7000,
+              "tasMph": 190,
+              "bhp": 1705,
+              "weightLb": 7485,
+              "observed": 4700,
+              "eta": 0.8,
+              "current": 4724.35,
+              "simple": 4571.96,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 8000,
+              "tasMph": 193,
+              "bhp": 1665.73812936611,
+              "weightLb": 7485,
+              "observed": 4560,
+              "eta": 0.8,
+              "current": 4551.82,
+              "simple": 4410.66,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 10000,
+              "tasMph": 199,
+              "bhp": 1590.273390267474,
+              "weightLb": 7485,
+              "observed": 4280,
+              "eta": 0.8,
+              "current": 4215.56,
+              "simple": 4099.12,
+              "role": "fit",
+              "candidateAnchor": true
+            },
+            {
+              "altFt": 12000,
+              "tasMph": 205,
+              "bhp": 1505.2019247626636,
+              "weightLb": 7485,
+              "observed": 4000,
+              "eta": 0.8,
+              "current": 3839.84,
+              "simple": 3754.09,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 14000,
+              "tasMph": 211.5,
+              "bhp": 1540.7058643012033,
+              "weightLb": 7485,
+              "observed": 3860,
+              "eta": 0.8,
+              "current": 3915.9,
+              "simple": 3830.27,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 16000,
+              "tasMph": 218.5,
+              "bhp": 1562.1175929036096,
+              "weightLb": 7485,
+              "observed": 3860,
+              "eta": 0.8,
+              "current": 3932.63,
+              "simple": 3852.73,
+              "role": "fit",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 18000,
+              "tasMph": 223,
+              "bhp": 1562.1175929036096,
+              "weightLb": 7485,
+              "observed": 3860,
+              "eta": 0.8,
+              "current": 3903.6,
+              "simple": 3821.77,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 20000,
+              "tasMph": 224,
+              "bhp": 1482.6028900629838,
+              "weightLb": 7485,
+              "observed": 3560,
+              "eta": 0.8,
+              "current": 3615.12,
+              "simple": 3536.86,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 22000,
+              "tasMph": 225,
+              "bhp": 1409.0634012686899,
+              "weightLb": 7485,
+              "observed": 3270,
+              "eta": 0.8,
+              "current": 3342.93,
+              "simple": 3267.16,
+              "role": "fit",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 24000,
+              "tasMph": 226,
+              "bhp": 1308.6527046109286,
+              "weightLb": 7485,
+              "observed": 2970,
+              "eta": 0.8,
+              "current": 2961.12,
+              "simple": 2896.37,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 26000,
+              "tasMph": 227,
+              "bhp": 1220.6975090594335,
+              "weightLb": 7485,
+              "observed": 2700,
+              "eta": 0.8,
+              "current": 2619.36,
+              "simple": 2562.71,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 28000,
+              "tasMph": 229,
+              "bhp": 1136.433633405245,
+              "weightLb": 7485,
+              "observed": 2400,
+              "eta": 0.8,
+              "current": 2275.48,
+              "simple": 2230.58,
+              "role": "fit",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 30000,
+              "tasMph": 230,
+              "bhp": 1049.985645172587,
+              "weightLb": 7485,
+              "observed": 2120,
+              "eta": 0.8,
+              "current": 1923.62,
+              "simple": 1887.78,
+              "role": "check",
+              "candidateAnchor": false
+            }
+          ]
+        },
+        {
+          "aircraft": "p38g",
+          "fitted_area_m2": 0,
+          "unconstrained_anchor_area_m2": -0.146835,
+          "anchor_alt_ft": 10000,
+          "shared_check_fpm": {
+            "count": 7,
+            "current_mae": 173.31,
+            "simple_mae": 136.4
+          },
+          "rows": [
+            {
+              "altFt": 0,
+              "tasMph": 156,
+              "bhp": 1200,
+              "weightLb": 13900,
+              "observed": 3300,
+              "eta": 0.8,
+              "current": 3710.87,
+              "simple": 3628.93,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 6000,
+              "tasMph": 171,
+              "bhp": 1210,
+              "weightLb": 13900,
+              "observed": 3660,
+              "eta": 0.8,
+              "current": 3679.94,
+              "simple": 3577.52,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 10000,
+              "tasMph": 181,
+              "bhp": 1210,
+              "weightLb": 13900,
+              "observed": 3630,
+              "eta": 0.8,
+              "current": 3630,
+              "simple": 3517.98,
+              "role": "cooling-anchor",
+              "candidateAnchor": true
+            },
+            {
+              "altFt": 15000,
+              "tasMph": 196,
+              "bhp": 1210,
+              "weightLb": 13900,
+              "observed": 3500,
+              "eta": 0.8,
+              "current": 3555.41,
+              "simple": 3428.62,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 20000,
+              "tasMph": 219,
+              "bhp": 1195,
+              "weightLb": 13900,
+              "observed": 3280,
+              "eta": 0.8,
+              "current": 3384.23,
+              "simple": 3232.82,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 25000,
+              "tasMph": 230,
+              "bhp": 1090,
+              "weightLb": 13900,
+              "observed": 2680,
+              "eta": 0.8,
+              "current": 2907.47,
+              "simple": 2769.9,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 30000,
+              "tasMph": 246,
+              "bhp": 985,
+              "weightLb": 13900,
+              "observed": 2100,
+              "eta": 0.8,
+              "current": 2385.28,
+              "simple": 2272.66,
+              "role": "check",
+              "candidateAnchor": false
+            },
+            {
+              "altFt": 35000,
+              "tasMph": 264,
+              "bhp": 690,
+              "weightLb": 13900,
+              "observed": 1200,
+              "eta": 0.8,
+              "current": 1090.02,
+              "simple": 1037.76,
+              "role": "check",
+              "candidateAnchor": false
+            }
+          ]
+        }
+      ],
+      "p47b_independent_airframe": {
+        "source": "https://www.wwiiaircraftperformance.com/org/p-47/p-47.html",
+        "summary_fpm": {
+          "count": 5,
+          "current_mae": 77.86,
+          "simple_mae": 88.47
+        },
+        "rows": [
+          {
+            "altFt": 10000,
+            "tasMph": 185,
+            "bhp": 2000,
+            "weightLb": 12620,
+            "observed": 2420,
+            "current": 2466.52,
+            "simple": 2510.7
+          },
+          {
+            "altFt": 15000,
+            "tasMph": 201,
+            "bhp": 2000,
+            "weightLb": 12620,
+            "observed": 2350,
+            "current": 2361.38,
+            "simple": 2385.8
+          },
+          {
+            "altFt": 20000,
+            "tasMph": 218,
+            "bhp": 2000,
+            "weightLb": 12620,
+            "observed": 2180,
+            "current": 2241.23,
+            "simple": 2250.16
+          },
+          {
+            "altFt": 24000,
+            "tasMph": 233,
+            "bhp": 2000,
+            "weightLb": 12620,
+            "observed": 1960,
+            "current": 2132.1,
+            "simple": 2129.82
+          },
+          {
+            "altFt": 30000,
+            "tasMph": 250,
+            "bhp": 1645,
+            "weightLb": 12620,
+            "observed": 1180,
+            "current": 1278.08,
+            "simple": 1255.85
+          }
+        ]
+      }
+    },
+    "p38g_part_power": {
+      "method": "Interpolate within each original level speed versus chart BHP series, using adjacent remaining points to check each held-out interior point. Original RPM, mass and BHP are retained. Useful power is conditional on the 80% reference value.",
+      "cases": [
+        {
+          "alt_ft": 5000,
+          "leave_one_out_mph": {
+            "count": 5,
+            "current_mae": 20.31,
+            "simple_mae": 1.18
+          },
+          "rows": [
+            {
+              "observation": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0007",
+              "bhp_per_engine": 290,
+              "rpm": 1600,
+              "weight_lb": 13430,
+              "observed": 236,
+              "useful_power_hp_at_reference_eta": 464,
+              "current": 189.628,
+              "simple_fixed_polar": 185.967,
+              "simple": null
+            },
+            {
+              "observation": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0006",
+              "bhp_per_engine": 360,
+              "rpm": 1600,
+              "weight_lb": 13460,
+              "observed": 248,
+              "useful_power_hp_at_reference_eta": 576,
+              "current": 212.528,
+              "simple_fixed_polar": 211.041,
+              "simple": 247.351
+            },
+            {
+              "observation": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0005",
+              "bhp_per_engine": 475,
+              "rpm": 1800,
+              "weight_lb": 13490,
+              "observed": 266,
+              "useful_power_hp_at_reference_eta": 760,
+              "current": 241.195,
+              "simple_fixed_polar": 240.699,
+              "simple": 265.25
+            },
+            {
+              "observation": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0004",
+              "bhp_per_engine": 600,
+              "rpm": 2000,
+              "weight_lb": 13540,
+              "observed": 284,
+              "useful_power_hp_at_reference_eta": 960,
+              "current": 265.52,
+              "simple_fixed_polar": 265.417,
+              "simple": 282.923
+            },
+            {
+              "observation": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0003",
+              "bhp_per_engine": 800,
+              "rpm": 2280,
+              "weight_lb": 13670,
+              "observed": 310,
+              "useful_power_hp_at_reference_eta": 1280,
+              "current": 296.589,
+              "simple_fixed_polar": 296.716,
+              "simple": 308
+            },
+            {
+              "observation": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0002",
+              "bhp_per_engine": 1000,
+              "rpm": 2600,
+              "weight_lb": 13410,
+              "observed": 332,
+              "useful_power_hp_at_reference_eta": 1600,
+              "current": 322.631,
+              "simple_fixed_polar": 322.672,
+              "simple": 330.571
+            },
+            {
+              "observation": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0001",
+              "bhp_per_engine": 1150,
+              "rpm": 2800,
+              "weight_lb": 13270,
+              "observed": 346,
+              "useful_power_hp_at_reference_eta": 1840,
+              "current": 339.477,
+              "simple_fixed_polar": 339.515,
+              "simple": null
+            }
+          ]
+        },
+        {
+          "alt_ft": 24400,
+          "leave_one_out_mph": {
+            "count": 4,
+            "current_mae": 14.29,
+            "simple_mae": 1.17
+          },
+          "rows": [
+            {
+              "observation": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0013",
+              "bhp_per_engine": 410,
+              "rpm": 2000,
+              "weight_lb": 13150,
+              "observed": 316,
+              "useful_power_hp_at_reference_eta": 656,
+              "current": 265.878,
+              "simple_fixed_polar": 262.74,
+              "simple": null
+            },
+            {
+              "observation": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0012",
+              "bhp_per_engine": 525,
+              "rpm": 2000,
+              "weight_lb": 13210,
+              "observed": 331,
+              "useful_power_hp_at_reference_eta": 840,
+              "current": 299.333,
+              "simple_fixed_polar": 300.065,
+              "simple": 330.786
+            },
+            {
+              "observation": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0011",
+              "bhp_per_engine": 690,
+              "rpm": 2200,
+              "weight_lb": 13270,
+              "observed": 352,
+              "useful_power_hp_at_reference_eta": 1104,
+              "current": 336.989,
+              "simple_fixed_polar": 339.329,
+              "simple": 352
+            },
+            {
+              "observation": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0010",
+              "bhp_per_engine": 800,
+              "rpm": 2280,
+              "weight_lb": 13330,
+              "observed": 366,
+              "useful_power_hp_at_reference_eta": 1280,
+              "current": 357.146,
+              "simple_fixed_polar": 360.58,
+              "simple": 366.194
+            },
+            {
+              "observation": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0009",
+              "bhp_per_engine": 1000,
+              "rpm": 2600,
+              "weight_lb": 13410,
+              "observed": 392,
+              "useful_power_hp_at_reference_eta": 1600,
+              "current": 390.355,
+              "simple_fixed_polar": 393.456,
+              "simple": 387.714
+            },
+            {
+              "observation": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0008",
+              "bhp_per_engine": 1150,
+              "rpm": 2800,
+              "weight_lb": 13550,
+              "observed": 404,
+              "useful_power_hp_at_reference_eta": 1840,
+              "current": 409.302,
+              "simple_fixed_polar": 414.563,
+              "simple": null
+            }
+          ]
+        }
+      ]
+    }
   },
   "sweep": {
     "input": {

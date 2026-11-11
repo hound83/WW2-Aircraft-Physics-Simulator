@@ -36,7 +36,7 @@ const c=buildCatalog();
 const newRows=c.observations.filter(v=>v.pack_id==='ww2_twelve_fighter_gap_followup_2026-11-10');
 assert.equal(followup.pack_version,'1.0.0');
 assert.equal(newRows.length,24);
-assert.equal(c.summary.observation_count,1626);
+assert.equal(c.summary.observation_count,1637);
 assert.equal(c.summary.source_count,280);
 assert.equal(c.summary.stall_count,250);
 assert.equal(c.summary.stall_quality_tiers['reported-CAS'],9);

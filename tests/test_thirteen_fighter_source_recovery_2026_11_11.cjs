@@ -10,7 +10,7 @@ const c=buildCatalog(),prefix='ww2_thirteen_fighter_source_recovery_2026-11-11';
 const rows=c.observations.filter(x=>x.pack_id===prefix),sources=c.sources.filter(x=>x.pack_id===prefix);
 assert.equal(rows.length,159);
 assert.equal(sources.length,24);
-assert.equal(c.summary.observation_count,1626);
+assert.equal(c.summary.observation_count,1637);
 assert.equal(c.summary.stall_count,250);
 assert.equal(c.summary.source_count,280);
 assert.equal(c.calibration_curves.length,19,'No new inferred IAS/CAS curve silently activated');

@@ -140,7 +140,7 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
   const baseline = JSON.parse(read(baselinePath));
   const propeller = read(propellerPath);
   return {
-    schema: 'ww2-fighter-sim-inputs/v1', version: '1.2.1', as_of: evidence.as_of,
+    schema: 'ww2-fighter-sim-inputs/v1', version: '1.3.0', as_of: '2026-11-12',
     scope: 'Historical inputs and conditional estimates for source-case lookups and evidence graphs.',
     originals: {
       catalog: 'research-catalog.json',
