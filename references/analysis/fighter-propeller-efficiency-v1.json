@@ -1,6 +1,6 @@
 {
   "schema": "ww2-fighter-propeller-efficiency/v1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "replay_base": {
     "version": "4.9.0-rc.1",
     "commit": "079d955d58425637cffcd84540198dde7f2a0a5d"
@@ -252,6 +252,7 @@
       "source": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf",
       "measured_climb_states": "references/p47b-measured-climb-v33.json",
       "condition": "41-5902 torque-meter BHP, true speed, 12565 lb. Donor interpolation is within P-47C source density ratios. J, Cp and tip Mach differences remain visible. No inferred correction for IAS across installations.",
+      "comparison_basis": "equivalent_eta keeps the full calibrated model drag. propeller_comparison shows the alternative of assigning the explicit fitted power-proportional term entirely to useful power and keeping the fitted fixed area term. These are two allocations of the same power balance. The physical allocation requires independent evidence.",
       "rows": [
         {
           "source_case": "p47-5902-0",
@@ -271,6 +272,11 @@
           "J": 0.92152,
           "Cp": 0.1524,
           "tip_mach": 0.80276,
+          "propeller_comparison": {
+            "fitted_loss_hp_in_drag": 152.74,
+            "drag_hp_excluding_fitted_loss": 543.21,
+            "eta_if_fitted_loss_is_in_useful_power": 0.758976
+          },
           "source_locator": "printed p.2 section 6, sea-level row",
           "density_ratio_isa": 1,
           "calibration_role": "cooling-fit",
@@ -294,6 +300,11 @@
           "J": 0.98046,
           "Cp": 0.17686,
           "tip_mach": 0.82119,
+          "propeller_comparison": {
+            "fitted_loss_hp_in_drag": 153.16,
+            "drag_hp_excluding_fitted_loss": 577.62,
+            "eta_if_fitted_loss_is_in_useful_power": 0.773324
+          },
           "source_locator": "printed p.2 section 6, 5000-ft row",
           "density_ratio_isa": 0.86167,
           "calibration_role": "same-campaign-check",
@@ -314,7 +325,9 @@
               "donor_tip_mach": 0.81766,
               "replay_fpm": 2030.02,
               "drag_hp_at_observed_climb": 534.7,
-              "drag_hp_delta_to_model": -196.08
+              "drag_hp_delta_to_model": -196.08,
+              "replay_fpm_if_fitted_loss_is_in_useful_power": 2432.27,
+              "drag_hp_delta_excluding_fitted_loss": -42.92
             }
           ]
         },
@@ -336,6 +349,11 @@
           "J": 1.05011,
           "Cp": 0.20637,
           "tip_mach": 0.84165,
+          "propeller_comparison": {
+            "fitted_loss_hp_in_drag": 153.72,
+            "drag_hp_excluding_fitted_loss": 618.63,
+            "eta_if_fitted_loss_is_in_useful_power": 0.778598
+          },
           "source_locator": "printed p.2 section 6, 10000-ft row",
           "density_ratio_isa": 0.738479,
           "calibration_role": "cooling-fit",
@@ -356,7 +374,9 @@
               "donor_tip_mach": 0.82836,
               "replay_fpm": 1991.9,
               "drag_hp_at_observed_climb": 592.21,
-              "drag_hp_delta_to_model": -180.14
+              "drag_hp_delta_to_model": -180.14,
+              "replay_fpm_if_fitted_loss_is_in_useful_power": 2395.62,
+              "drag_hp_delta_excluding_fitted_loss": -26.42
             }
           ]
         },
@@ -378,6 +398,11 @@
           "J": 1.09297,
           "Cp": 0.22411,
           "tip_mach": 0.8534,
+          "propeller_comparison": {
+            "fitted_loss_hp_in_drag": 154.12,
+            "drag_hp_excluding_fitted_loss": 643.89,
+            "eta_if_fitted_loss_is_in_useful_power": 0.780758
+          },
           "source_locator": "printed p.2 section 6, 12600-ft row",
           "density_ratio_isa": 0.680006,
           "calibration_role": "same-campaign-check",
@@ -398,7 +423,9 @@
               "donor_tip_mach": 0.84079,
               "replay_fpm": 1865.8,
               "drag_hp_at_observed_climb": 590.8,
-              "drag_hp_delta_to_model": -207.21
+              "drag_hp_delta_to_model": -207.21,
+              "replay_fpm_if_fitted_loss_is_in_useful_power": 2270.57,
+              "drag_hp_delta_excluding_fitted_loss": -53.09
             }
           ]
         },
@@ -420,6 +447,11 @@
           "J": 1.1062,
           "Cp": 0.21615,
           "tip_mach": 0.80705,
+          "propeller_comparison": {
+            "fitted_loss_hp_in_drag": 125.83,
+            "drag_hp_excluding_fitted_loss": 618.48,
+            "eta_if_fitted_loss_is_in_useful_power": 0.802364
+          },
           "source_locator": "printed p.2 section 6, second 12600-ft row, rated-power transition",
           "density_ratio_isa": 0.680006,
           "calibration_role": "cooling-fit",
@@ -440,7 +472,9 @@
               "donor_tip_mach": 0.82718,
               "replay_fpm": 1472.62,
               "drag_hp_at_observed_climb": 619.66,
-              "drag_hp_delta_to_model": -124.65
+              "drag_hp_delta_to_model": -124.65,
+              "replay_fpm_if_fitted_loss_is_in_useful_power": 1803.09,
+              "drag_hp_delta_excluding_fitted_loss": 1.18
             },
             {
               "branch": "Table I, printed p. 12, Figure 6 climb series",
@@ -458,7 +492,9 @@
               "donor_tip_mach": 0.81855,
               "replay_fpm": 1647.45,
               "drag_hp_at_observed_climb": 686.22,
-              "drag_hp_delta_to_model": -58.09
+              "drag_hp_delta_to_model": -58.09,
+              "replay_fpm_if_fitted_loss_is_in_useful_power": 1977.92,
+              "drag_hp_delta_excluding_fitted_loss": 67.74
             }
           ]
         },
@@ -480,6 +516,11 @@
           "J": 1.13457,
           "Cp": 0.23359,
           "tip_mach": 0.81677,
+          "propeller_comparison": {
+            "fitted_loss_hp_in_drag": 125.82,
+            "drag_hp_excluding_fitted_loss": 636.25,
+            "eta_if_fitted_loss_is_in_useful_power": 0.795729
+          },
           "source_locator": "printed p.2 section 6, 15000-ft row",
           "density_ratio_isa": 0.629238,
           "calibration_role": "same-campaign-check",
@@ -500,7 +541,9 @@
               "donor_tip_mach": 0.82895,
               "replay_fpm": 1423.64,
               "drag_hp_at_observed_climb": 647.33,
-              "drag_hp_delta_to_model": -114.74
+              "drag_hp_delta_to_model": -114.74,
+              "replay_fpm_if_fitted_loss_is_in_useful_power": 1754.09,
+              "drag_hp_delta_excluding_fitted_loss": 11.08
             },
             {
               "branch": "Table I, printed p. 12, Figure 6 climb series",
@@ -518,7 +561,9 @@
               "donor_tip_mach": 0.82808,
               "replay_fpm": 1530.66,
               "drag_hp_at_observed_climb": 688.07,
-              "drag_hp_delta_to_model": -74
+              "drag_hp_delta_to_model": -74,
+              "replay_fpm_if_fitted_loss_is_in_useful_power": 1861.1,
+              "drag_hp_delta_excluding_fitted_loss": 51.82
             }
           ]
         },
@@ -540,6 +585,11 @@
           "J": 1.23101,
           "Cp": 0.27587,
           "tip_mach": 0.84136,
+          "propeller_comparison": {
+            "fitted_loss_hp_in_drag": 126.44,
+            "drag_hp_excluding_fitted_loss": 690.61,
+            "eta_if_fitted_loss_is_in_useful_power": 0.791692
+          },
           "source_locator": "printed p.2 section 6, 20000-ft row",
           "density_ratio_isa": 0.532811,
           "calibration_role": "cooling-fit",
@@ -560,7 +610,9 @@
               "donor_tip_mach": 0.85162,
               "replay_fpm": 1311.42,
               "drag_hp_at_observed_climb": 720.51,
-              "drag_hp_delta_to_model": -96.55
+              "drag_hp_delta_to_model": -96.55,
+              "replay_fpm_if_fitted_loss_is_in_useful_power": 1643.49,
+              "drag_hp_delta_excluding_fitted_loss": 29.9
             },
             {
               "branch": "Table I, printed p. 12, Figure 6 climb series",
@@ -578,7 +630,9 @@
               "donor_tip_mach": 0.85057,
               "replay_fpm": 1362.26,
               "drag_hp_at_observed_climb": 739.86,
-              "drag_hp_delta_to_model": -77.2
+              "drag_hp_delta_to_model": -77.2,
+              "replay_fpm_if_fitted_loss_is_in_useful_power": 1694.33,
+              "drag_hp_delta_excluding_fitted_loss": 49.25
             }
           ]
         },
@@ -600,6 +654,11 @@
           "J": 1.33879,
           "Cp": 0.328,
           "tip_mach": 0.86903,
+          "propeller_comparison": {
+            "fitted_loss_hp_in_drag": 127.04,
+            "drag_hp_excluding_fitted_loss": 751.6,
+            "eta_if_fitted_loss_is_in_useful_power": 0.785873
+          },
           "source_locator": "printed p.2 section 6, 25000-ft row",
           "density_ratio_isa": 0.448119,
           "calibration_role": "same-campaign-check",
@@ -620,7 +679,9 @@
               "donor_tip_mach": 0.86671,
               "replay_fpm": 1119.23,
               "drag_hp_at_observed_climb": 779.35,
-              "drag_hp_delta_to_model": -99.29
+              "drag_hp_delta_to_model": -99.29,
+              "replay_fpm_if_fitted_loss_is_in_useful_power": 1452.88,
+              "drag_hp_delta_excluding_fitted_loss": 27.75
             },
             {
               "branch": "Table I, printed p. 12, Figure 6 climb series",
@@ -638,7 +699,9 @@
               "donor_tip_mach": 0.87979,
               "replay_fpm": 1095.22,
               "drag_hp_at_observed_climb": 770.21,
-              "drag_hp_delta_to_model": -108.43
+              "drag_hp_delta_to_model": -108.43,
+              "replay_fpm_if_fitted_loss_is_in_useful_power": 1428.87,
+              "drag_hp_delta_excluding_fitted_loss": 18.61
             }
           ]
         },
@@ -660,6 +723,11 @@
           "J": 1.53167,
           "Cp": 0.39287,
           "tip_mach": 0.90847,
+          "propeller_comparison": {
+            "fitted_loss_hp_in_drag": 128.57,
+            "drag_hp_excluding_fitted_loss": 853.06,
+            "eta_if_fitted_loss_is_in_useful_power": 0.792078
+          },
           "source_locator": "printed p.2 section 6, 30000-ft critical-altitude row",
           "density_ratio_isa": 0.374132,
           "calibration_role": "cooling-fit",
@@ -680,7 +748,9 @@
               "donor_tip_mach": 0.93296,
               "replay_fpm": 782.68,
               "drag_hp_at_observed_climb": 845.59,
-              "drag_hp_delta_to_model": -136.05
+              "drag_hp_delta_to_model": -136.05,
+              "replay_fpm_if_fitted_loss_is_in_useful_power": 1120.35,
+              "drag_hp_delta_excluding_fitted_loss": -7.47
             }
           ]
         },
@@ -702,6 +772,11 @@
           "J": 1.73022,
           "Cp": 0.39844,
           "tip_mach": 0.95311,
+          "propeller_comparison": {
+            "fitted_loss_hp_in_drag": 109.37,
+            "drag_hp_excluding_fitted_loss": 962.69,
+            "eta_if_fitted_loss_is_in_useful_power": 0.83079
+          },
           "source_locator": "printed p.2 section 6, 35000-ft row",
           "density_ratio_isa": 0.309875,
           "calibration_role": "same-campaign-check",

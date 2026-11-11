@@ -59,6 +59,14 @@ function climbReplay(data, aircraft, source, mode, measuredShaftHp) {
   const shaftHp = measuredShaftHp ?? flight.power.shaftHp;
   const climbHp = observedFpm / FPM_PER_MPS * weightLb * LBF / HP;
   const eta = (flight.power.requiredHp + climbHp) / shaftHp;
+  // The Thunderbolt energy fit puts a fraction of useful power on the drag side.
+  // Reassign the term to useful power for a donor comparison with the same power balance.
+  const fittedLossHp = Math.max(0, flight.energyConfiguration?.powerFraction ?? 0) * flight.power.propulsiveHp;
+  const propellerComparison = aircraft === 'p47b' && fittedLossHp > 0 ? {
+    fitted_loss_hp_in_drag: round(fittedLossHp, 2),
+    drag_hp_excluding_fitted_loss: round(flight.power.requiredHp - fittedLossHp, 2),
+    eta_if_fitted_loss_is_in_useful_power: round(eta - fittedLossHp / shaftHp, 6),
+  } : null;
   return {
     source_case: source.id, alt_ft: altFt, tas_mph: tasMph, weight_lb: weightLb, rpm: flight.benchmark.rpm,
     observed_fpm: observedFpm, modeled_fpm: round(flight.power.climbFpm, 2),
@@ -67,6 +75,7 @@ function climbReplay(data, aircraft, source, mode, measuredShaftHp) {
     model_eta: round(flight.power.propulsiveHp / flight.power.shaftHp, 6),
     equivalent_eta: round(eta, 6), delta_eta: round(eta - flight.power.propulsiveHp / flight.power.shaftHp, 6),
     J: round(flight.prop.J, 5), Cp: round(flight.prop.Cp, 5), tip_mach: round(flight.prop.tipMach, 5),
+    ...(propellerComparison && { propeller_comparison: propellerComparison }),
   };
 }
 
@@ -84,13 +93,19 @@ function thunderboltReplay(data, catalog) {
       if (!reading) return [];
       const climbHp = state.observedFpm / FPM_PER_MPS * p47b.mass.valueLb * LBF / HP;
       const impliedDragHp = reading.eta * state.shaftHp - climbHp;
-      const replayFpm = (reading.eta * state.shaftHp - result.model_drag_hp) * HP / (p47b.mass.valueLb * LBF) * FPM_PER_MPS;
+      const fpmPerHp = HP / (p47b.mass.valueLb * LBF) * FPM_PER_MPS;
+      const replayFpm = (reading.eta * state.shaftHp - result.model_drag_hp) * fpmPerHp;
+      const comparison = result.propeller_comparison;
       return [{
         branch: branch[0].source_location, eta: round(reading.eta, 6), observed_endpoints: reading.endpoint_eta,
         source_observations: reading.observations, donor_J: round(reading.J, 5), donor_Cp: round(reading.Cp, 5),
         donor_tip_mach: round(reading.tip_mach, 5), replay_fpm: round(replayFpm, 2),
         drag_hp_at_observed_climb: round(impliedDragHp, 2),
         drag_hp_delta_to_model: round(impliedDragHp - result.model_drag_hp, 2),
+        ...(comparison && {
+          replay_fpm_if_fitted_loss_is_in_useful_power: round(replayFpm + comparison.fitted_loss_hp_in_drag * fpmPerHp, 2),
+          drag_hp_delta_excluding_fitted_loss: round(impliedDragHp - comparison.drag_hp_excluding_fitted_loss, 2),
+        }),
       }];
     });
     return {
@@ -193,6 +208,7 @@ function sourceEvidence(data, catalog) {
       p47b: {
         source: p47b.source.url, measured_climb_states: 'references/p47b-measured-climb-v33.json',
         condition: '41-5902 torque-meter BHP, true speed, 12565 lb. Donor interpolation is within P-47C source density ratios. J, Cp and tip Mach differences remain visible. No inferred correction for IAS across installations.',
+        comparison_basis: 'equivalent_eta keeps the full calibrated model drag. propeller_comparison shows the alternative of assigning the explicit fitted power-proportional term entirely to useful power and keeping the fitted fixed area term. These are two allocations of the same power balance. The physical allocation requires independent evidence.',
         rows: thunderboltReplay(data, catalog),
       },
       spitfire: {
