@@ -84,15 +84,32 @@
    if(r.status==='modelled'&&Number.isFinite(r.power?.climbFpm)&&(!best||r.power.climbFpm>best.climbFpm))best={status:'modelled',climbFpm:r.power.climbFpm,easMph:eas,tasMph:tas,shaftHp:r.power.shaftHp,estimatedPower:r.benchmark.estimated};}
   return best??{status:'no-level-flight'};
  }
+ function firstSustainedSpeed(atSpeed, low, high){
+  if(Number.isFinite(atSpeed(low).limits?.nSust))return low;
+  for(let i=0;i<30;i++){
+   const middle=(low+high)/2;
+   if(Number.isFinite(atSpeed(middle).limits?.nSust))high=middle;
+   else low=middle;
+  }
+  return high;
+ }
  function metrics(M,T,L,model,spec,policy,settings,alt){
   const s=validateSettings(spec,settings),loading=load(spec,policy,s),phase=phaseFor(spec,s,0,0,loading.injectionLb);
   const out={altFt:alt,settings:s,loading,phase,sourceQualification:spec.loadQualification,powerQualification:phase.qualification??'Existing source power plus documented rating inputs; lower-rating shaft power may use an explicit pressure/RPM conversion.',
-   sustained:null,instantaneous:null,minSustainedRadius:null,climb:null,level:null};
+   sustained:null,instantaneous:null,minSustainedRadius:null,climb:null,level:null,stallEasMph:null,turnRange:null};
+  const atSpeed=eas=>evaluate(M,T,L,model,spec,s,alt,eas,loading.weightLb,phase);
   let last=null,crossing=null,engineSeen=false;
-  for(let eas=65;eas<=Math.min(400,M.airspeeds(590,alt).eas);eas+=1){const r=evaluate(M,T,L,model,spec,s,alt,eas,loading.weightLb,phase);
+  let firstSustained=null,lastSustained=null;
+  const maxEas=M.airspeeds(590,alt).eas;
+  for(let eas=65;eas<=maxEas;eas+=1){const r=atSpeed(eas);
    if(r.benchmark)engineSeen=true;
+   if(Number.isFinite(r.stallEasMph))out.stallEasMph??=r.stallEasMph;
    if(r.status!=='modelled'||!r.power){last=null;continue;}
    if(last&&last.r.power.excessHp>=0&&r.power.excessHp<0)crossing=[last.eas,eas];last={eas,r};
+   if(Number.isFinite(r.limits.nSust)){
+    firstSustained??=eas;
+    lastSustained=eas;
+   }
    const su=r.limits.sustDegSec,ins=r.limits.instantDegSec;
    if(su>0&&(!out.sustained||su>out.sustained.rateDegSec))out.sustained=summary(r,eas,'sust');
    if(ins>0&&(!out.instantaneous||ins>out.instantaneous.rateDegSec))out.instantaneous=summary(r,eas,'instant');
@@ -101,11 +118,27 @@
   if(!engineSeen){out.status='source-power-unavailable';return out;}
   for(const [key,kind]of [['sustained','sust'],['instantaneous','instant'],['minSustainedRadius','sust']]){
    if(!out[key])continue;const center=out[key].easMph;
-   for(let eas=center-1;eas<=center+1;eas+=.05){const r=evaluate(M,T,L,model,spec,s,alt,eas,loading.weightLb,phase);if(r.status!=='modelled')continue;
+   for(let eas=center-1;eas<=center+1;eas+=.05){const r=atSpeed(eas);if(r.status!=='modelled')continue;
     const value=kind==='instant'?r.limits.instantDegSec:r.limits.sustDegSec;if(!(value>0))continue;const p=summary(r,eas,kind);
     if(key==='minSustainedRadius'?p.radiusM<out[key].radiusM:value>out[key].rateDegSec)out[key]=p;}
   }
-  if(crossing){let [lo,hi]=crossing;for(let i=0;i<30;i++){const mid=(lo+hi)/2,r=evaluate(M,T,L,model,spec,s,alt,mid,loading.weightLb,phase);if(r.power.excessHp>0)lo=mid;else hi=mid;}const eas=(lo+hi)/2,r=evaluate(M,T,L,model,spec,s,alt,eas,loading.weightLb,phase);out.level={easMph:eas,tasMph:r.tasMph,mach:r.air.mach,estimatedPower:r.benchmark.estimated,qualification:'Steady level-speed equilibrium at this rating; acceleration/engine thermal history not simulated.'};}
+  if(crossing){
+   let [lo,hi]=crossing;
+   for(let i=0;i<30;i++){
+    const middle=(lo+hi)/2;
+    if(atSpeed(middle).power?.excessHp>0)lo=middle;
+    else hi=middle;
+   }
+   const eas=(lo+hi)/2,r=atSpeed(eas);
+   if(r.status==='modelled')out.level={easMph:eas,tasMph:r.tasMph,mach:r.air.mach,estimatedPower:r.benchmark.estimated,qualification:'Steady level-speed equilibrium at this rating; acceleration/engine thermal history not simulated.'};
+  }
+  if(firstSustained!==null){
+   const lower=Math.min(firstSustained,Math.max(firstSustained-1,out.stallEasMph));
+   out.turnRange={
+    minEasMph:firstSustainedSpeed(atSpeed,lower,firstSustained),
+    maxEasMph:out.level?.easMph??lastSustained
+   };
+  }
   out.climb=bestClimb(M,T,L,model,spec,s,alt,loading.weightLb,phase,1);
   const ias=interpolate(spec.climbIAS,alt,1),tas=M.tasFrom(ias,'CAS',alt),eas=M.airspeeds(tas,alt).eas;
   const manual=evaluate(M,T,L,model,spec,s,alt,eas,loading.weightLb,phase,true);

@@ -324,6 +324,52 @@ async function run(){
   const benchmark=()=>evaluate('({rows:OperatingBenchmarkUI.rows,settings:OperatingBenchmarkUI.settings,climbs:OperatingBenchmarkUI.climbs})');
   let bm=await benchmark();assert.equal(bm.rows.a.altFt,10000);assert.equal(bm.rows.b.altFt,10000);
   assert.deepEqual(await evaluate('[...document.getElementById("bench-altitude").options].map(o=>Number(o.value))'),[0,10000,20000,30000,35000,40000]);
+  const envelope=await evaluate(`['a','b'].map(side=>{
+    const plot=document.getElementById('bench-turn-plot');
+    const path=plot.querySelector('path[data-bench-curve="'+side+'"]');
+    const end=plot.querySelector('[data-bench-level="'+side+'"]');
+    const first=path.getPointAtLength(0),last=path.getPointAtLength(path.getTotalLength());
+    return {startX:first.x,endX:last.x,endY:last.y,levelX:Number(end.getAttribute('cx')),levelY:Number(end.getAttribute('cy'))};
+  })`);
+  assert.ok(envelope[0].startX>envelope[1].startX+1,'The curves start at their own stall speeds');
+  assert.ok(envelope[0].endX>envelope[1].endX+1,'The faster aircraft extends further along the shared axis');
+  for(const end of envelope){
+    assert.ok(Math.abs(end.endX-end.levelX)<.01,'The curve reaches the modeled maximum level speed');
+    assert.ok(Math.abs(end.endY-end.levelY)<.01,'Sustained turn reaches zero at maximum level speed');
+  }
+  assert.match(await evaluate('document.getElementById("bench-probe-results").textContent'),/1 G stall 97 mph EAS.*1 G stall 85 mph EAS/s);
+  const probe=()=>evaluate('OperatingBenchmarkUI.probe');
+  const setProbe=eas=>evaluate(`(()=>{const s=document.getElementById('bench-probe-speed');s.value='${eas}';s.dispatchEvent(new Event('input',{bubbles:true}));})()`);
+  await setProbe(175);
+  const probeAt175=await probe();
+  assert.equal(probeAt175.easMph,175);
+  assert.ok(Object.values(probeAt175.aircraft).every(a=>a.sustainedG>1&&a.climbFpm>0));
+  await select('bench-speed-unit','kph');
+  assert.deepEqual(await probe(),probeAt175,'The unit picker preserves the same flight condition');
+  assert.match(await evaluate('document.getElementById("bench-probe-value").textContent'),/^281\.6 km\/h EAS$/);
+  assert.match(await evaluate('document.getElementById("bench-result-a").textContent'),/657 km\/h TAS/);
+  await select('bench-speed-unit','knots');
+  assert.deepEqual(await probe(),probeAt175);
+  assert.match(await evaluate('document.getElementById("bench-probe-value").textContent'),/^152\.1 kn EAS$/);
+  assert.match(await evaluate('document.getElementById("bench-turn-plot").textContent'),/Equivalent airspeed \(kn EAS\)/);
+  await select('bench-speed-unit','mph');
+  await setProbe(340);
+  assert.ok((await probe()).aircraft.a.sustainedG>1);
+  assert.equal((await probe()).aircraft.b.sustainedG,null,'No sustained turn is shown past the slower aircraft’s own top speed');
+  const hoverPoint=await evaluate(`(()=>{
+    const svg=document.querySelector('#bench-turn-plot svg');
+    svg.scrollIntoView({block:'center',behavior:'instant'});
+    const path=svg.querySelector('path[data-bench-curve="a"]');
+    const p=path.getPointAtLength(path.getTotalLength()*.3);
+    const screen=new DOMPoint(p.x,p.y).matrixTransform(svg.getScreenCTM());
+    return {x:screen.x,y:screen.y};
+  })()`);
+  await send('Input.dispatchMouseEvent',{type:'mouseMoved',...hoverPoint});
+  await until(()=>evaluate('!document.getElementById("bench-hover-readout").hidden'),'speed probe hover');
+  const hoverText=await evaluate('document.getElementById("bench-hover-readout").textContent');
+  assert.match(hoverText,/Aircraft 1.*°\/s.* G.*ft\/min.*Aircraft 2.*°\/s.* G.*ft\/min/s);
+  assert.equal((await probe()).easMph%5,0,'The hover probe snaps to the slider’s five mph increments');
+  checks.push('v4.2 chart follows separate stall and level speed limits, with shared speed hover and three display units');
   const bInitial=bm.rows.b;
   await select('bench-power-a','normal');
   await select('bench-fuel-a','0.75');bm=await benchmark();assert.deepEqual(bm.rows.b,bInitial);assert.equal(bm.settings.a.settings.mode,'normal');assert.equal(bm.settings.a.settings.fuelFraction,.75);
@@ -335,6 +381,7 @@ async function run(){
   await select('bench-altitude','40000');bm=await benchmark();assert.equal(bm.rows.a.altFt,40000);assert.equal(bm.rows.b.altFt,40000);assert.equal(bm.rows.a.climb.estimatedPower,true);
   await evaluate('(()=>{const c=document.getElementById("bench-extension");c.checked=false;c.dispatchEvent(new Event("change",{bubbles:true}));})()');
   bm=await benchmark();assert.equal(bm.rows.a.status,'source-power-unavailable');assert.equal(bm.rows.b.status,'source-power-unavailable');assert.equal(bm.rows.a.sustained,null);assert.ok((await evaluate('document.getElementById("bench-result-a").textContent')).includes('Power source does not cover'));
+  assert.equal(await probe(),null);assert.equal(await evaluate('document.getElementById("bench-probe-speed").disabled'),true);
   await evaluate('(()=>{const c=document.getElementById("bench-extension");c.checked=true;c.dispatchEvent(new Event("change",{bubbles:true}));})()');
   await select('bench-aircraft-a','p51b');assert.equal(await evaluate('document.getElementById("bench-injection-a").disabled'),true);assert.equal(await evaluate('document.getElementById("bench-injection-a").checked'),false);
   await select('bench-aircraft-a','spitfire_lfix_bs543');await select('bench-power-a','combat');await select('bench-fuel-a','0.5');await select('bench-altitude','30000');

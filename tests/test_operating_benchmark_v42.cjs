@@ -11,6 +11,23 @@ assert.ok(Math.abs(M.isa(40000).p-18753)<3);assert.equal(M.isa(40000).T,216.65);
 const trop=11000/.3048;assert.ok(Math.abs(M.isa(trop-.01).p-M.isa(trop+.01).p)<.1);assert.throws(()=>M.isa(40001));
 const before=JSON.stringify(models),specBefore=JSON.stringify(S);
 const row=(id,s=settings,h=10000)=>B.metrics(M,T,L,models[id],S.aircraft[id],S.policy,s,h);
+const benchmarkPoint=(id,result,eas)=>B.evaluate(M,T,L,models[id],S.aircraft[id],
+ result.settings,result.altFt,eas,result.loading.weightLb,result.phase);
+const mustangRange=row('p51b'),spitfireRange=row('spitfire_lfix_bs543');
+assert.ok(mustangRange.stallEasMph>spitfireRange.stallEasMph+5);
+assert.ok(mustangRange.level.easMph>spitfireRange.level.easMph+15);
+for(const [id,result] of [['p51b',mustangRange],['spitfire_lfix_bs543',spitfireRange]]){
+ const {minEasMph,maxEasMph}=result.turnRange;
+ assert.ok(Math.abs(minEasMph-result.stallEasMph)<.01,'Sustained flight starts at the lift limit here');
+ assert.equal(benchmarkPoint(id,result,minEasMph-.01).status,'below-provisional-stall');
+ assert.ok(benchmarkPoint(id,result,minEasMph).limits.nSust>=1);
+ assert.ok(Math.abs(benchmarkPoint(id,result,maxEasMph).power.excessHp)<1e-5);
+ assert.equal(benchmarkPoint(id,result,maxEasMph+1).limits.nSust,null);
+}
+const highCorsair=row('f4u4',{...settings,mode:'normal'},40000);
+assert.ok(highCorsair.turnRange.minEasMph>highCorsair.stallEasMph+1,'Power can set the slow end above aerodynamic stall');
+assert.equal(benchmarkPoint('f4u4',highCorsair,highCorsair.turnRange.minEasMph-.05).limits.nSust,null);
+assert.ok(benchmarkPoint('f4u4',highCorsair,highCorsair.turnRange.minEasMph).limits.nSust>=1);
 for(const [id,spec]of Object.entries(S.aircraft)){
  const low=row(id,{...settings,fuelFraction:.25}),high=row(id,{...settings,fuelFraction:.75});
  assert.equal(low.status,'modelled',id+' low-load flight');assert.equal(high.status,'modelled',id+' high-load flight');
