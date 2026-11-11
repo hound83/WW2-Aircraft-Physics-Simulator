@@ -1,5 +1,7 @@
 # European Air War Physics
 
+The [v4.2 operating benchmark](docs/V42_OPERATING_BENCHMARK.md) is the first comparison panel. Choose **Normal or Combat, 25/50/75% internal fuel, and fitted injection independently for each aircraft**, with one shared altitude: sea level, 10,000, 20,000, 30,000, 35,000 or 40,000 ft. It shows sustained/instantaneous turn, climb rate and speed, level speed, and full climbs that consume fuel and respect power/injection limits. Version **4.2.0-rc.1** is a research candidate; load reconstructions, rating transfers and extrapolated high-altitude power are explicitly qualified.
+
 The [v4.1 installed-energy candidate](docs/V41_ENERGY_RESULTS.md) improves matched-source climb checks for P-47B, Spitfire IX, P-38G, Fw 190 A-4 and P-51B in the live comparison. Source/reference switching, 48 energy checks and a separate-report P-47 transfer make the changes inspectable. Version 4.1.0-rc.1 remains a research candidate; historical sustained-turn 5:1 accuracy is unresolved.
 
 The [v4.0 research candidate](docs/V4_MILESTONE.md) adds a live seven-aircraft maneuver envelope, F4U-4 Corsair profile, paired P-47B propeller and P-51B rack checks, and climb-time integration with changing fuel mass. Download the main CI artifact and open `dist/model.html`. Full historical sustained-turn accuracy remains unresolved.
@@ -18,7 +20,7 @@ GitHub setup is complete. The frozen import is on branch **baseline/v2.5-import*
 
 ## Start here
 
-For the browser simulator, open [Physics regression](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/regression.yml), choose the latest successful run for `main`, and download its **physics-validation** artifact. Extract the ZIP and open `dist/model.html` in a browser. The HTML runs offline. Choose **Historical evidence library** to filter source data and IAS/CAS status or **Compare four fighters** for the current model. Choose **Compare clean stall speeds** for exploratory numerical stall calculations. New versioned research packs are embedded automatically when the simulator is rebuilt. GitHub requires a signed-in account to download Actions artifacts.
+For the browser simulator, open [Physics regression](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/regression.yml), choose the latest successful run for `main`, and download its **physics-validation** artifact. Extract the ZIP and open `dist/model.html` in a browser. The HTML runs offline. Start with **Normal / Combat benchmark** for independent aircraft settings at a common altitude. The earlier source-test comparisons remain below it. Choose **Historical evidence library** to filter source data and IAS/CAS status or **Compare clean stall speeds** for exploratory numerical stall calculations. New versioned research packs are embedded automatically when the simulator is rebuilt. GitHub requires a signed-in account to download Actions artifacts.
 
 For a local build with Node.js 22 or newer, run `npm run build` and open `dist/model.html`. For development and validation, follow the instructions below.
 

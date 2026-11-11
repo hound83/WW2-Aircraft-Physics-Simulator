@@ -3,7 +3,7 @@
 (function(root,factory){const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;root.UniversalAirPhysics=api;})(typeof globalThis!=='undefined'?globalThis:this, function(){
 'use strict';
 const MPH=.44704,FT=.3048,HP=745.6998716,LBF=4.4482216153,RHO0=1.225,PS0=101325,T0=288.15,R=287.05287,G=9.80665,GAMMA=1.4;
-function isa(ft){if(!Number.isFinite(ft)||ft<0||ft>36089)throw Error('Atmosphere valid only for 0–36,089 ft');const h=ft*FT,T=T0-.0065*h,p=PS0*Math.pow(T/T0,5.2558797),rho=p/(R*T),a=Math.sqrt(GAMMA*R*T);return {T,p,rho,a,sigma:rho/RHO0};}
+function isa(ft){if(!Number.isFinite(ft)||ft<0||ft>40000)throw Error('Atmosphere valid only for 0-40,000 ft');const h=ft*FT,T=h<=11000?T0-.0065*h:216.65,p=h<=11000?PS0*Math.pow(T/T0,5.2558797):PS0*Math.pow(216.65/T0,5.2558797)*Math.exp(-G*(h-11000)/(R*216.65)),rho=p/(R*T),a=Math.sqrt(GAMMA*R*T);return {T,p,rho,a,sigma:rho/RHO0};}
 function trueFromCAS(mph,ft){const at=isa(ft),M0=mph*MPH/Math.sqrt(GAMMA*R*T0),impact=PS0*(Math.pow(1+.2*M0*M0,3.5)-1),M=Math.sqrt(5*(Math.pow(1+impact/at.p,2/7)-1));return M*at.a/MPH;}
 function casFromTrue(mph,ft){const at=isa(ft),M=mph*MPH/at.a,impact=at.p*(Math.pow(1+.2*M*M,3.5)-1),M0=Math.sqrt(5*(Math.pow(1+impact/PS0,2/7)-1));return M0*Math.sqrt(GAMMA*R*T0)/MPH;}
 function tasFrom(mph,kind,alt){if(kind==='TAS')return mph;if(kind==='EAS')return mph/Math.sqrt(isa(alt).sigma);if(kind==='CAS')return trueFromCAS(mph,alt);throw Error('IAS needs a specimen-specific instrument/position calibration');}
