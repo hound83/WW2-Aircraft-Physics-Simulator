@@ -1,0 +1,1001 @@
+{
+  "schema": "ww2-fighter-evidence-pack/v1",
+  "pack_version": "1.0.0",
+  "as_of": "2026-11-11",
+  "scope": "German fighter archive recovery. Measured values, chart readings, documentary settings, secondary evidence and conditional calculations retain their distinct source classes.",
+  "sources": [
+    {
+      "id": "F4-MTT-1941-FLOWN",
+      "aircraft": "Bf 109 F-4 DB 601 E",
+      "report": "Messerschmitt Flugzeugdatenblatt, Leistungen erflogen, Augsburg, 29 November 1941",
+      "source": "https://web.archive.org/web/20141110152256im_/http://www.beim-zeugmeister.de/zeugmeister/uploads/pics/_LW_A0001_B015.jpg",
+      "location": "Single original sheet, mass block, Steigzeit and Landegeschwindigkeit",
+      "notes": "Separate 2890 kg full flight load and 2560 kg landing condition. Existing transcribed level speeds are retained in the earlier pack. The rating and correction history of the high-altitude speed rows remain open.",
+      "inspected_copy_sha256": "853c099c75abd773e00979bd5f8a7a93e628e79f1ac023cbb8e843c0d50652db"
+    },
+    {
+      "id": "F4-MTT-1942-CALCULATED",
+      "aircraft": "Bf 109 F-4 DB 601 E",
+      "report": "Messerschmitt Flugzeugdatenblatt IV/56/42, errechnete Werte, 1 July 1942",
+      "source": "https://web.archive.org/web/20160323022701im_/http://www.beim-zeugmeister.de/zeugmeister/uploads/pics/_LW_A0001_B016.jpg",
+      "location": "Single original sheet, mass and landing blocks",
+      "notes": "The sheet is explicitly calculated. Its 135 km/h entry is a related factory estimate, with different flight and landing loading. No independent flight replication.",
+      "inspected_copy_sha256": "67147c5230fdc6600a245e19a1c9d496e4745ceff7e7344bfb86ec4844b6e955"
+    },
+    {
+      "id": "F4-MTT-1943-GEOMETRY",
+      "aircraft": "Bf 109 F-4 DB 601 E",
+      "report": "Messerschmitt Flugzeug-Daten, Fleig 109-01/1, 3 February 1943",
+      "source": "https://web.archive.org/web/20140509054935im_/http://www.beim-zeugmeister.de/zeugmeister/uploads/pics/_LW_A0001_B017.jpg",
+      "location": "Single original sheet, Allgemein, Flügel, Landeklappe and bottom coefficient line",
+      "notes": "Operating and aerodynamic design-sheet values. The lift coefficient is labeled cA Lande and the drag coefficient is labeled Schnellflug cW. No stated measurement method or drag polar.",
+      "inspected_copy_sha256": "8e52b3deca1dee630c337c3d32e96bef0329a5ca6097a4938efc43dbd5584466"
+    },
+    {
+      "id": "F4-RECHLIN-15023",
+      "aircraft": "Bf 109 F-4 and Fw 190 A-2",
+      "report": "KdE Rechlin 15023/41 g.Kdos., Gollob, 10 December 1941, circulated 11 December 1941",
+      "source": "https://web.archive.org/web/20160323022642im_/http://www.beim-zeugmeister.de/zeugmeister/uploads/pics/_LW_A0001_B008.jpg",
+      "location": "Original wartime copy, printed pp. 1–3, stamped folios 4–6. Scans B008, B009 and B010",
+      "notes": "Both were production aircraft at full operational load with ammunition. Serial, actual masses, climb settings and turn radius are missing in these pages.",
+      "companion_scans": ["https://web.archive.org/web/20160323022642im_/http://www.beim-zeugmeister.de/zeugmeister/uploads/pics/_LW_A0001_B009.jpg", "https://web.archive.org/web/20160323022642im_/http://www.beim-zeugmeister.de/zeugmeister/uploads/pics/_LW_A0001_B010.jpg"],
+      "inspected_copy_sha256": "4ba9325d91d19d3df7acc78947bdbef5b95f4e45c9538406deebac64d78fe99f",
+      "companion_scan_sha256": ["d5301fba224d5165a402e21edd28a125ae3b143b7302bd0ceccafadcaffbdf6f", "25886512388c4ff1ff093f1e39809af3138bdb00eeaa9d3ac7a21cc340d8c364"]
+    },
+    {
+      "id": "F4-OKL-1942",
+      "aircraft": "Bf 109 F-4 DB 601 E",
+      "report": "OKL GL/A-Rü IA aircraft tables, 1 June 1942",
+      "source": "https://web.archive.org/web/20110718202435im_/http://www.beim-zeugmeister.de/zeugmeister/uploads/pics/_LW_A0001_B014.jpg",
+      "location": "Sheet 27, cropped original table, F-4 first row",
+      "notes": "Contemporary official compilation. Test method and specimen unstated. Do not assume independence from the Rechlin/factory material.",
+      "inspected_copy_sha256": "c8172afc7b4515d5a7a772a78e0fedeefec9ceff38a9582a2340d5c3d839ddf0"
+    },
+    {
+      "id": "F4-WTS-COMPARISON",
+      "aircraft": "Bf 109 F-4, early Fw 190 with BMW 801 C, projected G and BMW 801 D configurations",
+      "report": "Vergleich Me 109 – FW 190, period performance chart reproduced from WTS Koblenz",
+      "source": "https://web.archive.org/web/20110718202410im_/http://www.beim-zeugmeister.de/zeugmeister/uploads/pics/_LW_A0001_B001.jpg",
+      "location": "Right-hand start/emergency speed plot and left-hand combat climb plot",
+      "notes": "Chart distinguishes Rechlin-flown curves and calculations. BMW 801 D and DB 605 G curves are projected. Exact test date, individual identity and relation to the OKL row are unknown.",
+      "inspected_copy_sha256": "ef027b0abd0388cee8a655e9bff48200a2c6dbc78d04c13836adf829948ace0d"
+    },
+    {
+      "id": "F4-601E-INSTALLATION",
+      "aircraft": "Bf 109 F-3/F-4 DB 601 E",
+      "report": "D.(Luft)T. 2109 F-1 bis F-4, Teil 6 Triebwerksanlage, authorized 24 February 1942",
+      "source": "https://web.archive.org/web/20110718202553im_/http://www.beim-zeugmeister.de/zeugmeister/uploads/pics/_LW_A0001_B013.jpg",
+      "location": "Printed p. 607, original Bundesarchiv scan, gear reduction and settings table",
+      "notes": "Recoverable direct scan of the same manual previously used for DB 601 E ratings. Gear reduction is engine to propeller. Both 601 E and 601 N appear, with separate ratios.",
+      "inspected_copy_sha256": "28c901c66f644d976a767dfdfd7931fd456fc533beec7486e003c784c780d93d"
+    },
+    {
+      "id": "F4-BARCH-WS1013",
+      "aircraft": "Bf 109 F family",
+      "report": "Bundesarchiv BArch RL 3/6207, WS 1013 BF 109 F Bedienungsvorschrift",
+      "source": "https://www.deutsche-digitale-bibliothek.de/item/H6LJ35TLT7B4OMNUPIU2L7VFLATJYH3L",
+      "location": "May 1941, original RLD 7/1013",
+      "notes": "Catalogue entry. Check edition and F-4 applicability before using a page."
+    },
+    {
+      "id": "F1-G-COOLER-10915",
+      "aircraft": "Bf 109 F-1 WNr 6631, DB 601 N-1, experimental G radiators",
+      "report": "Messerschmitt Versuchs-Bericht 109 15 L 42, 10 August 1942",
+      "source": "https://www.wwiiaircraftperformance.com/org/me109/g/g_files/VB-109-15-L-42.pdf",
+      "location": "Blatt 2, measured speed table reduced to 950 PS at equivalent 500 m normal day",
+      "notes": "Experiment on F-1 with G radiators and F flap linkage, 2705 kg, additional surface oil radiator and evaporative test cooling. A useful installation experiment for F/G comparison with limited applicability to either benchmark.",
+      "inspected_copy_sha256": "20d06bd30d1416b833e0f70bded1ef9cb93476864992f35d54a1d1d9a32e6d67"
+    },
+    {
+      "id": "G2-NIIVVS-14513-HANDLING",
+      "aircraft": "Bf 109 G-2 WNr 14513 DB 605 A-1",
+      "report": "NII VVS, stability and controllability trials, 4–22 June 1943",
+      "source": "https://www.wwiiaircraftperformance.com/org/me109/g/g_files/Me-109_G2_14513_Russian.pdf",
+      "location": "Printed pp. 8, 10–12, 19, 24–25, 33, 43–45 and 52",
+      "notes": "10 flights, 8 h 06 min. Loading includes 29 kg of test instruments and 149.5 kg of armament. Do not assume clean three-gun service fit or apply the full-throttle trim-run setting to the speed-loss runs. The archived p. 43 minima are already present in the catalog.",
+      "inspected_copy_sha256": "2017627bf2666d12a32226d783d48d97f59fecfb389d5d8f0d668207365b7ad8"
+    },
+    {
+      "id": "G2-1942-PILOT-COPY",
+      "aircraft": "Bf 109 G-2 and Ga-2 DB 605",
+      "report": "Messerschmitt Bv-Fl 109 G-2, Ga-2 Bedienungsvorschrift-Fl, June 1942",
+      "source": "https://stephentaylorhistorian.com/wp-content/uploads/2020/04/bf-109g-2.pdf",
+      "location": "Printed pp. 14–15, PDF pp. 21–22",
+      "notes": "Same operating manual previously catalogued. The scan has a handwritten 270 in place of the printed 250 km/h best climb indication at ground level. Higher-altitude boxes are blank in this copy. Normal landing pages 18–19 are absent.",
+      "inspected_copy_sha256": "47796c9427af8e32a83ebfef506c288b02993d2cd3e710c9943c3171fad4844b"
+    },
+    {
+      "id": "G2-1943-PILOT",
+      "aircraft": "Bf 109 G-2, G-4 and G-6 DB 605 A",
+      "report": "L.Dv.T.2109 G-2, G-4, G-6-Fl Bedienungsvorschrift-Fl, April 1943 status, June 1943 issue",
+      "source": "https://www.wwiiaircraftperformance.com/org/me109/g/g_files/BF109_G-2-4-6_Bedienungsvorschrift_June43.pdf",
+      "location": "Printed p. 12 and title page",
+      "notes": "1.42 ata at 2800 rpm is printed but footnote 1 prohibits use and says the setting is blocked. 1.30 ata/2600 rpm for 30 min is the climb/combat row, with possible +0.03 ata overshoot in climb.",
+      "inspected_copy_sha256": "89ee1ae79338b2a0198ffbb7d7e82da1421d5b641526e9c118895e8df084dcd1"
+    },
+    {
+      "id": "G2-WNF-10911",
+      "aircraft": "Bf 109 G-2 WNF production group",
+      "report": "Messerschmitt Versuchs-Bericht 109 11 L 42, 9 July 1942, signed 15 July",
+      "source": "https://www.wwiiaircraftperformance.com/org/me109/g/g_files/VB-109-11-L-42.pdf",
+      "location": "Original PDF, Blatt 2 specimen ledger, Blatt 3 test results, Blatt 4 reduction basis",
+      "notes": "At 250 m normal-day normalization uses 1.30 kg/cm² manifold and 1.80 kg/cm² blower pressure as printed. Blatt 2 motor type is overwritten/ambiguous: printed DB 601 A with handwritten 605 and other marks. Engine serials are recoverable. Exact RPM and uniform DB 605 A fit for all eight are unverified.",
+      "inspected_copy_sha256": "e306e2e79aabaf8356584d72d8cc3bd23da8430821e34178f824e2f4b9a51e67",
+      "transcription": "https://www.wwiiaircraftperformance.com/org/me109/g/me109g-10911l42.html"
+    },
+    {
+      "id": "G-EARLY-SLAT-10910",
+      "aircraft": "Early Me 109 G airframes and F development specimen 5604",
+      "report": "Messerschmitt Versuchs-Bericht 109 10 E 42, Vorflügel 109 G, 13 July 1942",
+      "source": "https://www.wwiiaircraftperformance.com/org/me109/g/g_files/VB-109-10-E-42.pdf",
+      "location": "Blatt 2–3, rigging changes and opening speeds",
+      "notes": "Va is retained as printed. WNr 14166 is explicitly identified as a Regensburg production machine. Exact subvariant is unclear. WNr 5604 is a development airframe. Comparisons are configuration-sensitive.",
+      "inspected_copy_sha256": "8cb280377605043f2f20384d7d20404228456c3a708ba56a2e86d4666d373d39"
+    },
+    {
+      "id": "A4-HANDBOOK-TEIL0",
+      "aircraft": "Fw 190 A-4 standard loading configurations",
+      "report": "Focke-Wulf Flugzeug-Handbuch Teil 0, A-1 with applicability to A-2 through A-4",
+      "source": "https://www.degnans.com/markd/Fw%20190%20A-2%20bis%20A-4%20Teil%2000.pdf",
+      "location": "PDF p. 15, printed p. 12, explicit Baureihe A-4 load table",
+      "notes": "Scanned/reproduced period handbook. Bound cover and internal section carry different 1942/1943 edition markings. Compare the explicit A-4 heading and printed loading table. These are prescribed configurations.",
+      "inspected_copy_sha256": "834a6982af0a2fc3715bce3d1f92a9404ea71a7c1e02d7a212571b87caf0d885"
+    },
+    {
+      "id": "A4-783-FW-NR1",
+      "aircraft": "Fw 190 A-4 WNr 783, BMW 801 D-2/20208",
+      "report": "Focke-Wulf Flugbericht Fw 190/783 Nr. 1, 1 March 1943",
+      "source": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr1.pdf",
+      "location": "Original PDF, Blatt 2–3 and Kurvenblatt 2 (PDF p. 5)",
+      "notes": "Tight engine cowl, two MG 17 and two MG 151 with ammunition, 3870 kg takeoff. Curves compare open and shut cooling flaps with long exterior intakes, at 2400 rpm.",
+      "inspected_copy_sha256": "466386bb734b8f0860cc6721080c944f2af85470e22af891247d4b4435775256",
+      "transcription": "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-783-nr1.html"
+    },
+    {
+      "id": "A4-BARCH-ANNEX",
+      "aircraft": "Fw 190 A-4/U8 and A-5/U8",
+      "report": "Bundesarchiv BArch RL 3/6308, extended-range fighter-bomber instructions",
+      "source": "https://www.deutsche-digitale-bibliothek.de/item/C6VNXORWURVX5DGZP552WBCQLRG7U3BQ",
+      "location": "Annex, specialized loadings",
+      "notes": "Catalogue entry. Treat the U8 installation as a separate loading and drag case."
+    },
+    {
+      "id": "A4-BARCH-PILOT",
+      "aircraft": "Fw 190 A-1 through A-8 including A-4",
+      "report": "Bundesarchiv BArch RL 3/7781, L.Dv.T. 2190/Fl family operating instructions",
+      "source": "https://www.deutsche-digitale-bibliothek.de/item/LZ2IYLFKLOZPPHSL2DUHLEH4NILSDFYQ",
+      "location": "Edition February 1944, status December 1943",
+      "notes": "Catalogue entry. General operating handbook distinct from the manufacturer's Part 0 load table."
+    },
+    {
+      "id": "D9-210002-FW-NR1",
+      "aircraft": "Fw 190 D-9 WNr 210002, Jumo 213 A/1021521862",
+      "report": "Focke-Wulf Flugbericht Fw 190 D-9/210002 Nr. 1, 7 October 1944",
+      "source": "https://www.wwiiaircraftperformance.com/org/fw190/d9/d9_files/Fw_190_D-9_210002_FB_Nr1.pdf",
+      "location": "PDF pp. 2–3 and 5–7, original charts 1–3",
+      "notes": "Initial Eltron installation. 4100 kg level-flight start weight on chart 2 differs from 4300 kg climb loading on chart 3. Cooling, rack and wheel-door combinations must be matched to a particular run. The original separates the ~700 m intake-flap pressure drop-height gain from the climb rate increase at the 9000 m change to all flaps flush.",
+      "inspected_copy_sha256": "2eb69cec374ec47161cd36401887d6491a3f1b5c30e27475444dd55a83e8ef36"
+    },
+    {
+      "id": "D9-210002-FW-NR3",
+      "aircraft": "Fw 190 D-9 WNr 210002, Jumo 213 A/1021521862",
+      "report": "Focke-Wulf Flugbericht Fw 190 D-9/210002 Nr. 3, 24 October 1944",
+      "source": "https://www.wwiiaircraftperformance.com/org/fw190/d9/d9_files/Fw_190_D-9_210002_FB_Nr3.pdf",
+      "location": "Original PDF, Blatt 1–2, engine-gap sealing trial",
+      "notes": "Polished surface, moveable wheel covers, non-driven radiator flap flush. Temporary seals failed. Printed before/after speed pairs complement the prior approximate gain. Camera fairing stall trials were deferred after damage.",
+      "inspected_copy_sha256": "86be5e78858d802b19b6c5406fad1396686d44105afe13921d15cd43d4b87231",
+      "transcription": "https://www.wwiiaircraftperformance.com/org/fw190/d9/Fw190D-9_210002_Nr3.html"
+    },
+    {
+      "id": "D9-RECHLIN-9003",
+      "aircraft": "Fw 190 D-9 WNr 210006 Jumo 213 A, ETC 504",
+      "report": "E-Stelle Rechlin Erpr.Nr. 9003, Teilbericht 2, 2 March 1945",
+      "source": "https://www.wwiiaircraftperformance.com/org/fw190/d9/d9_files/Fw_190_D-9_006.pdf",
+      "location": "Original PDF, sheets 2, 6 and 8",
+      "notes": "Rechlin airframe/engine/propeller distinct from WNr 210002. The weight chart and climb curves are separate from the prior radiator and empty tank study and provide comparison data.",
+      "inspected_copy_sha256": "9eb4cd9b6da1ba578c613796d96ad6ae10252534f9edfe53f4d5c68ad1144f39",
+      "transcription": "https://www.wwiiaircraftperformance.com/org/fw190/d9/Fw190D-9_E-StelleRechlin.html"
+    },
+    {
+      "id": "D9-BARCH-PILOT",
+      "aircraft": "Fw 190 D-9",
+      "report": "Bundesarchiv BArch RL 3/6309, WS 2190 8-190 D-9 Teil 1",
+      "source": "https://www.deutsche-digitale-bibliothek.de/item/UZ6OFI5SIHBJLYJSLN6BSQSHA3RFGKTB",
+      "location": "Pilot instructions, September 1944",
+      "notes": "Catalogue entry. Separate 86.3 MB copy listed in the Festungsbauten collection. Public page images for this edition could not be verified.",
+      "catalog": "https://www.festungsbauten.de/Archiv.htm"
+    },
+    {
+      "id": "D9-BARCH-PART2",
+      "aircraft": "Fw 190 D-9",
+      "report": "Bundesarchiv BArch RL 3/6310, WS 2190 8-190 D-9 Teil 2",
+      "source": "https://www.deutsche-digitale-bibliothek.de/item/RQVUNXJNOMHFVVI2GWKKVOKBF66I4P33",
+      "location": "Maintenance and adjustment handbook",
+      "notes": "Catalogue entry."
+    },
+    {
+      "id": "D9-FE120-LOCATOR",
+      "aircraft": "Fw 190 D-9 WNr 601088 FE-120",
+      "report": "Wright Field flight evaluation, 1st Lt. Charles A. Ross, September 1946",
+      "source": "https://airandspace.si.edu/collection-objects/focke-wulf-fw-190-d-9/nasm_A19600319000",
+      "location": "Smithsonian aircraft record identifies the report",
+      "notes": "Aircraft and report locator. No underlying measured performance pages recovered."
+    },
+    {
+      "id": "FW190-NIIVVS-YAKUBOVICH",
+      "aircraft": "Fw 190 A-4 captured aircraft and D-9 WNr 210251",
+      "report": "N. V. Yakubovich, La-7, La-9, La-11, 2014, NII VVS test comparison table",
+      "source": "https://ru.djvu.online/file/hR5Asibxj3nWb",
+      "location": "Table 3, printed pp. 58–59",
+      "notes": "Secondary archival compilation. A-4 serial absent in this table. D-9 WNr 210251 is explicit. Launch mass is known, instantaneous test mass, speed, boost and retained-energy traces are absent."
+    },
+    {
+      "id": "D9-NIIVVS-RGAE",
+      "aircraft": "Fw 190 D-9 WNr 210251 and Fw 190 A-4 WNr 2310",
+      "report": "D. A. Sobolev and D. B. Khazanov, German imprint in the history of Soviet aviation, 2000",
+      "source": "https://djvu.online/file/A3MamKLu2C42j",
+      "location": "Printed pp. 189–191, 210–211 and note 71, RGAE f. 8164, op. 1, d. 214, ll. 7–7 verso",
+      "notes": "Archival citation for D-9 comparative tests. D-9 emergency water-methanol was not tested in the cited trials. The book identifies the tested A-4 WNr 2310, but does not establish a serial for every row in Yakubovich's table."
+    },
+    {
+      "id": "NACA-R868-REVIEW",
+      "aircraft": "Fw 190 family",
+      "report": "NACA Report 868, Summary of Lateral-Control Research",
+      "source": "https://ntrs.nasa.gov/api/citations/19930090943/downloads/19930090943.pdf",
+      "location": "Table and figures on aileron/lateral control",
+      "notes": "Existing research lineage. Variant and specimen are insufficient for new A-4 or D-9 near-stall calibration, and roll data do not give sustained-turn energy balance."
+    },
+    {
+      "id": "NACA-FST-DRAG-REVIEW",
+      "aircraft": "Eleven aircraft tested in NACA's full-scale tunnel",
+      "report": "NACA report, Drag Analysis of Single-Engine Military Airplanes Tested in the NACA Full-Scale Wind Tunnel",
+      "source": "https://digital.library.unt.edu/ark:/67531/metadc61158/",
+      "location": "NACA full-scale-tunnel drag methods and survey, 1940",
+      "notes": "Useful comparison method. This search did not yield a matched data table for any of the four German benchmarks."
+    }
+  ],
+  "series": [
+    {
+      "id": "f4-original-1941-loading",
+      "source_id": "F4-MTT-1941-FLOWN",
+      "aircraft": "Bf 109 F-4 DB 601 E",
+      "quantity": "aircraft_loading",
+      "source_class": "inspected-original-documentary-data",
+      "source_location": "Mass block and wing area, 29 November 1941 sheet",
+      "conditions": "Period listed loading. The mass at individual speed or stall events is not printed.",
+      "speed_basis": "unestablished",
+      "columns": ["equipped_mass_kg", "pilot_kg", "ammunition_kg", "fuel_kg", "oil_kg", "flight_loading_kg", "wing_area_m2", "listed_wing_loading_kg_m2"],
+      "rows": [
+        [2386, 100, 73, 304, 27, 2890, 16.1, 180]
+      ]
+    },
+    {
+      "id": "f4-original-1941-climb-time",
+      "source_id": "F4-MTT-1941-FLOWN",
+      "aircraft": "Bf 109 F-4 DB 601 E",
+      "quantity": "climb_elapsed_time",
+      "source_class": "inspected-original-table",
+      "source_location": "Steigzeit block, 29 November 1941 sheet",
+      "conditions": "Cumulative time as tabulated for Ga. The sheet title says Leistungen erflogen. The climb table does not independently print boost or RPM. Same sheet as the prior transcribed speed data.",
+      "speed_basis": "unestablished",
+      "columns": ["top_altitude_m", "elapsed_min", "listed_flight_loading_kg"],
+      "rows": [
+        [1000, 0.9, 2890],
+        [2000, 1.8, 2890],
+        [4000, 3.8, 2890],
+        [6000, 6, 2890],
+        [8000, 9, 2890]
+      ]
+    },
+    {
+      "id": "f4-original-1941-landing",
+      "source_id": "F4-MTT-1941-FLOWN",
+      "aircraft": "Bf 109 F-4 DB 601 E",
+      "quantity": "landing_speed",
+      "source_class": "inspected-original-table",
+      "source_location": "Landegeschwindigkeit block, 29 November 1941 sheet",
+      "conditions": "Light landing condition with fuel for a quarter hour at continuous power. The fuel basis is not the power at touchdown. Flap angle, speed calibration and stall criterion are absent.",
+      "speed_basis": "unestablished",
+      "columns": ["landing_loading_kg", "speed_kmh", "fuel_allowance_min"],
+      "rows": [
+        [2560, 135, 15]
+      ]
+    },
+    {
+      "id": "f4-calculated-1942-landing",
+      "source_id": "F4-MTT-1942-CALCULATED",
+      "aircraft": "Bf 109 F-4 DB 601 E",
+      "quantity": "landing_speed",
+      "source_class": "inspected-original-calculation",
+      "source_location": "Landegeschwindigkeit block, IV/56/42",
+      "conditions": "Calculated speed. Loading appears as 2570 kg on the original. Separate from the November 1941 flight sheet.",
+      "speed_basis": "unestablished",
+      "columns": ["landing_loading_kg", "speed_kmh", "listed_flight_loading_kg"],
+      "rows": [
+        [2570, 135, 2900]
+      ]
+    },
+    {
+      "id": "f4-1943-wing-and-coefficients",
+      "source_id": "F4-MTT-1943-GEOMETRY",
+      "aircraft": "Bf 109 F-4 DB 601 E",
+      "quantity": "aerodynamic_design_reference",
+      "source_class": "inspected-original-design-data",
+      "source_location": "3 February 1943 sheet, Allgemein, Flügel and bottom coefficient line",
+      "conditions": "Period engineering values. Landing coefficient and high-speed cW are distinct regimes. The report does not establish C_Lmax, a common drag intercept, or a measured full polar.",
+      "speed_basis": "unestablished",
+      "columns": ["listed_flight_loading_kg", "wing_area_m2", "landing_speed_kmh", "landing_cl_as_printed", "high_speed_cw_as_printed"],
+      "rows": [
+        [2890, 16.05, 148, 1.7, 0.023]
+      ]
+    },
+    {
+      "id": "f4-1943-aerodynamic-speed-implication",
+      "source_id": "F4-MTT-1943-GEOMETRY",
+      "aircraft": "Bf 109 F-4 DB 601 E",
+      "quantity": "conditional_lift_balance_speed",
+      "source_class": "engineering-derivation",
+      "source_location": "3 February 1943 sheet, design coefficient and wing area applied in a level force balance",
+      "conditions": "V = sqrt(2 m g / (rho0 S CL)). g = 9.80665 m/s², rho0 = 1.225 kg/m³, S = 16.05 m², and the printed cA Lande is held constant. Provides a sensitivity check only. The 2560 kg mass is the 1941 sheet landing loading.",
+      "speed_basis": "EAS",
+      "columns": ["assumed_mass_kg", "assumed_cl", "conditional_eas_kmh"],
+      "rows": [
+        [2560, 1.7, 139.5],
+        [2890, 1.7, 148.3]
+      ]
+    },
+    {
+      "id": "f4-rechlin-matched-climb",
+      "source_id": "F4-RECHLIN-15023",
+      "aircraft": "Bf 109 F-4 and Fw 190 A-2",
+      "quantity": "climb_elapsed_time",
+      "source_class": "inspected-original-table",
+      "source_location": "Rechlin 15023/41 p. 3, section c",
+      "conditions": "Same comparison, production aircraft with ammunition at full operational load. Boost, RPM, actual mass and specific climb speed are unreported.",
+      "speed_basis": "unestablished",
+      "columns": ["lower_altitude_m", "upper_altitude_m", "bf109f4_time_s", "fw190a2_time_s"],
+      "rows": [
+        [1000, 5000, 240, 290],
+        [1000, 10000, 750, 1110]
+      ]
+    },
+    {
+      "id": "f4-rechlin-combat-run-separation",
+      "source_id": "F4-RECHLIN-15023",
+      "aircraft": "Bf 109 F-4 and Fw 190 A-2",
+      "quantity": "relative_distance_after_comparison_run",
+      "source_class": "inspected-original-table",
+      "source_location": "Rechlin 15023/41 p. 2, section a",
+      "conditions": "At Kampfleistung. Distances after three minutes, positive when the A-2 is ahead. Initial conditions and acceleration history are not sufficiently specified for steady speed or drag inference.",
+      "speed_basis": "unestablished",
+      "columns": ["altitude_m", "elapsed_s", "fw190a2_relative_distance_low_m", "fw190a2_relative_distance_high_m"],
+      "rows": [
+        [50, 180, 0, 500],
+        [2000, 180, -200, -100],
+        [4000, 180, -100, -50],
+        [6000, 180, -250, -200],
+        [8000, 180, -300, -250],
+        [10000, 180, -600, -400]
+      ]
+    },
+    {
+      "id": "f4-rechlin-relative-landing-and-takeoff",
+      "source_id": "F4-RECHLIN-15023",
+      "aircraft": "Bf 109 F-4 and Fw 190 A-2",
+      "quantity": "relative_landing_and_takeoff",
+      "source_class": "inspected-original-table",
+      "source_location": "Rechlin 15023/41 p. 3, section e",
+      "conditions": "A-2 relative to F-4. Test pilots could not conclusively rank minimum turn radius. This is a landing-speed difference, not an absolute F-4 stall or pitot correction.",
+      "speed_basis": "unestablished",
+      "columns": ["fw190a2_landing_speed_excess_kmh_approx", "fw190a2_takeoff_distance_excess_low_m", "fw190a2_takeoff_distance_excess_high_m"],
+      "rows": [
+        [15, 60, 70]
+      ]
+    },
+    {
+      "id": "f4-601e-propeller-reduction",
+      "source_id": "F4-601E-INSTALLATION",
+      "aircraft": "Bf 109 F-3/F-4 DB 601 E",
+      "quantity": "propeller_reduction_ratio",
+      "source_class": "inspected-original-documentary-data",
+      "source_location": "Teil 6 p. 607",
+      "conditions": "Crankshaft to propeller speed ratio expressed as engine rpm divided by propeller rpm. 1.55 in the next line applies to DB 601 N.",
+      "speed_basis": "unestablished",
+      "columns": ["engine", "crankshaft_to_propeller_speed_ratio"],
+      "rows": [
+        ["DB 601 E", 1.685]
+      ]
+    },
+    {
+      "id": "f4-wts-and-okl-emergency-check",
+      "source_id": "F4-WTS-COMPARISON",
+      "aircraft": "Bf 109 F-4, early Fw 190 with BMW 801 C, projected G and BMW 801 D configurations",
+      "quantity": "level_flight_speed",
+      "source_class": "digitized-period-compiled-flight-curve",
+      "source_location": "WTS comparison, right-hand Start-/Notleistung plot",
+      "conditions": "The F-4 trace is marked erflogen at 2890 kg. Visually read the peak to roughly ±4 km/h and ±250 m. The linked OKL sheet separately lists 670 km/h at 6200 m. The sources may describe the same original test lineage. Do not attach an exact boost or test date.",
+      "speed_basis": "unestablished",
+      "columns": ["peak_speed_kmh_approx", "peak_altitude_m_approx", "listed_flight_loading_kg"],
+      "rows": [
+        [670, 6300, 2890]
+      ]
+    },
+    {
+      "id": "f4-okl-1942-emergency-summary",
+      "source_id": "F4-OKL-1942",
+      "aircraft": "Bf 109 F-4 DB 601 E",
+      "quantity": "level_flight_speed",
+      "source_class": "inspected-original-period-compilation",
+      "source_location": "OKL sheet 27, Bf 109 F-4, maximum-speed column",
+      "conditions": "The high-speed altitude cell reads 6.2 km. This official compiled value is not a new independently instrumented speed point.",
+      "speed_basis": "unestablished",
+      "columns": ["speed_kmh", "altitude_m"],
+      "rows": [
+        [670, 6200]
+      ]
+    },
+    {
+      "id": "f1-hybrid-g-radiator-runs",
+      "source_id": "F1-G-COOLER-10915",
+      "aircraft": "Bf 109 F-1 WNr 6631, DB 601 N-1, experimental G radiators",
+      "quantity": "cooling_installation_level_speed",
+      "source_class": "inspected-original-table",
+      "source_location": "Versuchs-Bericht 109 15 L 42 Blatt 2",
+      "conditions": "F-1 WNr 6631, experimental G radiator installation, F geometry linkage, 2705 kg. Reduced to 950 PS, 718 mm Hg and 12°C (equivalent 500 m normal day). No transfer to F-4 or G-2 as absolute performance.",
+      "speed_basis": "TAS",
+      "columns": ["flight_date", "pilot", "radiator_condition", "normalized_speed_kmh"],
+      "rows": [
+        ["1942-06-17", "Schmid", "warm", 460],
+        ["1942-06-20", "Schmid", "cold", 459],
+        ["1942-06-20", "Wendel", "cold", 454],
+        ["1942-07-10", "Baur", "removed", 481],
+        ["1942-07-16", "Wendel", "removed", 484],
+        ["1942-07-30", "Wendel", "cold", 453],
+        ["1942-08-05", "Schmid", "warm", 458]
+      ]
+    },
+    {
+      "id": "g2-14513-weighing-and-cg",
+      "source_id": "G2-NIIVVS-14513-HANDLING",
+      "aircraft": "Bf 109 G-2 WNr 14513 DB 605 A-1",
+      "quantity": "aircraft_loading",
+      "source_class": "inspected-original-table",
+      "source_location": "NII VVS p. 33 with p. 10 reference loading",
+      "conditions": "CG in percent mean aerodynamic chord. Control-input and speed-loss flights were at 3235 kg takeoff. The prior pack already records the p. 10 empty mass and component weights, including 3206 kg loaded before the 29 kg instruments. The exact mass at break and CG for each p. 43 minimum remain unknown.",
+      "speed_basis": "unestablished",
+      "columns": ["condition", "mass_kg", "cg_pct_mac", "mass_basis"],
+      "rows": [
+        ["control_and_speed_loss_forward", 3235, 25, "takeoff"],
+        ["control_and_speed_loss_aft", 3235, 30.7, "takeoff"]
+      ]
+    },
+    {
+      "id": "g2-14513-slat-events",
+      "source_id": "G2-NIIVVS-14513-HANDLING",
+      "aircraft": "Bf 109 G-2 WNr 14513 DB 605 A-1",
+      "quantity": "slat_transition_speed",
+      "source_class": "inspected-original-table",
+      "source_location": "NII VVS p. 44, section 5",
+      "conditions": "Flaps retracted. Report explicitly says instrument-indicated. Pitot correction, mass at each event, and engine setting are unreported.",
+      "speed_basis": "IAS",
+      "columns": ["side", "event", "speed_kmh"],
+      "rows": [
+        ["right", "open", 235],
+        ["left", "open", 225],
+        ["right", "close", 250],
+        ["left", "close", 260]
+      ]
+    },
+    {
+      "id": "g2-14513-lateral-stability-onset",
+      "source_id": "G2-NIIVVS-14513-HANDLING",
+      "aircraft": "Bf 109 G-2 WNr 14513 DB 605 A-1",
+      "quantity": "near_stall_handling_onset",
+      "source_class": "inspected-original-table",
+      "source_location": "NII VVS p. 44, loss of speed section",
+      "conditions": "Lateral stability weakens from about this speed, especially at the aft CG. Aileron response remains available up to loss of speed. Source does not identify the basis of this particular speed.",
+      "speed_basis": "unestablished",
+      "columns": ["speed_kmh_approx", "notable_aft_cg_pct_mac"],
+      "rows": [
+        [190, 30.7]
+      ]
+    },
+    {
+      "id": "g2-14513-glide-speed-loss-trace",
+      "source_id": "G2-NIIVVS-14513-HANDLING",
+      "aircraft": "Bf 109 G-2 WNr 14513 DB 605 A-1",
+      "quantity": "stall_approach_trace",
+      "source_class": "digitized-original-flight-chart",
+      "source_location": "NII VVS p. 45, Photo 21, V and H traces",
+      "conditions": "Flaps up, glide, 3235 kg takeoff. Approximate chart readings ±3 km/h and ±20 m, elapsed time ±0.2 s. Speed axis labeled V, not explicitly calibrated. The instrument trace documents the approach to loss of control. It is not a table of discrete stall speeds.",
+      "speed_basis": "unestablished",
+      "columns": ["elapsed_s", "chart_speed_kmh_approx", "chart_altitude_m_approx"],
+      "rows": [
+        [0, 220, 4040],
+        [2, 215, 4020],
+        [4, 209, 4005],
+        [6, 205, 3995],
+        [8, 201, 3995],
+        [10, 197, 3990],
+        [12, 194, 3980],
+        [14, 192, 3965],
+        [16, 190, 3950],
+        [18, 189, 3945],
+        [20, 187, 3945],
+        [22, 184, 3945],
+        [24, 182, 3945],
+        [26, 179, 3920]
+      ]
+    },
+    {
+      "id": "g2-14513-elevator-neutral-points",
+      "source_id": "G2-NIIVVS-14513-HANDLING",
+      "aircraft": "Bf 109 G-2 WNr 14513 DB 605 A-1",
+      "quantity": "longitudinal_stability_neutral_point",
+      "source_class": "inspected-original-table",
+      "source_location": "NII VVS p. 24 neutral point table",
+      "conditions": "CG in percent mean aerodynamic chord. Report's lift coefficients and fixed/free elevator neutral points. These are stability observations and do not identify maximum lift.",
+      "speed_basis": "unestablished",
+      "columns": ["condition", "reported_cl", "flap_deg", "fixed_elevator_neutral_pct_mac", "free_elevator_neutral_pct_mac"],
+      "rows": [
+        ["glide", 0.55, 0, 30.5, 29],
+        ["landing", 0.95, 40, 35, 27],
+        ["dive", 0, 0, 32, 31],
+        ["best_climb", 0.5, 0, 27.5, 25]
+      ]
+    },
+    {
+      "id": "g2-14513-known-setting-trim",
+      "source_id": "G2-NIIVVS-14513-HANDLING",
+      "aircraft": "Bf 109 G-2 WNr 14513 DB 605 A-1",
+      "quantity": "test_power_setting",
+      "source_class": "inspected-original-documentary-data",
+      "source_location": "NII VVS p. 19, Photo 5 chart header",
+      "conditions": "The chart explicitly prints the 2600 rpm and manifold pressure. Only the full-throttle trim run carries these settings. Do not apply to the p. 43–45 speed-loss trials.",
+      "speed_basis": "unestablished",
+      "columns": ["rpm", "manifold_kgf_cm2_as_printed"],
+      "rows": [
+        [2600, 1.3]
+      ]
+    },
+    {
+      "id": "g2-1942-pilot-climb-indication",
+      "source_id": "G2-1942-PILOT-COPY",
+      "aircraft": "Bf 109 G-2 and Ga-2 DB 605",
+      "quantity": "pilot_climb_speed_guidance",
+      "source_class": "inspected-original-documentary-data",
+      "source_location": "Printed p. 14, best-climb indication table",
+      "conditions": "The ground-level cell and preceding prose change 250 to 270 in this copy. Date of the handwritten change is unknown. No higher altitude values are entered.",
+      "speed_basis": "IAS",
+      "columns": ["altitude_m", "printed_ias_kmh", "handwritten_replacement_ias_kmh"],
+      "rows": [
+        [0, 250, 270]
+      ]
+    },
+    {
+      "id": "g2-1942-pilot-idle-glide-governor",
+      "source_id": "G2-1942-PILOT-COPY",
+      "aircraft": "Bf 109 G-2 and Ga-2 DB 605",
+      "quantity": "propeller_governor_operating_guidance",
+      "source_class": "inspected-original-documentary-data",
+      "source_location": "Printed p. 15, propeller instructions point 3",
+      "conditions": "For idle gliding below this indicated speed, switch off the automatic governor or monitor that the end limit is not exceeded. This does not establish the propeller setting in the later Soviet glide.",
+      "speed_basis": "IAS",
+      "columns": ["idle_glide_ias_threshold_kmh"],
+      "rows": [
+        [200]
+      ]
+    },
+    {
+      "id": "g2-1943-pilot-rating-table",
+      "source_id": "G2-1943-PILOT",
+      "aircraft": "Bf 109 G-2, G-4 and G-6 DB 605 A",
+      "quantity": "engine_operating_permission",
+      "source_class": "inspected-original-documentary-data",
+      "source_location": "Printed p. 12, Leistungs table and footnotes 1–2",
+      "conditions": "Status applies to this June 1943 issue. Continuous settings have no minute limit in this table. Emergency row is listed with 1 min but blocked.",
+      "speed_basis": "unestablished",
+      "columns": ["rating", "rpm", "boost_ata", "printed_limit_min", "permitted_in_this_issue", "climb_boost_overshoot_ata"],
+      "rows": [
+        ["start_emergency", 2800, 1.42, 1, false, null],
+        ["climb_combat", 2600, 1.3, 30, true, 0.03],
+        ["maximum_continuous", 2300, 1.15, null, true, null],
+        ["economical_continuous", 2100, 1, null, true, null]
+      ]
+    },
+    {
+      "id": "g2-1943-pilot-operating-speeds",
+      "source_id": "G2-1943-PILOT",
+      "aircraft": "Bf 109 G-2, G-4 and G-6 DB 605 A",
+      "quantity": "manual_configuration_speed_limit",
+      "source_class": "inspected-original-documentary-data",
+      "source_location": "Printed p. 12, Zulässige Höchstgeschwindigkeiten",
+      "conditions": "Operating limits. The excerpt does not explicitly name the speed correction basis.",
+      "speed_basis": "unestablished",
+      "columns": ["configuration", "published_limit_kmh"],
+      "rows": [
+        ["full_landing_flaps", 250],
+        ["gear_extended", 350],
+        ["dive", 750]
+      ]
+    },
+    {
+      "id": "g2-wnf-individual-timed-course-runs",
+      "source_id": "G2-WNF-10911",
+      "aircraft": "Bf 109 G-2 WNF production group",
+      "quantity": "timed_course_level_flight_speed",
+      "source_class": "inspected-original-table",
+      "source_location": "Blatt 2 aircraft and engine ledger, Blatt 3 results, Blatt 4 Vw/Vn/Vnk definitions",
+      "conditions": "G-2 production aircraft, with Vw true at actual test day, altitude and engine output. Vn and Vnk are normalized to 250 m, 1.30 kg/cm² manifold and 1.80 kg/cm² blower. Vnk also includes the rod penalty. The report estimates 7 km/h absolute tolerance. Flight 5 repeats 3. Flights 1 and 11 have no results in this table. Printed engine type is overwritten and unresolved. The original p. 2 ledger appears to give engine 25592 for flight 9, while the English transcription gives 26592.",
+      "speed_basis": "TAS",
+      "columns": ["flight", "airframe_werknummer", "engine_werknummer", "surface_group", "vw_kmh", "vn_kmh", "vnk_kmh"],
+      "rows": [
+        [2, 13439, 76861, "treated", 520, 517, 520],
+        [3, 13438, 77265, "treated", 518, 526, 529],
+        [4, 13440, 76854, "treated", 514, 525, 528],
+        [5, 13438, 77265, "treated", 517, 526, 529],
+        [6, 13442, 76875, "treated", 520, 525, 528],
+        [7, 13448, 25562, "production", 514, 515, 518],
+        [8, 13496, 25554, "production", 520, 519, 519],
+        [9, 13506, 25592, "production", 517, 520, 520],
+        [10, 13500, 25516, "production", 517, 515, 518]
+      ]
+    },
+    {
+      "id": "g2-wnf-sea-level-reduced-comparison",
+      "source_id": "G2-WNF-10911",
+      "aircraft": "Bf 109 G-2 WNF production group",
+      "quantity": "level_flight_speed_normalized",
+      "source_class": "inspected-original-table",
+      "source_location": "Blatt 4, first results paragraph",
+      "conditions": "Sea-level reductions from the same July timed-course flights. Prior 250 m summaries and these reduced values share a test series. They are not new sea-level flight runs.",
+      "speed_basis": "TAS",
+      "columns": ["surface_group", "standardized_altitude_m", "speed_kmh", "report_absolute_tolerance_kmh_approx"],
+      "rows": [
+        ["treated", 0, 520, 7],
+        ["production", 0, 512, 7]
+      ]
+    },
+    {
+      "id": "early-fg-factory-slat-opening",
+      "source_id": "G-EARLY-SLAT-10910",
+      "aircraft": "Early Me 109 G airframes and F development specimen 5604",
+      "quantity": "slat_transition_speed",
+      "source_class": "inspected-original-table",
+      "source_location": "Blatt 2–3, cases 1–4",
+      "conditions": "Va as printed, speed correction basis unspecified here. Tipping and edge contact affect opening. F development specimen 5604 and early G 14001/14026/14166 remain distinct. Exact G subvariant is unverified in the report.",
+      "speed_basis": "unestablished",
+      "columns": ["airframe_werknummer", "case", "side", "lower_va_kmh", "upper_va_kmh", "power_label"],
+      "rows": [
+        [14001, "as_tested", "right", 230, 230, null],
+        [14001, "after_left_slat_adjustment", "left", 230, 230, null],
+        [14166, "before_roller_track_adjustment", "left", 200, 200, null],
+        [14166, "before_roller_track_adjustment", "right", 200, 200, null],
+        [14166, "after_roller_track_and_edge_adjustment", "unspecified", 240, 245, "Kampfleistung"],
+        [5604, "comparison_development_airframe", "unspecified", 200, 210, "Kampfleistung"],
+        [14026, "as_tested", "unspecified", 230, 230, null]
+      ]
+    },
+    {
+      "id": "a4-teil0-four-airframe-loads",
+      "source_id": "A4-HANDBOOK-TEIL0",
+      "aircraft": "Fw 190 A-4 standard loading configurations",
+      "quantity": "aircraft_loading",
+      "source_class": "inspected-original-documentary-data",
+      "source_location": "Printed p. 12, PDF p. 15",
+      "conditions": "Variants I–IV from the explicit A-4 table. Fuel and ordnance are full-load entries. WNr 783 test loading is separately recorded.",
+      "speed_basis": "unestablished",
+      "columns": ["loading", "empty_kg", "equipped_kg", "pilot_kg", "forward_fuel_kg", "aft_fuel_kg", "aux_fuel_kg", "oil_kg", "mg17_ammunition_kg", "mg151_ammunition_kg", "mgff_ammunition_kg", "bomb_kg", "flight_loading_kg"],
+      "rows": [
+        ["fighter_2mg17_2mg151", 2900, 3148, 100, 182, 228, 0, 40, 54, 110, 0, 0, 3862],
+        ["fighter_with_2mgff", 2900, 3242, 100, 182, 228, 0, 40, 54, 110, 29, 0, 3985],
+        ["extended_range_fighter", 2900, 3218, 100, 182, 228, 234, 50, 54, 110, 0, 0, 4176],
+        ["jabo_500kg_bomb", 2900, 3197, 100, 182, 228, 0, 40, 54, 110, 0, 500, 4411]
+      ]
+    },
+    {
+      "id": "a4-783-open-and-closed-climb",
+      "source_id": "A4-783-FW-NR1",
+      "aircraft": "Fw 190 A-4 WNr 783, BMW 801 D-2/20208",
+      "quantity": "climb_performance_by_cooling_configuration",
+      "source_class": "digitized-original-flight-chart",
+      "source_location": "Nr. 1 Kurvenblatt 2, original PDF p. 5",
+      "conditions": "3870 kg takeoff, BMW 801 D-2/20208, 2400 rpm Kampfleistung, long exterior intakes, tight cowl and fully armed two-MG 17/two-MG 151 installation. ±0.35 m/s and ±0.25 min visual reading uncertainty. Elapsed-time curve is open cooling flaps only. Different cowl flap states constrain installation loss at these climb points.",
+      "speed_basis": "unestablished",
+      "columns": ["barometric_altitude_m", "open_roc_mps_approx", "closed_roc_mps_approx", "open_elapsed_min_approx"],
+      "rows": [
+        [1000, 14.5, 16, 1.1],
+        [2000, 13.5, 15, 2.3],
+        [3000, 12.2, 13.3, 3.6],
+        [4000, 12.1, 13.1, 5],
+        [5000, 12.1, 13.1, 6.5],
+        [6000, 12, 13, 7.9],
+        [7000, 9.8, 11.7, 9.4],
+        [8000, 7.3, 9.1, 11.5],
+        [9000, 4.8, 6.5, 14.2],
+        [10000, 2.2, 4, null]
+      ]
+    },
+    {
+      "id": "a4-783-cooling-climb-ceiling",
+      "source_id": "A4-783-FW-NR1",
+      "aircraft": "Fw 190 A-4 WNr 783, BMW 801 D-2/20208",
+      "quantity": "service_ceiling_by_configuration",
+      "source_class": "inspected-original-table",
+      "source_location": "Nr. 1 Blatt 3, paragraph 3",
+      "conditions": "Report's service-ceiling estimates from the same climb trials at 2400 rpm. Manifold-pressure drop height is 6100 m. The ceiling entries are extrapolated from the curve.",
+      "speed_basis": "unestablished",
+      "columns": ["cooling_flaps", "service_ceiling_m", "manifold_drop_height_m"],
+      "rows": [
+        ["open", 10650, 6100],
+        ["closed", 11200, 6100]
+      ]
+    },
+    {
+      "id": "a4-niivvs-turn-and-low-speed",
+      "source_id": "FW190-NIIVVS-YAKUBOVICH",
+      "aircraft": "Fw 190 A-4 captured NII VVS specimen",
+      "quantity": "reported_timed_turn",
+      "source_class": "historical-secondary-test-summary",
+      "source_location": "Yakubovich 2014 Table 3 and note 1",
+      "conditions": "Captured A-4, 3989 kg takeoff, engine settings and IAS absent. Record duration as published without a sustained energy claim. The four-cannon armament table differs from WNr 783.",
+      "speed_basis": "unestablished",
+      "columns": ["altitude_m", "flap_deg", "turn_time_min_s", "turn_time_max_s", "takeoff_weight_kg"],
+      "rows": [
+        [1000, 0, 23, 24, 3989],
+        [1000, 10, 22, 23, 3989]
+      ]
+    },
+    {
+      "id": "a4-niivvs-landing-speed",
+      "source_id": "FW190-NIIVVS-YAKUBOVICH",
+      "aircraft": "Fw 190 A-4 captured NII VVS specimen",
+      "quantity": "landing_speed",
+      "source_class": "historical-secondary-test-summary",
+      "source_location": "Yakubovich 2014 Table 3, A-4 column",
+      "conditions": "Takeoff mass is context only. Landing mass, configuration and correction are not stated. Serial is not printed in this table.",
+      "speed_basis": "unestablished",
+      "columns": ["landing_speed_kmh", "takeoff_weight_kg", "actual_landing_weight_kg"],
+      "rows": [
+        [154, 3989, null]
+      ]
+    },
+    {
+      "id": "a4-niivvs-climb-and-level-summary",
+      "source_id": "FW190-NIIVVS-YAKUBOVICH",
+      "aircraft": "Fw 190 A-4 captured NII VVS specimen",
+      "quantity": "independent_captured_performance_summary",
+      "source_class": "historical-secondary-test-summary",
+      "source_location": "Yakubovich 2014 Table 3, A-4 column",
+      "conditions": "Independent captured specimen. Source does not provide absolute speed basis, test RPM or boost for these entries.",
+      "speed_basis": "unestablished",
+      "columns": ["takeoff_weight_kg", "sea_level_speed_kmh", "altitude_speed_kmh", "altitude_m", "climb_to_5000m_min"],
+      "rows": [
+        [3989, 510, 610, 6000, 6.8]
+      ]
+    },
+    {
+      "id": "d9-210002-load-by-trial",
+      "source_id": "D9-210002-FW-NR1",
+      "aircraft": "Fw 190 D-9 WNr 210002, Jumo 213 A/1021521862",
+      "quantity": "aircraft_loading",
+      "source_class": "inspected-original-table",
+      "source_location": "Charts 2 and 3, original PDF pp. 6–7",
+      "conditions": "Start mass for level and climb trials. The level chart uses two ETC/wheel-door fits. The 4300 kg climb lists ammunition, ETC 504 and a full range fuel tank. In-flight mass is not printed point by point.",
+      "speed_basis": "unestablished",
+      "columns": ["flight_test", "starting_mass_kg"],
+      "rows": [
+        ["level_flight", 4100],
+        ["combat_climb_1944_09_19", 4300]
+      ]
+    },
+    {
+      "id": "d9-210002-3000rpm-combat-climb",
+      "source_id": "D9-210002-FW-NR1",
+      "aircraft": "Fw 190 D-9 WNr 210002, Jumo 213 A/1021521862",
+      "quantity": "climb_performance_by_altitude",
+      "source_class": "digitized-original-flight-chart",
+      "source_location": "Nr. 1 chart 3, original PDF p. 7",
+      "conditions": "19 September 1944, 3000 rpm, 4300 kg at takeoff, ETC 504, ammunition, intake-side flap flush and all other radiator flaps open below 9000 m. Read ±0.5 m/s and ±0.45 min. The higher-altitude setting was changed and is omitted from these curve samples.",
+      "speed_basis": "unestablished",
+      "columns": ["barometric_altitude_m", "climb_rate_mps_approx", "elapsed_min_approx"],
+      "rows": [
+        [1000, 15.8, 0.9],
+        [2000, 14.9, 1.9],
+        [3000, 12.9, 3],
+        [4000, 12, 4.2],
+        [5000, 11.2, 5.6],
+        [6000, 9.4, 7.3],
+        [7000, 7, 9.9],
+        [8000, 4.8, 13.3]
+      ]
+    },
+    {
+      "id": "d9-210002-climb-flap-change",
+      "source_id": "D9-210002-FW-NR1",
+      "aircraft": "Fw 190 D-9 WNr 210002, Jumo 213 A/1021521862",
+      "quantity": "service_ceiling_by_cooling_configuration",
+      "source_class": "inspected-original-table",
+      "source_location": "Nr. 1 Blatt 2–3, paragraph 4",
+      "conditions": "At 9000 m all flaps brought flush. The original cites about 2 m/s increase at the change, already catalogued in the prior dual-lane pack. Ceiling estimates are extrapolated from climb data. The 700 m intake-flap result was a separate measurement.",
+      "speed_basis": "unestablished",
+      "columns": ["change_altitude_m", "before_service_ceiling_m", "after_service_ceiling_m"],
+      "rows": [
+        [9000, 10000, 10500]
+      ]
+    },
+    {
+      "id": "d9-210002-intake-flap-and-cooling",
+      "source_id": "D9-210002-FW-NR1",
+      "aircraft": "Fw 190 D-9 WNr 210002, Jumo 213 A/1021521862",
+      "quantity": "cooling_installation_test",
+      "source_class": "inspected-original-table",
+      "source_location": "Nr. 1 Blatt 2–3, paragraphs 3 and 5",
+      "conditions": "Separate short climb runs. Coolant measured at radiator inlet, oil at engine inlet. Flush intake-side flap position is 20 mm open. The pressure drop-height increase belongs to the intake comparison and is approximate.",
+      "speed_basis": "unestablished",
+      "columns": ["case", "intake_flap_open_mm", "reported_pressure_drop_height_gain_m_approx", "coolant_inlet_c", "oil_inlet_min_c", "oil_inlet_max_c"],
+      "rows": [
+        ["all_flaps_open", null, null, 114, 130, 132],
+        ["flap_at_air_intake_flush", 20, 700, 115, 131, 131]
+      ]
+    },
+    {
+      "id": "d9-210002-original-eltron-chart",
+      "source_id": "D9-210002-FW-NR1",
+      "aircraft": "Fw 190 D-9 WNr 210002, Jumo 213 A/1021521862",
+      "quantity": "measured_course_speed_correction",
+      "source_class": "digitized-original-flight-chart",
+      "source_location": "Nr. 1 chart 1, original PDF p. 5, lower delta plot",
+      "conditions": "As-delivered Eltron probe. Signed correction is corrected minus indicated. The original plots two distinct treatments of compressibility. Graph read to about ±0.6 km/h in the interior of its domain. The entries are historical chart deltas with original scope. No below-domain fit or stall CAS.",
+      "speed_basis": "unestablished",
+      "columns": ["va_kmh_as_printed", "delta_kmh_solid_with_compressibility_approx", "delta_kmh_dashed_without_compressibility_approx"],
+      "rows": [
+        [360, 5.2, 1.6],
+        [400, 6.5, 0.7],
+        [450, 8, -0.4],
+        [500, 9.3, -1.4],
+        [550, 10.9, -2.5]
+      ]
+    },
+    {
+      "id": "d9-210002-engine-gap-configuration-pairs",
+      "source_id": "D9-210002-FW-NR3",
+      "aircraft": "Fw 190 D-9 WNr 210002, Jumo 213 A/1021521862",
+      "quantity": "level_flight_speed_by_engine_gap_state",
+      "source_class": "inspected-original-table",
+      "source_location": "Nr. 3 Blatt 2 original metric table",
+      "conditions": "Sea level values from the original temporary sealing trial. The early A engine and experimental conditions differ from a generic production D-9. No takeoff-rating sealed row. Seal failure prevents treating this as a permanent production configuration. Narrative gives a 1900 PS basis for the increased rating. The original table labels it Erhöhte Notleistung.",
+      "speed_basis": "TAS",
+      "columns": ["power_label", "unsealed_vwkc_kmh", "temporarily_sealed_vwkc_kmh"],
+      "rows": [
+        ["takeoff", 557, null],
+        ["increased_emergency", 574, 589],
+        ["special_emergency", 595, 608]
+      ]
+    },
+    {
+      "id": "d9-006-rechlin-weight-climb-ias-reference",
+      "source_id": "D9-RECHLIN-9003",
+      "aircraft": "Fw 190 D-9 WNr 210006 Jumo 213 A, ETC 504",
+      "quantity": "weight_indexed_climb_speed",
+      "source_class": "digitized-original-flight-chart",
+      "source_location": "Rechlin sheet 6, Va Steigflug line",
+      "conditions": "Visual reading ±3 km/h. Va is the chart's speed indicator quantity. Chart relates weight and indication in its tested regime, not a low-speed calibrated airspeed curve. Applies to the Rechlin installation.",
+      "speed_basis": "unestablished",
+      "columns": ["weight_kg", "climb_va_kmh_approx"],
+      "rows": [
+        [3800, 260],
+        [4000, 266],
+        [4200, 272],
+        [4400, 277],
+        [4600, 282]
+      ]
+    },
+    {
+      "id": "d9-006-rechlin-open-cooling-climb",
+      "source_id": "D9-RECHLIN-9003",
+      "aircraft": "Fw 190 D-9 WNr 210006 Jumo 213 A, ETC 504",
+      "quantity": "climb_performance_by_power",
+      "source_class": "digitized-original-flight-chart",
+      "source_location": "Rechlin sheet 8, original PDF p. 8",
+      "conditions": "WNr 210006, 4300 kg start, cooling flaps fully open. Intermediate values only, approximate ±0.5 m/s and ±0.5 min. Chart's 3250 and 3000 rpm curves are from a separate airframe from 210002.",
+      "speed_basis": "unestablished",
+      "columns": ["barometric_altitude_m", "rpm_3000_rate_mps_approx", "rpm_3250_rate_mps_approx", "rpm_3000_elapsed_min_approx", "rpm_3250_elapsed_min_approx"],
+      "rows": [
+        [2000, 13.8, 15.9, 2.4, 2.1],
+        [4000, 12.2, 14.2, 5.1, 4.4],
+        [6000, 10.5, 12.5, 8.1, 7],
+        [8000, 5.7, 7.8, 12.3, 10.3]
+      ]
+    },
+    {
+      "id": "d9-210251-niivvs-timed-turn",
+      "source_id": "FW190-NIIVVS-YAKUBOVICH",
+      "aircraft": "Fw 190 D-9 WNr 210251",
+      "quantity": "reported_timed_turn",
+      "source_class": "historical-secondary-test-summary",
+      "source_location": "Yakubovich 2014 Table 3, D-9 WNr 210251 column",
+      "conditions": "Takeoff mass 4197 kg. No MW 50 in the cited NII VVS trial according to Sobolev and Khazanov. Flap, measured speed, power and retention of speed and altitude are unknown for these two turn rows.",
+      "speed_basis": "unestablished",
+      "columns": ["altitude_m", "turn_time_min_s", "turn_time_max_s", "takeoff_weight_kg"],
+      "rows": [
+        [1000, 22, 23, 4197],
+        [5000, 27, 28, 4197]
+      ]
+    },
+    {
+      "id": "d9-210251-niivvs-climb-and-level-summary",
+      "source_id": "FW190-NIIVVS-YAKUBOVICH",
+      "aircraft": "Fw 190 D-9 WNr 210251",
+      "quantity": "independent_captured_performance_summary",
+      "source_class": "historical-secondary-test-summary",
+      "source_location": "Yakubovich 2014 Table 3, D-9 WNr 210251 column and note 5",
+      "conditions": "Climb time explicitly at nominal power. Two ground speed figures as printed, individual settings unavailable in the comparison. Distinct captured specimen.",
+      "speed_basis": "unestablished",
+      "columns": ["takeoff_weight_kg", "sea_level_speed_first_kmh", "sea_level_speed_second_kmh", "altitude_speed_kmh", "altitude_m", "nominal_climb_to_5000m_min"],
+      "rows": [
+        [4197, 530, 543, 646, 6100, 5.6]
+      ]
+    }
+  ],
+  "document_lineage": [
+    {
+      "id": "f4-period-speed-claims",
+      "relationship": "related_period_summaries_original_test_independence_unresolved",
+      "members": ["F4-MTT-1941-FLOWN", "F4-MTT-1942-CALCULATED", "F4-MTT-1943-GEOMETRY", "F4-OKL-1942", "F4-WTS-COMPARISON", "ww2_thirteen_fighter_source_recovery_2026-11-11:F4-DATASHEET-TRANSCRIPTION", "ww2_twelve_fighter_dual_lane_2026-11-10:BF109F4-MESSERSCHMITT-TRANSCRIPTION"],
+      "note": "Do not count repeated results, estimates, or design data as independent flights. Keep the November flown and July calculated sheets distinct."
+    },
+    {
+      "id": "g2-14513-single-handling-campaign",
+      "relationship": "same_specimen_report_distinct_sections",
+      "members": ["G2-NIIVVS-14513-HANDLING", "ww2_thirteen_fighter_source_recovery_2026-11-11:G2-NIIVVS-14513"],
+      "independent_test_groups": 1,
+      "note": "Stall-associated minima, trace, propeller details and stability observations come from one instrumented handling report. Earlier VVS performance summaries may use the same serial under other loadings."
+    },
+    {
+      "id": "d9-210002-original-flugberichte",
+      "relationship": "same_specimen_distinct_trials",
+      "members": ["D9-210002-FW-NR1", "D9-210002-FW-NR3", "ww2_multiaxis_propulsion_trials_2026-11-10:FW190D9-210002-N1", "ww2_multiaxis_propulsion_trials_2026-11-10:FW190D9-210002-N3"],
+      "independent_test_groups": 1,
+      "note": "These records extend the extraction of the same Focke-Wulf test reports and do not supply independent specimens."
+    },
+    {
+      "id": "fw190-captured-soviet-trials",
+      "relationship": "secondary_accounts_partial_shared_archive_lineage",
+      "members": ["FW190-NIIVVS-YAKUBOVICH", "D9-NIIVVS-RGAE"],
+      "note": "Books summarize the same testing institution and corroborate context. Do not score two independent time trials from these publications."
+    }
+  ],
+  "calibration_reviews": [
+    {
+      "id": "f4-landing-speed-basis-review",
+      "source_id": "F4-MTT-1941-FLOWN",
+      "status": "landing-condition-numerical-calibration-unverified",
+      "finding": "135 km/h is a light-load landing speed at 2560 kg. The sheet provides no pitot correction, event definition or flap angle."
+    },
+    {
+      "id": "g2-14513-loss-speed-context",
+      "source_id": "G2-NIIVVS-14513-HANDLING",
+      "status": "instrumented-approach-with-takeoff-mass-and-unresolved-speed-basis",
+      "finding": "P. 33 fixes takeoff mass for the p. 43–45 speed-loss campaign. Photo 21 records V and H. The earlier IAS and Vi pairs still lack a documented IAS-to-CAS method or actual stall-event mass."
+    },
+    {
+      "id": "a4-783-speed-course-domain",
+      "source_id": "A4-783-FW-NR1",
+      "status": "calibration-test-speeds-unreported",
+      "finding": "Three timed-course checks were reported to show no erroneous indication, with no printed speeds on Blatt 2. The newly digitized chart is climb data and gives no near-stall pitot correction."
+    },
+    {
+      "id": "d9-210002-eltron-domain",
+      "source_id": "D9-210002-FW-NR1",
+      "status": "original-calibration-graph-digitized-bounded-high-speed",
+      "finding": "Chart 1 provides two signed treatments in the level-speed domain. Samples 360–550 km/h from the as-delivered Eltron probe cannot transfer to the Bruhn setup or to stall speed."
+    },
+    {
+      "id": "d9-006-rechlin-mass-domain",
+      "source_id": "D9-RECHLIN-9003",
+      "status": "weight-indexed-climb-indication-different-specimen",
+      "finding": "Sheet 6 gives weight-linked climb indication, down to roughly 260 km/h in the climb regime. Neither a WNr 210002 calibration nor a measured near-stall correction."
+    }
+  ]
+}
