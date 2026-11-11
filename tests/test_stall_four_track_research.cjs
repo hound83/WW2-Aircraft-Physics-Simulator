@@ -10,14 +10,14 @@ const prefix='stall_four_track_followup_2026-11-10';
 const rows=catalog.observations.filter(row=>row.pack_id===prefix);
 assert.equal(pack.pack_version,'1.0.1');
 assert.equal(rows.length,29);
-assert.equal(catalog.summary.observation_count,1053);
-assert.equal(catalog.summary.stall_count,235);
-assert.equal(catalog.summary.source_count,191);
+assert.equal(catalog.summary.observation_count,1205);
+assert.equal(catalog.summary.stall_count,240);
+assert.equal(catalog.summary.source_count,214);
 assert.equal(catalog.calibration_curves.length,19,'Unsafe chart digitization must not silently produce a correction curve');
-assert.equal(catalog.summary.lineage_groups,26);
-assert.equal(catalog.summary.calibration_reviews,11);
-assert.equal(catalog.document_lineage.length,26);
-assert.equal(catalog.calibration_reviews.length,11);
+assert.equal(catalog.summary.lineage_groups,35);
+assert.equal(catalog.summary.calibration_reviews,16);
+assert.equal(catalog.document_lineage.length,35);
+assert.equal(catalog.calibration_reviews.length,16);
 
 const va=rows.filter(row=>row.quantity==='stall_speed');
 assert.equal(va.length,10);
@@ -49,6 +49,6 @@ assert.ok(catalog.document_lineage.every(link=>link.members.every(id=>sources.ha
 assert.ok(catalog.calibration_reviews.every(review=>sources.has(review.source_id||review.original_other_source)));
 assert.ok(pack.calibration_reviews.every(row=>row.status==='original-low-speed-chart-inspected-not-fit-ready'));
 assert.equal(catalog.observations.filter(row=>row.preferred_airspeed?.basis==='CAS*').length,1);
-assert.equal(catalog.observations.filter(row=>row.preferred_airspeed?.basis==='CAS').length,4);
+assert.equal(catalog.observations.filter(row=>row.preferred_airspeed?.basis==='CAS').length,9);
 
 console.log('Pass four-track stall research evidence, semantic dedup links, original IAS/CN and unchanged CAS gates');

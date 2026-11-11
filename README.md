@@ -1,5 +1,7 @@
 # European Air War Physics
 
+**Data collection update, 11 November 2026:** [thirteen-aircraft source recovery](docs/research/WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md) adds152 evidence/condition records and the research-only Bf109G-2. Catalog:1,205 records,214 source entries. Fixed-rubric primary80/augmented90 targets remain unmet for most aircraft; this is a data checkpoint, with no solver or flyable-roster change.
+
 The [v4.2 operating benchmark](docs/V42_OPERATING_BENCHMARK.md) is the first comparison panel. Choose **Normal or Combat, 25/50/75% internal fuel, and fitted injection independently for each aircraft**, with one shared altitude: sea level, 10,000, 20,000, 30,000, 35,000 or 40,000 ft. It shows sustained/instantaneous turn, climb rate and speed, level speed, and full climbs that consume fuel and respect power/injection limits. Version **4.2.0-rc.1** is a research candidate; load reconstructions, rating transfers and extrapolated high-altitude power are explicitly qualified.
 
 The [v4.1 installed-energy candidate](docs/V41_ENERGY_RESULTS.md) improves matched-source climb checks for P-47B, Spitfire IX, P-38G, Fw 190 A-4 and P-51B in the live comparison. Source/reference switching, 48 energy checks and a separate-report P-47 transfer make the changes inspectable. Version 4.1.0-rc.1 remains a research candidate; historical sustained-turn 5:1 accuracy is unresolved.

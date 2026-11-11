@@ -1,0 +1,733 @@
+{
+  "schema": "ww2-fighter-dual-lane-readiness/v1",
+  "version": "1.1.0",
+  "as_of": "2026-11-11",
+  "baseline_file": "references/aircraft-readiness-dual-lane-2026-11-10.json",
+  "research_pack": "references/research/ww2_thirteen_fighter_source_recovery_2026-11-11.json",
+  "scope": "Thirteen research variants, including newG2 only in evidence intake. Six fixed weighted dimensions retained. These are judgment-based evidence-coverage points, NOT measured percentages of every historical datum, probability, solver accuracy or release approval.",
+  "weights": [
+    10,
+    25,
+    20,
+    15,
+    10,
+    20
+  ],
+  "dimensions": [
+    "variant_identity",
+    "stall_and_actual_mass",
+    "near_stall_calibration",
+    "installed_engine_prop_cooling",
+    "independent_speed_climb",
+    "sustained_turn_drag"
+  ],
+  "targets": {
+    "primary_percent": 80,
+    "augmented_percent": 90,
+    "super_good_enough_hard_gate_override": false
+  },
+  "primary_definition": "Only independently inspected wartime/period source evidence, including scans reproduced by websites, with deductions for nonmatching specimens, untested operating points or design rather than measured figures. Published original source without measured numeric applicable data receives only limited qualitative coverage.",
+  "augmented_definition": "Primary plus explicitly attributed historical-secondary findings, same-variant but different-specimen comparisons and transparent physical derivations confined to their stated assumptions. Modern game flight models are cross-checks, NOT historical flight-test measurements. Categories remain capped; no inference can manufacture source-matched measured CAS or sustained-turn data.",
+  "score_policy": "Expert-judgment evidence-coverage checklist, 0..100 points. Incremental scores are conservative; recovering a citation or identifying a report without its numbers does not itself close the missing-performance category. Reprint is same original source, not another independent measurement. Two lanes are not probabilities and may remain below target. Achieving 80 is an ambition, NOT a release gate override.",
+  "variants": [
+    {
+      "id": "f4u4_80765",
+      "label": "F4U-4 80765",
+      "previous_primary_points": [
+        10,
+        22,
+        20,
+        12,
+        10,
+        6
+      ],
+      "previous_augmented_points": [
+        10,
+        23,
+        20,
+        13,
+        10,
+        8
+      ],
+      "primary_points": [
+        10,
+        23,
+        20,
+        13,
+        10,
+        7
+      ],
+      "augmented_points": [
+        10,
+        24,
+        20,
+        14,
+        10,
+        10
+      ],
+      "new_primary_sources": [
+        "F4U4-NACA-A7C05",
+        "F4U4-SAC-1948"
+      ],
+      "new_secondary_or_derived": [],
+      "credit": "Five newly transcribed, position-corrected CAS-equivalent stall speeds from NACA at~12100lb (unmatched serial), plus Navy1948 flight-based installed critical altitudes and explicit capped-pylon/clean/launcher conditions. Partial stall/engine/configuration credit; no independent sustained-turn test.",
+      "remaining_primary_work": [
+        "Find an identified80765 independent powered turn/polar at known mass, RPM/MAP, altitude and cooling.",
+        "Resolve1947 Vought design stall versus1948 Navy80765 measured stall discrepancy; keep NACA unmatched serial distinct."
+      ],
+      "secondary_work": "Use source-traced service-family drag bounds; the pylon speed comparison alone is not a complete polar.",
+      "primary_percent": 83,
+      "augmented_percent": 88,
+      "primary_target_met": true,
+      "augmented_target_met": false,
+      "delta_primary": 3,
+      "delta_augmented": 4
+    },
+    {
+      "id": "p51b_4324777",
+      "label": "P-51B-15 43-24777",
+      "previous_primary_points": [
+        10,
+        21,
+        11,
+        12,
+        10,
+        5
+      ],
+      "previous_augmented_points": [
+        10,
+        22,
+        11,
+        14,
+        10,
+        8
+      ],
+      "primary_points": [
+        10,
+        21,
+        11,
+        12,
+        10,
+        8
+      ],
+      "augmented_points": [
+        10,
+        22,
+        11,
+        14,
+        10,
+        12
+      ],
+      "new_primary_sources": [
+        "USAAF-POWERREQUIRED-1943"
+      ],
+      "new_secondary_or_derived": [
+        "USAAF-POWERREQUIRED-1943",
+        "LEDNICER-1999"
+      ],
+      "credit": "Recovered original1943 AAF calculated thrust-power curves and e/f labels for V1650-3 at8600lb. Benchmark is V1650-7 atothermass: no exact-specimen claim. Lednicer1999 gives a separately sourced drag synthesis. Calculated curves receive limited drag coverage, not flight-test replication.",
+      "remaining_primary_work": [
+        "Recover43-24777 position/instrument correction below140mphIAS, covering67-86mph stall runs.",
+        "ReconcileAAF calculated f3.35 versus Lednicer f4.61 and their engine/weight/finish/cooling definitions; seek same-variant measured high-CL polar."
+      ],
+      "secondary_work": "Maintain alternate drag assumptions instead of averaging conflicting f values.",
+      "primary_percent": 72,
+      "augmented_percent": 79,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "delta_primary": 3,
+      "delta_augmented": 4
+    },
+    {
+      "id": "f6f3_04776",
+      "label": "F6F-3 04776",
+      "previous_primary_points": [
+        10,
+        23,
+        10,
+        9,
+        7,
+        8
+      ],
+      "previous_augmented_points": [
+        10,
+        24,
+        10,
+        11,
+        8,
+        9
+      ],
+      "primary_points": [
+        10,
+        24,
+        18,
+        11,
+        7,
+        8
+      ],
+      "augmented_points": [
+        10,
+        25,
+        18,
+        12,
+        8,
+        10
+      ],
+      "new_primary_sources": [
+        "F6F04776-NACA-METHOD",
+        "F6F04776-NACA-STALL-CONDITIONS"
+      ],
+      "new_secondary_or_derived": [],
+      "credit": "Original PartI documents low-speed formation/trailing-bomb position calibration and pressure-derived standard sea-level compressible speed; PartIII gives fuel-corrected coefficients and five exact power/configuration cases. Near-stall method and engine-condition coverage improve substantially. Untranscribed figure speeds are not newly measured CAS rows.",
+      "remaining_primary_work": [
+        "DigitizePartIII first-stall time windows with speed, normal acceleration, actual mass/fuel and visual uncertainty, preserving transient versus steady results.",
+        "Recover independently measuredF6F-3 speed/climb or high-CL polar matching04776 engine/prop/cooling; keep40164/42633 separate."
+      ],
+      "secondary_work": "Use same-variant independent serials with explicit transfer bounds; poweredCN2.1-2.2 is not clean wingCLmax.",
+      "primary_percent": 78,
+      "augmented_percent": 83,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "delta_primary": 11,
+      "delta_augmented": 11
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "label": "Spitfire LF IX BS543",
+      "previous_primary_points": [
+        10,
+        13,
+        10,
+        12,
+        10,
+        5
+      ],
+      "previous_augmented_points": [
+        10,
+        15,
+        10,
+        13,
+        10,
+        7
+      ],
+      "primary_points": [
+        10,
+        13,
+        11,
+        13,
+        10,
+        5
+      ],
+      "augmented_points": [
+        10,
+        15,
+        11,
+        14,
+        10,
+        10
+      ],
+      "new_primary_sources": [
+        "SPITIX-AP1946-SCAN"
+      ],
+      "new_secondary_or_derived": [
+        "LEDNICER-1999"
+      ],
+      "credit": "Original manualPEC intervals120-350mph, Merlin66 continuous/climb/combat limits, delayed normal-power gear-change rule and climbIAS schedule. Near-stall correction still absent. Secondary SpitfireIX drag synthesis is configuration-unmatched.",
+      "remaining_primary_work": [
+        "RecoverBS543 or demonstrably equivalent full-spanLFIX near-stall pitot calibration and actual stall mass.",
+        "Recover originalBS543 TableII climb schedule/conditions and independent high-CL drag/turn evidence."
+      ],
+      "secondary_work": "Keep full-span versus clipped-wing and Merlin66 versus61/63/70 schedules separate; do not transferSpitVA correctedCLmax as an observation onIX.",
+      "primary_percent": 62,
+      "augmented_percent": 70,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "delta_primary": 2,
+      "delta_augmented": 5
+    },
+    {
+      "id": "p47b_415902",
+      "label": "P-47B 41-5902",
+      "previous_primary_points": [
+        10,
+        14,
+        4,
+        14,
+        10,
+        5
+      ],
+      "previous_augmented_points": [
+        10,
+        14,
+        4,
+        14,
+        10,
+        9
+      ],
+      "primary_points": [
+        10,
+        14,
+        4,
+        14,
+        10,
+        8
+      ],
+      "augmented_points": [
+        10,
+        14,
+        4,
+        14,
+        10,
+        12
+      ],
+      "new_primary_sources": [
+        "P47B-TO1942",
+        "USAAF-POWERREQUIRED-1943"
+      ],
+      "new_secondary_or_derived": [
+        "USAAF-POWERREQUIRED-1943"
+      ],
+      "credit": "OriginalP47B manual establishes2000bhp2700RPM military5min and high-altitudeMAP reduction, with blankMAP cells retained. AAF1943 calculated curve suppliesP47B R2800-21 e/f/mass context, without declaring41-5902 identity. No new near-stallCAS.",
+      "remaining_primary_work": [
+        "Retrieve41-5902 low-speed correction below170mphIAS and distinguish flight-instant mass from gross test load.",
+        "Trace original calculatedP47B drag assumptions and obtain measured turn/polar or independent low-J efficiency with known shaftpower."
+      ],
+      "secondary_work": "Use original1943 calculated curve as a conditional constraint; RAF different-P47 comparisons stay qualitative.",
+      "primary_percent": 60,
+      "augmented_percent": 64,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "delta_primary": 3,
+      "delta_augmented": 3
+    },
+    {
+      "id": "p38g_4212687",
+      "label": "P-38G-1 42-12687",
+      "previous_primary_points": [
+        10,
+        11,
+        3,
+        12,
+        10,
+        7
+      ],
+      "previous_augmented_points": [
+        10,
+        13,
+        3,
+        14,
+        10,
+        9
+      ],
+      "primary_points": [
+        10,
+        11,
+        7,
+        12,
+        10,
+        7
+      ],
+      "augmented_points": [
+        10,
+        13,
+        7,
+        14,
+        10,
+        10
+      ],
+      "new_primary_sources": [
+        "P38DG-TO0175F1"
+      ],
+      "new_secondary_or_derived": [],
+      "credit": "Recovered22 numeric D-G manual installation-correction rows including wing/nose pitots and threegear/flap states. Corrected earlier page28 search lead to actualprinted32B. Clean domain begins125mph, still above target clean stall; instrument-error qualification and1943installationmatch remain open.",
+      "remaining_primary_work": [
+        "Verify42-12687 wing/nose pitot and revision applicability; recoverclean correction below125mph or independently corrected stall.",
+        "Find G-specific actual stall mass and independent installed two-engine propulsive/turn data; H/J/L remain separate."
+      ],
+      "secondary_work": "Use D-G manual within its measured rows only; do not extrapolate or substitute laterH/J/L corrections.",
+      "primary_percent": 57,
+      "augmented_percent": 64,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "delta_primary": 4,
+      "delta_augmented": 5
+    },
+    {
+      "id": "fw190d9_210002",
+      "label": "Fw 190 D-9 210002",
+      "previous_primary_points": [
+        10,
+        3,
+        11,
+        13,
+        9,
+        2
+      ],
+      "previous_augmented_points": [
+        10,
+        4,
+        11,
+        14,
+        10,
+        4
+      ],
+      "primary_points": [
+        10,
+        3,
+        11,
+        14,
+        9,
+        2
+      ],
+      "augmented_points": [
+        10,
+        4,
+        11,
+        15,
+        10,
+        8
+      ],
+      "new_primary_sources": [
+        "FW190D9-210002-NR2"
+      ],
+      "new_secondary_or_derived": [
+        "LEDNICER-1999"
+      ],
+      "credit": "OriginalNr2 scan qualifies existing speed points with actual1.70ata dry versus1.80ataMW50, incorrect early runs and~35C charge-temperature change. This is engine-condition enrichment, not new independent speed tests. Lednicer provides secondary D9 drag synthesis.",
+      "remaining_primary_work": [
+        "Recover full low-speed correction domain, exact mass and original1gstall forD9.",
+        "Obtain original known-RPM high-CL polar or constant-altitude sustained-turn test; MW50 and dryboost must stay separate."
+      ],
+      "secondary_work": "UseD9 f4.77ft2 as a source-traced conditional parasite estimate; no induced/high-CL drag or maximum turn is supplied.",
+      "primary_percent": 49,
+      "augmented_percent": 58,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "delta_primary": 1,
+      "delta_augmented": 5
+    },
+    {
+      "id": "fw190a4_783",
+      "label": "Fw 190 A-4 783",
+      "previous_primary_points": [
+        10,
+        8,
+        3,
+        10,
+        10,
+        6
+      ],
+      "previous_augmented_points": [
+        10,
+        9,
+        4,
+        11,
+        10,
+        9
+      ],
+      "primary_points": [
+        10,
+        8,
+        3,
+        12,
+        10,
+        6
+      ],
+      "augmented_points": [
+        10,
+        9,
+        4,
+        13,
+        10,
+        10
+      ],
+      "new_primary_sources": [
+        "FW190A4-783-NR2"
+      ],
+      "new_secondary_or_derived": [
+        "LEDNICER-1999"
+      ],
+      "credit": "Recovered originalNr2 fixed3870kg/2400RPM intake comparison, full-throttle/climb-height differences and8-9% cooling-pressure effect. Not higher2700RPMNr5. FwA8 modern drag synthesis is distant family context, with only small augmented credit.",
+      "remaining_primary_work": [
+        "Find783 same-installation low-speed correction and mass-matchedstall;619 orcapturedjaboare different specimens.",
+        "Recover cleanA4 full-armament powered polar or sustained-turn trial; current783 intake trials used reducedarmament."
+      ],
+      "secondary_work": "A8 geometry/drag cannot be silently madeA4; use only a sensitivity bound until configuration differences are quantified.",
+      "primary_percent": 49,
+      "augmented_percent": 56,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "delta_primary": 2,
+      "delta_augmented": 3
+    },
+    {
+      "id": "p40f_4113635",
+      "label": "P-40F 41-13635",
+      "previous_primary_points": [
+        10,
+        2,
+        2,
+        14,
+        10,
+        3
+      ],
+      "previous_augmented_points": [
+        10,
+        4,
+        2,
+        14,
+        10,
+        8
+      ],
+      "primary_points": [
+        10,
+        2,
+        3,
+        14,
+        10,
+        3
+      ],
+      "augmented_points": [
+        10,
+        4,
+        3,
+        14,
+        10,
+        8
+      ],
+      "new_primary_sources": [
+        "P40F-NACA-L5A29A"
+      ],
+      "new_secondary_or_derived": [],
+      "credit": "OriginalP40F41-14119 flight roll/helix points now digitized with7870lb meanmass,CG28%,production pitot position calibration and108-304mph testdomain. Valuable same-variant handling data, limited near-stall-method credit; not41-13635 stall evidence.",
+      "remaining_primary_work": [
+        "Recover41-13635 or matchedF-family original stall data and numericlow-speed position/instrument correction.",
+        "Retrieve originalMerlinP40F manual from a working archival mirror; formerp40warhawk PDF currently redirects to unrelatedretailHTML. Seek independent F-family polar."
+      ],
+      "secondary_work": "Keep AllisonE assumptions and FL220 borrowedAllisonPEC out of exact F-variant calibration.",
+      "primary_percent": 42,
+      "augmented_percent": 49,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "delta_primary": 1,
+      "delta_augmented": 1
+    },
+    {
+      "id": "ki84_302",
+      "label": "Ki-84-I 302",
+      "previous_primary_points": [
+        10,
+        15,
+        1,
+        9,
+        2,
+        3
+      ],
+      "previous_augmented_points": [
+        10,
+        16,
+        1,
+        10,
+        2,
+        5
+      ],
+      "primary_points": [
+        10,
+        15,
+        1,
+        11,
+        2,
+        3
+      ],
+      "augmented_points": [
+        10,
+        16,
+        1,
+        12,
+        2,
+        5
+      ],
+      "new_primary_sources": [
+        "KI84-TSFTE2001",
+        "KI84-MATSC"
+      ],
+      "new_secondary_or_derived": [],
+      "credit": "OriginalTSFTE confirms powered low-speed rudder81mph andaileron74mph control limits, NOTstalls. MATSC177-page technical compilation adds rated1970/2050hp,3000RPM,49.6inHg context. TAICMarch1945 performance and1946handlingprogram are not independent measuredspeed/climb.",
+      "remaining_primary_work": [
+        "Locate original302 instrumentation/correction records and flight-instantstallmass.",
+        "Find actual measured performance trial with knownengine/fuel/boost/RPM; publishedTAICdesign/estimatedcurves cannot close this gap."
+      ],
+      "secondary_work": "Treat US high-octane426mph folklore as unverified unless the actual trial and measurement basis are recovered.",
+      "primary_percent": 42,
+      "augmented_percent": 46,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "delta_primary": 2,
+      "delta_augmented": 2
+    },
+    {
+      "id": "p47d30_433441",
+      "label": "P-47D-30 43-3441",
+      "previous_primary_points": [
+        10,
+        18,
+        1,
+        7,
+        1,
+        8
+      ],
+      "previous_augmented_points": [
+        10,
+        21,
+        2,
+        9,
+        2,
+        10
+      ],
+      "primary_points": [
+        10,
+        19,
+        4,
+        8,
+        1,
+        8
+      ],
+      "augmented_points": [
+        10,
+        22,
+        5,
+        10,
+        2,
+        11
+      ],
+      "new_primary_sources": [
+        "P47D30-L8A06-RECHECK",
+        "P47D-NACA-L6B21"
+      ],
+      "new_secondary_or_derived": [],
+      "credit": "OriginalFigure52now legible:12860lb,CG28.9%,5000ft,approach21inHg2550RPM. PairedNACA/service traces near80-100mph recovered but not digitized/qualifiedasCAS. Wing-section drag domain enriched; existing0.0097minimum not counted again.",
+      "remaining_primary_work": [
+        "ResolveRM/NACAvsservice channel mapping usingTN2675 and originalinstrumentation; digitize matchedstall windows withoutdoublecorrection.",
+        "Recover43-3441 independent speed/climb and installedR2800-59/SPA-7propeller data; sectiondrag is not whole-aircraftpolar."
+      ],
+      "secondary_work": "A D30 family speed/climb transfer must identifypropeller,waterinjection,storeloadandcooling before augmented-performance credit.",
+      "primary_percent": 50,
+      "augmented_percent": 60,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "delta_primary": 5,
+      "delta_augmented": 6
+    },
+    {
+      "id": "bf109f4_representative",
+      "label": "Bf 109 F-4 DB601E",
+      "previous_primary_points": [
+        9,
+        4,
+        0,
+        9,
+        7,
+        5
+      ],
+      "previous_augmented_points": [
+        9,
+        6,
+        0,
+        11,
+        9,
+        7
+      ],
+      "primary_points": [
+        9,
+        4,
+        0,
+        12,
+        7,
+        5
+      ],
+      "augmented_points": [
+        9,
+        6,
+        0,
+        13,
+        9,
+        8
+      ],
+      "new_primary_sources": [
+        "F4-DB601E-MANUAL"
+      ],
+      "new_secondary_or_derived": [
+        "F4-DATASHEET-TRANSCRIPTION"
+      ],
+      "credit": "Inspected originalFebruary1942 DB601E manual table1.42/2700,1.30/2500(30min),1.15/2300. Performance sheets still only secondarytranscription; correctedflownsheetdate29Nov1941 andpreservedcalculatedvsclaimedflown/ram/compressibilityambiguity.",
+      "remaining_primary_work": [
+        "Recover originalMesserschmitt IV/43/42 flownsheet and1942calculatedsheet, plusEB100/WNr7640 originalUS report; resolveserial/configuration.",
+        "Recover actualmass cleanstall, near-stallcorrection and F4-specific high-CL/turn data. SovietF2WNr9209 isnotF4."
+      ],
+      "secondary_work": "Use transcribedmanufacturerperformance conditionally; do not upgrade toprimaryuntil originalsheetisread.",
+      "primary_percent": 37,
+      "augmented_percent": 45,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "delta_primary": 3,
+      "delta_augmented": 3
+    },
+    {
+      "id": "bf109g2_db605a",
+      "label": "Bf109G-2 DB605A (research intake)",
+      "previous_primary_points": null,
+      "previous_augmented_points": null,
+      "primary_points": [
+        9,
+        10,
+        3,
+        12,
+        8,
+        5
+      ],
+      "augmented_points": [
+        10,
+        13,
+        4,
+        14,
+        10,
+        8
+      ],
+      "new_primary_sources": [
+        "G2-NIIVVS-14513",
+        "G2-NIIVVS-1944-SUMMARY",
+        "G2-MT215-SCAN",
+        "G2-DB605-RESTRICTION-1942"
+      ],
+      "new_secondary_or_derived": [
+        "G2-MT215-TRANSCRIPTION"
+      ],
+      "credit": "New researchvariant. Originalgunpod14513loading/controlreport and1944clean/gunpodsummary, restrictionorder andFinnishprimarycurves recovered. Finnish numericaltables remainsecondarybutexplicitly recordactual2540RPM and1.30-1.32ata. Sovietcompiledturntimeshaveunknownper-runpowerandarenotacceptedmaximumsustainedturnbenchmarks.",
+      "remaining_primary_work": [
+        "Recover originalMT215numeric/instrumenttables and actualrunmass; calibratepitotstatic ratherthanassumingsecondaryTASisfullyqualified.",
+        "Recover originalcleanG2 low-speed andturntrial with per-runRPM/MAP,cooling,mass,speeddefinitionandlevel-energycriterion. Gunpod14513cannot be defaultclean."
+      ],
+      "secondary_work": "Use MT215 table atactual2540RPM as a disclosedconditionalcheck. Keep1.42/2800 initialrestrictionseparate; do not assumeall1943G2wereunrestricted.",
+      "primary_percent": 47,
+      "augmented_percent": 59,
+      "primary_target_met": false,
+      "augmented_target_met": false,
+      "delta_primary": null,
+      "delta_augmented": null
+    }
+  ],
+  "status": "substantial-source-recovery-checkpoint-targets-not-met-for-all-aircraft",
+  "summary": {
+    "variants": 13,
+    "primary_target_met": 1,
+    "augmented_target_met": 0,
+    "primary_range": [
+      37,
+      83
+    ],
+    "augmented_range": [
+      45,
+      88
+    ]
+  }
+}

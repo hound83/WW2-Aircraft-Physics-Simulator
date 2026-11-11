@@ -1,5 +1,9 @@
 # Known limitations
 
+## 11 November 2026 data-collection checkpoint
+
+[Thirteen-aircraft source recovery](research/WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md) supersedes older source-count and retrieval-status statements below, without changing physics. The80/90 targets are evidence-coverage judgments and remain unmet for most aircraft. P38D-G printed32B is now numeric, but clean correction starts125mph and excludes unestablished instrument error. F6F04776 pressure-derived speed/calibration method is now confirmed, but its figure speeds remain undigitized. Five new NACA F4U4 CAS-equivalent stalls have approximate12100lb mass and an unmatched serial. P47D30 Figure52 mass12860lb is now legible; NACA/service trace mapping remains unqualified. G2 MT215 numeric data are secondary at actual2540RPM and1.30-1.32ata; Soviet compiled turn times have unknown per-run power/energy criteria. No complete sustained-turn validation or aircraft admission follows from this source update.
+
 ## v4.2 operating benchmark
 
 Independent power/fuel/injection settings are calculation scenarios, not historical accuracy certification. Routine-climb rating definitions differ by type. Some lower-power curves use a pressure/RPM proxy; F-4 numerical manual cells and early P-38G MAP/duration remain provisional. Fw190 emergency clearance is transferred from its engine/manual family. Service-load masses, ammunition deltas and internal-fuel attribution include explicit reconstruction assumptions. Fuel burn uses a common illustrative BSFC, and the Corsair's fluid quantity/flow and injected altitude curve are engineering inputs. The optional 40000-ft engine continuation is a density-lapse estimate beyond source coverage; disabling it does not validate other transfers.

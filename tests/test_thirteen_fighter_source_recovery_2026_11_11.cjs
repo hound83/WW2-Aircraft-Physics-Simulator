@@ -1,0 +1,79 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path');
+const {buildCatalog}=require('../scripts/research-layer.cjs');
+const pack=require('../references/research/ww2_thirteen_fighter_source_recovery_2026-11-11.json');
+const score=require('../references/aircraft-readiness-thirteen-2026-11-11.json');
+const previous=require('../references/aircraft-readiness-dual-lane-2026-11-10.json');
+const manifest=require('../references/source-recovery-manifest-2026-11-11.json');
+const c=buildCatalog(),prefix='ww2_thirteen_fighter_source_recovery_2026-11-11';
+const rows=c.observations.filter(x=>x.pack_id===prefix),sources=c.sources.filter(x=>x.pack_id===prefix);
+assert.equal(rows.length,152);
+assert.equal(sources.length,23);
+assert.equal(c.summary.observation_count,1205);
+assert.equal(c.summary.stall_count,240);
+assert.equal(c.summary.source_count,214);
+assert.equal(c.calibration_curves.length,19,'No new inferred IAS/CAS curve silently activated');
+assert.equal(c.document_lineage.length,35);
+assert.equal(c.calibration_reviews.length,16);
+assert.ok(sources.every(x=>x.primary_url),'All new source records retain a browsable canonical citation');
+assert.ok(pack.series.every(x=>x.source_location&&x.conditions&&x.source_class&&x.evidence_kind));
+const sourceIds=new Set(pack.sources.map(x=>x.id));
+assert.ok(pack.series.every(x=>sourceIds.has(x.source_id)));
+const get=id=>pack.series.find(x=>x.id===id);
+// G2 actual RPM and corrected TAS must not be replaced by nominal engine settings.
+const speed=get('g2-mt215-speed-power-table');
+assert.equal(speed.rows.length,12);
+assert.ok(speed.source_class.startsWith('SECONDARY'));
+assert.ok(speed.rows.every(x=>x[5]===2540&&x[6]===2580));
+assert.deepEqual(speed.rows[0],[10,140,515,523,522,2540,2580,1.3]);
+const climb=get('g2-mt215-cina-climb');
+assert.deepEqual(climb.rows[0],[0,21.6,null]);
+assert.deepEqual(climb.rows[1],[1000,23.5,0.8]);
+assert.deepEqual(climb.rows.at(-1),[11000,null,null],'Blank11000m table values are not fabricated from the0.8min adjacent column');
+assert.deepEqual(get('g2-early-restriction-policy').rows,[['initial_emergency',2800,1.42,false],['climb_combat',2600,1.3,true]]);
+assert.ok(get('g2-soviet-clean-vs-gunpod-summary').conditions.includes('NOT known per-run'));
+assert.ok(!rows.some(x=>x.quantity==='max_sustained_turn_rate'));
+// Original corrected stall measurements are allowed; installation-only tables are not.
+const cas=rows.filter(x=>x.quantity==='stall_speed');
+assert.equal(cas.length,5);
+assert.ok(cas.every(x=>x.speed_basis==='CAS'&&x.correction.position==='applied'));
+assert.deepEqual(cas.map(x=>x.values.speed_mph),[105,95,92,82,80]);
+assert.ok(cas.every(x=>x.aircraft.includes('serial unmatched')));
+for(const s of pack.series.filter(x=>/p38dg-/.test(x.id)))assert.equal(s.speed_basis,'IAS');
+assert.equal(get('p38dg-clean-wing-nose-correction').rows[0][0],125,'Clean correction remains above stall; no extrapolated100mph datum');
+assert.equal(get('spitix-original-pec-intervals').rows[0][0],120);
+assert.ok(pack.series.filter(x=>/manual_position_error/.test(x.quantity)).every(x=>x.speed_basis==='IAS'));
+assert.equal(get('p47d30-near-stall-paired-recorders').rows[0][2],false);
+assert.deepEqual(get('p47d30-figure52-loading-and-power').rows[0],[52,12860,28.9,5000,21,2550]);
+// Recovered documents and numerical metadata are not independent replications.
+assert.ok(!get('ki84-original-turning-stall-observations'));
+assert.equal(get('p47d-measured-wing-profile-drag-domain').quantity,'existing_experiment_domain_enrichment');
+assert.equal(get('fw190d9-210002-boost-intervention').quantity,'existing_experiment_engine_condition_enrichment');
+assert.ok(pack.document_lineage.some(x=>x.members.includes('G2-MT215-SCAN')&&x.members.includes('G2-MT215-TRANSCRIPTION')));
+assert.ok(get('p51b-p47b-period-drag-assumption-labels').source_class.includes('calculated'));
+assert.ok(get('lednicer-equivalent-flat-plate-synthesis').source_class.startsWith('SECONDARY'));
+assert.ok(get('p47b-original-rating-duration-table').rows.every(x=>x[5]===null),'Blank original MAP cells remain blank');
+assert.equal(get('ki84-matsc-engine-specification').source_class,'period-original-technical-specification-not-measured-flight-power');
+assert.ok(get('p40f-original-aileron-flight-points').conditions.includes('NOTrollrate'));
+// Fixed rubric, exact identities, separate primary/augmented scores, honest unmet targets.
+assert.deepEqual(score.weights,previous.weights);
+assert.deepEqual(score.dimensions,previous.dimensions);
+assert.equal(score.variants.length,13);
+assert.deepEqual(score.targets,{primary_percent:80,augmented_percent:90,super_good_enough_hard_gate_override:false});
+const sum=a=>a.reduce((x,y)=>x+y,0);
+for(const v of score.variants){
+ assert.equal(v.primary_percent,sum(v.primary_points));assert.equal(v.augmented_percent,sum(v.augmented_points));
+ for(const [i,n]of v.primary_points.entries())assert.ok(n>=0&&n<=v.augmented_points[i]&&v.augmented_points[i]<=score.weights[i]);
+ assert.equal(v.primary_target_met,v.primary_percent>=80);assert.equal(v.augmented_target_met,v.augmented_percent>=90);
+ assert.ok(v.remaining_primary_work.length>=2&&v.secondary_work);
+ const p=previous.variants.find(x=>x.id===v.id);
+ if(p){assert.deepEqual(v.previous_primary_points,p.primary_points);assert.deepEqual(v.previous_augmented_points,p.augmented_points);}
+}
+assert.equal(score.summary.primary_target_met,1);assert.equal(score.summary.augmented_target_met,0);
+const cases=JSON.parse(fs.readFileSync(path.join(__dirname,'../aircraft/cases.json'),'utf8'));
+assert.ok(!/bf109g2/i.test(JSON.stringify(cases)),'G2 is a research intake only; no solver roster expansion');
+assert.ok(manifest.files.length>=24);
+assert.ok(manifest.files.every(x=>sourceIds.has(x.source_id)&&/^[a-f0-9]{64}$/.test(x.sha256)&&x.bytes>0&&/^https?:\/\//.test(x.source_or_download_url)));
+assert.ok(manifest.failed_or_unclosed_leads.some(x=>x.aircraft==='P40F'&&x.result.includes('retailHTML')));
+console.log('PASS 13-variant data intake:152 sourced rows; known G2 settings; explicit calculations/metadata; fixed80/90 targets; no false CAS/turn/roster claims');

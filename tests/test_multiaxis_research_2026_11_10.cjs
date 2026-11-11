@@ -11,9 +11,9 @@ const prop=take('ww2_multiaxis_propulsion_trials_2026-11-10');
 const low=take('ww2_low_speed_turn_calibration_2026-11-10');
 assert.equal(prop.length,143,'All 143 independently sourced scalar propeller/power/altitude observations survive ingestion');
 assert.equal(low.length,57,'All 57 low-speed, turn/control and correction entries survive ingestion');
-assert.equal(c.summary.observation_count,1053);
-assert.equal(c.summary.stall_count,235);
-assert.equal(c.summary.source_count,191);
+assert.equal(c.summary.observation_count,1205);
+assert.equal(c.summary.stall_count,240);
+assert.equal(c.summary.source_count,214);
 assert.equal(c.calibration_curves.length,19,'No unapproved CAS curve was fitted from installation-only data');
 
 const p47Dec=prop.filter(x=>x.id.includes('p47b-dec-props-level'));
@@ -65,6 +65,6 @@ for(const pack of [propulsion,corrections])for(const lineage of pack.document_li
  const qualified=id.includes(':')?id:`${pack===propulsion?'ww2_multiaxis_propulsion_trials_2026-11-10':'ww2_low_speed_turn_calibration_2026-11-10'}:${id}`;
  assert.ok(uniqueSourceIds.has(qualified),`Missing source lineage ${qualified}`);
 }
-assert.equal(c.summary.stall_quality_tiers['reported-CAS'],4);
+assert.equal(c.summary.stall_quality_tiers['reported-CAS'],9);
 assert.equal(c.summary.stall_quality_tiers['provisional-calibration-table-CAS'],1);
 console.log('PASS primary performance expansion (200 rows), original IAS/CAS restrictions, independent specimens, source contradictions and lineage');

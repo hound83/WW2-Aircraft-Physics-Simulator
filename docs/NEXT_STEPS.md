@@ -1,5 +1,9 @@
 # Next steps
 
+## Data-only collection objective: thirteen variants, primary80 / augmented90
+
+[Current checkpoint and per-aircraft retrieval tasks](research/WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md). The agreed objective remains open:1/13 reaches80 primary;0/13 reaches90 augmented under the unchanged rubric. Prioritize F6F04776 original stall time-history digitization with matched fuel/mass; P47D30 recorder-channel qualification and existing paired near-stall traces; then original F4 performance/EB100 files and Ki84 actual measured performance/calibration records. Continue all thirteen dossiers, retaining same-variant transfer bounds and source-level independence. G2 verification requires actual RPM/MAP and separate clean/gunpod/radiator configurations. This thread authorizes data collection only; simulator settings, physics and aircraft admission belong to the separate implementation milestone.
+
 ## After v4.2 independent operating benchmarks
 
 The [operating benchmark milestone](V42_OPERATING_BENCHMARK.md) implements independent power, fuel and injection settings, co-altitude presets, full performance outputs and rating-limited climb schedules. Next, strengthen the **comparative turn-performance evidence**: verify exact service-load/fuel/armament and rating-duration cells for each variant, replace the declared power/BSFC/injection transfers with original installation data, and constrain low-speed lift, drag and installed thrust jointly against matched speed/climb observations. Seek independent same-condition turn measurements before assigning a historical ranking or 5:1 pass. Prioritize provisional F-4 and P-38G operating cells, Corsair water flow/altitude behavior, and the known high-altitude propulsion gaps. Coordinate incoming source data with the separate research stream; no additional aircraft is part of this milestone.

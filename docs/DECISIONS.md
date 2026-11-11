@@ -203,3 +203,7 @@ Admit five source-conditioned chart replays and the sampled turn range. Keep the
 ## Turn/stall correction
 
 Apply separate bounded P-51B stall and maneuver lift to the live profile P explorer using NACA TN1044. Keep the F-4 game-conditioned scenario separate, and reject the game-fit nonlinear drag candidate for historical use. [Turn/stall review](TURN_STALL_CORRECTION.md)
+
+## 11 November 2026: thirteen-aircraft data-only recovery
+
+Retain the existing six weighted evidence dimensions; raise the augmented ambition from80 to90 while keeping primary80. Add Bf109G-2 DB605A to research intake only. Known actual engine settings are mandatory for its quantitative verification; record MT215 at2540 actualRPM, not nominal2600. Preserve primary, period-calculated, secondary and condition-only evidence separately, with same-experiment lineage. Capture152 records, source hashes and explicit remaining tasks; do not claim the overall80/90 objective achieved. No solver, parameter, frozen snapshot or flyable-roster changes. [Evidence and exact per-aircraft scores](research/WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md).
