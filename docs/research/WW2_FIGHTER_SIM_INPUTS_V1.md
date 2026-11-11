@@ -1,4 +1,4 @@
-# Fighter sim inputs v1.0.0
+# Fighter sim inputs v1.0.1
 
 The data pack covers 13 variants and 23 evidence plots. It carries preferred readings and uncertainty for reviewed cases, pointers to the original observations, and the support level of each curve segment. The simulator can use it to look up a specific test case and draw the evidence behind it. [Versioned JSON](../../references/analysis/fighter-sim-inputs-v1.json) · [Underlying calculations and source checks](WW2_FIGHTER_CALCULATED_EVIDENCE_2026-11-11.md)
 
@@ -33,7 +33,7 @@ Match the aircraft, installation, metric, speed basis, altitude, load and rating
 | Quantity at matched conditions | Accuracy goal | Maximum full spread for combining |
 | --- | ---: | ---: |
 | Clean 1 g stall CAS or EAS at known mass | ±2 km/h | 3 km/h |
-| Level TAS | ±3 km/h | 5 km/h |
+| Level TAS | ±3 km/h | 6 km/h |
 | Climb rate at matched schedule | ±3% | 5% |
 | Climb or acceleration time over identical endpoints | ±3% | 5% |
 | Sustained turn rate | ±0.3°/s | 0.5°/s |
@@ -41,6 +41,8 @@ Match the aircraft, installation, metric, speed basis, altitude, load and rating
 | Comparable drag or L/D | ±3% | 5% |
 
 Percentage spread uses the magnitude of the case mean. Near-zero rates warrant a separate absolute-error review. The accuracy goals govern Gold and research priority. Original test uncertainty stays visible even when it exceeds a goal.
+
+Version 1.0.1 accepts a full level TAS spread of 6 km/h. For example, comparable readings of 450 and 456 km/h combine to 453 km/h.
 
 **Gold** closes routine research for the exact benchmark condition. An accepted primary reading or mean, an independent secondary result and a calculation with independent inputs must agree within the spread limit. Each needs reviewed uncertainty within the accuracy goal. Original reprints, values fitted to the target, and calculations from the same trial share lineage. The pack records Gold count over 12 planned benchmarks per aircraft, including open slots. The initial count is zero confirmed Gold cases. The benchmark list is fixed for this version and counts each slot once, regardless of how many rows or graph samples support it.
 

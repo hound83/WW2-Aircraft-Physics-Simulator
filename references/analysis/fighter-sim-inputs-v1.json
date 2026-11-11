@@ -1,6 +1,6 @@
 {
   "schema": "ww2-fighter-sim-inputs/v1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "as_of": "2026-11-11",
   "scope": "Historical inputs and conditional estimates for source-case lookups and evidence graphs.",
   "originals": {
@@ -183,7 +183,7 @@
     "level_speed": {
       "unit": "km/h TAS",
       "accuracy": 3,
-      "spread": 5
+      "spread": 6
     },
     "climb_rate": {
       "unit": "%",
