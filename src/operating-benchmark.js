@@ -204,6 +204,91 @@
   out.manualClimb={iasMph:ias,climbFpm:manual.power?.climbFpm??null,qualification:spec.speedQualification+' IAS=CAS engineering approximation; not a newly measured calibration.'};
   out.status=out.sustained?'modelled':'cannot-sustain-level-flight';return out;
  }
+ function traceInputs(flight){
+  return {status:flight.status,altFt:flight.altFt,tasMph:flight.tasMph,benchmark:flight.benchmark,engine:{gear:flight.engine?.gear}};
+ }
+ function accelerate(M,T,L,model,spec,policy,settings,alt,from,to,options={}){
+  if(![alt,from,to].every(Number.isFinite)||alt<0||alt>40000||from<=0||to<=from){
+   throw Error('Choose increasing positive EAS endpoints and an altitude from sea level to 40,000 ft.');
+  }
+  const step=options.stepSeconds??.5;
+  if(!(step>0&&step<=1))throw Error('Acceleration integration step must be greater than zero and at most one second.');
+  const s=validateSettings(spec,settings,model),initial=load(spec,policy,s);
+  const easToTasRatio=M.airspeeds(1,alt).eas,domainEnd=M.airspeeds(590,alt).eas;
+  let eas=from,seconds=0,combatSeconds=0,fuel=initial.fuelLb,fluid=initial.injectionLb,estimatedPower=false;
+  const schedule=[],trace=[{seconds,easMph:eas}];
+  const result=status=>({
+   status,seconds:status==='reached'?seconds:null,elapsedSeconds:seconds,altFt:alt,startEasMph:from,targetEasMph:to,reachedEasMph:eas,
+   combatSeconds,combatRemainingSeconds:Math.max(0,(spec.combat.seconds??0)-combatSeconds),
+   fuelUsedLb:initial.fuelLb-fuel,injectionRemainingLb:fluid,endWeightLb:initial.dryLb+fuel+fluid,estimatedPower,schedule,trace
+  });
+  if(to>domainEnd)return result('speed-domain-unavailable');
+
+  const at=(speed,weight,phase)=>evaluate(M,T,L,model,spec,s,alt,speed,weight,phase);
+  const rate=flight=>{
+   const acceleration=levelAccelerationMphPerSecond(flight);
+   return acceleration===null?null:acceleration*easToTasRatio;
+  };
+  const fuelFlow=flight=>policy.bsfcLbPerHpHour*flight.power.shaftHp/3600;
+  while(seconds<7200&&eas<to-1e-8){
+   const phase=phaseFor(spec,s,seconds,combatSeconds,fluid);
+   if(!phase)return result('rating-time-exhausted');
+   const weight=initial.dryLb+fuel+fluid,start=at(eas,weight,phase),initialRate=rate(start);
+   if(initialRate===null)return result(start.status);
+   if(initialRate<=1e-6)return result('power-limited');
+
+   const boosting=phase.key==='combat'||phase.key==='injection';
+   const injectionRate=phase.key==='injection'?(spec.injection.fluidLbPerMinute??0)/60:0;
+   let remaining=boosting?(spec.combat.seconds??Infinity)-combatSeconds:
+    phase.key==='normal'?(spec.normal.seconds??Infinity)-seconds:Infinity;
+   if(phase.key==='injection')remaining=Math.min(remaining,(spec.injection.seconds??Infinity)-combatSeconds);
+   if(injectionRate>0)remaining=Math.min(remaining,fluid/injectionRate);
+   let dt=Math.min(step,remaining,7200-seconds);
+   if(!(dt>1e-8))return result('integration-limit');
+   const startFlow=fuelFlow(start);
+   if(fuel<=0)return result('fuel-exhausted');
+
+   // Hold altitude and integrate true airspeed in EAS coordinates at the midpoint mass.
+   function advance(duration){
+    const midWeight=weight-Math.min(fuel,startFlow*duration/2)-Math.min(fluid,injectionRate*duration/2);
+    const mid=at(Math.min(to,eas+initialRate*duration/2),midWeight,phase);
+    const midRate=rate(mid);
+    if(midRate===null)return {status:mid.status};
+    if(midRate<=0)return {status:'power-limited'};
+    return {speed:eas+midRate*duration,burn:fuelFlow(mid)*duration,flight:mid};
+   }
+   let trial=advance(dt);
+   if(trial.status)return result(trial.status);
+   if(trial.speed>=to||trial.burn>fuel){
+    // Locate a target-speed or fuel event inside the last step.
+    let low=0,high=dt;
+    for(let i=0;i<28;i++){
+     const middle=(low+high)/2,p=advance(middle);
+     if(p.status||p.speed>=to||p.burn>fuel)high=middle;
+     else low=middle;
+    }
+    dt=high;
+    trial=advance(dt);
+    if(trial.status)return result(trial.status);
+   }
+   const next=Math.min(to,trial.speed);
+   const burn=Math.min(fuel,trial.burn),water=Math.min(fluid,injectionRate*dt);
+   const end=at(next,weight-burn-water,phase),endRate=rate(end);
+   if(endRate===null)return result(end.status);
+   if(endRate<=0)return result('power-limited');
+
+   const previous=eas;
+   eas=next;seconds+=dt;fuel-=burn;fluid=Math.max(0,fluid-water);
+   if(fluid<1e-7)fluid=0;
+   if(boosting)combatSeconds+=dt;
+   estimatedPower||=start.benchmark.estimated||trial.flight.benchmark.estimated||end.benchmark.estimated;
+   const tail=schedule.at(-1);
+   if(tail?.phase===phase.key){tail.toEasMph=eas;tail.seconds+=dt;}
+   else schedule.push({phase:phase.key,label:phase.label,fromEasMph:previous,toEasMph:eas,seconds:dt});
+   trace.push({seconds,easMph:eas,phase:phase.key,inputs:traceInputs(trial.flight)});
+  }
+  return result(eas>=to-1e-8?'reached':'integration-limit');
+ }
  function climb(M,T,L,model,spec,policy,settings,from,to,options={}){
   if(!(from>=0&&to>from&&to<=40000))throw Error('Climb target must be above start, within 0-40000 ft');
   const s=validateSettings(spec,settings,model),initial=load(spec,policy,s),stepFt=options.stepFt??500;
@@ -219,8 +304,9 @@
     if(vals.some(v=>v===null))return null;return vals[0]+(vals[1]-vals[0])*(w-samples[i])/(samples[i+1]-samples[i]);}
    const a=atHeight(lower),b=atHeight(upper);return a===null||b===null?null:a+(b-a)*(alt-lower)/(upper-lower||1);
   }
-  function replay(boostStart){let h=from,seconds=0,combatUsed=0,fuel=initial.fuelLb,fluid=initial.injectionLb,iterations=0,estimated=false;const schedule=[];
-   function output(status){return {status,seconds:status==='reached'?seconds:null,elapsedSeconds:seconds,reachedFt:h,startFt:from,targetFt:to,boostStartFt:boostStart,combatSeconds:combatUsed,combatRemainingSeconds:Math.max(0,(spec.combat.seconds??0)-combatUsed),injectionRemainingLb:fluid,fuelUsedLb:initial.fuelLb-fuel,endFuelLb:fuel,endWeightLb:initial.dryLb+fuel+fluid,estimatedPower:estimated,schedule};}
+  function replay(boostStart,captureTrace=false){let h=from,seconds=0,combatUsed=0,fuel=initial.fuelLb,fluid=initial.injectionLb,iterations=0,estimated=false;const schedule=[];
+   const trace=captureTrace?[{seconds,altFt:h}]:null;
+   function output(status){return {status,seconds:status==='reached'?seconds:null,elapsedSeconds:seconds,reachedFt:h,startFt:from,targetFt:to,boostStartFt:boostStart,combatSeconds:combatUsed,combatRemainingSeconds:Math.max(0,(spec.combat.seconds??0)-combatUsed),injectionRemainingLb:fluid,fuelUsedLb:initial.fuelLb-fuel,endFuelLb:fuel,endWeightLb:initial.dryLb+fuel+fluid,estimatedPower:estimated,schedule,...(trace&&{trace})};}
    while(h<to-1e-6&&iterations++<3000){
     if(seconds>7200)return output('time-limit');
     const canBoost=s.mode==='combat'&&h>=boostStart-1e-6&&combatUsed<(spec.combat.seconds??Infinity)-1e-7;
@@ -247,16 +333,18 @@
     if(phase.key==='combat'||phase.key==='injection')combatUsed+=dt;
     estimated||=mid.benchmark.estimated;
     const tail=schedule.at(-1);if(tail?.phase===phase.key){tail.toFt=h;tail.seconds+=dt;}else schedule.push({phase:phase.key,label:phase.label,fromFt:start,toFt:h,seconds:dt});
+    trace?.push({seconds,altFt:h,phase:phase.key,inputs:traceInputs(mid)});
    }
    return output(h>=to-1e-6?'reached':'integration-limit');
   }
-  if(s.mode==='normal')return {...replay(Infinity),policy:'Manual normal-climb schedule; IAS approximately CAS; no time budget reset.'};
+  if(s.mode==='normal')return {...replay(Infinity,options.trace),policy:'Manual normal-climb schedule; IAS approximately CAS; no time budget reset.'};
   const starts=[from];for(let h=from+1000;h<to;h+=1000)starts.push(h);starts.push(to);
-  const candidates=starts.map(replay),valid=candidates.filter(r=>r.status==='reached');
-  if(!valid.length)return {...candidates.reduce((a,b)=>b.reachedFt>a.reachedFt?b:a),candidateWindows:starts.length,policy:'No tested permitted boost window reaches the target.'};
+  const candidates=starts.map(start=>replay(start)),valid=candidates.filter(r=>r.status==='reached');
+  function withTrace(run){return options.trace?{...run,trace:replay(run.boostStartFt,true).trace}:run;}
+  if(!valid.length)return {...withTrace(candidates.reduce((a,b)=>b.reachedFt>a.reachedFt?b:a)),candidateWindows:starts.length,policy:'No tested permitted boost window reaches the target.'};
   let best=valid.reduce((a,b)=>b.seconds<a.seconds?b:a);
   for(const h of [best.boostStartFt-500,best.boostStartFt+500].filter(h=>h>=from&&h<to)){const r=replay(h);candidates.push(r);if(r.status==='reached'&&r.seconds<best.seconds)best=r;}
-  return {...best,candidateWindows:candidates.length,frontLoadedSeconds:candidates[0].seconds,policy:'Quickest tested contiguous boost window, 1000-ft grid plus local 500-ft refinement; shared-solver midpoint mass replay. Not a proof of global optimal control; no thermal or speed-change acceleration model.'};
+  return {...withTrace(best),candidateWindows:candidates.length,frontLoadedSeconds:candidates[0].seconds,policy:'Quickest tested contiguous boost window, 1000-ft grid plus local 500-ft refinement; shared-solver midpoint mass replay. Not a proof of global optimal control; no thermal or speed-change acceleration model.'};
  }
- return Object.freeze({validateSettings,fittedInjection,load,phaseFor,nativePower,evaluate,levelAccelerationMphPerSecond,bestClimb,metrics,climb,interpolate});
+ return Object.freeze({validateSettings,fittedInjection,load,phaseFor,nativePower,evaluate,levelAccelerationMphPerSecond,bestClimb,metrics,climb,accelerate,interpolate});
 });

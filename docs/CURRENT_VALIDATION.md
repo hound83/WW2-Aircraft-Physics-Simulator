@@ -1,5 +1,7 @@
 # Current validation
 
+v4.9 [Timed runs, practical comparison margins and four-aircraft replay](V49_TIMED_MATCHUPS.md).
+
 v4.8 [Level acceleration, the four-aircraft replay and current evidence gaps](V48_LEVEL_ACCELERATION.md).
 
 v4.7 [Comparison controls, historical source agreement and four-aircraft regression](V47_BENCHMARK_AND_GOLD.md).

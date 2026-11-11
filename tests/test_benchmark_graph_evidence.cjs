@@ -41,7 +41,9 @@ function at(id,eas,kind,alt=10000,mode='combat'){
  return E.describe(flight,kind,data.graphEvidence[id],P.state(flight)?.limiting);
 }
 const spit='spitfire_lfix_bs543';
-assert.equal(at(spit,170,'climb').covered,true);
+assert.equal(at(spit,170,'climb').covered,false);
+assert.match(at(spit,170,'climb').label,/boost-derived power/);
+assert.equal(at(spit,170,'climb').reference.measured,true);
 assert.equal(at(spit,155,'climb').covered,false);
 assert.equal(at(spit,185,'climb').covered,false);
 assert.equal(at(spit,170,'climb',40000).covered,false);
@@ -52,6 +54,13 @@ assert.equal(at('p51b',110,'turn').covered,false);
 assert.equal(at('p51b',155,'turn').covered,true);
 assert.equal(at('p51b',155,'turn').source.label,'Primary lift report');
 assert.equal(at('p51b',250,'turn').label,'Calculated · table-supported power');
+assert.equal(at('p51b',250,'acceleration').covered,true);
+assert.equal(at('p51b',250,'acceleration',10000,'normal').covered,false);
+assert.equal(at(spit,250,'acceleration').covered,false);
+assert.equal(E.sourceBacked({grade:'primary',method:'table'}),true);
+assert.equal(E.sourceBacked({grade:'primary',method:'boost-to-bhp'}),false);
+assert.equal(E.sourceBacked({grade:'secondary',method:'mean',independentSources:2}),true);
+assert.equal(E.sourceBacked({grade:'secondary',method:'original',independentSources:1}),false);
 assert.equal(at('f4u4',250,'turn').covered,true);
 assert.equal(at('f4u4',250,'turn',29000).covered,false);
 

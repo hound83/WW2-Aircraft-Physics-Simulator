@@ -119,11 +119,17 @@
   if(links.childElementCount)parent.append(links);
  }
 
- function climbPoints(aircraft, pointAt) {
+ function climbPoints(aircraft, pointAt, altFt) {
   if (!Number.isFinite(aircraft.stallEasMph) || !(aircraft.climbFpm > 0)) return [];
   const low=aircraft.stallEasMph,high=aircraft.scanMaxEasMph;
   const at=eas=>({...pointAt(aircraft.side,Math.max(eas,low+1e-7),'climb'),eas});
   const speeds = new Set([low, aircraft.vyEasMph, high]);
+  for(const region of aircraft.evidence.regions??[]){
+   const anchor=region.anchors.find(row=>row.altFt===altFt);
+   const speedsTas=Evidence.scheduleWindow(region.anchors,altFt)??[];
+   if(anchor)speedsTas.push(anchor.tasMph);
+   for(const tas of speedsTas){const eas=UniversalAirPhysics.airspeeds(tas,altFt).eas;if(eas>=low&&eas<=high)speeds.add(eas);}
+  }
   for (let eas = Math.ceil(low / probeStepMph) * probeStepMph; eas < high; eas += probeStepMph) speeds.add(eas);
   const points=[...speeds].sort((a,b)=>a-b).map(at),result=[];
   // Add zero-climb endpoints where the level-flight balance crosses zero.
@@ -301,14 +307,15 @@
   }
   const left = 76, right = 758, top = 36, bottom = turn ? 256 : 206;
   const displayHeight = bottom + 50;
-  const rates=curves.flatMap(c=>c.points.flatMap(p=>[p.rate??0,p.range?.[1]??0]));
+  const rates=curves.flatMap(c=>c.points.flatMap(p=>[p.rate??0,p.range?.[1]??0,p.evidence?.reference?.observed??0]));
   const maxRate=Math.max(...rates),minRate=acceleration?Math.min(...rates):0;
   let yStep;
   if(acceleration)yStep=[.05,.1,.25,.5,1,2,5,10,20].find(step=>maxRate-minRate<=5*step)??25;
-  else if(turn)yStep=load?(maxRate<=3?.5:1):5;
+  else if(turn)yStep=load?(maxRate<4?.5:1):5;
   else yStep=[250,500,1000,1500,2000].find(step=>maxRate<=5*step)??2500;
   const yMin=acceleration?Math.floor(minRate/yStep)*yStep:load?1:0;
-  const peak = Math.max(yMin+yStep, Math.ceil(maxRate / yStep) * yStep);
+  const peak=load?Math.max(1.5,maxRate+Math.max(.05,(maxRate-yMin)*.04)):
+   Math.max(yMin+yStep,Math.ceil(maxRate/yStep)*yStep);
   const x = eas => left + (eas - minEas) * (right - left) / (maxEas - minEas);
   const y = rate => bottom - (rate-yMin) * (bottom - top) / (peak-yMin);
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -336,7 +343,7 @@
   }
   const inView=eas=>Number.isFinite(eas)&&eas>=minEas&&eas<=maxEas;
   const tickDigits=yStep<.5?2:yStep<1?1:0;
-  for(let tick=Math.round(yMin/yStep);tick<=Math.round(peak/yStep);tick++){
+  for(let tick=Math.round(yMin/yStep);tick<=Math.floor(peak/yStep+1e-8);tick++){
    const rate=tick*yStep;
    add('line',{x1:left,x2:right,y1:y(rate),y2:y(rate),class:acceleration&&tick===0?'bench-acceleration-zero':'bench-grid-line'});
    add('text',{x:left-11,y:y(rate)+5,'text-anchor':'end'},format(rate,tickDigits));
@@ -370,6 +377,15 @@
     const d=segment.points.map((point,i)=>(i?'L':'M')+x(point.eas)+','+y(point.rate)).join('');
     add('path',{d,fill:'none',stroke,'stroke-width':3,'stroke-linecap':'round',
      'data-bench-style':segment.solid?'solid':'dotted',...(segment.solid?{}:{'stroke-dasharray':'1 6'})},undefined,group);
+   }
+   if(kind==='climb'){
+    const measured=points.find(p=>p.evidence?.reference?.measured&&
+     Math.abs(p.eas-UniversalAirPhysics.airspeeds(p.evidence.reference.tasMph,altFt).eas)<1e-6);
+    if(measured&&inView(measured.eas)){
+     const report=measured.evidence.reference;
+     const dot=add('circle',{cx:x(measured.eas),cy:y(report.observed),r:5,fill:'#18242e',stroke,'stroke-width':2.3,'data-bench-measured-climb':aircraft.side});
+     add('title',{},aircraft.name+' flight test '+format(report.observed)+' ft/min at '+format(report.weightLb)+' lb',dot);
+    }
    }
    if(acceleration){
     const level=aircraft.levelEasMph;
@@ -447,7 +463,7 @@
    return point;
   }
   const turning = series.filter(aircraft => aircraft.range).map(aircraft => ({ aircraft, points:plotPoints(aircraft,pointAt) }));
-  const climbing = series.map(aircraft => ({ aircraft, points:climbPoints(aircraft,pointAt) }))
+  const climbing = series.map(aircraft => ({ aircraft, points:climbPoints(aircraft,pointAt,altFt) }))
    .filter(curve => curve.points.some(point => point.rate > 0));
   const curves=[...turning,...climbing];
   const levelSpeeds=series.map(a=>a.levelEasMph).filter(Number.isFinite);
@@ -564,6 +580,59 @@
   update(selectedEasMph??turning[0]?.aircraft.peakEasMph??climbing[0]?.aircraft.vyEasMph??maxEas/2);
  }
 
- globalThis.OperatingBenchmarkChart = Object.freeze({ render, speed, ticks, turnUnits });
+ function timedTrace(host,series,{low,high,label}){
+  const elapsed=Math.max(0,...series.map(a=>a.trace.at(-1)?.seconds??0));
+  host.replaceChildren();
+  if(!(elapsed>0))return;
+  const width=780,height=222,left=76,right=758,top=30,bottom=174;
+  const secondsStep=[5,10,15,30,60,120,300,600,1800].find(step=>elapsed<=6*step)??3600;
+  const end=Math.ceil(elapsed/secondsStep)*secondsStep;
+  const x=seconds=>left+(right-left)*seconds/end;
+  const y=value=>bottom-(bottom-top)*(value-low)/(high-low);
+  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('viewBox','0 0 '+width+' '+height);
+  svg.setAttribute('role','img');
+  svg.setAttribute('aria-label',label+' against elapsed time');
+  function draw(tag,attrs,content,parent=svg){
+   const node=document.createElementNS(svg.namespaceURI,tag);
+   for(const [key,value] of Object.entries(attrs))node.setAttribute(key,value);
+   if(content!==undefined)node.textContent=content;
+   parent.append(node);
+   return node;
+  }
+  draw('text',{x:left,y:20},label);
+  for(let seconds=0;seconds<=end;seconds+=secondsStep){
+   const at=x(seconds);
+   draw('line',{x1:at,x2:at,y1:top,y2:bottom,class:'bench-grid-line'});
+   draw('text',{x:at,y:bottom+22,'text-anchor':'middle'},format(seconds));
+  }
+  for(let i=0;i<=4;i++){
+   const value=low+(high-low)*i/4,at=y(value);
+   draw('line',{x1:left,x2:right,y1:at,y2:at,class:i===4?'bench-advantage-zero':'bench-grid-line'});
+   draw('text',{x:left-9,y:at+5,'text-anchor':'end'},format(value));
+  }
+  draw('text',{x:(left+right)/2,y:height-4,'text-anchor':'middle'},'Elapsed time (s)');
+  for(const aircraft of series){
+   const {side,color,name,trace}=aircraft;
+   if(trace.length<2)continue;
+   const group=draw('g',{'data-bench-time-trace':side});
+   for(const segment of Evidence.lineSegments(trace.map((point,i)=>({
+    eas:point.seconds,rate:point.value,covered:i===0?trace[1].covered:point.covered
+   })))){
+    const d=segment.points.map((point,i)=>(i?'L':'M')+x(point.eas)+','+y(point.rate)).join('');
+    draw('path',{d,fill:'none',stroke:color,'stroke-width':3,'stroke-linecap':'round',
+     'data-bench-style':segment.solid?'solid':'dotted',...(segment.solid?{}:{'stroke-dasharray':'1 6'})},undefined,group);
+   }
+   for(let i=1;i<trace.length;i++){
+    const point=trace[i],next=trace[i+1];
+    if(next&&next.phase===point.phase)continue;
+    const node=draw('circle',{cx:x(point.seconds),cy:y(point.value),r:4.5,fill:color,'data-bench-time-phase':point.phase},undefined,group);
+    draw('title',{},name+' · '+(next?'Power changes at ':'Run ends at ')+format(point.seconds,1)+' s',node);
+   }
+  }
+  host.append(svg);
+ }
+
+ globalThis.OperatingBenchmarkChart = Object.freeze({ render, timedTrace, speed, ticks, turnUnits, speedFactor:unit=>units[unit].factor });
 })();
 

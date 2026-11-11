@@ -5,7 +5,10 @@
  const fmt=(x,n=1)=>Number.isFinite(x)?x.toLocaleString('en-US',{minimumFractionDigits:n,maximumFractionDigits:n}):'—';
  const Chart=OperatingBenchmarkChart,History=BenchmarkServiceContext,Evidence=BenchmarkGraphEvidence;
  const sides=['a','b'];
+ const Match=BenchmarkMatchup,tolerances=data.sourceGrades.tolerances;
  const height=$('bench-altitude'),fromHeight=$('bench-climb-from'),toHeight=$('bench-climb-to');
+ const altitudeControls=[...document.querySelectorAll('[data-bench-altitude]')];
+ const altitudeReadouts=[...document.querySelectorAll('[data-bench-altitude-value]')];
  const altitudes=Array.from({length:9},(_,i)=>i*5000);
  const heightLabel=alt=>alt===0?'Sea level':fmt(alt,0)+' ft';
  for(const alt of altitudes){
@@ -14,8 +17,9 @@
  }
  toHeight.value='10000';
  const turnUnit=()=>Chart.turnUnits[$('bench-turn-unit').value];
- const api=globalThis.OperatingBenchmarkUI={data,settings:{},rows:{},altitudeRows:[],climbs:null,probe:null,probeLocked:false,probeLock:null};
+ const api=globalThis.OperatingBenchmarkUI={data,settings:{},rows:{},altitudeRows:[],climbs:null,accelerations:null,probe:null,probeLocked:false,probeLock:null};
  const speed=(value,kind)=>Chart.speed(value,$('bench-speed-unit').value,kind);
+ const accelerationInputs=[$('bench-acceleration-from'),$('bench-acceleration-to')],accelerationSpeeds=[180,300];
  const text=(tag,value,className)=>{const e=document.createElement(tag);if(value!==undefined)e.textContent=value;if(className)e.className=className;return e;};
  const shortName=id=>service.aircraft[id].displayName;
  let allAircraftChoice='spitfire_lfix_bs543';
@@ -132,7 +136,7 @@
    evaluateAt,
    makeAdvantage(domain){
     return OperatingTurnComparison.advantage({...domain,host:advantage,readout,limits,names,colors,policy,
-     soloKey:$('bench-solo-key'),turnUnit:turnUnit(),unit:$('bench-speed-unit').value});
+     soloKey:$('bench-solo-key'),turnUnit:turnUnit(),unit:$('bench-speed-unit').value,tolerances});
    },
    onProbe(probe){api.probe=probe;}
   });
@@ -223,16 +227,29 @@
   for(const label of labels){const th=text('th',label);th.scope='col';headers.append(th);}
   head.append(headers);table.append(head,body);return {table,body};
  }
+ function peakVerdict(a,b,turn){
+  if(!a||!b)return null;
+  if(turn.key==='rate')return Match.compare('sustained_turn_rate',a.rateDegSec,b.rateDegSec,tolerances);
+  const tas=(a.tasMph+b.tasMph)/2;
+  return Match.compare('sustained_turn_rate',TurnPerformance.turnFromLoad(a.g,tas).rateDegSec,
+   TurnPerformance.turnFromLoad(b.g,tas).rateDegSec,tolerances);
+ }
+ function leadLabel(verdict,margin){
+  if(verdict.lead==='tie')return text('strong','Effectively tied','bench-note');
+  return text('strong',shortName(api.settings[verdict.lead].id)+' +'+margin,'bench-'+verdict.lead);
+ }
  function renderAltitudeOverview(alt){
   const turn=turnUnit();
   const {table,body}=makeTable(['Altitude','Peak sustained turn ('+turn.label+')','Best climb (ft/min)','Top level speed (TAS)'],'bench-altitude-table');
   const unit=$('bench-speed-unit').value;
-  const speedFactor={mph:1,kph:1.609344,knots:1609.344/1852}[unit];
-  function pair(a,b,format,delta,estimated){
+  function pair(a,b,format,margin,estimated,verdict){
    const cell=text('td');
    const values=sides.map((side,i)=>text('span',format([a,b][i])+(estimated[i]?'*':''),'bench-'+side));
    cell.append(values[0],document.createTextNode(' / '),values[1]);
-   if(Number.isFinite(a)&&Number.isFinite(b))cell.append(text('small','Δ '+(a-b>0?'+':'')+delta(a-b),'bench-note'));
+   if(verdict){
+    const label=text('small');label.dataset.lead=verdict.lead;
+    label.append(leadLabel(verdict,margin(Math.abs(a-b))));cell.append(label);
+   }
    return cell;
   }
   for(const {altFt,a,b} of api.altitudeRows){
@@ -247,10 +264,14 @@
    });
    th.append(button);
    const positive=row=>row.climb?.climbFpm>0?row.climb.climbFpm:null;
+   const ta=a[turn.peak],tb=b[turn.peak],climbA=positive(a),climbB=positive(b),levelA=a.level?.tasMph,levelB=b.level?.tasMph;
    tr.append(th,
-    pair(a[turn.peak]?.[turn.field],b[turn.peak]?.[turn.field],v=>fmt(v,turn.digits),v=>fmt(v,turn.digits),[a.sustained?.estimatedPower,b.sustained?.estimatedPower]),
-    pair(positive(a),positive(b),v=>fmt(v,0),v=>fmt(v,0),[a.climb?.estimatedPower&&positive(a),b.climb?.estimatedPower&&positive(b)]),
-    pair(a.level?.tasMph,b.level?.tasMph,v=>speed(v,'TAS'),v=>fmt(v*speedFactor,0),[a.level?.estimatedPower,b.level?.estimatedPower]));
+    pair(ta?.[turn.field],tb?.[turn.field],v=>fmt(v,turn.digits),v=>fmt(v,turn.digits)+' '+turn.label,
+     [ta?.estimatedPower,tb?.estimatedPower],peakVerdict(ta,tb,turn)),
+    pair(climbA,climbB,v=>fmt(v,0),v=>fmt(v,0)+' ft/min',[a.climb?.estimatedPower&&climbA,b.climb?.estimatedPower&&climbB],
+     Match.compare('climb_rate',climbA,climbB,tolerances)),
+    pair(levelA,levelB,v=>Chart.speed(v,unit,'TAS'),v=>Chart.speed(v,unit,'TAS'),[a.level?.estimatedPower,b.level?.estimatedPower],
+     Match.compare('level_speed',levelA,levelB,tolerances)));
    body.append(tr);
   }
   $('bench-altitude-overview').replaceChildren(table);
@@ -284,16 +305,22 @@
  function invalidateClimbs(message){
   api.climbs=null;
   $('bench-climb-result').textContent=message;
+  $('bench-climb-trace').replaceChildren();
  }
  function renderAltitude(){
   const alt=Number(height.value),label=heightLabel(alt);
-  height.setAttribute('aria-valuetext',label);
-  $('bench-altitude-value').value=label;
+  for(const control of altitudeControls){control.value=alt;control.setAttribute('aria-valuetext',label);}
+  for(const output of altitudeReadouts)output.value=label;
   const current=api.altitudeRows.find(row=>row.altFt===alt);
   for(const side of sides){api.rows[side]=current[side];renderSide(side);}
   plot(alt);renderAltitudeOverview(alt);
-  const turn=turnUnit(),a=api.rows.a[turn.peak]?.[turn.field],b=api.rows.b[turn.peak]?.[turn.field];
-  $('bench-comparison').textContent=Number.isFinite(a)&&Number.isFinite(b)?'Modeled peak difference (aircraft 1 − aircraft 2): '+fmt(a-b,turn.digits)+' '+turn.label+'. Historical ranking uncertainty remains unresolved.':'A sustained-turn comparison is unavailable for one or both selected states.';
+  const turn=turnUnit(),a=api.rows.a[turn.peak],b=api.rows.b[turn.peak],verdict=peakVerdict(a,b,turn);
+  const comparison=$('bench-comparison');comparison.replaceChildren();
+  if(verdict)comparison.append(document.createTextNode('Modeled peak sustained turn. '),
+   leadLabel(verdict,fmt(Math.abs(a[turn.field]-b[turn.field]),turn.digits)+' '+turn.label));
+  else comparison.textContent='A sustained-turn comparison is unavailable for one or both selected states.';
+  if(api.accelerations&&api.accelerations.a.altFt!==alt)invalidateAcceleration('Altitude changed. Recalculate both runs.');
+  $('bench-acceleration-altitude').textContent='Shared altitude '+label;
  }
  function render(){
   for(const side of sides){const chosen=read(side);api.settings[side]=chosen;readAltitudes(side,chosen);}
@@ -301,10 +328,13 @@
   renderAltitude();sourceDetails();renderSourceGrades();
   $('bench-matchup').textContent=History.compare(service.aircraft[api.settings.a.id],service.aircraft[api.settings.b.id]);
   invalidateClimbs('Calculate both climbs for the current aircraft and settings.');
+  invalidateAcceleration('Calculate both runs for the current aircraft and settings.');
  }
- function changeHeight(){if(Number(height.value)!==api.rows.a?.altFt)renderAltitude();}
- height.addEventListener('input',changeHeight);
- height.addEventListener('change',changeHeight);
+ function changeHeight(event){
+  height.value=event.currentTarget.value;
+  if(Number(height.value)!==api.rows.a?.altFt)renderAltitude();
+ }
+ for(const control of altitudeControls){control.addEventListener('input',changeHeight);control.addEventListener('change',changeHeight);}
  for(const id of ['bench-extension',...sides.flatMap(s=>['power','fuel','injection','cooling'].map(k=>'bench-'+k+'-'+s))])$(id).addEventListener('change',render);
  for(const id of ['bench-aircraft-a','bench-aircraft-filter'])$(id).addEventListener('change',()=>{updateSecondAircraft();render();});
  $('bench-aircraft-b').addEventListener('change',()=>{
@@ -319,16 +349,103 @@
  $('bench-speed-unit').addEventListener('change',()=>{
   for(const side of ['a','b'])renderSide(side);
   const alt=Number($('bench-altitude').value);
-  plot(alt);renderAltitudeOverview(alt);
+  plot(alt);renderAltitudeOverview(alt);showAccelerationInputs();
+  if(api.accelerations)renderAcceleration();
  });
  for(const input of [fromHeight,toHeight])input.addEventListener('change',()=>invalidateClimbs('Climb altitude changed. Recalculate both climbs.'));
  $('bench-climb-calculate').addEventListener('click',()=>{const from=Number(fromHeight.value),to=Number(toHeight.value),box=$('bench-climb-result');box.replaceChildren();if(to<=from){box.append(text('p','Choose a target altitude above the climb start.'));return;}
-  const results={};for(const side of ['a','b']){const c=api.settings[side];results[side]=B.climb(M,T,L,models[c.id],specs.aircraft[c.id],specs.policy,c.settings,from,to);const r=results[side];
+  const results={};for(const side of ['a','b']){const c=api.settings[side];results[side]=B.climb(M,T,L,models[c.id],specs.aircraft[c.id],specs.policy,c.settings,from,to,{trace:true});const r=results[side];
    box.append(text('h3','Aircraft '+(side==='a'?'1':'2')+' · '+shortName(c.id)),text('p',r.status==='reached'?heightLabel(from)+' to '+heightLabel(to)+': '+fmt(r.seconds/60,2)+' min':'Target not reached: '+r.status+' at '+fmt(r.reachedFt,0)+' ft'),text('p','Combat used '+fmt(r.combatSeconds/60,2)+' min · remaining '+fmt(r.combatRemainingSeconds/60,2)+' min · fuel used '+fmt(r.fuelUsedLb,1)+' lb · arrival mass '+fmt(r.endWeightLb,0)+' lb · injection fluid remaining '+fmt(r.injectionRemainingLb,1)+' lb'));
    for(const p of r.schedule)box.append(text('p',p.label+': '+fmt(p.fromFt,0)+' → '+fmt(p.toFt,0)+' ft · '+fmt(p.seconds/60,2)+' min','bench-note'));
    box.append(text('p',r.policy,'bench-note'));
-  }api.climbs=results;
+  }
+  box.prepend(timeVerdict(results));
+  renderTimeGraph('bench-climb-trace',results,'climb',from,to,'Altitude (ft)',point=>point.altFt);
+  api.climbs=results;
  });
+ function invalidateAcceleration(message){
+  api.accelerations=null;
+  $('bench-acceleration-result').textContent=message;
+  $('bench-acceleration-trace').replaceChildren();
+ }
+ function timeVerdict(results){
+  const result=text('p',undefined,'bench-time-verdict'),a=results.a,b=results.b;
+  const verdict=Match.compare('elapsed_time',a.seconds,b.seconds,tolerances);
+  if(verdict){
+   const gap=fmt(Math.abs(verdict.delta),1)+' s';
+   if(verdict.lead==='tie')result.append(text('strong','Effectively tied'),document.createTextNode(' · '+gap+' apart within the '+tolerances.elapsed_time.spread+'% margin'));
+   else result.append(text('strong',shortName(api.settings[verdict.lead].id)+' arrives '+gap+' sooner','bench-'+verdict.lead));
+  }else{
+   const finisher=sides.find(side=>results[side].status==='reached');
+   result.textContent=finisher?shortName(api.settings[finisher].id)+' reaches the target':'Target not reached by either aircraft';
+  }
+  return result;
+ }
+ function renderTimeGraph(id,results,kind,low,high,label,coordinate){
+  const colors=Evidence.colors(...sides.map(side=>service.aircraft[api.settings[side].id].country));
+  const series=sides.map(side=>{
+   const aircraft=api.settings[side].id,record=data.graphEvidence[aircraft];
+   const trace=results[side].trace.map(point=>({
+    ...point,value:coordinate(point),covered:point.inputs?Evidence.describe(point.inputs,kind,record).covered:false
+   }));
+   return {side,color:colors[side],name:shortName(aircraft),trace};
+  });
+  Chart.timedTrace($(id),series,{low,high,label});
+ }
+ function showAccelerationInputs(){
+  const unit=$('bench-speed-unit').value,factor=Chart.speedFactor(unit);
+  for(const [i,input] of accelerationInputs.entries()){
+   input.value=Number.isFinite(accelerationSpeeds[i])?Math.round(accelerationSpeeds[i]*factor*100)/100:'';
+  }
+  $('bench-acceleration-unit').textContent=Chart.speed(0,unit,'EAS').slice(2);
+ }
+ function renderAcceleration(){
+  const results=api.accelerations,box=$('bench-acceleration-result');
+  const status={
+   'power-limited':'Acceleration reaches its power limit',
+   'source-power-unavailable':'Power data unavailable',
+   'below-provisional-stall':'Starting speed is below the modeled 1 G stall',
+   'speed-domain-unavailable':'Target is outside the modeled speed range',
+   'rating-time-exhausted':'Available rating time exhausted',
+   'fuel-exhausted':'Fuel exhausted',
+   'integration-limit':'Run ended at the integration limit'
+  };
+  box.replaceChildren(timeVerdict(results));
+  for(const side of sides){
+   const r=results[side],name=shortName(api.settings[side].id);
+   const summary=r.status==='reached'?fmt(r.seconds,2)+' s to '+speed(r.targetEasMph,'EAS'):
+    (status[r.status]??r.status)+' at '+speed(r.reachedEasMph,'EAS');
+   box.append(text('h4',name,'bench-'+side),text('p',summary),
+    text('p','Combat remaining '+fmt(r.combatRemainingSeconds,1)+' s · fuel used '+fmt(r.fuelUsedLb,1)+' lb · injection fluid remaining '+fmt(r.injectionRemainingLb,1)+' lb','bench-note'));
+   if(r.estimatedPower)box.append(text('p','Includes extrapolated engine power.','bench-note'));
+   for(const phase of r.schedule){
+    box.append(text('p',phase.label+' · '+speed(phase.fromEasMph,'EAS')+' to '+speed(phase.toEasMph,'EAS')+' · '+fmt(phase.seconds,1)+' s','bench-note'));
+   }
+  }
+  const unit=$('bench-speed-unit').value,factor=Chart.speedFactor(unit);
+  renderTimeGraph('bench-acceleration-trace',results,'acceleration',results.a.startEasMph*factor,
+   results.a.targetEasMph*factor,'Speed ('+Chart.speed(0,unit,'EAS').slice(2)+')',point=>point.easMph*factor);
+ }
+ for(const [i,input] of accelerationInputs.entries()){
+  input.addEventListener('input',()=>{
+   accelerationSpeeds[i]=input.valueAsNumber/Chart.speedFactor($('bench-speed-unit').value);
+   invalidateAcceleration('Speed interval changed. Recalculate both runs.');
+  });
+ }
+ $('bench-acceleration-calculate').addEventListener('click',()=>{
+  const [from,to]=accelerationSpeeds,alt=Number(height.value);
+  if(![from,to].every(Number.isFinite)||from<=0||to<=from){
+   invalidateAcceleration('Choose a positive start speed and a higher target speed.');return;
+  }
+  api.accelerations=Object.fromEntries(sides.map(side=>{
+   const c=api.settings[side];
+   return [side,B.accelerate(M,T,L,models[c.id],specs.aircraft[c.id],specs.policy,c.settings,alt,from,to)];
+  }));
+  renderAcceleration();
+ });
+ showAccelerationInputs();
+ $('bench-tie-margins').textContent='Effective ties use '+tolerances.sustained_turn_rate.spread+'°/s, '+
+  tolerances.climb_rate.spread+'% climb rate and '+tolerances.level_speed.spread+' km/h TAS. In G view the peak tie margin uses the two peaks’ mean TAS. * includes estimated power.';
  render();
  renderFlightChecks();
  OperatingTurnComparison.evidence($('bench-turn-evidence'),data.turnEvidence,data.turnLiftChecks,

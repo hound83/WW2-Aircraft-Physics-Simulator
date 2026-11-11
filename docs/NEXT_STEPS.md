@@ -1,5 +1,9 @@
 # Next steps
 
+## After v4.9 timed matchups
+
+Retrieve condition-matched straight level speed-time traces and powered-turn observations for the four benchmark aircraft. Prioritize common airspeed and altitude around the Mustang–Spitfire turn crossover, with installation, rating and weight recorded. [Timed run conditions and open checks](V49_TIMED_MATCHUPS.md).
+
 ## After v4.8 level acceleration
 
 Candidate major milestone is a timed acceleration comparison with historical checks. Integrate through selected speed intervals and available power time. Seek condition-matched speed-time and powered steady-turn observations and preserve whole runs as independent checks. Use the Mustang and Spitfire around 200 mph EAS to assess where a comparative ranking survives uncertainty. [Current acceleration plot and proposed milestone](V48_LEVEL_ACCELERATION.md#proposed-major-milestone).
