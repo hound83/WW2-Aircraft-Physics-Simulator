@@ -1,0 +1,47 @@
+name: Publish simulator
+on:
+  pull_request:
+    paths: [.github/workflows/publish-simulator.yml]
+  push:
+    branches: [main]
+    paths: [.github/workflows/publish-simulator.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node validation/diagnostics/joint_calibration_v28.cjs
+      - run: npm run check
+      - run: node scripts/verify-pre-pr1.cjs
+      - run: npm run test:browser
+      - name: Stage the tested simulator
+        run: |
+          mkdir -p "$RUNNER_TEMP/simulator-pages"
+          cp dist/model.html "$RUNNER_TEMP/simulator-pages/index.html"
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: ${{ runner.temp }}/simulator-pages
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v5
+        id: deployment
