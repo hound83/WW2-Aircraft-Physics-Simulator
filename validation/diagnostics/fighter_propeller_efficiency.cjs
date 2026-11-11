@@ -6,6 +6,7 @@ const { buildCatalog } = require('../../scripts/research-layer.cjs');
 const { browserData } = require('./operating_benchmark_v46.cjs');
 const { runSweep } = require('./propeller_efficiency_sweep.cjs');
 const { sourceEvidence } = require('./propeller_efficiency_evidence.cjs');
+const { workingReference } = require('./simple_propeller_efficiency.cjs');
 
 const root = path.resolve(__dirname, '../..');
 const outputPath = 'references/analysis/fighter-propeller-efficiency-v1.json';
@@ -13,12 +14,15 @@ const baselineCommit = '079d955d58425637cffcd84540198dde7f2a0a5d';
 
 function buildEfficiencyData(full = false) {
   const data = browserData();
+  const catalog = buildCatalog();
+  const evidence = sourceEvidence(data, catalog);
   return {
     schema: 'ww2-fighter-propeller-efficiency/v1',
-    version: '1.0.1',
+    version: '1.1.0',
     replay_base: { version: '4.9.0-rc.1', commit: baselineCommit },
-    as_of: '2026-11-11',
-    ...sourceEvidence(data, buildCatalog()),
+    as_of: '2026-11-12',
+    ...evidence,
+    working_reference: workingReference(data, catalog, evidence),
     sweep: runSweep(data, full),
   };
 }

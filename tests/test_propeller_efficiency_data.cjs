@@ -74,6 +74,30 @@ assert.equal(donor.eta, .765391);
 assert.ok(Math.abs(comparableEta - donor.eta - .0132) < .0001);
 assert.ok(Math.abs(donor.replay_fpm_if_fitted_loss_is_in_useful_power - 2395.63) < .03);
 
+const reference = evidence.working_reference;
+assert.equal(reference.reference_values.baseline_eta, .8);
+assert.equal(reference.reference_values.p47b_military_climb_eta, .76);
+const newFlightRows = reference.flight_efficiency.rows.filter(row => row.id.includes('p47c-high-speed:'));
+assert.equal(newFlightRows.length, 11);
+for (const row of newFlightRows) {
+  const v = originals.get(row.id)?.values;
+  assert.equal(v.efficiency, row.eta);
+  assert.ok(Math.abs(v.advance_ratio * v.thrust_coefficient / v.power_coefficient - v.efficiency) <= .006);
+}
+assert.equal(reference.flight_efficiency.rows.length, 103);
+assert.equal(reference.level.length, 7);
+const corsair = reference.level.find(row => row.aircraft === 'f4u4');
+assert.equal(corsair.summary_mph.count, 7);
+assert.ok(corsair.summary_mph.simple_mae < corsair.summary_mph.current_mae);
+assert.ok(reference.p47b_independent_level.summary_mph.simple_mae < 3);
+assert.equal(reference.p47b_independent_level.summary_mph.count, 3);
+for (const test of reference.p38g_part_power.cases) {
+  assert.equal(test.rows[0].simple, null);
+  assert.equal(test.rows.at(-1).simple, null);
+  assert.equal(test.leave_one_out_mph.count, test.rows.length - 2);
+  assert.ok(test.leave_one_out_mph.simple_mae < 2);
+}
+
 // A known constant acceleration exercises force/mass conversion and the timed integral.
 const flight = tasMph => {
   const weightLb = 10000;

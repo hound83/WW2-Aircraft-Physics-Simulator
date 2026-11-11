@@ -10,7 +10,7 @@ const prefix='stall_four_track_followup_2026-11-10';
 const rows=catalog.observations.filter(row=>row.pack_id===prefix);
 assert.equal(pack.pack_version,'1.0.1');
 assert.equal(rows.length,29);
-assert.equal(catalog.summary.observation_count,1626);
+assert.equal(catalog.summary.observation_count,1637);
 assert.equal(catalog.summary.stall_count,250);
 assert.equal(catalog.summary.source_count,280);
 assert.equal(catalog.calibration_curves.length,19,'Unsafe chart digitization must not silently produce a correction curve');

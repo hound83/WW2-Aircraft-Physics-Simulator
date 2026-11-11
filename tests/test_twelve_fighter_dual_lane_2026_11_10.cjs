@@ -41,7 +41,7 @@ const c=buildCatalog();
 const newRows=c.observations.filter(o=>o.pack_id==='ww2_twelve_fighter_dual_lane_2026-11-10');
 assert.equal(newRows.length,74);
 assert.equal(c.summary.source_count,280);
-assert.equal(c.summary.observation_count,1626);
+assert.equal(c.summary.observation_count,1637);
 assert.equal(c.summary.stall_count,250);
 assert.equal(c.summary.stall_quality_tiers['reported-CAS'],9,'No new measured CAS fabricated');
 assert.equal(c.summary.stall_quality_tiers['provisional-calibration-table-CAS'],1);
