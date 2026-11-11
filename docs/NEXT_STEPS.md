@@ -1,5 +1,9 @@
 # Next steps
 
+## After v4.7 source agreement
+
+Resolve the two Mustang 444 mph transcriptions against the original program records, with particular attention to altitude and the weight convention. Seek separate matched trials for the GOLD* cases and retain the recorded source ranges. Continue the powered-turn work below, starting with the Mustang and Spitfire speed range where the modeled lead depends on inputs. [Reviewed benchmarks and current comparison](V47_BENCHMARK_AND_GOLD.md).
+
 ## After v4.4 maneuver lift and turn comparison
 
 Seek measured powered steady-turn states with TAS, weight, altitude, engine setting and energy balance for the modeled variants. Prioritize Spitfire LF IX usable lift under load and Mustang installed propulsive power and incremental turn drag. Reserve whole runs or airframes before fitting. The measured turn evidence is needed to test the speed ranges where the modeled ranking can change. [Current evidence and checks](V44_TURN_PERFORMANCE.md).

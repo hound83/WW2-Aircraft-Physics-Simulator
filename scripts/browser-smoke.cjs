@@ -345,7 +345,7 @@ async function run(){
   assert.equal(await evaluate('document.getElementById("bench-aircraft-b").value'),'bf109f4');
   await select('bench-aircraft-b','spitfire_lfix_bs543');
   assert.match(await evaluate('document.getElementById("bench-matchup").textContent'),/Approximate overlap.*Western Europe/);
-  assert.equal(await evaluate('document.querySelectorAll("#bench-altitude-overview tbody tr").length'),6);
+  assert.equal(await evaluate('document.querySelectorAll("#bench-altitude-overview tbody tr").length'),9);
   await evaluate('document.querySelector("#bench-altitude-overview [data-altitude=\\"20000\\"] button").click()');
   const altitudeSelection=await benchmark();
   assert.equal(altitudeSelection.rows.a.altFt,20000);
@@ -362,7 +362,16 @@ async function run(){
   assert.match(await evaluate('document.getElementById("bench-flight-checks").textContent'),/41-5902.*BS\.543.*41-5942/s);
   checks.push('v4.3 service-era groups, contemporaries filter, shared altitude matrix, independent cooling and original-flight checks');
   let bm=await benchmark();assert.equal(bm.rows.a.altFt,10000);assert.equal(bm.rows.b.altFt,10000);
-  assert.deepEqual(await evaluate('[...document.getElementById("bench-altitude").options].map(o=>Number(o.value))'),[0,10000,20000,30000,35000,40000]);
+  assert.deepEqual(await evaluate('(()=>{const e=document.getElementById("bench-altitude");return [e.type,+e.min,+e.max,+e.step];})()'),['range',0,40000,5000]);
+  await evaluate('(()=>{const e=document.getElementById("bench-altitude");e.value="15000";e.dispatchEvent(new Event("input",{bubbles:true}));})()');
+  const midAltitude=await benchmark();
+  assert.equal(midAltitude.rows.a.altFt,15000);
+  assert.equal(midAltitude.rows.b.altFt,15000);
+  assert.match(await evaluate('document.getElementById("bench-altitude-value").value'),/15,000 ft/);
+  assert.equal(await evaluate('document.getElementById("bench-climb-to").value'),'10000');
+  assert.match(await evaluate('document.querySelector("#bench-climb-plot svg").getAttribute("aria-label")'),/15,000 ft/);
+  await select('bench-altitude','10000');
+  checks.push('v4.7 chart altitude slider synchronizes plots and aircraft at 5,000 ft steps independently of timed climb');
   const curveEnds=()=>evaluate(`['a','b'].map(side=>{
     const plot=document.getElementById('bench-turn-plot');
     const paths=[...plot.querySelectorAll('[data-bench-curve="'+side+'"] path')];
@@ -374,7 +383,9 @@ async function run(){
   const axes=()=>evaluate('["turn","climb","advantage"].map(kind=>{const s=document.querySelector("#bench-"+kind+"-plot svg");return [Number(s.dataset.minEas),Number(s.dataset.maxEas)];})');
   assert.equal(await evaluate('document.getElementById("bench-turn-focus").value'),'3');
   const focusAxes=await axes();
-  assert.deepEqual(focusAxes,[[0,360],[0,360],[0,360]]);
+  assert.deepEqual(focusAxes,[[80,360],[80,360],[80,360]]);
+  assert.ok(Math.min(bm.rows.a.stallEasMph,bm.rows.b.stallEasMph)-focusAxes[0][0]>=5);
+  assert.ok(Math.min(bm.rows.a.stallEasMph,bm.rows.b.stallEasMph)-focusAxes[0][0]<10);
   assert.ok(bm.rows.a.level.easMph>350&&bm.rows.a.level.easMph<360);
   for(const point of await curveEnds()){
     assert.ok(Math.abs(point.startY-point.guideY)<.01,'Turn curve enters at 3°/s');
@@ -400,7 +411,7 @@ async function run(){
   checks.push('v4.6 default 3 degree per second endpoints, connected table-supported paths and square-only curve markers');
   await select('bench-turn-focus','full');
   const envelope=await curveEnds();
-  const easToX=eas=>76+(758-76)*eas/focusAxes[0][1];
+  const easToX=eas=>76+(758-76)*(eas-focusAxes[0][0])/(focusAxes[0][1]-focusAxes[0][0]);
   assert.ok(envelope[0].startX>envelope[1].startX+1,'The curves start at their own stall speeds');
   for(const [i,side] of ['a','b'].entries()){
     const point=envelope[i];
@@ -409,7 +420,7 @@ async function run(){
   }
   assert.match(await evaluate('document.getElementById("bench-probe-results").textContent'),/1 G stall 97 mph EAS.*1 G stall 85 mph EAS/s);
   assert.deepEqual(await axes(),focusAxes);
-  checks.push('v4.6 a shared zero-to-next-ten axis preserves physical turn endpoints in both curve views');
+  checks.push('v4.7 a shared stall-offset axis preserves physical turn endpoints in both curve views');
   const probe=()=>evaluate('OperatingBenchmarkUI.probe');
   const setProbe=eas=>evaluate(`(()=>{const s=document.getElementById('bench-probe-speed');s.value='${eas}';s.dispatchEvent(new Event('input',{bubbles:true}));})()`);
   await setProbe(150);
@@ -427,6 +438,25 @@ async function run(){
   await until(async()=>(await probe()).easMph!==200,'turn advantage chart shares the speed probe');
   checks.push('v4.4 advantage chart distinguishes persistent and assumption-sensitive leads and shares speed with turn and climb');
   checks.push('v4.4 limit bars and measured maneuver-lift bands appear at matched conditions');
+  await select('bench-aircraft-a','f4u4');
+  await select('bench-aircraft-b','p51b');
+  const corsairMatch=await benchmark();
+  assert.ok(corsairMatch.rows.a.level.easMph<335&&corsairMatch.rows.b.level.easMph>335);
+  assert.ok(await evaluate('document.querySelector("#bench-advantage-plot [data-turn-solo=b]").getTotalLength()>0'));
+  await setProbe(335);
+  assert.match(await evaluate('document.getElementById("bench-advantage-readout").textContent'),/Only P-51B.*above maximum level speed/s);
+  await select('bench-turn-unit','g');
+  assert.match(await evaluate('document.querySelector("#bench-turn-plot svg").getAttribute("aria-label")'),/Sustained turn \(G\)/);
+  assert.match(await evaluate('document.querySelector("#bench-advantage-plot svg").getAttribute("aria-label")'),/advantage in G/);
+  assert.match(await evaluate('document.getElementById("bench-advantage-readout").textContent'),/Only P-51B.*[\d.] G sustained/s);
+  assert.ok(await evaluate('document.querySelector("#bench-turn-plot path.bench-turn-reference").getTotalLength()>0'));
+  assert.match(await evaluate('document.getElementById("bench-result-b").textContent'),/Peak sustained load/);
+  await select('bench-turn-unit','rate');
+  await select('bench-aircraft-a','p51b');
+  await select('bench-aircraft-b','spitfire_lfix_bs543');
+  assert.match(await evaluate('document.getElementById("bench-source-grade-results").textContent'),/444 mph TAS.*GOLD\*.*219 s.*216.29 s/s);
+  assert.ok(await evaluate('document.querySelector("#bench-source-grade-results [data-case-grade=gold-qualified] a").href.startsWith("https://")'));
+  checks.push('v4.7 solo envelope continues beyond the slower aircraft; G and rate switch together; GOLD* has values, limits and sources');
   await setProbe(175);
   const probeAt175=await probe();
   assert.equal(probeAt175.easMph,175);
@@ -503,7 +533,7 @@ async function run(){
   assert.deepEqual(await probe(),pinned);
   assert.equal(await locked(),true);
   assert.equal((await tipState(climbId)).visible,true);
-  assert.ok((await axes()).every(([lo,hi])=>lo===0&&Math.abs(hi*1609.344/1852-310)<1e-8));
+  assert.ok((await axes()).every(([lo,hi])=>lo===focusAxes[0][0]&&Math.abs(hi*1609.344/1852-310)<1e-8));
   await select('bench-speed-unit','mph');
 
   await clickPlot(await graphPoint('turn',445,105));
@@ -546,7 +576,7 @@ async function run(){
   checks.push('v4.5 country colors follow the selected variant and same-country aircraft use separate shades');
   await select('bench-aircraft-b','f4u4');
   await select('bench-turn-focus','3');
-  assert.deepEqual(await axes(),[[0,360],[0,360],[0,360]]);
+  assert.deepEqual(await axes(),[[90,360],[90,360],[90,360]]);
   for(const side of ['a','b']){
     const lengths=await evaluate(`[...document.querySelectorAll('[data-bench-curve="${side}"] path')].map(p=>[p.dataset.benchStyle,p.getTotalLength()])`);
     const solid=lengths.filter(([s])=>s==='solid').reduce((n,[,l])=>n+l,0);
@@ -584,9 +614,16 @@ async function run(){
   await evaluate('(()=>{const c=document.getElementById("bench-extension");c.checked=true;c.dispatchEvent(new Event("change",{bubbles:true}));})()');
   await select('bench-aircraft-a','p51b');assert.equal(await evaluate('document.getElementById("bench-injection-a").disabled'),true);assert.equal(await evaluate('document.getElementById("bench-injection-a").checked'),false);
   await select('bench-aircraft-a','spitfire_lfix_bs543');await select('bench-power-a','combat');await select('bench-fuel-a','0.5');await select('bench-altitude','30000');
+  await select('bench-climb-from','5000');await select('bench-climb-to','30000');
   await evaluate('document.getElementById("bench-climb-calculate").parentElement.parentElement.open=true;document.getElementById("bench-climb-calculate").click()');bm=await benchmark();assert.equal(bm.climbs.a.status,'reached');assert.ok(bm.climbs.a.combatSeconds<=300+1e-6);assert.ok(bm.climbs.a.schedule.some(p=>p.phase==='normal'));assert.equal(bm.climbs.b.combatSeconds,0);assert.ok(bm.climbs.a.fuelUsedLb>0);
+  assert.match(await evaluate('document.getElementById("bench-climb-result").textContent'),/5,000 ft to 30,000 ft/);
+  await select('bench-altitude','15000');assert.deepEqual((await benchmark()).climbs,bm.climbs,'Changing comparison altitude keeps the separate climb result');
+  await select('bench-climb-to','5000');assert.equal((await benchmark()).climbs,null);
+  await evaluate('document.getElementById("bench-climb-calculate").click()');
+  assert.match(await evaluate('document.getElementById("bench-climb-result").textContent'),/target altitude above/);
+  await select('bench-climb-from','0');await select('bench-climb-to','10000');
   await select('bench-fuel-a','0.25');assert.equal((await benchmark()).climbs,null,'Climb results invalidate after independent changes');
-  checks.push('v4.2 independent Normal/Combat, three fuel loads, fitted injection toggle and shared six-altitude control');
+  checks.push('v4.2 independent Normal/Combat, three fuel loads, fitted injection toggle and shared altitude control');
   checks.push('v4.2 labelled high-altitude estimates, strict source mode without stale values, timed fuel-changing climb and invalidation');
   await select('bench-aircraft-a','f4u4');await select('bench-power-a','combat');await select('bench-fuel-a','0.75');await select('bench-altitude','10000');
   await evaluate('(()=>{const c=document.getElementById("bench-injection-a");c.checked=true;c.dispatchEvent(new Event("change",{bubbles:true}));})()');
@@ -600,7 +637,7 @@ async function run(){
   const joined=await evaluate('(()=>{const a=[...document.querySelectorAll(".curve-segment")].filter(e=>e.dataset.series==="0"),i=a.findIndex(e=>e.dataset.style==="dotted"),p=a[i-1],n=a[i];return i>0&&p.dataset.style==="solid"&&p.getAttribute("x2")===n.getAttribute("x1")&&p.getAttribute("y2")===n.getAttribute("y1");})()');
   assert.equal(joined,true,'A-4 calculated tail meets the original trace at the exact plotted endpoint');
   assert.equal(await evaluate('document.querySelectorAll("#coverage tbody tr").length'),13);
-  assert.match(await evaluate('document.querySelector("#coverage tfoot").textContent'),/0\/156/);
+  assert.match(await evaluate('document.querySelector("#coverage tfoot").textContent'),/0\/156.*5\/156/s);
   assert.ok(await evaluate('document.querySelectorAll("#plot polygon").length')>0);
   await evaluate('document.getElementById("bands").click()');
   assert.equal(await evaluate('document.querySelectorAll("#plot polygon").length'),0);

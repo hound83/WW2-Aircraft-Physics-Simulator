@@ -1,5 +1,7 @@
 'use strict';
 
+const { round, climbSeconds } = require('./fighter-evidence-methods.cjs');
+
 const german = 'ww2_german_fighter_archive_2026-11-11:';
 const thirteen = 'ww2_thirteen_fighter_source_recovery_2026-11-11:';
 const measured = 'ww2_fighter_measured_conditions_2026-11-11:';
@@ -51,7 +53,7 @@ const legacyCredits = [
 ].map(([aircraft, dimension, grade, points, observation, reason, superseded_by]) =>
   ({ aircraft, dimension, grade, points, observation, reason, ...(superseded_by && { superseded_by }) }));
 
-function reviewedCases(observations, charts) {
+function reviewedCases(observations, { charts, checks }) {
   const cases = [];
 
   function add(id, aircraft, metric, unit, conditions, candidates, placement = {}) {
@@ -60,12 +62,14 @@ function reviewedCases(observations, charts) {
   }
 
   function reading(observation, field, grade, options = {}) {
-    const { allowance, ...metadata } = options;
-    const value = observations.get(observation)?.values[field];
+    const { allowance, scale = 1, source_unit, ...metadata } = options;
+    const originalValue = observations.get(observation)?.values[field];
+    const value = originalValue * scale;
     if (!Number.isFinite(value)) throw Error('Missing reviewed reading ' + observation + ' ' + field);
     return {
       id: observation + '/' + field, observation_ids: [observation], grade, value,
-      method: 'original', use: 'eligible',
+      method: scale === 1 ? 'original' : 'conversion', use: 'eligible',
+      ...(source_unit && { original_reading: { value: originalValue, unit: source_unit } }),
       range: allowance == null ? null : [value - allowance, value + allowance],
       ...metadata,
     };
@@ -106,7 +110,11 @@ function reviewedCases(observations, charts) {
       allowance, lineage, combine_group: id, sample_id: 'wnf-airframe-' + row.values.airframe_werknummer,
     }));
     if (reported) rows.push(reading(reported, 'mean_speed_kmh', 'primary', { allowance, lineage, method: 'reported-summary' }));
-    add(id, g2, 'level_speed', 'km/h TAS', conditions, rows);
+    const productionVnk = surface === 'production' && field === 'vnk_kmh';
+    add(id, g2, 'level_speed', 'km/h TAS', conditions, rows, productionVnk ? {
+      benchmark: 'low-speed-run', allow_replicates: true,
+      qualification: 'Four distinct airframes in one standardized WNF program. Actual RPM, mass and engine designation are unresolved.',
+    } : {});
   }
 
   const mt215 = ['finnish-mt215-vtt-flight-trials'];
@@ -143,6 +151,85 @@ function reviewedCases(observations, charts) {
     lineage: ['focke-wulf-783-nr1'],
   }], { benchmark: 'timed-climb', curve: { chart: 'a4-timed-cooling-climb', series: 0, x: 10000 } });
 
+  const timingSlot = { benchmark: 'timed-climb' };
+  const chart = id => charts.find(item => item.id === id).series[0];
+  const check = id => checks.find(item => item.id === id);
+  const calculated = (id, series, lineage) => ({
+    id, observation_ids: series.observations, value: series.points.at(-1)[1],
+    range: series.points.at(-1).slice(2, 4), method: 'integration',
+    grade: 'calculated', use: 'eligible', lineage: [lineage],
+  });
+
+  const p47 = chart('p47b-climb-times'), p47Report = 'wright-field-41-5902';
+  add('p47b-415902-military-elapsed', 'p47b_415902', 'elapsed_time', 's', {
+    specimen: '41-5902', from_pressure_altitude_ft: 0, to_pressure_altitude_ft: 12600,
+    rpm: 2700, shaft_hp: 2000, takeoff_mass_lb: 12565, cooling: 'climb flaps open',
+    scope: 'Sea level to 12,600 ft at 2,000 bhp and 2,700 RPM with open climb flaps. The integral uses the rate column of the recorded climb schedule.',
+  }, [
+    reading(p47.observations.at(-1), 'time_min', 'primary', { scale: 60, source_unit: 'min', lineage: [p47Report] }),
+    calculated('p47b-military-rate-integral', p47, p47Report),
+  ], { ...timingSlot, qualification: 'Timing and integrated rates come from the same report and may share a flight.' });
+
+  const spit = chart('spitfire-climb-time'), spitReport = 'aaee-bs543-table-ii';
+  const [startTime, endTime] = require('../references/climb-band-evidence.json').spitfire.timesMin;
+  add('spitfire-bs543-high-blower-elapsed', 'spitfire_lfix_bs543', 'elapsed_time', 's', {
+    specimen: 'BS.543', from_pressure_altitude_ft: 20000, to_pressure_altitude_ft: 30000,
+    rpm: 3000, takeoff_mass_lb: 7485, cooling: 'radiator open', blower: 'F.S.', boost_psi: [15.8, 6.6],
+    scope: 'Elapsed time from the Table II entries at 20,000 ft (4.75 min) and 30,000 ft (8.4 min).',
+  }, [{
+    id: 'spitfire-bs543-table-ii-elapsed', observation_ids: [spit.observations[0], spit.observations.at(-1)],
+    value: round((endTime - startTime) * 60), range: null, method: 'reported-interval',
+    grade: 'primary', use: 'eligible', lineage: [spitReport],
+  }, calculated('spitfire-bs543-rate-integral', spit, spitReport)],
+  { ...timingSlot, qualification: 'Published timing and integrated rates come from the same A&AEE report.' });
+
+  const f4 = check('f4-rechlin-factory-1-to-5');
+  add('f4-factory-rechlin-1000-5000m', 'bf109f4_representative', 'elapsed_time', 's', {
+    specimen: 'Bf 109 F-4, Messerschmitt and Rechlin trials', from_altitude_m: 1000, to_altitude_m: 5000,
+    factory_listed_mass_kg: 2890, rechlin_mass_kg: null, rpm: null, boost_ata: null,
+    scope: 'Separate original trials. The factory interval uses an interpolated 5,000 m point. Exact ratings and climb schedules cannot be matched.',
+  }, [
+    reading(f4.observations.at(-1), 'bf109f4_time_s', 'primary', { lineage: ['rechlin-15023-41'] }),
+    { id: f4.id, observation_ids: f4.observations.slice(0, -1), value: f4.predicted, range: null,
+      method: 'interpolation', grade: 'calculated', use: 'eligible', lineage: ['messerschmitt-1941-11-29'] },
+  ], { ...timingSlot, qualification: 'RPM, boost, climb speed and Rechlin mass are unreported.' });
+
+  const a4Start = open.points[0][0], a4End = 9000;
+  const [, elapsed, elapsedLow, elapsedHigh] = open.points.find(point => point[0] === a4End);
+  const a4Ids = open.observations.slice(0, -1), a4Report = 'focke-wulf-783-nr1';
+  const a4Rates = a4Ids.map(id => observations.get(id).values);
+  function a4Integral(offset) {
+    return round(a4Rates.slice(1).reduce((time, row, i) => {
+      const previous = a4Rates[i];
+      return time + climbSeconds(row.barometric_altitude_m - previous.barometric_altitude_m,
+        previous.open_roc_mps_approx + offset, row.open_roc_mps_approx + offset);
+    }, 0));
+  }
+  add('a4-783-open-1000-9000m-time', 'fw190a4_783', 'elapsed_time', 's', {
+    specimen: 'WNr 783', from_barometric_altitude_m: a4Start, to_barometric_altitude_m: a4End, rpm: 2400,
+    takeoff_mass_kg: 3870, cooling: 'open flaps, long external intakes',
+    scope: '1,000 to 9,000 m with open flaps at 2,400 RPM. The timing and integrated rates use this interval and cooling configuration.',
+  }, [{
+    id: 'a4-783-open-elapsed-interval', observation_ids: [a4Ids[0], a4Ids.at(-1)], value: elapsed,
+    range: [elapsedLow, elapsedHigh], method: 'reported-interval', grade: 'primary', use: 'eligible', lineage: [a4Report],
+  }, {
+    id: 'a4-783-open-rate-integral', observation_ids: a4Ids, value: a4Integral(0),
+    range: [a4Integral(.35), a4Integral(-.35)], method: 'integration', grade: 'calculated', use: 'eligible', lineage: [a4Report],
+  }], { ...timingSlot, qualification: 'Timing and rate curves share the same factory report and test configuration.',
+    curve: { chart: 'a4-timed-cooling-climb', series: 0, x: a4End } });
+
+  const mustang = 'archival-2026-11-10:S37:0009', mustangReport = 'aaf-43-24777-44-1-fuel';
+  add('p51b-4324777-clean-75in-level', 'p51b_4324777', 'level_speed', 'mph TAS', {
+    specimen: '43-24777', altitude_ft: 20600, rpm: 3000, boost_inhg: 75, fuel: '44-1',
+    configuration: 'wing racks removed, F.S. gear',
+    scope: 'Both transcriptions show 444 mph. They list different altitudes and weight conventions and refer to the same test program.',
+  }, [
+    reading(mustang, 'speed', 'primary', { lineage: [mustangReport] }),
+    reading('ww2_multiaxis_propulsion_trials_2026-11-10:p51b15-chart-vs-performance:0001', 'speed_mph', 'primary', {
+      lineage: [mustangReport], use: 'comparison-only', reason: '20,800 ft and a different stated weight basis. Keep both original entries pending reconciliation.',
+    }),
+  ], { benchmark: 'high-speed-run' });
+
   return cases;
 }
 
@@ -155,11 +242,6 @@ const rejectedPairs = [
     observation_ids: ['ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-level:0001',
       'ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-level:0002'],
     reason: 'P-40F at 18,100 ft, 355 and 356 mph. Different propellers at the same nominal altitude and power.',
-  },
-  {
-    observation_ids: [german + 'f4-rechlin-matched-climb:0001', german + 'f4-original-1941-climb-time:0001',
-      german + 'f4-original-1941-climb-time:0003', german + 'f4-original-1941-climb-time:0004'],
-    reason: 'Rechlin and interpolated factory 1,000–5,000 m time both give 240 s. Weight, RPM and boost are unresolved.',
   },
 ];
 

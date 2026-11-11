@@ -101,7 +101,7 @@
 
   <section class="surface" aria-labelledby="coverage-title">
     <h2 id="coverage-title">Evidence coverage</h2>
-    <p class="note">Coverage counts qualified evidence. The previous total includes older context and overlapping calculation credit. Gold tracks planned benchmarks with independent agreement and sufficient accuracy.</p>
+    <p class="note">Coverage counts qualified evidence. The previous total includes older context and overlapping calculation credit. GOLD tracks agreement between comparable central values. GOLD* carries a source or condition qualification.</p>
     <div id="coverage"></div>
   </section>
 </main>
@@ -114,13 +114,14 @@ const colors = ['#17574e', '#3958a3', '#815423', '#81406a'];
 const grades = {primary:'Primary', secondary:'Secondary', calculated:'Calculated'};
 const methods = {
   original:'Original', documentary:'Handbook', mean:'Combined mean', 'reported-summary':'Reported summary',
-  interpolation:'Interpolation', scenario:'Scenario', estimate:'Estimate', integration:'Integration', 'mass-scaling':'Mass scaling',
+  interpolation:'Interpolation', scenario:'Scenario', estimate:'Estimate', integration:'Integration', 'mass-scaling':'Mass scaling', conversion:'Unit conversion', 'reported-interval':'Reported interval',
 };
 const ranges = {'source-reading':'Reading allowance', sensitivity:'Sensitivity range', 'defined-origin':'Defined origin'};
 const formatter = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 });
 const fmt = n => typeof n === 'number' ? formatter.format(n) : n == null ? '—' : n;
 const span = range => range ? range.map(fmt).join(' to ') : '-';
-const evidence = p => grades[p.grade] + ' · ' + methods[p.method] + (p.gold ? ' · Gold' : '');
+const gold = p => p.gold ? ' · GOLD' : p.gold_status === 'gold-qualified' ? ' · GOLD*' : '';
+const evidence = p => grades[p.grade] + ' · ' + methods[p.method] + gold(p);
 
 function node(tag, value, className) {
   const result = document.createElement(tag);
@@ -271,15 +272,18 @@ function caseDetails(item) {
   const details = node('details');
   const result = item.preferred;
   const name = item.conditions.specimen + ' · ' + item.metric.replaceAll('_', ' ');
-  const status = result ? fmt(result.value) + ' ' + item.unit + ' · ' + evidence({...result, gold:item.gold}) : 'Unresolved spread';
+  const status = result ? fmt(result.value) + ' ' + item.unit + ' · ' + evidence({...result, gold:item.gold, gold_status:item.gold_status}) : 'Unresolved spread';
   const summary = node('summary', name + ' · ' + status);
   const bounds = result?.range ? 'Range ' + span(result.range) + ' ' + item.unit + '.' : 'Range unavailable.';
   const spread = result?.observed_span || item.by_grade.primary?.observed_span;
   const note = node('p', item.conditions.scope + ' ' + (result ? bounds + ' ' : '') +
     (spread ? 'Observed span ' + span(spread) + ' ' + item.unit + '.' : ''), 'note');
+  const a = item.agreement;
+  const review = node('p', (a.spread === null ? '' : 'Central spread ' + fmt(a.spread) + ' ' + item.unit +
+    ' · limit ' + fmt(a.limit_percent ?? a.limit) + (a.limit_percent === null ? ' ' + item.unit : '%') + '. ') + a.reason, 'note');
   const sources = node('ul', null, 'sources note');
   sources.append(...sourceList(item.candidates.flatMap(row => row.observation_ids)));
-  details.append(summary, note, table(['Value (' + item.unit + ')','Evidence','Range','Original observation','Review'],
+  details.append(summary, note, review, table(['Value (' + item.unit + ')','Evidence','Range','Original observation','Review'],
     item.candidates.map(row => [row.value, evidence(row), span(row.range), row.observation_ids.join(', '), row.reason || '-'])), sources);
   return details;
 }
@@ -331,9 +335,9 @@ $('curve').addEventListener('change', render);
 $('bands').addEventListener('change', () => draw(data.charts.find(c => c.id === $('curve').value)));
 window.addEventListener('resize', () => draw(data.charts.find(c => c.id === $('curve').value)));
 const score = row => [row.primary_percent+'%',row.with_secondary_percent+'%',row.with_calculations_percent+'%',
-  row.gold_count+'/'+row.planned_count+' ('+row.gold_percent+'%)',row.previous_total_percent+'%'];
+  row.gold_count+'/'+row.planned_count+' ('+row.gold_percent+'%)',row.gold_qualified_count+'/'+row.planned_count+' ('+row.gold_qualified_percent+'%)',row.previous_total_percent+'%'];
 $('coverage').append(table(
-  ['Aircraft','Primary','Primary + secondary','With calculations','Gold','Previous total'],
+  ['Aircraft','Primary','Primary + secondary','With calculations','GOLD','GOLD*','Previous total'],
   data.coverage.rows.map(row => [row.label,...score(row)]),
   ['Fleet average',...score(data.coverage.fleet)], 3,
 ));

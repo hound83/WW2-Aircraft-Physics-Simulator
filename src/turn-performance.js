@@ -75,11 +75,11 @@
   }};
  }
 
- function difference(a,b){
+ function difference(a,b,field='rateDegSec'){
   const x=a.nominal?.turn,y=b.nominal?.turn;
   if(!x||!y)return null;
-  const lower=a.range?.lower&&b.range?.upper?a.range.lower.rateDegSec-b.range.upper.rateDegSec:null;
-  const upper=a.range?.upper&&b.range?.lower?a.range.upper.rateDegSec-b.range.lower.rateDegSec:null;
+  const lower=a.range?.lower&&b.range?.upper?a.range.lower[field]-b.range.upper[field]:null;
+  const upper=a.range?.upper&&b.range?.lower?a.range.upper[field]-b.range.lower[field]:null;
   const range=Number.isFinite(lower)&&Number.isFinite(upper)?[lower,upper]:null;
   return {rateDegSec:x.rateDegSec-y.rateDegSec,g:x.g-y.g,
    radiusM:Number.isFinite(x.radiusM)&&Number.isFinite(y.radiusM)?x.radiusM-y.radiusM:null,

@@ -95,11 +95,16 @@
  @media(max-width:740px){#operating-benchmark .bench-turn-limits{grid-template-columns:1fr}#operating-benchmark .bench-advantage{padding:.7rem}}
  @media(max-width:740px){#operating-benchmark .bench-sides{grid-template-columns:1fr}#operating-benchmark .bench-numbers{grid-template-columns:repeat(2,minmax(0,1fr))}#operating-benchmark .bench-toolbar{align-items:stretch}}
  @media(max-width:740px){#operating-benchmark .bench-probe-cards{grid-template-columns:1fr}#operating-benchmark .bench-chart text{font-size:23px}#operating-benchmark .bench-probe-slider output{text-align:left}}
+ #operating-benchmark .bench-chart-controls{align-items:end}
+ #operating-benchmark .bench-height{flex:1;min-width:min(14rem,100%)}
+ #operating-benchmark .bench-height input{width:100%}
+ #operating-benchmark .bench-height output{color:#eef5fb;font-weight:650}
+ #operating-benchmark #bench-source-grade-results article{min-width:0}
+ #operating-benchmark #bench-source-grade-results h4{margin:.65rem 0 .15rem}
  </style>
  <h2>Compare flight performance</h2>
  <p>Air-to-air loads. Choose power, fuel and injection for each aircraft independently. Both aircraft always share the same altitude.</p>
  <div class="bench-toolbar">
-  <label>Shared altitude<select id="bench-altitude"><option value="0">Sea level</option><option value="10000" selected>10,000 ft · 3.0 km</option><option value="20000">20,000 ft · 6.1 km</option><option value="30000">30,000 ft · 9.1 km</option><option value="35000">35,000 ft · 10.7 km</option><option value="40000">40,000 ft · 12.2 km</option></select></label>
   <label>Speed units<select id="bench-speed-unit"><option value="mph">mph</option><option value="kph">km/h</option><option value="knots">Knots</option></select></label>
   <label>Aircraft 2 choices<select id="bench-aircraft-filter" aria-controls="bench-aircraft-b"><option value="all">All aircraft</option><option value="contemporaries">Contemporaries</option></select></label>
   <label style="flex-direction:row;align-items:center"><input id="bench-extension" type="checkbox" checked> Include labelled high-altitude power estimates</label>
@@ -112,11 +117,11 @@
  <p id="bench-matchup" aria-live="polite"></p>
  <p class="bench-note">Approximate WWII service windows. Contemporaries filters by years of main service.</p>
  <p id="bench-comparison" aria-live="polite"></p>
- <div class="bench-toolbar"><label>Turn curves<select id="bench-turn-focus"><option value="3" selected>Show 3°/s and above</option><option value="full">Full envelope</option></select></label><p id="bench-range-status" class="bench-note"></p></div>
+ <div class="bench-toolbar bench-chart-controls"><label class="bench-height">Comparison altitude <output id="bench-altitude-value" for="bench-altitude">10,000 ft</output><input id="bench-altitude" type="range" min="0" max="40000" step="5000" value="10000" aria-valuetext="10,000 ft"></label><label>Turn units<select id="bench-turn-unit"><option value="rate">Degrees per second</option><option value="g">Load factor (G)</option></select></label><label>Turn curves<select id="bench-turn-focus"><option value="3" selected>Show 3°/s and above</option><option value="full">Full envelope</option></select></label><p id="bench-range-status" class="bench-note"></p></div>
  <div id="bench-curve-names" class="bench-curve-key"></div>
  <p class="bench-curve-key bench-note"><span><i class="bench-key-solid"></i> Table-supported calculation</span><span><i class="bench-key-dotted"></i> Provisional calculation</span><span><i class="bench-key-band"></i> Input or report range</span></p>
  <div id="bench-turn-plot" class="bench-chart"></div>
- <p class="bench-note">Squares mark peak turn rate and best climb speed (Vy). The grey guide shows 3°/s.</p>
+ <p id="bench-plot-note" class="bench-note"></p>
  <div class="bench-probe-slider">
   <label>Speed to compare<input id="bench-probe-speed" type="range" aria-describedby="bench-probe-help"></label>
   <output id="bench-probe-value" for="bench-probe-speed">—</output>
@@ -130,6 +135,7 @@
   <div id="bench-advantage-readout" class="bench-advantage-readout"></div>
   <div id="bench-advantage-plot" class="bench-chart"></div>
   <p id="bench-advantage-key" class="bench-note bench-evidence-legend"><span>White line · Modeled difference</span><span>Shading · Tested range</span><span>Aircraft colour · Same aircraft leads across inputs</span><span>Grey strip · Lead depends on inputs</span></p>
+  <p id="bench-solo-key" class="bench-note" hidden>Colored dashed line · only one aircraft can sustain flight at this speed. It shows that aircraft’s remaining turn capability.</p>
   <details><summary>What limits each aircraft at this speed?</summary>
    <p class="bench-note">The lowest of lift, power and the model’s G cap sets the turn. Extra drag in a turn uses power above what the aircraft needs for level flight.</p>
    <div id="bench-turn-limits" class="bench-turn-limits"></div>
@@ -142,7 +148,8 @@
  <h3>Performance across altitude</h3>
  <p class="bench-note">Select a row to compare both aircraft at that altitude. Δ is aircraft 1 minus aircraft 2. * includes estimated power.</p>
  <div id="bench-altitude-overview" class="bench-table-scroll"></div>
- <details><summary>Full climb to the shared altitude</summary><p>Start already airborne at the chosen start height. Normal follows the recorded routine climb-speed schedule. Combat searches where a single permitted higher-power window saves the most time, then replays fuel and injection use. No allowance resets at intermediate altitudes.</p><div class="bench-toolbar"><label>Climb from<select id="bench-climb-from"><option value="0">Sea level</option><option value="10000">10,000 ft</option><option value="20000">20,000 ft</option><option value="30000">30,000 ft</option><option value="35000">35,000 ft</option></select></label><button id="bench-climb-calculate" type="button">Calculate both climbs</button></div><div id="bench-climb-result" aria-live="polite">Calculate a climb with the current settings.</div><p class="bench-note">Climb fuel flow uses a shared illustrative 0.50 lb/shaft-hp-hour. The optimized window is the quickest tested schedule under this model, not a reconstruction of a pilot's tactical choices. Acceleration during speed changes and a dynamic thermal model are not included.</p></details>
+ <details><summary>Time to climb</summary><p>Start already airborne at the chosen start height. Normal follows the recorded routine climb-speed schedule. Combat searches where a single permitted higher-power window saves the most time, then replays fuel and injection use. No allowance resets at intermediate altitudes.</p><div class="bench-toolbar"><label>Start altitude<select id="bench-climb-from"></select></label><label>Target altitude<select id="bench-climb-to"></select></label><button id="bench-climb-calculate" type="button">Calculate both climbs</button></div><div id="bench-climb-result" aria-live="polite">Calculate a climb with the current settings.</div><p class="bench-note">Climb fuel flow uses a shared illustrative 0.50 lb/shaft-hp-hour. The optimized window is the quickest tested schedule under this model, not a reconstruction of a pilot's tactical choices. Acceleration during speed changes and a dynamic thermal model are not included.</p></details>
+ <details id="bench-source-grades"><summary>Historical source agreement (GOLD)</summary><div id="bench-source-grade-results"></div></details>
  <details id="bench-flight-checks"><summary>Flight-test checks for this model update</summary><div id="bench-flight-check-results"></div></details>
  <details><summary>Aircraft settings, load assumptions and sources</summary><div id="bench-sources"></div></details>
  <p class="bench-note">Normal and Combat use the same service-load reconstruction. No bombs, rockets, external tanks or optional gun pods; removable racks excluded. A charged injection reservoir is carried in dry and injected cases. Full-ammo weights and some lower-rating/altitude power conversions remain qualified engineering reconstructions. Original source-test replays follow below.</p>

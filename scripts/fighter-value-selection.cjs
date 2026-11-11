@@ -35,7 +35,10 @@ function withinSpread(policy, values) {
   return policy && high - low <= limit(policy, 'spread', average(values)) + epsilon;
 }
 
-function resolveCase({ id, metric, unit, candidates }) {
+const centralValue = row => row.value == null && row.range?.length === 2 ? average(row.range) : row.value;
+const independentOf = (a, b) => Boolean(a?.length && b?.length && a.every(source => !b.includes(source)));
+
+function resolveCase({ id, metric, unit, candidates, qualification, allow_replicates }) {
   const policy = casePolicy(metric, unit);
   const byGrade = {};
   for (const grade of gradeOrder) {
@@ -44,7 +47,7 @@ function resolveCase({ id, metric, unit, candidates }) {
     const rows = eligible.filter(row => row.method !== 'reported-summary');
     // Printed summaries remain available when the underlying individual
     // readings are unavailable. A printed mean is never another replicate.
-    const usable = rows.length ? rows : eligible;
+    const usable = (rows.length ? rows : eligible).map(row => ({ ...row, value: centralValue(row) }));
     if (!usable.length) continue;
     if (usable.some(row => !Number.isFinite(row.value) || !Array.isArray(row.observation_ids) ||
       (row.range !== null && !(row.range?.length === 2 && row.range.every(Number.isFinite) &&
@@ -77,21 +80,44 @@ function resolveCase({ id, metric, unit, candidates }) {
       observed_span: isMean ? observed_span : null, candidate_ids,
       observation_ids: [...new Set(distinct.flatMap(row => row.observation_ids))],
       lineage: distinct.every(row => row.lineage?.length) ? [...new Set(distinct.flatMap(row => row.lineage))] : null,
-      accuracy_reviewed: distinct.every(row => row.accuracy_reviewed === true),
     };
   }
 
   const best = gradeOrder.map(grade => byGrade[grade]).find(Boolean);
-  if (best?.status !== 'accepted') {
-    return { status: best?.status ?? 'missing', preferred: null, by_grade: byGrade, gold: false };
-  }
+  const preferred = best?.status === 'accepted' ? best : null;
+  const comparable = Object.values(byGrade).filter(row => row.status === 'accepted');
+  const primary = byGrade.primary;
+  const primaryInputs = candidates.filter(row => primary?.status === 'accepted' && primary.candidate_ids.includes(row.id));
+  const independentPrimary = primaryInputs.some((row, i) => primaryInputs.slice(i + 1).some(other => independentOf(row.lineage, other.lineage)));
+  const replicates = comparable.length === 1 && primary?.status === 'accepted' && primary.observed_span &&
+    (allow_replicates || independentPrimary);
+  const conflicts = Object.values(byGrade).filter(row => row.status === 'conflict');
+  const conflictedIds = new Set(conflicts.flatMap(row => row.candidate_ids));
+  const values = conflicts.length ? candidates.filter(row => conflictedIds.has(row.id)).map(centralValue) :
+    replicates ? preferred.observed_span : comparable.map(row => row.value);
+  const valid = values.length > 0 && values.every(Number.isFinite);
+  const center = valid ? (replicates ? preferred.value : average(values)) : null;
+  const spread = valid && values.length >= 2 ? Math.max(...values) - Math.min(...values) : null;
+  const limitValue = policy && center !== null ? limit(policy, 'spread', center) : null;
+  const independent = independentPrimary || comparable.some(row => row !== primary && independentOf(row.lineage, primary?.lineage));
+  let gold_status = 'open', reason;
+  if (conflicts.length) reason = spread !== null && limitValue !== null && spread > limitValue + epsilon ?
+    'The central values exceed the agreement limit.' : 'The source readings conflict or lack matched conditions.';
+  else if (!policy) reason = 'The metric or speed basis has no applicable agreement limit.';
+  else if (spread === null) reason = 'No comparable second result.';
+  else if (policy.unit === '%' && center === 0) reason = 'The percentage comparison needs a nonzero reference value.';
+  else if (spread > limitValue + epsilon) reason = 'The central values exceed the agreement limit.';
+  else if (primary?.status !== 'accepted') reason = 'A reviewed primary observation is needed.';
+  else if (qualification) { gold_status = 'gold-qualified'; reason = qualification; }
+  else if (independent) { gold_status = 'gold'; reason = 'Comparable results agree across independent sources.'; }
+  else reason = 'The available results share a source or have unverified lineage.';
 
-  const qualified = gradeOrder.map(grade => byGrade[grade]);
-  const gold = Boolean(policy && qualified.every(row => row?.status === 'accepted' && row.lineage && row.accuracy_reviewed &&
-    row.range && Math.max(row.value - row.range[0], row.range[1] - row.value) <= limit(policy, 'accuracy', row.value) + epsilon) &&
-    new Set(qualified.flatMap(row => row.lineage)).size === qualified.reduce((sum, row) => sum + row.lineage.length, 0) &&
-    withinSpread(policy, qualified.map(row => row.value)));
-  return { status: 'accepted', preferred: best, by_grade: byGrade, gold };
+  return {
+    status: best?.status ?? 'missing', preferred, by_grade: byGrade, gold: gold_status === 'gold', gold_status,
+    agreement: { center, spread, limit: limitValue,
+      percent: policy?.unit === '%' && spread !== null && center !== 0 ? 100 * spread / Math.abs(center) : null,
+      limit_percent: policy?.unit === '%' ? policy.spread : null, reason },
+  };
 }
 
 module.exports = { tolerances, resolveCase };

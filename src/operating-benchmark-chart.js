@@ -8,6 +8,10 @@
   knots: { label: 'kn', factor: 1609.344 / 1852 }
  };
  const probeStepMph = 5;
+ const turnUnits = {
+  rate: {key:'rate',label:'°/s',digits:1,field:'rateDegSec',peak:'sustained'},
+  g: {key:'g',label:'G',digits:2,field:'g',peak:'sustainedLoad'}
+ };
  const format = (value, digits = 0) => value.toLocaleString('en-US', {
   minimumFractionDigits: digits, maximumFractionDigits: digits
  });
@@ -27,18 +31,19 @@
   const { minEasMph, maxEasMph } = aircraft.range;
   const speeds = new Set([minEasMph, maxEasMph]);
   for (let eas = Math.ceil(minEasMph / 2) * 2; eas < maxEasMph; eas += 2) speeds.add(eas);
-  if (aircraft.peakEasMph >= minEasMph && aircraft.peakEasMph <= maxEasMph) {
-   speeds.add(aircraft.peakEasMph);
+  for(const peak of [aircraft.peakEasMph,aircraft.peakLoad?.easMph]){
+   if(peak>=minEasMph&&peak<=maxEasMph)speeds.add(peak);
   }
   // At the level-speed equilibrium all available power sustains 1 G.
   return [...speeds].sort((a, b) => a - b).map(eas =>
-   pointAt(aircraft.side,eas,'turn',eas===aircraft.levelEasMph?0:undefined));
+   pointAt(aircraft.side,eas,'turn'));
  }
 
- function probeAircraft(aircraft, easMph, evaluateAt) {
+ function probeAircraft(aircraft, easMph, evaluateAt, pointAt) {
   const flight = evaluateAt(aircraft.side, easMph);
   const climb = evaluateAt(aircraft.side, easMph, true);
-  const sustainedG = flight.limits?.nSust ?? null;
+  const turn = pointAt(aircraft.side,easMph,'turn');
+  const sustainedG = turn.load;
   let turnStatus = 'Sustained turn unavailable';
   if (Number.isFinite(sustainedG)) turnStatus = null;
   else if (flight.status === 'source-power-unavailable') turnStatus = 'Power data unavailable';
@@ -48,7 +53,7 @@
   }
   return {
    sustainedG,
-   turnRate: flight.limits?.sustDegSec ?? null,
+   turnRate: turn.rate,
    climbFpm: climb.status === 'modelled' ? climb.power?.climbFpm ?? null : null,
    turnStatus
   };
@@ -59,7 +64,7 @@
   return rate > 0 ? format(rate) + ' ft/min' : 'No positive climb';
  }
 
- function readoutCard(aircraft, point, unit, evidence, locked) {
+ function readoutCard(aircraft, point, unit, evidence, locked, turnUnit) {
   const card = element('div', null, 'bench-probe-card');
   card.dataset.side = aircraft.side;
   card.append(element('strong', aircraft.name, 'bench-probe-name'));
@@ -79,7 +84,7 @@
    metrics.append(entry);
   }
   card.append(metrics);
-  if(!point.turnStatus)appendEvidence(card,evidence,locked,'°/s',1);
+  if(!point.turnStatus)appendEvidence(card,evidence,locked,turnUnit.label,turnUnit.digits);
   if (point.turnStatus) card.append(element('p', point.turnStatus, 'bench-note'));
   return card;
  }
@@ -178,7 +183,7 @@
   }
 
   function show(y,pinned) {
-   const {probe,label,series,sources}=state.read();
+   const {probe,label,series,sources,turnUnit}=state.read();
    const matrix=svg.getScreenCTM();
    if(!matrix)return;
    if(lastSpeed!==probe.easMph||lastPinned!==pinned){
@@ -190,11 +195,12 @@
      row.dataset.side=aircraft.side;
      row.append(element('strong',aircraft.name,'bench-probe-name'));
      const readout=metric==='turn'
-      ? (point.turnStatus??format(point.turnRate,1)+'°/s · '+format(point.sustainedG,2)+' G')
+      ? (point.turnStatus??(turnUnit.key==='g'?format(point.sustainedG,2)+' G · '+format(point.turnRate,1)+'°/s':
+       format(point.turnRate,1)+'°/s · '+format(point.sustainedG,2)+' G'))
       : climbLabel(point.climbFpm);
      row.append(element('span',readout));
      if(Number.isFinite(metric==='turn'?point.turnRate:point.climbFpm)){
-      appendEvidence(row,sources[aircraft.side][metric],pinned,metric==='turn'?'°/s':'ft/min',metric==='turn'?1:0);
+      appendEvidence(row,sources[aircraft.side][metric],pinned,metric==='turn'?turnUnit.label:'ft/min',metric==='turn'?turnUnit.digits:0);
      }
      tooltip.append(row);
     }
@@ -251,8 +257,8 @@
   return {kind,show,hide,centerY:(top+bottom)/2};
  }
 
- function drawPlot({ host, kind, curves, altFt, unit, minEas, maxEas, threshold }) {
-  const turn = kind === 'turn';
+ function drawPlot({ host, kind, curves, altFt, unit, turnUnit, minEas, maxEas, threshold }) {
+  const turn = kind === 'turn', load = turn&&turnUnit.key==='g';
   if (!curves.length) {
    host.replaceChildren(element('p', turn ? 'Sustained turn is unavailable.' : 'Positive straight climb is unavailable.', 'bench-note'));
    return null;
@@ -260,14 +266,15 @@
   const left = 76, right = 758, top = 36, bottom = turn ? 256 : 206;
   const displayHeight = bottom + 50;
   const maxRate = Math.max(...curves.flatMap(c=>c.points.flatMap(p=>[p.rate??0,p.range?.[1]??0])));
-  const yStep = turn ? 5 : [250, 500, 1000, 1500, 2000].find(step => maxRate <= 5 * step) ?? 2500;
-  const peak = Math.max(yStep, Math.ceil(maxRate / yStep) * yStep);
+  const yMin = load ? 1 : 0;
+  const yStep = load ? (maxRate <= 3 ? .5 : 1) : turn ? 5 : [250, 500, 1000, 1500, 2000].find(step => maxRate <= 5 * step) ?? 2500;
+  const peak = Math.max(yMin+yStep, Math.ceil(maxRate / yStep) * yStep);
   const x = eas => left + (eas - minEas) * (right - left) / (maxEas - minEas);
-  const y = rate => bottom - rate * (bottom - top) / peak;
+  const y = rate => bottom - (rate-yMin) * (bottom - top) / (peak-yMin);
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svg.setAttribute('viewBox', '0 0 780 ' + displayHeight);
   svg.setAttribute('role', 'img');
-  const heading = (turn ? 'Sustained turn (°/s)' : 'Straight climb (ft/min)') + ' at ' + format(altFt) + ' ft';
+  const heading = (turn ? 'Sustained turn ('+turnUnit.label+')' : 'Straight climb (ft/min)') + ' at ' + format(altFt) + ' ft';
   svg.setAttribute('aria-label', heading);
   function add(tag, attributes, label, parent = svg) {
    const node = document.createElementNS(svg.namespaceURI, tag);
@@ -287,12 +294,16 @@
    add('text', { x: tickX, y: bottom + 23, 'text-anchor': 'middle' }, label);
   }
   const inView=eas=>Number.isFinite(eas)&&eas>=minEas&&eas<=maxEas;
-  for (let rate = 0; rate <= peak; rate += yStep) {
+  for (let rate = yMin; rate <= peak; rate += yStep) {
    add('line', { x1: left, x2: right, y1: y(rate), y2: y(rate), class: 'bench-grid-line' });
-   add('text', { x: left - 11, y: y(rate) + 5, 'text-anchor': 'end' }, format(rate));
+   add('text', { x: left - 11, y: y(rate) + 5, 'text-anchor': 'end' }, format(rate,yStep<1?1:0));
   }
   if (turn) {
-   const guide = add('line', { x1: left, x2: right, y1: y(3), y2: y(3), class: 'bench-turn-reference' });
+   const guide = load ? add('path',{d:Array.from({length:33},(_,i)=>{
+    const eas=minEas+(maxEas-minEas)*i/32;
+    return (i?'L':'M')+x(eas)+','+y(loadForRate(3,UniversalAirPhysics.tasFrom(eas,'EAS',altFt)));
+   }).join(''),fill:'none','clip-path':'url(#'+clipId+')',class:'bench-turn-reference'}) :
+    add('line', { x1: left, x2: right, y1: y(3), y2: y(3), class: 'bench-turn-reference' });
    add('title', {}, '3°/s reference. A full circle takes two minutes.', guide);
   }
   add('text', { x: left, y: 21 }, heading);
@@ -316,12 +327,12 @@
     add('path',{d,fill:'none',stroke,'stroke-width':3,'stroke-linecap':'round',
      'data-bench-style':segment.solid?'solid':'dotted',...(segment.solid?{}:{'stroke-dasharray':'1 6'})},undefined,group);
    }
-   const bestEas = turn ? aircraft.peakEasMph : aircraft.vyEasMph;
-   const bestRate = turn ? aircraft.peakRate : aircraft.climbFpm;
+   const bestEas = turn ? (load?aircraft.peakLoad?.easMph:aircraft.peakEasMph) : aircraft.vyEasMph;
+   const bestRate = turn ? (load?aircraft.peakLoad?.g:aircraft.peakRate) : aircraft.climbFpm;
    if (inView(bestEas) && bestRate > 0) {
     const marker = add('rect', {x:x(bestEas)-4,y:y(bestRate)-4,width:8,height:8,fill:stroke,
      [turn?'data-bench-best-turn':'data-bench-vy']:aircraft.side});
-    add('title', {}, aircraft.name + (turn ? ' best sustained turn ' : ' best climb, Vy ') + speed(bestEas, unit, 'EAS'), marker);
+    add('title', {}, aircraft.name + (turn ? (load?' peak sustained G ':' peak sustained turn rate ') : ' best climb, Vy ') + speed(bestEas, unit, 'EAS'), marker);
    }
   }
 
@@ -335,8 +346,8 @@
    crosshair.setAttribute('x1', probeX);
    crosshair.setAttribute('x2', probeX);
    for (const [side,dot] of Object.entries(dots)) {
-    const rate = turn ? points[side].turnRate : points[side].climbFpm;
-    const shown = Number.isFinite(rate) && rate >= threshold;
+    const point=points[side], rate = turn ? (load?point.sustainedG:point.turnRate) : point.climbFpm;
+    const shown = Number.isFinite(rate) && (turn ? point.turnRate>=threshold : rate>=0);
     dot.style.display = shown ? '' : 'none';
     if (shown) {
      dot.setAttribute('cx', probeX);
@@ -347,7 +358,10 @@
   return {kind,host,svg,left,right,top,bottom,x,update};
  }
 
- function render({ chart, climbChart, slider, value, results, climbResults, rangeStatus, focus, series, altFt, unit,
+ // Coordinated level turn: n² = 1 + (ω V / g₀)².
+ function loadForRate(rate,tasMph){return Math.hypot(1,rate*Math.PI/180*tasMph*.44704/9.80665);}
+
+ function render({ chart, climbChart, slider, value, results, climbResults, rangeStatus, focus, series, altFt, unit,turnUnit,
   evaluateAt, selectedEasMph, onProbe, makeAdvantage, lockButton, lockStatus, lock, onLock }) {
   const bySide=Object.fromEntries(series.map(a=>[a.side,a]));
   const sampleCache=new Map();
@@ -355,14 +369,22 @@
    const key=side+':'+kind+':'+eas;
    if(override===undefined&&sampleCache.has(key))return sampleCache.get(key);
    const flight=evaluateAt(side,eas,kind==='climb');
-   const {evidence:record,turnPolicy}=bySide[side];
-   const estimate=override??(kind==='turn'?flight.limits?.sustDegSec:flight.status==='modelled'?flight.power?.climbFpm:null);
-   const assessment=kind==='turn'?TurnPerformance.assessment(flight,turnPolicy):null;
+   const {evidence:record,turnPolicy,range:turnRange,levelEasMph}=bySide[side];
+   const turn=kind==='turn',inRange=turnRange&&eas>=turnRange.minEasMph&&eas<=turnRange.maxEasMph;
+   const atLevel=turn&&inRange&&eas===levelEasMph;
+   const assessment=turn?TurnPerformance.assessment(flight,turnPolicy):null;
+   if(atLevel&&assessment.nominal){
+    assessment.nominal={...assessment.nominal,turn:{g:1,rateDegSec:0,radiusM:null,bankDeg:0},limiting:'power'};
+   }
+   const estimate=turn?(inRange?(override??(atLevel?0:flight.limits?.sustDegSec)):null):
+    flight.status==='modelled'?flight.power?.climbFpm:null;
+   const load=turn&&Number.isFinite(estimate)?(override===undefined?(atLevel?1:flight.limits?.nSust):loadForRate(override,flight.tasMph)):null;
    const evidence=Evidence.describe(flight,kind,record,assessment?.nominal?.limiting);
    const range=assessment?.range;
    const bounds=evidence.reference?.bounds??
     (Number.isFinite(estimate)&&range?.lower&&range?.upper?[range.lower.rateDegSec,range.upper.rateDegSec]:null);
-   const point={...Evidence.sample(eas,estimate,evidence.covered,bounds),evidence,assessment};
+   const loadRange=turn&&Number.isFinite(estimate)&&range?.lower&&range?.upper?[range.lower.g,range.upper.g]:null;
+   const point={...Evidence.sample(eas,estimate,evidence.covered,bounds),load:load??null,loadRange,evidence,assessment};
    if(override===undefined)sampleCache.set(key,point);
    return point;
   }
@@ -393,20 +415,25 @@
   const levelSpeeds=series.map(a=>a.levelEasMph).filter(Number.isFinite);
   const lastSpeeds=curves.map(c=>c.points.findLast(p=>Number.isFinite(p.rate))?.eas??0);
   const quickest=Math.max(...(levelSpeeds.length?levelSpeeds:lastSpeeds));
-  const minEas=0, factor=units[unit].factor;
+  const lowestStall=Math.min(...curves.map(c=>c.aircraft.stallEasMph).filter(Number.isFinite));
+  const minEas=Number.isFinite(lowestStall)?Math.max(0,Math.floor(lowestStall/probeStepMph)*probeStepMph-probeStepMph):0;
+  const factor=units[unit].factor;
   const maxEas=(Math.floor(quickest*factor/10+1e-9)+1)*10/factor;
   const maxStep=Math.floor((maxEas+1e-9)/probeStepMph)*probeStepMph;
   const visibleTurns=focus?focusCurves(turning,pointAt,3):[];
   const focused=visibleTurns.length>0;
   rangeStatus.textContent=focused?'Turn curves shown at 3°/s and above.':
    focus?'Neither aircraft reaches 3°/s. Showing the full turn envelope.':'Turn curves show the full flight envelope.';
+  const asTurn=point=>turnUnit.key==='g'?
+   {...point,...Evidence.sample(point.eas,Number.isFinite(point.rate)?point.load:null,point.covered,Number.isFinite(point.rate)?point.loadRange:null)}:point;
+  const plottedTurns=(focused?visibleTurns:turning).map(curve=>({...curve,points:curve.points.map(asTurn)}));
   let probe,sources,label,lastHover;
   const plots=[
-   drawPlot({host:chart,kind:'turn',curves:focused?visibleTurns:turning,altFt,unit,minEas,maxEas,threshold:focused?3:0}),
-   drawPlot({host:climbChart,kind:'climb',curves:climbing,altFt,unit,minEas,maxEas,threshold:0}),
-   makeAdvantage?.({minEas,maxEas,pointAt,threshold:focused?3:0})
+   drawPlot({host:chart,kind:'turn',curves:plottedTurns,altFt,unit,turnUnit,minEas,maxEas,threshold:focused?3:0}),
+   drawPlot({host:climbChart,kind:'climb',curves:climbing,altFt,unit,turnUnit,minEas,maxEas,threshold:0}),
+   makeAdvantage?.({minEas,maxEas,pointAt,series})
   ].filter(Boolean);
-  const interaction={read:()=>({probe,label,series,sources}),update,locked:()=>lock!==null,setLock,
+  const interaction={read:()=>({probe,label,series,sources,turnUnit}),update,locked:()=>lock!==null,setLock,
    hover(anchor){lastHover=anchor;}};
   const tips=plots.filter(plot=>plot.svg).map(plot=>attachProbe(plot,interaction,minEas,maxEas));
   const defaultAnchor={kind:tips[0].kind,y:tips[0].centerY};
@@ -423,7 +450,7 @@
    lockButton.textContent=lock?'Unlock speed':'Lock speed';
    lockButton.setAttribute('aria-pressed',String(Boolean(lock)));
    lockStatus.textContent=lock?'Locked at '+label:'Click a plot to lock its reading.';
-   results.replaceChildren(...series.map(a=>readoutCard(a,probe.aircraft[a.side],unit,sources[a.side].turn,Boolean(lock))));
+   results.replaceChildren(...series.map(a=>readoutCard(a,probe.aircraft[a.side],unit,sources[a.side].turn,Boolean(lock),turnUnit)));
    climbResults.replaceChildren(...series.map(a=>{
     const card=element('div',null,'bench-probe-card');
     card.dataset.side=a.side;
@@ -438,9 +465,9 @@
   function update(rawEas) {
    const easMph=Math.max(minEas,Math.min(maxStep,Math.round(rawEas/probeStepMph)*probeStepMph));
    if(probe?.easMph===easMph)return;
-   const points=Object.fromEntries(series.map(a=>[a.side,probeAircraft(a,easMph,evaluateAt)]));
+   const points=Object.fromEntries(series.map(a=>[a.side,probeAircraft(a,easMph,evaluateAt,pointAt)]));
    probe={easMph,aircraft:points};
-   sources=Object.fromEntries(series.map(a=>[a.side,{turn:pointAt(a.side,easMph,'turn'),climb:pointAt(a.side,easMph,'climb')}]));
+   sources=Object.fromEntries(series.map(a=>[a.side,{turn:asTurn(pointAt(a.side,easMph,'turn')),climb:pointAt(a.side,easMph,'climb')}]));
    onProbe(probe);
    slider.value=easMph;
    label=speed(easMph,unit,'EAS',unit==='mph'?0:1);
@@ -464,6 +491,6 @@
   update(selectedEasMph??turning[0]?.aircraft.peakEasMph??climbing[0]?.aircraft.vyEasMph??maxEas/2);
  }
 
- globalThis.OperatingBenchmarkChart = Object.freeze({ render, speed, ticks });
+ globalThis.OperatingBenchmarkChart = Object.freeze({ render, speed, ticks, turnUnits });
 })();
 
