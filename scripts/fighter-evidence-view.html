@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WWII fighter evidence curves</title>
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #f6f7f5;
+    --white: #fff;
+    --ink: #142824;
+    --muted: #4e625e;
+    --rule: #d8e2dd;
+    --accent: #17574e;
+    --scenario: #91621c;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: var(--ink); background: var(--paper); font: 1rem/1.5 Inter, system-ui, sans-serif; }
+  main { max-width: 1160px; padding: clamp(1rem, 4vw, 3.5rem); margin: auto; }
+  h1, h2, h3, p { margin: 0; }
+  h1 { font-size: clamp(2.05rem, 5vw, 3.65rem); letter-spacing: -.054em; line-height: 1.07; }
+  h2 { font-size: 1.5rem; letter-spacing: -.025em; line-height: 1.24; }
+  h3 { font-size: 1rem; }
+  a { color: var(--accent); text-underline-offset: .18em; }
+  .subtitle { margin-top: .7rem; color: var(--muted); max-width: 67ch; }
+  .surface { background: var(--white); border: 1px solid var(--rule); border-radius: 12px; margin-top: 1.35rem; padding: clamp(.85rem, 3vw, 1.6rem); }
+  .controls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr) auto; align-items: end; gap: .85rem; }
+  label { display: grid; gap: .22rem; font-size: .87rem; color: var(--muted); font-weight: 650; }
+  select { width: 100%; min-width: 0; font: inherit; font-weight: 550; color: var(--ink); background: var(--white); border: 1px solid #a8bcb4; border-radius: 6px; padding: .62rem .52rem; }
+  .toggle { display: flex; align-items: center; gap: .35rem; padding: .7rem 0; }
+  input { accent-color: var(--accent); }
+  :focus-visible { outline: 2px solid #1e7669; outline-offset: 3px; }
+  .plot-title { margin: 1.35rem 0 .32rem; }
+  .note { color: var(--muted); font-size: .9rem; max-width: 85ch; }
+  .chart-key, .series-key { display: flex; flex-wrap: wrap; gap: .4rem 1rem; color: var(--muted); font-size: .84rem; }
+  .chart-key { margin: 1rem 0 .1rem; }
+  .key-item { display: flex; gap: .4rem; align-items: center; }
+  .key-line { width: 1.48rem; height: 0; border-top: 2px solid var(--accent); }
+  .key-line.calc { border-top-style: dashed; }
+  .key-line.scenario { border-top: 3px dotted var(--scenario); }
+  .marker { width: .48rem; height: .48rem; display: inline-block; border: 1px solid; border-radius: 50%; background: var(--accent); color: var(--accent); margin: 0 .36rem; }
+  .marker.outline { background: #fff; border-radius: 0; transform: rotate(45deg); }
+  .swatch { width: .64rem; height: .64rem; border-radius: 50%; margin-right: .35rem; display: inline-block; }
+  #plot { display: block; width: 100%; height: auto; overflow: visible; }
+  #point-readout { min-height: 1.4em; color: var(--ink); margin: .4rem 0 .55rem; font-size: .85rem; font-variant-numeric: tabular-nums; }
+  .series-key { margin: .5rem 0 .15rem; color: var(--ink); }
+  .axis-text { fill: var(--muted); font: 12px Inter, system-ui, sans-serif; }
+  .axis-title { fill: var(--ink); font: 600 13px Inter, system-ui, sans-serif; }
+  .plot-point { cursor: crosshair; }
+  .plot-point:focus-visible { outline: none; stroke: #151c1a; stroke-width: 3; }
+  .stack { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  details { padding-top: .7rem; border-top: 1px solid var(--rule); margin-top: .65rem; }
+  summary { cursor: pointer; font-weight: 650; }
+  .sources { margin-top: .55rem; padding-left: 1.15rem; }
+  .sources li + li { margin-top: .55rem; }
+  .table-wrap { overflow-x: auto; margin-top: .55rem; }
+  table { width: 100%; border-collapse: collapse; text-align: left; font-size: .87rem; font-variant-numeric: tabular-nums; }
+  th, td { padding: .48rem .55rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  thead { color: var(--muted); background: #f1f6f3; }
+  tfoot { font-weight: 700; background: #edf4ef; }
+  .coverage-score { color: var(--accent); font-weight: 700; }
+  .warn { color: #9a461b; font-weight: 650; }
+  @media (max-width: 720px) { .controls { grid-template-columns: repeat(2, minmax(0, 1fr)); } .toggle { grid-column: 1 / -1; padding: 0; } }
+  @media (max-width: 480px) { .controls { grid-template-columns: 1fr; } h2 { font-size: 1.28rem; } th, td { padding-inline: .42rem; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>WWII fighter evidence curves</h1>
+    <p class="subtitle">Browse published flight data, estimates and their ranges across 13 aircraft. Each curve retains its test conditions and source links.</p>
+  </header>
+
+  <section class="surface" aria-label="Evidence explorer">
+    <div class="controls">
+      <label>Aircraft <select id="aircraft"></select></label>
+      <label>Curve <select id="curve"></select></label>
+      <label class="toggle"><input type="checkbox" id="bands" checked> Show ranges</label>
+    </div>
+    <h2 class="plot-title" id="plot-title"></h2>
+    <p class="note" id="plot-note"></p>
+    <div class="chart-key" aria-label="Line and point styles">
+      <span class="key-item"><span class="key-line"></span>Primary trace</span>
+      <span class="key-item"><span class="marker"></span>Primary point</span>
+      <span class="key-item"><span class="marker outline"></span>Secondary or handbook point</span>
+      <span class="key-item"><span class="key-line calc"></span>Calculated</span>
+      <span class="key-item"><span class="key-line scenario"></span>Scenario</span>
+    </div>
+    <div id="series-key" class="series-key"></div>
+    <svg id="plot" role="group" aria-labelledby="plot-title" aria-describedby="plot-note"></svg>
+    <p id="point-readout" aria-live="polite">Hover or focus a point for its value and range.</p>
+    <details>
+      <summary>Curve points and sources</summary>
+      <div id="curve-data" class="stack"></div>
+      <ul id="source-list" class="sources note"></ul>
+    </details>
+    <details>
+      <summary id="checks-title">Checks and disagreements</summary>
+      <div id="checks"></div>
+    </details>
+    <div id="aircraft-tables" class="stack"></div>
+  </section>
+
+  <section class="surface" aria-labelledby="coverage-title">
+    <h2 id="coverage-title">Evidence coverage</h2>
+    <p class="note">The third column of scores includes historical coverage plus new calculations. Each delta is in percentage points. Coverage reflects filled data gaps and expert judgment.</p>
+    <div id="coverage"></div>
+  </section>
+</main>
+<script>
+'use strict';
+const data = /* EVIDENCE_DATA */ null;
+const $ = id => document.getElementById(id);
+const svgNS = 'http://www.w3.org/2000/svg';
+const colors = ['#17574e', '#3958a3', '#815423', '#81406a'];
+const styles = {primary:'Primary', secondary:'Secondary', documentary:'Handbook', calculated:'Calculated', scenario:'Scenario'};
+const formatter = new Intl.NumberFormat('en-US', { maximumFractionDigits: 3 });
+const fmt = n => typeof n === 'number' ? formatter.format(n) : n == null ? '—' : n;
+
+function node(tag, value, className) {
+  const result = document.createElement(tag);
+  if (value != null) result.textContent = value;
+  if (className) result.className = className;
+  return result;
+}
+function svg(tag, attrs, value) {
+  const result = document.createElementNS(svgNS, tag);
+  for (const [name, val] of Object.entries(attrs)) result.setAttribute(name, val);
+  if (value != null) result.textContent = value;
+  return result;
+}
+function options(control, rows, label) {
+  control.replaceChildren(...rows.map(row => {
+    const option = node('option', label(row));
+    option.value = row.id;
+    return option;
+  }));
+}
+function table(headers, rows, footer, scoreColumn = -1) {
+  const wrap = node('div', null, 'table-wrap');
+  const t = node('table');
+  const add = (section, entries, header = false) => {
+    for (const row of entries) {
+      const tr = node('tr');
+      row.forEach((value, i) => {
+        const cell = node(header ? 'th' : 'td', fmt(value), i === scoreColumn && !header ? 'coverage-score' : '');
+        if (header) cell.scope = 'col';
+        if (typeof value === 'string' && value.startsWith('Outside tolerance')) cell.classList.add('warn');
+        tr.append(cell);
+      });
+      section.append(tr);
+    }
+    t.append(section);
+  };
+  add(node('thead'), [headers], true);
+  add(node('tbody'), rows);
+  if (footer) add(node('tfoot'), [footer]);
+  wrap.append(t);
+  return wrap;
+}
+function ticks(low, high, count) {
+  const guess = (high - low) / count;
+  const scale = 10 ** Math.floor(Math.log10(guess));
+  const step = scale * [1, 2, 2.5, 5, 10].find(value => value * scale >= guess);
+  const first = Math.ceil(low / step);
+  const last = Math.floor(high / step);
+  return Array.from({length: last - first + 1}, (_, index) => (first + index) * step);
+}
+function sourceKind(point) {
+  return ['primary', 'secondary', 'documentary'].includes(point[4]);
+}
+function draw(item) {
+  const plot = $('plot');
+  const mobile = plot.getBoundingClientRect().width < 580;
+  const width = mobile ? 410 : 900, height = mobile ? 300 : 385;
+  const padding = {left: mobile ? 61 : 83, right: 24, top: 15, bottom: 51};
+  plot.replaceChildren();
+  plot.setAttribute('viewBox', [0, 0, width, height].join(' '));
+  const points = item.series.flatMap(series => series.points);
+  const useBounds = $('bands').checked;
+  const xs = points.map(p => p[0]);
+  const ys = points.flatMap(p => useBounds ? [p[2], p[3]] : [p[1]]);
+  function domain(values) {
+    const low = Math.min(...values), high = Math.max(...values);
+    const margin = (high - low || 1) * .055;
+    return [low - margin, high + margin];
+  }
+  const [minX,maxX] = domain(xs), [minY,maxY] = domain(ys);
+  const right = width - padding.right, bottom = height - padding.bottom;
+  const x = n => padding.left + (n - minX) / (maxX - minX) * (right - padding.left);
+  const y = n => bottom - (n - minY) / (maxY - minY) * (bottom - padding.top);
+  for (const value of ticks(minY,maxY,5)) {
+    plot.append(svg('line', {x1:padding.left, x2:right, y1:y(value), y2:y(value), stroke:'#dce6e1'}));
+    plot.append(svg('text', {x:padding.left-8, y:y(value)+4, 'text-anchor':'end', class:'axis-text'}, fmt(value)));
+  }
+  for (const value of ticks(minX,maxX,mobile ? 4 : 7)) {
+    plot.append(svg('line', {x1:x(value), x2:x(value), y1:bottom, y2:bottom+5, stroke:'#a8bcb4'}));
+    plot.append(svg('text', {x:x(value), y:bottom+21, 'text-anchor':'middle', class:'axis-text'}, fmt(value)));
+  }
+  plot.append(svg('path', {d:'M'+padding.left+','+padding.top+'V'+bottom+'H'+right, fill:'none', stroke:'#a8bcb4'}));
+  plot.append(svg('text', {x:(padding.left+right)/2, y:height-8, 'text-anchor':'middle', class:'axis-title'}, item.x));
+  plot.append(svg('text', {x:16, y:(padding.top+bottom)/2, transform:'rotate(-90 16 '+(padding.top+bottom)/2+')', 'text-anchor':'middle', class:'axis-title'}, item.y));
+  item.series.forEach((series, i) => {
+    const color = colors[i % colors.length], pts = series.points;
+    if (useBounds && pts.some(p => p[2] !== p[3])) {
+      const edge = (rows, k) => rows.map(p => x(p[0])+','+y(p[k]));
+      const polygon = [...edge(pts, 3), ...edge([...pts].reverse(), 2)].join(' ');
+      plot.append(svg('polygon', {points:polygon, fill:color, opacity:.12, 'pointer-events':'none'}));
+    }
+    pts.slice(1).forEach((p, j) => {
+      const prev = pts[j];
+      const solid = series.solidHistory && p[4] === 'primary' && prev[4] === 'primary';
+      const scenario = p[4] === 'scenario' || prev[4] === 'scenario';
+      const line = svg('line', {
+        x1:x(prev[0]), y1:y(prev[1]), x2:x(p[0]), y2:y(p[1]),
+        stroke:color, 'stroke-width':solid ? 2.7 : 2.4, 'stroke-linecap':'round',
+        'stroke-dasharray':solid ? 'none' : scenario ? '1 5' : '5 4',
+        opacity:scenario ? .72 : 1, class:'curve-segment',
+        'data-style':solid ? 'primary' : scenario ? 'scenario' : 'calculated',
+        'data-series':i,
+      });
+      plot.append(line);
+    });
+    pts.forEach(p => {
+      const filled = p[4] === 'primary';
+      const historical = sourceKind(p);
+      const title = series.label + ' · ' + item.x + ' ' + fmt(p[0]) + ' · ' + item.y + ' ' + fmt(p[1]) +
+        (p[2] !== p[3] ? ' (' + fmt(p[2]) + ' to ' + fmt(p[3]) + ')' : '') + ' · ' + styles[p[4]];
+      const attrs = {fill:filled ? color : '#fff', stroke:color, 'stroke-width':1.5,
+        class:'plot-point', tabindex:0, 'aria-label':title, role:'img'};
+      const marker = historical && !filled
+        ? svg('rect', {...attrs, x:x(p[0])-3, y:y(p[1])-3, width:6, height:6, transform:'rotate(45 '+x(p[0])+' '+y(p[1])+')'})
+        : svg('circle', {...attrs, cx:x(p[0]), cy:y(p[1]), r:historical ? 4 : 2.8});
+      marker.append(svg('title', {}, title));
+      const read = () => { $('point-readout').textContent = title; };
+      marker.addEventListener('pointerenter', read);
+      marker.addEventListener('focus', read);
+      plot.append(marker);
+    });
+  });
+}
+function sourceList(ids) {
+  const sources = new Map();
+  for (const id of new Set(ids)) {
+    const observation = data.observations[id];
+    if (!sources.has(observation.source)) sources.set(observation.source, new Set());
+    if (observation.locator) sources.get(observation.source).add(observation.locator);
+  }
+  return [...sources].map(([id, locators]) => {
+    const source = data.sources[id];
+    const li = node('li');
+    if (source.url) {
+      const link = node('a', source.name || id);
+      link.href = source.url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      li.append(link);
+    } else li.append(node('span', source.name || id));
+    if (locators.size) li.append(node('div', [...locators].join(' · ')));
+    return li;
+  });
+}
+function render() {
+  const item = data.charts.find(c => c.id === $('curve').value);
+  $('plot-title').textContent = item.title;
+  $('plot-note').textContent = item.note;
+  $('point-readout').textContent = 'Hover or focus a point for its value and range.';
+  $('series-key').replaceChildren(...item.series.map((s, i) => {
+    const label = node('span');
+    const swatch = node('span', null, 'swatch');
+    swatch.style.background = colors[i % colors.length];
+    label.append(swatch, s.label);
+    return label;
+  }));
+  draw(item);
+  $('curve-data').replaceChildren(...item.series.map(s => {
+    const section = node('section');
+    section.append(node('h3', s.label), node('p', s.limits, 'note'),
+      table([item.x,item.y,'Lower','Upper','Evidence'], s.points.map(([x,y,lo,hi,kind]) => [x,y,lo,hi,styles[kind]])));
+    return section;
+  }));
+  $('source-list').replaceChildren(...sourceList(item.series.flatMap(s => s.observations)));
+  const checks = data.checks.filter(c => c.aircraft === item.aircraft);
+  $('checks-title').textContent = 'Checks and disagreements (' + checks.length + ')';
+  $('checks').replaceChildren(checks.length ? table(
+    ['Check','Estimate','Source','Difference','Allowance','Assessment'],
+    checks.map(c => [c.title + ' · ' + c.unit, c.predicted, c.reported, c.delta, c.tolerance,
+      (c.outcome === 'outside' ? 'Outside tolerance' : c.outcome === 'within' ? 'Within tolerance' : 'Comparison only') + '. ' + c.conditions]),
+  ) : node('p','This aircraft’s comparisons appear in its calculation tables.','note'));
+  $('aircraft-tables').replaceChildren(...data.tables.filter(t => t.aircraft === item.aircraft).map(t => {
+    const details = node('details');
+    const list = node('ul',null,'sources note');
+    list.append(...sourceList(t.observations));
+    details.append(node('summary',t.title),node('p',t.note,'note'),table(t.columns,t.rows),list);
+    return details;
+  }));
+}
+function chooseAircraft() {
+  options($('curve'), data.charts.filter(c => c.aircraft === $('aircraft').value), c => c.title);
+  render();
+}
+options($('aircraft'), data.coverage.rows, row => row.label);
+$('aircraft').value = 'fw190a4_783';
+$('aircraft').addEventListener('change', chooseAircraft);
+$('curve').addEventListener('change', render);
+$('bands').addEventListener('change', () => draw(data.charts.find(c => c.id === $('curve').value)));
+window.addEventListener('resize', () => draw(data.charts.find(c => c.id === $('curve').value)));
+const score = row => [row.primary_percent+'%',row.augmented_percent+'%',row.with_calculations_percent+'%','+'+row.delta_calculations_points];
+$('coverage').append(table(
+  ['Aircraft','Primary','Historical augmented','With calculations','Gain (pp)'],
+  data.coverage.rows.map(row => [row.label,...score(row)]),
+  ['Fleet average',...score(data.coverage.fleet)], 3,
+));
+chooseAircraft();
+</script>
+</body>
+</html>

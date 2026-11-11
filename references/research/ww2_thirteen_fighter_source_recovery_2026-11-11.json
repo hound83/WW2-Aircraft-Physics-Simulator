@@ -1,6 +1,6 @@
 {
   "schema": "ww2-fighter-evidence-pack/v1",
-  "pack_version": "1.0.0",
+  "pack_version": "1.1.0",
   "compiled": "2026-11-11",
   "purpose": "Thirteen-variant source recovery. Data and provenance only. Targets: >=80 primary evidence coverage and >=90 augmented; these are ambitions, not achieved scores or prediction accuracy. Known engine settings are mandatory for quantitative G-2 performance verification.",
   "sources": [
@@ -39,6 +39,16 @@
       "location": "Original report tables transcribed on public page; retrieved via HTTP",
       "classification": "secondary-transcription-of-period-report",
       "notes": "Records actual2540RPM versus2580indicated, MAP1.30-1.32ata then altitude-dependent reduction. Do not replace these with nominal2600RPM. Radiators closed in speed runs, thermostatic during climb, first fully open2500m."
+    },
+    {
+      "id": "ME109G-HOERNER",
+      "aircraft": "Me 109 G family in Hoerner analysis, exact subvariant unestablished",
+      "report": "S. F. Hoerner, Fluid-Dynamic Drag, chapter XIV, pp. 14-3 to 14-7",
+      "source": "https://wwiiaircraftperformance.com/org/me109/g/g_files/Hoerner-Me_109.pdf",
+      "location": "pp. 14-3, 14-4 and 14-6, equations 2–5 and figure 3",
+      "classification": "secondary-engineering-synthesis-from-flight-and-tunnel-data",
+      "notes": "Family-level high-speed case. The text calls it 1944 Me 109 G and prints DB 601A. That engine/specimen mismatch bars direct DB 605A/G-2 transfer. The reported 1941 tunnel reference is not another G-2 flight.",
+      "sha256": "9764d51675cef0f786e2bbc9de2ab4106016d37bfe8373a8871fe053d75f78a4"
     },
     {
       "id": "F4-DB601E-MANUAL",
@@ -709,8 +719,8 @@
       "aircraft": "Bf109G-2 WNr14783 MT-215",
       "quantity": "standard_atmosphere_climb_rate_and_elapsed_time",
       "speed_basis": "unestablished",
-      "source_location": "Transcribed MT-215 Time to Altitude table and original climb chart",
-      "conditions": "CINA-reduced values, actual2540RPM. Secondary table has12 rate values for13 heights;11000m rate and elapsed time are blank. The0.8 belongs to elapsed time at1000m, NOT to climb rate at11000m. No invented sea-level elapsed-time datum. First full radiator opening2500m; cooling policy and lack of special flight-test instrumentation limit representativeness.",
+      "source_location": "English MT-215 Time to Altitude table, preserved prior column mapping",
+      "conditions": "CINA-reduced values, actual2540RPM. Secondary HTML column alignment was interpreted in the original intake and is preserved for comparison. Upper values conflict with the original plotted lines. In particular the mapped 2.1 m/s and 10.9 min at 10000 m should not be used as matched anchors. No sea-level elapsed-time datum. First full radiator opening2500m; cooling policy and lack of special flight-test instrumentation limit representativeness.",
       "columns": [
         "cina_altitude_m",
         "climb_rate_mps",
@@ -784,6 +794,95 @@
         ]
       ],
       "source_class": "SECONDARY-original-table-transcription",
+      "evidence_kind": "secondary"
+    },
+    {
+      "id": "g2-mt215-original-upper-climb",
+      "source_id": "G2-MT215-SCAN",
+      "aircraft": "Bf 109 G-2 WNr 14783 MT-215",
+      "quantity": "digitized_climb_rate_and_elapsed_time",
+      "speed_basis": "unestablished",
+      "source_location": "Finnish report p. 16, curve 1 (m/s) and curve 2 (min), original chart image",
+      "conditions": "Upper 5,000–10,000 m only. CINA altitude. Actual 2,540 rpm from the same trial’s narrative transcription. Radiator thermostatic, fixed tailwheel. Digitized reading allowance ±0.5 m/s and ±0.2 min. Read the two horizontal scales separately. Same flight test as the secondary table.",
+      "columns": [
+        "cina_altitude_m",
+        "climb_rate_mps",
+        "elapsed_min"
+      ],
+      "rows": [
+        [
+          5000,
+          16.6,
+          4.1
+        ],
+        [
+          6000,
+          15.7,
+          5
+        ],
+        [
+          7000,
+          13.2,
+          6.2
+        ],
+        [
+          8000,
+          10.6,
+          7.6
+        ],
+        [
+          9000,
+          7.9,
+          9.4
+        ],
+        [
+          10000,
+          5.3,
+          12
+        ]
+      ],
+      "source_class": "digitized-original-flight-chart",
+      "evidence_kind": "primary"
+    },
+    {
+      "id": "me109g-hoerner-drag-budget",
+      "source_id": "ME109G-HOERNER",
+      "aircraft": "Me 109 G family, exact subvariant unestablished",
+      "quantity": "historical_engineering_high_speed_drag_budget",
+      "speed_basis": "unestablished",
+      "source_location": "Hoerner chapter XIV, pp. 14-3, 14-4 and 14-6",
+      "conditions": "Approximate high-speed synthesis, 610 km/h and 22,000 ft, 6,700 lb. 1,140 lbf total drag is inferred from propulsive thrust including an estimated 140 lbf exhaust contribution. 5.6 ft² synthetic and 5.8 ft² flight-inferred parasite areas share the same operating context. The source identifies a G series but prints DB 601A.",
+      "columns": [
+        "weight_lb",
+        "wing_area_ft2",
+        "speed_reported_kmh",
+        "alt_ft",
+        "q_psf",
+        "total_drag_lbf",
+        "flight_inferred_parasite_ft2",
+        "component_synthesis_parasite_ft2",
+        "effective_aspect_ratio",
+        "induced_planform_factor",
+        "estimated_exhaust_lbf",
+        "assumed_eta"
+      ],
+      "rows": [
+        [
+          6700,
+          172,
+          610,
+          22000,
+          184,
+          1140,
+          5.8,
+          5.6,
+          5.8,
+          1.02,
+          140,
+          0.85
+        ]
+      ],
+      "source_class": "secondary-engineering-synthesis",
       "evidence_kind": "secondary"
     },
     {

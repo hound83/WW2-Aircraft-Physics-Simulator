@@ -143,7 +143,10 @@ function buildCatalog(options={}){
      const values=Object.fromEntries(series.columns.map((key,j)=>[key,row[j]]));
      const raw=values.stall_speed??values.minimum_speed??values.reported_speed;
      if(!Number.isFinite(raw))throw Error('Missing US stall speed '+series.id+':'+i);
-     values.speed_mph=raw;
+     // Keep the source literal and unit. All *_mph fields use statute miles/hour.
+     const sourceUnit=series.speed_unit||'mph';
+     if(!['mph','knots'].includes(sourceUnit))throw Error('Unsupported US stall unit: '+sourceUnit);
+     values.speed_mph=sourceUnit==='knots'?raw*1852/1609.344:raw;
      if(values.exact_stall_weight_lb!==undefined)values.weight_lb=values.exact_stall_weight_lb;
      else if(values.approx_stall_weight_lb!==undefined)values.weight_lb=values.approx_stall_weight_lb;
      const basis=series.basis.startsWith('IAS')||series.basis==='manual_IAS'?'IAS':series.basis==='CAS_explicit'?'CAS':'unestablished';

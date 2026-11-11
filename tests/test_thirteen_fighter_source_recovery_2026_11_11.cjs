@@ -8,11 +8,11 @@ const previous=require('../references/aircraft-readiness-dual-lane-2026-11-10.js
 const manifest=require('../references/source-recovery-manifest-2026-11-11.json');
 const c=buildCatalog(),prefix='ww2_thirteen_fighter_source_recovery_2026-11-11';
 const rows=c.observations.filter(x=>x.pack_id===prefix),sources=c.sources.filter(x=>x.pack_id===prefix);
-assert.equal(rows.length,152);
-assert.equal(sources.length,23);
-assert.equal(c.summary.observation_count,1552);
+assert.equal(rows.length,159);
+assert.equal(sources.length,24);
+assert.equal(c.summary.observation_count,1559);
 assert.equal(c.summary.stall_count,250);
-assert.equal(c.summary.source_count,277);
+assert.equal(c.summary.source_count,278);
 assert.equal(c.calibration_curves.length,19,'No new inferred IAS/CAS curve silently activated');
 assert.equal(c.document_lineage.length,47);
 assert.equal(c.calibration_reviews.length,27);
@@ -30,10 +30,15 @@ assert.deepEqual(speed.rows[0],[10,140,515,523,522,2540,2580,1.3]);
 const climb=get('g2-mt215-cina-climb');
 assert.deepEqual(climb.rows[0],[0,21.6,null]);
 assert.deepEqual(climb.rows[1],[1000,23.5,0.8]);
-assert.deepEqual(climb.rows.at(-1),[11000,null,null],'Blank11000m table values are not fabricated from the0.8min adjacent column');
+assert.deepEqual(climb.rows.at(-1),[11000,null,null],'Retain the prior table mapping for the discrepancy audit');
+const upper = get('g2-mt215-original-upper-climb');
+assert.equal(upper.source_id, 'G2-MT215-SCAN');
+assert.equal(upper.rows.length, 6);
+assert.deepEqual(upper.rows.at(-1), [10000, 5.3, 12]);
 assert.deepEqual(get('g2-early-restriction-policy').rows,[['initial_emergency',2800,1.42,false],['climb_combat',2600,1.3,true]]);
 assert.ok(get('g2-soviet-clean-vs-gunpod-summary').conditions.includes('NOT known per-run'));
 assert.ok(!rows.some(x=>x.quantity==='max_sustained_turn_rate'));
+assert.equal(get('me109g-hoerner-drag-budget').evidence_kind,'secondary');
 // Original corrected stall measurements are allowed; installation-only tables are not.
 const cas=rows.filter(x=>x.quantity==='stall_speed');
 assert.equal(cas.length,5);
@@ -87,4 +92,4 @@ assert.equal(ki624.values.manifold_pressure_mm_relative,null,'The Japanese handb
 const approach=flightRows.find(row=>row.values.figure===52&&row.id.includes(':p47d30-433441-stall-traces:'));
 assert.match(approach.values.window_definition,/full break unclear/);
 assert.ok(!approach.preferred_airspeed);
-console.log('PASS 13-variant data intake:152 sourced rows; known G2 settings; explicit calculations/metadata; fixed80/90 targets; no false CAS/turn/roster claims');
+console.log('PASS 13-variant data intake:159 sourced rows; known G2 settings; explicit calculations/metadata; fixed80/90 targets; no false CAS/turn/roster claims');
