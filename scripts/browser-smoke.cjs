@@ -375,8 +375,9 @@ async function run(){
   assert.notEqual(cooled.rows.b.sustained.rateDegSec,altitudeSelection.rows.b.sustained.rateDegSec);
   await select('bench-cooling-b','clean');
   await select('bench-altitude','10000');
-  assert.equal(await evaluate('document.querySelectorAll("#bench-flight-checks tbody tr").length'),31);
-  assert.match(await evaluate('document.getElementById("bench-flight-checks").textContent'),/41-5902.*BS\.543.*41-5942/s);
+  const flightCheckRows=await evaluate('Array.from(document.querySelectorAll("#bench-flight-check-results table"),table=>table.tBodies[0].rows.length)');
+  assert.deepEqual(flightCheckRows,[10,16,5,9]);
+  assert.match(await evaluate('document.getElementById("bench-flight-checks").textContent'),/41-5902.*BS\.543.*41-5942.*WNr 783/s);
   checks.push('v4.3 service-era groups, contemporaries filter, shared altitude matrix, independent cooling and original-flight checks');
   let bm=await benchmark();assert.equal(bm.rows.a.altFt,10000);assert.equal(bm.rows.b.altFt,10000);
   assert.deepEqual(await evaluate('(()=>{const e=document.getElementById("bench-altitude");return [e.type,+e.min,+e.max,+e.step];})()'),['range',0,40000,5000]);
