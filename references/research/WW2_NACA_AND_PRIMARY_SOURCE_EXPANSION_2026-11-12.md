@@ -54,7 +54,7 @@
 - **Japanese (Ki-84, etc.):** TAIC Summary Reports and captured-aircraft tests.
 
 ## 3. Practical next extraction order
-1. NACA ACR 4K02 and WR L-86 (clean drag anchors for Mustang and P-47).
+1. NACA ACR 4K02 for Mustang propeller-off drag and WR L-86 for P-47 wing-section profile drag.
 2. A&AEE BS.543 / MA.648 full tables (Spitfire IX family).
 3. Rechlin Kennblatt G-1 and Vergleichsfliegen F-4 vs A-2 (Bf 109 / Fw 190).
 4. Finnish MT-215 original curves (G-2).

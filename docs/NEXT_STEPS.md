@@ -10,7 +10,7 @@ The shared climb candidate uses the Fw 190 open-cooling case and P-38G timed cli
 
 ## Next milestone for propeller efficiency
 
-Make the seven-aircraft Normal / Combat benchmark usable with defensible propeller efficiency at the conditions where people compare aircraft. Use the current research candidate and the latest reviewed Fighter Sim Inputs. The shared benchmark already calculates speed, climb, acceleration and sustained turn from available power. Test the simpler candidate in that same calculation. [Current benchmark](V49_TIMED_MATCHUPS.md) · [Simulator data handoff](SIMULATOR_DATA_HANDOFF.md)
+The two v4.10 propeller passes established the seven-aircraft replays. Use these source conditions and acceptance checks when a new matched observation warrants a propulsion follow-up. The shared benchmark calculates speed, climb, acceleration and sustained turn from available power. [Current benchmark](V49_TIMED_MATCHUPS.md) · [Simulator data handoff](SIMULATOR_DATA_HANDOFF.md)
 
 Test Greg’s **80%** in-flight reference, the **76%** Curtiss military-climb case and the tested Curtiss high-tip-Mach correction. Across 103 direct readings from two Thunderbolt installations, the 80% reference had **2.16 percentage points** mean absolute error, versus **8.15** for the working equation. The separate L7D10 military-climb series gave **0.74 points** at 80%. Apply the evidence at its recorded conditions. [Propeller replays](research/WW2_PROPELLER_REFERENCE_VALUES_2026-11-12.md) · [NACA L4L07 Tables I–II](https://ntrs.nasa.gov/citations/19930093302) · [NACA L5G09a](https://ntrs.nasa.gov/citations/19930093653) · [NACA L7D10 Tables I–II](https://ntrs.nasa.gov/citations/20050019331)
 

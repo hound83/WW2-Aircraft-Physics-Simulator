@@ -1,6 +1,12 @@
 # Simulator model roadmap
 
-A targeted overhaul will make the simulator easier to improve. Rework how it selects, applies and checks inputs for a specific aircraft configuration. Build on the shared steady-flight solver, which already calculates stall, speed, climb, acceleration, and instantaneous and sustained turn. Use the next propeller release to prove the approach on a small set of real flight tests. [Solver](../src/physics.js) · [Normal / Combat comparison](V49_TIMED_MATCHUPS.md) · [Propeller milestone](NEXT_STEPS.md#next-milestone-for-propeller-efficiency)
+The shared steady-flight solver calculates stall, speed, climb, acceleration, and instantaneous and sustained turn. The v4.10 propeller passes and v4.11 shared climb replay now provide matched power and cooling checks. The next implementation milestone tests how the solver selects and applies stall and maneuver-lift inputs at a specified configuration. [Solver](../src/physics.js) · [Shared climb results](V411_SHARED_FLIGHT_CLIMB.md) · [Normal / Combat comparison](V49_TIMED_MATCHUPS.md)
+
+## Next implementation milestone
+
+**Continuous stall and usable maneuver lift.** Use the reported stall speeds at their own weights, power and configurations. Convert to EAS or a bounded estimate where the airspeed evidence supports it. Check continuity and the change in lift available as speed changes, starting with the P-51B-15, the calibrated P-38G check and the distinct Corsair glide and powered cases. A graph should show solid source-supported sections and dot the part that depends on a provisional input. Verify one mixed-style graph and report the seven benchmark profiles with the source and calculation behind each supported value. [Cases and acceptance checks](LATEST_INSIGHTS.md#next-simulator-milestone)
+
+Grok’s parallel source work starts with the Bf 109 F-4. Its family summaries are discovery leads with specific reviewed rows linked to existing evidence. Carry new rows into the input pack after checking the source, condition and grade. [Family extraction review](../references/research/WW2_FAMILY_PRIMARY_EXTRACTION_v1_2026-11-12.md#review-for-simulator-use) · [Extraction queue](../references/research/WW2_EXTRACTION_BATCH_LIST_EXPANDED_2026-11-12.md)
 
 ## What the three files contribute
 
@@ -14,11 +20,11 @@ The Fw 190 A-5 is listed at 4,000 kg and a zero-lift drag coefficient of 0.0265 
 
 Two examples belong in the input checks. First, verify the report identifier and figure for a promoted value. The JSON link labelled NACA 916 opens NACA 1239. NASA indexes the P-51B drag study named in the Markdown under ACR 4K02. Second, check power across each full-throttle height. Applying the framework’s sea-level-density lapse formula directly to power rated at a 6,000 m full-throttle height would leave about 48% of rated power immediately above it. Use the original power curve and explicit gear domain first. Anchor any necessary estimated continuation at the end of its own branch. [Linked NASA report](https://ntrs.nasa.gov/citations/19930092244) · [P-51B drag study](https://ntrs.nasa.gov/citations/19930092458) · [Existing engine and installation inputs](research/WW2_FIGHTER_INPUT_REFERENCE_2026-11-12.md)
 
-## 1. Finish propeller efficiency in one or two milestones
+## 1. Propeller efficiency and follow-ups
 
 The first pass is v4.10.0-rc.1. The seven-aircraft replay and the independent P-47B transfer are recorded in the [propeller milestone results](V410_PROPELLER_REFERENCE.md). The largest remaining Corsair level-speed discrepancy points to high-altitude shaft power and blower selection.
 
-Use v4.9.0-rc.2 as the planning baseline. Record the actual simulator and data revisions when implementation starts. Integrate the existing 80% in-flight reference where the aircraft checks support it, starting with the F4U-4 80765 speed and climb case and the P-47B Curtiss high-tip-Mach case. Use one reference drag anchor per candidate installation and the observed power, RPM and cooling. Score all seven aircraft at matched conditions, including held-back speed and climb observations. Check how the plausible propeller range moves acceleration and sustained-turn comparisons.
+The first pass used v4.9.0-rc.2 as its baseline and replayed the F4U-4 80765 case and the P-47B Curtiss case. For future matched data, use one reference drag anchor per candidate installation and the observed power, RPM and cooling. Score all seven aircraft at matched conditions, including held-back speed and climb observations. Check how the plausible propeller range moves acceleration and sustained-turn comparisons.
 
 The second pass is v4.10.0-rc.2. It pairs the Lightning's Military faired-shutter shaft-power schedule with a bounded high-speed tip loss and records the decision for each of the other four fighters. Remaining source gaps include the Fw 190 A-4 installation and gear, the Bf 109 F-4 combat power curve and the P-38G part-power balance. [Second-pass scorecard](V410_REMAINING_PROPELLERS.md) · [Propeller plan](NEXT_STEPS.md#next-milestone-for-propeller-efficiency)
 
