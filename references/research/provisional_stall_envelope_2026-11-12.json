@@ -1,0 +1,222 @@
+{
+  "schema": "provisional-stall-envelope/v1",
+  "generated": "2026-11-12",
+  "note": "Provisional values for dotted-line display only.",
+  "aircraft": {
+    "f4u4": {
+      "name": "F4U-4",
+      "wingAreaM2": 29.17,
+      "observations": [
+        {
+          "sourceId": "f4u4-clean-powered",
+          "reportedMph": 97.4,
+          "basis": "CAS",
+          "provisionalEasMph": 97.4,
+          "weightLb": 12500,
+          "config": "up/up/on",
+          "limitation": "reported CAS used as provisional EAS"
+        },
+        {
+          "sourceId": "f4u4-landing-power-off",
+          "reportedMph": 89.4,
+          "basis": "CAS",
+          "provisionalEasMph": 89.4,
+          "weightLb": 12500,
+          "config": "down/down/off",
+          "limitation": "reported CAS used as provisional EAS"
+        }
+      ],
+      "provisionalBandEasMph": {
+        "min": 89.4,
+        "max": 97.4,
+        "n": 2
+      }
+    },
+    "spitfire_lfix_bs543": {
+      "name": "Spitfire LF Mk IX",
+      "wingAreaM2": 22.48,
+      "observations": [
+        {
+          "sourceId": "spitfire-ix-normal-load-clean",
+          "reportedMph": 86,
+          "basis": "IAS",
+          "provisionalEasMph": 86,
+          "weightLb": 7445,
+          "config": "up/up/off",
+          "limitation": "uncorrected or unestablished airspeed treated as provisional EAS"
+        },
+        {
+          "sourceId": "spitfire-ix-normal-load-landing",
+          "reportedMph": 76,
+          "basis": "IAS",
+          "provisionalEasMph": 76,
+          "weightLb": 7445,
+          "config": "down/down/off",
+          "limitation": "uncorrected or unestablished airspeed treated as provisional EAS"
+        }
+      ],
+      "provisionalBandEasMph": {
+        "min": 76,
+        "max": 86,
+        "n": 2
+      }
+    },
+    "p47b": {
+      "name": "P-47B",
+      "wingAreaM2": 27.87,
+      "observations": [
+        {
+          "sourceId": "p47b-handbook-clean-off",
+          "reportedMph": 105,
+          "basis": "unestablished",
+          "provisionalEasMph": 105,
+          "weightLb": null,
+          "config": "up/up/off",
+          "limitation": "uncorrected or unestablished airspeed treated as provisional EAS"
+        },
+        {
+          "sourceId": "p47b-handbook-clean-on",
+          "reportedMph": 98,
+          "basis": "unestablished",
+          "provisionalEasMph": 98,
+          "weightLb": null,
+          "config": "up/up/on",
+          "limitation": "uncorrected or unestablished airspeed treated as provisional EAS"
+        },
+        {
+          "sourceId": "p47b-handbook-landing-off",
+          "reportedMph": 95,
+          "basis": "unestablished",
+          "provisionalEasMph": 95,
+          "weightLb": null,
+          "config": "down/down/off",
+          "limitation": "uncorrected or unestablished airspeed treated as provisional EAS"
+        },
+        {
+          "sourceId": "p47b-handbook-landing-on",
+          "reportedMph": 85,
+          "basis": "unestablished",
+          "provisionalEasMph": 85,
+          "weightLb": null,
+          "config": "down/down/on",
+          "limitation": "uncorrected or unestablished airspeed treated as provisional EAS"
+        }
+      ],
+      "provisionalBandEasMph": {
+        "min": 85,
+        "max": 105,
+        "n": 4
+      }
+    },
+    "p38g": {
+      "name": "P-38G",
+      "wingAreaM2": 30.43,
+      "observations": [
+        {
+          "sourceId": "p38dg-handbook-clean-15000",
+          "reportedMph": 94,
+          "basis": "IAS",
+          "provisionalEasMph": 94,
+          "weightLb": 15000,
+          "config": "up/up/unreported for numerical table",
+          "limitation": "uncorrected or unestablished airspeed treated as provisional EAS"
+        },
+        {
+          "sourceId": "p38dg-handbook-landing-15000",
+          "reportedMph": 69,
+          "basis": "IAS",
+          "provisionalEasMph": 69,
+          "weightLb": 15000,
+          "config": "down/down/unreported for numerical table",
+          "limitation": "uncorrected or unestablished airspeed treated as provisional EAS"
+        },
+        {
+          "sourceId": "p38dg-handbook-clean-17000",
+          "reportedMph": 100,
+          "basis": "IAS",
+          "provisionalEasMph": 100,
+          "weightLb": 17000,
+          "config": "up/up/unreported for numerical table",
+          "limitation": "uncorrected or unestablished airspeed treated as provisional EAS"
+        },
+        {
+          "sourceId": "p38dg-handbook-landing-17000",
+          "reportedMph": 74,
+          "basis": "IAS",
+          "provisionalEasMph": 74,
+          "weightLb": 17000,
+          "config": "down/down/unreported for numerical table",
+          "limitation": "uncorrected or unestablished airspeed treated as provisional EAS"
+        },
+        {
+          "sourceId": "p38dg-handbook-clean-19000",
+          "reportedMph": 105,
+          "basis": "IAS",
+          "provisionalEasMph": 105,
+          "weightLb": 19000,
+          "config": "up/up/unreported for numerical table",
+          "limitation": "uncorrected or unestablished airspeed treated as provisional EAS"
+        },
+        {
+          "sourceId": "p38dg-handbook-landing-19000",
+          "reportedMph": 78,
+          "basis": "IAS",
+          "provisionalEasMph": 78,
+          "weightLb": 19000,
+          "config": "down/down/unreported for numerical table",
+          "limitation": "uncorrected or unestablished airspeed treated as provisional EAS"
+        },
+        {
+          "sourceId": "p38g-4212690-clean-off",
+          "reportedMph": 112,
+          "basis": "CAS",
+          "provisionalEasMph": 112,
+          "weightLb": 14800,
+          "config": "up/up/off",
+          "limitation": "reported CAS used as provisional EAS"
+        },
+        {
+          "sourceId": "p38g-4212690-flaps-down-off",
+          "reportedMph": 86,
+          "basis": "CAS",
+          "provisionalEasMph": 86,
+          "weightLb": 14800,
+          "config": "up/down/off",
+          "limitation": "reported CAS used as provisional EAS"
+        },
+        {
+          "sourceId": "p38g-4212690-landing-off",
+          "reportedMph": 88,
+          "basis": "CAS",
+          "provisionalEasMph": 88,
+          "weightLb": 14800,
+          "config": "down/down/off",
+          "limitation": "reported CAS used as provisional EAS"
+        },
+        {
+          "sourceId": "p38g-4212690-clean-powered",
+          "reportedMph": 107,
+          "basis": "CAS",
+          "provisionalEasMph": 107,
+          "weightLb": 14800,
+          "config": "up/up/on",
+          "limitation": "reported CAS used as provisional EAS"
+        },
+        {
+          "sourceId": "p38g-4212690-landing-powered",
+          "reportedMph": 75,
+          "basis": "CAS",
+          "provisionalEasMph": 75,
+          "weightLb": 14800,
+          "config": "down/down/on",
+          "limitation": "reported CAS used as provisional EAS"
+        }
+      ],
+      "provisionalBandEasMph": {
+        "min": 69,
+        "max": 112,
+        "n": 11
+      }
+    }
+  }
+}
