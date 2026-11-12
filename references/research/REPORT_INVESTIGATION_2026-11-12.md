@@ -25,3 +25,17 @@ These match the numbers previously logged from the Gemini packs.
 
 ## Conclusion
 The only primary tabulated stall numbers that could be confirmed by opening the actual pages are the two P-51B Wright Field tables. All other Gemini-pack numbers remain secondary transcriptions until the underlying PDFs are obtained.
+
+## Correction (same day)
+
+The Gemini pack cited the wrong NTRS ID for “NACA Wartime Report L-407”.
+
+- Actual NACA-WR-L-407 is a different report (wing ducts on a pursuit model).
+- The XP-51 flying qualities and stalling characteristics report is **NACA-WR-L-566** (White, Hoover, Garris, April 1943).
+  NTRS: https://ntrs.nasa.gov/citations/19930092575
+  UNT: https://digital.library.unt.edu/ark:/67531/metadc61027/
+  PDF is available but could not be extracted in this pass.
+
+NACA Report 916 (airfoil data) is also catalogued as NACA-TR-824 / ACR-L5C05.
+
+The only tabulated stall numbers still confirmed by opening a live page remain the two Wright Field P-51B tables.
