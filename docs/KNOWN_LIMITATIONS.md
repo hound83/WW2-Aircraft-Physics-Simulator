@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.10 propeller evidence
+
+The Corsair reference is a fitted installed efficiency/drag pair. High-altitude shaft power still differs from the report chart. The P-47B transfer improves the separate-airframe speed replay by 0.26 mph and adds 0.68 mph to mean error on 41-5902. The altered clean-flight acceleration times and the 29,000-ft Corsair/Thunderbolt sensitivity are model results. [Flight-test residuals and comparison scope](V410_PROPELLER_REFERENCE.md).
+
 ## v4.9 timed run evidence
 
 The timed acceleration replay uses steady level-flight states at the selected altitude. Its elapsed times depend on the documented power schedule and estimated installed power and drag. Matched historical speed-time and powered-turn records remain open. [Historical checks](V49_TIMED_MATCHUPS.md#historical-checks).

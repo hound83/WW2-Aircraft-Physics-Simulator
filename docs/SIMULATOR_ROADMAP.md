@@ -16,6 +16,8 @@ Two examples belong in the input checks. First, verify the report identifier and
 
 ## 1. Finish propeller efficiency in one or two milestones
 
+The first pass is v4.10.0-rc.1. The seven-aircraft replay and the independent P-47B transfer are recorded in the [propeller milestone results](V410_PROPELLER_REFERENCE.md). The largest remaining Corsair level-speed discrepancy points to high-altitude shaft power and blower selection.
+
 Use v4.9.0-rc.2 as the planning baseline. Record the actual simulator and data revisions when implementation starts. Integrate the existing 80% in-flight reference where the aircraft checks support it, starting with the F4U-4 80765 speed and climb case and the P-47B Curtiss high-tip-Mach case. Use one reference drag anchor per candidate installation and the observed power, RPM and cooling. Score all seven aircraft at matched conditions, including held-back speed and climb observations. Check how the plausible propeller range moves acceleration and sustained-turn comparisons.
 
 Use the first scorecard to decide whether a second propeller milestone is needed. Prioritize the cases where a propulsion gap changes a comparison or materially worsens a flight-test replay. The current leads are the Fw 190 A-4 installation and gear, the Bf 109 F-4 combat power curve, and the P-38G part-power balance. The agreed propeller plan contains the source list and release criteria. [Propeller plan](NEXT_STEPS.md#next-milestone-for-propeller-efficiency) · [Seven-aircraft replays](research/WW2_PROPELLER_REFERENCE_VALUES_2026-11-12.md)

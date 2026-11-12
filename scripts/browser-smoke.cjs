@@ -753,6 +753,13 @@ async function run(){
   await select('bench-power-a','normal');
   await select('bench-fuel-a','0.75');bm=await benchmark();assert.deepEqual(bm.rows.b,bInitial);assert.equal(bm.settings.a.settings.mode,'normal');assert.equal(bm.settings.a.settings.fuelFraction,.75);
   await select('bench-aircraft-a','f4u4');await select('bench-power-a','combat');bm=await benchmark();const dryBenchmark=bm.rows.a;
+  await select('bench-altitude','25000');await setProbe(260);
+  assert.match(await evaluate('document.getElementById("bench-acceleration-at-speed").textContent'),/clean-flight propeller and drag fit/);
+  await lockButton();
+  assert.equal(await evaluate('[...document.querySelectorAll("#bench-acceleration-at-speed a")].some(link=>link.href.endsWith("/f4u-4-80765.pdf"))'),true);
+  await lockButton();
+  await select('bench-altitude',String(dryBenchmark.altFt));
+  checks.push('v4.10 the live Corsair comparison exposes the active clean-flight reference and source');
   assert.equal(await evaluate('document.getElementById("bench-injection-a").disabled'),false);
   assert.equal(await evaluate('document.getElementById("bench-injection-a").hidden'),false);
   assert.equal(await evaluate('document.getElementById("bench-injection-b").hidden'),true);

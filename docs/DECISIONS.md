@@ -1,5 +1,9 @@
 # Current decisions
 
+## v4.10 clean-flight propeller references
+
+Apply the paired propeller efficiency and clean drag reference through the shared Normal / Combat calculation for the Corsair dry ratings and Thunderbolt dry Military. Use the report-specific altitude and RPM scope and taper both terms together. Adopt the Thunderbolt change on the same-blade evidence and separate-airframe check with the small 41-5902 speed regression recorded. Use the existing report-conditioned climb model. [Checks and sensitivities](V410_PROPELLER_REFERENCE.md).
+
 ## v4.9 equal-start comparisons
 
 Compare timed acceleration at a shared altitude and EAS interval, accounting for rating, fuel and injection use. Use the established 0.5°/s, 5%, and 6 km/h TAS boundaries for practical matchup ties. Line styles follow operating-input provenance and measured climb points identify original report conditions. [Timed runs and comparison rules](V49_TIMED_MATCHUPS.md).

@@ -2,7 +2,7 @@
 
 **Data collection update, 11 November 2026:** [thirteen-aircraft source recovery](docs/research/WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md) adds152 evidence/condition records and the research-only Bf109G-2. Catalog:1,205 records,214 source entries. Fixed-rubric primary80/augmented90 targets remain unmet for most aircraft; this is a data checkpoint, with no solver or flyable-roster change.
 
-The [live simulator](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/#operating-benchmark) runs the **4.9.0-rc.1 research candidate**. Timed climb and acceleration compare equal-start runs, and the altitude table and turn plot show practical tie and lead results. Line styles follow operating-input provenance. [Timed runs and four-aircraft replay](docs/V49_TIMED_MATCHUPS.md).
+The [live simulator](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/#operating-benchmark) runs the **4.10.0-rc.1 research candidate**. The Corsair and Thunderbolt use source-bounded clean-flight propeller and drag references. [Propeller results](docs/V410_PROPELLER_REFERENCE.md). Timed climb and acceleration compare equal-start runs, and the altitude table and turn plot show practical tie and lead results. Line styles follow operating-input provenance. [Timed runs and four-aircraft replay](docs/V49_TIMED_MATCHUPS.md).
 
 The [v4.1 installed-energy candidate](docs/V41_ENERGY_RESULTS.md) improves matched-source climb checks for P-47B, Spitfire IX, P-38G, Fw 190 A-4 and P-51B in the live comparison. Source/reference switching, 48 energy checks and a separate-report P-47 transfer make the changes inspectable. Version 4.1.0-rc.1 remains a research candidate; historical sustained-turn 5:1 accuracy is unresolved.
 
