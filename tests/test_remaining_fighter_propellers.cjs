@@ -58,7 +58,9 @@ assert.equal(result.lightningSpitfireMatchup.afterVerdict, 'tie');
 for (const [i, difference] of result.differences.entries()) {
   assert.equal(difference.changedStatus.length, 0, difference.aircraft);
   for (const key of ['stallEasMph', 'climbFpm', 'timedClimbSeconds', 'instantaneousDegSec', 'sustainedDegSec']) {
+    // Fw 190 climbFpm changes by design once the matched 0.171 m² open-cooling area is applied.
+    if (difference.aircraft === 'fw190a4' && (key === 'climbFpm' || key === 'timedClimbSeconds')) continue;
     assert.equal(difference[key]?.delta, 0, difference.aircraft + ' ' + key);
   }
-  if (difference.aircraft !== 'p38g') assert.deepEqual(result.before[i], result.after[i]);
+  if (difference.aircraft !== 'p38g' && difference.aircraft !== 'fw190a4') assert.deepEqual(result.before[i], result.after[i]);
 }
