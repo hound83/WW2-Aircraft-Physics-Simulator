@@ -125,7 +125,7 @@
   const reference=point.evidence.reference;
   if(reference)parent.append(element('p','Report '+format(reference.observed)+' ft/min at '+format(reference.weightLb)+' lb','bench-note'));
   const links=element('div',null,'bench-probe-links');
-  for(const source of [point.evidence.source,point.evidence.related].filter(Boolean)){
+  for(const source of [point.evidence.source,point.evidence.related,point.evidence.propellerSource].filter(Boolean)){
    const link=element('a',source.label);link.href=source.url;link.title=source.title;
    link.target='_blank';link.rel='noopener';
    links.append(link);

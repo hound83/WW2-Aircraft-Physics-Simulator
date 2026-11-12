@@ -2,6 +2,10 @@
 
 The [simulator model roadmap](SIMULATOR_ROADMAP.md) sets the order for propulsion, input handling, turn validation, aircraft intake and future handling features.
 
+## After v4.10 propeller integration
+
+The first pass uses the bounded Corsair and Thunderbolt level references in the Normal / Combat benchmark. For a focused second pass, start with the Corsair shaft-power and blower schedule at 23,100 and 29,000 ft. The current model uses 1,710 BHP at both Military points, while the report chart reads roughly 1,900 and 1,800 BHP. Use the v1.5 WNr 783 paired intakes and P-38G part-power records where they materially affect a target comparison. [First-pass scorecard](V410_PROPELLER_REFERENCE.md) · [Fleet data](research/WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md)
+
 ## Next milestone for propeller efficiency
 
 Make the seven-aircraft Normal / Combat benchmark usable with defensible propeller efficiency at the conditions where people compare aircraft. Use the current research candidate and the latest reviewed Fighter Sim Inputs. The shared benchmark already calculates speed, climb, acceleration and sustained turn from available power. Test the simpler candidate in that same calculation. [Current benchmark](V49_TIMED_MATCHUPS.md) · [Simulator data handoff](SIMULATOR_DATA_HANDOFF.md)

@@ -87,7 +87,10 @@
   else if(kind==='climb'&&state?.cooling==='report-conditioned')label='Calculated · report fit transferred';
   else if(state?.cooling==='climb-estimate')label='Calculated · estimated cooling input';
   else if(record.calculatedPower)label='Calculated · '+record.calculatedPower;
-  return {covered:Boolean(supportedFit||lift||power),label,source,related:record.related,reference:climbReference(fit,flight)};
+  const propeller=state?.propellerReference;
+  if(propeller)label+=' · clean-flight propeller and drag fit';
+  return {covered:Boolean(supportedFit||lift||power),label,source,related:record.related,
+   ...(propeller?{propellerSource:propeller.source}:{}),reference:climbReference(fit,flight)};
  }
 
  function sample(eas,estimate,covered,range){

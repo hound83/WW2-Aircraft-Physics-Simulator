@@ -53,9 +53,12 @@ try{
  for(const trial of benchmark.flightChecks){
   console.log(trial.name+' climb check MAE '+trial.checks.beforeMae.toFixed(2)+' -> '+trial.checks.afterMae.toFixed(2)+' ft/min ('+trial.checks.count+' points).');
  }
+ write('validation/current/propeller-reference-v410.json',require('../validation/diagnostics/operating_benchmark_v410.cjs').run());
  require('./write-v42-report.cjs');
  const md=[
  '# Current validation',
+ '',
+ 'v4.10 [Bounded clean-flight propeller references and seven-aircraft replay](V410_PROPELLER_REFERENCE.md). The numerical replay is included in the Physics regression artifact.',
  '',
  'v4.9 [Timed runs, practical comparison margins and four-aircraft replay](V49_TIMED_MATCHUPS.md).',
  '',

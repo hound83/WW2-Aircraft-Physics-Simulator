@@ -563,9 +563,10 @@ async function run(){
   const accelAxes=await evaluate('(()=>{const s=document.querySelector("#bench-acceleration-plot svg");return [+s.dataset.minEas,+s.dataset.maxEas];})()');
   assert.deepEqual(accelAxes,(await axes())[0]);
   const accelAt335=await probe();
-  assert.ok(Math.abs(accelAt335.aircraft.a.accelerationMphPerSecond+.49920)<.0001);
+  // The Corsair clean-flight reference changes this live 335 mph EAS point.
+  assert.ok(Math.abs(accelAt335.aircraft.a.accelerationMphPerSecond+.41549)<.0001);
   assert.ok(Math.abs(accelAt335.aircraft.b.accelerationMphPerSecond-.45504)<.0001);
-  assert.match(await evaluate('document.getElementById("bench-acceleration-at-speed").textContent'),/-0\.50 mph\/s.*\+0\.46 mph\/s/s);
+  assert.match(await evaluate('document.getElementById("bench-acceleration-at-speed").textContent'),/-0\.42 mph\/s.*\+0\.46 mph\/s/s);
   const accelerationPlot=await evaluate('(()=>{'+
    'const s=document.querySelector("#bench-acceleration-plot svg"),zero=Number(s.querySelector(".bench-acceleration-zero").getAttribute("y1"));'+
    'const equilibria=[...s.querySelectorAll("[data-bench-level-equilibrium]")].map(e=>[+e.getAttribute("cx"),+e.getAttribute("cy")]);'+
@@ -583,7 +584,7 @@ async function run(){
   assert.equal(new Set(accelerationPlot.cursors).size,1);
   await select('bench-speed-unit','kph');
   assert.deepEqual(await probe(),accelAt335);
-  assert.match(await evaluate('document.getElementById("bench-acceleration-at-speed").textContent'),/-0\.80 km\/h\/s.*\+0\.73 km\/h\/s/s);
+  assert.match(await evaluate('document.getElementById("bench-acceleration-at-speed").textContent'),/-0\.67 km\/h\/s.*\+0\.73 km\/h\/s/s);
   await select('bench-speed-unit','mph');
   await setProbe(accelAxes[0]);
   assert.ok(Object.values((await probe()).aircraft).every(a=>a.accelerationMphPerSecond===null));
@@ -753,6 +754,13 @@ async function run(){
   await select('bench-power-a','normal');
   await select('bench-fuel-a','0.75');bm=await benchmark();assert.deepEqual(bm.rows.b,bInitial);assert.equal(bm.settings.a.settings.mode,'normal');assert.equal(bm.settings.a.settings.fuelFraction,.75);
   await select('bench-aircraft-a','f4u4');await select('bench-power-a','combat');bm=await benchmark();const dryBenchmark=bm.rows.a;
+  await select('bench-altitude','25000');await setProbe(260);
+  assert.match(await evaluate('document.getElementById("bench-acceleration-at-speed").textContent'),/clean-flight propeller and drag fit/);
+  await lockButton();
+  assert.equal(await evaluate('[...document.querySelectorAll("#bench-acceleration-at-speed a")].some(link=>link.href.endsWith("/f4u-4-80765.pdf"))'),true);
+  await lockButton();
+  await select('bench-altitude',String(dryBenchmark.altFt));
+  checks.push('v4.10 the live Corsair comparison exposes the active clean-flight reference and source');
   assert.equal(await evaluate('document.getElementById("bench-injection-a").disabled'),false);
   assert.equal(await evaluate('document.getElementById("bench-injection-a").hidden'),false);
   assert.equal(await evaluate('document.getElementById("bench-injection-b").hidden'),true);

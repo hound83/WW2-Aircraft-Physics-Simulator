@@ -102,9 +102,10 @@
   const rating=spec.baseRating,gear=p.gear??'benchmark';
   const ac={...model.ac,powerRatings:{[rating]:{gears:{[gear]:[{altFt,bhp:p.bhp,engineRpm:phase.rpm,mapInHg:p.mapInHg}]}}},
    propGeometry:{...model.ac.propGeometry,...(model.benchmarkReductionRatio?{reductionRatioEnginePerProp:model.benchmarkReductionRatio}:{}),engineRpmByRating:{...model.ac.propGeometry.engineRpmByRating,[rating]:phase.rpm}}};
-  const opts={...model.options,profile:'P',polar:model.benchmarkPolar,rating,gear,weightLb};
-  delete opts.engineModel;delete opts.flightCooling;
   const open=climbing||s.openCooling;
+  const opts={...model.options,profile:'P',polar:model.benchmarkPolar,rating,gear,weightLb,
+   cleanLevelPropeller:open?undefined:model.cleanLevelPropellers?.[phase.key]};
+  delete opts.engineModel;delete opts.flightCooling;
   if(open&&model.climbCoolingAreaM2)opts.addedDragAreaM2=model.climbCoolingAreaM2;
   const installed=open?installedClimb(M,model,altFt,tas,weightLb,phase,p):null;
   const turnOptions=turn.optionsFor(M,ac,lift,altFt,tas,opts);
@@ -119,7 +120,8 @@
   }
   return {...r,benchmark:{phase:phase.key??s.mode,label:phase.label,estimated:p.estimated,sourceMaxFt:p.sourceMaxFt,
    rpm:phase.rpm,map:phase.map,mapUnit:spec.mapUnit,cooling:installed?'report-conditioned':open?'climb-estimate':'clean',
-   ...(maneuverLift?{maneuverLift}:{})}};
+   ...(maneuverLift?{maneuverLift}:{}),
+   ...(r.prop?.levelReference?{propellerReference:r.prop.levelReference}:{})}};
  }
  function levelAccelerationMphPerSecond(flight){
   const {status,tasMph,power}=flight;

@@ -427,6 +427,25 @@ function flightCoolingDelta(entry,opts,alt,tas,shaft){
  return Number.isFinite(delta)&&delta>=0&&delta<=.03?delta:null;
 }
 
+// Fade the paired efficiency and drag reference together at the edges of the
+// clean level-flight cases. The transition widths are engineering choices.
+function cleanLevelPropeller(altFt, prop, reference){
+ if(!reference||prop.engineRpm!==reference.engineRpm)return null;
+ const edge=(value,[low,high],width)=>{
+  const t=Math.max(0,1-Math.max(low-value,value-high,0)/width);
+  return t*t*(3-2*t);
+ };
+ const fraction=edge(altFt,reference.altitudeFt,1000)*edge(prop.J,reference.advanceRatio,.25);
+ if(!(fraction>0))return null;
+ let eta=reference.eta;
+ if(reference.tipMachEfficiency){
+  const [[low,lowEta],[high,highEta]]=reference.tipMachEfficiency;
+  const t=Math.max(0,Math.min(1,(prop.tipMach-low)/(high-low)));
+  eta=lowEta+t*(highEta-lowEta);
+ }
+ return {eta,fraction,source:reference.source};
+}
+
 function evaluated(ac,alt,tasMph,opts={}){if(opts.profile==='P'&&!opts.polar)opts=workingOptions(ac,opts);const profile=opts.profile||'C',polar=opts.polar,e=polar?polar.e:(opts.e??.78),storesWeightLb=opts.storesWeightLb??0,addedDragAreaM2=opts.addedDragAreaM2??0,weight=(opts.weightLb??ac.weightLb)+storesWeightLb,clMax=opts.clMax??ac.clMaxAssumed,maneuverClMax=opts.maneuverClMax??clMax,structG=opts.structG??7,rating=opts.rating||ac.defaultRating,gear=opts.gear||'auto';if(!(weight>0&&clMax>0&&Number.isFinite(maneuverClMax)&&maneuverClMax>0&&e>0&&e<=1&&Number.isFinite(storesWeightLb)&&storesWeightLb>=0&&Number.isFinite(addedDragAreaM2)&&addedDragAreaM2>=0)||opts.engineCondition&&opts.engineModel)return {status:'invalid-input'};
  if(polar&&(opts.e!==undefined||opts.refit||!(polar.cd0>.005&&polar.cd0<.085)||typeof polar.source!=='string'||!polar.source.trim()))return {status:'invalid-polar-input',reason:'Explicit polar requires sourced CD0 and e; do not simultaneously refit or override e'};
  const entry=envelopeEntry(ac,opts);
@@ -442,19 +461,25 @@ function evaluated(ac,alt,tasMph,opts={}){if(opts.profile==='P'&&!opts.polar)opt
  if(!cdData||!cdData.valid)return {status:'no-credible-drag-anchor'};
  const propAircraft=shaft.reductionRatioEnginePerProp?{...ac,propGeometry:{...ac.propGeometry,reductionRatioEnginePerProp:shaft.reductionRatioEnginePerProp}}:ac;
  const propulsion=propulsionAt(propAircraft,alt,tasMph,shaft.bhp,profile,rating,{engineRpmOverride:shaft.engineRpm});if(!propulsion)return {status:'no-prop-input'};
- const {prop}=propulsion;
+ const baseProp=propulsion.prop;
+ const reference=opts.cleanLevelPropeller;
+ const levelReference=cleanLevelPropeller(alt,baseProp,reference);
+ const prop=levelReference?{...baseProp,eta:baseProp.eta+levelReference.fraction*(levelReference.eta-baseProp.eta),
+  method:'bounded clean-flight propeller and drag reference',levelReference}:baseProp;
+ const cleanCd0=levelReference?cdData.cd0+levelReference.fraction*(reference.cd0-cdData.cd0):cdData.cd0;
  const installedDeltaCd0=installedDelta(entry,opts,alt,tasMph,shaft);
  const coolingDeltaCd0=flightCoolingDelta(entry,opts,alt,tasMph,shaft);
  if(coolingDeltaCd0===null)return {status:'no-cooling-source',reason:'Outside the open-shutter speed/altitude or configuration envelope'};
- const effectiveCd0=cdData.cd0+installedDeltaCd0+coolingDeltaCd0+addedDragAreaM2/ac.wingAreaM2;
+ const effectiveCd0=cleanCd0+installedDeltaCd0+coolingDeltaCd0+addedDragAreaM2/ac.wingAreaM2;
  const D=dragBreakdown(ac,alt,tasMph,weight,effectiveCd0,e,1),V=tasMph*MPH,W=weight*LBF,geo=geometry(ac),q=D.q;
  const propulsivePowerScale=opts.propulsivePowerScale??1;
  if(!(propulsivePowerScale>=.9&&propulsivePowerScale<=1.15))return {status:'invalid-propulsive-power-scenario'};
- const Pav=Math.min(propulsion.propulsiveW*propulsivePowerScale,propulsion.shaftHp*HP),Ps=(Pav-D.drag*V)/W,stallEas=Math.sqrt(2*W/(RHO0*geo.S*clMax))/MPH,air=airspeeds(tasMph,alt),nLift=q*geo.S*maneuverClMax/W;
+ const usefulW=levelReference?prop.eta*propulsion.shaftHp*HP:propulsion.propulsiveW;
+ const Pav=Math.min(usefulW*propulsivePowerScale,propulsion.shaftHp*HP),Ps=(Pav-D.drag*V)/W,stallEas=Math.sqrt(2*W/(RHO0*geo.S*clMax))/MPH,air=airspeeds(tasMph,alt),nLift=q*geo.S*maneuverClMax/W;
  const feasible=q*geo.S*clMax/W>=1;const nPower2=(Pav/V-D.dParasite)/Math.max(1e-9,D.dInd),powerOk=feasible&&nPower2>=1;const nInst=feasible&&nLift>=1?Math.min(nLift,structG):null;
  const nSust=powerOk&&nInst!==null?Math.min(nInst,Math.sqrt(nPower2)):null;
  const turn=n=>n!=null&&n>=1?G*Math.sqrt(Math.max(0,n*n-1))/V*180/Math.PI:null;
- return {status:feasible?'modelled':'below-provisional-stall',aircraft:ac.name,altFt:alt,tasMph,air,weightLb:weight,engine:shaft,prop,cd0:effectiveCd0,cleanCd0:cdData.cd0,...(entry?{installedDeltaCd0,coolingDeltaCd0}:{}),dragPolarSource:cdData.origin,externalDragAreaM2:addedDragAreaM2,storesWeightLb,oswald:e,clMax,stallEasMph:stallEas,drag:D,
+ return {status:feasible?'modelled':'below-provisional-stall',aircraft:ac.name,altFt:alt,tasMph,air,weightLb:weight,engine:shaft,prop,cd0:effectiveCd0,cleanCd0,...(entry?{installedDeltaCd0,coolingDeltaCd0}:{}),dragPolarSource:levelReference?.source.title??cdData.origin,externalDragAreaM2:addedDragAreaM2,storesWeightLb,oswald:e,clMax,stallEasMph:stallEas,drag:D,
    power:{shaftHp:propulsion.shaftHp,propulsiveHp:Pav/HP,
    ...(opts.propulsivePowerScale!==undefined?{propulsivePowerScale}:{}),
    ...(propulsion.count>1?{engineCount:propulsion.count,shaftHpPerEngine:shaft.bhp,propulsiveHpPerEngine:Pav/HP/propulsion.count}:{}),requiredHp:D.requiredHp,excessHp:(Pav-D.drag*V)/HP,psMps:Ps,climbFpm:feasible?Ps*196.850394:null},
