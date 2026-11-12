@@ -1,5 +1,7 @@
 # Next steps
 
+The [simulator model roadmap](SIMULATOR_ROADMAP.md) sets the order for propulsion, input handling, turn validation, aircraft intake and future handling features.
+
 ## Next milestone for propeller efficiency
 
 Make the seven-aircraft Normal / Combat benchmark usable with defensible propeller efficiency at the conditions where people compare aircraft. Use the current research candidate and the latest reviewed Fighter Sim Inputs. The shared benchmark already calculates speed, climb, acceleration and sustained turn from available power. Test the simpler candidate in that same calculation. [Current benchmark](V49_TIMED_MATCHUPS.md) · [Simulator data handoff](SIMULATOR_DATA_HANDOFF.md)
