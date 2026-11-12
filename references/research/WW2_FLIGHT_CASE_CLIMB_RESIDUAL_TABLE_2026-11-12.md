@@ -4,6 +4,8 @@
 **Baseline:** v4.9.0-rc.2 / v4.10.0-rc.2 research candidate (propeller passes applied; climb path largely unchanged)  
 **Status:** frozen before-scorecard for the major milestone. Research only.
 
+The machine-readable before-scorecard is archived with the analysis records. [Residual table JSON](../analysis/ww2_flight_case_climb_residual_table_2026-11-12.json)
+
 ## Two priority climb cases
 
 ### 1. Fw 190 A-4 WNr 783 open-cooling climb
@@ -14,7 +16,7 @@
 - Residual class: cooling/intake + missing useful-power observation.
 
 ### 2. P-38G 42-12687 timed climb (Wright Field FS-M-19-1538-A §B.4)
-- Source elapsed: **340.80 s** (sea-level to 10 000 ft band cited in audits).
+- Source elapsed: **340.80 s** from sea level to 20,000 ft. The report gives **168.60 s** to 10,000 ft. [Wright Field B.4 transcription](../p38g-42-12687.json)
 - Seven open-cooling climb checks: **173.3 ft/min** mean absolute error (unchanged by propeller passes; 10 000 ft cooling anchor excluded).
 - Sea-level residual ≈ **+411 ft/min**.
 - Timed-climb path currently omits kinetic-energy term for increasing TAS. Opt-in `accountForTasChange` exists; baselines unchanged.
