@@ -1,6 +1,10 @@
 # Known limitations
 
-## v4.10 propeller evidence
+## v4.10-rc.2 Lightning propeller evidence
+
+The P-38G's additional high-speed loss is fitted at one altitude with chart-derived shaft power and the existing drag polar. The three reserved checks share the report. Part-power speed and the cooling or shaft-power discrepancy remain open, as do separate-airframe accuracy, measured acceleration, and powered-turn checks. [Flight-test residuals](V410_REMAINING_PROPELLERS.md).
+
+## v4.10-rc.1 propeller evidence
 
 The Corsair reference is a fitted installed efficiency/drag pair. High-altitude shaft power still differs from the report chart. The P-47B transfer improves the separate-airframe speed replay by 0.26 mph and adds 0.68 mph to mean error on 41-5902. The altered clean-flight acceleration times and the 29,000-ft Corsair/Thunderbolt sensitivity are model results. [Flight-test residuals and comparison scope](V410_PROPELLER_REFERENCE.md).
 

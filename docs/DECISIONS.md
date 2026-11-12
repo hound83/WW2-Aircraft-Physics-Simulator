@@ -1,6 +1,10 @@
 # Current decisions
 
-## v4.10 clean-flight propeller references
+## v4.10-rc.2 Lightning Military level power
+
+Apply the faired-shutter level shaft-power schedule and the bounded tip-Mach loss together for P-38G-1 42-12687 Military at 3,000 rpm. Keep its existing drag polar and use the climb schedule for open cooling. The 22,600-ft fit and 5,000-ft anchor are excluded from the three same-report checks. The other four aircraft retain the better-supported working model. [Replay and source decisions](V410_REMAINING_PROPELLERS.md).
+
+## v4.10-rc.1 clean-flight propeller references
 
 Apply the paired propeller efficiency and clean drag reference through the shared Normal / Combat calculation for the Corsair dry ratings and Thunderbolt dry Military. Use the report-specific altitude and RPM scope and taper both terms together. Adopt the Thunderbolt change on the same-blade evidence and separate-airframe check with the small 41-5902 speed regression recorded. Use the existing report-conditioned climb model. [Checks and sensitivities](V410_PROPELLER_REFERENCE.md).
 

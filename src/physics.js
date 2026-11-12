@@ -231,6 +231,9 @@ function nacaMachResearch(tipMach,etaBase,options={}){
    '1945 numerical 7 percent ratio is from P-47D three-blade 6507A-2 and is NOT an independent validation of 1945 tabulated rows',
    'No exact four-blade, VDM, Rotol or Mustang blade map; high-Mach test data needed']};
 }
+function propellerAdvanceRatio(tasMph,propRpm,diameterFt){
+ return tasMph*MPH/((propRpm/60)*(diameterFt*FT));
+}
 function propEta(ac,alt,tasMph,bhp,profile='C',rating=ac.defaultRating,options={}){const v=tasMph*MPH,at=isa(alt);let eta=.8,debug={};if(profile==='A'){eta=.8;}else if(profile==='B'){eta=.8-.045*(tasMph-320)/150;}else if(profile==='C'||profile==='N'||profile==='M'){
   const params=ac.propGeometry||{};
   // Fixed reduction gear: propeller RPM changes with the ENGINE RATING.
@@ -313,7 +316,7 @@ function propEta(ac,alt,tasMph,bhp,profile='C',rating=ac.defaultRating,options={
   const n=propRpm/60,diameter=p.diameterFt*FT,area=Math.PI*diameter*diameter/4,power=fit.retainedPowerFraction*bhp*HP;
   let lo=0,hi=Math.cbrt(power/(2*at.rho*area));
   for(let i=0;i<35;i++){const mid=(lo+hi)/2;if(2*at.rho*area*mid*(v+mid)**2>power)hi=mid;else lo=mid;}
-  const vi=(lo+hi)/2,J=v/(n*diameter),tipMach=Math.hypot(v,Math.PI*n*diameter)/at.a;
+  const vi=(lo+hi)/2,J=propellerAdvanceRatio(tasMph,propRpm,p.diameterFt),tipMach=Math.hypot(v,Math.PI*n*diameter)/at.a;
   const machFactor=Math.exp(-fit.machPenalty*Math.max(0,tipMach-fit.machOnset)**2);
   const advanceFactor=Math.exp(-fit.advanceLoss*Math.max(0,J-1.65)**2);
   eta=fit.retainedPowerFraction*v/(v+vi)*machFactor*advanceFactor;
@@ -427,15 +430,18 @@ function flightCoolingDelta(entry,opts,alt,tas,shaft){
  return Number.isFinite(delta)&&delta>=0&&delta<=.03?delta:null;
 }
 
-// Fade the paired efficiency and drag reference together at the edges of the
-// clean level-flight cases. The transition widths are engineering choices.
-function cleanLevelPropeller(altFt, prop, reference){
- if(!reference||prop.engineRpm!==reference.engineRpm)return null;
+// Use the same fade for the clean-flight propeller and its associated power or drag input.
+function cleanLevelReferenceShare(altFt,engineRpm,advanceRatio,reference){
+ if(!reference||engineRpm!==reference.engineRpm)return 0;
  const edge=(value,[low,high],width)=>{
   const t=Math.max(0,1-Math.max(low-value,value-high,0)/width);
   return t*t*(3-2*t);
  };
- const fraction=edge(altFt,reference.altitudeFt,1000)*edge(prop.J,reference.advanceRatio,.25);
+ return edge(altFt,reference.altitudeFt,1000)*edge(advanceRatio,reference.advanceRatio,.25);
+}
+
+function cleanLevelPropeller(altFt,prop,reference){
+ const fraction=cleanLevelReferenceShare(altFt,prop.engineRpm,prop.J,reference);
  if(!(fraction>0))return null;
  let eta=reference.eta;
  if(reference.tipMachEfficiency){
@@ -443,7 +449,12 @@ function cleanLevelPropeller(altFt, prop, reference){
   const t=Math.max(0,Math.min(1,(prop.tipMach-low)/(high-low)));
   eta=lowEta+t*(highEta-lowEta);
  }
- return {eta,fraction,source:reference.source};
+ const loss=reference.tipMachLoss;
+ if(loss){
+  const aboveOnset=Math.max(0,Math.min(prop.tipMach,loss.maxTipMach)-loss.onset);
+  eta=prop.eta*Math.exp(-loss.coefficient*aboveOnset**2);
+ }
+ return {eta,fraction,source:reference.source,...(loss&&{tipMachLoss:true})};
 }
 
 function evaluated(ac,alt,tasMph,opts={}){if(opts.profile==='P'&&!opts.polar)opts=workingOptions(ac,opts);const profile=opts.profile||'C',polar=opts.polar,e=polar?polar.e:(opts.e??.78),storesWeightLb=opts.storesWeightLb??0,addedDragAreaM2=opts.addedDragAreaM2??0,weight=(opts.weightLb??ac.weightLb)+storesWeightLb,clMax=opts.clMax??ac.clMaxAssumed,maneuverClMax=opts.maneuverClMax??clMax,structG=opts.structG??7,rating=opts.rating||ac.defaultRating,gear=opts.gear||'auto';if(!(weight>0&&clMax>0&&Number.isFinite(maneuverClMax)&&maneuverClMax>0&&e>0&&e<=1&&Number.isFinite(storesWeightLb)&&storesWeightLb>=0&&Number.isFinite(addedDragAreaM2)&&addedDragAreaM2>=0)||opts.engineCondition&&opts.engineModel)return {status:'invalid-input'};
@@ -465,8 +476,9 @@ function evaluated(ac,alt,tasMph,opts={}){if(opts.profile==='P'&&!opts.polar)opt
  const reference=opts.cleanLevelPropeller;
  const levelReference=cleanLevelPropeller(alt,baseProp,reference);
  const prop=levelReference?{...baseProp,eta:baseProp.eta+levelReference.fraction*(levelReference.eta-baseProp.eta),
-  method:'bounded clean-flight propeller and drag reference',levelReference}:baseProp;
- const cleanCd0=levelReference?cdData.cd0+levelReference.fraction*(reference.cd0-cdData.cd0):cdData.cd0;
+  method:levelReference.tipMachLoss?'bounded clean-flight tip-Mach loss reference':'bounded clean-flight propeller and drag reference',levelReference}:baseProp;
+ const useReferenceDrag=levelReference&&reference.cd0!==undefined;
+ const cleanCd0=useReferenceDrag?cdData.cd0+levelReference.fraction*(reference.cd0-cdData.cd0):cdData.cd0;
  const installedDeltaCd0=installedDelta(entry,opts,alt,tasMph,shaft);
  const coolingDeltaCd0=flightCoolingDelta(entry,opts,alt,tasMph,shaft);
  if(coolingDeltaCd0===null)return {status:'no-cooling-source',reason:'Outside the open-shutter speed/altitude or configuration envelope'};
@@ -479,7 +491,7 @@ function evaluated(ac,alt,tasMph,opts={}){if(opts.profile==='P'&&!opts.polar)opt
  const feasible=q*geo.S*clMax/W>=1;const nPower2=(Pav/V-D.dParasite)/Math.max(1e-9,D.dInd),powerOk=feasible&&nPower2>=1;const nInst=feasible&&nLift>=1?Math.min(nLift,structG):null;
  const nSust=powerOk&&nInst!==null?Math.min(nInst,Math.sqrt(nPower2)):null;
  const turn=n=>n!=null&&n>=1?G*Math.sqrt(Math.max(0,n*n-1))/V*180/Math.PI:null;
- return {status:feasible?'modelled':'below-provisional-stall',aircraft:ac.name,altFt:alt,tasMph,air,weightLb:weight,engine:shaft,prop,cd0:effectiveCd0,cleanCd0,...(entry?{installedDeltaCd0,coolingDeltaCd0}:{}),dragPolarSource:levelReference?.source.title??cdData.origin,externalDragAreaM2:addedDragAreaM2,storesWeightLb,oswald:e,clMax,stallEasMph:stallEas,drag:D,
+ return {status:feasible?'modelled':'below-provisional-stall',aircraft:ac.name,altFt:alt,tasMph,air,weightLb:weight,engine:shaft,prop,cd0:effectiveCd0,cleanCd0,...(entry?{installedDeltaCd0,coolingDeltaCd0}:{}),dragPolarSource:useReferenceDrag?levelReference.source.title:cdData.origin,externalDragAreaM2:addedDragAreaM2,storesWeightLb,oswald:e,clMax,stallEasMph:stallEas,drag:D,
    power:{shaftHp:propulsion.shaftHp,propulsiveHp:Pav/HP,
    ...(opts.propulsivePowerScale!==undefined?{propulsivePowerScale}:{}),
    ...(propulsion.count>1?{engineCount:propulsion.count,shaftHpPerEngine:shaft.bhp,propulsiveHpPerEngine:Pav/HP/propulsion.count}:{}),requiredHp:D.requiredHp,excessHp:(Pav-D.drag*V)/HP,psMps:Ps,climbFpm:feasible?Ps*196.850394:null},
@@ -737,5 +749,5 @@ function matchedPowerClimb(ac,altFt,ratingA,ratingB,opts={}){
    deltaClimbFpm:b.climbFpm-a.climbFpm,deltaShaftHp:high.bhp-low.bhp,
    provenance:opts.profile==='P'?'v2.8 joint engineering fit; 67-inHg fitted, 75-inHg out of fit':'calculated from frozen speed-calibrated polar; NO climb-rate calibration'};
 }
-return Object.freeze({isa,airspeeds,tasFrom,trueFromCAS,casFromTrue,casFromIAS,resolveAirspeed,resolveStallEvidence,stallSensitivity,shaftPower,shaftPowerAtMeasuredBoost,ratedInletPower,inletPressureAtSpeed,ramManifoldAtSpeed,referenceLevelTas,shaftPowerAtRamSpeed,nacaLowSpeedPropChart,nacaMachResearch,propEta,dragBreakdown,cd0FromAnchor,workingOptions,evaluated,maxSpeed,greg109At,inferredGregF4,inferredGregP47,climbConditionEngine,climbPrediction,equivalentClimbDrag,gregP47PowerPoint,gregP47MaxSpeed,bestClimb,sourceChartClimb,matchedPowerClimb});
+return Object.freeze({isa,airspeeds,tasFrom,trueFromCAS,casFromTrue,casFromIAS,resolveAirspeed,resolveStallEvidence,stallSensitivity,shaftPower,shaftPowerAtMeasuredBoost,ratedInletPower,inletPressureAtSpeed,ramManifoldAtSpeed,referenceLevelTas,shaftPowerAtRamSpeed,nacaLowSpeedPropChart,nacaMachResearch,propEta,propellerAdvanceRatio,cleanLevelReferenceShare,dragBreakdown,cd0FromAnchor,workingOptions,evaluated,maxSpeed,greg109At,inferredGregF4,inferredGregP47,climbConditionEngine,climbPrediction,equivalentClimbDrag,gregP47PowerPoint,gregP47MaxSpeed,bestClimb,sourceChartClimb,matchedPowerClimb});
 });
