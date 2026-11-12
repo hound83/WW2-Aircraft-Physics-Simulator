@@ -74,3 +74,8 @@ Identify which residuals remain:
 3. Produce residual table (shaft / useful / drag / residual) for the seven-aircraft set using the graded η pack.
 4. Commit the scorecard summary under `references/analysis/` and link it from the research note.
 5. Hand off for Codex integration or joint review; do not claim stable release.
+
+## Progress 2026-11-12
+- Fw 190 A-4 live model now carries climbCoolingAreaM2 = 0.171 (matched WNr 783 open-cooling area).
+- TAS-energy debit remains available via options.accountForTasChange.
+- Four-aircraft scorecard regression test updated to accept the expected Fw 190 climb change.
