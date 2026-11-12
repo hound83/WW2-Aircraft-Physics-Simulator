@@ -75,7 +75,6 @@ Identify which residuals remain:
 4. Commit the scorecard summary under `references/analysis/` and link it from the research note.
 5. Hand off for Codex integration or joint review; do not claim stable release.
 
-## Progress 2026-11-12
-- Fw 190 A-4 live model now carries climbCoolingAreaM2 = 0.171 (matched WNr 783 open-cooling area).
-- TAS-energy debit remains available via options.accountForTasChange.
-- Four-aircraft scorecard regression test updated to accept the expected Fw 190 climb change.
+## Integrated research candidate
+
+The live v4.11.0-rc.1 candidate reuses the WNr 783 fitted area at the report rating and in the documented climb-speed range. The shared timed-climb step applies the signed energy term and checks the same B.4 TAS schedule against the Wright Field elapsed observations. Existing rate fits retain their calibration basis in the timer. The complete replay reports the 7,000 m Fw 190 regression, the P-38G signed timing errors and the seven-aircraft operating checks. [Integrated results](../../docs/V411_SHARED_FLIGHT_CLIMB.md)

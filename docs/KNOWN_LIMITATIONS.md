@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.11-rc.1 shared climb
+
+The WNr 783 equivalent cooling area comes from one open/closed fit with modeled TAS. The 7,000 m residual worsens and the derived 6,000 m time remains below the factory read band. The P-38G time check uses the same report’s TAS and chart BHP at fixed takeoff weight. Timing of the operational runs also depends on the assumed fuel flow and the planned speed schedule. The P-47B and Spitfire report-conditioned fits restore reference speed energy inside their supported calibration. Historical sustained turn, exact corrected stall and 5:1 evidence remain open. [Source residuals and scorecard](V411_SHARED_FLIGHT_CLIMB.md)
+
 ## v4.10-rc.2 Lightning propeller evidence
 
 The P-38G's additional high-speed loss is fitted at one altitude with chart-derived shaft power and the existing drag polar. The three reserved checks share the report. Part-power speed and the cooling or shaft-power discrepancy remain open, as do separate-airframe accuracy, measured acceleration, and powered-turn checks. [Flight-test residuals](V410_REMAINING_PROPELLERS.md).

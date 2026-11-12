@@ -50,7 +50,7 @@
   input.hidden=!injection;input.disabled=!injection||!combat;if(input.disabled)input.checked=false;
   $('bench-injection-label-'+side).textContent=injection?(injection.type+(combat?'':' · Combat only')):'Injection unavailable';
   const cooling=$('bench-cooling-'+side);
-  cooling.disabled=!(models[id].benchmarkCooling||models[id].climbCoolingAreaM2);
+  cooling.disabled=!(models[id].benchmarkCooling||models[id].climbCoolingAreaM2||models[id].climbCoolingCase);
   if(cooling.disabled)cooling.value='clean';
   return {id,settings:{mode:combat?'combat':'normal',fuelFraction:Number($('bench-fuel-'+side).value),injection:input.checked,
    extension:$('bench-extension').checked,openCooling:cooling.value==='open'}};
@@ -278,7 +278,7 @@
  }
  function renderFlightChecks(){
   const target=$('bench-flight-check-results');
-  target.append(text('p','Mean absolute errors are in ft/min. The first two cases use points excluded from fitting. The third uses a separate report and airframe.','bench-note'));
+  target.append(text('p','Mean absolute errors are in ft/min. Each case identifies its fitted points, held-out checks and any separate-airframe evidence.','bench-note'));
   for(const check of data.flightChecks){
    const {count,beforeMae,afterMae,largestRegression}=check.checks;
    const source=text('a','Original flight report');
@@ -287,7 +287,7 @@
     text('p',fmt(beforeMae,0)+' → '+fmt(afterMae,0)+' ft/min mean error over '+count+' checks. Largest increase '+fmt(largestRegression,0)+' ft/min.'),
     text('p',check.condition,'bench-note'),source);
    const details=text('details'),summary=text('summary','Observed and modeled climb rates');
-   const {table,body}=makeTable(['Altitude (ft)','Rating','Role','Observed','v4.2','v4.3']);
+   const {table,body}=makeTable(['Altitude (ft)','Rating','Role','Observed',...(check.modelLabels??['v4.2','v4.3'])]);
    const box=text('div',undefined,'bench-table-scroll');box.append(table);details.append(summary,box);
    for(const row of check.rows){
     const tr=text('tr');

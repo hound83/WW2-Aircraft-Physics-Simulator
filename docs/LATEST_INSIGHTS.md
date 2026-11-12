@@ -4,15 +4,9 @@ Pointer file for agents starting a new milestone. Not a second model of record. 
 
 ## Shared research / implementation roadmap (2026-11-12)
 
-### Immediate next major milestone
+### Delivered in v4.11.0-rc.1
 
-**Shared flight-case climb and seven-aircraft propulsion residual audit.** Use the two matched climb cases below to test the shared calculation and to explain how much of each residual the available evidence can resolve.
-
-1. **Flight-case climb.** Apply matched open-cooling input to the live Fw 190 A-4 WNr 783 climb. The timed-climb integrator now has an opt-in TAS energy debit. Test it against the P-38G Wright Field B.4 schedule and elapsed time. Check signed TAS changes, fuel and rating accounting under the revised step time, and time-step sensitivity. Keep current v4.10 propeller references within their supported bands. [Next steps](NEXT_STEPS.md#after-v410-propeller-integration) · [Climb audit](V410_CLIMB_TURN_AND_FORMULA_AUDIT.md#issues-to-address-next)
-2. **Propulsion residual audit on the same cases.** Report shaft power, useful propeller power, and drag power for the matched conditions. Use intake and cooling pairs and installed-power evidence to test explanations. Carry coupled or unsupported causes as open residuals. [Propulsion source checks](V410_REMAINING_PROPELLERS.md#source-checks-for-follow-up)
-3. **Seven-aircraft scorecard.** Freeze the before-scorecard and report signed rate and elapsed-time residuals for the two source cases. Compare level speed, climb and supported acceleration and sustained-turn sensitivities across the benchmark using the existing practical margins. Run the regression and browser checks, check the four-aircraft baseline, and retain unsupported matchups and source gaps in validation and limitations. [Practical comparison margins](V49_TIMED_MATCHUPS.md#practical-ties-and-chart-evidence)
-
-Status is research candidate. The two test reports and existing replays support the implementation work while further source recovery continues.
+The shared timer now applies signed TAS energy, and the live Fw 190 WNr 783 climb uses the source-bounded open-cooling fit. The seven-aircraft replay reports the power budgets, adverse residuals and matched comparisons. The direct P-47B and Spitfire elapsed checks keep their vertical-rate calibration basis. [Climb implementation and results](V411_SHARED_FLIGHT_CLIMB.md) · [Grok’s source extraction](../references/research/WW2_FLIGHT_CASE_CLIMB_AFTER_EXTRACTION_2026-11-12.md)
 
 ### Input-data milestones
 
@@ -30,17 +24,11 @@ Fighter Sim Inputs **v1.7.0** exports the matched WNr 783 and 42-12687 climb cas
 
 Use the existing observation IDs, pack and compact research notes for each increment. Record original units, conditions, source locator and evidence grade. For calculated inputs, include the formula, cited inputs, assumptions and bounds. Keep measured, calculated and unresolved values visible and distinguish fit points, reserved checks and independent runs. Keep well-sourced observations in the catalog even when their immediate simulator use is open. Hand off each usable case with its remaining gaps. [Candidate handoff](WORKFLOW.md#candidate-handoff)
 
-## Codex review and proposed simulator milestone
+## Next simulator milestone
 
-**Keep the shared climb as the next solver change.** Use one resolved case for the live benchmark and the historical replay. Verify that opening the WNr 783 cooling flaps reduces climb at otherwise matched settings, and test how the unrecorded TAS affects that result. Use the seven-aircraft power budgets to diagnose residuals and keep the existing coefficients until the evidence supports a change. Re-score elapsed time by band for the P-38G, Spitfire, P-47B and P-51B with the original rating schedules. Integrate observed vertical rates as recorded. [Climb evidence and adverse result](V410_CLIMB_TURN_AND_FORMULA_AUDIT.md#issues-to-address-next) · [Elapsed-time references](V410_VALIDATION_IMPROVEMENT_PLAN.md#historical-and-calculated-time-to-climb)
+### Continuous stall and usable maneuver lift
 
-**Correct and test the timed-climb step before enabling it.** The [opt-in prototype](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/commit/3a20176c4910b2d8ce07bbb73bba9abf5bf14808) computes the kinetic-energy rate using the old step duration and then changes that duration. With 100 m of altitude gain, 50 m of kinetic energy height gain and 10 m/s of specific excess power, it gives 20 s. Energy balance gives 15 s using `Δt = (Δh + Δ(V²/2g)) / P_s` at constant `P_s`. Check increasing, constant and decreasing TAS schedules, step convergence, and fuel and rating expiry using the final step time. The P-38G fixed-mass diagnostic gives 332.99 s before and 346.25 s with the energy term against 340.80 s reported. Keep the signed error visible and repeat the check through the live timed-climb path. [Formula audit](V410_CLIMB_TURN_AND_FORMULA_AUDIT.md#issues-to-address-next)
-
-**Check maneuver performance across the curves.** The propeller audit reproduced open-cooling climb and peak turn but moved the P-38G clean sustained turn from 2.43 to 1.10°/s at 30,000 ft and 240 mph EAS in the sampled Combat case. Include stall, instantaneous turn and timed acceleration in the before-and-after comparison at matched conditions, alongside climb time and the sustained-turn curves. Report adverse changes and flag sensitive rankings using the existing practical comparison margins. Pursue further propulsion research where a plausible input change can move a source replay or a matchup. [Envelope audit](V410_CLIMB_TURN_AND_FORMULA_AUDIT.md#changes-at-a-fixed-speed) · [Comparison margins](V49_TIMED_MATCHUPS.md#practical-ties-and-chart-evidence)
-
-### Proposed follow-on · Continuous stall and usable maneuver lift
-
-After the shared-climb candidate passes its gates, correct the Mustang lift input and demonstrate what the existing stall evidence supports in the live comparison.
+Correct the Mustang lift input and demonstrate what the existing stall evidence supports in the live comparison.
 
 1. **Fix the P-51B-15 stall boundary.** At 9,270 lb its predicted one-G stall falls from 103.55 to 98.62 mph EAS between 9,300 and 9,301 ft. Check continuity at both altitude edges and the applicable Mach limits. Verify that the same inputs give the same lift limit in the replay and the live app, and that stall EAS scales with the square root of weight at fixed lift coefficient and wing area. Preserve the TN 1044 maneuver-lift check bands. [Stall and lift diagnostics](V410_VALIDATION_IMPROVEMENT_PLAN.md#maneuvering-priorities) · [Mustang maneuver replay](V44_TURN_PERFORMANCE.md#mustang-flight-evidence)
 2. **Use the available flight tests.** Replay the F4U-4 BuNo 91028 glide and powered stall conditions to bound effective lift with power and configuration. Reserve the corrected P-38G sister-airframe stall as a transfer check. For IAS without a matched correction, calculate a lift range with stated correction and loading assumptions. Apply the existing 2 km/h stall goal where the test conditions and uncertainty support it. [Stall test conditions and sensitivity](V410_VALIDATION_IMPROVEMENT_PLAN.md#stall-and-lift-from-usable-inputs) · [Fleet stall references](research/WW2_FLEET_STALL_INPUTS_2026-11-12.md)
@@ -49,8 +37,8 @@ After the shared-climb candidate passes its gates, correct the Mustang lift inpu
 Grok can check the airspeed and lift derivations and look for powered-turn evidence in parallel. Codex owns the solver candidate, verification and production integration. [Candidate handoff](WORKFLOW.md#candidate-handoff)
 
 ## Current research candidate
-- Published simulator: [v4.10.0-rc.2](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/) at [`52369812`](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/commit/52369812a7ed40ec8fed1cde42354023aec407f0). [Verified deployment](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/runs/43192337527)
-- Input pack on `main` · [Fighter Sim Inputs v1.7.0](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
+- Simulator research candidate [v4.11.0-rc.1](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/). [Release verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/publish-simulator.yml)
+- Input pack on main · [Fighter Sim Inputs v1.7.0](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 - Status: research candidate. Exact corrected stall, sustained-turn accuracy and historical 5:1 remain unresolved.
 
 ## Open gaps to respect
@@ -64,4 +52,4 @@ Grok can check the airspeed and lift derivations and look for powered-turn evide
 - Graded seven-aircraft propeller benchmark and archive leads. [Research note](../references/research/WW2_PROPELLER_EFFICIENCY_BENCHMARK_2026-11-12.md)
 - See `docs/research/` and the v4.10 propeller and climb-turn audit documents.
 
-Last updated: 2026-11-12 (climb residual closure progress)
+Last updated: 2026-11-12

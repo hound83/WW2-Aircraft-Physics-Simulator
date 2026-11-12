@@ -375,8 +375,9 @@ async function run(){
   assert.notEqual(cooled.rows.b.sustained.rateDegSec,altitudeSelection.rows.b.sustained.rateDegSec);
   await select('bench-cooling-b','clean');
   await select('bench-altitude','10000');
-  assert.equal(await evaluate('document.querySelectorAll("#bench-flight-checks tbody tr").length'),31);
-  assert.match(await evaluate('document.getElementById("bench-flight-checks").textContent'),/41-5902.*BS\.543.*41-5942/s);
+  const flightCheckRows=await evaluate('Array.from(document.querySelectorAll("#bench-flight-check-results table"),table=>table.tBodies[0].rows.length)');
+  assert.deepEqual(flightCheckRows,[10,16,5,9]);
+  assert.match(await evaluate('document.getElementById("bench-flight-checks").textContent'),/41-5902.*BS\.543.*41-5942.*WNr 783/s);
   checks.push('v4.3 service-era groups, contemporaries filter, shared altitude matrix, independent cooling and original-flight checks');
   let bm=await benchmark();assert.equal(bm.rows.a.altFt,10000);assert.equal(bm.rows.b.altFt,10000);
   assert.deepEqual(await evaluate('(()=>{const e=document.getElementById("bench-altitude");return [e.type,+e.min,+e.max,+e.step];})()'),['range',0,40000,5000]);
@@ -798,6 +799,10 @@ async function run(){
   assert.equal(await evaluate('document.querySelectorAll("#bench-climb-trace [data-bench-time-trace]").length'),2);
   assert.ok(bm.climbs.a.trace.length>10);
   checks.push('v4.9 timed climb opens by default and graphs the actual integration trace');
+  assert.match(bm.climbs.a.policy,/signed TAS energy/);
+  assert.ok(bm.climbs.a.trace.slice(1).every(point=>Number.isFinite(point.tasMph)));
+  assert.match(await evaluate('document.getElementById("bench-flight-check-results").textContent'),/Fw 190 A-4 WNr 783/);
+  checks.push('Shared climb uses signed TAS in the live timer and exposes the WNr 783 source replay');
   await select('bench-altitude','15000');assert.deepEqual((await benchmark()).climbs,bm.climbs,'Changing comparison altitude keeps the separate climb result');
   await select('bench-climb-to','5000');assert.equal((await benchmark()).climbs,null);
   await evaluate('document.getElementById("bench-climb-calculate").click()');

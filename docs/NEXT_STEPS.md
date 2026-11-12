@@ -6,7 +6,7 @@ The [simulator model roadmap](SIMULATOR_ROADMAP.md) sets the order for propulsio
 
 The first pass delivered the Corsair and Thunderbolt clean-flight references. The second pass reviewed the five other fighters and improved the Lightning's dry Military level-flight replay. Remaining propulsion work can start from the individual conditions in the two scorecards. The Corsair high-blower shaft-power gap, Fw 190 intake and cooling split, DB 601 E combat curve and P-38G part-power drag/power balance are documented. [First-pass scorecard](V410_PROPELLER_REFERENCE.md) · [Second-pass scorecard](V410_REMAINING_PROPELLERS.md) · [Fleet data](research/WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md)
 
-The next simulator milestone should use the Fw 190 open-cooling climb case and P-38G timed climb to prove the shared flight-case calculation. Apply the matched cooling input and account for changing TAS in the timed climb energy budget. Then use the Mustang–Spitfire crossover to test maneuver lift and drag above one G. [Climb, maneuverability and formula audit](V410_CLIMB_TURN_AND_FORMULA_AUDIT.md)
+The shared climb candidate uses the Fw 190 open-cooling case and P-38G timed climb through the same calculation. The next simulator milestone is continuous stall and usable maneuver lift, beginning with the Mustang altitude boundary and the Corsair glide/power cases. Use the Mustang–Spitfire crossover as a sensitivity check and constrain drag above one G with measured evidence. [Shared climb results](V411_SHARED_FLIGHT_CLIMB.md) · [Next simulator milestone](LATEST_INSIGHTS.md#next-simulator-milestone)
 
 ## Next milestone for propeller efficiency
 

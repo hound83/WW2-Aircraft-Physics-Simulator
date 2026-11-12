@@ -55,9 +55,12 @@ try{
  }
  write('validation/current/propeller-reference-v410.json',require('../validation/diagnostics/operating_benchmark_v410.cjs').run());
  write('validation/current/remaining-fighter-propellers.json',require('../validation/diagnostics/remaining_fighter_propellers.cjs').run());
+ write('validation/current/shared-flight-climb.json',require('../validation/diagnostics/shared_flight_climb.cjs').run());
  require('./write-v42-report.cjs');
  const md=[
  '# Current validation',
+ '',
+ 'v4.11-rc.1 [Shared flight-case climb and timed energy](V411_SHARED_FLIGHT_CLIMB.md). The seven-aircraft replay is included in the Physics regression artifact.',
  '',
  'v4.10-rc.2 [Lightning military-power propeller reference and five-aircraft assessment](V410_REMAINING_PROPELLERS.md). The numerical replay is included in the Physics regression artifact.',
  '',

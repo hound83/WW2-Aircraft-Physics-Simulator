@@ -54,10 +54,7 @@ function withLightningReference(data, reference) {
 }
 
 function browserData(data = previous.browserData()) {
-  const withLightning = withLightningReference(data, lightningReference(data.models.p38g, fitAltitudeFt));
-  // Apply the matched WNr 783 open-cooling area (0.171 m²) to the live Fw 190 model.
-  const fw = withLightning.models.fw190a4;
-  return { ...withLightning, models: { ...withLightning.models, fw190a4: { ...fw, climbCoolingAreaM2: 0.171 } } };
+  return withLightningReference(data, lightningReference(data.models.p38g, fitAltitudeFt));
 }
 
 function compare(rows, key, include = row => row.role === 'reserved same-report check') {
