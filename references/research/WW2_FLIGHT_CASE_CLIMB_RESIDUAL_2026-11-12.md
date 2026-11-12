@@ -23,7 +23,7 @@ Same matched flight cases improve both climb accuracy and the energy/maneuver co
 
 ## 2. Propulsion residual audit on the same cases
 Use the graded propeller-efficiency pack:
-`references/research/ww2_propeller_efficiency_benchmark_2026-11-12.json`
+[Benchmark analysis JSON](../analysis/ww2_propeller_efficiency_benchmark_2026-11-12.json)
 
 At each matched condition report:
 - Shaft power (source or chart)
