@@ -4,7 +4,7 @@ The [simulator model roadmap](SIMULATOR_ROADMAP.md) sets the order for propulsio
 
 ## After v4.10 propeller integration
 
-The first pass uses the bounded Corsair and Thunderbolt level references in the Normal / Combat benchmark. For a focused second pass, start with the Corsair shaft-power and blower schedule at 23,100 and 29,000 ft. The current model uses 1,710 BHP at both Military points, while the report chart reads roughly 1,900 and 1,800 BHP. Use the v1.5 WNr 783 paired intakes and P-38G part-power records where they materially affect a target comparison. [First-pass scorecard](V410_PROPELLER_REFERENCE.md) · [Fleet data](research/WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md)
+The first pass delivered the Corsair and Thunderbolt clean-flight references. The second pass reviewed the five other fighters and improved the Lightning's dry Military level-flight replay. Remaining propulsion work can start from the individual conditions in the two scorecards. The Corsair high-blower shaft-power gap, Fw 190 intake and cooling split, DB 601 E combat curve and P-38G part-power drag/power balance are documented. [First-pass scorecard](V410_PROPELLER_REFERENCE.md) · [Second-pass scorecard](V410_REMAINING_PROPELLERS.md) · [Fleet data](research/WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md)
 
 ## Next milestone for propeller efficiency
 
@@ -31,7 +31,7 @@ Test Greg’s **80%** in-flight reference, the **76%** Curtiss military-climb ca
 
 ### Second propeller milestone if a material gap remains
 
-Use the first scorecard to pick the cases where propulsion uncertainty changes a useful comparison or produces a large matched speed or climb error. The first candidates are the Fw 190 A-4 intake and gear split, the Bf 109 F-4 combat power curve and the P-38G part-power balance. Close the cases that matter most using the same scorecard and report the operating bounds established by the two passes.
+The second pass found a material P-38G speed error and adopted a bounded correction in v4.10.0-rc.2. Its climb, part-power diagnosis and the four retention decisions are recorded with their source conditions. Use the two passes to prepare the shared flight-case work in the roadmap. [Second-pass results](V410_REMAINING_PROPELLERS.md).
 
 ## Later roll-rate comparison
 

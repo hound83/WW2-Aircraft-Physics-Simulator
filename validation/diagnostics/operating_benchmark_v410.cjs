@@ -227,5 +227,5 @@ function run() {
   };
 }
 
-module.exports = { browserData, run, scorecard };
+module.exports = { browserData, run, scorecard, caseSummary, fixedShaftReplay, nativePowerReplay };
 if (require.main === module) console.log(JSON.stringify(run(), null, 2));

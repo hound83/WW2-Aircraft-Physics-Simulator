@@ -88,7 +88,7 @@
   else if(state?.cooling==='climb-estimate')label='Calculated · estimated cooling input';
   else if(record.calculatedPower)label='Calculated · '+record.calculatedPower;
   const propeller=state?.propellerReference;
-  if(propeller)label+=' · clean-flight propeller and drag fit';
+  if(propeller)label+=propeller.tipMachLoss?' · clean-flight propeller and shaft-power reference':' · clean-flight propeller and drag fit';
   return {covered:Boolean(supportedFit||lift||power),label,source,related:record.related,
    ...(propeller?{propellerSource:propeller.source}:{}),reference:climbReference(fit,flight)};
  }

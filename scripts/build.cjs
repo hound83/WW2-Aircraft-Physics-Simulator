@@ -119,7 +119,7 @@ function build(){
  html=html.replace('<main>',()=>'<main>'+read('src/maneuver-envelope-panel.html'));
  html=html.replace('<a href="#historical-evidence">','<a href="#maneuver-envelope">Seven-aircraft maneuver envelope</a> · <a href="#historical-evidence">');
  html=html.replace('</body>','<script>'+source+'</script><script type="application/json" id="robustness-data">'+audit+'</script><script>'+ui+'</script>'+conditionEmbed+measuredEmbed+stallEmbed+comparisonEmbed+'<script type="application/json" id="historical-research-data">'+researchData+'</script><script>'+researchUI+'</script>'+maneuverEmbed+'</body>');
- const benchmark=require('../validation/diagnostics/operating_benchmark_v410.cjs').browserData();
+ const benchmark=require('../validation/diagnostics/remaining_fighter_propellers.cjs').browserData();
  const inputs=JSON.parse(read('references/analysis/fighter-sim-inputs-v1.json'));
  const observationIds=new Set(inputs.cases.flatMap(item=>item.candidates.flatMap(row=>row.observation_ids)));
  const observations=Object.fromEntries([...observationIds].map(id=>[id,inputs.observations[id]]));
@@ -147,7 +147,7 @@ function build(){
  const efficiencyData=read(propeller.path);
  if(sha256(efficiencyData)!==propeller.sha256)throw Error('Propeller efficiency data and input pack disagree');
  fs.writeFileSync(path.join(root,'dist',propeller.build_file),efficiencyData);
- const metadata={version,researchStatus:'v4.10 bounded clean-flight propulsion references',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
+ const metadata={version,researchStatus:'v4.10 clean-flight propulsion references and P-38G military replay',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
  fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify(metadata,null,2)+'\n');
  return metadata;
 }

@@ -65,6 +65,24 @@
   return {...shaft,bhp,engineRpm:phase.rpm,rating:spec.baseRating,estimated,sourceMaxFt:max,
    estimatedMap:Math.min(phase.map,spec.baseMap*(estimated?M.isa(altFt).rho/M.isa(max).rho:1))};
  }
+ function cleanLevelPower(M,model,spec,phase,altFt,tas,native,reference){
+  if(!reference?.powerRating||native.estimated)return native;
+  const geometry=model.ac.propGeometry;
+  const reduction=model.benchmarkReductionRatio??geometry.reductionRatioEnginePerProp;
+  const advanceRatio=M.propellerAdvanceRatio(tas,phase.rpm/reduction,geometry.diameterFt);
+  const fraction=M.cleanLevelReferenceShare(altFt,phase.rpm,advanceRatio,reference);
+  if(!(fraction>0))return native;
+  // Fade the power difference at the closest source node outside the recorded altitude range.
+  const [low,high]=reference.altitudeFt;
+  const anchorFt=Math.max(low,Math.min(high,altFt));
+  const level=nativePower(M,model,spec,{...phase,nativeRating:reference.powerRating},anchorFt,tas,false);
+  const climb=anchorFt===altFt?native:nativePower(M,model,spec,phase,anchorFt,tas,false);
+  if(!level||!climb)return native;
+  const bhp=native.bhp+fraction*(level.bhp-climb.bhp);
+  const mapInHg=[native.mapInHg,level.mapInHg,climb.mapInHg].every(Number.isFinite)
+   ?native.mapInHg+fraction*(level.mapInHg-climb.mapInHg):native.mapInHg;
+  return {...native,bhp,mapInHg};
+ }
  // These configurations were derived from climbs with open cooling. Rating, RPM,
  // airspeed and altitude checks keep them within the applicable test conditions.
  function installedClimb(M,model,altFt,tas,weightLb,phase,native){
@@ -97,14 +115,16 @@
   phase=phase??phaseFor(spec,s);
   if(!phase)return {status:'rating-time-exhausted'};
   if(phase.key==='injection'&&!fittedInjection(model,spec))return {status:'injection-unavailable'};
-  const tas=M.tasFrom(eas,'EAS',altFt),p=nativePower(M,model,spec,phase,altFt,tas,s.extension);
-  if(!p)return {status:'source-power-unavailable'};
+  const tas=M.tasFrom(eas,'EAS',altFt),native=nativePower(M,model,spec,phase,altFt,tas,s.extension);
+  if(!native)return {status:'source-power-unavailable'};
+  const open=climbing||s.openCooling;
+  const reference=open?undefined:model.cleanLevelPropellers?.[phase.key];
+  const p=cleanLevelPower(M,model,spec,phase,altFt,tas,native,reference);
   const rating=spec.baseRating,gear=p.gear??'benchmark';
   const ac={...model.ac,powerRatings:{[rating]:{gears:{[gear]:[{altFt,bhp:p.bhp,engineRpm:phase.rpm,mapInHg:p.mapInHg}]}}},
    propGeometry:{...model.ac.propGeometry,...(model.benchmarkReductionRatio?{reductionRatioEnginePerProp:model.benchmarkReductionRatio}:{}),engineRpmByRating:{...model.ac.propGeometry.engineRpmByRating,[rating]:phase.rpm}}};
-  const open=climbing||s.openCooling;
   const opts={...model.options,profile:'P',polar:model.benchmarkPolar,rating,gear,weightLb,
-   cleanLevelPropeller:open?undefined:model.cleanLevelPropellers?.[phase.key]};
+   cleanLevelPropeller:reference};
   delete opts.engineModel;delete opts.flightCooling;
   if(open&&model.climbCoolingAreaM2)opts.addedDragAreaM2=model.climbCoolingAreaM2;
   const installed=open?installedClimb(M,model,altFt,tas,weightLb,phase,p):null;
