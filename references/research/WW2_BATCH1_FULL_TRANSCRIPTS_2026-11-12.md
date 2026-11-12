@@ -165,3 +165,26 @@ Full public page-by-page transcriptions of the original Rechlin Kennblatt and So
 ## Lineage
 - Kurfürst archive transcriptions (primary source for the above)
 - Expanded extraction batch list (Batch 1)
+
+---
+
+## 5. Soviet NII VVS trial fragments (WNr 14513 and related G-2)
+
+Source: Public references to NII VVS reports (including forum transcriptions of handling/performance notes and Kurfürst cross-references). Grade: observed where stated; conditions often incomplete.
+
+Key quantitative fragments:
+
+- Level speed: 666 km/h at 7000 m (WNr 14513, semi-retractable tailwheel).  
+- Climb to 5000 m: ~4 min 24 s (WNr 14513).  
+- Turn times at 1000 m:  
+  - Clean G-2: ~20–20.5 s (left/right).  
+  - With underwing gondolas (G-2/R6 “five-pointer”): ~22.6 s.  
+- Rough stall notes (one Soviet handling summary):  
+  - Clean: ~170 km/h (not clearly defined; nose sank, calm bank to right).  
+  - Landing configuration: ~145 km/h.  
+  - Full power, hanging on prop: 130–140 km/h ASI at 60° nose-up.  
+- Other turn points mentioned: 180° in 10 s from 450 km/h to 380 km/h; full circle 18 s ending at 330 km/h; sustained 360° at 360 km/h / 70° bank in 22 s.
+
+Notes:  
+These are secondary transcriptions of Soviet trial content. Mass and exact configuration (guns, fuel, cooling) are not always stated. Stall figures lack instrument corrections and are qualitative. Useful as supporting evidence where German primary tables are thin, but not primary for near-stall CAS/EAS.
+
