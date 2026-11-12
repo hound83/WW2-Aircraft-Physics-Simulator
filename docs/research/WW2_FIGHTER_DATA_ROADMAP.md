@@ -2,6 +2,47 @@
 
 Review date 12 November 2026. The baseline is Fighter Sim Inputs v1.5.0 at `67ba5573`. The pack covers 13 research variants and seven current simulator profiles. PR #70 added 126 original-source records, including the two WNr 783 intake curves and the 62 NACA L7D10 Table III points. The evidence score remains 63.62% primary and 67.15% with secondary evidence and calculations. The pack records zero GOLD and five qualified GOLD* agreements across 156 planned checks. A new release should close a named evidence gap or improve a source-conditioned replay. [v1.5 data and checks](WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md) · [Coverage and evidence rules](WW2_FIGHTER_SIM_INPUTS_V1.md) · [Simulator roadmap](../SIMULATOR_ROADMAP.md)
 
+## Variant priority list (2026-11-13)
+
+Sorted by data and sim priority. Yes / Improve at top, Later in the middle, Never / very low at the bottom.
+
+| Variant | Force | In sim | Data | Add to dataset | Add to sim | Remarks |
+|---------|-------|--------|------|----------------|------------|---------|
+| Bf 109 G-2 | Luftwaffe | — | Medium | Yes (near-term) | Yes (next) | Roadmap’s suggested first addition |
+| P-51D | USAAF | — | Strong (local) | Yes (near-term) | Yes (next) | Most numerous late-war US fighter |
+| P-47D | USAAF | — | Strong (local) | Yes (near-term) | Yes (next) | Strong local data; still common late-war |
+| Spitfire I | RAF | — | Partial | Yes (targeted) | Later | Early-war / BoB baseline |
+| Spitfire V | RAF | — | Partial | Yes | Later | Dominant RAF fighter 1941–early 1943 |
+| Bf 109 E | Luftwaffe | — | Partial | Yes (targeted) | Later | Main Luftwaffe fighter in BoB |
+| Bf 109 G-6/G-14 | Luftwaffe | — | Medium | Yes (near-term) | Later | Most numerous late G |
+| Fw 190 A-8 | Luftwaffe | — | Medium | Yes (near-term) | Later | Most common late A-series |
+| Fw 190 D-9 | Luftwaffe | — | Medium | Yes (near-term) | Later | Distinct late-war type |
+| Spitfire LF IX | RAF | Yes | Strong | Improve (near-term) | Already in | Core; improve stall |
+| Bf 109 F-4 | Luftwaffe | Yes | Strong | Improve (near-term) | Already in | Core; improve power curve |
+| Fw 190 A-4 | Luftwaffe | Yes | Strong | Improve (near-term) | Already in | Core; improve cooling & power |
+| P-51B | USAAF | Yes | Strong | Improve (near-term) | Already in | Core; improve stall |
+| P-47B | USAAF | Yes | Strong | Improve (near-term) | Already in | Core |
+| P-38G | USAAF | Yes | Medium | Improve (near-term) | Already in | Core |
+| F4U-4 | USAAF/Navy | Yes | Medium | Improve (near-term) | Already in | Core |
+| Spitfire XIV | RAF | — | Weak | Later | Later | Late-war high-altitude |
+| Tempest V | RAF | — | Weak | Later | Later | Good 1944–45 candidate |
+| Typhoon IB | RAF | — | Weak | Later | Later | Secondary to Tempest |
+| Bf 109 K-4 | Luftwaffe | — | Weak | Later | Later | Lower priority than G |
+| Me 262 | Luftwaffe | — | Weak | Later | Later | Different performance class |
+| P-40 (Tomahawk/Kittyhawk) | USAAF | — | Weak | Later | Later | Important in North Africa / MTO |
+| Yak-1 | Soviet | — | Weak | Later | Later | Early Eastern Front |
+| Yak-9 / Yak-3 | Soviet | — | Weak | Later | Later | Major Eastern Front |
+| La-5 / La-5FN / La-7 | Soviet | — | Partial (local) | Later | Later | Major Eastern Front |
+| Mosquito (fighter variants) | RAF | — | Weak | Later | Later | Iconic but different role |
+| P-39 | USAAF/Soviet | — | Weak | Later | Later | More relevant on Eastern Front |
+| Hurricane I/II | RAF | — | Weak | Never / very low | Never / very low | Critical in 1940, lower priority for energy work |
+| Bf 110 | Luftwaffe | — | Weak | Never / very low | Never / very low | Early heavy fighter, quickly outclassed |
+| Il-2 | Soviet | — | Weak | Never / very low | Never / very low | Ground-attack, not a day fighter |
+
+**Near-term focus (top of the list)**  
+- **Data + Sim next:** Bf 109 G-2, P-51D, P-47D  
+- **Data now, sim later:** Spitfire I & V, Bf 109 E, Bf 109 G-6/G-14, Fw 190 A-8, Fw 190 D-9
+
 ## Review of the supplied Google AI files
 
 | Input | Use in the data work |
