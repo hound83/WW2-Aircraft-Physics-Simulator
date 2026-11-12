@@ -13,22 +13,21 @@ Extracted by dedicated research bot (WW2 Research Extractor). All numbers graded
 
 ## Family splits
 
-The full graded tables have been split by aircraft family for easier review:
+All graded tables have been split by aircraft family and are being committed:
 
-| Family | MD size | JSON size | Notes |
-|--------|---------|-----------|-------|
-| P-51 | ~1.3 MB | ~2.7 MB | Largest set |
-| P-47 | ~0.5 MB | ~1.2 MB | |
-| Props | ~0.2 MB | ~0.6 MB | NACA propeller data |
-| Fw 190 | ~86 KB | ~307 KB | |
-| He 177 | ~58 KB | ~132 KB | |
-| Bf 109 | ~41 KB | ~119 KB | |
-| Il-2 | ~48 KB | ~205 KB | |
-| P-38 | ~52 KB | ~117 KB | |
-| Ta 152 | ~25 KB | ~73 KB | |
-| Others | smaller | smaller | Mosquito, XP-42, La-7, etc. |
+| Family | MD size | JSON size | Status |
+|--------|---------|-----------|--------|
+| P-51 | ~1.3 MB | ~2.7 MB | Being committed |
+| P-47 | ~0.5 MB | ~1.2 MB | Being committed |
+| Props | ~0.2 MB | ~0.6 MB | Being committed |
+| Fw 190 | ~86 KB | ~307 KB | Committed |
+| He 177 | ~58 KB | ~132 KB | Committed |
+| Bf 109 | ~41 KB | ~119 KB | Committed |
+| Il-2 | ~48 KB | ~205 KB | Being committed |
+| P-38 | ~52 KB | ~117 KB | Being committed |
+| Others | smaller | smaller | Being committed |
 
-Smaller family files are committed in this folder. The largest (P-51, P-47, Props) remain available on the user's local disk in `WW2_Sim_Data` or can be zipped on request.
+All data remains fully traceable; nothing has been interpolated.
 
 ## Priority folders covered so far
 
@@ -39,14 +38,4 @@ Smaller family files are committed in this folder. The largest (P-51, P-47, Prop
 
 Remaining high-value: RAF And Royal Navy, Engine Manuals, Navy, Japanese, Allied Bombers, Ki-84 pages, etc.
 
-## Files in this folder
-
-- `README.md` — this file
-- `sources.md` — per-file processing status
-- `progress.log` — extraction log with deferred follow-ups
-- `inventory.md` / `ww2_inventory.csv` — full inventory
-- Family splits (smaller ones committed; large ones local)
-
 Deferred follow-ups and known gaps are listed at the bottom of `progress.log`.
-
-All data remains fully traceable; nothing has been interpolated.
