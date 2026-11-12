@@ -64,4 +64,4 @@ Grok can check the airspeed and lift derivations and look for powered-turn evide
 - Graded seven-aircraft propeller benchmark and archive leads. [Research note](../references/research/WW2_PROPELLER_EFFICIENCY_BENCHMARK_2026-11-12.md)
 - See `docs/research/` and the v4.10 propeller and climb-turn audit documents.
 
-Last updated: 2026-11-12
+Last updated: 2026-11-12 (climb residual closure progress)
