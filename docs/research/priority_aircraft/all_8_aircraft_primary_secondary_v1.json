@@ -1,0 +1,59 @@
+{
+  "version": "2026-11-13",
+  "description": "Minimum viable primary + secondary performance data for 8 priority aircraft. Graded observed where possible. Prop efficiency default 0.80. Stall mostly IAS from manuals or secondary.",
+  "aircraft": {
+    "p51d": {
+      "primary_source": "Wright Field TSCEP5E-1908, AAF 44-15342",
+      "weight_lb": 9760,
+      "level_speed_wep": [{"alt_ft": 0, "tas_mph": 375}, {"alt_ft": 10000, "tas_mph": 417}, {"alt_ft": 26000, "tas_mph": 442}],
+      "climb_wep": [{"alt_ft": 0, "roc_fpm": 3600}, {"alt_ft": 19000, "roc_fpm": 3200}],
+      "stall_ias_mph": "95-103",
+      "secondary": "Wikipedia/IL-2/DCS consistent with primary"
+    },
+    "p47d": {
+      "primary_source": "Wright Field 44-1 fuel tests + NACA L8A06",
+      "level_speed": [{"rating": "70in water", "tas_mph": 444, "alt_ft": 23200}, {"rating": "65in water", "tas_mph": 439, "alt_ft": 25200}],
+      "climb": [{"rating": "65in water", "roc_fpm": 3260, "alt_ft": 10000}],
+      "stall_ias_mph": "105-116",
+      "secondary": "IL-2 D-22 and DCS D-30 close"
+    },
+    "bf109g2": {
+      "primary_source": "Finnish MT-215 + Rechlin/Messerschmitt",
+      "weight_kg": 3050,
+      "level_speed_kmh": [{"alt_m": 0, "tas": 522}, {"alt_m": 6300, "tas": 636}, {"alt_m": 10000, "tas": 552}],
+      "climb_ms": [{"alt_m": 0, "roc": 21.6}, {"alt_m": 1000, "roc": 23.5}],
+      "stall_ias_kmh": "158-174",
+      "secondary": "IL-2 matches closely"
+    },
+    "fw190a8": {
+      "primary_source": "Focke-Wulf Flugleistungen sheets 1943-44",
+      "weight_kg": 4300,
+      "level_speed_kmh": [{"alt_m": 0, "tas": 566}, {"alt_m": 5500, "tas": 652}],
+      "climb_ms": [{"alt_m": 0, "roc": 13.4}],
+      "secondary": "Wikipedia ~656 km/h @ 4800 m"
+    },
+    "fw190d9": {
+      "primary_source": "Focke-Wulf Flugberichte W.Nr. 210001/210002",
+      "weight_kg": 4070,
+      "level_speed_mph": [{"alt_ft": 0, "tas": 330, "rating": "combat"}, {"alt_ft": 19357, "tas": 398}],
+      "climb_note": "Documented with 20\u00b0 radiator open, ceiling ~11100 m",
+      "secondary": "IL-2 emergency ~694 km/h @ 5200 m"
+    },
+    "spitfire1": {
+      "primary_source": "A&AEE N.3171 / K.9787",
+      "weight_lb": 6050,
+      "level_speed_mph": [{"alt_ft": 0, "tas": 283}, {"alt_ft": 18900, "tas": 354}],
+      "note": "Stall data sparse"
+    },
+    "spitfire5": {
+      "primary_source": "A&AEE / RAE partial (AB.488)",
+      "note": "Thinner full tables than Mk I; Wikipedia ~370-404 mph"
+    },
+    "bf109e": {
+      "primary_source": "Messerschmitt Me\u00dfprotokoll + French CEMA",
+      "level_speed_mph": [{"alt_ft": 0, "tas": 290}, {"alt_ft": 16240, "tas": 348}],
+      "stall_ias_kmh": "152-159",
+      "secondary": "IL-2 combat speeds align"
+    }
+  }
+}
