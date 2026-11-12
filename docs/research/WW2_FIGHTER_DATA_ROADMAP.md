@@ -42,7 +42,11 @@ A case is ready when its original observations, operating conditions, source all
 
 Delivered WNr 783 paired cooling rates and open-flap timing and 42-12687 B.4 TAS, chart power and timing. The scorecard carries the input estimates and their residuals. [Climb input milestone](WW2_MATCHED_CLIMB_INPUTS_2026-11-12.md)
 
-### v1.8 · Corrected stall and drag under load
+### v1.8 · Reviewed source batches
+
+Delivered 96 source-linked records, a file-by-file review and the 13-variant coverage comparison. [Grok batch review](WW2_GROK_BATCH_INPUT_REVIEW_2026-11-12.md)
+
+### Next · Corrected stall and drag under load
 
 - Prioritize the P-51B-15 43-24777 and Spitfire LF IX BS.543 cases used in the existing sustained-turn comparison. Recover a near-stall position and instrument correction in the relevant range, plus weight at the stall or a qualified corrected stall observation. Use the reported airspeed basis and configuration when deriving clean `CLmax`. Make the remaining gap explicit where only a takeoff weight or an uncorrected IAS is available. [Original-source gaps by aircraft](WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md#recovered-material-and-remaining-work)
 - Use P-51B Figure 5 and the 4K02/916 drag reports to bound the one-G drag check with their recorded specimen and propeller treatment. Seek a second measured constraint for drag under load: a matched high-lift drag polar or a level powered turn with speed and altitude retention, known load factor, power and mass. This is the input needed before changing induced drag or a sustained-turn ranking. Keep a configuration transfer as a bounded estimate. [Mustang power-required audit](../P51_PROPELLER_EFFICIENCY_AUDIT.md) · [Turn comparison](../V44_TURN_PERFORMANCE.md)

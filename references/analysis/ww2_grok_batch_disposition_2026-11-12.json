@@ -1,0 +1,343 @@
+{
+  "schema": "ww2-fighter-batch-review/v1",
+  "as_of": "2026-11-12",
+  "source_commit": "0a3b4270b8b6239960aacf0853bd0d40a591a3c9",
+  "input_pack_before": "1.7.0",
+  "scope": "Eleven transcript batches, three subsequent batches and the associated extraction, queue and source-review files present on the pinned revision.",
+  "evidence_pack": "references/research/ww2_grok_batch_source_review_2026-11-12.json",
+  "series": [
+    {
+      "series_id": "g1-rechlin-1586-climb-time",
+      "roster_id": "bf109g2_db605a",
+      "application": "comparison",
+      "row_count": 12
+    },
+    {
+      "series_id": "p47d30-433441-glide-fig50",
+      "roster_id": "p47d30_433441",
+      "application": "reference-specimen",
+      "row_count": 10
+    },
+    {
+      "series_id": "p47d-l86-profile-addenda",
+      "roster_id": "p47d30_433441",
+      "application": "comparison",
+      "row_count": 2
+    },
+    {
+      "series_id": "p47d-l86-test-domain",
+      "roster_id": "p47d30_433441",
+      "application": "comparison",
+      "row_count": 1
+    },
+    {
+      "series_id": "p51b1-4k02-prop-off-dives",
+      "roster_id": "p51b_4324777",
+      "application": "comparison",
+      "row_count": 3
+    },
+    {
+      "series_id": "mustang-iii-fx858-climb",
+      "roster_id": "p51b_4324777",
+      "application": "comparison",
+      "row_count": 22
+    },
+    {
+      "series_id": "mustang-iii-fx858-level",
+      "roster_id": "p51b_4324777",
+      "application": "comparison",
+      "row_count": 21
+    },
+    {
+      "series_id": "mustang-iii-fx858-pec",
+      "roster_id": "p51b_4324777",
+      "application": "comparison",
+      "row_count": 4
+    },
+    {
+      "series_id": "mustang-iii-fx858-tip-mach",
+      "roster_id": "p51b_4324777",
+      "application": "comparison",
+      "row_count": 5
+    },
+    {
+      "series_id": "p38j-4267869-level",
+      "roster_id": "p38g_4212687",
+      "application": "comparison",
+      "row_count": 2
+    },
+    {
+      "series_id": "p38j-4267869-climb",
+      "roster_id": "p38g_4212687",
+      "application": "comparison",
+      "row_count": 2
+    },
+    {
+      "series_id": "p38j-4313563-level",
+      "roster_id": "p38g_4212687",
+      "application": "comparison",
+      "row_count": 6
+    },
+    {
+      "series_id": "fw190a5-19431020-level",
+      "roster_id": "fw190a4_783",
+      "application": "comparison",
+      "row_count": 2
+    },
+    {
+      "series_id": "fw190a5-19431020-climb",
+      "roster_id": "fw190a4_783",
+      "application": "comparison",
+      "row_count": 2
+    },
+    {
+      "series_id": "p51b15-4324777-low-blower-lapse",
+      "roster_id": "p51b_4324777",
+      "application": "reference-specimen",
+      "row_count": 2
+    }
+  ],
+  "coverage_assessment": "The reference-specimen additions are low-blower level readings in an already fully credited axis and a repeat service-IAS glide trace with no new identified stall or calibrated airspeed. All remaining records have other specimen, configuration or measurement scope. The six-axis 13-variant scores receive zero additional points.",
+  "reviewed_artifacts": [
+    {
+      "path": "references/analysis/full_gemini_extract_2026-11-12.json",
+      "git_blob": "ea3a2afe079e7071fd2b04d95d99b82d47b08008",
+      "disposition": "checked-existing-evidence",
+      "review": "21 variant and rating entries retained in the submitted analysis export. The original claims serve as source leads unless matched and checked."
+    },
+    {
+      "path": "references/analysis/provisional_stall_envelope_2026-11-12.json",
+      "git_blob": "5c38cdf813be62e3c77dcb52a571ac2a5258cd3e",
+      "disposition": "checked-existing-evidence",
+      "review": "Keep all original ranges with the existing source review. Different power and flap conditions cannot form one stall-speed range."
+    },
+    {
+      "path": "references/analysis/provisional_stall_expansion_2026-11-12.json",
+      "git_blob": "7d6f89d1fb91a028ca143d7a842d0ac2dd2b3bac",
+      "disposition": "checked-existing-evidence",
+      "review": "Keep the three-family draft with checked originals and unresolved attributions. Existing selected speeds carry the applicable grade."
+    },
+    {
+      "path": "references/research/FULL_GEMINI_EXTRACT_2026-11-12.md",
+      "git_blob": "97b82d7d4b524361f6437550153df9eb61253e31",
+      "disposition": "checked-existing-evidence",
+      "review": "Retained the 21-entry Gemini extract as submitted. Its generic Cd0, power, propeller-efficiency and mass assumptions need matching test conditions. See the linked source review for checked stall values."
+    },
+    {
+      "path": "references/research/PROVISIONAL_STALL_ENVELOPE_2026-11-12.md",
+      "git_blob": "b5388eb49f53f77b2d688663ae9d0dbb0cb04d24",
+      "disposition": "checked-existing-evidence",
+      "review": "Reused the existing catalog stall records and the previous source review. Calculated and IAS stall references keep their original evidence grades."
+    },
+    {
+      "path": "references/research/REPORT_INVESTIGATION_2026-11-12.md",
+      "git_blob": "62dd03ab670f59c72a3b0d42c0679ebf75b4b254",
+      "disposition": "checked-existing-evidence",
+      "review": "Retained the existing original-source checks for 43-24777, 43-6883, captured A-3 and the corrected NACA identifiers.",
+      "existing_observation_ids": [
+        "stall_us_2026-11-10:US02:0001",
+        "stall_us_2026-11-10:US01:0001",
+        "stall_global_2026-11-10:FW190-A3-RAF-1"
+      ]
+    },
+    {
+      "path": "references/research/WW2_BATCH10_FULL_TRANSCRIPTS_2026-11-12.md",
+      "git_blob": "dae19194ee3b19f1b4ea2cbccc6f58ba8edffc46",
+      "disposition": "retained-source-leads",
+      "review": "Retained P-47M/N and Tempest/Thunderbolt comparison leads. Aggregate high-speed figures need their exact report and test conditions. They supply no new 41-5902 or 43-3441 data."
+    },
+    {
+      "path": "references/research/WW2_BATCH11_FULL_TRANSCRIPTS_2026-11-12.md",
+      "git_blob": "c5542ca06788c986ecb388b3e82e0f4f805bdde7",
+      "disposition": "verified-additions",
+      "review": "Added two independently identified P-38J report tables and endpoints. P-38G B.4 remains on its own existing input case. F4U/F6F and TAIC summaries need exact aircraft linkage. T-2 302's handling report has no measured performance climb.",
+      "new_series": [
+        "p38j-4267869-level",
+        "p38j-4267869-climb",
+        "p38j-4313563-level"
+      ],
+      "existing_observation_ids": [
+        "balanced-2026-11-10:BS02:0005",
+        "ww2_twelve_fighter_gap_followup_2026-11-10:p38j-4267869-original-complete-calibration-table:0008"
+      ]
+    },
+    {
+      "path": "references/research/WW2_BATCH1_BF109_F4_G1_EXTRACTION_2026-11-12.md",
+      "git_blob": "f270b96c5b1850b479554dac1844ec1c1222ad4e",
+      "disposition": "verified-additions",
+      "review": "Kept F-4 135 km/h as landing speed at its stated loading. The 660 km/h claim retains its secondary attribution. Added Rechlin G-1 climb times from the period Kennblatt.",
+      "new_series": [
+        "g1-rechlin-1586-climb-time"
+      ]
+    },
+    {
+      "path": "references/research/WW2_BATCH1_FULL_TRANSCRIPTS_2026-11-12.md",
+      "git_blob": "01599a6d6bf77e5d0fbc1f41787170c645e8b9a0",
+      "disposition": "verified-additions",
+      "review": "Added the missing G-1 time column from sheet 7, separate from MT-215. Reused the existing F-4 and Finnish curves. The Soviet G-2 22 s turn, approximate stalls and exact run conditions remain to be verified against the original pages.",
+      "new_series": [
+        "g1-rechlin-1586-climb-time"
+      ],
+      "existing_observation_ids": [
+        "archival-2026-11-10:S11:0001",
+        "ww2_twelve_fighter_dual_lane_2026-11-10:bf109f4-secondary-recovered-data-sheet:0002"
+      ]
+    },
+    {
+      "path": "references/research/WW2_BATCH2_FULL_TRANSCRIPTS_2026-11-12.md",
+      "git_blob": "e7aacd73dc487d9776a077b4af2047d05044767d",
+      "disposition": "retained-source-leads",
+      "review": "Relative F-4/A-2 and E-series trial statements remain contextual. GM-1 G-3 WNr 16261 and production scatter belong to separate cases. The summary does not supply the missing F-4 near-stall calibration or sustained-turn curve."
+    },
+    {
+      "path": "references/research/WW2_BATCH3_FULL_TRANSCRIPTS_2026-11-12.md",
+      "git_blob": "2674369403c59a2d42daf7ffaa95035d1d68ebc1",
+      "disposition": "checked-existing-evidence",
+      "review": "Reused BS.543 speed and climb records and JL.165 paired-radiator rows. BS.543 used BF.274 position corrections. JL.165 +18 results in §4.42 are estimates. MA.648 and EN409 remain separately identified cases.",
+      "existing_observation_ids": [
+        "ww2_fighter_measured_conditions_2026-11-11:spit-jl165-radiator-climb-pairs:0007"
+      ]
+    },
+    {
+      "path": "references/research/WW2_BATCH4_FULL_TRANSCRIPTS_2026-11-12.md",
+      "git_blob": "2b0e76810aa00133284536febc3047c069c5acf6",
+      "disposition": "retained-source-leads",
+      "review": "Retained Seafire, Griffon and high-speed/tactical material as related variant leads. Their results supply no new BS.543 stall or powered-turn measurement."
+    },
+    {
+      "path": "references/research/WW2_BATCH5_FULL_TRANSCRIPTS_2026-11-12.md",
+      "git_blob": "1a03ff12327b991d3e3869ca48527ab5a2fd4cdc",
+      "disposition": "verified-additions",
+      "review": "Added four dated A-5 factory summary readings for comparison. WNr 783 intake and paired cooling results already exist. Alternate A-series, injection settings and test specimens keep their own conditions.",
+      "new_series": [
+        "fw190a5-19431020-level",
+        "fw190a5-19431020-climb"
+      ],
+      "existing_observation_ids": [
+        "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0005",
+        "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0001"
+      ]
+    },
+    {
+      "path": "references/research/WW2_BATCH6_FULL_TRANSCRIPTS_2026-11-12.md",
+      "git_blob": "eab4380b0ec05f06deab039ad9d5e4153644b1b3",
+      "disposition": "checked-existing-evidence",
+      "review": "Reused WNr 210002 dry, MW 50 and configuration records with their existing source IDs. Retained the A-6/A-8/A-9/D-11 and late-propeller leads. The D-9 Nr. 1 calibration graph still needs a defensible digitization and stall-domain check."
+    },
+    {
+      "path": "references/research/WW2_BATCH7_FULL_TRANSCRIPTS_2026-11-12.md",
+      "git_blob": "107433dec402fef1f2102803191af66aca594580",
+      "disposition": "verified-additions",
+      "review": "Recovered two low-blower lapse points omitted from the 43-24777 speed rows. Kept existing high-blower data and the 20,800-ft rack pair. Added NACA 4K02 B-1 test run conditions. The alternate 43-6883, 43-12093 and XP-51 reports retain distinct specimens and instruments.",
+      "new_series": [
+        "p51b1-4k02-prop-off-dives",
+        "p51b15-4324777-low-blower-lapse"
+      ],
+      "existing_observation_ids": [
+        "ww2_multiaxis_propulsion_trials_2026-11-10:p51b15-chart-vs-performance:0001",
+        "ww2_multiaxis_propulsion_trials_2026-11-10:p51b15-chart-vs-performance:0002"
+      ]
+    },
+    {
+      "path": "references/research/WW2_BATCH8_FULL_TRANSCRIPTS_2026-11-12.md",
+      "git_blob": "75234842540bda2e86ef8233939d06712699b826",
+      "disposition": "verified-additions",
+      "review": "Added the source-checked FX.858 climb and level schedules, its four PEC points and five report-calculated tip-Mach values. P-51D and Allison variants retain separate case identity. The FX.858 corrections begin at 140 mph IAS and do not establish near-stall corrections for 43-24777.",
+      "new_series": [
+        "mustang-iii-fx858-climb",
+        "mustang-iii-fx858-level",
+        "mustang-iii-fx858-pec",
+        "mustang-iii-fx858-tip-mach"
+      ]
+    },
+    {
+      "path": "references/research/WW2_BATCH9_FULL_TRANSCRIPTS_2026-11-12.md",
+      "git_blob": "23acf16c2c7c38ac33b28fc62bb7057610372f1c",
+      "disposition": "verified-additions",
+      "review": "Added new L-86 section-drag values and the test envelope, with its previously cataloged minimum reused. ACR 5D20 is a scale-model tunnel comparison. Recovered the exact Fig. 50 service IAS trace; D-series speed summaries still require serial and rating confirmation.",
+      "new_series": [
+        "p47d-l86-profile-addenda",
+        "p47d-l86-test-domain",
+        "p47d30-433441-glide-fig50"
+      ],
+      "existing_observation_ids": [
+        "archival-2026-11-10:S40:0001",
+        "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0002"
+      ]
+    },
+    {
+      "path": "references/research/WW2_EXTRACTION_BATCH_LIST_2026-11-12.md",
+      "git_blob": "49fc9ce8b7189eafab5f13f5cd90eaa7d2bc1108",
+      "disposition": "retained-source-leads",
+      "review": "Preserved the earlier extraction queue as an index. Ordered report lists do not create observations."
+    },
+    {
+      "path": "references/research/WW2_EXTRACTION_BATCH_LIST_EXPANDED_2026-11-12.md",
+      "git_blob": "b5b2f6c380485db50c001de02da09adfc8324b4b",
+      "disposition": "retained-source-leads",
+      "review": "Preserved the expanded extraction queue and exact report headings, including unresolved originals."
+    },
+    {
+      "path": "references/research/WW2_FAMILY_PRIMARY_EXTRACTION_v1_2026-11-12.md",
+      "git_blob": "efad700a2fbdb923ffded243ed2e2a5e98b7ffa2",
+      "disposition": "checked-existing-evidence",
+      "review": "Checked the highest-value numbers against existing catalog and original reports. Reused the same-report duplicates, kept aircraft variants separate and incorporated the recoverable additions in the associated batch rows."
+    },
+    {
+      "path": "references/research/WW2_FLIGHT_CASE_CLIMB_RESIDUAL_2026-11-12.md",
+      "git_blob": "ce9c5649cc7dc174e462799b41632433d3e23090",
+      "disposition": "checked-existing-evidence",
+      "review": "Already integrated through the matched-climb data pack and shared-climb research candidate. Retained as context without duplicating rows."
+    },
+    {
+      "path": "references/research/WW2_FULL_FAMILY_PRIMARY_SOURCE_LEADS_2026-11-12.md",
+      "git_blob": "d680a5b064fc6e293b6137f61f607b3bfb77fdc8",
+      "disposition": "retained-source-leads",
+      "review": "Preserved the source-lead index by family. Variant and configuration qualifiers are required before using aggregate performance values."
+    },
+    {
+      "path": "references/research/WW2_NACA_AND_PRIMARY_SOURCE_EXPANSION_2026-11-12.md",
+      "git_blob": "8cc0bdf12cc7fca19f01e5d9b95345e7e1e8053a",
+      "disposition": "verified-additions",
+      "review": "Reused checked report identifiers, existing L4L07 efficiency rows and L-86 minimum. Added L-86 conditions and additional section values, and the distinct 4K02 flights. Separate scale-model and XP-51 sources remain qualified.",
+      "new_series": [
+        "p47d-l86-profile-addenda",
+        "p47d-l86-test-domain",
+        "p51b1-4k02-prop-off-dives"
+      ]
+    },
+    {
+      "path": "references/research/WW2_NEW_BATCH1_PART1_HIGH_VALUE_REPORTS_2026-11-12.md",
+      "git_blob": "df297d310cc728200349c901187710b6a5eb8729",
+      "disposition": "verified-additions",
+      "review": "Source-checked L-86 beyond the known minimum and recovered a measured D-30 trace. Retained the XP-51 warning finding as context. The Spitfire handbook correction is already indexed; it begins above clean stall.",
+      "new_series": [
+        "p47d-l86-profile-addenda",
+        "p47d-l86-test-domain",
+        "p47d30-433441-glide-fig50"
+      ]
+    },
+    {
+      "path": "references/research/WW2_NEW_BATCH2_GERMAN_SOVIET_2026-11-12.md",
+      "git_blob": "f5a0521592ffbfd3821e2524c1a6d7bc93c14612",
+      "disposition": "retained-source-leads",
+      "review": "Preserved the submitted German/Soviet lookup table as leads. The specific trial airframe, power and condition require the original Soviet or German pages. Takeoff and landing targets cannot stand for stall speeds."
+    },
+    {
+      "path": "references/research/WW2_NEW_BATCH3_PILOT_MANUALS_2026-11-12.md",
+      "git_blob": "e8304dc24c0bb55abfbb0d3c6dd3b554d3722c95",
+      "disposition": "checked-existing-evidence",
+      "review": "The AP 1565J §53 and climb schedule repeat cataloged originals. §53 is a paragraph on printed page 32 and includes 120–150 mph IAS at +4 mph. The broader manual ranges remain operational information.",
+      "existing_observation_ids": [
+        "ww2_thirteen_fighter_source_recovery_2026-11-11:spitix-original-pec-intervals:0001",
+        "ww2_thirteen_fighter_source_recovery_2026-11-11:spitix-climb-speed-policy:0001"
+      ]
+    },
+    {
+      "path": "references/research/WW2_SUPPLEMENTAL_GAPS_AND_GERMAN_SOVIET_2026-11-12.md",
+      "git_blob": "20d22370a7cf371f760e83571dfd8f8c117f3733",
+      "disposition": "retained-source-leads",
+      "review": "Retained source pointers and reviewed them through the respective batches. Handbooks, theoretical values and unconditioned German/Soviet ranges remain qualified."
+    }
+  ]
+}

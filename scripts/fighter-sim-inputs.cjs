@@ -16,6 +16,7 @@ const releasePath = 'references/analysis/fighter-sim-inputs-v1.json';
 const propellerPath = 'references/analysis/fighter-propeller-efficiency-v1.json';
 const evidencePath = 'references/analysis/fighter-derived-evidence-2026-11-11.json';
 const baselinePath = 'references/aircraft-readiness-german-archive-2026-11-11.json';
+const batchReviewPath = 'references/analysis/ww2_grok_batch_disposition_2026-11-12.json';
 const stallPath = 'references/research/ww2_fleet_stall_2026-11-12.json';
 const interpolatedCharts = new Set(['spitfire-climb-branches', 'p47b-climb-branches', 'p38g-part-power-speed',
   'p40f-standard-spinner-climb', 'f4-factory-climb', 'g2-known-setting-speed']);
@@ -179,6 +180,40 @@ function stallReference(catalog, catalogObservations) {
   };
 }
 
+function batchReference(catalog) {
+  const review = JSON.parse(read(batchReviewPath));
+  const packId = path.basename(review.evidence_pack, '.json');
+  const rows = catalog.observations.filter(row => row.pack_id === packId);
+  const series = review.series.map(({ series_id, roster_id, application, row_count }) => {
+    const group = rows.filter(row => row.id.startsWith(packId + ':' + series_id + ':'));
+    if (group.length !== row_count) throw Error('Incomplete reviewed series ' + series_id);
+    const [first] = group;
+    const fields = Object.keys(first.values);
+    return {
+      id: series_id, roster_id, aircraft: first.aircraft, application, quantity: first.quantity,
+      source_class: first.source_class, source_location: first.source_location,
+      conditions: first.conditions, speed_basis: first.speed_basis, fields,
+      observation_ids: group.map(row => row.id),
+      rows: group.map(row => fields.map(field => row.values[field])),
+    };
+  });
+  const newIds = series.flatMap(group => group.observation_ids);
+  if (newIds.length !== rows.length || new Set(newIds).size !== rows.length) {
+    throw Error('Batch review must assign each new catalog observation exactly once');
+  }
+  const existingIds = [...new Set(review.reviewed_artifacts.flatMap(row => row.existing_observation_ids ?? []))];
+  return {
+    source_commit: review.source_commit, review_path: batchReviewPath, evidence_pack: review.evidence_pack,
+    reviewed_artifact_count: review.reviewed_artifacts.length,
+    observation_count: newIds.length,
+    reference_specimen_observation_count: series
+      .filter(row => row.application === 'reference-specimen')
+      .reduce((total, row) => total + row.rows.length, 0),
+    coverage_assessment: review.coverage_assessment,
+    series, observation_ids: newIds, existing_observation_ids: existingIds,
+  };
+}
+
 function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catalog)) {
   const observations = new Map(catalog.observations.map(row => [row.id, row]));
   const engine = engineReference(observations);
@@ -187,12 +222,14 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
   const fleet = JSON.parse(propeller).fleet_reference;
   const charts = [...evidence.charts, fwIntakeChart(fleet.fw190a4)];
   const climb = climbReference(observations, charts);
+  const batch = batchReference(catalog);
   const fleetObservationIds = catalog.observations.filter(row => row.pack_id === 'ww2_fleet_propeller_2026-11-12').map(row => row.id);
   const originalIds = new Set([...Object.keys(evidence.observations), ...engine.observation_ids, ...fleetObservationIds]);
   const cases = reviewedCases(observations, evidence).map(item => ({ ...item, ...resolveCase(item) }));
   for (const id of [...cases.flatMap(item => item.candidates.flatMap(row => row.observation_ids)),
     ...rejectedPairs.flatMap(row => row.observation_ids), ...legacyCredits.map(row => row.observation),
     ...stall.observations.map(row => row.id), ...climb.observation_ids,
+    ...batch.observation_ids, ...batch.existing_observation_ids,
     ...stall.variants.flatMap(row => [...row.prior_ids, ...row.clean_stall.observation_ids])]) {
     if (!observations.has(id)) throw Error('Unresolved original observation ' + id);
     originalIds.add(id);
@@ -209,7 +246,7 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
   const packs = new Set([...originalIds].map(id => observations.get(id).pack_id));
   const baseline = JSON.parse(read(baselinePath));
   return {
-    schema: 'ww2-fighter-sim-inputs/v1', version: '1.7.0', as_of: '2026-11-12',
+    schema: 'ww2-fighter-sim-inputs/v1', version: '1.8.0', as_of: '2026-11-12',
     scope: 'Historical inputs and conditional estimates for source-case lookups and evidence graphs.',
     originals: {
       catalog: 'research-catalog.json',
@@ -225,6 +262,7 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
     engine_reference: engine,
     stall_reference: stall,
     climb_reference: climb,
+    batch_reference: batch,
     tolerances, coverage: scoreCoverage(baseline, evidence, cases),
     cases, rejected_pairs: rejectedPairs,
     charts: charts.map(chart => ({
