@@ -1,0 +1,1078 @@
+{
+  "schema": "full-gemini-extract/v1",
+  "generated": "2026-11-12",
+  "note": "All numeric values extracted from Gemini packs. Secondary/derived unless a primary report URL is cited. For provisional use only.",
+  "variants": [
+    {
+      "id": "fw190_a5",
+      "aircraft": "Focke-Wulf Fw 190",
+      "variant": "A-5",
+      "service_year": 1943,
+      "airframe": {
+        "loaded_weight_kg": 4106,
+        "empty_weight_kg": 3200,
+        "wing_area_m2": 18.3,
+        "wingspan_m": 10.51,
+        "aspect_ratio": 6.04,
+        "wing_loading_kg_m2": 224.4,
+        "cd0": 0.0245,
+        "oswald_efficiency_e": 0.78,
+        "cl_max_clean": 1.4,
+        "cl_max_flaps": 1.75,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "BMW 801 D-2",
+        "stages": [
+          {
+            "stage_name": "Low Blower (Bodenlader)",
+            "rating_type": "Start- u. Notleistung (1.42 ata)",
+            "rated_power_hp": 1730,
+            "critical_altitude_m": 700
+          },
+          {
+            "stage_name": "High Blower (H\u00f6henlader)",
+            "rating_type": "Kampfleistung (1.32 ata)",
+            "rated_power_hp": 1440,
+            "critical_altitude_m": 5700
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.3,
+          "blades": 3,
+          "prop_efficiency_cruise": 0.83,
+          "prop_efficiency_climb": 0.78
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 665,
+        "max_speed_altitude_m": 6300,
+        "max_rate_of_climb_m_s": 15.3,
+        "sea_level_rate_of_climb_m_s": 15.0,
+        "service_ceiling_m": 10600
+      },
+      "references": [
+        "Focke-Wulf Flugzeugbau Flug- und Betriebsanleitung Fw 190 A-5/A-6, 1943",
+        "Lednicer (2000), Table 2 (Fw 190 Aerodynamics)",
+        "WWII Aircraft Performance: Fw 190 A-5 Flight Trials (E-Stelle Rechlin 1943)"
+      ]
+    },
+    {
+      "id": "fw190_a8",
+      "aircraft": "Focke-Wulf Fw 190",
+      "variant": "A-8",
+      "service_year": 1944,
+      "airframe": {
+        "loaded_weight_kg": 4417,
+        "empty_weight_kg": 3470,
+        "wing_area_m2": 18.3,
+        "wingspan_m": 10.51,
+        "aspect_ratio": 6.04,
+        "wing_loading_kg_m2": 241.4,
+        "cd0": 0.0252,
+        "oswald_efficiency_e": 0.78,
+        "cl_max_clean": 1.4,
+        "cl_max_flaps": 1.75,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "BMW 801 D-2 (Erhoehte Notleistung / C3-Einspritzung)",
+        "stages": [
+          {
+            "stage_name": "Low Blower",
+            "rating_type": "Erh\u00f6hte Notleistung (1.58 ata / C3-fuel)",
+            "rated_power_hp": 2050,
+            "critical_altitude_m": 1000
+          },
+          {
+            "stage_name": "High Blower",
+            "rating_type": "Erh\u00f6hte Notleistung (1.58 ata / C3-fuel)",
+            "rated_power_hp": 1820,
+            "critical_altitude_m": 5300
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.3,
+          "blades": 3,
+          "prop_efficiency_cruise": 0.82,
+          "prop_efficiency_climb": 0.77
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 656,
+        "max_speed_altitude_m": 6000,
+        "max_rate_of_climb_m_s": 14.8,
+        "sea_level_rate_of_climb_m_s": 14.2,
+        "service_ceiling_m": 10300
+      },
+      "references": [
+        "Focke-Wulf Flugzeugbau Fw 190 A-8 Baubeschreibung u. Leistungsrechnung, 1944",
+        "A&AEE Boscombe Down Evaluation Report No. M.4390A (Captured Fw 190 A-8)",
+        "WWII Aircraft Performance: Fw 190 A-8 performance curves"
+      ]
+    },
+    {
+      "id": "fw190_d9",
+      "aircraft": "Focke-Wulf Fw 190",
+      "variant": "D-9 'Dora'",
+      "service_year": 1944,
+      "airframe": {
+        "loaded_weight_kg": 4300,
+        "empty_weight_kg": 3490,
+        "wing_area_m2": 18.3,
+        "wingspan_m": 10.51,
+        "aspect_ratio": 6.04,
+        "wing_loading_kg_m2": 235.0,
+        "cd0": 0.021,
+        "oswald_efficiency_e": 0.8,
+        "cl_max_clean": 1.42,
+        "cl_max_flaps": 1.76,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "Junkers Jumo 213A-1 with MW 50",
+        "stages": [
+          {
+            "stage_name": "Low Blower",
+            "rating_type": "Sondernotleistung (1.80 ata MW 50)",
+            "rated_power_hp": 2100,
+            "critical_altitude_m": 500
+          },
+          {
+            "stage_name": "High Blower",
+            "rating_type": "Sondernotleistung (1.80 ata MW 50)",
+            "rated_power_hp": 1900,
+            "critical_altitude_m": 4800
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.5,
+          "blades": 3,
+          "prop_efficiency_cruise": 0.84,
+          "prop_efficiency_climb": 0.79
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 686,
+        "max_speed_altitude_m": 6600,
+        "max_rate_of_climb_m_s": 17.0,
+        "sea_level_rate_of_climb_m_s": 16.5,
+        "service_ceiling_m": 12000
+      },
+      "references": [
+        "Junkers Motorenbau Jumo 213A Motoren-Pass u. Leistungsdiagramme, 1944",
+        "Lednicer (2000), Table 2 (Fw 190 D-9 inline profile drag)",
+        "WWII Aircraft Performance: Fw 190 D-9 flight tests (USAAF Foreign Equipment Eval T-2-2122)"
+      ]
+    },
+    {
+      "id": "bf109_e4",
+      "aircraft": "Messerschmitt Bf 109",
+      "variant": "E-4",
+      "service_year": 1940,
+      "airframe": {
+        "loaded_weight_kg": 2608,
+        "empty_weight_kg": 2010,
+        "wing_area_m2": 16.17,
+        "wingspan_m": 9.87,
+        "aspect_ratio": 6.02,
+        "wing_loading_kg_m2": 161.3,
+        "cd0": 0.0263,
+        "oswald_efficiency_e": 0.77,
+        "cl_max_clean": 1.45,
+        "cl_max_slats_extended": 1.8,
+        "g_limit_positive": 7.5
+      },
+      "propulsion": {
+        "engine_model": "Daimler-Benz DB 601Aa",
+        "stages": [
+          {
+            "stage_name": "Full Range (Barometric control)",
+            "rating_type": "Notleistung (1.40 ata)",
+            "rated_power_hp": 1175,
+            "critical_altitude_m": 4000
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.1,
+          "blades": 3,
+          "prop_efficiency_cruise": 0.81,
+          "prop_efficiency_climb": 0.76
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 570,
+        "max_speed_altitude_m": 4500,
+        "max_rate_of_climb_m_s": 15.2,
+        "sea_level_rate_of_climb_m_s": 14.5,
+        "service_ceiling_m": 10500
+      },
+      "references": [
+        "Messerschmitt AG Flugzeug-Handbuch Bf 109 E Baureihe E-1 bis E-4, 1940",
+        "RAE Farnborough Report No. B.A. 1629 (Performance of Messerschmitt 109 E)",
+        "WWII Aircraft Performance: Bf 109 E-3/E-4 Trials"
+      ]
+    },
+    {
+      "id": "bf109_f4",
+      "aircraft": "Messerschmitt Bf 109",
+      "variant": "F-4",
+      "service_year": 1941,
+      "airframe": {
+        "loaded_weight_kg": 2890,
+        "empty_weight_kg": 2160,
+        "wing_area_m2": 16.17,
+        "wingspan_m": 9.92,
+        "aspect_ratio": 6.08,
+        "wing_loading_kg_m2": 178.7,
+        "cd0": 0.0218,
+        "oswald_efficiency_e": 0.81,
+        "cl_max_clean": 1.47,
+        "cl_max_slats_extended": 1.83,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "Daimler-Benz DB 601E",
+        "stages": [
+          {
+            "stage_name": "Full Range",
+            "rating_type": "Start- u. Notleistung (1.42 ata)",
+            "rated_power_hp": 1350,
+            "critical_altitude_m": 4800
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.0,
+          "blades": 3,
+          "prop_efficiency_cruise": 0.83,
+          "prop_efficiency_climb": 0.78
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 635,
+        "max_speed_altitude_m": 6000,
+        "max_rate_of_climb_m_s": 19.1,
+        "sea_level_rate_of_climb_m_s": 18.0,
+        "service_ceiling_m": 11500
+      },
+      "references": [
+        "Messerschmitt AG Flugzeug-Handbuch Bf 109 F-1 bis F-4, 1941",
+        "Lednicer (2000), Table 2 (Bf 109 F clean airframe aerodynamic clean-up)",
+        "WWII Aircraft Performance: Bf 109 F-4 Rechlin Test Data"
+      ]
+    },
+    {
+      "id": "bf109_g6",
+      "aircraft": "Messerschmitt Bf 109",
+      "variant": "G-6",
+      "service_year": 1943,
+      "airframe": {
+        "loaded_weight_kg": 3148,
+        "empty_weight_kg": 2426,
+        "wing_area_m2": 16.17,
+        "wingspan_m": 9.92,
+        "aspect_ratio": 6.08,
+        "wing_loading_kg_m2": 194.7,
+        "cd0": 0.0242,
+        "oswald_efficiency_e": 0.79,
+        "cl_max_clean": 1.45,
+        "cl_max_slats_extended": 1.82,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "Daimler-Benz DB 605A-1 with MW 50 (1.70 ata option)",
+        "stages": [
+          {
+            "stage_name": "Full Range",
+            "rating_type": "Sondernotleistung (1.70 ata MW 50)",
+            "rated_power_hp": 1800,
+            "critical_altitude_m": 4100
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.0,
+          "blades": 3,
+          "prop_efficiency_cruise": 0.83,
+          "prop_efficiency_climb": 0.78
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 640,
+        "max_speed_altitude_m": 6300,
+        "max_rate_of_climb_m_s": 17.5,
+        "sea_level_rate_of_climb_m_s": 17.0,
+        "service_ceiling_m": 11800
+      },
+      "references": [
+        "Messerschmitt AG Flugzeug-Handbuch Bf 109 G-6, 1943",
+        "E-Stelle Rechlin Flugleistungen Messerschmitt 109 G-6 mit MW 50 (Jan 1944)",
+        "WWII Aircraft Performance: Bf 109 G-6 Performance Sheets"
+      ]
+    },
+    {
+      "id": "bf109_k4",
+      "aircraft": "Messerschmitt Bf 109",
+      "variant": "K-4",
+      "service_year": 1944,
+      "airframe": {
+        "loaded_weight_kg": 3362,
+        "empty_weight_kg": 2580,
+        "wing_area_m2": 16.17,
+        "wingspan_m": 9.92,
+        "aspect_ratio": 6.08,
+        "wing_loading_kg_m2": 207.9,
+        "cd0": 0.0225,
+        "oswald_efficiency_e": 0.8,
+        "cl_max_clean": 1.46,
+        "cl_max_slats_extended": 1.83,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "Daimler-Benz DB 605DC with MW 50",
+        "stages": [
+          {
+            "stage_name": "Full Range",
+            "rating_type": "Sondernotleistung (1.98 ata MW 50)",
+            "rated_power_hp": 2000,
+            "critical_altitude_m": 5000
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.0,
+          "blades": 3,
+          "prop_efficiency_cruise": 0.84,
+          "prop_efficiency_climb": 0.79
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 710,
+        "max_speed_altitude_m": 7500,
+        "max_rate_of_climb_m_s": 22.2,
+        "sea_level_rate_of_climb_m_s": 21.0,
+        "service_ceiling_m": 12500
+      },
+      "references": [
+        "Messerschmitt AG Flugzeug-Handbuch Bf 109 K-4, 1944",
+        "E-Stelle Rechlin Versuchsbericht Bf 109 K-4 mit DB 605 DC (Nov 1944)",
+        "WWII Aircraft Performance: Bf 109 K-4 Flight Trial Curves"
+      ]
+    },
+    {
+      "id": "p51b_c",
+      "aircraft": "North American Aviation P-51 Mustang",
+      "variant": "P-51B / P-51C",
+      "service_year": 1943,
+      "airframe": {
+        "loaded_weight_kg": 4445,
+        "empty_weight_kg": 3120,
+        "wing_area_m2": 21.83,
+        "wingspan_m": 11.28,
+        "aspect_ratio": 5.83,
+        "wing_loading_kg_m2": 203.6,
+        "cd0": 0.0163,
+        "oswald_efficiency_e": 0.84,
+        "cl_max_clean": 1.38,
+        "cl_max_flaps": 1.7,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "Packard V-1650-3 (Merlin 63 licensed)",
+        "stages": [
+          {
+            "stage_name": "Moderate Supercharger (MS)",
+            "rating_type": "War Emergency Power (67\" Hg)",
+            "rated_power_hp": 1620,
+            "critical_altitude_m": 3962
+          },
+          {
+            "stage_name": "Full Supercharger (FS)",
+            "rating_type": "War Emergency Power (67\" Hg)",
+            "rated_power_hp": 1400,
+            "critical_altitude_m": 7864
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.4,
+          "blades": 4,
+          "prop_efficiency_cruise": 0.86,
+          "prop_efficiency_climb": 0.8
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 708,
+        "max_speed_altitude_m": 7620,
+        "max_rate_of_climb_m_s": 17.8,
+        "sea_level_rate_of_climb_m_s": 16.5,
+        "service_ceiling_m": 12800
+      },
+      "references": [
+        "USAAF Flight Test Engineering Branch: P-51B-1 Performance Trials (Wright Field, 1943)",
+        "Lednicer (2000), Table 1 (Laminar Flow Cd0 evaluation for P-51B/D)",
+        "WWII Aircraft Performance: P-51B 43-12102 Performance Data"
+      ]
+    },
+    {
+      "id": "p51d_67hg",
+      "aircraft": "North American Aviation P-51 Mustang",
+      "variant": "P-51D-5-NA (Standard 67\" Hg Boost)",
+      "service_year": 1944,
+      "airframe": {
+        "loaded_weight_kg": 4581,
+        "empty_weight_kg": 3232,
+        "wing_area_m2": 21.83,
+        "wingspan_m": 11.28,
+        "aspect_ratio": 5.83,
+        "wing_loading_kg_m2": 209.8,
+        "cd0": 0.0168,
+        "oswald_efficiency_e": 0.84,
+        "cl_max_clean": 1.38,
+        "cl_max_flaps": 1.7,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "Packard V-1650-7",
+        "stages": [
+          {
+            "stage_name": "Moderate Supercharger (MS)",
+            "rating_type": "War Emergency Power (67\" Hg)",
+            "rated_power_hp": 1720,
+            "critical_altitude_m": 3170
+          },
+          {
+            "stage_name": "Full Supercharger (FS)",
+            "rating_type": "War Emergency Power (67\" Hg)",
+            "rated_power_hp": 1490,
+            "critical_altitude_m": 6520
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.4,
+          "blades": 4,
+          "prop_efficiency_cruise": 0.86,
+          "prop_efficiency_climb": 0.8
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 703,
+        "max_speed_altitude_m": 7620,
+        "max_rate_of_climb_m_s": 17.4,
+        "sea_level_rate_of_climb_m_s": 16.0,
+        "service_ceiling_m": 12770
+      },
+      "references": [
+        "North American Aviation Report NA-5827: Performance of P-51D Airplane, 1944",
+        "USAAF Wright Field Flight Test Report No. ENG-47-1678-A",
+        "WWII Aircraft Performance: P-51D Flight Performance Tests"
+      ]
+    },
+    {
+      "id": "p51d_75hg_150oct",
+      "aircraft": "North American Aviation P-51 Mustang",
+      "variant": "P-51D (150-Octane / 75\" Hg Boost)",
+      "service_year": 1944,
+      "airframe": {
+        "loaded_weight_kg": 4581,
+        "empty_weight_kg": 3232,
+        "wing_area_m2": 21.83,
+        "wingspan_m": 11.28,
+        "aspect_ratio": 5.83,
+        "wing_loading_kg_m2": 209.8,
+        "cd0": 0.0168,
+        "oswald_efficiency_e": 0.84,
+        "cl_max_clean": 1.38,
+        "cl_max_flaps": 1.7,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "Packard V-1650-7 (150-Octane Grade 100/150 Fuel)",
+        "stages": [
+          {
+            "stage_name": "Moderate Supercharger (MS)",
+            "rating_type": "War Emergency Power (75\" Hg)",
+            "rated_power_hp": 1900,
+            "critical_altitude_m": 2286
+          },
+          {
+            "stage_name": "Full Supercharger (FS)",
+            "rating_type": "War Emergency Power (75\" Hg)",
+            "rated_power_hp": 1650,
+            "critical_altitude_m": 5608
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.4,
+          "blades": 4,
+          "prop_efficiency_cruise": 0.86,
+          "prop_efficiency_climb": 0.8
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 724,
+        "max_speed_altitude_m": 6100,
+        "max_rate_of_climb_m_s": 20.1,
+        "sea_level_rate_of_climb_m_s": 19.3,
+        "service_ceiling_m": 12900
+      },
+      "references": [
+        "Eighth Air Force Fighter Command Tactical Memoranda on 150-Octane Operation, 1944",
+        "USAAF Wright Field Memorandum Report on P-51D with High Manifold Pressure (75\" Hg)",
+        "WWII Aircraft Performance: 150 Octane Fuel Trials for P-51D"
+      ]
+    },
+    {
+      "id": "p51h",
+      "aircraft": "North American Aviation P-51 Mustang",
+      "variant": "P-51H-1-NA",
+      "service_year": 1945,
+      "airframe": {
+        "loaded_weight_kg": 4309,
+        "empty_weight_kg": 2987,
+        "wing_area_m2": 21.83,
+        "wingspan_m": 11.28,
+        "aspect_ratio": 5.83,
+        "wing_loading_kg_m2": 197.4,
+        "cd0": 0.0152,
+        "oswald_efficiency_e": 0.85,
+        "cl_max_clean": 1.4,
+        "cl_max_flaps": 1.72,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "Packard V-1650-9 with Water Injection",
+        "stages": [
+          {
+            "stage_name": "Moderate Supercharger (MS)",
+            "rating_type": "War Emergency Power with Water (90\" Hg)",
+            "rated_power_hp": 2218,
+            "critical_altitude_m": 3109
+          },
+          {
+            "stage_name": "Full Supercharger (FS)",
+            "rating_type": "War Emergency Power with Water (90\" Hg)",
+            "rated_power_hp": 1900,
+            "critical_altitude_m": 6706
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.38,
+          "blades": 4,
+          "prop_efficiency_cruise": 0.87,
+          "prop_efficiency_climb": 0.81
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 784,
+        "max_speed_altitude_m": 7620,
+        "max_rate_of_climb_m_s": 24.1,
+        "sea_level_rate_of_climb_m_s": 23.0,
+        "service_ceiling_m": 12800
+      },
+      "references": [
+        "USAAF Wright Field Flight Test Report: Performance Test of North American P-51H-1-NA (AAF No. 44-64161), 1945",
+        "Lednicer (2000), Table 1 (Airframe structural and drag reductions in P-51H)",
+        "WWII Aircraft Performance: P-51H Flight Trials"
+      ]
+    },
+    {
+      "id": "spitfire_mkvb",
+      "aircraft": "Supermarine Spitfire",
+      "variant": "Mk Vb",
+      "service_year": 1941,
+      "airframe": {
+        "loaded_weight_kg": 3034,
+        "empty_weight_kg": 2313,
+        "wing_area_m2": 22.48,
+        "wingspan_m": 11.23,
+        "aspect_ratio": 5.61,
+        "wing_loading_kg_m2": 135.0,
+        "cd0": 0.024,
+        "oswald_efficiency_e": 0.88,
+        "cl_max_clean": 1.5,
+        "cl_max_flaps": 1.82,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "Rolls-Royce Merlin 45",
+        "stages": [
+          {
+            "stage_name": "Full Throttle Height",
+            "rating_type": "Combat Power (+16 lb boost)",
+            "rated_power_hp": 1470,
+            "critical_altitude_m": 3353
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.28,
+          "blades": 3,
+          "prop_efficiency_cruise": 0.82,
+          "prop_efficiency_climb": 0.77
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 605,
+        "max_speed_altitude_m": 6100,
+        "max_rate_of_climb_m_s": 16.5,
+        "sea_level_rate_of_climb_m_s": 15.2,
+        "service_ceiling_m": 11300
+      },
+      "references": [
+        "Air Ministry Pilot's Notes: Spitfire Vb & Vc (Merlin 45, 46, 50 Engines), A.P. 1565E",
+        "A&AEE Boscombe Down Report: Performance Trial of Spitfire V with Merlin 45 (1941)",
+        "WWII Aircraft Performance: Spitfire Mk V Performance Records"
+      ]
+    },
+    {
+      "id": "spitfire_f_mkix",
+      "aircraft": "Supermarine Spitfire",
+      "variant": "F Mk IX",
+      "service_year": 1942,
+      "airframe": {
+        "loaded_weight_kg": 3402,
+        "empty_weight_kg": 2540,
+        "wing_area_m2": 22.48,
+        "wingspan_m": 11.23,
+        "aspect_ratio": 5.61,
+        "wing_loading_kg_m2": 151.3,
+        "cd0": 0.0228,
+        "oswald_efficiency_e": 0.88,
+        "cl_max_clean": 1.5,
+        "cl_max_flaps": 1.82,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "Rolls-Royce Merlin 61 / 63",
+        "stages": [
+          {
+            "stage_name": "Moderate Supercharger (MS)",
+            "rating_type": "Combat Power (+15 lb boost)",
+            "rated_power_hp": 1565,
+            "critical_altitude_m": 3734
+          },
+          {
+            "stage_name": "Full Supercharger (FS)",
+            "rating_type": "Combat Power (+15 lb boost)",
+            "rated_power_hp": 1390,
+            "critical_altitude_m": 7163
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.28,
+          "blades": 4,
+          "prop_efficiency_cruise": 0.84,
+          "prop_efficiency_climb": 0.79
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 657,
+        "max_speed_altitude_m": 7620,
+        "max_rate_of_climb_m_s": 20.3,
+        "sea_level_rate_of_climb_m_s": 19.1,
+        "service_ceiling_m": 13100
+      },
+      "references": [
+        "A&AEE Boscombe Down Report No. M/794/Part 1: Spitfire IX with Merlin 61 Engine, 1942",
+        "Lednicer (2000), Table 1 (Elliptical wing induced drag & Oswald factor)",
+        "WWII Aircraft Performance: Spitfire F Mk IX Flight Trials"
+      ]
+    },
+    {
+      "id": "spitfire_lf_mkix",
+      "aircraft": "Supermarine Spitfire",
+      "variant": "LF Mk IX (+25 lb Boost / 150 Octane)",
+      "service_year": 1944,
+      "airframe": {
+        "loaded_weight_kg": 3447,
+        "empty_weight_kg": 2570,
+        "wing_area_m2": 22.48,
+        "wingspan_m": 11.23,
+        "aspect_ratio": 5.61,
+        "wing_loading_kg_m2": 153.3,
+        "cd0": 0.023,
+        "oswald_efficiency_e": 0.88,
+        "cl_max_clean": 1.5,
+        "cl_max_flaps": 1.82,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "Rolls-Royce Merlin 66 (Clipped Blower Impeller)",
+        "stages": [
+          {
+            "stage_name": "Moderate Supercharger (MS)",
+            "rating_type": "Combat Power (+25 lb boost / Grade 150)",
+            "rated_power_hp": 1720,
+            "critical_altitude_m": 1753
+          },
+          {
+            "stage_name": "Full Supercharger (FS)",
+            "rating_type": "Combat Power (+25 lb boost / Grade 150)",
+            "rated_power_hp": 1505,
+            "critical_altitude_m": 5791
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.28,
+          "blades": 4,
+          "prop_efficiency_cruise": 0.84,
+          "prop_efficiency_climb": 0.79
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 650,
+        "max_speed_altitude_m": 6400,
+        "max_rate_of_climb_m_s": 24.0,
+        "sea_level_rate_of_climb_m_s": 23.2,
+        "service_ceiling_m": 12600
+      },
+      "references": [
+        "A&AEE Boscombe Down Report No. 794/11: Spitfire IX (Merlin 66) at +25 lb. sq. in. Boost (April 1944)",
+        "Air Ministry Pilot's Notes: Spitfire IX, XI & XVI (Merlin 61, 63, 66, 70), A.P. 1565J",
+        "WWII Aircraft Performance: Spitfire LF Mk IX (+25 lb trials)"
+      ]
+    },
+    {
+      "id": "spitfire_mkxiv",
+      "aircraft": "Supermarine Spitfire",
+      "variant": "Mk XIV",
+      "service_year": 1944,
+      "airframe": {
+        "loaded_weight_kg": 3856,
+        "empty_weight_kg": 2990,
+        "wing_area_m2": 22.48,
+        "wingspan_m": 11.23,
+        "aspect_ratio": 5.61,
+        "wing_loading_kg_m2": 171.5,
+        "cd0": 0.0222,
+        "oswald_efficiency_e": 0.88,
+        "cl_max_clean": 1.5,
+        "cl_max_flaps": 1.82,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "Rolls-Royce Griffon 65",
+        "stages": [
+          {
+            "stage_name": "Moderate Supercharger (MS)",
+            "rating_type": "Combat Power (+21 lb boost)",
+            "rated_power_hp": 2220,
+            "critical_altitude_m": 3277
+          },
+          {
+            "stage_name": "Full Supercharger (FS)",
+            "rating_type": "Combat Power (+21 lb boost)",
+            "rated_power_hp": 1820,
+            "critical_altitude_m": 7742
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.18,
+          "blades": 5,
+          "prop_efficiency_cruise": 0.85,
+          "prop_efficiency_climb": 0.8
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 718,
+        "max_speed_altitude_m": 7925,
+        "max_rate_of_climb_m_s": 25.8,
+        "sea_level_rate_of_climb_m_s": 23.4,
+        "service_ceiling_m": 13500
+      },
+      "references": [
+        "A&AEE Boscombe Down Report No. M/814A/Part 1: Spitfire XIV with Griffon 65 (Dec 1943)",
+        "Air Ministry Pilot's Notes: Spitfire XIV & XVIII (Griffon 65), A.P. 1565T",
+        "WWII Aircraft Performance: Spitfire Mk XIV Trials"
+      ]
+    },
+    {
+      "id": "p47d_25",
+      "aircraft": "Republic Aviation P-47 Thunderbolt",
+      "variant": "P-47D-25-RE / D-28-RE",
+      "service_year": 1944,
+      "airframe": {
+        "loaded_weight_kg": 6032,
+        "empty_weight_kg": 4513,
+        "wing_area_m2": 27.87,
+        "wingspan_m": 12.42,
+        "aspect_ratio": 5.54,
+        "wing_loading_kg_m2": 216.4,
+        "cd0": 0.0205,
+        "oswald_efficiency_e": 0.81,
+        "cl_max_clean": 1.42,
+        "cl_max_flaps": 1.74,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "Pratt & Whitney R-2800-59 Double Wasp with Water Injection",
+        "stages": [
+          {
+            "stage_name": "Full Turbosupercharger Envelope",
+            "rating_type": "War Emergency Power with Water (64\" Hg)",
+            "rated_power_hp": 2530,
+            "critical_altitude_m": 9144
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.96,
+          "blades": 4,
+          "prop_efficiency_cruise": 0.85,
+          "prop_efficiency_climb": 0.8
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 690,
+        "max_speed_altitude_m": 9144,
+        "max_rate_of_climb_m_s": 16.0,
+        "sea_level_rate_of_climb_m_s": 14.5,
+        "service_ceiling_m": 12800
+      },
+      "references": [
+        "USAAF Flight Test Engineering Branch: P-47D-25-RE (AAF No. 42-26389) Performance Tests, Wright Field (1944)",
+        "Republic Aviation Corp. Report RAC-103: Aerodynamics of P-47D with Paddle Blade Propellers",
+        "WWII Aircraft Performance: P-47D Flight Performance Documents"
+      ]
+    },
+    {
+      "id": "p47m",
+      "aircraft": "Republic Aviation P-47 Thunderbolt",
+      "variant": "P-47M-1-RE",
+      "service_year": 1944,
+      "airframe": {
+        "loaded_weight_kg": 6010,
+        "empty_weight_kg": 4480,
+        "wing_area_m2": 27.87,
+        "wingspan_m": 12.42,
+        "aspect_ratio": 5.54,
+        "wing_loading_kg_m2": 215.6,
+        "cd0": 0.0198,
+        "oswald_efficiency_e": 0.81,
+        "cl_max_clean": 1.42,
+        "cl_max_flaps": 1.74,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "Pratt & Whitney R-2800-57(C) Double Wasp",
+        "stages": [
+          {
+            "stage_name": "Full Turbosupercharger Envelope",
+            "rating_type": "War Emergency Power with Water (72\" Hg)",
+            "rated_power_hp": 2800,
+            "critical_altitude_m": 9754
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.96,
+          "blades": 4,
+          "prop_efficiency_cruise": 0.86,
+          "prop_efficiency_climb": 0.81
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 761,
+        "max_speed_altitude_m": 9750,
+        "max_rate_of_climb_m_s": 20.2,
+        "sea_level_rate_of_climb_m_s": 18.0,
+        "service_ceiling_m": 12500
+      },
+      "references": [
+        "USAAF Wright Field Flight Test Report No. TSEAL-2-4266-A: Performance of P-47M-1-RE, 1945",
+        "56th Fighter Group Operational Combat Trials (V-1 and Jet Intercept Profiles, ETO 1945)",
+        "WWII Aircraft Performance: P-47M Performance and Power Analysis"
+      ]
+    },
+    {
+      "id": "p47n",
+      "aircraft": "Republic Aviation P-47 Thunderbolt",
+      "variant": "P-47N-5-RE",
+      "service_year": 1945,
+      "airframe": {
+        "loaded_weight_kg": 7380,
+        "empty_weight_kg": 4990,
+        "wing_area_m2": 29.91,
+        "wingspan_m": 12.98,
+        "aspect_ratio": 5.63,
+        "wing_loading_kg_m2": 246.7,
+        "cd0": 0.021,
+        "oswald_efficiency_e": 0.81,
+        "cl_max_clean": 1.41,
+        "cl_max_flaps": 1.73,
+        "g_limit_positive": 8.0
+      },
+      "propulsion": {
+        "engine_model": "Pratt & Whitney R-2800-77(C) Double Wasp",
+        "stages": [
+          {
+            "stage_name": "Full Turbosupercharger Envelope",
+            "rating_type": "War Emergency Power with Water (72\" Hg)",
+            "rated_power_hp": 2800,
+            "critical_altitude_m": 9754
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.96,
+          "blades": 4,
+          "prop_efficiency_cruise": 0.86,
+          "prop_efficiency_climb": 0.8
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 752,
+        "max_speed_altitude_m": 9750,
+        "max_rate_of_climb_m_s": 15.5,
+        "sea_level_rate_of_climb_m_s": 13.8,
+        "service_ceiling_m": 12200
+      },
+      "references": [
+        "USAAF Wright Field Flight Test Report No. TSESE-2-4279-A: Performance of P-47N Airplane (AAF No. 44-88001), 1945",
+        "Republic Aviation Corp. Engineering Report: P-47N Long Range Escort Aerodynamics (1945)",
+        "WWII Aircraft Performance: P-47N Flight Trials"
+      ]
+    },
+    {
+      "id": "p38f",
+      "aircraft": "Lockheed P-38 Lightning",
+      "variant": "P-38F-1-LO",
+      "service_year": 1942,
+      "airframe": {
+        "loaded_weight_kg": 7620,
+        "empty_weight_kg": 5443,
+        "wing_area_m2": 30.43,
+        "wingspan_m": 15.85,
+        "aspect_ratio": 8.26,
+        "wing_loading_kg_m2": 250.4,
+        "cd0": 0.0245,
+        "oswald_efficiency_e": 0.83,
+        "cl_max_clean": 1.4,
+        "cl_max_maneuver_flaps": 1.7,
+        "g_limit_positive": 7.5
+      },
+      "propulsion": {
+        "engine_model": "2x Allison V-1710-49/53 (Counter-rotating)",
+        "stages": [
+          {
+            "stage_name": "Full Turbosupercharger Envelope",
+            "rating_type": "War Emergency Power (54\" Hg)",
+            "rated_power_hp": 1325,
+            "total_power_hp": 2650,
+            "critical_altitude_m": 7620
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.51,
+          "blades": 3,
+          "prop_efficiency_cruise": 0.84,
+          "prop_efficiency_climb": 0.79
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 636,
+        "max_speed_altitude_m": 7620,
+        "max_rate_of_climb_m_s": 15.5,
+        "sea_level_rate_of_climb_m_s": 14.0,
+        "service_ceiling_m": 12190
+      },
+      "references": [
+        "Lockheed Aircraft Corp. Report 2555: Performance of Model 322/Model 222 (P-38F), 1942",
+        "USAAF Wright Field Flight Test Report No. ENG-47-1563-A: P-38F Performance Tests",
+        "WWII Aircraft Performance: P-38F Official Trials"
+      ]
+    },
+    {
+      "id": "p38j",
+      "aircraft": "Lockheed P-38 Lightning",
+      "variant": "P-38J-15-LO",
+      "service_year": 1943,
+      "airframe": {
+        "loaded_weight_kg": 7938,
+        "empty_weight_kg": 5806,
+        "wing_area_m2": 30.43,
+        "wingspan_m": 15.85,
+        "aspect_ratio": 8.26,
+        "wing_loading_kg_m2": 260.9,
+        "cd0": 0.0238,
+        "oswald_efficiency_e": 0.83,
+        "cl_max_clean": 1.4,
+        "cl_max_maneuver_flaps": 1.7,
+        "g_limit_positive": 7.5
+      },
+      "propulsion": {
+        "engine_model": "2x Allison V-1710-89/91 (Core chin intercoolers)",
+        "stages": [
+          {
+            "stage_name": "Full Turbosupercharger Envelope",
+            "rating_type": "War Emergency Power (60\" Hg)",
+            "rated_power_hp": 1600,
+            "total_power_hp": 3200,
+            "critical_altitude_m": 7925
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.51,
+          "blades": 3,
+          "prop_efficiency_cruise": 0.85,
+          "prop_efficiency_climb": 0.8
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 666,
+        "max_speed_altitude_m": 7620,
+        "max_rate_of_climb_m_s": 17.0,
+        "sea_level_rate_of_climb_m_s": 15.2,
+        "service_ceiling_m": 13400
+      },
+      "references": [
+        "USAAF Wright Field Flight Test Report No. ENG-47-1647-A: Performance Test of P-38J-15-LO (AAF No. 42-67856), 1944",
+        "Lockheed Aircraft Corp. Report No. 4296: Aerodynamic Summary and Chin Radiator Integration on P-38J",
+        "WWII Aircraft Performance: P-38J Flight Tests"
+      ]
+    },
+    {
+      "id": "p38l",
+      "aircraft": "Lockheed P-38 Lightning",
+      "variant": "P-38L-5-LO",
+      "service_year": 1944,
+      "airframe": {
+        "loaded_weight_kg": 7938,
+        "empty_weight_kg": 5806,
+        "wing_area_m2": 30.43,
+        "wingspan_m": 15.85,
+        "aspect_ratio": 8.26,
+        "wing_loading_kg_m2": 260.9,
+        "cd0": 0.0235,
+        "oswald_efficiency_e": 0.83,
+        "cl_max_clean": 1.4,
+        "cl_max_maneuver_flaps": 1.7,
+        "g_limit_positive": 7.5
+      },
+      "propulsion": {
+        "engine_model": "2x Allison V-1710-111/113 with Water Injection",
+        "stages": [
+          {
+            "stage_name": "Full Turbosupercharger Envelope",
+            "rating_type": "War Emergency Power with Water (64\" Hg)",
+            "rated_power_hp": 1720,
+            "total_power_hp": 3440,
+            "critical_altitude_m": 8230
+          }
+        ],
+        "propeller": {
+          "diameter_m": 3.51,
+          "blades": 3,
+          "prop_efficiency_cruise": 0.85,
+          "prop_efficiency_climb": 0.8
+        }
+      },
+      "performance_benchmarks": {
+        "max_speed_kmh": 666,
+        "max_speed_altitude_m": 8230,
+        "max_rate_of_climb_m_s": 19.8,
+        "sea_level_rate_of_climb_m_s": 17.5,
+        "service_ceiling_m": 13400
+      },
+      "references": [
+        "USAAF Wright Field Flight Test Report No. TSESE-2-4275-A: P-38L Performance with V-1710-111/113 Engines, 1945",
+        "Air Technical Service Command: Operational Flight Characteristics of P-38L with Dive Recovery Flaps",
+        "WWII Aircraft Performance: P-38L Flight Trials"
+      ]
+    }
+  ]
+}
