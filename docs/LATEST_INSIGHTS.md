@@ -5,25 +5,23 @@ Pointer file for agents starting a new milestone. Not a second model of record. 
 ## Shared research / implementation roadmap (2026-11-12)
 
 ### Immediate next implementation
-1. **Shared flight-case climb calculation** (highest-priority implementation)
-   - Apply the existing matched open-cooling input to the Fw 190 A-4 WNr 783 live benchmark climb (currently omitted in the live path).
-   - Add the kinetic-energy term for changing TAS in the timed-climb energy budget, starting with the P-38G Wright Field B.4 report (source elapsed 340.80 s).
-   - Keep current v4.10 propeller references in their supported bands.
-   - Freeze before-scorecard, re-score both cases, run `npm run check` + browser smoke, confirm four-aircraft scorecard does not regress outside accepted tolerances, update validation/limitations/next-steps.
-   - Status: next agreed implementation milestone. Data already present; no new model invention required.
-   - Refs: `docs/NEXT_STEPS.md`, `docs/V410_CLIMB_TURN_AND_FORMULA_AUDIT.md`, `docs/LATEST_INSIGHTS.md`.
 
-### Near-term research (can run in parallel)
-2. **Propeller-efficiency data pack** for the seven-aircraft Normal/Combat benchmark
-   Graded observations (observed / derived / estimated / missing), matched conditions (mass, rating, RPM, gear, cooling/intake, airspeed basis), tip-Mach corrections, and installation notes.
-   Output: compact JSON + short Markdown research note under `references/research/`.
-   Status: high-leverage research; existing scorecards and NACA leads already available. Do not block the climb milestone.
+**Shared flight-case climb calculation.** Apply the existing matched open-cooling input to the Fw 190 A-4 WNr 783 live benchmark climb. Account for changing TAS in the timed-climb energy budget, starting with the P-38G Wright Field B.4 report. Keep current v4.10 propeller references within their supported bands.
 
-### Follow-on (after climb calculation is stable)
-3. **Mustang–Spitfire crossover** for usable lift and drag above 1 G at equal EAS.
-   Use existing NACA TN 1044 and report evidence; constrain any new coefficient with powered-turn or matched-load drag data.
-4. Cooling / intake residual audit (still listed as unresolved).
-5. Sustained-turn and near-stall evidence tightening where primary matched data exists (do not invent CLmax).
+Freeze the before-scorecard and re-score both cases. Check time-step sensitivity, rate and elapsed-time residuals, and four-aircraft regressions against the existing tolerances. Run the regression and browser checks and update validation and limitations. The existing evidence supports starting a bounded implementation candidate while research continues. [Next steps](NEXT_STEPS.md#after-v410-propeller-integration) · [Climb audit](V410_CLIMB_TURN_AND_FORMULA_AUDIT.md#issues-to-address-next)
+
+### Input-data milestones
+
+Fighter Sim Inputs **v1.6.0** exports clean-stall references for all 13 variants. Two use reported CAS, eight use source-indicated speeds, and three use calculated EAS. The propeller companion already carries installation references for all 13 variants and includes a seven-profile sensitivity sweep. Build the next data increment on these records and their checked conditions. [Data handoff](SIMULATOR_DATA_HANDOFF.md) · [Fleet stall references](research/WW2_FLEET_STALL_INPUTS_2026-11-12.md) · [Fleet propeller references](research/WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md)
+
+1. **Climb case handoff for WNr 783 and 42-12687.** Package the existing test rows into two reusable climb cases with their source IDs, input limits and baseline residuals.
+   - **Fw 190 A-4 WNr 783.** Match the long external intake, open/closed cooling-flap pair, 3,870 kg takeoff load and 2,400 rpm / 1.32 ata rating. Keep the 0.171 m² equivalent cooling area tied to its 5,000 m fit and check other altitude bands, including the adverse 7,000 m result in the existing replay. Recorded climb TAS remains open. Give any modeled speed schedule its own estimate label and bounds. [WNr 783 replay](V311_FW190A4.md) · [Climb audit](V410_CLIMB_TURN_AND_FORMULA_AUDIT.md#issues-to-address-next)
+   - **P-38G-1 42-12687.** Use B.4's open-cooling climb TAS, chart-assigned BHP per engine, climb rates and elapsed times, including the 340.80 s sea-level to 20,000 ft check. Retain loading and rating limits and keep the B.1 faired-cooling level-power schedule with its own case. Report rate and time residuals by altitude band, including sea level. Identify shared-report checks and independent tests by lineage. [Wright Field transcription](../references/p38g-42-12687.json) · [Validation plan](V410_VALIDATION_IMPROVEMENT_PLAN.md#historical-and-calculated-time-to-climb)
+2. **Corrected stall and maneuver evidence for the Mustang–Spitfire crossover.** Start with P-51B-15 43-24777 and Spitfire LF IX BS.543. Seek near-stall airspeed corrections, test loading and configuration for one-G lift. Keep the TN 1044 maneuver-lift transfer within its measured Mach and test-condition range. For sustained-turn drag above one G, seek a matched high-lift drag polar, powered turn, or energy-loss trace with known load, speed, altitude and power. Deliver a bounded comparison at matched EAS and altitude with declared loading and power. Report lift and sustained-turn support separately, with unresolved comparisons flagged. [Input roadmap v1.7](research/WW2_FIGHTER_DATA_ROADMAP.md) · [Maneuver evidence](V44_TURN_PERFORMANCE.md)
+3. **Targeted propulsion and timed acceleration evidence.** Extend the existing companion at named gaps. Prioritize the WNr 783 installed BMW 801 D-2 power schedule through the blower transition and the exact blade drawing. Check cooling and intake against their matched pairs before attributing a residual to propeller efficiency. For timed acceleration, start with the Mustang–Spitfire comparison and seek a constant-altitude speed–time trace with known speed basis, loading and power. Record the endpoints and elapsed time for any usable case. [Propulsion source leads](V410_REMAINING_PROPELLERS.md#source-checks-for-follow-up) · [Timed comparison evidence](V49_TIMED_MATCHUPS.md#historical-checks)
+4. **Qualify the next airframe.** Prepare the Bf 109 G-2 MT-215 level-speed and climb dossier after the current comparison priorities. Recover run loading, airspeed corrections and installed DB 605 A power for the Finnish trial. Keep the donor installations as separate cases. [Candidate data handoff](SIMULATOR_DATA_HANDOFF.md#suggested-aircraft) · [Input roadmap v1.8](research/WW2_FIGHTER_DATA_ROADMAP.md)
+
+Use the existing observation IDs, pack and compact research notes for each increment. Record original units, conditions, source locator and evidence grade. For calculated inputs, include the formula, cited inputs, assumptions and bounds. Keep measured, calculated and unresolved values visible and distinguish fit points, reserved checks and independent runs. Keep well-sourced observations in the catalog even when their immediate simulator use is open. Hand off each usable case with its remaining gaps. [Candidate handoff](WORKFLOW.md#candidate-handoff)
 
 ## Current research candidate
 - Version: 4.10.0-rc.2
