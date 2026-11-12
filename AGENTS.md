@@ -9,6 +9,9 @@ These instructions apply to `hound83/WW2-Aircraft-Physics-Simulator`, the **scie
 - Mark each item `- [x]` once its outcome is verified. Add brief evidence such as a file path, test result, commit, PR, or verified live link. Save the log at each meaningful checkpoint with the current branch, commit, or worktree location as applicable. Keep open items unchecked and record any blocker and the next concrete action.
 - When resuming, open the existing log and verify the checkpoint against the current repository state. Before the final reply, reconcile the checklist with the latest request. Record `Done` when all requested outcomes are verified, or `In progress` or `Blocked` with the remaining work. Leave the log available for the user's review.
 
+
+- **Pre-assignment WIP and latest-insights check:** Before starting a new implementation milestone, inspect open PRs, unmerged feature branches, and recent commits under `docs/research/` and `references/` for work that touches the same aircraft, subsystem, or validation path. Also read `docs/LATEST_INSIGHTS.md` (or the top of `docs/NEXT_STEPS.md`) if it exists. Record the scan result in the task log. If relevant in-progress material exists, either incorporate it or state why the milestone proceeds without it. Do not begin from a private chat history when committed or open work already covers the same ground.
+
 ## Mission and substantial milestones
 
 - Aim for a usable, physically consistent and historically evidence-bounded shared solver covering the **four benchmark aircraft/configurations identified by the current repository**. Preserve meaningful differences between aircraft; do not tune them into artificially identical behavior.
