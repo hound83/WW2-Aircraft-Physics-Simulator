@@ -1,0 +1,99 @@
+{
+  "schema": "ww2-propeller-efficiency-benchmark/v1",
+  "pack_version": "1.0.0-research",
+  "as_of": "2026-11-12",
+  "purpose": "Graded propeller efficiency observations and residual gaps for the seven-aircraft Normal/Combat benchmark. Research only.",
+  "grading": ["observed", "derived", "estimated", "missing"],
+  "working_references": {
+    "eta_80_percent": {
+      "value": 0.80,
+      "grade": "calculated",
+      "basis": "Greg Mustang workbook constant; supported by level-speed replays on F4U-4, P-51B low-blower, Spitfire LF IX closed radiators.",
+      "use": "Starting value inside tested level-flight envelopes; not universal."
+    },
+    "eta_76_percent_p47b_military": {
+      "value": 0.76,
+      "grade": "derived",
+      "basis": "Mean of close matches to NACA L4L07 military climb series (≈0.75–0.76); high-load Curtiss runs 24-5/24-2 give 0.801/0.759.",
+      "use": "P-47B 2700 rpm military climb with matched open-cooling area; tip-Mach level curve endpoint."
+    }
+  },
+  "aircraft": [
+    {
+      "id": "f4u4_80765",
+      "sim_id": "f4u4",
+      "recommended_eta": 0.80,
+      "grade": "derived",
+      "matched_condition": "Clean Normal and Military level, chart power, BuNo 80765",
+      "source": "Wright Field / VF-96 level trial; existing replay MAE 3.10 mph (was 7.38)",
+      "residual_gap": "High-blower shaft-power and climb plates still open"
+    },
+    {
+      "id": "p47b_415902",
+      "sim_id": "p47b",
+      "recommended_eta": 0.76,
+      "grade": "observed/derived",
+      "matched_condition": "2700 rpm military climb + open cooling; tip-Mach level curve 0.979→1.035",
+      "source": "NACA L4L07 Tables I–II; Wright Field 41-5902 / 41-5942",
+      "residual_gap": "Installation loss split still coarse; hold endpoints only over tested domain"
+    },
+    {
+      "id": "p51b_4324777",
+      "sim_id": "p51b",
+      "recommended_eta": 0.80,
+      "grade": "derived",
+      "matched_condition": "Low-blower 67 inHg, racks fitted, 0–10300 ft",
+      "source": "Wright Field Eng-47-1749-A; existing level checks",
+      "residual_gap": "High-blower is a separate test condition; Fig. 5 remains diagnostic"
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "sim_id": "spitfire_lfix_bs543",
+      "recommended_eta": 0.80,
+      "grade": "derived",
+      "matched_condition": "+18 lb low-blower, closed radiators, 2000–10800 ft",
+      "source": "A&AEE BS.543 Tables II and V",
+      "residual_gap": "Open-radiator climb and metal-blade (RA.10061) transfer still open; wooden Rotol data not directly transferable"
+    },
+    {
+      "id": "p38g_4212687",
+      "sim_id": "p38g",
+      "recommended_eta": 0.80,
+      "grade": "estimated",
+      "matched_condition": "Part-power level, recorded TAS/BHP/RPM at 5000 and 24400 ft, faired shutters",
+      "source": "Wright Field FS-M-19-1538-A",
+      "residual_gap": "Full-power level and open-shutter climb need joint power/drag check"
+    },
+    {
+      "id": "fw190a4_wnr783",
+      "sim_id": "fw190a4",
+      "recommended_eta": null,
+      "grade": "missing",
+      "matched_condition": "Combat 2400 rpm, closed flaps, internal vs long intake, ~3870 kg",
+      "source": "WNr 783 Nr. 1/2/5; installation evidence only",
+      "residual_gap": "No direct measured η; need matched boost/RPM/intake + useful-power or thrust observation"
+    },
+    {
+      "id": "bf109f4",
+      "sim_id": "bf109f4",
+      "recommended_eta": null,
+      "grade": "missing",
+      "matched_condition": "DB 601 E 1.30 ata / 2500 rpm combat schedule",
+      "source": "Messerschmitt 109 19 L 42 (geometry); Rechlin times incomplete",
+      "residual_gap": "Original power-by-altitude curve and rated F-4 run required before any η estimate"
+    }
+  ],
+  "residual_gaps": [
+    "Direct measured η for Fw 190 A-4 and Bf 109 F-4 under combat ratings (missing)",
+    "High-blower / high-altitude tip-Mach and installation losses (partial)",
+    "Joint cooling + propulsive power on open-radiator/open-shutter climbs",
+    "Additional separate-airframe or independent-report checks",
+    "Tip-Mach corrections for non-Curtiss installations"
+  ],
+  "lineage": [
+    "references/analysis/fighter-propeller-efficiency-v1.json",
+    "docs/research/WW2_PROPELLER_REFERENCE_VALUES_2026-11-12.md",
+    "docs/V410_PROPELLER_REFERENCE.md",
+    "docs/V410_REMAINING_PROPELLERS.md"
+  ]
+}
