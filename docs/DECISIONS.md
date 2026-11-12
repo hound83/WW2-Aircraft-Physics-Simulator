@@ -1,5 +1,9 @@
 # Current decisions
 
+## v4.11-rc.1 shared climb
+
+Use Grok’s WNr 783 and B.4 source extraction with the existing WNr 783 open/closed cooling fit bounded by rating and climb conditions. Keep the v4.10 propeller diagnostic and its regression assertions at their original scope. Integrate signed speed energy, midpoint fuel mass, and rating and fluid limits in the operating benchmark. Preserve the measured vertical-rate basis of the report-conditioned Thunderbolt and Spitfire cases. The four-aircraft steady scorecard and the seven-aircraft power budgets accompany the research candidate. [Shared climb replay](V411_SHARED_FLIGHT_CLIMB.md)
+
 ## v4.10-rc.2 Lightning Military level power
 
 Apply the faired-shutter level shaft-power schedule and the bounded tip-Mach loss together for P-38G-1 42-12687 Military at 3,000 rpm. Keep its existing drag polar and use the climb schedule for open cooling. The 22,600-ft fit and 5,000-ft anchor are excluded from the three same-report checks. The other four aircraft retain the better-supported working model. [Replay and source decisions](V410_REMAINING_PROPELLERS.md).

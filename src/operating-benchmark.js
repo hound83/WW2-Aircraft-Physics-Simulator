@@ -83,14 +83,16 @@
    ?native.mapInHg+fraction*(level.mapInHg-climb.mapInHg):native.mapInHg;
   return {...native,bhp,mapInHg};
  }
+ function climbTasShare(tas,{minTasMph,maxTasMph,fadeTasMph}) {
+  return Math.max(0,Math.min(1,(tas-minTasMph)/fadeTasMph,(maxTasMph-tas)/fadeTasMph));
+ }
  // These configurations were derived from climbs with open cooling. Rating, RPM,
  // airspeed and altitude checks keep them within the applicable test conditions.
  function installedClimb(M,model,altFt,tas,weightLb,phase,native){
   const configuration=model.benchmarkCooling;
   const match=configuration?.ratings[phase.key];
   if(!match||native.estimated||phase.map!==match.map)return null;
-  const {minTasMph,maxTasMph,fadeTasMph}=configuration;
-  const fraction=Math.min(1,(tas-minTasMph)/fadeTasMph,(maxTasMph-tas)/fadeTasMph);
+  const fraction=climbTasShare(tas,configuration);
   if(fraction<=0)return null;
   const prepared=Energy.prepare(M,model,altFt,match.rating,weightLb,configuration);
   if(!prepared||prepared.branch.engineRpm!==phase.rpm)return null;
@@ -99,7 +101,7 @@
   const power=nodes[0];
   const areaM2=(model.climbCoolingAreaM2??0)*(1-fraction)+branch.loss.areaM2*fraction;
   return {
-   configuration,
+   configuration, fraction,
    prepared:{
     ...prepared,
     ac:{...ac,powerRatings:{[options.rating]:{gears:{[options.gear]:[
@@ -126,7 +128,12 @@
   const opts={...model.options,profile:'P',polar:model.benchmarkPolar,rating,gear,weightLb,
    cleanLevelPropeller:reference};
   delete opts.engineModel;delete opts.flightCooling;
-  if(open&&model.climbCoolingAreaM2)opts.addedDragAreaM2=model.climbCoolingAreaM2;
+  const coolingCase=model.climbCoolingCase;
+  const matchedCooling=open&&coolingCase&&phase.map===coolingCase.map&&phase.rpm===coolingCase.rpm&&
+   altFt>=coolingCase.minFt&&altFt<=coolingCase.maxFt&&!p.estimated?coolingCase:null;
+  const coolingShare=matchedCooling?climbTasShare(tas,matchedCooling):0;
+  const coolingArea=coolingShare>0?matchedCooling.areaM2*coolingShare:model.climbCoolingAreaM2;
+  if(open&&coolingArea)opts.addedDragAreaM2=coolingArea;
   const installed=open?installedClimb(M,model,altFt,tas,weightLb,phase,p):null;
   const turnOptions=turn.optionsFor(M,ac,lift,altFt,tas,opts);
   const maneuverLift=!open?Turn.maneuverLift(M,ac,model.maneuverLiftSource,altFt,tas,turnOptions):null;
@@ -139,7 +146,9 @@
    r=M.evaluated(ac,altFt,tas,maneuverLift?{...turnOptions,maneuverClMax:maneuverLift.clMax}:turnOptions);
   }
   return {...r,benchmark:{phase:phase.key??s.mode,label:phase.label,estimated:p.estimated,sourceMaxFt:p.sourceMaxFt,
-   rpm:phase.rpm,map:phase.map,mapUnit:spec.mapUnit,cooling:installed?'report-conditioned':open?'climb-estimate':'clean',
+   rpm:phase.rpm,map:phase.map,mapUnit:spec.mapUnit,cooling:installed||coolingShare>0?'report-conditioned':open?'climb-estimate':'clean',
+   ...(coolingShare>0?{coolingFit:{...matchedCooling,appliedAreaM2:coolingArea}}:{}),
+   ...(installed&&model.climbRateTas?.[phase.key]?{climbRateShare:installed.fraction}:{}),
    ...(maneuverLift?{maneuverLift}:{}),
    ...(r.prop?.levelReference?{propellerReference:r.prop.levelReference}:{})}};
  }
@@ -311,19 +320,85 @@
   }
   return result(eas>=to-1e-8?'reached':'integration-limit');
  }
+ function speedEnergyHeightFt(startMph,endMph) {
+  return (endMph-startMph)*(endMph+startMph)*MPH**2/(2*G*.3048);
+ }
+
+ function scheduledClimbStep({dh, tas, weightLb, dryLb, speedAt, stateAt, referenceSpeedAt, fuelPerHpSecond, injectionRate, limit}) {
+  function trial(distanceFt) {
+   let massUsedLb=0;
+   for(let iteration=0;iteration<6;iteration++){
+    const endWeight=Math.max(dryLb,weightLb-massUsedLb);
+    const endTas=speedAt(distanceFt,endWeight);
+    if(!(endTas>0))return {status:'source-power-unavailable'};
+    const mid=stateAt(distanceFt/2,(weightLb+endWeight)/2);
+    if(!mid.power)return {status:mid.status};
+    // Specific excess power pays for both altitude and the signed change in kinetic energy.
+    const energyHeightFt=distanceFt+speedEnergyHeightFt(tas,endTas);
+    let excessRateFpm=mid.power.climbFpm;
+    // Existing installation fits use vertical rates along the report's speed
+    // schedule. Restore that schedule's energy gain in the calibrated share.
+    const share=mid.benchmark.climbRateShare;
+    if(share){
+     const refStart=referenceSpeedAt(0),refEnd=referenceSpeedAt(distanceFt);
+     if(refStart>0&&refEnd>0)excessRateFpm*=1+share*speedEnergyHeightFt(refStart,refEnd)/distanceFt;
+    }
+    if(!(excessRateFpm>0&&energyHeightFt>0))return {status:'unattainable'};
+    const dt=60*energyHeightFt/excessRateFpm;
+    const burn=fuelPerHpSecond*mid.power.shaftHp*dt;
+    const nextMassUsedLb=burn+injectionRate*dt;
+    if(Math.abs(nextMassUsedLb-massUsedLb)<=1e-5)return {dh:distanceFt,dt,burn,mid,endTas};
+    massUsedLb=nextMassUsedLb;
+   }
+   return {status:'integration-limit'};
+  }
+
+  const full=trial(dh);
+  if(full.status||full.dt<=limit)return full;
+  // Shorten the altitude step using the same energy equation at a rating or fluid limit.
+  let low=0,high=dh,best=null;
+  for(let iteration=0;iteration<40;iteration++){
+   const candidate=trial((low+high)/2);
+   if(candidate.status)return candidate;
+   if(candidate.dt>limit)high=candidate.dh;
+   else {
+    low=candidate.dh;
+    best=candidate;
+    if(limit-candidate.dt<1e-8)break;
+   }
+  }
+  return best??{status:'rating-time-exhausted'};
+ }
+
  function climb(M,T,L,model,spec,policy,settings,from,to,options={}){
   if(!(from>=0&&to>from&&to<=40000))throw Error('Climb target must be above start, within 0-40000 ft');
-  const s=validateSettings(spec,settings,model),initial=load(spec,policy,s),stepFt=options.stepFt??500;
+  const s=validateSettings(spec,settings,model),stepFt=options.stepFt??500;
   if(!(stepFt>=50&&stepFt<=1000))throw Error('Invalid climb integration step');
+  const source=options.flightCase;
+  if(source&&(!(source.weightLb>0&&Number.isFinite(source.weightLb))||
+    !Array.isArray(source.tasSchedule)||!source.tasSchedule.length||s.injection))throw Error('Invalid climb flight case');
+  const initial=source?{weightLb:source.weightLb,dryLb:source.weightLb,fuelLb:0,injectionLb:0}:load(spec,policy,s);
+  const accountForTasChange=options.accountForTasChange??model.timedClimbEnergy??false;
+  const fuelPerHpSecond=source?0:policy.bsfcLbPerHpHour/3600;
+  const plannedPhase=accountForTasChange&&s.mode==='combat'?phaseFor(spec,s,0,0,initial.injectionLb):null;
+  function manualTas(alt){
+   const ias=interpolate(spec.climbIAS,alt,1);
+   return ias===null?null:M.tasFrom(ias,'CAS',alt);
+  }
   // Reuse optimal speed at three load levels. Every replay re-evaluates the shared
   // force balance at actual midpoint fuel mass; interpolated speeds are not rates.
   const speedCache=new Map();
   function speedFor(alt,w,phase){
-   if(s.mode==='normal'){const ias=interpolate(spec.climbIAS,alt,1);return M.tasFrom(ias,'CAS',alt);}
+   if(source)return interpolate(source.tasSchedule,alt,1);
+   if(s.mode==='normal')return manualTas(alt);
+   // Fix the planned Combat speed schedule across power changes. Its interpolation
+   // stays continuous when the actual phase or boost-window start changes.
+   const speedPhase=plannedPhase??phase;
    const lower=Math.floor(alt/1000)*1000,upper=Math.min(40000,lower+1000),minW=initial.dryLb,maxW=initial.weightLb;
    function atHeight(h){const samples=[minW,(minW+maxW)/2,maxW];let i=w>(minW+maxW)/2?1:0;
-    const vals=samples.slice(i,i+2).map(weight=>{const key=[h,phase.key,weight].join(':');if(!speedCache.has(key))speedCache.set(key,bestClimb(M,T,L,model,spec,s,h,weight,phase,5).tasMph??null);return speedCache.get(key);});
-    if(vals.some(v=>v===null))return null;return vals[0]+(vals[1]-vals[0])*(w-samples[i])/(samples[i+1]-samples[i]);}
+    const vals=samples.slice(i,i+2).map(weight=>{const key=[h,speedPhase.key,weight].join(':');if(!speedCache.has(key))speedCache.set(key,bestClimb(M,T,L,model,spec,s,h,weight,speedPhase,5).tasMph??null);return speedCache.get(key);});
+    if(vals.some(v=>v===null))return accountForTasChange?manualTas(h):null;
+    return vals[0]+(vals[1]-vals[0])*(w-samples[i])/(samples[i+1]-samples[i]);}
    const a=atHeight(lower),b=atHeight(upper);return a===null||b===null?null:a+(b-a)*(alt-lower)/(upper-lower||1);
   }
   function replay(boostStart,captureTrace=false){let h=from,seconds=0,combatUsed=0,fuel=initial.fuelLb,fluid=initial.injectionLb,iterations=0,estimated=false;const schedule=[];
@@ -339,48 +414,58 @@
     const get=(height,weight)=>{const speed=speedFor(height,weight,phase);return speed?evaluate(M,T,L,model,spec,s,height,M.airspeeds(speed,height).eas,weight,phase,true):{status:'source-power-unavailable'};};
     const a=get(h,w);if(!a.power)return output(a.status);if(!(a.power.climbFpm>0))return output('unattainable');
     let dh=Math.min(stepFt,to-h);if(!canBoost&&s.mode==='combat'&&boostStart>h)dh=Math.min(dh,boostStart-h);
-    let dt=dh/a.power.climbFpm*60;
     const injectionRate=phase.key==='injection'?(spec.injection.fluidLbPerMinute??0)/60:0;
-    const halfBurn=policy.bsfcLbPerHpHour*a.power.shaftHp*dt/7200+injectionRate*dt/2;
-    let mid=get(h+dh/2,w-halfBurn);if(!mid.power)return output(mid.status);if(!(mid.power.climbFpm>0))return output('unattainable');
-    dt=dh/mid.power.climbFpm*60;
     const remaining=phase.key==='continuous'?Infinity:phase.key==='injection'?Math.min((spec.combat.seconds??Infinity)-combatUsed,(spec.injection.seconds??Infinity)-combatUsed):phase.key==='combat'?(spec.combat.seconds??Infinity)-combatUsed:(spec.normal.seconds??Infinity)-seconds;
     const remainingFluid=injectionRate>0?fluid/injectionRate:Infinity;
-    const allowed=Math.min(dt,remaining,remainingFluid);
-    if(!(allowed>1e-8))return output('rating-time-exhausted');
-    if(allowed<dt){dt=allowed;dh=Math.min(dh,mid.power.climbFpm*dt/60);mid=get(h+dh/2,w-(policy.bsfcLbPerHpHour*a.power.shaftHp/3600+injectionRate)*dt/2);if(!mid.power)return output(mid.status);}
-    const burn=policy.bsfcLbPerHpHour*mid.power.shaftHp*dt/3600;
-    if(burn>fuel)return output('fuel-exhausted');
-    // Optional kinetic-energy debit when the speed schedule requires increasing TAS.
-    // Enable with options.accountForTasChange so existing baselines stay unchanged.
-    if(options.accountForTasChange){
-     const endTas=speedFor(h+dh,w-burn,phase);
-     if(Number.isFinite(endTas)&&endTas>tas){
-      const tasMps=tas*MPH,endMps=endTas*MPH,massKg=(w-burn)*0.45359237;
-      const keDelta=0.5*massKg*(endMps*endMps-tasMps*tasMps);
-      const kePowerW=keDelta/dt;
-      const keFpm=kePowerW/((w-burn)*4.4482216153)*196.8503937;
-      const available=mid.power.climbFpm-keFpm;
-      if(!(available>0))return output('unattainable');
-      dt=dh/available*60;
+    let dt,burn,mid,endTas;
+    if(accountForTasChange){
+     const limit=Math.min(remaining,remainingFluid);
+     if(!(limit>1e-8))return output('rating-time-exhausted');
+     const step=scheduledClimbStep({
+      dh,tas,weightLb:w,dryLb:initial.dryLb,fuelPerHpSecond,injectionRate,limit,
+      speedAt:(distance,weight)=>speedFor(h+distance,weight,phase),
+      stateAt:(distance,weight)=>get(h+distance,weight),
+      referenceSpeedAt:distance=>interpolate(model.climbRateTas?.[phase.key],h+distance,1)
+     });
+     if(step.status)return output(step.status);
+     ({dh,dt,burn,mid,endTas}=step);
+    }else{
+     // Historical scorecards keep the original steady-rate integration.
+     dt=dh/a.power.climbFpm*60;
+     const halfBurn=(source?0:policy.bsfcLbPerHpHour*a.power.shaftHp*dt/7200)+injectionRate*dt/2;
+     mid=get(h+dh/2,w-halfBurn);if(!mid.power)return output(mid.status);if(!(mid.power.climbFpm>0))return output('unattainable');
+     dt=dh/mid.power.climbFpm*60;
+     const allowed=Math.min(dt,remaining,remainingFluid);
+     if(!(allowed>1e-8))return output('rating-time-exhausted');
+     if(allowed<dt){
+      dt=allowed;dh=Math.min(dh,mid.power.climbFpm*dt/60);
+      mid=get(h+dh/2,w-((source?0:policy.bsfcLbPerHpHour*a.power.shaftHp/3600)+injectionRate)*dt/2);
+      if(!mid.power)return output(mid.status);
      }
+     burn=source?0:policy.bsfcLbPerHpHour*mid.power.shaftHp*dt/3600;
     }
+    if(burn>fuel)return output('fuel-exhausted');
     const start=h;h+=dh;seconds+=dt;fuel-=burn;fluid=Math.max(0,fluid-injectionRate*dt);
     if(phase.key==='combat'||phase.key==='injection')combatUsed+=dt;
     estimated||=mid.benchmark.estimated;
     const tail=schedule.at(-1);if(tail?.phase===phase.key){tail.toFt=h;tail.seconds+=dt;}else schedule.push({phase:phase.key,label:phase.label,fromFt:start,toFt:h,seconds:dt});
-    trace?.push({seconds,altFt:h,phase:phase.key,inputs:traceInputs(mid)});
+    trace?.push({seconds,altFt:h,phase:phase.key,inputs:traceInputs(mid),...(accountForTasChange?{tasMph:endTas}:{})});
    }
    return output(h>=to-1e-6?'reached':'integration-limit');
   }
-  if(s.mode==='normal')return {...replay(Infinity,options.trace),policy:'Manual normal-climb schedule; IAS approximately CAS; no time budget reset.'};
+  if(source)return {...replay(s.mode==='combat'?from:Infinity,options.trace),policy:'Recorded climb TAS at report takeoff weight and rating schedule.'};
+  if(s.mode==='normal')return {...replay(Infinity,options.trace),policy:accountForTasChange?
+   'Manual Normal climb schedule with IAS approximated as CAS and signed TAS energy.':
+   'Manual normal-climb schedule; IAS approximately CAS; no time budget reset.'};
   const starts=[from];for(let h=from+1000;h<to;h+=1000)starts.push(h);starts.push(to);
   const candidates=starts.map(start=>replay(start)),valid=candidates.filter(r=>r.status==='reached');
   function withTrace(run){return options.trace?{...run,trace:replay(run.boostStartFt,true).trace}:run;}
   if(!valid.length)return {...withTrace(candidates.reduce((a,b)=>b.reachedFt>a.reachedFt?b:a)),candidateWindows:starts.length,policy:'No tested permitted boost window reaches the target.'};
   let best=valid.reduce((a,b)=>b.seconds<a.seconds?b:a);
   for(const h of [best.boostStartFt-500,best.boostStartFt+500].filter(h=>h>=from&&h<to)){const r=replay(h);candidates.push(r);if(r.status==='reached'&&r.seconds<best.seconds)best=r;}
-  return {...withTrace(best),candidateWindows:candidates.length,frontLoadedSeconds:candidates[0].seconds,policy:'Quickest tested contiguous boost window, 1000-ft grid plus local 500-ft refinement; shared-solver midpoint mass replay. Not a proof of global optimal control; no thermal or speed-change acceleration model.'};
+  return {...withTrace(best),candidateWindows:candidates.length,frontLoadedSeconds:candidates[0].seconds,policy:accountForTasChange?
+   'Quickest tested contiguous boost window on one planned Combat speed schedule. Timed steps include signed TAS energy and changing fuel mass.':
+   'Quickest tested contiguous boost window, 1000-ft grid plus local 500-ft refinement; shared-solver midpoint mass replay. Not a proof of global optimal control; no thermal or speed-change acceleration model.'};
  }
  return Object.freeze({validateSettings,fittedInjection,load,phaseFor,nativePower,evaluate,levelAccelerationMphPerSecond,bestClimb,metrics,climb,accelerate,interpolate});
 });

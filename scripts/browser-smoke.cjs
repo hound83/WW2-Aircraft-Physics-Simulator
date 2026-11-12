@@ -798,6 +798,10 @@ async function run(){
   assert.equal(await evaluate('document.querySelectorAll("#bench-climb-trace [data-bench-time-trace]").length'),2);
   assert.ok(bm.climbs.a.trace.length>10);
   checks.push('v4.9 timed climb opens by default and graphs the actual integration trace');
+  assert.match(bm.climbs.a.policy,/signed TAS energy/);
+  assert.ok(bm.climbs.a.trace.slice(1).every(point=>Number.isFinite(point.tasMph)));
+  assert.match(await evaluate('document.getElementById("bench-flight-check-results").textContent'),/Fw 190 A-4 WNr 783/);
+  checks.push('Shared climb uses signed TAS in the live timer and exposes the WNr 783 source replay');
   await select('bench-altitude','15000');assert.deepEqual((await benchmark()).climbs,bm.climbs,'Changing comparison altitude keeps the separate climb result');
   await select('bench-climb-to','5000');assert.equal((await benchmark()).climbs,null);
   await evaluate('document.getElementById("bench-climb-calculate").click()');
