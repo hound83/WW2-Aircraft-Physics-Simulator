@@ -25,7 +25,27 @@ for (const [id, ref] of Object.entries(pack.observations)) {
 }
 
 const byId = id => pack.cases.find(row => row.id === id);
-assert.equal(pack.version, '1.7.0');
+assert.equal(pack.version, '1.8.0');
+const batch = pack.batch_reference;
+assert.equal(batch.reviewed_artifact_count, 28);
+assert.equal(batch.observation_count, 96);
+assert.equal(batch.reference_specimen_observation_count, 12);
+assert.equal(new Set(batch.observation_ids).size, batch.observation_count);
+assert.ok([...batch.observation_ids, ...batch.existing_observation_ids].every(id => pack.observations[id]));
+for (const series of batch.series) {
+  const original = series.observation_ids.map(id => observations.get(id));
+  assert.deepEqual(series.rows, original.map(row => series.fields.map(field => row.values[field])));
+  if (series.application === 'reference-specimen') {
+    assert.ok(['p47d30_433441', 'p51b_4324777'].includes(series.roster_id));
+  }
+}
+const batchSeries = id => batch.series.find(row => row.id === id);
+assert.deepEqual(batchSeries('g1-rechlin-1586-climb-time').rows[4], [5, '4:11', 280]);
+assert.equal(batchSeries('g1-rechlin-1586-climb-time').application, 'comparison');
+assert.deepEqual(batchSeries('p47d30-433441-glide-fig50').rows[6], [12, 104, 3]);
+assert.equal(batchSeries('p47d30-433441-glide-fig50').speed_basis, 'IAS');
+assert.equal(batchSeries('mustang-iii-fx858-climb').source_class, 'original-report-composite');
+assert.deepEqual(batchSeries('mustang-iii-fx858-pec').rows[0], [140, 4.6]);
 const [fwClimb, p38Climb] = pack.climb_reference.cases;
 assert.equal(fwClimb.reported_climb_tas, null);
 assert.equal(fwClimb.estimated_climb_tas.grade, 'calculated');

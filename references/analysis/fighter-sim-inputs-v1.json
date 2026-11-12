@@ -1,6 +1,6 @@
 {
   "schema": "ww2-fighter-sim-inputs/v1",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "as_of": "2026-11-12",
   "scope": "Historical inputs and conditional estimates for source-case lookups and evidence graphs.",
   "originals": {
@@ -158,6 +158,18 @@
         ],
         "sha256": [
           "5c5b6907119884eecac1e3b8ce4fb5ab53145a803505893bde65b1bf886d5387"
+        ]
+      },
+      {
+        "id": "ww2_grok_batch_source_review_2026-11-12",
+        "kind": "independent-research-pack",
+        "version": "1.0.0",
+        "original_schema": "ww2-fighter-evidence-pack/v1",
+        "files": [
+          "references/research/ww2_grok_batch_source_review_2026-11-12.json"
+        ],
+        "sha256": [
+          "b6370aa73bb12f44f546295130bdcc4b5a60fb868dce3d16b71fc673bae8109a"
         ]
       },
       {
@@ -3314,6 +3326,1228 @@
       "balanced-2026-11-10:BS01:0006"
     ]
   },
+  "batch_reference": {
+    "source_commit": "0a3b4270b8b6239960aacf0853bd0d40a591a3c9",
+    "review_path": "references/analysis/ww2_grok_batch_disposition_2026-11-12.json",
+    "evidence_pack": "references/research/ww2_grok_batch_source_review_2026-11-12.json",
+    "reviewed_artifact_count": 28,
+    "observation_count": 96,
+    "reference_specimen_observation_count": 12,
+    "coverage_assessment": "The reference-specimen additions are low-blower level readings in an already fully credited axis and a repeat service-IAS glide trace with no new identified stall or calibrated airspeed. All remaining records have other specimen, configuration or measurement scope. The six-axis 13-variant scores receive zero additional points.",
+    "series": [
+      {
+        "id": "g1-rechlin-1586-climb-time",
+        "roster_id": "bf109g2_db605a",
+        "aircraft": "Bf 109 G-1 DB 605 A",
+        "application": "comparison",
+        "quantity": "reported_climb_time_schedule",
+        "source_class": "original-report-table",
+        "source_location": "Sheet 7 §12, CINA altitude and Steigzeit",
+        "conditions": "DB 605 A Steig- und Kampfleistung, 1.30 ata and 2,600 rpm. Period Kennblatt values. Preserve original min:sec notation and the existing related speed/rate rows. The original sea-level elapsed entry is blank.",
+        "speed_basis": "IAS",
+        "fields": [
+          "altitude_km_cina",
+          "reported_elapsed_min_sec",
+          "climb_ias_kmh"
+        ],
+        "observation_ids": [
+          "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0001",
+          "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0002",
+          "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0003",
+          "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0004",
+          "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0005",
+          "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0006",
+          "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0007",
+          "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0008",
+          "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0009",
+          "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0010",
+          "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0011",
+          "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0012"
+        ],
+        "rows": [
+          [
+            1,
+            "0:47",
+            280
+          ],
+          [
+            2,
+            "1:35",
+            280
+          ],
+          [
+            3,
+            "2:24",
+            280
+          ],
+          [
+            4,
+            "3:16",
+            280
+          ],
+          [
+            5,
+            "4:11",
+            280
+          ],
+          [
+            6,
+            "5:14",
+            280
+          ],
+          [
+            7,
+            "6:23",
+            280
+          ],
+          [
+            8,
+            "7:46",
+            275
+          ],
+          [
+            9,
+            "9:36",
+            270
+          ],
+          [
+            10,
+            "11:54",
+            265
+          ],
+          [
+            11,
+            "15:41",
+            260
+          ],
+          [
+            12,
+            "24:02",
+            255
+          ]
+        ]
+      },
+      {
+        "id": "p47d30-433441-glide-fig50",
+        "roster_id": "p47d30_433441",
+        "aircraft": "P-47D-30 43-3441",
+        "application": "reference-specimen",
+        "quantity": "stall_approach_airspeed_trace",
+        "source_class": "digitized-original-flight-chart",
+        "source_location": "Figure 50, bottom trace labeled Service indicated airspeed, mph",
+        "conditions": "Glide, gear and flaps up, canopy closed, power off, 12,400 lb gross weight, 26.3% MAC, 5,000 ft. All controls used to hold wings level. Digitized whole-mph reading with ±3 mph chart allowance. A sample is a trace value, not an identified stall event.",
+        "speed_basis": "IAS",
+        "fields": [
+          "time_s",
+          "service_ias_mph",
+          "chart_read_allowance_mph"
+        ],
+        "observation_ids": [
+          "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0001",
+          "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0002",
+          "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0003",
+          "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0004",
+          "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0005",
+          "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0006",
+          "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0007",
+          "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0008",
+          "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0009",
+          "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0010"
+        ],
+        "rows": [
+          [
+            0,
+            116,
+            3
+          ],
+          [
+            2,
+            113,
+            3
+          ],
+          [
+            4,
+            113,
+            3
+          ],
+          [
+            6,
+            119,
+            3
+          ],
+          [
+            8,
+            110,
+            3
+          ],
+          [
+            10,
+            109,
+            3
+          ],
+          [
+            12,
+            104,
+            3
+          ],
+          [
+            14,
+            116,
+            3
+          ],
+          [
+            16,
+            121,
+            3
+          ],
+          [
+            18,
+            126,
+            3
+          ]
+        ]
+      },
+      {
+        "id": "p47d-l86-profile-addenda",
+        "roster_id": "p47d30_433441",
+        "aircraft": "Republic P-47D, smooth wing test article",
+        "application": "comparison",
+        "quantity": "wing_section_profile_drag",
+        "source_class": "original-report-table",
+        "source_location": "Printed pp. 7–8 and Figures 12–13 discussion",
+        "conditions": "Smooth Republic S-3 section at 63% semispan of right wing, wake outside slipstream. Report's CL is airplane lift coefficient. The local section coefficient has its own reference area. The already cataloged straight-flight minimum of 0.0062 at CL 0.15 has the same lineage.",
+        "speed_basis": "unestablished",
+        "fields": [
+          "run_family",
+          "semispan_fraction",
+          "airplane_cl",
+          "section_profile_cd"
+        ],
+        "observation_ids": [
+          "ww2_grok_batch_source_review_2026-11-12:p47d-l86-profile-addenda:0001",
+          "ww2_grok_batch_source_review_2026-11-12:p47d-l86-profile-addenda:0002"
+        ],
+        "rows": [
+          [
+            "straight flight",
+            0.63,
+            0.68,
+            0.0075
+          ],
+          [
+            "turn series 2 and 3 minimum",
+            0.63,
+            null,
+            0.0066
+          ]
+        ]
+      },
+      {
+        "id": "p47d-l86-test-domain",
+        "roster_id": "p47d30_433441",
+        "aircraft": "Republic P-47D, smooth wing test article",
+        "application": "comparison",
+        "quantity": "section_drag_test_domain",
+        "source_class": "original-report-table",
+        "source_location": "Report summary and test description",
+        "conditions": "Straight flight and steady turns with smoothed surfaces. The report's overall test envelope spans several measurement stations and configurations.",
+        "speed_basis": "unestablished",
+        "fields": [
+          "mach_min",
+          "mach_max",
+          "airplane_cl_min",
+          "airplane_cl_max",
+          "reynolds_min",
+          "reynolds_max"
+        ],
+        "observation_ids": [
+          "ww2_grok_batch_source_review_2026-11-12:p47d-l86-test-domain:0001"
+        ],
+        "rows": [
+          [
+            0.25,
+            0.69,
+            0.15,
+            0.68,
+            7700000,
+            19700000
+          ]
+        ]
+      },
+      {
+        "id": "p51b1-4k02-prop-off-dives",
+        "roster_id": "p51b_4324777",
+        "aircraft": "P-51B-1-NA, modified propeller-off test",
+        "application": "comparison",
+        "quantity": "propeller_off_drag_test_conditions",
+        "source_class": "original-report-table",
+        "source_location": "Printed p. 6, Figures 9–11",
+        "conditions": "P-51B-1-NA with propeller removed, radiator flap fixed flush, carburetor inlet sealed, racks removed and modified tail. Source treats dust as a run-dependent condition. Full-aircraft drag figures remain report lookups. These dives do not supply powered turn data.",
+        "speed_basis": "unestablished",
+        "fields": [
+          "flight_number",
+          "dive_start_altitude_ft",
+          "relative_dust",
+          "reported_peak_mach"
+        ],
+        "observation_ids": [
+          "ww2_grok_batch_source_review_2026-11-12:p51b1-4k02-prop-off-dives:0001",
+          "ww2_grok_batch_source_review_2026-11-12:p51b1-4k02-prop-off-dives:0002",
+          "ww2_grok_batch_source_review_2026-11-12:p51b1-4k02-prop-off-dives:0003"
+        ],
+        "rows": [
+          [
+            108,
+            25000,
+            "most",
+            null
+          ],
+          [
+            109,
+            26000,
+            "least",
+            null
+          ],
+          [
+            110,
+            28000,
+            "intermediate",
+            0.755
+          ]
+        ]
+      },
+      {
+        "id": "mustang-iii-fx858-climb",
+        "roster_id": "p51b_4324777",
+        "aircraft": "Mustang III FX.858",
+        "application": "comparison",
+        "quantity": "combat_climb_schedule",
+        "source_class": "original-report-composite",
+        "source_location": "Table I, 22 altitude rows",
+        "conditions": "3,000 rpm, 9,260 lb report test weight, radiator and oil cooler flaps fully open, +25 lb/in² rating as permitted by altitude. At the gear change two boost readings are printed. Empty source cells remain null. The report combines separately flown MS and FS runs at the best gear-change height.",
+        "speed_basis": "IAS",
+        "fields": [
+          "altitude_ft",
+          "vertical_rate_ft_min",
+          "elapsed_min",
+          "asi_mph",
+          "boost_lb_in2",
+          "second_gear_boost_lb_in2",
+          "gear_as_printed"
+        ],
+        "observation_ids": [
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0001",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0002",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0003",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0004",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0005",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0006",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0007",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0008",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0009",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0010",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0011",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0012",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0013",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0014",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0015",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0016",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0017",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0018",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0019",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0020",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0021",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0022"
+        ],
+        "rows": [
+          [
+            0,
+            4500,
+            0,
+            160,
+            25,
+            null,
+            "MS"
+          ],
+          [
+            1600,
+            4500,
+            0.3,
+            null,
+            25,
+            null,
+            null
+          ],
+          [
+            3000,
+            4240,
+            0.65,
+            null,
+            22.8,
+            null,
+            null
+          ],
+          [
+            4600,
+            3960,
+            1.05,
+            null,
+            20.6,
+            25,
+            "MS/FS"
+          ],
+          [
+            6000,
+            3965,
+            1.4,
+            null,
+            25,
+            null,
+            "FS"
+          ],
+          [
+            8000,
+            3975,
+            1.9,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            10000,
+            3985,
+            2.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            13000,
+            4000,
+            3.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            14000,
+            3860,
+            3.45,
+            null,
+            23.6,
+            null,
+            null
+          ],
+          [
+            16000,
+            3570,
+            3.95,
+            null,
+            21,
+            null,
+            null
+          ],
+          [
+            18000,
+            3280,
+            4.5,
+            null,
+            18.8,
+            null,
+            null
+          ],
+          [
+            20000,
+            2990,
+            5.25,
+            null,
+            16.6,
+            null,
+            null
+          ],
+          [
+            22000,
+            2700,
+            6,
+            null,
+            14.6,
+            null,
+            null
+          ],
+          [
+            24000,
+            2405,
+            6.75,
+            160,
+            12.6,
+            null,
+            null
+          ],
+          [
+            26000,
+            2110,
+            7.65,
+            159,
+            10.8,
+            null,
+            null
+          ],
+          [
+            28000,
+            1820,
+            8.6,
+            157,
+            9,
+            null,
+            null
+          ],
+          [
+            30000,
+            1535,
+            9.85,
+            155,
+            7.4,
+            null,
+            null
+          ],
+          [
+            32000,
+            1250,
+            11.2,
+            153,
+            5.8,
+            null,
+            null
+          ],
+          [
+            34000,
+            955,
+            12.9,
+            151,
+            4.3,
+            null,
+            null
+          ],
+          [
+            36000,
+            670,
+            15.35,
+            148,
+            2.7,
+            null,
+            null
+          ],
+          [
+            38000,
+            385,
+            19,
+            145,
+            1.3,
+            null,
+            null
+          ],
+          [
+            40000,
+            100,
+            27,
+            142,
+            0,
+            null,
+            null
+          ]
+        ]
+      },
+      {
+        "id": "mustang-iii-fx858-level",
+        "roster_id": "p51b_4324777",
+        "aircraft": "Mustang III FX.858",
+        "application": "comparison",
+        "quantity": "combat_level_speed_schedule",
+        "source_class": "original-report-table",
+        "source_location": "§4.3 and Table II, 21 altitude rows",
+        "conditions": "3,000 rpm, speeds corrected to 8,800 lb, radiator and oil cooler flaps at minimum opening. The original table carries separate PEC, compressibility and strut corrections. IAS and final TAS are retained without any additional correction. Empty source cells remain null.",
+        "speed_basis": "TAS",
+        "fields": [
+          "altitude_ft",
+          "tas_mph",
+          "ias_mph",
+          "boost_lb_in2",
+          "second_gear_boost_lb_in2",
+          "gear_as_printed"
+        ],
+        "observation_ids": [
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0001",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0002",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0003",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0004",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0005",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0006",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0007",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0008",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0009",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0010",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0011",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0012",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0013",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0014",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0015",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0016",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0017",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0018",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0019",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0020",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0021"
+        ],
+        "rows": [
+          [
+            2000,
+            404,
+            416,
+            25,
+            null,
+            "MS"
+          ],
+          [
+            4000,
+            413,
+            413,
+            25,
+            null,
+            null
+          ],
+          [
+            5200,
+            419,
+            412,
+            25,
+            null,
+            null
+          ],
+          [
+            6000,
+            419,
+            407,
+            23.9,
+            null,
+            null
+          ],
+          [
+            8000,
+            419,
+            395,
+            21.4,
+            null,
+            null
+          ],
+          [
+            9000,
+            419,
+            389,
+            20.1,
+            25,
+            "MS/FS"
+          ],
+          [
+            10000,
+            423,
+            387,
+            25,
+            null,
+            "FS"
+          ],
+          [
+            12000,
+            431,
+            382,
+            null,
+            null,
+            null
+          ],
+          [
+            14000,
+            439,
+            377,
+            null,
+            null,
+            null
+          ],
+          [
+            16000,
+            447,
+            373,
+            null,
+            null,
+            null
+          ],
+          [
+            17800,
+            455,
+            369,
+            25,
+            null,
+            null
+          ],
+          [
+            20000,
+            454,
+            355,
+            22.2,
+            null,
+            null
+          ],
+          [
+            22000,
+            453,
+            343,
+            19.7,
+            null,
+            null
+          ],
+          [
+            24000,
+            452,
+            331,
+            17.4,
+            null,
+            null
+          ],
+          [
+            26000,
+            450,
+            318,
+            15.2,
+            null,
+            null
+          ],
+          [
+            28000,
+            447,
+            304,
+            13,
+            null,
+            null
+          ],
+          [
+            30000,
+            443,
+            290,
+            10.8,
+            null,
+            null
+          ],
+          [
+            32000,
+            438,
+            276,
+            8.7,
+            null,
+            null
+          ],
+          [
+            34000,
+            432,
+            261,
+            6.6,
+            null,
+            null
+          ],
+          [
+            36000,
+            425,
+            247,
+            4.8,
+            null,
+            null
+          ],
+          [
+            38000,
+            416,
+            230,
+            2.8,
+            null,
+            null
+          ]
+        ]
+      },
+      {
+        "id": "mustang-iii-fx858-pec",
+        "roster_id": "p51b_4324777",
+        "aircraft": "Mustang III FX.858",
+        "application": "comparison",
+        "quantity": "reported_position_error_checkpoints",
+        "source_class": "original-report-table",
+        "source_location": "§4.1 and Figure 2",
+        "conditions": "FX.858 test pressure head. Linear variation is stated only between 240 and 420 mph IAS. Preserve original checkpoints without extending to another specimen or stall speed.",
+        "speed_basis": "IAS",
+        "fields": [
+          "ias_mph",
+          "add_position_error_mph"
+        ],
+        "observation_ids": [
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-pec:0001",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-pec:0002",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-pec:0003",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-pec:0004"
+        ],
+        "rows": [
+          [
+            140,
+            4.6
+          ],
+          [
+            177,
+            0
+          ],
+          [
+            240,
+            -8.4
+          ],
+          [
+            420,
+            -20.9
+          ]
+        ]
+      },
+      {
+        "id": "mustang-iii-fx858-tip-mach",
+        "roster_id": "p51b_4324777",
+        "aircraft": "Mustang III FX.858",
+        "application": "comparison",
+        "quantity": "reported_level_flight_tip_mach",
+        "source_class": "period-calculation",
+        "source_location": "§4.4, all-out level flights",
+        "conditions": "3,000 rpm test, propeller tip Mach calculated by the original report on standard atmospheric conditions. Actual air temperature ranges are printed separately.",
+        "speed_basis": "unestablished",
+        "fields": [
+          "altitude_ft",
+          "gear",
+          "tip_mach_standard",
+          "actual_temp_min_c",
+          "actual_temp_max_c"
+        ],
+        "observation_ids": [
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-tip-mach:0001",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-tip-mach:0002",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-tip-mach:0003",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-tip-mach:0004",
+          "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-tip-mach:0005"
+        ],
+        "rows": [
+          [
+            5200,
+            "MS",
+            0.88,
+            0,
+            2
+          ],
+          [
+            17500,
+            "FS",
+            0.96,
+            -24,
+            -19
+          ],
+          [
+            25000,
+            "FS",
+            0.97,
+            -40,
+            -34
+          ],
+          [
+            30000,
+            "FS",
+            0.99,
+            -53,
+            -48
+          ],
+          [
+            35000,
+            "FS",
+            1,
+            -62,
+            -58
+          ]
+        ]
+      },
+      {
+        "id": "p38j-4267869-level",
+        "roster_id": "p38g_4212687",
+        "aircraft": "P-38J 42-67869",
+        "application": "comparison",
+        "quantity": "reported_level_speed",
+        "source_class": "original-report-table",
+        "source_location": "Eng-47-1706-A summary",
+        "conditions": "60 inHg and 3,000 rpm, 16,597 lb at takeoff. These are the sea-level and reported critical-altitude endpoints for this J specimen.",
+        "speed_basis": "TAS",
+        "fields": [
+          "altitude_ft",
+          "speed_mph",
+          "map_inhg",
+          "engine_rpm"
+        ],
+        "observation_ids": [
+          "ww2_grok_batch_source_review_2026-11-12:p38j-4267869-level:0001",
+          "ww2_grok_batch_source_review_2026-11-12:p38j-4267869-level:0002"
+        ],
+        "rows": [
+          [
+            0,
+            345,
+            60,
+            3000
+          ],
+          [
+            25800,
+            421.5,
+            60,
+            3000
+          ]
+        ]
+      },
+      {
+        "id": "p38j-4267869-climb",
+        "roster_id": "p38g_4212687",
+        "aircraft": "P-38J 42-67869",
+        "application": "comparison",
+        "quantity": "reported_climb_performance",
+        "source_class": "original-report-table",
+        "source_location": "Eng-47-1706-A summary",
+        "conditions": "60 inHg and 3,000 rpm, 16,597 lb at takeoff. Cumulative time is printed at the climb critical altitude.",
+        "speed_basis": "unestablished",
+        "fields": [
+          "altitude_ft",
+          "vertical_rate_ft_min",
+          "elapsed_min_as_reported",
+          "map_inhg",
+          "engine_rpm"
+        ],
+        "observation_ids": [
+          "ww2_grok_batch_source_review_2026-11-12:p38j-4267869-climb:0001",
+          "ww2_grok_batch_source_review_2026-11-12:p38j-4267869-climb:0002"
+        ],
+        "rows": [
+          [
+            0,
+            4000,
+            null,
+            60,
+            3000
+          ],
+          [
+            23400,
+            2900,
+            6.49,
+            60,
+            3000
+          ]
+        ]
+      },
+      {
+        "id": "p38j-4313563-level",
+        "roster_id": "p38g_4212687",
+        "aircraft": "P-38J 43-13563",
+        "application": "comparison",
+        "quantity": "reported_level_speed_and_power",
+        "source_class": "original-report-table",
+        "source_location": "FS-M-19-1656-A level-flight table",
+        "conditions": "Wheels up, wing flaps neutral, intercooler flaps flush, coolant flaps automatic, auto-rich. Source table's BHP column retained as printed. The report identifies induction leakage, and actual run weight is absent from this table.",
+        "speed_basis": "TAS",
+        "fields": [
+          "altitude_ft",
+          "reported_bhp",
+          "manifold_inhg",
+          "carb_air_c",
+          "engine_rpm",
+          "turbo_rpm",
+          "exhaust_back_pressure_inhg",
+          "tas_mph"
+        ],
+        "observation_ids": [
+          "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0001",
+          "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0002",
+          "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0003",
+          "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0004",
+          "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0005",
+          "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0006"
+        ],
+        "rows": [
+          [
+            10000,
+            1520,
+            60,
+            32,
+            3000,
+            18300,
+            39.2,
+            375
+          ],
+          [
+            15000,
+            1510,
+            60,
+            35,
+            3000,
+            21900,
+            40.5,
+            391.5
+          ],
+          [
+            20300,
+            1500,
+            60,
+            42.5,
+            3000,
+            26400,
+            45,
+            408
+          ],
+          [
+            25000,
+            1300,
+            50.2,
+            33.5,
+            3000,
+            26400,
+            37.5,
+            403.5
+          ],
+          [
+            30000,
+            1090,
+            41,
+            26,
+            3000,
+            26400,
+            30.7,
+            391
+          ],
+          [
+            35000,
+            880,
+            32.6,
+            18,
+            3000,
+            26400,
+            24.2,
+            362
+          ]
+        ]
+      },
+      {
+        "id": "fw190a5-19431020-level",
+        "roster_id": "fw190a4_783",
+        "aircraft": "Fw 190 A-5 Normaljäger",
+        "application": "comparison",
+        "quantity": "factory_level_speed_summary",
+        "source_class": "original-factory-summary",
+        "source_location": "20 October 1943 Normaljäger level-speed chart endpoints",
+        "conditions": "A-5 Normaljäger, 1.42 ata / 2,700 rpm per index for the level curve. The record summarizes a factory chart with specimen mass unspecified in the index.",
+        "speed_basis": "TAS",
+        "fields": [
+          "altitude_m",
+          "speed_kmh"
+        ],
+        "observation_ids": [
+          "ww2_grok_batch_source_review_2026-11-12:fw190a5-19431020-level:0001",
+          "ww2_grok_batch_source_review_2026-11-12:fw190a5-19431020-level:0002"
+        ],
+        "rows": [
+          [
+            0,
+            567
+          ],
+          [
+            6300,
+            656
+          ]
+        ]
+      },
+      {
+        "id": "fw190a5-19431020-climb",
+        "roster_id": "fw190a4_783",
+        "aircraft": "Fw 190 A-5 Normaljäger",
+        "application": "comparison",
+        "quantity": "factory_climb_rate_summary",
+        "source_class": "original-factory-summary",
+        "source_location": "20 October 1943 Normaljäger climb chart endpoints",
+        "conditions": "A-5 Normaljäger. Rating and specimen mass have not been assigned from the separate level-speed chart.",
+        "speed_basis": "unestablished",
+        "fields": [
+          "altitude_m",
+          "vertical_rate_m_s"
+        ],
+        "observation_ids": [
+          "ww2_grok_batch_source_review_2026-11-12:fw190a5-19431020-climb:0001",
+          "ww2_grok_batch_source_review_2026-11-12:fw190a5-19431020-climb:0002"
+        ],
+        "rows": [
+          [
+            0,
+            15
+          ],
+          [
+            900,
+            15.3
+          ]
+        ]
+      },
+      {
+        "id": "p51b15-4324777-low-blower-lapse",
+        "roster_id": "p51b_4324777",
+        "aircraft": "P-51B-15 43-24777",
+        "application": "reference-specimen",
+        "quantity": "reported_level_speed_with_chart_shaft_power",
+        "source_class": "original-report-table",
+        "source_location": "§V.B.2 present war emergency, low blower beyond critical altitude",
+        "conditions": "V-1650-7, 3,000 rpm, wing racks fitted, coolant and oil shutters automatic, auto-rich. 9,335 lb takeoff. Speeds corrected to the report's normal-climb weight curve. The standard BHP column comes from the Packard power chart.",
+        "speed_basis": "TAS",
+        "fields": [
+          "altitude_ft",
+          "manifold_inhg",
+          "chart_bhp",
+          "tas_mph"
+        ],
+        "observation_ids": [
+          "ww2_grok_batch_source_review_2026-11-12:p51b15-4324777-low-blower-lapse:0001",
+          "ww2_grok_batch_source_review_2026-11-12:p51b15-4324777-low-blower-lapse:0002"
+        ],
+        "rows": [
+          [
+            17000,
+            52.8,
+            1350,
+            398
+          ],
+          [
+            24000,
+            39.8,
+            1037,
+            385
+          ]
+        ]
+      }
+    ],
+    "observation_ids": [
+      "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0001",
+      "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0002",
+      "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0003",
+      "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0004",
+      "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0005",
+      "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0006",
+      "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0007",
+      "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0008",
+      "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0009",
+      "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0010",
+      "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0011",
+      "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0012",
+      "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0001",
+      "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0002",
+      "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0003",
+      "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0004",
+      "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0005",
+      "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0006",
+      "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0007",
+      "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0008",
+      "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0009",
+      "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0010",
+      "ww2_grok_batch_source_review_2026-11-12:p47d-l86-profile-addenda:0001",
+      "ww2_grok_batch_source_review_2026-11-12:p47d-l86-profile-addenda:0002",
+      "ww2_grok_batch_source_review_2026-11-12:p47d-l86-test-domain:0001",
+      "ww2_grok_batch_source_review_2026-11-12:p51b1-4k02-prop-off-dives:0001",
+      "ww2_grok_batch_source_review_2026-11-12:p51b1-4k02-prop-off-dives:0002",
+      "ww2_grok_batch_source_review_2026-11-12:p51b1-4k02-prop-off-dives:0003",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0001",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0002",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0003",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0004",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0005",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0006",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0007",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0008",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0009",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0010",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0011",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0012",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0013",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0014",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0015",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0016",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0017",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0018",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0019",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0020",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0021",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0022",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0001",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0002",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0003",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0004",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0005",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0006",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0007",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0008",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0009",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0010",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0011",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0012",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0013",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0014",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0015",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0016",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0017",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0018",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0019",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0020",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0021",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-pec:0001",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-pec:0002",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-pec:0003",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-pec:0004",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-tip-mach:0001",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-tip-mach:0002",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-tip-mach:0003",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-tip-mach:0004",
+      "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-tip-mach:0005",
+      "ww2_grok_batch_source_review_2026-11-12:p38j-4267869-level:0001",
+      "ww2_grok_batch_source_review_2026-11-12:p38j-4267869-level:0002",
+      "ww2_grok_batch_source_review_2026-11-12:p38j-4267869-climb:0001",
+      "ww2_grok_batch_source_review_2026-11-12:p38j-4267869-climb:0002",
+      "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0001",
+      "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0002",
+      "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0003",
+      "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0004",
+      "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0005",
+      "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0006",
+      "ww2_grok_batch_source_review_2026-11-12:fw190a5-19431020-level:0001",
+      "ww2_grok_batch_source_review_2026-11-12:fw190a5-19431020-level:0002",
+      "ww2_grok_batch_source_review_2026-11-12:fw190a5-19431020-climb:0001",
+      "ww2_grok_batch_source_review_2026-11-12:fw190a5-19431020-climb:0002",
+      "ww2_grok_batch_source_review_2026-11-12:p51b15-4324777-low-blower-lapse:0001",
+      "ww2_grok_batch_source_review_2026-11-12:p51b15-4324777-low-blower-lapse:0002"
+    ],
+    "existing_observation_ids": [
+      "stall_us_2026-11-10:US02:0001",
+      "stall_us_2026-11-10:US01:0001",
+      "stall_global_2026-11-10:FW190-A3-RAF-1",
+      "balanced-2026-11-10:BS02:0005",
+      "ww2_twelve_fighter_gap_followup_2026-11-10:p38j-4267869-original-complete-calibration-table:0008",
+      "archival-2026-11-10:S11:0001",
+      "ww2_twelve_fighter_dual_lane_2026-11-10:bf109f4-secondary-recovered-data-sheet:0002",
+      "ww2_fighter_measured_conditions_2026-11-11:spit-jl165-radiator-climb-pairs:0007",
+      "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0005",
+      "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0001",
+      "ww2_multiaxis_propulsion_trials_2026-11-10:p51b15-chart-vs-performance:0001",
+      "ww2_multiaxis_propulsion_trials_2026-11-10:p51b15-chart-vs-performance:0002",
+      "archival-2026-11-10:S40:0001",
+      "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0002",
+      "ww2_thirteen_fighter_source_recovery_2026-11-11:spitix-original-pec-intervals:0001",
+      "ww2_thirteen_fighter_source_recovery_2026-11-11:spitix-climb-speed-policy:0001"
+    ]
+  },
   "tolerances": {
     "stall_speed": {
       "unit": "km/h CAS or EAS",
@@ -5431,6 +6665,7 @@
     "archival-2026-11-10:S03:0019": {"source":"archival-2026-11-10:R28","locator":"Table II"},
     "archival-2026-11-10:S03:0020": {"source":"archival-2026-11-10:R28","locator":"Table II"},
     "archival-2026-11-10:S03:0021": {"source":"archival-2026-11-10:R28","locator":"Table II"},
+    "archival-2026-11-10:S11:0001": {"source":"archival-2026-11-10:R31","locator":"Rechlin Kennblatt sheet 7, lines 18-30"},
     "archival-2026-11-10:S13:0001": {"source":"archival-2026-11-10:R33","locator":"Messerschmitt 109 11 L 42 conclusions"},
     "archival-2026-11-10:S13:0002": {"source":"archival-2026-11-10:R33","locator":"Messerschmitt 109 11 L 42 conclusions"},
     "archival-2026-11-10:S37:0002": {"source":"archival-2026-11-10:R04","locator":"AAF 15 May 1944 speed summary"},
@@ -5442,6 +6677,7 @@
     "archival-2026-11-10:S39:0001": {"source":"archival-2026-11-10:R48","locator":"AAF F-IM-1119C-NDT-2 original pp7-8"},
     "archival-2026-11-10:S39:0002": {"source":"archival-2026-11-10:R48","locator":"AAF F-IM-1119C-NDT-2 original pp7-8"},
     "archival-2026-11-10:S39:0003": {"source":"archival-2026-11-10:R48","locator":"AAF F-IM-1119C-NDT-2 original pp7-8"},
+    "archival-2026-11-10:S40:0001": {"source":"archival-2026-11-10:R08","locator":"NACA WR-L-86 abstract"},
     "archival-2026-11-10:S43:0001": {"source":"archival-2026-11-10:R54","locator":"USAAF FS-M-19-1578-A original p1; confirmed in 2026-11-06 archive audit"},
     "archival-2026-11-10:S43:0002": {"source":"archival-2026-11-10:R54","locator":"USAAF FS-M-19-1578-A original p1; confirmed in 2026-11-06 archive audit"},
     "archival-2026-11-10:S43:0003": {"source":"archival-2026-11-10:R54","locator":"USAAF FS-M-19-1578-A original p1; confirmed in 2026-11-06 archive audit"},
@@ -5475,6 +6711,7 @@
     "stall_four_track_followup_2026-11-10:f6f3-04776-naca-corrected-peak-cn:0001": {"source":"stall_four_track_followup_2026-11-10:f6f3-04776-wr-l717","locator":"NACA WR L-717, original figs.4-13, approximate discussion bands"},
     "stall_four_track_followup_2026-11-10:f6f3-04776-naca-corrected-peak-cn:0003": {"source":"stall_four_track_followup_2026-11-10:f6f3-04776-wr-l717","locator":"NACA WR L-717, original figs.4-13, approximate discussion bands"},
     "stall_global_2026-11-10:BF109-G2-trop-1": {"source":"stall_global_2026-11-10:UK-BFG2-209","locator":"para20 stalling speeds; preface states non-recognized experimental unit"},
+    "stall_global_2026-11-10:FW190-A3-RAF-1": {"source":"stall_global_2026-11-10:UK-FW-A3","locator":"paras 11 and 31-33"},
     "stall_global_2026-11-10:KI84-302-1": {"source":"stall_global_2026-11-10:US-KI84-302","locator":"pp7-8 stall tests, 8,000/8,500 ft"},
     "stall_us_2026-11-10:US01:0001": {"source":"stall_us_2026-11-10:P51B5","locator":"V.F Stalling Speeds, 9-row table; figures 1-2 referred to for airspeed/altimeter position"},
     "stall_us_2026-11-10:US02:0001": {"source":"stall_us_2026-11-10:P51B15","locator":"V.E Stalling Speeds, 9-row table at 8000ft; Fig. 1 airspeed calibration"},
@@ -5650,6 +6887,7 @@
     "ww2_fighter_measured_conditions_2026-11-11:p47b-cooling-flap-speed:0003": {"source":"ww2_fighter_measured_conditions_2026-11-11:B-5902-COOLING","locator":"Printed p. 2 §B.2"},
     "ww2_fighter_measured_conditions_2026-11-11:p47b-cooling-flap-speed:0004": {"source":"ww2_fighter_measured_conditions_2026-11-11:B-5902-COOLING","locator":"Printed p. 2 §B.2"},
     "ww2_fighter_measured_conditions_2026-11-11:p47b-cooling-flap-speed:0005": {"source":"ww2_fighter_measured_conditions_2026-11-11:B-5902-COOLING","locator":"Printed p. 2 §B.2"},
+    "ww2_fighter_measured_conditions_2026-11-11:spit-jl165-radiator-climb-pairs:0007": {"source":"ww2_fighter_measured_conditions_2026-11-11:SPIT-JL165-COOLING","locator":"A&AEE Tables I–II, original chart Fig. 1, §4.43"},
     "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0001": {"source":"ww2_fleet_propeller_2026-11-12:FW190-783-NR2-CURVES","locator":"Blatt 3, dashed comparison Vwc curve from Nr. 1; Ergebnis 1 for the 6950 m anchor"},
     "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0002": {"source":"ww2_fleet_propeller_2026-11-12:FW190-783-NR2-CURVES","locator":"Blatt 3, dashed comparison Vwc curve from Nr. 1; Ergebnis 1 for the 6950 m anchor"},
     "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0003": {"source":"ww2_fleet_propeller_2026-11-12:FW190-783-NR2-CURVES","locator":"Blatt 3, dashed comparison Vwc curve from Nr. 1; Ergebnis 1 for the 6950 m anchor"},
@@ -5860,6 +7098,102 @@
     "ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0007": {"source":"ww2_german_fighter_archive_2026-11-11:G2-WNF-10911","locator":"Blatt 2 aircraft and engine ledger, Blatt 3 results, Blatt 4 Vw/Vn/Vnk definitions"},
     "ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0008": {"source":"ww2_german_fighter_archive_2026-11-11:G2-WNF-10911","locator":"Blatt 2 aircraft and engine ledger, Blatt 3 results, Blatt 4 Vw/Vn/Vnk definitions"},
     "ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0009": {"source":"ww2_german_fighter_archive_2026-11-11:G2-WNF-10911","locator":"Blatt 2 aircraft and engine ledger, Blatt 3 results, Blatt 4 Vw/Vn/Vnk definitions"},
+    "ww2_grok_batch_source_review_2026-11-12:fw190a5-19431020-climb:0001": {"source":"ww2_grok_batch_source_review_2026-11-12:A5-20OCT43","locator":"20 October 1943 Normaljäger climb chart endpoints"},
+    "ww2_grok_batch_source_review_2026-11-12:fw190a5-19431020-climb:0002": {"source":"ww2_grok_batch_source_review_2026-11-12:A5-20OCT43","locator":"20 October 1943 Normaljäger climb chart endpoints"},
+    "ww2_grok_batch_source_review_2026-11-12:fw190a5-19431020-level:0001": {"source":"ww2_grok_batch_source_review_2026-11-12:A5-20OCT43","locator":"20 October 1943 Normaljäger level-speed chart endpoints"},
+    "ww2_grok_batch_source_review_2026-11-12:fw190a5-19431020-level:0002": {"source":"ww2_grok_batch_source_review_2026-11-12:A5-20OCT43","locator":"20 October 1943 Normaljäger level-speed chart endpoints"},
+    "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0001": {"source":"ww2_grok_batch_source_review_2026-11-12:RECHLIN-1586","locator":"Sheet 7 §12, CINA altitude and Steigzeit"},
+    "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0002": {"source":"ww2_grok_batch_source_review_2026-11-12:RECHLIN-1586","locator":"Sheet 7 §12, CINA altitude and Steigzeit"},
+    "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0003": {"source":"ww2_grok_batch_source_review_2026-11-12:RECHLIN-1586","locator":"Sheet 7 §12, CINA altitude and Steigzeit"},
+    "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0004": {"source":"ww2_grok_batch_source_review_2026-11-12:RECHLIN-1586","locator":"Sheet 7 §12, CINA altitude and Steigzeit"},
+    "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0005": {"source":"ww2_grok_batch_source_review_2026-11-12:RECHLIN-1586","locator":"Sheet 7 §12, CINA altitude and Steigzeit"},
+    "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0006": {"source":"ww2_grok_batch_source_review_2026-11-12:RECHLIN-1586","locator":"Sheet 7 §12, CINA altitude and Steigzeit"},
+    "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0007": {"source":"ww2_grok_batch_source_review_2026-11-12:RECHLIN-1586","locator":"Sheet 7 §12, CINA altitude and Steigzeit"},
+    "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0008": {"source":"ww2_grok_batch_source_review_2026-11-12:RECHLIN-1586","locator":"Sheet 7 §12, CINA altitude and Steigzeit"},
+    "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0009": {"source":"ww2_grok_batch_source_review_2026-11-12:RECHLIN-1586","locator":"Sheet 7 §12, CINA altitude and Steigzeit"},
+    "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0010": {"source":"ww2_grok_batch_source_review_2026-11-12:RECHLIN-1586","locator":"Sheet 7 §12, CINA altitude and Steigzeit"},
+    "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0011": {"source":"ww2_grok_batch_source_review_2026-11-12:RECHLIN-1586","locator":"Sheet 7 §12, CINA altitude and Steigzeit"},
+    "ww2_grok_batch_source_review_2026-11-12:g1-rechlin-1586-climb-time:0012": {"source":"ww2_grok_batch_source_review_2026-11-12:RECHLIN-1586","locator":"Sheet 7 §12, CINA altitude and Steigzeit"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0001": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0002": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0003": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0004": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0005": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0006": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0007": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0008": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0009": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0010": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0011": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0012": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0013": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0014": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0015": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0016": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0017": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0018": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0019": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0020": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0021": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-climb:0022": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"Table I, 22 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0001": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0002": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0003": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0004": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0005": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0006": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0007": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0008": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0009": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0010": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0011": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0012": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0013": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0014": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0015": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0016": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0017": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0018": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0019": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0020": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-level:0021": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.3 and Table II, 21 altitude rows"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-pec:0001": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.1 and Figure 2"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-pec:0002": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.1 and Figure 2"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-pec:0003": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.1 and Figure 2"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-pec:0004": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.1 and Figure 2"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-tip-mach:0001": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.4, all-out level flights"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-tip-mach:0002": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.4, all-out level flights"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-tip-mach:0003": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.4, all-out level flights"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-tip-mach:0004": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.4, all-out level flights"},
+    "ww2_grok_batch_source_review_2026-11-12:mustang-iii-fx858-tip-mach:0005": {"source":"ww2_grok_batch_source_review_2026-11-12:FX858","locator":"§4.4, all-out level flights"},
+    "ww2_grok_batch_source_review_2026-11-12:p38j-4267869-climb:0001": {"source":"ww2_grok_batch_source_review_2026-11-12:P38J-4267869","locator":"Eng-47-1706-A summary"},
+    "ww2_grok_batch_source_review_2026-11-12:p38j-4267869-climb:0002": {"source":"ww2_grok_batch_source_review_2026-11-12:P38J-4267869","locator":"Eng-47-1706-A summary"},
+    "ww2_grok_batch_source_review_2026-11-12:p38j-4267869-level:0001": {"source":"ww2_grok_batch_source_review_2026-11-12:P38J-4267869","locator":"Eng-47-1706-A summary"},
+    "ww2_grok_batch_source_review_2026-11-12:p38j-4267869-level:0002": {"source":"ww2_grok_batch_source_review_2026-11-12:P38J-4267869","locator":"Eng-47-1706-A summary"},
+    "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0001": {"source":"ww2_grok_batch_source_review_2026-11-12:P38J-4313563","locator":"FS-M-19-1656-A level-flight table"},
+    "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0002": {"source":"ww2_grok_batch_source_review_2026-11-12:P38J-4313563","locator":"FS-M-19-1656-A level-flight table"},
+    "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0003": {"source":"ww2_grok_batch_source_review_2026-11-12:P38J-4313563","locator":"FS-M-19-1656-A level-flight table"},
+    "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0004": {"source":"ww2_grok_batch_source_review_2026-11-12:P38J-4313563","locator":"FS-M-19-1656-A level-flight table"},
+    "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0005": {"source":"ww2_grok_batch_source_review_2026-11-12:P38J-4313563","locator":"FS-M-19-1656-A level-flight table"},
+    "ww2_grok_batch_source_review_2026-11-12:p38j-4313563-level:0006": {"source":"ww2_grok_batch_source_review_2026-11-12:P38J-4313563","locator":"FS-M-19-1656-A level-flight table"},
+    "ww2_grok_batch_source_review_2026-11-12:p47d-l86-profile-addenda:0001": {"source":"ww2_grok_batch_source_review_2026-11-12:L86","locator":"Printed pp. 7–8 and Figures 12–13 discussion"},
+    "ww2_grok_batch_source_review_2026-11-12:p47d-l86-profile-addenda:0002": {"source":"ww2_grok_batch_source_review_2026-11-12:L86","locator":"Printed pp. 7–8 and Figures 12–13 discussion"},
+    "ww2_grok_batch_source_review_2026-11-12:p47d-l86-test-domain:0001": {"source":"ww2_grok_batch_source_review_2026-11-12:L86","locator":"Report summary and test description"},
+    "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0001": {"source":"ww2_grok_batch_source_review_2026-11-12:P47D30-FIG50","locator":"Figure 50, bottom trace labeled Service indicated airspeed, mph"},
+    "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0002": {"source":"ww2_grok_batch_source_review_2026-11-12:P47D30-FIG50","locator":"Figure 50, bottom trace labeled Service indicated airspeed, mph"},
+    "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0003": {"source":"ww2_grok_batch_source_review_2026-11-12:P47D30-FIG50","locator":"Figure 50, bottom trace labeled Service indicated airspeed, mph"},
+    "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0004": {"source":"ww2_grok_batch_source_review_2026-11-12:P47D30-FIG50","locator":"Figure 50, bottom trace labeled Service indicated airspeed, mph"},
+    "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0005": {"source":"ww2_grok_batch_source_review_2026-11-12:P47D30-FIG50","locator":"Figure 50, bottom trace labeled Service indicated airspeed, mph"},
+    "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0006": {"source":"ww2_grok_batch_source_review_2026-11-12:P47D30-FIG50","locator":"Figure 50, bottom trace labeled Service indicated airspeed, mph"},
+    "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0007": {"source":"ww2_grok_batch_source_review_2026-11-12:P47D30-FIG50","locator":"Figure 50, bottom trace labeled Service indicated airspeed, mph"},
+    "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0008": {"source":"ww2_grok_batch_source_review_2026-11-12:P47D30-FIG50","locator":"Figure 50, bottom trace labeled Service indicated airspeed, mph"},
+    "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0009": {"source":"ww2_grok_batch_source_review_2026-11-12:P47D30-FIG50","locator":"Figure 50, bottom trace labeled Service indicated airspeed, mph"},
+    "ww2_grok_batch_source_review_2026-11-12:p47d30-433441-glide-fig50:0010": {"source":"ww2_grok_batch_source_review_2026-11-12:P47D30-FIG50","locator":"Figure 50, bottom trace labeled Service indicated airspeed, mph"},
+    "ww2_grok_batch_source_review_2026-11-12:p51b1-4k02-prop-off-dives:0001": {"source":"ww2_grok_batch_source_review_2026-11-12:ACR4K02","locator":"Printed p. 6, Figures 9–11"},
+    "ww2_grok_batch_source_review_2026-11-12:p51b1-4k02-prop-off-dives:0002": {"source":"ww2_grok_batch_source_review_2026-11-12:ACR4K02","locator":"Printed p. 6, Figures 9–11"},
+    "ww2_grok_batch_source_review_2026-11-12:p51b1-4k02-prop-off-dives:0003": {"source":"ww2_grok_batch_source_review_2026-11-12:ACR4K02","locator":"Printed p. 6, Figures 9–11"},
+    "ww2_grok_batch_source_review_2026-11-12:p51b15-4324777-low-blower-lapse:0001": {"source":"ww2_grok_batch_source_review_2026-11-12:P51B15-1749A","locator":"§V.B.2 present war emergency, low blower beyond critical altitude"},
+    "ww2_grok_batch_source_review_2026-11-12:p51b15-4324777-low-blower-lapse:0002": {"source":"ww2_grok_batch_source_review_2026-11-12:P51B15-1749A","locator":"§V.B.2 present war emergency, low blower beyond critical altitude"},
     "ww2_low_speed_turn_calibration_2026-11-10:f6f3-04776-naca-three-loading-conditions:0001": {"source":"ww2_low_speed_turn_calibration_2026-11-10:F6F3-04776-NACA-I","locator":"NACA WR L-715 Part I loading/CG test configurations"},
     "ww2_low_speed_turn_calibration_2026-11-10:f6f3-04776-naca-three-loading-conditions:0002": {"source":"ww2_low_speed_turn_calibration_2026-11-10:F6F3-04776-NACA-I","locator":"NACA WR L-715 Part I loading/CG test configurations"},
     "ww2_low_speed_turn_calibration_2026-11-10:f6f3-04776-naca-three-loading-conditions:0003": {"source":"ww2_low_speed_turn_calibration_2026-11-10:F6F3-04776-NACA-I","locator":"NACA WR L-715 Part I loading/CG test configurations"},
@@ -5880,6 +7214,7 @@
     "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-level:0001": {"source":"ww2_multiaxis_propulsion_trials_2026-11-10:P40F-4113635-FEB","locator":"FS-M-19-1549-A speed table"},
     "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-level:0002": {"source":"ww2_multiaxis_propulsion_trials_2026-11-10:P40F-4113635-FEB","locator":"FS-M-19-1549-A speed table"},
     "ww2_multiaxis_propulsion_trials_2026-11-10:p51b15-chart-vs-performance:0001": {"source":"ww2_multiaxis_propulsion_trials_2026-11-10:P51B15-4324777","locator":"Eng-47-1749-A summary, III.C, level-flight compare 20,800 ft"},
+    "ww2_multiaxis_propulsion_trials_2026-11-10:p51b15-chart-vs-performance:0002": {"source":"ww2_multiaxis_propulsion_trials_2026-11-10:P51B15-4324777","locator":"Eng-47-1749-A summary, III.C, level-flight compare 20,800 ft"},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:fw190a4-783-intake-controlled-comparison:0001": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:FW190A4-783-NR2","locator":"ReportNr2 summary andNr1 baseline"},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-14513-measured-loading:0001": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:G2-NIIVVS-14513","locator":"Original p10"},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-14513-minimum-controlled-speed:0001": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:G2-NIIVVS-14513","locator":"Original p43 Table2"},
@@ -5915,14 +7250,20 @@
     "ww2_thirteen_fighter_source_recovery_2026-11-11:lednicer-equivalent-flat-plate-synthesis:0004": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:LEDNICER-1999","locator":"SportAviation p90 Table1"},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:me109g-hoerner-drag-budget:0001": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:ME109G-HOERNER","locator":"Hoerner chapter XIV, pp. 14-3, 14-4 and 14-6"},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:p51b-p47b-period-drag-assumption-labels:0002": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:USAAF-POWERREQUIRED-1943","locator":"Original PDF2 and4 graph headings"},
+    "ww2_thirteen_fighter_source_recovery_2026-11-11:spitix-climb-speed-policy:0001": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:SPITIX-AP1946-SCAN","locator":"Printed33 para54"},
+    "ww2_thirteen_fighter_source_recovery_2026-11-11:spitix-original-pec-intervals:0001": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:SPITIX-AP1946-SCAN","locator":"Printed32 para53"},
+    "ww2_twelve_fighter_dual_lane_2026-11-10:bf109f4-secondary-recovered-data-sheet:0002": {"source":"ww2_twelve_fighter_dual_lane_2026-11-10:BF109F4-MESSERSCHMITT-TRANSCRIPTION","locator":"Forum transcription of alleged Messerschmitt 29 Nov1942/3 Feb1943 sheets; originals NOT viewed"},
     "ww2_twelve_fighter_dual_lane_2026-11-10:f4u4-80765-derived-stall-vs-mass:0003": {"source":"ww2_twelve_fighter_dual_lane_2026-11-10:F4U4-80765-1948-NAVY","locator":"Derived by V_s(W)=89.4 kt * sqrt(W/12500lb), anchored only to BIS2157 original exact CAS 89.4kt at12500lb"},
     "ww2_twelve_fighter_dual_lane_2026-11-10:f4u4-80765-derived-stall-vs-mass:0004": {"source":"ww2_twelve_fighter_dual_lane_2026-11-10:F4U4-80765-1948-NAVY","locator":"Derived by V_s(W)=89.4 kt * sqrt(W/12500lb), anchored only to BIS2157 original exact CAS 89.4kt at12500lb"},
     "ww2_twelve_fighter_gap_followup_2026-11-10:ki84-302-mass-basis-discrepancy:0001": {"source":"ww2_twelve_fighter_gap_followup_2026-11-10:KI84-302-AAF-SPECS","locator":"AAF printed p.2 summary normal/overload; printed p.5 actual test takeoff mass"},
-    "ww2_twelve_fighter_gap_followup_2026-11-10:ki84-302-observed-turn-abort-not-sustained:0001": {"source":"ww2_twelve_fighter_gap_followup_2026-11-10:KI84-302-AAF-SPECS","locator":"AAF report printed p.8, power-on clean 60-degree-bank 3G-estimated turning trial"}
+    "ww2_twelve_fighter_gap_followup_2026-11-10:ki84-302-observed-turn-abort-not-sustained:0001": {"source":"ww2_twelve_fighter_gap_followup_2026-11-10:KI84-302-AAF-SPECS","locator":"AAF report printed p.8, power-on clean 60-degree-bank 3G-estimated turning trial"},
+    "ww2_twelve_fighter_gap_followup_2026-11-10:p38j-4267869-original-complete-calibration-table:0008": {"source":"ww2_twelve_fighter_gap_followup_2026-11-10:P38J-4267869-AIRSPEED","locator":"Eng-47-1706-A Part VI.A; original table, 150–360 mph cockpit IAS"}
   },
   "sources": {
     "archival-2026-11-10:R04": {"name":"AAF Wright Field, 44-1 fuel tests 15–20 May 1944","url":"https://www.wwiiaircraftperformance.org/mustang/mustangtest.html","sha256":null},
+    "archival-2026-11-10:R08": {"name":"NACA ARR-L5H11A / WR-L-86; wing-profile drag","url":"https://ntrs.nasa.gov/api/citations/19930093001/downloads/19930093001.pdf","sha256":null},
     "archival-2026-11-10:R28": {"name":"A&AEE 1943 three-engine-comparison, tables II III V VI","url":"https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html","sha256":null},
+    "archival-2026-11-10:R31": {"name":"E-Stelle Rechlin Kennblatt test 1586, 1943, sheet 7","url":"https://www.wwiiaircraftperformance.org/me109/me109g-kennblatt-german.html","sha256":null},
     "archival-2026-11-10:R33": {"name":"Messerschmitt 109 11 L 42, 4 standard vs 4 smoothed airframes","url":"https://www.wwiiaircraftperformance.org/me109/me109g-10911l42.html","sha256":null},
     "archival-2026-11-10:R48": {"name":"AAF F-IM-1119C-NDT-2 interim handling/stall test","url":"https://www.wwiiaircraftperformance.org/japan/T-2_Report_on_Frank_I_Ki-84.pdf","sha256":null},
     "archival-2026-11-10:R54": {"name":"USAAF FS-M-19-1578-A seven matched belly brace-on/off speed pairs","url":"https://www.wwiiaircraftperformance.com/org/p-40/p-40_files/P-40F_41-13635_FS-M-19-1578-A.pdf","sha256":null},
@@ -5930,6 +7271,7 @@
     "balanced-2026-11-10:B04": {"name":"USAAF PHQ-M-19-1417-A, 1942-06-18","url":"https://wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf","locator":"Military 2700 rpm and rated 2550 rpm climb portions are distinct power conditions, NOT one homogeneous continuous climb.","sha256":null},
     "stall_four_track_followup_2026-11-10:f6f3-04776-wr-l717": {"name":"NACA MR L5B13B / WR L-717, Flight Measurements of the Flying Qualities of an F6F-3 Airplane III: Stalling Characteristics (Reeder, February 1945)","url":"https://ntrs.nasa.gov/api/citations/19930092602/downloads/19930092602.pdf","locator":"Conclusions and figures 4-13, flight-derived peak normal-force coefficient CN; gross-weight correction for fuel consumed","sha256":null},
     "stall_global_2026-11-10:UK-BFG2-209": {"name":"Captured Me109 G-2 trop technical trials","url":"https://www.wwiiaircraftperformance.org/me109/me-109g2-trop.html","sha256":null},
+    "stall_global_2026-11-10:UK-FW-A3": {"name":"Captured Fw190 A-3 handling and tactical trials, July 1942","url":"https://wwiiaircraftperformance.com/com/gb/documents/fw190a3_RAE-Test-Jul42-new.html","sha256":null},
     "stall_global_2026-11-10:US-KI84-302": {"name":"Report on Frank I Ki-84, F-IM-1119C-NDT-2","url":"https://www.wwiiaircraftperformance.org/japan/T-2_Report_on_Frank_I_Ki-84.pdf","sha256":null},
     "stall_us_2026-11-10:F4U4_80765": {"name":"US Naval Air Test Center TED BIS-2157, 25 Mar 1948","url":"https://www.wwiiaircraftperformance.org/f4u/f4u-4-80765.pdf","locator":"summary section 3 explicitly 'Calibrated Airspeed at Stall', at 12500lb; row (d) repeats 'power on' text","sha256":null},
     "stall_us_2026-11-10:P47B": {"name":"USAAF PHQ-M-19-1417-A, 18 Jun 1942","url":"https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf","locator":"PDF printed p.3 paragraph 10(a) stalls, p.4 paragraph 13 ASI calibration; see references/p47b-stall-weight-audit.json","sha256":null},
@@ -5951,6 +7293,7 @@
     "ww2_fighter_measured_conditions_2026-11-11:D9-210006-RECHLIN": {"name":"Rechlin Erpr. Nr. 9003 Teilber. 2, 2 March 1945","url":"https://www.wwiiaircraftperformance.com/org/fw190/d9/d9_files/Fw_190_D-9_006.pdf","locator":"Blätter 1–4, 7–9","sha256":"9eb4cd9b6da1ba578c613796d96ad6ae10252534f9edfe53f4d5c68ad1144f39"},
     "ww2_fighter_measured_conditions_2026-11-11:F-13635-BRACES": {"name":"Wright Field FS-M-19-1578-A, 3 April 1943","url":"https://www.wwiiaircraftperformance.com/org/p-40/p-40_files/P-40F_41-13635_FS-M-19-1578-A.pdf","locator":"PDF 1 §B.1, R54/S43 in the existing archive","sha256":"c7329bd918da6304581d819ee10aeb0ef0a5930311486165b2890de070cef11f"},
     "ww2_fighter_measured_conditions_2026-11-11:G-12687-PARTPOWER": {"name":"Wright Field FS-M-19-1538-A, 10 February 1943","url":"https://www.wwiiaircraftperformance.com/org/p-38/p-38_files/P-38G-1_42-12687_FS-M-19-1538-A.pdf","locator":"Printed p. 2 §§B.2–3 and p. 3 §B.8","sha256":"9e192df3f0b12e2218cdc35235e1f6210ec7c1fb136d0219e878140e9d15b9a0"},
+    "ww2_fighter_measured_conditions_2026-11-11:SPIT-JL165-COOLING": {"name":"A&AEE 692/m 30th Part, JL165 increased-boost tests","url":"https://wwiiaircraftperformance.com/org/spitcom/mk9/spitIX_25boost_JL165_files/jl165climb.jpg","locator":"Original Figure 1 and transcribed Tables I–II and §4.43","sha256":"b5b6bd5d7993f948bab00e80ea8c337559298f18a56501f43f1940cce973d245"},
     "ww2_fleet_propeller_2026-11-12:FW190-783-NR2-CURVES": {"name":"Focke-Wulf Flugbericht Fw 190/783 Nr. 2, 15 March 1943","url":"https://www.wwiiaircraftperformance.org/fw190/Fw_190_783_Nr2.pdf","locator":"Ergebnis 1-3 and Blatt 3 (PDF p. 3)","sha256":"79696ca2d594f9098bd9eee7d19eb3264a3b5e29e4c9f67ce35c4875a26222d7"},
     "ww2_fleet_propeller_2026-11-12:NACA-MR-L4L18-P51-INSTALLATION": {"name":"NACA MR L4L18, Flight Tests of the High-Speed Performance of a P-51B Airplane (AAF No. 43-12105)","url":"https://ntrs.nasa.gov/api/citations/19780078569/downloads/19780078569.pdf","locator":"Airplane item 4, printed p. 2 (PDF p. 3)","sha256":"4ad0f57c41f062feaee15bd85887fb7f0f9481265bedebb10ebc427d4bfc6b54"},
     "ww2_fleet_propeller_2026-11-12:NACA-MR-L5B13-F6F-INSTALLATION": {"name":"NACA MR L5B13, Flight Measurements of the Flying Qualities of an F6F-3 Airplane (BuAer No. 04776), I","url":"https://ntrs.nasa.gov/api/citations/19930092600/downloads/19930092600.pdf","locator":"Airplane description, printed p. 2 (PDF p. 3)","sha256":"906fa4ec476655dc9277bcc2f07b896fd87fa6c2340259b3e7216eb711523247"},
@@ -5976,6 +7319,15 @@
     "ww2_german_fighter_archive_2026-11-11:FW190-NIIVVS-YAKUBOVICH": {"name":"N. V. Yakubovich, La-7, La-9, La-11, 2014, NII VVS test comparison table","url":"https://ru.djvu.online/file/hR5Asibxj3nWb","locator":"Table 3, printed pp. 58–59","sha256":null},
     "ww2_german_fighter_archive_2026-11-11:G2-NIIVVS-14513-HANDLING": {"name":"NII VVS, stability and controllability trials, 4–22 June 1943","url":"https://www.wwiiaircraftperformance.com/org/me109/g/g_files/Me-109_G2_14513_Russian.pdf","locator":"Printed pp. 8, 10–12, 19, 24–25, 33, 43–45 and 52","sha256":"2017627bf2666d12a32226d783d48d97f59fecfb389d5d8f0d668207365b7ad8"},
     "ww2_german_fighter_archive_2026-11-11:G2-WNF-10911": {"name":"Messerschmitt Versuchs-Bericht 109 11 L 42, 9 July 1942, signed 15 July","url":"https://www.wwiiaircraftperformance.com/org/me109/g/g_files/VB-109-11-L-42.pdf","locator":"Original PDF, Blatt 2 specimen ledger, Blatt 3 test results, Blatt 4 reduction basis","sha256":"e306e2e79aabaf8356584d72d8cc3bd23da8430821e34178f824e2f4b9a51e67"},
+    "ww2_grok_batch_source_review_2026-11-12:A5-20OCT43": {"name":"Focke-Wulf Flugmechanik L, Normaljäger A-5, 20 October 1943","url":"https://www.wwiiaircraftperformance.org/fw190/fw190a5.html","locator":"Original factory chart links 1 and 2 and summary","sha256":null},
+    "ww2_grok_batch_source_review_2026-11-12:ACR4K02": {"name":"NACA ACR 4K02 / WR A-62, February 1945","url":"https://ntrs.nasa.gov/api/citations/19930092458/downloads/19930092458.pdf","locator":"Printed pp. 3–9, Figures 9–15 and conclusions","sha256":null},
+    "ww2_grok_batch_source_review_2026-11-12:FX858": {"name":"A&AEE Mustang III FX.858 flight trials at +25 boost","url":"https://www.wwiiaircraftperformance.org/mustang/fx858.html","locator":"§4.1–4.4 and Tables I and II, original report transcription","sha256":null},
+    "ww2_grok_batch_source_review_2026-11-12:L86": {"name":"NACA ARR L5H11a / WR L-86, October 1945","url":"https://ntrs.nasa.gov/api/citations/19930093001/downloads/19930093001.pdf","locator":"Summary and Figures 12–13 discussion, retained original OCR 1945_NACA-ARR-L5H11A_19930093001.txt","sha256":null},
+    "ww2_grok_batch_source_review_2026-11-12:P38J-4267869": {"name":"Wright Field Eng-47-1706-A, 4 February 1944","url":"https://www.wwiiaircraftperformance.com/org/p-38/p-38.html","locator":"Report summary, 42-67869","sha256":null},
+    "ww2_grok_batch_source_review_2026-11-12:P38J-4313563": {"name":"Wright Field FS-M-19-1656-A, 27 October 1943","url":"https://www.wwiiaircraftperformance.com/org/p-38/p-38.html","locator":"43-13563 summary, level-flight table and conclusion","sha256":null},
+    "ww2_grok_batch_source_review_2026-11-12:P47D30-FIG50": {"name":"NACA RM L8A06, longitudinal stability and stall, February 1948","url":"https://ntrs.nasa.gov/api/citations/20090022749/downloads/20090022749.pdf","locator":"Figure 50, also retained in references/sources/stall-2026-11-02/naca-rm-l8a06-excerpts.pdf","sha256":"d419fa465f75da8904acf933a59c6f41999f6e86cf79202ac89058c4d4fe75bb"},
+    "ww2_grok_batch_source_review_2026-11-12:P51B15-1749A": {"name":"Wright Field Eng-47-1749-A, 20 May 1944","url":"https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html","locator":"§III and §V.B.2 level performance table","sha256":null},
+    "ww2_grok_batch_source_review_2026-11-12:RECHLIN-1586": {"name":"E-Stelle Rechlin Kennblatt, test 1586, 1943","url":"https://www.wwiiaircraftperformance.org/me109/me109g-kennblatt-german.html","locator":"Sheet 7 §12, Steigzeit column","sha256":null},
     "ww2_low_speed_turn_calibration_2026-11-10:F6F3-04776-NACA-I": {"name":"NACA WR L-715 Part I, Longitudinal Stability and Control, February 1945","url":"https://ntrs.nasa.gov/api/citations/19930092600/downloads/19930092600.pdf","locator":"Original Part I instrument calibration method, three CG/takeoff weight configurations; sister Part III stall report in existing pack.","sha256":null},
     "ww2_multiaxis_propulsion_trials_2026-11-10:F4U4-80765": {"name":"US Navy Production Inspection Trials of Model F4U-4, 25 Mar 1948","url":"https://www.wwiiaircraftperformance.org/f4u/f4u-4-80765.pdf","locator":"Original pp. 8–11 normal/military power speed and climb tables; CAS stall table already indexed in separate pack.","sha256":null},
     "ww2_multiaxis_propulsion_trials_2026-11-10:P40F-4113635-FEB": {"name":"AAF FS-M-19-1549-A, Propeller Tests, 18 Feb 1943","url":"https://www.wwiiaircraftperformance.com/org/p-40/p-40_files/P-40F_41-13635_FS-M-19-1549-A.pdf","locator":"Original summary tables high speed at 18,100 ft and high-blower climbs at 18,000–28,000 ft; V-1650-1, 5 hubs/blades/spinners.","sha256":null},
@@ -5986,8 +7338,11 @@
     "ww2_thirteen_fighter_source_recovery_2026-11-11:G2-NIIVVS-14513": {"name":"NII VVS stability/control report, tests4-22Jun1943; approval23Jul1943","url":"https://wwiiaircraftperformance.com/org/me109/g/g_files/Me-109_G2_14513_Russian.pdf","locator":"Original53-page scan; pp10,43","sha256":null},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:LEDNICER-1999": {"name":"David Lednicer, World WarII Fighter Aerodynamics, Sport Aviation January1999,pp85-91","url":"https://www.wwiiaircraftperformance.org/mustang/Lednicer_Fighter_Aerodynamics.pdf","locator":"Original modern article p90 Table1, notes pp89-91","sha256":null},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:ME109G-HOERNER": {"name":"S. F. Hoerner, Fluid-Dynamic Drag, chapter XIV, pp. 14-3 to 14-7","url":"https://wwiiaircraftperformance.com/org/me109/g/g_files/Hoerner-Me_109.pdf","locator":"pp. 14-3, 14-4 and 14-6, equations 2–5 and figure 3","sha256":"9764d51675cef0f786e2bbc9de2ab4106016d37bfe8373a8871fe053d75f78a4"},
+    "ww2_thirteen_fighter_source_recovery_2026-11-11:SPITIX-AP1946-SCAN": {"name":"AirMinistry AP1565J,P&L Pilot Notes thirdedition,September1946","url":"https://stephentaylorhistorian.com/wp-content/uploads/2020/04/spitfire-ix-xi-xvi.pdf","locator":"Original printed30,32-33; PDF18-19","sha256":null},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:USAAF-POWERREQUIRED-1943": {"name":"AAF Materiel Center inter-office memorandum, Power Required and Power Available,11Dec1943","url":"https://www.wwiiaircraftperformance.org/mustang/Power_required_available_P-51A_P-51B_P-47B.pdf","locator":"Original cover memo and appended P51B/P47B graphs","sha256":null},
+    "ww2_twelve_fighter_dual_lane_2026-11-10:BF109F4-MESSERSCHMITT-TRANSCRIPTION": {"name":"Modern researcher discussion transcribes alleged Messerschmitt AG Flugzeug-Daten dated 29 Nov 1942 and 3 Feb 1943","url":"https://www.flugzeugforum.de/threads/optimierte-me-109-k-4.99210/page-2","locator":"Different 'calculated' and 'flown' specifications 635km/h@6000m 1185PS, 660km/h@6200m 1180PS, 670km/h@6300m 1290PS; modern transcription only, conditional primary lead","sha256":null},
     "ww2_twelve_fighter_dual_lane_2026-11-10:F4U4-80765-1948-NAVY": {"name":"US Naval Air Test Center BIS 2157, 25 March 1948","url":"https://www.wwiiaircraftperformance.org/f4u/f4u-4-80765.pdf","locator":"12500lb and 89.4kt measured calibrated clean power-off stall; derived speed-versus-mass scenarios are NOT further flight-test data","sha256":null},
-    "ww2_twelve_fighter_gap_followup_2026-11-10:KI84-302-AAF-SPECS": {"name":"AAF F-IM-1119C-NDT-2, Interim Report No. 3, 1946","url":"https://www.wwiiaircraftperformance.org/japan/T-2_Report_on_Frank_I_Ki-84.pdf","locator":"Printed pp.2–3 tabulated nominal aircraft/performance/engine specifications; pp.5–8 actual handling and IAS stall flights; printed p.7 says no performance climbs attempted.","sha256":null}
+    "ww2_twelve_fighter_gap_followup_2026-11-10:KI84-302-AAF-SPECS": {"name":"AAF F-IM-1119C-NDT-2, Interim Report No. 3, 1946","url":"https://www.wwiiaircraftperformance.org/japan/T-2_Report_on_Frank_I_Ki-84.pdf","locator":"Printed pp.2–3 tabulated nominal aircraft/performance/engine specifications; pp.5–8 actual handling and IAS stall flights; printed p.7 says no performance climbs attempted.","sha256":null},
+    "ww2_twelve_fighter_gap_followup_2026-11-10:P38J-4267869-AIRSPEED": {"name":"Wright Field Eng-47-1706-A, 4 February 1944, original performance flight report","url":"https://wwiiaircraftperformance.com/org/p-38/p-38-67869.html","locator":"Part VI.A, airspeed calibration table: cockpit IAS, water-column airspeed, calibrated airspeed, installation error, altimeter error; original speed table calibration begins 150 mph IAS.","sha256":null}
   }
 }

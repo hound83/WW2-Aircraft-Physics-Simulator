@@ -16,7 +16,7 @@ The P-51 observations are `stall_us_2026-11-10:US02:0001` and `stall_us_2026-11-
 
 | Draft example | What the original observations support |
 | --- | --- |
-| F4U-4, 89.4–97.4 mph | The 89.4 mph CAS point is landing power off. The 97.4 mph CAS point is clean power on. Use the two conditions separately. The stall altitude is unspecified in these rows. |
+| F4U-4, draft 89.4–97.4 mph | The Navy normal-fighter table gives 89.4 kt CAS clean power off and 84.5 kt CAS clean power on at 12,500 lb. The separate 77.7 kt landing figure is about 89.4 mph. The original table repeats a power label on that landing row. Use the separately sourced fleet-stall conditions and keep altitude unspecified. |
 | Spitfire IX, 76–86 mph | These are handbook IAS values for landing and clean configurations at the handbook normal load. Keep the clean 86 mph IAS as a source value and qualify any transfer to the modeled full-span LF IX. |
 | P-47B, 85–105 mph | The handbook lists four power and configuration cases. The stall paragraph leaves the speed basis and numerical gross weight open. Retain the four observations and state the loading and airspeed assumptions for each derived value. |
 | P-38G, 69–112 mph | The low endpoint is a 15,000 lb landing IAS from the D/G handbook. The high endpoint is the 42-12690 clean power-off CAS at approximately 14,800 lb and 10,000 ft. The latter has its own matched IAS/CAS pair. |

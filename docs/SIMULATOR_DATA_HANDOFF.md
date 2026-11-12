@@ -1,12 +1,12 @@
 # Simulator data handoff
 
-**Fighter Sim Inputs v1.7.0**, dated **12 November 2026**, adds the Fw 190 WNr 783 and P-38G 42-12687 matched climb cases. It covers 13 aircraft variants. The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
+**Fighter Sim Inputs v1.8.0**, dated **12 November 2026**, adds the reviewed Grok batch inputs. It covers 13 aircraft variants. The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 
 [Data milestones and original-source research priorities](research/WW2_FIGHTER_DATA_ROADMAP.md)
 
 | File in the build | Use |
 | --- | --- |
-| `dist/fighter-sim-inputs.json` | Reviewed cases, matched climbs, fleet stall reference, original observation IDs, GOLD and GOLD* agreement, and curve styles and bounds |
+| `dist/fighter-sim-inputs.json` | Reviewed batch inputs, matched climbs, fleet stall reference, original observation IDs, GOLD and GOLD* agreement, and curve styles and bounds |
 | `dist/fighter-propeller-efficiency.json` | Propeller and installation references for all 13 variants, original efficiency series, conditional flight replays and the seven-aircraft sensitivity sweep |
 | `dist/research-catalog.json` | Original observations, conditions, source links and report lineage |
 | `dist/fighter-evidence-curves.html` | Standalone evidence viewer for the full research roster |
@@ -29,6 +29,8 @@ The Normal / Combat benchmark currently has seven modeled aircraft. They are the
 Coverage measures available evidence for the research dossier. The source conditions and supported metrics give a better guide to the initial comparison range. [Full coverage table](research/WW2_FIGHTER_SIM_INPUTS_V1.md#coverage-by-aircraft) · [Variant dossiers and retrieval targets](research/WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md)
 
 ## Notes for Simulator Work
+
+- Read `batch_reference.series` for 96 new source-linked records. Twelve apply to exact roster specimens. Related cases carry their own aircraft, conditions and use. [Batch dispositions and coverage matrix](research/WW2_GROK_BATCH_INPUT_REVIEW_2026-11-12.md)
 
 - Read `climb_reference.cases` for the two matched climb input sets. WNr 783 includes paired cooling rates and a source timing trace. Its modeled TAS is an explicitly calculated scenario. The P-38G B.4 input includes reported TAS and time, chart-assigned BHP per engine and the altitude limits. B.1 remains a separate level-flight case. [Climb handoff and scorecard](research/WW2_MATCHED_CLIMB_INPUTS_2026-11-12.md)
 

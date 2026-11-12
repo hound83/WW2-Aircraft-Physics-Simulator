@@ -1,0 +1,1037 @@
+{
+  "schema": "ww2-fighter-evidence-pack/v1",
+  "pack_version": "1.0.0",
+  "as_of": "2026-11-12",
+  "scope": "Original-source recoveries from the Grok batch review. Comparison records retain their own aircraft identities and configurations.",
+  "sources": [
+    {
+      "id": "RECHLIN-1586",
+      "aircraft": "Bf 109 G-1 DB 605 A",
+      "report": "E-Stelle Rechlin Kennblatt, test 1586, 1943",
+      "source": "https://www.wwiiaircraftperformance.org/me109/me109g-kennblatt-german.html",
+      "location": "Sheet 7 §12, Steigzeit column",
+      "notes": "Transcription of the period Rechlin table. Same report as archival-2026-11-10:R31. Separate from MT-215."
+    },
+    {
+      "id": "P47D30-FIG50",
+      "aircraft": "P-47D-30 43-3441",
+      "report": "NACA RM L8A06, longitudinal stability and stall, February 1948",
+      "source": "https://ntrs.nasa.gov/api/citations/20090022749/downloads/20090022749.pdf",
+      "location": "Figure 50, also retained in references/sources/stall-2026-11-02/naca-rm-l8a06-excerpts.pdf",
+      "inspected_copy_sha256": "d419fa465f75da8904acf933a59c6f41999f6e86cf79202ac89058c4d4fe75bb",
+      "notes": "Same investigation as ww2_fighter_flight_tests_2026-11-11:P47D30-L8A06-STALL-TRACE. Figure 50 is the all-controls run. The pilot's separate elevator-only run is Figure 49."
+    },
+    {
+      "id": "L86",
+      "aircraft": "Republic P-47D, smooth wing test article",
+      "report": "NACA ARR L5H11a / WR L-86, October 1945",
+      "source": "https://ntrs.nasa.gov/api/citations/19930093001/downloads/19930093001.pdf",
+      "location": "Summary and Figures 12–13 discussion, retained original OCR 1945_NACA-ARR-L5H11A_19930093001.txt",
+      "notes": "Same lineage as archival-2026-11-10:R08. The 0.0062 minimum is already cataloged as archival-2026-11-10:S40:0001."
+    },
+    {
+      "id": "ACR4K02",
+      "aircraft": "P-51B-1-NA, modified propeller-off test",
+      "report": "NACA ACR 4K02 / WR A-62, February 1945",
+      "source": "https://ntrs.nasa.gov/api/citations/19930092458/downloads/19930092458.pdf",
+      "location": "Printed pp. 3–9, Figures 9–15 and conclusions",
+      "notes": "Resolves archival-2026-11-10:R02 into identifiable flight cases. Use the report's configuration and flight numbers to avoid treating later republished plots as independent."
+    },
+    {
+      "id": "FX858",
+      "aircraft": "Mustang III FX.858",
+      "report": "A&AEE Mustang III FX.858 flight trials at +25 boost",
+      "source": "https://www.wwiiaircraftperformance.org/mustang/fx858.html",
+      "location": "§4.1–4.4 and Tables I and II, original report transcription",
+      "notes": "The summary repeats MS on the second line. Section 4.3 and Table II identify 455 mph at 17,800 ft as FS. Treat +18 results explicitly labeled estimated as a separate condition. Merlin 100 RM.14 SM, 150-grade fuel and Hamilton 24D-50-65. Climb and all-out level combat rating carries a five-minute limit; the full climb table combines separate gear runs."
+    },
+    {
+      "id": "P38J-4267869",
+      "aircraft": "P-38J 42-67869",
+      "report": "Wright Field Eng-47-1706-A, 4 February 1944",
+      "source": "https://www.wwiiaircraftperformance.com/org/p-38/p-38.html",
+      "location": "Report summary, 42-67869",
+      "notes": "Same specimen as the original calibration table retained in ww2_twelve_fighter_gap_followup_2026-11-10. Later J installation, separate from P-38G 42-12687."
+    },
+    {
+      "id": "P38J-4313563",
+      "aircraft": "P-38J 43-13563",
+      "report": "Wright Field FS-M-19-1656-A, 27 October 1943",
+      "source": "https://www.wwiiaircraftperformance.com/org/p-38/p-38.html",
+      "location": "43-13563 summary, level-flight table and conclusion",
+      "notes": "The report documents induction-system leakage affecting critical altitude. Use as a distinct J comparison case."
+    },
+    {
+      "id": "A5-20OCT43",
+      "aircraft": "Fw 190 A-5 Normaljäger",
+      "report": "Focke-Wulf Flugmechanik L, Normaljäger A-5, 20 October 1943",
+      "source": "https://www.wwiiaircraftperformance.org/fw190/fw190a5.html",
+      "location": "Original factory chart links 1 and 2 and summary",
+      "notes": "Separate A-5 reference. Climb rating and exact test mass are absent from the index summary. Retain the documentary values without assigning them to WNr 783."
+    },
+    {
+      "id": "P51B15-1749A",
+      "aircraft": "P-51B-15 43-24777",
+      "report": "Wright Field Eng-47-1749-A, 20 May 1944",
+      "source": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+      "location": "§III and §V.B.2 level performance table",
+      "notes": "Same source as ww2_multiaxis_propulsion_trials_2026-11-10:P51B15-4324777. Records two low-blower TAS points missing from the existing speed rows."
+    }
+  ],
+  "series": [
+    {
+      "id": "g1-rechlin-1586-climb-time",
+      "source_id": "RECHLIN-1586",
+      "aircraft": "Bf 109 G-1 DB 605 A",
+      "quantity": "reported_climb_time_schedule",
+      "source_class": "original-report-table",
+      "source_location": "Sheet 7 §12, CINA altitude and Steigzeit",
+      "conditions": "DB 605 A Steig- und Kampfleistung, 1.30 ata and 2,600 rpm. Period Kennblatt values. Preserve original min:sec notation and the existing related speed/rate rows. The original sea-level elapsed entry is blank.",
+      "speed_basis": "IAS",
+      "columns": [
+        "altitude_km_cina",
+        "reported_elapsed_min_sec",
+        "climb_ias_kmh"
+      ],
+      "rows": [
+        [
+          1,
+          "0:47",
+          280
+        ],
+        [
+          2,
+          "1:35",
+          280
+        ],
+        [
+          3,
+          "2:24",
+          280
+        ],
+        [
+          4,
+          "3:16",
+          280
+        ],
+        [
+          5,
+          "4:11",
+          280
+        ],
+        [
+          6,
+          "5:14",
+          280
+        ],
+        [
+          7,
+          "6:23",
+          280
+        ],
+        [
+          8,
+          "7:46",
+          275
+        ],
+        [
+          9,
+          "9:36",
+          270
+        ],
+        [
+          10,
+          "11:54",
+          265
+        ],
+        [
+          11,
+          "15:41",
+          260
+        ],
+        [
+          12,
+          "24:02",
+          255
+        ]
+      ]
+    },
+    {
+      "id": "p47d30-433441-glide-fig50",
+      "source_id": "P47D30-FIG50",
+      "aircraft": "P-47D-30 43-3441",
+      "quantity": "stall_approach_airspeed_trace",
+      "source_class": "digitized-original-flight-chart",
+      "source_location": "Figure 50, bottom trace labeled Service indicated airspeed, mph",
+      "conditions": "Glide, gear and flaps up, canopy closed, power off, 12,400 lb gross weight, 26.3% MAC, 5,000 ft. All controls used to hold wings level. Digitized whole-mph reading with ±3 mph chart allowance. A sample is a trace value, not an identified stall event.",
+      "speed_basis": "IAS",
+      "columns": [
+        "time_s",
+        "service_ias_mph",
+        "chart_read_allowance_mph"
+      ],
+      "rows": [
+        [
+          0,
+          116,
+          3
+        ],
+        [
+          2,
+          113,
+          3
+        ],
+        [
+          4,
+          113,
+          3
+        ],
+        [
+          6,
+          119,
+          3
+        ],
+        [
+          8,
+          110,
+          3
+        ],
+        [
+          10,
+          109,
+          3
+        ],
+        [
+          12,
+          104,
+          3
+        ],
+        [
+          14,
+          116,
+          3
+        ],
+        [
+          16,
+          121,
+          3
+        ],
+        [
+          18,
+          126,
+          3
+        ]
+      ]
+    },
+    {
+      "id": "p47d-l86-profile-addenda",
+      "source_id": "L86",
+      "aircraft": "Republic P-47D, smooth wing test article",
+      "quantity": "wing_section_profile_drag",
+      "source_class": "original-report-table",
+      "source_location": "Printed pp. 7–8 and Figures 12–13 discussion",
+      "conditions": "Smooth Republic S-3 section at 63% semispan of right wing, wake outside slipstream. Report's CL is airplane lift coefficient. The local section coefficient has its own reference area. The already cataloged straight-flight minimum of 0.0062 at CL 0.15 has the same lineage.",
+      "speed_basis": "unestablished",
+      "columns": [
+        "run_family",
+        "semispan_fraction",
+        "airplane_cl",
+        "section_profile_cd"
+      ],
+      "rows": [
+        [
+          "straight flight",
+          0.63,
+          0.68,
+          0.0075
+        ],
+        [
+          "turn series 2 and 3 minimum",
+          0.63,
+          null,
+          0.0066
+        ]
+      ]
+    },
+    {
+      "id": "p47d-l86-test-domain",
+      "source_id": "L86",
+      "aircraft": "Republic P-47D, smooth wing test article",
+      "quantity": "section_drag_test_domain",
+      "source_class": "original-report-table",
+      "source_location": "Report summary and test description",
+      "conditions": "Straight flight and steady turns with smoothed surfaces. The report's overall test envelope spans several measurement stations and configurations.",
+      "speed_basis": "unestablished",
+      "columns": [
+        "mach_min",
+        "mach_max",
+        "airplane_cl_min",
+        "airplane_cl_max",
+        "reynolds_min",
+        "reynolds_max"
+      ],
+      "rows": [
+        [
+          0.25,
+          0.69,
+          0.15,
+          0.68,
+          7700000,
+          19700000
+        ]
+      ]
+    },
+    {
+      "id": "p51b1-4k02-prop-off-dives",
+      "source_id": "ACR4K02",
+      "aircraft": "P-51B-1-NA, modified propeller-off test",
+      "quantity": "propeller_off_drag_test_conditions",
+      "source_class": "original-report-table",
+      "source_location": "Printed p. 6, Figures 9–11",
+      "conditions": "P-51B-1-NA with propeller removed, radiator flap fixed flush, carburetor inlet sealed, racks removed and modified tail. Source treats dust as a run-dependent condition. Full-aircraft drag figures remain report lookups. These dives do not supply powered turn data.",
+      "speed_basis": "unestablished",
+      "columns": [
+        "flight_number",
+        "dive_start_altitude_ft",
+        "relative_dust",
+        "reported_peak_mach"
+      ],
+      "rows": [
+        [
+          108,
+          25000,
+          "most",
+          null
+        ],
+        [
+          109,
+          26000,
+          "least",
+          null
+        ],
+        [
+          110,
+          28000,
+          "intermediate",
+          0.755
+        ]
+      ]
+    },
+    {
+      "id": "mustang-iii-fx858-climb",
+      "source_id": "FX858",
+      "aircraft": "Mustang III FX.858",
+      "quantity": "combat_climb_schedule",
+      "source_class": "original-report-composite",
+      "source_location": "Table I, 22 altitude rows",
+      "conditions": "3,000 rpm, 9,260 lb report test weight, radiator and oil cooler flaps fully open, +25 lb/in² rating as permitted by altitude. At the gear change two boost readings are printed. Empty source cells remain null. The report combines separately flown MS and FS runs at the best gear-change height.",
+      "speed_basis": "IAS",
+      "columns": [
+        "altitude_ft",
+        "vertical_rate_ft_min",
+        "elapsed_min",
+        "asi_mph",
+        "boost_lb_in2",
+        "second_gear_boost_lb_in2",
+        "gear_as_printed"
+      ],
+      "rows": [
+        [
+          0,
+          4500,
+          0,
+          160,
+          25,
+          null,
+          "MS"
+        ],
+        [
+          1600,
+          4500,
+          0.3,
+          null,
+          25,
+          null,
+          null
+        ],
+        [
+          3000,
+          4240,
+          0.65,
+          null,
+          22.8,
+          null,
+          null
+        ],
+        [
+          4600,
+          3960,
+          1.05,
+          null,
+          20.6,
+          25,
+          "MS/FS"
+        ],
+        [
+          6000,
+          3965,
+          1.4,
+          null,
+          25,
+          null,
+          "FS"
+        ],
+        [
+          8000,
+          3975,
+          1.9,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          10000,
+          3985,
+          2.4,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          13000,
+          4000,
+          3.2,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          14000,
+          3860,
+          3.45,
+          null,
+          23.6,
+          null,
+          null
+        ],
+        [
+          16000,
+          3570,
+          3.95,
+          null,
+          21,
+          null,
+          null
+        ],
+        [
+          18000,
+          3280,
+          4.5,
+          null,
+          18.8,
+          null,
+          null
+        ],
+        [
+          20000,
+          2990,
+          5.25,
+          null,
+          16.6,
+          null,
+          null
+        ],
+        [
+          22000,
+          2700,
+          6,
+          null,
+          14.6,
+          null,
+          null
+        ],
+        [
+          24000,
+          2405,
+          6.75,
+          160,
+          12.6,
+          null,
+          null
+        ],
+        [
+          26000,
+          2110,
+          7.65,
+          159,
+          10.8,
+          null,
+          null
+        ],
+        [
+          28000,
+          1820,
+          8.6,
+          157,
+          9,
+          null,
+          null
+        ],
+        [
+          30000,
+          1535,
+          9.85,
+          155,
+          7.4,
+          null,
+          null
+        ],
+        [
+          32000,
+          1250,
+          11.2,
+          153,
+          5.8,
+          null,
+          null
+        ],
+        [
+          34000,
+          955,
+          12.9,
+          151,
+          4.3,
+          null,
+          null
+        ],
+        [
+          36000,
+          670,
+          15.35,
+          148,
+          2.7,
+          null,
+          null
+        ],
+        [
+          38000,
+          385,
+          19,
+          145,
+          1.3,
+          null,
+          null
+        ],
+        [
+          40000,
+          100,
+          27,
+          142,
+          0,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "mustang-iii-fx858-level",
+      "source_id": "FX858",
+      "aircraft": "Mustang III FX.858",
+      "quantity": "combat_level_speed_schedule",
+      "source_class": "original-report-table",
+      "source_location": "§4.3 and Table II, 21 altitude rows",
+      "conditions": "3,000 rpm, speeds corrected to 8,800 lb, radiator and oil cooler flaps at minimum opening. The original table carries separate PEC, compressibility and strut corrections. IAS and final TAS are retained without any additional correction. Empty source cells remain null.",
+      "speed_basis": "TAS",
+      "columns": [
+        "altitude_ft",
+        "tas_mph",
+        "ias_mph",
+        "boost_lb_in2",
+        "second_gear_boost_lb_in2",
+        "gear_as_printed"
+      ],
+      "rows": [
+        [
+          2000,
+          404,
+          416,
+          25,
+          null,
+          "MS"
+        ],
+        [
+          4000,
+          413,
+          413,
+          25,
+          null,
+          null
+        ],
+        [
+          5200,
+          419,
+          412,
+          25,
+          null,
+          null
+        ],
+        [
+          6000,
+          419,
+          407,
+          23.9,
+          null,
+          null
+        ],
+        [
+          8000,
+          419,
+          395,
+          21.4,
+          null,
+          null
+        ],
+        [
+          9000,
+          419,
+          389,
+          20.1,
+          25,
+          "MS/FS"
+        ],
+        [
+          10000,
+          423,
+          387,
+          25,
+          null,
+          "FS"
+        ],
+        [
+          12000,
+          431,
+          382,
+          null,
+          null,
+          null
+        ],
+        [
+          14000,
+          439,
+          377,
+          null,
+          null,
+          null
+        ],
+        [
+          16000,
+          447,
+          373,
+          null,
+          null,
+          null
+        ],
+        [
+          17800,
+          455,
+          369,
+          25,
+          null,
+          null
+        ],
+        [
+          20000,
+          454,
+          355,
+          22.2,
+          null,
+          null
+        ],
+        [
+          22000,
+          453,
+          343,
+          19.7,
+          null,
+          null
+        ],
+        [
+          24000,
+          452,
+          331,
+          17.4,
+          null,
+          null
+        ],
+        [
+          26000,
+          450,
+          318,
+          15.2,
+          null,
+          null
+        ],
+        [
+          28000,
+          447,
+          304,
+          13,
+          null,
+          null
+        ],
+        [
+          30000,
+          443,
+          290,
+          10.8,
+          null,
+          null
+        ],
+        [
+          32000,
+          438,
+          276,
+          8.7,
+          null,
+          null
+        ],
+        [
+          34000,
+          432,
+          261,
+          6.6,
+          null,
+          null
+        ],
+        [
+          36000,
+          425,
+          247,
+          4.8,
+          null,
+          null
+        ],
+        [
+          38000,
+          416,
+          230,
+          2.8,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "mustang-iii-fx858-pec",
+      "source_id": "FX858",
+      "aircraft": "Mustang III FX.858",
+      "quantity": "reported_position_error_checkpoints",
+      "source_class": "original-report-table",
+      "source_location": "§4.1 and Figure 2",
+      "conditions": "FX.858 test pressure head. Linear variation is stated only between 240 and 420 mph IAS. Preserve original checkpoints without extending to another specimen or stall speed.",
+      "speed_basis": "IAS",
+      "columns": [
+        "ias_mph",
+        "add_position_error_mph"
+      ],
+      "rows": [
+        [
+          140,
+          4.6
+        ],
+        [
+          177,
+          0
+        ],
+        [
+          240,
+          -8.4
+        ],
+        [
+          420,
+          -20.9
+        ]
+      ]
+    },
+    {
+      "id": "mustang-iii-fx858-tip-mach",
+      "source_id": "FX858",
+      "aircraft": "Mustang III FX.858",
+      "quantity": "reported_level_flight_tip_mach",
+      "source_class": "period-calculation",
+      "source_location": "§4.4, all-out level flights",
+      "conditions": "3,000 rpm test, propeller tip Mach calculated by the original report on standard atmospheric conditions. Actual air temperature ranges are printed separately.",
+      "speed_basis": "unestablished",
+      "columns": [
+        "altitude_ft",
+        "gear",
+        "tip_mach_standard",
+        "actual_temp_min_c",
+        "actual_temp_max_c"
+      ],
+      "rows": [
+        [
+          5200,
+          "MS",
+          0.88,
+          0,
+          2
+        ],
+        [
+          17500,
+          "FS",
+          0.96,
+          -24,
+          -19
+        ],
+        [
+          25000,
+          "FS",
+          0.97,
+          -40,
+          -34
+        ],
+        [
+          30000,
+          "FS",
+          0.99,
+          -53,
+          -48
+        ],
+        [
+          35000,
+          "FS",
+          1,
+          -62,
+          -58
+        ]
+      ]
+    },
+    {
+      "id": "p38j-4267869-level",
+      "source_id": "P38J-4267869",
+      "aircraft": "P-38J 42-67869",
+      "quantity": "reported_level_speed",
+      "source_class": "original-report-table",
+      "source_location": "Eng-47-1706-A summary",
+      "conditions": "60 inHg and 3,000 rpm, 16,597 lb at takeoff. These are the sea-level and reported critical-altitude endpoints for this J specimen.",
+      "speed_basis": "TAS",
+      "columns": [
+        "altitude_ft",
+        "speed_mph",
+        "map_inhg",
+        "engine_rpm"
+      ],
+      "rows": [
+        [
+          0,
+          345,
+          60,
+          3000
+        ],
+        [
+          25800,
+          421.5,
+          60,
+          3000
+        ]
+      ]
+    },
+    {
+      "id": "p38j-4267869-climb",
+      "source_id": "P38J-4267869",
+      "aircraft": "P-38J 42-67869",
+      "quantity": "reported_climb_performance",
+      "source_class": "original-report-table",
+      "source_location": "Eng-47-1706-A summary",
+      "conditions": "60 inHg and 3,000 rpm, 16,597 lb at takeoff. Cumulative time is printed at the climb critical altitude.",
+      "speed_basis": "unestablished",
+      "columns": [
+        "altitude_ft",
+        "vertical_rate_ft_min",
+        "elapsed_min_as_reported",
+        "map_inhg",
+        "engine_rpm"
+      ],
+      "rows": [
+        [
+          0,
+          4000,
+          null,
+          60,
+          3000
+        ],
+        [
+          23400,
+          2900,
+          6.49,
+          60,
+          3000
+        ]
+      ]
+    },
+    {
+      "id": "p38j-4313563-level",
+      "source_id": "P38J-4313563",
+      "aircraft": "P-38J 43-13563",
+      "quantity": "reported_level_speed_and_power",
+      "source_class": "original-report-table",
+      "source_location": "FS-M-19-1656-A level-flight table",
+      "conditions": "Wheels up, wing flaps neutral, intercooler flaps flush, coolant flaps automatic, auto-rich. Source table's BHP column retained as printed. The report identifies induction leakage, and actual run weight is absent from this table.",
+      "speed_basis": "TAS",
+      "columns": [
+        "altitude_ft",
+        "reported_bhp",
+        "manifold_inhg",
+        "carb_air_c",
+        "engine_rpm",
+        "turbo_rpm",
+        "exhaust_back_pressure_inhg",
+        "tas_mph"
+      ],
+      "rows": [
+        [
+          10000,
+          1520,
+          60,
+          32,
+          3000,
+          18300,
+          39.2,
+          375
+        ],
+        [
+          15000,
+          1510,
+          60,
+          35,
+          3000,
+          21900,
+          40.5,
+          391.5
+        ],
+        [
+          20300,
+          1500,
+          60,
+          42.5,
+          3000,
+          26400,
+          45,
+          408
+        ],
+        [
+          25000,
+          1300,
+          50.2,
+          33.5,
+          3000,
+          26400,
+          37.5,
+          403.5
+        ],
+        [
+          30000,
+          1090,
+          41,
+          26,
+          3000,
+          26400,
+          30.7,
+          391
+        ],
+        [
+          35000,
+          880,
+          32.6,
+          18,
+          3000,
+          26400,
+          24.2,
+          362
+        ]
+      ]
+    },
+    {
+      "id": "fw190a5-19431020-level",
+      "source_id": "A5-20OCT43",
+      "aircraft": "Fw 190 A-5 Normaljäger",
+      "quantity": "factory_level_speed_summary",
+      "source_class": "original-factory-summary",
+      "source_location": "20 October 1943 Normaljäger level-speed chart endpoints",
+      "conditions": "A-5 Normaljäger, 1.42 ata / 2,700 rpm per index for the level curve. The record summarizes a factory chart with specimen mass unspecified in the index.",
+      "speed_basis": "TAS",
+      "columns": [
+        "altitude_m",
+        "speed_kmh"
+      ],
+      "rows": [
+        [
+          0,
+          567
+        ],
+        [
+          6300,
+          656
+        ]
+      ]
+    },
+    {
+      "id": "fw190a5-19431020-climb",
+      "source_id": "A5-20OCT43",
+      "aircraft": "Fw 190 A-5 Normaljäger",
+      "quantity": "factory_climb_rate_summary",
+      "source_class": "original-factory-summary",
+      "source_location": "20 October 1943 Normaljäger climb chart endpoints",
+      "conditions": "A-5 Normaljäger. Rating and specimen mass have not been assigned from the separate level-speed chart.",
+      "speed_basis": "unestablished",
+      "columns": [
+        "altitude_m",
+        "vertical_rate_m_s"
+      ],
+      "rows": [
+        [
+          0,
+          15
+        ],
+        [
+          900,
+          15.3
+        ]
+      ]
+    },
+    {
+      "id": "p51b15-4324777-low-blower-lapse",
+      "source_id": "P51B15-1749A",
+      "aircraft": "P-51B-15 43-24777",
+      "quantity": "reported_level_speed_with_chart_shaft_power",
+      "source_class": "original-report-table",
+      "source_location": "§V.B.2 present war emergency, low blower beyond critical altitude",
+      "conditions": "V-1650-7, 3,000 rpm, wing racks fitted, coolant and oil shutters automatic, auto-rich. 9,335 lb takeoff. Speeds corrected to the report's normal-climb weight curve. The standard BHP column comes from the Packard power chart.",
+      "speed_basis": "TAS",
+      "columns": [
+        "altitude_ft",
+        "manifold_inhg",
+        "chart_bhp",
+        "tas_mph"
+      ],
+      "rows": [
+        [
+          17000,
+          52.8,
+          1350,
+          398
+        ],
+        [
+          24000,
+          39.8,
+          1037,
+          385
+        ]
+      ]
+    }
+  ]
+}
