@@ -34,7 +34,7 @@ The baseline is `67ba5573bc5aa2cec55b547305e9c72fef38bb50` and data version 1.5.
 | P-47B | 429.83 → 431.38 mph TAS at 30,000 ft Combat | 81.28 → 85.70 s at 10,000 ft Combat |
 | Bf 109 F-4, Fw 190 A-4, P-51B, P-38G and Spitfire LF IX | 0.00 mph | 0.00 s |
 
-The grid produces zero changes in stall EAS, maximum climb, timed climb, peak instantaneous turn, peak sustained turn or availability. At 10,000 ft the Corsair Combat acceleration changes from 91.68 to 96.16 s. The paired power and drag fit changes the excess power along the run, including below maximum speed. These elapsed times are model results. Matched historical speed-time and powered-turn validation remain open.
+The grid produces zero changes in stall EAS, maximum climb, timed climb, peak instantaneous turn, peak sustained turn or availability. At 10,000 ft the Corsair Combat acceleration changes from 91.68 to 96.16 s. At 335 mph EAS the same Combat model decelerates at 0.415 mph/s, compared with 0.499 mph/s before. The paired power and drag fit changes the excess power along the run, including below maximum speed. These elapsed times are model results. Matched historical speed-time and powered-turn validation remain open.
 
 At 29,000 ft Combat the nominal Corsair/Thunderbolt result is a practical tie at 431.54 and 433.78 mph TAS. Shifting each reference by ±2 efficiency points at fixed fitted drag gives 426.93–436.03 and 428.89–438.55 mph respectively. Either aircraft can lead under the tested opposing assumptions. The engineering range provides a sensitivity check for this comparison. Historical 5:1 discrimination remains unresolved. [Practical matchup margins](V49_TIMED_MATCHUPS.md#practical-ties-and-chart-evidence)
 

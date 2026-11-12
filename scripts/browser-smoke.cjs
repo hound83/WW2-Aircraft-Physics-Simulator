@@ -563,9 +563,10 @@ async function run(){
   const accelAxes=await evaluate('(()=>{const s=document.querySelector("#bench-acceleration-plot svg");return [+s.dataset.minEas,+s.dataset.maxEas];})()');
   assert.deepEqual(accelAxes,(await axes())[0]);
   const accelAt335=await probe();
-  assert.ok(Math.abs(accelAt335.aircraft.a.accelerationMphPerSecond+.49920)<.0001);
+  // The Corsair clean-flight reference changes this live 335 mph EAS point.
+  assert.ok(Math.abs(accelAt335.aircraft.a.accelerationMphPerSecond+.41549)<.0001);
   assert.ok(Math.abs(accelAt335.aircraft.b.accelerationMphPerSecond-.45504)<.0001);
-  assert.match(await evaluate('document.getElementById("bench-acceleration-at-speed").textContent'),/-0\.50 mph\/s.*\+0\.46 mph\/s/s);
+  assert.match(await evaluate('document.getElementById("bench-acceleration-at-speed").textContent'),/-0\.42 mph\/s.*\+0\.46 mph\/s/s);
   const accelerationPlot=await evaluate('(()=>{'+
    'const s=document.querySelector("#bench-acceleration-plot svg"),zero=Number(s.querySelector(".bench-acceleration-zero").getAttribute("y1"));'+
    'const equilibria=[...s.querySelectorAll("[data-bench-level-equilibrium]")].map(e=>[+e.getAttribute("cx"),+e.getAttribute("cy")]);'+
@@ -583,7 +584,7 @@ async function run(){
   assert.equal(new Set(accelerationPlot.cursors).size,1);
   await select('bench-speed-unit','kph');
   assert.deepEqual(await probe(),accelAt335);
-  assert.match(await evaluate('document.getElementById("bench-acceleration-at-speed").textContent'),/-0\.80 km\/h\/s.*\+0\.73 km\/h\/s/s);
+  assert.match(await evaluate('document.getElementById("bench-acceleration-at-speed").textContent'),/-0\.67 km\/h\/s.*\+0\.73 km\/h\/s/s);
   await select('bench-speed-unit','mph');
   await setProbe(accelAxes[0]);
   assert.ok(Object.values((await probe()).aircraft).every(a=>a.accelerationMphPerSecond===null));
