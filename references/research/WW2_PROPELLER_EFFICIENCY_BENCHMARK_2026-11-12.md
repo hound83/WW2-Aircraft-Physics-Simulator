@@ -4,6 +4,8 @@
 **Status:** research candidate (no solver change)  
 **Purpose:** graded, condition-matched propeller efficiency observations and residual gaps for the seven-aircraft benchmark. Every number is tagged observed / derived / estimated / missing.
 
+The graded benchmark summary is an analysis record. [Research JSON](../analysis/ww2_propeller_efficiency_benchmark_2026-11-12.json)
+
 ## Scope
 F4U-4 (80765), P-47B (41-5902 / 41-5942), P-51B-15 (43-24777), Spitfire LF IX (BS.543), P-38G (42-12687), Fw 190 A-4 (WNr 783), Bf 109 F-4.
 

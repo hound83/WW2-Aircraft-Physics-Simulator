@@ -23,7 +23,7 @@ Same matched flight cases improve both climb accuracy and the energy/maneuver co
 
 ## 2. Propulsion residual audit on the same cases
 Use the graded propeller-efficiency pack:
-[Benchmark analysis JSON](../analysis/ww2_propeller_efficiency_benchmark_2026-11-12.json)
+[Graded benchmark JSON](../analysis/ww2_propeller_efficiency_benchmark_2026-11-12.json).
 
 At each matched condition report:
 - Shaft power (source or chart)
@@ -47,7 +47,7 @@ Identify which residuals remain:
 - `npm run check` and browser smoke pass.
 - No new unsupported coefficients; propeller references stay inside graded envelopes.
 - Residual gaps documented rather than closed by assumption.
-- Candidate pack + scorecard under `references/research/`.
+- Store source observations in the catalog's supported schema and scorecard summaries under `references/analysis/`.
 
 ## Non-goals
 - New aircraft intake.
@@ -72,5 +72,5 @@ Identify which residuals remain:
 1. Freeze before-scorecard for WNr 783 open-cooling climb and P-38G timed climb.
 2. Apply matched cooling input and TAS-energy term; re-score.
 3. Produce residual table (shaft / useful / drag / residual) for the seven-aircraft set using the graded η pack.
-4. Commit scorecard and residual note under `references/research/`.
+4. Commit the scorecard summary under `references/analysis/` and link it from the research note.
 5. Hand off for Codex integration or joint review; do not claim stable release.
