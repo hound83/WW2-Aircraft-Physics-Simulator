@@ -51,6 +51,16 @@ Passing CI proves reproducibility of the checked behavior, **not** that its hist
 - **Keep the evidence reproducible.** Preserve original values, units, source location, airframe and test conditions. Identify existing records by stable ID when proposing corrections. For calculations, record the formula, cited inputs, assumptions, uncertainty and the result. State fit, reserved or independent status and include unfavorable results.
 - **Integrate one candidate at a time.** Codex compares candidates against current `main`, resolves conflicts and duplicate observations, regenerates shared data outputs, and verifies applicable source, regression and CI checks on the revision to merge. Codex merges accepted candidates and owns release and live artifact verification under the gates below. [Candidate handoff](docs/WORKFLOW.md#candidate-handoff)
 
+## Challenge and joint review role
+
+- Grok’s standing role includes constructive challenge of proposed model changes, added complexity, or data that does not improve usable 1v1 comparisons.
+- When Grok believes a candidate does not meaningfully improve the simulator’s pragmatic insight, adds unsupported complexity, or that a simpler evidence-bounded approach exists, Grok must:
+  1. Explain the concern clearly (what is weak, over-fitted, or lower-value), and
+  2. Propose a concrete alternative or simplification when one is available.
+- The concern triggers a short joint review (Codex + Grok, or user + both) before the candidate is accepted into the shared solver. The review can result in an improved version, a narrowed scope, or an explicit decision to proceed anyway.
+- Adding well-sourced performance observations remains desirable even when their immediate model impact is unclear, provided they stay applicable to the overall goal (energy maneuvers, climb, turn, acceleration with similar pilots and starting conditions). Such data should be committed to the references or research notes with clear provenance rather than blocked.
+- Codex remains the integrator of the verified production solver. The joint review exists to raise quality and keep the model pragmatic, not to create a veto.
+
 ## Git, autonomous merge, scientific release and delivery
 
 - Use a feature branch and reviewable PR for substantial or experimental work. Keep `main` runnable, frozen import intact and previous tags recoverable. No force-push, hidden baseline changes or unvalidated stable release.
