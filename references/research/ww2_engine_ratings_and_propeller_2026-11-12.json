@@ -1,0 +1,427 @@
+{
+  "schema": "ww2-fighter-evidence-pack/v1",
+  "pack_version": "1.0.0",
+  "as_of": "2026-11-12",
+  "scope": "Wartime engine rating anchors, original Messerschmitt installed speed traces, and independent NACA propeller climb observations. Rating data retain PS and evidence of actual settings remains separate.",
+  "sources": [
+    {
+      "id": "DB-605-A-C-MUSTER",
+      "aircraft": "DB 605 A–C",
+      "report": "Daimler-Benz Motorenmuster DB 605 A–C, Kraftstoff B4",
+      "source": "https://degnans.com/markd/DB605.pdf",
+      "location": "PDF p. 14, Motorenmuster Blatt 1. April 1943 Leistungsblatt on PDF p. 12 agrees on combat and emergency points.",
+      "inspected_copy_sha256": "d95185ced34031e27e3c23ca73544ce34be85369ffd51aac2a45ecc3b5ad2d8f"
+    },
+    {
+      "id": "FW190-A2-A4-HANDBUCH-00",
+      "aircraft": "Fw 190 A-2 to A-4",
+      "report": "D.(Luft) T.2190 A-1, Fw 190 Flugzeug-Handbuch, Teil 0, October 1943, applicable to A-2 to A-4",
+      "source": "https://degnans.com/markd/Fw%20190%20A-2%20bis%20A-4%20Teil%2000.pdf",
+      "location": "Printed pp. 7, 9 and 12 (PDF pp. 10, 12 and 15)",
+      "inspected_copy_sha256": "834a6982af0a2fc3715bce3d1f92a9404ea71a7c1e02d7a212571b87caf0d885"
+    },
+    {
+      "id": "NACA-MR-E5D19",
+      "aircraft": "BMW 801 D-2",
+      "report": "NACA MR E5D19 / WR E-192, Characteristics of the BMW 801D2 Automatic Engine Control as Determined from Bench Tests, April 1945",
+      "source": "https://ntrs.nasa.gov/api/citations/19930093290/downloads/19930093290.pdf",
+      "location": "Printed pp. 2–3, 8, 14–15 and Figure 14"
+    },
+    {
+      "id": "MTT-109-19-L-42",
+      "aircraft": "Bf 109 G-1 WNr 14026",
+      "report": "Messerschmitt V.B. 109 19 L 42, 19 September 1942, DB 601 E and DB 605 A",
+      "source": "https://www.wwiiaircraftperformance.org/me109/VB-109-19-L-42.pdf",
+      "location": "Blatt 1–4 and 7–8; Wright Field microfilm R 2448 F/015",
+      "inspected_copy_sha256": "a14753051c9e175bb44f9a94f138b2423a1833ec77bcce1a086ebeee035cd995"
+    },
+    {
+      "id": "NACA-RM-L7D10",
+      "aircraft": "P-47D-28 NACA Curtiss 838-1C2-18 test",
+      "report": "NACA RM L7D10, Flight Tests of a Curtiss No. 838-1C2-18 Three-Blade Propeller Having Trailing-Edge Extensions, 1947",
+      "source": "https://ntrs.nasa.gov/api/citations/20050019331/downloads/20050019331.pdf",
+      "location": "Tables I and II, printed pp. 12–13",
+      "inspected_copy_sha256": "33c7ee617c1e952b728571150536a8ba32aa1f5d649480888a16289a34ae34ba"
+    },
+    {
+      "id": "FW190-783-NR1-BOOST",
+      "aircraft": "Fw 190 A-4 WNr 783",
+      "report": "Focke-Wulf Flugbericht Fw 190/783 Nr. 1, Graphs 1 and 2",
+      "source": "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-783-nr1.html",
+      "location": "Long exterior intakes, boost curves; archived chart readings in references/fw190a4-783.json"
+    },
+    {
+      "id": "FW190-783-NR2-INTAKE",
+      "aircraft": "Fw 190 A-4 WNr 783",
+      "report": "Focke-Wulf Flugbericht Fw 190/783 Nr. 2, 15 March 1943",
+      "source": "https://www.wwiiaircraftperformance.org/fw190/Fw_190_783_Nr2.pdf",
+      "transcription": "https://www.wwiiaircraftperformance.org/fw190/fw190-783-nr2.html",
+      "location": "Results 1–3 and Figure 1, normal internal intake",
+      "inspected_copy_sha256": "79696ca2d594f9098bd9eee7d19eb3264a3b5e29e4c9f67ce35c4875a26222d7"
+    }
+  ],
+  "document_lineage": [
+    {
+      "id": "mtt-109-19-l-42-original",
+      "relationship": "same-report scan, legacy translated summary and newly inspected chart",
+      "members": [
+        "MTT-109-19-L-42",
+        "ww2_multiaxis_propulsion_trials_2026-11-10:BF109G1-14026"
+      ]
+    },
+    {
+      "id": "a4-783-nr1-charts",
+      "relationship": "same report, separate boost, level speed and climb quantities",
+      "members": [
+        "FW190-783-NR1-BOOST",
+        "ww2_german_fighter_archive_2026-11-11:A4-783-FW-NR1"
+      ]
+    }
+  ],
+  "series": [
+    {
+      "id": "db605a-rated-power",
+      "source_id": "DB-605-A-C-MUSTER",
+      "aircraft": "Bf 109 G-2 DB 605 A (engine-type rating)",
+      "quantity": "rated_shaft_power",
+      "source_location": "Motorenmuster DB 605 A–C, Kraftstoff B4, Blatt 1, table headed Höhe km",
+      "source_class": "original-engine-rating-table",
+      "conditions": "Daimler-Benz engine-type B4 ratings. DB 605 A uses 1:1.685 reduction. Bf 109 G-2 operating authorization is separate. Installed shaft power and ram are unspecified by these ratings.",
+      "columns": [
+        "rating",
+        "altitude_m",
+        "power_ps",
+        "engine_rpm",
+        "manifold_ata",
+        "fuel_l_per_h"
+      ],
+      "rows": [
+        ["takeoff-emergency",0,1475,2800,1.42,480],
+        ["climb-combat",0,1310,2600,1.3,400],
+        ["maximum-continuous",0,1075,2300,1.15,320],
+        ["emergency",5700,1355,2800,1.42,450],
+        ["climb-combat",5800,1250,2600,1.3,390],
+        ["maximum-continuous",5500,1080,2300,1.15,320],
+        ["economy",5700,890,2100,1,250],
+        ["emergency",10000,790,2800,0.85,310]
+      ],
+      "notes": "The A–B April 1943 sheet on PDF p. 12 gives the same combat and emergency entries, and lists the economy setting as 1.05 ata rather than the A–C sheet's 1.00 ata. Both are from Daimler-Benz."
+    },
+    {
+      "id": "bmw801d-rated-power",
+      "source_id": "FW190-A2-A4-HANDBUCH-00",
+      "aircraft": "Fw 190 A-4 BMW 801 D (engine-type rating)",
+      "quantity": "rated_shaft_power",
+      "source_location": "Teil 0, printed p. 9, Betriebswerte des Motors, BMW 801 D lower row in each cell",
+      "source_class": "original-aircraft-handbook-table",
+      "conditions": "Full-throttle heights without ram pressure. Bottom-supercharger and high-supercharger columns kept distinct. The actual 783/1 climb/level ram heights differ.",
+      "columns": [
+        "rating",
+        "gear",
+        "altitude_m",
+        "power_ps",
+        "engine_rpm",
+        "manifold_ata",
+        "limit_min"
+      ],
+      "rows": [
+        ["takeoff-emergency","low",600,1730,2700,1.42,3],
+        ["climb-combat","low",700,1520,2400,1.32,30],
+        ["maximum-continuous","low",1200,1370,2300,1.2,null],
+        ["economy","low",1800,1060,2100,1.1,null],
+        ["emergency","high",5700,1440,2700,1.42,3],
+        ["climb-combat","high",5300,1320,2400,1.32,30],
+        ["maximum-continuous","high",5500,1180,2300,1.2,null],
+        ["economy","high",5400,985,2100,1.1,null]
+      ]
+    },
+    {
+      "id": "bmw801d2-shift-bench",
+      "source_id": "NACA-MR-E5D19",
+      "aircraft": "Fw 190 family BMW 801 D-2 (test controller 304068)",
+      "quantity": "supercharger_shift_hysteresis",
+      "source_location": "Printed pp. 2–3, 8; Fig. 14 and summary pp. 14–15",
+      "source_class": "original-bench-test",
+      "conditions": "Bench test of removed Kommandogerät. Altitude pressure changed at 3,000–4,000 ft/min equivalent. Changeover depends on engine speed and pressure direction.",
+      "columns": [
+        "overlap_ft_approx",
+        "simulated_altitude_rate_low_fpm",
+        "simulated_altitude_rate_high_fpm"
+      ],
+      "rows": [
+        [5200,3000,4000]
+      ]
+    },
+    {
+      "id": "g1-14026-db601e-level",
+      "source_id": "MTT-109-19-L-42",
+      "aircraft": "Bf 109 G-1 WNr 14026 with DB 601 E",
+      "quantity": "level_flight_speed",
+      "speed_basis": "TAS",
+      "source_location": "Blatt 1 summary and Blatt 7 speed curve",
+      "source_class": "original-flight-test",
+      "conditions": "1.30 ata target, 2,500 rpm, VDM 9-12010.31, 3 m, oil cooling automatic, water radiator hand-set. Same G-1 body with installation differences. Blatt 7 drawn curve requires the original +3 km/h radiator-indicator correction for comparison with Blatt 1.",
+      "columns": [
+        "altitude_m",
+        "tas_kmh_printed_or_curve",
+        "report_indicator_correction_kmh",
+        "chart_read_allowance_kmh",
+        "reading",
+        "engine_rpm"
+      ],
+      "rows": [
+        [0,514,0,null,"summary",2500],
+        [1000,536,3,3,"curve",2500],
+        [2000,560,3,3,"curve",2500],
+        [3000,560,3,3,"curve",2500],
+        [4000,578,3,3,"curve",2500],
+        [5000,588,3,3,"curve",2500],
+        [6000,622,0,null,"summary",2500],
+        [7000,613,3,3,"curve",2500],
+        [8000,604,3,3,"curve",2500],
+        [9000,592,3,3,"curve",2500],
+        [10000,578,3,3,"curve",2500]
+      ]
+    },
+    {
+      "id": "g1-14026-db605a-level",
+      "source_id": "MTT-109-19-L-42",
+      "aircraft": "Bf 109 G-1 WNr 14026 with DB 605 A",
+      "quantity": "level_flight_speed",
+      "speed_basis": "TAS",
+      "source_location": "Blatt 1 summary and Blatt 8 speed curve",
+      "source_class": "original-flight-test",
+      "conditions": "1.30 ata target, 2,600 rpm, VDM 9-12087.31, 3 m, oil cooling automatic, water radiator hand-set. Intake scoops and prop differ from the 601 installation. Blatt 8 drawn curve requires the original +3 km/h radiator-indicator correction.",
+      "columns": [
+        "altitude_m",
+        "tas_kmh_printed_or_curve",
+        "report_indicator_correction_kmh",
+        "chart_read_allowance_kmh",
+        "reading",
+        "engine_rpm"
+      ],
+      "rows": [
+        [0,507,0,null,"summary",2600],
+        [1000,530,3,3,"curve",2600],
+        [2000,552,3,3,"curve",2600],
+        [3000,567,3,3,"curve",2600],
+        [4000,574,3,3,"curve",2600],
+        [5000,590,3,3,"curve",2600],
+        [6100,626,0,null,"summary",2600],
+        [7000,620,3,3,"curve",2600],
+        [8000,612,3,3,"curve",2600],
+        [9000,600,3,3,"curve",2600],
+        [10000,585,3,3,"curve",2600]
+      ]
+    },
+    {
+      "id": "l7d10-normal",
+      "source_id": "NACA-RM-L7D10",
+      "aircraft": "P-47D-28 (NACA modified Curtiss installation)",
+      "quantity": "propeller_efficiency",
+      "source_location": "Table I, printed p. 12, Figure 4",
+      "source_class": "original-flight-test-table",
+      "conditions": "normal power climb, Curtiss 838-1C2-18 three-blade propeller with trailing-edge extensions. NACA wake survey. Specimen is distinct from P-47B and production D-30.",
+      "columns": [
+        "run",
+        "advance_ratio",
+        "power_coefficient",
+        "thrust_coefficient",
+        "efficiency",
+        "prop_rps",
+        "flight_mach",
+        "tip_mach",
+        "density_ratio"
+      ],
+      "rows": [
+        ["25 to 1",0.972,0.119,0.1007,0.823,21.48,0.244,0.825,0.845],
+        ["25 to 2",0.983,0.126,0.1043,0.813,21.48,0.247,0.826,0.803],
+        ["25 to 3",0.996,0.134,0.1095,0.814,21.45,0.251,0.829,0.769],
+        ["25 to 4",1.02,0.14,0.1135,0.827,21.4,0.258,0.835,0.737],
+        ["25 to 5",1.05,0.148,0.1144,0.811,21.45,0.268,0.845,0.702],
+        ["25 to 6",1.092,0.157,0.12,0.834,21.42,0.28,0.852,0.669],
+        ["25 to 7",1.101,0.163,0.1232,0.832,21.45,0.284,0.857,0.638],
+        ["25 to 8",1.129,0.172,0.1263,0.829,21.42,0.291,0.86,0.607],
+        ["25 to 9",1.138,0.18,0.1307,0.826,21.45,0.296,0.868,0.579],
+        ["25 to 10",1.178,0.187,0.1308,0.824,21.45,0.307,0.875,0.555],
+        ["25 to 11",1.194,0.195,0.1353,0.828,21.45,0.314,0.883,0.53],
+        ["25 to 12",1.222,0.204,0.1401,0.839,21.47,0.323,0.89,0.507],
+        ["25 to 13",1.255,0.213,0.1433,0.844,21.45,0.333,0.898,0.486],
+        ["25 to 14",1.273,0.222,0.1448,0.83,21.47,0.34,0.906,0.463],
+        ["25 to 15",1.291,0.229,0.1458,0.822,21.45,0.347,0.912,0.445],
+        ["25 to 16",1.328,0.237,0.1486,0.832,21.47,0.359,0.921,0.431],
+        ["25 to 17",1.338,0.244,0.1507,0.826,21.47,0.362,0.924,0.42],
+        ["25 to 18",1.356,0.256,0.1542,0.817,21.47,0.369,0.932,0.4],
+        ["25 to 19",1.385,0.261,0.1559,0.827,21.47,0.38,0.941,0.389],
+        ["25 to 20",1.415,0.269,0.1562,0.822,21.47,0.39,0.951,0.377],
+        ["25 to 21",1.421,0.274,0.1599,0.829,21.48,0.394,0.956,0.364],
+        ["25 to 22",1.467,0.284,0.1594,0.823,21.32,0.405,0.958,0.355],
+        ["25 to 23",1.495,0.293,0.1599,0.816,21.27,0.414,0.963,0.344],
+        ["25 to 24",1.486,0.295,0.1618,0.815,21.38,0.415,0.97,0.334]
+      ]
+    },
+    {
+      "id": "l7d10-military",
+      "source_id": "NACA-RM-L7D10",
+      "aircraft": "P-47D-28 (NACA modified Curtiss installation)",
+      "quantity": "propeller_efficiency",
+      "source_location": "Table II, printed p. 13, Figure 5",
+      "source_class": "original-flight-test-table",
+      "conditions": "military power climb, Curtiss 838-1C2-18 three-blade propeller with trailing-edge extensions. NACA wake survey. Specimen is distinct from P-47B and production D-30.",
+      "columns": [
+        "run",
+        "advance_ratio",
+        "power_coefficient",
+        "thrust_coefficient",
+        "efficiency",
+        "prop_rps",
+        "flight_mach",
+        "tip_mach",
+        "density_ratio"
+      ],
+      "rows": [
+        ["22 to 1",0.887,0.12,0.1068,0.789,22.62,0.231,0.851,0.923],
+        ["22 to 2",0.911,0.128,0.1132,0.805,22.62,0.24,0.863,0.872],
+        ["22 to 3",0.972,0.142,0.1163,0.795,22.65,0.257,0.868,0.798],
+        ["22 to 4",0.98,0.15,0.1217,0.795,22.52,0.259,0.87,0.749],
+        ["22 to 5",1.002,0.162,0.1277,0.79,22.48,0.267,0.877,0.702],
+        ["22 to 6",1.031,0.172,0.1319,0.791,22.63,0.278,0.892,0.651],
+        ["22 to 7",1.075,0.185,0.1365,0.793,22.52,0.291,0.898,0.605],
+        ["22 to 8",1.117,0.194,0.1381,0.795,22.48,0.303,0.905,0.572],
+        ["22 to 9",1.157,0.207,0.1431,0.8,22.52,0.317,0.917,0.535],
+        ["22 to 10",1.186,0.22,0.15,0.809,22.53,0.328,0.927,0.501],
+        ["22 to 11",1.226,0.229,0.1497,0.801,22.52,0.342,0.939,0.475],
+        ["22 to 12",1.26,0.241,0.1562,0.817,22.58,0.355,0.954,0.446],
+        ["22 to 13",1.272,0.25,0.1595,0.812,22.53,0.36,0.959,0.423],
+        ["22 to 14",1.296,0.262,0.1602,0.792,22.47,0.368,0.964,0.402]
+      ]
+    },
+    {
+      "id": "l7d10-war-emergency",
+      "source_id": "NACA-RM-L7D10",
+      "aircraft": "P-47D-28 (NACA modified Curtiss installation)",
+      "quantity": "propeller_efficiency",
+      "source_location": "Table II, printed p. 13, Figures 6 and 8",
+      "source_class": "original-flight-test-table",
+      "conditions": "war-emergency power climb, Curtiss 838-1C2-18 three-blade propeller with trailing-edge extensions. NACA wake survey. Specimen is distinct from P-47B and production D-30.",
+      "columns": [
+        "run",
+        "advance_ratio",
+        "power_coefficient",
+        "thrust_coefficient",
+        "efficiency",
+        "prop_rps",
+        "flight_mach",
+        "tip_mach",
+        "density_ratio"
+      ],
+      "rows": [
+        ["32 to 1",0.971,0.177,0.1421,0.78,22.55,0.252,0.855,0.805],
+        ["32 to 2",1.005,0.191,0.1482,0.78,22.58,0.263,0.864,0.731],
+        ["32 to 3",1.055,0.209,0.1554,0.784,22.53,0.278,0.872,0.664],
+        ["32 to 4",1.08,0.226,0.1641,0.784,22.57,0.287,0.884,0.61],
+        ["32 to 5",1.135,0.243,0.1693,0.791,22.53,0.304,0.896,0.561],
+        ["32 to 6",1.183,0.265,0.1781,0.795,22.5,0.32,0.907,0.513],
+        ["33 to 1",0.979,0.178,0.1408,0.774,22.48,0.251,0.844,0.8],
+        ["33 to 2",1.008,0.191,0.1482,0.782,22.55,0.262,0.857,0.735],
+        ["33 to 3",1.032,0.212,0.1573,0.766,22.55,0.272,0.869,0.665],
+        ["33 to 4",1.093,0.228,0.1626,0.779,22.57,0.29,0.884,0.617],
+        ["33 to 5",1.134,0.245,0.1694,0.784,22.55,0.303,0.894,0.563],
+        ["33 to 6",1.202,0.264,0.1727,0.786,22.57,0.325,0.908,0.519]
+      ]
+    },
+    {
+      "id": "a4-783-boost-by-flight-phase",
+      "source_id": "FW190-783-NR1-BOOST",
+      "aircraft": "Fw 190 A-4 WNr 783",
+      "quantity": "manifold_pressure",
+      "source_location": "Graphs 1 and 2, chart reads retained in references/fw190a4-783.json",
+      "source_class": "original-chart-reading",
+      "conditions": "BMW 801 D-2/20208, 2,400 rpm, 3,870 kg takeoff, long exterior intakes. Level test closed cooling flaps, climb uses the recorded climb trace.",
+      "columns": [
+        "altitude_m",
+        "level_manifold_ata",
+        "climb_manifold_ata",
+        "chart_read_allowance_ata",
+        "engine_rpm"
+      ],
+      "rows": [
+        [4000,1.32,1.32,0.025,2400],
+        [5000,1.32,1.32,0.025,2400],
+        [6000,1.32,1.32,0.025,2400],
+        [8000,1.16,1.045,0.025,2400],
+        [9000,1.01,0.93,0.025,2400],
+        [10000,0.91,0.8,0.025,2400]
+      ]
+    },
+    {
+      "id": "a4-handbook-climb-time",
+      "source_id": "FW190-A2-A4-HANDBUCH-00",
+      "aircraft": "Fw 190 A-2 to A-4 handbook reference",
+      "quantity": "time_to_climb",
+      "source_location": "Printed p. 9, Flugleistungen, Steigzeiten mit Steigleistung",
+      "source_class": "original-handbook-reference",
+      "conditions": "3,900 kg, handbook guideline across the covered series. Test serial, climb schedule and derivation unspecified.",
+      "columns": [
+        "altitude_m",
+        "time_min",
+        "reference_weight_kg"
+      ],
+      "rows": [
+        [2000,2.2,3900],
+        [4000,4.8,3900],
+        [6000,7.9,3900],
+        [8000,12,3900]
+      ]
+    },
+    {
+      "id": "a4-783-long-intake-level",
+      "source_id": "FW190-783-NR1-BOOST",
+      "aircraft": "Fw 190 A-4 WNr 783",
+      "quantity": "level_flight_speed",
+      "speed_basis": "TAS",
+      "source_location": "Flugbericht 783 Nr. 1 Graph 1 and long exterior intake result paragraph",
+      "source_class": "original-flight-test",
+      "conditions": "BMW 801 D-2/20208 at combat 2,400 rpm, 3,870 kg takeoff, long external intakes and closed split cooling flaps.",
+      "columns": [
+        "altitude_m",
+        "tas_kmh",
+        "chart_read_allowance_kmh",
+        "use_in_current_replay"
+      ],
+      "rows": [
+        [0,523,4,"drag-anchor"],
+        [1000,549,4,"check"],
+        [2000,575,4,"low-gear inlet anchor"],
+        [4000,583,4,"check"],
+        [5000,606,4,"check"],
+        [6000,631,4,"check"],
+        [6950,652,null,"high-gear inlet anchor"],
+        [8000,647,4,"check"],
+        [9000,636,4,"check"],
+        [10000,618,4,"check"]
+      ]
+    },
+    {
+      "id": "a4-783-internal-intake",
+      "source_id": "FW190-783-NR2-INTAKE",
+      "aircraft": "Fw 190 A-4 WNr 783",
+      "quantity": "level_flight_speed",
+      "speed_basis": "TAS",
+      "source_location": "Results 1–2, internal-intake corrected maximum speed and level/climb full-throttle heights",
+      "source_class": "original-flight-test-report",
+      "conditions": "BMW 801 D-2/20208, 2,400 rpm, 3,870 kg takeoff, normal internal intake, level speed with closed split cooling flaps.",
+      "columns": [
+        "altitude_m",
+        "tas_kmh",
+        "climb_full_throttle_height_m",
+        "long_external_intake_climb_full_throttle_height_m",
+        "internal_speed_gain_below_full_throttle_low_kmh",
+        "internal_speed_gain_below_full_throttle_high_kmh"
+      ],
+      "rows": [
+        [6000,645,5500,6150,10,14]
+      ]
+    }
+  ]
+}

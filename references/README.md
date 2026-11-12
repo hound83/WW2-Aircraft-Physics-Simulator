@@ -1,6 +1,6 @@
 # Research and imported evidence
 
-**Fighter sim inputs v1.3.0.** The [versioned data pack](analysis/fighter-sim-inputs-v1.json) provides preferred source-case values, original observation links, curve styles, ranges and GOLD and GOLD* coverage for thirteen variants. Build output includes the data pack and the full research catalog. [Coverage changes and simulator handoff](../docs/research/WW2_FIGHTER_SIM_INPUTS_V1.md)
+**Fighter sim inputs v1.4.0.** The [versioned data pack](analysis/fighter-sim-inputs-v1.json) provides preferred source-case values, original observation links, curve styles, ranges and GOLD and GOLD* coverage for thirteen variants. Build output includes the data pack and the full research catalog. [Coverage changes and simulator handoff](../docs/research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 
 **Propeller efficiency.** The [companion dataset](analysis/fighter-propeller-efficiency-v1.json) links the [NACA and RAE readings](research/ww2_propeller_efficiency_2026-11-11.json) to the checked 80% and 76% references. [Working values, conditions and replay results](../docs/research/WW2_PROPELLER_REFERENCE_VALUES_2026-11-12.md) · [Earlier sensitivity study](../docs/research/WW2_PROPELLER_EFFICIENCY_2026-11-11.md)
 

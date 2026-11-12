@@ -1,6 +1,6 @@
 {
   "schema": "ww2-fighter-sim-inputs/v1",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "as_of": "2026-11-12",
   "scope": "Historical inputs and conditional estimates for source-case lookups and evidence graphs.",
   "originals": {
@@ -74,6 +74,18 @@
         ],
         "sha256": [
           "8d74758341a178f83ebd5fe3f7ffa9a99d4605f32794a89fef32ee7efc3d99d6"
+        ]
+      },
+      {
+        "id": "ww2_engine_ratings_and_propeller_2026-11-12",
+        "kind": "independent-research-pack",
+        "version": "1.0.0",
+        "original_schema": "ww2-fighter-evidence-pack/v1",
+        "files": [
+          "references/research/ww2_engine_ratings_and_propeller_2026-11-12.json"
+        ],
+        "sha256": [
+          "c8c25e5699cf5443eb702808ee0c4a54237668ea215006d0233e84ce4f5e9c47"
         ]
       },
       {
@@ -179,6 +191,1046 @@
     "build_file": "fighter-propeller-efficiency.json",
     "sha256": "ff887e0085baaac9a7aa75871989ac11e1c3ef925ba3360293398fb62d1f6c9e",
     "use": "original source observations, condition-specific replays and efficiency-only sensitivity"
+  },
+  "engine_reference": {
+    "observation_ids": [
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0001",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0002",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0003",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0004",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0005",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0006",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0007",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0008",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0009",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0010",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0011",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0012",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0013",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0014",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0015",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0016",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0017",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0018",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0019",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0020",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0021",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0022",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0023",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0024",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0001",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0002",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0003",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0004",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0005",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0006",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0007",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0008",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0009",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0010",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0011",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0012",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0013",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0014",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0001",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0002",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0003",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0004",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0005",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0006",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0007",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0008",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0009",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0010",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0011",
+      "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0012",
+      "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0001",
+      "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0002",
+      "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0003",
+      "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0004",
+      "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0005",
+      "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0006",
+      "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0007",
+      "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0008",
+      "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0001",
+      "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0002",
+      "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0003",
+      "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0004",
+      "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0005",
+      "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0006",
+      "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0007",
+      "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0008",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0001",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0002",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0003",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0004",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0005",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0006",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0007",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0008",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0009",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0010",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0011",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0001",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0002",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0003",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0004",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0005",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0006",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0007",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0008",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0009",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0010",
+      "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0011",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0001",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0002",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0003",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0004",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0005",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0006",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0001",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0002",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0003",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0004",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0005",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0006",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0007",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0008",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0009",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0010",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-internal-intake:0001",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-handbook-climb-time:0001",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-handbook-climb-time:0002",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-handbook-climb-time:0003",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-handbook-climb-time:0004",
+      "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d2-shift-bench:0001"
+    ],
+    "rated_power": {
+      "bf109g2_db605a": {
+        "engine": "DB 605 A",
+        "fuel": "B4",
+        "engine_to_prop_reduction": 1.685,
+        "active_reference_rating": "climb-combat",
+        "active_reference_manifold_ata": 1.3,
+        "active_reference_rpm": 2600,
+        "qualification": "Engine-type ratings. The restricted G-2 comparison uses 1.30 ata and 2,600 rpm. Use the MT-215 test settings for its own speed trace.",
+        "anchors": [
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0001",
+            "rating": "takeoff-emergency",
+            "altitude_m": 0,
+            "power_ps": 1475,
+            "engine_rpm": 2800,
+            "manifold_ata": 1.42,
+            "fuel_l_per_h": 480,
+            "power_kw": 1084.86,
+            "power_bhp": 1454.82,
+            "grade": "primary"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0002",
+            "rating": "climb-combat",
+            "altitude_m": 0,
+            "power_ps": 1310,
+            "engine_rpm": 2600,
+            "manifold_ata": 1.3,
+            "fuel_l_per_h": 400,
+            "power_kw": 963.5,
+            "power_bhp": 1292.08,
+            "grade": "primary"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0003",
+            "rating": "maximum-continuous",
+            "altitude_m": 0,
+            "power_ps": 1075,
+            "engine_rpm": 2300,
+            "manifold_ata": 1.15,
+            "fuel_l_per_h": 320,
+            "power_kw": 790.66,
+            "power_bhp": 1060.29,
+            "grade": "primary"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0004",
+            "rating": "emergency",
+            "altitude_m": 5700,
+            "power_ps": 1355,
+            "engine_rpm": 2800,
+            "manifold_ata": 1.42,
+            "fuel_l_per_h": 450,
+            "power_kw": 996.6,
+            "power_bhp": 1336.46,
+            "grade": "primary"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0005",
+            "rating": "climb-combat",
+            "altitude_m": 5800,
+            "power_ps": 1250,
+            "engine_rpm": 2600,
+            "manifold_ata": 1.3,
+            "fuel_l_per_h": 390,
+            "power_kw": 919.37,
+            "power_bhp": 1232.9,
+            "grade": "primary"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0006",
+            "rating": "maximum-continuous",
+            "altitude_m": 5500,
+            "power_ps": 1080,
+            "engine_rpm": 2300,
+            "manifold_ata": 1.15,
+            "fuel_l_per_h": 320,
+            "power_kw": 794.34,
+            "power_bhp": 1065.23,
+            "grade": "primary"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0007",
+            "rating": "economy",
+            "altitude_m": 5700,
+            "power_ps": 890,
+            "engine_rpm": 2100,
+            "manifold_ata": 1,
+            "fuel_l_per_h": 250,
+            "power_kw": 654.59,
+            "power_bhp": 877.82,
+            "grade": "primary"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0008",
+            "rating": "emergency",
+            "altitude_m": 10000,
+            "power_ps": 790,
+            "engine_rpm": 2800,
+            "manifold_ata": 0.85,
+            "fuel_l_per_h": 310,
+            "power_kw": 581.04,
+            "power_bhp": 779.19,
+            "grade": "primary"
+          }
+        ]
+      },
+      "fw190a4_783": {
+        "engine": "BMW 801 D-2",
+        "active_reference_rating": "climb-combat",
+        "active_reference_manifold_ata": 1.32,
+        "active_reference_rpm": 2400,
+        "qualification": "Handbook BMW 801 D full-throttle ratings without ram. Select the documented gear. Installed flight boost depends on intake and flight phase.",
+        "anchors": [
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0001",
+            "rating": "takeoff-emergency",
+            "gear": "low",
+            "altitude_m": 600,
+            "power_ps": 1730,
+            "engine_rpm": 2700,
+            "manifold_ata": 1.42,
+            "limit_min": 3,
+            "power_kw": 1272.41,
+            "power_bhp": 1706.33,
+            "grade": "primary"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0002",
+            "rating": "climb-combat",
+            "gear": "low",
+            "altitude_m": 700,
+            "power_ps": 1520,
+            "engine_rpm": 2400,
+            "manifold_ata": 1.32,
+            "limit_min": 30,
+            "power_kw": 1117.96,
+            "power_bhp": 1499.21,
+            "grade": "primary"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0003",
+            "rating": "maximum-continuous",
+            "gear": "low",
+            "altitude_m": 1200,
+            "power_ps": 1370,
+            "engine_rpm": 2300,
+            "manifold_ata": 1.2,
+            "limit_min": null,
+            "power_kw": 1007.63,
+            "power_bhp": 1351.26,
+            "grade": "primary"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0004",
+            "rating": "economy",
+            "gear": "low",
+            "altitude_m": 1800,
+            "power_ps": 1060,
+            "engine_rpm": 2100,
+            "manifold_ata": 1.1,
+            "limit_min": null,
+            "power_kw": 779.63,
+            "power_bhp": 1045.5,
+            "grade": "primary"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0005",
+            "rating": "emergency",
+            "gear": "high",
+            "altitude_m": 5700,
+            "power_ps": 1440,
+            "engine_rpm": 2700,
+            "manifold_ata": 1.42,
+            "limit_min": 3,
+            "power_kw": 1059.12,
+            "power_bhp": 1420.3,
+            "grade": "primary"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0006",
+            "rating": "climb-combat",
+            "gear": "high",
+            "altitude_m": 5300,
+            "power_ps": 1320,
+            "engine_rpm": 2400,
+            "manifold_ata": 1.32,
+            "limit_min": 30,
+            "power_kw": 970.86,
+            "power_bhp": 1301.94,
+            "grade": "primary"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0007",
+            "rating": "maximum-continuous",
+            "gear": "high",
+            "altitude_m": 5500,
+            "power_ps": 1180,
+            "engine_rpm": 2300,
+            "manifold_ata": 1.2,
+            "limit_min": null,
+            "power_kw": 867.89,
+            "power_bhp": 1163.86,
+            "grade": "primary"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0008",
+            "rating": "economy",
+            "gear": "high",
+            "altitude_m": 5400,
+            "power_ps": 985,
+            "engine_rpm": 2100,
+            "manifold_ata": 1.1,
+            "limit_min": null,
+            "power_kw": 724.47,
+            "power_bhp": 971.53,
+            "grade": "primary"
+          }
+        ]
+      }
+    },
+    "flight_tests": {
+      "g1_14026": {
+        "scope": "Original corrected speed in a G-1 with two different installations. The propeller and intake also changed. Retain the two curves separately when comparing F-4 and G-2 engine references.",
+        "db601e": {
+          "engine_serial": "177",
+          "engine_rpm": 2500,
+          "rating_target_ata": 1.3,
+          "critical_altitude_m": 6000,
+          "points": [
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0001",
+              "altitude_m": 0,
+              "tas_kmh_printed_or_curve": 514,
+              "report_indicator_correction_kmh": 0,
+              "chart_read_allowance_kmh": null,
+              "reading": "summary",
+              "engine_rpm": 2500,
+              "tas_kmh": 514,
+              "grade": "primary",
+              "range_kmh": null
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0002",
+              "altitude_m": 1000,
+              "tas_kmh_printed_or_curve": 536,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2500,
+              "tas_kmh": 539,
+              "grade": "primary",
+              "range_kmh": [
+                536,
+                542
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0003",
+              "altitude_m": 2000,
+              "tas_kmh_printed_or_curve": 560,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2500,
+              "tas_kmh": 563,
+              "grade": "primary",
+              "range_kmh": [
+                560,
+                566
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0004",
+              "altitude_m": 3000,
+              "tas_kmh_printed_or_curve": 560,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2500,
+              "tas_kmh": 563,
+              "grade": "primary",
+              "range_kmh": [
+                560,
+                566
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0005",
+              "altitude_m": 4000,
+              "tas_kmh_printed_or_curve": 578,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2500,
+              "tas_kmh": 581,
+              "grade": "primary",
+              "range_kmh": [
+                578,
+                584
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0006",
+              "altitude_m": 5000,
+              "tas_kmh_printed_or_curve": 588,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2500,
+              "tas_kmh": 591,
+              "grade": "primary",
+              "range_kmh": [
+                588,
+                594
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0007",
+              "altitude_m": 6000,
+              "tas_kmh_printed_or_curve": 622,
+              "report_indicator_correction_kmh": 0,
+              "chart_read_allowance_kmh": null,
+              "reading": "summary",
+              "engine_rpm": 2500,
+              "tas_kmh": 622,
+              "grade": "primary",
+              "range_kmh": null
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0008",
+              "altitude_m": 7000,
+              "tas_kmh_printed_or_curve": 613,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2500,
+              "tas_kmh": 616,
+              "grade": "primary",
+              "range_kmh": [
+                613,
+                619
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0009",
+              "altitude_m": 8000,
+              "tas_kmh_printed_or_curve": 604,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2500,
+              "tas_kmh": 607,
+              "grade": "primary",
+              "range_kmh": [
+                604,
+                610
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0010",
+              "altitude_m": 9000,
+              "tas_kmh_printed_or_curve": 592,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2500,
+              "tas_kmh": 595,
+              "grade": "primary",
+              "range_kmh": [
+                592,
+                598
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0011",
+              "altitude_m": 10000,
+              "tas_kmh_printed_or_curve": 578,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2500,
+              "tas_kmh": 581,
+              "grade": "primary",
+              "range_kmh": [
+                578,
+                584
+              ]
+            }
+          ],
+          "interpolation_checks": [
+            {
+              "altitude_m": 1000,
+              "observed_tas_kmh": 539,
+              "interpolated_tas_kmh": 538.5,
+              "error_kmh": -0.5
+            },
+            {
+              "altitude_m": 2000,
+              "observed_tas_kmh": 563,
+              "interpolated_tas_kmh": 551,
+              "error_kmh": -12
+            },
+            {
+              "altitude_m": 3000,
+              "observed_tas_kmh": 563,
+              "interpolated_tas_kmh": 572,
+              "error_kmh": 9
+            },
+            {
+              "altitude_m": 4000,
+              "observed_tas_kmh": 581,
+              "interpolated_tas_kmh": 577,
+              "error_kmh": -4
+            },
+            {
+              "altitude_m": 5000,
+              "observed_tas_kmh": 591,
+              "interpolated_tas_kmh": 601.5,
+              "error_kmh": 10.5
+            },
+            {
+              "altitude_m": 7000,
+              "observed_tas_kmh": 616,
+              "interpolated_tas_kmh": 614.5,
+              "error_kmh": -1.5
+            },
+            {
+              "altitude_m": 8000,
+              "observed_tas_kmh": 607,
+              "interpolated_tas_kmh": 605.5,
+              "error_kmh": -1.5
+            },
+            {
+              "altitude_m": 9000,
+              "observed_tas_kmh": 595,
+              "interpolated_tas_kmh": 594,
+              "error_kmh": -1
+            }
+          ],
+          "interpolation_mae_kmh": 5
+        },
+        "db605a": {
+          "engine_serial": "76098",
+          "engine_rpm": 2600,
+          "rating_target_ata": 1.3,
+          "critical_altitude_m": 6100,
+          "points": [
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0001",
+              "altitude_m": 0,
+              "tas_kmh_printed_or_curve": 507,
+              "report_indicator_correction_kmh": 0,
+              "chart_read_allowance_kmh": null,
+              "reading": "summary",
+              "engine_rpm": 2600,
+              "tas_kmh": 507,
+              "grade": "primary",
+              "range_kmh": null
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0002",
+              "altitude_m": 1000,
+              "tas_kmh_printed_or_curve": 530,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2600,
+              "tas_kmh": 533,
+              "grade": "primary",
+              "range_kmh": [
+                530,
+                536
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0003",
+              "altitude_m": 2000,
+              "tas_kmh_printed_or_curve": 552,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2600,
+              "tas_kmh": 555,
+              "grade": "primary",
+              "range_kmh": [
+                552,
+                558
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0004",
+              "altitude_m": 3000,
+              "tas_kmh_printed_or_curve": 567,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2600,
+              "tas_kmh": 570,
+              "grade": "primary",
+              "range_kmh": [
+                567,
+                573
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0005",
+              "altitude_m": 4000,
+              "tas_kmh_printed_or_curve": 574,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2600,
+              "tas_kmh": 577,
+              "grade": "primary",
+              "range_kmh": [
+                574,
+                580
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0006",
+              "altitude_m": 5000,
+              "tas_kmh_printed_or_curve": 590,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2600,
+              "tas_kmh": 593,
+              "grade": "primary",
+              "range_kmh": [
+                590,
+                596
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0007",
+              "altitude_m": 6100,
+              "tas_kmh_printed_or_curve": 626,
+              "report_indicator_correction_kmh": 0,
+              "chart_read_allowance_kmh": null,
+              "reading": "summary",
+              "engine_rpm": 2600,
+              "tas_kmh": 626,
+              "grade": "primary",
+              "range_kmh": null
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0008",
+              "altitude_m": 7000,
+              "tas_kmh_printed_or_curve": 620,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2600,
+              "tas_kmh": 623,
+              "grade": "primary",
+              "range_kmh": [
+                620,
+                626
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0009",
+              "altitude_m": 8000,
+              "tas_kmh_printed_or_curve": 612,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2600,
+              "tas_kmh": 615,
+              "grade": "primary",
+              "range_kmh": [
+                612,
+                618
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0010",
+              "altitude_m": 9000,
+              "tas_kmh_printed_or_curve": 600,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2600,
+              "tas_kmh": 603,
+              "grade": "primary",
+              "range_kmh": [
+                600,
+                606
+              ]
+            },
+            {
+              "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0011",
+              "altitude_m": 10000,
+              "tas_kmh_printed_or_curve": 585,
+              "report_indicator_correction_kmh": 3,
+              "chart_read_allowance_kmh": 3,
+              "reading": "curve",
+              "engine_rpm": 2600,
+              "tas_kmh": 588,
+              "grade": "primary",
+              "range_kmh": [
+                585,
+                591
+              ]
+            }
+          ],
+          "interpolation_checks": [
+            {
+              "altitude_m": 1000,
+              "observed_tas_kmh": 533,
+              "interpolated_tas_kmh": 531,
+              "error_kmh": -2
+            },
+            {
+              "altitude_m": 2000,
+              "observed_tas_kmh": 555,
+              "interpolated_tas_kmh": 551.5,
+              "error_kmh": -3.5
+            },
+            {
+              "altitude_m": 3000,
+              "observed_tas_kmh": 570,
+              "interpolated_tas_kmh": 566,
+              "error_kmh": -4
+            },
+            {
+              "altitude_m": 4000,
+              "observed_tas_kmh": 577,
+              "interpolated_tas_kmh": 581.5,
+              "error_kmh": 4.5
+            },
+            {
+              "altitude_m": 5000,
+              "observed_tas_kmh": 593,
+              "interpolated_tas_kmh": 600.33,
+              "error_kmh": 7.33
+            },
+            {
+              "altitude_m": 7000,
+              "observed_tas_kmh": 623,
+              "interpolated_tas_kmh": 620.79,
+              "error_kmh": -2.21
+            },
+            {
+              "altitude_m": 8000,
+              "observed_tas_kmh": 615,
+              "interpolated_tas_kmh": 613,
+              "error_kmh": -2
+            },
+            {
+              "altitude_m": 9000,
+              "observed_tas_kmh": 603,
+              "interpolated_tas_kmh": 601.5,
+              "error_kmh": -1.5
+            }
+          ],
+          "interpolation_mae_kmh": 3.38
+        }
+      },
+      "fw190a4_783": {
+        "scope": "WNr 783, long external intakes, 3,870 kg takeoff, combat 2,400 rpm.",
+        "level_tas": [
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0001",
+            "altitude_m": 0,
+            "tas_kmh": 523,
+            "chart_read_allowance_kmh": 4,
+            "use_in_current_replay": "drag-anchor"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0002",
+            "altitude_m": 1000,
+            "tas_kmh": 549,
+            "chart_read_allowance_kmh": 4,
+            "use_in_current_replay": "check"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0003",
+            "altitude_m": 2000,
+            "tas_kmh": 575,
+            "chart_read_allowance_kmh": 4,
+            "use_in_current_replay": "low-gear inlet anchor"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0004",
+            "altitude_m": 4000,
+            "tas_kmh": 583,
+            "chart_read_allowance_kmh": 4,
+            "use_in_current_replay": "check"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0005",
+            "altitude_m": 5000,
+            "tas_kmh": 606,
+            "chart_read_allowance_kmh": 4,
+            "use_in_current_replay": "check"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0006",
+            "altitude_m": 6000,
+            "tas_kmh": 631,
+            "chart_read_allowance_kmh": 4,
+            "use_in_current_replay": "check"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0007",
+            "altitude_m": 6950,
+            "tas_kmh": 652,
+            "chart_read_allowance_kmh": null,
+            "use_in_current_replay": "high-gear inlet anchor"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0008",
+            "altitude_m": 8000,
+            "tas_kmh": 647,
+            "chart_read_allowance_kmh": 4,
+            "use_in_current_replay": "check"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0009",
+            "altitude_m": 9000,
+            "tas_kmh": 636,
+            "chart_read_allowance_kmh": 4,
+            "use_in_current_replay": "check"
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0010",
+            "altitude_m": 10000,
+            "tas_kmh": 618,
+            "chart_read_allowance_kmh": 4,
+            "use_in_current_replay": "check"
+          }
+        ],
+        "internal_intake_comparison": {
+          "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-internal-intake:0001",
+          "altitude_m": 6000,
+          "tas_kmh": 645,
+          "climb_full_throttle_height_m": 5500,
+          "long_external_intake_climb_full_throttle_height_m": 6150,
+          "internal_speed_gain_below_full_throttle_low_kmh": 10,
+          "internal_speed_gain_below_full_throttle_high_kmh": 14
+        },
+        "manifold_by_flight_phase": [
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0001",
+            "altitude_m": 4000,
+            "level_manifold_ata": 1.32,
+            "climb_manifold_ata": 1.32,
+            "chart_read_allowance_ata": 0.025,
+            "engine_rpm": 2400,
+            "level_minus_climb_ata": 0
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0002",
+            "altitude_m": 5000,
+            "level_manifold_ata": 1.32,
+            "climb_manifold_ata": 1.32,
+            "chart_read_allowance_ata": 0.025,
+            "engine_rpm": 2400,
+            "level_minus_climb_ata": 0
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0003",
+            "altitude_m": 6000,
+            "level_manifold_ata": 1.32,
+            "climb_manifold_ata": 1.32,
+            "chart_read_allowance_ata": 0.025,
+            "engine_rpm": 2400,
+            "level_minus_climb_ata": 0
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0004",
+            "altitude_m": 8000,
+            "level_manifold_ata": 1.16,
+            "climb_manifold_ata": 1.045,
+            "chart_read_allowance_ata": 0.025,
+            "engine_rpm": 2400,
+            "level_minus_climb_ata": 0.115
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0005",
+            "altitude_m": 9000,
+            "level_manifold_ata": 1.01,
+            "climb_manifold_ata": 0.93,
+            "chart_read_allowance_ata": 0.025,
+            "engine_rpm": 2400,
+            "level_minus_climb_ata": 0.08
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0006",
+            "altitude_m": 10000,
+            "level_manifold_ata": 0.91,
+            "climb_manifold_ata": 0.8,
+            "chart_read_allowance_ata": 0.025,
+            "engine_rpm": 2400,
+            "level_minus_climb_ata": 0.11
+          }
+        ],
+        "handbook_climb_context": [
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-handbook-climb-time:0001",
+            "altitude_m": 2000,
+            "time_min": 2.2,
+            "reference_weight_kg": 3900
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-handbook-climb-time:0002",
+            "altitude_m": 4000,
+            "time_min": 4.8,
+            "reference_weight_kg": 3900
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-handbook-climb-time:0003",
+            "altitude_m": 6000,
+            "time_min": 7.9,
+            "reference_weight_kg": 3900
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-handbook-climb-time:0004",
+            "altitude_m": 8000,
+            "time_min": 12,
+            "reference_weight_kg": 3900
+          }
+        ],
+        "controller_bench_context": {
+          "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d2-shift-bench:0001",
+          "overlap_ft_approx": 5200,
+          "simulated_altitude_rate_low_fpm": 3000,
+          "simulated_altitude_rate_high_fpm": 4000
+        }
+      }
+    },
+    "propeller_check": {
+      "scope": "NACA L7D10 independent P-47D-28 test installation with modified Curtiss 838-1C2-18. Compare with v1.3 references at each recorded condition.",
+      "climb": [
+        {
+          "rating": "normal",
+          "observation_ids": [
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0001",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0002",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0003",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0004",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0005",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0006",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0007",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0008",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0009",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0010",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0011",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0012",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0013",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0014",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0015",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0016",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0017",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0018",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0019",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0020",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0021",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0022",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0023",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0024"
+          ],
+          "mean_eta": 0.82512,
+          "observed_span_eta": [
+            0.811,
+            0.844
+          ],
+          "fixed_80_mae_percentage_points": 2.51,
+          "fixed_76_mae_percentage_points": 6.51
+        },
+        {
+          "rating": "military",
+          "observation_ids": [
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0001",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0002",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0003",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0004",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0005",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0006",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0007",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0008",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0009",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0010",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0011",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0012",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0013",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0014"
+          ],
+          "mean_eta": 0.79886,
+          "observed_span_eta": [
+            0.789,
+            0.817
+          ],
+          "fixed_80_mae_percentage_points": 0.74,
+          "fixed_76_mae_percentage_points": 3.89
+        },
+        {
+          "rating": "war-emergency",
+          "observation_ids": [
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0001",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0002",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0003",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0004",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0005",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0006",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0007",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0008",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0009",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0010",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0011",
+            "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0012"
+          ],
+          "mean_eta": 0.78208,
+          "observed_span_eta": [
+            0.766,
+            0.795
+          ],
+          "fixed_80_mae_percentage_points": 1.79,
+          "fixed_76_mae_percentage_points": 2.21
+        }
+      ]
+    }
   },
   "tolerances": {
     "stall_speed": {
@@ -1444,8 +2496,8 @@
           },
           {
             "id": "high-speed-run",
-            "case_id": null,
-            "status": "open"
+            "case_id": "a4-783-external-intake-6950m",
+            "status": "reviewed-open"
           },
           {
             "id": "climb-rate",
@@ -2213,6 +3265,12 @@
   },
   "cases": [
     {"id":"f4u4-80765-clean-1g","aircraft":"f4u4_80765","metric":"stall_speed","unit":"kt CAS","conditions":{"specimen":"BuNo 80765","load_factor_g":1,"weight_lb":12500,"configuration":"clean, power off","pressure_altitude_ft":null,"scope":"BIS 2157 clean stall. The report supplies no absolute speed uncertainty for this reading."},"benchmark":"clean-stall","curve":{"chart":"corsair-clean-lift","series":0,"x":1},"candidates":[{"id":"stall_us_2026-11-10:US20:0002/stall_speed","observation_ids":["stall_us_2026-11-10:US20:0002"],"grade":"primary","value":89.4,"method":"original","use":"eligible","range":null,"lineage":["bis-2157"],"case_id":"f4u4-80765-clean-1g"},{"id":"ww2_twelve_fighter_dual_lane_2026-11-10:f4u4-80765-derived-stall-vs-mass:0004/derived_cas_kt","observation_ids":["ww2_twelve_fighter_dual_lane_2026-11-10:f4u4-80765-derived-stall-vs-mass:0004"],"grade":"calculated","value":89.4,"method":"mass-scaling","use":"comparison-only","range":null,"lineage":["bis-2157"],"reason":"The weight transfer uses the exact stall reading as its anchor.","case_id":"f4u4-80765-clean-1g"}],"status":"accepted","preferred":{"status":"accepted","grade":"primary","method":"original","value":89.4,"range":null,"observed_span":null,"candidate_ids":["stall_us_2026-11-10:US20:0002/stall_speed"],"observation_ids":["stall_us_2026-11-10:US20:0002"],"lineage":["bis-2157"]},"by_grade":{"primary":{"status":"accepted","grade":"primary","method":"original","value":89.4,"range":null,"observed_span":null,"candidate_ids":["stall_us_2026-11-10:US20:0002/stall_speed"],"observation_ids":["stall_us_2026-11-10:US20:0002"],"lineage":["bis-2157"]}},"gold":false,"gold_status":"open","agreement":{"center":89.4,"spread":null,"limit":1.6198704103671706,"percent":null,"limit_percent":null,"reason":"No comparable second result."}},
+    {"id":"g2-db605a-combat-sea-level-rating","aircraft":"bf109g2_db605a","metric":"shaft_power","unit":"PS","conditions":{"engine":"DB 605 A","pressure_altitude_m":0,"rpm":2600,"manifold_ata":1.3,"gear":null,"rating":"climb-combat","basis":"manufacturer engine rating","scope":"Daimler-Benz B4 rating"},"candidates":[{"id":"ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0002/power_ps","observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0002"],"grade":"primary","value":1310,"method":"original","use":"eligible","range":null,"lineage":["ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER"],"case_id":"g2-db605a-combat-sea-level-rating"}],"status":"accepted","preferred":{"status":"accepted","grade":"primary","method":"original","value":1310,"range":null,"observed_span":null,"candidate_ids":["ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0002/power_ps"],"observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0002"],"lineage":["ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER"]},"by_grade":{"primary":{"status":"accepted","grade":"primary","method":"original","value":1310,"range":null,"observed_span":null,"candidate_ids":["ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0002/power_ps"],"observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0002"],"lineage":["ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER"]}},"gold":false,"gold_status":"open","agreement":{"center":1310,"spread":null,"limit":39.3,"percent":null,"limit_percent":3,"reason":"No comparable second result."}},
+    {"id":"g2-db605a-combat-5800m-rating","aircraft":"bf109g2_db605a","metric":"shaft_power","unit":"PS","conditions":{"engine":"DB 605 A","pressure_altitude_m":5800,"rpm":2600,"manifold_ata":1.3,"gear":null,"rating":"climb-combat","basis":"manufacturer engine rating","scope":"Daimler-Benz B4 rating"},"candidates":[{"id":"ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0005/power_ps","observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0005"],"grade":"primary","value":1250,"method":"original","use":"eligible","range":null,"lineage":["ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER"],"case_id":"g2-db605a-combat-5800m-rating"}],"status":"accepted","preferred":{"status":"accepted","grade":"primary","method":"original","value":1250,"range":null,"observed_span":null,"candidate_ids":["ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0005/power_ps"],"observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0005"],"lineage":["ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER"]},"by_grade":{"primary":{"status":"accepted","grade":"primary","method":"original","value":1250,"range":null,"observed_span":null,"candidate_ids":["ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0005/power_ps"],"observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0005"],"lineage":["ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER"]}},"gold":false,"gold_status":"open","agreement":{"center":1250,"spread":null,"limit":37.5,"percent":null,"limit_percent":3,"reason":"No comparable second result."}},
+    {"id":"a4-bmw801d-combat-low-gear-rating","aircraft":"fw190a4_783","metric":"shaft_power","unit":"PS","conditions":{"engine":"BMW 801 D","pressure_altitude_m":700,"rpm":2400,"manifold_ata":1.32,"gear":"low","rating":"climb-combat","basis":"manufacturer engine rating","scope":"Handbook full-throttle rating without ram"},"candidates":[{"id":"ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0002/power_ps","observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0002"],"grade":"primary","value":1520,"method":"original","use":"eligible","range":null,"lineage":["ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00"],"case_id":"a4-bmw801d-combat-low-gear-rating"}],"status":"accepted","preferred":{"status":"accepted","grade":"primary","method":"original","value":1520,"range":null,"observed_span":null,"candidate_ids":["ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0002/power_ps"],"observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0002"],"lineage":["ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00"]},"by_grade":{"primary":{"status":"accepted","grade":"primary","method":"original","value":1520,"range":null,"observed_span":null,"candidate_ids":["ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0002/power_ps"],"observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0002"],"lineage":["ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00"]}},"gold":false,"gold_status":"open","agreement":{"center":1520,"spread":null,"limit":45.6,"percent":null,"limit_percent":3,"reason":"No comparable second result."}},
+    {"id":"a4-bmw801d-combat-high-gear-rating","aircraft":"fw190a4_783","metric":"shaft_power","unit":"PS","conditions":{"engine":"BMW 801 D","pressure_altitude_m":5300,"rpm":2400,"manifold_ata":1.32,"gear":"high","rating":"climb-combat","basis":"manufacturer engine rating","scope":"Handbook full-throttle rating without ram"},"candidates":[{"id":"ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0006/power_ps","observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0006"],"grade":"primary","value":1320,"method":"original","use":"eligible","range":null,"lineage":["ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00"],"case_id":"a4-bmw801d-combat-high-gear-rating"}],"status":"accepted","preferred":{"status":"accepted","grade":"primary","method":"original","value":1320,"range":null,"observed_span":null,"candidate_ids":["ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0006/power_ps"],"observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0006"],"lineage":["ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00"]},"by_grade":{"primary":{"status":"accepted","grade":"primary","method":"original","value":1320,"range":null,"observed_span":null,"candidate_ids":["ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0006/power_ps"],"observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0006"],"lineage":["ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00"]}},"gold":false,"gold_status":"open","agreement":{"center":1320,"spread":null,"limit":39.6,"percent":null,"limit_percent":3,"reason":"No comparable second result."}},
+    {"id":"a4-783-external-intake-6950m","aircraft":"fw190a4_783","metric":"level_speed","unit":"km/h TAS","conditions":{"specimen":"WNr 783","pressure_altitude_m":6950,"weight_at_takeoff_kg":3870,"rpm":2400,"rating":"climb-combat","configuration":"long external intake, closed split cooling flaps","scope":"Focke-Wulf 783 Nr. 1. High-gear inlet anchor in the existing replay."},"benchmark":"high-speed-run","candidates":[{"id":"ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0007/tas_kmh","observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0007"],"grade":"primary","value":652,"method":"original","use":"eligible","range":null,"lineage":["focke-wulf-783-nr1"],"case_id":"a4-783-external-intake-6950m"}],"status":"accepted","preferred":{"status":"accepted","grade":"primary","method":"original","value":652,"range":null,"observed_span":null,"candidate_ids":["ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0007/tas_kmh"],"observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0007"],"lineage":["focke-wulf-783-nr1"]},"by_grade":{"primary":{"status":"accepted","grade":"primary","method":"original","value":652,"range":null,"observed_span":null,"candidate_ids":["ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0007/tas_kmh"],"observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0007"],"lineage":["focke-wulf-783-nr1"]}},"gold":false,"gold_status":"open","agreement":{"center":652,"spread":null,"limit":6,"percent":null,"limit_percent":null,"reason":"No comparable second result."}},
+    {"id":"a4-783-internal-intake-6000m","aircraft":"fw190a4_783","metric":"level_speed","unit":"km/h TAS","conditions":{"specimen":"WNr 783","pressure_altitude_m":6000,"weight_at_takeoff_kg":3870,"rpm":2400,"rating":"climb-combat","configuration":"normal internal intake, closed split cooling flaps","scope":"Focke-Wulf 783 Nr. 2. Separate installation comparison."},"candidates":[{"id":"ww2_engine_ratings_and_propeller_2026-11-12:a4-783-internal-intake:0001/tas_kmh","observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:a4-783-internal-intake:0001"],"grade":"primary","value":645,"method":"original","use":"eligible","range":null,"lineage":["focke-wulf-783-nr2"],"case_id":"a4-783-internal-intake-6000m"}],"status":"accepted","preferred":{"status":"accepted","grade":"primary","method":"original","value":645,"range":null,"observed_span":null,"candidate_ids":["ww2_engine_ratings_and_propeller_2026-11-12:a4-783-internal-intake:0001/tas_kmh"],"observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:a4-783-internal-intake:0001"],"lineage":["focke-wulf-783-nr2"]},"by_grade":{"primary":{"status":"accepted","grade":"primary","method":"original","value":645,"range":null,"observed_span":null,"candidate_ids":["ww2_engine_ratings_and_propeller_2026-11-12:a4-783-internal-intake:0001/tas_kmh"],"observation_ids":["ww2_engine_ratings_and_propeller_2026-11-12:a4-783-internal-intake:0001"],"lineage":["focke-wulf-783-nr2"]}},"gold":false,"gold_status":"open","agreement":{"center":645,"spread":null,"limit":6,"percent":null,"limit_percent":null,"reason":"No comparable second result."}},
     {"id":"g2-wnf-250m-production-vnk","aircraft":"bf109g2_db605a","metric":"level_speed","unit":"km/h TAS","conditions":{"specimen":"WNF G-2 production comparison","altitude_m":250,"atmosphere":"standardized by report","normalized_manifold_kg_cm2":1.3,"normalized_blower_kg_cm2":1.8,"surface":"production","normalization":"Vnk, with rod correction","actual_rpm":null,"stall_or_flight_mass":null,"reported_absolute_tolerance_kmh":7,"scope":"Relative timed-course reference. The overwritten engine designation and RPM remain unresolved."},"benchmark":"low-speed-run","allow_replicates":true,"qualification":"Four distinct airframes in one standardized WNF program. Actual RPM, mass and engine designation are unresolved.","candidates":[{"id":"ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0006/vnk_kmh","observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0006"],"grade":"primary","value":518,"method":"original","use":"eligible","range":[511,525],"lineage":["wnf-109-11-l-42"],"combine_group":"g2-wnf-250m-production-vnk","sample_id":"wnf-airframe-13448","case_id":"g2-wnf-250m-production-vnk"},{"id":"ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0007/vnk_kmh","observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0007"],"grade":"primary","value":519,"method":"original","use":"eligible","range":[512,526],"lineage":["wnf-109-11-l-42"],"combine_group":"g2-wnf-250m-production-vnk","sample_id":"wnf-airframe-13496","case_id":"g2-wnf-250m-production-vnk"},{"id":"ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0008/vnk_kmh","observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0008"],"grade":"primary","value":520,"method":"original","use":"eligible","range":[513,527],"lineage":["wnf-109-11-l-42"],"combine_group":"g2-wnf-250m-production-vnk","sample_id":"wnf-airframe-13506","case_id":"g2-wnf-250m-production-vnk"},{"id":"ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0009/vnk_kmh","observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0009"],"grade":"primary","value":518,"method":"original","use":"eligible","range":[511,525],"lineage":["wnf-109-11-l-42"],"combine_group":"g2-wnf-250m-production-vnk","sample_id":"wnf-airframe-13500","case_id":"g2-wnf-250m-production-vnk"},{"id":"archival-2026-11-10:S13:0001/mean_speed_kmh","observation_ids":["archival-2026-11-10:S13:0001"],"grade":"primary","value":519,"method":"reported-summary","use":"eligible","range":[512,526],"lineage":["wnf-109-11-l-42"],"case_id":"g2-wnf-250m-production-vnk"}],"status":"accepted","preferred":{"status":"accepted","grade":"primary","method":"mean","value":518.75,"range":[511,527],"observed_span":[518,520],"candidate_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0006/vnk_kmh","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0007/vnk_kmh","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0008/vnk_kmh","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0009/vnk_kmh"],"observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0006","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0007","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0008","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0009"],"lineage":["wnf-109-11-l-42"]},"by_grade":{"primary":{"status":"accepted","grade":"primary","method":"mean","value":518.75,"range":[511,527],"observed_span":[518,520],"candidate_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0006/vnk_kmh","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0007/vnk_kmh","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0008/vnk_kmh","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0009/vnk_kmh"],"observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0006","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0007","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0008","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0009"],"lineage":["wnf-109-11-l-42"]}},"gold":false,"gold_status":"gold-qualified","agreement":{"center":518.75,"spread":2,"limit":6,"percent":null,"limit_percent":null,"reason":"Four distinct airframes in one standardized WNF program. Actual RPM, mass and engine designation are unresolved."}},
     {"id":"g2-wnf-250m-production-vn","aircraft":"bf109g2_db605a","metric":"level_speed","unit":"km/h TAS","conditions":{"specimen":"WNF G-2 production comparison","altitude_m":250,"atmosphere":"standardized by report","normalized_manifold_kg_cm2":1.3,"normalized_blower_kg_cm2":1.8,"surface":"production","normalization":"Vn, without rod correction","actual_rpm":null,"stall_or_flight_mass":null,"reported_absolute_tolerance_kmh":7,"scope":"Relative timed-course reference. The overwritten engine designation and RPM remain unresolved."},"candidates":[{"id":"ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0006/vn_kmh","observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0006"],"grade":"primary","value":515,"method":"original","use":"eligible","range":[508,522],"lineage":["wnf-109-11-l-42"],"combine_group":"g2-wnf-250m-production-vn","sample_id":"wnf-airframe-13448","case_id":"g2-wnf-250m-production-vn"},{"id":"ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0007/vn_kmh","observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0007"],"grade":"primary","value":519,"method":"original","use":"eligible","range":[512,526],"lineage":["wnf-109-11-l-42"],"combine_group":"g2-wnf-250m-production-vn","sample_id":"wnf-airframe-13496","case_id":"g2-wnf-250m-production-vn"},{"id":"ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0008/vn_kmh","observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0008"],"grade":"primary","value":520,"method":"original","use":"eligible","range":[513,527],"lineage":["wnf-109-11-l-42"],"combine_group":"g2-wnf-250m-production-vn","sample_id":"wnf-airframe-13506","case_id":"g2-wnf-250m-production-vn"},{"id":"ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0009/vn_kmh","observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0009"],"grade":"primary","value":515,"method":"original","use":"eligible","range":[508,522],"lineage":["wnf-109-11-l-42"],"combine_group":"g2-wnf-250m-production-vn","sample_id":"wnf-airframe-13500","case_id":"g2-wnf-250m-production-vn"}],"status":"accepted","preferred":{"status":"accepted","grade":"primary","method":"mean","value":517.25,"range":[508,527],"observed_span":[515,520],"candidate_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0006/vn_kmh","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0007/vn_kmh","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0008/vn_kmh","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0009/vn_kmh"],"observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0006","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0007","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0008","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0009"],"lineage":["wnf-109-11-l-42"]},"by_grade":{"primary":{"status":"accepted","grade":"primary","method":"mean","value":517.25,"range":[508,527],"observed_span":[515,520],"candidate_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0006/vn_kmh","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0007/vn_kmh","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0008/vn_kmh","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0009/vn_kmh"],"observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0006","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0007","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0008","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0009"],"lineage":["wnf-109-11-l-42"]}},"gold":false,"gold_status":"open","agreement":{"center":517.25,"spread":null,"limit":6,"percent":null,"limit_percent":null,"reason":"No comparable second result."}},
     {"id":"g2-wnf-250m-treated-vnk","aircraft":"bf109g2_db605a","metric":"level_speed","unit":"km/h TAS","conditions":{"specimen":"WNF G-2 production comparison","altitude_m":250,"atmosphere":"standardized by report","normalized_manifold_kg_cm2":1.3,"normalized_blower_kg_cm2":1.8,"surface":"treated","normalization":"Vnk, with rod correction","actual_rpm":null,"stall_or_flight_mass":null,"reported_absolute_tolerance_kmh":7,"scope":"Relative timed-course reference. The overwritten engine designation and RPM remain unresolved."},"candidates":[{"id":"ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0001/vnk_kmh","observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0001"],"grade":"primary","value":520,"method":"original","use":"eligible","range":[513,527],"lineage":["wnf-109-11-l-42"],"combine_group":"g2-wnf-250m-treated-vnk","sample_id":"wnf-airframe-13439","case_id":"g2-wnf-250m-treated-vnk"},{"id":"ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0002/vnk_kmh","observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0002"],"grade":"primary","value":529,"method":"original","use":"eligible","range":[522,536],"lineage":["wnf-109-11-l-42"],"combine_group":"g2-wnf-250m-treated-vnk","sample_id":"wnf-airframe-13438","case_id":"g2-wnf-250m-treated-vnk"},{"id":"ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0003/vnk_kmh","observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0003"],"grade":"primary","value":528,"method":"original","use":"eligible","range":[521,535],"lineage":["wnf-109-11-l-42"],"combine_group":"g2-wnf-250m-treated-vnk","sample_id":"wnf-airframe-13440","case_id":"g2-wnf-250m-treated-vnk"},{"id":"ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0004/vnk_kmh","observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0004"],"grade":"primary","value":529,"method":"original","use":"eligible","range":[522,536],"lineage":["wnf-109-11-l-42"],"combine_group":"g2-wnf-250m-treated-vnk","sample_id":"wnf-airframe-13438","case_id":"g2-wnf-250m-treated-vnk"},{"id":"ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0005/vnk_kmh","observation_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0005"],"grade":"primary","value":528,"method":"original","use":"eligible","range":[521,535],"lineage":["wnf-109-11-l-42"],"combine_group":"g2-wnf-250m-treated-vnk","sample_id":"wnf-airframe-13442","case_id":"g2-wnf-250m-treated-vnk"},{"id":"archival-2026-11-10:S13:0002/mean_speed_kmh","observation_ids":["archival-2026-11-10:S13:0002"],"grade":"primary","value":527,"method":"reported-summary","use":"eligible","range":[520,534],"lineage":["wnf-109-11-l-42"],"case_id":"g2-wnf-250m-treated-vnk"}],"status":"conflict","preferred":null,"by_grade":{"primary":{"status":"conflict","reason":"unmatched-or-excess-spread","observed_span":[520,529],"candidate_ids":["ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0001/vnk_kmh","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0002/vnk_kmh","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0003/vnk_kmh","ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0005/vnk_kmh"]}},"gold":false,"gold_status":"open","agreement":{"center":526.25,"spread":9,"limit":6,"percent":null,"limit_percent":null,"reason":"The central values exceed the agreement limit."}},
@@ -2322,6 +3380,116 @@
     "stall_us_2026-11-10:US02:0001": {"source":"stall_us_2026-11-10:P51B15","locator":"V.E Stalling Speeds, 9-row table at 8000ft; Fig. 1 airspeed calibration"},
     "stall_us_2026-11-10:US02:0002": {"source":"stall_us_2026-11-10:P51B15","locator":"V.E Stalling Speeds, 9-row table at 8000ft; Fig. 1 airspeed calibration"},
     "stall_us_2026-11-10:US20:0002": {"source":"stall_us_2026-11-10:F4U4_80765","locator":"summary section 3 explicitly 'Calibrated Airspeed at Stall', at 12500lb; row (d) repeats 'power on' text"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0001": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Graphs 1 and 2, chart reads retained in references/fw190a4-783.json"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0002": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Graphs 1 and 2, chart reads retained in references/fw190a4-783.json"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0003": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Graphs 1 and 2, chart reads retained in references/fw190a4-783.json"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0004": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Graphs 1 and 2, chart reads retained in references/fw190a4-783.json"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0005": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Graphs 1 and 2, chart reads retained in references/fw190a4-783.json"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0006": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Graphs 1 and 2, chart reads retained in references/fw190a4-783.json"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-internal-intake:0001": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR2-INTAKE","locator":"Results 1–2, internal-intake corrected maximum speed and level/climb full-throttle heights"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0001": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Flugbericht 783 Nr. 1 Graph 1 and long exterior intake result paragraph"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0002": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Flugbericht 783 Nr. 1 Graph 1 and long exterior intake result paragraph"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0003": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Flugbericht 783 Nr. 1 Graph 1 and long exterior intake result paragraph"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0004": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Flugbericht 783 Nr. 1 Graph 1 and long exterior intake result paragraph"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0005": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Flugbericht 783 Nr. 1 Graph 1 and long exterior intake result paragraph"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0006": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Flugbericht 783 Nr. 1 Graph 1 and long exterior intake result paragraph"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0007": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Flugbericht 783 Nr. 1 Graph 1 and long exterior intake result paragraph"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0008": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Flugbericht 783 Nr. 1 Graph 1 and long exterior intake result paragraph"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0009": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Flugbericht 783 Nr. 1 Graph 1 and long exterior intake result paragraph"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0010": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Flugbericht 783 Nr. 1 Graph 1 and long exterior intake result paragraph"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-handbook-climb-time:0001": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00","locator":"Printed p. 9, Flugleistungen, Steigzeiten mit Steigleistung"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-handbook-climb-time:0002": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00","locator":"Printed p. 9, Flugleistungen, Steigzeiten mit Steigleistung"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-handbook-climb-time:0003": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00","locator":"Printed p. 9, Flugleistungen, Steigzeiten mit Steigleistung"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:a4-handbook-climb-time:0004": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00","locator":"Printed p. 9, Flugleistungen, Steigzeiten mit Steigleistung"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0001": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00","locator":"Teil 0, printed p. 9, Betriebswerte des Motors, BMW 801 D lower row in each cell"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0002": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00","locator":"Teil 0, printed p. 9, Betriebswerte des Motors, BMW 801 D lower row in each cell"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0003": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00","locator":"Teil 0, printed p. 9, Betriebswerte des Motors, BMW 801 D lower row in each cell"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0004": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00","locator":"Teil 0, printed p. 9, Betriebswerte des Motors, BMW 801 D lower row in each cell"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0005": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00","locator":"Teil 0, printed p. 9, Betriebswerte des Motors, BMW 801 D lower row in each cell"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0006": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00","locator":"Teil 0, printed p. 9, Betriebswerte des Motors, BMW 801 D lower row in each cell"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0007": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00","locator":"Teil 0, printed p. 9, Betriebswerte des Motors, BMW 801 D lower row in each cell"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0008": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00","locator":"Teil 0, printed p. 9, Betriebswerte des Motors, BMW 801 D lower row in each cell"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d2-shift-bench:0001": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-MR-E5D19","locator":"Printed pp. 2–3, 8; Fig. 14 and summary pp. 14–15"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0001": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER","locator":"Motorenmuster DB 605 A–C, Kraftstoff B4, Blatt 1, table headed Höhe km"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0002": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER","locator":"Motorenmuster DB 605 A–C, Kraftstoff B4, Blatt 1, table headed Höhe km"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0003": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER","locator":"Motorenmuster DB 605 A–C, Kraftstoff B4, Blatt 1, table headed Höhe km"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0004": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER","locator":"Motorenmuster DB 605 A–C, Kraftstoff B4, Blatt 1, table headed Höhe km"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0005": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER","locator":"Motorenmuster DB 605 A–C, Kraftstoff B4, Blatt 1, table headed Höhe km"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0006": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER","locator":"Motorenmuster DB 605 A–C, Kraftstoff B4, Blatt 1, table headed Höhe km"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0007": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER","locator":"Motorenmuster DB 605 A–C, Kraftstoff B4, Blatt 1, table headed Höhe km"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0008": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER","locator":"Motorenmuster DB 605 A–C, Kraftstoff B4, Blatt 1, table headed Höhe km"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0001": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 7 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0002": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 7 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0003": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 7 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0004": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 7 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0005": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 7 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0006": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 7 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0007": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 7 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0008": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 7 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0009": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 7 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0010": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 7 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db601e-level:0011": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 7 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0001": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 8 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0002": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 8 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0003": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 8 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0004": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 8 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0005": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 8 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0006": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 8 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0007": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 8 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0008": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 8 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0009": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 8 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0010": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 8 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:g1-14026-db605a-level:0011": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42","locator":"Blatt 1 summary and Blatt 8 speed curve"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0001": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figure 5"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0002": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figure 5"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0003": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figure 5"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0004": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figure 5"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0005": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figure 5"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0006": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figure 5"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0007": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figure 5"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0008": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figure 5"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0009": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figure 5"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0010": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figure 5"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0011": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figure 5"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0012": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figure 5"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0013": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figure 5"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-military:0014": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figure 5"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0001": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0002": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0003": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0004": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0005": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0006": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0007": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0008": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0009": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0010": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0011": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0012": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0013": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0014": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0015": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0016": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0017": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0018": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0019": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0020": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0021": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0022": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0023": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-normal:0024": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table I, printed p. 12, Figure 4"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0001": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figures 6 and 8"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0002": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figures 6 and 8"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0003": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figures 6 and 8"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0004": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figures 6 and 8"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0005": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figures 6 and 8"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0006": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figures 6 and 8"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0007": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figures 6 and 8"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0008": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figures 6 and 8"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0009": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figures 6 and 8"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0010": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figures 6 and 8"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0011": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figures 6 and 8"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0012": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figures 6 and 8"},
     "ww2_fighter_flight_tests_2026-11-11:f6f3-04776-early-stall-traces:0001": {"source":"ww2_fighter_flight_tests_2026-11-11:F6F04776-NACA-L5B13B-TRACE","locator":"PDF 14, 16, 18, 20, 22, and condition table on PDF 4"},
     "ww2_fighter_flight_tests_2026-11-11:f6f3-04776-early-stall-traces:0003": {"source":"ww2_fighter_flight_tests_2026-11-11:F6F04776-NACA-L5B13B-TRACE","locator":"PDF 14, 16, 18, 20, 22, and condition table on PDF 4"},
     "ww2_fighter_flight_tests_2026-11-11:ki84-pacmirs-full-power-climb:0001": {"source":"ww2_fighter_flight_tests_2026-11-11:KI84-PACMIRS-8","locator":"Printed 29, PDF 33, section 1 II F"},
@@ -2479,6 +3647,13 @@
     "stall_us_2026-11-10:F4U4_80765": {"name":"US Naval Air Test Center TED BIS-2157, 25 Mar 1948","url":"https://www.wwiiaircraftperformance.org/f4u/f4u-4-80765.pdf","locator":"summary section 3 explicitly 'Calibrated Airspeed at Stall', at 12500lb; row (d) repeats 'power on' text","sha256":null},
     "stall_us_2026-11-10:P51B15": {"name":"USAAF Eng-47-1749-A, 20 May 1944","url":"https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html","locator":"V.E Stalling Speeds, 9-row table at 8000ft; Fig. 1 airspeed calibration","sha256":null},
     "stall_us_2026-11-10:P51B5": {"name":"USAAF Eng-47-1734-A, 24 Apr 1944","url":"https://www.wwiiaircraftperformance.com/org/p-51/p-51b-6883.html","locator":"V.F Stalling Speeds, 9-row table; figures 1-2 referred to for airspeed/altimeter position","sha256":null},
+    "ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER": {"name":"Daimler-Benz Motorenmuster DB 605 A–C, Kraftstoff B4","url":"https://degnans.com/markd/DB605.pdf","locator":"PDF p. 14, Motorenmuster Blatt 1. April 1943 Leistungsblatt on PDF p. 12 agrees on combat and emergency points.","sha256":"d95185ced34031e27e3c23ca73544ce34be85369ffd51aac2a45ecc3b5ad2d8f"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST": {"name":"Focke-Wulf Flugbericht Fw 190/783 Nr. 1, Graphs 1 and 2","url":"https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-783-nr1.html","locator":"Long exterior intakes, boost curves; archived chart readings in references/fw190a4-783.json","sha256":null},
+    "ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR2-INTAKE": {"name":"Focke-Wulf Flugbericht Fw 190/783 Nr. 2, 15 March 1943","url":"https://www.wwiiaircraftperformance.org/fw190/Fw_190_783_Nr2.pdf","locator":"Results 1–3 and Figure 1, normal internal intake","sha256":"79696ca2d594f9098bd9eee7d19eb3264a3b5e29e4c9f67ce35c4875a26222d7"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00": {"name":"D.(Luft) T.2190 A-1, Fw 190 Flugzeug-Handbuch, Teil 0, October 1943, applicable to A-2 to A-4","url":"https://degnans.com/markd/Fw%20190%20A-2%20bis%20A-4%20Teil%2000.pdf","locator":"Printed pp. 7, 9 and 12 (PDF pp. 10, 12 and 15)","sha256":"834a6982af0a2fc3715bce3d1f92a9404ea71a7c1e02d7a212571b87caf0d885"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42": {"name":"Messerschmitt V.B. 109 19 L 42, 19 September 1942, DB 601 E and DB 605 A","url":"https://www.wwiiaircraftperformance.org/me109/VB-109-19-L-42.pdf","locator":"Blatt 1–4 and 7–8; Wright Field microfilm R 2448 F/015","sha256":"a14753051c9e175bb44f9a94f138b2423a1833ec77bcce1a086ebeee035cd995"},
+    "ww2_engine_ratings_and_propeller_2026-11-12:NACA-MR-E5D19": {"name":"NACA MR E5D19 / WR E-192, Characteristics of the BMW 801D2 Automatic Engine Control as Determined from Bench Tests, April 1945","url":"https://ntrs.nasa.gov/api/citations/19930093290/downloads/19930093290.pdf","locator":"Printed pp. 2–3, 8, 14–15 and Figure 14","sha256":null},
+    "ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10": {"name":"NACA RM L7D10, Flight Tests of a Curtiss No. 838-1C2-18 Three-Blade Propeller Having Trailing-Edge Extensions, 1947","url":"https://ntrs.nasa.gov/api/citations/20050019331/downloads/20050019331.pdf","locator":"Tables I and II, printed pp. 12–13","sha256":"33c7ee617c1e952b728571150536a8ba32aa1f5d649480888a16289a34ae34ba"},
     "ww2_fighter_flight_tests_2026-11-11:F6F04776-NACA-L5B13B-TRACE": {"name":"NACA MR L5B13b / WR L-717, stalling characteristics, 1945","url":"https://ntrs.nasa.gov/citations/19930092602","locator":"PDF 4–6 and 14–23, including Figures 4, 6, 8, 10, 12","sha256":"2cddc4f507ef61bd0fc8e238b334cde82e563a1e0b5e30eb126e2e30245fd7ce"},
     "ww2_fighter_flight_tests_2026-11-11:KI84-PACMIRS-8": {"name":"PACMIRS Air Translations No. 8, captured Japanese Doc 1578, sections 1–6, 26 July 1945","url":"https://www.si.edu/media/NASM/NASM-Manual-000033269.pdf","locator":"NASM.XXXX.0428 ref4016, Box D641 / Nakajima 21. PDF 3, 5–7, 27, 31–34, 38, 44, 46","sha256":"1e5c42557f1c7814ad5a2b25b158efc0886197d2ee2da6d72856b2b001147968"},
     "ww2_fighter_flight_tests_2026-11-11:P47D30-L8A06-STALL-TRACE": {"name":"NACA RM L8A06, longitudinal stability and stalling, 1948","url":"https://ntrs.nasa.gov/citations/20090022749","locator":"PDF 3–4, 9–10, 70, 72, 75, 77–78","sha256":"95c68467065e3a68394581c7b8c20b4e0578224bde9710e3bde05b6c89961075"},

@@ -1,6 +1,7 @@
 'use strict';
 
 const { round, climbSeconds } = require('./fighter-evidence-methods.cjs');
+const { sourcePack } = require('./fighter-engine-reference.cjs');
 
 const german = 'ww2_german_fighter_archive_2026-11-11:';
 const thirteen = 'ww2_thirteen_fighter_source_recovery_2026-11-11:';
@@ -89,6 +90,33 @@ function reviewedCases(observations, { charts, checks }) {
   ], { benchmark: 'clean-stall', curve: { chart: 'corsair-clean-lift', series: 0, x: 1 } });
 
   const g2 = 'bf109g2_db605a';
+  const power = sourcePack + ':';
+  const powerCases = [
+    ['g2-db605a-combat-sea-level-rating', g2, 'db605a-rated-power:0002', 'DB 605 A', 0, 2600, 1.30, null, 'Daimler-Benz B4 rating'],
+    ['g2-db605a-combat-5800m-rating', g2, 'db605a-rated-power:0005', 'DB 605 A', 5800, 2600, 1.30, null, 'Daimler-Benz B4 rating'],
+    ['a4-bmw801d-combat-low-gear-rating', 'fw190a4_783', 'bmw801d-rated-power:0002', 'BMW 801 D', 700, 2400, 1.32, 'low', 'Handbook full-throttle rating without ram'],
+    ['a4-bmw801d-combat-high-gear-rating', 'fw190a4_783', 'bmw801d-rated-power:0006', 'BMW 801 D', 5300, 2400, 1.32, 'high', 'Handbook full-throttle rating without ram'],
+  ];
+  for (const [id, aircraft, key, engine, altitude, rpm, manifold, gear, scope] of powerCases) {
+    const observation = power + key;
+    add(id, aircraft, 'shaft_power', 'PS', {
+      engine, pressure_altitude_m: altitude, rpm, manifold_ata: manifold, gear,
+      rating: 'climb-combat', basis: 'manufacturer engine rating', scope,
+    }, [reading(observation, 'power_ps', 'primary', { lineage: [observations.get(observation).source_id] })]);
+  }
+
+  add('a4-783-external-intake-6950m', 'fw190a4_783', 'level_speed', 'km/h TAS', {
+    specimen: 'WNr 783', pressure_altitude_m: 6950, weight_at_takeoff_kg: 3870, rpm: 2400,
+    rating: 'climb-combat', configuration: 'long external intake, closed split cooling flaps',
+    scope: 'Focke-Wulf 783 Nr. 1. High-gear inlet anchor in the existing replay.',
+  }, [reading(power + 'a4-783-long-intake-level:0007', 'tas_kmh', 'primary', { lineage: ['focke-wulf-783-nr1'] })],
+  { benchmark: 'high-speed-run' });
+
+  add('a4-783-internal-intake-6000m', 'fw190a4_783', 'level_speed', 'km/h TAS', {
+    specimen: 'WNr 783', pressure_altitude_m: 6000, weight_at_takeoff_kg: 3870, rpm: 2400,
+    rating: 'climb-combat', configuration: 'normal internal intake, closed split cooling flaps',
+    scope: 'Focke-Wulf 783 Nr. 2. Separate installation comparison.',
+  }, [reading(power + 'a4-783-internal-intake:0001', 'tas_kmh', 'primary', { lineage: ['focke-wulf-783-nr2'] })]);
   const runSeries = german + 'g2-wnf-individual-timed-course-runs:';
   const course = [...observations.values()].filter(row => row.id.startsWith(runSeries));
   const allowance = observations.get(german + 'g2-wnf-sea-level-reduced-comparison:0002').values.report_absolute_tolerance_kmh_approx;
