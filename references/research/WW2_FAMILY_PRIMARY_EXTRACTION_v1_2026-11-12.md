@@ -5,6 +5,15 @@
 **Grade key:** observed = flight-test or official Kennblatt/trial; derived = calculated from observed with stated method; estimated = secondary or incomplete conditions.  
 **Status:** First pass. Not exhaustive. Matching specimen, boost, cooling, mass, and intake is still required before simulator use.
 
+## Review for simulator use
+
+Treat this first-pass table as an extraction index. The grades describe the proposed source basis. The simulator uses reviewed source rows with exact conditions and records their lineage.
+
+- The 29 November 1941 F-4 **6.0 min to 6,000 m** is already in the catalog at **2,890 kg** as part of the five-point climb series. The **660 km/h at 6,200 m** summary still needs the original speed curve and rating checked. The separate 135 km/h landing figure has its own loading and label. [Original F-4 records](../../docs/research/WW2_GERMAN_FIGHTER_ARCHIVE_2026-11-11.md#bf-109-f-4) · [Catalog pack](ww2_german_fighter_archive_2026-11-11.json)
+- Wright Field reports **444.0 mph TAS at 20,800 ft** for **43-24777** at **75 inHg / 3,000 rpm**, no racks. In the separate **43-6883** report, §II gives **442.0 mph** at **29,400 ft** and the detailed table gives **442.5 mph** there at **67 inHg**. Record which entry is transcribed so these values do not count as separate tests. [43-24777 report](https://wwiiaircraftperformance.com/org/p-51/p51b-24777.html) · [43-6883 report](https://wwiiaircraftperformance.com/org/p-51/p51b-6883.html)
+- The P-47 **WR L-86** value is wing-section profile drag. **ACR 5D20** is a scale-model tunnel test. Use the original matched efficiency points for **L4L07** and verify the aggregate percentage statements against their precise conditions. [NACA review and report links](WW2_NACA_AND_PRIMARY_SOURCE_EXPANSION_2026-11-12.md)
+- Recover the figure, rating, weight, cooling and speed basis for each remaining summary before treating it as a model input or check. Keep each test condition in its own record. [Current extraction queue](WW2_EXTRACTION_BATCH_LIST_EXPANDED_2026-11-12.md)
+
 ## Spitfire family
 | Mark / specimen | Condition | Value | Grade | Source |
 |---|---|---|---|---|

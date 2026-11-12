@@ -7,6 +7,6 @@ All numeric values extracted from the attached Gemini research packs (`ww2_fight
 - References listed per variant (mix of primary report names and secondary citations).
 
 ## Status
-These are secondary / transcribed values unless a primary report URL is cited. Logged for provisional use and to identify gaps. Not yet integrated into the solver or operating benchmark.
+This 21-variant compilation is a source-discovery index. A report link provides a lead. Use the original report row, units, specimen and run conditions to qualify a value. The checked matches and unresolved references are recorded in the [source review](REPORT_INVESTIGATION_2026-11-12.md).
 
-See `full_gemini_extract_2026-11-12.json` for the complete structured extract.
+The [structured extract](../analysis/full_gemini_extract_2026-11-12.json) preserves the submitted values.
