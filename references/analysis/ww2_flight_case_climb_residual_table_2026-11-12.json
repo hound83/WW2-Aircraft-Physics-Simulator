@@ -1,0 +1,46 @@
+{
+  "schema": "ww2-flight-case-climb-residual-table/v1",
+  "pack_version": "1.0.0-before",
+  "as_of": "2026-11-12",
+  "baseline": "v4.9.0-rc.2 / v4.10.0-rc.2 (propeller passes; climb path largely unchanged)",
+  "purpose": "Frozen before-scorecard residual table for shared flight-case climb + seven-aircraft propulsion residual closure.",
+  "priority_cases": [
+    {
+      "id": "fw190a4_wnr783_open_cooling",
+      "aircraft": "Fw 190 A-4 WNr 783",
+      "issue": "Live path omits existing matched open-cooling term",
+      "eta_grade": "missing",
+      "residual_class": "cooling/intake + missing useful power",
+      "action": "Apply matched open-cooling area; re-score climb"
+    },
+    {
+      "id": "p38g_4212687_timed_climb",
+      "aircraft": "P-38G 42-12687",
+      "issue": "Timed climb omits kinetic-energy term for increasing TAS",
+      "source_elapsed_s": 340.80,
+      "climb_mae_ftmin": 173.3,
+      "sea_level_residual_ftmin": 411,
+      "eta_grade": "estimated",
+      "residual_class": "missing TAS-energy term + aggregate cooling/power",
+      "action": "Apply accountForTasChange; re-score elapsed time"
+    }
+  ],
+  "seven_aircraft_climb_mae_ftmin": [
+    {"aircraft": "P-47B 41-5902", "points": 5, "before": 32.4, "after_prop": 32.4, "eta_grade": "derived"},
+    {"aircraft": "P-47B 41-5942", "points": 5, "before": 77.9, "after_prop": 77.9, "eta_grade": "derived", "note": "transfer"},
+    {"aircraft": "Spitfire LF IX BS.543", "points": 10, "before": 64.5, "after_prop": 64.5, "eta_grade": "derived"},
+    {"aircraft": "P-38G 42-12687", "points": 7, "before": 173.3, "after_prop": 173.3, "eta_grade": "estimated"},
+    {"aircraft": "F4U-4 80765", "points": 7, "before": 139.9, "after_prop": 139.9, "eta_grade": "derived"},
+    {"aircraft": "P-51B 43-24777", "points": 5, "before": 105.6, "after_prop": 105.6, "eta_grade": "derived", "note": "below 10k ft; one point above 333.2"},
+    {"aircraft": "Fw 190 A-4 WNr 783", "points": null, "before": null, "after_prop": null, "eta_grade": "missing", "note": "open path not re-scored"},
+    {"aircraft": "Bf 109 F-4", "points": null, "before": null, "after_prop": null, "eta_grade": "missing", "note": "no supported climb score"}
+  ],
+  "margins": {"tas_kmh": 6, "climb_or_timed_percent": 5, "sustained_turn_deg_s": 0.5},
+  "lineage": [
+    "docs/V410_CLIMB_TURN_AND_FORMULA_AUDIT.md",
+    "docs/V410_REMAINING_PROPELLERS.md",
+    "references/fw190a4-783.json",
+    "references/p38g-42-12687.json",
+    "references/research/ww2_propeller_efficiency_benchmark_2026-11-12.json"
+  ]
+}
