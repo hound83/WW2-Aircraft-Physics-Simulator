@@ -13,19 +13,23 @@ Extracted by dedicated research bot (WW2 Research Extractor). All numbers graded
 
 ## Family splits
 
-All graded tables have been split by aircraft family and are being committed:
+All graded tables have been split by aircraft family and committed:
 
-| Family | MD size | JSON size | Status |
-|--------|---------|-----------|--------|
-| P-51 | ~1.3 MB | ~2.7 MB | Being committed |
-| P-47 | ~0.5 MB | ~1.2 MB | Being committed |
-| Props | ~0.2 MB | ~0.6 MB | Being committed |
-| Fw 190 | ~86 KB | ~307 KB | Committed |
-| He 177 | ~58 KB | ~132 KB | Committed |
-| Bf 109 | ~41 KB | ~119 KB | Committed |
-| Il-2 | ~48 KB | ~205 KB | Being committed |
-| P-38 | ~52 KB | ~117 KB | Being committed |
-| Others | smaller | smaller | Being committed |
+| Family | MD | JSON | Status |
+|--------|----|------|--------|
+| P-51 | performance_p51.md | performance_p-51.json | Committed |
+| P-47 | performance_p47.md | performance_p-47.json | Committed |
+| Props | performance_props.md | performance_props.json | Committed |
+| Fw 190 | performance_fw190.md | performance_fw_190.json | Committed |
+| He 177 | performance_he177.md | performance_he_177.json | Committed |
+| Bf 109 | performance_bf109.md | performance_bf_109.json | Committed |
+| Il-2 | performance_il2.md | performance_il-2.json | Committed |
+| P-38 | performance_p38.md | performance_p-38.json | Committed |
+| Ta 152 | performance_ta152.md | performance_ta_152.json | Committed |
+| Mosquito | performance_mosquito.md | performance_mosquito.json | Committed |
+| La-7 | performance_la7.md | performance_la-7.json | Committed |
+| XP-42 | performance_xp42.md | performance_xp-42.json | Committed |
+| Other | performance_other.md | performance_other.json | Committed |
 
 All data remains fully traceable; nothing has been interpolated.
 
