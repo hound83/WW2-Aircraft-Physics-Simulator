@@ -803,6 +803,11 @@ async function run(){
   assert.equal(await evaluate('document.querySelectorAll("#plot polygon").length'),0);
   await evaluate('document.getElementById("bands").click()');
   const evidenceImage=await send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(root,'validation/current/fighter-evidence-curves.png'),Buffer.from(evidenceImage.data,'base64'));
+  await select('curve','a4-783-combat-intake-level');
+  const intakes=await evaluate('(()=>{const lines=[...document.querySelectorAll("#plot .curve-segment")],end=lines.filter(e=>e.dataset.series==="2").at(-1),start=lines.find(e=>e.dataset.series==="3");return {series:new Set(lines.map(e=>e.dataset.series)).size,bands:document.querySelectorAll("#plot polygon").length,solid:lines.every(e=>e.dataset.style==="solid"),break:+end.getAttribute("x2")<+start.getAttribute("x1")};})()');
+  assert.deepEqual(intakes,{series:4,bands:4,solid:true,break:true});
+  assert.match(await evaluate('document.getElementById("source-list").textContent'),/Flugbericht Fw 190\/783 Nr\. 2/);
+  checks.push('Fw 190 combat intake traces preserve source bands and the blower changeover');
   await select('aircraft','bf109g2_db605a');
   await select('curve','g2-known-setting-speed');
   assert.ok(await evaluate('[...document.querySelectorAll("#plot .curve-segment")].some(e=>e.dataset.series==="0"&&e.dataset.style==="solid")'));

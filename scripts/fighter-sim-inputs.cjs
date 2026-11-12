@@ -119,10 +119,35 @@ function curveSeries(chart, series, i, cases) {
     observations: series.observations, points, segments };
 }
 
+function fwIntakeChart(reference) {
+  const series = ['internal', 'long_external'].flatMap(intake => ['lower', 'upper'].map(branch => {
+    const rows = reference.rows.filter(row => row.branch === branch);
+    const name = intake === 'internal' ? 'Normal internal' : 'Long external';
+    return {
+      label: name + ' intake, ' + branch + ' branch',
+      limits: reference.conditions,
+      solidHistory: true,
+      observations: rows.map(row => row[intake].observation),
+      points: rows.map(row => [row.altitude_m, row[intake].tas_kmh, ...row[intake].reading_range_kmh, 'primary']),
+    };
+  }));
+  return {
+    id: 'a4-783-combat-intake-level', aircraft: 'fw190a4_783',
+    title: 'Fw 190 A-4 WNr 783 combat-power level speed by intake',
+    x: 'Pressure altitude (m)', y: 'Level TAS (km/h)',
+    note: 'Focke-Wulf Flugbericht 783 Nr. 2, Blatt 3. Readings follow the two faired traces, with a chart-reading band and a break at the blower transition.',
+    series,
+  };
+}
+
 function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catalog)) {
   const observations = new Map(catalog.observations.map(row => [row.id, row]));
   const engine = engineReference(observations);
-  const originalIds = new Set([...Object.keys(evidence.observations), ...engine.observation_ids]);
+  const propeller = read(propellerPath);
+  const fleet = JSON.parse(propeller).fleet_reference;
+  const charts = [...evidence.charts, fwIntakeChart(fleet.fw190a4)];
+  const fleetObservationIds = catalog.observations.filter(row => row.pack_id === 'ww2_fleet_propeller_2026-11-12').map(row => row.id);
+  const originalIds = new Set([...Object.keys(evidence.observations), ...engine.observation_ids, ...fleetObservationIds]);
   const cases = reviewedCases(observations, evidence).map(item => ({ ...item, ...resolveCase(item) }));
   for (const id of [...cases.flatMap(item => item.candidates.flatMap(row => row.observation_ids)),
     ...rejectedPairs.flatMap(row => row.observation_ids), ...legacyCredits.map(row => row.observation)]) {
@@ -140,9 +165,8 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
   }]));
   const packs = new Set([...originalIds].map(id => observations.get(id).pack_id));
   const baseline = JSON.parse(read(baselinePath));
-  const propeller = read(propellerPath);
   return {
-    schema: 'ww2-fighter-sim-inputs/v1', version: '1.4.0', as_of: '2026-11-12',
+    schema: 'ww2-fighter-sim-inputs/v1', version: '1.5.0', as_of: '2026-11-12',
     scope: 'Historical inputs and conditional estimates for source-case lookups and evidence graphs.',
     originals: {
       catalog: 'research-catalog.json',
@@ -152,12 +176,13 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
     },
     propeller_efficiency: {
       path: propellerPath, build_file: 'fighter-propeller-efficiency.json', sha256: sha256(propeller),
-      use: 'original source observations, condition-specific replays and efficiency-only sensitivity',
+      fleet_reference_key: 'fleet_reference',
+      use: '13-aircraft installation reference, original source observations, condition-specific replays and efficiency-only sensitivity',
     },
     engine_reference: engine,
     tolerances, coverage: scoreCoverage(baseline, evidence, cases),
     cases, rejected_pairs: rejectedPairs,
-    charts: evidence.charts.map(chart => ({
+    charts: charts.map(chart => ({
       ...chart, series: chart.series.map((series, i) => curveSeries(chart, series, i, cases)),
     })),
     observations: originalRefs, sources,

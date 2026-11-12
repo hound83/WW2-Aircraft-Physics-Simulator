@@ -1,6 +1,6 @@
 {
   "schema": "ww2-fighter-propeller-efficiency/v1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "replay_base": {
     "version": "4.9.0-rc.1",
     "commit": "079d955d58425637cffcd84540198dde7f2a0a5d"
@@ -5036,6 +5036,1959 @@
               "simple": null
             }
           ]
+        }
+      ]
+    }
+  },
+  "fleet_reference": {
+    "test_base": {
+      "version": "4.9.0-rc.2",
+      "commit": "e7fee380bcd1b89ddfff5214c0d75d410616b9de"
+    },
+    "reference_eta": 0.8,
+    "reference_eta_grade": "calculated",
+    "conditions": "The 80% starting value applies in the tested regions. Source-specific installation data take precedence. A useful-power replay retains combined installation effects.",
+    "aircraft": [
+      {
+        "id": "p47b_415902",
+        "sim_id": "p47b",
+        "status": "same-blade reference",
+        "use": "Use 76% for documented 2700-rpm military climb with the matched cooling area. Use the checked Curtiss level tip-Mach nodes.",
+        "sources": [
+          "ww2_propeller_efficiency_2026-11-11:NACA-L4L07",
+          "ww2_multiaxis_propulsion_trials_2026-11-10:P47B-415942-DEC"
+        ]
+      },
+      {
+        "id": "f4u4_80765",
+        "sim_id": "f4u4",
+        "status": "conditioned reference",
+        "use": "Use 80% for 80765 clean level Normal and Military with the report chart power.",
+        "sources": [
+          "ww2_multiaxis_propulsion_trials_2026-11-10:F4U4-80765"
+        ]
+      },
+      {
+        "id": "p51b_4324777",
+        "sim_id": "p51b",
+        "status": "conditioned reference",
+        "use": "Use 80% in the checked low-blower case. Use the original high-blower cases and the Fig. 5 power comparison for the matched configuration.",
+        "sources": [
+          "ww2_fleet_propeller_2026-11-12:P51B-ENG-47-1749-A-FIG-5",
+          "ww2_multiaxis_propulsion_trials_2026-11-10:P51B15-4324777",
+          "ww2_fleet_propeller_2026-11-12:NACA-MR-L4L18-P51-INSTALLATION"
+        ]
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "sim_id": "spitfire_lfix_bs543",
+        "status": "conditioned reference",
+        "use": "Use 80% in the checked M.S. case. The F.S. branch has original speeds and a separate useful-power reference.",
+        "sources": [
+          "ww2_fleet_propeller_2026-11-12:SPIT-BS543-AAEE-TABLE-V",
+          "ww2_propeller_efficiency_2026-11-11:RAE-RM2357"
+        ]
+      },
+      {
+        "id": "p38g_4212687",
+        "sim_id": "p38g",
+        "status": "conditioned reference",
+        "use": "Use the two checked part-power series and the 5000-ft rating comparison. Match the per-engine BHP and cooler positions.",
+        "sources": [
+          "balanced-2026-11-10:B01",
+          "ww2_fighter_measured_conditions_2026-11-11:G-12687-PARTPOWER"
+        ]
+      },
+      {
+        "id": "bf109f4_representative",
+        "sim_id": "bf109f4",
+        "status": "installation evidence",
+        "use": "Use the DB 601 E ratings and matched performance. The factory G-1 comparison uses a 9-12010 A with the DB 601 E and supplies installation context.",
+        "sources": [
+          "ww2_german_fighter_archive_2026-11-11:F4-601E-INSTALLATION",
+          "ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42"
+        ]
+      },
+      {
+        "id": "fw190a4_783",
+        "sim_id": "fw190a4",
+        "status": "configuration reference",
+        "use": "Use the 783 combat-power curve for the actual intake, with the separate cooling and manifold evidence.",
+        "sources": [
+          "ww2_fleet_propeller_2026-11-12:FW190-783-NR2-CURVES",
+          "ww2_german_fighter_archive_2026-11-11:A4-783-FW-NR1",
+          "ww2_fighter_measured_conditions_2026-11-11:A4-783-NR4",
+          "ww2_engine_ratings_and_propeller_2026-11-12:NACA-MR-E5D19"
+        ]
+      },
+      {
+        "id": "bf109g2_db605a",
+        "sim_id": null,
+        "status": "installation evidence",
+        "use": "Use the MT-215 combat settings and Finnish speed/climb. The 9-12087 A in WNr 14026 is a G-1 installation lead.",
+        "sources": [
+          "ww2_thirteen_fighter_source_recovery_2026-11-11:G2-MT215-SCAN",
+          "ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER",
+          "ww2_engine_ratings_and_propeller_2026-11-12:MTT-109-19-L-42"
+        ]
+      },
+      {
+        "id": "fw190d9_210002",
+        "sim_id": null,
+        "status": "installation evidence",
+        "use": "Use the separate dry and MW 50 cases, preserving the source intake and radiator conditions.",
+        "sources": [
+          "ww2_german_fighter_archive_2026-11-11:D9-210002-FW-NR1",
+          "ww2_thirteen_fighter_source_recovery_2026-11-11:FW190D9-210002-NR2",
+          "ww2_german_fighter_archive_2026-11-11:D9-210002-FW-NR3"
+        ]
+      },
+      {
+        "id": "p47d30_433441",
+        "sim_id": null,
+        "status": "installation evidence",
+        "use": "Use the verified four-blade Curtiss SPA-5 identity. The modified 838 and Hamilton 6507A-2 data are test-installation donors.",
+        "sources": [
+          "ww2_fleet_propeller_2026-11-12:NACA-RM-L8A06-D30-INSTALLATION",
+          "ww2_fleet_propeller_2026-11-12:NACA-RM-L7D10-TABLE-III",
+          "ww2_fighter_measured_conditions_2026-11-11:D-PROP-WR594"
+        ]
+      },
+      {
+        "id": "p40f_4113635",
+        "sim_id": null,
+        "status": "propeller-swap evidence",
+        "use": "Use the original blade/hub/spinner-specific level and climb points, including the separate April 101344-24 trial.",
+        "sources": [
+          "ww2_multiaxis_propulsion_trials_2026-11-10:P40F-4113635-FEB",
+          "ww2_fleet_propeller_2026-11-12:P40F-1578A-101344-CLIMB"
+        ]
+      },
+      {
+        "id": "f6f3_04776",
+        "sim_id": null,
+        "status": "installation evidence",
+        "use": "Use the 04776 three-blade Hydromatic geometry. A drawing match is still needed for a specific Hamilton efficiency map.",
+        "sources": [
+          "ww2_fleet_propeller_2026-11-12:NACA-MR-L5B13-F6F-INSTALLATION"
+        ]
+      },
+      {
+        "id": "ki84_302",
+        "sim_id": null,
+        "status": "installation evidence",
+        "use": "Use T-2 302 handling and configuration data. A loaded flight performance or propeller thrust/power series is still needed.",
+        "sources": [
+          "ww2_twelve_fighter_dual_lane_2026-11-10:KI84-302-AAF-LIMIT"
+        ]
+      }
+    ],
+    "p47d28_high_speed": {
+      "grade": "primary",
+      "installation": "P-47D-28, modified three-blade Curtiss 838-1C2-18",
+      "use": "Independent flight dataset for testing propeller assumptions at the original J, Cp and tip Mach. Use the measured span as donor evidence.",
+      "source": "ww2_fleet_propeller_2026-11-12:NACA-RM-L7D10-TABLE-III",
+      "all": {
+        "conditions": "Full Table III",
+        "count": 62,
+        "eta_span": [
+          0.611,
+          0.841
+        ],
+        "mean_eta": 0.7765,
+        "fixed_80_mae_pp": 3.81,
+        "observations": [
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0001",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0002",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0003",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0004",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0005",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0006",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0007",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0008",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0009",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0010",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0011",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0012",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0013",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0014",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0015",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0016",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0017",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0018",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0019",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0020",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0021",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0022",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0023",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0024",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0025",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0026",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0027",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0028",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0029",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0030",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0031",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0032",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0033",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0034",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0035",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0036",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0037",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0038",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0039",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0040",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0041",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0042",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0043",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0044",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0045",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0046",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0047",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0048",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0049",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0050",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0051",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0052",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0053",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0054",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0055",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0056",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0057",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0058",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0059",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0060",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0061",
+          "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0062"
+        ]
+      },
+      "bands": [
+        {
+          "conditions": "J >= 1.55, tip Mach 0.94-1.02",
+          "count": 11,
+          "eta_span": [
+            0.795,
+            0.841
+          ],
+          "mean_eta": 0.8236,
+          "fixed_80_mae_pp": 2.45,
+          "observations": [
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0004",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0005",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0012",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0018",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0019",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0027",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0034",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0039",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0051",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0057",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0061"
+          ]
+        },
+        {
+          "conditions": "J >= 1.55, tip Mach >1.02 and <1.08",
+          "count": 16,
+          "eta_span": [
+            0.748,
+            0.816
+          ],
+          "mean_eta": 0.7919,
+          "fixed_80_mae_pp": 1.5,
+          "observations": [
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0006",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0010",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0011",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0017",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0025",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0026",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0032",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0033",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0040",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0041",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0046",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0047",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0049",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0055",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0058",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0060"
+          ]
+        },
+        {
+          "conditions": "J >= 1.55, tip Mach >=1.08, Cp <0.20",
+          "count": 4,
+          "eta_span": [
+            0.611,
+            0.669
+          ],
+          "mean_eta": 0.6395,
+          "fixed_80_mae_pp": 16.05,
+          "observations": [
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0007",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0008",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0015",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0016"
+          ]
+        },
+        {
+          "conditions": "J >= 1.55, tip Mach >=1.08, Cp >=0.20",
+          "count": 11,
+          "eta_span": [
+            0.672,
+            0.752
+          ],
+          "mean_eta": 0.7241,
+          "fixed_80_mae_pp": 7.59,
+          "observations": [
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0009",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0024",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0030",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0031",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0042",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0043",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0045",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0048",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0052",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0053",
+            "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0054"
+          ]
+        }
+      ],
+      "tip_mach_review": [
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0059",
+          "run": "22-15",
+          "J": 2.2,
+          "Cp": 0.304,
+          "tip_mach": 1.09,
+          "eta": 0.809,
+          "tip_mach_from_rounded_columns": 1.0774
+        }
+      ],
+      "rows": [
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0001",
+          "run": "20-1",
+          "J": 0.913,
+          "Cp": 0.181,
+          "tip_mach": 0.901,
+          "eta": 0.754,
+          "tip_mach_from_rounded_columns": 0.903
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0002",
+          "run": "20-2",
+          "J": 1.149,
+          "Cp": 0.18,
+          "tip_mach": 0.929,
+          "eta": 0.809,
+          "tip_mach_from_rounded_columns": 0.9287
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0003",
+          "run": "20-3",
+          "J": 1.405,
+          "Cp": 0.177,
+          "tip_mach": 0.956,
+          "eta": 0.828,
+          "tip_mach_from_rounded_columns": 0.9553
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0004",
+          "run": "20-4",
+          "J": 1.646,
+          "Cp": 0.18,
+          "tip_mach": 0.987,
+          "eta": 0.841,
+          "tip_mach_from_rounded_columns": 0.9869
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0005",
+          "run": "20-5",
+          "J": 1.918,
+          "Cp": 0.176,
+          "tip_mach": 1.018,
+          "eta": 0.795,
+          "tip_mach_from_rounded_columns": 1.0171
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0006",
+          "run": "20-6",
+          "J": 2.174,
+          "Cp": 0.181,
+          "tip_mach": 1.05,
+          "eta": 0.748,
+          "tip_mach_from_rounded_columns": 1.0509
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0007",
+          "run": "20-7",
+          "J": 2.391,
+          "Cp": 0.173,
+          "tip_mach": 1.086,
+          "eta": 0.669,
+          "tip_mach_from_rounded_columns": 1.0865
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0008",
+          "run": "20-8",
+          "J": 2.62,
+          "Cp": 0.178,
+          "tip_mach": 1.132,
+          "eta": 0.611,
+          "tip_mach_from_rounded_columns": 1.132
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0009",
+          "run": "23-25",
+          "J": 2.456,
+          "Cp": 0.245,
+          "tip_mach": 1.127,
+          "eta": 0.718,
+          "tip_mach_from_rounded_columns": 1.1268
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0010",
+          "run": "23-26",
+          "J": 2.186,
+          "Cp": 0.248,
+          "tip_mach": 1.068,
+          "eta": 0.787,
+          "tip_mach_from_rounded_columns": 1.0698
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0011",
+          "run": "23-27",
+          "J": 1.887,
+          "Cp": 0.244,
+          "tip_mach": 1.043,
+          "eta": 0.807,
+          "tip_mach_from_rounded_columns": 1.0429
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0012",
+          "run": "23-28",
+          "J": 1.656,
+          "Cp": 0.241,
+          "tip_mach": 1.01,
+          "eta": 0.822,
+          "tip_mach_from_rounded_columns": 1.0101
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0013",
+          "run": "23-29",
+          "J": 1.386,
+          "Cp": 0.236,
+          "tip_mach": 0.977,
+          "eta": 0.816,
+          "tip_mach_from_rounded_columns": 0.9761
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0014",
+          "run": "23-30",
+          "J": 1.117,
+          "Cp": 0.237,
+          "tip_mach": 0.95,
+          "eta": 0.77,
+          "tip_mach_from_rounded_columns": 0.9492
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0015",
+          "run": "24-7",
+          "J": 2.622,
+          "Cp": 0.176,
+          "tip_mach": 1.11,
+          "eta": 0.617,
+          "tip_mach_from_rounded_columns": 1.1096
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0016",
+          "run": "24-8",
+          "J": 2.469,
+          "Cp": 0.18,
+          "tip_mach": 1.086,
+          "eta": 0.661,
+          "tip_mach_from_rounded_columns": 1.0859
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0017",
+          "run": "24-9",
+          "J": 2.252,
+          "Cp": 0.18,
+          "tip_mach": 1.044,
+          "eta": 0.762,
+          "tip_mach_from_rounded_columns": 1.047
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0018",
+          "run": "24-10",
+          "J": 1.95,
+          "Cp": 0.183,
+          "tip_mach": 1.001,
+          "eta": 0.812,
+          "tip_mach_from_rounded_columns": 1.0012
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0019",
+          "run": "24-11",
+          "J": 1.709,
+          "Cp": 0.188,
+          "tip_mach": 0.973,
+          "eta": 0.839,
+          "tip_mach_from_rounded_columns": 0.9731
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0020",
+          "run": "24-12",
+          "J": 1.455,
+          "Cp": 0.188,
+          "tip_mach": 0.936,
+          "eta": 0.824,
+          "tip_mach_from_rounded_columns": 0.9351
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0021",
+          "run": "24-13",
+          "J": 1.184,
+          "Cp": 0.185,
+          "tip_mach": 0.905,
+          "eta": 0.794,
+          "tip_mach_from_rounded_columns": 0.9045
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0022",
+          "run": "24-14",
+          "J": 0.935,
+          "Cp": 0.181,
+          "tip_mach": 0.891,
+          "eta": 0.738,
+          "tip_mach_from_rounded_columns": 0.8904
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0023",
+          "run": "34-12",
+          "J": 1.416,
+          "Cp": 0.269,
+          "tip_mach": 0.973,
+          "eta": 0.793,
+          "tip_mach_from_rounded_columns": 0.9734
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0024",
+          "run": "34-13",
+          "J": 2.344,
+          "Cp": 0.256,
+          "tip_mach": 1.103,
+          "eta": 0.751,
+          "tip_mach_from_rounded_columns": 1.102
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0025",
+          "run": "34-14",
+          "J": 2.113,
+          "Cp": 0.257,
+          "tip_mach": 1.066,
+          "eta": 0.808,
+          "tip_mach_from_rounded_columns": 1.0661
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0026",
+          "run": "34-15",
+          "J": 1.942,
+          "Cp": 0.255,
+          "tip_mach": 1.04,
+          "eta": 0.816,
+          "tip_mach_from_rounded_columns": 1.0403
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0027",
+          "run": "34-16",
+          "J": 1.699,
+          "Cp": 0.251,
+          "tip_mach": 1.007,
+          "eta": 0.829,
+          "tip_mach_from_rounded_columns": 1.0069
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0028",
+          "run": "34-17",
+          "J": 1.454,
+          "Cp": 0.247,
+          "tip_mach": 0.973,
+          "eta": 0.815,
+          "tip_mach_from_rounded_columns": 0.9738
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0029",
+          "run": "34-18",
+          "J": 1.211,
+          "Cp": 0.26,
+          "tip_mach": 0.949,
+          "eta": 0.776,
+          "tip_mach_from_rounded_columns": 0.9481
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0030",
+          "run": "35-1",
+          "J": 2.522,
+          "Cp": 0.263,
+          "tip_mach": 1.115,
+          "eta": 0.715,
+          "tip_mach_from_rounded_columns": 1.115
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0031",
+          "run": "35-2",
+          "J": 2.453,
+          "Cp": 0.283,
+          "tip_mach": 1.111,
+          "eta": 0.737,
+          "tip_mach_from_rounded_columns": 1.1114
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0032",
+          "run": "35-3",
+          "J": 2.221,
+          "Cp": 0.286,
+          "tip_mach": 1.073,
+          "eta": 0.77,
+          "tip_mach_from_rounded_columns": 1.074
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0033",
+          "run": "35-4",
+          "J": 1.965,
+          "Cp": 0.28,
+          "tip_mach": 1.038,
+          "eta": 0.796,
+          "tip_mach_from_rounded_columns": 1.0372
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0034",
+          "run": "35-5",
+          "J": 1.707,
+          "Cp": 0.276,
+          "tip_mach": 1.001,
+          "eta": 0.818,
+          "tip_mach_from_rounded_columns": 1.0012
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0035",
+          "run": "35-6",
+          "J": 1.427,
+          "Cp": 0.282,
+          "tip_mach": 0.961,
+          "eta": 0.787,
+          "tip_mach_from_rounded_columns": 0.9599
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0036",
+          "run": "35-7",
+          "J": 1.213,
+          "Cp": 0.282,
+          "tip_mach": 0.936,
+          "eta": 0.781,
+          "tip_mach_from_rounded_columns": 0.9356
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0037",
+          "run": "35-8",
+          "J": 1.175,
+          "Cp": 0.246,
+          "tip_mach": 0.948,
+          "eta": 0.79,
+          "tip_mach_from_rounded_columns": 0.9477
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0038",
+          "run": "35-9",
+          "J": 1.427,
+          "Cp": 0.245,
+          "tip_mach": 0.975,
+          "eta": 0.81,
+          "tip_mach_from_rounded_columns": 0.9745
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0039",
+          "run": "35-10",
+          "J": 1.687,
+          "Cp": 0.246,
+          "tip_mach": 1.009,
+          "eta": 0.819,
+          "tip_mach_from_rounded_columns": 1.0083
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0040",
+          "run": "35-11",
+          "J": 1.917,
+          "Cp": 0.251,
+          "tip_mach": 1.037,
+          "eta": 0.8,
+          "tip_mach_from_rounded_columns": 1.0367
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0041",
+          "run": "35-12",
+          "J": 2.229,
+          "Cp": 0.246,
+          "tip_mach": 1.079,
+          "eta": 0.768,
+          "tip_mach_from_rounded_columns": 1.0784
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0042",
+          "run": "35-13",
+          "J": 2.49,
+          "Cp": 0.249,
+          "tip_mach": 1.127,
+          "eta": 0.715,
+          "tip_mach_from_rounded_columns": 1.1269
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0043",
+          "run": "35-14",
+          "J": 2.62,
+          "Cp": 0.256,
+          "tip_mach": 1.142,
+          "eta": 0.672,
+          "tip_mach_from_rounded_columns": 1.146
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0044",
+          "run": "36-1",
+          "J": 1.225,
+          "Cp": 0.27,
+          "tip_mach": 0.933,
+          "eta": 0.793,
+          "tip_mach_from_rounded_columns": 0.9331
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0045",
+          "run": "36-2",
+          "J": 2.507,
+          "Cp": 0.278,
+          "tip_mach": 1.121,
+          "eta": 0.752,
+          "tip_mach_from_rounded_columns": 1.1223
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0046",
+          "run": "36-3",
+          "J": 2.153,
+          "Cp": 0.27,
+          "tip_mach": 1.065,
+          "eta": 0.79,
+          "tip_mach_from_rounded_columns": 1.0649
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0047",
+          "run": "36-4",
+          "J": 2.071,
+          "Cp": 0.283,
+          "tip_mach": 1.042,
+          "eta": 0.81,
+          "tip_mach_from_rounded_columns": 1.0429
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0048",
+          "run": "36-5",
+          "J": 2.539,
+          "Cp": 0.277,
+          "tip_mach": 1.13,
+          "eta": 0.73,
+          "tip_mach_from_rounded_columns": 1.1311
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0049",
+          "run": "36-6",
+          "J": 2.083,
+          "Cp": 0.277,
+          "tip_mach": 1.05,
+          "eta": 0.805,
+          "tip_mach_from_rounded_columns": 1.0514
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0050",
+          "run": "36-7",
+          "J": 1.423,
+          "Cp": 0.273,
+          "tip_mach": 0.958,
+          "eta": 0.803,
+          "tip_mach_from_rounded_columns": 0.9573
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0051",
+          "run": "36-8",
+          "J": 1.714,
+          "Cp": 0.278,
+          "tip_mach": 0.997,
+          "eta": 0.82,
+          "tip_mach_from_rounded_columns": 0.996
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0052",
+          "run": "36-9",
+          "J": 2.513,
+          "Cp": 0.245,
+          "tip_mach": 1.136,
+          "eta": 0.718,
+          "tip_mach_from_rounded_columns": 1.1366
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0053",
+          "run": "36-10",
+          "J": 2.534,
+          "Cp": 0.246,
+          "tip_mach": 1.133,
+          "eta": 0.71,
+          "tip_mach_from_rounded_columns": 1.1325
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0054",
+          "run": "36-11",
+          "J": 2.287,
+          "Cp": 0.239,
+          "tip_mach": 1.107,
+          "eta": 0.747,
+          "tip_mach_from_rounded_columns": 1.1061
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0055",
+          "run": "36-12",
+          "J": 1.985,
+          "Cp": 0.247,
+          "tip_mach": 1.049,
+          "eta": 0.8,
+          "tip_mach_from_rounded_columns": 1.0484
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0056",
+          "run": "36-13",
+          "J": 1.428,
+          "Cp": 0.244,
+          "tip_mach": 0.971,
+          "eta": 0.82,
+          "tip_mach_from_rounded_columns": 0.9715
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0057",
+          "run": "36-14",
+          "J": 1.702,
+          "Cp": 0.247,
+          "tip_mach": 1.006,
+          "eta": 0.83,
+          "tip_mach_from_rounded_columns": 1.0056
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0058",
+          "run": "36-15",
+          "J": 2.069,
+          "Cp": 0.267,
+          "tip_mach": 1.076,
+          "eta": 0.794,
+          "tip_mach_from_rounded_columns": 1.0763
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0059",
+          "run": "22-15",
+          "J": 2.2,
+          "Cp": 0.304,
+          "tip_mach": 1.09,
+          "eta": 0.809,
+          "tip_mach_from_rounded_columns": 1.0774
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0060",
+          "run": "22-16",
+          "J": 1.94,
+          "Cp": 0.31,
+          "tip_mach": 1.042,
+          "eta": 0.809,
+          "tip_mach_from_rounded_columns": 1.043
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0061",
+          "run": "22-17",
+          "J": 1.724,
+          "Cp": 0.307,
+          "tip_mach": 1.011,
+          "eta": 0.835,
+          "tip_mach_from_rounded_columns": 1.0102
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p47d28-838-extended-blade-high-speed:0062",
+          "run": "22-18",
+          "J": 1.431,
+          "Cp": 0.303,
+          "tip_mach": 0.975,
+          "eta": 0.78,
+          "tip_mach_from_rounded_columns": 0.9746
+        }
+      ]
+    },
+    "fw190a4": {
+      "grade": "primary",
+      "conditions": "WNr 783, BMW 801 D-2/20208, combat 2400 rpm, closed cooling flaps, 3870 kg takeoff, pressure altitude.",
+      "source": "ww2_fleet_propeller_2026-11-12:FW190-783-NR2-CURVES",
+      "use": "Use the matching intake trace. Use the report nodes at critical heights and interpolate within the individual plotted branches.",
+      "chart_check": {
+        "method": "Hold each interior altitude out of its own chart branch; use adjacent altitudes from the same intake. The dashed external trace is from Nr. 1.",
+        "count_per_intake": 17,
+        "internal_mae_kmh": 1.38,
+        "long_external_mae_kmh": 1.06,
+        "wrong_intake_mae_kmh": 11,
+        "rows": [
+          {
+            "altitude_m": 1000,
+            "internal": {
+              "predicted_kmh": 562,
+              "error_kmh": -1
+            },
+            "long_external": {
+              "predicted_kmh": 551,
+              "error_kmh": 0
+            }
+          },
+          {
+            "altitude_m": 1500,
+            "internal": {
+              "predicted_kmh": 575.67,
+              "error_kmh": 0.67
+            },
+            "long_external": {
+              "predicted_kmh": 565,
+              "error_kmh": 1
+            }
+          },
+          {
+            "altitude_m": 1750,
+            "internal": {
+              "predicted_kmh": 578,
+              "error_kmh": -4
+            },
+            "long_external": {
+              "predicted_kmh": 571,
+              "error_kmh": -1
+            }
+          },
+          {
+            "altitude_m": 2000,
+            "internal": {
+              "predicted_kmh": 580.5,
+              "error_kmh": -0.5
+            },
+            "long_external": {
+              "predicted_kmh": 574.5,
+              "error_kmh": -3.5
+            }
+          },
+          {
+            "altitude_m": 2250,
+            "internal": {
+              "predicted_kmh": 579,
+              "error_kmh": 0
+            },
+            "long_external": {
+              "predicted_kmh": 576.5,
+              "error_kmh": -0.5
+            }
+          },
+          {
+            "altitude_m": 2500,
+            "internal": {
+              "predicted_kmh": 577.46,
+              "error_kmh": 0.46
+            },
+            "long_external": {
+              "predicted_kmh": 575.46,
+              "error_kmh": 0.46
+            }
+          },
+          {
+            "altitude_m": 3500,
+            "internal": {
+              "predicted_kmh": 585,
+              "error_kmh": 0
+            },
+            "long_external": {
+              "predicted_kmh": 573,
+              "error_kmh": 0
+            }
+          },
+          {
+            "altitude_m": 4000,
+            "internal": {
+              "predicted_kmh": 597,
+              "error_kmh": 1
+            },
+            "long_external": {
+              "predicted_kmh": 584.33,
+              "error_kmh": 0.33
+            }
+          },
+          {
+            "altitude_m": 5000,
+            "internal": {
+              "predicted_kmh": 620.67,
+              "error_kmh": -0.33
+            },
+            "long_external": {
+              "predicted_kmh": 607.33,
+              "error_kmh": 0.33
+            }
+          },
+          {
+            "altitude_m": 5500,
+            "internal": {
+              "predicted_kmh": 633,
+              "error_kmh": 0
+            },
+            "long_external": {
+              "predicted_kmh": 619.5,
+              "error_kmh": 0.5
+            }
+          },
+          {
+            "altitude_m": 6000,
+            "internal": {
+              "predicted_kmh": 639,
+              "error_kmh": -6
+            },
+            "long_external": {
+              "predicted_kmh": 631.5,
+              "error_kmh": -0.5
+            }
+          },
+          {
+            "altitude_m": 6500,
+            "internal": {
+              "predicted_kmh": 644.47,
+              "error_kmh": -0.53
+            },
+            "long_external": {
+              "predicted_kmh": 642.53,
+              "error_kmh": -1.47
+            }
+          },
+          {
+            "altitude_m": 6950,
+            "internal": {
+              "predicted_kmh": 642.75,
+              "error_kmh": -1.25
+            },
+            "long_external": {
+              "predicted_kmh": 647.15,
+              "error_kmh": -4.85
+            }
+          },
+          {
+            "altitude_m": 7500,
+            "internal": {
+              "predicted_kmh": 638.24,
+              "error_kmh": -1.76
+            },
+            "long_external": {
+              "predicted_kmh": 649.38,
+              "error_kmh": -1.62
+            }
+          },
+          {
+            "altitude_m": 8000,
+            "internal": {
+              "predicted_kmh": 631.5,
+              "error_kmh": -1.5
+            },
+            "long_external": {
+              "predicted_kmh": 646.5,
+              "error_kmh": -0.5
+            }
+          },
+          {
+            "altitude_m": 8500,
+            "internal": {
+              "predicted_kmh": 620,
+              "error_kmh": -3
+            },
+            "long_external": {
+              "predicted_kmh": 641.5,
+              "error_kmh": -0.5
+            }
+          },
+          {
+            "altitude_m": 9000,
+            "internal": {
+              "predicted_kmh": 605.5,
+              "error_kmh": -1.5
+            },
+            "long_external": {
+              "predicted_kmh": 635,
+              "error_kmh": -1
+            }
+          }
+        ]
+      },
+      "crossover_altitude_bracket_m": [
+        6000,
+        6950
+      ],
+      "rows": [
+        {
+          "altitude_m": 0,
+          "branch": "lower",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0001",
+            "tas_kmh": 536,
+            "reading_range_kmh": [
+              533,
+              539
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0001",
+            "tas_kmh": 525,
+            "reading_range_kmh": [
+              522,
+              528
+            ]
+          },
+          "internal_minus_external_kmh": 11
+        },
+        {
+          "altitude_m": 1000,
+          "branch": "lower",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0002",
+            "tas_kmh": 563,
+            "reading_range_kmh": [
+              560,
+              566
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0002",
+            "tas_kmh": 551,
+            "reading_range_kmh": [
+              548,
+              554
+            ]
+          },
+          "internal_minus_external_kmh": 12
+        },
+        {
+          "altitude_m": 1500,
+          "branch": "lower",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0003",
+            "tas_kmh": 575,
+            "reading_range_kmh": [
+              572,
+              578
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0003",
+            "tas_kmh": 564,
+            "reading_range_kmh": [
+              561,
+              567
+            ]
+          },
+          "internal_minus_external_kmh": 11
+        },
+        {
+          "altitude_m": 1750,
+          "branch": "lower",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0004",
+            "tas_kmh": 582,
+            "reading_range_kmh": [
+              579,
+              585
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0004",
+            "tas_kmh": 572,
+            "reading_range_kmh": [
+              569,
+              575
+            ]
+          },
+          "internal_minus_external_kmh": 10
+        },
+        {
+          "altitude_m": 2000,
+          "branch": "lower",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0005",
+            "tas_kmh": 581,
+            "reading_range_kmh": [
+              578,
+              584
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0005",
+            "tas_kmh": 578,
+            "reading_range_kmh": [
+              575,
+              581
+            ]
+          },
+          "internal_minus_external_kmh": 3
+        },
+        {
+          "altitude_m": 2250,
+          "branch": "lower",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0006",
+            "tas_kmh": 579,
+            "reading_range_kmh": [
+              576,
+              582
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0006",
+            "tas_kmh": 577,
+            "reading_range_kmh": [
+              574,
+              580
+            ]
+          },
+          "internal_minus_external_kmh": 2
+        },
+        {
+          "altitude_m": 2500,
+          "branch": "lower",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0007",
+            "tas_kmh": 577,
+            "reading_range_kmh": [
+              574,
+              580
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0007",
+            "tas_kmh": 575,
+            "reading_range_kmh": [
+              572,
+              578
+            ]
+          },
+          "internal_minus_external_kmh": 2
+        },
+        {
+          "altitude_m": 2900,
+          "branch": "lower",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0008",
+            "tas_kmh": 575,
+            "reading_range_kmh": [
+              572,
+              578
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0008",
+            "tas_kmh": 573,
+            "reading_range_kmh": [
+              570,
+              576
+            ]
+          },
+          "internal_minus_external_kmh": 2
+        },
+        {
+          "altitude_m": 3000,
+          "branch": "upper",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0009",
+            "tas_kmh": 574,
+            "reading_range_kmh": [
+              571,
+              577
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0009",
+            "tas_kmh": 562,
+            "reading_range_kmh": [
+              559,
+              565
+            ]
+          },
+          "internal_minus_external_kmh": 12
+        },
+        {
+          "altitude_m": 3500,
+          "branch": "upper",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0010",
+            "tas_kmh": 585,
+            "reading_range_kmh": [
+              582,
+              588
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0010",
+            "tas_kmh": 573,
+            "reading_range_kmh": [
+              570,
+              576
+            ]
+          },
+          "internal_minus_external_kmh": 12
+        },
+        {
+          "altitude_m": 4000,
+          "branch": "upper",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0011",
+            "tas_kmh": 596,
+            "reading_range_kmh": [
+              593,
+              599
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0011",
+            "tas_kmh": 584,
+            "reading_range_kmh": [
+              581,
+              587
+            ]
+          },
+          "internal_minus_external_kmh": 12
+        },
+        {
+          "altitude_m": 5000,
+          "branch": "upper",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0012",
+            "tas_kmh": 621,
+            "reading_range_kmh": [
+              618,
+              624
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0012",
+            "tas_kmh": 607,
+            "reading_range_kmh": [
+              604,
+              610
+            ]
+          },
+          "internal_minus_external_kmh": 14
+        },
+        {
+          "altitude_m": 5500,
+          "branch": "upper",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0013",
+            "tas_kmh": 633,
+            "reading_range_kmh": [
+              630,
+              636
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0013",
+            "tas_kmh": 619,
+            "reading_range_kmh": [
+              616,
+              622
+            ]
+          },
+          "internal_minus_external_kmh": 14
+        },
+        {
+          "altitude_m": 6000,
+          "branch": "upper",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0014",
+            "tas_kmh": 645,
+            "reading_range_kmh": [
+              642,
+              648
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0014",
+            "tas_kmh": 632,
+            "reading_range_kmh": [
+              629,
+              635
+            ]
+          },
+          "internal_minus_external_kmh": 13
+        },
+        {
+          "altitude_m": 6500,
+          "branch": "upper",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0015",
+            "tas_kmh": 645,
+            "reading_range_kmh": [
+              642,
+              648
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0015",
+            "tas_kmh": 644,
+            "reading_range_kmh": [
+              641,
+              647
+            ]
+          },
+          "internal_minus_external_kmh": 1
+        },
+        {
+          "altitude_m": 6950,
+          "branch": "upper",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0016",
+            "tas_kmh": 644,
+            "reading_range_kmh": [
+              641,
+              647
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0016",
+            "tas_kmh": 652,
+            "reading_range_kmh": [
+              649,
+              655
+            ]
+          },
+          "internal_minus_external_kmh": -8
+        },
+        {
+          "altitude_m": 7500,
+          "branch": "upper",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0017",
+            "tas_kmh": 640,
+            "reading_range_kmh": [
+              637,
+              643
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0017",
+            "tas_kmh": 651,
+            "reading_range_kmh": [
+              648,
+              654
+            ]
+          },
+          "internal_minus_external_kmh": -11
+        },
+        {
+          "altitude_m": 8000,
+          "branch": "upper",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0018",
+            "tas_kmh": 633,
+            "reading_range_kmh": [
+              630,
+              636
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0018",
+            "tas_kmh": 647,
+            "reading_range_kmh": [
+              644,
+              650
+            ]
+          },
+          "internal_minus_external_kmh": -14
+        },
+        {
+          "altitude_m": 8500,
+          "branch": "upper",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0019",
+            "tas_kmh": 623,
+            "reading_range_kmh": [
+              620,
+              626
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0019",
+            "tas_kmh": 642,
+            "reading_range_kmh": [
+              639,
+              645
+            ]
+          },
+          "internal_minus_external_kmh": -19
+        },
+        {
+          "altitude_m": 9000,
+          "branch": "upper",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0020",
+            "tas_kmh": 607,
+            "reading_range_kmh": [
+              604,
+              610
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0020",
+            "tas_kmh": 636,
+            "reading_range_kmh": [
+              633,
+              639
+            ]
+          },
+          "internal_minus_external_kmh": -29
+        },
+        {
+          "altitude_m": 9500,
+          "branch": "upper",
+          "internal": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-normal-internal-intake-level:0021",
+            "tas_kmh": 588,
+            "reading_range_kmh": [
+              585,
+              591
+            ]
+          },
+          "long_external": {
+            "observation": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0021",
+            "tas_kmh": 628,
+            "reading_range_kmh": [
+              625,
+              631
+            ]
+          },
+          "internal_minus_external_kmh": -40
+        }
+      ]
+    },
+    "p38g": {
+      "grade": "primary",
+      "conditions": "42-12687, V-1710-51 and -55, 88996-18 and 89303-18, shutters faired for level flight. Power is from engine charts, per engine.",
+      "use": "48 inHg is a 5000-ft comparison point. Use the published manifold and BHP rows by altitude; use the separate open-shutter climb schedule.",
+      "level_rows": [
+        {
+          "observation": "balanced-2026-11-10:BS01:0001",
+          "altFt": 5000,
+          "bhp": 1220,
+          "tasMph": 346.5,
+          "weightLb": 13550,
+          "rpm": 3000,
+          "rating": "level",
+          "gear": "turbo",
+          "manifold_inhg": 44.7,
+          "limit": null
+        },
+        {
+          "observation": "balanced-2026-11-10:BS01:0002",
+          "altFt": 5000,
+          "bhp": 1320,
+          "tasMph": 355.5,
+          "weightLb": 13550,
+          "rpm": 3000,
+          "rating": "level",
+          "gear": "turbo",
+          "manifold_inhg": 48,
+          "limit": "48 inHg demonstration"
+        },
+        {
+          "observation": "balanced-2026-11-10:BS01:0003",
+          "altFt": 14700,
+          "bhp": 1220,
+          "tasMph": 378,
+          "weightLb": 13525,
+          "rpm": 3000,
+          "rating": "level",
+          "gear": "turbo",
+          "manifold_inhg": 44.7,
+          "limit": "carburetor-air temperature limits higher rating"
+        },
+        {
+          "observation": "balanced-2026-11-10:BS01:0004",
+          "altFt": 22600,
+          "bhp": 1225,
+          "tasMph": 404,
+          "weightLb": 13500,
+          "rpm": 3000,
+          "rating": "level",
+          "gear": "turbo",
+          "manifold_inhg": 44.7,
+          "limit": "44.7 inHg turbo critical altitude"
+        },
+        {
+          "observation": "balanced-2026-11-10:BS01:0005",
+          "altFt": 24400,
+          "bhp": 1175,
+          "tasMph": 403,
+          "weightLb": 13450,
+          "rpm": 3000,
+          "rating": "level",
+          "gear": "turbo",
+          "manifold_inhg": 43.2,
+          "limit": "carburetor-air temperature"
+        },
+        {
+          "observation": "balanced-2026-11-10:BS01:0006",
+          "altFt": 30000,
+          "bhp": 980,
+          "tasMph": 396,
+          "weightLb": 13400,
+          "rpm": 3000,
+          "rating": "level",
+          "gear": "turbo",
+          "manifold_inhg": 36,
+          "limit": "turbo rpm"
+        }
+      ],
+      "replay": {
+        "grade": "calculated",
+        "alt_ft": 5000,
+        "rpm": 3000,
+        "reference_eta": 0.8,
+        "anchor_observation": "balanced-2026-11-10:BS01:0001",
+        "check_observation": "balanced-2026-11-10:BS01:0002",
+        "chart_bhp_per_engine": [
+          1220,
+          1320
+        ],
+        "observed_tas_mph": [
+          346.5,
+          355.5
+        ],
+        "replay_tas_mph": 356.35,
+        "error_mph": 0.85
+      }
+    },
+    "p51b": {
+      "grade": "primary",
+      "conditions": "43-24777, V-1650-7, K-6523A-24, high blower, 3000 rpm, auto shutters and auto-rich mixture. Table V.B uses a faired curve and reports carburetor-related scatter.",
+      "use": "Use the original matched rack and rating speed cases. Use Fig. 5 to constrain the high-blower level power requirement near 22400 ft.",
+      "at_20800_ft": {
+        "rack_fit_67": "ww2_multiaxis_propulsion_trials_2026-11-10:p51b15-chart-vs-performance:0003",
+        "rack_fit_75": "ww2_multiaxis_propulsion_trials_2026-11-10:p51b15-chart-vs-performance:0002",
+        "rack_removed_75": "ww2_multiaxis_propulsion_trials_2026-11-10:p51b15-chart-vs-performance:0001",
+        "rack_effect_mph": 13,
+        "rating_gain_mph": 14
+      },
+      "figure_5": [
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p51b-24777-fig5-high-blower:0001",
+          "alt_ft": 22400,
+          "tas_mph": 414,
+          "bhp_chart": 1270,
+          "manifold_inhg": 61,
+          "engine_rpm": 3000,
+          "speed_reading_uncertainty_mph": 1,
+          "bhp_reading_uncertainty": 10
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p51b-24777-fig5-high-blower:0002",
+          "alt_ft": 22400,
+          "tas_mph": 426,
+          "bhp_chart": 1400,
+          "manifold_inhg": 67,
+          "engine_rpm": 3000,
+          "speed_reading_uncertainty_mph": 1,
+          "bhp_reading_uncertainty": 10
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:p51b-24777-fig5-high-blower:0003",
+          "alt_ft": 22400,
+          "tas_mph": 433,
+          "bhp_chart": 1470,
+          "manifold_inhg": null,
+          "engine_rpm": 3000,
+          "speed_reading_uncertainty_mph": 1,
+          "bhp_reading_uncertainty": 10
+        }
+      ],
+      "replays": {
+        "grade": "calculated",
+        "weight_lb": 9240,
+        "method": "Set one drag reference at the specified speed and BHP, then hold it and 80% fixed. 9240 lb is the report cruise reference, used here as the replay mass. Fig. 5 checks are from the same test campaign.",
+        "rating_check": {
+          "alt_ft": 20800,
+          "rpm": 3000,
+          "reference_eta": 0.8,
+          "anchor_observation": "ww2_multiaxis_propulsion_trials_2026-11-10:p51b15-chart-vs-performance:0003",
+          "check_observation": "ww2_multiaxis_propulsion_trials_2026-11-10:p51b15-chart-vs-performance:0002",
+          "chart_bhp_per_engine": [
+            1390,
+            1572
+          ],
+          "observed_tas_mph": [
+            417,
+            431
+          ],
+          "replay_tas_mph": 436.78,
+          "error_mph": 5.78
+        },
+        "figure_5_checks": [
+          {
+            "alt_ft": 22400,
+            "rpm": 3000,
+            "reference_eta": 0.8,
+            "anchor_observation": "ww2_fleet_propeller_2026-11-12:p51b-24777-fig5-high-blower:0002",
+            "check_observation": "ww2_fleet_propeller_2026-11-12:p51b-24777-fig5-high-blower:0001",
+            "chart_bhp_per_engine": [
+              1400,
+              1270
+            ],
+            "observed_tas_mph": [
+              426,
+              414
+            ],
+            "replay_tas_mph": 410.26,
+            "error_mph": -3.74
+          },
+          {
+            "alt_ft": 22400,
+            "rpm": 3000,
+            "reference_eta": 0.8,
+            "anchor_observation": "ww2_fleet_propeller_2026-11-12:p51b-24777-fig5-high-blower:0002",
+            "check_observation": "ww2_fleet_propeller_2026-11-12:p51b-24777-fig5-high-blower:0003",
+            "chart_bhp_per_engine": [
+              1400,
+              1470
+            ],
+            "observed_tas_mph": [
+              426,
+              433
+            ],
+            "replay_tas_mph": 433.98,
+            "error_mph": 0.98
+          }
+        ]
+      }
+    },
+    "spitfire_lfix_bs543": {
+      "grade": "calculated",
+      "use": "Read Table V for original speeds. Use the anchored useful-power reference for this level-flight installation below or at full-throttle height.",
+      "method": "Hold the existing low-blower reference polar and chart BHP schedule, anchor useful power at 20000 ft, and check the remaining F.S. nodes. Table V shows +18.5 lb boost and 2995 rpm below full-throttle height; replay uses the nominal +18 schedule and 3000 rpm.",
+      "anchor_alt_ft": 20000,
+      "equivalent_useful_hp_at_anchor": 1184.29,
+      "equivalent_useful_to_chart_power": 0.74955,
+      "below_or_at_full_throttle_height": {
+        "count": 3,
+        "flat_80_mae_mph": 10.27,
+        "anchored_mae_mph": 0.63,
+        "current_mae_mph": 1.54
+      },
+      "above_full_throttle_height": {
+        "count": 6,
+        "flat_80_mae_mph": 8.31,
+        "anchored_mae_mph": 2.55,
+        "current_mae_mph": 1.46
+      },
+      "rows": [
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0003",
+          "alt_ft": 16000,
+          "boost_psi": 18.5,
+          "observed_tas_mph": 381.5,
+          "chart_bhp": 1580,
+          "flat_80_tas_mph": 391.91,
+          "anchored_tas_mph": 382.61,
+          "current_tas_mph": 384.33
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0004",
+          "alt_ft": 18000,
+          "boost_psi": 18.5,
+          "observed_tas_mph": 390.5,
+          "chart_bhp": 1580,
+          "flat_80_tas_mph": 400.21,
+          "anchored_tas_mph": 390.67,
+          "current_tas_mph": 391.92
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0005",
+          "alt_ft": 20000,
+          "boost_psi": 18.5,
+          "observed_tas_mph": 399,
+          "chart_bhp": 1580,
+          "flat_80_tas_mph": 408.79,
+          "anchored_tas_mph": 399,
+          "current_tas_mph": 399.6
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0006",
+          "alt_ft": 22000,
+          "boost_psi": 18.5,
+          "observed_tas_mph": 407,
+          "chart_bhp": 1580,
+          "flat_80_tas_mph": 417.68,
+          "anchored_tas_mph": 407.62,
+          "current_tas_mph": 407.37
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0007",
+          "alt_ft": 24000,
+          "boost_psi": 15.6,
+          "observed_tas_mph": 406,
+          "chart_bhp": 1442.95,
+          "flat_80_tas_mph": 412.5,
+          "anchored_tas_mph": 402.33,
+          "current_tas_mph": 402.65
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0008",
+          "alt_ft": 26000,
+          "boost_psi": 13.6,
+          "observed_tas_mph": 403,
+          "chart_bhp": 1347.77,
+          "flat_80_tas_mph": 410.64,
+          "anchored_tas_mph": 400.28,
+          "current_tas_mph": 400.84
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0009",
+          "alt_ft": 28000,
+          "boost_psi": 11.6,
+          "observed_tas_mph": 399.5,
+          "chart_bhp": 1252.59,
+          "flat_80_tas_mph": 407.72,
+          "anchored_tas_mph": 397.13,
+          "current_tas_mph": 398.1
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0010",
+          "alt_ft": 30000,
+          "boost_psi": 9.7,
+          "observed_tas_mph": 395,
+          "chart_bhp": 1162.65,
+          "flat_80_tas_mph": 404.21,
+          "anchored_tas_mph": 393.32,
+          "current_tas_mph": 394.83
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0011",
+          "alt_ft": 32000,
+          "boost_psi": 7.7,
+          "observed_tas_mph": 389,
+          "chart_bhp": 1067.47,
+          "flat_80_tas_mph": 398.28,
+          "anchored_tas_mph": 387,
+          "current_tas_mph": 389.49
+        },
+        {
+          "observation": "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0012",
+          "alt_ft": 34000,
+          "boost_psi": 5.7,
+          "observed_tas_mph": 381,
+          "chart_bhp": 972.29,
+          "flat_80_tas_mph": 390,
+          "anchored_tas_mph": 378.17,
+          "current_tas_mph": 382.17
+        }
+      ],
+      "source_observations": [
+        "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0001",
+        "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0002",
+        "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0003",
+        "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0004",
+        "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0005",
+        "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0006",
+        "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0007",
+        "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0008",
+        "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0009",
+        "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0010",
+        "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0011",
+        "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0012"
+      ]
+    },
+    "p40f_4113635": {
+      "grade": "primary",
+      "use": "Select blade, hub and spinner by test, including the 101344-24 April climb series. Retain the airframe and configuration in any comparison.",
+      "february_standard_spinner_level": {
+        "alt_ft": 18100,
+        "chart_bhp": 1100,
+        "rpm": 2950,
+        "tas_span_mph": [
+          350.5,
+          356
+        ],
+        "tas_spread_mph": 5.5,
+        "observations": [
+          "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-level:0001",
+          "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-level:0002",
+          "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-level:0003",
+          "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-level:0004"
+        ]
+      },
+      "climb_comparison": [
+        {
+          "alt_ft": 18000,
+          "february_observations": [
+            "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-climb:0001",
+            "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-climb:0005",
+            "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-climb:0009"
+          ],
+          "february_fpm_span": [
+            1460,
+            2010
+          ],
+          "april_observation": "ww2_fleet_propeller_2026-11-12:p40f-101344-april-climb:0001",
+          "april_fpm": 2185,
+          "april_minus_february_best_fpm": 175
+        },
+        {
+          "alt_ft": 22000,
+          "february_observations": [
+            "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-climb:0002",
+            "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-climb:0006",
+            "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-climb:0010"
+          ],
+          "february_fpm_span": [
+            1140,
+            1590
+          ],
+          "april_observation": "ww2_fleet_propeller_2026-11-12:p40f-101344-april-climb:0002",
+          "april_fpm": 1725,
+          "april_minus_february_best_fpm": 135
+        },
+        {
+          "alt_ft": 25000,
+          "february_observations": [
+            "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-climb:0003",
+            "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-climb:0007",
+            "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-climb:0011"
+          ],
+          "february_fpm_span": [
+            910,
+            1270
+          ],
+          "april_observation": "ww2_fleet_propeller_2026-11-12:p40f-101344-april-climb:0003",
+          "april_fpm": 1380,
+          "april_minus_february_best_fpm": 110
+        },
+        {
+          "alt_ft": 28000,
+          "february_observations": [
+            "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-climb:0004",
+            "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-climb:0008",
+            "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-climb:0012"
+          ],
+          "february_fpm_span": [
+            680,
+            960
+          ],
+          "april_observation": "ww2_fleet_propeller_2026-11-12:p40f-101344-april-climb:0004",
+          "april_fpm": 1040,
+          "april_minus_february_best_fpm": 80
         }
       ]
     }

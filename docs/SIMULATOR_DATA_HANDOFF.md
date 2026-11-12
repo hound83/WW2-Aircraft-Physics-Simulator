@@ -1,11 +1,11 @@
 # Simulator data handoff
 
-**Fighter Sim Inputs v1.4.0**, dated **12 November 2026**, is the current pack. It covers 13 aircraft variants. The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
+**Fighter Sim Inputs v1.5.0**, dated **12 November 2026**, is the current pack. It covers 13 aircraft variants. The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 
 | File in the build | Use |
 | --- | --- |
 | `dist/fighter-sim-inputs.json` | Reviewed cases, preferred values, original observation IDs, GOLD and GOLD* agreement, and curve styles and bounds |
-| `dist/fighter-propeller-efficiency.json` | Original efficiency series, conditional flight replays and the seven-aircraft sensitivity sweep |
+| `dist/fighter-propeller-efficiency.json` | Propeller and installation references for all 13 variants, original efficiency series, conditional flight replays and the seven-aircraft sensitivity sweep |
 | `dist/research-catalog.json` | Original observations, conditions, source links and report lineage |
 | `dist/fighter-evidence-curves.html` | Standalone evidence viewer for the full research roster |
 
@@ -27,6 +27,8 @@ The Normal / Combat benchmark currently has seven modeled aircraft. They are the
 Coverage measures available evidence for the research dossier. The source conditions and supported metrics give a better guide to the initial comparison range. [Full coverage table](research/WW2_FIGHTER_SIM_INPUTS_V1.md#coverage-by-aircraft) · [Variant dossiers and retrieval targets](research/WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md)
 
 ## Notes for Simulator Work
+
+- The v1.5 companion's `fleet_reference` gives each research variant its original reports and the conditions for using the data. The Fw 190 A-4 has separate combat-power curves for both intakes. The P-38G high-power comparison, Mustang and Spitfire high-blower readings, and P-40F propeller trials are ready for source-conditioned comparisons. [Fleet propeller reference and report index](research/WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md)
 
 - The v1.4 engine reference is in `engine_reference` in `fighter-sim-inputs.json`. Use the G-2 DB 605 A anchors at **1.30 ata / 2,600 rpm** and the separate BMW 801 D low- and high-gear anchors. WNr 783 has distinct internal and external intake cases. The original 622 km/h DB 601 E reading belongs to the G-1 installation comparison. [Fighter input reference](research/WW2_FIGHTER_INPUT_REFERENCE_2026-11-12.md)
 

@@ -22,7 +22,7 @@ for (const [id, ref] of Object.entries(pack.observations)) {
 }
 
 const byId = id => pack.cases.find(row => row.id === id);
-assert.equal(pack.version, '1.4.0');
+assert.equal(pack.version, '1.5.0');
 assert.equal(byId('g2-db605a-combat-sea-level-rating').preferred.value, 1310);
 assert.equal(byId('g2-db605a-combat-5800m-rating').preferred.value, 1250);
 assert.equal(byId('a4-bmw801d-combat-low-gear-rating').preferred.value, 1520);
@@ -136,7 +136,7 @@ const disagreement = series('g2-finnish-climb-rate')[1];
 assert.equal(disagreement.role, 'comparison');
 assert.ok(disagreement.segments.every(segment => segment.style === 'dotted' && !segment.band));
 
-for (const [i, chart] of pack.charts.entries()) for (const [j, branch] of chart.series.entries()) {
+for (const [i, chart] of pack.charts.slice(0, derived.charts.length).entries()) for (const [j, branch] of chart.series.entries()) {
   const legacy = derived.charts[i].series[j];
   assert.deepEqual(branch.observations, legacy.observations);
   for (const [k, point] of branch.points.entries()) {
@@ -149,6 +149,22 @@ for (const [i, chart] of pack.charts.entries()) for (const [j, branch] of chart.
     if (segment.band) assert.ok(branch.points[segment.from].range && branch.points[segment.to].range);
   }
 }
+assert.equal(pack.charts.length, derived.charts.length + 1);
+const intakes = series('a4-783-combat-intake-level');
+assert.equal(intakes.length, 4);
+assert.deepEqual(intakes.map(branch => [branch.points[0].x, branch.points.at(-1).x]),
+  [[0, 2900], [3000, 9500], [0, 2900], [3000, 9500]]);
+for (const branch of intakes) {
+  assert.ok(branch.segments.every(segment => segment.style === 'solid' && segment.band));
+  for (const [index, point] of branch.points.entries()) {
+    assert.equal(point.grade, 'primary');
+    const v = observations.get(branch.observations[index]).values;
+    assert.deepEqual([point.x, point.value, ...point.range], [v.altitude_m, v.tas_kmh, v.tas_kmh - 3, v.tas_kmh + 3]);
+    assert.ok(pack.observations[branch.observations[index]]);
+  }
+}
+assert.equal(intakes[1].points.find(point => point.x === 6000).value, 645);
+assert.equal(intakes[3].points.find(point => point.x === 6950).value, 652);
 assert.equal(pack.coverage.rows.length, 13);
 assert.equal(pack.coverage.fleet.planned_count, 156);
 assert.equal(pack.coverage.fleet.gold_count, 0);
