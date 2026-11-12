@@ -1,6 +1,6 @@
 # Simulator data handoff
 
-**Fighter Sim Inputs v1.3.0**, dated **12 November 2026**, is the current pack. It covers 13 aircraft variants. The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
+**Fighter Sim Inputs v1.4.0**, dated **12 November 2026**, is the current pack. It covers 13 aircraft variants. The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 
 | File in the build | Use |
 | --- | --- |
@@ -27,6 +27,8 @@ The Normal / Combat benchmark currently has seven modeled aircraft. They are the
 Coverage measures available evidence for the research dossier. The source conditions and supported metrics give a better guide to the initial comparison range. [Full coverage table](research/WW2_FIGHTER_SIM_INPUTS_V1.md#coverage-by-aircraft) · [Variant dossiers and retrieval targets](research/WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md)
 
 ## Notes for Simulator Work
+
+- The v1.4 engine reference is in `engine_reference` in `fighter-sim-inputs.json`. Use the G-2 DB 605 A anchors at **1.30 ata / 2,600 rpm** and the separate BMW 801 D low- and high-gear anchors. WNr 783 has distinct internal and external intake cases. The original 622 km/h DB 601 E reading belongs to the G-1 installation comparison. [Fighter input reference](research/WW2_FIGHTER_INPUT_REFERENCE_2026-11-12.md)
 
 - The v1.3 propeller reference uses **80%** as the starting value. The tested applications are F4U-4 clean level speed, the low-blower Mustang and Spitfire conditions, and the P-47B military-speed branch with a change to **76%** at higher tip Mach. For P-47B military climb, the **76%** reference pairs with one **0.136 m²** open-cooling drag area. The P-38G part-power replay uses the two original speed and power tables. [Reference numbers and checked conditions](research/WW2_PROPELLER_REFERENCE_VALUES_2026-11-12.md)
 

@@ -2,7 +2,7 @@
 
 ## Bf 109 F-4 above rated altitude
 
-The September 1942 Messerschmitt report **V.B. 109 19 L 42** records a G-1 (W.Nr. 14026) tested with a DB 601 E and the production F-series VDM propeller at 1.3 ata and 2,500 rpm. The translated summary gives 386 mph at the 6,000 m full-throttle height. The searchable German scan reads 522 km/h where the translation implies about 621 km/h. The nominal model uses the translation and reports the OCR alternative as a separate sensitivity. [Report translation](https://wwiiaircraftperformance.com/org/me109/g/me109g-14026.html) · [German scan](https://www.wwiiaircraftperformance.org/me109/VB-109-19-L-42.pdf)
+The September 1942 Messerschmitt report **V.B. 109 19 L 42** records a G-1 (W.Nr. 14026) tested with a DB 601 E and the production F-series VDM propeller at 1.3 ata and 2,500 rpm. Blatt 1 of the original scan gives **622 km/h at 6,000 m**, consistent with the 386 mph translation and the corrected Blatt 7 curve. The older 522 km/h transcription was an OCR error. The diagnostic below retains the rounded translation and the legacy sensitivity for reproducibility. The [v1.4 data reference](research/WW2_FIGHTER_INPUT_REFERENCE_2026-11-12.md) records the original speed. [Report translation](https://wwiiaircraftperformance.com/org/me109/g/me109g-14026.html) · [German scan](https://www.wwiiaircraftperformance.org/me109/VB-109-19-L-42.pdf)
 
 Profile P now offers a separate **DB 601 E inlet transfer** option. It caps boost at 1.3 ata and uses the inlet total-pressure ratio to the G-1 full-throttle reference to estimate the falloff. The F-4's existing nominal 1,184 BHP, reference polar and propeller model are held fixed. Recovery 0.85 and charge exponent 2/3 are engineering assumptions. The G-1 data do not identify the F-4 intake recovery, supercharger characteristics or actual shaft horsepower. The calculation is available to 23,000 ft for combat power. At 1.42 ata the source gate stays closed. The default F-4 and the historical comparison gate retain their original domains.
 
@@ -13,7 +13,7 @@ Profile P now offers a separate **DB 601 E inlet transfer** option. It caps boos
 | New inlet transfer | 633.2 km/h |
 | Secondary F-4 figure | 645 km/h |
 
-The 645 km/h value is a check outside the power derivation. The model is 11.8 km/h low and needs about 47 more propulsive hp to hold the source speed at the assumed weight and drag. Recovery 0.65–1.00 and charge exponents 2/3–1 give 622.2–633.5 km/h with the translated reference. Substituting the disputed OCR reading gives 641.4 km/h at the nominal assumptions. The closer fit does not settle the reading. The 670 km/h emergency figure remains outside this evidence. [Secondary F-4 data](https://info.eduard.com/en/06-2023-1)
+The 645 km/h value is a check outside the power derivation. The model is 11.8 km/h low and needs about 47 more propulsive hp to hold the source speed at the assumed weight and drag. Recovery 0.65–1.00 and charge exponents 2/3–1 give 622.2–633.5 km/h with the translated reference. The legacy 522 km/h OCR sensitivity gives 641.4 km/h at the nominal assumptions. The inspected Blatt 1 scan resolves the original reading to 622 km/h. The 670 km/h emergency figure remains outside this evidence. [Secondary F-4 data](https://info.eduard.com/en/06-2023-1)
 
 ### Emergency-power challenger
 

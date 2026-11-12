@@ -6,6 +6,7 @@ const { createHash } = require('node:crypto');
 const { buildCatalog } = require('./research-layer.cjs');
 const { buildEvidence } = require('./derive-fighter-evidence.cjs');
 const { tolerances, resolveCase } = require('./fighter-value-selection.cjs');
+const { engineReference } = require('./fighter-engine-reference.cjs');
 const { benchmarks, legacyCredits, reviewedCases, rejectedPairs } = require('./fighter-sim-input-review.cjs');
 
 const root = path.resolve(__dirname, '..');
@@ -120,7 +121,8 @@ function curveSeries(chart, series, i, cases) {
 
 function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catalog)) {
   const observations = new Map(catalog.observations.map(row => [row.id, row]));
-  const originalIds = new Set(Object.keys(evidence.observations));
+  const engine = engineReference(observations);
+  const originalIds = new Set([...Object.keys(evidence.observations), ...engine.observation_ids]);
   const cases = reviewedCases(observations, evidence).map(item => ({ ...item, ...resolveCase(item) }));
   for (const id of [...cases.flatMap(item => item.candidates.flatMap(row => row.observation_ids)),
     ...rejectedPairs.flatMap(row => row.observation_ids), ...legacyCredits.map(row => row.observation)]) {
@@ -140,7 +142,7 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
   const baseline = JSON.parse(read(baselinePath));
   const propeller = read(propellerPath);
   return {
-    schema: 'ww2-fighter-sim-inputs/v1', version: '1.3.0', as_of: '2026-11-12',
+    schema: 'ww2-fighter-sim-inputs/v1', version: '1.4.0', as_of: '2026-11-12',
     scope: 'Historical inputs and conditional estimates for source-case lookups and evidence graphs.',
     originals: {
       catalog: 'research-catalog.json',
@@ -152,6 +154,7 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
       path: propellerPath, build_file: 'fighter-propeller-efficiency.json', sha256: sha256(propeller),
       use: 'original source observations, condition-specific replays and efficiency-only sensitivity',
     },
+    engine_reference: engine,
     tolerances, coverage: scoreCoverage(baseline, evidence, cases),
     cases, rejected_pairs: rejectedPairs,
     charts: evidence.charts.map(chart => ({

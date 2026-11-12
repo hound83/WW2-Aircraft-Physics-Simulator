@@ -12,7 +12,8 @@
     "boostAta": 1.3,
     "fullThrottleM": 6000,
     "fullThrottleMph": 386,
-    "readingQualification": "Use the HTML translation's 386 mph at 19,685 ft. Searchable scan text reads 522 km/h, inconsistent with that translation; the numerical speed is transcription-qualified.",
+    "originalFullThrottleKmh": 622,
+    "readingQualification": "The inspected Blatt 1 scan prints 622 km/h at 6,000 m. Blatt 7 supports this reading after the report\u0027s indicator correction. The existing replay retains the rounded 386 mph conversion and its legacy OCR sensitivity.",
     "transferQualification": "Same engine rating and F-series propeller; G-1 airframe, radiator and intake installation differ. The source gives critical height and speed, not calibrated F-4 shaft horsepower.",
     "archiveLead": "Air Documents Division, Wright Field microfilm R 2448 F/015. F-4 W.Nr. 7640 was catalogued as EB-1; no usable matched speed/power sheet was recovered."
   },

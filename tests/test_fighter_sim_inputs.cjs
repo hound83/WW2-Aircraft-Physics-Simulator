@@ -22,6 +22,23 @@ for (const [id, ref] of Object.entries(pack.observations)) {
 }
 
 const byId = id => pack.cases.find(row => row.id === id);
+assert.equal(pack.version, '1.4.0');
+assert.equal(byId('g2-db605a-combat-sea-level-rating').preferred.value, 1310);
+assert.equal(byId('g2-db605a-combat-5800m-rating').preferred.value, 1250);
+assert.equal(byId('a4-bmw801d-combat-low-gear-rating').preferred.value, 1520);
+assert.equal(byId('a4-bmw801d-combat-high-gear-rating').preferred.value, 1320);
+assert.equal(byId('a4-783-external-intake-6950m').preferred.value, 652);
+assert.equal(byId('a4-783-internal-intake-6000m').preferred.value, 645);
+const engine = pack.engine_reference;
+assert.equal(engine.observation_ids.length, 110);
+assert.ok(engine.observation_ids.every(id => pack.observations[id]));
+assert.equal(engine.rated_power.bf109g2_db605a.anchors.find(row => row.power_ps === 1310).power_bhp, 1292.08);
+const g1 = engine.flight_tests.g1_14026.db601e;
+assert.equal(g1.points.find(row => row.altitude_m === 6000).tas_kmh, 622);
+assert.deepEqual(g1.points.find(row => row.altitude_m === 5000).range_kmh, [588, 594]);
+assert.equal(engine.flight_tests.fw190a4_783.manifold_by_flight_phase.at(-1).level_minus_climb_ata, 0.11);
+assert.deepEqual(engine.propeller_check.climb.map(row => row.observation_ids.length), [24, 14, 12]);
+assert.deepEqual(engine.propeller_check.climb.map(row => row.fixed_80_mae_percentage_points), [2.51, 0.74, 1.79]);
 const production = byId('g2-wnf-250m-production-vnk');
 assert.equal(production.preferred.value, 518.75);
 assert.equal(production.preferred.grade, 'primary');

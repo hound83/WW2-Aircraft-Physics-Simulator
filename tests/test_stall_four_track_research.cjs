@@ -10,13 +10,13 @@ const prefix='stall_four_track_followup_2026-11-10';
 const rows=catalog.observations.filter(row=>row.pack_id===prefix);
 assert.equal(pack.pack_version,'1.0.1');
 assert.equal(rows.length,29);
-assert.equal(catalog.summary.observation_count,1637);
+assert.equal(catalog.summary.observation_count,1747);
 assert.equal(catalog.summary.stall_count,250);
-assert.equal(catalog.summary.source_count,280);
+assert.equal(catalog.summary.source_count,287);
 assert.equal(catalog.calibration_curves.length,19,'Unsafe chart digitization must not silently produce a correction curve');
-assert.equal(catalog.summary.lineage_groups,47);
+assert.equal(catalog.summary.lineage_groups,49);
 assert.equal(catalog.summary.calibration_reviews,29);
-assert.equal(catalog.document_lineage.length,47);
+assert.equal(catalog.document_lineage.length,49);
 assert.equal(catalog.calibration_reviews.length,29);
 
 const va=rows.filter(row=>row.quantity==='stall_speed');
