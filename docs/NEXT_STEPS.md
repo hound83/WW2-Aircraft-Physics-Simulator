@@ -1,5 +1,36 @@
 # Next steps
 
+## Next milestone for propeller efficiency
+
+Make the seven-aircraft Normal / Combat benchmark usable with defensible propeller efficiency at the conditions where people compare aircraft. Use the current research candidate and the latest reviewed Fighter Sim Inputs. The shared benchmark already calculates speed, climb, acceleration and sustained turn from available power. Test the simpler candidate in that same calculation. [Current benchmark](V49_TIMED_MATCHUPS.md) · [Simulator data handoff](SIMULATOR_DATA_HANDOFF.md)
+
+Test Greg’s **80%** in-flight reference, the **76%** Curtiss military-climb case and the tested Curtiss high-tip-Mach correction. Across 103 direct readings from two Thunderbolt installations, the 80% reference had **2.16 percentage points** mean absolute error, versus **8.15** for the working equation. The separate L7D10 military-climb series gave **0.74 points** at 80%. Apply the evidence at its recorded conditions. [Propeller replays](research/WW2_PROPELLER_REFERENCE_VALUES_2026-11-12.md) · [NACA L4L07 Tables I–II](https://ntrs.nasa.gov/citations/19930093302) · [NACA L5G09a](https://ntrs.nasa.gov/citations/19930093653) · [NACA L7D10 Tables I–II](https://ntrs.nasa.gov/citations/20050019331)
+
+| Aircraft | First-pass decision and source |
+| --- | --- |
+| F4U-4 | Lead with the 80% and single level-drag anchor candidate. Reproduce the BuNo 80765 clean Normal and Military speed checks, including the 29,000 ft high-blower point. Check the climb plates before adopting it. The existing seven-point level replay reduced mean error from 7.38 to 3.10 mph. [VF-96 level and climb trial](https://www.wwiiaircraftperformance.org/f4u/f4u.html) |
+| P-47B | Test the Curtiss 80% to 76% tip-Mach curve at 2,700 rpm and evaluate the 76% military climb with its paired open-cooling area. Compare the current installed-loss calculation and the simpler candidate at the same torque-meter BHP and RPM. Use 41-5942 as a separate-airframe transfer check. [Wright Field 41-5902 and 41-5942](https://www.wwiiaircraftperformance.com/org/p-47/p-47.html) · [NACA L4L07](https://ntrs.nasa.gov/citations/19930093302) |
+| P-51B | Test 80% in the low-blower, 67 inHg rack configuration. Check high blower as its own test condition. [Wright Field Eng-47-1749-A](https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html) |
+| Spitfire LF IX | Test 80% on low-blower, +18 lb closed-radiator level flight. Use the recorded open-radiator climb schedule to constrain cooling and useful power together. [A&AEE BS.543 Tables II and V](https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html) |
+| P-38G | Replay the original part-power TAS, BHP per engine and RPM at 5,000 and 24,400 ft as a power and drag check. Use these alongside full-power level and climb checks when deciding on a live propeller change. [Wright Field FS-M-19-1538-A, complete report p. 2](https://www.wwiiaircraftperformance.com/org/p-38/p-38.html) |
+| Fw 190 A-4 | Pair the BMW 801 D combat gear ratings with WNr 783’s measured boost and matching intake and cooling configurations. Use the same-aircraft comparisons to locate the loss before changing efficiency. [WNr 783 Nr. 1](https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-783-nr1.html) · [Nr. 4](https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-783-nr4.html) · [Handbook and Nr. 2](research/WW2_FIGHTER_INPUT_REFERENCE_2026-11-12.md#flight-checks) · [NACA E5D19 controller bench test](https://ntrs.nasa.gov/citations/19930093290) |
+| Bf 109 F-4 | Test 80% with the DB 601 E **1.30 ata / 2,500 rpm** combat schedule. Use the original F-4 factory and Rechlin runs at their recorded conditions. Use the DB 601 E installation in 109 19 L 42 as a G-1 cross-check. The DB 601 E–G manual inventory is a lead for the original combat power-by-altitude curve. [F-4 original report scans](research/WW2_GERMAN_FIGHTER_ARCHIVE_2026-11-11.md#bf-109-f-4) · [Messerschmitt 109 19 L 42](https://www.wwiiaircraftperformance.org/me109/VB-109-19-L-42.pdf) · [DB 601 E–G manual locator](research/WW2_FIGHTER_INPUT_REFERENCE_2026-11-12.md#using-the-inputs) |
+
+### Propeller milestone acceptance
+
+1. Freeze the current simulator and reserve check runs or altitude bands before fitting. Match weight, rating, shaft BHP, RPM, gear, cooling and airspeed basis. Report shaft horsepower, useful propeller horsepower and drag horsepower at the same test conditions. Start with one measured level-speed anchor for drag per candidate installation and account for each installed loss once.
+2. Show before-and-after speed and climb errors against reserved observations for affected cases, with a separate-airframe or separate-report check where available. Aim to recover the Corsair level-speed gain and check the climb residuals against the source allowances. Choose the better-supported model for each case. Check that useful propeller power stays within shaft power and that transitions are smooth.
+3. “Super good enough” means the adopted estimate agrees with applicable direct propeller measurements or gives a consistent balance across matched speed and climb checks, and its plausible range supports the intended Normal / Combat comparisons. Report each aircraft’s adopted rule, supporting conditions and remaining gaps. Perturb efficiency within its evidence-based range at representative altitudes. Use the existing **6 km/h TAS**, **5% climb or timed-run**, and **0.5°/s sustained-turn** margins to flag changes that matter. Mark a lead as sensitive to propulsion when plausible values can change the outcome.
+4. Publish the accepted improvements as one research candidate with the seven-aircraft scorecard, the four-aircraft regression and the standard numerical and browser checks. [Comparison margins](V49_TIMED_MATCHUPS.md#practical-ties-and-chart-evidence) · [Validation workflow](WORKFLOW.md)
+
+### Second propeller milestone if a material gap remains
+
+Use the first scorecard to pick the cases where propulsion uncertainty changes a useful comparison or produces a large matched speed or climb error. The first candidates are the Fw 190 A-4 intake and gear split, the Bf 109 F-4 combat power curve and the P-38G part-power balance. Close the cases that matter most using the same scorecard and report the operating bounds established by the two passes.
+
+## Later roll-rate comparison
+
+Compare steady roll rate versus airspeed at a stated stick force and altitude. Start with NACA Report 868 Figure 47, which plots roll rate against indicated airspeed at 10,000 ft for a 50 lb stick force. Label the actual wing and aileron configurations. Follow up with exact-variant flight tests as available. [NACA Report 868, Figures 46–47](https://ntrs.nasa.gov/api/citations/19930090943/downloads/19930090943.pdf)
+
 ## After v4.9 timed matchups
 
 Retrieve condition-matched straight level speed-time traces and powered-turn observations for the four benchmark aircraft. Prioritize common airspeed and altitude around the Mustang–Spitfire turn crossover, with installation, rating and weight recorded. [Timed run conditions and open checks](V49_TIMED_MATCHUPS.md).
