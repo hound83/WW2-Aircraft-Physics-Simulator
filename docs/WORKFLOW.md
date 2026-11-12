@@ -9,8 +9,21 @@ The root [AGENTS.md](../AGENTS.md) defines standing instructions, scope, scienti
 3. Implement one coherent milestone with source-matched and held-out checks for all affected aircraft. Do not silently refit independent checks or discard negative results.
 4. Run `npm run check` and inspect numerical differences; run `npm run test:browser` when applicable. A green regression suite does not prove historical accuracy.
 5. Update the relevant decisions, limitations, scorecard and next-priority records, including unfavorable findings.
-6. Commit, push and open a reviewable PR. Verify required CI and scientific milestone gates for the exact revision. Merge autonomously when all applicable gates pass and repository protections allow; otherwise leave the PR open with the specific blocker.
+6. Commit, push and open a reviewable candidate PR. Codex verifies required CI and scientific milestone gates for the exact revision and merges when the applicable gates pass. Record the specific blocker on any candidate that needs more work.
 7. Verify the merged state and accessible generated research artifact. Create a stable release/tag **only** when the stricter documented historical-validation requirements are met. Label intermediate models as research or beta, not real-world validated.
+
+## Candidate handoff
+
+Use one issue or draft PR per scoped candidate. Codex coordinates ownership and integrates accepted work under [AGENTS.md](../AGENTS.md#parallel-candidates-and-production-ownership). For an independently permissioned contributor, a fork and pull request keep the candidate in its own repository. A standalone handoff can use the same fields.
+
+| Field | Record |
+| --- | --- |
+| Scope and owner | Aircraft, metric or files, assigned agent, and any intentional independent review |
+| Baseline | Base commit, simulator and input-pack versions, and related open candidates |
+| Evidence | Source links and page/table or figure, aircraft/serial, loading, configuration, rating, original readings and units |
+| Proposed changes | Stable record IDs for corrections, new observations, or a focused patch |
+| Calculations and checks | Formulas, inputs, assumptions, uncertainty, fit/check role, reproducible commands and adverse results |
+| Handoff | Candidate branch or commit, remaining gaps and expected integration step |
 
 ## Commands
 
