@@ -1,6 +1,6 @@
 {
   "schema": "ww2-fighter-sim-inputs/v1",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "as_of": "2026-11-12",
   "scope": "Historical inputs and conditional estimates for source-case lookups and evidence graphs.",
   "originals": {
@@ -134,6 +134,18 @@
         ],
         "sha256": [
           "e61669ed39b6b6f5f0e57d5dfb77fbcf795bc07a295bc7df13dd8f8e753e5d72"
+        ]
+      },
+      {
+        "id": "ww2_flight_case_climb_2026-11-12",
+        "kind": "independent-research-pack",
+        "version": "1.0.0",
+        "original_schema": "ww2-fighter-evidence-pack/v1",
+        "files": [
+          "references/research/ww2_flight_case_climb_2026-11-12.json"
+        ],
+        "sha256": [
+          "f45954ac2b4e5ba7361fadc74d25e09b5fdbd350aff836f18d2f86eca2a3b873"
         ]
       },
       {
@@ -2697,6 +2709,611 @@
       "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-ias-to-cas"
     ]
   },
+  "climb_reference": {
+    "use": "Source-conditioned replay and data lookup. Identical reports share lineage across all transcriptions.",
+    "replay_scorecard": {
+      "path": "references/analysis/ww2_matched_climb_scorecard_2026-11-12.json",
+      "baseline_commit": "636d57c52228012fcdb932973af5636320c0dac1",
+      "qualification": "Fixed-mass diagnostic using the same reports and their published input bounds."
+    },
+    "cases": [
+      {
+        "id": "fw190a4-783-nr1-climb",
+        "aircraft": "fw190a4_783",
+        "source": {
+          "url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/fw190-783-nr1.html",
+          "locator": "Flugbericht 190/783 Nr. 1, Kurvenblatt 2",
+          "chart_url": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr1-climb.jpg",
+          "chart_sha256": "6b9510dbba2ed1d46bb5e942fd10869c8ec4921610aa1b96dbf96199604ced07",
+          "grade": "primary",
+          "method": "digitized-chart"
+        },
+        "conditions": {
+          "engine": "BMW 801 D-2/20208",
+          "intake": "long external",
+          "cooling": [
+            "open",
+            "closed"
+          ],
+          "takeoff_mass_kg": 3870,
+          "gross_mass_by_altitude": null,
+          "rating": "Combat",
+          "engine_rpm": 2400,
+          "rated_manifold_ata": 1.32,
+          "reported_manifold_drop_height_m": 6100
+        },
+        "altitude_domain_m": [
+          0,
+          10000
+        ],
+        "chart_reading_allowance": {
+          "rate_m_s": 0.35,
+          "open_time_min": 0.25
+        },
+        "reported_climb_tas": null,
+        "estimated_climb_tas": {
+          "grade": "calculated",
+          "unit": "mph",
+          "basis": "TAS",
+          "method": "Best-rate search in 1 mph steps on the bounded open-cooling scenario. ±10% is an engineering sensitivity.",
+          "rows": [
+            {
+              "altitude_m": 0,
+              "tas_mph": 151,
+              "sensitivity_mph": [
+                135.9,
+                166.1
+              ]
+            },
+            {
+              "altitude_m": 1000,
+              "tas_mph": 156,
+              "sensitivity_mph": [
+                140.4,
+                171.6
+              ]
+            },
+            {
+              "altitude_m": 2000,
+              "tas_mph": 163,
+              "sensitivity_mph": [
+                146.7,
+                179.3
+              ]
+            },
+            {
+              "altitude_m": 3000,
+              "tas_mph": 164,
+              "sensitivity_mph": [
+                147.6,
+                180.4
+              ]
+            },
+            {
+              "altitude_m": 4000,
+              "tas_mph": 172,
+              "sensitivity_mph": [
+                154.8,
+                189.2
+              ]
+            },
+            {
+              "altitude_m": 5000,
+              "tas_mph": 179,
+              "sensitivity_mph": [
+                161.1,
+                196.9
+              ]
+            },
+            {
+              "altitude_m": 6000,
+              "tas_mph": 194,
+              "sensitivity_mph": [
+                174.6,
+                213.4
+              ]
+            },
+            {
+              "altitude_m": 7000,
+              "tas_mph": 199,
+              "sensitivity_mph": [
+                179.1,
+                218.9
+              ]
+            },
+            {
+              "altitude_m": 8000,
+              "tas_mph": 204,
+              "sensitivity_mph": [
+                183.6,
+                224.4
+              ]
+            },
+            {
+              "altitude_m": 9000,
+              "tas_mph": 212,
+              "sensitivity_mph": [
+                190.8,
+                233.2
+              ]
+            },
+            {
+              "altitude_m": 10000,
+              "tas_mph": 220,
+              "sensitivity_mph": [
+                198,
+                242
+              ]
+            }
+          ]
+        },
+        "replay_summary": {
+          "open_rate_checks_fpm": {
+            "before_mae_fpm": 220.667,
+            "after_mae_fpm": 163.573
+          },
+          "open_time_from_1000_m_to_9000_m_s": {
+            "from_altitude": 8000,
+            "altitude": 9000,
+            "reported_cumulative_s": 786,
+            "before_steady_cumulative_s": 712.354,
+            "after_steady_cumulative_s": 793.538,
+            "after_tas_energy_cumulative_s": 814.979,
+            "before_cumulative_error_s": -73.646,
+            "after_cumulative_error_s": 28.979,
+            "reported_band_s": 162,
+            "before_band_error_s": -1.127,
+            "after_band_error_s": 37.15,
+            "after_50ft_minus_100ft_cumulative_s": 0.005
+          }
+        },
+        "rows": [
+          {
+            "observation_id": "ww2_flight_case_climb_2026-11-12:fw190a4-783-open-climb-sea-level:0001",
+            "altitude_m": 0,
+            "open_rate_m_s": 14.55,
+            "closed_rate_m_s": null,
+            "open_chart_time_min": null,
+            "open_elapsed_from_1000_m_s": null,
+            "existing_replay_open_rate_m_s": 14.55,
+            "role": "same-report-reserved"
+          },
+          {
+            "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0001",
+            "altitude_m": 1000,
+            "open_rate_m_s": 14.5,
+            "closed_rate_m_s": 16,
+            "open_chart_time_min": 1.1,
+            "open_elapsed_from_1000_m_s": 0,
+            "existing_replay_open_rate_m_s": null,
+            "role": "same-report-reserved"
+          },
+          {
+            "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0002",
+            "altitude_m": 2000,
+            "open_rate_m_s": 13.5,
+            "closed_rate_m_s": 15,
+            "open_chart_time_min": 2.3,
+            "open_elapsed_from_1000_m_s": 72,
+            "existing_replay_open_rate_m_s": 13.7,
+            "role": "same-report-reserved"
+          },
+          {
+            "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0003",
+            "altitude_m": 3000,
+            "open_rate_m_s": 12.2,
+            "closed_rate_m_s": 13.3,
+            "open_chart_time_min": 3.6,
+            "open_elapsed_from_1000_m_s": 150,
+            "existing_replay_open_rate_m_s": null,
+            "role": "same-report-reserved"
+          },
+          {
+            "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0004",
+            "altitude_m": 4000,
+            "open_rate_m_s": 12.1,
+            "closed_rate_m_s": 13.1,
+            "open_chart_time_min": 5,
+            "open_elapsed_from_1000_m_s": 234,
+            "existing_replay_open_rate_m_s": 12.1,
+            "role": "same-report-reserved"
+          },
+          {
+            "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0005",
+            "altitude_m": 5000,
+            "open_rate_m_s": 12.1,
+            "closed_rate_m_s": 13.1,
+            "open_chart_time_min": 6.5,
+            "open_elapsed_from_1000_m_s": 324,
+            "existing_replay_open_rate_m_s": 12.1,
+            "role": "cooling-fit-anchor"
+          },
+          {
+            "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0006",
+            "altitude_m": 6000,
+            "open_rate_m_s": 12,
+            "closed_rate_m_s": 13,
+            "open_chart_time_min": 7.9,
+            "open_elapsed_from_1000_m_s": 408,
+            "existing_replay_open_rate_m_s": 12.05,
+            "role": "same-report-reserved"
+          },
+          {
+            "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0007",
+            "altitude_m": 7000,
+            "open_rate_m_s": 9.8,
+            "closed_rate_m_s": 11.7,
+            "open_chart_time_min": 9.4,
+            "open_elapsed_from_1000_m_s": 498,
+            "existing_replay_open_rate_m_s": 9.95,
+            "role": "same-report-reserved"
+          },
+          {
+            "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0008",
+            "altitude_m": 8000,
+            "open_rate_m_s": 7.3,
+            "closed_rate_m_s": 9.1,
+            "open_chart_time_min": 11.5,
+            "open_elapsed_from_1000_m_s": 624,
+            "existing_replay_open_rate_m_s": 7.3,
+            "role": "same-report-reserved"
+          },
+          {
+            "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0009",
+            "altitude_m": 9000,
+            "open_rate_m_s": 4.8,
+            "closed_rate_m_s": 6.5,
+            "open_chart_time_min": 14.2,
+            "open_elapsed_from_1000_m_s": 786,
+            "existing_replay_open_rate_m_s": 4.8,
+            "role": "same-report-reserved"
+          },
+          {
+            "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0010",
+            "altitude_m": 10000,
+            "open_rate_m_s": 2.2,
+            "closed_rate_m_s": 4,
+            "open_chart_time_min": null,
+            "open_elapsed_from_1000_m_s": null,
+            "existing_replay_open_rate_m_s": 2.15,
+            "role": "same-report-reserved"
+          }
+        ],
+        "climb_manifold_points": [
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0001",
+            "altitude_m": 4000,
+            "level_manifold_ata": 1.32,
+            "climb_manifold_ata": 1.32,
+            "chart_read_allowance_ata": 0.025,
+            "engine_rpm": 2400
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0002",
+            "altitude_m": 5000,
+            "level_manifold_ata": 1.32,
+            "climb_manifold_ata": 1.32,
+            "chart_read_allowance_ata": 0.025,
+            "engine_rpm": 2400
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0003",
+            "altitude_m": 6000,
+            "level_manifold_ata": 1.32,
+            "climb_manifold_ata": 1.32,
+            "chart_read_allowance_ata": 0.025,
+            "engine_rpm": 2400
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0004",
+            "altitude_m": 8000,
+            "level_manifold_ata": 1.16,
+            "climb_manifold_ata": 1.045,
+            "chart_read_allowance_ata": 0.025,
+            "engine_rpm": 2400
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0005",
+            "altitude_m": 9000,
+            "level_manifold_ata": 1.01,
+            "climb_manifold_ata": 0.93,
+            "chart_read_allowance_ata": 0.025,
+            "engine_rpm": 2400
+          },
+          {
+            "observation_id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0006",
+            "altitude_m": 10000,
+            "level_manifold_ata": 0.91,
+            "climb_manifold_ata": 0.8,
+            "chart_read_allowance_ata": 0.025,
+            "engine_rpm": 2400
+          }
+        ],
+        "service_ceilings": [
+          {
+            "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-cooling-climb-ceiling:0001",
+            "cooling_flaps": "open",
+            "service_ceiling_m": 10650,
+            "manifold_drop_height_m": 6100
+          },
+          {
+            "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-cooling-climb-ceiling:0002",
+            "cooling_flaps": "closed",
+            "service_ceiling_m": 11200,
+            "manifold_drop_height_m": 6100
+          }
+        ],
+        "cooling_fit": {
+          "grade": "calculated",
+          "area_m2": 0.1712229990138041,
+          "altitude_m": 5000,
+          "modeled_fit_tas_mph": 192,
+          "open_rate_m_s": 12.1,
+          "closed_rate_m_s": 13.15,
+          "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0005",
+          "formula": "Equivalent area = (closed rate − open rate) × weight / (0.5 × ISA density × TAS³).",
+          "qualification": "The existing fit uses the alternate reading of the same graph and modeled climb TAS. The area represents aggregate installed loss.",
+          "replay": "validation/diagnostics/fw190a4.cjs"
+        },
+        "elapsed_time": {
+          "start_altitude_m": 1000,
+          "last_source_altitude_m": 9000,
+          "closed_chart_time": null,
+          "normalized_chart_allowance_s": 30,
+          "chart_id": "a4-timed-cooling-climb",
+          "calculated_open_tail": {
+            "altitude_m": 10000,
+            "elapsed_from_1000_m_s": 1086.061,
+            "range_s": [
+              1026.347,
+              1153.584
+            ],
+            "grade": "calculated",
+            "method": "integration of the source vertical-rate curve"
+          }
+        },
+        "open_research": [
+          "Actual climb TAS and mass at altitude",
+          "Installed shaft power around the blower transition",
+          "Specimen propeller blade drawing and direct useful propeller power"
+        ]
+      },
+      {
+        "id": "p38g-12687-b4-climb",
+        "aircraft": "p38g_4212687",
+        "source": {
+          "url": "https://www.wwiiaircraftperformance.com/org/p-38/p-38_files/P-38G-1_42-12687_FS-M-19-1538-A.pdf",
+          "locator": "Wright Field FS-M-19-1538-A §A and §B.4",
+          "sha256": "9e192df3f0b12e2218cdc35235e1f6210ec7c1fb136d0219e878140e9d15b9a0",
+          "grade": "primary",
+          "method": "reported-table"
+        },
+        "conditions": {
+          "engines": [
+            "Allison V-1710-51",
+            "Allison V-1710-55"
+          ],
+          "propellerDesigns": [
+            "Curtiss 88996-18",
+            "Curtiss 89303-18"
+          ],
+          "bladeAngleDegAt42In": [
+            22.7,
+            57.7
+          ],
+          "wheelsUpCgPercentMac": 30.9,
+          "fuelGallons": 180,
+          "armament": "One 20 mm cannon (50 rounds) and two .50 caliber guns (400 rounds)",
+          "radioAntenna": "Three-wire",
+          "takeoff_weight_lb": 13900,
+          "gross_weight_by_altitude": null,
+          "rating": "Wright Field B.4 Military test schedule",
+          "engine_rpm": 3000,
+          "coolant_shutters": "wide open",
+          "oil_cooler_shutters": "wide open",
+          "gear": "up",
+          "wing_flaps": "neutral",
+          "mixture": "auto-rich"
+        },
+        "altitude_domain_ft": [
+          0,
+          35000
+        ],
+        "tas_basis": "reported TAS (mph)",
+        "shaft_power_basis": "Average BHP per engine assigned from engine power curves",
+        "replay_summary": {
+          "reserved_steady_rate_mae_fpm": 173.314,
+          "time_from_sea_level_to_20000_ft_s": {
+            "from_altitude": 15000,
+            "altitude": 20000,
+            "reported_cumulative_s": 340.8,
+            "before_steady_cumulative_s": 332.986,
+            "after_steady_cumulative_s": 332.986,
+            "after_tas_energy_cumulative_s": 346.255,
+            "before_cumulative_error_s": -7.814,
+            "after_cumulative_error_s": 5.455,
+            "reported_band_s": 88.2,
+            "before_band_error_s": -1.766,
+            "after_band_error_s": 3.753,
+            "after_50ft_minus_100ft_cumulative_s": 0
+          }
+        },
+        "interpolation": "Linear between B.4 altitude nodes. Keep B.1 level points and the two ceiling rows outside the climb schedule.",
+        "elapsed_time": {
+          "start_altitude_ft": 0,
+          "units_as_reported": "min",
+          "resolution_min": 0.01,
+          "flight_test_uncertainty_s": null
+        },
+        "rows": [
+          {
+            "observation_id": "balanced-2026-11-10:BS02:0001",
+            "alt_ft": 0,
+            "roc_fpm": 3300,
+            "climb_tas_mph": 156,
+            "bhp_each": 1200,
+            "time_min": 0,
+            "mp_inhg": 44.7,
+            "elapsed_from_sea_level_s": 0,
+            "limiting_factor": null,
+            "role": "same-report-reserved"
+          },
+          {
+            "observation_id": "balanced-2026-11-10:BS02:0002",
+            "alt_ft": 6000,
+            "roc_fpm": 3660,
+            "climb_tas_mph": 171,
+            "bhp_each": 1210,
+            "time_min": 1.71,
+            "mp_inhg": 44.7,
+            "elapsed_from_sea_level_s": 102.6,
+            "limiting_factor": null,
+            "role": "same-report-reserved"
+          },
+          {
+            "observation_id": "balanced-2026-11-10:BS02:0003",
+            "alt_ft": 10000,
+            "roc_fpm": 3630,
+            "climb_tas_mph": 181,
+            "bhp_each": 1210,
+            "time_min": 2.81,
+            "mp_inhg": 44.7,
+            "elapsed_from_sea_level_s": 168.6,
+            "limiting_factor": null,
+            "role": "cooling-fit-anchor"
+          },
+          {
+            "observation_id": "balanced-2026-11-10:BS02:0004",
+            "alt_ft": 15000,
+            "roc_fpm": 3500,
+            "climb_tas_mph": 196,
+            "bhp_each": 1210,
+            "time_min": 4.21,
+            "mp_inhg": 44.7,
+            "elapsed_from_sea_level_s": 252.6,
+            "limiting_factor": null,
+            "role": "same-report-reserved"
+          },
+          {
+            "observation_id": "balanced-2026-11-10:BS02:0005",
+            "alt_ft": 20000,
+            "roc_fpm": 3280,
+            "climb_tas_mph": 219,
+            "bhp_each": 1195,
+            "time_min": 5.68,
+            "mp_inhg": 44.7,
+            "elapsed_from_sea_level_s": 340.8,
+            "limiting_factor": "Carburetor air temperature",
+            "role": "same-report-reserved"
+          },
+          {
+            "observation_id": "balanced-2026-11-10:BS02:0006",
+            "alt_ft": 25000,
+            "roc_fpm": 2680,
+            "climb_tas_mph": 230,
+            "bhp_each": 1090,
+            "time_min": 7.36,
+            "mp_inhg": 40.6,
+            "elapsed_from_sea_level_s": 441.6,
+            "limiting_factor": "Carburetor air temperature",
+            "role": "same-report-reserved"
+          },
+          {
+            "observation_id": "balanced-2026-11-10:BS02:0007",
+            "alt_ft": 30000,
+            "roc_fpm": 2100,
+            "climb_tas_mph": 246,
+            "bhp_each": 985,
+            "time_min": 9.46,
+            "mp_inhg": 36,
+            "elapsed_from_sea_level_s": 567.6,
+            "limiting_factor": "Carburetor air temperature and turbo RPM",
+            "role": "same-report-reserved"
+          },
+          {
+            "observation_id": "ww2_flight_case_climb_2026-11-12:p38g-12687-b4-35000ft:0001",
+            "alt_ft": 35000,
+            "roc_fpm": 1200,
+            "climb_tas_mph": 264,
+            "bhp_each": 690,
+            "time_min": 12.48,
+            "mp_inhg": 27.2,
+            "elapsed_from_sea_level_s": 748.8,
+            "limiting_factor": "Turbo RPM",
+            "role": "same-report-reserved"
+          }
+        ],
+        "ceiling_rows": [
+          {
+            "observation_id": "ww2_flight_case_climb_2026-11-12:p38g-12687-b4-ceilings:0001",
+            "ceiling": "service",
+            "alt_ft": 35000,
+            "roc_fpm": 100,
+            "climb_tas_mph": 280,
+            "time_min": 22.04
+          },
+          {
+            "observation_id": "ww2_flight_case_climb_2026-11-12:p38g-12687-b4-ceilings:0002",
+            "ceiling": "absolute",
+            "alt_ft": 39700,
+            "roc_fpm": 0,
+            "climb_tas_mph": null,
+            "time_min": null
+          }
+        ],
+        "separate_b1_level_observation_ids": [
+          "balanced-2026-11-10:BS01:0001",
+          "balanced-2026-11-10:BS01:0002",
+          "balanced-2026-11-10:BS01:0003",
+          "balanced-2026-11-10:BS01:0004",
+          "balanced-2026-11-10:BS01:0005",
+          "balanced-2026-11-10:BS01:0006"
+        ],
+        "open_research": [
+          "Instantaneous climb loading and fuel burn",
+          "Direct shaft and propulsive-power measurements",
+          "Independent matched B.4 climb replay"
+        ]
+      }
+    ],
+    "observation_ids": [
+      "ww2_flight_case_climb_2026-11-12:fw190a4-783-open-climb-sea-level:0001",
+      "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0001",
+      "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0002",
+      "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0003",
+      "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0004",
+      "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0005",
+      "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0006",
+      "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0007",
+      "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0008",
+      "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0009",
+      "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0010",
+      "balanced-2026-11-10:BS02:0001",
+      "balanced-2026-11-10:BS02:0002",
+      "balanced-2026-11-10:BS02:0003",
+      "balanced-2026-11-10:BS02:0004",
+      "balanced-2026-11-10:BS02:0005",
+      "balanced-2026-11-10:BS02:0006",
+      "balanced-2026-11-10:BS02:0007",
+      "ww2_flight_case_climb_2026-11-12:p38g-12687-b4-35000ft:0001",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0001",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0002",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0003",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0004",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0005",
+      "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0006",
+      "ww2_german_fighter_archive_2026-11-11:a4-783-cooling-climb-ceiling:0001",
+      "ww2_german_fighter_archive_2026-11-11:a4-783-cooling-climb-ceiling:0002",
+      "ww2_flight_case_climb_2026-11-12:p38g-12687-b4-ceilings:0001",
+      "ww2_flight_case_climb_2026-11-12:p38g-12687-b4-ceilings:0002",
+      "balanced-2026-11-10:BS01:0001",
+      "balanced-2026-11-10:BS01:0002",
+      "balanced-2026-11-10:BS01:0003",
+      "balanced-2026-11-10:BS01:0004",
+      "balanced-2026-11-10:BS01:0005",
+      "balanced-2026-11-10:BS01:0006"
+    ]
+  },
   "tolerances": {
     "stall_speed": {
       "unit": "km/h CAS or EAS",
@@ -4832,6 +5449,19 @@
     "archival-2026-11-10:S43:0005": {"source":"archival-2026-11-10:R54","locator":"USAAF FS-M-19-1578-A original p1; confirmed in 2026-11-06 archive audit"},
     "archival-2026-11-10:S43:0006": {"source":"archival-2026-11-10:R54","locator":"USAAF FS-M-19-1578-A original p1; confirmed in 2026-11-06 archive audit"},
     "archival-2026-11-10:S43:0007": {"source":"archival-2026-11-10:R54","locator":"USAAF FS-M-19-1578-A original p1; confirmed in 2026-11-06 archive audit"},
+    "balanced-2026-11-10:BS01:0001": {"source":"balanced-2026-11-10:B01","locator":"FS-M-19-1538-A speed table"},
+    "balanced-2026-11-10:BS01:0002": {"source":"balanced-2026-11-10:B01","locator":"FS-M-19-1538-A speed table"},
+    "balanced-2026-11-10:BS01:0003": {"source":"balanced-2026-11-10:B01","locator":"FS-M-19-1538-A speed table"},
+    "balanced-2026-11-10:BS01:0004": {"source":"balanced-2026-11-10:B01","locator":"FS-M-19-1538-A speed table"},
+    "balanced-2026-11-10:BS01:0005": {"source":"balanced-2026-11-10:B01","locator":"FS-M-19-1538-A speed table"},
+    "balanced-2026-11-10:BS01:0006": {"source":"balanced-2026-11-10:B01","locator":"FS-M-19-1538-A speed table"},
+    "balanced-2026-11-10:BS02:0001": {"source":"balanced-2026-11-10:B01","locator":"FS-M-19-1538-A climb table"},
+    "balanced-2026-11-10:BS02:0002": {"source":"balanced-2026-11-10:B01","locator":"FS-M-19-1538-A climb table"},
+    "balanced-2026-11-10:BS02:0003": {"source":"balanced-2026-11-10:B01","locator":"FS-M-19-1538-A climb table"},
+    "balanced-2026-11-10:BS02:0004": {"source":"balanced-2026-11-10:B01","locator":"FS-M-19-1538-A climb table"},
+    "balanced-2026-11-10:BS02:0005": {"source":"balanced-2026-11-10:B01","locator":"FS-M-19-1538-A climb table"},
+    "balanced-2026-11-10:BS02:0006": {"source":"balanced-2026-11-10:B01","locator":"FS-M-19-1538-A climb table"},
+    "balanced-2026-11-10:BS02:0007": {"source":"balanced-2026-11-10:B01","locator":"FS-M-19-1538-A climb table"},
     "balanced-2026-11-10:BS07:0001": {"source":"balanced-2026-11-10:B04","locator":"PHQ-M-19-1417-A climb table"},
     "balanced-2026-11-10:BS07:0002": {"source":"balanced-2026-11-10:B04","locator":"PHQ-M-19-1417-A climb table"},
     "balanced-2026-11-10:BS07:0003": {"source":"balanced-2026-11-10:B04","locator":"PHQ-M-19-1417-A climb table"},
@@ -5183,6 +5813,12 @@
     "ww2_fleet_stall_2026-11-12:p47d30-landing-wind-up-fig59": {"source":"ww2_fleet_stall_2026-11-12:P47D30-L8A06","locator":"Fig. 59 (PDF p. 82), near peak normal acceleration and onset of sustained unloading at 10.5–11.3 s"},
     "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-clean": {"source":"ww2_fleet_stall_2026-11-12:SPIT-IX-AP1565J-2","locator":"Part II §40, printed p. 17"},
     "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-landing": {"source":"ww2_fleet_stall_2026-11-12:SPIT-IX-AP1565J-2","locator":"Part II §40, printed p. 17"},
+    "ww2_flight_case_climb_2026-11-12:fw190a4-783-open-climb-sea-level:0001": {"source":"ww2_flight_case_climb_2026-11-12:FW190-783-GRAPH2","locator":"Kurvenblatt 2, open-flap rate at sea level"},
+    "ww2_flight_case_climb_2026-11-12:p38g-12687-b4-35000ft:0001": {"source":"ww2_flight_case_climb_2026-11-12:P38G-12687-B4","locator":"B.4 35,000-ft climb row"},
+    "ww2_flight_case_climb_2026-11-12:p38g-12687-b4-ceilings:0001": {"source":"ww2_flight_case_climb_2026-11-12:P38G-12687-B4","locator":"B.4 S/C and A/C rows"},
+    "ww2_flight_case_climb_2026-11-12:p38g-12687-b4-ceilings:0002": {"source":"ww2_flight_case_climb_2026-11-12:P38G-12687-B4","locator":"B.4 S/C and A/C rows"},
+    "ww2_german_fighter_archive_2026-11-11:a4-783-cooling-climb-ceiling:0001": {"source":"ww2_german_fighter_archive_2026-11-11:A4-783-FW-NR1","locator":"Nr. 1 Blatt 3, paragraph 3"},
+    "ww2_german_fighter_archive_2026-11-11:a4-783-cooling-climb-ceiling:0002": {"source":"ww2_german_fighter_archive_2026-11-11:A4-783-FW-NR1","locator":"Nr. 1 Blatt 3, paragraph 3"},
     "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0001": {"source":"ww2_german_fighter_archive_2026-11-11:A4-783-FW-NR1","locator":"Nr. 1 Kurvenblatt 2, original PDF p. 5"},
     "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0002": {"source":"ww2_german_fighter_archive_2026-11-11:A4-783-FW-NR1","locator":"Nr. 1 Kurvenblatt 2, original PDF p. 5"},
     "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0003": {"source":"ww2_german_fighter_archive_2026-11-11:A4-783-FW-NR1","locator":"Nr. 1 Kurvenblatt 2, original PDF p. 5"},
@@ -5290,6 +5926,7 @@
     "archival-2026-11-10:R33": {"name":"Messerschmitt 109 11 L 42, 4 standard vs 4 smoothed airframes","url":"https://www.wwiiaircraftperformance.org/me109/me109g-10911l42.html","sha256":null},
     "archival-2026-11-10:R48": {"name":"AAF F-IM-1119C-NDT-2 interim handling/stall test","url":"https://www.wwiiaircraftperformance.org/japan/T-2_Report_on_Frank_I_Ki-84.pdf","sha256":null},
     "archival-2026-11-10:R54": {"name":"USAAF FS-M-19-1578-A seven matched belly brace-on/off speed pairs","url":"https://www.wwiiaircraftperformance.com/org/p-40/p-40_files/P-40F_41-13635_FS-M-19-1578-A.pdf","sha256":null},
+    "balanced-2026-11-10:B01": {"name":"USAAF Wright Field FS-M-19-1538-A, 1943-02-10","url":"https://www.wwiiaircraftperformance.com/org/p-38/p-38_files/P-38G-1_42-12687_FS-M-19-1538-A.pdf","locator":"All chart BHP values are per ENGINE, not total twin-engine power; radiator doors change between speed and climb. One original report despite two curve groups.","sha256":null},
     "balanced-2026-11-10:B04": {"name":"USAAF PHQ-M-19-1417-A, 1942-06-18","url":"https://wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf","locator":"Military 2700 rpm and rated 2550 rpm climb portions are distinct power conditions, NOT one homogeneous continuous climb.","sha256":null},
     "stall_four_track_followup_2026-11-10:f6f3-04776-wr-l717": {"name":"NACA MR L5B13B / WR L-717, Flight Measurements of the Flying Qualities of an F6F-3 Airplane III: Stalling Characteristics (Reeder, February 1945)","url":"https://ntrs.nasa.gov/api/citations/19930092602/downloads/19930092602.pdf","locator":"Conclusions and figures 4-13, flight-derived peak normal-force coefficient CN; gross-weight correction for fuel consumed","sha256":null},
     "stall_global_2026-11-10:UK-BFG2-209": {"name":"Captured Me109 G-2 trop technical trials","url":"https://www.wwiiaircraftperformance.org/me109/me-109g2-trop.html","sha256":null},
@@ -5329,6 +5966,8 @@
     "ww2_fleet_stall_2026-11-12:P47B-TO01-65BC-1": {"name":"USAAF T.O. 01-65BC-1 preliminary pilot handbook, 25 April 1942","url":"https://www.si.edu/media/NASM/NASM-Manual-000027958.pdf","locator":"Section IV §1(e), printed p. 16 (PDF p. 18)","sha256":"451fd7aed91419dabc1bf78c872993d0ad5c9ed0d4f8352c8ddb902ffbc1c36b"},
     "ww2_fleet_stall_2026-11-12:P47D30-L8A06": {"name":"NACA RM L8A06, longitudinal stability and stalling characteristics, February 1948","url":"https://ntrs.nasa.gov/api/citations/20090022749/downloads/20090022749.pdf","locator":"Printed pp. 2–3 and 8–10, Figures 47–59","sha256":"95c68467065e3a68394581c7b8c20b4e0578224bde9710e3bde05b6c89961075"},
     "ww2_fleet_stall_2026-11-12:SPIT-IX-AP1565J-2": {"name":"Air Ministry A.P. 1565J—P.N., second edition, August 1943, with A.L. 1","url":"https://www.docdroid.com/file/download/HRosRhd/supermarine-spitfire-fix-pilots-notes-pdf.pdf","locator":"Part I §1 (LF Mk IX with Merlin 66), Part II §40 Stalling, printed p. 17","sha256":null},
+    "ww2_flight_case_climb_2026-11-12:FW190-783-GRAPH2": {"name":"Focke-Wulf Flugbericht Fw 190/783 Nr. 1, 1 March 1943","url":"https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr1-climb.jpg","locator":"Kurvenblatt 2, original PDF p. 5","sha256":"6b9510dbba2ed1d46bb5e942fd10869c8ec4921610aa1b96dbf96199604ced07"},
+    "ww2_flight_case_climb_2026-11-12:P38G-12687-B4": {"name":"Wright Field FS-M-19-1538-A, 10 February 1943","url":"https://www.wwiiaircraftperformance.com/org/p-38/p-38_files/P-38G-1_42-12687_FS-M-19-1538-A.pdf","locator":"B.4 climb at 3000 rpm","sha256":"9e192df3f0b12e2218cdc35235e1f6210ec7c1fb136d0219e878140e9d15b9a0"},
     "ww2_german_fighter_archive_2026-11-11:A4-783-FW-NR1": {"name":"Focke-Wulf Flugbericht Fw 190/783 Nr. 1, 1 March 1943","url":"https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr1.pdf","locator":"Original PDF, Blatt 2–3 and Kurvenblatt 2 (PDF p. 5)","sha256":"466386bb734b8f0860cc6721080c944f2af85470e22af891247d4b4435775256"},
     "ww2_german_fighter_archive_2026-11-11:D9-210002-FW-NR1": {"name":"Focke-Wulf Flugbericht Fw 190 D-9/210002 Nr. 1, 7 October 1944","url":"https://www.wwiiaircraftperformance.com/org/fw190/d9/d9_files/Fw_190_D-9_210002_FB_Nr1.pdf","locator":"PDF pp. 2–3 and 5–7, original charts 1–3","sha256":"2eb69cec374ec47161cd36401887d6491a3f1b5c30e27475444dd55a83e8ef36"},
     "ww2_german_fighter_archive_2026-11-11:F4-MTT-1941-FLOWN": {"name":"Messerschmitt Flugzeugdatenblatt, Leistungen erflogen, Augsburg, 29 November 1941","url":"https://web.archive.org/web/20141110152256im_/http://www.beim-zeugmeister.de/zeugmeister/uploads/pics/_LW_A0001_B015.jpg","locator":"Single original sheet, mass block, Steigzeit and Landegeschwindigkeit","sha256":"853c099c75abd773e00979bd5f8a7a93e628e79f1ac023cbb8e843c0d50652db"},

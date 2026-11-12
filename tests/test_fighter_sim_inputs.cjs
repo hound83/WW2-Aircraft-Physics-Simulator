@@ -25,7 +25,27 @@ for (const [id, ref] of Object.entries(pack.observations)) {
 }
 
 const byId = id => pack.cases.find(row => row.id === id);
-assert.equal(pack.version, '1.6.0');
+assert.equal(pack.version, '1.7.0');
+const [fwClimb, p38Climb] = pack.climb_reference.cases;
+assert.equal(fwClimb.reported_climb_tas, null);
+assert.equal(fwClimb.estimated_climb_tas.grade, 'calculated');
+assert.ok(fwClimb.estimated_climb_tas.rows.every(row =>
+  row.sensitivity_mph[0] < row.tas_mph && row.sensitivity_mph[1] > row.tas_mph));
+assert.equal(fwClimb.replay_summary.open_rate_checks_fpm.before_mae_fpm, 220.667);
+assert.equal(fwClimb.rows.filter(row => row.closed_rate_m_s !== null).length, 10);
+assert.equal(fwClimb.rows.find(row => row.altitude_m === 9000).open_elapsed_from_1000_m_s, 786);
+assert.equal(fwClimb.rows.at(-1).open_elapsed_from_1000_m_s, null);
+assert.equal(fwClimb.elapsed_time.calculated_open_tail.grade, 'calculated');
+assert.equal(fwClimb.cooling_fit.altitude_m, 5000);
+assert.deepEqual(p38Climb.rows.find(row => row.alt_ft === 20000),
+  { observation_id: 'balanced-2026-11-10:BS02:0005', alt_ft: 20000, roc_fpm: 3280, climb_tas_mph: 219,
+    bhp_each: 1195, time_min: 5.68, mp_inhg: 44.7, elapsed_from_sea_level_s: 340.8,
+    limiting_factor: 'Carburetor air temperature', role: 'same-report-reserved' });
+assert.equal(p38Climb.rows.at(-1).roc_fpm, 1200);
+assert.equal(p38Climb.replay_summary.time_from_sea_level_to_20000_ft_s.reported_cumulative_s, 340.8);
+assert.equal(p38Climb.ceiling_rows[0].roc_fpm, 100);
+assert.ok(p38Climb.separate_b1_level_observation_ids.every(id => !p38Climb.rows.some(row => row.observation_id === id)));
+assert.ok(pack.climb_reference.observation_ids.every(id => pack.observations[id]));
 const stall = pack.stall_reference;
 assert.deepEqual(stall.variants.map(row => row.id), baseline.variants.map(row => row.id));
 assert.deepEqual(stall.clean_stall_selection_order, [

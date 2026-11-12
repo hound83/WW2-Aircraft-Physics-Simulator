@@ -8,6 +8,7 @@ const { buildEvidence } = require('./derive-fighter-evidence.cjs');
 const { tolerances, resolveCase } = require('./fighter-value-selection.cjs');
 const { engineReference } = require('./fighter-engine-reference.cjs');
 const { selectionOrder, selectCleanStall } = require('./fighter-stall-reference.cjs');
+const { climbReference } = require('./fighter-climb-reference.cjs');
 const { benchmarks, legacyCredits, reviewedCases, rejectedPairs } = require('./fighter-sim-input-review.cjs');
 
 const root = path.resolve(__dirname, '..');
@@ -185,12 +186,13 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
   const propeller = read(propellerPath);
   const fleet = JSON.parse(propeller).fleet_reference;
   const charts = [...evidence.charts, fwIntakeChart(fleet.fw190a4)];
+  const climb = climbReference(observations, charts);
   const fleetObservationIds = catalog.observations.filter(row => row.pack_id === 'ww2_fleet_propeller_2026-11-12').map(row => row.id);
   const originalIds = new Set([...Object.keys(evidence.observations), ...engine.observation_ids, ...fleetObservationIds]);
   const cases = reviewedCases(observations, evidence).map(item => ({ ...item, ...resolveCase(item) }));
   for (const id of [...cases.flatMap(item => item.candidates.flatMap(row => row.observation_ids)),
     ...rejectedPairs.flatMap(row => row.observation_ids), ...legacyCredits.map(row => row.observation),
-    ...stall.observations.map(row => row.id),
+    ...stall.observations.map(row => row.id), ...climb.observation_ids,
     ...stall.variants.flatMap(row => [...row.prior_ids, ...row.clean_stall.observation_ids])]) {
     if (!observations.has(id)) throw Error('Unresolved original observation ' + id);
     originalIds.add(id);
@@ -207,7 +209,7 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
   const packs = new Set([...originalIds].map(id => observations.get(id).pack_id));
   const baseline = JSON.parse(read(baselinePath));
   return {
-    schema: 'ww2-fighter-sim-inputs/v1', version: '1.6.0', as_of: '2026-11-12',
+    schema: 'ww2-fighter-sim-inputs/v1', version: '1.7.0', as_of: '2026-11-12',
     scope: 'Historical inputs and conditional estimates for source-case lookups and evidence graphs.',
     originals: {
       catalog: 'research-catalog.json',
@@ -222,6 +224,7 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
     },
     engine_reference: engine,
     stall_reference: stall,
+    climb_reference: climb,
     tolerances, coverage: scoreCoverage(baseline, evidence, cases),
     cases, rejected_pairs: rejectedPairs,
     charts: charts.map(chart => ({

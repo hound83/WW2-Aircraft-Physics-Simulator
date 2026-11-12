@@ -1,4 +1,4 @@
-# Fighter sim inputs v1.6.0
+# Fighter sim inputs v1.7.0
 
 The data pack covers 13 variants and 24 evidence plots. It carries preferred readings and uncertainty for reviewed cases, pointers to the original observations, and the support level of each curve segment. The simulator can use it to look up a specific test case and draw the evidence behind it. [Versioned JSON](../../references/analysis/fighter-sim-inputs-v1.json) · [Underlying calculations and source checks](WW2_FIGHTER_CALCULATED_EVIDENCE_2026-11-11.md)
 
@@ -11,6 +11,8 @@ v1.4 adds source-checked power anchors, installation-specific speed and boost, a
 v1.5 adds the 13-aircraft `fleet_reference` in the propeller companion, 126 original-source records and the paired Fw 190 A-4 intake plot. The coverage and GOLD delta from v1.4 is zero. [Fleet inputs and original report index](WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md)
 
 v1.6.0 exports a clean-stall reference for each of the 13 variants in `stall_reference.variants[].clean_stall`. It selects source-reported CAS or EAS, source-indicated speed, a documented calculation, or an empty entry flagged `emergency research needed`. The section retains the 37 catalog additions and P-38G calibration references. Reviewed benchmark cases and evidence coverage continue to use the criteria below. [Fleet stall evidence and data contract](WW2_FLEET_STALL_INPUTS_2026-11-12.md)
+
+v1.7.0 adds `climb_reference.cases` with condition-matched report rows, timing, original IDs, the explicitly calculated Fw 190 TAS estimate and links to the frozen replay. The fleet weights and GOLD criteria use the same coverage rubric. [Matched climb cases](WW2_MATCHED_CLIMB_INPUTS_2026-11-12.md)
 
 ## Coverage by aircraft
 
