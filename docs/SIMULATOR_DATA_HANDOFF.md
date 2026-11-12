@@ -2,6 +2,8 @@
 
 **Fighter Sim Inputs v1.5.0**, dated **12 November 2026**, is the current pack. It covers 13 aircraft variants. The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 
+[Data milestones and original-source research priorities](research/WW2_FIGHTER_DATA_ROADMAP.md)
+
 | File in the build | Use |
 | --- | --- |
 | `dist/fighter-sim-inputs.json` | Reviewed cases, preferred values, original observation IDs, GOLD and GOLD* agreement, and curve styles and bounds |
