@@ -1,0 +1,109 @@
+{
+  "schema": "ww2-fighter-evidence-pack/v1",
+  "pack_version": "1.0.0",
+  "as_of": "2026-11-12",
+  "scope": "Supplemental observations for two matched climb cases. Other rows in the same reports retain their existing catalog IDs.",
+  "sources": [
+    {
+      "id": "FW190-783-GRAPH2",
+      "aircraft": "Fw 190 A-4 WNr 783",
+      "report": "Focke-Wulf Flugbericht Fw 190/783 Nr. 1, 1 March 1943",
+      "source": "https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr1-climb.jpg",
+      "location": "Kurvenblatt 2, original PDF p. 5",
+      "sha256": "6b9510dbba2ed1d46bb5e942fd10869c8ec4921610aa1b96dbf96199604ced07",
+      "notes": "Same flight report and graph as ww2_german_fighter_archive_2026-11-11:A4-783-FW-NR1. Sea-level read from references/fw190a4-783.json."
+    },
+    {
+      "id": "P38G-12687-B4",
+      "aircraft": "P-38G-1 42-12687",
+      "report": "Wright Field FS-M-19-1538-A, 10 February 1943",
+      "source": "https://www.wwiiaircraftperformance.com/org/p-38/p-38_files/P-38G-1_42-12687_FS-M-19-1538-A.pdf",
+      "location": "B.4 climb at 3000 rpm",
+      "sha256": "9e192df3f0b12e2218cdc35235e1f6210ec7c1fb136d0219e878140e9d15b9a0",
+      "notes": "Same report as balanced-2026-11-10:B01. BHP was assigned from power curves."
+    }
+  ],
+  "series": [
+    {
+      "id": "fw190a4-783-open-climb-sea-level",
+      "source_id": "FW190-783-GRAPH2",
+      "aircraft": "Fw 190 A-4 WNr 783",
+      "quantity": "climb_performance_by_cooling_configuration",
+      "source_class": "digitized-original-flight-chart",
+      "source_location": "Kurvenblatt 2, open-flap rate at sea level",
+      "conditions": "Long exterior intake, open cooling flaps, 3870 kg takeoff, BMW 801 D-2 at Combat 2400 rpm. Visual reading allowance 0.35 m/s.",
+      "speed_basis": "unestablished",
+      "columns": [
+        "barometric_altitude_m",
+        "open_roc_mps_approx"
+      ],
+      "rows": [
+        [
+          0,
+          14.55
+        ]
+      ]
+    },
+    {
+      "id": "p38g-12687-b4-35000ft",
+      "source_id": "P38G-12687-B4",
+      "aircraft": "P-38G-1 42-12687",
+      "quantity": "climb_rate",
+      "source_class": "original-report-table",
+      "source_location": "B.4 35,000-ft climb row",
+      "conditions": "Coolant and oil shutters wide open, gear up, wing flaps neutral, auto-rich, 3000 rpm, 13,900 lb takeoff. Turbo RPM limiting.",
+      "speed_basis": "TAS",
+      "columns": [
+        "alt_ft",
+        "roc_fpm",
+        "climb_tas_mph",
+        "bhp_each",
+        "time_min",
+        "mp_inhg"
+      ],
+      "rows": [
+        [
+          35000,
+          1200,
+          264,
+          690,
+          12.48,
+          27.2
+        ]
+      ]
+    },
+    {
+      "id": "p38g-12687-b4-ceilings",
+      "source_id": "P38G-12687-B4",
+      "aircraft": "P-38G-1 42-12687",
+      "quantity": "climb_ceiling",
+      "source_class": "original-report-table",
+      "source_location": "B.4 S/C and A/C rows",
+      "conditions": "Separate ceiling rows. The service-ceiling row shares the nominal 35,000-ft altitude with a different TAS, vertical rate and elapsed time. BHP is absent.",
+      "speed_basis": "TAS",
+      "columns": [
+        "ceiling",
+        "alt_ft",
+        "roc_fpm",
+        "climb_tas_mph",
+        "time_min"
+      ],
+      "rows": [
+        [
+          "service",
+          35000,
+          100,
+          280,
+          22.04
+        ],
+        [
+          "absolute",
+          39700,
+          0,
+          null,
+          null
+        ]
+      ]
+    }
+  ]
+}

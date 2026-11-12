@@ -1,0 +1,916 @@
+{
+  "schema": "ww2-matched-climb-input-scorecard/v1",
+  "input_pack_version": "1.7.0",
+  "baseline_commit": "636d57c52228012fcdb932973af5636320c0dac1",
+  "scope": "Fixed takeoff mass, ISA and source-conditioned power. The Fw 190 control omits the open-cooling area to reproduce the frozen baseline. Error is modeled minus reported. The timing comparison shares report lineage with the fitted input. No independent timing validation.",
+  "integration": "100-ft midpoint specific excess power. After time uses Δt = (Δh + Δ(TAS²/2g)) / Ps; 50-ft repeat. Fixed-mass diagnosis excludes fuel burn and rating-duration effects.",
+  "fw190": {
+    "case_id": "fw190a4-783-nr1-climb",
+    "estimated_tas_basis": "Best-rate search in 1 mph steps on the bounded open-cooling scenario. ±10% is an engineering sensitivity.",
+    "replay_weight_lb": 8531.89,
+    "operating_phase": "normal",
+    "rated_manifold_ata": 1.32,
+    "cooling_area_m2": 0.1712229990138041,
+    "rate_rows": [
+      {
+        "altitude_m": 0,
+        "observation_id": "ww2_flight_case_climb_2026-11-12:fw190a4-783-open-climb-sea-level:0001",
+        "role": "same-report-reserved",
+        "graph_open_rate_m_s": 14.55,
+        "graph_closed_rate_m_s": null,
+        "replay_source_open_fpm": 2864.173,
+        "before_tas_mph_estimate": 161,
+        "after_tas_mph_estimate": 151,
+        "tas_sensitivity_mph": [
+          135.9,
+          166.1
+        ],
+        "after_rate_fpm_at_tas_bounds": [
+          3287.484,
+          3286.866
+        ],
+        "before_open_error_fpm": 648.755,
+        "after_open_error_fpm": 465.093,
+        "observed_paired_penalty_fpm": null,
+        "modeled_paired_penalty_fpm": 167.318,
+        "open": {
+          "shaft_hp_total": 1499.207,
+          "useful_propeller_hp_total": 1200.817,
+          "drag_hp_total": 340.061,
+          "excess_hp_total": 860.756,
+          "modeled_propulsive_fraction": 0.801
+        },
+        "closed": {
+          "shaft_hp_total": 1499.207,
+          "useful_propeller_hp_total": 1200.817,
+          "drag_hp_total": 296.802,
+          "excess_hp_total": 904.014,
+          "modeled_propulsive_fraction": 0.801
+        }
+      },
+      {
+        "altitude_m": 1000,
+        "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0001",
+        "role": "same-report-reserved",
+        "graph_open_rate_m_s": 14.5,
+        "graph_closed_rate_m_s": 16,
+        "replay_source_open_fpm": 2854.331,
+        "before_tas_mph_estimate": 168,
+        "after_tas_mph_estimate": 156,
+        "tas_sensitivity_mph": [
+          140.4,
+          171.6
+        ],
+        "after_rate_fpm_at_tas_bounds": [
+          3238.016,
+          3246.07
+        ],
+        "before_open_error_fpm": 616.873,
+        "after_open_error_fpm": 430.264,
+        "observed_paired_penalty_fpm": 295.276,
+        "modeled_paired_penalty_fpm": 167.423,
+        "open": {
+          "shaft_hp_total": 1499.207,
+          "useful_propeller_hp_total": 1200.884,
+          "drag_hp_total": 351.678,
+          "excess_hp_total": 849.206,
+          "modeled_propulsive_fraction": 0.801
+        },
+        "closed": {
+          "shaft_hp_total": 1499.207,
+          "useful_propeller_hp_total": 1200.884,
+          "drag_hp_total": 308.393,
+          "excess_hp_total": 892.492,
+          "modeled_propulsive_fraction": 0.801
+        }
+      },
+      {
+        "altitude_m": 2000,
+        "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0002",
+        "role": "same-report-reserved",
+        "graph_open_rate_m_s": 13.5,
+        "graph_closed_rate_m_s": 15,
+        "replay_source_open_fpm": 2696.85,
+        "before_tas_mph_estimate": 176,
+        "after_tas_mph_estimate": 163,
+        "tas_sensitivity_mph": [
+          146.7,
+          179.3
+        ],
+        "after_rate_fpm_at_tas_bounds": [
+          2758.679,
+          2764.397
+        ],
+        "before_open_error_fpm": 298.674,
+        "after_open_error_fpm": 104.18,
+        "observed_paired_penalty_fpm": 295.276,
+        "modeled_paired_penalty_fpm": 172.921,
+        "open": {
+          "shaft_hp_total": 1346.77,
+          "useful_propeller_hp_total": 1091.871,
+          "drag_hp_total": 367.687,
+          "excess_hp_total": 724.184,
+          "modeled_propulsive_fraction": 0.811
+        },
+        "closed": {
+          "shaft_hp_total": 1346.77,
+          "useful_propeller_hp_total": 1091.871,
+          "drag_hp_total": 322.979,
+          "excess_hp_total": 768.892,
+          "modeled_propulsive_fraction": 0.811
+        }
+      },
+      {
+        "altitude_m": 3000,
+        "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0003",
+        "role": "same-report-reserved",
+        "graph_open_rate_m_s": 12.2,
+        "graph_closed_rate_m_s": 13.3,
+        "replay_source_open_fpm": 2401.575,
+        "before_tas_mph_estimate": 176,
+        "after_tas_mph_estimate": 164,
+        "tas_sensitivity_mph": [
+          147.6,
+          180.4
+        ],
+        "after_rate_fpm_at_tas_bounds": [
+          2577.207,
+          2584.825
+        ],
+        "before_open_error_fpm": 397.177,
+        "after_open_error_fpm": 219.853,
+        "observed_paired_penalty_fpm": 216.535,
+        "modeled_paired_penalty_fpm": 159.085,
+        "open": {
+          "shaft_hp_total": 1301.942,
+          "useful_propeller_hp_total": 1051.141,
+          "drag_hp_total": 373.392,
+          "excess_hp_total": 677.749,
+          "modeled_propulsive_fraction": 0.807
+        },
+        "closed": {
+          "shaft_hp_total": 1301.942,
+          "useful_propeller_hp_total": 1051.141,
+          "drag_hp_total": 332.262,
+          "excess_hp_total": 718.88,
+          "modeled_propulsive_fraction": 0.807
+        }
+      },
+      {
+        "altitude_m": 4000,
+        "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0004",
+        "role": "same-report-reserved",
+        "graph_open_rate_m_s": 12.1,
+        "graph_closed_rate_m_s": 13.1,
+        "replay_source_open_fpm": 2381.89,
+        "before_tas_mph_estimate": 184,
+        "after_tas_mph_estimate": 172,
+        "tas_sensitivity_mph": [
+          154.8,
+          189.2
+        ],
+        "after_rate_fpm_at_tas_bounds": [
+          2521.415,
+          2519.933
+        ],
+        "before_open_error_fpm": 361.517,
+        "after_open_error_fpm": 180.29,
+        "observed_paired_penalty_fpm": 196.85,
+        "modeled_paired_penalty_fpm": 165.354,
+        "open": {
+          "shaft_hp_total": 1301.942,
+          "useful_propeller_hp_total": 1054.573,
+          "drag_hp_total": 392.142,
+          "excess_hp_total": 662.431,
+          "modeled_propulsive_fraction": 0.81
+        },
+        "closed": {
+          "shaft_hp_total": 1301.942,
+          "useful_propeller_hp_total": 1054.573,
+          "drag_hp_total": 349.391,
+          "excess_hp_total": 705.182,
+          "modeled_propulsive_fraction": 0.81
+        }
+      },
+      {
+        "altitude_m": 5000,
+        "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0005",
+        "role": "cooling-fit-anchor",
+        "graph_open_rate_m_s": 12.1,
+        "graph_closed_rate_m_s": 13.1,
+        "replay_source_open_fpm": 2381.89,
+        "before_tas_mph_estimate": 192,
+        "after_tas_mph_estimate": 179,
+        "tas_sensitivity_mph": [
+          161.1,
+          196.9
+        ],
+        "after_rate_fpm_at_tas_bounds": [
+          2452.992,
+          2457.405
+        ],
+        "before_open_error_fpm": 301.123,
+        "after_open_error_fpm": 115.635,
+        "observed_paired_penalty_fpm": 196.85,
+        "modeled_paired_penalty_fpm": 167.487,
+        "open": {
+          "shaft_hp_total": 1301.942,
+          "useful_propeller_hp_total": 1055.696,
+          "drag_hp_total": 409.98,
+          "excess_hp_total": 645.715,
+          "modeled_propulsive_fraction": 0.811
+        },
+        "closed": {
+          "shaft_hp_total": 1301.942,
+          "useful_propeller_hp_total": 1055.696,
+          "drag_hp_total": 366.678,
+          "excess_hp_total": 689.018,
+          "modeled_propulsive_fraction": 0.811
+        }
+      },
+      {
+        "altitude_m": 6000,
+        "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0006",
+        "role": "same-report-reserved",
+        "graph_open_rate_m_s": 12,
+        "graph_closed_rate_m_s": 13,
+        "replay_source_open_fpm": 2372.047,
+        "before_tas_mph_estimate": 210,
+        "after_tas_mph_estimate": 194,
+        "tas_sensitivity_mph": [
+          174.6,
+          213.4
+        ],
+        "after_rate_fpm_at_tas_bounds": [
+          2303.277,
+          2304.356
+        ],
+        "before_open_error_fpm": 187.521,
+        "after_open_error_fpm": -26.737,
+        "observed_paired_penalty_fpm": 196.85,
+        "modeled_paired_penalty_fpm": 191.085,
+        "open": {
+          "shaft_hp_total": 1275.988,
+          "useful_propeller_hp_total": 1047.111,
+          "drag_hp_total": 440.749,
+          "excess_hp_total": 606.362,
+          "modeled_propulsive_fraction": 0.821
+        },
+        "closed": {
+          "shaft_hp_total": 1275.988,
+          "useful_propeller_hp_total": 1047.111,
+          "drag_hp_total": 391.346,
+          "excess_hp_total": 655.765,
+          "modeled_propulsive_fraction": 0.821
+        }
+      },
+      {
+        "altitude_m": 7000,
+        "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0007",
+        "role": "same-report-reserved",
+        "graph_open_rate_m_s": 9.8,
+        "graph_closed_rate_m_s": 11.7,
+        "replay_source_open_fpm": 1958.661,
+        "before_tas_mph_estimate": 215,
+        "after_tas_mph_estimate": 199,
+        "tas_sensitivity_mph": [
+          179.1,
+          218.9
+        ],
+        "after_rate_fpm_at_tas_bounds": [
+          1757.1,
+          1756.227
+        ],
+        "before_open_error_fpm": 43.81,
+        "after_open_error_fpm": -162.152,
+        "observed_paired_penalty_fpm": 374.016,
+        "modeled_paired_penalty_fpm": 184.298,
+        "open": {
+          "shaft_hp_total": 1114.435,
+          "useful_propeller_hp_total": 921.142,
+          "drag_hp_total": 456.669,
+          "excess_hp_total": 464.473,
+          "modeled_propulsive_fraction": 0.827
+        },
+        "closed": {
+          "shaft_hp_total": 1114.435,
+          "useful_propeller_hp_total": 921.142,
+          "drag_hp_total": 409.02,
+          "excess_hp_total": 512.122,
+          "modeled_propulsive_fraction": 0.827
+        }
+      },
+      {
+        "altitude_m": 8000,
+        "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0008",
+        "role": "same-report-reserved",
+        "graph_open_rate_m_s": 7.3,
+        "graph_closed_rate_m_s": 9.1,
+        "replay_source_open_fpm": 1437.008,
+        "before_tas_mph_estimate": 222,
+        "after_tas_mph_estimate": 204,
+        "tas_sensitivity_mph": [
+          183.6,
+          224.4
+        ],
+        "after_rate_fpm_at_tas_bounds": [
+          1242.278,
+          1248.336
+        ],
+        "before_open_error_fpm": 47.204,
+        "after_open_error_fpm": -153.216,
+        "observed_paired_penalty_fpm": 354.331,
+        "modeled_paired_penalty_fpm": 176.874,
+        "open": {
+          "shaft_hp_total": 969.919,
+          "useful_propeller_hp_total": 807.029,
+          "drag_hp_total": 475.114,
+          "excess_hp_total": 331.914,
+          "modeled_propulsive_fraction": 0.832
+        },
+        "closed": {
+          "shaft_hp_total": 969.919,
+          "useful_propeller_hp_total": 807.029,
+          "drag_hp_total": 429.385,
+          "excess_hp_total": 377.644,
+          "modeled_propulsive_fraction": 0.832
+        }
+      },
+      {
+        "altitude_m": 9000,
+        "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0009",
+        "role": "same-report-reserved",
+        "graph_open_rate_m_s": 4.8,
+        "graph_closed_rate_m_s": 6.5,
+        "replay_source_open_fpm": 944.882,
+        "before_tas_mph_estimate": 230,
+        "after_tas_mph_estimate": 212,
+        "tas_sensitivity_mph": [
+          190.8,
+          233.2
+        ],
+        "after_rate_fpm_at_tas_bounds": [
+          764.619,
+          764.733
+        ],
+        "before_open_error_fpm": 55.24,
+        "after_open_error_fpm": -142.29,
+        "observed_paired_penalty_fpm": 334.646,
+        "modeled_paired_penalty_fpm": 176.276,
+        "open": {
+          "shaft_hp_total": 842.378,
+          "useful_propeller_hp_total": 706.961,
+          "drag_hp_total": 499.457,
+          "excess_hp_total": 207.504,
+          "modeled_propulsive_fraction": 0.839
+        },
+        "closed": {
+          "shaft_hp_total": 842.378,
+          "useful_propeller_hp_total": 706.961,
+          "drag_hp_total": 453.882,
+          "excess_hp_total": 253.079,
+          "modeled_propulsive_fraction": 0.839
+        }
+      },
+      {
+        "altitude_m": 10000,
+        "observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0010",
+        "role": "same-report-reserved",
+        "graph_open_rate_m_s": 2.2,
+        "graph_closed_rate_m_s": 4,
+        "replay_source_open_fpm": 423.228,
+        "before_tas_mph_estimate": 239,
+        "after_tas_mph_estimate": 220,
+        "tas_sensitivity_mph": [
+          198,
+          242
+        ],
+        "after_rate_fpm_at_tas_bounds": [
+          308.696,
+          313.353
+        ],
+        "before_open_error_fpm": 122.615,
+        "after_open_error_fpm": -74.623,
+        "observed_paired_penalty_fpm": 354.331,
+        "modeled_paired_penalty_fpm": 174.335,
+        "open": {
+          "shaft_hp_total": 728.894,
+          "useful_propeller_hp_total": 616.369,
+          "drag_hp_total": 526.24,
+          "excess_hp_total": 90.129,
+          "modeled_propulsive_fraction": 0.846
+        },
+        "closed": {
+          "shaft_hp_total": 728.894,
+          "useful_propeller_hp_total": 616.369,
+          "drag_hp_total": 481.167,
+          "excess_hp_total": 135.202,
+          "modeled_propulsive_fraction": 0.846
+        }
+      }
+    ],
+    "same_eight_rate_checks": {
+      "before_mae_fpm": 220.667,
+      "after_mae_fpm": 163.573
+    },
+    "timing_start_m": 1000,
+    "timing_chart_reading_allowance_s": 30,
+    "timing_bands": [
+      {
+        "from_altitude": 1000,
+        "altitude": 2000,
+        "reported_cumulative_s": 72,
+        "before_steady_cumulative_s": 60.476,
+        "after_steady_cumulative_s": 64.401,
+        "after_tas_energy_cumulative_s": 65.867,
+        "before_cumulative_error_s": -11.524,
+        "after_cumulative_error_s": -6.133,
+        "reported_band_s": 72,
+        "before_band_error_s": -11.524,
+        "after_band_error_s": -6.133,
+        "after_50ft_minus_100ft_cumulative_s": 0.001
+      },
+      {
+        "from_altitude": 2000,
+        "altitude": 3000,
+        "reported_cumulative_s": 150,
+        "before_steady_cumulative_s": 132.66,
+        "after_steady_cumulative_s": 141.971,
+        "after_tas_energy_cumulative_s": 143.696,
+        "before_cumulative_error_s": -17.34,
+        "after_cumulative_error_s": -6.304,
+        "reported_band_s": 78,
+        "before_band_error_s": -5.816,
+        "after_band_error_s": -0.171,
+        "after_50ft_minus_100ft_cumulative_s": 0.001
+      },
+      {
+        "from_altitude": 3000,
+        "altitude": 4000,
+        "reported_cumulative_s": 234,
+        "before_steady_cumulative_s": 203.69,
+        "after_steady_cumulative_s": 217.913,
+        "after_tas_energy_cumulative_s": 221.717,
+        "before_cumulative_error_s": -30.31,
+        "after_cumulative_error_s": -12.283,
+        "reported_band_s": 84,
+        "before_band_error_s": -12.971,
+        "after_band_error_s": -5.979,
+        "after_50ft_minus_100ft_cumulative_s": 0.001
+      },
+      {
+        "from_altitude": 4000,
+        "altitude": 5000,
+        "reported_cumulative_s": 324,
+        "before_steady_cumulative_s": 276.233,
+        "after_steady_cumulative_s": 295.713,
+        "after_tas_energy_cumulative_s": 301.466,
+        "before_cumulative_error_s": -47.767,
+        "after_cumulative_error_s": -22.534,
+        "reported_band_s": 90,
+        "before_band_error_s": -17.456,
+        "after_band_error_s": -10.252,
+        "after_50ft_minus_100ft_cumulative_s": 0.001
+      },
+      {
+        "from_altitude": 5000,
+        "altitude": 6000,
+        "reported_cumulative_s": 408,
+        "before_steady_cumulative_s": 350.662,
+        "after_steady_cumulative_s": 375.915,
+        "after_tas_energy_cumulative_s": 386.241,
+        "before_cumulative_error_s": -57.338,
+        "after_cumulative_error_s": -21.759,
+        "reported_band_s": 84,
+        "before_band_error_s": -9.572,
+        "after_band_error_s": 0.775,
+        "after_50ft_minus_100ft_cumulative_s": 0.002
+      },
+      {
+        "from_altitude": 6000,
+        "altitude": 7000,
+        "reported_cumulative_s": 498,
+        "before_steady_cumulative_s": 437.524,
+        "after_steady_cumulative_s": 471.68,
+        "after_tas_energy_cumulative_s": 483.925,
+        "before_cumulative_error_s": -60.476,
+        "after_cumulative_error_s": -14.075,
+        "reported_band_s": 90,
+        "before_band_error_s": -3.137,
+        "after_band_error_s": 7.684,
+        "after_50ft_minus_100ft_cumulative_s": 0.002
+      },
+      {
+        "from_altitude": 7000,
+        "altitude": 8000,
+        "reported_cumulative_s": 624,
+        "before_steady_cumulative_s": 551.481,
+        "after_steady_cumulative_s": 600.929,
+        "after_tas_energy_cumulative_s": 615.829,
+        "before_cumulative_error_s": -72.519,
+        "after_cumulative_error_s": -8.171,
+        "reported_band_s": 126,
+        "before_band_error_s": -12.043,
+        "after_band_error_s": 5.904,
+        "after_50ft_minus_100ft_cumulative_s": 0.003
+      },
+      {
+        "from_altitude": 8000,
+        "altitude": 9000,
+        "reported_cumulative_s": 786,
+        "before_steady_cumulative_s": 712.354,
+        "after_steady_cumulative_s": 793.538,
+        "after_tas_energy_cumulative_s": 814.979,
+        "before_cumulative_error_s": -73.646,
+        "after_cumulative_error_s": 28.979,
+        "reported_band_s": 162,
+        "before_band_error_s": -1.127,
+        "after_band_error_s": 37.15,
+        "after_50ft_minus_100ft_cumulative_s": 0.005
+      }
+    ],
+    "timing_sensitivity_at_last_chart_row_s": [
+      {
+        "tas_scale": 0.9,
+        "elapsed_s": 830.883
+      },
+      {
+        "tas_scale": 1,
+        "elapsed_s": 814.979
+      },
+      {
+        "tas_scale": 1.1,
+        "elapsed_s": 838.717
+      }
+    ]
+  },
+  "p38g": {
+    "case_id": "p38g-12687-b4-climb",
+    "replay_weight_lb": 13900,
+    "rate_rows": [
+      {
+        "observation_id": "balanced-2026-11-10:BS02:0001",
+        "altitude_ft": 0,
+        "role": "same-report-reserved",
+        "reported_tas_mph": 156,
+        "chart_bhp_per_engine": 1200,
+        "observed_vertical_rate_fpm": 3300,
+        "steady_rate_error_fpm": 410.874,
+        "power": {
+          "shaft_hp_total": 2400,
+          "useful_propeller_hp_total": 1990.281,
+          "drag_hp_total": 427.216,
+          "excess_hp_total": 1563.065,
+          "modeled_propulsive_fraction": 0.829
+        }
+      },
+      {
+        "observation_id": "balanced-2026-11-10:BS02:0002",
+        "altitude_ft": 6000,
+        "role": "same-report-reserved",
+        "reported_tas_mph": 171,
+        "chart_bhp_per_engine": 1210,
+        "observed_vertical_rate_fpm": 3660,
+        "steady_rate_error_fpm": 19.943,
+        "power": {
+          "shaft_hp_total": 2420,
+          "useful_propeller_hp_total": 2018.512,
+          "drag_hp_total": 468.476,
+          "excess_hp_total": 1550.036,
+          "modeled_propulsive_fraction": 0.834
+        }
+      },
+      {
+        "observation_id": "balanced-2026-11-10:BS02:0003",
+        "altitude_ft": 10000,
+        "role": "cooling-fit-anchor",
+        "reported_tas_mph": 181,
+        "chart_bhp_per_engine": 1210,
+        "observed_vertical_rate_fpm": 3630,
+        "steady_rate_error_fpm": 0,
+        "power": {
+          "shaft_hp_total": 2420,
+          "useful_propeller_hp_total": 2024.435,
+          "drag_hp_total": 495.435,
+          "excess_hp_total": 1529,
+          "modeled_propulsive_fraction": 0.837
+        }
+      },
+      {
+        "observation_id": "balanced-2026-11-10:BS02:0004",
+        "altitude_ft": 15000,
+        "role": "same-report-reserved",
+        "reported_tas_mph": 196,
+        "chart_bhp_per_engine": 1210,
+        "observed_vertical_rate_fpm": 3500,
+        "steady_rate_error_fpm": 55.409,
+        "power": {
+          "shaft_hp_total": 2420,
+          "useful_propeller_hp_total": 2034.037,
+          "drag_hp_total": 536.456,
+          "excess_hp_total": 1497.581,
+          "modeled_propulsive_fraction": 0.841
+        }
+      },
+      {
+        "observation_id": "balanced-2026-11-10:BS02:0005",
+        "altitude_ft": 20000,
+        "role": "same-report-reserved",
+        "reported_tas_mph": 219,
+        "chart_bhp_per_engine": 1195,
+        "observed_vertical_rate_fpm": 3280,
+        "steady_rate_error_fpm": 104.234,
+        "power": {
+          "shaft_hp_total": 2390,
+          "useful_propeller_hp_total": 2028.498,
+          "drag_hp_total": 603.018,
+          "excess_hp_total": 1425.48,
+          "modeled_propulsive_fraction": 0.849
+        }
+      },
+      {
+        "observation_id": "balanced-2026-11-10:BS02:0006",
+        "altitude_ft": 25000,
+        "role": "same-report-reserved",
+        "reported_tas_mph": 230,
+        "chart_bhp_per_engine": 1090,
+        "observed_vertical_rate_fpm": 2680,
+        "steady_rate_error_fpm": 227.47,
+        "power": {
+          "shaft_hp_total": 2180,
+          "useful_propeller_hp_total": 1853.306,
+          "drag_hp_total": 628.645,
+          "excess_hp_total": 1224.662,
+          "modeled_propulsive_fraction": 0.85
+        }
+      },
+      {
+        "observation_id": "balanced-2026-11-10:BS02:0007",
+        "altitude_ft": 30000,
+        "role": "same-report-reserved",
+        "reported_tas_mph": 246,
+        "chart_bhp_per_engine": 985,
+        "observed_vertical_rate_fpm": 2100,
+        "steady_rate_error_fpm": 285.28,
+        "power": {
+          "shaft_hp_total": 1970,
+          "useful_propeller_hp_total": 1675.907,
+          "drag_hp_total": 671.198,
+          "excess_hp_total": 1004.709,
+          "modeled_propulsive_fraction": 0.851
+        }
+      },
+      {
+        "observation_id": "ww2_flight_case_climb_2026-11-12:p38g-12687-b4-35000ft:0001",
+        "altitude_ft": 35000,
+        "role": "same-report-reserved",
+        "reported_tas_mph": 264,
+        "chart_bhp_per_engine": 690,
+        "observed_vertical_rate_fpm": 1200,
+        "steady_rate_error_fpm": -109.985,
+        "power": {
+          "shaft_hp_total": 1380,
+          "useful_propeller_hp_total": 1179.721,
+          "drag_hp_total": 720.593,
+          "excess_hp_total": 459.128,
+          "modeled_propulsive_fraction": 0.855
+        }
+      }
+    ],
+    "seven_reserved_rate_checks_mae_fpm": 173.314,
+    "timing_start_ft": 0,
+    "timing_bands": [
+      {
+        "from_altitude": 0,
+        "altitude": 6000,
+        "reported_cumulative_s": 102.6,
+        "before_steady_cumulative_s": 97.399,
+        "after_steady_cumulative_s": 97.399,
+        "after_tas_energy_cumulative_s": 100.061,
+        "before_cumulative_error_s": -5.201,
+        "after_cumulative_error_s": -2.539,
+        "reported_band_s": 102.6,
+        "before_band_error_s": -5.201,
+        "after_band_error_s": -2.539,
+        "after_50ft_minus_100ft_cumulative_s": 0
+      },
+      {
+        "from_altitude": 6000,
+        "altitude": 10000,
+        "reported_cumulative_s": 168.6,
+        "before_steady_cumulative_s": 163.059,
+        "after_steady_cumulative_s": 163.059,
+        "after_tas_energy_cumulative_s": 167.652,
+        "before_cumulative_error_s": -5.541,
+        "after_cumulative_error_s": -0.948,
+        "reported_band_s": 66,
+        "before_band_error_s": -0.34,
+        "after_band_error_s": 1.592,
+        "after_50ft_minus_100ft_cumulative_s": 0
+      },
+      {
+        "from_altitude": 10000,
+        "altitude": 15000,
+        "reported_cumulative_s": 252.6,
+        "before_steady_cumulative_s": 246.552,
+        "after_steady_cumulative_s": 246.552,
+        "after_tas_energy_cumulative_s": 254.302,
+        "before_cumulative_error_s": -6.048,
+        "after_cumulative_error_s": 1.702,
+        "reported_band_s": 84,
+        "before_band_error_s": -0.507,
+        "after_band_error_s": 2.65,
+        "after_50ft_minus_100ft_cumulative_s": 0
+      },
+      {
+        "from_altitude": 15000,
+        "altitude": 20000,
+        "reported_cumulative_s": 340.8,
+        "before_steady_cumulative_s": 332.986,
+        "after_steady_cumulative_s": 332.986,
+        "after_tas_energy_cumulative_s": 346.255,
+        "before_cumulative_error_s": -7.814,
+        "after_cumulative_error_s": 5.455,
+        "reported_band_s": 88.2,
+        "before_band_error_s": -1.766,
+        "after_band_error_s": 3.753,
+        "after_50ft_minus_100ft_cumulative_s": 0
+      },
+      {
+        "from_altitude": 20000,
+        "altitude": 25000,
+        "reported_cumulative_s": 441.6,
+        "before_steady_cumulative_s": 428.481,
+        "after_steady_cumulative_s": 428.481,
+        "after_tas_energy_cumulative_s": 444.905,
+        "before_cumulative_error_s": -13.119,
+        "after_cumulative_error_s": 3.305,
+        "reported_band_s": 100.8,
+        "before_band_error_s": -5.305,
+        "after_band_error_s": -2.15,
+        "after_50ft_minus_100ft_cumulative_s": 0
+      },
+      {
+        "from_altitude": 25000,
+        "altitude": 30000,
+        "reported_cumulative_s": 567.6,
+        "before_steady_cumulative_s": 542.133,
+        "after_steady_cumulative_s": 542.133,
+        "after_tas_energy_cumulative_s": 564.351,
+        "before_cumulative_error_s": -25.467,
+        "after_cumulative_error_s": -3.249,
+        "reported_band_s": 126,
+        "before_band_error_s": -12.348,
+        "after_band_error_s": -6.554,
+        "after_50ft_minus_100ft_cumulative_s": 0
+      },
+      {
+        "from_altitude": 30000,
+        "altitude": 35000,
+        "reported_cumulative_s": 748.8,
+        "before_steady_cumulative_s": 723.205,
+        "after_steady_cumulative_s": 723.205,
+        "after_tas_energy_cumulative_s": 756.588,
+        "before_cumulative_error_s": -25.595,
+        "after_cumulative_error_s": 7.788,
+        "reported_band_s": 181.2,
+        "before_band_error_s": -0.127,
+        "after_band_error_s": 11.037,
+        "after_50ft_minus_100ft_cumulative_s": 0.004
+      }
+    ]
+  },
+  "seven_aircraft_propulsion": [
+    {
+      "aircraft": "spitfire_lfix_bs543",
+      "altitude_ft": 12000,
+      "weight_lb": 7485,
+      "tas_mph": 205,
+      "phase": "combat",
+      "source_url": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html",
+      "reported_shaft_hp_total": null,
+      "source_rate_fpm": 4000,
+      "native_rate_error_fpm": -160.164,
+      "power": {
+        "shaft_hp_total": 1505.202,
+        "useful_propeller_hp_total": 1392.014,
+        "drag_hp_total": 521.069,
+        "excess_hp_total": 870.945,
+        "modeled_propulsive_fraction": 0.925
+      },
+      "qualification": "BS.543 open radiator, recorded TAS; installed power and drag coupled."
+    },
+    {
+      "aircraft": "p47b",
+      "altitude_ft": 12600,
+      "weight_lb": 12565,
+      "tas_mph": 204,
+      "phase": "combat",
+      "source_url": "https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf",
+      "reported_shaft_hp_total": 2000,
+      "source_rate_fpm": 2410,
+      "native_rate_error_fpm": -8.301,
+      "power": {
+        "shaft_hp_total": 2000,
+        "useful_propeller_hp_total": 1712.479,
+        "drag_hp_total": 798.014,
+        "excess_hp_total": 914.465,
+        "modeled_propulsive_fraction": 0.856
+      },
+      "qualification": "41-5902 report replay at chart-assigned power and TAS; efficiency is transferred."
+    },
+    {
+      "aircraft": "p51b",
+      "altitude_ft": 2200,
+      "weight_lb": 9335,
+      "tas_mph": 175,
+      "phase": "combat",
+      "source_url": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+      "reported_shaft_hp_total": null,
+      "source_rate_fpm": 3820,
+      "native_rate_error_fpm": -12.237,
+      "power": {
+        "shaft_hp_total": 1603.1,
+        "useful_propeller_hp_total": 1363.99,
+        "drag_hp_total": 286.854,
+        "excess_hp_total": 1077.135,
+        "modeled_propulsive_fraction": 0.851
+      },
+      "qualification": "43-24777 rated configuration, model best-rate TAS; racked automatic-shutter trial."
+    },
+    {
+      "aircraft": "f4u4",
+      "altitude_ft": 6500,
+      "weight_lb": 12500,
+      "tas_mph": 165,
+      "phase": "normal",
+      "source_url": "https://www.wwiiaircraftperformance.org/f4u/f4u-4-80765.pdf",
+      "reported_shaft_hp_total": null,
+      "source_rate_fpm": 2820,
+      "native_rate_error_fpm": -19.219,
+      "power": {
+        "shaft_hp_total": 1700,
+        "useful_propeller_hp_total": 1506.742,
+        "drag_hp_total": 445.84,
+        "excess_hp_total": 1060.902,
+        "modeled_propulsive_fraction": 0.886
+      },
+      "qualification": "12,500-lb Navy Normal climb, modeled best-rate TAS; clean-level efficiency reference has its own domain."
+    },
+    {
+      "aircraft": "fw190a4",
+      "altitude_m": 5000,
+      "weight_lb": 8531.89,
+      "tas_mph": 179,
+      "source_observation_id": "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0005",
+      "phase": "normal",
+      "power": {
+        "shaft_hp_total": 1301.942,
+        "useful_propeller_hp_total": 1055.696,
+        "drag_hp_total": 409.98,
+        "excess_hp_total": 645.715,
+        "modeled_propulsive_fraction": 0.811
+      },
+      "closed_power": {
+        "shaft_hp_total": 1301.942,
+        "useful_propeller_hp_total": 1055.696,
+        "drag_hp_total": 366.678,
+        "excess_hp_total": 689.018,
+        "modeled_propulsive_fraction": 0.811
+      },
+      "qualification": "WNr 783 cooling fit. Direct shaft and useful power remain unavailable."
+    },
+    {
+      "aircraft": "p38g",
+      "altitude_ft": 10000,
+      "weight_lb": 13900,
+      "tas_mph": 181,
+      "source_observation_id": "balanced-2026-11-10:BS02:0003",
+      "phase": "combat",
+      "power": {
+        "shaft_hp_total": 2420,
+        "useful_propeller_hp_total": 2024.435,
+        "drag_hp_total": 495.435,
+        "excess_hp_total": 1529,
+        "modeled_propulsive_fraction": 0.837
+      },
+      "reported_shaft_hp_total": 2420,
+      "qualification": "Wright Field B.4 cooling-fit point. Total chart-assigned shaft power is twice the BHP per engine."
+    },
+    {
+      "aircraft": "bf109f4",
+      "altitude_ft": 10000,
+      "weight_lb": 6371,
+      "tas_mph": 203.643,
+      "phase": "combat",
+      "power": {
+        "shaft_hp_total": 1331.532,
+        "useful_propeller_hp_total": 1144.712,
+        "drag_hp_total": 295.247,
+        "excess_hp_total": 849.465,
+        "modeled_propulsive_fraction": 0.86
+      },
+      "qualification": "Engineering point at 175 mph EAS. Matched measured climb power and efficiency remain open."
+    }
+  ]
+}

@@ -38,7 +38,11 @@ The v1.6.0 export has 13 populated references. Further calibration work includes
 
 A case is ready when its original observations, operating conditions, source allowance and supported range can be joined and replayed. Use distinct rows for gear, rating and cooling branches, retain actual versus nominal settings and preserve the original BHP, PS or kW. Reserve the check observations before setting a coefficient. Identify whether each check shares the same report or comes from a separate campaign. If the leading gap still lacks a chart, publish the bounded cases and the exact missing condition. Reopen propeller research when that gap changes a supported comparison. [Simulator propeller acceptance](../NEXT_STEPS.md#propeller-milestone-acceptance)
 
-### v1.7 · Corrected stall and drag under load
+### v1.7 · Matched climb cases
+
+Delivered WNr 783 paired cooling rates and open-flap timing and 42-12687 B.4 TAS, chart power and timing. The scorecard carries the input estimates and their residuals. [Climb input milestone](WW2_MATCHED_CLIMB_INPUTS_2026-11-12.md)
+
+### v1.8 · Corrected stall and drag under load
 
 - Prioritize the P-51B-15 43-24777 and Spitfire LF IX BS.543 cases used in the existing sustained-turn comparison. Recover a near-stall position and instrument correction in the relevant range, plus weight at the stall or a qualified corrected stall observation. Use the reported airspeed basis and configuration when deriving clean `CLmax`. Make the remaining gap explicit where only a takeoff weight or an uncorrected IAS is available. [Original-source gaps by aircraft](WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md#recovered-material-and-remaining-work)
 - Use P-51B Figure 5 and the 4K02/916 drag reports to bound the one-G drag check with their recorded specimen and propeller treatment. Seek a second measured constraint for drag under load: a matched high-lift drag polar or a level powered turn with speed and altitude retention, known load factor, power and mass. This is the input needed before changing induced drag or a sustained-turn ranking. Keep a configuration transfer as a bounded estimate. [Mustang power-required audit](../P51_PROPELLER_EFFICIENCY_AUDIT.md) · [Turn comparison](../V44_TURN_PERFORMANCE.md)
@@ -46,7 +50,7 @@ A case is ready when its original observations, operating conditions, source all
 
 Release the first case whose airspeed, mass, configuration and uncertainty are defensible. Retain measured, transcribed and derived values with their provenance. The existing research goals are ±2 km/h for clean stall, ±3 km/h for level TAS and ±3% for matched climb or time. Publish actual residuals and the source allowance. [Evidence rules](WW2_FIGHTER_SIM_INPUTS_V1.md#selection-and-gold)
 
-### v1.8 · First new-aircraft input dossier
+### v1.9 · First new-aircraft input dossier
 
 Prepare **Bf 109 G-2 MT-215 / WNr 14783** for a bounded speed-and-climb comparison. The Finnish test ran near 2,540 actual rpm and 1.30–1.32 ata on the documented level branch. The DB 605 A factory 1.30 ata / 2,600 rpm points are a reference schedule. Recover the original run mass or loading sheet, exact installed power and propeller drawing, and verify the airspeed corrections. Use the Finnish trial for its supported branches, and keep the WNF production and NII VVS gun-pod tests as separate cases. The Finnish Aviation Museum catalog describes aircraft logs and technical archives as a further retrieval route. [G-2 data handoff](../SIMULATOR_DATA_HANDOFF.md#suggested-aircraft) · [German source register](WW2_GERMAN_FIGHTER_ARCHIVE_2026-11-11.md#bf-109-g-2) · [Finnish Aviation Museum archives](https://ilmailumuseo.fi/en/kirjasto-arkisto/)
 
