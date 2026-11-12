@@ -1,0 +1,86 @@
+{
+  "schema": "provisional-stall-envelope/v1",
+  "generated": "2026-11-12",
+  "aircraft": {
+    "p51b": {
+      "name": "P-51B",
+      "provisionalBandEasMph": {
+        "min": 69,
+        "max": 94,
+        "n": 2
+      },
+      "observations": [
+        {
+          "sourceId": "wright-field-43-24777",
+          "reportedMph": 86,
+          "basis": "IAS",
+          "provisionalEasMph": 86,
+          "weightLb": 9270,
+          "config": "up/up/off",
+          "limitation": "Wright Field tabulated IAS, clean power-off"
+        },
+        {
+          "sourceId": "wright-field-43-6883",
+          "reportedMph": 94,
+          "basis": "IAS",
+          "provisionalEasMph": 94,
+          "weightLb": 9100,
+          "config": "up/up/off",
+          "limitation": "Wright Field tabulated IAS, clean power-off"
+        }
+      ]
+    },
+    "fw190a4": {
+      "name": "Fw 190 A-4 / A-3",
+      "provisionalBandEasMph": {
+        "min": 110,
+        "max": 118,
+        "n": 2
+      },
+      "observations": [
+        {
+          "sourceId": "aaee-m785",
+          "reportedMph": 110,
+          "basis": "IAS",
+          "provisionalEasMph": 110,
+          "config": "clean",
+          "limitation": "A&AEE Boscombe Down M/785, captured A-3"
+        },
+        {
+          "sourceId": "wright-field-eng-47-1658-d",
+          "reportedMph": 118,
+          "basis": "IAS",
+          "provisionalEasMph": 118,
+          "config": "clean",
+          "limitation": "secondary citation of Wright Field report"
+        }
+      ]
+    },
+    "bf109f4": {
+      "name": "Bf 109 (G-6 / F-4 family)",
+      "provisionalBandEasMph": {
+        "min": 84,
+        "max": 103,
+        "n": 2
+      },
+      "observations": [
+        {
+          "sourceId": "rechlin-109-6",
+          "reportedMph": 103,
+          "basis": "IAS",
+          "provisionalEasMph": 103,
+          "config": "clean",
+          "limitation": "Rechlin 109/6, 165 km/h clean"
+        },
+        {
+          "sourceId": "rechlin-109-6-slats",
+          "reportedMph": 84,
+          "basis": "IAS",
+          "provisionalEasMph": 84,
+          "config": "landing/slats",
+          "limitation": "Rechlin 109/6, 135 km/h landing with slats"
+        }
+      ]
+    }
+  }
+}
