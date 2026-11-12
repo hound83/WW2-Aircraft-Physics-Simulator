@@ -1,6 +1,6 @@
 {
   "schema": "ww2-fighter-sim-inputs/v1",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "as_of": "2026-11-12",
   "scope": "Historical inputs and conditional estimates for source-case lookups and evidence graphs.",
   "originals": {
@@ -122,6 +122,18 @@
         ],
         "sha256": [
           "54251c4d9cf375d59caadc8a1456489547cee17925001f749964598d578b9132"
+        ]
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12",
+        "kind": "independent-research-pack",
+        "version": "1.1.0",
+        "original_schema": "ww2-fighter-evidence-pack/v1",
+        "files": [
+          "references/research/ww2_fleet_stall_2026-11-12.json"
+        ],
+        "sha256": [
+          "e61669ed39b6b6f5f0e57d5dfb77fbcf795bc07a295bc7df13dd8f8e753e5d72"
         ]
       },
       {
@@ -1244,6 +1256,1446 @@
         }
       ]
     }
+  },
+  "stall_reference": {
+    "baseline": "012559556dc77e821ede9218bcbe35be7524c32e",
+    "target_numerically_improved_variants": 6,
+    "target_new_clean_power_off_variants": 3,
+    "clean_power_off_criterion": "New measured straight clean power-off stall with defensible corrected airspeed, run loading, event criterion and uncertainty for the matched aircraft. Handbook nominal conditions and raw IAS are retained as source references.",
+    "variants": [
+      {
+        "id": "f4u4_80765",
+        "prior_ids": [
+          "stall_us_2026-11-10:US20:0001",
+          "stall_us_2026-11-10:US20:0002",
+          "stall_us_2026-11-10:US20:0003",
+          "stall_us_2026-11-10:US20:0004"
+        ],
+        "open": "The 89.4 kt CAS clean power-off row was already available. A run sheet would identify the airframe, actual loading, altitude and test settings for the summary values.",
+        "added_ids": [
+          "ww2_fleet_stall_2026-11-12:f4u4-clean-powered",
+          "ww2_fleet_stall_2026-11-12:f4u4-landing-power-off"
+        ],
+        "numerical_improvement_ids": [
+          "ww2_fleet_stall_2026-11-12:f4u4-clean-powered"
+        ],
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "calibrated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 89.4,
+            "unit": "kt",
+            "basis": "CAS",
+            "range": null
+          },
+          "observation_ids": [
+            "stall_us_2026-11-10:US20:0002"
+          ],
+          "source_aircraft": "F4U-4 BuNo 80765",
+          "source_class": "postwar_original_USN_flight_test_of_WWII_type",
+          "conditions": {
+            "weight_lb": 12500,
+            "weight_basis": "normal fighter loading in the report",
+            "takeoff_weight_lb": null,
+            "altitude_ft": null,
+            "gear": "up",
+            "flaps": "up",
+            "power": "off"
+          },
+          "qualification": "NATC normal-fighter table. The report lists three serials and leaves the stall-run serial unspecified."
+        }
+      },
+      {
+        "id": "p51b_4324777",
+        "prior_ids": [],
+        "open": "Eng-47-1749-A §V.E gives nine 67.5–86 mph IAS stalls at 8,000 ft with instantaneous weights. The gear/flaps-up Figure 1 has an axis beginning at 100 mph and its first measured calibration point near 150 mph. Recover a low-speed position-error run or independent position-corrected stall on the same installation.",
+        "added_ids": [],
+        "numerical_improvement_ids": [],
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 86,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": null
+          },
+          "observation_ids": [
+            "stall_us_2026-11-10:US02:0001"
+          ],
+          "source_aircraft": "P-51B-15 43-24777",
+          "source_class": "period_original_flight_test_transcribed",
+          "conditions": {
+            "weight_lb": 9270,
+            "weight_basis": "instantaneous stall weight",
+            "takeoff_weight_lb": null,
+            "altitude_ft": 8000,
+            "gear": "up",
+            "flaps": "up",
+            "power": "off"
+          },
+          "qualification": "Gear and flaps up with cooling shutters closed. Figure 1 has no calibration at this speed."
+        }
+      },
+      {
+        "id": "f6f3_04776",
+        "prior_ids": [
+          "ww2_fighter_flight_tests_2026-11-11:f6f3-04776-early-stall-traces:0001",
+          "ww2_fighter_flight_tests_2026-11-11:f6f3-04776-early-stall-traces:0002",
+          "ww2_fighter_flight_tests_2026-11-11:f6f3-04776-early-stall-traces:0003",
+          "ww2_fighter_flight_tests_2026-11-11:f6f3-04776-early-stall-traces:0004",
+          "ww2_fighter_flight_tests_2026-11-11:f6f3-04776-early-stall-traces:0005"
+        ],
+        "open": "The clean Fig. 5, powered climb Fig. 7 and landing Fig. 9 add active-control runs to the existing fixed-control figures. Seek the recorder reduction or low-speed calibration and the per-run fuel/loading log. The 11,200 lb value is approximate takeoff weight.",
+        "added_ids": [
+          "ww2_fleet_stall_2026-11-12:f6f3-glide-fig5-first-roll",
+          "ww2_fleet_stall_2026-11-12:f6f3-powered-climb-fig7-first-roll",
+          "ww2_fleet_stall_2026-11-12:f6f3-landing-fig9-first-roll"
+        ],
+        "numerical_improvement_ids": [
+          "ww2_fleet_stall_2026-11-12:f6f3-glide-fig5-first-roll",
+          "ww2_fleet_stall_2026-11-12:f6f3-powered-climb-fig7-first-roll",
+          "ww2_fleet_stall_2026-11-12:f6f3-landing-fig9-first-roll"
+        ],
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 95,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": [
+              93,
+              97
+            ]
+          },
+          "observation_ids": [
+            "ww2_fleet_stall_2026-11-12:f6f3-glide-fig5-first-roll"
+          ],
+          "source_aircraft": "F6F-3 BuAer 04776",
+          "source_class": "original-report-figure-digitized",
+          "conditions": {
+            "weight_lb": null,
+            "weight_basis": "approximate takeoff weight. NACA corrected for fuel used when computing CN",
+            "takeoff_weight_lb": 11200,
+            "altitude_ft": null,
+            "gear": "up",
+            "flaps": "up",
+            "power": "idle"
+          },
+          "qualification": "First roll-off reading window. Part III leaves the reduction applied to the indicated channel unconfirmed. Loading is the approximate takeoff weight."
+        }
+      },
+      {
+        "id": "spitfire_lfix_bs543",
+        "prior_ids": [],
+        "open": "New operating points are for the Mk IX handbook family. Recover a full-span Merlin 66 flight trial with mass at the stall and low-speed calibration for BS.543 or an identified comparable airframe.",
+        "added_ids": [
+          "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-clean",
+          "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-landing"
+        ],
+        "numerical_improvement_ids": [
+          "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-clean",
+          "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-landing"
+        ],
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 86,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": null
+          },
+          "observation_ids": [
+            "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-clean"
+          ],
+          "source_aircraft": "Spitfire F/LF/HF Mk IX, pilot notes family",
+          "source_class": "period-operating-handbook",
+          "conditions": {
+            "weight_lb": 7445,
+            "weight_basis": "handbook normal all-up weight",
+            "takeoff_weight_lb": null,
+            "altitude_ft": null,
+            "gear": "up",
+            "flaps": "up",
+            "power": "off"
+          },
+          "qualification": "Family pilot notes include the LF Mk IX. The table leaves test serial and wingtip configuration unspecified."
+        }
+      },
+      {
+        "id": "p47b_415902",
+        "prior_ids": [
+          "stall_us_2026-11-10:US04:0001",
+          "stall_us_2026-11-10:US04:0004"
+        ],
+        "open": "The preliminary handbook identifies normal load only. The 41-5902 clean test gives 105 mph IAS, below its available clean calibration. Seek a calibration and run loading that match that installation.",
+        "added_ids": [
+          "ww2_fleet_stall_2026-11-12:p47b-handbook-clean-off",
+          "ww2_fleet_stall_2026-11-12:p47b-handbook-clean-on",
+          "ww2_fleet_stall_2026-11-12:p47b-handbook-landing-off",
+          "ww2_fleet_stall_2026-11-12:p47b-handbook-landing-on"
+        ],
+        "numerical_improvement_ids": [
+          "ww2_fleet_stall_2026-11-12:p47b-handbook-clean-on",
+          "ww2_fleet_stall_2026-11-12:p47b-handbook-landing-off",
+          "ww2_fleet_stall_2026-11-12:p47b-handbook-landing-on"
+        ],
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 105,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": null
+          },
+          "observation_ids": [
+            "stall_us_2026-11-10:US04:0001"
+          ],
+          "source_aircraft": "P-47B 41-5902",
+          "source_class": "period_original_scan_previous_repo_audit",
+          "conditions": {
+            "weight_lb": 12565,
+            "weight_basis": "gross weight in test summary",
+            "takeoff_weight_lb": null,
+            "altitude_ft": null,
+            "gear": "up",
+            "flaps": "up",
+            "power": "off"
+          },
+          "qualification": "Original 41-5902 trial. The 12,565 lb figure is the test summary loading. The run weight and stall-range calibration are unresolved."
+        }
+      },
+      {
+        "id": "p38g_4212687",
+        "prior_ids": [],
+        "open": "42-12690 supplies five measured stall points at approximately 14,800 lb and 10,000 ft. The clean power-off point is usable as a calibrated source comparison for this G-1-LO. Power-on CAS is printed below the respective tables' IAS ranges. The clean test on 42-12687 and the 42-12690 run-by-run load and break criterion remain open.",
+        "added_ids": [
+          "ww2_fleet_stall_2026-11-12:p38dg-handbook-clean-15000",
+          "ww2_fleet_stall_2026-11-12:p38dg-handbook-landing-15000",
+          "ww2_fleet_stall_2026-11-12:p38dg-handbook-clean-17000",
+          "ww2_fleet_stall_2026-11-12:p38dg-handbook-landing-17000",
+          "ww2_fleet_stall_2026-11-12:p38dg-handbook-clean-19000",
+          "ww2_fleet_stall_2026-11-12:p38dg-handbook-landing-19000",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-off",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-off",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-off",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-powered",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-powered",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-calibration-95",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-calibration-100",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-calibration-105",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-calibration-110",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-calibration-115",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-gear-up-calibration-70",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-gear-up-calibration-80",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-gear-up-calibration-90",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-gear-up-calibration-100",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-calibration-65",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-calibration-70",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-calibration-80",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-calibration-90",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-calibration-100"
+        ],
+        "numerical_improvement_ids": [
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-off",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-off",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-off",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-powered",
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-powered"
+        ],
+        "clean_power_off_case_ids": [
+          "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-off"
+        ],
+        "clean_stall": {
+          "status": "calibrated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 112,
+            "unit": "mph",
+            "basis": "CAS",
+            "range": null
+          },
+          "observation_ids": [
+            "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-off"
+          ],
+          "source_aircraft": "P-38G-1-LO A.C. 42-12690",
+          "source_class": "original-report-table",
+          "conditions": {
+            "weight_lb": 14800,
+            "weight_basis": "approximate gross weight for all stall tests",
+            "takeoff_weight_lb": null,
+            "altitude_ft": 10000,
+            "gear": "up",
+            "flaps": "up",
+            "power": "off"
+          },
+          "reported_ias_mph": 98,
+          "calibration_id": "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-ias-to-cas",
+          "qualification": "Sister airframe 42-12690 with its own pitot installation. The gross weight and altitude are approximate."
+        }
+      },
+      {
+        "id": "fw190d9_210002",
+        "prior_ids": [],
+        "open": "WNr 210002 Eltron installation correction spans 360–550 km/h. Seek a WNr 210002 stall test with configuration and weight, and a low-speed calibration for that installation. Wright Field FE-120/WNr 601088 would be a separate case.",
+        "added_ids": [],
+        "numerical_improvement_ids": [],
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "calculated",
+          "grade": "calculated",
+          "speed": {
+            "value": 185,
+            "unit": "km/h",
+            "basis": "EAS",
+            "range": null
+          },
+          "observation_ids": [
+            "ww2_german_fighter_archive_2026-11-11:d9-210002-load-by-trial:0002"
+          ],
+          "source_aircraft": "Fw 190 D-9 WNr 210002, Jumo 213 A/1021521862",
+          "conditions": {
+            "gear": "up",
+            "flaps": "up",
+            "power": "off (assumed)",
+            "load_factor_g": 1
+          },
+          "calculation": {
+            "method": "clean 1g lift balance",
+            "mass_kg": 4300,
+            "mass_field": "starting_mass_kg",
+            "wing_area_m2": 18.3,
+            "wing_area_source": "Project-supplied Google AI ww2_fighters_dataset(1).json, fw190_d9 airframe.wing_area_m2",
+            "cl_max": 1.42,
+            "cl_max_source": "Project-supplied Google AI ww2_fighters_dataset(1).json, fw190_d9 airframe.cl_max_clean, used as an engineering assumption",
+            "reference_density_kg_m3": 1.225,
+            "gravity_m_s2": 9.80665
+          },
+          "qualification": "Uses the documented combat-climb starting mass as a reference loading for a clean, power-off estimate. The available Eltron correction starts at 360 km/h."
+        }
+      },
+      {
+        "id": "fw190a4_783",
+        "prior_ids": [],
+        "open": "WNr 783 Nr. 1/2/4 describe speed, climb and cooling. Seek the WNr 783 low-speed test or a named A-4 handling report. A-3 WNr 313 and US EB-104 are separate variants. The WNr 2310 number is landing speed.",
+        "added_ids": [],
+        "numerical_improvement_ids": [],
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "calculated",
+          "grade": "calculated",
+          "speed": {
+            "value": 177,
+            "unit": "km/h",
+            "basis": "EAS",
+            "range": null
+          },
+          "observation_ids": [
+            "ww2_thirteen_fighter_source_recovery_2026-11-11:fw190a4-783-intake-controlled-comparison:0001"
+          ],
+          "source_aircraft": "Fw190A4 WNr783 engine20208",
+          "conditions": {
+            "gear": "up",
+            "flaps": "up",
+            "power": "off (assumed)",
+            "load_factor_g": 1
+          },
+          "calculation": {
+            "method": "clean 1g lift balance",
+            "mass_kg": 3870,
+            "mass_field": "test_mass_kg",
+            "wing_area_m2": 18.3,
+            "wing_area_source": "Project-supplied Google AI ww2_fighters_dataset(1).json, Fw 190 A-5 and A-8 airframe.wing_area_m2, transferred",
+            "cl_max": 1.4,
+            "cl_max_source": "Project-supplied Google AI ww2_fighters_dataset(1).json, Fw 190 A-5 and A-8 airframe.cl_max_clean, transferred as an engineering assumption",
+            "reference_density_kg_m3": 1.225,
+            "gravity_m_s2": 9.80665
+          },
+          "qualification": "Uses WNr 783 test loading and same-family geometry and lift assumptions. Brown's 127 mph A-4/U8 recollection leaves the speed basis, run loading and power unspecified."
+        }
+      },
+      {
+        "id": "p40f_4113635",
+        "prior_ids": [
+          "ww2_fighter_flight_tests_2026-11-11:p40fl-manual-stall:0001",
+          "ww2_fighter_flight_tests_2026-11-11:p40fl-manual-stall:0004"
+        ],
+        "open": "T.O. 01-25CH-1 §II gives 92 mph clean and 82 mph landing IAS for the P-40F/L family. The separately stated 8,500 lb normal gross weight is an operating limit reference. Recover the actual stall-test power, load and in-range position correction for 41-13635.",
+        "added_ids": [],
+        "numerical_improvement_ids": [],
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 92,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": null
+          },
+          "observation_ids": [
+            "ww2_fighter_flight_tests_2026-11-11:p40fl-manual-stall:0001"
+          ],
+          "source_aircraft": "P-40F/L",
+          "source_class": "original-handbook",
+          "conditions": {
+            "weight_lb": null,
+            "weight_basis": null,
+            "takeoff_weight_lb": null,
+            "altitude_ft": null,
+            "gear": "up",
+            "flaps": "up",
+            "power": null
+          },
+          "qualification": "P-40F/L pilot manual, approximate operating value. The handbook leaves stall-run mass, power and instrument correction unspecified."
+        }
+      },
+      {
+        "id": "ki84_302",
+        "prior_ids": [
+          "archival-2026-11-10:S39:0001",
+          "archival-2026-11-10:S39:0002",
+          "archival-2026-11-10:S39:0003"
+        ],
+        "open": "T-2 302 Interim Report No. 3 already gives 102/90/79 mph IAS. Its 7,900 lb value is takeoff weight. Recover the run load and airspeed calibration. The PACMIRS metric table has a separate lineage and ambiguous power column.",
+        "added_ids": [],
+        "numerical_improvement_ids": [],
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 102,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": null
+          },
+          "observation_ids": [
+            "archival-2026-11-10:S39:0001"
+          ],
+          "source_aircraft": "Ki-84-I Frank / captured T-2 no.302",
+          "source_class": "original-report-table",
+          "conditions": {
+            "weight_lb": null,
+            "weight_basis": null,
+            "takeoff_weight_lb": 7900,
+            "altitude_ft": 8000,
+            "gear": "up",
+            "flaps": "up",
+            "power": "off"
+          },
+          "qualification": "T-2 aircraft 302. The report gives takeoff weight. The weight at the stall and airspeed calibration are unresolved."
+        }
+      },
+      {
+        "id": "p47d30_433441",
+        "prior_ids": [
+          "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0001",
+          "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0002",
+          "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0003",
+          "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0004",
+          "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0005"
+        ],
+        "open": "Fig. 59 adds an accelerated landing stall. The clean near-1g windows in Figs. 49, 50 and 51a already exist. TN 2899 Fig. 34 retains the service-indicated label. Verify that the RM trace was reduced with the TN 2675 low-speed calibration or recover the numerical correction.",
+        "added_ids": [
+          "ww2_fleet_stall_2026-11-12:p47d30-landing-wind-up-fig59"
+        ],
+        "numerical_improvement_ids": [
+          "ww2_fleet_stall_2026-11-12:p47d30-landing-wind-up-fig59"
+        ],
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 116,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": [
+              113,
+              119
+            ]
+          },
+          "observation_ids": [
+            "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0002"
+          ],
+          "source_aircraft": "P-47D-30 AAF 43-3441",
+          "source_class": "inspected-original-digitized-window",
+          "conditions": {
+            "weight_lb": 12400,
+            "weight_basis": "figure run gross weight",
+            "takeoff_weight_lb": null,
+            "altitude_ft": 5000,
+            "gear": "up",
+            "flaps": "up",
+            "power": "glide"
+          },
+          "qualification": "Clean-glide roll and acceleration break, Figure 49. The chart labels the channel service indicated. The range is a chart reading window."
+        }
+      },
+      {
+        "id": "bf109f4_representative",
+        "prior_ids": [],
+        "open": "The flight and calculation sheets give 135 km/h landing speed at 2,560 and 2,570 kg respectively. Seek the separate clean stall in a Rechlin or factory report with airspeed reduction and test loading.",
+        "added_ids": [],
+        "numerical_improvement_ids": [],
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "calculated",
+          "grade": "calculated",
+          "speed": {
+            "value": 159,
+            "unit": "km/h",
+            "basis": "EAS",
+            "range": null
+          },
+          "observation_ids": [
+            "ww2_german_fighter_archive_2026-11-11:f4-original-1941-loading:0001"
+          ],
+          "source_aircraft": "Bf 109 F-4 DB 601 E",
+          "conditions": {
+            "gear": "up",
+            "flaps": "up",
+            "power": "off (assumed)",
+            "load_factor_g": 1
+          },
+          "calculation": {
+            "method": "clean 1g lift balance",
+            "mass_kg": 2890,
+            "mass_field": "flight_loading_kg",
+            "wing_area_m2": 16.1,
+            "wing_area_source": "ww2_german_fighter_archive_2026-11-11:f4-original-1941-loading:0001",
+            "cl_max": 1.47,
+            "cl_max_source": "Project-supplied Google AI ww2_fighters_dataset(1).json, bf109_f4 airframe.cl_max_clean, used as an engineering assumption",
+            "reference_density_kg_m3": 1.225,
+            "gravity_m_s2": 9.80665
+          },
+          "qualification": "Uses loading and wing area from the 29 November 1941 Messerschmitt sheet. Its separate 135 km/h figure describes landing."
+        }
+      },
+      {
+        "id": "bf109g2_db605a",
+        "prior_ids": [
+          "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-14513-minimum-controlled-speed:0001",
+          "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-14513-minimum-controlled-speed:0002",
+          "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-14513-minimum-controlled-speed:0003"
+        ],
+        "open": "NII VVS p. 43 Table 2 already records 180/170/165 km/h indicated and 186/176/171 km/h in the source Vᵢ column. The method descends to loss of control. Recover the Vᵢ correction definition, gear and engine state for the glide and actual stall weight. Keep gun-pod WNr 14513 separate from MT-215.",
+        "added_ids": [],
+        "numerical_improvement_ids": [],
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 112,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": null
+          },
+          "observation_ids": [
+            "stall_global_2026-11-10:BF109-G2-trop-1"
+          ],
+          "source_aircraft": "Messerschmitt Bf 109 G-2 tropicalized",
+          "source_class": "research-pack",
+          "conditions": {
+            "weight_lb": null,
+            "weight_basis": "not published",
+            "takeoff_weight_lb": null,
+            "altitude_ft": null,
+            "gear": "up",
+            "flaps": "up",
+            "power": "not stated"
+          },
+          "qualification": "Captured G-2/Trop handling trial. Use with its own installation. Stall-run mass, power and near-stall correction are unspecified."
+        }
+      }
+    ],
+    "clean_stall_selection_order": [
+      "calibrated_from_source",
+      "indicated_from_source",
+      "calculated",
+      "emergency_research_needed"
+    ],
+    "summary": {
+      "clean_stall_by_status": {
+        "calibrated_from_source": 2,
+        "indicated_from_source": 8,
+        "calculated": 3,
+        "emergency_research_needed": 0
+      },
+      "variants_reviewed": 13,
+      "variants_numerically_improved": 6,
+      "new_clean_power_off_variants": 1,
+      "catalog_rows_added": 37
+    },
+    "observations": [
+      {
+        "id": "ww2_fleet_stall_2026-11-12:f4u4-clean-powered",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_kt": 84.6,
+          "speed_mph": 97.35594130279169,
+          "gear": "up",
+          "flaps": "up",
+          "power": "on",
+          "weight_lb": 12500,
+          "weight_basis": "normal fighter loading for the report section",
+          "cg_pct_mac_gear_up": 31.5,
+          "alt_ft": null,
+          "reported_resolution_kt": 0.1,
+          "measurement_uncertainty_kt": null
+        },
+        "speed_basis": "CAS",
+        "correction": {
+          "instrument": "reported-calibrated",
+          "position": "reported-calibrated",
+          "basis_evidence": "explicit-CAS"
+        },
+        "source_class": "original-report-table",
+        "notes": "Original p. 5 reads 84.6 kt CAS. The earlier transcription reads 84.5 kt. The project lists BuAer 80762, 80763 and 80765. The summary table does not identify the stall-run serial, power setting or uncertainty.",
+        "supersedes": [
+          "stall_us_2026-11-10:US20:0001"
+        ]
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:f4u4-landing-power-off",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_kt": 77.7,
+          "speed_mph": 89.41556311142925,
+          "gear": "down",
+          "flaps": "down",
+          "power": "off",
+          "weight_lb": 12500,
+          "weight_basis": "normal fighter loading for the report section",
+          "cg_pct_mac_gear_up": 31.5,
+          "alt_ft": null,
+          "reported_resolution_kt": 0.1,
+          "measurement_uncertainty_kt": null
+        },
+        "speed_basis": "CAS",
+        "correction": {
+          "instrument": "reported-calibrated",
+          "position": "reported-calibrated",
+          "basis_evidence": "explicit-CAS"
+        },
+        "source_class": "original-report-table",
+        "notes": "Original p. 5 marks power off. The earlier transcription repeats the power-on label. The project lists BuAer 80762, 80763 and 80765. The summary table does not identify the stall-run serial, power setting or uncertainty.",
+        "supersedes": [
+          "stall_us_2026-11-10:US20:0004"
+        ]
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:f6f3-glide-fig5-first-roll",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 95,
+          "speed_min_mph": 93,
+          "speed_max_mph": 97,
+          "speed_channel_label": "Indicated airspeed, mph",
+          "elapsed_s_min": 4.8,
+          "elapsed_s_max": 6.2,
+          "normal_g_min": 0.88,
+          "normal_g_max": 1.02,
+          "gear": "up",
+          "flaps": "up",
+          "canopy": "closed",
+          "cooling": "closed",
+          "power": "idle",
+          "weight_lb": null,
+          "takeoff_weight_lb": 11200,
+          "weight_basis": "approximate takeoff weight. NACA corrected for fuel used when computing CN",
+          "alt_ft": null
+        },
+        "speed_basis": "IAS",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "original-report-figure-digitized",
+        "notes": "The pilot used all controls through the stall. The window brackets first roll-off and covers visual read uncertainty. Part I documents low-speed position calibration of the same head. Part III does not identify the plotted channel as the corrected Part I reduction."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:f6f3-landing-fig9-first-roll",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 78,
+          "speed_min_mph": 76,
+          "speed_max_mph": 80,
+          "speed_channel_label": "Indicated airspeed, mph",
+          "elapsed_s_min": 3.1,
+          "elapsed_s_max": 4.3,
+          "normal_g_min": 0.77,
+          "normal_g_max": 1.03,
+          "gear": "down",
+          "flaps": "down",
+          "canopy": "open",
+          "cooling": "closed",
+          "power": "idle",
+          "weight_lb": null,
+          "takeoff_weight_lb": 11200,
+          "weight_basis": "approximate takeoff weight. NACA corrected for fuel used when computing CN",
+          "alt_ft": null,
+          "rpm": null,
+          "map_inhg": null
+        },
+        "speed_basis": "IAS",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "original-report-figure-digitized",
+        "notes": "This is a separate run with active control through the stall. The plot window includes visual read and onset uncertainty. Use the indicated speed and original power and configuration."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:f6f3-powered-climb-fig7-first-roll",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 66,
+          "speed_min_mph": 63,
+          "speed_max_mph": 69,
+          "speed_channel_label": "Indicated airspeed, mph",
+          "elapsed_s_min": 6.5,
+          "elapsed_s_max": 7.3,
+          "normal_g_min": 0.8,
+          "normal_g_max": 1.02,
+          "gear": "up",
+          "flaps": "up",
+          "canopy": "closed",
+          "cooling": "closed",
+          "power": "climb",
+          "weight_lb": null,
+          "takeoff_weight_lb": 11200,
+          "weight_basis": "approximate takeoff weight. NACA corrected for fuel used when computing CN",
+          "alt_ft": null,
+          "rpm": 2550,
+          "map_inhg": 43
+        },
+        "speed_basis": "IAS",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "original-report-figure-digitized",
+        "notes": "This is a separate run with active control through the stall. The plot window includes visual read and onset uncertainty. Use the indicated speed and original power and configuration."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38dg-handbook-clean-15000",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 94,
+          "gear": "up",
+          "flaps": "up",
+          "power": "unreported for numerical table",
+          "weight_lb": 15000,
+          "weight_basis": "handbook table gross weight",
+          "alt_ft": null,
+          "reported_resolution_mph": 1,
+          "measurement_uncertainty_mph": null
+        },
+        "speed_basis": "IAS",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "period-operating-handbook",
+        "notes": "The adjacent prose discusses both power states. The later H/J/L handbook reproduces all six values with a power-off label. Use the early D–G table as a family reference, with unknown stall-test serial and pitot installation. Its matching configuration curves do not bracket these stall IAS values."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38dg-handbook-clean-17000",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 100,
+          "gear": "up",
+          "flaps": "up",
+          "power": "unreported for numerical table",
+          "weight_lb": 17000,
+          "weight_basis": "handbook table gross weight",
+          "alt_ft": null,
+          "reported_resolution_mph": 1,
+          "measurement_uncertainty_mph": null
+        },
+        "speed_basis": "IAS",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "period-operating-handbook",
+        "notes": "The adjacent prose discusses both power states. The later H/J/L handbook reproduces all six values with a power-off label. Use the early D–G table as a family reference, with unknown stall-test serial and pitot installation. Its matching configuration curves do not bracket these stall IAS values."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38dg-handbook-clean-19000",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 105,
+          "gear": "up",
+          "flaps": "up",
+          "power": "unreported for numerical table",
+          "weight_lb": 19000,
+          "weight_basis": "handbook table gross weight",
+          "alt_ft": null,
+          "reported_resolution_mph": 1,
+          "measurement_uncertainty_mph": null
+        },
+        "speed_basis": "IAS",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "period-operating-handbook",
+        "notes": "The adjacent prose discusses both power states. The later H/J/L handbook reproduces all six values with a power-off label. Use the early D–G table as a family reference, with unknown stall-test serial and pitot installation. Its matching configuration curves do not bracket these stall IAS values."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38dg-handbook-landing-15000",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 69,
+          "gear": "down",
+          "flaps": "down",
+          "power": "unreported for numerical table",
+          "weight_lb": 15000,
+          "weight_basis": "handbook table gross weight",
+          "alt_ft": null,
+          "reported_resolution_mph": 1,
+          "measurement_uncertainty_mph": null
+        },
+        "speed_basis": "IAS",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "period-operating-handbook",
+        "notes": "The adjacent prose discusses both power states. The later H/J/L handbook reproduces all six values with a power-off label. Use the early D–G table as a family reference, with unknown stall-test serial and pitot installation. Its matching configuration curves do not bracket these stall IAS values."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38dg-handbook-landing-17000",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 74,
+          "gear": "down",
+          "flaps": "down",
+          "power": "unreported for numerical table",
+          "weight_lb": 17000,
+          "weight_basis": "handbook table gross weight",
+          "alt_ft": null,
+          "reported_resolution_mph": 1,
+          "measurement_uncertainty_mph": null
+        },
+        "speed_basis": "IAS",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "period-operating-handbook",
+        "notes": "The adjacent prose discusses both power states. The later H/J/L handbook reproduces all six values with a power-off label. Use the early D–G table as a family reference, with unknown stall-test serial and pitot installation. Its matching configuration curves do not bracket these stall IAS values."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38dg-handbook-landing-19000",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 78,
+          "gear": "down",
+          "flaps": "down",
+          "power": "unreported for numerical table",
+          "weight_lb": 19000,
+          "weight_basis": "handbook table gross weight",
+          "alt_ft": null,
+          "reported_resolution_mph": 1,
+          "measurement_uncertainty_mph": null
+        },
+        "speed_basis": "IAS",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "period-operating-handbook",
+        "notes": "The adjacent prose discusses both power states. The later H/J/L handbook reproduces all six values with a power-off label. Use the early D–G table as a family reference, with unknown stall-test serial and pitot installation. Its matching configuration curves do not bracket these stall IAS values."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-calibration-100",
+        "quantity": "airspeed_installation_correction",
+        "values": {
+          "original_ias_mph": 100,
+          "water_column_mph": 98,
+          "reported_cas_mph": 114,
+          "reported_installation_error_mph": -16,
+          "gear": "up",
+          "flaps": "up",
+          "pitot": "Kollsman D-2, left wing"
+        },
+        "speed_basis": "IAS",
+        "correction": {},
+        "source_class": "original-report-table"
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-calibration-105",
+        "quantity": "airspeed_installation_correction",
+        "values": {
+          "original_ias_mph": 105,
+          "water_column_mph": 103,
+          "reported_cas_mph": 118,
+          "reported_installation_error_mph": -15,
+          "gear": "up",
+          "flaps": "up",
+          "pitot": "Kollsman D-2, left wing"
+        },
+        "speed_basis": "IAS",
+        "correction": {},
+        "source_class": "original-report-table"
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-calibration-110",
+        "quantity": "airspeed_installation_correction",
+        "values": {
+          "original_ias_mph": 110,
+          "water_column_mph": 108,
+          "reported_cas_mph": 122.5,
+          "reported_installation_error_mph": -14.5,
+          "gear": "up",
+          "flaps": "up",
+          "pitot": "Kollsman D-2, left wing"
+        },
+        "speed_basis": "IAS",
+        "correction": {},
+        "source_class": "original-report-table"
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-calibration-115",
+        "quantity": "airspeed_installation_correction",
+        "values": {
+          "original_ias_mph": 115,
+          "water_column_mph": 113,
+          "reported_cas_mph": 127,
+          "reported_installation_error_mph": -14,
+          "gear": "up",
+          "flaps": "up",
+          "pitot": "Kollsman D-2, left wing"
+        },
+        "speed_basis": "IAS",
+        "correction": {},
+        "source_class": "original-report-table"
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-calibration-95",
+        "quantity": "airspeed_installation_correction",
+        "values": {
+          "original_ias_mph": 95,
+          "water_column_mph": 93,
+          "reported_cas_mph": 110,
+          "reported_installation_error_mph": -17,
+          "gear": "up",
+          "flaps": "up",
+          "pitot": "Kollsman D-2, left wing"
+        },
+        "speed_basis": "IAS",
+        "correction": {},
+        "source_class": "original-report-table"
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-off",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 112,
+          "reported_cas_mph": 112,
+          "original_ias_mph": 98,
+          "gear": "up",
+          "flaps": "up",
+          "power": "off",
+          "rpm": 1700,
+          "reported_manifold_pressure": 0,
+          "map_inhg": null,
+          "oil_cooler_flaps": "neutral",
+          "intercooler_flaps": "neutral",
+          "pitot": "Kollsman D-2, left wing",
+          "weight_lb": 14800,
+          "weight_basis": "approximate gross weight for all stall tests",
+          "weight_uncertainty_lb": null,
+          "alt_ft": 10000,
+          "altitude_basis": "approximate test altitude",
+          "reported_resolution_mph": 1,
+          "measurement_uncertainty_mph": null,
+          "stall_criterion": "report labels as a stall. Break criterion and measured load factor unreported."
+        },
+        "speed_basis": "CAS",
+        "correction": {
+          "instrument": "applied",
+          "position": "applied",
+          "basis_evidence": "explicit-CAS",
+          "calibration_id": "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-ias-to-cas",
+          "in_report_calibration_interpolated_cas_mph": 112.4,
+          "table_support": "bracketed-on-same-installation"
+        },
+        "source_class": "original-report-table",
+        "notes": "The table prints 0 in the manifold pressure column for the power-off condition. The calibration is a within-report check."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-powered",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 107,
+          "reported_cas_mph": 107,
+          "original_ias_mph": 92,
+          "gear": "up",
+          "flaps": "up",
+          "power": "on",
+          "rpm": 2000,
+          "reported_manifold_pressure": 25,
+          "map_inhg": 25,
+          "oil_cooler_flaps": "neutral",
+          "intercooler_flaps": "neutral",
+          "pitot": "Kollsman D-2, left wing",
+          "weight_lb": 14800,
+          "weight_basis": "approximate gross weight for all stall tests",
+          "weight_uncertainty_lb": null,
+          "alt_ft": 10000,
+          "altitude_basis": "approximate test altitude",
+          "reported_resolution_mph": 1,
+          "measurement_uncertainty_mph": null,
+          "stall_criterion": "report labels as a stall. Break criterion and measured load factor unreported."
+        },
+        "speed_basis": "CAS",
+        "correction": {
+          "instrument": "applied",
+          "position": "applied",
+          "basis_evidence": "explicit-CAS",
+          "calibration_id": "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-ias-to-cas",
+          "in_report_calibration_interpolated_cas_mph": null,
+          "table_support": "reported-CAS-below-tabulated-IAS-range"
+        },
+        "source_class": "original-report-table",
+        "notes": "The source prints calibrated stall speed below the lowest tabulated indicated calibration anchor for this configuration. Use the source's reported value."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-gear-up-calibration-100",
+        "quantity": "airspeed_installation_correction",
+        "values": {
+          "original_ias_mph": 100,
+          "water_column_mph": 98,
+          "reported_cas_mph": 106,
+          "reported_installation_error_mph": -8,
+          "gear": "up",
+          "flaps": "down",
+          "pitot": "Kollsman D-2, left wing"
+        },
+        "speed_basis": "IAS",
+        "correction": {},
+        "source_class": "original-report-table"
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-gear-up-calibration-70",
+        "quantity": "airspeed_installation_correction",
+        "values": {
+          "original_ias_mph": 70,
+          "water_column_mph": 67,
+          "reported_cas_mph": 82,
+          "reported_installation_error_mph": -15,
+          "gear": "up",
+          "flaps": "down",
+          "pitot": "Kollsman D-2, left wing"
+        },
+        "speed_basis": "IAS",
+        "correction": {},
+        "source_class": "original-report-table"
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-gear-up-calibration-80",
+        "quantity": "airspeed_installation_correction",
+        "values": {
+          "original_ias_mph": 80,
+          "water_column_mph": 77,
+          "reported_cas_mph": 89,
+          "reported_installation_error_mph": -12,
+          "gear": "up",
+          "flaps": "down",
+          "pitot": "Kollsman D-2, left wing"
+        },
+        "speed_basis": "IAS",
+        "correction": {},
+        "source_class": "original-report-table"
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-gear-up-calibration-90",
+        "quantity": "airspeed_installation_correction",
+        "values": {
+          "original_ias_mph": 90,
+          "water_column_mph": 87,
+          "reported_cas_mph": 98,
+          "reported_installation_error_mph": -11,
+          "gear": "up",
+          "flaps": "down",
+          "pitot": "Kollsman D-2, left wing"
+        },
+        "speed_basis": "IAS",
+        "correction": {},
+        "source_class": "original-report-table"
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-off",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 86,
+          "reported_cas_mph": 86,
+          "original_ias_mph": 76,
+          "gear": "up",
+          "flaps": "down",
+          "power": "off",
+          "rpm": 1300,
+          "reported_manifold_pressure": 0,
+          "map_inhg": null,
+          "oil_cooler_flaps": "neutral",
+          "intercooler_flaps": "neutral",
+          "pitot": "Kollsman D-2, left wing",
+          "weight_lb": 14800,
+          "weight_basis": "approximate gross weight for all stall tests",
+          "weight_uncertainty_lb": null,
+          "alt_ft": 10000,
+          "altitude_basis": "approximate test altitude",
+          "reported_resolution_mph": 1,
+          "measurement_uncertainty_mph": null,
+          "stall_criterion": "report labels as a stall. Break criterion and measured load factor unreported."
+        },
+        "speed_basis": "CAS",
+        "correction": {
+          "instrument": "applied",
+          "position": "applied",
+          "basis_evidence": "explicit-CAS",
+          "calibration_id": "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-gear-up-ias-to-cas",
+          "in_report_calibration_interpolated_cas_mph": 86.2,
+          "table_support": "bracketed-on-same-installation"
+        },
+        "source_class": "original-report-table",
+        "notes": "The table prints 0 in the manifold pressure column for the power-off condition. The calibration is a within-report check."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-calibration-100",
+        "quantity": "airspeed_installation_correction",
+        "values": {
+          "original_ias_mph": 100,
+          "water_column_mph": 98,
+          "reported_cas_mph": 106,
+          "reported_installation_error_mph": -8,
+          "gear": "down",
+          "flaps": "down",
+          "pitot": "Kollsman D-2, left wing"
+        },
+        "speed_basis": "IAS",
+        "correction": {},
+        "source_class": "original-report-table"
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-calibration-65",
+        "quantity": "airspeed_installation_correction",
+        "values": {
+          "original_ias_mph": 65,
+          "water_column_mph": 61,
+          "reported_cas_mph": 78,
+          "reported_installation_error_mph": -17,
+          "gear": "down",
+          "flaps": "down",
+          "pitot": "Kollsman D-2, left wing"
+        },
+        "speed_basis": "IAS",
+        "correction": {},
+        "source_class": "original-report-table"
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-calibration-70",
+        "quantity": "airspeed_installation_correction",
+        "values": {
+          "original_ias_mph": 70,
+          "water_column_mph": 67,
+          "reported_cas_mph": 81,
+          "reported_installation_error_mph": -14,
+          "gear": "down",
+          "flaps": "down",
+          "pitot": "Kollsman D-2, left wing"
+        },
+        "speed_basis": "IAS",
+        "correction": {},
+        "source_class": "original-report-table"
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-calibration-80",
+        "quantity": "airspeed_installation_correction",
+        "values": {
+          "original_ias_mph": 80,
+          "water_column_mph": 77,
+          "reported_cas_mph": 89,
+          "reported_installation_error_mph": -12,
+          "gear": "down",
+          "flaps": "down",
+          "pitot": "Kollsman D-2, left wing"
+        },
+        "speed_basis": "IAS",
+        "correction": {},
+        "source_class": "original-report-table"
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-calibration-90",
+        "quantity": "airspeed_installation_correction",
+        "values": {
+          "original_ias_mph": 90,
+          "water_column_mph": 87,
+          "reported_cas_mph": 98,
+          "reported_installation_error_mph": -11,
+          "gear": "down",
+          "flaps": "down",
+          "pitot": "Kollsman D-2, left wing"
+        },
+        "speed_basis": "IAS",
+        "correction": {},
+        "source_class": "original-report-table"
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-off",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 88,
+          "reported_cas_mph": 88,
+          "original_ias_mph": 78,
+          "gear": "down",
+          "flaps": "down",
+          "power": "off",
+          "rpm": 1350,
+          "reported_manifold_pressure": 0,
+          "map_inhg": null,
+          "oil_cooler_flaps": "neutral",
+          "intercooler_flaps": "neutral",
+          "pitot": "Kollsman D-2, left wing",
+          "weight_lb": 14800,
+          "weight_basis": "approximate gross weight for all stall tests",
+          "weight_uncertainty_lb": null,
+          "alt_ft": 10000,
+          "altitude_basis": "approximate test altitude",
+          "reported_resolution_mph": 1,
+          "measurement_uncertainty_mph": null,
+          "stall_criterion": "report labels as a stall. Break criterion and measured load factor unreported."
+        },
+        "speed_basis": "CAS",
+        "correction": {
+          "instrument": "applied",
+          "position": "applied",
+          "basis_evidence": "explicit-CAS",
+          "calibration_id": "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-ias-to-cas",
+          "in_report_calibration_interpolated_cas_mph": 87.4,
+          "table_support": "bracketed-on-same-installation"
+        },
+        "source_class": "original-report-table",
+        "notes": "The table prints 0 in the manifold pressure column for the power-off condition. The calibration is a within-report check."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-powered",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 75,
+          "reported_cas_mph": 75,
+          "original_ias_mph": 62,
+          "gear": "down",
+          "flaps": "down",
+          "power": "on",
+          "rpm": 2000,
+          "reported_manifold_pressure": 25,
+          "map_inhg": 25,
+          "oil_cooler_flaps": "neutral",
+          "intercooler_flaps": "neutral",
+          "pitot": "Kollsman D-2, left wing",
+          "weight_lb": 14800,
+          "weight_basis": "approximate gross weight for all stall tests",
+          "weight_uncertainty_lb": null,
+          "alt_ft": 10000,
+          "altitude_basis": "approximate test altitude",
+          "reported_resolution_mph": 1,
+          "measurement_uncertainty_mph": null,
+          "stall_criterion": "report labels as a stall. Break criterion and measured load factor unreported."
+        },
+        "speed_basis": "CAS",
+        "correction": {
+          "instrument": "applied",
+          "position": "applied",
+          "basis_evidence": "explicit-CAS",
+          "calibration_id": "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-ias-to-cas",
+          "in_report_calibration_interpolated_cas_mph": null,
+          "table_support": "reported-CAS-below-tabulated-IAS-range"
+        },
+        "source_class": "original-report-table",
+        "notes": "The source prints calibrated stall speed below the lowest tabulated indicated calibration anchor for this configuration. Use the source's reported value."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p47b-handbook-clean-off",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 105,
+          "gear": "up",
+          "flaps": "up",
+          "power": "off",
+          "weight_lb": null,
+          "weight_basis": "normal load, numerical weight not stated in the stall paragraph",
+          "alt_ft": null,
+          "measurement_uncertainty_mph": null,
+          "approximate": true
+        },
+        "speed_basis": "unestablished",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "period-operating-handbook",
+        "notes": "Approximate operational figures. The handbook stall paragraph does not specify the airspeed basis, exact power, test serial or loading. The separate 41-5902 trial gives 88 mph IAS in the full-flap, gear-down power-off test."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p47b-handbook-clean-on",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 98,
+          "gear": "up",
+          "flaps": "up",
+          "power": "on",
+          "weight_lb": null,
+          "weight_basis": "normal load, numerical weight not stated in the stall paragraph",
+          "alt_ft": null,
+          "measurement_uncertainty_mph": null,
+          "approximate": true
+        },
+        "speed_basis": "unestablished",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "period-operating-handbook",
+        "notes": "Approximate operational figures. The handbook stall paragraph does not specify the airspeed basis, exact power, test serial or loading. The separate 41-5902 trial gives 88 mph IAS in the full-flap, gear-down power-off test."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p47b-handbook-landing-off",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 95,
+          "gear": "down",
+          "flaps": "down",
+          "power": "off",
+          "weight_lb": null,
+          "weight_basis": "normal load, numerical weight not stated in the stall paragraph",
+          "alt_ft": null,
+          "measurement_uncertainty_mph": null,
+          "approximate": true
+        },
+        "speed_basis": "unestablished",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "period-operating-handbook",
+        "notes": "Approximate operational figures. The handbook stall paragraph does not specify the airspeed basis, exact power, test serial or loading. The separate 41-5902 trial gives 88 mph IAS in the full-flap, gear-down power-off test."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p47b-handbook-landing-on",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 85,
+          "gear": "down",
+          "flaps": "down",
+          "power": "on",
+          "weight_lb": null,
+          "weight_basis": "normal load, numerical weight not stated in the stall paragraph",
+          "alt_ft": null,
+          "measurement_uncertainty_mph": null,
+          "approximate": true
+        },
+        "speed_basis": "unestablished",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "period-operating-handbook",
+        "notes": "Approximate operational figures. The handbook stall paragraph does not specify the airspeed basis, exact power, test serial or loading. The separate 41-5902 trial gives 88 mph IAS in the full-flap, gear-down power-off test."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:p47d30-landing-wind-up-fig59",
+        "quantity": "accelerated_stall_speed",
+        "values": {
+          "speed_mph": 173,
+          "speed_min_mph": 170,
+          "speed_max_mph": 176,
+          "speed_channel_label": "Service indicated airspeed, mph",
+          "elapsed_s_min": 10.5,
+          "elapsed_s_max": 11.3,
+          "normal_g_min": 2.8,
+          "normal_g_max": 3.1,
+          "gear": "down",
+          "flaps": "down",
+          "canopy": "open",
+          "power": "off",
+          "weight_lb": 12680,
+          "weight_basis": "figure caption gross weight",
+          "cg_pct_mac": 26.4,
+          "alt_ft": 5000
+        },
+        "speed_basis": "IAS",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "original-report-figure-digitized",
+        "notes": "Visual estimate of the load and roll departure in the landing-configuration wind-up turn. The window reflects the read and event choice. TN 2675 establishes the calibration method but does not supply a numerical correction for this trace."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-clean",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 86,
+          "gear": "up",
+          "flaps": "up",
+          "power": "off",
+          "weight_lb": 7445,
+          "weight_basis": "handbook normal all-up weight",
+          "alt_ft": null,
+          "reported_resolution_mph": 1,
+          "measurement_uncertainty_mph": null
+        },
+        "speed_basis": "IAS",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "period-operating-handbook",
+        "notes": "The handbook covers the LF Mk IX Merlin 66 alongside other Mk IX marks. The table does not specify serial, wingtip configuration, test loading details or a low-speed correction. Keep separate from later handbook editions and the BS.543 trials."
+      },
+      {
+        "id": "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-landing",
+        "quantity": "stall_speed",
+        "values": {
+          "speed_mph": 76,
+          "gear": "down",
+          "flaps": "down",
+          "power": "off",
+          "weight_lb": 7445,
+          "weight_basis": "handbook normal all-up weight",
+          "alt_ft": null,
+          "reported_resolution_mph": 1,
+          "measurement_uncertainty_mph": null
+        },
+        "speed_basis": "IAS",
+        "correction": {
+          "instrument": "unestablished",
+          "position": "unestablished"
+        },
+        "source_class": "period-operating-handbook",
+        "notes": "The handbook covers the LF Mk IX Merlin 66 alongside other Mk IX marks. The table does not specify serial, wingtip configuration, test loading details or a low-speed correction. Keep separate from later handbook editions and the BS.543 trials."
+      }
+    ],
+    "calibration_ids": [
+      "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-ias-to-cas",
+      "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-gear-up-ias-to-cas",
+      "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-ias-to-cas"
+    ]
   },
   "tolerances": {
     "stall_speed": {
@@ -3370,6 +4822,9 @@
     "archival-2026-11-10:S37:0006": {"source":"archival-2026-11-10:R04","locator":"AAF 15 May 1944 speed summary"},
     "archival-2026-11-10:S37:0008": {"source":"archival-2026-11-10:R04","locator":"AAF 15 May 1944 speed summary"},
     "archival-2026-11-10:S37:0009": {"source":"archival-2026-11-10:R04","locator":"AAF 15 May 1944 speed summary"},
+    "archival-2026-11-10:S39:0001": {"source":"archival-2026-11-10:R48","locator":"AAF F-IM-1119C-NDT-2 original pp7-8"},
+    "archival-2026-11-10:S39:0002": {"source":"archival-2026-11-10:R48","locator":"AAF F-IM-1119C-NDT-2 original pp7-8"},
+    "archival-2026-11-10:S39:0003": {"source":"archival-2026-11-10:R48","locator":"AAF F-IM-1119C-NDT-2 original pp7-8"},
     "archival-2026-11-10:S43:0001": {"source":"archival-2026-11-10:R54","locator":"USAAF FS-M-19-1578-A original p1; confirmed in 2026-11-06 archive audit"},
     "archival-2026-11-10:S43:0002": {"source":"archival-2026-11-10:R54","locator":"USAAF FS-M-19-1578-A original p1; confirmed in 2026-11-06 archive audit"},
     "archival-2026-11-10:S43:0003": {"source":"archival-2026-11-10:R54","locator":"USAAF FS-M-19-1578-A original p1; confirmed in 2026-11-06 archive audit"},
@@ -3389,11 +4844,17 @@
     "balanced-2026-11-10:BS07:0010": {"source":"balanced-2026-11-10:B04","locator":"PHQ-M-19-1417-A climb table"},
     "stall_four_track_followup_2026-11-10:f6f3-04776-naca-corrected-peak-cn:0001": {"source":"stall_four_track_followup_2026-11-10:f6f3-04776-wr-l717","locator":"NACA WR L-717, original figs.4-13, approximate discussion bands"},
     "stall_four_track_followup_2026-11-10:f6f3-04776-naca-corrected-peak-cn:0003": {"source":"stall_four_track_followup_2026-11-10:f6f3-04776-wr-l717","locator":"NACA WR L-717, original figs.4-13, approximate discussion bands"},
+    "stall_global_2026-11-10:BF109-G2-trop-1": {"source":"stall_global_2026-11-10:UK-BFG2-209","locator":"para20 stalling speeds; preface states non-recognized experimental unit"},
     "stall_global_2026-11-10:KI84-302-1": {"source":"stall_global_2026-11-10:US-KI84-302","locator":"pp7-8 stall tests, 8,000/8,500 ft"},
     "stall_us_2026-11-10:US01:0001": {"source":"stall_us_2026-11-10:P51B5","locator":"V.F Stalling Speeds, 9-row table; figures 1-2 referred to for airspeed/altimeter position"},
     "stall_us_2026-11-10:US02:0001": {"source":"stall_us_2026-11-10:P51B15","locator":"V.E Stalling Speeds, 9-row table at 8000ft; Fig. 1 airspeed calibration"},
     "stall_us_2026-11-10:US02:0002": {"source":"stall_us_2026-11-10:P51B15","locator":"V.E Stalling Speeds, 9-row table at 8000ft; Fig. 1 airspeed calibration"},
+    "stall_us_2026-11-10:US04:0001": {"source":"stall_us_2026-11-10:P47B","locator":"PDF printed p.3 paragraph 10(a) stalls, p.4 paragraph 13 ASI calibration; see references/p47b-stall-weight-audit.json"},
+    "stall_us_2026-11-10:US04:0004": {"source":"stall_us_2026-11-10:P47B","locator":"PDF printed p.3 paragraph 10(a) stalls, p.4 paragraph 13 ASI calibration; see references/p47b-stall-weight-audit.json"},
+    "stall_us_2026-11-10:US20:0001": {"source":"stall_us_2026-11-10:F4U4_80765","locator":"summary section 3 explicitly 'Calibrated Airspeed at Stall', at 12500lb; row (d) repeats 'power on' text"},
     "stall_us_2026-11-10:US20:0002": {"source":"stall_us_2026-11-10:F4U4_80765","locator":"summary section 3 explicitly 'Calibrated Airspeed at Stall', at 12500lb; row (d) repeats 'power on' text"},
+    "stall_us_2026-11-10:US20:0003": {"source":"stall_us_2026-11-10:F4U4_80765","locator":"summary section 3 explicitly 'Calibrated Airspeed at Stall', at 12500lb; row (d) repeats 'power on' text"},
+    "stall_us_2026-11-10:US20:0004": {"source":"stall_us_2026-11-10:F4U4_80765","locator":"summary section 3 explicitly 'Calibrated Airspeed at Stall', at 12500lb; row (d) repeats 'power on' text"},
     "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0001": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Graphs 1 and 2, chart reads retained in references/fw190a4-783.json"},
     "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0002": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Graphs 1 and 2, chart reads retained in references/fw190a4-783.json"},
     "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-boost-by-flight-phase:0003": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST","locator":"Graphs 1 and 2, chart reads retained in references/fw190a4-783.json"},
@@ -3505,7 +4966,10 @@
     "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0011": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figures 6 and 8"},
     "ww2_engine_ratings_and_propeller_2026-11-12:l7d10-war-emergency:0012": {"source":"ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10","locator":"Table II, printed p. 13, Figures 6 and 8"},
     "ww2_fighter_flight_tests_2026-11-11:f6f3-04776-early-stall-traces:0001": {"source":"ww2_fighter_flight_tests_2026-11-11:F6F04776-NACA-L5B13B-TRACE","locator":"PDF 14, 16, 18, 20, 22, and condition table on PDF 4"},
+    "ww2_fighter_flight_tests_2026-11-11:f6f3-04776-early-stall-traces:0002": {"source":"ww2_fighter_flight_tests_2026-11-11:F6F04776-NACA-L5B13B-TRACE","locator":"PDF 14, 16, 18, 20, 22, and condition table on PDF 4"},
     "ww2_fighter_flight_tests_2026-11-11:f6f3-04776-early-stall-traces:0003": {"source":"ww2_fighter_flight_tests_2026-11-11:F6F04776-NACA-L5B13B-TRACE","locator":"PDF 14, 16, 18, 20, 22, and condition table on PDF 4"},
+    "ww2_fighter_flight_tests_2026-11-11:f6f3-04776-early-stall-traces:0004": {"source":"ww2_fighter_flight_tests_2026-11-11:F6F04776-NACA-L5B13B-TRACE","locator":"PDF 14, 16, 18, 20, 22, and condition table on PDF 4"},
+    "ww2_fighter_flight_tests_2026-11-11:f6f3-04776-early-stall-traces:0005": {"source":"ww2_fighter_flight_tests_2026-11-11:F6F04776-NACA-L5B13B-TRACE","locator":"PDF 14, 16, 18, 20, 22, and condition table on PDF 4"},
     "ww2_fighter_flight_tests_2026-11-11:ki84-pacmirs-full-power-climb:0001": {"source":"ww2_fighter_flight_tests_2026-11-11:KI84-PACMIRS-8","locator":"Printed 29, PDF 33, section 1 II F"},
     "ww2_fighter_flight_tests_2026-11-11:ki84-pacmirs-full-power-climb:0002": {"source":"ww2_fighter_flight_tests_2026-11-11:KI84-PACMIRS-8","locator":"Printed 29, PDF 33, section 1 II F"},
     "ww2_fighter_flight_tests_2026-11-11:ki84-pacmirs-full-power-climb:0003": {"source":"ww2_fighter_flight_tests_2026-11-11:KI84-PACMIRS-8","locator":"Printed 29, PDF 33, section 1 II F"},
@@ -3514,6 +4978,8 @@
     "ww2_fighter_flight_tests_2026-11-11:ki84-pacmirs-full-power-climb:0006": {"source":"ww2_fighter_flight_tests_2026-11-11:KI84-PACMIRS-8","locator":"Printed 29, PDF 33, section 1 II F"},
     "ww2_fighter_flight_tests_2026-11-11:ki84-pacmirs-full-power-climb:0007": {"source":"ww2_fighter_flight_tests_2026-11-11:KI84-PACMIRS-8","locator":"Printed 29, PDF 33, section 1 II F"},
     "ww2_fighter_flight_tests_2026-11-11:ki84-pacmirs-full-power-climb:0008": {"source":"ww2_fighter_flight_tests_2026-11-11:KI84-PACMIRS-8","locator":"Printed 29, PDF 33, section 1 II F"},
+    "ww2_fighter_flight_tests_2026-11-11:p40fl-manual-stall:0001": {"source":"ww2_fighter_flight_tests_2026-11-11:P40FL-TO01-25CH-1-1943","locator":"Printed 28, 32"},
+    "ww2_fighter_flight_tests_2026-11-11:p40fl-manual-stall:0004": {"source":"ww2_fighter_flight_tests_2026-11-11:P40FL-TO01-25CH-1-1943","locator":"Printed 28, 32"},
     "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0001": {"source":"ww2_fighter_flight_tests_2026-11-11:P47D30-L8A06-STALL-TRACE","locator":"PDF 70, 72, 75, 77, 78 and configuration table on PDF 3"},
     "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0002": {"source":"ww2_fighter_flight_tests_2026-11-11:P47D30-L8A06-STALL-TRACE","locator":"PDF 70, 72, 75, 77, 78 and configuration table on PDF 3"},
     "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0003": {"source":"ww2_fighter_flight_tests_2026-11-11:P47D30-L8A06-STALL-TRACE","locator":"PDF 70, 72, 75, 77, 78 and configuration table on PDF 3"},
@@ -3680,6 +5146,43 @@
     "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0010": {"source":"ww2_fleet_propeller_2026-11-12:SPIT-BS543-AAEE-TABLE-V","locator":"A&AEE Table V, two upper M.S. points and the full F.S. branch"},
     "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0011": {"source":"ww2_fleet_propeller_2026-11-12:SPIT-BS543-AAEE-TABLE-V","locator":"A&AEE Table V, two upper M.S. points and the full F.S. branch"},
     "ww2_fleet_propeller_2026-11-12:spit-bs543-table-v-upper-level:0012": {"source":"ww2_fleet_propeller_2026-11-12:SPIT-BS543-AAEE-TABLE-V","locator":"A&AEE Table V, two upper M.S. points and the full F.S. branch"},
+    "ww2_fleet_stall_2026-11-12:f4u4-clean-powered": {"source":"ww2_fleet_stall_2026-11-12:F4U4-FT-C-140","locator":"Printed p. 5, Findings A.3(a), and p. 4 loading condition"},
+    "ww2_fleet_stall_2026-11-12:f4u4-landing-power-off": {"source":"ww2_fleet_stall_2026-11-12:F4U4-FT-C-140","locator":"Printed p. 5, Findings A.3(d), and p. 4 loading condition"},
+    "ww2_fleet_stall_2026-11-12:f6f3-glide-fig5-first-roll": {"source":"ww2_fleet_stall_2026-11-12:F6F3-L717","locator":"Fig. 5 (PDF p. 15), first sustained left roll at about 4.8–6.2 s, pp. 2–3 for test method"},
+    "ww2_fleet_stall_2026-11-12:f6f3-landing-fig9-first-roll": {"source":"ww2_fleet_stall_2026-11-12:F6F3-L717","locator":"Fig. 9 (PDF p. 19), first left roll with sustained unloading at 3.1–4.3 s, pp. 2–4 for test method"},
+    "ww2_fleet_stall_2026-11-12:f6f3-powered-climb-fig7-first-roll": {"source":"ww2_fleet_stall_2026-11-12:F6F3-L717","locator":"Fig. 7 (PDF p. 17), first right roll and normal-load break at 6.5–7.3 s, pp. 2–4 for test method"},
+    "ww2_fleet_stall_2026-11-12:p38dg-handbook-clean-15000": {"source":"ww2_fleet_stall_2026-11-12:P38DG-TO01-75F-1","locator":"Section II §15(a), printed p. 29 (PDF p. 31)"},
+    "ww2_fleet_stall_2026-11-12:p38dg-handbook-clean-17000": {"source":"ww2_fleet_stall_2026-11-12:P38DG-TO01-75F-1","locator":"Section II §15(a), printed p. 29 (PDF p. 31)"},
+    "ww2_fleet_stall_2026-11-12:p38dg-handbook-clean-19000": {"source":"ww2_fleet_stall_2026-11-12:P38DG-TO01-75F-1","locator":"Section II §15(a), printed p. 29 (PDF p. 31)"},
+    "ww2_fleet_stall_2026-11-12:p38dg-handbook-landing-15000": {"source":"ww2_fleet_stall_2026-11-12:P38DG-TO01-75F-1","locator":"Section II §15(a), printed p. 29 (PDF p. 31)"},
+    "ww2_fleet_stall_2026-11-12:p38dg-handbook-landing-17000": {"source":"ww2_fleet_stall_2026-11-12:P38DG-TO01-75F-1","locator":"Section II §15(a), printed p. 29 (PDF p. 31)"},
+    "ww2_fleet_stall_2026-11-12:p38dg-handbook-landing-19000": {"source":"ww2_fleet_stall_2026-11-12:P38DG-TO01-75F-1","locator":"Section II §15(a), printed p. 29 (PDF p. 31)"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-calibration-100": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 1 §B.2(a), flaps and gear up"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-calibration-105": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 1 §B.2(a), flaps and gear up"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-calibration-110": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 1 §B.2(a), flaps and gear up"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-calibration-115": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 1 §B.2(a), flaps and gear up"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-calibration-95": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 1 §B.2(a), flaps and gear up"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-off": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 1 §B.1 stall results table"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-powered": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 1 §B.1 stall results table"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-gear-up-calibration-100": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 2 §B.2(b), flaps down and gear up"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-gear-up-calibration-70": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 2 §B.2(b), flaps down and gear up"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-gear-up-calibration-80": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 2 §B.2(b), flaps down and gear up"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-gear-up-calibration-90": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 2 §B.2(b), flaps down and gear up"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-flaps-down-off": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 1 §B.1 stall results table"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-calibration-100": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 2 §B.2(c), flaps and gear down"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-calibration-65": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 2 §B.2(c), flaps and gear down"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-calibration-70": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 2 §B.2(c), flaps and gear down"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-calibration-80": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 2 §B.2(c), flaps and gear down"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-calibration-90": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 2 §B.2(c), flaps and gear down"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-off": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 1 §B.1 stall results table"},
+    "ww2_fleet_stall_2026-11-12:p38g-4212690-landing-powered": {"source":"ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A","locator":"p. 1 §B.1 stall results table"},
+    "ww2_fleet_stall_2026-11-12:p47b-handbook-clean-off": {"source":"ww2_fleet_stall_2026-11-12:P47B-TO01-65BC-1","locator":"Section IV §1(e), printed p. 16 (PDF p. 18)"},
+    "ww2_fleet_stall_2026-11-12:p47b-handbook-clean-on": {"source":"ww2_fleet_stall_2026-11-12:P47B-TO01-65BC-1","locator":"Section IV §1(e), printed p. 16 (PDF p. 18)"},
+    "ww2_fleet_stall_2026-11-12:p47b-handbook-landing-off": {"source":"ww2_fleet_stall_2026-11-12:P47B-TO01-65BC-1","locator":"Section IV §1(e), printed p. 16 (PDF p. 18)"},
+    "ww2_fleet_stall_2026-11-12:p47b-handbook-landing-on": {"source":"ww2_fleet_stall_2026-11-12:P47B-TO01-65BC-1","locator":"Section IV §1(e), printed p. 16 (PDF p. 18)"},
+    "ww2_fleet_stall_2026-11-12:p47d30-landing-wind-up-fig59": {"source":"ww2_fleet_stall_2026-11-12:P47D30-L8A06","locator":"Fig. 59 (PDF p. 82), near peak normal acceleration and onset of sustained unloading at 10.5–11.3 s"},
+    "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-clean": {"source":"ww2_fleet_stall_2026-11-12:SPIT-IX-AP1565J-2","locator":"Part II §40, printed p. 17"},
+    "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-landing": {"source":"ww2_fleet_stall_2026-11-12:SPIT-IX-AP1565J-2","locator":"Part II §40, printed p. 17"},
     "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0001": {"source":"ww2_german_fighter_archive_2026-11-11:A4-783-FW-NR1","locator":"Nr. 1 Kurvenblatt 2, original PDF p. 5"},
     "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0002": {"source":"ww2_german_fighter_archive_2026-11-11:A4-783-FW-NR1","locator":"Nr. 1 Kurvenblatt 2, original PDF p. 5"},
     "ww2_german_fighter_archive_2026-11-11:a4-783-open-and-closed-climb:0003": {"source":"ww2_german_fighter_archive_2026-11-11:A4-783-FW-NR1","locator":"Nr. 1 Kurvenblatt 2, original PDF p. 5"},
@@ -3700,6 +5203,7 @@
     "ww2_german_fighter_archive_2026-11-11:d9-210002-3000rpm-combat-climb:0006": {"source":"ww2_german_fighter_archive_2026-11-11:D9-210002-FW-NR1","locator":"Nr. 1 chart 3, original PDF p. 7"},
     "ww2_german_fighter_archive_2026-11-11:d9-210002-3000rpm-combat-climb:0007": {"source":"ww2_german_fighter_archive_2026-11-11:D9-210002-FW-NR1","locator":"Nr. 1 chart 3, original PDF p. 7"},
     "ww2_german_fighter_archive_2026-11-11:d9-210002-3000rpm-combat-climb:0008": {"source":"ww2_german_fighter_archive_2026-11-11:D9-210002-FW-NR1","locator":"Nr. 1 chart 3, original PDF p. 7"},
+    "ww2_german_fighter_archive_2026-11-11:d9-210002-load-by-trial:0002": {"source":"ww2_german_fighter_archive_2026-11-11:D9-210002-FW-NR1","locator":"Charts 2 and 3, original PDF pp. 6–7"},
     "ww2_german_fighter_archive_2026-11-11:d9-210251-niivvs-timed-turn:0001": {"source":"ww2_german_fighter_archive_2026-11-11:FW190-NIIVVS-YAKUBOVICH","locator":"Yakubovich 2014 Table 3, D-9 WNr 210251 column"},
     "ww2_german_fighter_archive_2026-11-11:f4-1943-wing-and-coefficients:0001": {"source":"ww2_german_fighter_archive_2026-11-11:F4-MTT-1943-GEOMETRY","locator":"3 February 1943 sheet, Allgemein, Flügel and bottom coefficient line"},
     "ww2_german_fighter_archive_2026-11-11:f4-original-1941-climb-time:0001": {"source":"ww2_german_fighter_archive_2026-11-11:F4-MTT-1941-FLOWN","locator":"Steigzeit block, 29 November 1941 sheet"},
@@ -3708,6 +5212,7 @@
     "ww2_german_fighter_archive_2026-11-11:f4-original-1941-climb-time:0004": {"source":"ww2_german_fighter_archive_2026-11-11:F4-MTT-1941-FLOWN","locator":"Steigzeit block, 29 November 1941 sheet"},
     "ww2_german_fighter_archive_2026-11-11:f4-original-1941-climb-time:0005": {"source":"ww2_german_fighter_archive_2026-11-11:F4-MTT-1941-FLOWN","locator":"Steigzeit block, 29 November 1941 sheet"},
     "ww2_german_fighter_archive_2026-11-11:f4-original-1941-landing:0001": {"source":"ww2_german_fighter_archive_2026-11-11:F4-MTT-1941-FLOWN","locator":"Landegeschwindigkeit block, 29 November 1941 sheet"},
+    "ww2_german_fighter_archive_2026-11-11:f4-original-1941-loading:0001": {"source":"ww2_german_fighter_archive_2026-11-11:F4-MTT-1941-FLOWN","locator":"Mass block and wing area, 29 November 1941 sheet"},
     "ww2_german_fighter_archive_2026-11-11:f4-rechlin-matched-climb:0001": {"source":"ww2_german_fighter_archive_2026-11-11:F4-RECHLIN-15023","locator":"Rechlin 15023/41 p. 3, section c"},
     "ww2_german_fighter_archive_2026-11-11:g2-14513-weighing-and-cg:0001": {"source":"ww2_german_fighter_archive_2026-11-11:G2-NIIVVS-14513-HANDLING","locator":"NII VVS p. 33 with p. 10 reference loading"},
     "ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0001": {"source":"ww2_german_fighter_archive_2026-11-11:G2-WNF-10911","locator":"Blatt 2 aircraft and engine ledger, Blatt 3 results, Blatt 4 Vw/Vn/Vnk definitions"},
@@ -3739,8 +5244,11 @@
     "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-level:0001": {"source":"ww2_multiaxis_propulsion_trials_2026-11-10:P40F-4113635-FEB","locator":"FS-M-19-1549-A speed table"},
     "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-level:0002": {"source":"ww2_multiaxis_propulsion_trials_2026-11-10:P40F-4113635-FEB","locator":"FS-M-19-1549-A speed table"},
     "ww2_multiaxis_propulsion_trials_2026-11-10:p51b15-chart-vs-performance:0001": {"source":"ww2_multiaxis_propulsion_trials_2026-11-10:P51B15-4324777","locator":"Eng-47-1749-A summary, III.C, level-flight compare 20,800 ft"},
+    "ww2_thirteen_fighter_source_recovery_2026-11-11:fw190a4-783-intake-controlled-comparison:0001": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:FW190A4-783-NR2","locator":"ReportNr2 summary andNr1 baseline"},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-14513-measured-loading:0001": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:G2-NIIVVS-14513","locator":"Original p10"},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-14513-minimum-controlled-speed:0001": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:G2-NIIVVS-14513","locator":"Original p43 Table2"},
+    "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-14513-minimum-controlled-speed:0002": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:G2-NIIVVS-14513","locator":"Original p43 Table2"},
+    "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-14513-minimum-controlled-speed:0003": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:G2-NIIVVS-14513","locator":"Original p43 Table2"},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-cina-climb:0006": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:G2-MT215-TRANSCRIPTION","locator":"English MT-215 Time to Altitude table, preserved prior column mapping"},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-cina-climb:0007": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:G2-MT215-TRANSCRIPTION","locator":"English MT-215 Time to Altitude table, preserved prior column mapping"},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-cina-climb:0008": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:G2-MT215-TRANSCRIPTION","locator":"English MT-215 Time to Altitude table, preserved prior column mapping"},
@@ -3780,11 +5288,14 @@
     "archival-2026-11-10:R04": {"name":"AAF Wright Field, 44-1 fuel tests 15–20 May 1944","url":"https://www.wwiiaircraftperformance.org/mustang/mustangtest.html","sha256":null},
     "archival-2026-11-10:R28": {"name":"A&AEE 1943 three-engine-comparison, tables II III V VI","url":"https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html","sha256":null},
     "archival-2026-11-10:R33": {"name":"Messerschmitt 109 11 L 42, 4 standard vs 4 smoothed airframes","url":"https://www.wwiiaircraftperformance.org/me109/me109g-10911l42.html","sha256":null},
+    "archival-2026-11-10:R48": {"name":"AAF F-IM-1119C-NDT-2 interim handling/stall test","url":"https://www.wwiiaircraftperformance.org/japan/T-2_Report_on_Frank_I_Ki-84.pdf","sha256":null},
     "archival-2026-11-10:R54": {"name":"USAAF FS-M-19-1578-A seven matched belly brace-on/off speed pairs","url":"https://www.wwiiaircraftperformance.com/org/p-40/p-40_files/P-40F_41-13635_FS-M-19-1578-A.pdf","sha256":null},
     "balanced-2026-11-10:B04": {"name":"USAAF PHQ-M-19-1417-A, 1942-06-18","url":"https://wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf","locator":"Military 2700 rpm and rated 2550 rpm climb portions are distinct power conditions, NOT one homogeneous continuous climb.","sha256":null},
     "stall_four_track_followup_2026-11-10:f6f3-04776-wr-l717": {"name":"NACA MR L5B13B / WR L-717, Flight Measurements of the Flying Qualities of an F6F-3 Airplane III: Stalling Characteristics (Reeder, February 1945)","url":"https://ntrs.nasa.gov/api/citations/19930092602/downloads/19930092602.pdf","locator":"Conclusions and figures 4-13, flight-derived peak normal-force coefficient CN; gross-weight correction for fuel consumed","sha256":null},
+    "stall_global_2026-11-10:UK-BFG2-209": {"name":"Captured Me109 G-2 trop technical trials","url":"https://www.wwiiaircraftperformance.org/me109/me-109g2-trop.html","sha256":null},
     "stall_global_2026-11-10:US-KI84-302": {"name":"Report on Frank I Ki-84, F-IM-1119C-NDT-2","url":"https://www.wwiiaircraftperformance.org/japan/T-2_Report_on_Frank_I_Ki-84.pdf","sha256":null},
     "stall_us_2026-11-10:F4U4_80765": {"name":"US Naval Air Test Center TED BIS-2157, 25 Mar 1948","url":"https://www.wwiiaircraftperformance.org/f4u/f4u-4-80765.pdf","locator":"summary section 3 explicitly 'Calibrated Airspeed at Stall', at 12500lb; row (d) repeats 'power on' text","sha256":null},
+    "stall_us_2026-11-10:P47B": {"name":"USAAF PHQ-M-19-1417-A, 18 Jun 1942","url":"https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf","locator":"PDF printed p.3 paragraph 10(a) stalls, p.4 paragraph 13 ASI calibration; see references/p47b-stall-weight-audit.json","sha256":null},
     "stall_us_2026-11-10:P51B15": {"name":"USAAF Eng-47-1749-A, 20 May 1944","url":"https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html","locator":"V.E Stalling Speeds, 9-row table at 8000ft; Fig. 1 airspeed calibration","sha256":null},
     "stall_us_2026-11-10:P51B5": {"name":"USAAF Eng-47-1734-A, 24 Apr 1944","url":"https://www.wwiiaircraftperformance.com/org/p-51/p-51b-6883.html","locator":"V.F Stalling Speeds, 9-row table; figures 1-2 referred to for airspeed/altimeter position","sha256":null},
     "ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER": {"name":"Daimler-Benz Motorenmuster DB 605 A–C, Kraftstoff B4","url":"https://degnans.com/markd/DB605.pdf","locator":"PDF p. 14, Motorenmuster Blatt 1. April 1943 Leistungsblatt on PDF p. 12 agrees on combat and emergency points.","sha256":"d95185ced34031e27e3c23ca73544ce34be85369ffd51aac2a45ecc3b5ad2d8f"},
@@ -3796,6 +5307,7 @@
     "ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10": {"name":"NACA RM L7D10, Flight Tests of a Curtiss No. 838-1C2-18 Three-Blade Propeller Having Trailing-Edge Extensions, 1947","url":"https://ntrs.nasa.gov/api/citations/20050019331/downloads/20050019331.pdf","locator":"Tables I and II, printed pp. 12–13","sha256":"33c7ee617c1e952b728571150536a8ba32aa1f5d649480888a16289a34ae34ba"},
     "ww2_fighter_flight_tests_2026-11-11:F6F04776-NACA-L5B13B-TRACE": {"name":"NACA MR L5B13b / WR L-717, stalling characteristics, 1945","url":"https://ntrs.nasa.gov/citations/19930092602","locator":"PDF 4–6 and 14–23, including Figures 4, 6, 8, 10, 12","sha256":"2cddc4f507ef61bd0fc8e238b334cde82e563a1e0b5e30eb126e2e30245fd7ce"},
     "ww2_fighter_flight_tests_2026-11-11:KI84-PACMIRS-8": {"name":"PACMIRS Air Translations No. 8, captured Japanese Doc 1578, sections 1–6, 26 July 1945","url":"https://www.si.edu/media/NASM/NASM-Manual-000033269.pdf","locator":"NASM.XXXX.0428 ref4016, Box D641 / Nakajima 21. PDF 3, 5–7, 27, 31–34, 38, 44, 46","sha256":"1e5c42557f1c7814ad5a2b25b158efc0886197d2ee2da6d72856b2b001147968"},
+    "ww2_fighter_flight_tests_2026-11-11:P40FL-TO01-25CH-1-1943": {"name":"T.O. 01-25CH-1 Flight Operating Instructions, 20 June 1943","url":"https://aviationarchives.blogspot.com/2022/01/curtiss-p-40fl-warhawk-flight.html","locator":"Printed 2, 25, 28, 32, 36–40. PDF 7, 30, 33, 37, 41–45","sha256":"1f8722753669132045095aeeaf385152bfc6932e219669c205dd49e0df875ec8"},
     "ww2_fighter_flight_tests_2026-11-11:P47D30-L8A06-STALL-TRACE": {"name":"NACA RM L8A06, longitudinal stability and stalling, 1948","url":"https://ntrs.nasa.gov/citations/20090022749","locator":"PDF 3–4, 9–10, 70, 72, 75, 77–78","sha256":"95c68467065e3a68394581c7b8c20b4e0578224bde9710e3bde05b6c89961075"},
     "ww2_fighter_measured_conditions_2026-11-11:B-5902-COOLING": {"name":"Wright Field PHQ-M-19-1417-A, 18 June 1942","url":"https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf","locator":"Printed pp. 2–4, §§B.2–6, B.11–13","sha256":"3508b0d84f46e42cef9534224d7d8839179fb04a1d5e6be0dff20a2211c9ac97"},
     "ww2_fighter_measured_conditions_2026-11-11:D30-TN2899": {"name":"NACA TN 2899, superseding RM L8A06","url":"https://ntrs.nasa.gov/api/citations/19930083857/downloads/19930083857.pdf","locator":"PDF 2, 4, 7, 13, 50, 68, 75–76","sha256":"99e90787abfdd1c15c4bffd06260dce317c992fd9276746cea063a5138edb542"},
@@ -3810,6 +5322,13 @@
     "ww2_fleet_propeller_2026-11-12:P40F-1578A-101344-CLIMB": {"name":"Wright Field FS-M-19-1578-A, P-40F 41-13635 Propeller Test, 3 April 1943","url":"https://www.wwiiaircraftperformance.com/org/p-40/p-40_files/P-40F_41-13635_FS-M-19-1578-A.pdf","locator":"Summary A.1 and B.2, original report transcription","sha256":null},
     "ww2_fleet_propeller_2026-11-12:P51B-ENG-47-1749-A-FIG-5": {"name":"Wright Field Eng-47-1749-A, P-51B-15 43-24777, 20 May 1944","url":"https://www.wwiiaircraftperformance.com/org/p-51/p-51_files/P-51B_24777_Power_Required.jpg","locator":"Fig. 5, printed p. 11","sha256":"c306de7b236b86f3c30db53fa4563a7d70c8c9e6ebbe542ffcc4a93ab6499f75"},
     "ww2_fleet_propeller_2026-11-12:SPIT-BS543-AAEE-TABLE-V": {"name":"A&AEE, Spitfire IX comparison of Merlin RM.9SM, 66 and 70, BS.354, BS.543 and BS.551","url":"https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html","locator":"Sections 2-3 and Table V; original report transcription","sha256":null},
+    "ww2_fleet_stall_2026-11-12:F4U4-FT-C-140": {"name":"NATC FT-C-140 / TED BIS 2157, production inspection trials, 25 March 1948","url":"https://www.wwiiaircraftperformance.org/f4u/f4u-4-80765.pdf","locator":"Printed pp. 3–5, Findings A.3 on p. 5","sha256":"1a0cef7ff1a8a80dd0928ab428221fc276677d4398e00bf7c20662622c4bff53"},
+    "ww2_fleet_stall_2026-11-12:F6F3-L717": {"name":"NACA MR L5B13b / WR L-717, stalling characteristics, February 1945","url":"https://ntrs.nasa.gov/api/citations/19930092602/downloads/19930092602.pdf","locator":"Printed pp. 1–4 and Figures 4–13","sha256":"2cddc4f507ef61bd0fc8e238b334cde82e563a1e0b5e30eb126e2e30245fd7ce"},
+    "ww2_fleet_stall_2026-11-12:P38DG-TO01-75F-1": {"name":"USAAF T.O. 01-75F-1, Section II p. 29 revision dated 1 September 1943","url":"https://drive.google.com/file/d/0Bw4FNWq6qRgqek5WMngzdG13UDA/view","locator":"Section II §15(a)–(b), printed p. 29 (PDF p. 31). Correction charts printed p. 32B.","sha256":"0b64f8d6809a261324964f61eb30a411618155e323d75331e0ea889aa3df8"},
+    "ww2_fleet_stall_2026-11-12:P38G-FS-M-19-1492-A": {"name":"USAAF Materiel Center FS-M-19-1492-A, Stall Tests, 22 October 1942","url":"https://www.wwiiaircraftperformance.com/org/p-38/p-38_files/P-38G_42-12690_FS-M-19-1492-A.pdf","locator":"p. 1 §B.1 paired stall speeds and §B.2(a) clean calibration, p. 2 §B.2(b)–(c) calibration","sha256":"3a19b8fd3084c2e013250c47a374b447e535f7b067c39d9f4fc25d100650e5cc"},
+    "ww2_fleet_stall_2026-11-12:P47B-TO01-65BC-1": {"name":"USAAF T.O. 01-65BC-1 preliminary pilot handbook, 25 April 1942","url":"https://www.si.edu/media/NASM/NASM-Manual-000027958.pdf","locator":"Section IV §1(e), printed p. 16 (PDF p. 18)","sha256":"451fd7aed91419dabc1bf78c872993d0ad5c9ed0d4f8352c8ddb902ffbc1c36b"},
+    "ww2_fleet_stall_2026-11-12:P47D30-L8A06": {"name":"NACA RM L8A06, longitudinal stability and stalling characteristics, February 1948","url":"https://ntrs.nasa.gov/api/citations/20090022749/downloads/20090022749.pdf","locator":"Printed pp. 2–3 and 8–10, Figures 47–59","sha256":"95c68467065e3a68394581c7b8c20b4e0578224bde9710e3bde05b6c89961075"},
+    "ww2_fleet_stall_2026-11-12:SPIT-IX-AP1565J-2": {"name":"Air Ministry A.P. 1565J—P.N., second edition, August 1943, with A.L. 1","url":"https://www.docdroid.com/file/download/HRosRhd/supermarine-spitfire-fix-pilots-notes-pdf.pdf","locator":"Part I §1 (LF Mk IX with Merlin 66), Part II §40 Stalling, printed p. 17","sha256":null},
     "ww2_german_fighter_archive_2026-11-11:A4-783-FW-NR1": {"name":"Focke-Wulf Flugbericht Fw 190/783 Nr. 1, 1 March 1943","url":"https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr1.pdf","locator":"Original PDF, Blatt 2–3 and Kurvenblatt 2 (PDF p. 5)","sha256":"466386bb734b8f0860cc6721080c944f2af85470e22af891247d4b4435775256"},
     "ww2_german_fighter_archive_2026-11-11:D9-210002-FW-NR1": {"name":"Focke-Wulf Flugbericht Fw 190 D-9/210002 Nr. 1, 7 October 1944","url":"https://www.wwiiaircraftperformance.com/org/fw190/d9/d9_files/Fw_190_D-9_210002_FB_Nr1.pdf","locator":"PDF pp. 2–3 and 5–7, original charts 1–3","sha256":"2eb69cec374ec47161cd36401887d6491a3f1b5c30e27475444dd55a83e8ef36"},
     "ww2_german_fighter_archive_2026-11-11:F4-MTT-1941-FLOWN": {"name":"Messerschmitt Flugzeugdatenblatt, Leistungen erflogen, Augsburg, 29 November 1941","url":"https://web.archive.org/web/20141110152256im_/http://www.beim-zeugmeister.de/zeugmeister/uploads/pics/_LW_A0001_B015.jpg","locator":"Single original sheet, mass block, Steigzeit and Landegeschwindigkeit","sha256":"853c099c75abd773e00979bd5f8a7a93e628e79f1ac023cbb8e843c0d50652db"},
@@ -3822,6 +5341,7 @@
     "ww2_multiaxis_propulsion_trials_2026-11-10:F4U4-80765": {"name":"US Navy Production Inspection Trials of Model F4U-4, 25 Mar 1948","url":"https://www.wwiiaircraftperformance.org/f4u/f4u-4-80765.pdf","locator":"Original pp. 8–11 normal/military power speed and climb tables; CAS stall table already indexed in separate pack.","sha256":null},
     "ww2_multiaxis_propulsion_trials_2026-11-10:P40F-4113635-FEB": {"name":"AAF FS-M-19-1549-A, Propeller Tests, 18 Feb 1943","url":"https://www.wwiiaircraftperformance.com/org/p-40/p-40_files/P-40F_41-13635_FS-M-19-1549-A.pdf","locator":"Original summary tables high speed at 18,100 ft and high-blower climbs at 18,000–28,000 ft; V-1650-1, 5 hubs/blades/spinners.","sha256":null},
     "ww2_multiaxis_propulsion_trials_2026-11-10:P51B15-4324777": {"name":"AAF Eng-47-1749-A, 44-1 fuel trials, 20 May 1944","url":null,"locator":"Original introduction, III.C configuration and V performance; matched airframe stall rows already indexed in stall_us, speed-calibration Fig.1 elsewhere.","sha256":null},
+    "ww2_thirteen_fighter_source_recovery_2026-11-11:FW190A4-783-NR2": {"name":"FockeWulf flightreport783Nr2,15March1943","url":"https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr2.pdf","locator":"Original manufacturer report, supporting transcription fw190-783-nr2.html","sha256":null},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:G2-MT215-SCAN": {"name":"Finnish test curves,5Apr1943","url":"https://wwiiaircraftperformance.com/org/me109/g/g_files/me-109g2-finn.pdf","locator":"Original two-page scan; corresponding original chart images at Kurfurst","sha256":null},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:G2-MT215-TRANSCRIPTION": {"name":"Finnish MT-215 trial, English transcription by Hkuusela with editorial commentary","url":"https://kurfurst.org/Performance_tests/109G_MT215/109G2_MT215_en.html","locator":"Original report tables transcribed on public page; retrieved via HTTP","sha256":null},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:G2-NIIVVS-14513": {"name":"NII VVS stability/control report, tests4-22Jun1943; approval23Jul1943","url":"https://wwiiaircraftperformance.com/org/me109/g/g_files/Me-109_G2_14513_Russian.pdf","locator":"Original53-page scan; pp10,43","sha256":null},

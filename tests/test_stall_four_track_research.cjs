@@ -10,13 +10,13 @@ const prefix='stall_four_track_followup_2026-11-10';
 const rows=catalog.observations.filter(row=>row.pack_id===prefix);
 assert.equal(pack.pack_version,'1.0.1');
 assert.equal(rows.length,29);
-assert.equal(catalog.summary.observation_count,1873);
-assert.equal(catalog.summary.stall_count,250);
-assert.equal(catalog.summary.source_count,295);
-assert.equal(catalog.calibration_curves.length,19,'Unsafe chart digitization must not silently produce a correction curve');
-assert.equal(catalog.summary.lineage_groups,56);
+assert.equal(catalog.summary.observation_count,1910);
+assert.equal(catalog.summary.stall_count,272);
+assert.equal(catalog.summary.source_count,302);
+assert.equal(catalog.calibration_curves.length,22,'Three P-38G report tables extend the 19 existing curves');
+assert.equal(catalog.summary.lineage_groups,62);
 assert.equal(catalog.summary.calibration_reviews,29);
-assert.equal(catalog.document_lineage.length,56);
+assert.equal(catalog.document_lineage.length,62);
 assert.equal(catalog.calibration_reviews.length,29);
 
 const va=rows.filter(row=>row.quantity==='stall_speed');
@@ -49,6 +49,6 @@ assert.ok(catalog.document_lineage.every(link=>link.members.every(id=>sources.ha
 assert.ok(catalog.calibration_reviews.every(review=>sources.has(review.source_id||review.original_other_source)));
 assert.ok(pack.calibration_reviews.every(row=>row.status==='original-low-speed-chart-inspected-not-fit-ready'));
 assert.equal(catalog.observations.filter(row=>row.preferred_airspeed?.basis==='CAS*').length,1);
-assert.equal(catalog.observations.filter(row=>row.preferred_airspeed?.basis==='CAS').length,9);
+assert.equal(catalog.observations.filter(row=>row.preferred_airspeed?.basis==='CAS').length,16);
 
 console.log('Pass four-track stall research evidence, semantic dedup links, original IAS/CN and unchanged CAS gates');

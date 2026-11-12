@@ -22,7 +22,7 @@ test('existing performance archives and both original stall research packs join 
  assert.equal(a.observations.filter(row=>row.pack_id==='stall_global_2026-11-10').length,44);
  assert.equal(a.observations.filter(row=>row.pack_id==='stall_airspeed_corrections_us_2026-11-10').length,6);
  assert.equal(a.observations.filter(row=>row.pack_id==='stall_airspeed_corrections_global_2026-11-10').length,8);
- assert.equal(a.calibration_curves.length,19);
+ assert.equal(a.calibration_curves.length,22,'Three P-38G report tables extend the 19 existing curves');
  assert.equal(a.calibration_curves.filter(curve=>curve.index_only).length,2);
  const corsair=a.observations.find(row=>row.id.endsWith(':corsair1945-stall-full-flaps-power-off'));
  assert.equal(corsair.preferred_airspeed.basis,'CAS*');
@@ -113,7 +113,7 @@ test('current HTML embeds exactly the reviewed catalog and read-only browser exp
  assert.ok(html.includes('id="historical-audit"'));
  assert.ok(html.includes('id="historical-lineage-rows"'));
  assert.ok(html.includes('id="historical-review-rows"'));
-assert.equal(catalog.document_lineage.length,56);
+assert.equal(catalog.document_lineage.length,62);
  assert.equal(catalog.calibration_reviews.length,29);
  assert.ok(html.includes('id="historical-research-data"'));
  assert.ok(html.includes('window.UniversalResearchEvidence'));

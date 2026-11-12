@@ -24,7 +24,13 @@ Two examples show why matching comes first. The P-51B/C rows give **4,175 kg and
 
 ## Proposed data milestones
 
-### v1.6 · Condition-matched propulsion inputs
+### v1.6 · Fleet stall inputs
+
+Export a clean-stall reference for every research variant using source-calibrated speed, source-indicated speed, a documented calculation, or an empty value flagged **emergency research needed**, in that order. Retain the original loading, configuration, power, speed basis and uncertainty wherever the evidence supports them.
+
+The v1.6.0 export has 13 populated references. Further calibration work includes the P-47D-30 speed channel, F6F-3 reduction and run loading, and P-51B-15 near-stall position error. [Fleet stall data and per-variant gaps](WW2_FLEET_STALL_INPUTS_2026-11-12.md)
+
+### Follow-up · Condition-matched propulsion inputs
 
 1. Deliver the F4U-4 80765 and P-47B 41-5902 inputs the simulator propeller milestone needs using the existing `fleet_reference`, `engine_reference` and observation links. Keep the 80% F4U-4 level reference and the P-47B 76% high-tip-Mach military level branch in their checked conditions. The separate 76% military climb case uses a 0.136 m² cooling-drag area. Retain the 41-5942 transfer result. Record selected shaft power as measured, chart-assigned or estimated, with original units, and efficiency as measured, inferred or assumed. Carry RPM, boost, gear, cooling and the propeller drawing where known. Preserve the propeller test envelope in advance ratio, power coefficient and tip Mach. L7D10 Table III spans 61.1–84.1% on one modified three-blade Curtiss installation, with a distinct high-tip-Mach drop. Twin-engine cases should identify both per-engine and total power. [v1.3 reference replays](WW2_PROPELLER_REFERENCE_VALUES_2026-11-12.md) · [v1.5 fleet reference](WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md#aircraft-inputs)
 2. Use the seven-profile propeller scorecard to choose one remaining gap that moves a replay or matchup. Start the source search with **Fw 190 A-4 WNr 783** at 2,400 rpm. Nr. 1/2/4 provide the speed, boost, intake and cooling comparisons. Match the existing boost observations and the two handbook anchors to an installed BMW 801 D-2 shaft-power schedule through the blower transition. Recover the exact blade drawing. **ARC 11066**, **ARC 11439 / DSIR 23/17276** and **ARC 9516 / DSIR 23/15353** are leads. The handbook power anchors and controller bench study set boundaries. Other candidates are the F-4 DB 601 E 1.30 ata / 2,500 rpm combat branch and the P-38G's high-power altitude schedule if the 48 inHg transfer matters beyond the checked 5,000-ft case. [v1.4 engine anchors](WW2_FIGHTER_INPUT_REFERENCE_2026-11-12.md) · [v1.5 archive leads](WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md#further-report-access) · [German source register](WW2_GERMAN_FIGHTER_ARCHIVE_2026-11-11.md)
