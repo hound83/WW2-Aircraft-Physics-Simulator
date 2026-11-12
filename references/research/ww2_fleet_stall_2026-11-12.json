@@ -1,6 +1,6 @@
 {
   "schema": "ww2-fighter-evidence-pack/v1",
-  "pack_version": "1.0.0",
+  "pack_version": "1.1.0",
   "description": "Fleet stall input review and original report readings for Fighter Sim Inputs v1.6.",
   "sources": [
     {
@@ -1087,7 +1087,22 @@
         "numerical_improvement_ids": [
           "ww2_fleet_stall_2026-11-12:f4u4-clean-powered"
         ],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "sources": [
+            {
+              "observation_id": "stall_us_2026-11-10:US20:0002",
+              "qualification": "NATC normal-fighter table. The report lists three serials and leaves the stall-run serial unspecified.",
+              "conditions": {
+                "weight_lb": 12500,
+                "weight_basis": "normal fighter loading in the report"
+              },
+              "unit": "kt",
+              "value_field": "stall_speed",
+              "grade": "primary"
+            }
+          ]
+        }
       },
       {
         "id": "p51b_4324777",
@@ -1095,7 +1110,29 @@
         "open": "Eng-47-1749-A §V.E gives nine 67.5–86 mph IAS stalls at 8,000 ft with instantaneous weights. The gear/flaps-up Figure 1 has an axis beginning at 100 mph and its first measured calibration point near 150 mph. Recover a low-speed position-error run or independent position-corrected stall on the same installation.",
         "added_ids": [],
         "numerical_improvement_ids": [],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "sources": [
+            {
+              "observation_id": "stall_us_2026-11-10:US02:0001",
+              "qualification": "Gear and flaps up with cooling shutters closed. Figure 1 has no calibration at this speed.",
+              "conditions": {
+                "altitude_ft": 8000,
+                "weight_basis": "instantaneous stall weight"
+              },
+              "grade": "primary"
+            },
+            {
+              "observation_id": "stall_us_2026-11-10:US02:0002",
+              "qualification": "Gear and flaps up with cooling shutters open. Figure 1 has no calibration at this speed.",
+              "conditions": {
+                "altitude_ft": 8000,
+                "weight_basis": "instantaneous stall weight"
+              },
+              "grade": "primary"
+            }
+          ]
+        }
       },
       {
         "id": "f6f3_04776",
@@ -1117,7 +1154,16 @@
           "ww2_fleet_stall_2026-11-12:f6f3-powered-climb-fig7-first-roll",
           "ww2_fleet_stall_2026-11-12:f6f3-landing-fig9-first-roll"
         ],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "sources": [
+            {
+              "observation_id": "ww2_fleet_stall_2026-11-12:f6f3-glide-fig5-first-roll",
+              "qualification": "First roll-off reading window. Part III leaves the reduction applied to the indicated channel unconfirmed. Loading is the approximate takeoff weight.",
+              "grade": "primary"
+            }
+          ]
+        }
       },
       {
         "id": "spitfire_lfix_bs543",
@@ -1131,7 +1177,16 @@
           "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-clean",
           "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-landing"
         ],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "sources": [
+            {
+              "observation_id": "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-clean",
+              "qualification": "Family pilot notes include the LF Mk IX. The table leaves test serial and wingtip configuration unspecified.",
+              "grade": "primary"
+            }
+          ]
+        }
       },
       {
         "id": "p47b_415902",
@@ -1151,7 +1206,20 @@
           "ww2_fleet_stall_2026-11-12:p47b-handbook-landing-off",
           "ww2_fleet_stall_2026-11-12:p47b-handbook-landing-on"
         ],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "sources": [
+            {
+              "observation_id": "stall_us_2026-11-10:US04:0001",
+              "qualification": "Original 41-5902 trial. The 12,565 lb figure is the test summary loading. The run weight and stall-range calibration are unresolved.",
+              "conditions": {
+                "weight_lb": 12565,
+                "weight_basis": "gross weight in test summary"
+              },
+              "grade": "primary"
+            }
+          ]
+        }
       },
       {
         "id": "p38g_4212687",
@@ -1193,7 +1261,21 @@
         ],
         "clean_power_off_case_ids": [
           "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-off"
-        ]
+        ],
+        "clean_stall": {
+          "sources": [
+            {
+              "observation_id": "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-off",
+              "qualification": "Sister airframe 42-12690 with its own pitot installation. The gross weight and altitude are approximate.",
+              "grade": "primary"
+            },
+            {
+              "observation_id": "ww2_fleet_stall_2026-11-12:p38dg-handbook-clean-15000",
+              "qualification": "D through G handbook row at 15,000 lb. Power is unreported.",
+              "grade": "primary"
+            }
+          ]
+        }
       },
       {
         "id": "fw190d9_210002",
@@ -1201,7 +1283,19 @@
         "open": "WNr 210002 Eltron installation correction spans 360–550 km/h. Seek a WNr 210002 stall test with configuration and weight, and a low-speed calibration for that installation. Wright Field FE-120/WNr 601088 would be a separate case.",
         "added_ids": [],
         "numerical_improvement_ids": [],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "sources": [],
+          "calculation": {
+            "loading_observation_id": "ww2_german_fighter_archive_2026-11-11:d9-210002-load-by-trial:0002",
+            "mass_field": "starting_mass_kg",
+            "wing_area_m2": 18.3,
+            "wing_area_source": "Project-supplied Google AI ww2_fighters_dataset(1).json, fw190_d9 airframe.wing_area_m2",
+            "cl_max": 1.42,
+            "cl_max_source": "Project-supplied Google AI ww2_fighters_dataset(1).json, fw190_d9 airframe.cl_max_clean, used as an engineering assumption",
+            "qualification": "Uses the documented combat-climb starting mass as a reference loading for a clean, power-off estimate. The available Eltron correction starts at 360 km/h."
+          }
+        }
       },
       {
         "id": "fw190a4_783",
@@ -1209,7 +1303,19 @@
         "open": "WNr 783 Nr. 1/2/4 describe speed, climb and cooling. Seek the WNr 783 low-speed test or a named A-4 handling report. A-3 WNr 313 and US EB-104 are separate variants. The WNr 2310 number is landing speed.",
         "added_ids": [],
         "numerical_improvement_ids": [],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "sources": [],
+          "calculation": {
+            "loading_observation_id": "ww2_thirteen_fighter_source_recovery_2026-11-11:fw190a4-783-intake-controlled-comparison:0001",
+            "mass_field": "test_mass_kg",
+            "wing_area_m2": 18.3,
+            "wing_area_source": "Project-supplied Google AI ww2_fighters_dataset(1).json, Fw 190 A-5 and A-8 airframe.wing_area_m2, transferred",
+            "cl_max": 1.4,
+            "cl_max_source": "Project-supplied Google AI ww2_fighters_dataset(1).json, Fw 190 A-5 and A-8 airframe.cl_max_clean, transferred as an engineering assumption",
+            "qualification": "Uses WNr 783 test loading and same-family geometry and lift assumptions. Brown's 127 mph A-4/U8 recollection leaves the speed basis, run loading and power unspecified."
+          }
+        }
       },
       {
         "id": "p40f_4113635",
@@ -1220,7 +1326,16 @@
         "open": "T.O. 01-25CH-1 §II gives 92 mph clean and 82 mph landing IAS for the P-40F/L family. The separately stated 8,500 lb normal gross weight is an operating limit reference. Recover the actual stall-test power, load and in-range position correction for 41-13635.",
         "added_ids": [],
         "numerical_improvement_ids": [],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "sources": [
+            {
+              "observation_id": "ww2_fighter_flight_tests_2026-11-11:p40fl-manual-stall:0001",
+              "qualification": "P-40F/L pilot manual, approximate operating value. The handbook leaves stall-run mass, power and instrument correction unspecified.",
+              "grade": "primary"
+            }
+          ]
+        }
       },
       {
         "id": "ki84_302",
@@ -1232,7 +1347,19 @@
         "open": "T-2 302 Interim Report No. 3 already gives 102/90/79 mph IAS. Its 7,900 lb value is takeoff weight. Recover the run load and airspeed calibration. The PACMIRS metric table has a separate lineage and ambiguous power column.",
         "added_ids": [],
         "numerical_improvement_ids": [],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "sources": [
+            {
+              "observation_id": "archival-2026-11-10:S39:0001",
+              "qualification": "T-2 aircraft 302. The report gives takeoff weight. The weight at the stall and airspeed calibration are unresolved.",
+              "conditions": {
+                "takeoff_weight_lb": 7900
+              },
+              "grade": "primary"
+            }
+          ]
+        }
       },
       {
         "id": "p47d30_433441",
@@ -1250,7 +1377,21 @@
         "numerical_improvement_ids": [
           "ww2_fleet_stall_2026-11-12:p47d30-landing-wind-up-fig59"
         ],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "sources": [
+            {
+              "observation_id": "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0002",
+              "qualification": "Clean-glide roll and acceleration break, Figure 49. The chart labels the channel service indicated. The range is a chart reading window.",
+              "conditions": {
+                "weight_basis": "figure run gross weight"
+              },
+              "unit": "mph",
+              "value_field": "figure_speed_mph",
+              "grade": "primary"
+            }
+          ]
+        }
       },
       {
         "id": "bf109f4_representative",
@@ -1258,7 +1399,17 @@
         "open": "The flight and calculation sheets give 135 km/h landing speed at 2,560 and 2,570 kg respectively. Seek the separate clean stall in a Rechlin or factory report with airspeed reduction and test loading.",
         "added_ids": [],
         "numerical_improvement_ids": [],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "sources": [],
+          "calculation": {
+            "loading_observation_id": "ww2_german_fighter_archive_2026-11-11:f4-original-1941-loading:0001",
+            "mass_field": "flight_loading_kg",
+            "cl_max": 1.47,
+            "cl_max_source": "Project-supplied Google AI ww2_fighters_dataset(1).json, bf109_f4 airframe.cl_max_clean, used as an engineering assumption",
+            "qualification": "Uses loading and wing area from the 29 November 1941 Messerschmitt sheet. Its separate 135 km/h figure describes landing."
+          }
+        }
       },
       {
         "id": "bf109g2_db605a",
@@ -1270,7 +1421,16 @@
         "open": "NII VVS p. 43 Table 2 already records 180/170/165 km/h indicated and 186/176/171 km/h in the source Vᵢ column. The method descends to loss of control. Recover the Vᵢ correction definition, gear and engine state for the glide and actual stall weight. Keep gun-pod WNr 14513 separate from MT-215.",
         "added_ids": [],
         "numerical_improvement_ids": [],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "sources": [
+            {
+              "observation_id": "stall_global_2026-11-10:BF109-G2-trop-1",
+              "qualification": "Captured G-2/Trop handling trial. Use with its own installation. Stall-run mass, power and near-stall correction are unspecified.",
+              "grade": "primary"
+            }
+          ]
+        }
       }
     ]
   },

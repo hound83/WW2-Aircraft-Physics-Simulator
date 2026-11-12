@@ -1,6 +1,6 @@
 # Simulator data handoff
 
-**Fighter Sim Inputs v1.6.0-rc.1**, dated **12 November 2026**, adds fleet stall evidence. It covers 13 aircraft variants. The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
+**Fighter Sim Inputs v1.6.0**, dated **12 November 2026**, adds the fleet clean-stall reference. It covers 13 aircraft variants. The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 
 [Data milestones and original-source research priorities](research/WW2_FIGHTER_DATA_ROADMAP.md)
 
@@ -30,7 +30,7 @@ Coverage measures available evidence for the research dossier. The source condit
 
 ## Notes for Simulator Work
 
-- The stall reference adds numerical evidence for six variants and a calibrated clean power-off case for P-38G 42-12690. Its 98 mph IAS and 112 mph CAS are both reported at approximately 14,800 lb and 10,000 ft. Two further calibrated clean cases remain open. [Stall data and source limits](research/WW2_FLEET_STALL_INPUTS_2026-11-12.md)
+- Read `stall_reference.variants[].clean_stall` for the 13 selected clean-stall references. Two use reported CAS, eight use source-indicated speeds and three use documented EAS calculations. The speed basis, evidence grade, conditions, observation IDs and assumptions travel with each row. The P-38G carries both 98 mph IAS and 112 mph CAS for the 42-12690 test. [Stall data and source limits](research/WW2_FLEET_STALL_INPUTS_2026-11-12.md)
 
 - The v1.5 companion's `fleet_reference` gives each research variant its original reports and the conditions for using the data. The Fw 190 A-4 has separate combat-power curves for both intakes. The P-38G high-power comparison, Mustang and Spitfire high-blower readings, and P-40F propeller trials are ready for source-conditioned comparisons. [Fleet propeller reference and report index](research/WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md)
 

@@ -26,9 +26,9 @@ Two examples show why matching comes first. The P-51B/C rows give **4,175 kg and
 
 ### v1.6 · Fleet stall inputs
 
-Review all 13 variants for clean power-off, powered and landing stalls. Record the test installation, original indicated and corrected speed where available, load, configuration, power, altitude and uncertainty. The targets are six variants with a numerical improvement and three new usable clean power-off cases.
+Export a clean-stall reference for every research variant using source-calibrated speed, source-indicated speed, a documented calculation, or an empty value flagged **emergency research needed**, in that order. Retain the original loading, configuration, power, speed basis and uncertainty wherever the evidence supports them.
 
-The v1.6.0-rc.1 checkpoint adds numerical evidence to six dossiers and qualifies one clean power-off source comparison. P-38G 42-12690 has paired stall speeds and a low-speed calibration. Prioritize the P-47D-30 speed channel, F6F-3 reduction and run loading, and P-51B-15 near-stall calibration for the two remaining cases. [Fleet stall checkpoint and per-variant gaps](WW2_FLEET_STALL_INPUTS_2026-11-12.md)
+The v1.6.0 export has 13 populated references. Further calibration work includes the P-47D-30 speed channel, F6F-3 reduction and run loading, and P-51B-15 near-stall position error. [Fleet stall data and per-variant gaps](WW2_FLEET_STALL_INPUTS_2026-11-12.md)
 
 ### Follow-up · Condition-matched propulsion inputs
 

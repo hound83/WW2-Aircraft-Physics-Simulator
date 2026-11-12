@@ -1,6 +1,6 @@
 {
   "schema": "ww2-fighter-sim-inputs/v1",
-  "version": "1.6.0-rc.1",
+  "version": "1.6.0",
   "as_of": "2026-11-12",
   "scope": "Historical inputs and conditional estimates for source-case lookups and evidence graphs.",
   "originals": {
@@ -127,13 +127,13 @@
       {
         "id": "ww2_fleet_stall_2026-11-12",
         "kind": "independent-research-pack",
-        "version": "1.0.0",
+        "version": "1.1.0",
         "original_schema": "ww2-fighter-evidence-pack/v1",
         "files": [
           "references/research/ww2_fleet_stall_2026-11-12.json"
         ],
         "sha256": [
-          "70d1cd6bdc9cfc3c694c77b58f82e6a80dc6e9bb36869910520e6452685c00a9"
+          "e61669ed39b6b6f5f0e57d5dfb77fbcf795bc07a295bc7df13dd8f8e753e5d72"
         ]
       },
       {
@@ -1279,7 +1279,32 @@
         "numerical_improvement_ids": [
           "ww2_fleet_stall_2026-11-12:f4u4-clean-powered"
         ],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "calibrated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 89.4,
+            "unit": "kt",
+            "basis": "CAS",
+            "range": null
+          },
+          "observation_ids": [
+            "stall_us_2026-11-10:US20:0002"
+          ],
+          "source_aircraft": "F4U-4 BuNo 80765",
+          "source_class": "postwar_original_USN_flight_test_of_WWII_type",
+          "conditions": {
+            "weight_lb": 12500,
+            "weight_basis": "normal fighter loading in the report",
+            "takeoff_weight_lb": null,
+            "altitude_ft": null,
+            "gear": "up",
+            "flaps": "up",
+            "power": "off"
+          },
+          "qualification": "NATC normal-fighter table. The report lists three serials and leaves the stall-run serial unspecified."
+        }
       },
       {
         "id": "p51b_4324777",
@@ -1287,7 +1312,32 @@
         "open": "Eng-47-1749-A §V.E gives nine 67.5–86 mph IAS stalls at 8,000 ft with instantaneous weights. The gear/flaps-up Figure 1 has an axis beginning at 100 mph and its first measured calibration point near 150 mph. Recover a low-speed position-error run or independent position-corrected stall on the same installation.",
         "added_ids": [],
         "numerical_improvement_ids": [],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 86,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": null
+          },
+          "observation_ids": [
+            "stall_us_2026-11-10:US02:0001"
+          ],
+          "source_aircraft": "P-51B-15 43-24777",
+          "source_class": "period_original_flight_test_transcribed",
+          "conditions": {
+            "weight_lb": 9270,
+            "weight_basis": "instantaneous stall weight",
+            "takeoff_weight_lb": null,
+            "altitude_ft": 8000,
+            "gear": "up",
+            "flaps": "up",
+            "power": "off"
+          },
+          "qualification": "Gear and flaps up with cooling shutters closed. Figure 1 has no calibration at this speed."
+        }
       },
       {
         "id": "f6f3_04776",
@@ -1309,7 +1359,35 @@
           "ww2_fleet_stall_2026-11-12:f6f3-powered-climb-fig7-first-roll",
           "ww2_fleet_stall_2026-11-12:f6f3-landing-fig9-first-roll"
         ],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 95,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": [
+              93,
+              97
+            ]
+          },
+          "observation_ids": [
+            "ww2_fleet_stall_2026-11-12:f6f3-glide-fig5-first-roll"
+          ],
+          "source_aircraft": "F6F-3 BuAer 04776",
+          "source_class": "original-report-figure-digitized",
+          "conditions": {
+            "weight_lb": null,
+            "weight_basis": "approximate takeoff weight. NACA corrected for fuel used when computing CN",
+            "takeoff_weight_lb": 11200,
+            "altitude_ft": null,
+            "gear": "up",
+            "flaps": "up",
+            "power": "idle"
+          },
+          "qualification": "First roll-off reading window. Part III leaves the reduction applied to the indicated channel unconfirmed. Loading is the approximate takeoff weight."
+        }
       },
       {
         "id": "spitfire_lfix_bs543",
@@ -1323,7 +1401,32 @@
           "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-clean",
           "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-landing"
         ],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 86,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": null
+          },
+          "observation_ids": [
+            "ww2_fleet_stall_2026-11-12:spitfire-ix-normal-load-clean"
+          ],
+          "source_aircraft": "Spitfire F/LF/HF Mk IX, pilot notes family",
+          "source_class": "period-operating-handbook",
+          "conditions": {
+            "weight_lb": 7445,
+            "weight_basis": "handbook normal all-up weight",
+            "takeoff_weight_lb": null,
+            "altitude_ft": null,
+            "gear": "up",
+            "flaps": "up",
+            "power": "off"
+          },
+          "qualification": "Family pilot notes include the LF Mk IX. The table leaves test serial and wingtip configuration unspecified."
+        }
       },
       {
         "id": "p47b_415902",
@@ -1343,7 +1446,32 @@
           "ww2_fleet_stall_2026-11-12:p47b-handbook-landing-off",
           "ww2_fleet_stall_2026-11-12:p47b-handbook-landing-on"
         ],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 105,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": null
+          },
+          "observation_ids": [
+            "stall_us_2026-11-10:US04:0001"
+          ],
+          "source_aircraft": "P-47B 41-5902",
+          "source_class": "period_original_scan_previous_repo_audit",
+          "conditions": {
+            "weight_lb": 12565,
+            "weight_basis": "gross weight in test summary",
+            "takeoff_weight_lb": null,
+            "altitude_ft": null,
+            "gear": "up",
+            "flaps": "up",
+            "power": "off"
+          },
+          "qualification": "Original 41-5902 trial. The 12,565 lb figure is the test summary loading. The run weight and stall-range calibration are unresolved."
+        }
       },
       {
         "id": "p38g_4212687",
@@ -1385,7 +1513,34 @@
         ],
         "clean_power_off_case_ids": [
           "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-off"
-        ]
+        ],
+        "clean_stall": {
+          "status": "calibrated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 112,
+            "unit": "mph",
+            "basis": "CAS",
+            "range": null
+          },
+          "observation_ids": [
+            "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-off"
+          ],
+          "source_aircraft": "P-38G-1-LO A.C. 42-12690",
+          "source_class": "original-report-table",
+          "conditions": {
+            "weight_lb": 14800,
+            "weight_basis": "approximate gross weight for all stall tests",
+            "takeoff_weight_lb": null,
+            "altitude_ft": 10000,
+            "gear": "up",
+            "flaps": "up",
+            "power": "off"
+          },
+          "reported_ias_mph": 98,
+          "calibration_id": "ww2_fleet_stall_2026-11-12:p38g-4212690-clean-ias-to-cas",
+          "qualification": "Sister airframe 42-12690 with its own pitot installation. The gross weight and altitude are approximate."
+        }
       },
       {
         "id": "fw190d9_210002",
@@ -1393,7 +1548,39 @@
         "open": "WNr 210002 Eltron installation correction spans 360–550 km/h. Seek a WNr 210002 stall test with configuration and weight, and a low-speed calibration for that installation. Wright Field FE-120/WNr 601088 would be a separate case.",
         "added_ids": [],
         "numerical_improvement_ids": [],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "calculated",
+          "grade": "calculated",
+          "speed": {
+            "value": 185,
+            "unit": "km/h",
+            "basis": "EAS",
+            "range": null
+          },
+          "observation_ids": [
+            "ww2_german_fighter_archive_2026-11-11:d9-210002-load-by-trial:0002"
+          ],
+          "source_aircraft": "Fw 190 D-9 WNr 210002, Jumo 213 A/1021521862",
+          "conditions": {
+            "gear": "up",
+            "flaps": "up",
+            "power": "off (assumed)",
+            "load_factor_g": 1
+          },
+          "calculation": {
+            "method": "clean 1g lift balance",
+            "mass_kg": 4300,
+            "mass_field": "starting_mass_kg",
+            "wing_area_m2": 18.3,
+            "wing_area_source": "Project-supplied Google AI ww2_fighters_dataset(1).json, fw190_d9 airframe.wing_area_m2",
+            "cl_max": 1.42,
+            "cl_max_source": "Project-supplied Google AI ww2_fighters_dataset(1).json, fw190_d9 airframe.cl_max_clean, used as an engineering assumption",
+            "reference_density_kg_m3": 1.225,
+            "gravity_m_s2": 9.80665
+          },
+          "qualification": "Uses the documented combat-climb starting mass as a reference loading for a clean, power-off estimate. The available Eltron correction starts at 360 km/h."
+        }
       },
       {
         "id": "fw190a4_783",
@@ -1401,7 +1588,39 @@
         "open": "WNr 783 Nr. 1/2/4 describe speed, climb and cooling. Seek the WNr 783 low-speed test or a named A-4 handling report. A-3 WNr 313 and US EB-104 are separate variants. The WNr 2310 number is landing speed.",
         "added_ids": [],
         "numerical_improvement_ids": [],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "calculated",
+          "grade": "calculated",
+          "speed": {
+            "value": 177,
+            "unit": "km/h",
+            "basis": "EAS",
+            "range": null
+          },
+          "observation_ids": [
+            "ww2_thirteen_fighter_source_recovery_2026-11-11:fw190a4-783-intake-controlled-comparison:0001"
+          ],
+          "source_aircraft": "Fw190A4 WNr783 engine20208",
+          "conditions": {
+            "gear": "up",
+            "flaps": "up",
+            "power": "off (assumed)",
+            "load_factor_g": 1
+          },
+          "calculation": {
+            "method": "clean 1g lift balance",
+            "mass_kg": 3870,
+            "mass_field": "test_mass_kg",
+            "wing_area_m2": 18.3,
+            "wing_area_source": "Project-supplied Google AI ww2_fighters_dataset(1).json, Fw 190 A-5 and A-8 airframe.wing_area_m2, transferred",
+            "cl_max": 1.4,
+            "cl_max_source": "Project-supplied Google AI ww2_fighters_dataset(1).json, Fw 190 A-5 and A-8 airframe.cl_max_clean, transferred as an engineering assumption",
+            "reference_density_kg_m3": 1.225,
+            "gravity_m_s2": 9.80665
+          },
+          "qualification": "Uses WNr 783 test loading and same-family geometry and lift assumptions. Brown's 127 mph A-4/U8 recollection leaves the speed basis, run loading and power unspecified."
+        }
       },
       {
         "id": "p40f_4113635",
@@ -1412,7 +1631,32 @@
         "open": "T.O. 01-25CH-1 §II gives 92 mph clean and 82 mph landing IAS for the P-40F/L family. The separately stated 8,500 lb normal gross weight is an operating limit reference. Recover the actual stall-test power, load and in-range position correction for 41-13635.",
         "added_ids": [],
         "numerical_improvement_ids": [],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 92,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": null
+          },
+          "observation_ids": [
+            "ww2_fighter_flight_tests_2026-11-11:p40fl-manual-stall:0001"
+          ],
+          "source_aircraft": "P-40F/L",
+          "source_class": "original-handbook",
+          "conditions": {
+            "weight_lb": null,
+            "weight_basis": null,
+            "takeoff_weight_lb": null,
+            "altitude_ft": null,
+            "gear": "up",
+            "flaps": "up",
+            "power": null
+          },
+          "qualification": "P-40F/L pilot manual, approximate operating value. The handbook leaves stall-run mass, power and instrument correction unspecified."
+        }
       },
       {
         "id": "ki84_302",
@@ -1424,7 +1668,32 @@
         "open": "T-2 302 Interim Report No. 3 already gives 102/90/79 mph IAS. Its 7,900 lb value is takeoff weight. Recover the run load and airspeed calibration. The PACMIRS metric table has a separate lineage and ambiguous power column.",
         "added_ids": [],
         "numerical_improvement_ids": [],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 102,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": null
+          },
+          "observation_ids": [
+            "archival-2026-11-10:S39:0001"
+          ],
+          "source_aircraft": "Ki-84-I Frank / captured T-2 no.302",
+          "source_class": "original-report-table",
+          "conditions": {
+            "weight_lb": null,
+            "weight_basis": null,
+            "takeoff_weight_lb": 7900,
+            "altitude_ft": 8000,
+            "gear": "up",
+            "flaps": "up",
+            "power": "off"
+          },
+          "qualification": "T-2 aircraft 302. The report gives takeoff weight. The weight at the stall and airspeed calibration are unresolved."
+        }
       },
       {
         "id": "p47d30_433441",
@@ -1442,7 +1711,35 @@
         "numerical_improvement_ids": [
           "ww2_fleet_stall_2026-11-12:p47d30-landing-wind-up-fig59"
         ],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 116,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": [
+              113,
+              119
+            ]
+          },
+          "observation_ids": [
+            "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0002"
+          ],
+          "source_aircraft": "P-47D-30 AAF 43-3441",
+          "source_class": "inspected-original-digitized-window",
+          "conditions": {
+            "weight_lb": 12400,
+            "weight_basis": "figure run gross weight",
+            "takeoff_weight_lb": null,
+            "altitude_ft": 5000,
+            "gear": "up",
+            "flaps": "up",
+            "power": "glide"
+          },
+          "qualification": "Clean-glide roll and acceleration break, Figure 49. The chart labels the channel service indicated. The range is a chart reading window."
+        }
       },
       {
         "id": "bf109f4_representative",
@@ -1450,7 +1747,39 @@
         "open": "The flight and calculation sheets give 135 km/h landing speed at 2,560 and 2,570 kg respectively. Seek the separate clean stall in a Rechlin or factory report with airspeed reduction and test loading.",
         "added_ids": [],
         "numerical_improvement_ids": [],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "calculated",
+          "grade": "calculated",
+          "speed": {
+            "value": 159,
+            "unit": "km/h",
+            "basis": "EAS",
+            "range": null
+          },
+          "observation_ids": [
+            "ww2_german_fighter_archive_2026-11-11:f4-original-1941-loading:0001"
+          ],
+          "source_aircraft": "Bf 109 F-4 DB 601 E",
+          "conditions": {
+            "gear": "up",
+            "flaps": "up",
+            "power": "off (assumed)",
+            "load_factor_g": 1
+          },
+          "calculation": {
+            "method": "clean 1g lift balance",
+            "mass_kg": 2890,
+            "mass_field": "flight_loading_kg",
+            "wing_area_m2": 16.1,
+            "wing_area_source": "ww2_german_fighter_archive_2026-11-11:f4-original-1941-loading:0001",
+            "cl_max": 1.47,
+            "cl_max_source": "Project-supplied Google AI ww2_fighters_dataset(1).json, bf109_f4 airframe.cl_max_clean, used as an engineering assumption",
+            "reference_density_kg_m3": 1.225,
+            "gravity_m_s2": 9.80665
+          },
+          "qualification": "Uses loading and wing area from the 29 November 1941 Messerschmitt sheet. Its separate 135 km/h figure describes landing."
+        }
       },
       {
         "id": "bf109g2_db605a",
@@ -1462,10 +1791,47 @@
         "open": "NII VVS p. 43 Table 2 already records 180/170/165 km/h indicated and 186/176/171 km/h in the source Vᵢ column. The method descends to loss of control. Recover the Vᵢ correction definition, gear and engine state for the glide and actual stall weight. Keep gun-pod WNr 14513 separate from MT-215.",
         "added_ids": [],
         "numerical_improvement_ids": [],
-        "clean_power_off_case_ids": []
+        "clean_power_off_case_ids": [],
+        "clean_stall": {
+          "status": "indicated_from_source",
+          "grade": "primary",
+          "speed": {
+            "value": 112,
+            "unit": "mph",
+            "basis": "IAS",
+            "range": null
+          },
+          "observation_ids": [
+            "stall_global_2026-11-10:BF109-G2-trop-1"
+          ],
+          "source_aircraft": "Messerschmitt Bf 109 G-2 tropicalized",
+          "source_class": "research-pack",
+          "conditions": {
+            "weight_lb": null,
+            "weight_basis": "not published",
+            "takeoff_weight_lb": null,
+            "altitude_ft": null,
+            "gear": "up",
+            "flaps": "up",
+            "power": "not stated"
+          },
+          "qualification": "Captured G-2/Trop handling trial. Use with its own installation. Stall-run mass, power and near-stall correction are unspecified."
+        }
       }
     ],
+    "clean_stall_selection_order": [
+      "calibrated_from_source",
+      "indicated_from_source",
+      "calculated",
+      "emergency_research_needed"
+    ],
     "summary": {
+      "clean_stall_by_status": {
+        "calibrated_from_source": 2,
+        "indicated_from_source": 8,
+        "calculated": 3,
+        "emergency_research_needed": 0
+      },
       "variants_reviewed": 13,
       "variants_numerically_improved": 6,
       "new_clean_power_off_variants": 1,
@@ -4478,6 +4844,7 @@
     "balanced-2026-11-10:BS07:0010": {"source":"balanced-2026-11-10:B04","locator":"PHQ-M-19-1417-A climb table"},
     "stall_four_track_followup_2026-11-10:f6f3-04776-naca-corrected-peak-cn:0001": {"source":"stall_four_track_followup_2026-11-10:f6f3-04776-wr-l717","locator":"NACA WR L-717, original figs.4-13, approximate discussion bands"},
     "stall_four_track_followup_2026-11-10:f6f3-04776-naca-corrected-peak-cn:0003": {"source":"stall_four_track_followup_2026-11-10:f6f3-04776-wr-l717","locator":"NACA WR L-717, original figs.4-13, approximate discussion bands"},
+    "stall_global_2026-11-10:BF109-G2-trop-1": {"source":"stall_global_2026-11-10:UK-BFG2-209","locator":"para20 stalling speeds; preface states non-recognized experimental unit"},
     "stall_global_2026-11-10:KI84-302-1": {"source":"stall_global_2026-11-10:US-KI84-302","locator":"pp7-8 stall tests, 8,000/8,500 ft"},
     "stall_us_2026-11-10:US01:0001": {"source":"stall_us_2026-11-10:P51B5","locator":"V.F Stalling Speeds, 9-row table; figures 1-2 referred to for airspeed/altimeter position"},
     "stall_us_2026-11-10:US02:0001": {"source":"stall_us_2026-11-10:P51B15","locator":"V.E Stalling Speeds, 9-row table at 8000ft; Fig. 1 airspeed calibration"},
@@ -4836,6 +5203,7 @@
     "ww2_german_fighter_archive_2026-11-11:d9-210002-3000rpm-combat-climb:0006": {"source":"ww2_german_fighter_archive_2026-11-11:D9-210002-FW-NR1","locator":"Nr. 1 chart 3, original PDF p. 7"},
     "ww2_german_fighter_archive_2026-11-11:d9-210002-3000rpm-combat-climb:0007": {"source":"ww2_german_fighter_archive_2026-11-11:D9-210002-FW-NR1","locator":"Nr. 1 chart 3, original PDF p. 7"},
     "ww2_german_fighter_archive_2026-11-11:d9-210002-3000rpm-combat-climb:0008": {"source":"ww2_german_fighter_archive_2026-11-11:D9-210002-FW-NR1","locator":"Nr. 1 chart 3, original PDF p. 7"},
+    "ww2_german_fighter_archive_2026-11-11:d9-210002-load-by-trial:0002": {"source":"ww2_german_fighter_archive_2026-11-11:D9-210002-FW-NR1","locator":"Charts 2 and 3, original PDF pp. 6–7"},
     "ww2_german_fighter_archive_2026-11-11:d9-210251-niivvs-timed-turn:0001": {"source":"ww2_german_fighter_archive_2026-11-11:FW190-NIIVVS-YAKUBOVICH","locator":"Yakubovich 2014 Table 3, D-9 WNr 210251 column"},
     "ww2_german_fighter_archive_2026-11-11:f4-1943-wing-and-coefficients:0001": {"source":"ww2_german_fighter_archive_2026-11-11:F4-MTT-1943-GEOMETRY","locator":"3 February 1943 sheet, Allgemein, Flügel and bottom coefficient line"},
     "ww2_german_fighter_archive_2026-11-11:f4-original-1941-climb-time:0001": {"source":"ww2_german_fighter_archive_2026-11-11:F4-MTT-1941-FLOWN","locator":"Steigzeit block, 29 November 1941 sheet"},
@@ -4844,6 +5212,7 @@
     "ww2_german_fighter_archive_2026-11-11:f4-original-1941-climb-time:0004": {"source":"ww2_german_fighter_archive_2026-11-11:F4-MTT-1941-FLOWN","locator":"Steigzeit block, 29 November 1941 sheet"},
     "ww2_german_fighter_archive_2026-11-11:f4-original-1941-climb-time:0005": {"source":"ww2_german_fighter_archive_2026-11-11:F4-MTT-1941-FLOWN","locator":"Steigzeit block, 29 November 1941 sheet"},
     "ww2_german_fighter_archive_2026-11-11:f4-original-1941-landing:0001": {"source":"ww2_german_fighter_archive_2026-11-11:F4-MTT-1941-FLOWN","locator":"Landegeschwindigkeit block, 29 November 1941 sheet"},
+    "ww2_german_fighter_archive_2026-11-11:f4-original-1941-loading:0001": {"source":"ww2_german_fighter_archive_2026-11-11:F4-MTT-1941-FLOWN","locator":"Mass block and wing area, 29 November 1941 sheet"},
     "ww2_german_fighter_archive_2026-11-11:f4-rechlin-matched-climb:0001": {"source":"ww2_german_fighter_archive_2026-11-11:F4-RECHLIN-15023","locator":"Rechlin 15023/41 p. 3, section c"},
     "ww2_german_fighter_archive_2026-11-11:g2-14513-weighing-and-cg:0001": {"source":"ww2_german_fighter_archive_2026-11-11:G2-NIIVVS-14513-HANDLING","locator":"NII VVS p. 33 with p. 10 reference loading"},
     "ww2_german_fighter_archive_2026-11-11:g2-wnf-individual-timed-course-runs:0001": {"source":"ww2_german_fighter_archive_2026-11-11:G2-WNF-10911","locator":"Blatt 2 aircraft and engine ledger, Blatt 3 results, Blatt 4 Vw/Vn/Vnk definitions"},
@@ -4875,6 +5244,7 @@
     "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-level:0001": {"source":"ww2_multiaxis_propulsion_trials_2026-11-10:P40F-4113635-FEB","locator":"FS-M-19-1549-A speed table"},
     "ww2_multiaxis_propulsion_trials_2026-11-10:p40f-five-props-level:0002": {"source":"ww2_multiaxis_propulsion_trials_2026-11-10:P40F-4113635-FEB","locator":"FS-M-19-1549-A speed table"},
     "ww2_multiaxis_propulsion_trials_2026-11-10:p51b15-chart-vs-performance:0001": {"source":"ww2_multiaxis_propulsion_trials_2026-11-10:P51B15-4324777","locator":"Eng-47-1749-A summary, III.C, level-flight compare 20,800 ft"},
+    "ww2_thirteen_fighter_source_recovery_2026-11-11:fw190a4-783-intake-controlled-comparison:0001": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:FW190A4-783-NR2","locator":"ReportNr2 summary andNr1 baseline"},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-14513-measured-loading:0001": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:G2-NIIVVS-14513","locator":"Original p10"},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-14513-minimum-controlled-speed:0001": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:G2-NIIVVS-14513","locator":"Original p43 Table2"},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-14513-minimum-controlled-speed:0002": {"source":"ww2_thirteen_fighter_source_recovery_2026-11-11:G2-NIIVVS-14513","locator":"Original p43 Table2"},
@@ -4922,6 +5292,7 @@
     "archival-2026-11-10:R54": {"name":"USAAF FS-M-19-1578-A seven matched belly brace-on/off speed pairs","url":"https://www.wwiiaircraftperformance.com/org/p-40/p-40_files/P-40F_41-13635_FS-M-19-1578-A.pdf","sha256":null},
     "balanced-2026-11-10:B04": {"name":"USAAF PHQ-M-19-1417-A, 1942-06-18","url":"https://wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf","locator":"Military 2700 rpm and rated 2550 rpm climb portions are distinct power conditions, NOT one homogeneous continuous climb.","sha256":null},
     "stall_four_track_followup_2026-11-10:f6f3-04776-wr-l717": {"name":"NACA MR L5B13B / WR L-717, Flight Measurements of the Flying Qualities of an F6F-3 Airplane III: Stalling Characteristics (Reeder, February 1945)","url":"https://ntrs.nasa.gov/api/citations/19930092602/downloads/19930092602.pdf","locator":"Conclusions and figures 4-13, flight-derived peak normal-force coefficient CN; gross-weight correction for fuel consumed","sha256":null},
+    "stall_global_2026-11-10:UK-BFG2-209": {"name":"Captured Me109 G-2 trop technical trials","url":"https://www.wwiiaircraftperformance.org/me109/me-109g2-trop.html","sha256":null},
     "stall_global_2026-11-10:US-KI84-302": {"name":"Report on Frank I Ki-84, F-IM-1119C-NDT-2","url":"https://www.wwiiaircraftperformance.org/japan/T-2_Report_on_Frank_I_Ki-84.pdf","sha256":null},
     "stall_us_2026-11-10:F4U4_80765": {"name":"US Naval Air Test Center TED BIS-2157, 25 Mar 1948","url":"https://www.wwiiaircraftperformance.org/f4u/f4u-4-80765.pdf","locator":"summary section 3 explicitly 'Calibrated Airspeed at Stall', at 12500lb; row (d) repeats 'power on' text","sha256":null},
     "stall_us_2026-11-10:P47B": {"name":"USAAF PHQ-M-19-1417-A, 18 Jun 1942","url":"https://www.wwiiaircraftperformance.com/org/p-47/p-47_files/P-47B_41-5902_PHQ-M-19-1417-A.pdf","locator":"PDF printed p.3 paragraph 10(a) stalls, p.4 paragraph 13 ASI calibration; see references/p47b-stall-weight-audit.json","sha256":null},
@@ -4970,6 +5341,7 @@
     "ww2_multiaxis_propulsion_trials_2026-11-10:F4U4-80765": {"name":"US Navy Production Inspection Trials of Model F4U-4, 25 Mar 1948","url":"https://www.wwiiaircraftperformance.org/f4u/f4u-4-80765.pdf","locator":"Original pp. 8–11 normal/military power speed and climb tables; CAS stall table already indexed in separate pack.","sha256":null},
     "ww2_multiaxis_propulsion_trials_2026-11-10:P40F-4113635-FEB": {"name":"AAF FS-M-19-1549-A, Propeller Tests, 18 Feb 1943","url":"https://www.wwiiaircraftperformance.com/org/p-40/p-40_files/P-40F_41-13635_FS-M-19-1549-A.pdf","locator":"Original summary tables high speed at 18,100 ft and high-blower climbs at 18,000–28,000 ft; V-1650-1, 5 hubs/blades/spinners.","sha256":null},
     "ww2_multiaxis_propulsion_trials_2026-11-10:P51B15-4324777": {"name":"AAF Eng-47-1749-A, 44-1 fuel trials, 20 May 1944","url":null,"locator":"Original introduction, III.C configuration and V performance; matched airframe stall rows already indexed in stall_us, speed-calibration Fig.1 elsewhere.","sha256":null},
+    "ww2_thirteen_fighter_source_recovery_2026-11-11:FW190A4-783-NR2": {"name":"FockeWulf flightreport783Nr2,15March1943","url":"https://www.wwiiaircraftperformance.com/org/fw190/a4/a4_files/Fw_190_783_Nr2.pdf","locator":"Original manufacturer report, supporting transcription fw190-783-nr2.html","sha256":null},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:G2-MT215-SCAN": {"name":"Finnish test curves,5Apr1943","url":"https://wwiiaircraftperformance.com/org/me109/g/g_files/me-109g2-finn.pdf","locator":"Original two-page scan; corresponding original chart images at Kurfurst","sha256":null},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:G2-MT215-TRANSCRIPTION": {"name":"Finnish MT-215 trial, English transcription by Hkuusela with editorial commentary","url":"https://kurfurst.org/Performance_tests/109G_MT215/109G2_MT215_en.html","locator":"Original report tables transcribed on public page; retrieved via HTTP","sha256":null},
     "ww2_thirteen_fighter_source_recovery_2026-11-11:G2-NIIVVS-14513": {"name":"NII VVS stability/control report, tests4-22Jun1943; approval23Jul1943","url":"https://wwiiaircraftperformance.com/org/me109/g/g_files/Me-109_G2_14513_Russian.pdf","locator":"Original53-page scan; pp10,43","sha256":null},

@@ -7,6 +7,7 @@ const { buildCatalog } = require('./research-layer.cjs');
 const { buildEvidence } = require('./derive-fighter-evidence.cjs');
 const { tolerances, resolveCase } = require('./fighter-value-selection.cjs');
 const { engineReference } = require('./fighter-engine-reference.cjs');
+const { selectionOrder, selectCleanStall } = require('./fighter-stall-reference.cjs');
 const { benchmarks, legacyCredits, reviewedCases, rejectedPairs } = require('./fighter-sim-input-review.cjs');
 
 const root = path.resolve(__dirname, '..');
@@ -141,7 +142,7 @@ function fwIntakeChart(reference) {
   };
 }
 
-function stallReference(catalog) {
+function stallReference(catalog, catalogObservations) {
   const review = JSON.parse(read(stallPath)).stall_review;
   const packId = path.basename(stallPath, '.json');
   const rows = catalog.observations.filter(row => row.pack_id === packId);
@@ -155,9 +156,18 @@ function stallReference(catalog) {
     notes: row.notes,
     supersedes: row.supersedes,
   }));
+  const variants = review.variants.map(variant => ({
+    ...variant, clean_stall: selectCleanStall(variant, catalogObservations),
+  }));
+  const cleanStallCounts = Object.fromEntries(selectionOrder.map(status => [
+    status, variants.filter(row => row.clean_stall.status === status).length,
+  ]));
   return {
     ...review,
+    variants,
+    clean_stall_selection_order: selectionOrder,
     summary: {
+      clean_stall_by_status: cleanStallCounts,
       variants_reviewed: review.variants.length,
       variants_numerically_improved: review.variants.filter(row => row.numerical_improvement_ids.length).length,
       new_clean_power_off_variants: review.variants.filter(row => row.clean_power_off_case_ids.length).length,
@@ -171,7 +181,7 @@ function stallReference(catalog) {
 function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catalog)) {
   const observations = new Map(catalog.observations.map(row => [row.id, row]));
   const engine = engineReference(observations);
-  const stall = stallReference(catalog);
+  const stall = stallReference(catalog, observations);
   const propeller = read(propellerPath);
   const fleet = JSON.parse(propeller).fleet_reference;
   const charts = [...evidence.charts, fwIntakeChart(fleet.fw190a4)];
@@ -180,7 +190,8 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
   const cases = reviewedCases(observations, evidence).map(item => ({ ...item, ...resolveCase(item) }));
   for (const id of [...cases.flatMap(item => item.candidates.flatMap(row => row.observation_ids)),
     ...rejectedPairs.flatMap(row => row.observation_ids), ...legacyCredits.map(row => row.observation),
-    ...stall.observations.map(row => row.id), ...stall.variants.flatMap(row => row.prior_ids)]) {
+    ...stall.observations.map(row => row.id),
+    ...stall.variants.flatMap(row => [...row.prior_ids, ...row.clean_stall.observation_ids])]) {
     if (!observations.has(id)) throw Error('Unresolved original observation ' + id);
     originalIds.add(id);
   }
@@ -196,7 +207,7 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
   const packs = new Set([...originalIds].map(id => observations.get(id).pack_id));
   const baseline = JSON.parse(read(baselinePath));
   return {
-    schema: 'ww2-fighter-sim-inputs/v1', version: '1.6.0-rc.1', as_of: '2026-11-12',
+    schema: 'ww2-fighter-sim-inputs/v1', version: '1.6.0', as_of: '2026-11-12',
     scope: 'Historical inputs and conditional estimates for source-case lookups and evidence graphs.',
     originals: {
       catalog: 'research-catalog.json',

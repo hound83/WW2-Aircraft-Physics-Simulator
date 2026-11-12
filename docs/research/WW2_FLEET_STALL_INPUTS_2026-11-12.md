@@ -1,18 +1,30 @@
-# Fighter Sim Inputs v1.6 fleet stall checkpoint
+# Fighter Sim Inputs v1.6.0 fleet stall reference
 
-The review covers all 13 research variants. Six dossiers gained numerical evidence, including two aircraft-family handbook sources. One variant gained a new calibrated clean power-off comparison against a target of three. The pack is **1.6.0-rc.1** while two further comparisons remain open. [Versioned data](../../references/analysis/fighter-sim-inputs-v1.json) · [Original rows, corrections and archive gaps](../../references/research/ww2_fleet_stall_2026-11-12.json)
+The input pack exports one clean-stall reference per research variant at `stall_reference.variants[].clean_stall`. The generator takes a source-reported CAS or EAS first, then a source-indicated speed, then a documented clean 1g calculation. A variant without a supported value has `speed: null` and the label **emergency research needed**. The current export has **2 source-calibrated, 8 source-indicated, 3 calculated and 0 empty** references. [Versioned data](../../references/analysis/fighter-sim-inputs-v1.json) · [Reviewed sources and calculation inputs](../../references/research/ww2_fleet_stall_2026-11-12.json)
 
-| Measure | v1.5 baseline | v1.6 checkpoint |
-| --- | ---: | ---: |
-| Research variants reviewed | 13 in roster | 13 reviewed for stall data |
-| Variants with new numerical stall evidence in this milestone | 0 | 6 |
-| Newly usable calibrated clean power-off variants | 0 | 1 |
-| Research catalog observations | 1,873 | 1,910 |
-| Research catalog source entries | 295 | 302 |
-| Primary / with secondary / with calculations | 63.62% / 64.15% / 67.15% | 63.62% / 64.15% / 67.15% |
-| GOLD / GOLD* agreements | 0 / 5 | 0 / 5 |
+For each speed tier, a comparable primary source takes precedence over a secondary source. The `grade` field is `primary`, `secondary` or `calculated` for a populated reference. Preserve the grade when displaying the reference.
 
-The 37 rows comprise 23 stall readings or corrected transcriptions and 14 calibration anchors. Some handbook values repeat values from other loads, editions or reports. The old evidence remains linked in `stall_reference.variants[].prior_ids`. Source conditions and original units appear in `stall_reference.observations`. The catalog carries each source locator and the three installation-specific curves.
+Each reference preserves its speed basis and source units, its range where reported or read from a trace, the aircraft and conditions, and the observation IDs for a join to the pack and research catalog. The P-38G carries its paired IAS and CAS and its calibration ID. Use indicated figures as cockpit targets under their stated conditions. Derive lift with the appropriate speed basis and mass. The fleet references supplement the reviewed benchmark cases. The evidence coverage remains 63.62% primary, 64.15% with secondary evidence and 67.15% with calculations under the existing rubric.
+
+| Variant | Clean-stall reference | Basis and loading |
+| --- | --- | --- |
+| F4U-4 | 89.4 kt CAS | NATC normal fighter, 12,500 lb |
+| P-51B-15 | 86 mph IAS | 9,270 lb at 8,000 ft, cooling shutters closed |
+| F6F-3 | 93–97 mph indicated | Idle, Fig. 5 first roll-off. Approx. 11,200 lb at takeoff. |
+| Spitfire LF IX | 86 mph IAS | Mk IX pilot notes, 7,445 lb nominal |
+| P-47B | 105 mph IAS | Power off. Reported gross test loading 12,565 lb. |
+| P-38G | 112 mph CAS / 98 mph IAS | 42-12690, approx. 14,800 lb at 10,000 ft |
+| Fw 190 D-9 | 185 km/h EAS | Calculated at 4,300 kg, 18.3 m² and assumed clean CLmax 1.42 |
+| Fw 190 A-4 | 177 km/h EAS | Calculated at 3,870 kg, 18.3 m² and assumed clean CLmax 1.40 |
+| P-40F | 92 mph IAS | Family handbook. Run weight and power unreported. |
+| Ki-84-I | 102 mph IAS | T-2 302, 8,000 ft, 7,900 lb at takeoff |
+| P-47D-30 | 113–119 mph service indicated | Fig. 49 clean glide, 12,400 lb at 5,000 ft |
+| Bf 109 F-4 | 159 km/h EAS | Calculated at 2,890 kg, 16.1 m² and assumed clean CLmax 1.47 |
+| Bf 109 G-2 | 112 mph IAS | Captured G-2/Trop handling trial. Run weight and power unreported. |
+
+The calculated values use the clean 1g lift balance `V_EAS = sqrt(2 m g / (rho0 S CLmax))` and round to whole km/h. The export carries the input values and their sources. The F-4 uses mass and wing area from the same factory sheet. The Fw 190 A-4 transfers the shared A-5/A-8 wing area and clean lift assumption to the documented WNr 783 test loading. The three lift coefficients are engineering assumptions from the shared Google AI dataset. [German source register](WW2_GERMAN_FIGHTER_ARCHIVE_2026-11-11.md)
+
+The source sweep added 37 catalog rows across six dossiers, comprising 23 stall readings or corrections and 14 calibration anchors. Earlier observations remain linked under `prior_ids`. The original sweep qualified the P-38G as a new calibrated clean comparison and identified further calibration work for the P-51B-15, F6F-3 and P-47D-30.
 
 ## P-38G flight test
 
@@ -46,4 +58,6 @@ The indicated, water-column and calibrated columns give the instrument and insta
 | Bf 109 F-4 | The flown 2,560 kg and calculated 2,570 kg sheets both give 135 km/h as landing speed. A separate clean stall event and low-speed correction remain open. [German source register](WW2_GERMAN_FIGHTER_ARCHIVE_2026-11-11.md) |
 | Bf 109 G-2 | NII VVS Table 2 gives 180/170/165 km/h indicated and 186/176/171 in its Vᵢ column for gun-pod WNr 14513. The source method descends to loss of control. The correction definition, gear, engine state and run loading for the glide remain open. [NII VVS pp. 43–44](https://www.wwiiaircraftperformance.com/org/me109/g/g_files/Me-109_G2_14513_Russian.pdf#page=43) |
 
-The next two clean cases need either the P-47D-30 stall channel reduction, the F6F-3 recorder reduction and per-run loading, or the 43-24777 near-stall position error. The P-38G comparison uses the original reported CAS and approximate campaign gross weight. Use it at the documented source condition. A fit or a cross-specimen calibration requires additional evidence.
+Further calibration work includes the P-47D-30 stall channel reduction, the F6F-3 recorder reduction and per-run loading, and the 43-24777 near-stall position error. Keep the P-38G comparison with the documented 42-12690 installation.
+
+For the A-4, Brown's retrospective A-4/U8 account gives 127 mph clean and 102 mph in landing configuration. It leaves the speed basis, run loading and power open. The US Navy PTR-1107 evaluation describes stall behavior in turns qualitatively. The WNr 783 reference therefore uses the stated calculation inputs. For the D-9, WNr 210002's Eltron chart begins at 360 km/h, and the Smithsonian identifies WNr 601088 as a separate airframe. [Brown account via Lednicer, ref. 11](https://www.wwiiaircraftperformance.org/mustang/Lednicer_Fighter_Aerodynamics.pdf) · [Navy PTR-1107](https://www.wwiiaircraftperformance.org/fw190/ptr-1107.pdf) · [D-9 601088](https://airandspace.si.edu/collection-objects/focke-wulf-fw-190-d-9/nasm_A19600319000)
