@@ -4,6 +4,8 @@ The root [AGENTS.md](../AGENTS.md) defines standing instructions, scope, scienti
 
 ## Each implementation milestone
 
+0. **WIP and latest-insights check:** Inspect open PRs, unmerged branches, and recent research notes under `docs/research/` and `references/` that affect the planned inputs. Read `docs/LATEST_INSIGHTS.md` if present. Record the result in the task log. Incorporate relevant WIP or explicitly note why it is deferred.
+
 1. Inspect the current branch, worktree, remote PRs and release state. Read the task-relevant project and source records.
 2. Create a feature branch for substantial changes. Keep hypotheses, extracted sources and diagnostic scenarios separate from accepted calibration inputs.
 3. Implement one coherent milestone with source-matched and held-out checks for all affected aircraft. Do not silently refit independent checks or discard negative results.
