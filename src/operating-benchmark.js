@@ -351,6 +351,20 @@
     if(allowed<dt){dt=allowed;dh=Math.min(dh,mid.power.climbFpm*dt/60);mid=get(h+dh/2,w-(policy.bsfcLbPerHpHour*a.power.shaftHp/3600+injectionRate)*dt/2);if(!mid.power)return output(mid.status);}
     const burn=policy.bsfcLbPerHpHour*mid.power.shaftHp*dt/3600;
     if(burn>fuel)return output('fuel-exhausted');
+    // Optional kinetic-energy debit when the speed schedule requires increasing TAS.
+    // Enable with options.accountForTasChange so existing baselines stay unchanged.
+    if(options.accountForTasChange){
+     const endTas=speedFor(h+dh,w-burn,phase);
+     if(Number.isFinite(endTas)&&endTas>tas){
+      const tasMps=tas*MPH,endMps=endTas*MPH,massKg=(w-burn)*0.45359237;
+      const keDelta=0.5*massKg*(endMps*endMps-tasMps*tasMps);
+      const kePowerW=keDelta/dt;
+      const keFpm=kePowerW/((w-burn)*4.4482216153)*196.8503937;
+      const available=mid.power.climbFpm-keFpm;
+      if(!(available>0))return output('unattainable');
+      dt=dh/available*60;
+     }
+    }
     const start=h;h+=dh;seconds+=dt;fuel-=burn;fluid=Math.max(0,fluid-injectionRate*dt);
     if(phase.key==='combat'||phase.key==='injection')combatUsed+=dt;
     estimated||=mid.benchmark.estimated;

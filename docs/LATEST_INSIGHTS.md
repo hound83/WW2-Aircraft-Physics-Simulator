@@ -10,7 +10,7 @@ Pointer file for agents starting a new milestone. Not a second model of record. 
    - Add the kinetic-energy term for changing TAS in the timed-climb energy budget, starting with the P-38G Wright Field B.4 report (source elapsed 340.80 s).
    - Keep current v4.10 propeller references in their supported bands.
    - Freeze before-scorecard, re-score both cases, run `npm run check` + browser smoke, confirm four-aircraft scorecard does not regress outside accepted tolerances, update validation/limitations/next-steps.
-   - Status: next agreed implementation milestone. Data already present; no new model invention required.
+   - Status: TAS-energy debit implemented as opt-in (`options.accountForTasChange`) in the timed-climb integrator. Existing baselines unchanged. Fw 190 open-cooling path still needs the model to supply `climbCoolingAreaM2` (currently absent on the live Fw 190 model).
    - Refs: `docs/NEXT_STEPS.md`, `docs/V410_CLIMB_TURN_AND_FORMULA_AUDIT.md`, `docs/LATEST_INSIGHTS.md`.
 
 ### Near-term research (can run in parallel)
@@ -39,4 +39,4 @@ Pointer file for agents starting a new milestone. Not a second model of record. 
 ## Recent research notes
 See `docs/research/` and the v4.10 propeller and climb-turn audit documents.
 
-Last updated: 2026-11-12
+Last updated: 2026-11-12 (climb energy term added)
