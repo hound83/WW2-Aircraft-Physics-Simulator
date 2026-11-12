@@ -312,4 +312,4 @@ function workingReference(data, catalog, evidence) {
   };
 }
 
-module.exports = { workingReference };
+module.exports = { workingReference, DEFAULT_ETA, dragAt, fitCleanDrag, levelSpeed };

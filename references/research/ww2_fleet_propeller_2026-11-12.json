@@ -1,0 +1,295 @@
+{
+  "schema": "ww2-fighter-evidence-pack/v1",
+  "pack_version": "1.0.0",
+  "as_of": "2026-11-12",
+  "scope": "Original propeller flight-test readings, configuration comparisons and installation identification for the v1.5 input reference.",
+  "sources": [
+    {
+      "id": "NACA-RM-L7D10-TABLE-III",
+      "report": "NACA RM L7D10, Flight Tests of a Curtiss No. 838-1C2-18 Three-Blade Propeller Having Trailing-Edge Extensions",
+      "pdf": "https://ntrs.nasa.gov/api/citations/20050019331/downloads/20050019331.pdf",
+      "location": "Table III, printed pp. 14-15 (PDF pp. 15-16)",
+      "inspected_copy_sha256": "33c7ee617c1e952b728571150536a8ba32aa1f5d649480888a16289a34ae34ba"
+    },
+    {
+      "id": "FW190-783-NR2-CURVES",
+      "report": "Focke-Wulf Flugbericht Fw 190/783 Nr. 2, 15 March 1943",
+      "pdf": "https://www.wwiiaircraftperformance.org/fw190/Fw_190_783_Nr2.pdf",
+      "location": "Ergebnis 1-3 and Blatt 3 (PDF p. 3)",
+      "inspected_copy_sha256": "79696ca2d594f9098bd9eee7d19eb3264a3b5e29e4c9f67ce35c4875a26222d7"
+    },
+    {
+      "id": "P51B-ENG-47-1749-A-FIG-5",
+      "report": "Wright Field Eng-47-1749-A, P-51B-15 43-24777, 20 May 1944",
+      "source": "https://www.wwiiaircraftperformance.com/org/p-51/p-51_files/P-51B_24777_Power_Required.jpg",
+      "location": "Fig. 5, printed p. 11",
+      "inspected_copy_sha256": "c306de7b236b86f3c30db53fa4563a7d70c8c9e6ebbe542ffcc4a93ab6499f75"
+    },
+    {
+      "id": "SPIT-BS543-AAEE-TABLE-V",
+      "report": "A&AEE, Spitfire IX comparison of Merlin RM.9SM, 66 and 70, BS.354, BS.543 and BS.551",
+      "source": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html",
+      "location": "Sections 2-3 and Table V; original report transcription"
+    },
+    {
+      "id": "NACA-MR-L4L18-P51-INSTALLATION",
+      "report": "NACA MR L4L18, Flight Tests of the High-Speed Performance of a P-51B Airplane (AAF No. 43-12105)",
+      "pdf": "https://ntrs.nasa.gov/api/citations/19780078569/downloads/19780078569.pdf",
+      "location": "Airplane item 4, printed p. 2 (PDF p. 3)",
+      "inspected_copy_sha256": "4ad0f57c41f062feaee15bd85887fb7f0f9481265bedebb10ebc427d4bfc6b54"
+    },
+    {
+      "id": "NACA-MR-L5B13-F6F-INSTALLATION",
+      "report": "NACA MR L5B13, Flight Measurements of the Flying Qualities of an F6F-3 Airplane (BuAer No. 04776), I",
+      "pdf": "https://ntrs.nasa.gov/api/citations/19930092600/downloads/19930092600.pdf",
+      "location": "Airplane description, printed p. 2 (PDF p. 3)",
+      "inspected_copy_sha256": "906fa4ec476655dc9277bcc2f07b896fd87fa6c2340259b3e7216eb711523247"
+    },
+    {
+      "id": "NACA-RM-L8A06-D30-INSTALLATION",
+      "report": "NACA RM L8A06, Flight Measurements of the Flying Qualities of a P-47D-30 Airplane",
+      "pdf": "https://ntrs.nasa.gov/api/citations/20090022749/downloads/20090022749.pdf",
+      "location": "Table I, printed p. 13 (PDF p. 14)",
+      "inspected_copy_sha256": "95c68467065e3a68394581c7b8c20b4e0578224bde9710e3bde05b6c89961075"
+    },
+    {
+      "id": "P40F-1578A-101344-CLIMB",
+      "report": "Wright Field FS-M-19-1578-A, P-40F 41-13635 Propeller Test, 3 April 1943",
+      "pdf": "https://www.wwiiaircraftperformance.com/org/p-40/p-40_files/P-40F_41-13635_FS-M-19-1578-A.pdf",
+      "source_transcription": "https://www.wwiiaircraftperformance.com/org/p-40/p-40.html",
+      "location": "Summary A.1 and B.2, original report transcription"
+    }
+  ],
+  "document_lineage": [
+    {
+      "id": "l7d10-flight-series",
+      "relationship": "Same report and test propeller, distinct climb and low-to-high-speed series",
+      "members": ["NACA-RM-L7D10-TABLE-III", "ww2_engine_ratings_and_propeller_2026-11-12:NACA-RM-L7D10"]
+    },
+    {
+      "id": "a4-intake-original",
+      "relationship": "Same Nr. 2 original in two mirrors and a chart extraction; long-intake trace is copied from Nr. 1",
+      "members": ["FW190-783-NR2-CURVES", "ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR2-INTAKE", "ww2_thirteen_fighter_source_recovery_2026-11-11:FW190A4-783-NR2", "ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST"]
+    },
+    {
+      "id": "p51b-wright-figure-5",
+      "relationship": "Same Wright Field report and campaign; Fig. 5 level power series and Sec. V.B high-speed cases are different conditions",
+      "members": ["P51B-ENG-47-1749-A-FIG-5", "ww2_multiaxis_propulsion_trials_2026-11-10:P51B15-4324777", "archival-2026-11-10:R04"]
+    },
+    {
+      "id": "spit-bs543-table-v",
+      "relationship": "Same A&AEE comparison report, with expanded Table V rows and separately digitized climb data",
+      "members": ["SPIT-BS543-AAEE-TABLE-V", "archival-2026-11-10:R28", "ww2_fighter_flight_tests_2026-11-11:SPIT-BS543-AAEE-CURVE"]
+    },
+    {
+      "id": "f6f3-l5b13-propeller",
+      "relationship": "Same Part I report, added airframe propeller identification",
+      "members": ["NACA-MR-L5B13-F6F-INSTALLATION", "stall_four_track_followup_2026-11-10:f6f3-04776-part1-instruments"]
+    },
+    {
+      "id": "p47d30-l8a06-propeller",
+      "relationship": "Same L8A06 report, added airframe propeller identification",
+      "members": ["NACA-RM-L8A06-D30-INSTALLATION", "ww2_thirteen_fighter_source_recovery_2026-11-11:P47D30-L8A06-RECHECK"]
+    },
+    {
+      "id": "p40f-april-1578a",
+      "relationship": "Same April report, distinct brace and climb results",
+      "members": ["P40F-1578A-101344-CLIMB", "ww2_fighter_measured_conditions_2026-11-11:F-13635-BRACES"]
+    }
+  ],
+  "series": [
+    {
+      "id": "p47d28-838-extended-blade-high-speed",
+      "source_id": "NACA-RM-L7D10-TABLE-III",
+      "aircraft": "P-47D-28 NACA flight-test installation",
+      "quantity": "propeller_efficiency",
+      "source_location": "NACA RM L7D10, Table III, printed pp. 14-15",
+      "source_class": "original-flight-test-table",
+      "conditions": "Curtiss 838-1C2-18 three-blade propeller with trailing-edge extensions, nominal 2700 engine rpm. Propeller speed is as tabulated in revolutions per second. This report derives flight thrust by the survey-rake method.",
+      "columns": ["printed_page", "figure", "run", "advance_ratio", "power_coefficient", "thrust_coefficient", "efficiency", "propeller_rps", "flight_mach", "tip_mach", "density_ratio"],
+      "rows": [
+        [14,9,"20-1",0.913,0.181,0.1495,0.754,22.42,0.252,0.901,0.630],
+        [14,9,"20-2",1.149,0.180,0.1268,0.809,22.55,0.319,0.929,0.629],
+        [14,9,"20-3",1.405,0.177,0.1043,0.828,22.63,0.390,0.956,0.636],
+        [14,9,"20-4",1.646,0.180,0.0920,0.841,22.55,0.458,0.987,0.631],
+        [14,9,"20-5",1.918,0.176,0.0730,0.795,22.63,0.530,1.018,0.640],
+        [14,9,"20-6",2.174,0.181,0.0623,0.748,22.43,0.598,1.050,0.638],
+        [14,9,"20-7",2.391,0.173,0.0484,0.669,22.48,0.658,1.086,0.656],
+        [14,9,"20-8",2.620,0.178,0.0415,0.611,22.62,0.725,1.132,0.641],
+        [14,10,"23-25",2.456,0.245,0.0716,0.718,22.50,0.694,1.127,0.440],
+        [14,10,"23-26",2.186,0.248,0.0893,0.787,22.28,0.611,1.068,0.444],
+        [14,10,"23-27",1.887,0.244,0.1044,0.807,22.65,0.537,1.043,0.433],
+        [14,10,"23-28",1.656,0.241,0.1197,0.822,22.65,0.471,1.010,0.437],
+        [14,10,"23-29",1.386,0.236,0.1389,0.816,22.67,0.394,0.977,0.436],
+        [14,10,"23-30",1.117,0.237,0.1632,0.770,22.67,0.318,0.950,0.433],
+        [14,9,"24-7",2.622,0.176,0.0414,0.617,22.27,0.711,1.110,0.654],
+        [14,9,"24-8",2.469,0.180,0.0482,0.661,22.67,0.671,1.086,0.606],
+        [14,9,"24-9",2.252,0.180,0.0610,0.762,22.64,0.610,1.044,0.610],
+        [14,9,"24-10",1.950,0.183,0.0762,0.812,22.63,0.528,1.001,0.617],
+        [14,9,"24-11",1.709,0.188,0.0923,0.839,22.68,0.465,0.973,0.594],
+        [14,9,"24-12",1.455,0.188,0.1065,0.824,22.58,0.393,0.936,0.606],
+        [14,9,"24-13",1.184,0.185,0.1241,0.794,22.50,0.319,0.905,0.614],
+        [14,9,"24-14",0.935,0.181,0.1429,0.738,22.67,0.254,0.891,0.617],
+        [14,11,"34-12",1.416,0.269,0.1506,0.793,22.72,0.400,0.973,0.412],
+        [14,11,"34-13",2.344,0.256,0.0820,0.751,22.67,0.659,1.103,0.410],
+        [14,11,"34-14",2.113,0.257,0.0982,0.808,22.60,0.595,1.066,0.412],
+        [14,11,"34-15",1.942,0.255,0.1072,0.816,22.60,0.547,1.040,0.412],
+        [14,11,"34-16",1.699,0.251,0.1224,0.829,22.67,0.479,1.007,0.412],
+        [14,11,"34-17",1.454,0.247,0.1385,0.815,22.60,0.409,0.973,0.412],
+        [14,11,"34-18",1.211,0.260,0.1666,0.776,22.67,0.341,0.949,0.410],
+        [14,12,"35-1",2.522,0.263,0.0746,0.715,22.53,0.698,1.115,0.496],
+        [14,12,"35-2",2.453,0.283,0.0850,0.737,22.48,0.684,1.111,0.464],
+        [14,12,"35-3",2.221,0.286,0.0992,0.770,22.50,0.620,1.073,0.467],
+        [14,12,"35-4",1.965,0.280,0.1134,0.796,22.53,0.550,1.038,0.468],
+        [14,12,"35-5",1.707,0.276,0.1322,0.818,22.55,0.478,1.001,0.468],
+        [14,12,"35-6",1.427,0.282,0.1556,0.787,22.42,0.397,0.961,0.464],
+        [14,12,"35-7",1.213,0.282,0.1815,0.781,22.37,0.337,0.936,0.466],
+        [15,10,"35-8",1.175,0.246,0.1654,0.790,22.53,0.332,0.948,0.433],
+        [15,10,"35-9",1.427,0.245,0.1390,0.810,22.52,0.403,0.975,0.439],
+        [15,10,"35-10",1.687,0.246,0.1194,0.819,22.55,0.477,1.009,0.438],
+        [15,10,"35-11",1.917,0.251,0.1048,0.800,22.48,0.540,1.037,0.434],
+        [15,10,"35-12",2.229,0.246,0.0848,0.768,22.37,0.624,1.079,0.442],
+        [15,10,"35-13",2.490,0.249,0.0715,0.715,22.48,0.700,1.127,0.441],
+        [15,10,"35-14",2.620,0.256,0.0656,0.672,22.43,0.734,1.142,0.432],
+        [15,12,"36-1",1.225,0.270,0.1747,0.793,22.63,0.339,0.933,0.455],
+        [15,12,"36-2",2.507,0.278,0.0834,0.752,22.70,0.700,1.121,0.455],
+        [15,12,"36-3",2.153,0.270,0.0991,0.790,22.72,0.602,1.065,0.459],
+        [15,12,"36-4",2.071,0.283,0.1106,0.810,22.60,0.574,1.042,0.454],
+        [15,12,"36-5",2.539,0.277,0.0796,0.730,22.80,0.711,1.130,0.460],
+        [15,12,"36-6",2.083,0.277,0.1071,0.805,22.65,0.581,1.050,0.458],
+        [15,12,"36-7",1.423,0.273,0.1541,0.803,22.58,0.395,0.958,0.457],
+        [15,12,"36-8",1.714,0.278,0.1331,0.820,22.67,0.477,0.997,0.457],
+        [15,10,"36-9",2.513,0.245,0.0700,0.718,22.78,0.710,1.136,0.430],
+        [15,10,"36-10",2.534,0.246,0.0689,0.710,22.67,0.711,1.133,0.437],
+        [15,10,"36-11",2.287,0.239,0.0781,0.747,22.67,0.651,1.107,0.436],
+        [15,10,"36-12",1.985,0.247,0.0996,0.800,22.65,0.560,1.049,0.431],
+        [15,10,"36-13",1.428,0.244,0.1401,0.820,22.67,0.402,0.971,0.429],
+        [15,10,"36-14",1.702,0.247,0.1204,0.830,22.63,0.479,1.006,0.430],
+        [15,10,"36-15",2.069,0.267,0.1024,0.794,22.68,0.592,1.076,0.480],
+        [15,13,"22-15",2.200,0.304,0.1118,0.809,22.48,0.618,1.090,0.426],
+        [15,13,"22-16",1.940,0.310,0.1293,0.809,22.48,0.548,1.042,0.417],
+        [15,13,"22-17",1.724,0.307,0.1487,0.835,22.47,0.486,1.011,0.418],
+        [15,13,"22-18",1.431,0.303,0.1651,0.780,22.53,0.404,0.975,0.418]
+      ]
+    },
+    {
+      "id": "a4-783-normal-internal-intake-level",
+      "source_id": "FW190-783-NR2-CURVES",
+      "aircraft": "Fw 190 A-4 WNr 783",
+      "quantity": "level_speed",
+      "speed_basis": "TAS",
+      "source_location": "Blatt 3, solid faired Vwc curve; Ergebnis 1 for the 6000 m anchor",
+      "source_class": "original-flight-test-chart-reading",
+      "conditions": "Normal internal intake, BMW 801 D-2/20208, combat at 2400 rpm, level flight with closed cooling flaps, takeoff mass 3870 kg. Pressure height HB. Read the faired trace; dots are individual runs. The same chart-reading allowance accompanies the text-confirmed anchor.",
+      "columns": ["altitude_m", "tas_kmh", "reading_uncertainty_kmh", "branch"],
+      "rows": [
+        [0,536,3,"lower"], [1000,563,3,"lower"], [1500,575,3,"lower"], [1750,582,3,"lower"],
+        [2000,581,3,"lower"], [2250,579,3,"lower"], [2500,577,3,"lower"], [2900,575,3,"lower"],
+        [3000,574,3,"upper"], [3500,585,3,"upper"], [4000,596,3,"upper"], [5000,621,3,"upper"], [5500,633,3,"upper"],
+        [6000,645,3,"upper"], [6500,645,3,"upper"], [6950,644,3,"upper"], [7500,640,3,"upper"],
+        [8000,633,3,"upper"], [8500,623,3,"upper"], [9000,607,3,"upper"], [9500,588,3,"upper"]
+      ]
+    },
+    {
+      "id": "a4-783-long-external-intake-level",
+      "source_id": "FW190-783-NR2-CURVES",
+      "aircraft": "Fw 190 A-4 WNr 783",
+      "quantity": "level_speed",
+      "speed_basis": "TAS",
+      "source_location": "Blatt 3, dashed comparison Vwc curve from Nr. 1; Ergebnis 1 for the 6950 m anchor",
+      "source_class": "original-flight-test-chart-reading",
+      "conditions": "Long external intake, BMW 801 D-2/20208, combat at 2400 rpm, level flight with closed cooling flaps, takeoff mass 3870 kg. Pressure height HB. Read the faired trace as redrawn in Nr. 2, taking the high branch side of the 3000 m step. The same chart-reading allowance accompanies the text-confirmed anchor.",
+      "columns": ["altitude_m", "tas_kmh", "reading_uncertainty_kmh", "branch"],
+      "rows": [
+        [0,525,3,"lower"], [1000,551,3,"lower"], [1500,564,3,"lower"], [1750,572,3,"lower"],
+        [2000,578,3,"lower"], [2250,577,3,"lower"], [2500,575,3,"lower"], [2900,573,3,"lower"],
+        [3000,562,3,"upper"], [3500,573,3,"upper"], [4000,584,3,"upper"], [5000,607,3,"upper"], [5500,619,3,"upper"],
+        [6000,632,3,"upper"], [6500,644,3,"upper"], [6950,652,3,"upper"], [7500,651,3,"upper"],
+        [8000,647,3,"upper"], [8500,642,3,"upper"], [9000,636,3,"upper"], [9500,628,3,"upper"]
+      ]
+    },
+    {
+      "id": "p51b-24777-fig5-high-blower",
+      "source_id": "P51B-ENG-47-1749-A-FIG-5",
+      "aircraft": "P-51B-15 43-24777",
+      "quantity": "level_speed_shaft_power",
+      "speed_basis": "TAS",
+      "source_location": "Eng-47-1749-A Fig. 5, three plotted high-blower observations at 3000 rpm",
+      "source_class": "original-flight-test-chart-reading",
+      "conditions": "22,400 ft, V-1650-7 and K-6523A-24, gear and wing flaps up, 44-1 fuel, shutters automatic, auto-rich. Wing racks per report's default configuration. BHP is chart assigned (III.C). Upper point MAP label is indistinct in this copy.",
+      "columns": ["alt_ft", "tas_mph", "bhp_chart", "manifold_inhg", "engine_rpm", "speed_reading_uncertainty_mph", "bhp_reading_uncertainty"],
+      "rows": [
+        [22400,414,1270,61,3000,1,10],
+        [22400,426,1400,67,3000,1,10],
+        [22400,433,1470,null,3000,1,10]
+      ]
+    },
+    {
+      "id": "spit-bs543-table-v-upper-level",
+      "source_id": "SPIT-BS543-AAEE-TABLE-V",
+      "aircraft": "Spitfire LF Mk IX BS.543",
+      "quantity": "level_speed",
+      "speed_basis": "TAS",
+      "source_location": "A&AEE Table V, two upper M.S. points and the full F.S. branch",
+      "source_class": "original-flight-test-table-transcription",
+      "conditions": "Merlin 66, Rotol XH54D-RM-S5 with four duralumin RA.10061 blades and diameter 10 ft 9 in. Radiator flaps closed, 7485 lb takeoff and speeds corrected to 7110 lb.",
+      "columns": ["alt_ft", "tas_mph", "engine_rpm", "boost_psi", "blower", "corrected_weight_lb"],
+      "rows": [
+        [16000,383,2995,12.4,"M.S.",7110], [18000,382,2995,10.8,"M.S.",7110],
+        [16000,381.5,2995,18.5,"F.S.",7110], [18000,390.5,2995,18.5,"F.S.",7110],
+        [20000,399,2995,18.5,"F.S.",7110], [22000,407,2995,18.5,"F.S.",7110],
+        [24000,406,2995,15.6,"F.S.",7110], [26000,403,2995,13.6,"F.S.",7110],
+        [28000,399.5,2995,11.6,"F.S.",7110], [30000,395,2995,9.7,"F.S.",7110],
+        [32000,389,2995,7.7,"F.S.",7110], [34000,381,2995,5.7,"F.S.",7110]
+      ]
+    },
+    {
+      "id": "p51b-naca-j6487-installation",
+      "source_id": "NACA-MR-L4L18-P51-INSTALLATION",
+      "aircraft": "P-51B NACA L4L18 test",
+      "quantity": "propeller_installation",
+      "source_location": "Printed p. 2, Airplane items 2 and 4",
+      "source_class": "original-test-configuration",
+      "conditions": "The original scan identifies J6487-24, resolving the ambiguous OCR. Target 43-24777 uses K-6523A-24 per Wright Field Eng-47-1749-A III.C.",
+      "columns": ["engine", "propeller_designation", "blade_count", "diameter_in"],
+      "rows": [["Packard V-1650-3","Hamilton Standard J6487-24",4,134]]
+    },
+    {
+      "id": "f6f3-04776-installation",
+      "source_id": "NACA-MR-L5B13-F6F-INSTALLATION",
+      "aircraft": "F6F-3 BuAer 04776",
+      "quantity": "propeller_installation",
+      "source_location": "Printed p. 2, Propeller",
+      "source_class": "original-test-configuration",
+      "conditions": "Blade drawing is unspecified on this page. Gear ratio is engine revolutions per propeller revolution.",
+      "columns": ["propeller_designation", "blade_count", "diameter_in", "engine_per_propeller_ratio"],
+      "rows": [["Hamilton Standard Hydromatic",3,157,2]]
+    },
+    {
+      "id": "p47d30-433441-installation",
+      "source_id": "NACA-RM-L8A06-D30-INSTALLATION",
+      "aircraft": "P-47D-30 AAF 43-3441",
+      "quantity": "propeller_installation",
+      "source_location": "Printed p. 13, Table I",
+      "source_class": "original-test-configuration",
+      "conditions": "Curtiss drawing SPA-5 in the original table. The modified three-blade 838 of L7D10 is a different installation.",
+      "columns": ["engine", "propeller_designation", "blade_count"],
+      "rows": [["Pratt & Whitney R-2800-59","Curtiss SPA-5",4]]
+    },
+    {
+      "id": "p40f-101344-april-climb",
+      "source_id": "P40F-1578A-101344-CLIMB",
+      "aircraft": "P-40F AAF 41-13635",
+      "quantity": "climb_rate",
+      "speed_basis": "TAS",
+      "source_location": "FS-M-19-1578-A, Summary B.2",
+      "source_class": "original-flight-test-table-transcription",
+      "conditions": "101344-24 three-blade propeller and standard spinner, V-1650-1 at wide open throttle in high blower, 2850 rpm, chart BHP, radiator flap open and tank braces fitted, without tank. Separate April run from the February 1549-A campaign.",
+      "columns": ["alt_ft", "roc_fpm", "bhp_reported", "climb_tas_mph", "engine_rpm"],
+      "rows": [
+        [18000,2185,1040,201,2850], [22000,1725,915,207,2850],
+        [25000,1380,820,212,2850], [28000,1040,710,217,2850]
+      ]
+    }
+  ]
+}

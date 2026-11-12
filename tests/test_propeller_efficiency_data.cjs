@@ -98,6 +98,48 @@ for (const test of reference.p38g_part_power.cases) {
   assert.ok(test.leave_one_out_mph.simple_mae < 2);
 }
 
+const fleet = evidence[pack.propeller_efficiency.fleet_reference_key];
+assert.deepEqual(fleet.aircraft.map(row => row.id).sort(), pack.coverage.rows.map(row => row.id).sort());
+const sources = new Set(catalog.sources.map(row => row.id));
+assert.ok(fleet.aircraft.every(row => row.sources.length && row.sources.every(id => sources.has(id))));
+const donorRows = fleet.p47d28_high_speed.rows;
+assert.equal(donorRows.length, 62);
+assert.deepEqual(fleet.p47d28_high_speed.all.eta_span, [.611, .841]);
+for (const row of donorRows) {
+  const v = originals.get(row.observation).values;
+  assert.equal(row.eta, v.efficiency);
+  assert.equal(row.tip_mach, v.tip_mach);
+  assert.ok(Math.abs(v.advance_ratio * v.thrust_coefficient / v.power_coefficient - v.efficiency) < .003);
+}
+assert.deepEqual(fleet.p47d28_high_speed.tip_mach_review.map(row => row.run), ['22-15']);
+assert.equal(fleet.p47d28_high_speed.bands.at(-2).fixed_80_mae_pp, 16.05);
+assert.equal(fleet.p47d28_high_speed.bands.at(-1).fixed_80_mae_pp, 7.59);
+
+const intake = fleet.fw190a4;
+assert.equal(intake.rows.length, 21);
+assert.equal(intake.rows.find(row => row.altitude_m === 6000).internal_minus_external_kmh, 13);
+assert.equal(intake.rows.find(row => row.altitude_m === 9000).internal_minus_external_kmh, -29);
+assert.ok(intake.chart_check.internal_mae_kmh < 3);
+assert.ok(intake.chart_check.long_external_mae_kmh < 3);
+assert.ok(intake.chart_check.wrong_intake_mae_kmh > 10);
+assert.deepEqual(fleet.p38g.replay.chart_bhp_per_engine, [1220, 1320]);
+assert.ok(Math.abs(fleet.p38g.replay.error_mph) < 1);
+assert.equal(fleet.p51b.at_20800_ft.rack_effect_mph, 13);
+assert.equal(fleet.p51b.at_20800_ft.rating_gain_mph, 14);
+assert.equal(fleet.p51b.replays.rating_check.error_mph, 5.78);
+assert.equal(fleet.p51b.figure_5[0].manifold_inhg, 61);
+assert.equal(fleet.p51b.figure_5[2].manifold_inhg, null);
+const highBlower = fleet.spitfire_lfix_bs543;
+assert.equal(highBlower.below_or_at_full_throttle_height.count, 3);
+assert.ok(highBlower.below_or_at_full_throttle_height.anchored_mae_mph < 1);
+assert.ok(highBlower.above_full_throttle_height.anchored_mae_mph > highBlower.above_full_throttle_height.current_mae_mph);
+for (const row of highBlower.rows) {
+  const v = originals.get(row.observation).values;
+  assert.equal(v.tas_mph, row.observed_tas_mph);
+  assert.equal(v.boost_psi, row.boost_psi);
+}
+assert.deepEqual(fleet.p40f_4113635.climb_comparison.map(row => row.april_minus_february_best_fpm), [175, 135, 110, 80]);
+
 // A known constant acceleration exercises force/mass conversion and the timed integral.
 const flight = tasMph => {
   const weightLb = 10000;

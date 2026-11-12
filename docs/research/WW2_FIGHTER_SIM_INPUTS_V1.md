@@ -1,12 +1,14 @@
-# Fighter sim inputs v1.4.0
+# Fighter sim inputs v1.5.0
 
-The data pack covers 13 variants and 23 evidence plots. It carries preferred readings and uncertainty for reviewed cases, pointers to the original observations, and the support level of each curve segment. The simulator can use it to look up a specific test case and draw the evidence behind it. [Versioned JSON](../../references/analysis/fighter-sim-inputs-v1.json) · [Underlying calculations and source checks](WW2_FIGHTER_CALCULATED_EVIDENCE_2026-11-11.md)
+The data pack covers 13 variants and 24 evidence plots. It carries preferred readings and uncertainty for reviewed cases, pointers to the original observations, and the support level of each curve segment. The simulator can use it to look up a specific test case and draw the evidence behind it. [Versioned JSON](../../references/analysis/fighter-sim-inputs-v1.json) · [Underlying calculations and source checks](WW2_FIGHTER_CALCULATED_EVIDENCE_2026-11-11.md)
 
 v1.2 links 67 new propeller-test readings, source-conditioned replays, and a seven-aircraft efficiency-only sweep. The new companion is available as `dist/fighter-propeller-efficiency.json`. The table shows the 13-variant coverage and GOLD scorecard, with a v1.2 delta of zero in each column. [Propeller report and data contract](WW2_PROPELLER_EFFICIENCY_2026-11-11.md)
 
 The v1.3 propeller companion carries checked efficiency values, reference drag and the P-38G part-power tables. [Propeller reference values](WW2_PROPELLER_REFERENCE_VALUES_2026-11-12.md)
 
 v1.4 adds source-checked power anchors, installation-specific speed and boost, and an independent NACA propeller climb check. The `engine_reference` section links each value back to the original catalog row. [Fighter input reference](WW2_FIGHTER_INPUT_REFERENCE_2026-11-12.md)
+
+v1.5 adds the 13-aircraft `fleet_reference` in the propeller companion, 126 original-source records and the paired Fw 190 A-4 intake plot. The coverage and GOLD delta from v1.4 is zero. [Fleet inputs and original report index](WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md)
 
 ## Coverage by aircraft
 
