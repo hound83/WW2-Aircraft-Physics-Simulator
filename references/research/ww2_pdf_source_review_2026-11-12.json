@@ -817,7 +817,7 @@
     },
     {"id":"p40fl-climb-p43-8500-ferry","source_id":"P40FL-TO01-25CH1","aircraft":"P-40F and P-40L, V-1650-1","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Section III, PDF p. 43, printed p. 38","conditions":"external store fitted. V-1650-1. Combat uses 3000 rpm / 48.2 inHg for five minutes, then 2650 / 44.2. Ferry uses 2300 / 37. Fuel includes warm-up and takeoff. Chart includes figures marked as unflight-checked. Preserve printed values.","columns":["gross_weight_lb","climb_type","altitude_ft","altitude_type","climb_ias_mph","rate_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
       "rows": [
-        [8500,"ferry",5000,"sea-level to 5,000 ft",135,900,5.4,null,[]],
+        [8500,"ferry",5000,"sea-level to 5,000 ft",135,900,null,null,[]],
         [8500,"ferry",10000,"point",140,700,11.9,33,[]],
         [8500,"ferry",15000,"point",140,600,19.4,43,[]],
         [8500,"ferry",20000,"point",140,300,30,57,[]]
@@ -828,13 +828,13 @@
         [9300,"combat",5000,"sea-level to 5,000 ft",150,2050,2.4,null,[]],
         [9300,"combat",10000,"point",145,2200,4.7,28,[]],
         [9300,"combat",15000,"point",155,1160,8.3,35,[]],
-        [9300,"combat",20000,"point",155,790,13.3,44,[]],
+        [9300,"combat",20000,"point",155,790,13.3,49,[]],
         [9300,"combat",25000,"point",155,350,22.1,57,[]]
       ]
     },
     {"id":"p40fl-climb-p44-9300-ferry","source_id":"P40FL-TO01-25CH1","aircraft":"P-40F and P-40L, V-1650-1","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Section III, PDF p. 44, printed p. 39","conditions":"external store unspecified on chart. V-1650-1. Combat uses 3000 rpm / 48.2 inHg for five minutes, then 2650 / 44.2. Ferry uses 2300 / 37. Fuel includes warm-up and takeoff. Chart includes figures marked as unflight-checked. Preserve printed values.","columns":["gross_weight_lb","climb_type","altitude_ft","altitude_type","climb_ias_mph","rate_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
       "rows": [
-        [9300,"ferry",5000,"sea-level to 5,000 ft",145,850,5.9,null,[]],
+        [9300,"ferry",5000,"sea-level to 5,000 ft",145,850,5.8,null,[]],
         [9300,"ferry",10000,"point",150,700,12.2,34,[]],
         [9300,"ferry",15000,"point",150,800,19.9,44,[]],
         [9300,"ferry",20000,"point",145,250,31.7,60,[]]
@@ -860,7 +860,7 @@
     {"id":"p40fl-climb-p44-7500-combat","source_id":"P40FL-TO01-25CH1","aircraft":"P-40F and P-40L, V-1650-1","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Section III, PDF p. 44, printed p. 39","conditions":"external store unspecified on chart. V-1650-1. Combat uses 3000 rpm / 48.2 inHg for five minutes, then 2650 / 44.2. Ferry uses 2300 / 37. Fuel includes warm-up and takeoff. Chart includes figures marked as unflight-checked. Preserve printed values.","columns":["gross_weight_lb","climb_type","altitude_ft","altitude_type","climb_ias_mph","rate_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
       "rows": [
         [7500,"combat",5000,"sea-level to 5,000 ft",145,2850,1.8,null,[]],
-        [7500,"combat",10000,"point",135,2850,3.5,26,[]],
+        [7500,"combat",10000,"point",135,2650,3.5,26,[]],
         [7500,"combat",15000,"point",130,2600,5.4,30,[]],
         [7500,"combat",20000,"point",150,1350,8.2,35,[]],
         [7500,"combat",25000,"point",145,670,12.7,41,[]]
