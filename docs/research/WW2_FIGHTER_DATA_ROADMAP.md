@@ -87,6 +87,8 @@ Delivered WNr 783 paired cooling rates and open-flap timing and 42-12687 B.4 TAS
 
 Delivered 96 source-linked records, a file-by-file review and the 13-variant coverage comparison. [Grok batch review](WW2_GROK_BATCH_INPUT_REVIEW_2026-11-12.md)
 
+The v1.9.0 follow-up recovered the full 5,801-entry candidate archive and added 552 catalog observations, including P-47D operating limits and P-40F/L climb conditions. [PDF input release](WW2_PDF_INPUT_DATA_V1_9.md)
+
 ### Next · Corrected stall and drag under load
 
 - Prioritize the P-51B-15 43-24777 and Spitfire LF IX BS.543 cases used in the existing sustained-turn comparison. Recover a near-stall position and instrument correction in the relevant range, plus weight at the stall or a qualified corrected stall observation. Use the reported airspeed basis and configuration when deriving clean `CLmax`. Make the remaining gap explicit where only a takeoff weight or an uncorrected IAS is available. [Original-source gaps by aircraft](WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md#recovered-material-and-remaining-work)

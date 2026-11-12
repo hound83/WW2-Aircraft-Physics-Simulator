@@ -25,7 +25,7 @@ for (const [id, ref] of Object.entries(pack.observations)) {
 }
 
 const byId = id => pack.cases.find(row => row.id === id);
-assert.equal(pack.version, '1.8.0');
+assert.equal(pack.version, '1.9.0');
 const batch = pack.batch_reference;
 assert.equal(batch.reviewed_artifact_count, 28);
 assert.equal(batch.observation_count, 96);
@@ -318,8 +318,8 @@ assert.equal(byId('p47b-415902-military-elapsed').agreement.limit_percent, 5);
 assert.deepEqual(byId('p47b-415902-military-elapsed').candidates[0].original_reading, { value: 5, unit: 'min' });
 assert.equal(byId('f4-factory-rechlin-1000-5000m').agreement.spread, 0);
 for (const [i, row] of pack.coverage.rows.entries()) {
-  assert.equal(row.primary_percent, baseline.variants[i].primary_percent);
-  assert.equal(row.with_calculations_percent + row.legacy_context_points + row.overlapping_legacy_points, row.previous_total_percent);
+  assert.equal(row.primary_percent, baseline.variants[i].primary_percent + row.source_review_points);
+  assert.equal(row.with_calculations_percent - row.source_review_points + row.legacy_context_points + row.overlapping_legacy_points, row.previous_total_percent);
   assert.equal(row.benchmarks.length, row.planned_count);
 }
 assert.equal(pack.coverage.rows.find(row => row.id === 'p40f_4113635').overlapping_legacy_points, 3);

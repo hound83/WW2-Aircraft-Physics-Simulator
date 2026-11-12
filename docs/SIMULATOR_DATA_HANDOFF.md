@@ -1,12 +1,12 @@
 # Simulator data handoff
 
-**Fighter Sim Inputs v1.8.0**, dated **12 November 2026**, adds the reviewed Grok batch inputs. It covers 13 aircraft variants. The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
+**Fighter Sim Inputs v1.9.0** adds the reviewed PDF extraction. It covers 13 aircraft variants. The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 
 [Data milestones and original-source research priorities](research/WW2_FIGHTER_DATA_ROADMAP.md)
 
 | File in the build | Use |
 | --- | --- |
-| `dist/fighter-sim-inputs.json` | Reviewed batch inputs, matched climbs, fleet stall reference, original observation IDs, GOLD and GOLD* agreement, and curve styles and bounds |
+| `dist/fighter-sim-inputs.json` | Reviewed PDF and batch inputs, matched climbs, fleet stall reference, original observation IDs, GOLD and GOLD* agreement, and curve styles and bounds |
 | `dist/fighter-propeller-efficiency.json` | Propeller and installation references for all 13 variants, original efficiency series, conditional flight replays and the seven-aircraft sensitivity sweep |
 | `dist/research-catalog.json` | Original observations, conditions, source links and report lineage |
 | `dist/fighter-evidence-curves.html` | Standalone evidence viewer for the full research roster |
@@ -22,13 +22,15 @@ The Normal / Combat benchmark currently has seven modeled aircraft. They are the
 | **Bf 109 G-2, MT-215 / WNr 14783** | **65%** | **69%** | **Suggested first addition.** The Finnish level-speed and climb trials give a starting point. Installed DB 605 A power by altitude and actual run loading are the most useful leads. |
 | **F6F-3, BuAer 04776** | **79%** | **82%** | **Strongest remaining candidate by coverage.** NACA provides detailed low-speed and lift evidence. The correction and mass at stall need clarification, alongside configuration-matched power and performance. |
 | Fw 190 D-9, WNr 210002 | 61% | 65% | Original speed and climb records cover distinct dry and MW 50 cases. Installed power and clean low-speed data would help a German follow-up. |
-| P-47D-30, 43-3441 | 64% | 66% | Original NACA maneuver and stall traces give a starting point. The recorded airspeed channel and configuration-matched speed, climb and propulsion data are open. |
+| P-47D-30, 43-3441 | 66% | 68% | The block handbook supplies operating settings and climb schedules. NACA traces give maneuver and stall references for 43-3441. The installed power curve and exact low-speed calibration are open. |
 | P-40F, 41-13635 | 49% | 53% | Original propeller comparisons give several installations to choose from. A clean stall point with corrected airspeed and actual test mass would strengthen the dossier. |
 | Ki-84-I, T-2 302 | 50% | 52% | Captured-aircraft handling and documented ratings are available. Measured speed and climb with known engine settings and loading would move this candidate forward. |
 
 Coverage measures available evidence for the research dossier. The source conditions and supported metrics give a better guide to the initial comparison range. [Full coverage table](research/WW2_FIGHTER_SIM_INPUTS_V1.md#coverage-by-aircraft) · [Variant dossiers and retrieval targets](research/WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md)
 
 ## Notes for Simulator Work
+
+- Read `pdf_reference.series` for the 552 reviewed PDF records. Use the roster link, application and source conditions to select a comparison. [PDF input release](research/WW2_PDF_INPUT_DATA_V1_9.md)
 
 - Read `batch_reference.series` for 96 new source-linked records. Twelve apply to exact roster specimens. Related cases carry their own aircraft, conditions and use. [Batch dispositions and coverage matrix](research/WW2_GROK_BATCH_INPUT_REVIEW_2026-11-12.md)
 

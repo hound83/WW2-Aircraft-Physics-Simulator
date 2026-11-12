@@ -1,45 +1,26 @@
-# Local PDF Collection Extraction — 2026-11-12
+# Local PDF extraction
 
-Source: User's local archive at `C:\Users\mkolm\Downloads\WW2 Archive\Manuals And More 3.3`
+Grok indexed 247 archive files and recorded 5,801 candidate entries. The original GitHub handoff at `99edb9fd` included the inventory, processing notes and empty family JSON files. The populated export from the same run supplies the records below. Its grade totals match the handoff. [Original handoff](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/tree/99edb9fdeb8eca3011c5f4dfee427ce3157f7220/references/research/local-pdf-extract-2026-11-12)
 
-Extracted by dedicated research bot (WW2 Research Extractor). All numbers graded (observed / derived / estimated / missing) with source file + page.
+| Family | Candidate records | JSON |
+| --- | ---: | --- |
+| Other | 61 | [performance_other.json](performance_other.json) |
+| P-51 and Mustang | 2,660 | [performance_p-51.json](performance_p-51.json) |
+| Bf 109 | 134 | [performance_bf_109.json](performance_bf_109.json) |
+| Fw 190 | 424 | [performance_fw_190.json](performance_fw_190.json) |
+| He 177 | 145 | [performance_he_177.json](performance_he_177.json) |
+| Il-2 | 141 | [performance_il-2.json](performance_il-2.json) |
+| La-7 | 61 | [performance_la-7.json](performance_la-7.json) |
+| Mosquito | 65 | [performance_mosquito.json](performance_mosquito.json) |
+| P-47 | 1,238 | [performance_p-47.json](performance_p-47.json) |
+| Propeller reports | 603 | [performance_props.json](performance_props.json) |
+| Ta 152 | 85 | [performance_ta_152.json](performance_ta_152.json) |
+| XP-42 | 80 | [performance_xp-42.json](performance_xp-42.json) |
+| P-38 | 104 | [performance_p-38.json](performance_p-38.json) |
+| **Total** | **5,801** | |
 
-## Status (as of 22:35 CET)
+Original extraction grades comprise 1,979 observed, 189 derived, 3,537 estimated and 96 missing entries. The candidate grade and notes travel with each row. Reviewed catalog entries carry their own source class and scope.
 
-- Inventory: 247 files, ~5.8 GB
-- Processed: ~42 files / ~2 760 pages (high-value folders prioritized)
-- Records extracted: **5 801** (observed 1 979, derived 189, estimated 3 537, missing 96)
-- Output files (local): `performance.md`, `performance.json`, `sources.md`, `progress.log`, inventory CSVs
+Each JSON array contains documents with a source filename, report title, source type and rows. Read the row column order from `row_fields` in the index. When a field has a dictionary in the document, look up the row value as a zero-based index. PDF and printed page numbers retain their original values. The index carries the original export and decoded-record hashes. The family Markdown files record the original handoff state.
 
-## Family splits
-
-All graded tables have been split by aircraft family and committed:
-
-| Family | MD | JSON | Status |
-|--------|----|------|--------|
-| P-51 | performance_p51.md | performance_p-51.json | Committed |
-| P-47 | performance_p47.md | performance_p-47.json | Committed |
-| Props | performance_props.md | performance_props.json | Committed |
-| Fw 190 | performance_fw190.md | performance_fw_190.json | Committed |
-| He 177 | performance_he177.md | performance_he_177.json | Committed |
-| Bf 109 | performance_bf109.md | performance_bf_109.json | Committed |
-| Il-2 | performance_il2.md | performance_il-2.json | Committed |
-| P-38 | performance_p38.md | performance_p-38.json | Committed |
-| Ta 152 | performance_ta152.md | performance_ta_152.json | Committed |
-| Mosquito | performance_mosquito.md | performance_mosquito.json | Committed |
-| La-7 | performance_la7.md | performance_la-7.json | Committed |
-| XP-42 | performance_xp42.md | performance_xp-42.json | Committed |
-| Other | performance_other.md | performance_other.json | Committed |
-
-All data remains fully traceable; nothing has been interpolated.
-
-## Priority folders covered so far
-
-- N.A.C.A. Reports (complete)
-- WW2 USAAF Fighters (P-47 group complete; P-51 series largely done)
-- Luftwaffe (complete)
-- Soviet WW2 Aircraft (in progress)
-
-Remaining high-value: RAF And Royal Navy, Engine Manuals, Navy, Japanese, Allied Bombers, Ki-84 pages, etc.
-
-Deferred follow-ups and known gaps are listed at the bottom of `progress.log`.
+[Extraction index](extraction-index.json) · [Source inventory](sources.md) · [Reviewed input release](../../../docs/research/WW2_PDF_INPUT_DATA_V1_9.md)

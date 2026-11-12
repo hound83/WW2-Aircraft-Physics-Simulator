@@ -12,7 +12,9 @@ The shared timer now applies signed TAS energy, and the live Fw 190 WNr 783 clim
 
 Use the existing climb residual table as a starting scorecard. Confirm each baseline value against its source and keep the P-38G B.4 elapsed-time check at sea level to 20,000 ft. [Before-scorecard](../references/research/WW2_FLIGHT_CASE_CLIMB_RESIDUAL_TABLE_2026-11-12.md)
 
-Fighter Sim Inputs **v1.8.0** incorporates 96 source-linked records from the Grok review and exports the matched WNr 783 and 42-12687 climb cases and clean-stall references for all 13 variants. [Climb case handoff and scorecard](research/WW2_MATCHED_CLIMB_INPUTS_2026-11-12.md) The stall references include two reported CAS values, eight source-indicated speeds and three calculated EAS values. The propeller companion already carries installation references for all 13 variants and includes a seven-profile sensitivity sweep. Build the next data increment on these records and their checked conditions. [Data handoff](SIMULATOR_DATA_HANDOFF.md) · [Fleet stall references](research/WW2_FLEET_STALL_INPUTS_2026-11-12.md) · [Fleet propeller references](research/WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md)
+Fighter Sim Inputs **v1.9.0** incorporates 552 reviewed records from the archive extraction. [PDF input release and coverage matrix](research/WW2_PDF_INPUT_DATA_V1_9.md)
+
+The pack retains the 96 earlier Grok records and exports the matched WNr 783 and 42-12687 climb cases and clean-stall references for all 13 variants. [Climb case handoff and scorecard](research/WW2_MATCHED_CLIMB_INPUTS_2026-11-12.md) The stall references include two reported CAS values, eight source-indicated speeds and three calculated EAS values. The propeller companion already carries installation references for all 13 variants and includes a seven-profile sensitivity sweep. Build the next data increment on these records and their checked conditions. [Data handoff](SIMULATOR_DATA_HANDOFF.md) · [Fleet stall references](research/WW2_FLEET_STALL_INPUTS_2026-11-12.md) · [Fleet propeller references](research/WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md)
 
 1. **Delivered · Climb case handoff for WNr 783 and 42-12687.** The input pack carries the original observation IDs, bounded Fw 190 TAS estimate and replay residuals. The Fw 190 open-cooling chart has source timing through 9,000 m. The P-38G B.4 elapsed-time replay uses the reported TAS and chart power.
    - **Fw 190 A-4 WNr 783.** Match the long external intake, open/closed cooling-flap pair, 3,870 kg takeoff load and 2,400 rpm / 1.32 ata rating. Keep the 0.171 m² equivalent cooling area tied to its 5,000 m fit and check other altitude bands, including the adverse 7,000 m result in the existing replay. Recorded climb TAS remains open. Give any modeled speed schedule its own estimate label and bounds. [WNr 783 replay](V311_FW190A4.md) · [Climb audit](V410_CLIMB_TURN_AND_FORMULA_AUDIT.md#issues-to-address-next)
@@ -47,7 +49,7 @@ Grok can check source rows and calculation assumptions in a candidate. Codex ver
 
 ## Current research candidate
 - Simulator research candidate [v4.11.0-rc.1](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/). [Release verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/publish-simulator.yml)
-- Input pack on main · [Fighter Sim Inputs v1.8.0](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
+- Input pack on main · [Fighter Sim Inputs v1.9.0](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 - Status: research candidate. Exact corrected stall, sustained-turn accuracy and historical 5:1 remain unresolved.
 
 ## Open gaps to respect

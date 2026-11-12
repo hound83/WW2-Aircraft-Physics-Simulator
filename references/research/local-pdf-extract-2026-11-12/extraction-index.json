@@ -1,0 +1,577 @@
+{
+  "schema": "ww2-pdf-candidate-extraction/v1",
+  "source_commit": "99edb9fdeb8eca3011c5f4dfee427ce3157f7220",
+  "original_export_sha256": "870dad45ba860dbe4d6decc68c7bf9880b817d0cb0c9680af222e44123944476",
+  "canonical_records_sha256": "05770a29867577d4ab675b367d453272c4a931490cb7bdb9a79c9981a33cc915",
+  "raw_record_count": 5801,
+  "grade_counts": {
+    "observed": 1979,
+    "missing": 96,
+    "estimated": 3537,
+    "derived": 189
+  },
+  "source_file_count": 49,
+  "row_fields": [
+    "id",
+    "aircraft",
+    "variant",
+    "quantity",
+    "value",
+    "unit",
+    "conditions",
+    "pdf_page",
+    "printed_page",
+    "grade",
+    "derivation",
+    "notes"
+  ],
+  "status": "recovered candidate transcription; original extraction grades preserved",
+  "files": [
+    {
+      "file": "performance_other.json",
+      "raw_rows": 61,
+      "grades": {
+        "observed": 22,
+        "missing": 3,
+        "estimated": 35,
+        "derived": 1
+      },
+      "sha256": "08665cc964e80f77c94554489d34dafd5c8f3e6d7da921acaf7156f7f9708a64"
+    },
+    {
+      "file": "performance_p-51.json",
+      "raw_rows": 2660,
+      "grades": {
+        "observed": 1104,
+        "missing": 22,
+        "estimated": 1525,
+        "derived": 9
+      },
+      "sha256": "fda30820c966a3e3d9c7741efda5de9b9e59f85a57aeb2500cb1be3dbf0ce69e"
+    },
+    {
+      "file": "performance_bf_109.json",
+      "raw_rows": 134,
+      "grades": {
+        "estimated": 126,
+        "missing": 8
+      },
+      "sha256": "4ed7b4836303c52092923b5d8fd4e26d12a739373417985a383a7777ab2a089d"
+    },
+    {
+      "file": "performance_fw_190.json",
+      "raw_rows": 424,
+      "grades": {
+        "observed": 264,
+        "estimated": 138,
+        "derived": 6,
+        "missing": 16
+      },
+      "sha256": "96b0cd1d5d12e99c89f5c9c477815a178b9ab466551fedf630aeeb800c01503d"
+    },
+    {
+      "file": "performance_he_177.json",
+      "raw_rows": 145,
+      "grades": {
+        "estimated": 141,
+        "missing": 4
+      },
+      "sha256": "73ca4f8362f391b660611dfe38bf24b72bc260a329cf4455a3f62349da49844f"
+    },
+    {
+      "file": "performance_il-2.json",
+      "raw_rows": 141,
+      "grades": {
+        "estimated": 131,
+        "missing": 10
+      },
+      "sha256": "d99805c2bc233079401f9b9db214f52d6740e96424e0d6100aa6b3b5932ddfa5"
+    },
+    {
+      "file": "performance_la-7.json",
+      "raw_rows": 61,
+      "grades": {
+        "estimated": 55,
+        "missing": 6
+      },
+      "sha256": "3cea6de14451f02c2c5ca4698304779cf7e3d493f90013f15439457e78693233"
+    },
+    {
+      "file": "performance_mosquito.json",
+      "raw_rows": 65,
+      "grades": {
+        "observed": 48,
+        "derived": 10,
+        "estimated": 1,
+        "missing": 6
+      },
+      "sha256": "b80264f5a05c28da1478677192a9fac9ce82bf8a4d2d9c13cd3144cb51e46e7e"
+    },
+    {
+      "file": "performance_p-47.json",
+      "raw_rows": 1238,
+      "grades": {
+        "estimated": 1155,
+        "missing": 6,
+        "derived": 1,
+        "observed": 76
+      },
+      "sha256": "807dd44ac2a9dd540b6110ea444a40da93b9f5e8e475904921cbf1b1b49b0333"
+    },
+    {
+      "file": "performance_props.json",
+      "raw_rows": 603,
+      "grades": {
+        "observed": 399,
+        "derived": 146,
+        "estimated": 53,
+        "missing": 5
+      },
+      "sha256": "e4156bb7170f4394e7c1d62e192d9ea274d9e2c6498047a61e0beea103f472d6"
+    },
+    {
+      "file": "performance_ta_152.json",
+      "raw_rows": 85,
+      "grades": {
+        "estimated": 81,
+        "missing": 4
+      },
+      "sha256": "1c85fd94092f2b2545785a76fa0b5d50aeaf1787b42dc0de3b820930d4cd680e"
+    },
+    {
+      "file": "performance_xp-42.json",
+      "raw_rows": 80,
+      "grades": {
+        "observed": 51,
+        "estimated": 10,
+        "derived": 15,
+        "missing": 4
+      },
+      "sha256": "e7b8046564d892b3ca0db4f7be704cab3fc0e1b0a4da8e7ced94a38024be5c00"
+    },
+    {
+      "file": "performance_p-38.json",
+      "raw_rows": 104,
+      "grades": {
+        "observed": 15,
+        "estimated": 86,
+        "derived": 1,
+        "missing": 2
+      },
+      "sha256": "3267a2550af5ee6f29231e84537ae648b94366b71c2d98e6ae10af19b6130aae"
+    }
+  ],
+  "sources": [
+    {
+      "source_file": "N.A.C.A. Reports\\BearcatGunPlatformNACA.pdf",
+      "raw_rows": 36,
+      "grades": {
+        "observed": 34,
+        "missing": 2
+      }
+    },
+    {
+      "source_file": "Luftwaffe\\Bf 109 D Kurzbetriebsanleitung.pdf",
+      "raw_rows": 58,
+      "grades": {
+        "estimated": 58
+      }
+    },
+    {
+      "source_file": "Luftwaffe\\Bf-109E Beladevorschriftt.pdf",
+      "raw_rows": 12,
+      "grades": {
+        "estimated": 10,
+        "missing": 2
+      }
+    },
+    {
+      "source_file": "Luftwaffe\\Bf-109G-3.pdf",
+      "raw_rows": 34,
+      "grades": {
+        "estimated": 31,
+        "missing": 3
+      }
+    },
+    {
+      "source_file": "Luftwaffe\\Bf-109G-6 U4.pdf",
+      "raw_rows": 30,
+      "grades": {
+        "estimated": 27,
+        "missing": 3
+      }
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\Fw190EngineControls.pdf",
+      "raw_rows": 52,
+      "grades": {
+        "observed": 23,
+        "estimated": 22,
+        "derived": 5,
+        "missing": 2
+      }
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-1.pdf",
+      "raw_rows": 159,
+      "grades": {
+        "observed": 132,
+        "estimated": 24,
+        "missing": 3
+      }
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-11.pdf",
+      "raw_rows": 12,
+      "grades": {
+        "observed": 11,
+        "derived": 1
+      }
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-2.pdf",
+      "raw_rows": 20,
+      "grades": {
+        "observed": 19,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-3.pdf",
+      "raw_rows": 17,
+      "grades": {
+        "observed": 12,
+        "estimated": 4,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-4.pdf",
+      "raw_rows": 29,
+      "grades": {
+        "observed": 26,
+        "estimated": 2,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-5.pdf",
+      "raw_rows": 13,
+      "grades": {
+        "estimated": 2,
+        "observed": 10,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-6.pdf",
+      "raw_rows": 15,
+      "grades": {
+        "observed": 14,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-7.pdf",
+      "raw_rows": 15,
+      "grades": {
+        "observed": 13,
+        "missing": 2
+      }
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-8.pdf",
+      "raw_rows": 5,
+      "grades": {
+        "observed": 4,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "Luftwaffe\\fw_190_d_9_teil_0_8a_c_e.pdf",
+      "raw_rows": 80,
+      "grades": {
+        "estimated": 77,
+        "missing": 3
+      }
+    },
+    {
+      "source_file": "Luftwaffe\\Fw 190 D-9 Teil 8A Schusswaffen.pdf",
+      "raw_rows": 3,
+      "grades": {
+        "estimated": 3
+      }
+    },
+    {
+      "source_file": "Luftwaffe\\Fw 190 F3 Teil 8A-1.pdf",
+      "raw_rows": 4,
+      "grades": {
+        "estimated": 4
+      }
+    },
+    {
+      "source_file": "Luftwaffe\\HeinkelHe 177 Technische Anweisungen des Generalluftzeugmeisters 1942.pdf",
+      "raw_rows": 33,
+      "grades": {
+        "estimated": 33
+      }
+    },
+    {
+      "source_file": "Luftwaffe\\He-177 A-0 Teil 12 Bewaffnung Allgemein.pdf",
+      "raw_rows": 23,
+      "grades": {
+        "estimated": 22,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "Luftwaffe\\He-177 A-0 Teil 12 B Abwurfwaffenanlage.pdf",
+      "raw_rows": 15,
+      "grades": {
+        "estimated": 13,
+        "missing": 2
+      }
+    },
+    {
+      "source_file": "Luftwaffe\\He 177 A-3 Schusswaffenanlage.pdf",
+      "raw_rows": 14,
+      "grades": {
+        "estimated": 14
+      }
+    },
+    {
+      "source_file": "Luftwaffe\\HeinkelHe 177 A-3 Kurzbeschreibung 1941.pdf",
+      "raw_rows": 60,
+      "grades": {
+        "estimated": 59,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "Soviet WW2 Aircraft\\IL 2 Stormovik.pdf",
+      "raw_rows": 57,
+      "grades": {
+        "estimated": 52,
+        "missing": 5
+      }
+    },
+    {
+      "source_file": "Soviet WW2 Aircraft\\\\IL2MainManual.pdf",
+      "raw_rows": 84,
+      "grades": {
+        "estimated": 79,
+        "missing": 5
+      }
+    },
+    {
+      "source_file": "Soviet WW2 Aircraft\\\\La-7.pdf",
+      "raw_rows": 61,
+      "grades": {
+        "estimated": 55,
+        "missing": 6
+      }
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\MosquitoFlyingQualities.pdf",
+      "raw_rows": 65,
+      "grades": {
+        "observed": 48,
+        "derived": 10,
+        "estimated": 1,
+        "missing": 6
+      }
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\NASA_NTRS_Archive_19930081628.pdf",
+      "raw_rows": 14,
+      "grades": {
+        "estimated": 13,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-47 Asia.pdf",
+      "raw_rows": 75,
+      "grades": {
+        "estimated": 75
+      }
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-47MeetPeter-2-19.pdf",
+      "raw_rows": 13,
+      "grades": {
+        "estimated": 13
+      }
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\Republic P-47 AAF Manual.pdf",
+      "raw_rows": 89,
+      "grades": {
+        "estimated": 88,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-47B  C and P-47D  G.pdf",
+      "raw_rows": 163,
+      "grades": {
+        "estimated": 162,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-47B,C,D,G.pdf",
+      "raw_rows": 557,
+      "grades": {
+        "estimated": 556,
+        "derived": 1
+      }
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-47D-25 through 35.pdf",
+      "raw_rows": 253,
+      "grades": {
+        "estimated": 181,
+        "missing": 3,
+        "observed": 69
+      }
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\Republic_P-47N_Thunderbolt_Pilot_Training_Manual(Better_Copy).pdf",
+      "raw_rows": 88,
+      "grades": {
+        "estimated": 80,
+        "observed": 7,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "P51B\\P-51B_manual_deel_1.pdf",
+      "raw_rows": 114,
+      "grades": {
+        "estimated": 88,
+        "observed": 19,
+        "derived": 1,
+        "missing": 6
+      }
+    },
+    {
+      "source_file": "P51B\\P-51B_manual_deel_2.pdf",
+      "raw_rows": 572,
+      "grades": {
+        "estimated": 561,
+        "observed": 6,
+        "missing": 5
+      }
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-51D-manual-5april44.pdf",
+      "raw_rows": 946,
+      "grades": {
+        "estimated": 611,
+        "derived": 8,
+        "missing": 4,
+        "observed": 323
+      }
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-51DK.pdf",
+      "raw_rows": 295,
+      "grades": {
+        "estimated": 160,
+        "observed": 133,
+        "missing": 2
+      }
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-51H Pilots Flight Operating Instructions.pdf",
+      "raw_rows": 715,
+      "grades": {
+        "estimated": 105,
+        "missing": 4,
+        "observed": 606
+      }
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\NACAProps2vs3vs4blds.pdf",
+      "raw_rows": 23,
+      "grades": {
+        "observed": 11,
+        "derived": 2,
+        "estimated": 9,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\NACAPropellerDifferentSections.pdf",
+      "raw_rows": 158,
+      "grades": {
+        "observed": 12,
+        "derived": 144,
+        "missing": 2
+      }
+    },
+    {
+      "source_file": "Luftwaffe\\ta152h_manual.pdf",
+      "raw_rows": 13,
+      "grades": {
+        "estimated": 13
+      }
+    },
+    {
+      "source_file": "Luftwaffe\\Ta-152 Translation.pdf",
+      "raw_rows": 72,
+      "grades": {
+        "estimated": 68,
+        "missing": 4
+      }
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\NACARacingSeaplanes.pdf",
+      "raw_rows": 29,
+      "grades": {
+        "estimated": 22,
+        "derived": 1,
+        "observed": 5,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\NACAbladeTheory.pdf",
+      "raw_rows": 73,
+      "grades": {
+        "observed": 28,
+        "estimated": 44,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\NACApropBlades.pdf",
+      "raw_rows": 349,
+      "grades": {
+        "observed": 348,
+        "missing": 1
+      }
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\NACAXP42.pdf",
+      "raw_rows": 80,
+      "grades": {
+        "observed": 51,
+        "estimated": 10,
+        "derived": 15,
+        "missing": 4
+      }
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\1942-03-31_Investigation_of_Buffering_and_Diving_Tendencies_of_the_YP-38_Airplane.pdf",
+      "raw_rows": 104,
+      "grades": {
+        "observed": 15,
+        "estimated": 86,
+        "derived": 1,
+        "missing": 2
+      }
+    }
+  ]
+}
