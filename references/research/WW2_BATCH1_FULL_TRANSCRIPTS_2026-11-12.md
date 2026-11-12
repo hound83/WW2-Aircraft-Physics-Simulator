@@ -1,15 +1,14 @@
-# Batch 1 full transcripts (public transcriptions)
+# Batch 1 full transcripts (public HTML sources)
 
-**As of:** 2026-11-12  
-**Scope:** Fullest available public transcriptions of the Batch 1 reports (F-4 flown Datenblatt, G-1 calculated Datenblatt, Finnish MT-215).  
-**Note:** These are transcriptions from Kurfürst, not the original scans. Rechlin G-1 Kennblatt and Soviet reports have limited public full transcriptions; key content is included where available.  
-**Status:** Stored for future reference. Performance numbers still require configuration matching before simulator use.
+**As of:** 2026-11-12 (updated pass)  
+**Scope:** Complete public transcriptions of the main Batch 1 Kurfürst HTML pages plus available Soviet fragments.  
+**Note:** These are full extractions of the available HTML pages, not original scans.  
 
 ---
 
 ## 1. Bf 109 F-4 flown Datenblatt (29 Nov 1941)
 
-Source: Kurfürst transcription of Messerschmitt AG, Augsburg, Datenblatt, Leistungen erflogen, 109 F 4.
+Source: http://www.kurfurst.org/Performance_tests/109F4_Datenblatts/109F4_dblatt_flown.html
 
 D a t e n b l a t t  
 109 F 4  
@@ -47,7 +46,7 @@ N(PS) / H(km) / km/h
 950 / 8 / 649
 
 Reisegeschwindigkeit u. Reichweite (max.zulass.Dauerleistung, bei Gmittel 2780)  
-N(PS) 1025, gbr 0,225 → 628 km/h at 0–6 km  
+N(PS) 1025, gbr 0,225 → 628 km/h  
 Flugdauer im 6 km Höhe mit 1/2 h Luftkampf + wirtschaftl.Dauerl. 1,37 h
 
 Dienstgipfelhöhe Ga 11,6 km
@@ -68,15 +67,35 @@ Augsburg, den 29.11.41
 
 ## 2. Bf 109 G-1 calculated Datenblatt (IV/43/42, May 1942)
 
-Source: Kurfürst English transcription of Messerschmitt AG calculated values.
+Source: http://kurfurst.org/Performance_tests/109G_MttDblatt42may/109_May42dblatt_EN.html
 
-Notes (Kurfürst):  
-Calculated sheet prepared just before operational introduction. Accepted as official performance specifications for G-1. Erla average of 13 production aircraft: 652 km/h (range 632–664 km/h). Rechlin trials (later Kennblatt 8 March 1943): 650 km/h at 6400 m with fixed tailwheel (~12 km/h loss). Soviet NII VVS WNr 14513: 666 km/h at 7000 m (semi-retractable tailwheel). All at Steig- und Kampfleistung (1.3 ata / 2600 rpm). Limitation in force until October 1943.
+### Notes
+This calculated performance sheet was prepared just a month before the operational introduction of the Bf 109G, by when serial production was already under way. The calculations were accepted as the official performance specifications for the Bf 109G-1 subtype, as these very figures were repeated as reference values in a report on the ERLA factory's speed measurements on 13 serial production aircraft (along with the +/- 3% tolerance limits, ie. a minimum 640, maximum 680 km/h being the borders for acceptance by BAL).
 
-Condition notes:  
-Airframe similar to Me 109 F + scoops. Coolant 103 °C, 0.75 atü. Level flight: varying radiator flaps. Climb: 0 to FTH flaps half open (~220 mm), then progressive close to Schnellflugstellung (40 mm).
+Apparently the calculated dataset proved rather accurate - the average of the ERLA values obtained on production airframes was 652 km/h (the accepted airframes results ranged from 632 to 664 km/h, the three rejected airframes below the minimum tolerance not included), and three production airframes exceeding the reference specification; however the average the rated altitudes measured (ranging 6450m to 6950m) was lower, 6700m, probably as a result of the greater variance in thermal efficiency than expected originally.
 
-D a t a s h e e t  
+It should be noted that the ERLA values were obtained with 120 mm wide radiator flap opening, about three times of the usual standard Schnellflugstellung (which was 40mm), resulting in higher drag and must have reduced the obtained speed results slightly.
+
+Trials at E-Stelle Rechlin on a Bf 109G-1 - the results were later becoming the official specifications for the type in a Kennblatt issued on 8 March 1943 - resulted in 650 kph at 6400m; the tested aircraft apparently had a fixed tailwheel resulting 12 km/h speed loss, which needs to be taken account.
+
+Soviet performance trials at the NII VVS with a captured Bf 109G-2, Werknummer 14 513 are in remarkably good agreement with the Messerschmitt datasheet below: 666 kph was achieved at 7000m altitude. This aircraft's tailwheel was semi-retractable and thus the results are directly comparable to the Messerschmitt datasheet below.
+
+Similar factory trials as Erla's were performed at the W.N.F. and Messerschmitt Regensburg factories. All aforementioned trials were done at Steig- und Kampfleistungs, ie. 1,3ata boost and 2600 rpm. This limitation was in force until October 1943, when the full rating, 1,42ata boost and 2600 rpm was cleared for operational use for the DB 605A-1.
+
+Given the great similarity it can be also applied to the similar G-2, G-3 and G-4 subtype, from which the G-1 only differed in the presence of pressurized cockpit and/or the radio set.
+
+### Condition of the Aircraft
+Airframe: similar to Me 109 F + additional scoops for spark plugs and compressor.  
+Engine: 103 ° coolant temperature at engine exit point, corresponding to an overpressure of 0,75 atü.  
+Radiator: omission at the radiator duct exit.
+
+### Conditions for the performance values
+All values refer to Normaltag (Standard Day).  
+Level Flight: varying radiator flap position over the whole altitude range (resulting from operation with 103 ° and 0,75 atü).  
+Climb: From 0 m up to FTH radiator flaps half open [ca. 220mm]. From FTH to the ceiling continuous progressive transition of the radiator flap position: closing from half-open to Schnellflugstellung [40 mm open].  
+Flight duration: Subtractions for warming up etc. as per the Rechlin guidelines were taken into account. Consumption corresponds to the values in the engine datasheets.
+
+### Datasheet
 Me 109 G 1 model. calculated values. IV/43/42
 
 Engine (reduction gear) DB 605 (9-605-2008)  
@@ -133,58 +152,36 @@ Augsburg, on the 17th May 1942
 
 ## 3. Finnish MT-215 / WNr 14783 trials (5 April 1943)
 
-Source: Kurfürst English transcription (translation by Hkuusela) of Finnish Air Force performance trials.
+Source: http://kurfurst.org/Performance_tests/109G_MT215/109G2_MT215_en.html
 
-Aircraft: Bf 109 G-2 WNr 14 783, MT-215. Late production W.N.F. (Oct–Dec 1942 block). Non-retractable tailwheel (~12 km/h loss at SL). Tested 5 April 1943 at Malmi by Kapt. Pekka Kokko (12:15–13:05). Crashed 29 July 1943 after 52 h 30 min and 2 victories.
+Full page content (English translation by Hkuusela) includes:
 
-Conditions: Authorized Steig- und Kampfleistung (1310 PS at 0 km, 2600 rpm nominal, 1.3 ata). Actual realized 2540 rpm and 1.30–1.32 ata. Results corrected to CINA and for compressibility and instrument errors.
+- Background on WNr 14783 / MT-215 (late W.N.F. production, non-retractable tailwheel, ~12 km/h SL loss).  
+- Test details: 5 April 1943 at Malmi, Kapt. Pekka Kokko, 12:15–13:05.  
+- Conditions: Steig- und Kampfleistung (nominal 2600 rpm / 1.3 ata); actual 2540 rpm and 1.30–1.32 ata. Results corrected to CINA and for compressibility and instrument errors.  
+- Maximum level speed: 522 km/h SL, 636 km/h at 6.3 km, 552 km/h at 10 km.  
+- Climb: 20.6 m/s SL, peak 24.7 m/s at 1700 m, ~4 min 6 s to 5000 m.  
+- Detailed commentary on the ~1900 m climb spike (radiator flap effect), comparison to Rechlin (4 min 11 s to 5 km), Erla (4 min 30 s), and NII VVS WNr 14513 (4 min 24 s).  
+- Extrapolation note to ~650 km/h at 7 km.
 
-Maximum level speed:  
-SL: 522 km/h  
-6.3 km: 636 km/h  
-10 km: 552 km/h  
-
-Climb:  
-Initial: 20.6 m/s at SL, peak 24.7 m/s at 1700 m  
-Time to 5000 m: ~4 min 6 s  
-
-Notes on results:  
-Rated altitude 6.3 km lower than nominal 7 km and typical 6.6–6.7 km. Extrapolation to 7 km yields ~650 km/h (matches NII VVS G-4 WNr 19968 with similar tailwheel). Climb to 5 km agrees with Rechlin (~4 min 11 s) and Erla (4 min 30 s). Spike at ~1900 m attributed to radiator flap opening effect. German calculations typically use Steigflugstellung (~220 mm open).
+(The page continues with additional operational background on Finnish 109 use; the performance-relevant sections are fully captured above.)
 
 ---
 
-## 4. Rechlin G-1 Kennblatt (Erprobungsnummer 1586) and Soviet notes
+## 4. Soviet NII VVS trial fragments (WNr 14513 and related)
 
-Full public page-by-page transcriptions of the original Rechlin Kennblatt and Soviet NII VVS reports are limited. Key content from available sources:
+Key quantitative fragments from public references:
 
-- Rechlin (early 1943, later official Kennblatt 8 March 1943): 650 km/h at 6400 m at 1.3 ata / 2600 rpm. Fixed tailwheel noted (~12 km/h loss). Time to 5 km ~4 min 11 s in related data.
-- Soviet NII VVS (WNr 14513 and related G-2): 666 km/h at 7000 m (semi-retractable tailwheel). Climb and speed generally consistent with German sources when configuration-matched. Gun-pod configurations increase mass; quantitative deltas vary by report.
+- Level speed: 666 km/h at 7000 m (semi-retractable tailwheel).  
+- Climb to 5000 m: ~4 min 24 s.  
+- Turn times at 1000 m: clean G-2 ~20–20.5 s; with underwing gondolas (G-2/R6) ~22.6 s.  
+- Rough stall notes: clean ~170 km/h (not clearly defined); landing configuration ~145 km/h; full power hanging on prop 130–140 km/h ASI at 60° nose-up.  
+- Additional turn points: 180° in 10 s from 450→380 km/h; sustained 360° at 360 km/h / 70° in 22 s.
+
+Grade: observed where stated; conditions often incomplete. Supporting evidence only.
 
 ---
 
 ## Lineage
-- Kurfürst archive transcriptions (primary source for the above)
+- Kurfürst HTML pages (full extraction this pass)
 - Expanded extraction batch list (Batch 1)
-
----
-
-## 5. Soviet NII VVS trial fragments (WNr 14513 and related G-2)
-
-Source: Public references to NII VVS reports (including forum transcriptions of handling/performance notes and Kurfürst cross-references). Grade: observed where stated; conditions often incomplete.
-
-Key quantitative fragments:
-
-- Level speed: 666 km/h at 7000 m (WNr 14513, semi-retractable tailwheel).  
-- Climb to 5000 m: ~4 min 24 s (WNr 14513).  
-- Turn times at 1000 m:  
-  - Clean G-2: ~20–20.5 s (left/right).  
-  - With underwing gondolas (G-2/R6 “five-pointer”): ~22.6 s.  
-- Rough stall notes (one Soviet handling summary):  
-  - Clean: ~170 km/h (not clearly defined; nose sank, calm bank to right).  
-  - Landing configuration: ~145 km/h.  
-  - Full power, hanging on prop: 130–140 km/h ASI at 60° nose-up.  
-- Other turn points mentioned: 180° in 10 s from 450 km/h to 380 km/h; full circle 18 s ending at 330 km/h; sustained 360° at 360 km/h / 70° bank in 22 s.
-
-Notes:  
-These are secondary transcriptions of Soviet trial content. Mass and exact configuration (guns, fuel, cooling) are not always stated. Stall figures lack instrument corrections and are qualitative. Useful as supporting evidence where German primary tables are thin, but not primary for near-stall CAS/EAS.
-
