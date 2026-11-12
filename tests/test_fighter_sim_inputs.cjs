@@ -5,6 +5,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { buildCatalog } = require('../scripts/research-layer.cjs');
 const { resolveCase } = require('../scripts/fighter-value-selection.cjs');
+const { interpolate } = require('../scripts/research-speed-corrections.cjs');
 const { buildSimInputs, encodeSimInputs, releasePath } = require('../scripts/fighter-sim-inputs.cjs');
 const derived = require('../references/analysis/fighter-derived-evidence-2026-11-11.json');
 const baseline = require('../references/aircraft-readiness-german-archive-2026-11-11.json');
@@ -22,7 +23,42 @@ for (const [id, ref] of Object.entries(pack.observations)) {
 }
 
 const byId = id => pack.cases.find(row => row.id === id);
-assert.equal(pack.version, '1.5.0');
+assert.equal(pack.version, '1.6.0-rc.1');
+const stall = pack.stall_reference;
+assert.deepEqual(stall.variants.map(row => row.id), baseline.variants.map(row => row.id));
+assert.deepEqual(stall.summary, {
+  variants_reviewed: 13,
+  variants_numerically_improved: 6,
+  new_clean_power_off_variants: 1,
+  catalog_rows_added: 37,
+});
+const stallRows = new Map(stall.observations.map(row => [row.id, row]));
+for (const variant of stall.variants) {
+  for (const id of [...variant.numerical_improvement_ids, ...variant.clean_power_off_case_ids]) {
+    assert.ok(variant.added_ids.includes(id), 'New case is assigned to its reviewed variant');
+  }
+  for (const id of variant.added_ids) assert.ok(stallRows.has(id) && pack.observations[id]);
+  for (const id of variant.prior_ids) assert.ok(pack.observations[id]);
+}
+const addedStall = id => stallRows.get('ww2_fleet_stall_2026-11-12:' + id);
+const lightning = addedStall('p38g-4212690-clean-off');
+assert.deepEqual([lightning.values.original_ias_mph, lightning.values.speed_mph, lightning.values.weight_lb], [98, 112, 14800]);
+assert.equal(lightning.speed_basis, 'CAS');
+assert.equal(lightning.values.power, 'off');
+const lightningCurve = catalog.calibration_curves.find(row => row.id === lightning.correction.calibration_id);
+assert.deepEqual(lightningCurve.configuration, { gear: 'up', flaps: 'up', pitot: 'Kollsman D-2, left wing' });
+assert.deepEqual(lightningCurve.applies_to_source_ids, [pack.observations[lightning.id].source]);
+assert.equal(interpolate(lightningCurve, 98), 112.4);
+assert.equal(interpolate(lightningCurve, 92), null);
+assert.equal(addedStall('p38g-4212690-clean-powered').values.speed_mph, 107);
+assert.equal(addedStall('p38g-4212690-clean-powered').correction.in_report_calibration_interpolated_cas_mph, null);
+assert.equal(addedStall('f4u4-clean-powered').values.speed_kt, 84.6);
+assert.equal(addedStall('f4u4-landing-power-off').values.power, 'off');
+assert.equal(addedStall('f4u4-landing-power-off').values.speed_kt, 77.7);
+assert.deepEqual(addedStall('f4u4-clean-powered').supersedes, ['stall_us_2026-11-10:US20:0001']);
+assert.equal(addedStall('f6f3-glide-fig5-first-roll').speed_basis, 'IAS');
+assert.equal(addedStall('f6f3-glide-fig5-first-roll').values.weight_lb, null);
+assert.equal(addedStall('p47d30-landing-wind-up-fig59').quantity, 'accelerated_stall_speed');
 assert.equal(byId('g2-db605a-combat-sea-level-rating').preferred.value, 1310);
 assert.equal(byId('g2-db605a-combat-5800m-rating').preferred.value, 1250);
 assert.equal(byId('a4-bmw801d-combat-low-gear-rating').preferred.value, 1520);

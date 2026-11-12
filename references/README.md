@@ -1,6 +1,8 @@
 # Research and imported evidence
 
-**Fighter sim inputs v1.5.0.** The [versioned data pack](analysis/fighter-sim-inputs-v1.json) provides preferred source-case values, original observation links, curve styles, ranges and GOLD and GOLD* coverage for thirteen variants. Build output includes the data pack and the full research catalog. [Coverage and simulator handoff](../docs/research/WW2_FIGHTER_SIM_INPUTS_V1.md)
+**Fighter sim inputs v1.6.0-rc.1.** The [versioned data pack](analysis/fighter-sim-inputs-v1.json) provides preferred source-case values, original observation links, curve styles, ranges and GOLD and GOLD* coverage for thirteen variants. Build output includes the data pack and the full research catalog. [Coverage and simulator handoff](../docs/research/WW2_FIGHTER_SIM_INPUTS_V1.md)
+
+**Fleet stall data.** The [source pack](research/ww2_fleet_stall_2026-11-12.json) records new readings, transcriptions and calibration anchors for the 13-variant stall review. [Fleet findings and remaining gaps](../docs/research/WW2_FLEET_STALL_INPUTS_2026-11-12.md)
 
 **Propeller efficiency.** The [companion dataset](analysis/fighter-propeller-efficiency-v1.json) carries installation-specific references for the fleet, including NACA high-speed efficiency readings and Focke-Wulf intake curves. [Fleet inputs and original report index](../docs/research/WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md) · [Checked 80% and 76% references](../docs/research/WW2_PROPELLER_REFERENCE_VALUES_2026-11-12.md)
 
