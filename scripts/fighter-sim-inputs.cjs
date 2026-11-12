@@ -17,6 +17,7 @@ const propellerPath = 'references/analysis/fighter-propeller-efficiency-v1.json'
 const evidencePath = 'references/analysis/fighter-derived-evidence-2026-11-11.json';
 const baselinePath = 'references/aircraft-readiness-german-archive-2026-11-11.json';
 const batchReviewPath = 'references/analysis/ww2_grok_batch_disposition_2026-11-12.json';
+const pdfReviewPath = 'references/analysis/ww2_pdf_source_disposition_2026-11-12.json';
 const stallPath = 'references/research/ww2_fleet_stall_2026-11-12.json';
 const interpolatedCharts = new Set(['spitfire-climb-branches', 'p47b-climb-branches', 'p38g-part-power-speed',
   'p40f-standard-spinner-climb', 'f4-factory-climb', 'g2-known-setting-speed']);
@@ -27,7 +28,7 @@ const sha256 = text => createHash('sha256').update(text).digest('hex');
 const sum = values => values.reduce((a, b) => a + b, 0);
 const percent = (total, count) => Math.round(100 * total / count) / 100;
 
-function scoreCoverage(baseline, evidence, cases) {
+function scoreCoverage(baseline, evidence, cases, sourceReviewCredits) {
   const rows = baseline.variants.map((variant, i) => {
     const prior = evidence.coverage.rows[i];
     if (prior.id !== variant.id) throw Error('Coverage variant mismatch');
@@ -37,13 +38,16 @@ function scoreCoverage(baseline, evidence, cases) {
       const current = matching.find(item => item.gold) ?? matching.find(item => item.gold_status === 'gold-qualified') ?? matching[0];
       return { id, case_id: current?.id ?? null, status: current?.gold_status !== 'open' ? current?.gold_status ?? 'open' : 'reviewed-open' };
     });
+    const sourceCredits = sourceReviewCredits.filter(credit => credit.roster_id === variant.id);
     const dimensions = baseline.dimensions.map((id, j) => {
-      const primary = variant.primary_points[j];
+      const basePrimary = variant.primary_points[j];
+      const sourcePoints = sum(sourceCredits.filter(credit => credit.dimension === id).map(credit => credit.points));
+      const primary = basePrimary + sourcePoints;
       const secondary = sum(credits.filter(c => c.dimension === id && c.grade === 'secondary').map(c => c.points));
       const legacyCalculated = sum(credits.filter(c => c.dimension === id && c.grade === 'calculated').map(c => c.points));
       const overlap = sum(credits.filter(c => c.dimension === id &&
         prior.credits.some(newer => newer.axis === id && newer.evidence.includes(c.superseded_by))).map(c => c.points));
-      const unallocated = variant.augmented_points[j] - primary - secondary - legacyCalculated;
+      const unallocated = variant.augmented_points[j] - basePrimary - secondary - legacyCalculated;
       const calculated = prior.points[j] - variant.augmented_points[j] + legacyCalculated - overlap;
       if (unallocated < 0 || calculated < 0 || primary + secondary + calculated > baseline.weights[j]) {
         throw Error('Invalid split coverage for ' + variant.id + ' ' + id);
@@ -55,20 +59,24 @@ function scoreCoverage(baseline, evidence, cases) {
     const withCalculations = withSecondary + sum(dimensions.map(row => row.calculated));
     const unallocated = sum(dimensions.map(row => row.unallocated));
     const overlap = sum(dimensions.map(row => row.overlap));
-    if (withCalculations + unallocated + overlap !== prior.with_calculations_percent) throw Error('Prior coverage must reconcile');
+    const sourceReviewPoints = sum(sourceCredits.map(credit => credit.points));
+    if (withCalculations - sourceReviewPoints + unallocated + overlap !== prior.with_calculations_percent) {
+      throw Error('Prior coverage must reconcile');
+    }
     return {
       id: variant.id, label: variant.label, primary_percent: primary, with_secondary_percent: withSecondary,
       with_calculations_percent: withCalculations, previous_total_percent: prior.with_calculations_percent,
-      legacy_context_points: unallocated, overlapping_legacy_points: overlap, delta_total_points: -(unallocated + overlap),
+      legacy_context_points: unallocated, overlapping_legacy_points: overlap,
+      source_review_points: sourceReviewPoints, delta_total_points: withCalculations - prior.with_calculations_percent,
       gold_count: slots.filter(slot => slot.status === 'gold').length,
       gold_qualified_count: slots.filter(slot => slot.status === 'gold-qualified').length, planned_count: slots.length,
-      dimensions, legacy_credits: credits, calculation_credits: prior.credits, benchmarks: slots,
+      dimensions, legacy_credits: credits, calculation_credits: prior.credits, source_review_credits: sourceCredits, benchmarks: slots,
     };
   });
 
   function summary(group) {
     const averages = Object.fromEntries(['primary_percent', 'with_secondary_percent', 'with_calculations_percent',
-      'previous_total_percent', 'legacy_context_points', 'overlapping_legacy_points', 'delta_total_points']
+      'previous_total_percent', 'legacy_context_points', 'overlapping_legacy_points', 'source_review_points', 'delta_total_points']
       .map(key => [key, percent(sum(group.map(row => row[key])), group.length)]));
     const gold_count = sum(group.map(row => row.gold_count));
     const planned_count = sum(group.map(row => row.planned_count));
@@ -180,8 +188,8 @@ function stallReference(catalog, catalogObservations) {
   };
 }
 
-function batchReference(catalog) {
-  const review = JSON.parse(read(batchReviewPath));
+function reviewedReference(catalog, reviewPath) {
+  const review = JSON.parse(read(reviewPath));
   const packId = path.basename(review.evidence_pack, '.json');
   const rows = catalog.observations.filter(row => row.pack_id === packId);
   const series = review.series.map(({ series_id, roster_id, application, row_count }) => {
@@ -199,17 +207,21 @@ function batchReference(catalog) {
   });
   const newIds = series.flatMap(group => group.observation_ids);
   if (newIds.length !== rows.length || new Set(newIds).size !== rows.length) {
-    throw Error('Batch review must assign each new catalog observation exactly once');
+    throw Error(reviewPath + ' must assign each new catalog observation exactly once');
   }
   const existingIds = [...new Set(review.reviewed_artifacts.flatMap(row => row.existing_observation_ids ?? []))];
   return {
-    source_commit: review.source_commit, review_path: batchReviewPath, evidence_pack: review.evidence_pack,
+    source_commit: review.source_commit, review_path: reviewPath, evidence_pack: review.evidence_pack,
     reviewed_artifact_count: review.reviewed_artifacts.length,
     observation_count: newIds.length,
     reference_specimen_observation_count: series
       .filter(row => row.application === 'reference-specimen')
       .reduce((total, row) => total + row.rows.length, 0),
     coverage_assessment: review.coverage_assessment,
+    ...(review.candidate_index ? {
+      candidate_index: review.candidate_index, raw_record_count: review.raw_record_count,
+      unresolved_source_rows: review.unresolved_source_rows,
+    } : {}),
     series, observation_ids: newIds, existing_observation_ids: existingIds,
   };
 }
@@ -222,7 +234,8 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
   const fleet = JSON.parse(propeller).fleet_reference;
   const charts = [...evidence.charts, fwIntakeChart(fleet.fw190a4)];
   const climb = climbReference(observations, charts);
-  const batch = batchReference(catalog);
+  const batch = reviewedReference(catalog, batchReviewPath);
+  const pdf = reviewedReference(catalog, pdfReviewPath);
   const fleetObservationIds = catalog.observations.filter(row => row.pack_id === 'ww2_fleet_propeller_2026-11-12').map(row => row.id);
   const originalIds = new Set([...Object.keys(evidence.observations), ...engine.observation_ids, ...fleetObservationIds]);
   const cases = reviewedCases(observations, evidence).map(item => ({ ...item, ...resolveCase(item) }));
@@ -230,6 +243,7 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
     ...rejectedPairs.flatMap(row => row.observation_ids), ...legacyCredits.map(row => row.observation),
     ...stall.observations.map(row => row.id), ...climb.observation_ids,
     ...batch.observation_ids, ...batch.existing_observation_ids,
+    ...pdf.observation_ids, ...pdf.existing_observation_ids,
     ...stall.variants.flatMap(row => [...row.prior_ids, ...row.clean_stall.observation_ids])]) {
     if (!observations.has(id)) throw Error('Unresolved original observation ' + id);
     originalIds.add(id);
@@ -245,8 +259,18 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
   }]));
   const packs = new Set([...originalIds].map(id => observations.get(id).pack_id));
   const baseline = JSON.parse(read(baselinePath));
+  const pdfCredits = pdf.coverage_assessment.credits.map(credit => {
+    const supportingSeries = credit.evidence_series_ids.map(id => pdf.series.find(group => group.id === id));
+    if (!baseline.variants.some(row => row.id === credit.roster_id) || !baseline.dimensions.includes(credit.dimension)
+      || credit.grade !== 'primary' || !Number.isInteger(credit.points) || credit.points <= 0
+      || !credit.rationale || !supportingSeries.length
+      || supportingSeries.some(group => group?.roster_id !== credit.roster_id || group.application !== 'block-handbook')) {
+      throw Error('Invalid documentary coverage credit for ' + credit.roster_id);
+    }
+    return { ...credit, observation_ids: supportingSeries.flatMap(group => group.observation_ids) };
+  });
   return {
-    schema: 'ww2-fighter-sim-inputs/v1', version: '1.8.0', as_of: '2026-11-12',
+    schema: 'ww2-fighter-sim-inputs/v1', version: '1.9.0', as_of: '2026-11-12',
     scope: 'Historical inputs and conditional estimates for source-case lookups and evidence graphs.',
     originals: {
       catalog: 'research-catalog.json',
@@ -263,7 +287,8 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
     stall_reference: stall,
     climb_reference: climb,
     batch_reference: batch,
-    tolerances, coverage: scoreCoverage(baseline, evidence, cases),
+    pdf_reference: pdf,
+    tolerances, coverage: scoreCoverage(baseline, evidence, cases, pdfCredits),
     cases, rejected_pairs: rejectedPairs,
     charts: charts.map(chart => ({
       ...chart, series: chart.series.map((series, i) => curveSeries(chart, series, i, cases)),
@@ -275,6 +300,14 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
 function encodeSimInputs(data) {
   const sections = Object.entries(data).map(([key, value]) => {
     const prefix = '  ' + JSON.stringify(key) + ': ';
+    if (key === 'pdf_reference') {
+      return prefix + '{\n' + Object.entries(value).map(([section, data]) => {
+        const content = section === 'series'
+          ? '[\n' + data.map(group => '      ' + JSON.stringify(group)).join(',\n') + '\n    ]'
+          : JSON.stringify(data);
+        return '    ' + JSON.stringify(section) + ': ' + content;
+      }).join(',\n') + '\n  }';
+    }
     if (['cases', 'charts'].includes(key)) {
       return prefix + '[\n' + value.map(row => '    ' + JSON.stringify(row)).join(',\n') + '\n  ]';
     }

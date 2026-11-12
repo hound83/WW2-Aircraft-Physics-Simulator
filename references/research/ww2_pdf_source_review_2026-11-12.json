@@ -1,0 +1,879 @@
+{
+  "schema": "ww2-fighter-evidence-pack/v1",
+  "pack_version": "1.0.0",
+  "as_of": "2026-11-12",
+  "scope": "Reviewed archival tables, chart readings and documentary data. Retains the original test or publication conditions.",
+  "sources": [
+    {
+      "id": "NACA-TN-698",
+      "aircraft": "NACA TN 698 scale propellers",
+      "report": "NACA TN 698, Lesley, 1939",
+      "location": "PDF pages 12–16, printed pp. 10–14, Tables I and II",
+      "source": "https://ntrs.nasa.gov/api/citations/19930081563/downloads/19930081563.pdf",
+      "archive_file": "N.A.C.A. Reports/NACApropBlades.pdf",
+      "inspected_copy_sha256": "286b89fae83509043f133af550ce2a9a088515d76b36653f80007c5f1c362f12",
+      "notes": "3 ft metal adjustable-pitch tunnel models. The second local scan is another copy of the same report. Reynolds number is 0.06–0.11 of the cited full-scale example."
+    },
+    {
+      "id": "P47D-AN65BC1A",
+      "aircraft": "P-47D-25 through P-47D-35",
+      "report": "AN 01-65BC-1A P-47D Pilot’s Flight Operating Instructions",
+      "location": "Fig. 42 printed p. 36, Fig. 48 printed p. 46",
+      "source": "https://app.aircorpslibrary.com/document/viewer/8a857610-e349-464b-a98f-7009e073081e",
+      "archive_file": "WW2 USAAF Fighters/P-47D-25 through 35.pdf",
+      "inspected_copy_sha256": "84ee2ad021c18bb747e038ec2f55ff2d1f99c026a06104687b6e9371c38b16dd",
+      "notes": "Official handbook covers the D-30 block. The charts give operating settings and planning performance from Republic data. Aircraft serial, installed shaft horsepower and the flight-check status of individual figures are unestablished."
+    },
+    {
+      "id": "AP-2381A-PN",
+      "aircraft": "RAF Thunderbolt I and II",
+      "report": "A.P. 2381A-P.N. Pilot’s Notes for Thunderbolt I and II, South East Asia command issue",
+      "location": "Sections 2 and 3, printed pp. 15, 20",
+      "archive_file": "WW2 USAAF Fighters/P-47 Asia.pdf",
+      "inspected_copy_sha256": "80f33fef4a3f76f438fcb96bbedfa8d34324805efa4e451811d65ec079ce10d9",
+      "notes": "Family handbook for RAF Thunderbolt configurations. The tested aircraft and pitot/instrument installation are unspecified."
+    },
+    {
+      "id": "P47BCDG-TO65BC1",
+      "aircraft": "P-47B, P-47C, P-47D, P-47G",
+      "report": "T.O. 01-65BC-1 P-47B/C/D/G Preliminary Pilot’s Operating Instructions",
+      "location": "Printed p. 31, flight operation instruction chart, sheet 2",
+      "archive_file": "WW2 USAAF Fighters/P-47B,C,D,G.pdf",
+      "inspected_copy_sha256": "783c2d4f14c9b59101d9f7cbc02b090b36bc161e53c85c81399e7f24d8794ee0",
+      "notes": "R-2800-21 with turbo. The chart explicitly marks P-47C and P-47D as estimated. It covers P-47B without a serial and identifies preliminary printed data."
+    },
+    {
+      "id": "P51B1-TO60JD1",
+      "aircraft": "P-51B-1 with V-1650-3",
+      "report": "T.O. 01-60JD-1, P-51B-1 Pilot’s Flight Operating Instructions, split Part 2",
+      "location": "Appendix II, PDF p. 28, printed p. 61",
+      "archive_file": "P51B/P-51B_manual_deel_2.pdf",
+      "inspected_copy_sha256": "a34638503dd265bffb04561ebb4e5d5b030cfdaf6d7d68e8b5e9e1b9092c3254",
+      "notes": "Packard V-1650-3 installation. A different engine from the V-1650-7 in P-51B-15 43-24777. The scan cannot establish which figures were flight checked."
+    },
+    {
+      "id": "FW190D9-2190-TEIL0",
+      "aircraft": "Fw 190 D-9, Jumo 213 A",
+      "report": "Werkschrift 2190 D-9 Teil 0, November 1944, retyped in a combined manual",
+      "location": "Section B §§2–4, pp. 8–9",
+      "archive_file": "Luftwaffe/fw_190_d_9_teil_0_8a_c_e.pdf",
+      "inspected_copy_sha256": "beab798ec444fc2b9e967c7209f2c17dc2a4b3a7aaa8bf2062ecd53d668191c1",
+      "notes": "Period manual text survives in a retyped scan. The ratings are reference values. The listed flight weights are handbook load cases."
+    },
+    {
+      "id": "NACA-E5D19",
+      "aircraft": "BMW 801 D-2 Kommandogerät",
+      "report": "NACA MR E5D19 / WR E-192, BMW 801 D-2 Automatic Engine Control, 1945",
+      "location": "Figure 5 and text p. 11",
+      "source": "https://ntrs.nasa.gov/api/citations/19930093290/downloads/19930093290.pdf",
+      "archive_file": "N.A.C.A. Reports/Fw190EngineControls.pdf",
+      "inspected_copy_sha256": "47f56caa502cff00c8e966acb26d0a75417d4025c05a76590fd58b3979efc796",
+      "notes": "Bench control unit 7653 from engine 304068. Fig. 5 is a schedule derived by NACA from AAF Materiel Command information, separate from the unit bench readings."
+    },
+    {
+      "id": "NACA-YP38-1942",
+      "aircraft": "YP-38 full-scale tunnel test aircraft",
+      "report": "NACA report for Army Air Corps, Guryansky and Preston, 31 March 1942",
+      "location": "Table I, PDF p. 11",
+      "source": "https://ntrs.nasa.gov/api/citations/19930092691/downloads/19930092691.pdf",
+      "archive_file": "N.A.C.A. Reports/1942-03-31_Investigation_of_Buffering_and_Diving_Tendencies_of_the_YP-38_Airplane.pdf",
+      "inspected_copy_sha256": "6d1a049387cab96738f40cbd36cfbc6145898765d6214f62363faebfccf49b49",
+      "notes": "Critical Mach estimates from local pressure data on the YP-38, including experimental modifications."
+    },
+    {
+      "id": "KI84-T2-IR3",
+      "aircraft": "Ki-84-I Frank, T-2 302 report",
+      "report": "AAF T-2 Interim Report No. 3, F-IM-1119C-ND, November 1946",
+      "location": "Factual Data, PDF p. 8, printed p. 2",
+      "source": "https://www.wwiiaircraftperformance.org/japan/T-2_Report_on_Frank_I_Ki-84.pdf",
+      "archive_file": "Japanese Manuals/Ki84ShortReport.pdf",
+      "inspected_copy_sha256": "7250f1449e4be19577a76a8a21efd4545125514a2e8a4a1d551709e39d17aeb2",
+      "notes": "The 7940 and 9194 lb performance figures are nominal specifications. The handling-test section reports that no performance climb was attempted. The reference takeoff weight in that flight section is 7900 lb."
+    },
+    {
+      "id": "FW190A5A6-2190-TEIL0",
+      "aircraft": "Fw 190 A-5/A-6, BMW 801 D",
+      "report": "D.(Luft) T.2190 A-5/A-6 Teil 0, December 1943",
+      "location": "Section A §§2–3, PDF p. 10, printed p. 11",
+      "archive_file": "190 manual split/Fw-190A5completeManual-part-1.pdf",
+      "inspected_copy_sha256": "cf07d98c5b9ec10d9ef32cd8f1a0b6f0778d45ab592feade45409202921e193e",
+      "notes": "Original handbook reference data for the A-5/A-6. The test serial and reduction method of the printed performance figures are unestablished."
+    },
+    {
+      "id": "P40FL-TO01-25CH1",
+      "aircraft": "P-40F and P-40L, V-1650-1",
+      "report": "T.O. 01-25CH-1 Pilot’s Flight Operating Instructions, revised 20 June 1943",
+      "location": "Section III, printed pp. 38–39",
+      "source": "https://aviationarchives.blogspot.com/2022/01/curtiss-p-40fl-warhawk-flight.html",
+      "archive_file": "WW2 USAAF Fighters/P-40F Pilots Manual.pdf",
+      "inspected_copy_sha256": "1f8722753669132045095aeeaf385152bfc6932e219669c205dd49e0df875ec8",
+      "notes": "The catalog already contains the stall, loading and specific engine tables from this handbook. This addition covers the two published climb planning charts."
+    }
+  ],
+  "series": [
+    {"id":"tn698-3-e-15-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 12, printed p. 10","conditions":"3-blade E (aspect ratio 7.7), 15 degrees at 0.75R, 2000 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [0.734,0.002,0.012,1.78,0.122,["NACA-TN698-022"]],
+        [0.679,0.0178,0.0204,1.478,0.592,["NACA-TN698-023"]],
+        [0.631,0.0292,0.0266,1.304,0.693,["NACA-TN698-024"]],
+        [0.593,0.0379,0.0307,1.191,0.732,["NACA-TN698-025"]],
+        [0.548,0.0483,0.0355,1.069,0.745,["NACA-TN698-026"]],
+        [0.506,0.0576,0.0394,0.966,0.739,["NACA-TN698-027"]],
+        [0.473,0.0646,0.0422,0.891,0.724,["NACA-TN698-028"]],
+        [0.425,0.0748,0.0452,0.79,0.703,["NACA-TN698-029"]],
+        [0.37,0.0833,0.0473,0.681,0.651,["NACA-TN698-030"]],
+        [0.326,0.0905,0.0485,0.597,0.607,["NACA-TN698-031"]],
+        [0.254,0.1007,0.0497,0.463,0.514,["NACA-TN698-032"]]
+      ]
+    },
+    {"id":"tn698-3-e-25-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 12, printed p. 10","conditions":"3-blade E (aspect ratio 7.7), 25 degrees at 0.75R, 1800 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [1.166,0.0024,0.0216,2.511,0.13,["NACA-TN698-033"]],
+        [1.123,0.0174,0.0349,2.198,0.56,["NACA-TN698-034"]],
+        [1.059,0.0316,0.0478,1.946,0.7,["NACA-TN698-035"]],
+        [1.007,0.0457,0.0598,1.77,0.77,["NACA-TN698-036"]],
+        [0.962,0.0549,0.0673,1.651,0.784,["NACA-TN698-037"]],
+        [0.912,0.0638,0.0732,1.54,0.797,["NACA-TN698-038"]],
+        [0.868,0.0733,0.0795,1.442,0.8,["NACA-TN698-039"]],
+        [0.817,0.0819,0.0846,1.339,0.791,["NACA-TN698-040"]],
+        [0.783,0.0888,0.0886,1.272,0.785,["NACA-TN698-041"]],
+        [0.738,0.0962,0.0921,1.19,0.771,["NACA-TN698-042"]],
+        [0.689,0.1049,0.0959,1.102,0.754,["NACA-TN698-043"]],
+        [0.628,0.1155,0.0997,0.996,0.727,["NACA-TN698-044"]],
+        [0.585,0.1215,0.1011,0.925,0.704,["NACA-TN698-045"]],
+        [0.541,0.1279,0.1021,0.854,0.677,["NACA-TN698-046"]],
+        [0.479,0.1344,0.1042,0.753,0.617,["NACA-TN698-047"]],
+        [0.419,0.1375,0.1038,0.659,0.554,["NACA-TN698-048"]],
+        [0.354,0.1374,0.1098,0.551,0.443,["NACA-TN698-049"]]
+      ]
+    },
+    {"id":"tn698-3-e-35-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 12, printed p. 10","conditions":"3-blade E (aspect ratio 7.7), 35 degrees at 0.75R, 1500 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [1.625,0.0172,0.0613,2.84,0.457,["NACA-TN698-050"]],
+        [1.586,0.03,0.0778,2.642,0.612,["NACA-TN698-051"]],
+        [1.523,0.0449,0.0964,2.431,0.709,["NACA-TN698-052"]],
+        [1.468,0.0556,0.1083,2.29,0.752,["NACA-TN698-053"]],
+        [1.409,0.0668,0.12,2.152,0.784,["NACA-TN698-054"]],
+        [1.361,0.076,0.1278,2.053,0.809,["NACA-TN698-055"]],
+        [1.297,0.0868,0.1387,1.926,0.812,["NACA-TN698-056"]],
+        [1.231,0.0972,0.1481,1.805,0.808,["NACA-TN698-057"]],
+        [1.171,0.1069,0.1554,1.7,0.805,["NACA-TN698-058"]],
+        [1.111,0.1168,0.1624,1.598,0.798,["NACA-TN698-059"]],
+        [1.051,0.1233,0.1667,1.505,0.777,["NACA-TN698-060"]],
+        [0.999,0.129,0.172,1.421,0.749,["NACA-TN698-061"]],
+        [0.939,0.1298,0.177,1.328,0.689,["NACA-TN698-062"]],
+        [0.88,0.1316,0.1781,1.243,0.65,["NACA-TN698-063"]],
+        [0.801,0.1333,0.1798,1.128,0.594,["NACA-TN698-064"]],
+        [0.728,0.1358,0.1836,1.022,0.538,["NACA-TN698-065"]]
+      ]
+    },
+    {"id":"tn698-3-e-45-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 12, printed p. 10","conditions":"3-blade E (aspect ratio 7.7), 45 degrees at 0.75R, 1000 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [2.247,0.0378,0.138,3.34,0.615,["NACA-TN698-067"]],
+        [2.188,0.0485,0.1554,3.174,0.683,["NACA-TN698-068"]],
+        [2.103,0.0626,0.1775,2.971,0.742,["NACA-TN698-069"]],
+        [2.025,0.0753,0.1962,2.802,0.777,["NACA-TN698-070"]],
+        [1.944,0.0876,0.2137,2.647,0.797,["NACA-TN698-071"]],
+        [1.856,0.0997,0.2291,2.491,0.807,["NACA-TN698-072"]],
+        [1.763,0.112,0.2439,2.34,0.81,["NACA-TN698-073"]],
+        [1.681,0.1221,0.2557,2.21,0.803,["NACA-TN698-074"]],
+        [1.599,0.1298,0.2648,2.087,0.784,["NACA-TN698-075"]],
+        [1.511,0.1315,0.2689,1.966,0.739,["NACA-TN698-076"]],
+        [1.42,0.1319,0.2676,1.85,0.7,["NACA-TN698-077"]],
+        [1.335,0.1328,0.2674,1.739,0.662,["NACA-TN698-078"]],
+        [1.261,0.134,0.2683,1.642,0.629,["NACA-TN698-079"]],
+        [1.181,0.1356,0.2681,1.538,0.597,["NACA-TN698-080"]],
+        [1.112,0.1369,0.2694,1.448,0.566,["NACA-TN698-081"]],
+        [1.043,0.1385,0.2706,1.356,0.534,["NACA-TN698-082"]],
+        [0.982,0.1401,0.2728,1.275,0.504,["NACA-TN698-083"]],
+        [0.79,0.1453,0.2828,1.014,0.406,["NACA-TN698-085"]]
+      ]
+    },
+    {"id":"tn698-2-e2-15-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 13, printed p. 11","conditions":"2-blade E'' (50% wider/thicker, AR 5.13; same total area as 3E), 15 degrees at 0.75R, 2000 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [0.763,0.0011,0.0101,1.915,0.085,["NACA-TN698-086"]],
+        [0.705,0.0158,0.0185,1.565,0.602,["NACA-TN698-087"]],
+        [0.655,0.0271,0.0246,1.375,0.722,["NACA-TN698-088"]],
+        [0.611,0.0352,0.0287,1.244,0.749,["NACA-TN698-089"]],
+        [0.565,0.0443,0.0331,1.118,0.755,["NACA-TN698-090"]],
+        [0.516,0.0536,0.037,0.998,0.748,["NACA-TN698-091"]],
+        [0.451,0.0657,0.0411,0.854,0.721,["NACA-TN698-092"]],
+        [0.416,0.0722,0.0436,0.779,0.689,["NACA-TN698-093"]],
+        [0.377,0.0777,0.0448,0.702,0.654,["NACA-TN698-094"]],
+        [0.328,0.0852,0.0462,0.607,0.605,["NACA-TN698-095"]],
+        [0.275,0.0936,0.048,0.505,0.536,["NACA-TN698-096"]]
+      ]
+    },
+    {"id":"tn698-2-e2-25-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 13, printed p. 11","conditions":"2-blade E'' (50% wider/thicker, AR 5.13; same total area as 3E), 25 degrees at 0.75R, 1800 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [1.19,0.0045,0.0208,2.582,0.258,["NACA-TN698-097"]],
+        [1.128,0.0173,0.0323,2.241,0.604,["NACA-TN698-098"]],
+        [1.078,0.0293,0.0425,2.027,0.744,["NACA-TN698-099"]],
+        [1.022,0.0399,0.0515,1.85,0.792,["NACA-TN698-100"]],
+        [0.971,0.0495,0.0597,1.708,0.805,["NACA-TN698-101"]],
+        [0.909,0.061,0.0686,1.554,0.808,["NACA-TN698-102"]],
+        [0.863,0.0696,0.075,1.448,0.801,["NACA-TN698-103"]],
+        [0.803,0.0785,0.0805,1.329,0.782,["NACA-TN698-104"]],
+        [0.754,0.0871,0.085,1.237,0.772,["NACA-TN698-105"]],
+        [0.71,0.0944,0.0888,1.153,0.755,["NACA-TN698-106"]],
+        [0.66,0.1027,0.0924,1.063,0.734,["NACA-TN698-107"]],
+        [0.619,0.11,0.0953,0.991,0.714,["NACA-TN698-108"]],
+        [0.574,0.1163,0.0968,0.916,0.689,["NACA-TN698-109"]],
+        [0.526,0.1226,0.0976,0.838,0.661,["NACA-TN698-110"]],
+        [0.475,0.1305,0.099,0.754,0.626,["NACA-TN698-111"]],
+        [0.427,0.1362,0.099,0.678,0.587,["NACA-TN698-112"]],
+        [0.39,0.1413,0.0995,0.619,0.554,["NACA-TN698-113"]],
+        [0.336,0.1402,0.1092,0.523,0.432,["NACA-TN698-114"]],
+        [0.249,0.1428,0.1135,0.385,0.313,["NACA-TN698-115"]]
+      ]
+    },
+    {"id":"tn698-2-e2-35-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 13, printed p. 11","conditions":"2-blade E'' (50% wider/thicker, AR 5.13; same total area as 3E), 35 degrees at 0.75R, 1500 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [1.625,0.0229,0.0625,2.83,0.596,["NACA-TN698-116"]],
+        [1.57,0.0344,0.0764,2.625,0.706,["NACA-TN698-117"]],
+        [1.508,0.0449,0.089,2.446,0.76,["NACA-TN698-118"]],
+        [1.454,0.0545,0.1006,2.301,0.788,["NACA-TN698-119"]],
+        [1.397,0.0644,0.1115,2.168,0.807,["NACA-TN698-120"]],
+        [1.318,0.0767,0.1244,2,0.812,["NACA-TN698-121"]],
+        [1.267,0.085,0.1323,1.899,0.814,["NACA-TN698-122"]],
+        [1.202,0.0941,0.1403,1.781,0.806,["NACA-TN698-123"]],
+        [1.146,0.102,0.1463,1.684,0.799,["NACA-TN698-124"]],
+        [1.114,0.1066,0.1502,1.627,0.791,["NACA-TN698-125"]],
+        [1.081,0.1118,0.1535,1.573,0.787,["NACA-TN698-126"]],
+        [1.051,0.1158,0.156,1.525,0.78,["NACA-TN698-127"]],
+        [1.015,0.1206,0.1588,1.466,0.771,["NACA-TN698-128"]],
+        [0.983,0.1247,0.1608,1.417,0.762,["NACA-TN698-129"]],
+        [0.953,0.1286,0.1635,1.37,0.75,["NACA-TN698-130"]],
+        [0.921,0.1325,0.167,1.318,0.731,["NACA-TN698-131"]],
+        [0.891,0.1324,0.1733,1.266,0.681,["NACA-TN698-132"]],
+        [0.86,0.1338,0.1756,1.218,0.655,["NACA-TN698-133"]],
+        [0.785,0.1358,0.1788,1.108,0.596,["NACA-TN698-134"]],
+        [0.717,0.1388,0.1803,1.01,0.552,["NACA-TN698-135"]],
+        [0.666,0.1431,0.1841,0.935,0.518,["NACA-TN698-136"]],
+        [0.412,0.1584,0.2011,0.568,0.325,["NACA-TN698-137"]]
+      ]
+    },
+    {"id":"tn698-2-e2-45-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 13, printed p. 11","conditions":"2-blade E'' (50% wider/thicker, AR 5.13; same total area as 3E), 45 degrees at 0.75R, 1000 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [2.243,0.0377,0.1284,3.387,0.659,["NACA-TN698-138"]],
+        [2.169,0.0485,0.1452,3.19,0.724,["NACA-TN698-139"]],
+        [2.092,0.0599,0.1643,3.002,0.763,["NACA-TN698-140"]],
+        [2.022,0.07,0.1793,2.85,0.79,["NACA-TN698-141"]],
+        [1.94,0.0813,0.1965,2.682,0.803,["NACA-TN698-142"]],
+        [1.859,0.093,0.2125,2.532,0.814,["NACA-TN698-143"]],
+        [1.766,0.1036,0.2251,2.38,0.812,["NACA-TN698-144"]],
+        [1.688,0.1133,0.2371,2.25,0.806,["NACA-TN698-145"]],
+        [1.595,0.1242,0.2475,2.108,0.8,["NACA-TN698-146"]],
+        [1.504,0.1322,0.2586,1.972,0.769,["NACA-TN698-147"]],
+        [1.418,0.1338,0.2658,1.849,0.714,["NACA-TN698-148"]],
+        [1.343,0.1343,0.2667,1.75,0.678,["NACA-TN698-149"]],
+        [1.266,0.136,0.2671,1.649,0.644,["NACA-TN698-150"]],
+        [1.174,0.1378,0.2694,1.528,0.6,["NACA-TN698-151"]],
+        [1.112,0.1412,0.2731,1.444,0.575,["NACA-TN698-152"]],
+        [1.031,0.1434,0.2766,1.334,0.534,["NACA-TN698-153"]],
+        [0.961,0.1476,0.2824,1.239,0.502,["NACA-TN698-154"]]
+      ]
+    },
+    {"id":"tn698-4-e-15-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 14, printed p. 12","conditions":"4-blade E (AR 7.7; same total area as 3E'), 15 degrees at 0.75R, 2000 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [0.744,0.002,0.0155,1.713,0.095,["NACA-TN698-155"]],
+        [0.713,0.0137,0.022,1.532,0.445,["NACA-TN698-156"]],
+        [0.679,0.0244,0.0278,1.391,0.597,["NACA-TN698-157"]],
+        [0.646,0.0353,0.0334,1.275,0.684,["NACA-TN698-158"]],
+        [0.627,0.0405,0.0359,1.221,0.708,["NACA-TN698-159"]],
+        [0.595,0.0494,0.0403,1.132,0.73,["NACA-TN698-160"]],
+        [0.553,0.06,0.0449,1.029,0.741,["NACA-TN698-161"]],
+        [0.525,0.068,0.048,0.964,0.743,["NACA-TN698-162"]],
+        [0.493,0.0758,0.0512,0.893,0.731,["NACA-TN698-163"]],
+        [0.467,0.0825,0.0535,0.839,0.72,["NACA-TN698-164"]],
+        [0.445,0.0861,0.0548,0.796,0.698,["NACA-TN698-165"]],
+        [0.406,0.0958,0.0576,0.719,0.677,["NACA-TN698-166"]],
+        [0.381,0.1004,0.0594,0.67,0.646,["NACA-TN698-167"]],
+        [0.335,0.1086,0.061,0.586,0.596,["NACA-TN698-168"]],
+        [0.3,0.1148,0.0624,0.523,0.552,["NACA-TN698-169"]],
+        [0.263,0.1206,0.0632,0.457,0.502,["NACA-TN698-170"]],
+        [0.227,0.1258,0.0634,0.394,0.451,["NACA-TN698-171"]]
+      ]
+    },
+    {"id":"tn698-4-e-25-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 14, printed p. 12","conditions":"4-blade E (AR 7.7; same total area as 3E'), 25 degrees at 0.75R, 1800 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [1.171,0.0062,0.0327,2.32,0.222,["NACA-TN698-172"]],
+        [1.128,0.0209,0.0458,2.09,0.515,["NACA-TN698-173"]],
+        [1.078,0.0381,0.0594,1.897,0.692,["NACA-TN698-174"]],
+        [1.046,0.0488,0.0685,1.788,0.745,["NACA-TN698-175"]],
+        [0.998,0.0613,0.0785,1.661,0.779,["NACA-TN698-176"]],
+        [0.96,0.0719,0.0864,1.567,0.799,["NACA-TN698-177"]],
+        [0.906,0.0824,0.0936,1.455,0.798,["NACA-TN698-178"]],
+        [0.883,0.0888,0.0979,1.405,0.801,["NACA-TN698-179"]],
+        [0.853,0.0978,0.1038,1.342,0.803,["NACA-TN698-180"]],
+        [0.823,0.1041,0.1084,1.283,0.791,["NACA-TN698-181"]],
+        [0.786,0.1126,0.113,1.216,0.783,["NACA-TN698-182"]],
+        [0.735,0.1221,0.1174,1.128,0.765,["NACA-TN698-183"]],
+        [0.687,0.1331,0.1226,1.045,0.748,["NACA-TN698-184"]],
+        [0.64,0.1429,0.1265,0.968,0.722,["NACA-TN698-185"]],
+        [0.583,0.1545,0.13,0.877,0.693,["NACA-TN698-186"]],
+        [0.523,0.1633,0.1313,0.785,0.65,["NACA-TN698-187"]],
+        [0.465,0.1736,0.1341,0.695,0.603,["NACA-TN698-188"]],
+        [0.409,0.178,0.1368,0.609,0.532,["NACA-TN698-189"]],
+        [0.267,0.1771,0.143,0.394,0.331,["NACA-TN698-191"]]
+      ]
+    },
+    {"id":"tn698-4-e-35-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 14, printed p. 12","conditions":"4-blade E (AR 7.7; same total area as 3E'), 35 degrees at 0.75R, 1500 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [1.597,0.0409,0.1032,2.515,0.632,["NACA-TN698-192"]],
+        [1.544,0.0545,0.1189,2.364,0.708,["NACA-TN698-193"]],
+        [1.484,0.0684,0.1347,2.217,0.754,["NACA-TN698-194"]],
+        [1.44,0.0796,0.1476,2.112,0.776,["NACA-TN698-195"]],
+        [1.406,0.0873,0.155,2.042,0.79,["NACA-TN698-196"]],
+        [1.374,0.0956,0.1641,1.972,0.801,["NACA-TN698-197"]],
+        [1.336,0.1031,0.1704,1.905,0.808,["NACA-TN698-198"]],
+        [1.274,0.1153,0.1816,1.792,0.808,["NACA-TN698-199"]],
+        [1.206,0.1312,0.1954,1.672,0.81,["NACA-TN698-200"]],
+        [1.138,0.1451,0.2065,1.561,0.799,["NACA-TN698-201"]],
+        [1.078,0.1565,0.2146,1.467,0.786,["NACA-TN698-202"]],
+        [1.006,0.1661,0.2213,1.362,0.757,["NACA-TN698-203"]],
+        [0.938,0.1669,0.2268,1.263,0.691,["NACA-TN698-204"]],
+        [0.877,0.1695,0.2275,1.179,0.653,["NACA-TN698-205"]],
+        [0.82,0.17,0.2265,1.104,0.616,["NACA-TN698-206"]],
+        [0.75,0.1724,0.2298,1.006,0.563,["NACA-TN698-207"]],
+        [0.67,0.1757,0.2352,0.895,0.501,["NACA-TN698-208"]],
+        [0.584,0.1812,0.241,0.776,0.439,["NACA-TN698-209"]],
+        [0.482,0.1843,0.244,0.638,0.364,["NACA-TN698-210"]],
+        [0.352,0.1884,0.2534,0.463,0.262,["NACA-TN698-211"]]
+      ]
+    },
+    {"id":"tn698-4-e-45-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 14, printed p. 12","conditions":"4-blade E (AR 7.7; same total area as 3E'), 45 degrees at 0.75R, 1000 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [2.184,0.0661,0.2135,2.978,0.676,["NACA-TN698-212"]],
+        [2.085,0.0865,0.2418,2.772,0.746,["NACA-TN698-213"]],
+        [2.02,0.099,0.2619,2.64,0.764,["NACA-TN698-214"]],
+        [1.93,0.116,0.2856,2.48,0.784,["NACA-TN698-215"]],
+        [1.848,0.1289,0.3022,2.35,0.79,["NACA-TN698-216"]],
+        [1.807,0.1364,0.31,2.283,0.796,["NACA-TN698-217"]],
+        [1.71,0.1522,0.329,2.136,0.791,["NACA-TN698-218"]],
+        [1.626,0.1635,0.3447,2.013,0.772,["NACA-TN698-219"]],
+        [1.542,0.1679,0.3502,1.902,0.739,["NACA-TN698-220"]],
+        [1.448,0.1704,0.35,1.786,0.706,["NACA-TN698-221"]],
+        [1.349,0.1716,0.3505,1.664,0.661,["NACA-TN698-222"]],
+        [1.258,0.1722,0.3502,1.552,0.619,["NACA-TN698-223"]],
+        [1.134,0.1756,0.351,1.398,0.567,["NACA-TN698-224"]],
+        [1.052,0.1779,0.353,1.295,0.53,["NACA-TN698-225"]],
+        [0.958,0.1815,0.3571,1.177,0.487,["NACA-TN698-226"]],
+        [0.821,0.183,0.3614,1.007,0.415,["NACA-TN698-227"]],
+        [0.66,0.1876,0.3725,0.804,0.332,["NACA-TN698-228"]],
+        [0.532,0.191,0.3828,0.644,0.265,["NACA-TN698-229"]]
+      ]
+    },
+    {"id":"tn698-3-e1-15-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 15, printed p. 13","conditions":"3-blade E' (33-1/3% wider/thicker, AR 5.77), 15 degrees at 0.75R, 2000 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [0.765,0.0011,0.0136,1.808,0.062,["NACA-TN698-230"]],
+        [0.715,0.0176,0.0228,1.524,0.552,["NACA-TN698-231"]],
+        [0.655,0.0344,0.0328,1.298,0.687,["NACA-TN698-232"]],
+        [0.606,0.0474,0.0391,1.159,0.735,["NACA-TN698-233"]],
+        [0.552,0.0619,0.046,1.021,0.743,["NACA-TN698-234"]],
+        [0.506,0.0733,0.0508,0.919,0.73,["NACA-TN698-235"]],
+        [0.451,0.085,0.0549,0.806,0.698,["NACA-TN698-236"]],
+        [0.396,0.0966,0.0588,0.698,0.65,["NACA-TN698-237"]],
+        [0.353,0.104,0.0607,0.619,0.605,["NACA-TN698-238"]],
+        [0.296,0.1147,0.0629,0.515,0.539,["NACA-TN698-239"]],
+        [0.245,0.1235,0.0639,0.425,0.474,["NACA-TN698-240"]]
+      ]
+    },
+    {"id":"tn698-3-e1-25-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 15, printed p. 13","conditions":"3-blade E' (33-1/3% wider/thicker, AR 5.77), 25 degrees at 0.75R, 1800 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [1.203,0.0081,0.0255,2.51,0.382,["NACA-TN698-241"]],
+        [1.145,0.0204,0.0427,2.151,0.547,["NACA-TN698-242"]],
+        [1.085,0.0372,0.0582,1.916,0.694,["NACA-TN698-243"]],
+        [1.032,0.0523,0.0705,1.755,0.766,["NACA-TN698-244"]],
+        [0.964,0.0679,0.0829,1.586,0.79,["NACA-TN698-245"]],
+        [0.919,0.0805,0.0929,1.478,0.796,["NACA-TN698-246"]],
+        [0.856,0.0936,0.1025,1.35,0.781,["NACA-TN698-247"]],
+        [0.795,0.1065,0.1105,1.235,0.766,["NACA-TN698-248"]],
+        [0.744,0.1172,0.1158,1.145,0.753,["NACA-TN698-249"]],
+        [0.689,0.1292,0.1221,1.049,0.729,["NACA-TN698-250"]],
+        [0.625,0.1416,0.1273,0.944,0.695,["NACA-TN698-251"]],
+        [0.55,0.1568,0.1318,0.825,0.654,["NACA-TN698-252"]],
+        [0.485,0.1671,0.1345,0.724,0.602,["NACA-TN698-253"]],
+        [0.425,0.1725,0.1398,0.63,0.524,["NACA-TN698-254"]],
+        [0.379,0.1744,0.1443,0.558,0.458,["NACA-TN698-255"]],
+        [0.318,0.1747,0.1463,0.467,0.38,["NACA-TN698-256"]]
+      ]
+    },
+    {"id":"tn698-3-e1-35-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 15, printed p. 13","conditions":"3-blade E' (33-1/3% wider/thicker, AR 5.77), 35 degrees at 0.75R, 1500 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [1.625,0.0325,0.0972,2.59,0.543,["NACA-TN698-257"]],
+        [1.552,0.0527,0.115,2.391,0.711,["NACA-TN698-258"]],
+        [1.49,0.0657,0.131,2.238,0.747,["NACA-TN698-259"]],
+        [1.465,0.0719,0.1377,2.179,0.765,["NACA-TN698-260"]],
+        [1.413,0.0838,0.1513,2.061,0.783,["NACA-TN698-261"]],
+        [1.349,0.0979,0.1663,1.932,0.794,["NACA-TN698-262"]],
+        [1.29,0.1101,0.1784,1.821,0.796,["NACA-TN698-263"]],
+        [1.255,0.1171,0.1852,1.76,0.794,["NACA-TN698-264"]],
+        [1.215,0.125,0.1925,1.689,0.789,["NACA-TN698-265"]],
+        [1.169,0.1335,0.1997,1.613,0.782,["NACA-TN698-266"]],
+        [1.096,0.1464,0.2099,1.498,0.765,["NACA-TN698-267"]],
+        [1.041,0.1557,0.2173,1.413,0.746,["NACA-TN698-268"]],
+        [1.016,0.1597,0.221,1.373,0.734,["NACA-TN698-269"]],
+        [0.985,0.1624,0.2245,1.328,0.712,["NACA-TN698-270"]],
+        [0.95,0.1647,0.2298,1.275,0.681,["NACA-TN698-271"]],
+        [0.919,0.1668,0.2321,1.23,0.66,["NACA-TN698-272"]],
+        [0.876,0.1693,0.2338,1.172,0.634,["NACA-TN698-273"]],
+        [0.81,0.1728,0.2362,1.081,0.592,["NACA-TN698-274"]],
+        [0.753,0.1766,0.2391,1.003,0.556,["NACA-TN698-275"]],
+        [0.634,0.1841,0.2459,0.839,0.475,["NACA-TN698-276"]],
+        [0.529,0.19,0.2538,0.696,0.396,["NACA-TN698-277"]]
+      ]
+    },
+    {"id":"tn698-3-e1-45-bare","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table I, PDF p. 15, printed p. 13","conditions":"3-blade E' (33-1/3% wider/thicker, AR 5.77), 45 degrees at 0.75R, 1000 rpm, bare hub, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [2.277,0.0462,0.1831,3.194,0.574,["NACA-TN698-278"]],
+        [2.2,0.0618,0.2044,3.022,0.665,["NACA-TN698-279"]],
+        [2.123,0.0772,0.2274,2.856,0.721,["NACA-TN698-280"]],
+        [2.042,0.0919,0.251,2.691,0.748,["NACA-TN698-281"]],
+        [1.962,0.1068,0.2703,2.55,0.775,["NACA-TN698-282"]],
+        [1.87,0.1219,0.292,2.39,0.78,["NACA-TN698-283"]],
+        [1.779,0.1376,0.3119,2.248,0.785,["NACA-TN698-284"]],
+        [1.689,0.1504,0.3281,2.11,0.774,["NACA-TN698-285"]],
+        [1.605,0.1619,0.3412,1.99,0.761,["NACA-TN698-286"]],
+        [1.512,0.1668,0.3505,1.865,0.719,["NACA-TN698-287"]],
+        [1.427,0.1696,0.3537,1.757,0.684,["NACA-TN698-288"]],
+        [1.348,0.172,0.3551,1.658,0.653,["NACA-TN698-289"]],
+        [1.271,0.174,0.3569,1.562,0.62,["NACA-TN698-290"]],
+        [1.184,0.1783,0.3608,1.451,0.585,["NACA-TN698-291"]],
+        [1.121,0.1803,0.3631,1.373,0.556,["NACA-TN698-292"]],
+        [1.051,0.1841,0.3672,1.285,0.527,["NACA-TN698-293"]],
+        [0.974,0.1888,0.3717,1.187,0.495,["NACA-TN698-294"]],
+        [0.885,0.1936,0.3774,1.075,0.454,["NACA-TN698-295"]],
+        [0.781,0.1987,0.3842,0.946,0.404,["NACA-TN698-296"]]
+      ]
+    },
+    {"id":"tn698-3-e-35-spinner","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table II, PDF p. 16, printed p. 14","conditions":"3-blade E (aspect ratio 7.7), with spinner, 35 degrees at 0.75R, 1500 rpm, spinner, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [1.652,0.0178,0.0574,2.926,0.512,["NACA-TN698-297"]],
+        [1.599,0.0324,0.0754,2.682,0.687,["NACA-TN698-298"]],
+        [1.541,0.0445,0.0906,2.492,0.757,["NACA-TN698-299"]],
+        [1.479,0.0592,0.1073,2.312,0.816,["NACA-TN698-300"]],
+        [1.426,0.0692,0.119,2.183,0.829,["NACA-TN698-301"]],
+        [1.361,0.0802,0.1288,2.051,0.848,["NACA-TN698-302"]],
+        [1.306,0.0897,0.1388,1.939,0.844,["NACA-TN698-303"]],
+        [1.243,0.0999,0.147,1.824,0.844,["NACA-TN698-304"]],
+        [1.196,0.1071,0.1538,1.739,0.833,["NACA-TN698-305"]],
+        [1.135,0.1161,0.1602,1.637,0.822,["NACA-TN698-306"]],
+        [1.082,0.1235,0.1655,1.551,0.807,["NACA-TN698-307"]],
+        [1.03,0.1295,0.1701,1.468,0.784,["NACA-TN698-308"]],
+        [0.975,0.1332,0.1745,1.383,0.744,["NACA-TN698-309"]],
+        [0.932,0.1328,0.1763,1.319,0.702,["NACA-TN698-310"]],
+        [0.889,0.1336,0.1771,1.257,0.671,["NACA-TN698-311"]],
+        [0.839,0.1341,0.1784,1.185,0.631,["NACA-TN698-312"]],
+        [0.787,0.1345,0.1788,1.111,0.592,["NACA-TN698-313"]],
+        [0.736,0.1367,0.181,1.036,0.556,["NACA-TN698-314"]]
+      ]
+    },
+    {"id":"tn698-2-e2-35-spinner","source_id":"NACA-TN-698","aircraft":"NACA TN 698 scale propellers","quantity":"propeller_wind_tunnel_coefficients","source_class":"original-report-table","speed_basis":"unestablished","source_location":"Table II, PDF p. 16, printed p. 14","conditions":"2-blade E'' (50% wider/thicker, AR 5.13; same total area as 3E), with spinner, 35 degrees at 0.75R, 1500 rpm, spinner, 3 ft model. Use within the measured series domain.","columns":["advance_ratio","thrust_coefficient","power_coefficient","speed_power_coefficient","efficiency","extraction_ids"],
+      "rows": [
+        [1.685,0.0099,0.0429,3.164,0.389,["NACA-TN698-315"]],
+        [1.62,0.024,0.0611,2.833,0.636,["NACA-TN698-316"]],
+        [1.568,0.034,0.0742,2.638,0.718,["NACA-TN698-317"]],
+        [1.516,0.0448,0.087,2.47,0.781,["NACA-TN698-318"]],
+        [1.463,0.0543,0.0981,2.328,0.81,["NACA-TN698-319"]],
+        [1.386,0.0662,0.1117,2.149,0.821,["NACA-TN698-320"]],
+        [1.332,0.0751,0.1205,2.033,0.831,["NACA-TN698-321"]],
+        [1.262,0.0866,0.1318,1.893,0.829,["NACA-TN698-322"]],
+        [1.188,0.0977,0.1427,1.754,0.814,["NACA-TN698-323"]],
+        [1.126,0.1072,0.1495,1.647,0.807,["NACA-TN698-324"]],
+        [1.065,0.1157,0.1558,1.545,0.791,["NACA-TN698-325"]],
+        [0.968,0.129,0.1633,1.392,0.765,["NACA-TN698-326"]],
+        [0.905,0.1345,0.1737,1.285,0.701,["NACA-TN698-327"]],
+        [0.827,0.1357,0.1776,1.168,0.632,["NACA-TN698-328"]],
+        [0.741,0.1395,0.1801,1.044,0.574,["NACA-TN698-329"]],
+        [0.656,0.144,0.1844,0.92,0.512,["NACA-TN698-330"]]
+      ]
+    },
+    {"id":"p47d-manual-climb-14200","source_id":"P47D-AN65BC1A","aircraft":"P-47D-25 through P-47D-35","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Fig. 48, PDF p. 49, printed p. 46","conditions":"Planning climb schedule based on Republic flight-test data. Rated settings are referenced to Fig. 42 without a specific power column. Reported fuel includes warm-up and takeoff. Two unclear rates retain the alternate readings.","columns":["altitude_ft","gross_weight_lb","climb_ias_mph","rate_fpm","rate_candidate_readings_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
+      "rows": [
+        [0,14200,165,2410,null,null,30,["P47D25-AN65BC1A-0228","P47D25-AN65BC1A-0229","P47D25-AN65BC1A-0230"]],
+        [5000,14200,165,2250,null,2.15,45,["P47D25-AN65BC1A-0231","P47D25-AN65BC1A-0232","P47D25-AN65BC1A-0233","P47D25-AN65BC1A-0234"]],
+        [10000,14200,165,2090,null,4.46,59,["P47D25-AN65BC1A-0235","P47D25-AN65BC1A-0236","P47D25-AN65BC1A-0237","P47D25-AN65BC1A-0238"]],
+        [15000,14200,160,1950,null,6.95,74,["P47D25-AN65BC1A-0239","P47D25-AN65BC1A-0240","P47D25-AN65BC1A-0241","P47D25-AN65BC1A-0242"]],
+        [20000,14200,155,1925,null,9.52,91,["P47D25-AN65BC1A-0243","P47D25-AN65BC1A-0244","P47D25-AN65BC1A-0245","P47D25-AN65BC1A-0246"]],
+        [25000,14200,150,1820,null,12.19,112,["P47D25-AN65BC1A-0247","P47D25-AN65BC1A-0248","P47D25-AN65BC1A-0249","P47D25-AN65BC1A-0250"]]
+      ]
+    },
+    {"id":"p47d-manual-climb-16000","source_id":"P47D-AN65BC1A","aircraft":"P-47D-25 through P-47D-35","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Fig. 48, PDF p. 49, printed p. 46","conditions":"Planning climb schedule based on Republic flight-test data. Rated settings are referenced to Fig. 42 without a specific power column. Reported fuel includes warm-up and takeoff. Two unclear rates retain the alternate readings.","columns":["altitude_ft","gross_weight_lb","climb_ias_mph","rate_fpm","rate_candidate_readings_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
+      "rows": [
+        [0,16000,165,2100,null,null,30,["P47D25-AN65BC1A-0205","P47D25-AN65BC1A-0206","P47D25-AN65BC1A-0207"]],
+        [5000,16000,165,1960,null,2.47,47,["P47D25-AN65BC1A-0208","P47D25-AN65BC1A-0209","P47D25-AN65BC1A-0210","P47D25-AN65BC1A-0211"]],
+        [10000,16000,165,1820,null,5.13,63,["P47D25-AN65BC1A-0212","P47D25-AN65BC1A-0213","P47D25-AN65BC1A-0214","P47D25-AN65BC1A-0215"]],
+        [15000,16000,160,1700,null,7.97,81,["P47D25-AN65BC1A-0216","P47D25-AN65BC1A-0217","P47D25-AN65BC1A-0218","P47D25-AN65BC1A-0219"]],
+        [20000,16000,155,1675,null,10.95,100,["P47D25-AN65BC1A-0220","P47D25-AN65BC1A-0221","P47D25-AN65BC1A-0222","P47D25-AN65BC1A-0223"]],
+        [25000,16000,150,1580,null,14.03,124,["P47D25-AN65BC1A-0224","P47D25-AN65BC1A-0225","P47D25-AN65BC1A-0226","P47D25-AN65BC1A-0227"]]
+      ]
+    },
+    {"id":"p47d-manual-climb-18000","source_id":"P47D-AN65BC1A","aircraft":"P-47D-25 through P-47D-35","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Fig. 48, PDF p. 49, printed p. 46","conditions":"Planning climb schedule based on Republic flight-test data. Rated settings are referenced to Fig. 42 without a specific power column. Reported fuel includes warm-up and takeoff. Two unclear rates retain the alternate readings.","columns":["altitude_ft","gross_weight_lb","climb_ias_mph","rate_fpm","rate_candidate_readings_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
+      "rows": [
+        [0,18000,165,null,[1830,1850],null,30,["P47D25-AN65BC1A-0182","P47D25-AN65BC1A-0183","P47D25-AN65BC1A-0184"]],
+        [5000,18000,165,1720,null,2.83,49,["P47D25-AN65BC1A-0185","P47D25-AN65BC1A-0186","P47D25-AN65BC1A-0187","P47D25-AN65BC1A-0188"]],
+        [10000,18000,165,1590,null,5.87,68,["P47D25-AN65BC1A-0189","P47D25-AN65BC1A-0190","P47D25-AN65BC1A-0191","P47D25-AN65BC1A-0192"]],
+        [15000,18000,160,1480,null,9.12,88,["P47D25-AN65BC1A-0193","P47D25-AN65BC1A-0194","P47D25-AN65BC1A-0195","P47D25-AN65BC1A-0196"]],
+        [20000,18000,155,1475,null,12.51,110,["P47D25-AN65BC1A-0197","P47D25-AN65BC1A-0198","P47D25-AN65BC1A-0199","P47D25-AN65BC1A-0200"]],
+        [25000,18000,150,null,[1350,1390],16.02,137,["P47D25-AN65BC1A-0201","P47D25-AN65BC1A-0202","P47D25-AN65BC1A-0203","P47D25-AN65BC1A-0204"]]
+      ]
+    },
+    {"id":"p47d-manual-power-wet","source_id":"P47D-AN65BC1A","aircraft":"P-47D-25 through P-47D-35","quantity":"operating_schedule","source_class":"original-handbook-chart","speed_basis":"unestablished","source_location":"Fig. 42, PDF p. 40, printed p. 36","conditions":"R-2800 B series with Hamilton Standard or Curtiss Electric propeller, 100/130 fuel. Some printed entries are preliminary. The surviving scan does not distinguish them. Fuel units vary by rating. Manifold pressure and RPM are settings.","columns":["first_pressure_altitude_ft","last_pressure_altitude_ft","manifold_pressure_inhg","engine_rpm","fuel_flow","fuel_flow_unit","mixture","time_limit","extraction_ids"],
+      "rows": [
+        [0,22000,64,2700,4.16,"US gal/min","auto-rich","5 min",["P47D25-AN65BC1A-0059","P47D25-AN65BC1A-0060","P47D25-AN65BC1A-0057","P47D25-AN65BC1A-0058","P47D25-AN65BC1A-0055","P47D25-AN65BC1A-0056","P47D25-AN65BC1A-0053","P47D25-AN65BC1A-0054","P47D25-AN65BC1A-0051","P47D25-AN65BC1A-0052","P47D25-AN65BC1A-0049","P47D25-AN65BC1A-0050","P47D25-AN65BC1A-0047","P47D25-AN65BC1A-0048","P47D25-AN65BC1A-0045","P47D25-AN65BC1A-0046","P47D25-AN65BC1A-0043","P47D25-AN65BC1A-0044","P47D25-AN65BC1A-0041","P47D25-AN65BC1A-0042","P47D25-AN65BC1A-0039","P47D25-AN65BC1A-0040","P47D25-AN65BC1A-0037","P47D25-AN65BC1A-0038"]]
+      ]
+    },
+    {"id":"p47d-manual-power-military","source_id":"P47D-AN65BC1A","aircraft":"P-47D-25 through P-47D-35","quantity":"operating_schedule","source_class":"original-handbook-chart","speed_basis":"unestablished","source_location":"Fig. 42, PDF p. 40, printed p. 36","conditions":"R-2800 B series with Hamilton Standard or Curtiss Electric propeller, 100/130 fuel. Some printed entries are preliminary. The surviving scan does not distinguish them. Fuel units vary by rating. Manifold pressure and RPM are settings.","columns":["first_pressure_altitude_ft","last_pressure_altitude_ft","manifold_pressure_inhg","engine_rpm","fuel_flow","fuel_flow_unit","mixture","time_limit","extraction_ids"],
+      "rows": [
+        [0,18000,52,2700,4.67,"US gal/min","auto-rich","15 min",["P47D25-AN65BC1A-0096","P47D25-AN65BC1A-0097","P47D25-AN65BC1A-0094","P47D25-AN65BC1A-0095","P47D25-AN65BC1A-0092","P47D25-AN65BC1A-0093","P47D25-AN65BC1A-0090","P47D25-AN65BC1A-0091","P47D25-AN65BC1A-0088","P47D25-AN65BC1A-0089","P47D25-AN65BC1A-0086","P47D25-AN65BC1A-0087","P47D25-AN65BC1A-0084","P47D25-AN65BC1A-0085","P47D25-AN65BC1A-0082","P47D25-AN65BC1A-0083","P47D25-AN65BC1A-0080","P47D25-AN65BC1A-0081","P47D25-AN65BC1A-0078","P47D25-AN65BC1A-0079"]],
+        [20000,22000,52,2700,4.65,"US gal/min","auto-rich","15 min",["P47D25-AN65BC1A-0076","P47D25-AN65BC1A-0077","P47D25-AN65BC1A-0074","P47D25-AN65BC1A-0075"]],
+        [24000,24000,52,2700,"4.63 or 4.65 (unclear)","US gal/min","auto-rich","15 min",["P47D25-AN65BC1A-0072","P47D25-AN65BC1A-0073"]],
+        [26000,26000,52,2700,4.57,"US gal/min","auto-rich","15 min",["P47D25-AN65BC1A-0070","P47D25-AN65BC1A-0071"]],
+        [28000,34000,52,2700,4.52,"US gal/min","auto-rich","15 min",["P47D25-AN65BC1A-0068","P47D25-AN65BC1A-0069","P47D25-AN65BC1A-0066","P47D25-AN65BC1A-0067","P47D25-AN65BC1A-0064","P47D25-AN65BC1A-0065","P47D25-AN65BC1A-0062","P47D25-AN65BC1A-0063"]]
+      ]
+    },
+    {"id":"p47d-manual-power-normal","source_id":"P47D-AN65BC1A","aircraft":"P-47D-25 through P-47D-35","quantity":"operating_schedule","source_class":"original-handbook-chart","speed_basis":"unestablished","source_location":"Fig. 42, PDF p. 40, printed p. 36","conditions":"R-2800 B series with Hamilton Standard or Curtiss Electric propeller, 100/130 fuel. Some printed entries are preliminary. The surviving scan does not distinguish them. Fuel units vary by rating. Manifold pressure and RPM are settings.","columns":["first_pressure_altitude_ft","last_pressure_altitude_ft","manifold_pressure_inhg","engine_rpm","fuel_flow","fuel_flow_unit","mixture","time_limit","extraction_ids"],
+      "rows": [
+        [0,40000,42,"2550 (low legibility)",220,"US gal/hr","auto-rich","unlimited",["P47D25-AN65BC1A-0178","P47D25-AN65BC1A-0179","P47D25-AN65BC1A-0174","P47D25-AN65BC1A-0175","P47D25-AN65BC1A-0170","P47D25-AN65BC1A-0171","P47D25-AN65BC1A-0166","P47D25-AN65BC1A-0167","P47D25-AN65BC1A-0162","P47D25-AN65BC1A-0163","P47D25-AN65BC1A-0158","P47D25-AN65BC1A-0159","P47D25-AN65BC1A-0154","P47D25-AN65BC1A-0155","P47D25-AN65BC1A-0150","P47D25-AN65BC1A-0151","P47D25-AN65BC1A-0146","P47D25-AN65BC1A-0147","P47D25-AN65BC1A-0142","P47D25-AN65BC1A-0143","P47D25-AN65BC1A-0138","P47D25-AN65BC1A-0139","P47D25-AN65BC1A-0134","P47D25-AN65BC1A-0135","P47D25-AN65BC1A-0130","P47D25-AN65BC1A-0131","P47D25-AN65BC1A-0126","P47D25-AN65BC1A-0127","P47D25-AN65BC1A-0122","P47D25-AN65BC1A-0123","P47D25-AN65BC1A-0118","P47D25-AN65BC1A-0119","P47D25-AN65BC1A-0114","P47D25-AN65BC1A-0115","P47D25-AN65BC1A-0110","P47D25-AN65BC1A-0111","P47D25-AN65BC1A-0106","P47D25-AN65BC1A-0107","P47D25-AN65BC1A-0102","P47D25-AN65BC1A-0103","P47D25-AN65BC1A-0098","P47D25-AN65BC1A-0099"]]
+      ]
+    },
+    {"id":"p47d-manual-power-cruise","source_id":"P47D-AN65BC1A","aircraft":"P-47D-25 through P-47D-35","quantity":"operating_schedule","source_class":"original-handbook-chart","speed_basis":"unestablished","source_location":"Fig. 42, PDF p. 40, printed p. 36","conditions":"R-2800 B series with Hamilton Standard or Curtiss Electric propeller, 100/130 fuel. Some printed entries are preliminary. The surviving scan does not distinguish them. Fuel units vary by rating. Manifold pressure and RPM are settings.","columns":["first_pressure_altitude_ft","last_pressure_altitude_ft","manifold_pressure_inhg","engine_rpm","fuel_flow","fuel_flow_unit","mixture","time_limit","extraction_ids"],
+      "rows": [
+        [0,2000,35,2325,"143 (unclear)","US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0180","P47D25-AN65BC1A-0181","P47D25-AN65BC1A-0176","P47D25-AN65BC1A-0177"]],
+        [4000,10000,35,2325,143,"US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0172","P47D25-AN65BC1A-0173","P47D25-AN65BC1A-0168","P47D25-AN65BC1A-0169","P47D25-AN65BC1A-0164","P47D25-AN65BC1A-0165","P47D25-AN65BC1A-0160","P47D25-AN65BC1A-0161"]],
+        [12000,12000,35,2325,"143 (unclear)","US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0156","P47D25-AN65BC1A-0157"]],
+        [14000,16000,35,2325,144,"US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0152","P47D25-AN65BC1A-0153","P47D25-AN65BC1A-0148","P47D25-AN65BC1A-0149"]],
+        [18000,18000,35,2325,145,"US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0144","P47D25-AN65BC1A-0145"]],
+        [20000,20000,35,2325,147,"US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0140","P47D25-AN65BC1A-0141"]],
+        [22000,22000,35,2325,149,"US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0136","P47D25-AN65BC1A-0137"]],
+        [24000,24000,35,2325,151,"US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0132","P47D25-AN65BC1A-0133"]],
+        [26000,26000,35,2325,154,"US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0128","P47D25-AN65BC1A-0129"]],
+        [28000,28000,35,2325,157,"US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0124","P47D25-AN65BC1A-0125"]],
+        [30000,30000,35,2325,160,"US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0120","P47D25-AN65BC1A-0121"]],
+        [32000,32000,35,2325,163,"US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0116","P47D25-AN65BC1A-0117"]],
+        [34000,34000,35,2325,166,"US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0112","P47D25-AN65BC1A-0113"]],
+        [36000,36000,35,2325,"169 (last digit unclear)","US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0108","P47D25-AN65BC1A-0109"]],
+        [38000,38000,35,2325,171,"US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0104","P47D25-AN65BC1A-0105"]],
+        [40000,40000,35,2325,174,"US gal/hr","auto-lean","unlimited",["P47D25-AN65BC1A-0100","P47D25-AN65BC1A-0101"]]
+      ]
+    },
+    {"id":"raf-thunderbolt-pec","source_id":"AP-2381A-PN","aircraft":"RAF Thunderbolt I and II","quantity":"position_error","source_class":"original-handbook-table","speed_basis":"IAS","source_location":"Section 3 §40, PDF p. 13, printed p. 20","conditions":"Position correction to add to IAS from 170 through 310 mph. The handbook stalls are below the measured table domain. Instrument error is unestablished.","columns":["indicated_mph","add_position_error_mph","extraction_ids"],
+      "rows": [
+        [170,5,["P47ASIA-APN-0062"]],
+        [200,7,["P47ASIA-APN-0063"]],
+        [230,8,["P47ASIA-APN-0064"]],
+        [260,9,["P47ASIA-APN-0065"]],
+        [290,11,["P47ASIA-APN-0066"]],
+        [310,13,["P47ASIA-APN-0067"]]
+      ]
+    },
+    {"id":"raf-thunderbolt-stall","source_id":"AP-2381A-PN","aircraft":"RAF Thunderbolt I and II","quantity":"stall_speed","source_class":"original-handbook-table","speed_basis":"IAS","source_location":"Section 2 §26, PDF p. 9, printed p. 15","conditions":"RAF normal loads. Stall mass and power unspecified. The 115/100 values are repeated in US handbook copies. One pair retained.","columns":["gear","flaps","speed_mph","extraction_ids"],
+      "rows": [
+        ["up","up",115,["P47ASIA-APN-0020"]],
+        ["down","down",100,["P47ASIA-APN-0021"]]
+      ]
+    },
+    {"id":"p47b-manual-cruise-i","source_id":"P47BCDG-TO65BC1","aircraft":"P-47B, P-47C, P-47D, P-47G","quantity":"cruise_operating_schedule","source_class":"original-handbook-chart","speed_basis":"TAS","source_location":"Flight operation instruction chart, PDF p. 35, printed p. 31","conditions":"I max cont. power. 13,500 to 11,000 lb, no load or empty 200 US gal belly tank. Density altitude as defined by handbook. Individual flight-check status is unestablished.","columns":["density_altitude_ft","speed_mph","engine_rpm","manifold_pressure_inhg","fuel_flow_us_gph","extraction_ids"],
+      "rows": [
+        [0,255,2350,36,135,["P47BCDG-TO65BC1-0518","P47BCDG-TO65BC1-0519"]],
+        [3000,265,2350,35,140,["P47BCDG-TO65BC1-0516","P47BCDG-TO65BC1-0517"]],
+        [6000,275,2350,34,145,["P47BCDG-TO65BC1-0514","P47BCDG-TO65BC1-0515"]],
+        [9000,285,2400,34,150,["P47BCDG-TO65BC1-0512","P47BCDG-TO65BC1-0513"]],
+        [12000,300,2400,35,160,["P47BCDG-TO65BC1-0510","P47BCDG-TO65BC1-0511"]],
+        [15000,310,2450,36,165,["P47BCDG-TO65BC1-0508","P47BCDG-TO65BC1-0509"]],
+        [20000,330,2450,37,175,["P47BCDG-TO65BC1-0506","P47BCDG-TO65BC1-0507"]],
+        [25000,360,2500,38,190,["P47BCDG-TO65BC1-0504","P47BCDG-TO65BC1-0505"]],
+        [30000,370,2550,36,205,["P47BCDG-TO65BC1-0502","P47BCDG-TO65BC1-0503"]]
+      ]
+    },
+    {"id":"p47b-manual-cruise-ii","source_id":"P47BCDG-TO65BC1","aircraft":"P-47B, P-47C, P-47D, P-47G","quantity":"cruise_operating_schedule","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Flight operation instruction chart, PDF p. 35, printed p. 31","conditions":"II. 13,500 to 11,000 lb, no load or empty 200 US gal belly tank. Density altitude as defined by handbook. Individual flight-check status is unestablished.","columns":["density_altitude_ft","speed_mph","engine_rpm","manifold_pressure_inhg","fuel_flow_us_gph","extraction_ids"],
+      "rows": [
+        [12000,235,2250,32,120,["P47BCDG-TO65BC1-0528","P47BCDG-TO65BC1-0529"]],
+        [15000,230,2300,32,125,["P47BCDG-TO65BC1-0526","P47BCDG-TO65BC1-0527"]],
+        [20000,225,2300,34,135,["P47BCDG-TO65BC1-0524","P47BCDG-TO65BC1-0525"]],
+        [25000,225,2350,36,145,["P47BCDG-TO65BC1-0522","P47BCDG-TO65BC1-0523"]],
+        [30000,210,2350,35,150,["P47BCDG-TO65BC1-0520","P47BCDG-TO65BC1-0521"]]
+      ]
+    },
+    {"id":"p47b-manual-cruise-iv","source_id":"P47BCDG-TO65BC1","aircraft":"P-47B, P-47C, P-47D, P-47G","quantity":"cruise_operating_schedule","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Flight operation instruction chart, PDF p. 35, printed p. 31","conditions":"IV. 13,500 to 11,000 lb, no load or empty 200 US gal belly tank. Density altitude as defined by handbook. Individual flight-check status is unestablished.","columns":["density_altitude_ft","speed_mph","engine_rpm","manifold_pressure_inhg","fuel_flow_us_gph","extraction_ids"],
+      "rows": [
+        [0,235,1950,35,75,["P47BCDG-TO65BC1-0546","P47BCDG-TO65BC1-0547"]],
+        [3000,230,1950,35,80,["P47BCDG-TO65BC1-0544","P47BCDG-TO65BC1-0545"]],
+        [6000,230,1950,34,80,["P47BCDG-TO65BC1-0542","P47BCDG-TO65BC1-0543"]],
+        [9000,230,2050,32,85,["P47BCDG-TO65BC1-0540","P47BCDG-TO65BC1-0541"]],
+        [12000,225,2050,33,85,["P47BCDG-TO65BC1-0538","P47BCDG-TO65BC1-0539"]],
+        [15000,220,2100,32,90,["P47BCDG-TO65BC1-0536","P47BCDG-TO65BC1-0537"]],
+        [20000,210,2150,30,95,["P47BCDG-TO65BC1-0534","P47BCDG-TO65BC1-0535"]],
+        [25000,200,2150,31,95,["P47BCDG-TO65BC1-0532","P47BCDG-TO65BC1-0533"]],
+        [30000,190,2150,32,100,["P47BCDG-TO65BC1-0530","P47BCDG-TO65BC1-0531"]]
+      ]
+    },
+    {"id":"p47b-manual-cruise-v","source_id":"P47BCDG-TO65BC1","aircraft":"P-47B, P-47C, P-47D, P-47G","quantity":"cruise_operating_schedule","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Flight operation instruction chart, PDF p. 35, printed p. 31","conditions":"V max range. 13,500 to 11,000 lb, no load or empty 200 US gal belly tank. Density altitude as defined by handbook. Individual flight-check status is unestablished.","columns":["density_altitude_ft","speed_mph","engine_rpm","manifold_pressure_inhg","fuel_flow_us_gph","extraction_ids"],
+      "rows": [
+        [0,200,1700,32,55,["P47BCDG-TO65BC1-0556","P47BCDG-TO65BC1-0557"]],
+        [3000,200,1700,32,55,["P47BCDG-TO65BC1-0554","P47BCDG-TO65BC1-0555"]],
+        [6000,205,1700,31,60,["P47BCDG-TO65BC1-0552","P47BCDG-TO65BC1-0553"]],
+        [9000,205,1800,30,65,["P47BCDG-TO65BC1-0550","P47BCDG-TO65BC1-0551"]],
+        [12000,200,1750,32,65,["P47BCDG-TO65BC1-0548","P47BCDG-TO65BC1-0549"]]
+      ]
+    },
+    {"id":"p51b1-manual-climb-combat","source_id":"P51B1-TO60JD1","aircraft":"P-51B-1 with V-1650-3","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Appendix II, PDF p. 28, printed p. 61","conditions":"Planning chart for P-51B-1, combat mission. Published limits are listed with the schedule. First altitude column spans sea level to 5,000 ft.","columns":["gross_weight_lb","altitude_ft","altitude_type","best_climb_ias_mph","rate_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","engine_rpm","manifold_pressure_inhg","extraction_ids"],
+      "rows": [
+        [9000,5000,"sea-level to 5,000 ft",170,1950,2.6,null,2700,46,["P51B-D2-217","P51B-D2-218"]],
+        [9000,10000,"point",170,1750,5.2,11,2700,46,["P51B-D2-219","P51B-D2-220","P51B-D2-221"]],
+        [9000,15000,"point",170,2000,7.8,16,2700,46,["P51B-D2-222","P51B-D2-223","P51B-D2-224"]],
+        [9000,20000,"point",165,1750,10,20,2700,46,["P51B-D2-225","P51B-D2-226","P51B-D2-227"]],
+        [9000,25000,"point",160,1200,13.5,25,2700,46,["P51B-D2-228","P51B-D2-229","P51B-D2-230"]],
+        [10000,5000,"sea-level to 5,000 ft",170,1500,3.4,null,2700,46,["P51B-D2-245","P51B-D2-246"]],
+        [10000,10000,"point",170,1500,6.6,14,2700,46,["P51B-D2-247","P51B-D2-248","P51B-D2-249"]],
+        [10000,15000,"point",170,1500,10,19,2700,46,["P51B-D2-250","P51B-D2-251","P51B-D2-252"]],
+        [10000,20000,"point",165,1300,13.5,25,2700,46,["P51B-D2-253","P51B-D2-254","P51B-D2-255"]],
+        [10000,25000,"point",160,750,18,33,2700,46,["P51B-D2-256","P51B-D2-257","P51B-D2-258"]],
+        [11000,5000,"sea-level to 5,000 ft",170,1250,4,null,2700,46,["P51B-D2-273","P51B-D2-274"]],
+        [11000,10000,"point",170,1250,8,16,2700,46,["P51B-D2-275","P51B-D2-276","P51B-D2-277"]],
+        [11000,15000,"point",170,1250,12,23,2700,46,["P51B-D2-278","P51B-D2-279","P51B-D2-280"]],
+        [11000,20000,"point",165,1000,16.5,30,2700,46,["P51B-D2-281","P51B-D2-282","P51B-D2-283"]],
+        [11000,25000,"point",160,500,22.5,40,2700,46,["P51B-D2-284","P51B-D2-285","P51B-D2-286"]]
+      ]
+    },
+    {"id":"p51b1-manual-climb-ferry","source_id":"P51B1-TO60JD1","aircraft":"P-51B-1 with V-1650-3","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Appendix II, PDF p. 28, printed p. 61","conditions":"Planning chart for P-51B-1, ferry mission. Published limits are listed with the schedule. First altitude column spans sea level to 5,000 ft.","columns":["gross_weight_lb","altitude_ft","altitude_type","best_climb_ias_mph","rate_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","engine_rpm","manifold_pressure_inhg","extraction_ids"],
+      "rows": [
+        [9000,5000,"sea-level to 5,000 ft",170,1400,3.6,null,2300,37,["P51B-D2-231","P51B-D2-232"]],
+        [9000,10000,"point",170,1400,7.2,14,2300,37,["P51B-D2-233","P51B-D2-234","P51B-D2-235"]],
+        [9000,15000,"point",170,1400,10.8,18,2300,37,["P51B-D2-236","P51B-D2-237","P51B-D2-238"]],
+        [9000,20000,"point",165,1400,14.5,25,2300,37,["P51B-D2-239","P51B-D2-240","P51B-D2-241"]],
+        [9000,25000,"point",160,1000,18.5,30,2300,37,["P51B-D2-242","P51B-D2-243","P51B-D2-244"]],
+        [10000,5000,"sea-level to 5,000 ft",170,1000,5,null,2300,37,["P51B-D2-259","P51B-D2-260"]],
+        [10000,10000,"point",170,1000,10,19,2300,37,["P51B-D2-261","P51B-D2-262","P51B-D2-263"]],
+        [10000,15000,"point",170,950,15,27,2300,37,["P51B-D2-264","P51B-D2-265","P51B-D2-266"]],
+        [10000,20000,"point",165,950,20.5,35,2300,37,["P51B-D2-267","P51B-D2-268","P51B-D2-269"]],
+        [10000,25000,"point",160,600,26,43,2300,37,["P51B-D2-270","P51B-D2-271","P51B-D2-272"]],
+        [11000,5000,"sea-level to 5,000 ft",170,800,6.4,null,2300,37,["P51B-D2-287","P51B-D2-288"]],
+        [11000,10000,"point",170,750,12.6,23,2300,37,["P51B-D2-289","P51B-D2-290","P51B-D2-291"]],
+        [11000,15000,"point",170,750,19,33,2300,37,["P51B-D2-292","P51B-D2-293","P51B-D2-294"]],
+        [11000,20000,"point",165,700,25.5,44,2300,37,["P51B-D2-295","P51B-D2-296","P51B-D2-297"]],
+        [11000,25000,"point",160,350,34,55,2300,37,["P51B-D2-298","P51B-D2-299","P51B-D2-300"]]
+      ]
+    },
+    {"id":"d9-handbook-ratings","source_id":"FW190D9-2190-TEIL0","aircraft":"Fw 190 D-9, Jumo 213 A","quantity":"engine_reference_ratings","source_class":"original-handbook-retyped","speed_basis":"unestablished","source_location":"Section B §2, PDF and printed p. 8","conditions":"Jumo 213 A reference ratings in metric PS. Fuel rates are approximate.","columns":["rating","blower_reference","altitude_km","rpm","power_ps","fuel_lph_approx","extraction_ids"],
+      "rows": [
+        ["takeoff","sea level",0,3250,1750,590,["FW190D9-0ACE-0024"]],
+        ["combat/climb","sea level",0,3000,1600,530,["FW190D9-0ACE-0025"]],
+        ["continuous","sea level",0,2700,1330,375,["FW190D9-0ACE-0026"]],
+        ["emergency","low blower reference altitude",2.5,3250,1730,590,["FW190D9-0ACE-0027"]],
+        ["combat/climb","low blower reference altitude",2.5,3000,1560,530,["FW190D9-0ACE-0028"]],
+        ["continuous","low blower reference altitude",2.5,2700,1320,375,["FW190D9-0ACE-0029"]],
+        ["emergency","high blower reference altitude",6,3250,1560,590,["FW190D9-0ACE-0030"]],
+        ["combat/climb","high blower reference altitude",5.5,3000,1400,530,["FW190D9-0ACE-0031"]],
+        ["continuous","high blower reference altitude",5.5,2700,1220,375,["FW190D9-0ACE-0032"]]
+      ]
+    },
+    {"id":"d9-handbook-flight-loadings","source_id":"FW190D9-2190-TEIL0","aircraft":"Fw 190 D-9, Jumo 213 A","quantity":"operational_loading","source_class":"original-handbook-retyped","speed_basis":"unestablished","source_location":"Section B §4, PDF and printed p. 9","conditions":"Printed gross Fluggewicht only. The retyped equipped-weight cells for cases II and IV have errors or missing digits.","columns":["load_case","equipment","gross_weight_kg","extraction_ids"],
+      "rows": [
+        ["I","fighter",4283,["FW190D9-0ACE-0048"]],
+        ["II","extended-range fighter",4567,["FW190D9-0ACE-0049"]],
+        ["III","fighter-bomber with ETC 504",4840,["FW190D9-0ACE-0050"]],
+        ["IV","fighter-bomber with ETC 504 and E-Rost",4663,["FW190D9-0ACE-0051"]]
+      ]
+    },
+    {"id":"bmw801d2-map-rpm","source_id":"NACA-E5D19","aircraft":"BMW 801 D-2 Kommandogerät","quantity":"manifold_pressure_schedule","source_class":"original-report-digitized-derived-schedule","speed_basis":"unestablished","source_location":"Fig. 5, PDF p. 31, printed p. 29","conditions":"Digitized period schedule. Read to about 0.5 inHg. The abrupt change near 2150 rpm separates two schedule branches. Treat as a control reference within this domain.","columns":["rpm","manifold_pressure_inhg_abs_approx","branch","extraction_ids"],
+      "rows": [
+        [1150,12.5,"below transition",["NACA-E5D19-012"]],
+        [1200,15,"below transition",["NACA-E5D19-013"]],
+        [1300,18.5,"below transition",["NACA-E5D19-014"]],
+        [1400,21.5,"below transition",["NACA-E5D19-015"]],
+        [1500,23.5,"below transition",["NACA-E5D19-016"]],
+        [1600,24.7,"below transition",["NACA-E5D19-017"]],
+        [1700,26,"below transition",["NACA-E5D19-018"]],
+        [1800,27.5,"below transition",["NACA-E5D19-019"]],
+        [1900,28.7,"below transition",["NACA-E5D19-020"]],
+        [2000,30,"below transition",["NACA-E5D19-021"]],
+        [2100,31.8,"below transition",["NACA-E5D19-022"]],
+        [2200,31.8,"above transition",["NACA-E5D19-024"]],
+        [2300,34.5,"above transition",["NACA-E5D19-025"]],
+        [2400,37.5,"above transition",["NACA-E5D19-026"]]
+      ]
+    },
+    {"id":"bmw801d2-bench-fuel-air","source_id":"NACA-E5D19","aircraft":"BMW 801 D-2 Kommandogerät","quantity":"fuel_air_ratio","source_class":"original-report-bench-derived","speed_basis":"unestablished","source_location":"PDF p. 13, printed p. 11, text and Figs. 17–18","conditions":"Ranges based on experimental fuel flow and calculated airflow at 2150 to 2465 rpm.","columns":["blower","altitude_region","minimum_ratio","maximum_ratio","extraction_ids"],
+      "rows": [
+        ["low","as tested",0.092,0.113,["NACA-E5D19-035"]],
+        ["high","below approximately 21,000 ft",0.103,0.13,["NACA-E5D19-036"]],
+        ["high","above approximately 21,000 ft",0.096,0.116,["NACA-E5D19-037"]]
+      ]
+    },
+    {"id":"yp38-local-critical-mach","source_id":"NACA-YP38-1942","aircraft":"YP-38 full-scale tunnel test aircraft","quantity":"local_critical_mach","source_class":"original-report-derived-table","speed_basis":"TAS","source_location":"Table I, PDF p. 11","conditions":"Local sonic onset from tunnel pressure measurements for a dive condition near CL 0.15. Published speeds at 20,000 ft are the report’s corresponding critical speeds. Local onset and whole-aircraft buffet are distinct.","columns":["region","configuration","peak_negative_pressure_coefficient_printed","peak_location_printed","local_critical_mach","critical_speed_at_20000_ft_mph","extraction_ids"],
+      "rows": [
+        ["Canopy","Original","0.92 (measured)","39 in",0.59,417,["NACA-YP38-009","NACA-YP38-010"]],
+        ["Canopy","Original, 66-115 wing glove","0.95 (measured)","39",0.6,425,["NACA-YP38-011","NACA-YP38-012"]],
+        ["Canopy","First revision, 66-115 wing glove","0.84 (measured)","43.5",0.62,440,["NACA-YP38-013","NACA-YP38-014"]],
+        ["Canopy","Second revision, 66-115 wing glove","0.68 (measured)","42",0.65,461,["NACA-YP38-015","NACA-YP38-016"]],
+        ["Canopy","Second revision, 0.10c L.E. extension","0.68 (measured)","42",0.65,461,["NACA-YP38-017","NACA-YP38-018"]],
+        ["Canopy","Second revision, 0.20c L.E. extension","0.7 (measured)","42",0.65,461,["NACA-YP38-019","NACA-YP38-020"]],
+        ["Canopy","Second revision extended, 66-115 wing glove","0.68 (measured)","41",0.65,461,["NACA-YP38-021","NACA-YP38-022"]],
+        ["Fuselage fillet","Original","1.07 (measured)","0.13c",0.57,404,["NACA-YP38-023","NACA-YP38-024"]],
+        ["Fuselage fillet","66-115 wing glove, original canopy","0.72 (measured)","0.28c",0.64,452,["NACA-YP38-025","NACA-YP38-026"]],
+        ["Fuselage fillet","66-115 wing glove, first canopy revision","0.73 (measured)","0.27c",0.64,452,["NACA-YP38-027","NACA-YP38-028"]],
+        ["Fuselage fillet","66-115 wing glove, second canopy revision","0.72 (measured)","0.26c",0.64,452,["NACA-YP38-029","NACA-YP38-030"]],
+        ["Fuselage fillet","66-115 wing glove, second canopy revision ext.","0.68 (measured)","0.25c",0.65,461,["NACA-YP38-031","NACA-YP38-032"]],
+        ["Fuselage fillet","0.10c L.E. extension, second canopy revision","0.8 (measured)","0.24c",0.62,438,["NACA-YP38-033","NACA-YP38-034"]],
+        ["Fuselage fillet","0.20c L.E. extension, second canopy revision","0.65 (measured)","0.28c",0.66,468,["NACA-YP38-035","NACA-YP38-036"]],
+        ["Fuselage fillet","Original, flaps 7deg50'","0.94 (measured)","0.12c",0.6,425,["NACA-YP38-037","NACA-YP38-038"]],
+        ["Fuselage fillet","Original, flaps 14deg20'","0.92 (measured)","0.12c",0.6,425,["NACA-YP38-039","NACA-YP38-040"]],
+        ["Fuselage fillet","Original, flaps 18deg35'","0.99 (measured)","0.12c",0.59,417,["NACA-YP38-041","NACA-YP38-042"]],
+        ["Wing, midway between fuselage and nacelle","Original","0.96 (measured)","0.11c",0.6,425,["NACA-YP38-043","NACA-YP38-044"]],
+        ["Wing, midway between fuselage and nacelle","66-115 wing glove","0.56 (measured)","0.25c",0.68,482,["NACA-YP38-045","NACA-YP38-046"]],
+        ["Wing, midway between fuselage and nacelle","0.10c L.E. extension","0.6 (measured)","0.25c",0.67,475,["NACA-YP38-047","NACA-YP38-048"]],
+        ["Wing, midway between fuselage and nacelle","0.20c L.E. extension","0.5 (measured)","0.25c",0.7,490,["NACA-YP38-049","NACA-YP38-050"]],
+        ["Inboard nacelle fillet","Original","0.68 (measured)","0.30c",0.64,452,["NACA-YP38-051","NACA-YP38-052"]],
+        ["Inboard nacelle fillet","66-115 wing glove","0.46 (measured)","0.31c",0.71,503,["NACA-YP38-053","NACA-YP38-054"]],
+        ["Inboard nacelle fillet","0.20c L.E. extension","0.53 (measured)","0.05c",0.69,488,["NACA-YP38-055","NACA-YP38-056"]],
+        ["Outboard nacelle fillet","Original","0.82 (measured)","0.29c",0.62,438,["NACA-YP38-057","NACA-YP38-058"]],
+        ["Wing, between tip and nacelle","Original","0.74 (measured)","0.12c",0.63,447,["NACA-YP38-059","NACA-YP38-060"]],
+        ["Wing tip","Original","0.64 (measured)","0.26c",0.65,461,["NACA-YP38-061","NACA-YP38-062"]],
+        ["Stabilizer, center section","Original, upper surface","0.21 (measured)","0.15c",0.83,588,["NACA-YP38-063","NACA-YP38-064"]],
+        ["Stabilizer, center section","Original, upper surface, de=-1.9deg","0.18 (measured)","0.18c",0.84,596,["NACA-YP38-065","NACA-YP38-066"]],
+        ["Stabilizer, center section","Original, lower surface, de=-1.9deg","0.5 (measured)","0.02c",0.7,496,["NACA-YP38-067","NACA-YP38-068"]],
+        ["Stabilizer, center section","Original, lower surface, de=-4.0deg","0.6 (measured)","0.02c",0.67,475,["NACA-YP38-069","NACA-YP38-070"]],
+        ["Stabilizer, center section","Original, upper surface, de=-4.0deg","0.12 (measured)","0.20c",0.89,631,["NACA-YP38-071","NACA-YP38-072"]],
+        ["Stabilizer-fin fillets","Original, upper inboard","0.21 (measured)","0.30c",0.83,588,["NACA-YP38-073","NACA-YP38-074"]],
+        ["Stabilizer-fin fillets","Original, lower inboard","0.32 (measured)","0.13c",0.79,561,["NACA-YP38-075","NACA-YP38-076"]],
+        ["Stabilizer-fin fillets","Original, upper outboard","0.26 (measured)","0.35c",0.8,568,["NACA-YP38-077","NACA-YP38-078"]],
+        ["Stabilizer-fin fillets","Original, lower outboard","0.08 (measured)","0.20c",0.88,625,["NACA-YP38-079","NACA-YP38-080"]],
+        ["Stabilizer-fin fillets","Original, lower inboard, de=-1.9deg","0.15 (measured)","0.23c",0.87,616,["NACA-YP38-081","NACA-YP38-082"]],
+        ["Stabilizer-fin fillets","Original, upper inboard, de=-1.9deg","0.13 (measured)","0.24c",0.88,625,["NACA-YP38-083","NACA-YP38-084"]],
+        ["Stabilizer-fin fillets","Original, lower inboard, de=-4.0deg","0.19 (measured)","0.05c",0.84,596,["NACA-YP38-085","NACA-YP38-086"]],
+        ["Stabilizer-fin fillets","Original, upper inboard, de=-4.0deg","0.13 (measured)","0.30c",0.88,625,["NACA-YP38-087","NACA-YP38-088"]]
+      ]
+    },
+    {"id":"ki84-ir3-nominal-level-speed","source_id":"KI84-T2-IR3","aircraft":"Ki-84-I Frank, T-2 302 report","quantity":"level_speed","source_class":"original-report-specification","speed_basis":"unestablished","source_location":"Factual Data, PDF p. 8, printed p. 2","conditions":"Source lists mph without stating speed basis. WEP figures for the 9194 lb overload case are blank.","columns":["altitude_ft","normal_7940_lb_military_mph","normal_7940_lb_wep_mph","overload_9194_lb_military_mph","extraction_ids"],
+      "rows": [
+        [0,350,363,312,[]],
+        [10000,389,390,347,[]],
+        [20000,412,427,370,[]],
+        [23000,426,419,382,[]],
+        [30000,400,393,357,[]],
+        [35000,370,360,317,[]]
+      ]
+    },
+    {"id":"ki84-ir3-nominal-timed-climb","source_id":"KI84-T2-IR3","aircraft":"Ki-84-I Frank, T-2 302 report","quantity":"timed_climb","source_class":"original-report-specification","speed_basis":"unestablished","source_location":"Factual Data, PDF p. 8, printed p. 2","conditions":"Published specification times. Power and climb speed are unspecified in the time table.","columns":["altitude_ft","normal_7940_lb_time_min","overload_9194_lb_time_min","extraction_ids"],
+      "rows": [
+        [10000,2.6,3.3,[]],
+        [20000,5.8,7.3,[]],
+        [30000,10,12.7,[]]
+      ]
+    },
+    {"id":"ki84-ir3-nominal-climb-rate","source_id":"KI84-T2-IR3","aircraft":"Ki-84-I Frank, T-2 302 report","quantity":"climb_rate","source_class":"original-report-specification","speed_basis":"unestablished","source_location":"Factual Data, PDF p. 8, printed p. 2","conditions":"Nominal normal-fighter specification, 7940 lb.","columns":["altitude_ft","rating","rate_fpm","extraction_ids"],
+      "rows": [
+        [0,"military",3790,[]],
+        [0,"war emergency",4275,[]],
+        [20900,"military",3195,[]],
+        [17900,"war emergency",3615,[]]
+      ]
+    },
+    {"id":"a5-a6-handbook-level-speed","source_id":"FW190A5A6-2190-TEIL0","aircraft":"Fw 190 A-5/A-6, BMW 801 D","quantity":"level_speed","source_class":"original-handbook-table","speed_basis":"unestablished","source_location":"Section A §3, PDF p. 10, printed p. 11","conditions":"4100 kg A-5/A-6 handbook performance.","columns":["altitude_m","rating","speed_kmh","flying_weight_kg","extraction_ids"],
+      "rows": [
+        [0,"take-off & emergency power",560,4100,["FW190A5-P1-026"]],
+        [6300,"take-off & emergency power",660,4100,["FW190A5-P1-027"]],
+        [0,"climb & combat power",530,4100,["FW190A5-P1-028"]],
+        [5900,"climb & combat power",634,4100,["FW190A5-P1-029"]],
+        [0,"max permissible continuous power",505,4100,["FW190A5-P1-030"]],
+        [6100,"max permissible continuous power",610,4100,["FW190A5-P1-031"]]
+      ]
+    },
+    {"id":"a5-a6-handbook-timed-climb","source_id":"FW190A5A6-2190-TEIL0","aircraft":"Fw 190 A-5/A-6, BMW 801 D","quantity":"timed_climb","source_class":"original-handbook-table","speed_basis":"unestablished","source_location":"Section A §3, PDF p. 10, printed p. 11","conditions":"4100 kg A-5/A-6, climb power. Time is decimal minutes as printed.","columns":["altitude_m","elapsed_min","flying_weight_kg","extraction_ids"],
+      "rows": [
+        [2000,2.4,4100,["FW190A5-P1-034"]],
+        [4000,5.1,4100,["FW190A5-P1-035"]],
+        [6000,8.45,4100,["FW190A5-P1-036"]],
+        [8000,13.1,4100,["FW190A5-P1-037"]]
+      ]
+    },
+    {"id":"p40fl-climb-p43-9300-combat","source_id":"P40FL-TO01-25CH1","aircraft":"P-40F and P-40L, V-1650-1","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Section III, PDF p. 43, printed p. 38","conditions":"external store fitted. V-1650-1. Combat uses 3000 rpm / 48.2 inHg for five minutes, then 2650 / 44.2. Ferry uses 2300 / 37. Fuel includes warm-up and takeoff. Chart includes figures marked as unflight-checked. Preserve printed values.","columns":["gross_weight_lb","climb_type","altitude_ft","altitude_type","climb_ias_mph","rate_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
+      "rows": [
+        [9300,"combat",5000,"sea-level to 5,000 ft",145,1900,2.6,null,[]],
+        [9300,"combat",10000,"point",140,1200,5.3,30,[]],
+        [9300,"combat",15000,"point",150,900,10.5,39,[]],
+        [9300,"combat",20000,"point",145,550,17.5,51,[]],
+        [9300,"combat",25000,"point",140,200,29.4,69,[]]
+      ]
+    },
+    {"id":"p40fl-climb-p43-9300-ferry","source_id":"P40FL-TO01-25CH1","aircraft":"P-40F and P-40L, V-1650-1","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Section III, PDF p. 43, printed p. 38","conditions":"external store fitted. V-1650-1. Combat uses 3000 rpm / 48.2 inHg for five minutes, then 2650 / 44.2. Ferry uses 2300 / 37. Fuel includes warm-up and takeoff. Chart includes figures marked as unflight-checked. Preserve printed values.","columns":["gross_weight_lb","climb_type","altitude_ft","altitude_type","climb_ias_mph","rate_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
+      "rows": [
+        [9300,"ferry",5000,"sea-level to 5,000 ft",140,750,6.7,null,[]],
+        [9300,"ferry",10000,"point",145,600,13.6,35,[]],
+        [9300,"ferry",15000,"point",145,400,20.2,49,[]],
+        [9300,"ferry",20000,"point",140,100,43.7,75,[]]
+      ]
+    },
+    {"id":"p40fl-climb-p43-8500-combat","source_id":"P40FL-TO01-25CH1","aircraft":"P-40F and P-40L, V-1650-1","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Section III, PDF p. 43, printed p. 38","conditions":"external store fitted. V-1650-1. Combat uses 3000 rpm / 48.2 inHg for five minutes, then 2650 / 44.2. Ferry uses 2300 / 37. Fuel includes warm-up and takeoff. Chart includes figures marked as unflight-checked. Preserve printed values.","columns":["gross_weight_lb","climb_type","altitude_ft","altitude_type","climb_ias_mph","rate_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
+      "rows": [
+        [8500,"combat",5000,"sea-level to 5,000 ft",140,2250,2.2,null,[]],
+        [8500,"combat",10000,"point",135,2400,4.4,28,[]],
+        [8500,"combat",15000,"point",130,1250,5.4,34,[]],
+        [8500,"combat",20000,"point",150,800,12.8,43,[]],
+        [8500,"combat",25000,"point",140,400,21.4,56,[]]
+      ]
+    },
+    {"id":"p40fl-climb-p43-8500-ferry","source_id":"P40FL-TO01-25CH1","aircraft":"P-40F and P-40L, V-1650-1","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Section III, PDF p. 43, printed p. 38","conditions":"external store fitted. V-1650-1. Combat uses 3000 rpm / 48.2 inHg for five minutes, then 2650 / 44.2. Ferry uses 2300 / 37. Fuel includes warm-up and takeoff. Chart includes figures marked as unflight-checked. Preserve printed values.","columns":["gross_weight_lb","climb_type","altitude_ft","altitude_type","climb_ias_mph","rate_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
+      "rows": [
+        [8500,"ferry",5000,"sea-level to 5,000 ft",135,900,5.4,null,[]],
+        [8500,"ferry",10000,"point",140,700,11.9,33,[]],
+        [8500,"ferry",15000,"point",140,600,19.4,43,[]],
+        [8500,"ferry",20000,"point",140,300,30,57,[]]
+      ]
+    },
+    {"id":"p40fl-climb-p44-9300-combat","source_id":"P40FL-TO01-25CH1","aircraft":"P-40F and P-40L, V-1650-1","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Section III, PDF p. 44, printed p. 39","conditions":"external store unspecified on chart. V-1650-1. Combat uses 3000 rpm / 48.2 inHg for five minutes, then 2650 / 44.2. Ferry uses 2300 / 37. Fuel includes warm-up and takeoff. Chart includes figures marked as unflight-checked. Preserve printed values.","columns":["gross_weight_lb","climb_type","altitude_ft","altitude_type","climb_ias_mph","rate_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
+      "rows": [
+        [9300,"combat",5000,"sea-level to 5,000 ft",150,2050,2.4,null,[]],
+        [9300,"combat",10000,"point",145,2200,4.7,28,[]],
+        [9300,"combat",15000,"point",155,1160,8.3,35,[]],
+        [9300,"combat",20000,"point",155,790,13.3,44,[]],
+        [9300,"combat",25000,"point",155,350,22.1,57,[]]
+      ]
+    },
+    {"id":"p40fl-climb-p44-9300-ferry","source_id":"P40FL-TO01-25CH1","aircraft":"P-40F and P-40L, V-1650-1","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Section III, PDF p. 44, printed p. 39","conditions":"external store unspecified on chart. V-1650-1. Combat uses 3000 rpm / 48.2 inHg for five minutes, then 2650 / 44.2. Ferry uses 2300 / 37. Fuel includes warm-up and takeoff. Chart includes figures marked as unflight-checked. Preserve printed values.","columns":["gross_weight_lb","climb_type","altitude_ft","altitude_type","climb_ias_mph","rate_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
+      "rows": [
+        [9300,"ferry",5000,"sea-level to 5,000 ft",145,850,5.9,null,[]],
+        [9300,"ferry",10000,"point",150,700,12.2,34,[]],
+        [9300,"ferry",15000,"point",150,800,19.9,44,[]],
+        [9300,"ferry",20000,"point",145,250,31.7,60,[]]
+      ]
+    },
+    {"id":"p40fl-climb-p44-8500-combat","source_id":"P40FL-TO01-25CH1","aircraft":"P-40F and P-40L, V-1650-1","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Section III, PDF p. 44, printed p. 39","conditions":"external store unspecified on chart. V-1650-1. Combat uses 3000 rpm / 48.2 inHg for five minutes, then 2650 / 44.2. Ferry uses 2300 / 37. Fuel includes warm-up and takeoff. Chart includes figures marked as unflight-checked. Preserve printed values.","columns":["gross_weight_lb","climb_type","altitude_ft","altitude_type","climb_ias_mph","rate_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
+      "rows": [
+        [8500,"combat",5000,"sea-level to 5,000 ft",150,2350,2.1,null,[]],
+        [8500,"combat",10000,"point",145,2500,4.2,27,[]],
+        [8500,"combat",15000,"point",155,1450,6.6,32,[]],
+        [8500,"combat",20000,"point",150,1000,10.6,39,[]],
+        [8500,"combat",25000,"point",150,550,17.1,49,[]]
+      ]
+    },
+    {"id":"p40fl-climb-p44-8500-ferry","source_id":"P40FL-TO01-25CH1","aircraft":"P-40F and P-40L, V-1650-1","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Section III, PDF p. 44, printed p. 39","conditions":"external store unspecified on chart. V-1650-1. Combat uses 3000 rpm / 48.2 inHg for five minutes, then 2650 / 44.2. Ferry uses 2300 / 37. Fuel includes warm-up and takeoff. Chart includes figures marked as unflight-checked. Preserve printed values.","columns":["gross_weight_lb","climb_type","altitude_ft","altitude_type","climb_ias_mph","rate_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
+      "rows": [
+        [8500,"ferry",5000,"sea-level to 5,000 ft",140,1050,4.8,null,[]],
+        [8500,"ferry",10000,"point",150,800,9.9,30,[]],
+        [8500,"ferry",15000,"point",150,700,16.2,39,[]],
+        [8500,"ferry",20000,"point",145,450,24.9,51,[]]
+      ]
+    },
+    {"id":"p40fl-climb-p44-7500-combat","source_id":"P40FL-TO01-25CH1","aircraft":"P-40F and P-40L, V-1650-1","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Section III, PDF p. 44, printed p. 39","conditions":"external store unspecified on chart. V-1650-1. Combat uses 3000 rpm / 48.2 inHg for five minutes, then 2650 / 44.2. Ferry uses 2300 / 37. Fuel includes warm-up and takeoff. Chart includes figures marked as unflight-checked. Preserve printed values.","columns":["gross_weight_lb","climb_type","altitude_ft","altitude_type","climb_ias_mph","rate_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
+      "rows": [
+        [7500,"combat",5000,"sea-level to 5,000 ft",145,2850,1.8,null,[]],
+        [7500,"combat",10000,"point",135,2850,3.5,26,[]],
+        [7500,"combat",15000,"point",130,2600,5.4,30,[]],
+        [7500,"combat",20000,"point",150,1350,8.2,35,[]],
+        [7500,"combat",25000,"point",145,670,12.7,41,[]]
+      ]
+    },
+    {"id":"p40fl-climb-p44-7500-ferry","source_id":"P40FL-TO01-25CH1","aircraft":"P-40F and P-40L, V-1650-1","quantity":"climb_performance","source_class":"original-handbook-chart","speed_basis":"IAS","source_location":"Section III, PDF p. 44, printed p. 39","conditions":"external store unspecified on chart. V-1650-1. Combat uses 3000 rpm / 48.2 inHg for five minutes, then 2650 / 44.2. Ferry uses 2300 / 37. Fuel includes warm-up and takeoff. Chart includes figures marked as unflight-checked. Preserve printed values.","columns":["gross_weight_lb","climb_type","altitude_ft","altitude_type","climb_ias_mph","rate_fpm","elapsed_from_sea_level_min","fuel_used_us_gal","extraction_ids"],
+      "rows": [
+        [7500,"ferry",5000,"sea-level to 5,000 ft",140,1350,3.7,null,[]],
+        [7500,"ferry",10000,"point",145,1200,7.7,27,[]],
+        [7500,"ferry",15000,"point",150,1000,12.2,33,[]],
+        [7500,"ferry",20000,"point",145,700,18.1,41,[]],
+        [7500,"ferry",25000,"point",null,300,28.1,53,[]]
+      ]
+    }
+  ]
+}

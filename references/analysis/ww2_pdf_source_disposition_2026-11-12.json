@@ -1,0 +1,1006 @@
+{
+  "schema": "ww2-pdf-source-review/v1",
+  "source_commit": "99edb9fdeb8eca3011c5f4dfee427ce3157f7220",
+  "evidence_pack": "references/research/ww2_pdf_source_review_2026-11-12.json",
+  "candidate_index": "references/research/local-pdf-extract-2026-11-12/extraction-index.json",
+  "raw_record_count": 5801,
+  "review_method": "Verified source identity and stated applicability. Compared selected table entries to the source pages. Reconciled TN 698 coefficients across all 309 rows.",
+  "series": [
+    {
+      "series_id": "tn698-3-e-15-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 11
+    },
+    {
+      "series_id": "tn698-3-e-25-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 17
+    },
+    {
+      "series_id": "tn698-3-e-35-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 16
+    },
+    {
+      "series_id": "tn698-3-e-45-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 18
+    },
+    {
+      "series_id": "tn698-2-e2-15-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 11
+    },
+    {
+      "series_id": "tn698-2-e2-25-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 19
+    },
+    {
+      "series_id": "tn698-2-e2-35-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 22
+    },
+    {
+      "series_id": "tn698-2-e2-45-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 17
+    },
+    {
+      "series_id": "tn698-4-e-15-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 17
+    },
+    {
+      "series_id": "tn698-4-e-25-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 19
+    },
+    {
+      "series_id": "tn698-4-e-35-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 20
+    },
+    {
+      "series_id": "tn698-4-e-45-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 18
+    },
+    {
+      "series_id": "tn698-3-e1-15-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 11
+    },
+    {
+      "series_id": "tn698-3-e1-25-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 16
+    },
+    {
+      "series_id": "tn698-3-e1-35-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 21
+    },
+    {
+      "series_id": "tn698-3-e1-45-bare",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 19
+    },
+    {
+      "series_id": "tn698-3-e-35-spinner",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 18
+    },
+    {
+      "series_id": "tn698-2-e2-35-spinner",
+      "roster_id": null,
+      "application": "component-comparison",
+      "row_count": 16
+    },
+    {
+      "series_id": "p47d-manual-climb-14200",
+      "roster_id": "p47d30_433441",
+      "application": "block-handbook",
+      "row_count": 6
+    },
+    {
+      "series_id": "p47d-manual-climb-16000",
+      "roster_id": "p47d30_433441",
+      "application": "block-handbook",
+      "row_count": 6
+    },
+    {
+      "series_id": "p47d-manual-climb-18000",
+      "roster_id": "p47d30_433441",
+      "application": "block-handbook",
+      "row_count": 6
+    },
+    {
+      "series_id": "p47d-manual-power-wet",
+      "roster_id": "p47d30_433441",
+      "application": "block-handbook",
+      "row_count": 1
+    },
+    {
+      "series_id": "p47d-manual-power-military",
+      "roster_id": "p47d30_433441",
+      "application": "block-handbook",
+      "row_count": 5
+    },
+    {
+      "series_id": "p47d-manual-power-normal",
+      "roster_id": "p47d30_433441",
+      "application": "block-handbook",
+      "row_count": 1
+    },
+    {
+      "series_id": "p47d-manual-power-cruise",
+      "roster_id": "p47d30_433441",
+      "application": "block-handbook",
+      "row_count": 16
+    },
+    {
+      "series_id": "raf-thunderbolt-pec",
+      "roster_id": "p47d30_433441",
+      "application": "variant-comparison",
+      "row_count": 6
+    },
+    {
+      "series_id": "raf-thunderbolt-stall",
+      "roster_id": "p47d30_433441",
+      "application": "variant-comparison",
+      "row_count": 2
+    },
+    {
+      "series_id": "p47b-manual-cruise-i",
+      "roster_id": "p47b_415902",
+      "application": "block-handbook",
+      "row_count": 9
+    },
+    {
+      "series_id": "p47b-manual-cruise-ii",
+      "roster_id": "p47b_415902",
+      "application": "block-handbook",
+      "row_count": 5
+    },
+    {
+      "series_id": "p47b-manual-cruise-iv",
+      "roster_id": "p47b_415902",
+      "application": "block-handbook",
+      "row_count": 9
+    },
+    {
+      "series_id": "p47b-manual-cruise-v",
+      "roster_id": "p47b_415902",
+      "application": "block-handbook",
+      "row_count": 5
+    },
+    {
+      "series_id": "p51b1-manual-climb-combat",
+      "roster_id": "p51b_4324777",
+      "application": "variant-comparison",
+      "row_count": 15
+    },
+    {
+      "series_id": "p51b1-manual-climb-ferry",
+      "roster_id": "p51b_4324777",
+      "application": "variant-comparison",
+      "row_count": 15
+    },
+    {
+      "series_id": "d9-handbook-ratings",
+      "roster_id": "fw190d9_210002",
+      "application": "block-handbook",
+      "row_count": 9
+    },
+    {
+      "series_id": "d9-handbook-flight-loadings",
+      "roster_id": "fw190d9_210002",
+      "application": "block-handbook",
+      "row_count": 4
+    },
+    {
+      "series_id": "bmw801d2-map-rpm",
+      "roster_id": "fw190a4_783",
+      "application": "component-comparison",
+      "row_count": 14
+    },
+    {
+      "series_id": "bmw801d2-bench-fuel-air",
+      "roster_id": "fw190a4_783",
+      "application": "component-comparison",
+      "row_count": 3
+    },
+    {
+      "series_id": "yp38-local-critical-mach",
+      "roster_id": "p38g_4212687",
+      "application": "variant-comparison",
+      "row_count": 40
+    },
+    {
+      "series_id": "ki84-ir3-nominal-level-speed",
+      "roster_id": "ki84_302",
+      "application": "documentary-specification",
+      "row_count": 6
+    },
+    {
+      "series_id": "ki84-ir3-nominal-timed-climb",
+      "roster_id": "ki84_302",
+      "application": "documentary-specification",
+      "row_count": 3
+    },
+    {
+      "series_id": "ki84-ir3-nominal-climb-rate",
+      "roster_id": "ki84_302",
+      "application": "documentary-specification",
+      "row_count": 4
+    },
+    {
+      "series_id": "a5-a6-handbook-level-speed",
+      "roster_id": "fw190a4_783",
+      "application": "variant-comparison",
+      "row_count": 6
+    },
+    {
+      "series_id": "a5-a6-handbook-timed-climb",
+      "roster_id": "fw190a4_783",
+      "application": "variant-comparison",
+      "row_count": 4
+    },
+    {
+      "series_id": "p40fl-climb-p43-9300-combat",
+      "roster_id": "p40f_4113635",
+      "application": "block-handbook",
+      "row_count": 5
+    },
+    {
+      "series_id": "p40fl-climb-p43-9300-ferry",
+      "roster_id": "p40f_4113635",
+      "application": "block-handbook",
+      "row_count": 4
+    },
+    {
+      "series_id": "p40fl-climb-p43-8500-combat",
+      "roster_id": "p40f_4113635",
+      "application": "block-handbook",
+      "row_count": 5
+    },
+    {
+      "series_id": "p40fl-climb-p43-8500-ferry",
+      "roster_id": "p40f_4113635",
+      "application": "block-handbook",
+      "row_count": 4
+    },
+    {
+      "series_id": "p40fl-climb-p44-9300-combat",
+      "roster_id": "p40f_4113635",
+      "application": "block-handbook",
+      "row_count": 5
+    },
+    {
+      "series_id": "p40fl-climb-p44-9300-ferry",
+      "roster_id": "p40f_4113635",
+      "application": "block-handbook",
+      "row_count": 4
+    },
+    {
+      "series_id": "p40fl-climb-p44-8500-combat",
+      "roster_id": "p40f_4113635",
+      "application": "block-handbook",
+      "row_count": 5
+    },
+    {
+      "series_id": "p40fl-climb-p44-8500-ferry",
+      "roster_id": "p40f_4113635",
+      "application": "block-handbook",
+      "row_count": 4
+    },
+    {
+      "series_id": "p40fl-climb-p44-7500-combat",
+      "roster_id": "p40f_4113635",
+      "application": "block-handbook",
+      "row_count": 5
+    },
+    {
+      "series_id": "p40fl-climb-p44-7500-ferry",
+      "roster_id": "p40f_4113635",
+      "application": "block-handbook",
+      "row_count": 5
+    }
+  ],
+  "reviewed_artifacts": [
+    {
+      "source_file": "N.A.C.A. Reports\\BearcatGunPlatformNACA.pdf",
+      "raw_rows": 36,
+      "grades": {
+        "observed": 34,
+        "missing": 2
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "Luftwaffe\\Bf 109 D Kurzbetriebsanleitung.pdf",
+      "raw_rows": 58,
+      "grades": {
+        "estimated": 58
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "Luftwaffe\\Bf-109E Beladevorschriftt.pdf",
+      "raw_rows": 12,
+      "grades": {
+        "estimated": 10,
+        "missing": 2
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "Luftwaffe\\Bf-109G-3.pdf",
+      "raw_rows": 34,
+      "grades": {
+        "estimated": 31,
+        "missing": 3
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0,
+      "existing_observation_ids": [
+        "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0001",
+        "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0002",
+        "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0003"
+      ]
+    },
+    {
+      "source_file": "Luftwaffe\\Bf-109G-6 U4.pdf",
+      "raw_rows": 30,
+      "grades": {
+        "estimated": 27,
+        "missing": 3
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\Fw190EngineControls.pdf",
+      "raw_rows": 52,
+      "grades": {
+        "observed": 23,
+        "estimated": 22,
+        "derived": 5,
+        "missing": 2
+      },
+      "catalog_series_ids": [
+        "bmw801d2-map-rpm",
+        "bmw801d2-bench-fuel-air"
+      ],
+      "catalog_rows": 17,
+      "extracted_records_linked_to_catalog": 17
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-1.pdf",
+      "raw_rows": 159,
+      "grades": {
+        "observed": 132,
+        "estimated": 24,
+        "missing": 3
+      },
+      "catalog_series_ids": [
+        "a5-a6-handbook-level-speed",
+        "a5-a6-handbook-timed-climb"
+      ],
+      "catalog_rows": 10,
+      "extracted_records_linked_to_catalog": 10
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-11.pdf",
+      "raw_rows": 12,
+      "grades": {
+        "observed": 11,
+        "derived": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-2.pdf",
+      "raw_rows": 20,
+      "grades": {
+        "observed": 19,
+        "missing": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-3.pdf",
+      "raw_rows": 17,
+      "grades": {
+        "observed": 12,
+        "estimated": 4,
+        "missing": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-4.pdf",
+      "raw_rows": 29,
+      "grades": {
+        "observed": 26,
+        "estimated": 2,
+        "missing": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-5.pdf",
+      "raw_rows": 13,
+      "grades": {
+        "estimated": 2,
+        "observed": 10,
+        "missing": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-6.pdf",
+      "raw_rows": 15,
+      "grades": {
+        "observed": 14,
+        "missing": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-7.pdf",
+      "raw_rows": 15,
+      "grades": {
+        "observed": 13,
+        "missing": 2
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "190 manual split\\Fw-190A5completeManual-part-8.pdf",
+      "raw_rows": 5,
+      "grades": {
+        "observed": 4,
+        "missing": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "Luftwaffe\\fw_190_d_9_teil_0_8a_c_e.pdf",
+      "raw_rows": 80,
+      "grades": {
+        "estimated": 77,
+        "missing": 3
+      },
+      "catalog_series_ids": [
+        "d9-handbook-ratings",
+        "d9-handbook-flight-loadings"
+      ],
+      "catalog_rows": 13,
+      "extracted_records_linked_to_catalog": 13
+    },
+    {
+      "source_file": "Luftwaffe\\Fw 190 D-9 Teil 8A Schusswaffen.pdf",
+      "raw_rows": 3,
+      "grades": {
+        "estimated": 3
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "Luftwaffe\\Fw 190 F3 Teil 8A-1.pdf",
+      "raw_rows": 4,
+      "grades": {
+        "estimated": 4
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "Luftwaffe\\HeinkelHe 177 Technische Anweisungen des Generalluftzeugmeisters 1942.pdf",
+      "raw_rows": 33,
+      "grades": {
+        "estimated": 33
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "Luftwaffe\\He-177 A-0 Teil 12 Bewaffnung Allgemein.pdf",
+      "raw_rows": 23,
+      "grades": {
+        "estimated": 22,
+        "missing": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "Luftwaffe\\He-177 A-0 Teil 12 B Abwurfwaffenanlage.pdf",
+      "raw_rows": 15,
+      "grades": {
+        "estimated": 13,
+        "missing": 2
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "Luftwaffe\\He 177 A-3 Schusswaffenanlage.pdf",
+      "raw_rows": 14,
+      "grades": {
+        "estimated": 14
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "Luftwaffe\\HeinkelHe 177 A-3 Kurzbeschreibung 1941.pdf",
+      "raw_rows": 60,
+      "grades": {
+        "estimated": 59,
+        "missing": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "Soviet WW2 Aircraft\\IL 2 Stormovik.pdf",
+      "raw_rows": 57,
+      "grades": {
+        "estimated": 52,
+        "missing": 5
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "Soviet WW2 Aircraft\\\\IL2MainManual.pdf",
+      "raw_rows": 84,
+      "grades": {
+        "estimated": 79,
+        "missing": 5
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "Soviet WW2 Aircraft\\\\La-7.pdf",
+      "raw_rows": 61,
+      "grades": {
+        "estimated": 55,
+        "missing": 6
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\MosquitoFlyingQualities.pdf",
+      "raw_rows": 65,
+      "grades": {
+        "observed": 48,
+        "derived": 10,
+        "estimated": 1,
+        "missing": 6
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\NASA_NTRS_Archive_19930081628.pdf",
+      "raw_rows": 14,
+      "grades": {
+        "estimated": 13,
+        "missing": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-47 Asia.pdf",
+      "raw_rows": 75,
+      "grades": {
+        "estimated": 75
+      },
+      "catalog_series_ids": [
+        "raf-thunderbolt-pec",
+        "raf-thunderbolt-stall"
+      ],
+      "catalog_rows": 8,
+      "extracted_records_linked_to_catalog": 8
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-47MeetPeter-2-19.pdf",
+      "raw_rows": 13,
+      "grades": {
+        "estimated": 13
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\Republic P-47 AAF Manual.pdf",
+      "raw_rows": 89,
+      "grades": {
+        "estimated": 88,
+        "missing": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-47B  C and P-47D  G.pdf",
+      "raw_rows": 163,
+      "grades": {
+        "estimated": 162,
+        "missing": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-47B,C,D,G.pdf",
+      "raw_rows": 557,
+      "grades": {
+        "estimated": 556,
+        "derived": 1
+      },
+      "catalog_series_ids": [
+        "p47b-manual-cruise-i",
+        "p47b-manual-cruise-ii",
+        "p47b-manual-cruise-iv",
+        "p47b-manual-cruise-v"
+      ],
+      "catalog_rows": 28,
+      "extracted_records_linked_to_catalog": 56
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-47D-25 through 35.pdf",
+      "raw_rows": 253,
+      "grades": {
+        "estimated": 181,
+        "missing": 3,
+        "observed": 69
+      },
+      "catalog_series_ids": [
+        "p47d-manual-climb-14200",
+        "p47d-manual-climb-16000",
+        "p47d-manual-climb-18000",
+        "p47d-manual-power-wet",
+        "p47d-manual-power-military",
+        "p47d-manual-power-normal",
+        "p47d-manual-power-cruise"
+      ],
+      "catalog_rows": 41,
+      "extracted_records_linked_to_catalog": 213
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\Republic_P-47N_Thunderbolt_Pilot_Training_Manual(Better_Copy).pdf",
+      "raw_rows": 88,
+      "grades": {
+        "estimated": 80,
+        "observed": 7,
+        "missing": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "P51B\\P-51B_manual_deel_1.pdf",
+      "raw_rows": 114,
+      "grades": {
+        "estimated": 88,
+        "observed": 19,
+        "derived": 1,
+        "missing": 6
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "P51B\\P-51B_manual_deel_2.pdf",
+      "raw_rows": 572,
+      "grades": {
+        "estimated": 561,
+        "observed": 6,
+        "missing": 5
+      },
+      "catalog_series_ids": [
+        "p51b1-manual-climb-combat",
+        "p51b1-manual-climb-ferry"
+      ],
+      "catalog_rows": 30,
+      "extracted_records_linked_to_catalog": 84
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-51D-manual-5april44.pdf",
+      "raw_rows": 946,
+      "grades": {
+        "estimated": 611,
+        "derived": 8,
+        "missing": 4,
+        "observed": 323
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-51DK.pdf",
+      "raw_rows": 295,
+      "grades": {
+        "estimated": 160,
+        "observed": 133,
+        "missing": 2
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "WW2 USAAF Fighters\\P-51H Pilots Flight Operating Instructions.pdf",
+      "raw_rows": 715,
+      "grades": {
+        "estimated": 105,
+        "missing": 4,
+        "observed": 606
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\NACAProps2vs3vs4blds.pdf",
+      "raw_rows": 23,
+      "grades": {
+        "observed": 11,
+        "derived": 2,
+        "estimated": 9,
+        "missing": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\NACAPropellerDifferentSections.pdf",
+      "raw_rows": 158,
+      "grades": {
+        "observed": 12,
+        "derived": 144,
+        "missing": 2
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "Luftwaffe\\ta152h_manual.pdf",
+      "raw_rows": 13,
+      "grades": {
+        "estimated": 13
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "Luftwaffe\\Ta-152 Translation.pdf",
+      "raw_rows": 72,
+      "grades": {
+        "estimated": 68,
+        "missing": 4
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\NACARacingSeaplanes.pdf",
+      "raw_rows": 29,
+      "grades": {
+        "estimated": 22,
+        "derived": 1,
+        "observed": 5,
+        "missing": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\NACAbladeTheory.pdf",
+      "raw_rows": 73,
+      "grades": {
+        "observed": 28,
+        "estimated": 44,
+        "missing": 1
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\NACApropBlades.pdf",
+      "raw_rows": 349,
+      "grades": {
+        "observed": 348,
+        "missing": 1
+      },
+      "catalog_series_ids": [
+        "tn698-3-e-15-bare",
+        "tn698-3-e-25-bare",
+        "tn698-3-e-35-bare",
+        "tn698-3-e-45-bare",
+        "tn698-2-e2-15-bare",
+        "tn698-2-e2-25-bare",
+        "tn698-2-e2-35-bare",
+        "tn698-2-e2-45-bare",
+        "tn698-4-e-15-bare",
+        "tn698-4-e-25-bare",
+        "tn698-4-e-35-bare",
+        "tn698-4-e-45-bare",
+        "tn698-3-e1-15-bare",
+        "tn698-3-e1-25-bare",
+        "tn698-3-e1-35-bare",
+        "tn698-3-e1-45-bare",
+        "tn698-3-e-35-spinner",
+        "tn698-2-e2-35-spinner"
+      ],
+      "catalog_rows": 306,
+      "extracted_records_linked_to_catalog": 306
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\NACAXP42.pdf",
+      "raw_rows": 80,
+      "grades": {
+        "observed": 51,
+        "estimated": 10,
+        "derived": 15,
+        "missing": 4
+      },
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "extracted_records_linked_to_catalog": 0
+    },
+    {
+      "source_file": "N.A.C.A. Reports\\1942-03-31_Investigation_of_Buffering_and_Diving_Tendencies_of_the_YP-38_Airplane.pdf",
+      "raw_rows": 104,
+      "grades": {
+        "observed": 15,
+        "estimated": 86,
+        "derived": 1,
+        "missing": 2
+      },
+      "catalog_series_ids": [
+        "yp38-local-critical-mach"
+      ],
+      "catalog_rows": 40,
+      "extracted_records_linked_to_catalog": 80
+    }
+  ],
+  "supplemental_source_ids": [
+    "KI84-T2-IR3",
+    "P40FL-TO01-25CH1"
+  ],
+  "known_overlaps": [
+    {
+      "source_id": "P40FL-TO01-25CH1",
+      "catalog_source_id": "ww2_fighter_flight_tests_2026-11-11:P40FL-TO01-25CH-1-1943",
+      "relationship": "same handbook; new tables only"
+    },
+    {
+      "source_id": "NACA-E5D19",
+      "catalog_source_id": "ww2_engine_ratings_and_propeller_2026-11-12:NACA-MR-E5D19",
+      "relationship": "same report; separate control schedule and fuel-air table"
+    },
+    {
+      "source_id": "KI84-T2-IR3",
+      "catalog_source_id": "ww2_twelve_fighter_gap_followup_2026-11-10:KI84-302-AAF-SPECS",
+      "relationship": "same report; published performance table added; existing ratings and handling cases kept"
+    }
+  ],
+  "unresolved_source_rows": [
+    {
+      "extraction_id": "NACA-TN698-066",
+      "pdf_page": 12,
+      "printed": 0.983,
+      "calculated_eta": 0.483,
+      "printed_cs": 0.905,
+      "calculated_cs": 0.905
+    },
+    {
+      "extraction_id": "NACA-TN698-084",
+      "pdf_page": 12,
+      "printed": 0.449,
+      "calculated_eta": 0.449,
+      "printed_cs": 1.121,
+      "calculated_cs": 1.129
+    },
+    {
+      "extraction_id": "NACA-TN698-190",
+      "pdf_page": 14,
+      "printed": 0.406,
+      "calculated_eta": 0.414,
+      "printed_cs": 0.493,
+      "calculated_cs": 0.493
+    }
+  ],
+  "coverage_assessment": {
+    "score_policy": "Existing six-dimension scores require new qualifying evidence for the reference aircraft. Related installations, family handbooks, and published specifications are available under their own source conditions.",
+    "credits": [
+      {
+        "roster_id": "p47d30_433441",
+        "dimension": "installed_engine_prop_cooling",
+        "grade": "primary",
+        "points": 2,
+        "evidence_series_ids": [
+          "p47d-manual-power-wet",
+          "p47d-manual-power-normal",
+          "p47d-manual-power-military"
+        ],
+        "rationale": "The operating instructions explicitly cover the D-30, R-2800 B series and Curtiss Electric installation. Credit applies to published manifold pressure, RPM and duration limits. Installed shaft horsepower and propeller efficiency still require specimen evidence."
+      }
+    ]
+  }
+}

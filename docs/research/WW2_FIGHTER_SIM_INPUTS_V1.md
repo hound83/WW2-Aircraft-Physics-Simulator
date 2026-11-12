@@ -1,4 +1,4 @@
-# Fighter sim inputs v1.8.0
+# Fighter sim inputs v1.9.0
 
 The data pack covers 13 variants and 24 evidence plots. It carries preferred readings and uncertainty for reviewed cases, pointers to the original observations, and the support level of each curve segment. The simulator can use it to look up a specific test case and draw the evidence behind it. [Versioned JSON](../../references/analysis/fighter-sim-inputs-v1.json) · [Underlying calculations and source checks](WW2_FIGHTER_CALCULATED_EVIDENCE_2026-11-11.md)
 
@@ -16,6 +16,8 @@ v1.7.0 adds `climb_reference.cases` with condition-matched report rows, timing, 
 
 v1.8.0 adds `batch_reference` with 15 source-linked series from the Grok review. The exact-specimen comparison follows the established rubric. [Review and coverage matrix](WW2_GROK_BATCH_INPUT_REVIEW_2026-11-12.md)
 
+v1.9.0 recovers 5,801 candidate records from Grok’s archive run and adds 552 reviewed records to the catalog. The `pdf_reference` section records applicability, source locators and unresolved readings. [Release and before/after matrix](WW2_PDF_INPUT_DATA_V1_9.md)
+
 ## Coverage by aircraft
 
 The three coverage columns use the existing six weighted dimensions. The primary score carries forward the documented checklist, including original documentary evidence such as operating limits. The second column credits identifiable secondary evidence. The third adds attributable calculations under their stated conditions. The earlier total also included original tests from other specimens and legacy credits with mixed or unspecified attribution. Those points remain in the reconciliation fields. The P-40F brace-pair sensitivity and its successor cover the same installation cases, so the clean total counts that contribution once.
@@ -32,13 +34,13 @@ The three coverage columns use the existing six weighted dimensions. The primary
 | Fw 190 A-4 WNr 783 | 63% | 65% | 68% | 73% | −5 | 0/12 | 1/12 |
 | P-40F 41-13635 | 49% | 49% | 53% | 62% | −9 | 0/12 | 0/12 |
 | Ki-84-I T-2 302 | 50% | 50% | 52% | 56% | −4 | 0/12 | 0/12 |
-| P-47D-30 43-3441 | 64% | 64% | 66% | 77% | −11 | 0/12 | 0/12 |
+| P-47D-30 43-3441 | 66% | 66% | 68% | 77% | −9 | 0/12 | 0/12 |
 | Bf 109 F-4 DB 601 E | 53% | 53% | 55% | 66% | −11 | 0/12 | 1/12 |
 | Bf 109 G-2 DB 605 A | 65% | 66% | 69% | 77% | −8 | 0/12 | 1/12 |
-| **Fleet average** | **63.62%** | **64.15%** | **67.15%** | **74.31%** | **−7.15** | **0/156** | **5/156** |
+| **Fleet average** | **63.77%** | **64.31%** | **67.31%** | **74.31%** | **−7.00** | **0/156** | **5/156** |
 | **German average** | **60.50%** | **61.75%** | **64.25%** | **72.75%** | **−8.50** | **0/48** | **3/48** |
 
-The delta uses unrounded scores. The fleet reconciliation assigns 6.92 percentage points to legacy context and 0.23 to overlapping calculation credit. The former 71.46% middle column used the earlier augmented definition. The 64.15% middle column applies the new primary-plus-secondary definition. [Previous scorecard](../../references/analysis/fighter-derived-evidence-2026-11-11.json)
+The delta uses unrounded scores and includes two documentary points for the D-30’s original operating instructions. The fleet reconciliation assigns 6.92 percentage points to legacy context and 0.23 to overlapping calculation credit. The former 71.46% middle column used the earlier augmented definition. The 64.31% middle column applies the primary-plus-secondary definition. [Previous scorecard](../../references/analysis/fighter-derived-evidence-2026-11-11.json)
 
 ## Selection and GOLD
 
