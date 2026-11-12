@@ -1,20 +1,20 @@
 # Implemented simulator accuracy by metric
 
-The published **v4.10.0-rc.2** level-speed results agree with the scored historical curves by about **98.0–99.9%**. Climb-rate agreement spans **87.9–97.8%**. The P-38G clean stall is within half a mile per hour of a separate airframe, while its part-power shaft requirement has **21.1% mean error**. The Fw 190 live calculation gives the same climb with its cooling flaps open and closed at the checked condition. Sustained and instantaneous turn performance still need matched powered tests. [Published build commit](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/commit/52369812a7ed40ec8fed1cde42354023aec407f0)
+The published **v4.10.0-rc.2** level-speed results agree with the scored historical curves by about **98.0–99.9%**. Climb-rate agreement spans **87.9–97.8%**. The P-38G clean stall is about half a mile per hour of a separate airframe, while its part-power shaft requirement has **21.1% mean error**. The Fw 190 live calculation gives the same climb with its cooling flaps open and closed at the checked condition. Sustained and instantaneous turn performance still need matched powered tests. [Published build commit](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/commit/52369812a7ed40ec8fed1cde42354023aec407f0)
 
 ## Aircraft scorecard
 
-Each percentage is **100% minus mean absolute percentage error** over the listed observations. Every observation is divided by its own historical value. The count is in parentheses. Each percentage describes the listed cases and conditions. A dash marks an unscored cell.
+Each percentage is **100% minus mean absolute percentage error** over the listed observations. Every observation is divided by its own historical value. The count is in parentheses. Each percentage describes the listed cases and conditions. Cells without a percentage describe the available source or calculation. The [validation improvement plan](V410_VALIDATION_IMPROVEMENT_PLAN.md) gives numeric model outputs for all seven aircraft, the additional historical timing and stall evidence, and the next solver priorities.
 
 | Aircraft | Level speed | Climb rate | Elapsed climb | Clean stall | Maneuver lift | Evidence |
 | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| Spitfire LF Mk IX | 99.7% (17) | 97.8% (10) | 98.9% (3) | - | - | Level speeds helped establish the fitted model. Open-radiator climb points are reserved within BS.543. |
-| P-47B | 99.6% (5) | 95.7% (5) | - | - | - | Reserved 41-5902 cases. Separate 41-5942 power-conditioned results below. |
-| P-51B-15 | 99.9% (8) | 94.5% (3) | - | - | 98.9% (5) | 67-inHg racked reference for level and climb. The maneuver-lift curve uses separate NACA figure sections. |
-| P-38G-1 | 99.8% (3) | 93.0% (7) | 96.6% (4) | 99.5% (1) | - | 42-12687 performance and the separately tested 42-12690 clean stall. |
-| F4U-4 | 98.0% (7) | 94.5% (7) | - | - | - | NATC 12,500 lb. Both speed and climb use the benchmark's own power. Clean stall is a lift anchor. |
-| Fw 190 A-4 | 98.0% (7) | 87.9% (8) | - | - | - | W.Nr. 783 long intake. Open-flap historical climb compared with the live Normal configuration. |
-| Bf 109 F-4 | 98.9% (1) | - | - | - | - | One sea-level emergency speed from a secondary source. Original trial conditions unresolved. |
+| Spitfire LF Mk IX | 99.7% (17) | 97.8% (10) | 98.9% (3) | Pilot's Notes transfer | Model lift limit | Level speeds helped establish the fitted model. Open-radiator climb points are reserved within BS.543. |
+| P-47B | 99.6% (5) | 95.7% (5) | 99.3% (2 bands) | 105 mph IAS | Model lift limit | Reserved 41-5902 cases. Separate 41-5942 power-conditioned results below. |
+| P-51B-15 | 99.9% (8) | 94.5% (3) | Fig. 6 read bands (2) | 86 mph IAS | 98.9% (5) | 67-inHg racked reference for level and climb. The maneuver-lift curve uses separate NACA figure sections. |
+| P-38G-1 | 99.8% (3) | 93.0% (7) | 96.6% (4) | 99.5% (1) | Model lift limit | 42-12687 performance and the separately tested 42-12690 clean stall. |
+| F4U-4 | 98.0% (7) | 94.5% (7) | Integrated trial rates | Anchor and NACA comparison | NACA turning-stall traces | NATC 12,500 lb. Both speed and climb use the benchmark's own power. Clean stall is a lift anchor. |
+| Fw 190 A-4 | 98.0% (7) | 87.9% (8) | Integrated factory curve | A-3 transfer | Model lift limit | W.Nr. 783 long intake. Open-flap historical climb compared with the live Normal configuration. |
+| Bf 109 F-4 | 98.9% (1) | Same-engine G-1 donor | DB 601 E donor | Simulation comparison | Model lift limit | One sea-level emergency speed from a secondary source. Original trial conditions unresolved. |
 
 - **Same-report checks** leave out the selected fit anchors. Some of the same observations or reports supply the power curves or informed earlier tuning. The Spitfire and Mustang level rows quantify fit consistency. The P-51B live configuration excludes removable racks and uses a model calibrated with a racked reference. The close match to that reference alone leaves the rack-free performance unverified. [BS.543 Tables II and V](https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html) · [43-24777 Sections III and V](https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html)
 - **Separate-airframe checks** use a test specimen excluded from the corresponding performance fit. For the P-47B, recorded torque-meter BHP is an input, so these comparisons test the drag, propeller and cooling solution with the test power supplied. The P-38G stall check uses the deployed lift threshold and approximate source test mass. [P-47B 41-5942, FS-M-19-1523-A](https://www.wwiiaircraftperformance.com/org/p-47/p-47.html) · [P-38G 42-12690, FS-M-19-1492-A, B.1](https://wwiiaircraftperformance.com/org/p-38/p-38_files/P-38G_42-12690_FS-M-19-1492-A.pdf)
@@ -78,6 +78,7 @@ Signed bias is model minus historical observation. The worst point is selected b
 | F4U-4 | climb rate | 7 | 5.51% | 139.9 | −127.8 | −13.7% at 25,500 ft | ft/min |
 | Spitfire LF Mk IX | elapsed climb | 3 | 1.07% | 2.1 | +2.1 | +2.3% at 10,000 ft | s |
 | P-38G-1 | elapsed climb | 4 | 3.37% | 16.1 | −16.1 | −4.5% at 30,000 ft | s |
+| P-47B | elapsed climb (41-5902) | 2 | 0.74% | 2.7 | −2.7 | −0.9% in 20,000–30,000 ft band | s |
 | P-38G-1 | clean one-g stall speed | 1 | 0.45% | 0.5 | +0.5 | +0.5% at 10,000 ft | mph EAS |
 | P-51B-15 | maneuver lift curve | 5 | 1.06% | 0.012 | +0.009 | +4.0% at Mach 0.46 | CLmax |
 | P-38G-1 | part-power shaft requirement | 13 | 21.13% | 104.9 | +98.2 | +57.5% at 5,000 ft | bhp per engine |
@@ -85,10 +86,11 @@ Signed bias is model minus historical observation. The worst point is selected b
 | Fw 190 A-4 | post-critical inlet pressure in level flight | 3 | 4.05% | 0.039 | −0.039 | −7.7% at 10,000 m | ata |
 | Fw 190 A-4 | post-critical inlet pressure in climb | 3 | 6.26% | 0.057 | −0.057 | −7.2% at 9,000 m | ata |
 
-From the report revision, run this command at the repository root.
+Reproduce the historical scores and the additional comparisons from the report revision.
 
 ```sh
 node validation/diagnostics/implemented_model_accuracy.cjs
+node validation/diagnostics/validation_backfill_v410.cjs
 ```
 
 The JSON includes source, conditions, test role, inputs, observed value, prediction and signed error for every scored point. The diagnostic uses the deployed benchmark model configuration and its existing source replays. The verified Pages HTML SHA-256 is `724ac05c59da0de2d7413eca917ade12645d0ef96e0012918e60aeb7497fc908`.
