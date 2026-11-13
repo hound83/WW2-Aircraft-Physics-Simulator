@@ -4,15 +4,12 @@
   "ready_for_first_pass": true,
   "mass_lb_typical": 12500,
   "level_speed_mph_examples": {
-    "sl_wep": "345-375",
-    "critical": "412-444"
+    "sl_wep": {"value": "345-375", "grade": "observed", "source": "Wright Field and pilot’s notes"},
+    "critical": {"value": "412-444", "grade": "observed", "source": "Wright Field 44-1 fuel tests and NACA"}
   },
-  "climb_notes": "Strong from Wright Field and NACA",
-  "power_curve": "Partial - high-blower needs refinement",
-  "prop_efficiency": "NACA-derived preferred over 0.80",
-  "stall_ias_mph_typical_clean": 115,
-  "stall_buffet_warning_mph": "3-5",
-  "stall_source": "Pilot’s notes + NACA RM L8A06",
-  "stall_grade": "observed",
+  "power_curve": {"status": "partial", "grade": "observed/partial", "source": "NACA and Wright Field; high-blower needs refinement"},
+  "prop_efficiency": {"value": "NACA-derived preferred", "grade": "observed", "source": "NACA propeller reports preferred over 0.80 default"},
+  "stall_ias_mph_typical_clean": {"value": 115, "grade": "observed", "source": "Pilot’s notes + NACA RM L8A06"},
+  "stall_buffet_warning_mph": {"value": "3-5", "grade": "observed", "source": "NACA RM L8A06"},
   "notes": "Satisfactory stall characteristics except approach/wave-off."
 }
