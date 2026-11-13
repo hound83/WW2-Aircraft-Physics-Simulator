@@ -81,7 +81,7 @@ function buildModel(input, label, observations) {
   }
 
   const nominal = fit(tasMph, massKg, shaftBhp, eta, anchors.oswald.nominal);
-  const scenarios = [{ ...nominal, massKg, eta }];
+  const scenarios = [{ ...nominal, massKg }];
   for (const mass of [input.mass.min * massFactor, input.mass.max * massFactor]) {
     if (split) {
       scenarios.push({ ...fit(tasMph, mass), massKg: mass });
@@ -91,7 +91,7 @@ function buildModel(input, label, observations) {
       for (const power of [input.power.min * bhpFactor, input.power.max * bhpFactor]) {
         for (const efficiency of [anchors.eta.min, anchors.eta.max]) {
           for (const e of [anchors.oswald.min, anchors.oswald.max]) {
-            scenarios.push({ ...fit(speed, mass, power, efficiency, e), massKg: mass, eta: efficiency });
+            scenarios.push({ ...fit(speed, mass, power, efficiency, e), massKg: mass });
           }
         }
       }
