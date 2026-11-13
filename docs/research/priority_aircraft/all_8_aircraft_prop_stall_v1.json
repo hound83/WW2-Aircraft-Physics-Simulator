@@ -1,0 +1,87 @@
+{
+  "version": "2026-11-13",
+  "description": "Propeller efficiency and stall-speed data for the 8 priority aircraft. Graded observed/derived/estimated. Prop efficiency default 0.80 where primary is missing. Stall mostly IAS from manuals or secondary; CAS/EAS rare.",
+  "propeller_efficiency": {
+    "default": 0.80,
+    "notes": "Use default for German types and Spitfire I/V. Prefer NACA series for P-47.",
+    "sources": {
+      "p47": {
+        "grade": "observed",
+        "source": "NACA L4L07 (P-47C Curtiss) and NACA WR L-594 / MR L5G09a (P-47D Hamilton Standard 6507A-2)",
+        "typical_range": [0.74, 0.85],
+        "notes": "Full rows already in references/analysis/fighter-propeller-efficiency-v1.json"
+      },
+      "p51d": {
+        "grade": "estimated",
+        "value": 0.80,
+        "notes": "No dedicated primary η table; derive from Wright Field power/speed if needed"
+      },
+      "spitfire": {
+        "grade": "partial",
+        "source": "RAE R&M 2357 (Rotol wooden)",
+        "typical": 0.80
+      },
+      "german": {
+        "grade": "estimated",
+        "value": 0.80,
+        "notes": "No primary measured installation curves located for Bf 109 E/G or Fw 190 A/D"
+      }
+    }
+  },
+  "stall_speeds": {
+    "p51d": {
+      "clean_power_off_ias_mph": "95-106",
+      "weight_lb": "8000-10000",
+      "grade": "observed",
+      "source": "Pilot’s Notes AN 01-60JE-1 and calculated sheet (wwiiaircraftperformance.org)",
+      "notes": "Scales with sqrt(W); ~94-101 mph at 9000 lb"
+    },
+    "p47d": {
+      "clean_power_off_ias_mph": "105-116",
+      "weight_lb": "12500-13230",
+      "grade": "observed",
+      "source": "Pilot’s notes + NACA L8A06",
+      "notes": "116 mph idling at 13230 lb; small CAS correction"
+    },
+    "bf109g2": {
+      "clean_ias_kmh": "158-174",
+      "grade": "secondary",
+      "source": "IL-2 / pilot manuals",
+      "notes": "IAS only; no primary CAS table"
+    },
+    "fw190a8": {
+      "clean_ias_kmh": "177-208",
+      "grade": "secondary",
+      "source": "IL-2 / manuals",
+      "notes": "IAS only"
+    },
+    "fw190d9": {
+      "clean_ias_kmh": "similar to A-8",
+      "grade": "secondary",
+      "notes": "Thin primary data"
+    },
+    "spitfire1": {
+      "clean_ias_mph": "64-70",
+      "grade": "partial",
+      "source": "A&AEE handling trials / secondary",
+      "notes": "Very low for early production weights"
+    },
+    "spitfire5": {
+      "grade": "observed",
+      "source": "NACA 'Stalling Characteristics of the Supermarine Spitfire VA Airplane' (Vensel & Phillips, 1942)",
+      "notes": "Good buffet warning; time histories available; higher than Mk I"
+    },
+    "bf109e": {
+      "clean_ias_mph": 105,
+      "clean_ias_kmh": 168,
+      "grade": "observed",
+      "source": "British RAE/AFDU captured Bf 109E trials",
+      "notes": "Slats open ~20 mph above stall; half-fuel load"
+    }
+  },
+  "gaps": [
+    "No clean CAS/EAS stall numbers at matched mass for any of the eight",
+    "German propeller efficiency remains estimated",
+    "Spitfire I full stall table still sparse"
+  ]
+}
