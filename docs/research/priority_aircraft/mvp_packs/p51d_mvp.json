@@ -1,0 +1,22 @@
+{
+  "aircraft": "P-51D",
+  "grade_overall": "strong",
+  "ready_for_first_pass": true,
+  "mass_lb_typical_clean": 8500,
+  "level_speed_mph_examples": {
+    "sl_wep": 375,
+    "critical_high_blower_wep": 442
+  },
+  "climb_notes": "Strong data from Wright Field and pilot notes",
+  "power_curve": "Strong - Merlin V-1650-7 curves available",
+  "prop_efficiency": 0.80,
+  "prop_notes": "Default; NACA series available for refinement",
+  "stall_ias_mph_clean_power_off": {
+    "7500_lb": 91,
+    "8500_lb": 97,
+    "9500_lb": 103
+  },
+  "stall_source": "AN 01-60JE-1 Pilot’s Notes",
+  "stall_grade": "observed",
+  "notes": "Best overall data of the eight. Mild stall with 3-4 mph buffet warning."
+}
