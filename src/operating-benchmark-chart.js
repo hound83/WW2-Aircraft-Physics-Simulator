@@ -15,6 +15,24 @@
  const format = (value, digits = 0) => value.toLocaleString('en-US', {
   minimumFractionDigits: digits, maximumFractionDigits: digits
  });
+
+ function drawProvisionalStallBand(add, aircraft, x, y, top, bottom) {
+  const band = aircraft.provisionalStallBand;
+  if (!band || !Number.isFinite(band.minEasMph) || !Number.isFinite(band.maxEasMph)) return;
+  const x1 = x(band.minEasMph), x2 = x(band.maxEasMph);
+  const rect = add('rect', {
+   x: Math.min(x1, x2), y: top, width: Math.abs(x2 - x1), height: bottom - top,
+   fill: aircraft.color, opacity: 0.08, 'data-bench-provisional-stall': aircraft.side
+  });
+  add('title', {}, aircraft.name + ' provisional stall band ' +
+   band.minEasMph.toFixed(1) + '–' + band.maxEasMph.toFixed(1) + ' mph EAS. ' +
+   (band.limitation || 'provisional'), rect);
+  // dotted vertical lines at the ends
+  for (const xv of [x1, x2]) {
+   add('line', { x1: xv, x2: xv, y1: top, y2: bottom, stroke: aircraft.color,
+    'stroke-width': 1.2, 'stroke-dasharray': '2 4', 'data-bench-provisional-stall': aircraft.side });
+  }
+ }
  function speed(value, unit, kind, digits = 0) {
   if (!Number.isFinite(value)) return '—';
   return format(value * units[unit].factor, digits) + ' ' + units[unit].label + ' ' + kind;
@@ -387,6 +405,7 @@
      'clip-path':'url(#'+clipId+')','data-bench-tested-range':aircraft.side});
    }
   }
+  for (const { aircraft } of curves) drawProvisionalStallBand(add, aircraft, x, y, top, bottom);
   for (const { aircraft, points } of curves) {
    const stroke=aircraft.color;
    const curveAttribute=turn?'data-bench-curve':'data-bench-'+kind+'-curve';
