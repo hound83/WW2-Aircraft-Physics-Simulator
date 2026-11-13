@@ -494,7 +494,7 @@ async function run(){
   await evaluate('document.querySelector("#bench-powered-turn summary").click()');
   assert.equal(await evaluate('document.getElementById("bench-powered-turn").open'),true);
   const poweredReplay=await evaluate('document.getElementById("bench-powered-turn-result").textContent');
-  assert.match(poweredReplay,/MT-215.*1,000 m.*360 km\/h IAS.*22\.0.*16\.36.*24\.0.*15\.00.*2\.97.*26\.2/s);
+  assert.match(poweredReplay,/MT-215.*1,000 m.*360 km\/h IAS.*22.*16\.36.*≈3.*24\.0.*15\.00.*2\.97.*26\.2/s);
   assert.match(poweredReplay,/70° bank implies 2\.92 G and 24\.4 s.*time implies 3\.21 G/s);
   assert.equal(await evaluate('document.querySelectorAll("#bench-powered-turn a").length'),2);
   await evaluate('document.querySelector("#bench-powered-turn summary").click()');

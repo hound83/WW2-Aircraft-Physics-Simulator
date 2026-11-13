@@ -87,7 +87,7 @@ try{
  const md=[
  '# Current validation',
  '',
- 'v4.14-rc.3 [Recorded Bf 109 G-2 powered-turn replay](V414_POWERED_TURN_REPLAY.md). The numerical replay is included in the Physics regression artifact.',
+ 'v4.14-rc.3 [Recorded Bf 109 G-2 powered-turn replay](V414_POWERED_TURN_REPLAY.md). [Numerical replay](../validation/current/powered-turn.json).',
  '',
  'v4.14-rc.2 [Recorded P-51D level-acceleration replay](V414_LEVEL_ACCELERATION_REPLAY.md). [Numerical replay](../validation/current/level-acceleration.json).',
  '',

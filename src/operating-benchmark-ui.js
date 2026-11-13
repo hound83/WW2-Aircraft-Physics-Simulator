@@ -385,20 +385,18 @@
   const {nominal}=replay;
   const signed=(n,digits)=>n>0?'+'+fmt(n,digits):n<0?'−'+fmt(-n,digits):fmt(n,digits);
   target.append(text('p',observation.aircraft+' · '+fmt(c.altitudeM,0)+' m · '+fmt(c.startKmh,0)+' km/h IAS at entry and exit · '+c.power+'.'));
-  const comparisons=[
-   ['Wartime test transcription',c.elapsedSeconds,observedRateDegSec,c.reportedG],
-   ['Calculated · clean cooling',clean.seconds,clean.turn.rateDegSec,clean.turn.g],
-   ['Calculated · open cooling',open.seconds,open.turn.rateDegSec,open.turn.g]
-  ];
-  appendTable(target,['Case','360° time (s)','Average rate (°/s)','Load (G)'],
-   comparisons.map(([label,seconds,rate,g])=>[label,fmt(seconds,1),fmt(rate,2),fmt(g,2)]));
+  const calculated=(label,row)=>[label,fmt(row.seconds,1),fmt(row.turn.rateDegSec,2),fmt(row.turn.g,2)];
+  appendTable(target,['Case','360° time (s)','Average rate (°/s)','Load (G)'],[
+   ['Wartime test transcription',fmt(c.elapsedSeconds,0),fmt(observedRateDegSec,2),'≈'+fmt(c.reportedG,0)],
+   calculated('Calculated · clean cooling',clean),calculated('Calculated · open cooling',open)
+  ]);
   const geom=clean.observedGeometry,power=clean.power.atSourceLoads;
   target.append(
    text('p','The clean-cooling model takes '+signed(clean.residuals.seconds,1)+' s. The reported '+
     fmt(c.bankDeg,0)+'° bank implies '+fmt(geom.bankLoad,2)+' G and '+fmt(geom.secondsAtBank,1)+
     ' s at the assumed TAS. The transcribed time implies '+fmt(geom.timeLoad,2)+' G.','bench-note'),
-   text('p','At 3 G the clean model has '+signed(power.reportedLoad.excessHp,0)+' hp in reserve. At the load implied by timing, the margin is '+
-    signed(power.timeLoad.excessHp,0)+' hp.','bench-note'),
+   text('p','The clean-cooling power margin is '+signed(power.reportedLoad.excessHp,0)+' hp at '+fmt(c.reportedG,0)+
+    ' G and '+signed(power.timeLoad.excessHp,0)+' hp at the load implied by timing.','bench-note'),
    text('p','The replay assumes '+fmt(nominal.massKg,0)+' kg, '+fmt(nominal.manifoldAta,2)+' ata and '+
     fmt(nominal.engineRpm,0)+' RPM, with IAS treated as CAS. Run mass, calibration, radiator angle and installed power remain open.','bench-note'),
    text('p','Tested mass, speed and cooling scenarios give '+scenarioRanges.seconds.map(x=>fmt(x,1)).join('–')+
