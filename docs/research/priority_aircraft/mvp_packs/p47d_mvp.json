@@ -1,0 +1,18 @@
+{
+  "aircraft": "P-47D",
+  "grade_overall": "strong",
+  "ready_for_first_pass": true,
+  "mass_lb_typical": 12500,
+  "level_speed_mph_examples": {
+    "sl_wep": "345-375",
+    "critical": "412-444"
+  },
+  "climb_notes": "Strong from Wright Field and NACA",
+  "power_curve": "Partial - high-blower needs refinement",
+  "prop_efficiency": "NACA-derived preferred over 0.80",
+  "stall_ias_mph_typical_clean": 115,
+  "stall_buffet_warning_mph": "3-5",
+  "stall_source": "Pilot’s notes + NACA RM L8A06",
+  "stall_grade": "observed",
+  "notes": "Satisfactory stall characteristics except approach/wave-off."
+}
