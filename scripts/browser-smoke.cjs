@@ -473,6 +473,40 @@ async function run(){
   assert.match(await evaluate('document.getElementById("bench-turn-limits").textContent'),/Lift.*Available power.*hp for level flight.*TN 1044|TN 1044.*hp for level flight/s);
   await setProbe(200);
   assert.match(await evaluate('document.getElementById("bench-advantage-readout").textContent'),/Effectively tied.*Outcome depends on tested inputs/s);
+  const dragProbe=()=>evaluate(`(()=>{
+   const host=document.getElementById('bench-turn-drag');
+   return {hidden:host.hidden,range:host.querySelector('[data-drag-range]')?.textContent,
+    parity:[...host.querySelectorAll('[data-drag-parity]')].map(e=>e.textContent),
+    donor:host.querySelector('[data-drag-donor]')?.textContent};
+  })()`);
+  await evaluate('document.getElementById("bench-turn-drag").open=true');
+  const crossover=await dragProbe();
+  assert.equal(crossover.hidden,false);
+  assert.match(crossover.range,/−1\.9 to \+1\.4°\/s/);
+  assert.match(crossover.parity[0],/\+6\.5%/);
+  assert.match(crossover.parity[1],/−4\.1%/);
+  assert.match(crossover.donor,/at least 16\.35 °\/s.*85 hp remains/);
+  await setProbe(210);
+  assert.match((await dragProbe()).donor,/16\.31 °\/s.*inside the source lift range/);
+  await select('bench-altitude','9000');
+  assert.equal((await dragProbe()).donor,undefined);
+  assert.equal((await dragProbe()).hidden,false);
+  await select('bench-altitude','10000');
+  await select('bench-fuel-b','0.75');
+  await setProbe(200);
+  assert.equal((await dragProbe()).donor,undefined);
+  await select('bench-fuel-b','0.5');
+  await select('bench-aircraft-b','p47b');
+  assert.equal((await dragProbe()).hidden,true);
+  await select('bench-aircraft-b','spitfire_lfix_bs543');
+  await setProbe(200);
+  assert.match((await dragProbe()).donor,/at least 16\.35/);
+  await select('bench-turn-unit','g');
+  assert.match((await dragProbe()).range,/ G$/);
+  assert.match((await dragProbe()).donor,/at least 3\.188 G/);
+  await select('bench-turn-unit','rate');
+  await evaluate('document.getElementById("bench-turn-drag").open=false');
+  checks.push('v4.13 shared speed probe shows drag-only range, parity, source limit and exact replay conditions');
   const turnCursors=await evaluate('[...document.querySelectorAll("#bench-turn-plot .bench-crosshair,#bench-climb-plot .bench-crosshair,[data-advantage-crosshair]")].map(e=>e.getAttribute("x1"))');
   assert.equal(turnCursors.length,3);
   assert.equal(new Set(turnCursors).size,1);

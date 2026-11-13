@@ -1,10 +1,12 @@
 # Simulator model roadmap
 
-The shared steady-flight solver calculates stall, speed, climb, acceleration, and instantaneous and sustained turn. The v4.10 propeller passes and v4.11 shared climb replay now provide matched power and cooling checks. The v4.12 milestone adds continuous stall and usable lift with condition-linked graph evidence. [Solver](../src/physics.js) · [Shared climb results](V411_SHARED_FLIGHT_CLIMB.md) · [Normal / Combat comparison](V49_TIMED_MATCHUPS.md)
+The shared steady-flight solver calculates stall, speed, climb, acceleration, and instantaneous and sustained turn. The v4.10 propeller passes and v4.11 shared climb replay now provide matched power and cooling checks. The v4.12 milestone adds continuous stall and usable lift with condition-linked graph evidence. The v4.13 benchmark shows drag sensitivity and checks an earlier Spitfire glide transfer. [Solver](../src/physics.js) · [Shared climb results](V411_SHARED_FLIGHT_CLIMB.md) · [Normal / Combat comparison](V49_TIMED_MATCHUPS.md)
 
 ## Next implementation milestone
 
-**Constrain drag above 1 G.** Start at the Mustang–Spitfire crossover near 200 mph EAS at 10,000 ft. Look for a matched powered turn, a high-lift drag polar, or synchronized speed and G with an energy-loss measurement. Use known mass, configuration, power, altitude and airspeed basis. Keep the existing level-speed anchor fixed and reserve a run or condition for the drag check. Report how the supported drag range changes the sustained-turn comparison and retain an unresolved ranking where the evidence allows both outcomes. [Turn research](V44_TURN_PERFORMANCE.md) · [Drag reference](research/WW2_GREG_DRAG_MODELS_2026-11-13.md)
+**Qualify Spitfire HF Mk IX BS.551.** Start with the A&AEE paired HF/LF report and replay the altitude crossover against the live BS.543. Use the Merlin 70 and its propeller installation, the recorded loading and cooling conditions, and reserved speed and climb points. Assess any shared clean-stall reference at matched configuration and show transferred lift as provisional. Keep a recorded level-acceleration trace and matched powered-turn evidence on the research queue. [Accepted aircraft roster](DECISIONS.md#aircraft-roster-expansion) · [Data handoff](SIMULATOR_DATA_HANDOFF.md#suggested-aircraft)
+
+**Delivered · Drag above 1 G.** The matchup reports the drag-only range and the drag change needed to reach parity. The Mk I glide fit provides a provisional scenario with a measured lift boundary. The matched historical turn ranking remains open. [Results](V413_TURN_DRAG.md)
 
 **Delivered · Continuous stall and usable maneuver lift.** The seven-aircraft replay records the Mustang transition, P-38G calibrated check and distinct Corsair glide and powered cases. [Results](V412_CONTINUOUS_STALL.md)
 
@@ -46,7 +48,7 @@ Make the comparison say which aircraft leads across the supported input range an
 
 ## 4. Prove the approach with one new aircraft
 
-The Bf 109 G-2 is the first intake candidate. Use the Finnish MT-215 installation, its recorded power settings, and the reviewed DB 605 A anchors. Start with speed and climb at supported conditions, and document the effect of any remaining uncertainty in run weight. Use the same case and validation flow used for the seven current aircraft. Prepare the P-51D-15-NA 44-15342 data in parallel. F6F-3 BuAer 04776 is the first alternate when its stall and installation evidence support the intended comparison. [G-2 handoff](SIMULATOR_DATA_HANDOFF.md#suggested-aircraft) · [Aircraft intake](../references/aircraft-intake.json) · [Minimum input data](research/MINIMUM_VIABLE_SIM_DATA.md)
+The Spitfire HF Mk IX BS.551 is the first profile to qualify, using the paired A&AEE comparison with BS.543. Prepare Finnish Bf 109 G-2 MT-215 with its DB 605 A installation and P-51D-15-NA 44-15342 in parallel. F6F-3 BuAer 04776 remains an alternate. [Accepted aircraft roster](DECISIONS.md#aircraft-roster-expansion) · [Intake data](SIMULATOR_DATA_HANDOFF.md#suggested-aircraft)
 
 ## 5. Add handling features when the evidence supports them
 

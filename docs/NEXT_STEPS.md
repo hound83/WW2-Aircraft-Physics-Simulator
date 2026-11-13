@@ -6,7 +6,7 @@ The [simulator model roadmap](SIMULATOR_ROADMAP.md) sets the order for propulsio
 
 The first pass delivered the Corsair and Thunderbolt clean-flight references. The second pass reviewed the five other fighters and improved the Lightning's dry Military level-flight replay. Remaining propulsion work can start from the individual conditions in the two scorecards. The Corsair high-blower shaft-power gap, Fw 190 intake and cooling split, DB 601 E combat curve and P-38G part-power drag/power balance are documented. [First-pass scorecard](V410_PROPELLER_REFERENCE.md) · [Second-pass scorecard](V410_REMAINING_PROPELLERS.md) · [Fleet data](research/WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md)
 
-The shared climb candidate and the continuous stall and usable-lift milestone are delivered. The next implementation constrains drag above 1 G with matched data and checks the Mustang–Spitfire crossover. [Shared climb results](V411_SHARED_FLIGHT_CLIMB.md) · [Stall and lift results](V412_CONTINUOUS_STALL.md) · [Next simulator milestone](LATEST_INSIGHTS.md#next-simulator-milestone)
+The shared climb, continuous lift and turn-drag milestones are delivered. The turn-drag replay quantifies the crossover sensitivity and the limits of the earlier Spitfire data. The next implementation milestone qualifies the Spitfire HF Mk IX BS.551 against the LF IX's paired trials. [Shared climb results](V411_SHARED_FLIGHT_CLIMB.md) · [Stall and lift results](V412_CONTINUOUS_STALL.md) · [Turn-drag results](V413_TURN_DRAG.md) · [Next simulator milestone](LATEST_INSIGHTS.md#next-simulator-milestone)
 
 ## Next milestone for propeller efficiency
 

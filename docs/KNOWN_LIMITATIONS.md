@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.13-rc.1 turn drag
+
+The Mk I fit combines airframe and engine-off windmilling effects. One of the three reserved glide points has a larger residual than the control. No matched powered-turn records were recovered for the live pair. The 200 mph EAS comparison allows either order when drag varies, and the donor replay stops at its measured lift limit while the Spitfire still has surplus power. Historical sustained-turn accuracy and 5:1 remain unresolved. [Results and source gaps](V413_TURN_DRAG.md)
+
 ## v4.12-rc.1 continuous stall
 
 The Mustang taper and its transfer of pooled TN 1044 readings are engineering assumptions. The exact 43-24777 near-stall IAS correction remains open. The Corsair Navy stall-run serial, altitude and powered setting are unspecified. The separate Ames glide comparison has a −3.69 mph EAS residual at approximate loading. The lift ceiling and the power-supported turn remain steady calculations. [Stall and lift results](V412_CONTINUOUS_STALL.md)

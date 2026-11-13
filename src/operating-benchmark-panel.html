@@ -89,7 +89,7 @@
  @container (max-width:40rem){#operating-benchmark .bench-advantage-readout{min-block-size:7rem}}
  @container (max-width:25rem){#operating-benchmark .bench-advantage-readout{min-block-size:9.5rem}}
  @container (max-width:17rem){#operating-benchmark .bench-advantage-readout{min-block-size:11.5rem}}
- #operating-benchmark #bench-advantage-key[hidden]{display:none}
+ #operating-benchmark #bench-advantage-key[hidden],#operating-benchmark #bench-turn-drag[hidden]{display:none}
  #operating-benchmark .bench-advantage-band{fill:#beb2f2;opacity:.25}
  #operating-benchmark .bench-advantage-zero,#operating-benchmark .bench-acceleration-zero{stroke:#c1cad5;stroke-width:1.5}
  #operating-benchmark .bench-evidence-legend{display:flex;gap:.5rem 1rem;flex-wrap:wrap}
@@ -161,6 +161,7 @@
    <p class="bench-note">The lowest of lift, power and the model’s G cap sets the turn. Extra drag in a turn uses power above what the aircraft needs for level flight.</p>
    <div id="bench-turn-limits" class="bench-turn-limits"></div>
   </details>
+  <details id="bench-turn-drag" hidden><summary>How does turn drag affect this matchup?</summary><div id="bench-turn-drag-result"></div></details>
   <details><summary>Flight-test evidence and sensitivity assumptions</summary><div id="bench-turn-evidence"></div></details>
  </section>
  <div class="bench-plot-row"><label class="bench-plot-height">Altitude<output data-bench-altitude-value>10,000 ft</output><input id="bench-altitude-climb" data-bench-altitude type="range" min="0" max="40000" step="1000" value="10000" aria-valuetext="10,000 ft"></label><div id="bench-climb-plot" class="bench-chart"></div></div>

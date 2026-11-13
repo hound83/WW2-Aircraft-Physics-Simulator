@@ -1,0 +1,131 @@
+{
+  "schema": "ww2-turn-drag-evidence/v1",
+  "date": "2026-11-13",
+  "matchedPoweredTurnRecords": 0,
+  "spitfireGlide": {
+    "title": "A&AEE Spitfire Mk I K.9793 engine-off glide",
+    "url": "https://wwiiaircraftperformance.com/org/spitcom/mk1/spitmk1_K9793.html",
+    "mirror": "https://spitfireperformance.com/k9793.html",
+    "locator": "Gliding tests (Engine-off), after take-off and climb procedure",
+    "identity": "K.9793 in the report title and trials summary. The glide heading in the transcription reads L.9793.",
+    "evidence": "Primary flight-test table transcribed by WWII Aircraft Performance. The two linked plot images and the original report scan were not used for numerical readings.",
+    "weightLb": 5750,
+    "weightBasis": "Estimated mean glide weight. The 5,935 lb trials summary weight is a different condition.",
+    "wingAreaFt2": 242,
+    "geometry": {
+      "title": "RAE R&M 2535 Part I, Table 1",
+      "url": "https://reports.aerade.cranfield.ac.uk/handle/1826.2/3821",
+      "basis": "Gross full-scale wing area for the Spitfire I model"
+    },
+    "speedBasis": "Reported standard sea-level equivalent dynamic airspeed in mph. Use the report's standard sea-level normalization for descent rate as well.",
+    "altitudeFt": null,
+    "configuration": "Engine off, gear and flaps up, D.H. three-blade two-pitch propeller in coarse pitch. The table reports windmilling RPM below the instrument scale.",
+    "sourceLimits": "Early Merlin II airframe and windmilling propeller. Actual glide altitude, Reynolds number, trim and individual-run weight are unavailable. The derived slope includes installed effects such as propeller drag.",
+    "columns": [
+      "standard sea-level equivalent airspeed mph",
+      "standard sea-level equivalent sink ft/min",
+      "role"
+    ],
+    "observations": [
+      [
+        100,
+        870,
+        "fit"
+      ],
+      [
+        110,
+        895,
+        "check"
+      ],
+      [
+        120,
+        935,
+        "fit"
+      ],
+      [
+        130,
+        1010,
+        "check"
+      ],
+      [
+        140,
+        1100,
+        "fit"
+      ],
+      [
+        156,
+        1210,
+        "check"
+      ],
+      [
+        160,
+        1345,
+        "fit"
+      ]
+    ],
+    "split": "Alternating speed order. Four fit points span the source domain. Three interleaved points are excluded from both fits and from the fit-only sensitivity calculation.",
+    "excludedConfiguration": {
+      "configuration": "Engine off, gear and flaps down, propeller fine pitch",
+      "observations": [
+        [
+          90,
+          1200
+        ],
+        [
+          100,
+          1315
+        ],
+        [
+          110,
+          1510
+        ],
+        [
+          120,
+          1800
+        ],
+        [
+          130,
+          2210
+        ]
+      ],
+      "role": "Separate landing configuration. Excluded from clean-polar arithmetic."
+    }
+  },
+  "related": [
+    {
+      "title": "Wright Field Eng-47-1749-A, 43-24777 Figure 5",
+      "url": "https://www.wwiiaircraftperformance.com/org/p-51/p51b-24777.html",
+      "locator": "Figure 5, Power Required in Level Flight",
+      "role": "Existing same-aircraft 1 G check",
+      "finding": "Six chart-read TAS and shaft-power points at 22,400 ft with 2,100–3,000 RPM. Use the existing digitization with reported RPM and low/high gear. The source assigned BHP from an engine chart."
+    },
+    {
+      "title": "North American NA-5548, as plotted by David Lednicer",
+      "url": "https://forum.dcs.world/applications/core/interface/file/attachment.php?id=67373",
+      "locator": "A VSAERO Analysis of Several World War II Fighters, section IV, Figure 10",
+      "role": "XP-51B high-lift drag lead",
+      "finding": "Quarter-scale trimmed GALCIT model equipped with an electric propeller. Most tests at 105 mph, 30 lb/ft² dynamic pressure and Re 1.68 million. Radiator simulation, transition and mounting tares are uncertain. The measured lift-drag trace was identified in the indexed paper but its ordinates were not verified."
+    },
+    {
+      "title": "NACA ACR 4K02, P-51B drag correlation",
+      "url": "https://ntrs.nasa.gov/citations/19930092458",
+      "locator": "Figures 13–15 and 21–23; Flight-Test Data",
+      "role": "Nonmatching drag evidence",
+      "finding": "Propeller-off P-51B-1-NA dives and one-third-scale tunnel tests. The dive comparison reports surface dust effects and variation with lift. Powered turn and installed cooling/propeller effects are outside this test."
+    },
+    {
+      "title": "RAE R&M 2535, Spitfire I tunnel measurements",
+      "url": "https://reports.aerade.cranfield.ac.uk/handle/1826.2/3821",
+      "locator": "Part I, Figure 4 and Table 1",
+      "role": "Nonmatching drag evidence and geometry",
+      "finding": "Figure 4 covers low-speed lift and drag of a Spitfire I tunnel model. Table 1 documents full-scale geometry. The figure was located, but its curve ordinates were not verified."
+    },
+    {
+      "title": "AFDU Mustang III tactical trials",
+      "url": "https://wwiiaircraftperformance.com/org/p-51/mustang-tactical.html",
+      "locator": "Paragraphs 1–2, 14, 20",
+      "role": "Separate qualitative turning comparison",
+      "finding": "The 10,100 lb Mustang III FZ.107 used a V-1650-3. The report describes two Spitfire IX comparisons, clipped-wing BS.552 and normal-wing JL.359, and reports the Spitfire IX turning inside the Mustang. Turn-run EAS, load factor, power and energy history are absent."
+    }
+  ]
+}

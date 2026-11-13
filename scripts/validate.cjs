@@ -58,9 +58,15 @@ try{
  write('validation/current/shared-flight-climb.json',require('../validation/diagnostics/shared_flight_climb.cjs').run());
  const catalog=require('./research-layer.cjs').buildCatalog();
  write('validation/current/continuous-stall.json',require('../validation/diagnostics/continuous_stall.cjs').run(catalog));
+ const turnDrag=require('../validation/diagnostics/turn_drag.cjs').run();
+ write('validation/current/turn-drag.json',turnDrag);
+ if(!turnDrag.regression.exactScorecardParity||!turnDrag.regression.exactFixedProbeParity)throw Error('Turn-drag milestone changed the nominal scorecard or crossover probes');
+ console.log('Spitfire Mk I glide checks: sink-rate MAE '+turnDrag.glide.checks.controlMaeFpm.toFixed(1)+' -> '+turnDrag.glide.checks.candidateMaeFpm.toFixed(1)+' ft/min across '+turnDrag.glide.checkCount+' reserved rows.');
  require('./write-v42-report.cjs');
  const md=[
  '# Current validation',
+ '',
+ 'v4.13-rc.1 [Drag above 1 G and the Mustang–Spitfire comparison](V413_TURN_DRAG.md). [Numerical replay](../validation/current/turn-drag.json).',
  '',
  'v4.12-rc.1 [Continuous stall and usable maneuver lift](V412_CONTINUOUS_STALL.md). [Seven-aircraft replay](../validation/current/continuous-stall.json).',
  '',

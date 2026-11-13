@@ -75,6 +75,38 @@
   }};
  }
 
+ function dragSensitivity(flight,nominal,rivalG,[lowDrag,highDrag]){
+  const range={
+   lower:state(flight,{dragFraction:highDrag})?.turn,
+   upper:state(flight,{dragFraction:lowDrag})?.turn
+  };
+  const cap=Math.min(nominal.nLift,nominal.nStructure);
+  const targetDragHp=flight.drag.inducedHp*(rivalG*rivalG-1);
+  const parity=rivalG>cap?{limiting:nominal.nLift<=nominal.nStructure?'lift':'structure'}:
+   targetDragHp>0&&nominal.marginHp>0?{fraction:nominal.marginHp/targetDragHp}:null;
+  return {nominal,range,parity};
+ }
+
+ // Apply a slope transfer only to the part of the lift interval covered by the source.
+ function boundedDragTurn(flight,{minCl,maxCl,dragFraction}){
+  const nominal=state(flight);
+  if(!nominal?.turn||!(minCl>0&&maxCl>minCl&&dragFraction>0&&Number.isFinite(dragFraction)))return null;
+  const {CL,inducedHp}=flight.drag;
+  const startG=Math.max(1,minCl/CL),sourceG=maxCl/CL;
+  if(sourceG<=startG||nominal.turn.g<=startG)return null;
+
+  const physicalCap=Math.min(nominal.nLift,nominal.nStructure);
+  const endG=Math.min(physicalCap,sourceG);
+  const dragAt=g=>inducedHp*(startG**2-1+dragFraction*(g**2-startG**2));
+  const g=nominal.marginHp>=dragAt(endG)?endG:
+   Math.sqrt(startG**2+(nominal.marginHp/inducedHp-(startG**2-1))/dragFraction);
+  const turnDragHp=dragAt(g);
+  const remainingHp=Math.max(0,nominal.marginHp-turnDragHp);
+  const lowerBound=g===sourceG&&sourceG<physicalCap&&remainingHp>1e-9;
+  return {turn:turnFromLoad(g,flight.tasMph),liftCoefficient:CL*g,lowerBound,
+   levelHp:nominal.levelHp,turnDragHp,remainingHp};
+ }
+
  function difference(a,b,field='rateDegSec'){
   const x=a.nominal?.turn,y=b.nominal?.turn;
   if(!x||!y)return null;
@@ -86,5 +118,5 @@
    range,side:range?(range[0]>.001?'a':range[1]<-.001?'b':'uncertain'):null};
  }
 
- return Object.freeze({liftRead,maneuverLift,turnFromLoad,state,assessment,difference});
+ return Object.freeze({liftRead,maneuverLift,turnFromLoad,state,assessment,dragSensitivity,boundedDragTurn,difference});
 });
