@@ -1,0 +1,3836 @@
+{
+  "schema": "fighter-greg-drag-models",
+  "version": "1.0.0",
+  "inputPackVersion": "1.11.0",
+  "model": {
+    "dynamicPressure": "q = 0.5 * rho * TAS^2",
+    "lift": "CL = n * m * g / (q * S)",
+    "drag": "D = q * S * (CD0 + k * CL^2)",
+    "propulsivePowerRequired": "P = D * TAS",
+    "powerFit": "D = eta * P_shaft / TAS; k = 1 / (pi * e * (span^2 / S)); CD0 = D / (q * S) - k * CL^2",
+    "worksheetFit": "CD0 = D_parasite / (q * S); k = D_induced / (q * S * CL^2)",
+    "assumptions": {
+      "atmosphere": "Simulator ISA at source pressure altitude",
+      "residualThrustN": 0,
+      "propellerEfficiency": {
+        "nominal": 0.8,
+        "min": 0.7,
+        "max": 0.88
+      },
+      "oswaldEfficiency": {
+        "nominal": 0.8,
+        "min": 0.7,
+        "max": 0.9
+      }
+    },
+    "scope": "Reference for each stated configuration. The single fit point anchors the polar. Other speeds are diagnostic at the listed mass, altitude and 1 g. Review stall, compressibility, trim, cooling, stores and high-load effects before any use beyond the anchor.",
+    "ranges": "Engineering sensitivity extrema over listed input endpoints, with the nominal case included. Endpoints are not probability intervals. A fixed field represents an input held constant in this sweep."
+  },
+  "aircraft": [
+    {
+      "id": "f4u4_80765",
+      "aircraft": "F4U-4 80765",
+      "status": "calculated reference",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "Navy military clean level trial; exact flap/shutter position at this run unresolved.",
+      "evidence": [
+        {
+          "id": "ww2_multiaxis_propulsion_trials_2026-11-10:f4u4-normal-military-speed:0005",
+          "sourceId": "ww2_multiaxis_propulsion_trials_2026-11-10:F4U4-80765",
+          "locator": "US Navy F4U-4 1948 report speed versus height table pp.8–11"
+        },
+        {
+          "id": "ww2_fleet_stall_2026-11-12:f4u4-clean-powered",
+          "sourceId": "ww2_fleet_stall_2026-11-12:F4U4-FT-C-140",
+          "locator": "Printed p. 5, Findings A.3(a), and p. 4 loading condition"
+        }
+      ],
+      "externalReferences": [
+        "https://www.wwiiaircraftperformance.com/org/f4u/f4u_files/80765-level.jpg",
+        "https://ntrs.nasa.gov/api/citations/20050081862/downloads/20050081862.pdf",
+        "https://www2.gvsu.edu/ramseyea/F4-U.html"
+      ],
+      "geometry": {
+        "areaM2": 29.17155456,
+        "spanM": 12.4968,
+        "basis": "F4U-4 type geometry",
+        "aspectRatio": 5.353503
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 348.686173,
+        "altitudeFt": 0,
+        "sourceSpeed": {
+          "value": 348.686173,
+          "unit": "mph",
+          "basis": "TAS",
+          "altitude": 0,
+          "altitudeUnit": "ft"
+        },
+        "densityKgM3": 1.225,
+        "mach": 0.45806,
+        "cl": 0.1280762,
+        "massKg": 5669.904625,
+        "sourceMass": {
+          "nominal": 12500,
+          "unit": "lb",
+          "min": 12250,
+          "max": 12500,
+          "basis": "Report normal fighter loading"
+        },
+        "shaftBhp": 2100,
+        "sourcePower": {
+          "nominal": 2100,
+          "unit": "bhp",
+          "min": 2050,
+          "max": 2150,
+          "basis": "BuNo 80765 level-flight Plate 3 chart shaft power, ±50 bhp reading allowance"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 8036.968,
+        "parasiteN": 7507.686,
+        "inducedN": 529.282,
+        "inducedFraction": 0.065856
+      },
+      "polar": {
+        "cd0": 0.017293313,
+        "k": 0.074322802,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.014419413,
+          0.019807787
+        ],
+        "kRange": [
+          0.066064713,
+          0.084940345
+        ]
+      },
+      "curve": {
+        "altitudeFt": 0,
+        "massKg": 5669.904625,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 191.777,
+            "mach": 0.2519,
+            "cl": 0.42339,
+            "parasiteN": 2271.08,
+            "inducedN": 1749.69,
+            "totalN": 4020.77,
+            "propulsiveHp": 462.26,
+            "totalNRange": [
+              3433.65,
+              4554.64
+            ],
+            "propulsiveHpRange": [
+              394.76,
+              523.64
+            ]
+          },
+          {
+            "tasMph": 226.646,
+            "mach": 0.2977,
+            "cl": 0.30314,
+            "parasiteN": 3172,
+            "inducedN": 1252.74,
+            "totalN": 4424.74,
+            "propulsiveHp": 601.2,
+            "totalNRange": [
+              3778.97,
+              5000.25
+            ],
+            "propulsiveHpRange": [
+              513.46,
+              679.39
+            ]
+          },
+          {
+            "tasMph": 261.515,
+            "mach": 0.3435,
+            "cl": 0.22769,
+            "parasiteN": 4223.07,
+            "inducedN": 940.95,
+            "totalN": 5164.02,
+            "propulsiveHp": 809.59,
+            "totalNRange": [
+              4410.63,
+              5826.39
+            ],
+            "propulsiveHpRange": [
+              691.48,
+              913.44
+            ]
+          },
+          {
+            "tasMph": 296.383,
+            "mach": 0.3894,
+            "cl": 0.17727,
+            "parasiteN": 5424.3,
+            "inducedN": 732.57,
+            "totalN": 6156.87,
+            "propulsiveHp": 1093.95,
+            "totalNRange": [
+              5258.83,
+              6939.65
+            ],
+            "propulsiveHpRange": [
+              934.38,
+              1233.03
+            ]
+          },
+          {
+            "tasMph": 331.252,
+            "mach": 0.4352,
+            "cl": 0.14191,
+            "parasiteN": 6775.69,
+            "inducedN": 586.46,
+            "totalN": 7362.15,
+            "propulsiveHp": 1461.99,
+            "totalNRange": [
+              6288.45,
+              8292.99
+            ],
+            "propulsiveHpRange": [
+              1248.78,
+              1646.84
+            ]
+          },
+          {
+            "tasMph": 348.686,
+            "mach": 0.4581,
+            "cl": 0.12808,
+            "parasiteN": 7507.69,
+            "inducedN": 529.28,
+            "totalN": 8036.97,
+            "propulsiveHp": 1680,
+            "totalNRange": [
+              6864.91,
+              9051.16
+            ],
+            "propulsiveHpRange": [
+              1435,
+              1892
+            ]
+          }
+        ]
+      },
+      "checks": [
+        {
+          "id": "ww2_multiaxis_propulsion_trials_2026-11-10:f4u4-normal-military-speed:0001",
+          "tasMph": 322.218245,
+          "shaftBhp": 1700,
+          "condition": "Same specimen and altitude, Plate 3 Normal branch, 2,600 rpm; cooling and efficiency equivalence approximate.",
+          "source": {
+            "id": "ww2_multiaxis_propulsion_trials_2026-11-10:f4u4-normal-military-speed:0001",
+            "sourceId": "ww2_multiaxis_propulsion_trials_2026-11-10:F4U4-80765",
+            "locator": "US Navy F4U-4 1948 report speed versus height table pp.8–11"
+          },
+          "predictedDragN": 7030.97,
+          "powerInferredDragN": 7040.55,
+          "differenceN": -9.58,
+          "differencePct": -0.14,
+          "role": "reserved engineering comparison, shared power/efficiency assumptions"
+        }
+      ],
+      "worksheet": null
+    },
+    {
+      "id": "p51b_4324777",
+      "aircraft": "P-51B-15 43-24777",
+      "status": "calculated reference",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "Eng-47-1749-A Fig. 5; V-1650-7 high blower, 67 inHg, 3,000 rpm, 44-1 fuel, wing racks, automatic shutters, auto-rich.",
+      "evidence": [
+        {
+          "id": "ww2_fleet_propeller_2026-11-12:p51b-24777-fig5-high-blower:0002",
+          "sourceId": "ww2_fleet_propeller_2026-11-12:P51B-ENG-47-1749-A-FIG-5",
+          "locator": "Eng-47-1749-A Fig. 5, three plotted high-blower observations at 3000 rpm"
+        },
+        {
+          "id": "ww2_grok_batch_source_review_2026-11-12:p51b15-4324777-low-blower-lapse:0001",
+          "sourceId": "ww2_grok_batch_source_review_2026-11-12:P51B15-1749A",
+          "locator": "§V.B.2 present war emergency, low blower beyond critical altitude"
+        }
+      ],
+      "externalReferences": [],
+      "geometry": {
+        "areaM2": 21.646408320000003,
+        "spanM": 11.277600000000001,
+        "basis": "aircraft/cases.json#aircraft.p51b",
+        "aspectRatio": 5.875536
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 426,
+        "altitudeFt": 22400,
+        "sourceSpeed": {
+          "value": 426,
+          "unit": "mph",
+          "basis": "TAS",
+          "altitude": 22400,
+          "altitudeUnit": "ft",
+          "allowance": 1
+        },
+        "densityKgM3": 0.6011799,
+        "mach": 0.60844,
+        "cl": 0.1759659,
+        "massKg": 4234.284774,
+        "sourceMass": {
+          "nominal": 9335,
+          "unit": "lb",
+          "min": 9050,
+          "max": 9335,
+          "basis": "Takeoff proxy; speed is reduced on the report weight schedule"
+        },
+        "shaftBhp": 1400,
+        "sourcePower": {
+          "nominal": 1400,
+          "unit": "bhp",
+          "min": 1390,
+          "max": 1410,
+          "basis": "Packard chart assignment, including plotted reading allowance"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 4385.571,
+        "parasiteN": 3890.757,
+        "inducedN": 494.814,
+        "inducedFraction": 0.112828
+      },
+      "polar": {
+        "cd0": 0.016487766,
+        "k": 0.067719324,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.013658184,
+          0.018966439
+        ],
+        "kRange": [
+          0.060194955,
+          0.077393513
+        ]
+      },
+      "curve": {
+        "altitudeFt": 22400,
+        "massKg": 4234.284774,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 234.3,
+            "mach": 0.3346,
+            "cl": 0.58171,
+            "parasiteN": 1176.95,
+            "inducedN": 1635.75,
+            "totalN": 2812.7,
+            "propulsiveHp": 395.07,
+            "totalNRange": [
+              2387.13,
+              3176.87
+            ],
+            "propulsiveHpRange": [
+              335.3,
+              446.22
+            ]
+          },
+          {
+            "tasMph": 276.9,
+            "mach": 0.3955,
+            "cl": 0.41649,
+            "parasiteN": 1643.84,
+            "inducedN": 1171.16,
+            "totalN": 2815,
+            "propulsiveHp": 467.29,
+            "totalNRange": [
+              2403.83,
+              3164.56
+            ],
+            "propulsiveHpRange": [
+              399.03,
+              525.31
+            ]
+          },
+          {
+            "tasMph": 319.5,
+            "mach": 0.4563,
+            "cl": 0.31283,
+            "parasiteN": 2188.55,
+            "inducedN": 879.67,
+            "totalN": 3068.22,
+            "propulsiveHp": 587.68,
+            "totalNRange": [
+              2632.64,
+              3436.53
+            ],
+            "propulsiveHpRange": [
+              504.25,
+              658.22
+            ]
+          },
+          {
+            "tasMph": 362.1,
+            "mach": 0.5172,
+            "cl": 0.24355,
+            "parasiteN": 2811.07,
+            "inducedN": 684.86,
+            "totalN": 3495.94,
+            "propulsiveHp": 758.88,
+            "totalNRange": [
+              3009.68,
+              3905.43
+            ],
+            "propulsiveHpRange": [
+              653.33,
+              847.77
+            ]
+          },
+          {
+            "tasMph": 404.7,
+            "mach": 0.578,
+            "cl": 0.19498,
+            "parasiteN": 3511.41,
+            "inducedN": 548.27,
+            "totalN": 4059.68,
+            "propulsiveHp": 984.93,
+            "totalNRange": [
+              3502.84,
+              4527.31
+            ],
+            "propulsiveHpRange": [
+              849.84,
+              1098.39
+            ]
+          },
+          {
+            "tasMph": 426,
+            "mach": 0.6084,
+            "cl": 0.17597,
+            "parasiteN": 3890.76,
+            "inducedN": 494.81,
+            "totalN": 4385.57,
+            "propulsiveHp": 1120,
+            "totalNRange": [
+              3787.12,
+              4889.06
+            ],
+            "propulsiveHpRange": [
+              967.17,
+              1248.58
+            ]
+          }
+        ]
+      },
+      "checks": [
+        {
+          "id": "ww2_fleet_propeller_2026-11-12:p51b-24777-fig5-high-blower:0001",
+          "tasMph": 414,
+          "shaftBhp": 1270,
+          "condition": "Same figure, 61 inHg and 3,000 rpm; same chart power and efficiency assumptions.",
+          "source": {
+            "id": "ww2_fleet_propeller_2026-11-12:p51b-24777-fig5-high-blower:0001",
+            "sourceId": "ww2_fleet_propeller_2026-11-12:P51B-ENG-47-1749-A-FIG-5",
+            "locator": "Eng-47-1749-A Fig. 5, three plotted high-blower observations at 3000 rpm"
+          },
+          "predictedDragN": 4198.56,
+          "powerInferredDragN": 4093.65,
+          "differenceN": 104.91,
+          "differencePct": 2.56,
+          "role": "reserved engineering comparison, shared power/efficiency assumptions"
+        }
+      ],
+      "worksheet": null
+    },
+    {
+      "id": "f6f3_04776",
+      "aircraft": "F6F-3 04776",
+      "status": "provisional proxy scenario",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "Cross-specimen F6F-3 BuAer 04934 military high-blower speed/power; suitability for 04776 cowl and installation needs checking.",
+      "evidence": [
+        {
+          "id": "ww2_fighter_flight_tests_2026-11-11:f6f3-04776-early-stall-traces:0001",
+          "sourceId": "ww2_fighter_flight_tests_2026-11-11:F6F04776-NACA-L5B13B-TRACE",
+          "locator": "PDF 14, 16, 18, 20, 22, and condition table on PDF 4"
+        }
+      ],
+      "externalReferences": [
+        "https://wwiiaircraftperformance.com/org/f6f/f6f.html",
+        "https://www.ibiblio.org/hyperwar/USN/ref/ONI/ONI-Misc/ArmyNavyAircraftRecogMan.pdf"
+      ],
+      "geometry": {
+        "areaM2": 31.02961536,
+        "spanM": 13.055600000000002,
+        "basis": "F6F-3 type geometry",
+        "aspectRatio": 5.493097
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 377.5,
+        "altitudeFt": 22300,
+        "sourceSpeed": {
+          "value": 377.5,
+          "unit": "mph",
+          "basis": "TAS",
+          "altitude": 22300,
+          "altitudeUnit": "ft"
+        },
+        "densityKgM3": 0.603262,
+        "mach": 0.53895,
+        "cl": 0.1931316,
+        "massKg": 5249.424498,
+        "sourceMass": {
+          "nominal": 11573,
+          "unit": "lb",
+          "min": 11200,
+          "max": 11573,
+          "basis": "BuAer 04934 donor gross; 11,200 lb is BuAer 04776 reference only"
+        },
+        "shaftBhp": 1650,
+        "sourcePower": {
+          "nominal": 1650,
+          "unit": "bhp",
+          "min": 1550,
+          "max": 1750,
+          "basis": "BIS 2116 summary military high blower"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 5832.767,
+        "parasiteN": 5112.608,
+        "inducedN": 720.159,
+        "inducedFraction": 0.123468
+      },
+      "polar": {
+        "cd0": 0.019180655,
+        "k": 0.072434065,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.014898951,
+          0.023280236
+        ],
+        "kRange": [
+          0.064385836,
+          0.082781789
+        ]
+      },
+      "curve": {
+        "altitudeFt": 22300,
+        "massKg": 5080.234544,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 207.625,
+            "mach": 0.2964,
+            "cl": 0.61787,
+            "parasiteN": 1546.56,
+            "inducedN": 2229.7,
+            "totalN": 3776.27,
+            "propulsiveHp": 470.03,
+            "totalNRange": [
+              3238.61,
+              4373.54
+            ],
+            "propulsiveHpRange": [
+              403.11,
+              544.37
+            ]
+          },
+          {
+            "tasMph": 245.375,
+            "mach": 0.3503,
+            "cl": 0.44238,
+            "parasiteN": 2160.08,
+            "inducedN": 1596.42,
+            "totalN": 3756.49,
+            "propulsiveHp": 552.58,
+            "totalNRange": [
+              3174.19,
+              4373.86
+            ],
+            "propulsiveHpRange": [
+              466.92,
+              643.4
+            ]
+          },
+          {
+            "tasMph": 283.125,
+            "mach": 0.4042,
+            "cl": 0.33228,
+            "parasiteN": 2875.84,
+            "inducedN": 1199.09,
+            "totalN": 4074.93,
+            "propulsiveHp": 691.64,
+            "totalNRange": [
+              3402.6,
+              4764.54
+            ],
+            "propulsiveHpRange": [
+              577.53,
+              808.69
+            ]
+          },
+          {
+            "tasMph": 320.875,
+            "mach": 0.4581,
+            "cl": 0.25869,
+            "parasiteN": 3693.86,
+            "inducedN": 933.54,
+            "totalN": 4627.4,
+            "propulsiveHp": 890.13,
+            "totalNRange": [
+              3831.24,
+              5426.51
+            ],
+            "propulsiveHpRange": [
+              736.98,
+              1043.85
+            ]
+          },
+          {
+            "tasMph": 358.625,
+            "mach": 0.512,
+            "cl": 0.2071,
+            "parasiteN": 4614.13,
+            "inducedN": 747.35,
+            "totalN": 5361.48,
+            "propulsiveHp": 1152.68,
+            "totalNRange": [
+              4413.49,
+              6299.85
+            ],
+            "propulsiveHpRange": [
+              948.87,
+              1354.42
+            ]
+          },
+          {
+            "tasMph": 377.5,
+            "mach": 0.539,
+            "cl": 0.18691,
+            "parasiteN": 5112.61,
+            "inducedN": 674.49,
+            "totalN": 5787.09,
+            "propulsiveHp": 1309.66,
+            "totalNRange": [
+              4742.16,
+              6804.9
+            ],
+            "propulsiveHpRange": [
+              1073.19,
+              1540
+            ]
+          }
+        ]
+      },
+      "checks": [],
+      "worksheet": null
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "aircraft": "Spitfire LF IX BS543",
+      "status": "calculated reference",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "Table V, standard full span, M.S. gear, +18 lb boost, 2,995 rpm, radiator flaps shut.",
+      "evidence": [
+        {
+          "id": "archival-2026-11-10:S01:0004",
+          "sourceId": "archival-2026-11-10:R28",
+          "locator": "Table V"
+        }
+      ],
+      "externalReferences": [
+        "https://www.wwiiaircraftperformance.org/Aircraft_Engines_of_the_World_Rolls-Royce_Merlin.pdf"
+      ],
+      "geometry": {
+        "areaM2": 22.48253568,
+        "spanM": 11.2268,
+        "basis": "aircraft/cases.json#aircraft.spitfire_lfix_bs543",
+        "aspectRatio": 5.606175
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 363,
+        "altitudeFt": 6000,
+        "sourceSpeed": {
+          "value": 363,
+          "unit": "mph",
+          "basis": "TAS",
+          "altitude": 6000,
+          "altitudeUnit": "ft"
+        },
+        "densityKgM3": 1.0239284,
+        "mach": 0.48702,
+        "cl": 0.1043434,
+        "massKg": 3225.041751,
+        "sourceMass": {
+          "nominal": 7110,
+          "unit": "lb",
+          "min": 7010,
+          "max": 7210,
+          "basis": "Reported reduction to 95% takeoff weight; ±100 lb sensitivity"
+        },
+        "shaftBhp": 1705,
+        "sourcePower": {
+          "nominal": 1705,
+          "unit": "bhp",
+          "min": 1620,
+          "max": 1785,
+          "basis": "Merlin 66 low-blower rating at 5,750 ft, applied at 6,000 ft"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 6267.949,
+        "parasiteN": 6033.734,
+        "inducedN": 234.215,
+        "inducedFraction": 0.037367
+      },
+      "polar": {
+        "cd0": 0.019906514,
+        "k": 0.070973048,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.016284141,
+          0.023146797
+        ],
+        "kRange": [
+          0.063087154,
+          0.081112055
+        ]
+      },
+      "curve": {
+        "altitudeFt": 6000,
+        "massKg": 3225.041751,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 199.65,
+            "mach": 0.2679,
+            "cl": 0.34494,
+            "parasiteN": 1825.2,
+            "inducedN": 774.26,
+            "totalN": 2599.47,
+            "propulsiveHp": 311.13,
+            "totalNRange": [
+              2184.13,
+              3010.2
+            ],
+            "propulsiveHpRange": [
+              261.41,
+              360.29
+            ]
+          },
+          {
+            "tasMph": 235.95,
+            "mach": 0.3166,
+            "cl": 0.24697,
+            "parasiteN": 2549.25,
+            "inducedN": 554.35,
+            "totalN": 3103.61,
+            "propulsiveHp": 439,
+            "totalNRange": [
+              2595.16,
+              3584.91
+            ],
+            "propulsiveHpRange": [
+              367.08,
+              507.08
+            ]
+          },
+          {
+            "tasMph": 272.25,
+            "mach": 0.3653,
+            "cl": 0.1855,
+            "parasiteN": 3393.98,
+            "inducedN": 416.38,
+            "totalN": 3810.36,
+            "propulsiveHp": 621.89,
+            "totalNRange": [
+              3177.15,
+              4394.78
+            ],
+            "propulsiveHpRange": [
+              518.55,
+              717.28
+            ]
+          },
+          {
+            "tasMph": 308.55,
+            "mach": 0.414,
+            "cl": 0.14442,
+            "parasiteN": 4359.37,
+            "inducedN": 324.17,
+            "totalN": 4683.55,
+            "propulsiveHp": 866.33,
+            "totalNRange": [
+              3898.86,
+              5397.29
+            ],
+            "propulsiveHpRange": [
+              721.18,
+              998.35
+            ]
+          },
+          {
+            "tasMph": 344.85,
+            "mach": 0.4627,
+            "cl": 0.11562,
+            "parasiteN": 5445.44,
+            "inducedN": 259.52,
+            "totalN": 5704.96,
+            "propulsiveHp": 1179.41,
+            "totalNRange": [
+              4744.56,
+              6571.05
+            ],
+            "propulsiveHpRange": [
+              980.86,
+              1358.46
+            ]
+          },
+          {
+            "tasMph": 363,
+            "mach": 0.487,
+            "cl": 0.10434,
+            "parasiteN": 6033.73,
+            "inducedN": 234.21,
+            "totalN": 6267.95,
+            "propulsiveHp": 1364,
+            "totalNRange": [
+              5211.04,
+              7218.25
+            ],
+            "propulsiveHpRange": [
+              1134,
+              1570.8
+            ]
+          }
+        ]
+      },
+      "checks": [],
+      "worksheet": null
+    },
+    {
+      "id": "p47b_415902",
+      "aircraft": "P-47B 41-5902",
+      "status": "calculated reference",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "R-2800-21 military, 52 inHg, 2,700 rpm; clean level reference with closed/flush cooling fit.",
+      "evidence": [
+        {
+          "id": "balanced-2026-11-10:BS06:0001",
+          "sourceId": "balanced-2026-11-10:B04",
+          "locator": "PHQ-M-19-1417-A speed table"
+        }
+      ],
+      "externalReferences": [],
+      "geometry": {
+        "areaM2": 27.870912,
+        "spanM": 12.426950000000001,
+        "basis": "aircraft/cases.json#aircraft.p47b",
+        "aspectRatio": 5.54087
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 352,
+        "altitudeFt": 5000,
+        "sourceSpeed": {
+          "value": 352,
+          "unit": "mph",
+          "basis": "TAS",
+          "altitude": 5000,
+          "altitudeUnit": "ft"
+        },
+        "densityKgM3": 1.0555463,
+        "mach": 0.47058,
+        "cl": 0.1534519,
+        "massKg": 5699.388129,
+        "sourceMass": {
+          "nominal": 12565,
+          "unit": "lb",
+          "min": 12365,
+          "max": 12565,
+          "basis": "Report gross, in-flight fuel allowance"
+        },
+        "shaftBhp": 2000,
+        "sourcePower": {
+          "nominal": 2000,
+          "unit": "bhp",
+          "min": 2000,
+          "max": 2000,
+          "basis": "Reported installed torquemeter BHP"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 7582.196,
+        "parasiteN": 6966.306,
+        "inducedN": 615.89,
+        "inducedFraction": 0.081229
+      },
+      "polar": {
+        "cd0": 0.019126079,
+        "k": 0.071809552,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.01628239,
+          0.02144313
+        ],
+        "kRange": [
+          0.063830713,
+          0.08206806
+        ]
+      },
+      "curve": {
+        "altitudeFt": 5000,
+        "massKg": 5699.388129,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 193.6,
+            "mach": 0.2588,
+            "cl": 0.50728,
+            "parasiteN": 2107.31,
+            "inducedN": 2036,
+            "totalN": 4143.31,
+            "propulsiveHp": 480.88,
+            "totalNRange": [
+              3599.16,
+              4636.91
+            ],
+            "propulsiveHpRange": [
+              417.72,
+              538.17
+            ]
+          },
+          {
+            "tasMph": 228.8,
+            "mach": 0.3059,
+            "cl": 0.3632,
+            "parasiteN": 2943.26,
+            "inducedN": 1457.73,
+            "totalN": 4400.99,
+            "propulsiveHp": 603.66,
+            "totalNRange": [
+              3833.88,
+              4892.41
+            ],
+            "propulsiveHpRange": [
+              525.87,
+              671.06
+            ]
+          },
+          {
+            "tasMph": 264,
+            "mach": 0.3529,
+            "cl": 0.2728,
+            "parasiteN": 3918.55,
+            "inducedN": 1094.92,
+            "totalN": 5013.46,
+            "propulsiveHp": 793.46,
+            "totalNRange": [
+              4376.16,
+              5546.89
+            ],
+            "propulsiveHpRange": [
+              692.6,
+              877.88
+            ]
+          },
+          {
+            "tasMph": 299.2,
+            "mach": 0.4,
+            "cl": 0.21239,
+            "parasiteN": 5033.16,
+            "inducedN": 852.44,
+            "totalN": 5885.6,
+            "propulsiveHp": 1055.69,
+            "totalNRange": [
+              5144.12,
+              6491.62
+            ],
+            "propulsiveHpRange": [
+              922.69,
+              1164.39
+            ]
+          },
+          {
+            "tasMph": 334.4,
+            "mach": 0.447,
+            "cl": 0.17003,
+            "parasiteN": 6287.09,
+            "inducedN": 682.43,
+            "totalN": 6969.52,
+            "propulsiveHp": 1397.18,
+            "totalNRange": [
+              6096.53,
+              7671.89
+            ],
+            "propulsiveHpRange": [
+              1222.17,
+              1537.98
+            ]
+          },
+          {
+            "tasMph": 352,
+            "mach": 0.4706,
+            "cl": 0.15345,
+            "parasiteN": 6966.31,
+            "inducedN": 615.89,
+            "totalN": 7582.2,
+            "propulsiveHp": 1600,
+            "totalNRange": [
+              6634.42,
+              8340.42
+            ],
+            "propulsiveHpRange": [
+              1400,
+              1760
+            ]
+          }
+        ]
+      },
+      "checks": [
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47b-cooling-flap-speed:0001",
+          "tasMph": 323,
+          "shaftBhp": 1605,
+          "condition": "Same specimen, altitude and rpm; neutral oil/intercooler flaps. Cooling equivalence and efficiency are approximate.",
+          "source": {
+            "id": "ww2_fighter_measured_conditions_2026-11-11:p47b-cooling-flap-speed:0001",
+            "sourceId": "ww2_fighter_measured_conditions_2026-11-11:B-5902-COOLING",
+            "locator": "Printed p. 2 §B.2"
+          },
+          "predictedDragN": 6597.18,
+          "powerInferredDragN": 6631.02,
+          "differenceN": -33.84,
+          "differencePct": -0.51,
+          "role": "reserved engineering comparison, shared power/efficiency assumptions"
+        }
+      ],
+      "worksheet": null
+    },
+    {
+      "id": "p38g_4212687",
+      "aircraft": "P-38G-1 42-12687",
+      "status": "calculated reference",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "42-12687 at 3,000 rpm and 44.7 inHg, radiators faired; no external load assigned.",
+      "evidence": [
+        {
+          "id": "balanced-2026-11-10:BS01:0001",
+          "sourceId": "balanced-2026-11-10:B01",
+          "locator": "FS-M-19-1538-A speed table"
+        }
+      ],
+      "externalReferences": [
+        "https://www.flugzeuginfo.net/acdata_php/acdata_p38_en.php"
+      ],
+      "geometry": {
+        "areaM2": 30.425745600000003,
+        "spanM": 15.8496,
+        "basis": "P-38G type geometry",
+        "aspectRatio": 8.256489
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 346.5,
+        "altitudeFt": 5000,
+        "sourceSpeed": {
+          "value": 346.5,
+          "unit": "mph",
+          "basis": "TAS",
+          "altitude": 5000,
+          "altitudeUnit": "ft"
+        },
+        "densityKgM3": 1.0555463,
+        "mach": 0.46322,
+        "cl": 0.1564364,
+        "massKg": 6146.176614,
+        "sourceMass": {
+          "nominal": 13550,
+          "unit": "lb",
+          "min": 13400,
+          "max": 13550,
+          "basis": "Reported speed-trial weight span"
+        },
+        "shaftBhp": 2440,
+        "sourcePower": {
+          "nominal": 2440,
+          "unit": "bhp",
+          "min": 2390,
+          "max": 2490,
+          "basis": "Two engines at 1,220 reported bhp each; ±50 total sensitivity"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 9397.109,
+        "parasiteN": 8942.719,
+        "inducedN": 454.39,
+        "inducedFraction": 0.048354
+      },
+      "polar": {
+        "cd0": 0.023210357,
+        "k": 0.048190869,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.019555851,
+          0.026353214
+        ],
+        "kRange": [
+          0.042836328,
+          0.055075279
+        ]
+      },
+      "curve": {
+        "altitudeFt": 5000,
+        "massKg": 6146.176614,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 190.575,
+            "mach": 0.2548,
+            "cl": 0.51715,
+            "parasiteN": 2705.17,
+            "inducedN": 1502.11,
+            "totalN": 4207.29,
+            "propulsiveHp": 480.67,
+            "totalNRange": [
+              3622.65,
+              4750.58
+            ],
+            "propulsiveHpRange": [
+              413.88,
+              542.74
+            ]
+          },
+          {
+            "tasMph": 225.225,
+            "mach": 0.3011,
+            "cl": 0.37026,
+            "parasiteN": 3778.3,
+            "inducedN": 1075.48,
+            "totalN": 4853.78,
+            "propulsiveHp": 655.36,
+            "totalNRange": [
+              4170.85,
+              5466.51
+            ],
+            "propulsiveHpRange": [
+              563.15,
+              738.09
+            ]
+          },
+          {
+            "tasMph": 259.875,
+            "mach": 0.3474,
+            "cl": 0.27811,
+            "parasiteN": 5030.28,
+            "inducedN": 807.8,
+            "totalN": 5838.08,
+            "propulsiveHp": 909.53,
+            "totalNRange": [
+              5010.41,
+              6564.71
+            ],
+            "propulsiveHpRange": [
+              780.58,
+              1022.73
+            ]
+          },
+          {
+            "tasMph": 294.525,
+            "mach": 0.3937,
+            "cl": 0.21652,
+            "parasiteN": 6461.11,
+            "inducedN": 628.91,
+            "totalN": 7090.03,
+            "propulsiveHp": 1251.85,
+            "totalNRange": [
+              6080.33,
+              7964.95
+            ],
+            "propulsiveHpRange": [
+              1073.57,
+              1406.33
+            ]
+          },
+          {
+            "tasMph": 329.175,
+            "mach": 0.4401,
+            "cl": 0.17334,
+            "parasiteN": 8070.8,
+            "inducedN": 503.48,
+            "totalN": 8574.28,
+            "propulsiveHp": 1692.03,
+            "totalNRange": [
+              7349.9,
+              9626.88
+            ],
+            "propulsiveHpRange": [
+              1450.41,
+              1899.74
+            ]
+          },
+          {
+            "tasMph": 346.5,
+            "mach": 0.4632,
+            "cl": 0.15644,
+            "parasiteN": 8942.72,
+            "inducedN": 454.39,
+            "totalN": 9397.11,
+            "propulsiveHp": 1952,
+            "totalNRange": [
+              8053.98,
+              10548.64
+            ],
+            "propulsiveHpRange": [
+              1673,
+              2191.2
+            ]
+          }
+        ]
+      },
+      "checks": [
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0001",
+          "tasMph": 346,
+          "shaftBhp": 2300,
+          "massLb": 13270,
+          "condition": "Same specimen and altitude, 2,800 rpm and chart BHP; faired radiators. This has little CL separation.",
+          "source": {
+            "id": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0001",
+            "sourceId": "ww2_fighter_measured_conditions_2026-11-11:G-12687-PARTPOWER",
+            "locator": "Printed p. 2 §§B.2–3"
+          },
+          "predictedDragN": 9353.99,
+          "powerInferredDragN": 8870.73,
+          "differenceN": 483.26,
+          "differencePct": 5.45,
+          "role": "reserved engineering comparison, shared power/efficiency assumptions"
+        }
+      ],
+      "worksheet": null
+    },
+    {
+      "id": "fw190d9_210002",
+      "aircraft": "Fw 190 D-9 210002",
+      "status": "calculated reference",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "WNr 210002 combat 3,000 rpm, no ETC rack, movable doors; dry rating. Keep cooling and engine-gap variants distinct.",
+      "evidence": [
+        {
+          "id": "balanced-2026-11-10:BS28:0003",
+          "sourceId": "balanced-2026-11-10:B12",
+          "locator": "Flugbericht Nr.1 level speed summary"
+        },
+        {
+          "id": "ww2_german_fighter_archive_2026-11-11:d9-210002-load-by-trial:0001",
+          "sourceId": "ww2_german_fighter_archive_2026-11-11:D9-210002-FW-NR1",
+          "locator": "Charts 2 and 3, original PDF pp. 6–7"
+        },
+        {
+          "id": "ww2_pdf_source_review_2026-11-12:d9-handbook-ratings:0002",
+          "sourceId": "ww2_pdf_source_review_2026-11-12:FW190D9-2190-TEIL0",
+          "locator": "Section B §2, PDF and printed p. 8"
+        }
+      ],
+      "externalReferences": [
+        "https://www.awm.gov.au/visit/exhibitions/striking/planes/german/fw190",
+        "https://prussia.online/Data/Book/fo/focke-wulf-fw-190-2003/Lowe%20M.%20Focke-Wulf%20Fw%20190%20%282003%29%2C%20OCR.pdf"
+      ],
+      "geometry": {
+        "areaM2": 18.3,
+        "spanM": 10.5,
+        "basis": "Fw 190 D-9 type geometry",
+        "aspectRatio": 6.02459
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 330,
+        "altitudeFt": 0,
+        "sourceSpeed": {
+          "value": 330,
+          "unit": "mph",
+          "basis": "TAS",
+          "altitude": 0,
+          "altitudeUnit": "ft"
+        },
+        "densityKgM3": 1.225,
+        "mach": 0.43352,
+        "cl": 0.1648264,
+        "massKg": 4100,
+        "sourceMass": {
+          "nominal": 4100,
+          "unit": "kg",
+          "min": 3950,
+          "max": 4100,
+          "basis": "Report level-test starting mass"
+        },
+        "shaftBhp": 1578.11211,
+        "sourcePower": {
+          "nominal": 1600,
+          "unit": "PS",
+          "min": 1500,
+          "max": 1700,
+          "basis": "Jumo 213 A handbook sea-level combat/climb rating"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 6381.629,
+        "parasiteN": 5943.942,
+        "inducedN": 437.687,
+        "inducedFraction": 0.068585
+      },
+      "polar": {
+        "cd0": 0.024366702,
+        "k": 0.066043888,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.01940958,
+          0.029095292
+        ],
+        "kRange": [
+          0.058705678,
+          0.075478729
+        ]
+      },
+      "curve": {
+        "altitudeFt": 0,
+        "massKg": 4100,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 181.5,
+            "mach": 0.2384,
+            "cl": 0.54488,
+            "parasiteN": 1798.04,
+            "inducedN": 1446.9,
+            "totalN": 3244.94,
+            "propulsiveHp": 353.07,
+            "totalNRange": [
+              2668.08,
+              3758.49
+            ],
+            "propulsiveHpRange": [
+              290.31,
+              408.95
+            ]
+          },
+          {
+            "tasMph": 214.5,
+            "mach": 0.2818,
+            "cl": 0.39012,
+            "parasiteN": 2511.32,
+            "inducedN": 1035.95,
+            "totalN": 3547.26,
+            "propulsiveHp": 456.14,
+            "totalNRange": [
+              2913.88,
+              4123.83
+            ],
+            "propulsiveHpRange": [
+              374.7,
+              530.29
+            ]
+          },
+          {
+            "tasMph": 247.5,
+            "mach": 0.3251,
+            "cl": 0.29302,
+            "parasiteN": 3343.47,
+            "inducedN": 778.11,
+            "totalN": 4121.58,
+            "propulsiveHp": 611.53,
+            "totalNRange": [
+              3383.5,
+              4803.32
+            ],
+            "propulsiveHpRange": [
+              502.02,
+              712.69
+            ]
+          },
+          {
+            "tasMph": 280.5,
+            "mach": 0.3685,
+            "cl": 0.22813,
+            "parasiteN": 4294.5,
+            "inducedN": 605.8,
+            "totalN": 4900.29,
+            "propulsiveHp": 824.02,
+            "totalNRange": [
+              4021.14,
+              5719.72
+            ],
+            "propulsiveHpRange": [
+              676.18,
+              961.81
+            ]
+          },
+          {
+            "tasMph": 313.5,
+            "mach": 0.4118,
+            "cl": 0.18263,
+            "parasiteN": 5364.41,
+            "inducedN": 484.97,
+            "totalN": 5849.38,
+            "propulsiveHp": 1099.33,
+            "totalNRange": [
+              4798.74,
+              6834.13
+            ],
+            "propulsiveHpRange": [
+              901.88,
+              1284.41
+            ]
+          },
+          {
+            "tasMph": 330,
+            "mach": 0.4335,
+            "cl": 0.16483,
+            "parasiteN": 5943.94,
+            "inducedN": 437.69,
+            "totalN": 6381.63,
+            "propulsiveHp": 1262.49,
+            "totalNRange": [
+              5234.93,
+              7458.53
+            ],
+            "propulsiveHpRange": [
+              1035.64,
+              1475.53
+            ]
+          }
+        ]
+      },
+      "checks": [],
+      "worksheet": null
+    },
+    {
+      "id": "fw190a4_783",
+      "aircraft": "Fw 190 A-4 783",
+      "status": "calculated reference",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "WNr 783 long external intake, lower branch, closed cooling flaps. The normal internal intake is a separate case.",
+      "evidence": [
+        {
+          "id": "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0001",
+          "sourceId": "ww2_fleet_propeller_2026-11-12:FW190-783-NR2-CURVES",
+          "locator": "Blatt 3, dashed comparison Vwc curve from Nr. 1; Ergebnis 1 for the 6950 m anchor"
+        },
+        {
+          "id": "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0001",
+          "sourceId": "ww2_engine_ratings_and_propeller_2026-11-12:FW190-783-NR1-BOOST",
+          "locator": "Flugbericht 783 Nr. 1 Graph 1 and long exterior intake result paragraph"
+        },
+        {
+          "id": "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0002",
+          "sourceId": "ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00",
+          "locator": "Teil 0, printed p. 9, Betriebswerte des Motors, BMW 801 D lower row in each cell"
+        }
+      ],
+      "externalReferences": [
+        "https://luftfahrtmuseum-hannover.de/index.php/en/infotext/schild-focke-wulf-190gb"
+      ],
+      "geometry": {
+        "areaM2": 18.3,
+        "spanM": 10.5,
+        "basis": "Representative radial Fw 190 wing",
+        "aspectRatio": 6.02459
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 326.219876,
+        "altitudeFt": 0,
+        "sourceSpeed": {
+          "value": 525,
+          "unit": "km/h",
+          "basis": "TAS",
+          "altitude": 0,
+          "altitudeUnit": "m",
+          "allowance": 3
+        },
+        "densityKgM3": 1.225,
+        "mach": 0.42855,
+        "cl": 0.1592065,
+        "massKg": 3870,
+        "sourceMass": {
+          "nominal": 3870,
+          "unit": "kg",
+          "min": 3720,
+          "max": 3870,
+          "basis": "Report takeoff proxy"
+        },
+        "shaftBhp": 1499.20651,
+        "sourcePower": {
+          "nominal": 1520,
+          "unit": "PS",
+          "min": 1420,
+          "max": 1580,
+          "basis": "BMW 801 D low-gear 700 m bench rating used as sea-level 1.32 ata / 2,400 rpm scenario"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 6132.799,
+        "parasiteN": 5733.751,
+        "inducedN": 399.048,
+        "inducedFraction": 0.065068
+      },
+      "polar": {
+        "cd0": 0.024052932,
+        "k": 0.066043888,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.01880361,
+          0.028520052
+        ],
+        "kRange": [
+          0.058705678,
+          0.075478729
+        ]
+      },
+      "curve": {
+        "altitudeFt": 0,
+        "massKg": 3870,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 179.421,
+            "mach": 0.2357,
+            "cl": 0.5263,
+            "parasiteN": 1734.46,
+            "inducedN": 1319.17,
+            "totalN": 3053.63,
+            "propulsiveHp": 328.45,
+            "totalNRange": [
+              2477.33,
+              3524.49
+            ],
+            "propulsiveHpRange": [
+              266.46,
+              379.1
+            ]
+          },
+          {
+            "tasMph": 212.043,
+            "mach": 0.2786,
+            "cl": 0.37682,
+            "parasiteN": 2422.51,
+            "inducedN": 944.49,
+            "totalN": 3367,
+            "propulsiveHp": 428.01,
+            "totalNRange": [
+              2722.54,
+              3896.37
+            ],
+            "propulsiveHpRange": [
+              346.08,
+              495.3
+            ]
+          },
+          {
+            "tasMph": 244.665,
+            "mach": 0.3214,
+            "cl": 0.28303,
+            "parasiteN": 3225.23,
+            "inducedN": 709.42,
+            "totalN": 3934.65,
+            "propulsiveHp": 577.11,
+            "totalNRange": [
+              3174.56,
+              4561.14
+            ],
+            "propulsiveHpRange": [
+              465.63,
+              669
+            ]
+          },
+          {
+            "tasMph": 277.287,
+            "mach": 0.3643,
+            "cl": 0.22036,
+            "parasiteN": 4142.63,
+            "inducedN": 552.32,
+            "totalN": 4694.95,
+            "propulsiveHp": 780.45,
+            "totalNRange": [
+              3782.79,
+              5448.37
+            ],
+            "propulsiveHpRange": [
+              628.82,
+              905.69
+            ]
+          },
+          {
+            "tasMph": 309.909,
+            "mach": 0.4071,
+            "cl": 0.17641,
+            "parasiteN": 5174.71,
+            "inducedN": 442.16,
+            "totalN": 5616.87,
+            "propulsiveHp": 1043.54,
+            "totalNRange": [
+              4521.72,
+              6522.6
+            ],
+            "propulsiveHpRange": [
+              840.08,
+              1211.82
+            ]
+          },
+          {
+            "tasMph": 326.22,
+            "mach": 0.4286,
+            "cl": 0.15921,
+            "parasiteN": 5733.75,
+            "inducedN": 399.05,
+            "totalN": 6132.8,
+            "propulsiveHp": 1199.37,
+            "totalNRange": [
+              4935.58,
+              7126.37
+            ],
+            "propulsiveHpRange": [
+              965.23,
+              1393.67
+            ]
+          }
+        ]
+      },
+      "checks": [],
+      "worksheet": null
+    },
+    {
+      "id": "p40f_4113635",
+      "aircraft": "P-40F 41-13635",
+      "status": "calculated reference",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "41-13635, empty tank sway braces removed, radiator faired, high blower, 2,950 rpm, no tank.",
+      "evidence": [
+        {
+          "id": "archival-2026-11-10:S43:0001",
+          "sourceId": "archival-2026-11-10:R54",
+          "locator": "USAAF FS-M-19-1578-A original p1; confirmed in 2026-11-06 archive audit"
+        },
+        {
+          "id": "ww2_fighter_flight_tests_2026-11-11:p40fl-manual-loading:0002",
+          "sourceId": "ww2_fighter_flight_tests_2026-11-11:P40FL-TO01-25CH-1-1943",
+          "locator": "Printed 36 and 40"
+        },
+        {
+          "id": "ww2_fighter_flight_tests_2026-11-11:p40fl-manual-loading:0003",
+          "sourceId": "ww2_fighter_flight_tests_2026-11-11:P40FL-TO01-25CH-1-1943",
+          "locator": "Printed 36 and 40"
+        }
+      ],
+      "externalReferences": [
+        "https://aeropedia.com.au/content/curtiss-p-40f-warhawk/"
+      ],
+      "geometry": {
+        "areaM2": 21.92511744,
+        "spanM": 11.3792,
+        "basis": "P-40F type geometry",
+        "aspectRatio": 5.905838
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 374,
+        "altitudeFt": 18100,
+        "sourceSpeed": {
+          "value": 374,
+          "unit": "mph",
+          "basis": "TAS",
+          "altitude": 18100,
+          "altitudeUnit": "ft"
+        },
+        "densityKgM3": 0.6958166,
+        "mach": 0.52508,
+        "cl": 0.1774263,
+        "massKg": 3857.803107,
+        "sourceMass": {
+          "nominal": 8505,
+          "unit": "lb",
+          "min": 8150,
+          "max": 8860,
+          "basis": "Handbook design load used as proxy; exact brace trial mass unresolved"
+        },
+        "shaftBhp": 1100,
+        "sourcePower": {
+          "nominal": 1100,
+          "unit": "bhp",
+          "min": 1045,
+          "max": 1155,
+          "basis": "Report chart assignment; range is an engineering allowance"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 3924.901,
+        "parasiteN": 3472.673,
+        "inducedN": 452.228,
+        "inducedFraction": 0.11522
+      },
+      "polar": {
+        "cd0": 0.016286256,
+        "k": 0.067371871,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.012670504,
+          0.019529108
+        ],
+        "kRange": [
+          0.059886107,
+          0.076996424
+        ]
+      },
+      "curve": {
+        "altitudeFt": 18100,
+        "massKg": 3857.803107,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 205.7,
+            "mach": 0.2888,
+            "cl": 0.58653,
+            "parasiteN": 1050.48,
+            "inducedN": 1494.97,
+            "totalN": 2545.45,
+            "propulsiveHp": 313.89,
+            "totalNRange": [
+              2095.51,
+              3055.79
+            ],
+            "propulsiveHpRange": [
+              258.41,
+              376.82
+            ]
+          },
+          {
+            "tasMph": 243.1,
+            "mach": 0.3413,
+            "cl": 0.41994,
+            "parasiteN": 1467.2,
+            "inducedN": 1070.36,
+            "totalN": 2537.57,
+            "propulsiveHp": 369.82,
+            "totalNRange": [
+              2096.15,
+              3005.85
+            ],
+            "propulsiveHpRange": [
+              305.48,
+              438.06
+            ]
+          },
+          {
+            "tasMph": 280.5,
+            "mach": 0.3938,
+            "cl": 0.31542,
+            "parasiteN": 1953.38,
+            "inducedN": 803.96,
+            "totalN": 2757.34,
+            "propulsiveHp": 463.67,
+            "totalNRange": [
+              2283.79,
+              3231.58
+            ],
+            "propulsiveHpRange": [
+              384.03,
+              543.41
+            ]
+          },
+          {
+            "tasMph": 317.9,
+            "mach": 0.4463,
+            "cl": 0.24557,
+            "parasiteN": 2509.01,
+            "inducedN": 625.92,
+            "totalN": 3134.93,
+            "propulsiveHp": 597.45,
+            "totalNRange": [
+              2601.42,
+              3646.35
+            ],
+            "propulsiveHpRange": [
+              495.77,
+              694.91
+            ]
+          },
+          {
+            "tasMph": 355.3,
+            "mach": 0.4988,
+            "cl": 0.19659,
+            "parasiteN": 3134.09,
+            "inducedN": 501.08,
+            "totalN": 3635.17,
+            "propulsiveHp": 774.29,
+            "totalNRange": [
+              3020.34,
+              4206.55
+            ],
+            "propulsiveHpRange": [
+              643.33,
+              895.99
+            ]
+          },
+          {
+            "tasMph": 374,
+            "mach": 0.5251,
+            "cl": 0.17743,
+            "parasiteN": 3472.67,
+            "inducedN": 452.23,
+            "totalN": 3924.9,
+            "propulsiveHp": 880,
+            "totalNRange": [
+              3262.57,
+              4533.26
+            ],
+            "propulsiveHpRange": [
+              731.5,
+              1016.4
+            ]
+          }
+        ]
+      },
+      "checks": [],
+      "worksheet": null
+    },
+    {
+      "id": "ki84_302",
+      "aircraft": "Ki-84-I 302",
+      "status": "provisional proxy scenario",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "T-2 302 normal-load military schedule. Report does not identify speed basis or show a matched installed power run. High-altitude speed treated as TAS for this scenario.",
+      "evidence": [
+        {
+          "id": "ww2_pdf_source_review_2026-11-12:ki84-ir3-nominal-level-speed:0003",
+          "sourceId": "ww2_pdf_source_review_2026-11-12:KI84-T2-IR3",
+          "locator": "Factual Data, PDF p. 8, printed p. 2"
+        },
+        {
+          "id": "ww2_twelve_fighter_gap_followup_2026-11-10:ki84-302-nominal-engine-rating-schedule:0005",
+          "sourceId": "ww2_twelve_fighter_gap_followup_2026-11-10:KI84-302-AAF-SPECS",
+          "locator": "AAF report printed p.3, 'Power Available' section; reported Ha-45 Model 21 ratings"
+        }
+      ],
+      "externalReferences": [
+        "https://www.aviastar.org/air/japan/nakajima_ki-84.php"
+      ],
+      "geometry": {
+        "areaM2": 21,
+        "spanM": 11.238,
+        "basis": "Ki-84 type geometry",
+        "aspectRatio": 6.013935
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 412,
+        "altitudeFt": 20000,
+        "sourceSpeed": {
+          "value": 412,
+          "unit": "mph",
+          "basis": "assumed TAS",
+          "altitude": 20000,
+          "altitudeUnit": "ft",
+          "allowance": 5
+        },
+        "densityKgM3": 0.6526938,
+        "mach": 0.58279,
+        "cl": 0.1519221,
+        "massKg": 3601.523418,
+        "sourceMass": {
+          "nominal": 7940,
+          "unit": "lb",
+          "min": 7750,
+          "max": 7940,
+          "basis": "T-2 IR-3 normal nominal load"
+        },
+        "shaftBhp": 1695,
+        "sourcePower": {
+          "nominal": 1695,
+          "unit": "bhp",
+          "min": 1450,
+          "max": 1780,
+          "basis": "Nominal military rating at 20,000 ft; assumes the report horsepower is mechanical BHP"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 5490.099,
+        "parasiteN": 5135.098,
+        "inducedN": 355.001,
+        "inducedFraction": 0.064662
+      },
+      "polar": {
+        "cd0": 0.022088324,
+        "k": 0.066160896,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.015385463,
+          0.026939449
+        ],
+        "kRange": [
+          0.058809686,
+          0.075612453
+        ]
+      },
+      "curve": {
+        "altitudeFt": 20000,
+        "massKg": 3601.523418,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 226.6,
+            "mach": 0.3205,
+            "cl": 0.50222,
+            "parasiteN": 1553.37,
+            "inducedN": 1173.56,
+            "totalN": 2726.92,
+            "propulsiveHp": 370.44,
+            "totalNRange": [
+              2106.11,
+              3202.35
+            ],
+            "propulsiveHpRange": [
+              286.1,
+              435.02
+            ]
+          },
+          {
+            "tasMph": 267.8,
+            "mach": 0.3788,
+            "cl": 0.35958,
+            "parasiteN": 2169.58,
+            "inducedN": 840.24,
+            "totalN": 3009.82,
+            "propulsiveHp": 483.21,
+            "totalNRange": [
+              2265.07,
+              3559.72
+            ],
+            "propulsiveHpRange": [
+              363.64,
+              571.49
+            ]
+          },
+          {
+            "tasMph": 309,
+            "mach": 0.4371,
+            "cl": 0.27008,
+            "parasiteN": 2888.49,
+            "inducedN": 631.11,
+            "totalN": 3519.61,
+            "propulsiveHp": 651.98,
+            "totalNRange": [
+              2602.74,
+              4182.08
+            ],
+            "propulsiveHpRange": [
+              482.14,
+              774.7
+            ]
+          },
+          {
+            "tasMph": 350.2,
+            "mach": 0.4954,
+            "cl": 0.21027,
+            "parasiteN": 3710.11,
+            "inducedN": 491.35,
+            "totalN": 4201.46,
+            "propulsiveHp": 882.06,
+            "totalNRange": [
+              3072.7,
+              5006.76
+            ],
+            "propulsiveHpRange": [
+              645.09,
+              1051.13
+            ]
+          },
+          {
+            "tasMph": 391.4,
+            "mach": 0.5537,
+            "cl": 0.16833,
+            "parasiteN": 4634.43,
+            "inducedN": 393.35,
+            "totalN": 5027.78,
+            "propulsiveHp": 1179.72,
+            "totalNRange": [
+              3651.56,
+              6002.22
+            ],
+            "propulsiveHpRange": [
+              856.8,
+              1408.36
+            ]
+          },
+          {
+            "tasMph": 412,
+            "mach": 0.5828,
+            "cl": 0.15192,
+            "parasiteN": 5135.1,
+            "inducedN": 355,
+            "totalN": 5490.1,
+            "propulsiveHp": 1356,
+            "totalNRange": [
+              3977.58,
+              6563.52
+            ],
+            "propulsiveHpRange": [
+              982.42,
+              1621.13
+            ]
+          }
+        ]
+      },
+      "checks": [],
+      "worksheet": null
+    },
+    {
+      "id": "p47d30_433441",
+      "aircraft": "P-47D-30 43-3441",
+      "status": "provisional proxy scenario",
+      "method": "worksheet drag split",
+      "configuration": "Greg high-power D-family worksheet, likely D-28, transferred as a drag-shape scenario to D-30 43-3441. Bubbletop fit, propeller, stores and cooling equivalence unresolved.",
+      "evidence": [
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:d30-longitudinal-installation:0001",
+          "sourceId": "ww2_fighter_measured_conditions_2026-11-11:D30-TN2899",
+          "locator": "Table I (PDF 13); RM L8A06 Table I (PDF 14)"
+        },
+        {
+          "id": "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0002",
+          "sourceId": "ww2_fighter_flight_tests_2026-11-11:P47D30-L8A06-STALL-TRACE",
+          "locator": "PDF 70, 72, 75, 77, 78 and configuration table on PDF 3"
+        }
+      ],
+      "externalReferences": [
+        "https://ntrs.nasa.gov/citations/20090022749"
+      ],
+      "geometry": {
+        "areaM2": 27.870912,
+        "spanM": 12.426949999989839,
+        "basis": "D-30 report wing area and representative Thunderbolt span",
+        "aspectRatio": 5.54087
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 350,
+        "altitudeFt": 0,
+        "sourceSpeed": null,
+        "densityKgM3": 1.225,
+        "mach": 0.45979,
+        "cl": 0.1390624,
+        "massKg": 5926.184314,
+        "sourceMass": {
+          "nominal": 13065,
+          "unit": "lb",
+          "min": 12500,
+          "max": 13600,
+          "basis": "Existing Greg worksheet reconstruction assumes 13,065 lb; worksheet run mass unconfirmed"
+        },
+        "shaftBhp": null,
+        "sourcePower": null,
+        "propellerEfficiency": null,
+        "totalDragN": 10099.052,
+        "parasiteN": 9508.074,
+        "inducedN": 590.978,
+        "inducedFraction": 0.058518
+      },
+      "polar": {
+        "cd0": 0.02275131,
+        "k": 0.073124987,
+        "oswaldE": 0.785609,
+        "cd0Range": [
+          0.02275131,
+          0.02275131
+        ],
+        "kRange": [
+          0.067484932,
+          0.079884883
+        ]
+      },
+      "curve": {
+        "altitudeFt": 0,
+        "massKg": 5624.545388,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 192.5,
+            "mach": 0.2529,
+            "cl": 0.43631,
+            "parasiteN": 2876.19,
+            "inducedN": 1759.83,
+            "totalN": 4636.02,
+            "propulsiveHp": 535.01,
+            "totalNRange": [
+              4500.29,
+              4798.71
+            ],
+            "propulsiveHpRange": [
+              519.34,
+              553.78
+            ]
+          },
+          {
+            "tasMph": 227.5,
+            "mach": 0.2989,
+            "cl": 0.31239,
+            "parasiteN": 4017.16,
+            "inducedN": 1260,
+            "totalN": 5277.16,
+            "propulsiveHp": 719.72,
+            "totalNRange": [
+              5179.97,
+              5393.63
+            ],
+            "propulsiveHpRange": [
+              706.47,
+              735.61
+            ]
+          },
+          {
+            "tasMph": 262.5,
+            "mach": 0.3448,
+            "cl": 0.23464,
+            "parasiteN": 5348.29,
+            "inducedN": 946.4,
+            "totalN": 6294.69,
+            "propulsiveHp": 990.57,
+            "totalNRange": [
+              6221.69,
+              6382.18
+            ],
+            "propulsiveHpRange": [
+              979.08,
+              1004.34
+            ]
+          },
+          {
+            "tasMph": 297.5,
+            "mach": 0.3908,
+            "cl": 0.18268,
+            "parasiteN": 6869.58,
+            "inducedN": 736.81,
+            "totalN": 7606.4,
+            "propulsiveHp": 1356.59,
+            "totalNRange": [
+              7549.57,
+              7674.51
+            ],
+            "propulsiveHpRange": [
+              1346.45,
+              1368.74
+            ]
+          },
+          {
+            "tasMph": 332.5,
+            "mach": 0.4368,
+            "cl": 0.14624,
+            "parasiteN": 8581.04,
+            "inducedN": 589.86,
+            "totalN": 9170.9,
+            "propulsiveHp": 1828.04,
+            "totalNRange": [
+              9125.4,
+              9225.42
+            ],
+            "propulsiveHpRange": [
+              1818.97,
+              1838.91
+            ]
+          },
+          {
+            "tasMph": 350,
+            "mach": 0.4598,
+            "cl": 0.13198,
+            "parasiteN": 9508.07,
+            "inducedN": 532.35,
+            "totalN": 10040.42,
+            "propulsiveHp": 2106.7,
+            "totalNRange": [
+              9999.36,
+              10089.63
+            ],
+            "propulsiveHpRange": [
+              2098.08,
+              2117.02
+            ]
+          }
+        ]
+      },
+      "checks": [],
+      "worksheet": {
+        "source": "aircraft/cases.json#greg.p47d28",
+        "replay": [
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 100,
+            "worksheetDragLbf": 1811.25,
+            "calculatedDragLbf": 1801.99,
+            "differencePct": -0.51
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 125,
+            "worksheetDragLbf": 1320,
+            "calculatedDragLbf": 1314.24,
+            "differencePct": -0.44
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 150,
+            "worksheetDragLbf": 1120,
+            "calculatedDragLbf": 1115.94,
+            "differencePct": -0.36
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 175,
+            "worksheetDragLbf": 1069.29,
+            "calculatedDragLbf": 1065.8,
+            "differencePct": -0.33
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 200,
+            "worksheetDragLbf": 1106.25,
+            "calculatedDragLbf": 1104.83,
+            "differencePct": -0.13
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 225,
+            "worksheetDragLbf": 1206.67,
+            "calculatedDragLbf": 1204.84,
+            "differencePct": -0.15
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 250,
+            "worksheetDragLbf": 1354.5,
+            "calculatedDragLbf": 1350.96,
+            "differencePct": -0.26
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 275,
+            "worksheetDragLbf": 1535.45,
+            "calculatedDragLbf": 1534.79,
+            "differencePct": -0.04
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 300,
+            "worksheetDragLbf": 1751.25,
+            "calculatedDragLbf": 1751.24,
+            "differencePct": 0
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 325,
+            "worksheetDragLbf": 1997.31,
+            "calculatedDragLbf": 1997.13,
+            "differencePct": -0.01
+          },
+          {
+            "role": "fit",
+            "tasMph": 350,
+            "worksheetDragLbf": 2271.43,
+            "calculatedDragLbf": 2270.36,
+            "differencePct": -0.05
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 375,
+            "worksheetDragLbf": 2570,
+            "calculatedDragLbf": 2569.5,
+            "differencePct": -0.02
+          }
+        ]
+      }
+    },
+    {
+      "id": "bf109f4_representative",
+      "aircraft": "Bf 109 F-4 DB601E",
+      "status": "calculated reference",
+      "method": "worksheet drag split",
+      "configuration": "Greg Bf 109 F-4 sea-level worksheet configuration. Original drag entries are calculations with unknown cooling and exact specimen.",
+      "evidence": [],
+      "externalReferences": [],
+      "geometry": {
+        "areaM2": 16.05,
+        "spanM": 9.92,
+        "basis": "aircraft/cases.json#aircraft.bf109f4",
+        "aspectRatio": 6.13124
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 325,
+        "altitudeFt": 0,
+        "sourceSpeed": null,
+        "densityKgM3": 1.225,
+        "mach": 0.42695,
+        "cl": 0.1365694,
+        "massKg": 2889.836989,
+        "sourceMass": {
+          "nominal": 6371,
+          "unit": "lb",
+          "min": 6371,
+          "max": 6371,
+          "basis": "Greg replay nominal loading used in the repository reconciliation"
+        },
+        "shaftBhp": null,
+        "sourcePower": null,
+        "propellerEfficiency": null,
+        "totalDragN": 5417.934,
+        "parasiteN": 5057.628,
+        "inducedN": 360.306,
+        "inducedFraction": 0.066502
+      },
+      "polar": {
+        "cd0": 0.024372847,
+        "k": 0.093094499,
+        "oswaldE": 0.557671,
+        "cd0Range": [
+          0.024372847,
+          0.024372847
+        ],
+        "kRange": [
+          0.093094499,
+          0.093094499
+        ]
+      },
+      "curve": {
+        "altitudeFt": 0,
+        "massKg": 2889.836989,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 178.75,
+            "mach": 0.2348,
+            "cl": 0.45147,
+            "parasiteN": 1529.93,
+            "inducedN": 1191.09,
+            "totalN": 2721.03,
+            "propulsiveHp": 291.58,
+            "totalNRange": [
+              2721.03,
+              2721.03
+            ],
+            "propulsiveHpRange": [
+              291.58,
+              291.58
+            ]
+          },
+          {
+            "tasMph": 211.25,
+            "mach": 0.2775,
+            "cl": 0.32324,
+            "parasiteN": 2136.85,
+            "inducedN": 852.8,
+            "totalN": 2989.64,
+            "propulsiveHp": 378.62,
+            "totalNRange": [
+              2989.64,
+              2989.64
+            ],
+            "propulsiveHpRange": [
+              378.62,
+              378.62
+            ]
+          },
+          {
+            "tasMph": 243.75,
+            "mach": 0.3202,
+            "cl": 0.24279,
+            "parasiteN": 2844.92,
+            "inducedN": 640.54,
+            "totalN": 3485.46,
+            "propulsiveHp": 509.32,
+            "totalNRange": [
+              3485.46,
+              3485.46
+            ],
+            "propulsiveHpRange": [
+              509.32,
+              509.32
+            ]
+          },
+          {
+            "tasMph": 276.25,
+            "mach": 0.3629,
+            "cl": 0.18902,
+            "parasiteN": 3654.14,
+            "inducedN": 498.69,
+            "totalN": 4152.83,
+            "propulsiveHp": 687.75,
+            "totalNRange": [
+              4152.83,
+              4152.83
+            ],
+            "propulsiveHpRange": [
+              687.75,
+              687.75
+            ]
+          },
+          {
+            "tasMph": 308.75,
+            "mach": 0.4056,
+            "cl": 0.15132,
+            "parasiteN": 4564.51,
+            "inducedN": 399.23,
+            "totalN": 4963.74,
+            "propulsiveHp": 918.75,
+            "totalNRange": [
+              4963.74,
+              4963.74
+            ],
+            "propulsiveHpRange": [
+              918.75,
+              918.75
+            ]
+          },
+          {
+            "tasMph": 325,
+            "mach": 0.4269,
+            "cl": 0.13657,
+            "parasiteN": 5057.63,
+            "inducedN": 360.31,
+            "totalN": 5417.93,
+            "propulsiveHp": 1055.6,
+            "totalNRange": [
+              5417.93,
+              5417.93
+            ],
+            "propulsiveHpRange": [
+              1055.6,
+              1055.6
+            ]
+          }
+        ]
+      },
+      "checks": [],
+      "worksheet": {
+        "source": "aircraft/cases.json#greg.bf109f4",
+        "replay": [
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 100,
+            "worksheetDragLbf": 964,
+            "calculatedDragLbf": 963.21,
+            "differencePct": -0.08
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 125,
+            "worksheetDragLbf": 717,
+            "calculatedDragLbf": 715.76,
+            "differencePct": -0.17
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 150,
+            "worksheetDragLbf": 623,
+            "calculatedDragLbf": 622.45,
+            "differencePct": -0.09
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 168,
+            "worksheetDragLbf": 607,
+            "calculatedDragLbf": 606.95,
+            "differencePct": -0.01
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 175,
+            "worksheetDragLbf": 611,
+            "calculatedDragLbf": 609.03,
+            "differencePct": -0.32
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 200,
+            "worksheetDragLbf": 646,
+            "calculatedDragLbf": 644.47,
+            "differencePct": -0.24
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 225,
+            "worksheetDragLbf": 716,
+            "calculatedDragLbf": 713.95,
+            "differencePct": -0.29
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 250,
+            "worksheetDragLbf": 812,
+            "calculatedDragLbf": 809.67,
+            "differencePct": -0.29
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 275,
+            "worksheetDragLbf": 930,
+            "calculatedDragLbf": 927.2,
+            "differencePct": -0.3
+          },
+          {
+            "role": "same-worksheet arithmetic check",
+            "tasMph": 300,
+            "worksheetDragLbf": 1068,
+            "calculatedDragLbf": 1063.87,
+            "differencePct": -0.39
+          },
+          {
+            "role": "fit",
+            "tasMph": 325,
+            "worksheetDragLbf": 1218,
+            "calculatedDragLbf": 1218,
+            "differencePct": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "bf109g2_db605a",
+      "aircraft": "Bf109G-2 DB605A (research intake)",
+      "status": "calculated reference",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "Finnish MT-215, corrected speed transcription, 1.30 ata, fixed tailwheel, departure with full fuselage fuel and ammunition; exact run mass and cooling unresolved.",
+      "evidence": [
+        {
+          "id": "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-speed-power-table:0001",
+          "sourceId": "ww2_thirteen_fighter_source_recovery_2026-11-11:G2-MT215-TRANSCRIPTION",
+          "locator": "Transcribed MT-215 Level speed tests table"
+        },
+        {
+          "id": "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0002",
+          "sourceId": "ww2_engine_ratings_and_propeller_2026-11-12:DB-605-A-C-MUSTER",
+          "locator": "Motorenmuster DB 605 A–C, Kraftstoff B4, Blatt 1, table headed Höhe km"
+        },
+        {
+          "id": "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-14513-measured-loading:0001",
+          "sourceId": "ww2_thirteen_fighter_source_recovery_2026-11-11:G2-NIIVVS-14513",
+          "locator": "Original p10"
+        }
+      ],
+      "externalReferences": [
+        "https://www.korpisota.fi/flugzeuge/bf109g2.html"
+      ],
+      "geometry": {
+        "areaM2": 16.05,
+        "spanM": 9.92,
+        "basis": "Representative G-2 wing",
+        "aspectRatio": 6.13124
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 324.355762,
+        "altitudeFt": 459.317585,
+        "sourceSpeed": {
+          "value": 522,
+          "unit": "km/h",
+          "basis": "TAS",
+          "altitude": 140,
+          "altitudeUnit": "m",
+          "allowance": 3
+        },
+        "densityKgM3": 1.20862,
+        "mach": 0.42678,
+        "cl": 0.1466728,
+        "massKg": 3050,
+        "sourceMass": {
+          "nominal": 3050,
+          "unit": "kg",
+          "min": 2900,
+          "max": 3235,
+          "basis": "Representative MT-215 scenario; upper sensitivity informed by separate G-2 WNr 14513 test loading"
+        },
+        "shaftBhp": 1292.07929,
+        "sourcePower": {
+          "nominal": 1310,
+          "unit": "PS",
+          "min": 1210,
+          "max": 1375,
+          "basis": "DB 605 A nominal 1.30 ata / 2,600 rpm; MT-215 run at 2,540 rpm"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 5315.881,
+        "parasiteN": 5031.184,
+        "inducedN": 284.696,
+        "inducedFraction": 0.053556
+      },
+      "polar": {
+        "cd0": 0.024671719,
+        "k": 0.064895089,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.018954776,
+          0.029474241
+        ],
+        "kRange": [
+          0.057684524,
+          0.074165816
+        ]
+      },
+      "curve": {
+        "altitudeFt": 459.317585,
+        "massKg": 3050,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 178.396,
+            "mach": 0.2347,
+            "cl": 0.48487,
+            "parasiteN": 1521.93,
+            "inducedN": 941.15,
+            "totalN": 2463.08,
+            "propulsiveHp": 263.42,
+            "totalNRange": [
+              1966.16,
+              2985.74
+            ],
+            "propulsiveHpRange": [
+              210.27,
+              319.31
+            ]
+          },
+          {
+            "tasMph": 210.831,
+            "mach": 0.2774,
+            "cl": 0.34715,
+            "parasiteN": 2125.68,
+            "inducedN": 673.84,
+            "totalN": 2799.51,
+            "propulsiveHp": 353.83,
+            "totalNRange": [
+              2231.29,
+              3346.47
+            ],
+            "propulsiveHpRange": [
+              282.02,
+              422.96
+            ]
+          },
+          {
+            "tasMph": 243.267,
+            "mach": 0.3201,
+            "cl": 0.26075,
+            "parasiteN": 2830.04,
+            "inducedN": 506.13,
+            "totalN": 3336.17,
+            "propulsiveHp": 486.53,
+            "totalNRange": [
+              2656.44,
+              3952.65
+            ],
+            "propulsiveHpRange": [
+              387.41,
+              576.44
+            ]
+          },
+          {
+            "tasMph": 275.702,
+            "mach": 0.3628,
+            "cl": 0.20301,
+            "parasiteN": 3635.03,
+            "inducedN": 394.04,
+            "totalN": 4029.07,
+            "propulsiveHp": 665.93,
+            "totalNRange": [
+              3206.29,
+              4747.76
+            ],
+            "propulsiveHpRange": [
+              529.94,
+              784.71
+            ]
+          },
+          {
+            "tasMph": 308.138,
+            "mach": 0.4054,
+            "cl": 0.16252,
+            "parasiteN": 4540.64,
+            "inducedN": 315.45,
+            "totalN": 4856.1,
+            "propulsiveHp": 897.05,
+            "totalNRange": [
+              3863.05,
+              5703.33
+            ],
+            "propulsiveHpRange": [
+              713.6,
+              1053.55
+            ]
+          },
+          {
+            "tasMph": 324.356,
+            "mach": 0.4268,
+            "cl": 0.14667,
+            "parasiteN": 5031.18,
+            "inducedN": 284.7,
+            "totalN": 5315.88,
+            "propulsiveHp": 1033.66,
+            "totalNRange": [
+              4228.28,
+              6239.32
+            ],
+            "propulsiveHpRange": [
+              822.18,
+              1213.23
+            ]
+          }
+        ]
+      },
+      "checks": [],
+      "worksheet": null
+    },
+    {
+      "id": "p51d15_4415342",
+      "aircraft": "P-51D-15-NA 44-15342",
+      "status": "calculated reference",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "44-15342 WEP, 67 inHg, 3,000 rpm, racks fitted, no external stores, automatic shutters, mixture Run.",
+      "evidence": [
+        {
+          "id": "ww2_priority_aircraft_2026-11-13:p51d-4415342-level-wep:0001",
+          "sourceId": "ww2_priority_aircraft_2026-11-13:WF-TSCEP5E-1908",
+          "locator": "IV.B.2 level speed table"
+        },
+        {
+          "id": "ww2_priority_aircraft_2026-11-13:p51d-representative-wing-geometry:0001",
+          "sourceId": "ww2_priority_aircraft_2026-11-13:AOPA-P51D-GEOMETRY",
+          "locator": "Specifications"
+        }
+      ],
+      "externalReferences": [],
+      "geometry": {
+        "areaM2": 21.8322144,
+        "spanM": 11.277600000000001,
+        "basis": "Representative P-51D wing geometry in the source register",
+        "aspectRatio": 5.825532
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 375,
+        "altitudeFt": 0,
+        "sourceSpeed": {
+          "value": 375,
+          "unit": "mph",
+          "basis": "TAS",
+          "altitude": 0,
+          "altitudeUnit": "ft"
+        },
+        "densityKgM3": 1.225,
+        "mach": 0.49263,
+        "cl": 0.1148151,
+        "massKg": 4399.845989,
+        "sourceMass": {
+          "nominal": 9700,
+          "unit": "lb",
+          "min": 9700,
+          "max": 9700,
+          "basis": "Report sea-level reduction weight"
+        },
+        "shaftBhp": 1630,
+        "sourcePower": {
+          "nominal": 1630,
+          "unit": "bhp",
+          "min": 1549,
+          "max": 1712,
+          "basis": "Wright Field sea-level chart assignment, ±5% sensitivity"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 5800.481,
+        "parasiteN": 5462.119,
+        "inducedN": 338.362,
+        "inducedFraction": 0.058333
+      },
+      "polar": {
+        "cd0": 0.014534562,
+        "k": 0.068300606,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.011805435,
+          0.017032227
+        ],
+        "kRange": [
+          0.060711649,
+          0.078057835
+        ]
+      },
+      "curve": {
+        "altitudeFt": 0,
+        "massKg": 4399.845989,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 206.25,
+            "mach": 0.2709,
+            "cl": 0.37955,
+            "parasiteN": 1652.29,
+            "inducedN": 1118.55,
+            "totalN": 2770.84,
+            "propulsiveHp": 342.6,
+            "totalNRange": [
+              2362.31,
+              3188.58
+            ],
+            "propulsiveHpRange": [
+              292.09,
+              394.25
+            ]
+          },
+          {
+            "tasMph": 243.75,
+            "mach": 0.3202,
+            "cl": 0.27175,
+            "parasiteN": 2307.75,
+            "inducedN": 800.86,
+            "totalN": 3108.6,
+            "propulsiveHp": 454.25,
+            "totalNRange": [
+              2622.6,
+              3583.27
+            ],
+            "propulsiveHpRange": [
+              383.23,
+              523.61
+            ]
+          },
+          {
+            "tasMph": 281.25,
+            "mach": 0.3695,
+            "cl": 0.20412,
+            "parasiteN": 3072.44,
+            "inducedN": 601.53,
+            "totalN": 3673.97,
+            "propulsiveHp": 619.46,
+            "totalNRange": [
+              3078.57,
+              4239.55
+            ],
+            "propulsiveHpRange": [
+              519.07,
+              714.82
+            ]
+          },
+          {
+            "tasMph": 318.75,
+            "mach": 0.4187,
+            "cl": 0.15891,
+            "parasiteN": 3946.38,
+            "inducedN": 468.32,
+            "totalN": 4414.7,
+            "propulsiveHp": 843.59,
+            "totalNRange": [
+              3683.75,
+              5097.68
+            ],
+            "propulsiveHpRange": [
+              703.92,
+              974.1
+            ]
+          },
+          {
+            "tasMph": 356.25,
+            "mach": 0.468,
+            "cl": 0.12722,
+            "parasiteN": 4929.56,
+            "inducedN": 374.92,
+            "totalN": 5304.48,
+            "propulsiveHp": 1132.87,
+            "totalNRange": [
+              4414.76,
+              6127.59
+            ],
+            "propulsiveHpRange": [
+              942.85,
+              1308.66
+            ]
+          },
+          {
+            "tasMph": 375,
+            "mach": 0.4926,
+            "cl": 0.11482,
+            "parasiteN": 5462.12,
+            "inducedN": 338.36,
+            "totalN": 5800.48,
+            "propulsiveHp": 1304,
+            "totalNRange": [
+              4823.21,
+              6701.51
+            ],
+            "propulsiveHpRange": [
+              1084.3,
+              1506.56
+            ]
+          }
+        ]
+      },
+      "checks": [
+        {
+          "id": "ww2_priority_aircraft_2026-11-13:p51d-4415342-level-mil:0001",
+          "tasMph": 363,
+          "shaftBhp": 1500,
+          "condition": "Same specimen, altitude and fit at 61 inHg military; same chart lineage.",
+          "source": {
+            "id": "ww2_priority_aircraft_2026-11-13:p51d-4415342-level-mil:0001",
+            "sourceId": "ww2_priority_aircraft_2026-11-13:WF-TSCEP5E-1908",
+            "locator": "IV.B.3 level speed table"
+          },
+          "predictedDragN": 5479.24,
+          "powerInferredDragN": 5514.32,
+          "differenceN": -35.08,
+          "differencePct": -0.64,
+          "role": "reserved engineering comparison, shared power/efficiency assumptions"
+        }
+      ],
+      "worksheet": null
+    },
+    {
+      "id": "p47d22_4226167",
+      "aircraft": "P-47D-22-RE 42-26167",
+      "status": "provisional proxy scenario",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "42-26167, 44-1 fuel, water injection, 70 inHg and 2,700 rpm. Speed is measured; precise cooling and rack conditions need the full report.",
+      "evidence": [
+        {
+          "id": "balanced-2026-11-10:BS08:0001",
+          "sourceId": "balanced-2026-11-10:B05",
+          "locator": "ENG-47-1774-A results and section V"
+        },
+        {
+          "id": "ww2_priority_comparative_2026-11-13:p47d22-4226167-loading:0001",
+          "sourceId": "ww2_priority_comparative_2026-11-13:WF-P47D-1774A",
+          "locator": "§III.A–B"
+        }
+      ],
+      "externalReferences": [
+        "https://wwiiaircraftperformance.com/org/p-47/p47-26167.html"
+      ],
+      "geometry": {
+        "areaM2": 27.870912,
+        "spanM": 12.426949999989839,
+        "basis": "Representative Thunderbolt wing",
+        "aspectRatio": 5.54087
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 444,
+        "altitudeFt": 23200,
+        "sourceSpeed": {
+          "value": 444,
+          "unit": "mph",
+          "basis": "TAS",
+          "altitude": 23200,
+          "altitudeUnit": "ft"
+        },
+        "densityKgM3": 0.5847198,
+        "mach": 0.63622,
+        "cl": 0.1833237,
+        "massKg": 6001.027055,
+        "sourceMass": {
+          "nominal": 13230,
+          "unit": "lb",
+          "min": 12800,
+          "max": 13320,
+          "basis": "Eng-47-1774-A gross at takeoff; ± loading sensitivity includes 13,320 lb from a separate comparison"
+        },
+        "shaftBhp": 2600,
+        "sourcePower": {
+          "nominal": 2600,
+          "unit": "bhp",
+          "min": 2350,
+          "max": 2750,
+          "basis": "Engineering R-2800-63 wet high-boost scenario; same-run power unestablished"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 7814.443,
+        "parasiteN": 7039.719,
+        "inducedN": 774.724,
+        "inducedFraction": 0.09914
+      },
+      "polar": {
+        "cd0": 0.021929444,
+        "k": 0.071809552,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.016456108,
+          0.026313883
+        ],
+        "kRange": [
+          0.063830713,
+          0.08206806
+        ]
+      },
+      "curve": {
+        "altitudeFt": 23200,
+        "massKg": 6001.027055,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 244.2,
+            "mach": 0.3499,
+            "cl": 0.60603,
+            "parasiteN": 2129.52,
+            "inducedN": 2561.07,
+            "totalN": 4690.59,
+            "propulsiveHp": 686.68,
+            "totalNRange": [
+              3805.44,
+              5445.68
+            ],
+            "propulsiveHpRange": [
+              557.1,
+              797.22
+            ]
+          },
+          {
+            "tasMph": 288.6,
+            "mach": 0.4135,
+            "cl": 0.4339,
+            "parasiteN": 2974.28,
+            "inducedN": 1833.67,
+            "totalN": 4807.95,
+            "propulsiveHp": 831.84,
+            "totalNRange": [
+              3864.47,
+              5586.33
+            ],
+            "propulsiveHpRange": [
+              668.6,
+              966.51
+            ]
+          },
+          {
+            "tasMph": 333,
+            "mach": 0.4772,
+            "cl": 0.32591,
+            "parasiteN": 3959.84,
+            "inducedN": 1377.29,
+            "totalN": 5337.13,
+            "propulsiveHp": 1065.45,
+            "totalNRange": [
+              4259.72,
+              6204.83
+            ],
+            "propulsiveHpRange": [
+              850.37,
+              1238.67
+            ]
+          },
+          {
+            "tasMph": 377.4,
+            "mach": 0.5408,
+            "cl": 0.25374,
+            "parasiteN": 5086.2,
+            "inducedN": 1072.28,
+            "totalN": 6158.48,
+            "propulsiveHp": 1393.34,
+            "totalNRange": [
+              4891.64,
+              7162.59
+            ],
+            "propulsiveHpRange": [
+              1106.72,
+              1620.52
+            ]
+          },
+          {
+            "tasMph": 421.8,
+            "mach": 0.6044,
+            "cl": 0.20313,
+            "parasiteN": 6353.35,
+            "inducedN": 858.42,
+            "totalN": 7211.77,
+            "propulsiveHp": 1823.6,
+            "totalNRange": [
+              5710.09,
+              8389.82
+            ],
+            "propulsiveHpRange": [
+              1443.88,
+              2121.49
+            ]
+          },
+          {
+            "tasMph": 444,
+            "mach": 0.6362,
+            "cl": 0.18332,
+            "parasiteN": 7039.72,
+            "inducedN": 774.72,
+            "totalN": 7814.44,
+            "propulsiveHp": 2080,
+            "totalNRange": [
+              6180.17,
+              9091.8
+            ],
+            "propulsiveHpRange": [
+              1645,
+              2420
+            ]
+          }
+        ]
+      },
+      "checks": [],
+      "worksheet": null
+    },
+    {
+      "id": "fw190a8_733705",
+      "aircraft": "Fw 190 A-8 WNr 733705",
+      "status": "calculated reference",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "Flugbericht Nr. 2 WNr 733705, no outer wing weapons, ETC 501, rigid wheel doors, combat. Exact cooling setting open.",
+      "evidence": [
+        {
+          "id": "ww2_priority_aircraft_2026-11-13:fw190a8-733705-level:0001",
+          "sourceId": "ww2_priority_aircraft_2026-11-13:FW-A8-733705-FB2",
+          "locator": "Flugbericht Nr. 2, Results §1"
+        },
+        {
+          "id": "ww2_priority_aircraft_2026-11-13:fw190a8-733705-loading:0001",
+          "sourceId": "ww2_priority_aircraft_2026-11-13:FW-A8-733705-FB2",
+          "locator": "Flugbericht Nr. 2, Condition"
+        },
+        {
+          "id": "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0002",
+          "sourceId": "ww2_engine_ratings_and_propeller_2026-11-12:FW190-A2-A4-HANDBUCH-00",
+          "locator": "Teil 0, printed p. 9, Betriebswerte des Motors, BMW 801 D lower row in each cell"
+        }
+      ],
+      "externalReferences": [
+        "https://luftfahrtmuseum-hannover.de/index.php/en/infotext/schild-focke-wulf-190gb"
+      ],
+      "geometry": {
+        "areaM2": 18.3,
+        "spanM": 10.5,
+        "basis": "A-8 type geometry",
+        "aspectRatio": 6.02459
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 320.627535,
+        "altitudeFt": 0,
+        "sourceSpeed": {
+          "value": 516,
+          "unit": "km/h",
+          "basis": "VwKC treated as TAS at sea level",
+          "altitude": 0,
+          "altitudeUnit": "m",
+          "allowance": 3
+        },
+        "densityKgM3": 1.225,
+        "mach": 0.4212,
+        "cl": 0.1798842,
+        "massKg": 4224,
+        "sourceMass": {
+          "nominal": 4224,
+          "unit": "kg",
+          "min": 4070,
+          "max": 4224,
+          "basis": "Report Nr. 2 takeoff proxy"
+        },
+        "shaftBhp": 1499.20651,
+        "sourcePower": {
+          "nominal": 1520,
+          "unit": "PS",
+          "min": 1400,
+          "max": 1580,
+          "basis": "BMW 801 D 700 m bench rating used as sea-level combat scenario"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 6239.766,
+        "parasiteN": 5747.647,
+        "inducedN": 492.119,
+        "inducedFraction": 0.078868
+      },
+      "polar": {
+        "cd0": 0.024959651,
+        "k": 0.066043888,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.019074929,
+          0.029724459
+        ],
+        "kRange": [
+          0.058705678,
+          0.075478729
+        ]
+      },
+      "curve": {
+        "altitudeFt": 0,
+        "massKg": 4224,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 176.345,
+            "mach": 0.2317,
+            "cl": 0.59466,
+            "parasiteN": 1738.66,
+            "inducedN": 1626.84,
+            "totalN": 3365.5,
+            "propulsiveHp": 355.79,
+            "totalNRange": [
+              2717.49,
+              3881.42
+            ],
+            "propulsiveHpRange": [
+              287.29,
+              410.33
+            ]
+          },
+          {
+            "tasMph": 208.408,
+            "mach": 0.2738,
+            "cl": 0.42576,
+            "parasiteN": 2428.38,
+            "inducedN": 1164.78,
+            "totalN": 3593.16,
+            "propulsiveHp": 448.92,
+            "totalNRange": [
+              2881.61,
+              4155.54
+            ],
+            "propulsiveHpRange": [
+              360.02,
+              519.19
+            ]
+          },
+          {
+            "tasMph": 240.471,
+            "mach": 0.3159,
+            "cl": 0.31979,
+            "parasiteN": 3233.05,
+            "inducedN": 874.88,
+            "totalN": 4107.93,
+            "propulsiveHp": 592.2,
+            "totalNRange": [
+              3278.7,
+              4760.11
+            ],
+            "propulsiveHpRange": [
+              472.66,
+              686.22
+            ]
+          },
+          {
+            "tasMph": 272.533,
+            "mach": 0.358,
+            "cl": 0.24897,
+            "parasiteN": 4152.67,
+            "inducedN": 681.13,
+            "totalN": 4833.81,
+            "propulsiveHp": 789.75,
+            "totalNRange": [
+              3846.05,
+              5608.27
+            ],
+            "propulsiveHpRange": [
+              628.37,
+              916.29
+            ]
+          },
+          {
+            "tasMph": 304.596,
+            "mach": 0.4001,
+            "cl": 0.19932,
+            "parasiteN": 5187.25,
+            "inducedN": 545.28,
+            "totalN": 5732.54,
+            "propulsiveHp": 1046.78,
+            "totalNRange": [
+              4552.08,
+              6656.29
+            ],
+            "propulsiveHpRange": [
+              831.22,
+              1215.46
+            ]
+          },
+          {
+            "tasMph": 320.628,
+            "mach": 0.4212,
+            "cl": 0.17988,
+            "parasiteN": 5747.65,
+            "inducedN": 492.12,
+            "totalN": 6239.77,
+            "propulsiveHp": 1199.37,
+            "totalNRange": [
+              4951.37,
+              7251
+            ],
+            "propulsiveHpRange": [
+              951.72,
+              1393.74
+            ]
+          }
+        ]
+      },
+      "checks": [],
+      "worksheet": null
+    },
+    {
+      "id": "spitfire_i_n3171",
+      "aircraft": "Spitfire I N.3171",
+      "status": "provisional proxy scenario",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "N.3171 early Mk I, Merlin III, Rotol three blade, +6.1 lb boost, 3,000 rpm, projecting windscreen and domed hood.",
+      "evidence": [
+        {
+          "id": "ww2_priority_aircraft_2026-11-13:spitfire1-n3171-level:0001",
+          "sourceId": "ww2_priority_aircraft_2026-11-13:AAEE-SPIT1-N3171",
+          "locator": "Speed Trials, 3000 rpm, nominal +6¼ lb boost"
+        },
+        {
+          "id": "ww2_priority_aircraft_2026-11-13:spitfire1-n3171-loading:0001",
+          "sourceId": "ww2_priority_aircraft_2026-11-13:AAEE-SPIT1-N3171",
+          "locator": "Summary of Trials and airscrew specification"
+        }
+      ],
+      "externalReferences": [
+        "https://engineersatwar.ww2.imeche.org/wp-content/uploads/2019/08/imeche_proceedings_banks_aviation_engine.pdf",
+        "https://wwiiaircraftperformance.com/org/spitcom/mk1/spitmk1.html"
+      ],
+      "geometry": {
+        "areaM2": 22.48253568,
+        "spanM": 11.2268,
+        "basis": "Standard full-span early Spitfire wing",
+        "aspectRatio": 5.606175
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 320.5,
+        "altitudeFt": 10000,
+        "sourceSpeed": {
+          "value": 320.5,
+          "unit": "mph",
+          "basis": "TAS",
+          "altitude": 10000,
+          "altitudeUnit": "ft"
+        },
+        "densityKgM3": 0.9046369,
+        "mach": 0.4363,
+        "cl": 0.128915,
+        "massKg": 2744.233839,
+        "sourceMass": {
+          "nominal": 6050,
+          "unit": "lb",
+          "min": 5925,
+          "max": 6050,
+          "basis": "Reported trial loading; in-flight variation scenario"
+        },
+        "shaftBhp": 960,
+        "sourcePower": {
+          "nominal": 960,
+          "unit": "bhp",
+          "min": 880,
+          "max": 1030,
+          "basis": "Engineering estimate bounded by early Merlin ratings; 10,000-ft +6.1 lb power of this engine unresolved"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 3997.154,
+        "parasiteN": 3750.925,
+        "inducedN": 246.229,
+        "inducedFraction": 0.061601
+      },
+      "polar": {
+        "cd0": 0.01796801,
+        "k": 0.070973048,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.014009896,
+          0.021592485
+        ],
+        "kRange": [
+          0.063087154,
+          0.081112055
+        ]
+      },
+      "curve": {
+        "altitudeFt": 10000,
+        "massKg": 2744.233839,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 176.275,
+            "mach": 0.24,
+            "cl": 0.42617,
+            "parasiteN": 1134.65,
+            "inducedN": 813.98,
+            "totalN": 1948.63,
+            "propulsiveHp": 205.92,
+            "totalNRange": [
+              1600.28,
+              2272.17
+            ],
+            "propulsiveHpRange": [
+              169.11,
+              240.11
+            ]
+          },
+          {
+            "tasMph": 208.325,
+            "mach": 0.2836,
+            "cl": 0.30512,
+            "parasiteN": 1584.77,
+            "inducedN": 582.79,
+            "totalN": 2167.56,
+            "propulsiveHp": 270.7,
+            "totalNRange": [
+              1762.72,
+              2540.29
+            ],
+            "propulsiveHpRange": [
+              220.14,
+              317.25
+            ]
+          },
+          {
+            "tasMph": 240.375,
+            "mach": 0.3272,
+            "cl": 0.22918,
+            "parasiteN": 2109.9,
+            "inducedN": 437.74,
+            "totalN": 2547.64,
+            "propulsiveHp": 367.12,
+            "totalNRange": [
+              2058.51,
+              2995.56
+            ],
+            "propulsiveHpRange": [
+              296.64,
+              431.67
+            ]
+          },
+          {
+            "tasMph": 272.425,
+            "mach": 0.3709,
+            "cl": 0.17843,
+            "parasiteN": 2710.04,
+            "inducedN": 340.8,
+            "totalN": 3050.84,
+            "propulsiveHp": 498.25,
+            "totalNRange": [
+              2455.25,
+              3594.55
+            ],
+            "propulsiveHpRange": [
+              400.98,
+              587.05
+            ]
+          },
+          {
+            "tasMph": 304.475,
+            "mach": 0.4145,
+            "cl": 0.14284,
+            "parasiteN": 3385.21,
+            "inducedN": 272.83,
+            "totalN": 3658.04,
+            "propulsiveHp": 667.7,
+            "totalNRange": [
+              2936.61,
+              4315.36
+            ],
+            "propulsiveHpRange": [
+              536.02,
+              787.68
+            ]
+          },
+          {
+            "tasMph": 320.5,
+            "mach": 0.4363,
+            "cl": 0.12891,
+            "parasiteN": 3750.93,
+            "inducedN": 246.23,
+            "totalN": 3997.15,
+            "propulsiveHp": 768,
+            "totalNRange": [
+              3206.05,
+              4717.47
+            ],
+            "propulsiveHpRange": [
+              616,
+              906.4
+            ]
+          }
+        ]
+      },
+      "checks": [],
+      "worksheet": null
+    },
+    {
+      "id": "spitfire_va_x4922",
+      "aircraft": "Spitfire Va X.4922",
+      "status": "calculated reference",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "X.4922, Merlin XLV, de Havilland two-pitch airscrew, eight Brownings and Mk II radiator, +9 lb boost and 3,000 rpm.",
+      "evidence": [
+        {
+          "id": "ww2_priority_aircraft_2026-11-13:spitfire-va-x4922-level:0007",
+          "sourceId": "ww2_priority_aircraft_2026-11-13:AAEE-SPITVA-X4922",
+          "locator": "Speed Trials"
+        },
+        {
+          "id": "ww2_priority_aircraft_2026-11-13:spitfire-va-x4922-loading:0001",
+          "sourceId": "ww2_priority_aircraft_2026-11-13:AAEE-SPITVA-X4922",
+          "locator": "Tests made and Summary of Trials"
+        },
+        {
+          "id": "ww2_low_speed_turn_calibration_2026-11-10:spitva-w3119-original-engine-ratings:0003",
+          "sourceId": "ww2_low_speed_turn_calibration_2026-11-10:SPITVA-W3119-COMPANION",
+          "locator": "NACA 1942 companion flying-qualities report engine description"
+        }
+      ],
+      "externalReferences": [
+        "https://www.wwiiaircraftperformance.com/org/spitcom/mk5/spitmkVa_X4922.html"
+      ],
+      "geometry": {
+        "areaM2": 22.48253568,
+        "spanM": 11.2268,
+        "basis": "Standard full-span Spitfire Va wing",
+        "aspectRatio": 5.606175
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 375,
+        "altitudeFt": 20800,
+        "sourceSpeed": {
+          "value": 375,
+          "unit": "mph",
+          "basis": "TAS",
+          "altitude": 20800,
+          "altitudeUnit": "ft"
+        },
+        "densityKgM3": 0.6351616,
+        "mach": 0.53215,
+        "cl": 0.1429853,
+        "massKg": 2925.670787,
+        "sourceMass": {
+          "nominal": 6450,
+          "unit": "lb",
+          "min": 6275,
+          "max": 6450,
+          "basis": "Reported trial loading; in-flight variation scenario"
+        },
+        "shaftBhp": 1210,
+        "sourcePower": {
+          "nominal": 1210,
+          "unit": "bhp",
+          "min": 1120,
+          "max": 1300,
+          "basis": "Merlin XLV 1,210 bhp at 18,250 ft (W.3119 nameplate) applied at X.4922 flight FTH"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 4305.879,
+        "parasiteN": 4014.719,
+        "inducedN": 291.159,
+        "inducedFraction": 0.067619
+      },
+      "polar": {
+        "cd0": 0.020007844,
+        "k": 0.070973048,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.015721595,
+          0.024139723
+        ],
+        "kRange": [
+          0.063087154,
+          0.081112055
+        ]
+      },
+      "curve": {
+        "altitudeFt": 20800,
+        "massKg": 2925.670787,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 206.25,
+            "mach": 0.2927,
+            "cl": 0.47268,
+            "parasiteN": 1214.45,
+            "inducedN": 962.51,
+            "totalN": 2176.96,
+            "propulsiveHp": 269.17,
+            "totalNRange": [
+              1790.61,
+              2538.71
+            ],
+            "propulsiveHpRange": [
+              221.4,
+              313.9
+            ]
+          },
+          {
+            "tasMph": 243.75,
+            "mach": 0.3459,
+            "cl": 0.33843,
+            "parasiteN": 1696.22,
+            "inducedN": 689.13,
+            "totalN": 2385.35,
+            "propulsiveHp": 348.56,
+            "totalNRange": [
+              1949.71,
+              2797
+            ],
+            "propulsiveHpRange": [
+              284.9,
+              408.71
+            ]
+          },
+          {
+            "tasMph": 281.25,
+            "mach": 0.3991,
+            "cl": 0.2542,
+            "parasiteN": 2258.28,
+            "inducedN": 517.62,
+            "totalN": 2775.9,
+            "propulsiveHp": 468.03,
+            "totalNRange": [
+              2259.35,
+              3266.82
+            ],
+            "propulsiveHpRange": [
+              380.94,
+              550.81
+            ]
+          },
+          {
+            "tasMph": 318.75,
+            "mach": 0.4523,
+            "cl": 0.1979,
+            "parasiteN": 2900.63,
+            "inducedN": 402.99,
+            "totalN": 3303.62,
+            "propulsiveHp": 631.28,
+            "totalNRange": [
+              2681.71,
+              3896.78
+            ],
+            "propulsiveHpRange": [
+              512.44,
+              744.63
+            ]
+          },
+          {
+            "tasMph": 356.25,
+            "mach": 0.5055,
+            "cl": 0.15843,
+            "parasiteN": 3623.28,
+            "inducedN": 322.61,
+            "totalN": 3945.9,
+            "propulsiveHp": 842.72,
+            "totalNRange": [
+              3197.73,
+              4661
+            ],
+            "propulsiveHpRange": [
+              682.93,
+              995.44
+            ]
+          },
+          {
+            "tasMph": 375,
+            "mach": 0.5322,
+            "cl": 0.14299,
+            "parasiteN": 4014.72,
+            "inducedN": 291.16,
+            "totalN": 4305.88,
+            "propulsiveHp": 968,
+            "totalNRange": [
+              3487.41,
+              5088.77
+            ],
+            "propulsiveHpRange": [
+              784,
+              1144
+            ]
+          }
+        ]
+      },
+      "checks": [],
+      "worksheet": null
+    },
+    {
+      "id": "bf109e_1304",
+      "aircraft": "Bf 109 E WNr 1304 (AE479)",
+      "status": "provisional proxy scenario",
+      "method": "level power and bounded Oswald efficiency",
+      "configuration": "WNr 1792 wing-armament comparison transferred as a provisional reference for WNr 1304/AE479; armament, cooling and engine subvariant to verify.",
+      "evidence": [
+        {
+          "id": "ww2_priority_aircraft_2026-11-13:bf109e3-1792-level:0001",
+          "sourceId": "ww2_priority_aircraft_2026-11-13:MSS-E3-1792-1939-02-16",
+          "locator": "Archive synthesis, Level speed, note 7"
+        },
+        {
+          "id": "stall_global_2026-11-10:BF109-E-RAE-1",
+          "sourceId": "stall_global_2026-11-10:UK-BFE-RAE",
+          "locator": "pp1-3, Approach and Stalling Test"
+        }
+      ],
+      "externalReferences": [
+        "https://www.pumaszallas.hu/Private/VO101_Tom/docs/DB601_AuB_MM_1940_08.pdf",
+        "https://www.wardrawings.be/WW2/Files/2-Airplanes/Non-aligned/Switzerland/1-Fighters/Me-Bf109/Me-Bf109E-3.htm"
+      ],
+      "geometry": {
+        "areaM2": 16.2,
+        "spanM": 9.87,
+        "basis": "Representative E-3 wing",
+        "aspectRatio": 6.013389
+      },
+      "anchor": {
+        "role": "fit",
+        "tasMph": 290,
+        "altitudeFt": 0,
+        "sourceSpeed": {
+          "value": 290,
+          "unit": "mph",
+          "basis": "TAS",
+          "altitude": 0,
+          "altitudeUnit": "ft"
+        },
+        "densityKgM3": 1.225,
+        "mach": 0.38097,
+        "cl": 0.1528918,
+        "massKg": 2600,
+        "sourceMass": {
+          "nominal": 2600,
+          "unit": "kg",
+          "min": 2450,
+          "max": 2700,
+          "basis": "Representative E-3 loading, exact run mass of WNr 1792 unresolved"
+        },
+        "shaftBhp": 986.32007,
+        "sourcePower": {
+          "nominal": 1000,
+          "unit": "PS",
+          "min": 900,
+          "max": 1100,
+          "basis": "Engineering DB 601 A 1.30 ata power scenario; exact rpm and installed power unresolved"
+        },
+        "propellerEfficiency": 0.8,
+        "totalDragN": 4538.659,
+        "parasiteN": 4280.719,
+        "inducedN": 257.94,
+        "inducedFraction": 0.056832
+      },
+      "polar": {
+        "cd0": 0.025668874,
+        "k": 0.066166909,
+        "oswaldE": 0.8,
+        "cd0Range": [
+          0.019526014,
+          0.031710064
+        ],
+        "kRange": [
+          0.058815031,
+          0.075619325
+        ]
+      },
+      "curve": {
+        "altitudeFt": 0,
+        "massKg": 2600,
+        "loadFactor": 1,
+        "points": [
+          {
+            "tasMph": 159.5,
+            "mach": 0.2095,
+            "cl": 0.50543,
+            "parasiteN": 1294.92,
+            "inducedN": 852.69,
+            "totalN": 2147.61,
+            "propulsiveHp": 205.35,
+            "totalNRange": [
+              1692.63,
+              2616.01
+            ],
+            "propulsiveHpRange": [
+              161.85,
+              250.14
+            ]
+          },
+          {
+            "tasMph": 188.5,
+            "mach": 0.2476,
+            "cl": 0.36187,
+            "parasiteN": 1808.6,
+            "inducedN": 610.51,
+            "totalN": 2419.11,
+            "propulsiveHp": 273.37,
+            "totalNRange": [
+              1905.95,
+              2938.39
+            ],
+            "propulsiveHpRange": [
+              215.38,
+              332.05
+            ]
+          },
+          {
+            "tasMph": 217.5,
+            "mach": 0.2857,
+            "cl": 0.27181,
+            "parasiteN": 2407.9,
+            "inducedN": 458.56,
+            "totalN": 2866.46,
+            "propulsiveHp": 373.76,
+            "totalNRange": [
+              2257.9,
+              3475.46
+            ],
+            "propulsiveHpRange": [
+              294.41,
+              453.16
+            ]
+          },
+          {
+            "tasMph": 246.5,
+            "mach": 0.3238,
+            "cl": 0.21161,
+            "parasiteN": 3092.82,
+            "inducedN": 357.01,
+            "totalN": 3449.83,
+            "propulsiveHp": 509.8,
+            "totalNRange": [
+              2717.05,
+              4178.13
+            ],
+            "propulsiveHpRange": [
+              401.51,
+              617.42
+            ]
+          },
+          {
+            "tasMph": 275.5,
+            "mach": 0.3619,
+            "cl": 0.16941,
+            "parasiteN": 3863.35,
+            "inducedN": 285.81,
+            "totalN": 4149.15,
+            "propulsiveHp": 685.27,
+            "totalNRange": [
+              3267.55,
+              5021.67
+            ],
+            "propulsiveHpRange": [
+              539.67,
+              829.38
+            ]
+          },
+          {
+            "tasMph": 290,
+            "mach": 0.381,
+            "cl": 0.15289,
+            "parasiteN": 4280.72,
+            "inducedN": 257.94,
+            "totalN": 4538.66,
+            "propulsiveHp": 789.06,
+            "totalNRange": [
+              3574.19,
+              5491.78
+            ],
+            "propulsiveHpRange": [
+              621.38,
+              954.76
+            ]
+          }
+        ]
+      },
+      "checks": [],
+      "worksheet": null
+    }
+  ]
+}

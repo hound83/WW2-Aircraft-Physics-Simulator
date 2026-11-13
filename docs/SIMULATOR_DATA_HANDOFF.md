@@ -8,10 +8,11 @@
 | --- | --- |
 | `dist/fighter-sim-inputs.json` | Reviewed priority-aircraft, PDF and batch inputs, matched climbs, fleet stall reference, original observation IDs, GOLD and GOLD* agreement, and curve styles and bounds |
 | `dist/fighter-propeller-efficiency.json` | Propeller and installation references for all 13 variants, original efficiency series, conditional flight replays and the seven-aircraft sensitivity sweep |
+| `dist/fighter-greg-drag-models.json` | Greg-method drag polars for all 19 dossiers, with source conditions, assumptions, sensitivity and check residuals |
 | `dist/research-catalog.json` | Original observations, conditions, source links and report lineage |
 | `dist/fighter-evidence-curves.html` | Standalone evidence viewer for the full research roster |
 
-A local build produces the three JSON files. The **physics-validation** artifact from a successful `main` run also includes the standalone viewer. [Physics regression builds](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/regression.yml)
+A local build produces these JSON files. See the [Greg drag reference and usage notes](research/WW2_GREG_DRAG_MODELS_2026-11-13.md) for the calculation, conditions and source quality. The **physics-validation** artifact from a successful `main` run also includes the standalone viewer. [Physics regression builds](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/regression.yml)
 
 ## Suggested aircraft
 

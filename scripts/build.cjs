@@ -143,11 +143,15 @@ function build(){
  fs.writeFileSync(path.join(root,'dist/model.html'),html);
  fs.writeFileSync(path.join(root,'dist/research-catalog.json'),researchData+'\n');
  fs.copyFileSync(path.join(root,'references/analysis/fighter-sim-inputs-v1.json'),path.join(root,'dist/fighter-sim-inputs.json'));
+ const {buildGregDragModels,encodeGregDragModels,releasePath:dragPath,buildFile:dragFile}=require('./fighter-greg-drag-models.cjs');
+ const dragData=encodeGregDragModels(buildGregDragModels(inputs,researchCatalog));
+ if(dragData!==read(dragPath))throw Error('Regenerate the Greg drag reference with node scripts/fighter-greg-drag-models.cjs');
+ fs.writeFileSync(path.join(root,'dist',dragFile),dragData);
  const propeller=inputs.propeller_efficiency;
  const efficiencyData=read(propeller.path);
  if(sha256(efficiencyData)!==propeller.sha256)throw Error('Propeller efficiency data and input pack disagree');
  fs.writeFileSync(path.join(root,'dist',propeller.build_file),efficiencyData);
- const metadata={version,researchStatus:'Shared climb energy and Fw 190 open-cooling replay',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
+ const metadata={version,researchStatus:'Shared climb energy and Fw 190 open-cooling replay',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,gregDragModelsFile:dragFile,gregDragModelsSha256:sha256(dragData),researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
  fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify(metadata,null,2)+'\n');
  return metadata;
 }
