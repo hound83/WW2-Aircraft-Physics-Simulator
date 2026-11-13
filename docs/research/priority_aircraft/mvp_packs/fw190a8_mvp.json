@@ -1,0 +1,16 @@
+{
+  "aircraft": "Fw 190 A-8",
+  "grade_overall": "good",
+  "ready_for_first_pass": true,
+  "level_speed_kmh": {
+    "0_m": "557-578",
+    "rated_alt": "644-652"
+  },
+  "climb_ms_sl": "13.4-15.0",
+  "power_curve": "Partial - cooling state graded",
+  "prop_efficiency": 0.80,
+  "stall_ias_mph": "~110",
+  "stall_grade": "secondary",
+  "source": "Focke-Wulf Flugleistungen sheets 1943-44 + AFDU notes",
+  "notes": "Sudden stall with little warning. Speed data usable."
+}
