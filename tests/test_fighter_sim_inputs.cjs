@@ -24,6 +24,33 @@ for (const [id, ref] of Object.entries(pack.observations)) {
   assert.ok(pack.sources[ref.source]);
 }
 
+const { buildGregDragModels, encodeGregDragModels, releasePath: dragPath } =
+  require('../scripts/fighter-greg-drag-models.cjs');
+const drag = buildGregDragModels(pack, catalog);
+assert.equal(encodeGregDragModels(drag), fs.readFileSync(path.join(__dirname, '..', dragPath), 'utf8'));
+assert.deepEqual(drag.aircraft.map(row => row.id), [
+  ...pack.coverage.rows.map(row => row.id),
+  ...pack.priority_comparative_reference.coverage_assessment.dossiers.map(row => row.id),
+]);
+assert.equal(drag.aircraft.length, 19);
+for (const row of drag.aircraft) {
+  assert.ok(row.polar.cd0 > 0 && row.polar.k > 0);
+  assert.ok(row.anchor.totalDragN > 0 && row.anchor.inducedFraction > 0 && row.anchor.inducedFraction < 1);
+  for (const point of row.curve.points) {
+    assert.ok(point.totalN >= point.totalNRange[0] && point.totalN <= point.totalNRange[1]);
+    assert.ok(Math.abs(point.parasiteN + point.inducedN - point.totalN) < 0.02);
+  }
+}
+const f4Drag = drag.aircraft.find(row => row.id === 'bf109f4_representative');
+const f4Replay = f4Drag.worksheet.replay.find(row => row.tasMph === 200);
+assert.equal(f4Replay.calculatedDragLbf, 644.47);
+assert.equal(f4Replay.worksheetDragLbf, 646);
+const p51dDrag = drag.aircraft.find(row => row.id === 'p51d15_4415342');
+assert.equal(Number(p51dDrag.polar.cd0.toFixed(5)), 0.01453);
+assert.equal(Number(p51dDrag.polar.k.toFixed(5)), 0.0683);
+assert.equal(drag.aircraft.find(row => row.id === 'p38g_4212687').anchor.shaftBhp, 2440);
+assert.equal(drag.aircraft.find(row => row.id === 'p47d30_433441').status, 'provisional proxy scenario');
+
 const byId = id => pack.cases.find(row => row.id === id);
 assert.equal(pack.version, '1.11.0');
 const comparative = pack.priority_comparative_reference;

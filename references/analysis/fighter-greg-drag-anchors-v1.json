@@ -1,0 +1,742 @@
+{
+  "eta": {
+    "nominal": 0.8,
+    "min": 0.7,
+    "max": 0.88
+  },
+  "oswald": {
+    "nominal": 0.8,
+    "min": 0.7,
+    "max": 0.9
+  },
+  "aircraft": [
+    {
+      "id": "f4u4_80765",
+      "geometry": {
+        "area": 314,
+        "span": 41,
+        "lengthUnit": "ft",
+        "basis": "F4U-4 type geometry"
+      },
+      "mass": {
+        "nominal": 12500,
+        "unit": "lb",
+        "min": 12250,
+        "max": 12500,
+        "basis": "Report normal fighter loading"
+      },
+      "speed": {
+        "value": 348.686173,
+        "unit": "mph",
+        "basis": "TAS",
+        "altitude": 0,
+        "altitudeUnit": "ft"
+      },
+      "power": {
+        "nominal": 2100,
+        "unit": "bhp",
+        "min": 2050,
+        "max": 2150,
+        "basis": "BuNo 80765 level-flight Plate 3 chart shaft power, ±50 bhp reading allowance"
+      },
+      "configuration": "Navy military clean level trial; exact flap/shutter position at this run unresolved.",
+      "evidence": [
+        "ww2_multiaxis_propulsion_trials_2026-11-10:f4u4-normal-military-speed:0005",
+        "ww2_fleet_stall_2026-11-12:f4u4-clean-powered"
+      ],
+      "links": [
+        "https://www.wwiiaircraftperformance.com/org/f4u/f4u_files/80765-level.jpg",
+        "https://ntrs.nasa.gov/api/citations/20050081862/downloads/20050081862.pdf",
+        "https://www2.gvsu.edu/ramseyea/F4-U.html"
+      ],
+      "checks": [
+        {
+          "id": "ww2_multiaxis_propulsion_trials_2026-11-10:f4u4-normal-military-speed:0001",
+          "tasMph": 322.218245,
+          "shaftBhp": 1700,
+          "condition": "Same specimen and altitude, Plate 3 Normal branch, 2,600 rpm; cooling and efficiency equivalence approximate."
+        }
+      ]
+    },
+    {
+      "id": "p51b_4324777",
+      "geometry": "p51b",
+      "mass": {
+        "nominal": 9335,
+        "unit": "lb",
+        "min": 9050,
+        "max": 9335,
+        "basis": "Takeoff proxy; speed is reduced on the report weight schedule"
+      },
+      "speed": {
+        "value": 426,
+        "unit": "mph",
+        "basis": "TAS",
+        "altitude": 22400,
+        "altitudeUnit": "ft",
+        "allowance": 1
+      },
+      "power": {
+        "nominal": 1400,
+        "unit": "bhp",
+        "min": 1390,
+        "max": 1410,
+        "basis": "Packard chart assignment, including plotted reading allowance"
+      },
+      "configuration": "Eng-47-1749-A Fig. 5; V-1650-7 high blower, 67 inHg, 3,000 rpm, 44-1 fuel, wing racks, automatic shutters, auto-rich.",
+      "evidence": [
+        "ww2_fleet_propeller_2026-11-12:p51b-24777-fig5-high-blower:0002",
+        "ww2_grok_batch_source_review_2026-11-12:p51b15-4324777-low-blower-lapse:0001"
+      ],
+      "checks": [
+        {
+          "id": "ww2_fleet_propeller_2026-11-12:p51b-24777-fig5-high-blower:0001",
+          "tasMph": 414,
+          "shaftBhp": 1270,
+          "condition": "Same figure, 61 inHg and 3,000 rpm; same chart power and efficiency assumptions."
+        }
+      ]
+    },
+    {
+      "id": "f6f3_04776",
+      "geometry": {
+        "area": 334,
+        "span": 42.833333333333336,
+        "lengthUnit": "ft",
+        "basis": "F6F-3 type geometry"
+      },
+      "mass": {
+        "nominal": 11573,
+        "unit": "lb",
+        "min": 11200,
+        "max": 11573,
+        "basis": "BuAer 04934 donor gross; 11,200 lb is BuAer 04776 reference only"
+      },
+      "evaluationMassLb": 11200,
+      "speed": {
+        "value": 377.5,
+        "unit": "mph",
+        "basis": "TAS",
+        "altitude": 22300,
+        "altitudeUnit": "ft"
+      },
+      "power": {
+        "nominal": 1650,
+        "unit": "bhp",
+        "min": 1550,
+        "max": 1750,
+        "basis": "BIS 2116 summary military high blower"
+      },
+      "configuration": "Cross-specimen F6F-3 BuAer 04934 military high-blower speed/power; suitability for 04776 cowl and installation needs checking.",
+      "proxy": true,
+      "evidence": [
+        "ww2_fighter_flight_tests_2026-11-11:f6f3-04776-early-stall-traces:0001"
+      ],
+      "links": [
+        "https://wwiiaircraftperformance.com/org/f6f/f6f.html",
+        "https://www.ibiblio.org/hyperwar/USN/ref/ONI/ONI-Misc/ArmyNavyAircraftRecogMan.pdf"
+      ]
+    },
+    {
+      "id": "spitfire_lfix_bs543",
+      "geometry": "spitfire_lfix_bs543",
+      "mass": {
+        "nominal": 7110,
+        "unit": "lb",
+        "min": 7010,
+        "max": 7210,
+        "basis": "Reported reduction to 95% takeoff weight; ±100 lb sensitivity"
+      },
+      "speed": {
+        "value": 363,
+        "unit": "mph",
+        "basis": "TAS",
+        "altitude": 6000,
+        "altitudeUnit": "ft"
+      },
+      "power": {
+        "nominal": 1705,
+        "unit": "bhp",
+        "min": 1620,
+        "max": 1785,
+        "basis": "Merlin 66 low-blower rating at 5,750 ft, applied at 6,000 ft"
+      },
+      "configuration": "Table V, standard full span, M.S. gear, +18 lb boost, 2,995 rpm, radiator flaps shut.",
+      "evidence": [
+        "archival-2026-11-10:S01:0004"
+      ],
+      "links": [
+        "https://www.wwiiaircraftperformance.org/Aircraft_Engines_of_the_World_Rolls-Royce_Merlin.pdf"
+      ]
+    },
+    {
+      "id": "p47b_415902",
+      "geometry": "p47b",
+      "mass": {
+        "nominal": 12565,
+        "unit": "lb",
+        "min": 12365,
+        "max": 12565,
+        "basis": "Report gross, in-flight fuel allowance"
+      },
+      "speed": {
+        "value": 352,
+        "unit": "mph",
+        "basis": "TAS",
+        "altitude": 5000,
+        "altitudeUnit": "ft"
+      },
+      "power": {
+        "nominal": 2000,
+        "unit": "bhp",
+        "min": 2000,
+        "max": 2000,
+        "basis": "Reported installed torquemeter BHP"
+      },
+      "configuration": "R-2800-21 military, 52 inHg, 2,700 rpm; clean level reference with closed/flush cooling fit.",
+      "evidence": [
+        "balanced-2026-11-10:BS06:0001"
+      ],
+      "checks": [
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p47b-cooling-flap-speed:0001",
+          "tasMph": 323,
+          "shaftBhp": 1605,
+          "condition": "Same specimen, altitude and rpm; neutral oil/intercooler flaps. Cooling equivalence and efficiency are approximate."
+        }
+      ]
+    },
+    {
+      "id": "p38g_4212687",
+      "geometry": {
+        "area": 327.5,
+        "span": 52,
+        "lengthUnit": "ft",
+        "basis": "P-38G type geometry"
+      },
+      "mass": {
+        "nominal": 13550,
+        "unit": "lb",
+        "min": 13400,
+        "max": 13550,
+        "basis": "Reported speed-trial weight span"
+      },
+      "speed": {
+        "value": 346.5,
+        "unit": "mph",
+        "basis": "TAS",
+        "altitude": 5000,
+        "altitudeUnit": "ft"
+      },
+      "power": {
+        "nominal": 2440,
+        "unit": "bhp",
+        "min": 2390,
+        "max": 2490,
+        "basis": "Two engines at 1,220 reported bhp each; ±50 total sensitivity"
+      },
+      "configuration": "42-12687 at 3,000 rpm and 44.7 inHg, radiators faired; no external load assigned.",
+      "evidence": [
+        "balanced-2026-11-10:BS01:0001"
+      ],
+      "links": [
+        "https://www.flugzeuginfo.net/acdata_php/acdata_p38_en.php"
+      ],
+      "checks": [
+        {
+          "id": "ww2_fighter_measured_conditions_2026-11-11:p38g-part-power-level:0001",
+          "tasMph": 346,
+          "shaftBhp": 2300,
+          "massLb": 13270,
+          "condition": "Same specimen and altitude, 2,800 rpm and chart BHP; faired radiators. This has little CL separation."
+        }
+      ]
+    },
+    {
+      "id": "fw190d9_210002",
+      "geometry": {
+        "area": 18.3,
+        "span": 10.5,
+        "lengthUnit": "m",
+        "basis": "Fw 190 D-9 type geometry"
+      },
+      "mass": {
+        "nominal": 4100,
+        "unit": "kg",
+        "min": 3950,
+        "max": 4100,
+        "basis": "Report level-test starting mass"
+      },
+      "speed": {
+        "value": 330,
+        "unit": "mph",
+        "basis": "TAS",
+        "altitude": 0,
+        "altitudeUnit": "ft"
+      },
+      "power": {
+        "nominal": 1600,
+        "unit": "PS",
+        "min": 1500,
+        "max": 1700,
+        "basis": "Jumo 213 A handbook sea-level combat/climb rating"
+      },
+      "configuration": "WNr 210002 combat 3,000 rpm, no ETC rack, movable doors; dry rating. Keep cooling and engine-gap variants distinct.",
+      "evidence": [
+        "balanced-2026-11-10:BS28:0003",
+        "ww2_german_fighter_archive_2026-11-11:d9-210002-load-by-trial:0001",
+        "ww2_pdf_source_review_2026-11-12:d9-handbook-ratings:0002"
+      ],
+      "links": [
+        "https://www.awm.gov.au/visit/exhibitions/striking/planes/german/fw190",
+        "https://prussia.online/Data/Book/fo/focke-wulf-fw-190-2003/Lowe%20M.%20Focke-Wulf%20Fw%20190%20%282003%29%2C%20OCR.pdf"
+      ]
+    },
+    {
+      "id": "fw190a4_783",
+      "geometry": {
+        "area": 18.3,
+        "span": 10.5,
+        "lengthUnit": "m",
+        "basis": "Representative radial Fw 190 wing"
+      },
+      "mass": {
+        "nominal": 3870,
+        "unit": "kg",
+        "min": 3720,
+        "max": 3870,
+        "basis": "Report takeoff proxy"
+      },
+      "speed": {
+        "value": 525,
+        "unit": "km/h",
+        "basis": "TAS",
+        "altitude": 0,
+        "altitudeUnit": "m",
+        "allowance": 3
+      },
+      "power": {
+        "nominal": 1520,
+        "unit": "PS",
+        "min": 1420,
+        "max": 1580,
+        "basis": "BMW 801 D low-gear 700 m bench rating used as sea-level 1.32 ata / 2,400 rpm scenario"
+      },
+      "configuration": "WNr 783 long external intake, lower branch, closed cooling flaps. The normal internal intake is a separate case.",
+      "evidence": [
+        "ww2_fleet_propeller_2026-11-12:a4-783-long-external-intake-level:0001",
+        "ww2_engine_ratings_and_propeller_2026-11-12:a4-783-long-intake-level:0001",
+        "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0002"
+      ],
+      "links": [
+        "https://luftfahrtmuseum-hannover.de/index.php/en/infotext/schild-focke-wulf-190gb"
+      ]
+    },
+    {
+      "id": "p40f_4113635",
+      "geometry": {
+        "area": 236,
+        "span": 37.333333333333336,
+        "lengthUnit": "ft",
+        "basis": "P-40F type geometry"
+      },
+      "mass": {
+        "nominal": 8505,
+        "unit": "lb",
+        "min": 8150,
+        "max": 8860,
+        "basis": "Handbook design load used as proxy; exact brace trial mass unresolved"
+      },
+      "speed": {
+        "value": 374,
+        "unit": "mph",
+        "basis": "TAS",
+        "altitude": 18100,
+        "altitudeUnit": "ft"
+      },
+      "power": {
+        "nominal": 1100,
+        "unit": "bhp",
+        "min": 1045,
+        "max": 1155,
+        "basis": "Report chart assignment; range is an engineering allowance"
+      },
+      "configuration": "41-13635, empty tank sway braces removed, radiator faired, high blower, 2,950 rpm, no tank.",
+      "evidence": [
+        "archival-2026-11-10:S43:0001",
+        "ww2_fighter_flight_tests_2026-11-11:p40fl-manual-loading:0002",
+        "ww2_fighter_flight_tests_2026-11-11:p40fl-manual-loading:0003"
+      ],
+      "links": [
+        "https://aeropedia.com.au/content/curtiss-p-40f-warhawk/"
+      ]
+    },
+    {
+      "id": "ki84_302",
+      "geometry": {
+        "area": 21,
+        "span": 11.238,
+        "lengthUnit": "m",
+        "basis": "Ki-84 type geometry"
+      },
+      "mass": {
+        "nominal": 7940,
+        "unit": "lb",
+        "min": 7750,
+        "max": 7940,
+        "basis": "T-2 IR-3 normal nominal load"
+      },
+      "speed": {
+        "value": 412,
+        "unit": "mph",
+        "basis": "assumed TAS",
+        "altitude": 20000,
+        "altitudeUnit": "ft",
+        "allowance": 5
+      },
+      "power": {
+        "nominal": 1695,
+        "unit": "bhp",
+        "min": 1450,
+        "max": 1780,
+        "basis": "Nominal military rating at 20,000 ft; assumes the report horsepower is mechanical BHP"
+      },
+      "configuration": "T-2 302 normal-load military schedule. Report does not identify speed basis or show a matched installed power run. High-altitude speed treated as TAS for this scenario.",
+      "proxy": true,
+      "evidence": [
+        "ww2_pdf_source_review_2026-11-12:ki84-ir3-nominal-level-speed:0003",
+        "ww2_twelve_fighter_gap_followup_2026-11-10:ki84-302-nominal-engine-rating-schedule:0005"
+      ],
+      "links": [
+        "https://www.aviastar.org/air/japan/nakajima_ki-84.php"
+      ]
+    },
+    {
+      "id": "p47d30_433441",
+      "geometry": {
+        "area": 300,
+        "span": 40.7708333333,
+        "lengthUnit": "ft",
+        "basis": "D-30 report wing area and representative Thunderbolt span"
+      },
+      "mass": {
+        "nominal": 13065,
+        "unit": "lb",
+        "min": 12500,
+        "max": 13600,
+        "basis": "Existing Greg worksheet reconstruction assumes 13,065 lb; worksheet run mass unconfirmed"
+      },
+      "evaluationMassLb": 12400,
+      "worksheet": {
+        "id": "p47d28",
+        "speedMph": 350
+      },
+      "configuration": "Greg high-power D-family worksheet, likely D-28, transferred as a drag-shape scenario to D-30 43-3441. Bubbletop fit, propeller, stores and cooling equivalence unresolved.",
+      "proxy": true,
+      "evidence": [
+        "ww2_fighter_measured_conditions_2026-11-11:d30-longitudinal-installation:0001",
+        "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0002"
+      ],
+      "links": [
+        "https://ntrs.nasa.gov/citations/20090022749"
+      ]
+    },
+    {
+      "id": "bf109f4_representative",
+      "geometry": "bf109f4",
+      "mass": {
+        "nominal": 6371,
+        "unit": "lb",
+        "min": 6371,
+        "max": 6371,
+        "basis": "Greg replay nominal loading used in the repository reconciliation"
+      },
+      "worksheet": {
+        "id": "bf109f4",
+        "speedMph": 325
+      },
+      "configuration": "Greg Bf 109 F-4 sea-level worksheet configuration. Original drag entries are calculations with unknown cooling and exact specimen."
+    },
+    {
+      "id": "bf109g2_db605a",
+      "geometry": {
+        "area": 16.05,
+        "span": 9.92,
+        "lengthUnit": "m",
+        "basis": "Representative G-2 wing"
+      },
+      "mass": {
+        "nominal": 3050,
+        "unit": "kg",
+        "min": 2900,
+        "max": 3235,
+        "basis": "Representative MT-215 scenario; upper sensitivity informed by separate G-2 WNr 14513 test loading"
+      },
+      "speed": {
+        "value": 522,
+        "unit": "km/h",
+        "basis": "TAS",
+        "altitude": 140,
+        "altitudeUnit": "m",
+        "allowance": 3
+      },
+      "power": {
+        "nominal": 1310,
+        "unit": "PS",
+        "min": 1210,
+        "max": 1375,
+        "basis": "DB 605 A nominal 1.30 ata / 2,600 rpm; MT-215 run at 2,540 rpm"
+      },
+      "configuration": "Finnish MT-215, corrected speed transcription, 1.30 ata, fixed tailwheel, departure with full fuselage fuel and ammunition; exact run mass and cooling unresolved.",
+      "evidence": [
+        "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-speed-power-table:0001",
+        "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power:0002",
+        "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-14513-measured-loading:0001"
+      ],
+      "links": [
+        "https://www.korpisota.fi/flugzeuge/bf109g2.html"
+      ]
+    },
+    {
+      "id": "p51d15_4415342",
+      "geometry": {
+        "area": 235,
+        "span": 37,
+        "lengthUnit": "ft",
+        "basis": "Representative P-51D wing geometry in the source register"
+      },
+      "mass": {
+        "nominal": 9700,
+        "unit": "lb",
+        "min": 9700,
+        "max": 9700,
+        "basis": "Report sea-level reduction weight"
+      },
+      "speed": {
+        "value": 375,
+        "unit": "mph",
+        "basis": "TAS",
+        "altitude": 0,
+        "altitudeUnit": "ft"
+      },
+      "power": {
+        "nominal": 1630,
+        "unit": "bhp",
+        "min": 1549,
+        "max": 1712,
+        "basis": "Wright Field sea-level chart assignment, ±5% sensitivity"
+      },
+      "configuration": "44-15342 WEP, 67 inHg, 3,000 rpm, racks fitted, no external stores, automatic shutters, mixture Run.",
+      "evidence": [
+        "ww2_priority_aircraft_2026-11-13:p51d-4415342-level-wep:0001",
+        "ww2_priority_aircraft_2026-11-13:p51d-representative-wing-geometry:0001"
+      ],
+      "checks": [
+        {
+          "id": "ww2_priority_aircraft_2026-11-13:p51d-4415342-level-mil:0001",
+          "tasMph": 363,
+          "shaftBhp": 1500,
+          "condition": "Same specimen, altitude and fit at 61 inHg military; same chart lineage."
+        }
+      ]
+    },
+    {
+      "id": "p47d22_4226167",
+      "geometry": {
+        "area": 300,
+        "span": 40.7708333333,
+        "lengthUnit": "ft",
+        "basis": "Representative Thunderbolt wing"
+      },
+      "mass": {
+        "nominal": 13230,
+        "unit": "lb",
+        "min": 12800,
+        "max": 13320,
+        "basis": "Eng-47-1774-A gross at takeoff; ± loading sensitivity includes 13,320 lb from a separate comparison"
+      },
+      "speed": {
+        "value": 444,
+        "unit": "mph",
+        "basis": "TAS",
+        "altitude": 23200,
+        "altitudeUnit": "ft"
+      },
+      "power": {
+        "nominal": 2600,
+        "unit": "bhp",
+        "min": 2350,
+        "max": 2750,
+        "basis": "Engineering R-2800-63 wet high-boost scenario; same-run power unestablished"
+      },
+      "configuration": "42-26167, 44-1 fuel, water injection, 70 inHg and 2,700 rpm. Speed is measured; precise cooling and rack conditions need the full report.",
+      "proxy": true,
+      "evidence": [
+        "balanced-2026-11-10:BS08:0001",
+        "ww2_priority_comparative_2026-11-13:p47d22-4226167-loading:0001"
+      ],
+      "links": [
+        "https://wwiiaircraftperformance.com/org/p-47/p47-26167.html"
+      ]
+    },
+    {
+      "id": "fw190a8_733705",
+      "geometry": {
+        "area": 18.3,
+        "span": 10.5,
+        "lengthUnit": "m",
+        "basis": "A-8 type geometry"
+      },
+      "mass": {
+        "nominal": 4224,
+        "unit": "kg",
+        "min": 4070,
+        "max": 4224,
+        "basis": "Report Nr. 2 takeoff proxy"
+      },
+      "speed": {
+        "value": 516,
+        "unit": "km/h",
+        "basis": "VwKC treated as TAS at sea level",
+        "altitude": 0,
+        "altitudeUnit": "m",
+        "allowance": 3
+      },
+      "power": {
+        "nominal": 1520,
+        "unit": "PS",
+        "min": 1400,
+        "max": 1580,
+        "basis": "BMW 801 D 700 m bench rating used as sea-level combat scenario"
+      },
+      "configuration": "Flugbericht Nr. 2 WNr 733705, no outer wing weapons, ETC 501, rigid wheel doors, combat. Exact cooling setting open.",
+      "evidence": [
+        "ww2_priority_aircraft_2026-11-13:fw190a8-733705-level:0001",
+        "ww2_priority_aircraft_2026-11-13:fw190a8-733705-loading:0001",
+        "ww2_engine_ratings_and_propeller_2026-11-12:bmw801d-rated-power:0002"
+      ],
+      "links": [
+        "https://luftfahrtmuseum-hannover.de/index.php/en/infotext/schild-focke-wulf-190gb"
+      ]
+    },
+    {
+      "id": "spitfire_i_n3171",
+      "geometry": {
+        "area": 242,
+        "span": 36.833333333333336,
+        "lengthUnit": "ft",
+        "basis": "Standard full-span early Spitfire wing"
+      },
+      "mass": {
+        "nominal": 6050,
+        "unit": "lb",
+        "min": 5925,
+        "max": 6050,
+        "basis": "Reported trial loading; in-flight variation scenario"
+      },
+      "speed": {
+        "value": 320.5,
+        "unit": "mph",
+        "basis": "TAS",
+        "altitude": 10000,
+        "altitudeUnit": "ft"
+      },
+      "power": {
+        "nominal": 960,
+        "unit": "bhp",
+        "min": 880,
+        "max": 1030,
+        "basis": "Engineering estimate bounded by early Merlin ratings; 10,000-ft +6.1 lb power of this engine unresolved"
+      },
+      "configuration": "N.3171 early Mk I, Merlin III, Rotol three blade, +6.1 lb boost, 3,000 rpm, projecting windscreen and domed hood.",
+      "proxy": true,
+      "evidence": [
+        "ww2_priority_aircraft_2026-11-13:spitfire1-n3171-level:0001",
+        "ww2_priority_aircraft_2026-11-13:spitfire1-n3171-loading:0001"
+      ],
+      "links": [
+        "https://engineersatwar.ww2.imeche.org/wp-content/uploads/2019/08/imeche_proceedings_banks_aviation_engine.pdf",
+        "https://wwiiaircraftperformance.com/org/spitcom/mk1/spitmk1.html"
+      ]
+    },
+    {
+      "id": "spitfire_va_x4922",
+      "geometry": {
+        "area": 242,
+        "span": 36.833333333333336,
+        "lengthUnit": "ft",
+        "basis": "Standard full-span Spitfire Va wing"
+      },
+      "mass": {
+        "nominal": 6450,
+        "unit": "lb",
+        "min": 6275,
+        "max": 6450,
+        "basis": "Reported trial loading; in-flight variation scenario"
+      },
+      "speed": {
+        "value": 375,
+        "unit": "mph",
+        "basis": "TAS",
+        "altitude": 20800,
+        "altitudeUnit": "ft"
+      },
+      "power": {
+        "nominal": 1210,
+        "unit": "bhp",
+        "min": 1120,
+        "max": 1300,
+        "basis": "Merlin XLV 1,210 bhp at 18,250 ft (W.3119 nameplate) applied at X.4922 flight FTH"
+      },
+      "configuration": "X.4922, Merlin XLV, de Havilland two-pitch airscrew, eight Brownings and Mk II radiator, +9 lb boost and 3,000 rpm.",
+      "evidence": [
+        "ww2_priority_aircraft_2026-11-13:spitfire-va-x4922-level:0007",
+        "ww2_priority_aircraft_2026-11-13:spitfire-va-x4922-loading:0001",
+        "ww2_low_speed_turn_calibration_2026-11-10:spitva-w3119-original-engine-ratings:0003"
+      ],
+      "links": [
+        "https://www.wwiiaircraftperformance.com/org/spitcom/mk5/spitmkVa_X4922.html"
+      ]
+    },
+    {
+      "id": "bf109e_1304",
+      "geometry": {
+        "area": 16.2,
+        "span": 9.87,
+        "lengthUnit": "m",
+        "basis": "Representative E-3 wing"
+      },
+      "mass": {
+        "nominal": 2600,
+        "unit": "kg",
+        "min": 2450,
+        "max": 2700,
+        "basis": "Representative E-3 loading, exact run mass of WNr 1792 unresolved"
+      },
+      "speed": {
+        "value": 290,
+        "unit": "mph",
+        "basis": "TAS",
+        "altitude": 0,
+        "altitudeUnit": "ft"
+      },
+      "power": {
+        "nominal": 1000,
+        "unit": "PS",
+        "min": 900,
+        "max": 1100,
+        "basis": "Engineering DB 601 A 1.30 ata power scenario; exact rpm and installed power unresolved"
+      },
+      "configuration": "WNr 1792 wing-armament comparison transferred as a provisional reference for WNr 1304/AE479; armament, cooling and engine subvariant to verify.",
+      "proxy": true,
+      "evidence": [
+        "ww2_priority_aircraft_2026-11-13:bf109e3-1792-level:0001",
+        "stall_global_2026-11-10:BF109-E-RAE-1"
+      ],
+      "links": [
+        "https://www.pumaszallas.hu/Private/VO101_Tom/docs/DB601_AuB_MM_1940_08.pdf",
+        "https://www.wardrawings.be/WW2/Files/2-Airplanes/Non-aligned/Switzerland/1-Fighters/Me-Bf109/Me-Bf109E-3.htm"
+      ]
+    }
+  ]
+}
