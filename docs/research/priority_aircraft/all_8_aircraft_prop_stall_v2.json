@@ -1,0 +1,73 @@
+{
+  "version": "2026-11-13-v2",
+  "description": "Updated propeller efficiency and stall-speed data for the 8 priority aircraft. Includes full P-51D Pilot’s Notes table. Stall mostly IAS; CAS/EAS rare.",
+  "propeller_efficiency": {
+    "default": 0.80,
+    "notes": "Use default for German types and Spitfire. Prefer NACA series for P-47."
+  },
+  "stall_speeds": {
+    "p51d": {
+      "grade": "observed",
+      "source": "AN 01-60JE-1 Pilot’s Flight Operating Instructions",
+      "clean_power_off_ias_mph": {
+        "7500_lb": 91,
+        "8500_lb": 97,
+        "9500_lb": 103
+      },
+      "with_external_ias_mph": {
+        "9000_lb": 102,
+        "10000_lb": 107.5,
+        "11000_lb": 113
+      },
+      "notes": "Gear and flaps up. Warning 3-4 mph above stall by elevator buffet. Mild stall."
+    },
+    "p47d": {
+      "clean_power_off_ias_mph": "105-116",
+      "typical": 115,
+      "grade": "observed",
+      "source": "Pilot’s notes + NACA L8A06 and flying-qualities report on P-47D-30",
+      "notes": "Ample buffet warning ~4-5 mph above stall"
+    },
+    "bf109g2": {
+      "clean_ias_kmh": "158-180",
+      "grade": "secondary",
+      "source": "IL-2 / pilot manuals",
+      "notes": "IAS only"
+    },
+    "fw190a8": {
+      "clean_ias_mph": "~110",
+      "clean_ias_kmh": "177-208",
+      "grade": "secondary",
+      "source": "AFDU captured Fw 190 notes + IL-2",
+      "notes": "Sudden stall with little warning in clean config"
+    },
+    "fw190d9": {
+      "clean_ias_kmh": "174-197",
+      "grade": "secondary",
+      "notes": "Similar to A-8"
+    },
+    "spitfire1": {
+      "clean_ias_mph": "64-73",
+      "weight_lb": "~6250",
+      "grade": "partial",
+      "source": "A&AEE handling trials / Pilot’s Notes",
+      "notes": "Flaps and undercarriage up"
+    },
+    "spitfire5": {
+      "grade": "observed",
+      "source": "NACA 'Stalling Characteristics of the Supermarine Spitfire VA Airplane' (Vensel & Phillips, 1942)",
+      "notes": "Good buffet warning several mph above minimum speed; higher than Mk I"
+    },
+    "bf109e": {
+      "clean_ias_mph": 75,
+      "grade": "observed",
+      "source": "British RAE/AFDU captured Bf 109E trials",
+      "notes": "Flaps and undercarriage up; ~105 mph also reported in other trials"
+    }
+  },
+  "gaps": [
+    "No clean CAS/EAS stall numbers at matched mass for most of the eight",
+    "German primary stall tables still missing",
+    "Spitfire V absolute IAS table still sparse"
+  ]
+}

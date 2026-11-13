@@ -25,7 +25,21 @@ for (const [id, ref] of Object.entries(pack.observations)) {
 }
 
 const byId = id => pack.cases.find(row => row.id === id);
-assert.equal(pack.version, '1.9.0');
+assert.equal(pack.version, '1.10.0');
+const priority = pack.priority_aircraft_reference;
+assert.equal(priority.observation_count, 164);
+assert.equal(priority.reviewed_artifact_count, 8);
+assert.equal(priority.concurrent_followups.artifacts.length, 5);
+assert.equal(priority.candidate_artifact.structured_claim_count, 31);
+assert.equal(priority.aircraft.reduce((total, row) => total + row.observation_count, 0), priority.observation_count);
+assert.deepEqual(priority.coverage_assessment.credits, []);
+assert.ok(priority.existing_observation_ids.includes('balanced-2026-11-10:BS08:0001'));
+const prioritySeries = id => priority.series.find(row => row.id === id);
+assert.equal(prioritySeries('p51d-an0160je1-stall-racks').speed_basis, 'IAS');
+assert.deepEqual(prioritySeries('p51d-an0160je1-stall-racks').rows[2], [9500, 103, 'up', 'up']);
+assert.equal(prioritySeries('fw190a8-1944-10-25-level').speed_basis, 'unestablished');
+assert.equal(prioritySeries('bf109e-v15a-1774-level').rows[1][2], 1.33);
+assert.equal(prioritySeries('bf109e3-1792-level').rows[0][2], 1.3);
 const batch = pack.batch_reference;
 assert.equal(batch.reviewed_artifact_count, 28);
 assert.equal(batch.observation_count, 96);

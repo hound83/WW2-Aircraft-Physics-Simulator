@@ -13,7 +13,7 @@ The research priority reflects the historical scope and the next useful evidence
 | P-47D-30 43-3441 | USAAF | — | 66% primary / 68% total | Targeted | Intake candidate | Resolve NACA low-speed channels. Keep Wright Field 42-26167 as a separate powerplant and performance dossier |
 | F6F-3 BuAer 04776 | US Navy | — | 79% primary / 82% total | Targeted | First alternate | Match NACA stall speed, calibration and test mass |
 | Spitfire I N.3171 | RAF | — | Named flight-test dossier | Targeted | Early-war pair | Match level power and low-speed basis; track propeller and fuel standard |
-| Spitfire Va X.4922 | RAF | — | Named flight-test dossier | Targeted | Later | Match Merlin 45 rating and cooling to its Rotol installation |
+| Spitfire Va X.4922 | RAF | — | Named flight-test dossier | Targeted | Later | Match Merlin 45 rating and cooling to its de Havilland installation |
 | Bf 109 E | Luftwaffe | — | Several period trials | Targeted | Early-war pair | Use an exact E-series trial; retain differences between captured and factory airframes |
 | Bf 109 G-6/G-14 | Luftwaffe | — | Medium | Yes (near-term) | Later | Most numerous late G |
 | Fw 190 A-8 | Luftwaffe | — | Medium | Yes (near-term) | Later | Most common late A-series |
@@ -87,6 +87,8 @@ Delivered WNr 783 paired cooling rates and open-flap timing and 42-12687 B.4 TAS
 Delivered 96 source-linked records, a file-by-file review and the 13-variant coverage comparison. [Grok batch review](WW2_GROK_BATCH_INPUT_REVIEW_2026-11-12.md)
 
 The v1.9.0 follow-up recovered the full 5,801-entry candidate archive and added 552 catalog observations, including P-47D operating limits and P-40F/L climb conditions. [PDF input release](WW2_PDF_INPUT_DATA_V1_9.md)
+
+The v1.10.0 release reviews all eight priority-aircraft entries and adds 164 observations across five new dossiers. [Priority-aircraft release](WW2_PRIORITY_AIRCRAFT_INPUTS_V1_10.md)
 
 ### Next · Corrected stall and drag under load
 
