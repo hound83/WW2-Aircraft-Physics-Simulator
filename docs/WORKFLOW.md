@@ -40,3 +40,7 @@ GitHub Actions runs the repository's regression workflow on pushes and pull requ
 Frozen files in `validation/baseline/` and `references/import/` are provenance, not calibration knobs. Preserve them. Explain any intentional changes to current generated outputs, and do not treat a passing numerical diff as proof of scientific improvement.
 
 Older Python research and plotting tools are retained for provenance; routine checks use Node.
+
+## Preparing an aircraft from limited data
+
+Use [Greg's limited-data workflow](research/MINIMUM_VIABLE_SIM_DATA.md#gregs-workflow-for-limited-datasets) when the dossier has a credible anchor and a documented split or estimate. Carry the resulting drag and power curve into the candidate handoff with its calculated values, assumed inputs, usable range and the next measurement that would improve it. A one-anchor result can support a provisional research profile while additional evidence is being recovered.
