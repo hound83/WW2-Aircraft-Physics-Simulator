@@ -71,6 +71,8 @@ try{
  const md=[
  '# Current validation',
  '',
+ 'v4.14-rc.1 [G-6/Trop and F Mk IX aircraft intake](V414_AIRCRAFT_INTAKE.md). The source replay is included in the Physics regression artifact.',
+ '',
  'v4.13-rc.2 [Drag above 1 G and the Mustang–Spitfire comparison](V413_TURN_DRAG.md). [Numerical replay](../validation/current/turn-drag.json).',
  '',
  'v4.13-rc.1 [HF IX, G-2 and P-51D aircraft intake](V413_AIRCRAFT_INTAKE.md). The source replay is included in the Physics regression artifact.',
