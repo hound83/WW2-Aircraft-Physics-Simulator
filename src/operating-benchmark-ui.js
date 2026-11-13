@@ -158,6 +158,16 @@
    };
   });
   const policy=series.every(a=>a.turnPolicy)?data.turnEvidence.sensitivity:null;
+  const replay=data.turnDrag.replay, chosen=sides.map(side=>api.settings[side]);
+  const dragPair=chosen[0].id!==chosen[1].id&&chosen.every(({id})=>replay.ids.includes(id));
+  const donorCase=dragPair&&alt===replay.altFt&&chosen.every(({settings:s})=>
+   s.mode===replay.mode&&s.fuelFraction===replay.fuelFraction&&s.injection===replay.injection&&!s.openCooling);
+  $('bench-turn-drag').hidden=!dragPair;
+  const dragProbe=dragPair?{
+   host:$('bench-turn-drag-result'), evaluateAt,
+   donor:donorCase?{...data.turnDrag.glide,range:replay.speedRangeMph,
+    side:chosen[0].id===replay.ids[1]?'a':'b'}:null
+  }:null;
   $('bench-advantage-key').hidden=!policy;
   $('bench-solo-key').hidden=true;
   $('bench-plot-note').textContent=includesIntake?'Turn curves require drag-under-load and lift evidence for both aircraft.':
@@ -186,7 +196,7 @@
    evaluateAt,
    makeAdvantage(domain){
     if(includesIntake)return null;
-    return OperatingTurnComparison.advantage({...domain,host:advantage,readout,limits,names,colors,policy,
+    return OperatingTurnComparison.advantage({...domain,host:advantage,readout,limits,names,colors,policy,dragProbe,
      soloKey:$('bench-solo-key'),turnUnit:turnUnit(),unit:$('bench-speed-unit').value,tolerances});
    },
    onProbe(probe){api.probe=probe;}
@@ -537,5 +547,5 @@
  render();
  renderFlightChecks();renderIntakeChecks();
  OperatingTurnComparison.evidence($('bench-turn-evidence'),data.turnEvidence,data.turnLiftChecks,
-  data.turnEvidence.sensitivity,data.turnEvidence.directTurns);
+  data.turnEvidence.sensitivity,data.turnEvidence.directTurns,data.turnDrag);
 })();

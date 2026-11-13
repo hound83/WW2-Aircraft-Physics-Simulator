@@ -61,7 +61,62 @@
   return card;
  }
 
- function advantage({host,readout,limits,minEas,maxEas,unit,turnUnit,names,colors,pointAt,policy,series,soloKey,tolerances}){
+ function updateDragProbe({host,evaluateAt,donor},eas,row,names,policy,turnUnit,turnMargin){
+  if(!row.difference){
+   host.replaceChildren(el('p','Both aircraft need sustained flight at this speed to compare turn drag.','bench-note'));
+   return;
+  }
+  const flights=sides.map(side=>evaluateAt(side,eas,false));
+  const nominal=sides.map(side=>row.aircraft[side].nominal);
+  const dragRange=policy.incrementalDragFraction;
+  const tested=flights.map((flight,i)=>P.dragSensitivity(flight,nominal[i],nominal[1-i].turn.g,dragRange));
+  const change=P.difference(...tested,turnUnit.field);
+  const percent=multiplier=>signed((multiplier-1)*100,1)+'%';
+  host.replaceChildren(el('p','Extra drag varied '+dragRange.map(percent).join(' to ')+' on each aircraft. Lift and useful power are held at their nominal values.','bench-note'));
+  if(change.range){
+   const rateRange=turnUnit.field==='rateDegSec'?change.range:P.difference(...tested).range;
+   const verdict=Match.turnVerdict(rateRange,turnMargin);
+   const outcome=verdict==='uncertain'?'The lead depends on drag.':verdict==='tie'?'Effectively tied across the drag sweep.':
+    names[verdict]+' leads across the drag sweep.';
+   const line=el('p',undefined,'bench-note');
+   const range=el('strong',change.range.map(n=>signed(n,turnUnit.digits)).join(' to ')+' '+turnUnit.label);
+   range.dataset.dragRange='';
+   line.append(range,' for '+names.a+' minus '+names.b+'. '+outcome);
+   host.append(line);
+  }else{
+   host.append(el('p','The drag sweep crosses a sustained-flight boundary.','bench-note'));
+  }
+
+  const list=el('ul',undefined,'bench-evidence-sources');
+  for(const [i,side] of sides.entries()){
+   const parity=tested[i].parity;
+   if(!parity)continue;
+   const rival=names[sides[1-i]];
+   const line=el('li',names[side]+(parity.limiting?' reaches its '+parity.limiting+' limit below '+rival+'’s nominal turn.':
+    ' reaches '+rival+'’s nominal turn at '+percent(parity.fraction)+' change in added turn drag.'));
+   line.dataset.dragParity=side;
+   list.append(line);
+  }
+  if(list.children.length)host.append(list);
+  if(!donor||eas<donor.range[0]||eas>donor.range[1])return;
+
+  const transfer=P.boundedDragTurn(flights[sides.indexOf(donor.side)],donor.transfer);
+  if(!transfer)return;
+  const name=names[donor.side], value=fmt(transfer.turn[turnUnit.field],turnUnit.digits+1)+' '+turnUnit.label;
+  const reference=fmt(nominal[sides.indexOf(donor.side)].turn[turnUnit.field],turnUnit.digits+1)+' '+turnUnit.label;
+  const info=el('p',undefined,'bench-note');
+  info.dataset.dragDonor='';
+  info.append(el('strong','Provisional Spitfire Mk I glide replay. '),name+' reaches '+(transfer.lowerBound?'at least ':'')+value+
+   ' in this scenario. Nominal '+reference+'. '+(transfer.lowerBound?
+    'At the last measured lift coefficient, '+fmt(transfer.remainingHp,0)+' hp remains. The replay stops there.':
+    'The modeled limiting point is inside the source lift range.'));
+  const link=el('a',donor.title);
+  link.href=donor.url;link.target='_blank';link.rel='noopener';
+  info.append(' ',link);
+  host.append(info);
+ }
+
+ function advantage({host,readout,limits,minEas,maxEas,unit,turnUnit,names,colors,pointAt,policy,series,soloKey,tolerances,dragProbe}){
   const width=780,height=214,left=76,right=758,top=23,bottom=160;
   const cache=new Map(),levels=series.map(a=>a.levelEasMph),load=turnUnit.key==='g';
   const referenceLoad=load?1:0,turnMargin=tolerances.sustained_turn_rate.spread;
@@ -91,7 +146,11 @@
   const supported=rows.filter(r=>r.difference||r.solo);
   if(!supported.length){
    host.replaceChildren(el('p','Turn advantage is unavailable at this altitude.','bench-note'));
-   return {update(eas){limits.replaceChildren(...sides.map(side=>limitsCard(names[side],sample(eas).aircraft[side],side)));}};
+   return {update(eas){
+    const row=sample(eas);
+    limits.replaceChildren(...sides.map(side=>limitsCard(names[side],row.aircraft[side],side)));
+    if(dragProbe)updateDragProbe(dragProbe,eas,row,names,policy,turnUnit,turnMargin);
+   }};
   }
   soloKey.hidden=!rows.some(r=>r.solo&&r.solo.rate!==0);
   const maxRate=Math.max(load ? .1 : 1,...supported.flatMap(r=>[
@@ -192,11 +251,12 @@
     readout.append(el('span',fmt(turn[turnUnit.field],turnUnit.digits)+' '+turnUnit.label+' sustained · '+speed+' · other aircraft above maximum level speed','bench-note'));
    }else readout.append(el('span','Both aircraft need supported flight at this speed for a difference.','bench-note'));
    limits.replaceChildren(...sides.map(side=>limitsCard(names[side],aircraft[side],side)));
+   if(dragProbe)updateDragProbe(dragProbe,eas,row,names,policy,turnUnit,turnMargin);
   }
   return {kind:'advantage',host,svg:g,left,right,top,bottom,x,update,tipText:eas=>summary(sample(eas))};
  }
 
- function evidence(host,source,checks,policy,direct){
+ function evidence(host,source,checks,policy,direct,turnDrag){
   const p=source.mustang;
   const graph=el('div',undefined,'bench-chart');
   const g=svg(780,252,'NACA P-51B maneuver lift. Held-out bands and the fitted curve by Mach number.');
@@ -239,11 +299,18 @@
    el('p','The band shows the extremes of these tested inputs. A band crossing zero means the ranking depends on them.','bench-note'),
    el('h4','Historical turn verification'),
    el('p',direct.matched===0?'Matched powered sustained-turn records remain open for this pair. The reports below constrain lift, drag or straight-flight performance.':'Matched powered sustained-turn records '+direct.matched+'.','bench-note'));
+  const glide=turnDrag.glide;
+  const glideLink=el('a',glide.title);
+  glideLink.href=glide.url;glideLink.target='_blank';glideLink.rel='noopener';
+  host.append(el('h4','Spitfire Mk I glide drag'),el('p',
+   'Four clean, engine-off points fit the drag slope. Across '+glide.checkCount+' reserved speeds, mean absolute sink-rate error falls from '+
+   fmt(glide.checks.controlMaeFpm,1)+' to '+fmt(glide.checks.candidateMaeFpm,1)+' ft/min. At '+fmt(glide.adverse.easMph,0)+
+   ' mph, the fitted sink rate is '+signed(glide.adverse.errorFpm,0)+' ft/min from the reported value. The replay uses an earlier Spitfire with a windmilling propeller.','bench-note'),glideLink);
   const list=el('ul',undefined,'bench-evidence-sources');
-  for(const source of direct.sources){
+  for(const source of [...direct.sources,...turnDrag.sources.filter(s=>s.role==='XP-51B high-lift drag lead'||s.role==='Separate qualitative turning comparison')]){
    const item=el('li'),a=el('a',source.title);
    a.href=source.url;a.target='_blank';a.rel='noopener';
-   item.append(a,el('small',source.scope));list.append(item);
+   item.append(a,el('small',source.scope??source.finding));list.append(item);
   }
   host.append(list);
  }

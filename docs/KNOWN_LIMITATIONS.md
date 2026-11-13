@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.13-rc.2 turn drag
+
+The Mk I fit combines airframe and engine-off windmilling effects. One of the three reserved glide points has a larger residual than the control. No matched powered-turn records were recovered for the live pair. The 200 mph EAS comparison allows either order when drag varies, and the donor replay stops at its measured lift limit while the Spitfire still has surplus power. Historical sustained-turn accuracy and 5:1 remain unresolved. [Results and source gaps](V413_TURN_DRAG.md)
+
 ## v4.13-rc.1 aircraft intake
 
 The new level and climb checks share reports with some of the power inputs. High-altitude HF level speed and G-2 upper climb retain material residuals. The P-51D climb rate also runs high near sea level. Clean stall uses provisional lift or IAS inputs. Maneuver comparisons require drag-under-load and lift evidence. [Aircraft intake residuals and source bounds](V413_AIRCRAFT_INTAKE.md)

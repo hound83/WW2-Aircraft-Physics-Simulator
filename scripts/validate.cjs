@@ -59,10 +59,19 @@ try{
  const catalog=require('./research-layer.cjs').buildCatalog();
  write('validation/current/continuous-stall.json',require('../validation/diagnostics/continuous_stall.cjs').run(catalog));
  const intakeBase=require('../validation/diagnostics/shared_flight_climb.cjs').browserData();
+ const intake=require('./aircraft-batch.cjs');
+ const activeBenchmark=intake.addAircraftBatch(intakeBase,catalog);
  write('validation/current/aircraft-intake.json',require('../validation/diagnostics/aircraft_intake.cjs').sourceChecks(intakeBase,catalog));
+ const turnDrag=require('../validation/diagnostics/turn_drag.cjs').run(activeBenchmark);
+ write('validation/current/turn-drag.json',turnDrag);
+ if(!turnDrag.regression.exactScorecardParity||!turnDrag.regression.exactFixedProbeParity||!turnDrag.regression.exactIntakeParity)
+  throw Error('Turn-drag milestone changed a nominal scorecard or crossover probe');
+ console.log('Spitfire Mk I glide checks: sink-rate MAE '+turnDrag.glide.checks.controlMaeFpm.toFixed(1)+' -> '+turnDrag.glide.checks.candidateMaeFpm.toFixed(1)+' ft/min across '+turnDrag.glide.checkCount+' reserved rows.');
  require('./write-v42-report.cjs');
  const md=[
  '# Current validation',
+ '',
+ 'v4.13-rc.2 [Drag above 1 G and the Mustang–Spitfire comparison](V413_TURN_DRAG.md). [Numerical replay](../validation/current/turn-drag.json).',
  '',
  'v4.13-rc.1 [HF IX, G-2 and P-51D aircraft intake](V413_AIRCRAFT_INTAKE.md). The source replay is included in the Physics regression artifact.',
  '',

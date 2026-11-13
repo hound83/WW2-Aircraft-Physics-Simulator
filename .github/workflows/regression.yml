@@ -22,7 +22,7 @@ jobs:
         run: |
           node - <<'NODE'
           const fs=require('node:fs');
-          for(const p of ['docs/V28_RESULTS.md','docs/V29_ROBUSTNESS.md','docs/CURRENT_VALIDATION.md','validation/current/v28-working.json','validation/current/test-summary.json','validation/current/baseline-diff.json','validation/current/build.json','docs/V3_RELEASE_CANDIDATE.md','validation/current/v3-coverage.json','validation/current/browser-smoke.json','docs/V31_CLIMB_IMPROVEMENT.md','validation/current/v31-climb-improvement.json','validation/current/continuous-stall.json']){
+          for(const p of ['docs/V28_RESULTS.md','docs/V29_ROBUSTNESS.md','docs/CURRENT_VALIDATION.md','validation/current/v28-working.json','validation/current/test-summary.json','validation/current/baseline-diff.json','validation/current/build.json','docs/V3_RELEASE_CANDIDATE.md','validation/current/v3-coverage.json','validation/current/browser-smoke.json','docs/V31_CLIMB_IMPROVEMENT.md','validation/current/v31-climb-improvement.json','validation/current/continuous-stall.json','validation/current/turn-drag.json']){
             console.log('V28_FILE '+JSON.stringify({path:p,content:fs.readFileSync(p,'utf8')}));
           }
           NODE
@@ -46,6 +46,10 @@ jobs:
             docs/V43_MODEL_CHECKS.md
             docs/V45_GRAPH_EVIDENCE.md
             docs/V44_TURN_PERFORMANCE.md
+            docs/V413_TURN_DRAG.md
+            references/analysis/turn-drag-evidence-2026-11-13.json
+            references/analysis/v413-turn-drag-before.json
+            references/analysis/v413-turn-drag-intake-before.json
             references/benchmark-operating-profiles.json
             docs/V4_MILESTONE.md
             docs/CURRENT_VALIDATION.md

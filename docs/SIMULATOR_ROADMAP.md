@@ -1,10 +1,12 @@
 # Simulator model roadmap
 
-The shared steady-flight solver calculates stall, speed, climb, acceleration, and instantaneous and sustained turn. The v4.10 propeller passes and v4.11 shared climb replay now provide matched power and cooling checks. The v4.12 milestone adds continuous stall and usable lift with condition-linked graph evidence. [Solver](../src/physics.js) · [Shared climb results](V411_SHARED_FLIGHT_CLIMB.md) · [Normal / Combat comparison](V49_TIMED_MATCHUPS.md)
+The shared steady-flight solver calculates stall, speed, climb, acceleration, and instantaneous and sustained turn. The v4.10 propeller passes and v4.11 shared climb replay now provide matched power and cooling checks. The v4.12 milestone adds continuous stall and usable lift with condition-linked graph evidence. The v4.13 benchmark adds the first intake profiles and shows drag sensitivity for the Mustang–Spitfire comparison. [Solver](../src/physics.js) · [Shared climb results](V411_SHARED_FLIGHT_CLIMB.md) · [Normal / Combat comparison](V49_TIMED_MATCHUPS.md)
 
 ## Next implementation milestone
 
-**Constrain drag above 1 G.** Start at the Mustang–Spitfire crossover near 200 mph EAS at 10,000 ft. Look for a matched powered turn, a high-lift drag polar, or synchronized speed and G with an energy-loss measurement. Use known mass, configuration, power, altitude and airspeed basis. Keep the existing level-speed anchor fixed and reserve a run or condition for the drag check. Report how the supported drag range changes the sustained-turn comparison and retain an unresolved ranking where the evidence allows both outcomes. [Turn research](V44_TURN_PERFORMANCE.md) · [Drag reference](research/WW2_GREG_DRAG_MODELS_2026-11-13.md)
+**Replay a recorded level-acceleration run.** Recover a constant-altitude speed–time trace for the Mustang or Spitfire with known load, rating, RPM, configuration and airspeed basis. Replay the speed endpoints with the shared solver and reserve an interval or another run for a check. A straight-flight run can test the installed energy budget at the speeds used for the turn comparison. Keep the search for matched high-lift or powered-turn evidence open. [Timed comparison evidence](V49_TIMED_MATCHUPS.md#historical-checks) · [Turn-drag results](V413_TURN_DRAG.md)
+
+**Delivered · Drag above 1 G.** The matchup reports the drag-only range and the drag change needed to reach parity. The Mk I glide fit provides a provisional scenario with a measured lift boundary. The matched historical turn ranking remains open. [Results](V413_TURN_DRAG.md)
 
 **Delivered · Continuous stall and usable maneuver lift.** The seven-aircraft replay records the Mustang transition, P-38G calibrated check and distinct Corsair glide and powered cases. [Results](V412_CONTINUOUS_STALL.md)
 

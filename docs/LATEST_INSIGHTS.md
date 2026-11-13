@@ -4,6 +4,10 @@ Pointer file for agents starting a new milestone. Not a second model of record. 
 
 ## Shared research / implementation roadmap (2026-11-12)
 
+### Delivered in v4.13.0-rc.2
+
+The benchmark now shows how much extra turn drag would change the Mustang–Spitfire order. At 200 mph EAS the nominal gap is 0.33°/s, and the drag-only sweep spans both outcomes. The earlier Spitfire glide replay checks three reserved speeds and reaches the source lift boundary at the crossover. [Turn-drag results](V413_TURN_DRAG.md)
+
 ### Delivered in v4.13.0-rc.1
 
 The Normal / Combat benchmark adds the HF IX, G-2 and P-51D for source-bounded speed and climb. The HF/LF test crossover is reproduced with an overstated high-altitude advantage. The new profiles carry provisional stalls and await drag-under-load and lift evidence for turn comparisons. [Aircraft intake and source replay](V413_AIRCRAFT_INTAKE.md)
@@ -46,10 +50,10 @@ Grok’s expanded stall draft and 21-variant extract are available as research i
 
 ## Next simulator milestone
 
-**Constrain drag above 1 G.** Start at the Mustang–Spitfire crossover near 200 mph EAS at 10,000 ft. Look for a matched powered turn, a high-lift drag polar, or synchronized speed and G with an energy-loss measurement. Use known mass, configuration, power, altitude and airspeed basis. Keep the existing level-speed anchor fixed and reserve a run or condition for the drag check. Report how the supported drag range changes the sustained-turn comparison and retain an unresolved ranking where the evidence allows both outcomes. [Turn research](V44_TURN_PERFORMANCE.md) · [Drag reference](research/WW2_GREG_DRAG_MODELS_2026-11-13.md)
+**Replay a recorded level-acceleration run.** Recover a constant-altitude speed–time trace for the Mustang or Spitfire with known load, rating, RPM, configuration and airspeed basis. Replay the speed endpoints with the shared solver and reserve an interval or another run for a check. A straight-flight run can test the installed energy budget at the speeds used for the turn comparison. Keep the search for matched high-lift or powered-turn evidence open. [Timed comparison evidence](V49_TIMED_MATCHUPS.md#historical-checks) · [Turn-drag results](V413_TURN_DRAG.md)
 
 ## Current research candidate
-- Simulator research candidate [v4.12.0-rc.1](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/). [Release verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/publish-simulator.yml)
+- Simulator research candidate [v4.13.0-rc.2](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/). [Release verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/publish-simulator.yml)
 - Input pack · [Fighter Sim Inputs v1.11.0](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 - Status: research candidate. Exact corrected stall, sustained-turn accuracy and historical 5:1 remain unresolved.
 

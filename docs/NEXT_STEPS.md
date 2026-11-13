@@ -4,13 +4,13 @@ The [simulator model roadmap](SIMULATOR_ROADMAP.md) sets the order for propulsio
 
 ## After v4.13 aircraft intake
 
-The HF IX, G-2 and P-51D are available in the benchmark for level speed and climb. The above-1 G drag and Mustang–Spitfire crossover work can proceed with its existing scope. The roster queues G-6/Trop WNr 16476 and F Mk IX BF.274 after this batch. [Source replay](V413_AIRCRAFT_INTAKE.md) · [Roster decision](DECISIONS.md#aircraft-roster-expansion)
+The HF IX, G-2 and P-51D are available in the benchmark for level speed and climb. The turn-drag follow-up quantifies the Mustang–Spitfire crossover sensitivity and the limits of the Mk I glide data. [Turn-drag results](V413_TURN_DRAG.md). The roster queues G-6/Trop WNr 16476 and F Mk IX BF.274 after this batch. [Source replay](V413_AIRCRAFT_INTAKE.md) · [Roster decision](DECISIONS.md#aircraft-roster-expansion)
 
 ## After v4.10 propeller integration
 
 The first pass delivered the Corsair and Thunderbolt clean-flight references. The second pass reviewed the five other fighters and improved the Lightning's dry Military level-flight replay. Remaining propulsion work can start from the individual conditions in the two scorecards. The Corsair high-blower shaft-power gap, Fw 190 intake and cooling split, DB 601 E combat curve and P-38G part-power drag/power balance are documented. [First-pass scorecard](V410_PROPELLER_REFERENCE.md) · [Second-pass scorecard](V410_REMAINING_PROPELLERS.md) · [Fleet data](research/WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md)
 
-The shared climb candidate and the continuous stall and usable-lift milestone are delivered. The next implementation constrains drag above 1 G with matched data and checks the Mustang–Spitfire crossover. [Shared climb results](V411_SHARED_FLIGHT_CLIMB.md) · [Stall and lift results](V412_CONTINUOUS_STALL.md) · [Next simulator milestone](LATEST_INSIGHTS.md#next-simulator-milestone)
+The shared climb, continuous lift and turn-drag milestones are delivered. The next implementation milestone is a recorded level-acceleration replay at matched conditions. [Shared climb results](V411_SHARED_FLIGHT_CLIMB.md) · [Stall and lift results](V412_CONTINUOUS_STALL.md) · [Turn-drag results](V413_TURN_DRAG.md) · [Next simulator milestone](LATEST_INSIGHTS.md#next-simulator-milestone)
 
 ## Next milestone for propeller efficiency
 
