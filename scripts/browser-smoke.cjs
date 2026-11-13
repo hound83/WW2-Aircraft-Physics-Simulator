@@ -482,7 +482,7 @@ async function run(){
   await evaluate('document.getElementById("bench-turn-drag").open=true');
   const crossover=await dragProbe();
   assert.equal(crossover.hidden,false);
-  assert.match(crossover.range,/−1\.9 to \+1\.4°\/s/);
+  assert.match(crossover.range,/−1\.9 to \+1\.4 °\/s/);
   assert.match(crossover.parity[0],/\+6\.5%/);
   assert.match(crossover.parity[1],/−4\.1%/);
   assert.match(crossover.donor,/at least 16\.35 °\/s.*85 hp remains/);
