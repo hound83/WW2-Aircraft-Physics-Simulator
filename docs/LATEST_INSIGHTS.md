@@ -4,13 +4,21 @@ Pointer file for agents starting a new milestone. Not a second model of record. 
 
 ## Shared research / implementation roadmap (2026-11-12)
 
+### Delivered in v4.13.0-rc.2
+
+The benchmark now shows how much extra turn drag would change the Mustang–Spitfire order. At 200 mph EAS the nominal gap is 0.33°/s, and the drag-only sweep spans both outcomes. The earlier Spitfire glide replay checks three reserved speeds and reaches the source lift boundary at the crossover. [Turn-drag results](V413_TURN_DRAG.md)
+
+### Delivered in v4.13.0-rc.1
+
+The Normal / Combat benchmark adds the HF IX, G-2 and P-51D for source-bounded speed and climb. The HF/LF test crossover is reproduced with an overstated high-altitude advantage. The new profiles carry provisional stalls and await drag-under-load and lift evidence for turn comparisons. [Aircraft intake and source replay](V413_AIRCRAFT_INTAKE.md)
+
 ### Delivered in v4.11.0-rc.1
 
 The shared timer now applies signed TAS energy, and the live Fw 190 WNr 783 climb uses the source-bounded open-cooling fit. The seven-aircraft replay reports the power budgets, adverse residuals and matched comparisons. The direct P-47B and Spitfire elapsed checks keep their vertical-rate calibration basis. [Climb implementation and results](V411_SHARED_FLIGHT_CLIMB.md) · [Grok’s source extraction](../references/research/WW2_FLIGHT_CASE_CLIMB_AFTER_EXTRACTION_2026-11-12.md)
 
 ### Input-data milestones
 
-Fighter Sim Inputs **v1.11.0** reviews Grok’s comparative summaries, adds 21 catalog rows and scores 19 dossiers. Start the next intake with HF Mk IX BS.551 and prepare G-2 MT-215 and P-51D-15-NA 44-15342 in parallel. [Accepted aircraft roster](DECISIONS.md#aircraft-roster-expansion) [Comparative intake and scores](research/WW2_PRIORITY_COMPARATIVE_COVERAGE_2026-11-13.md)
+Fighter Sim Inputs **v1.11.0** reviews Grok’s comparative summaries, adds 21 catalog rows and scores 19 dossiers. The resulting HF Mk IX BS.551, G-2 MT-215 and P-51D-15-NA 44-15342 profiles are available for speed and climb. [Accepted aircraft roster](DECISIONS.md#aircraft-roster-expansion) [Comparative intake and scores](research/WW2_PRIORITY_COMPARATIVE_COVERAGE_2026-11-13.md)
 
 Use the existing climb residual table as a starting scorecard. Confirm each baseline value against its source and keep the P-38G B.4 elapsed-time check at sea level to 20,000 ft. [Before-scorecard](../references/research/WW2_FLIGHT_CASE_CLIMB_RESIDUAL_TABLE_2026-11-12.md)
 
@@ -24,7 +32,7 @@ The pack retains the 96 earlier Grok records and exports the matched WNr 783 and
 2. **Corrected stall and maneuver evidence for the Mustang–Spitfire crossover.** Start with P-51B-15 43-24777 and Spitfire LF IX BS.543. Seek near-stall airspeed corrections, test loading and configuration for one-G lift. Keep the TN 1044 maneuver-lift transfer within its measured Mach and test-condition range. For sustained-turn drag above one G, seek a matched high-lift drag polar, powered turn, or energy-loss trace with known load, speed, altitude and power. Deliver a bounded comparison at matched EAS and altitude with declared loading and power. Report lift and sustained-turn support separately, with unresolved comparisons flagged. [Input roadmap](research/WW2_FIGHTER_DATA_ROADMAP.md#next--corrected-stall-and-drag-under-load) · [Maneuver evidence](V44_TURN_PERFORMANCE.md)
 3. **Targeted propulsion and timed acceleration evidence.** Extend the existing companion at named gaps. Prioritize the WNr 783 installed BMW 801 D-2 power schedule through the blower transition and the exact blade drawing. Check cooling and intake against their matched pairs before attributing a residual to propeller efficiency. For timed acceleration, start with the Mustang–Spitfire comparison and seek a constant-altitude speed–time trace with known speed basis, loading and power. Record the endpoints and elapsed time for any usable case. [Propulsion source leads](V410_REMAINING_PROPELLERS.md#source-checks-for-follow-up) · [Timed comparison evidence](V49_TIMED_MATCHUPS.md#historical-checks)
    - **Review the seven-aircraft benchmark pack as a source index.** Link any proposed input to its original observation IDs and match the operating conditions. The F4U-4 row's 3.10 mph replay uses Navy 80765 inspection-trial data. The P-47B 76% reference is a derived transfer from the Curtiss measurements. Carry those distinctions into any selected inputs. [Benchmark research pack](../references/research/WW2_PROPELLER_EFFICIENCY_BENCHMARK_2026-11-12.md) · [Verified propeller replays](V410_PROPELLER_REFERENCE.md)
-4. **Qualify the next aircraft profiles.** Start with the HF IX BS.551 paired speed and climb tests. Prepare the G-2 MT-215 Finnish dossier and P-51D-15-NA 44-15342 Wright Field dossier in parallel. Keep donor sources tied to their test installations. [Accepted aircraft roster](DECISIONS.md#aircraft-roster-expansion) · [Candidate data handoff](SIMULATOR_DATA_HANDOFF.md#suggested-aircraft)
+4. **Follow up the aircraft intake.** Constrain installed power at altitude for the HF IX and G-2 and qualify matched stall readings. The accepted roster queues G-6/Trop WNr 16476 and F Mk IX BF.274 next. [Accepted aircraft roster](DECISIONS.md#aircraft-roster-expansion) · [Candidate data handoff](SIMULATOR_DATA_HANDOFF.md#suggested-aircraft)
 
 Use the existing observation IDs, pack and compact research notes for each increment. Record original units, conditions, source locator and evidence grade. For calculated inputs, include the formula, cited inputs, assumptions and bounds. Keep measured, calculated and unresolved values visible and distinguish fit points, reserved checks and independent runs. Keep well-sourced observations in the catalog even when their immediate simulator use is open. Hand off each usable case with its remaining gaps. [Candidate handoff](WORKFLOW.md#candidate-handoff)
 
@@ -36,18 +44,16 @@ The input pack includes Rechlin G-1 timing, the P-47D-30 Fig. 50 IAS trace, two 
 
 Grok’s expanded stall draft and 21-variant extract are available as research inputs. The two Mustang readings and captured A-3 results link to the existing catalog rows. The verified NACA report identities and remaining archive leads are recorded for reuse. The Bf 109 F-4 leads Grok’s parallel primary-extraction queue. [Stall handoff](../references/research/PROVISIONAL_STALL_ENVELOPE_2026-11-12.md) · [Report checks](../references/research/REPORT_INVESTIGATION_2026-11-12.md) · [NACA source review](../references/research/WW2_NACA_AND_PRIMARY_SOURCE_EXPANSION_2026-11-12.md) · [Family extraction review](../references/research/WW2_FAMILY_PRIMARY_EXTRACTION_v1_2026-11-12.md#review-for-simulator-use) · [Extraction queue](../references/research/WW2_EXTRACTION_BATCH_LIST_EXPANDED_2026-11-12.md)
 
-## Delivered simulator milestones
-
-**Drag above 1 G.** The benchmark now shows how much extra turn drag would change the Mustang–Spitfire order. At 200 mph EAS the nominal gap is 0.33°/s, and the drag-only sweep spans both outcomes. The earlier Spitfire glide replay checks three reserved speeds and reaches the source lift boundary at the crossover. [v4.13 results](V413_TURN_DRAG.md)
+## Delivered simulator milestone
 
 **Continuous stall and usable maneuver lift.** The Mustang transitions continuously across the two low-speed altitude edges. The benchmark shows condition-specific stall references and joins the dotted lift-dependent interval to the supported solid interval on the same chart. The calibrated P-38G and the separate Corsair glide and powered cases are recorded in the seven-aircraft replay. [v4.12 results](V412_CONTINUOUS_STALL.md)
 
 ## Next simulator milestone
 
-**Qualify Spitfire HF Mk IX BS.551.** Start with the A&AEE paired HF/LF report and replay the altitude crossover against the live BS.543. Use the Merlin 70 and its propeller installation, the recorded loading and cooling conditions, and reserved speed and climb points. Assess any shared clean-stall reference at matched configuration and show transferred lift as provisional. Keep a recorded level-acceleration trace and matched powered-turn evidence on the research queue. [Accepted aircraft roster](DECISIONS.md#aircraft-roster-expansion) · [Data handoff](SIMULATOR_DATA_HANDOFF.md#suggested-aircraft)
+**Replay a recorded level-acceleration run.** Recover a constant-altitude speed–time trace for the Mustang or Spitfire with known load, rating, RPM, configuration and airspeed basis. Replay the speed endpoints with the shared solver and reserve an interval or another run for a check. A straight-flight run can test the installed energy budget at the speeds used for the turn comparison. Keep the search for matched high-lift or powered-turn evidence open. [Timed comparison evidence](V49_TIMED_MATCHUPS.md#historical-checks) · [Turn-drag results](V413_TURN_DRAG.md)
 
 ## Current research candidate
-- Simulator research candidate [v4.13.0-rc.1](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/). [Release verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/publish-simulator.yml)
+- Simulator research candidate [v4.13.0-rc.2](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/). [Release verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/publish-simulator.yml)
 - Input pack · [Fighter Sim Inputs v1.11.0](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 - Status: research candidate. Exact corrected stall, sustained-turn accuracy and historical 5:1 remain unresolved.
 

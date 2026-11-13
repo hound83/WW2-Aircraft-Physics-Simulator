@@ -8,9 +8,12 @@ const Lift = require('../../src/turn-lift.js');
 const liftSource = require('../../references/p51-turn-lift-tn1044.json');
 const source = require('../../references/analysis/turn-drag-evidence-2026-11-13.json');
 const frozen = require('../../references/analysis/v413-turn-drag-before.json');
+const intakeFrozen = require('../../references/analysis/v413-turn-drag-intake-before.json');
 const figure5 = require('../baseline/p51_power_required_source_v16.json');
 const { tolerances } = require('../../scripts/fighter-value-selection.cjs');
 const { browserData } = require('./shared_flight_climb.cjs');
+const { addAircraftBatch } = require('../../scripts/aircraft-batch.cjs');
+const { buildCatalog } = require('../../scripts/research-layer.cjs');
 const { scorecard, caseSummary } = require('./operating_benchmark_v410.cjs');
 
 const MPH = .44704;
@@ -132,19 +135,25 @@ function matchup(data, transfer, settings = frozen.case) {
   });
 }
 
-function run(data = browserData()) {
+function run(data = addAircraftBatch(browserData(),buildCatalog())) {
   const glide = glideAudit(data.models.spitfire_lfix_bs543);
   const sweeps = matchup(data,glide.transfer);
   const current = scorecard(data);
+  const previous = new Map(frozen.scorecard.map(r => [r.id,r]));
+  const earlierAircraft = current.filter(r => previous.has(r.id));
+  const intakeAircraft = current.filter(r => !previous.has(r.id));
   return {
     schema:'ww2-turn-drag/v1', version:require('../../package.json').version,
     baselineCommit:frozen.commit, inputPack:frozen.inputPack, case:frozen.case, fixedColumns:frozen.fixedColumns,
     historicalPoweredTurns:source.matchedPoweredTurnRecords,
     figure5:levelPowerCheck(data.models.p51b), glide, sweeps,
     regression:{
-      exactScorecardParity:sameNumbers(current,frozen.scorecard),
+      exactScorecardParity:sameNumbers(earlierAircraft,frozen.scorecard),
       exactFixedProbeParity:sameNumbers(sweeps.map(r => [r.easMph,...r.probes]),frozen.fixed),
-      aircraft:current.map((row,i) => caseSummary(frozen.scorecard[i],row))
+      exactIntakeParity:sameNumbers(intakeAircraft,intakeFrozen.scorecard),
+      intakeBaselineCommit:intakeFrozen.commit,
+      aircraft:earlierAircraft.map(row => caseSummary(previous.get(row.id),row)),
+      intakeAircraft:intakeAircraft.map(row => caseSummary(intakeFrozen.scorecard.find(r => r.id === row.id),row))
     }
   };
 }

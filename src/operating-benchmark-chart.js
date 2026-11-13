@@ -99,6 +99,7 @@
   const turn = pointAt(aircraft.side,easMph,'turn');
   const sustainedG = turn.load;
   let turnStatus = 'Sustained turn unavailable';
+  if(aircraft.turnComparisonUnavailable)turnStatus='Turn comparison awaits drag-under-load and lift evidence';
   if (Number.isFinite(sustainedG)) turnStatus = null;
   else if (flight.status === 'source-power-unavailable') turnStatus = 'Power data unavailable';
   else if (easMph < aircraft.stallEasMph) turnStatus = 'Below 1 G stall';
@@ -580,7 +581,8 @@
   const maxStep=Math.floor((maxEas+1e-9)/probeStepMph)*probeStepMph;
   const visibleTurns=focus?focusCurves(turning,pointAt,3):[];
   const focused=visibleTurns.length>0;
-  rangeStatus.textContent=focused?'Turn curves shown at 3°/s and above.':
+  rangeStatus.textContent=series.some(a=>a.turnComparisonUnavailable)?'Turn comparison awaits drag-under-load and lift evidence.':
+   focused?'Turn curves shown at 3°/s and above.':
    focus?'Neither aircraft reaches 3°/s. Showing the full turn envelope.':'Turn curves show the full flight envelope.';
   const asTurn=point=>turnUnit.key==='g'?
    {...point,...Evidence.sample(point.eas,Number.isFinite(point.rate)?point.load:null,point.covered,Number.isFinite(point.rate)?point.loadRange:null)}:point;

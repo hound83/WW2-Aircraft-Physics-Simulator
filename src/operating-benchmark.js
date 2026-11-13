@@ -34,8 +34,10 @@
   if(seconds<(spec.normal.seconds??Infinity)-1e-7)return {...spec.normal,key:'normal'};
   return spec.continuous?{...spec.continuous,key:'continuous'}:null;
  }
- function nativePower(M,model,spec,phase,altFt,tas,extension){
-  const ac=model.ac,rating=phase.nativeRating??spec.baseRating;
+ function nativePower(M,model,spec,phase,altFt,tas,extension,open=false){
+  const rating=phase.nativeRating??spec.baseRating;
+  const climbRating=open&&model.climbPowerRatings?.[rating];
+  const ac=climbRating?{...model.ac,powerRatings:{...model.ac.powerRatings,[rating]:climbRating}}:model.ac;
   const curve=ac.ratedInlet?.[rating];
   let powers=ac.powerRatings[rating]?.gears;
   const supplemental=model.options.flightEnvelope?.aircraft?.[ac.stallIdentity?.aircraftId]?.power?.[rating];
@@ -47,7 +49,10 @@
   let shaft;
   if(curve)shaft=M.ratedInletPower(ac,at,tas,rating,'auto','rated-inlet');
   else if(transferred&&rating==='combat')shaft=M.evaluated(ac,at,tas,{...model.options,polar:model.benchmarkPolar,rating,weightLb:ac.weightLb,engineModel:'inlet-transfer'}).engine;
-  else shaft=M.shaftPower(ac,at,rating,'auto');
+  else {
+   const shift=climbRating&&model.climbGearChangesFt?.[rating];
+   shaft=M.shaftPower(ac,at,rating,shift?(at<shift?'low':'high'):'auto');
+  }
   if(!shaft&&supplemental){const node=nodeAt(supplemental.nodes,at)??(phase.nativeRating==='normal'&&at<supplemental.nodes[0].altFt?supplemental.nodes[0]:null);if(node)shaft={...node,rating,gear:supplemental.gear,engineRpm:supplemental.engineRpm};}
   // P-38 report's level chart begins at 5000 ft; its climb power covers sea level.
   if(!shaft&&ac.stallIdentity?.aircraftId==='p38g')shaft=M.shaftPower(ac,at,'climb','auto');
@@ -117,9 +122,9 @@
   phase=phase??phaseFor(spec,s);
   if(!phase)return {status:'rating-time-exhausted'};
   if(phase.key==='injection'&&!fittedInjection(model,spec))return {status:'injection-unavailable'};
-  const tas=M.tasFrom(eas,'EAS',altFt),native=nativePower(M,model,spec,phase,altFt,tas,s.extension);
-  if(!native)return {status:'source-power-unavailable'};
   const open=climbing||s.openCooling;
+  const tas=M.tasFrom(eas,'EAS',altFt),native=nativePower(M,model,spec,phase,altFt,tas,s.extension,open);
+  if(!native)return {status:'source-power-unavailable'};
   const reference=open?undefined:model.cleanLevelPropellers?.[phase.key];
   const p=cleanLevelPower(M,model,spec,phase,altFt,tas,native,reference);
   const rating=spec.baseRating,gear=p.gear??'benchmark';
@@ -145,7 +150,8 @@
   }else{
    r=M.evaluated(ac,altFt,tas,maneuverLift?{...turnOptions,maneuverClMax:maneuverLift.clMax}:turnOptions);
   }
-  return {...r,benchmark:{phase:phase.key??s.mode,label:phase.label,estimated:p.estimated,sourceMaxFt:p.sourceMaxFt,
+  const limits=spec.performanceIntake&&r.limits?{...r.limits,nLift:null,nPower:null,nInst:null,nSust:null,instantDegSec:null,sustDegSec:null}:r.limits;
+  return {...r,limits,benchmark:{phase:phase.key??s.mode,label:phase.label,estimated:p.estimated,sourceMaxFt:p.sourceMaxFt,
    rpm:phase.rpm,map:phase.map,mapUnit:spec.mapUnit,cooling:installed||coolingShare>0?'report-conditioned':open?'climb-estimate':'clean',
    ...(coolingShare>0?{coolingFit:{...matchedCooling,appliedAreaM2:coolingArea}}:{}),
    ...(installed&&model.climbRateTas?.[phase.key]?{climbRateShare:installed.fraction}:{}),
@@ -208,7 +214,7 @@
    if(ins>0&&(!out.instantaneous||ins>out.instantaneous.rateDegSec))out.instantaneous=summary(r,eas,'instant');
    if(su>0){const p=summary(r,eas,'sust');if(!out.minSustainedRadius||p.radiusM<out.minSustainedRadius.radiusM)out.minSustainedRadius=p;}
   }
-  if(!engineSeen){out.status='source-power-unavailable';return out;}
+  if(!engineSeen&&!spec.performanceIntake){out.status='source-power-unavailable';return out;}
   for(const [key,kind]of [['sustained','sust'],['sustainedLoad','sust'],['instantaneous','instant'],['minSustainedRadius','sust']]){
    if(!out[key])continue;const center=out[key].easMph;
    for(let eas=center-1;eas<=center+1;eas+=.05){const r=atSpeed(eas);if(r.status!=='modelled')continue;
@@ -237,7 +243,8 @@
   const ias=interpolate(spec.climbIAS,alt,1),tas=M.tasFrom(ias,'CAS',alt),eas=M.airspeeds(tas,alt).eas;
   const manual=evaluate(M,T,L,model,spec,s,alt,eas,loading.weightLb,phase,true);
   out.manualClimb={iasMph:ias,climbFpm:manual.power?.climbFpm??null,qualification:spec.speedQualification+' IAS=CAS engineering approximation; not a newly measured calibration.'};
-  out.status=out.sustained?'modelled':'cannot-sustain-level-flight';return out;
+  out.status=out.sustained||(spec.performanceIntake&&(out.level||out.climb?.status==='modelled'))?'modelled':
+   engineSeen?'cannot-sustain-level-flight':'source-power-unavailable';return out;
  }
  function traceInputs(flight){
   return {status:flight.status,altFt:flight.altFt,tasMph:flight.tasMph,benchmark:flight.benchmark,engine:{gear:flight.engine?.gear}};

@@ -16,13 +16,13 @@ A local build produces these JSON files. See the [Greg drag reference and usage 
 
 ## Suggested aircraft
 
-The Normal / Combat benchmark currently has seven modeled aircraft. They are the Bf 109 F-4, Fw 190 A-4, Spitfire LF Mk IX, P-47B, P-51B, P-38G and F4U-4. The accepted next batch is **HF Mk IX BS.551 first**, alongside **G-2 MT-215** and **P-51D-15-NA 44-15342**. The [aircraft roster decision](DECISIONS.md#aircraft-roster-expansion) gives the full order and the stall evidence for each family. The coverage columns refer to the scored research roster. [Current benchmark profiles](../references/benchmark-operating-profiles.json)
+The Normal / Combat benchmark has ten profiles. The original seven are the Bf 109 F-4, Fw 190 A-4, Spitfire LF Mk IX, P-47B, P-51B, P-38G and F4U-4. **HF Mk IX BS.551**, **G-2 MT-215** and **P-51D-15-NA 44-15342** are the speed-and-climb intake. [Source conditions and results](V413_AIRCRAFT_INTAKE.md). The [aircraft roster decision](DECISIONS.md#aircraft-roster-expansion) gives the full order and the stall evidence for each family. The coverage columns refer to the scored research roster. [Current benchmark profiles](../references/benchmark-operating-profiles.json)
 
 | Candidate and reference aircraft | Primary | With calculations | Best-supported starting point and remaining data gap |
 | --- | ---: | ---: | --- |
-| **Spitfire HF Mk IX BS.551** | Pending | Pending | **First profile to qualify.** Paired speed and climb report with LF IX BS.543, matched wing configuration and CG, separate Merlin 70 and Rotol installation. [A&AEE report](https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html) |
-| **Bf 109 G-2, MT-215 / WNr 14783** | **65%** | **69%** | **Next batch.** Finnish speed and climb, with WNr 14513 as a separate stall donor candidate. Resolve installed power, run loading and near-stall speed basis. |
-| P-51D-15-NA 44-15342 | 48% | 51% | **Next batch, in parallel.** Wright Field provides three level ratings, WEP climb and stores runs. The D/K manual has weight-indexed IAS. Seek matched near-stall correction and propeller constraints. |
+| **Spitfire HF Mk IX BS.551** | Pending | Pending | **Modeled intake.** Paired speed and climb report with LF IX BS.543, matched wing configuration and CG, separate Merlin 70 and Rotol installation. [A&AEE report](https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html) |
+| **Bf 109 G-2, MT-215 / WNr 14783** | **65%** | **69%** | **Modeled intake.** Finnish speed and climb, with WNr 14513 as a separate stall donor candidate. Resolve installed power, run loading and near-stall speed basis. |
+| P-51D-15-NA 44-15342 | 48% | 51% | **Modeled intake.** Wright Field provides three level ratings, WEP climb and stores runs. The D/K manual has weight-indexed IAS. Seek matched near-stall correction and propeller constraints. |
 | **F6F-3, BuAer 04776** | **79%** | **82%** | Strongest unmodeled candidate among the scored dossiers by coverage. NACA provides detailed low-speed and lift evidence. The correction and mass at stall need clarification, alongside configuration-matched power and performance. |
 | Fw 190 D-9, WNr 210002 | 61% | 65% | Original speed and climb records cover distinct dry and MW 50 cases. Installed power and clean low-speed data would help a German follow-up. |
 | P-47D-30, 43-3441 | 66% | 68% | The block handbook supplies operating settings and climb schedules. NACA traces give maneuver and stall references for 43-3441. The installed power curve and exact low-speed calibration are open. |

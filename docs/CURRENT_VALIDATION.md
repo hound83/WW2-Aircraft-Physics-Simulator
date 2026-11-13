@@ -1,5 +1,11 @@
 # Current validation
 
+v4.13-rc.2 [Drag above 1 G and the Mustang–Spitfire comparison](V413_TURN_DRAG.md). The numerical replay is included in the Physics regression artifact.
+
+v4.13-rc.1 [HF IX, G-2 and P-51D aircraft intake](V413_AIRCRAFT_INTAKE.md). The source replay is included in the Physics regression artifact.
+
+v4.12-rc.1 [Continuous stall and usable maneuver lift](V412_CONTINUOUS_STALL.md). The seven-aircraft replay is included in the Physics regression artifact.
+
 v4.11-rc.1 [Shared flight-case climb and timed energy](V411_SHARED_FLIGHT_CLIMB.md). The seven-aircraft replay is included in the Physics regression artifact.
 
 v4.10-rc.2 [Lightning military-power propeller reference and five-aircraft assessment](V410_REMAINING_PROPELLERS.md). The numerical replay is included in the Physics regression artifact.

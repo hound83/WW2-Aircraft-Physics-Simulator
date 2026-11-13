@@ -1,6 +1,6 @@
 # Drag above 1 G and the Mustang–Spitfire comparison
 
-**v4.13.0-rc.1 · Fighter Sim Inputs v1.11.0.** In the Normal / Combat benchmark, open **How does turn drag affect this matchup?** under **Sustained-turn advantage**. It follows the shared speed probe and shows the effect of varying added turn drag independently on each aircraft, the drag change needed to match the other aircraft, and a provisional Spitfire glide replay at the milestone conditions. [Live benchmark](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/#operating-benchmark) · [Source register](../references/analysis/turn-drag-evidence-2026-11-13.json) · [Frozen before-scorecard](../references/analysis/v413-turn-drag-before.json)
+**v4.13.0-rc.2 · Fighter Sim Inputs v1.11.0.** In the Normal / Combat benchmark, open **How does turn drag affect this matchup?** under **Sustained-turn advantage**. It follows the shared speed probe and shows the effect of varying added turn drag independently on each aircraft, the drag change needed to match the other aircraft, and a provisional Spitfire glide replay at the milestone conditions. [Live benchmark](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/#operating-benchmark) · [Source register](../references/analysis/turn-drag-evidence-2026-11-13.json) · [Frozen before-scorecard](../references/analysis/v413-turn-drag-before.json)
 
 ## The 200 mph comparison
 
@@ -59,7 +59,7 @@ AFDU paragraph 20 reports the Spitfire IX turning inside a 10,100 lb Mustang III
 
 ## Nominal benchmark regression
 
-The seven live profiles reproduce the v4.12 baseline at the recorded precision across **84 steady, 42 timed acceleration and 14 timed climb cases**, plus the ten crossover probes. This includes instantaneous turn, sustained turn, stall, climb and level speed. Representative dry Combat values at 10,000 ft are shown as before → after below.
+The seven original operating profiles reproduce the v4.12 baseline at the recorded precision across **84 steady, 42 timed acceleration and 14 timed climb cases**, plus the ten crossover probes. This includes instantaneous turn, sustained turn, stall, climb and level speed. The three later intake profiles also reproduce their v4.13.0-rc.1 baselines across 36 steady, 18 timed acceleration and six timed climb cases. Their turn rankings remain unavailable. [Intake report](V413_AIRCRAFT_INTAKE.md) · [Intake baseline](../references/analysis/v413-turn-drag-intake-before.json) Representative dry Combat values at 10,000 ft are shown as before → after below.
 
 | Aircraft | Stall (mph EAS) | Level (mph TAS) | Best climb (ft/min) | Peak sustained turn (°/s) | 180–300 mph EAS acceleration (s) | 0–10,000 ft climb (s) |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |

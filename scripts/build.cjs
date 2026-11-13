@@ -119,15 +119,19 @@ function build(){
  html=html.replace('<main>',()=>'<main>'+read('src/maneuver-envelope-panel.html'));
  html=html.replace('<a href="#historical-evidence">','<a href="#maneuver-envelope">Seven-aircraft maneuver envelope</a> · <a href="#historical-evidence">');
  html=html.replace('</body>','<script>'+source+'</script><script type="application/json" id="robustness-data">'+audit+'</script><script>'+ui+'</script>'+conditionEmbed+measuredEmbed+stallEmbed+comparisonEmbed+'<script type="application/json" id="historical-research-data">'+researchData+'</script><script>'+researchUI+'</script>'+maneuverEmbed+'</body>');
- const benchmark=require('../validation/diagnostics/shared_flight_climb.cjs').browserData();
+ const baseBenchmark=require('../validation/diagnostics/shared_flight_climb.cjs').browserData();
+ const intake=require('./aircraft-batch.cjs');
+ const benchmark=intake.addAircraftBatch(baseBenchmark,researchCatalog);
  const inputs=JSON.parse(read('references/analysis/fighter-sim-inputs-v1.json'));
  const observationIds=new Set(inputs.cases.flatMap(item=>item.candidates.flatMap(row=>row.observation_ids)));
  const observations=Object.fromEntries([...observationIds].map(id=>[id,inputs.observations[id]]));
  const sources=Object.fromEntries([...new Set(Object.values(observations).map(row=>row.source))].map(id=>[id,inputs.sources[id]]));
  const coverage=inputs.coverage.rows.map(({id,gold_count,gold_qualified_count,planned_count})=>({id,gold_count,gold_qualified_count,planned_count}));
- const stallReferences=require('../src/provisional-stall-loader.js').referencesFor(inputs,researchCatalog);
+ const stallReferences={...require('../src/provisional-stall-loader.js').referencesFor(inputs,researchCatalog),
+  ...intake.stallReferences(researchCatalog)};
+ const intakeChecks=require('../validation/diagnostics/aircraft_intake.cjs').sourceChecks(baseBenchmark,researchCatalog);
  const turnDrag=require('../validation/diagnostics/turn_drag.cjs').browserEvidence(benchmark.models);
- const benchmarkData=JSON.stringify({...benchmark,stallReferences,turnDrag,
+ const benchmarkData=JSON.stringify({...benchmark,stallReferences,intakeChecks,turnDrag,
   sourceGrades:{cases:inputs.cases,coverage,observations,sources,tolerances:inputs.tolerances}});
  const turnPerformance=read('src/turn-performance.js');
  const matchup=read('src/benchmark-matchup.js');
@@ -155,7 +159,7 @@ function build(){
  const efficiencyData=read(propeller.path);
  if(sha256(efficiencyData)!==propeller.sha256)throw Error('Propeller efficiency data and input pack disagree');
  fs.writeFileSync(path.join(root,'dist',propeller.build_file),efficiencyData);
- const metadata={version,researchStatus:'Turn drag sensitivity and bounded Spitfire glide replay',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,gregDragModelsFile:dragFile,gregDragModelsSha256:sha256(dragData),researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
+ const metadata={version,researchStatus:'Three-aircraft speed and climb intake, turn drag sensitivity and bounded Spitfire glide replay',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,gregDragModelsFile:dragFile,gregDragModelsSha256:sha256(dragData),researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
  fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify(metadata,null,2)+'\n');
  return metadata;
 }
