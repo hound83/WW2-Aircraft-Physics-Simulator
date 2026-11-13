@@ -3,14 +3,12 @@
   "grade_overall": "good",
   "ready_for_first_pass": true,
   "level_speed_kmh": {
-    "0_m": "557-578",
-    "rated_alt": "644-652"
+    "0_m": {"value": "557-578", "grade": "observed", "source": "Focke-Wulf Flugleistungen sheets 1943-44"},
+    "rated_alt": {"value": "644-652", "grade": "observed", "source": "Focke-Wulf Flugleistungen sheets 1943-44"}
   },
-  "climb_ms_sl": "13.4-15.0",
-  "power_curve": "Partial - cooling state graded",
-  "prop_efficiency": 0.80,
-  "stall_ias_mph": "~110",
-  "stall_grade": "secondary",
-  "source": "Focke-Wulf Flugleistungen sheets 1943-44 + AFDU notes",
+  "climb_ms_sl": {"value": "13.4-15.0", "grade": "observed", "source": "Focke-Wulf sheets"},
+  "power_curve": {"status": "partial", "grade": "observed/partial", "source": "Focke-Wulf; cooling state graded"},
+  "prop_efficiency": {"value": 0.80, "grade": "estimated", "source": "Default"},
+  "stall_ias_mph": {"value": "~110", "grade": "secondary", "source": "AFDU captured Fw 190 notes"},
   "notes": "Sudden stall with little warning. Speed data usable."
 }
