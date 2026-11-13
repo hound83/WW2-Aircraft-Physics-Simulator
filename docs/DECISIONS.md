@@ -14,6 +14,10 @@
 
 The target family roster includes **E, F-4, G-2 and G-6** for the Bf 109 and **I, Va, F IX, LF IX and HF IX** for the Spitfire. Model full-span and clipped wings as distinct configurations. Use weight-only scaling in EAS for clean, power-off, 1g stall once wing area, effective lift, trim and loading distribution are supported. This roster order sets aircraft intake priorities. The [simulator milestone](LATEST_INSIGHTS.md#next-simulator-milestone) tracks work on the shared flight model. [Weight-transfer audit](../references/research/STALL_WEIGHT_TRANSFER_2026-11-13.md)
 
+## v4.13-rc.1 aircraft intake
+
+Expose BS.551, MT-215 and 44-15342 in the Normal / Combat benchmark. Use one level-speed fit per installation and show the remaining source residuals. Give climb its own shaft-power case where supported. Keep stall provisional and suppress turn comparisons for pairs involving these profiles. [Implementation and replay](V413_AIRCRAFT_INTAKE.md)
+
 ## v4.12-rc.1 continuous stall
 
 Taper the existing Mustang lift transfer inside its altitude and Mach bounds. Draw the provisional stall range and show the provenance of the limiting input by curve segment. Keep raw IAS, the calibrated P-38G check, and the Navy and Ames Corsair observations at their source conditions. [Scorecard](V412_CONTINUOUS_STALL.md)

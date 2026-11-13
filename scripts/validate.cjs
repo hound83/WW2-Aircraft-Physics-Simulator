@@ -58,9 +58,13 @@ try{
  write('validation/current/shared-flight-climb.json',require('../validation/diagnostics/shared_flight_climb.cjs').run());
  const catalog=require('./research-layer.cjs').buildCatalog();
  write('validation/current/continuous-stall.json',require('../validation/diagnostics/continuous_stall.cjs').run(catalog));
+ const intakeBase=require('../validation/diagnostics/shared_flight_climb.cjs').browserData();
+ write('validation/current/aircraft-intake.json',require('../validation/diagnostics/aircraft_intake.cjs').sourceChecks(intakeBase,catalog));
  require('./write-v42-report.cjs');
  const md=[
  '# Current validation',
+ '',
+ 'v4.13-rc.1 [HF IX, G-2 and P-51D aircraft intake](V413_AIRCRAFT_INTAKE.md). The source replay is included in the Physics regression artifact.',
  '',
  'v4.12-rc.1 [Continuous stall and usable maneuver lift](V412_CONTINUOUS_STALL.md). [Seven-aircraft replay](../validation/current/continuous-stall.json).',
  '',

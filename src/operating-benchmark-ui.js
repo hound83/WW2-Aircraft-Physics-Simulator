@@ -92,8 +92,25 @@
   if(r.status!=='modelled')box.append(text('p','This model cannot sustain level flight at this load, power and altitude.','bench-warning'));
   if(r.sustained?.estimatedPower||r.level?.estimatedPower||r.climb?.estimatedPower)box.append(text('p','High-altitude power estimate beyond the last source node.','bench-warning'));
   if(r.climb?.cooling==='report-conditioned')box.append(text('p','Climb uses report-conditioned power and open-cooling losses.','bench-note'));
-  if(chosen.settings.openCooling)box.append(text('p','Turn, level speed and acceleration use the modeled climb cooling scenario.','bench-note'));
+  if(chosen.settings.openCooling)box.append(text('p',(spec.performanceIntake?'Level speed':'Turn, level speed')+
+   ' and acceleration use the modeled climb cooling scenario.','bench-note'));
   const grid=document.createElement('div');grid.className='bench-numbers';
+  if(spec.performanceIntake){
+   if(r.climb?.climbFpm>0)grid.append(number('Best climb rate',fmt(r.climb.climbFpm,0)+' ft/min',
+    'Vy '+speed(r.climb.easMph,'EAS')+' / '+speed(r.climb.tasMph,'TAS')));
+   if(r.level)grid.append(number('Maximum level speed',speed(r.level.tasMph,'TAS'),speed(r.level.easMph,'EAS')+' · steady equilibrium'));
+   else if(r.climb?.climbFpm>0)box.append(text('p','Level speed is unavailable at this altitude and rating.','bench-note'));
+   if(Number.isFinite(r.stallEasMph)){
+    const band=spec.stallWeightRangeLb,w=r.loading.weightLb;
+    const outside=band&&(w<band[0]||w>band[1]);
+    grid.append(number('Provisional clean stall',speed(r.stallEasMph,'EAS'),spec.stallQualification+
+     (outside?' Selected loading is outside the handbook weight range.':'')));
+   }
+   if(grid.childElementCount)result.append(grid);
+   if(Number.isFinite(r.manualClimb?.climbFpm))result.append(text('p','At the scheduled climb speed of '+
+    speed(r.manualClimb.iasMph,'IAS≈CAS')+', the climb rate is '+fmt(r.manualClimb.climbFpm,0)+' ft/min.','bench-note'));
+   return;
+  }
   const metric=turnUnit(),peak=r[metric.peak];
   grid.append(number(metric.key==='g'?'Peak sustained load':'Maximum sustained turn',fmt(peak?.[metric.field],metric.digits)+' '+metric.label,
    fmt(peak?.seconds360)+' s / 360° · '+speed(peak?.easMph,'EAS')),
@@ -113,13 +130,15 @@
   for(const side of sides)panel.style.setProperty('--bench-'+side,colors[side]);
   $('bench-curve-names').replaceChildren(...sides.map((side,i)=>
    text('span',(i+1)+' · '+names[side],'bench-aircraft-key bench-'+side)));
+  const includesIntake=sides.some(side=>specs.aircraft[api.settings[side].id].performanceIntake);
   const series=sides.map(side=>{
-   const row=api.rows[side],evidence=data.graphEvidence[api.settings[side].id];
+   const row=api.rows[side],id=api.settings[side].id,evidence=data.graphEvidence[id];
    return {
     side,
     name:'Aircraft '+(side==='a'?'1':'2')+' · '+names[side],
     color:colors[side],evidence,turnPolicy:evidence.turnSensitivity?data.turnEvidence.sensitivity:null,
-    range:row.turnRange,
+    range:includesIntake?null:row.turnRange,
+    turnComparisonUnavailable:includesIntake,
     stallEasMph:row.stallEasMph,
     provisionalStallBand:row.stallEasRange?{
      minEasMph:row.stallEasRange[0],maxEasMph:row.stallEasRange[1],
@@ -141,7 +160,8 @@
   const policy=series.every(a=>a.turnPolicy)?data.turnEvidence.sensitivity:null;
   $('bench-advantage-key').hidden=!policy;
   $('bench-solo-key').hidden=true;
-  $('bench-plot-note').textContent=turnUnit().key==='g'?
+  $('bench-plot-note').textContent=includesIntake?'Turn curves require drag-under-load and lift evidence for both aircraft.':
+   turnUnit().key==='g'?
    'Squares mark peak sustained G and best climb speed (Vy). The grey guide shows the load needed for 3°/s at each speed.':
    'Squares mark peak turn rate and best climb speed (Vy). The grey guide shows 3°/s.';
   const samples=new Map();
@@ -165,6 +185,7 @@
    onLock(anchor){api.probeLock=anchor;api.probeLocked=Boolean(anchor);},
    evaluateAt,
    makeAdvantage(domain){
+    if(includesIntake)return null;
     return OperatingTurnComparison.advantage({...domain,host:advantage,readout,limits,names,colors,policy,
      soloKey:$('bench-solo-key'),turnUnit:turnUnit(),unit:$('bench-speed-unit').value,tolerances});
    },
@@ -183,7 +204,8 @@
    const row=coverage.find(item=>item.id===specimen);
    const panel=text('article',undefined,'bench-probe-card');panel.dataset.side=side;
    panel.append(text('strong',shortName(id),'bench-probe-name'),
-    text('p',row.gold_count+' GOLD · '+row.gold_qualified_count+' GOLD* of '+row.planned_count+' planned benchmarks','bench-note'));
+    text('p',row?row.gold_count+' GOLD · '+row.gold_qualified_count+' GOLD* of '+row.planned_count+' planned benchmarks':
+     'Benchmark agreement is unscored for this profile.','bench-note'));
    const reviewed=cases.filter(item=>item.aircraft===specimen);
    if(!reviewed.length)panel.append(text('p','No reviewed benchmark cases yet.','bench-note'));
    for(const item of reviewed){
@@ -270,7 +292,8 @@
  }
  function renderAltitudeOverview(alt){
   const turn=turnUnit();
-  const {table,body}=makeTable(['Altitude','Peak sustained turn ('+turn.label+')','Best climb (ft/min)','Top level speed (TAS)'],'bench-altitude-table');
+  const compareTurns=sides.every(side=>!specs.aircraft[api.settings[side].id].performanceIntake);
+  const {table,body}=makeTable(['Altitude',...(compareTurns?['Peak sustained turn ('+turn.label+')']:[]),'Best climb (ft/min)','Top level speed (TAS)'],'bench-altitude-table');
   const unit=$('bench-speed-unit').value;
   function pair(a,b,format,margin,estimated,verdict){
    const cell=text('td');
@@ -296,8 +319,8 @@
    const positive=row=>row.climb?.climbFpm>0?row.climb.climbFpm:null;
    const ta=a[turn.peak],tb=b[turn.peak],climbA=positive(a),climbB=positive(b),levelA=a.level?.tasMph,levelB=b.level?.tasMph;
    tr.append(th,
-    pair(ta?.[turn.field],tb?.[turn.field],v=>fmt(v,turn.digits),v=>fmt(v,turn.digits)+' '+turn.label,
-     [ta?.estimatedPower,tb?.estimatedPower],peakVerdict(ta,tb,turn)),
+    ...(compareTurns?[pair(ta?.[turn.field],tb?.[turn.field],v=>fmt(v,turn.digits),v=>fmt(v,turn.digits)+' '+turn.label,
+     [ta?.estimatedPower,tb?.estimatedPower],peakVerdict(ta,tb,turn))]:[]),
     pair(climbA,climbB,v=>fmt(v,0),v=>fmt(v,0)+' ft/min',[a.climb?.estimatedPower&&climbA,b.climb?.estimatedPower&&climbB],
      Match.compare('climb_rate',climbA,climbB,tolerances)),
     pair(levelA,levelB,v=>Chart.speed(v,unit,'TAS'),v=>Chart.speed(v,unit,'TAS'),[a.level?.estimatedPower,b.level?.estimatedPower],
@@ -332,6 +355,37 @@
   const speedCheck=data.spitfireBestSpeedSensitivity;
   target.append(text('p','Spitfire sensitivity at each model’s own best climb speed. Mean error '+fmt(speedCheck.beforeMae,0)+' → '+fmt(speedCheck.afterMae,0)+' ft/min. Largest increase '+fmt(speedCheck.largestRegression,0)+' ft/min.','bench-note'));
  }
+ function renderIntakeChecks(){
+  const target=$('bench-intake-check-results'),{crossover,aircraft}=data.intakeChecks;
+  function appendTable(parent,labels,rows){
+   const {table,body}=makeTable(labels);
+   for(const values of rows){
+    const tr=text('tr');
+    for(const value of values)tr.append(text('td',value));
+    body.append(tr);
+   }
+   const scroll=text('div',undefined,'bench-table-scroll');scroll.append(table);parent.append(scroll);
+  }
+  target.append(text('p','Spitfire HF IX versus LF IX. A positive difference favors the HF. Table VI sea level is the HF drag fit.','bench-note'));
+  appendTable(target,['Altitude','Observed HF − LF (mph TAS)','Modeled HF − LF (mph TAS)'],
+   crossover.map(row=>[heightLabel(row.altFt),fmt(row.observedDifferenceMph,1),fmt(row.modeledDifferenceMph,1)]));
+  for(const check of aircraft){
+   const details=text('details');
+   details.append(text('summary',check.label),text('p',check.scope,'bench-note'),
+    text('p','Mean absolute error excluding fit points is '+fmt(check.levelMaeMph,1)+' mph TAS for level speed and '+
+     fmt(check.climbMaeFpm,0)+' ft/min for climb.','bench-note'));
+   for(const [metric,rows,unit] of [['Level speed',check.level,'mph TAS'],['Climb rate',check.climb,'ft/min']]){
+    details.append(text('h4',metric));
+    const alternate=rows.some(row=>Number.isFinite(row.alternateRateFpm));
+    appendTable(details,['Altitude','Weight (lb)','Observed ('+unit+')','Modeled','Residual','Test condition',
+     ...(alternate?['Scan rate altitude','Alternate (ft/min)']:[])],
+    rows.map(row=>[heightLabel(row.altFt),fmt(row.weightLb,0),fmt(row.observed),fmt(row.predicted),fmt(row.error),
+     [row.mode,row.role].filter(Boolean).join(' · '),
+     ...(alternate?[heightLabel(row.rateAltitudeFt),fmt(row.alternateRateFpm)]:[])]));
+   }
+   target.append(details);
+  }
+ }
  function invalidateClimbs(message){
   api.climbs=null;
   $('bench-climb-result').textContent=message;
@@ -351,7 +405,8 @@
   const comparison=$('bench-comparison');comparison.replaceChildren();
   if(verdict)comparison.append(document.createTextNode('Modeled peak sustained turn. '),
    leadLabel(verdict,fmt(Math.abs(a[turn.field]-b[turn.field]),turn.digits)+' '+turn.label));
-  else comparison.textContent='A sustained-turn comparison is unavailable for one or both selected states.';
+  else comparison.textContent=sides.some(side=>specs.aircraft[api.settings[side].id].performanceIntake)?
+   'Turn comparison awaits drag-under-load and lift evidence.':'A sustained-turn comparison is unavailable for one or both selected states.';
   if(api.accelerations&&api.accelerations.a.altFt!==alt)invalidateAcceleration('Altitude changed. Recalculate both runs.');
   $('bench-acceleration-altitude').textContent='Shared altitude '+label;
  }
@@ -480,7 +535,7 @@
  $('bench-tie-margins').textContent='Effective ties use '+tolerances.sustained_turn_rate.spread+'°/s, '+
   tolerances.climb_rate.spread+'% climb rate and '+tolerances.level_speed.spread+' km/h TAS. In G view the peak tie margin uses the two peaks’ mean TAS. * includes estimated power.';
  render();
- renderFlightChecks();
+ renderFlightChecks();renderIntakeChecks();
  OperatingTurnComparison.evidence($('bench-turn-evidence'),data.turnEvidence,data.turnLiftChecks,
   data.turnEvidence.sensitivity,data.turnEvidence.directTurns);
 })();
