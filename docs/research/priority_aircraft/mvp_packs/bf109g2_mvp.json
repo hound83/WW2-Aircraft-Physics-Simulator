@@ -4,15 +4,13 @@
   "ready_for_first_pass": true,
   "mass_kg_approx": 3042,
   "level_speed_kmh": {
-    "0_m": 535,
-    "7000_m": 660
+    "0_m": {"value": 535, "grade": "observed/derived", "source": "Messerschmitt AG Datenblatt May 1942"},
+    "7000_m": {"value": 660, "grade": "observed/derived", "source": "Messerschmitt AG Datenblatt May 1942; Rechlin G-1 650 km/h at 6400 m; Soviet NII VVS G-2 666 km/h"}
   },
   "configuration": "Steig- und Kampfleistung 1.3 ata / 2600 rpm",
-  "climb_time_to_6km_min": 5.7,
-  "power_curve": "Partial - restricted combat settings available",
-  "prop_efficiency": 0.80,
-  "stall_ias_kmh": "158-180",
-  "stall_grade": "secondary",
-  "source": "Messerschmitt Datenblatt May 1942 + Rechlin/Erla/Soviet cross-checks",
+  "climb_time_to_6km_min": {"value": 5.7, "grade": "derived", "source": "Messerschmitt Datenblatt / Erla averages"},
+  "power_curve": {"status": "partial", "grade": "observed/partial", "source": "Rechlin Kennblatt and Messerschmitt datasheet"},
+  "prop_efficiency": {"value": 0.80, "grade": "estimated", "source": "Default"},
+  "stall_ias_kmh": {"value": "158-180", "grade": "secondary", "source": "IL-2 / pilot manuals"},
   "notes": "Speed data strong. Stall is IAS secondary only."
 }
