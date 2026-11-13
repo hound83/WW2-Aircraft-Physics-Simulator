@@ -910,7 +910,7 @@ async function run(){
   checks.push('HF IX, G-2 and P-51D are selectable with shared level and climb output, provisional stall, source residuals and turn comparisons withheld');
   await select('bench-aircraft-a','spitfire_fix_bf274');await select('bench-aircraft-b','bf109g6trop_16476');
   await select('bench-altitude','10000');
-  assert.match(await evaluate('document.getElementById("bench-result-a").textContent'),/BF\.274.*Maximum level speed.*Provisional clean stall/s);
+  assert.match(await evaluate('document.getElementById("bench-result-a").textContent'),/Maximum level speed.*Provisional clean stall.*BF\.274/s);
   assert.match(await evaluate('document.getElementById("bench-result-b").textContent'),/Wing gun pods.*Best climb rate \(estimated\).*Maximum level speed.*Provisional clean stall/s);
   assert.match(await evaluate('document.getElementById("bench-intake-check-results").textContent'),/BF\.274.*Climb elapsed time.*WNr 16476.*Reported ceiling 36,516 ft/s);
   assert.ok(await evaluate('!!document.querySelector("#bench-climb-plot svg")'));
