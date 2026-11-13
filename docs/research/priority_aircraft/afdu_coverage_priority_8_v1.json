@@ -1,0 +1,50 @@
+{
+  "version": "2026-11-13-v1",
+  "description": "AFDU coverage summary for the priority 8 aircraft",
+  "aircraft": {
+    "Bf_109_E": {
+      "coverage": "strong",
+      "key_findings": "Stall 75 mph IAS clean / 61 mph flaps down. Out-turned by Spitfire and Hurricane. CLmax ~1.4 / 1.9.",
+      "source": "RAE/AFDU handling and tactical trials 1940"
+    },
+    "Bf_109_F": {
+      "coverage": "partial",
+      "key_findings": "Minimum performance guide only (engine in poor state). Trials incomplete after crash.",
+      "source": "AFDU tactical trials on captured F-2 ES906 1941"
+    },
+    "Bf_109_G2": {
+      "coverage": "weak",
+      "key_findings": "Mostly qualitative notes from captured G-series.",
+      "source": "North Africa / Black 6 notes"
+    },
+    "Fw_190_A": {
+      "coverage": "strong",
+      "key_findings": "~110 mph IAS stall clean. 20-35 mph faster than Spitfire V. Climb ~450 ft/min better than Spitfire VB up to 25,000 ft. Superior roll. Out-turned by Spitfire. Sudden high-speed stall.",
+      "source": "AFDU reports on captured MP499 and others 1942-43"
+    },
+    "Fw_190_D9": {
+      "coverage": "missing",
+      "key_findings": "Almost no dedicated AFDU numbers."
+    },
+    "Spitfire_V": {
+      "coverage": "strong",
+      "key_findings": "Out-turns Fw 190. Inferior in speed and climb to early Fw 190.",
+      "source": "Direct comparison trials"
+    },
+    "Spitfire_I": {
+      "coverage": "medium",
+      "key_findings": "Used as baseline in 1940 Bf 109E fights.",
+      "source": "Early tactical trials"
+    },
+    "P-51_Mustang_III": {
+      "coverage": "strong",
+      "key_findings": "Speed roughly equal to Spitfire IX at many heights. Climb inferior to Spitfire XIV. Out-turned by Spitfire. Excellent dive.",
+      "source": "AFDU tactical trials vs Spitfire IX/XIV 1944"
+    },
+    "P-47D": {
+      "coverage": "weak-medium",
+      "key_findings": "Dive advantage clear. Climb and turn inferior to Spitfire. Some low-altitude notes vs Fw 190.",
+      "source": "Limited comparison notes"
+    }
+  }
+}
