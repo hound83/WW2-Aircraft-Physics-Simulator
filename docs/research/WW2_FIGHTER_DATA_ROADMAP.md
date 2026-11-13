@@ -1,6 +1,6 @@
 # Fighter Sim Inputs roadmap
 
-Review date 13 November 2026. The input roadmap covers 13 scored research variants and seven simulator profiles. The priority list also includes airframes with their own unscored source dossiers. [Current data and coverage](WW2_FIGHTER_SIM_INPUTS_V1.md) · [Minimum viable input data](MINIMUM_VIABLE_SIM_DATA.md) · [Simulator roadmap](../SIMULATOR_ROADMAP.md)
+Review date 13 November 2026. The input roadmap covers 13 scored reference variants, six additional scored dossiers and seven simulator profiles. [Coverage and crosswalk](WW2_PRIORITY_COMPARATIVE_COVERAGE_2026-11-13.md). [Current data and coverage](WW2_FIGHTER_SIM_INPUTS_V1.md) · [Minimum viable input data](MINIMUM_VIABLE_SIM_DATA.md) · [Simulator roadmap](../SIMULATOR_ROADMAP.md)
 
 ## Variant priority list (2026-11-13)
 
@@ -8,15 +8,15 @@ The research priority reflects the historical scope and the next useful evidence
 
 | Variant | Force | In sim | Data | Add to dataset | Add to sim | Remarks |
 |---------|-------|--------|------|----------------|------------|---------|
-| Bf 109 G-2 MT-215 | Luftwaffe | — | 65% primary / 69% total | Next | First bounded intake | Installed power, run mass and airspeed corrections |
-| P-51D-15-NA 44-15342 | USAAF | — | Wright Field level and climb tables | Prepare in parallel | Intake candidate | Match near-stall data and bound propeller efficiency and drag |
-| P-47D-30 43-3441 | USAAF | — | 66% primary / 68% total | Targeted | Intake candidate | Resolve NACA low-speed channels. Keep Wright Field 42-26167 as a separate powerplant and performance dossier |
+| Bf 109 G-2 MT-215 | Luftwaffe | — | 65% primary / 69% total for the G-2 research dossier | Next | First bounded intake | Installed power, run mass and airspeed corrections |
+| P-51D-15-NA 44-15342 | USAAF | — | 48% primary / 51% total | Prepare in parallel | Intake candidate | Match near-stall data and bound propeller efficiency and drag |
+| P-47D-30 43-3441 | USAAF | — | 66% primary / 68% total | Targeted | Intake candidate | Resolve NACA low-speed channels. Keep D-22 42-26167 as a separate dossier, 46% primary / 46% total |
 | F6F-3 BuAer 04776 | US Navy | — | 79% primary / 82% total | Targeted | First alternate | Match NACA stall speed, calibration and test mass |
-| Spitfire I N.3171 | RAF | — | Named flight-test dossier | Targeted | Early-war pair | Match level power and low-speed basis; track propeller and fuel standard |
-| Spitfire Va X.4922 | RAF | — | Named flight-test dossier | Targeted | Later | Match Merlin 45 rating and cooling to its de Havilland installation |
-| Bf 109 E | Luftwaffe | — | Several period trials | Targeted | Early-war pair | Use an exact E-series trial; retain differences between captured and factory airframes |
+| Spitfire I N.3171 | RAF | — | 43% primary / 44% total | Targeted | Early-war pair | Match level power and low-speed basis; track propeller and fuel standard |
+| Spitfire Va X.4922 | RAF | — | 32% primary / 32% total | Targeted | Later | Match Merlin 45 rating and cooling to its de Havilland installation |
+| Bf 109 E WNr 1304 | Luftwaffe | — | 22% primary / 24% total | Targeted | Early-war pair | Use an exact E-series trial; retain differences between captured and factory airframes |
 | Bf 109 G-6/G-14 | Luftwaffe | — | Medium | Yes (near-term) | Later | Most numerous late G |
-| Fw 190 A-8 | Luftwaffe | — | Medium | Yes (near-term) | Later | Most common late A-series |
+| Fw 190 A-8 WNr 733705 | Luftwaffe | — | 35% primary / 35% total | Yes (near-term) | Later | Most common late A-series |
 | Fw 190 D-9 WNr 210002 | Luftwaffe | — | 61% primary / 65% total | Targeted | Later | Match installed Jumo 213 A power to the dry and MW 50 cases |
 | Spitfire LF IX | RAF | Yes | Strong | Improve (near-term) | Already in | Core; improve stall |
 | Bf 109 F-4 | Luftwaffe | Yes | Strong | Improve (near-term) | Already in | Core; improve power curve |
@@ -89,6 +89,8 @@ Delivered 96 source-linked records, a file-by-file review and the 13-variant cov
 The v1.9.0 follow-up recovered the full 5,801-entry candidate archive and added 552 catalog observations, including P-47D operating limits and P-40F/L climb conditions. [PDF input release](WW2_PDF_INPUT_DATA_V1_9.md)
 
 The v1.10.0 release reviews all eight priority-aircraft entries and adds 164 observations across five new dossiers. [Priority-aircraft release](WW2_PRIORITY_AIRCRAFT_INPUTS_V1_10.md)
+
+The v1.11.0 follow-up adds 21 catalog records and six scoreable dossiers. The Fw 190 A-8 mock-up handling readings preserve their configuration, and the P-51D installation now links the K6523A-24 propeller assembly. [Comparative intake](WW2_PRIORITY_COMPARATIVE_COVERAGE_2026-11-13.md)
 
 ### Next · Corrected stall and drag under load
 

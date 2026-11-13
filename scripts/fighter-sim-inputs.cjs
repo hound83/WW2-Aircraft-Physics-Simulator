@@ -19,6 +19,7 @@ const baselinePath = 'references/aircraft-readiness-german-archive-2026-11-11.js
 const batchReviewPath = 'references/analysis/ww2_grok_batch_disposition_2026-11-12.json';
 const pdfReviewPath = 'references/analysis/ww2_pdf_source_disposition_2026-11-12.json';
 const priorityReviewPath = 'references/analysis/ww2_priority_aircraft_review_2026-11-13.json';
+const priorityComparativePath = 'references/analysis/ww2_priority_comparative_review_2026-11-13.json';
 const stallPath = 'references/research/ww2_fleet_stall_2026-11-12.json';
 const interpolatedCharts = new Set(['spitfire-climb-branches', 'p47b-climb-branches', 'p38g-part-power-speed',
   'p40f-standard-spinner-climb', 'f4-factory-climb', 'g2-known-setting-speed']);
@@ -237,6 +238,42 @@ function reviewedReference(catalog, reviewPath) {
   };
 }
 
+function priorityDossierCoverage(review, coverage, observations) {
+  const { crosswalk, dossiers } = review;
+  const referenceIds = coverage.rows.map(row => row.id);
+  const dossierIds = dossiers.map(row => row.id);
+  const ids = new Set([...referenceIds, ...dossierIds]);
+  const overlaps = crosswalk.filter(row => referenceIds.includes(row.dossier_id)).length;
+  if (ids.size !== review.roster_count || referenceIds.length !== review.reference_roster_count
+    || dossiers.length !== review.additional_dossier_count || crosswalk.length !== review.priority_candidate_count
+    || overlaps !== review.overlap_count || crosswalk.length - overlaps !== dossiers.length
+    || new Set(crosswalk.map(row => row.dossier_id)).size !== crosswalk.length
+    || crosswalk.some(row => !ids.has(row.dossier_id))) {
+    throw Error('Invalid priority dossier roster');
+  }
+  const dimensionIds = Object.keys(coverage.weights);
+  const rows = dossiers.map(row => {
+    if (row.dimensions.map(axis => axis.id).join(',') !== dimensionIds.join(',')
+      || !row.evidence_ids.length || row.evidence_ids.some(id => !observations.has(id))) {
+      throw Error('Unresolved coverage evidence for ' + row.id);
+    }
+    const totals = { primary: 0, secondary: 0, calculated: 0 };
+    for (const axis of row.dimensions) {
+      const values = [axis.primary, axis.secondary, axis.calculated];
+      if (values.some(value => !Number.isInteger(value) || value < 0)
+        || values.reduce((sum, value) => sum + value, 0) > coverage.weights[axis.id] || !axis.rationale) {
+        throw Error('Invalid priority coverage points for ' + row.id + ' ' + axis.id);
+      }
+      for (const grade of Object.keys(totals)) totals[grade] += axis[grade];
+    }
+    return {
+      ...row, primary_percent: totals.primary, with_secondary_percent: totals.primary + totals.secondary,
+      with_calculations_percent: totals.primary + totals.secondary + totals.calculated,
+    };
+  });
+  return { ...review, dossiers: rows };
+}
+
 function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catalog)) {
   const observations = new Map(catalog.observations.map(row => [row.id, row]));
   const engine = engineReference(observations);
@@ -248,6 +285,7 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
   const batch = reviewedReference(catalog, batchReviewPath);
   const pdf = reviewedReference(catalog, pdfReviewPath);
   const priority = reviewedReference(catalog, priorityReviewPath);
+  const comparative = reviewedReference(catalog, priorityComparativePath);
   const fleetObservationIds = catalog.observations.filter(row => row.pack_id === 'ww2_fleet_propeller_2026-11-12').map(row => row.id);
   const originalIds = new Set([...Object.keys(evidence.observations), ...engine.observation_ids, ...fleetObservationIds]);
   const cases = reviewedCases(observations, evidence).map(item => ({ ...item, ...resolveCase(item) }));
@@ -257,6 +295,8 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
     ...batch.observation_ids, ...batch.existing_observation_ids,
     ...pdf.observation_ids, ...pdf.existing_observation_ids,
     ...priority.observation_ids, ...priority.existing_observation_ids,
+    ...comparative.observation_ids, ...comparative.existing_observation_ids,
+    ...comparative.coverage_assessment.dossiers.flatMap(row => row.evidence_ids),
     ...stall.variants.flatMap(row => [...row.prior_ids, ...row.clean_stall.observation_ids])]) {
     if (!observations.has(id)) throw Error('Unresolved original observation ' + id);
     originalIds.add(id);
@@ -282,8 +322,10 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
     }
     return { ...credit, observation_ids: supportingSeries.flatMap(group => group.observation_ids) };
   });
+  const coverage = scoreCoverage(baseline, evidence, cases, pdfCredits);
+  comparative.coverage_assessment = priorityDossierCoverage(comparative.coverage_assessment, coverage, observations);
   return {
-    schema: 'ww2-fighter-sim-inputs/v1', version: '1.10.0', as_of: '2026-11-13',
+    schema: 'ww2-fighter-sim-inputs/v1', version: '1.11.0', as_of: '2026-11-13',
     scope: 'Historical inputs and conditional estimates for source-case lookups and evidence graphs.',
     originals: {
       catalog: 'research-catalog.json',
@@ -302,7 +344,8 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
     batch_reference: batch,
     pdf_reference: pdf,
     priority_aircraft_reference: priority,
-    tolerances, coverage: scoreCoverage(baseline, evidence, cases, pdfCredits),
+    priority_comparative_reference: comparative,
+    tolerances, coverage,
     cases, rejected_pairs: rejectedPairs,
     charts: charts.map(chart => ({
       ...chart, series: chart.series.map((series, i) => curveSeries(chart, series, i, cases)),
@@ -314,7 +357,7 @@ function buildSimInputs(catalog = buildCatalog(), evidence = buildEvidence(catal
 function encodeSimInputs(data) {
   const sections = Object.entries(data).map(([key, value]) => {
     const prefix = '  ' + JSON.stringify(key) + ': ';
-    if (['pdf_reference', 'priority_aircraft_reference'].includes(key)) {
+    if (['pdf_reference', 'priority_aircraft_reference', 'priority_comparative_reference'].includes(key)) {
       return prefix + '{\n' + Object.entries(value).map(([section, data]) => {
         const content = section === 'series'
           ? '[\n' + data.map(group => '      ' + JSON.stringify(group)).join(',\n') + '\n    ]'

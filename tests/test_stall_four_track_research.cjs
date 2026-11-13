@@ -10,13 +10,13 @@ const prefix='stall_four_track_followup_2026-11-10';
 const rows=catalog.observations.filter(row=>row.pack_id===prefix);
 assert.equal(pack.pack_version,'1.0.1');
 assert.equal(rows.length,29);
-assert.equal(catalog.summary.observation_count,2726);
+assert.equal(catalog.summary.observation_count,2747);
 assert.equal(catalog.summary.stall_count,288);
-assert.equal(catalog.summary.source_count,336);
+assert.equal(catalog.summary.source_count,341);
 assert.equal(catalog.calibration_curves.length,22,'Three P-38G report tables extend the 19 existing curves');
-assert.equal(catalog.summary.lineage_groups,63);
+assert.equal(catalog.summary.lineage_groups,67);
 assert.equal(catalog.summary.calibration_reviews,29);
-assert.equal(catalog.document_lineage.length,63);
+assert.equal(catalog.document_lineage.length,67);
 assert.equal(catalog.calibration_reviews.length,29);
 
 const va=rows.filter(row=>row.quantity==='stall_speed');
