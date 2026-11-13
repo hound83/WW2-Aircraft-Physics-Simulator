@@ -1,22 +1,3 @@
-# Provisional stall bands attached to the chart
+# Provisional stall band on the benchmark
 
-The chart now draws a light dotted vertical band when an aircraft object has a `provisionalStallBand` property.
-
-## Shape expected
-```js
-aircraft.provisionalStallBand = {
-  minEasMph: 89.4,
-  maxEasMph: 97.4,
-  limitation: 'reported CAS used as provisional EAS'
-};
-```
-
-## How to supply it
-Use the loader already on main:
-```js
-const { getProvisionalBand } = require('./provisional-stall-loader');
-const band = getProvisionalBand('f4u4');
-if (band) aircraft.provisionalStallBand = band;
-```
-
-The band is drawn as a light filled range plus dotted vertical lines. It does not replace or alter the solid 1 G stall line. No solver or baseline change.
+The [benchmark chart](../../src/operating-benchmark-chart.js) draws a dotted, clipped range for the Mustang’s active lift transfer. At 8,000 ft, Full envelope shows how the dotted low-speed portion joins the supported solid portion. The report check points have individual configurations and the tooltip uses the selected chart units. [Results and source checks](../../docs/V412_CONTINUOUS_STALL.md)

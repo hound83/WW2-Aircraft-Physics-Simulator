@@ -16,21 +16,30 @@
   minimumFractionDigits: digits, maximumFractionDigits: digits
  });
 
- function drawProvisionalStallBand(add, aircraft, x, y, top, bottom) {
+ function drawStallEvidence(add, aircraft, x, top, bottom, unit, clipId) {
   const band = aircraft.provisionalStallBand;
-  if (!band || !Number.isFinite(band.minEasMph) || !Number.isFinite(band.maxEasMph)) return;
-  const x1 = x(band.minEasMph), x2 = x(band.maxEasMph);
-  const rect = add('rect', {
-   x: Math.min(x1, x2), y: top, width: Math.abs(x2 - x1), height: bottom - top,
-   fill: aircraft.color, opacity: 0.08, 'data-bench-provisional-stall': aircraft.side
-  });
-  add('title', {}, aircraft.name + ' provisional stall band ' +
-   band.minEasMph.toFixed(1) + '–' + band.maxEasMph.toFixed(1) + ' mph EAS. ' +
-   (band.limitation || 'provisional'), rect);
-  // dotted vertical lines at the ends
-  for (const xv of [x1, x2]) {
-   add('line', { x1: xv, x2: xv, y1: top, y2: bottom, stroke: aircraft.color,
-    'stroke-width': 1.2, 'stroke-dasharray': '2 4', 'data-bench-provisional-stall': aircraft.side });
+  if (!band && !aircraft.stallChecks?.length) return;
+  const group = add('g', {'clip-path':'url(#'+clipId+')'});
+  if (band) {
+   const x1=x(band.minEasMph),x2=x(band.maxEasMph);
+   const rect=add('rect',{x:x1,y:top,width:x2-x1,height:bottom-top,
+    fill:aircraft.color,opacity:.10,'data-bench-provisional-stall':aircraft.side},undefined,group);
+   const title=aircraft.name+' · provisional 1 G stall '+speed(band.minEasMph,unit,'EAS',1)+
+    ' to '+speed(band.maxEasMph,unit,'EAS',1)+'. '+band.limitation;
+   add('title',{},title,rect);
+   for (const xv of [x1,x2]) {
+    const edge=add('line',{x1:xv,x2:xv,y1:top,y2:bottom,stroke:aircraft.color,
+     'stroke-width':1.5,'stroke-dasharray':'2 4','data-bench-provisional-stall':aircraft.side},undefined,group);
+    add('title',{},title,edge);
+   }
+  }
+  for (const [i,ref] of (aircraft.stallChecks??[]).entries()) {
+   if(!Number.isFinite(ref.eas))continue;
+   const marker=add('circle',{cx:x(ref.eas),cy:top+9+12*i,r:4,fill:'#18242e',stroke:aircraft.color,
+    'stroke-width':2,'data-bench-stall-check':ref.id},undefined,group);
+   add('title',{},ref.aircraft+' · '+(ref.power==='on'?'power on':ref.power==='off'?'power off':ref.power)+' · '+
+    speed(ref.eas,unit,'EAS',1)+' from '+ref.speed.value+' '+
+    ref.speed.unit+' '+ref.speed.basis+' at about '+format(ref.weightLb)+' lb. '+ref.qualification,marker);
   }
  }
  function speed(value, unit, kind, digits = 0) {
@@ -56,13 +65,32 @@
  function plotPoints(aircraft, pointAt) {
   const { minEasMph, maxEasMph } = aircraft.range;
   const speeds = new Set([minEasMph, maxEasMph]);
+  const upperStall=aircraft.provisionalStallBand?.maxEasMph;
+  if(upperStall>minEasMph&&upperStall<maxEasMph)speeds.add(upperStall);
   for (let eas = Math.ceil(minEasMph / 2) * 2; eas < maxEasMph; eas += 2) speeds.add(eas);
   for(const peak of [aircraft.peakEasMph,aircraft.peakLoad?.easMph]){
    if(peak>=minEasMph&&peak<=maxEasMph)speeds.add(peak);
   }
   // At the level-speed equilibrium all available power sustains 1 G.
-  return [...speeds].sort((a, b) => a - b).map(eas =>
-   pointAt(aircraft.side,eas,'turn'));
+  const at=eas=>pointAt(aircraft.side,eas,'turn');
+  const points=[...speeds].sort((a,b)=>a-b).map(at),result=[];
+  for(const [i,point] of points.entries()){
+   const previous=points[i-1];
+   if(previous&&Number.isFinite(previous.rate)&&Number.isFinite(point.rate)&&
+      previous.covered!==point.covered&&
+      previous.evidence.provisionalLift!==point.evidence.provisionalLift){
+    let lo=previous.eas,hi=point.eas;
+    for(let j=0;j<12;j++){
+     const mid=(lo+hi)/2;
+     if(at(mid).covered===previous.covered)lo=mid;
+     else hi=mid;
+    }
+    const join=at(previous.covered?lo:hi);
+    if(join.eas>previous.eas&&join.eas<point.eas)result.push(join);
+   }
+   result.push(point);
+  }
+  return result;
  }
 
  function probeAircraft(aircraft, easMph, evaluateAt, pointAt) {
@@ -79,6 +107,7 @@
   }
   return {
    sustainedG,
+   liftG: flight.limits?.nLift??null,
    turnRate: turn.rate,
    climbFpm: climb.status === 'modelled' ? climb.power?.climbFpm ?? null : null,
    accelerationMphPerSecond: pointAt(aircraft.side,easMph,'acceleration').rate,
@@ -109,7 +138,8 @@
   const metrics = element('dl', null, 'bench-probe-metrics');
   for (const [label, value] of [
    ['Sustained turn', point.turnRate === null ? '—' : format(point.turnRate, 1) + '°/s'],
-   ['Max sustained G', point.sustainedG === null ? '—' : format(point.sustainedG, 2) + ' G']
+   ['Max sustained G', point.sustainedG === null ? '—' : format(point.sustainedG, 2) + ' G'],
+   ['Lift ceiling', Number.isFinite(point.liftG) ? format(point.liftG, 2) + ' G' : '—']
   ]) {
    const entry = element('div');
    entry.append(element('dt', label), element('dd', value));
@@ -156,6 +186,8 @@
   const low=aircraft.stallEasMph,high=aircraft.scanMaxEasMph;
   const at=eas=>({...pointAt(aircraft.side,Math.max(eas,low+1e-7),'climb'),eas});
   const speeds = new Set([low, aircraft.vyEasMph, high]);
+  const upperStall=aircraft.provisionalStallBand?.maxEasMph;
+  if(upperStall>low&&upperStall<high)speeds.add(upperStall);
   for(const region of aircraft.evidence.regions??[]){
    const anchor=region.anchors.find(row=>row.altFt===altFt);
    const speedsTas=Evidence.scheduleWindow(region.anchors,altFt)??[];
@@ -187,6 +219,8 @@
   const low=Math.max(stall,minEas),high=Math.min(aircraft.scanMaxEasMph,maxEas);
   if(high<=low)return [];
   const speeds=new Set([low,high]);
+  const upperStall=aircraft.provisionalStallBand?.maxEasMph;
+  if(upperStall>low&&upperStall<high)speeds.add(upperStall);
   const level=aircraft.levelEasMph;
   if(Number.isFinite(level)&&level>=low&&level<=high)speeds.add(level);
   for(let eas=Math.ceil(low/probeStepMph)*probeStepMph;eas<high;eas+=probeStepMph)speeds.add(eas);
@@ -274,6 +308,12 @@
       readout=accelerationLabel(rate,unit);
      }
      row.append(element('span',readout));
+     if(metric==='turn'&&Number.isFinite(point.liftG))row.append(element('span','Lift ceiling '+format(point.liftG,2)+' G'));
+     const band=aircraft.provisionalStallBand;
+     if(band&&probe.easMph>=band.minEasMph&&probe.easMph<=band.maxEasMph){
+      row.append(element('p','Provisional 1 G stall '+speed(band.minEasMph,unit,'EAS',1)+' to '+
+       speed(band.maxEasMph,unit,'EAS',1)+'. '+band.limitation,'bench-note'));
+     }
      if(Number.isFinite(rate)){
       const point=sources[aircraft.side][metric];
       appendEvidence(row,point,rateUnit,digits);
@@ -405,7 +445,7 @@
      'clip-path':'url(#'+clipId+')','data-bench-tested-range':aircraft.side});
    }
   }
-  for (const { aircraft } of curves) drawProvisionalStallBand(add, aircraft, x, y, top, bottom);
+  for (const { aircraft } of curves) drawStallEvidence(add,aircraft,x,top,bottom,unit,clipId);
   for (const { aircraft, points } of curves) {
    const stroke=aircraft.color;
    const curveAttribute=turn?'data-bench-curve':'data-bench-'+kind+'-curve';
@@ -508,7 +548,7 @@
   const withStall=series.filter(a=>Number.isFinite(a.stallEasMph));
   const domainEnds=levelSpeeds.length?levelSpeeds:flightEnds.length?flightEnds:withStall.map(a=>a.scanMaxEasMph);
   const quickest=Math.max(0,...domainEnds);
-  const lowestStall=Math.min(...withStall.map(a=>a.stallEasMph));
+  const lowestStall=Math.min(...withStall.map(a=>Math.min(a.stallEasMph,a.provisionalStallBand?.minEasMph??Infinity)));
   const minEas=Number.isFinite(lowestStall)?Math.max(0,Math.floor(lowestStall/probeStepMph)*probeStepMph-probeStepMph):0;
   const factor=units[unit].factor;
   const maxEas=(Math.floor(quickest*factor/10+1e-9)+1)*10/factor;

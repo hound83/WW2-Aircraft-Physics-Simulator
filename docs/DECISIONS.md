@@ -1,5 +1,9 @@
 # Current decisions
 
+## v4.12-rc.1 continuous stall
+
+Taper the existing Mustang lift transfer inside its altitude and Mach bounds. Draw the provisional stall range and show the provenance of the limiting input by curve segment. Keep raw IAS, the calibrated P-38G check, and the Navy and Ames Corsair observations at their source conditions. [Scorecard](V412_CONTINUOUS_STALL.md)
+
 ## v4.11-rc.1 shared climb
 
 Use Grok’s WNr 783 and B.4 source extraction with the existing WNr 783 open/closed cooling fit bounded by rating and climb conditions. Keep the v4.10 propeller diagnostic and its regression assertions at their original scope. Integrate signed speed energy, midpoint fuel mass, and rating and fluid limits in the operating benchmark. Preserve the measured vertical-rate basis of the report-conditioned Thunderbolt and Spitfire cases. The four-aircraft steady scorecard and the seven-aircraft power budgets accompany the research candidate. [Shared climb replay](V411_SHARED_FLIGHT_CLIMB.md)

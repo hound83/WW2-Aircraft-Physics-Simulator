@@ -56,9 +56,13 @@ try{
  write('validation/current/propeller-reference-v410.json',require('../validation/diagnostics/operating_benchmark_v410.cjs').run());
  write('validation/current/remaining-fighter-propellers.json',require('../validation/diagnostics/remaining_fighter_propellers.cjs').run());
  write('validation/current/shared-flight-climb.json',require('../validation/diagnostics/shared_flight_climb.cjs').run());
+ const catalog=require('./research-layer.cjs').buildCatalog();
+ write('validation/current/continuous-stall.json',require('../validation/diagnostics/continuous_stall.cjs').run(catalog));
  require('./write-v42-report.cjs');
  const md=[
  '# Current validation',
+ '',
+ 'v4.12-rc.1 [Continuous stall and usable maneuver lift](V412_CONTINUOUS_STALL.md). [Seven-aircraft replay](../validation/current/continuous-stall.json).',
  '',
  'v4.11-rc.1 [Shared flight-case climb and timed energy](V411_SHARED_FLIGHT_CLIMB.md). The seven-aircraft replay is included in the Physics regression artifact.',
  '',

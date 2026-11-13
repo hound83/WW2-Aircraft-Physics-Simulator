@@ -36,21 +36,16 @@ The input pack includes Rechlin G-1 timing, the P-47D-30 Fig. 50 IAS trace, two 
 
 Grok’s expanded stall draft and 21-variant extract are available as research inputs. The two Mustang readings and captured A-3 results link to the existing catalog rows. The verified NACA report identities and remaining archive leads are recorded for reuse. The Bf 109 F-4 leads Grok’s parallel primary-extraction queue. [Stall handoff](../references/research/PROVISIONAL_STALL_ENVELOPE_2026-11-12.md) · [Report checks](../references/research/REPORT_INVESTIGATION_2026-11-12.md) · [NACA source review](../references/research/WW2_NACA_AND_PRIMARY_SOURCE_EXPANSION_2026-11-12.md) · [Family extraction review](../references/research/WW2_FAMILY_PRIMARY_EXTRACTION_v1_2026-11-12.md#review-for-simulator-use) · [Extraction queue](../references/research/WW2_EXTRACTION_BATCH_LIST_EXPANDED_2026-11-12.md)
 
+## Delivered simulator milestone
+
+**Continuous stall and usable maneuver lift.** The Mustang transitions continuously across the two low-speed altitude edges. The benchmark shows condition-specific stall references and joins the dotted lift-dependent interval to the supported solid interval on the same chart. The calibrated P-38G and the separate Corsair glide and powered cases are recorded in the seven-aircraft replay. [v4.12 results](V412_CONTINUOUS_STALL.md)
+
 ## Next simulator milestone
 
-### Continuous stall and usable maneuver lift
-
-Deliver a speed sweep and graph evidence for the P-51B-15 stall boundary, with the P-38G calibrated case as a check and Corsair glide and powered cases kept at their own conditions.
-
-1. **Select case-matched stall inputs.** Preserve the raw IAS/CAS and the source conditions. Calculate EAS or a range where a documented correction or defensible assumption is available. Record the source ID, airspeed basis, altitude, loading, power and configuration. Use the B-5 and B-15 Mustang stall tables as separate specimens. Keep the existing clean-stall references as the comparison baseline. [Reviewed candidates](../references/research/PROVISIONAL_STALL_ENVELOPE_2026-11-12.md)
-2. **Check the speed sweep and remove the artificial boundary.** Sweep the 9,270 lb P-51B-15 model across both altitude edges, 5,100 ft and 9,300 ft. Reserve the 42-12690 P-38G IAS/CAS pair as a check. Verify continuity across the altitude and Mach edges, square-root weight scaling at fixed lift coefficient, and the lift ceiling across EAS in both directions. Use the applicable maneuver lift where the source provides it. Under a fixed lift coefficient the speed sweep follows `n = (EAS / 1-G stall EAS)^2`. Carry any provisional stall range into the dependent lift calculation. [Stall and lift diagnostics](V410_VALIDATION_IMPROVEMENT_PLAN.md#maneuvering-priorities) · [Mustang maneuver replay](V44_TURN_PERFORMANCE.md#mustang-flight-evidence)
-3. **Verify mixed evidence styles on one graph.** Show the calculated stall marker or band in the graph’s speed units. Split the curve where the supporting inputs change. Dot only the calculated boundary extension or the portion controlled by a provisional lift input. Preserve supported solid sections. The tooltip carries the source, assumption and range. A single point or band can stand on its own when the connecting interval has no applicable evidence. [Graph evidence](V46_CHART_DATA.md)
-4. **Compare the seven profiles.** Report clean-stall and usable-G values, evidence and gaps across the seven-aircraft benchmark. Reproduce the four-aircraft regression and cover the mixed line style in the browser. Keep historical sustained-turn drag as a follow-up requiring matched powered-turn or energy-loss evidence. [Maneuver evidence](V44_TURN_PERFORMANCE.md) · [Release criteria](../AGENTS.md#git-autonomous-merge-scientific-release-and-delivery)
-
-Grok can check source rows and calculation assumptions in a candidate. Codex verifies the graph and shared solver integration. [Candidate handoff](WORKFLOW.md#candidate-handoff) · [Input-data roadmap](research/WW2_FIGHTER_DATA_ROADMAP.md)
+**Constrain drag above 1 G.** Start at the Mustang–Spitfire crossover near 200 mph EAS at 10,000 ft. Look for a matched powered turn, a high-lift drag polar, or synchronized speed and G with an energy-loss measurement. Use known mass, configuration, power, altitude and airspeed basis. Keep the existing level-speed anchor fixed and reserve a run or condition for the drag check. Report how the supported drag range changes the sustained-turn comparison and retain an unresolved ranking where the evidence allows both outcomes. [Turn research](V44_TURN_PERFORMANCE.md) · [Drag reference](research/WW2_GREG_DRAG_MODELS_2026-11-13.md)
 
 ## Current research candidate
-- Simulator research candidate [v4.11.0-rc.1](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/). [Release verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/publish-simulator.yml)
+- Simulator research candidate [v4.12.0-rc.1](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/). [Release verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/publish-simulator.yml)
 - Input pack · [Fighter Sim Inputs v1.11.0](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 - Status: research candidate. Exact corrected stall, sustained-turn accuracy and historical 5:1 remain unresolved.
 

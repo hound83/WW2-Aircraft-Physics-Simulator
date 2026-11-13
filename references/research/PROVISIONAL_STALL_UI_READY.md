@@ -1,22 +1,3 @@
-# Provisional stall bands ready for UI (2026-11-13)
+# Source-linked stall references
 
-A small loader is available at `src/provisional-stall-loader.js`.
-
-## Usage
-```js
-const { getProvisionalBand } = require('./provisional-stall-loader');
-const band = getProvisionalBand('f4u4');
-// { minEasMph, maxEasMph, n, limitation, solid: false }
-```
-
-## Aircraft with bands
-- f4u4
-- spitfire_lfix_bs543
-- p47b
-- p38g
-
-(P-51B, Fw 190, Bf 109 bands from the earlier extract can be merged the same way.)
-
-The chart already renders non-solid segments as dotted (`stroke-dasharray`). Attach the band as a non-solid range marker and show the limitation string in an expandable note.
-
-No solver or baseline change.
+The [loader](../../src/provisional-stall-loader.js) uses the reviewed input pack and historical catalog IDs for the seven benchmark aircraft. The benchmark shows source IAS, CAS or calculated EAS with the associated load and configuration. The archived provisional drafts preserve the original candidate values. In the simulator the Corsair glide, power-on and power-off cases have distinct records and the P-38G calibrated result has its own report marker. [v4.12 methods and scorecard](../../docs/V412_CONTINUOUS_STALL.md)
