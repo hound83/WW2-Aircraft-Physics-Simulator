@@ -2,10 +2,8 @@
   "aircraft": "Spitfire I",
   "grade_overall": "partial",
   "ready_for_first_pass": true,
-  "stall_ias_mph": "64-73",
-  "weight_lb": "~6250",
-  "stall_grade": "partial",
-  "source": "A&AEE handling trials / Pilot’s Notes",
-  "prop_efficiency": 0.80,
+  "stall_ias_mph": {"value": "64-73", "grade": "partial", "source": "A&AEE handling trials / Pilot’s Notes"},
+  "weight_lb": {"value": "~6250", "grade": "estimated", "source": "Typical early production"},
+  "prop_efficiency": {"value": 0.80, "grade": "estimated", "source": "Default"},
   "notes": "Early-war data thinner. Usable with clear provenance."
 }
