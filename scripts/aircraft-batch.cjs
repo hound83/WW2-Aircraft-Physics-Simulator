@@ -6,6 +6,8 @@ const greg = require('../references/analysis/fighter-greg-drag-models-v1.json');
 const HF = 'spitfire_hfix_bs551';
 const G2 = 'bf109g2_db605a';
 const D = 'p51d15_4415342';
+const FIX = 'spitfire_fix_bf274';
+const G6 = 'bf109g6trop_16476';
 const FT = .3048;
 const KMH = 1.609344;
 const PS_TO_HP = 735.49875 / 745.6998716;
@@ -14,6 +16,26 @@ const GALLON_L = 3.785411784;
 const FPM_PER_MPS = 60 / FT;
 
 const sources = {
+  fix: {
+    title: 'A&AEE Spitfire F Mk IX BF.274, Tables I–V',
+    url: 'https://wwiiaircraftperformance.com/org/spitcom/mk9/spitFmkIX_BF274.html',
+    kind: 'period flight report', facts: 'Merlin 61, Rotol RA.10061 blades, full-span Vc wing and a separate 30 Imperial gal tank configuration.',
+  },
+  merlin61: {
+    title: 'Aircraft Engines of the World, Merlin 61 ratings',
+    url: 'https://www.wwiiaircraftperformance.org/Aircraft_Engines_of_the_World_Rolls-Royce_Merlin.pdf',
+    kind: 'published engine ratings', facts: 'Takeoff 1,290 bhp at +12 psi. Combat 1,570 bhp at 11,500 ft and 1,390 bhp at 23,500 ft. Installed BF.274 shaft power is estimated.',
+  },
+  g6: {
+    title: 'Messerschmitt 109 10 L 43, WNr 16476 tropical equipment',
+    url: 'https://www.wwiiaircraftperformance.org/me109/me109g-16476german.html',
+    kind: 'period factory report', facts: 'Run 3b at 3,260 kg. 492 km/h TAS normalized to sea level and 610 km/h at the filtered 6,420 m critical height. Climb used 260 km/h IAS and reached 11,130 m.',
+  },
+  g6cowl: {
+    title: 'Messerschmitt 109 06 L 43, WNr 16476 cowling comparison',
+    url: 'https://www.wwiiaircraftperformance.com/org/me109/g/me109g-16476-b.html',
+    kind: 'separate same-airframe report', facts: 'Tested three cowls with the filter, pods, racks and closed radiators. Different drag configuration from the level anchor.',
+  },
   hf: {
     title: 'A&AEE BS.551 Merlin 70, Tables III and VI',
     url: 'https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html',
@@ -58,6 +80,7 @@ function series(catalog, prefix) {
 const archived = (catalog, id) => series(catalog, 'archival-2026-11-10:' + id);
 const finnish = (catalog, id) => series(catalog, 'ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-' + id);
 const mustang = (catalog, id) => series(catalog, 'ww2_priority_aircraft_2026-11-13:p51d-4415342-' + id);
+const secondBatch = (catalog, id) => series(catalog, 'ww2_g6trop_and_f_ix_2026-11-13:' + id);
 const db605 = catalog => series(catalog, 'ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power');
 const node = (altFt, bhp, mapInHg) => ({ altFt, bhp, ...(mapInHg === undefined ? {} : { mapInHg }) });
 const curve = gears => ({ gears });
@@ -225,8 +248,131 @@ function p51dProfile(base, catalog) {
     climbs, stall, service: { group: 'late', years: [1944, 1945], theatres: ['Western Europe', 'Pacific'], displayName: ac.name, country: 'us', source: sources.p51d.url } };
 }
 
+function fIxProfile(base, catalog) {
+  const lf = base.models.spitfire_lfix_bs543.ac;
+  const level = secondBatch(catalog, 'bf274-level-clean');
+  const climbs = { normal: secondBatch(catalog, 'bf274-climb-normal'), combat: secondBatch(catalog, 'bf274-climb-combat') };
+  const normal = phase('Climb +12 psi / 2850 rpm', 2850, 26.6959, 'normal', 3600);
+  const combat = phase('Combat +15 psi / 3000 rpm', 3000, 29.6959, 'combat', 300);
+  // Merlin 61 nominal combat shaft power at rated height. Apply observed
+  // absolute-pressure lapse above the installed critical point in each gear.
+  const powerAt = (altFt, boost, gear, rpm) => {
+    const nominal = gear === 'low' ? 1290 + (1570 - 1290) * Math.min(1, altFt / 11500) : 1390;
+    const pressure = (14.6959 + boost) / (14.6959 + (gear === 'low' && altFt === 0 ? 12 : 15.2));
+    return node(altFt, nominal * pressure * rpm / 3000, 14.6959 + boost);
+  };
+  const levelCurve = (rpm, boostLimit) => {
+    const gears = Object.fromEntries(['low', 'high'].map(gear => [gear, level.filter(row => row.gear === gear).map(row =>
+      powerAt(row.alt_ft, Math.min(boostLimit, row.boost_psi), gear, rpm))]));
+    // The clean level run starts at 6,000 ft. Lower-altitude planning uses
+    // the engine's takeoff rating and the bounded installed-power estimate.
+    gears.low.unshift(powerAt(0, Math.min(boostLimit, 12), 'low', rpm));
+    return curve(gears);
+  };
+  const climbCurve = (rows, shift, rpm, boost) => {
+    const low = [powerAt(0, boost, 'low', rpm), ...rows.filter(row => row.gear === 'low').map(row =>
+      powerAt(row.alt_ft, row.boost_psi, 'low', rpm))];
+    const high = rows.filter(row => row.gear === 'high').map(row => powerAt(row.alt_ft, row.boost_psi, 'high', rpm));
+    return curve({ low: [...low, { ...low.at(-1), altFt: shift }], high: [{ ...high[0], altFt: shift }, ...high] });
+  };
+  const ac = aircraft(FIX, 'Spitfire F Mk IXc', 'Merlin 61', 'RAF', geometry(lf),
+    prop(lf, 10.75, 1 / .477, 4, 'Rotol R3/4F5/3, dural RA.10061'), 7480, lf.clMaxAssumed,
+    { normal: levelCurve(2850, 12), combat: levelCurve(3000, Infinity) }, 'combat');
+  const model = {
+    ac, options: {}, timedClimbEnergy: true, climbCoolingAreaM2: .09,
+    climbGearChangesFt: { normal: 18700, combat: 18500 },
+    climbPowerRatings: { normal: climbCurve(climbs.normal, 18700, 2850, 12),
+      combat: climbCurve(climbs.combat, 18500, 3000, 15.2) },
+    benchmarkPolar: levelPolar(ac, { altFt: 6000, tasMph: level[0].tas_mph, gear: 'low', rpm: 3000 },
+      'A&AEE BF.274 Table IV single clean level-speed anchor with estimated Merlin 61 power'),
+  };
+  const continuous = { ...phase('Continuous +7 psi / 2650 rpm', 2650, 21.6959, 'normal', null),
+    powerFactor: (21.6959 / 26.6959) * 2650 / 2850 };
+  const spec = { ...base.specification.aircraft.spitfire_lfix_bs543, sources: ['fix', 'merlin61', 'spit-notes'],
+    referenceWeightLb: 7480, baseRating: 'combat', baseMap: combat.map, normal, combat, continuous,
+    climbIAS: [[0, 160], ...climbs.normal.map(row => [row.alt_ft, row.ias_mph])],
+    climbTAS: [[0, 162], ...climbs.normal.map(row => [row.alt_ft, row.tas_mph])],
+    levelObservationFloorFt: 6000,
+    loadQualification: 'BF.274 without the external tank, 7,480 lb takeoff. The 85 Imperial gal internal reference is an assumed full load.',
+    speedQualification: 'Normal uses the published climb TAS schedule with a 162 mph TAS departure estimate. The BF.274 position-error test spans 130–320 mph IAS.',
+    ratingEvidence: 'Merlin 61 rating anchors and measured boost give estimated installed power. Level flight below 6,000 ft is a planning estimate. The five-minute Combat allowance applies to the timer.',
+    stallQualification: 'Provisional full-span LF IX lift prior at BF.274 loading. The BF.274 position-error test stops at 130 mph IAS, above the estimated stall.',
+  };
+  return { model, spec, level, climbs,
+    service: { group: 'mid', years: [1942, 1944], theatres: ['Western Europe', 'Mediterranean'],
+      displayName: ac.name, country: 'uk', source: sources.fix.url } };
+}
+
+function g6Profile(base, catalog) {
+  const donor = base.models.bf109f4.ac;
+  const level = secondBatch(catalog, 'g6-level-attachments');
+  const anchor = level.find(row => row.run === '3b');
+  const critical = secondBatch(catalog, 'g6-level-fth')[0];
+  const climb = secondBatch(catalog, 'g6-climb-ceiling')[0];
+  const ratings = db605(catalog);
+  const [combatSea, combatPeak] = ratings.filter(row => row.rating === 'climb-combat');
+  const [normalSea, normalPeak] = ratings.filter(row => row.rating === 'maximum-continuous');
+  const normal = phase('Continuous 1.15 ata / 2300 rpm', 2300, 1.15, 'normal', null);
+  const combat = phase('Climb/combat 1.30 ata / 2600 rpm', 2600, 1.3, 'combat', 1800);
+  const climbBoost = finnish(catalog, 'climb-speed-map');
+  function powerCurve(sea, peak, forClimb) {
+    const criticalM = critical.alt_m;
+    const heights = forClimb ? [0, ...climbBoost.map(row => row.corrected_altitude_m), climb.ceiling_m, 40000 * FT] :
+      [0, 3000, criticalM, 8000, 10000, climb.ceiling_m];
+    const maxMap = sea.manifold_ata;
+    const rpm = sea.engine_rpm;
+    const ratingAt = h => sea.power_ps + (peak.power_ps - sea.power_ps) * Math.min(1, h / peak.altitude_m);
+    const last = climbBoost.at(-1);
+    const pressure = metres => {
+      const ambient = M.isa(metres / FT).p;
+      const criticalAmbient = M.isa(criticalM / FT).p;
+      const climbMap = boostAt(climbBoost, metres) ??
+        last.map_ata * ambient / M.isa(last.corrected_altitude_m / FT).p;
+      const map = forClimb ? climbMap : 1.3 * ambient / criticalAmbient;
+      return Math.min(maxMap, map);
+    };
+    return curve({ hydraulic: heights.map(h => {
+      const map = pressure(h);
+      return { ...node(h / FT, ratingAt(h) * PS_TO_HP * (map / maxMap) ** .88, map), engineRpm: rpm };
+    }) });
+  }
+  const weightLb = anchor.takeoff_kg * LB_PER_KG;
+  const ac = aircraft(G6, 'Bf 109 G-6/Trop', 'DB 605 A', 'Luftwaffe', { wingAreaM2: 16.05, spanM: 9.92 },
+    prop(donor, 3 / FT, 1.685, 3, 'VDM 9-12087a, 3 m'), weightLb, donor.clMaxAssumed,
+    { normal: powerCurve(normalSea, normalPeak, false), combat: powerCurve(combatSea, combatPeak, false) }, 'combat');
+  const model = { ac, options: {}, timedClimbEnergy: true, climbCoolingAreaM2: .12,
+    climbPowerRatings: { normal: powerCurve(normalSea, normalPeak, true), combat: powerCurve(combatSea, combatPeak, true) },
+    benchmarkPolar: levelPolar(ac, { altFt: 0, tasMph: anchor.tas_kmh / KMH, gear: 'hydraulic', rpm: 2600 },
+      'Messerschmitt 109 10 L 43 Table I run 3b, filter and pods fitted') };
+  const fuel = 400 / GALLON_L;
+  const spec = {
+    sources: ['g6', 'g6cowl', 'g2engine'], fuelCapacityUSGal: fuel, referenceFuelUSGal: fuel, referenceWeightLb: weightLb,
+    armament: 'Wing gun pods, sand filter and wheel covers. Fuselage guns removed in the timed speed tests.',
+    baseRating: 'combat', baseRpm: 2600, baseMap: 1.3, mapUnit: 'ata', pressureExponent: .88, normal, combat, continuous: normal,
+    climbIAS: [[0, climb.indicated_kmh / KMH], [40000, climb.indicated_kmh / KMH]],
+    loadQualification: 'WNr 16476 run 3b and climb departure use 3,260 kg. Planning assumes 400 L at that loading. Stores and filter stay fixed.',
+    climbProjectionOnly: true, levelObservationCeilingFt: critical.alt_m / FT,
+    speedQualification: 'The report prescribes 260 km/h IAS in climb. Planning treats IAS as CAS. The source climb check is the reported ceiling.',
+    ratingEvidence: 'Level power uses the filtered critical height. Climb power uses a DB 605 A boost schedule transferred from the Finnish G-2 and an estimated cooling area.',
+    stallQualification: 'Provisional F-4 lift prior at G-6/Trop loading and G-wing geometry. The gun pods and tropical installation have no matched clean stall test.',
+  };
+  return { model, spec, level, critical, climb,
+    service: { group: 'mid', years: [1943, 1945], theatres: ['Mediterranean', 'Western Europe', 'Eastern Front'],
+      displayName: ac.name, country: 'germany', source: sources.g6.url } };
+}
+
+function boostAt(rows, metres) {
+  const i = rows.findIndex(row => row.corrected_altitude_m >= metres);
+  if (i < 0) return null;
+  if (i === 0) return rows[0].map_ata;
+  const a = rows[i - 1], b = rows[i];
+  return a.map_ata + (b.map_ata - a.map_ata) * (metres - a.corrected_altitude_m) /
+    (b.corrected_altitude_m - a.corrected_altitude_m);
+}
+
 function profiles(base, catalog) {
-  return { [HF]: hfProfile(base, catalog), [G2]: g2Profile(base, catalog), [D]: p51dProfile(base, catalog) };
+  return { [HF]: hfProfile(base, catalog), [G2]: g2Profile(base, catalog), [D]: p51dProfile(base, catalog),
+    [FIX]: fIxProfile(base, catalog), [G6]: g6Profile(base, catalog) };
 }
 
 function addAircraftBatch(base, catalog) {
@@ -258,6 +404,8 @@ function stallReferences(catalog) {
   if (d.length !== 3 || !g2 || !soviet) throw Error('Missing aircraft intake stall sources');
   return {
     [HF]: [],
+    [FIX]: [],
+    [G6]: [],
     [D]: d.map(o => row(o, { value: o.values.speed_mph, unit: 'mph', basis: 'IAS' }, o.values.gross_weight_lb,
       'D/K handbook reference', 'Gear and flaps up, no external load. Altitude and power are unstated.')),
     [G2]: [
@@ -269,4 +417,4 @@ function stallReferences(catalog) {
   };
 }
 
-module.exports = { addAircraftBatch, profiles, stallReferences, sources, HF, G2, D, FT, KMH, FPM_PER_MPS };
+module.exports = { addAircraftBatch, profiles, stallReferences, sources, HF, G2, D, FIX, G6, FT, KMH, FPM_PER_MPS, LB_PER_KG };

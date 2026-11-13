@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.14-rc.1 aircraft intake
+
+BF.274 level flight below 6,000 ft and the G-6/Trop climb are model estimates. The G-6 factory climb summary supplies a ceiling and operating conditions, while the numerical rate trace remains open. BF.274’s correction data stop at 130 mph IAS. Both stall estimates use family lift assumptions and have no calibrated stall checks or maneuver rankings. [Second intake residuals](V414_AIRCRAFT_INTAKE.md)
+
 ## v4.13-rc.2 turn drag
 
 The Mk I fit combines airframe and engine-off windmilling effects. One of the three reserved glide points has a larger residual than the control. No matched powered-turn records were recovered for the live pair. The 200 mph EAS comparison allows either order when drag varies, and the donor replay stops at its measured lift limit while the Spitfire still has surplus power. Historical sustained-turn accuracy and 5:1 remain unresolved. [Results and source gaps](V413_TURN_DRAG.md)

@@ -46,9 +46,9 @@ Use the accepted propulsion inputs to constrain one aerodynamic problem at a tim
 
 Make the comparison say which aircraft leads across the supported input range and where the lead remains sensitive. Use the existing **6 km/h TAS**, **5% for climb or elapsed time**, and **0.5°/s sustained turn** as practical comparison margins. Report speed and climb accuracy against matched observations and their allowances. Acceleration and powered-turn accuracy need their own matched historical checks. Apply the 5:1 discrimination goal where independent evidence supports estimating the difference and its uncertainty. [Comparison margins](V49_TIMED_MATCHUPS.md#practical-ties-and-chart-evidence) · [Historical accuracy goals](research/WW2_FIGHTER_SIM_INPUTS_V1.md#selection-and-gold)
 
-## 4. Prove the approach with one new aircraft
+## 4. Expand the benchmark roster
 
-The first intake delivered HF Mk IX BS.551, G-2 MT-215 and P-51D-15-NA 44-15342 for speed and climb. G-6/Trop WNr 16476 and F Mk IX BF.274 are next in the accepted roster. Follow each report’s own load, power and configuration when introducing a new profile. [Aircraft intake results](V413_AIRCRAFT_INTAKE.md) · [Accepted roster](DECISIONS.md#aircraft-roster-expansion) · [Minimum input data](research/MINIMUM_VIABLE_SIM_DATA.md)
+The first intake delivered HF Mk IX BS.551, G-2 MT-215 and P-51D-15-NA 44-15342 for speed and climb. The second intake added G-6/Trop WNr 16476 and F Mk IX BF.274. The roster next queues Bf 109 E WNr 1304 and Spitfire Va X.4922, followed by Mk I N.3171. [Second intake results](V414_AIRCRAFT_INTAKE.md). Follow each report’s own load, power and configuration when introducing a new profile. [Aircraft intake results](V413_AIRCRAFT_INTAKE.md) · [Accepted roster](DECISIONS.md#aircraft-roster-expansion) · [Minimum input data](research/MINIMUM_VIABLE_SIM_DATA.md)
 
 ## 5. Add handling features when the evidence supports them
 

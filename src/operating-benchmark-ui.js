@@ -96,9 +96,13 @@
    ' and acceleration use the modeled climb cooling scenario.','bench-note'));
   const grid=document.createElement('div');grid.className='bench-numbers';
   if(spec.performanceIntake){
-   if(r.climb?.climbFpm>0)grid.append(number('Best climb rate',fmt(r.climb.climbFpm,0)+' ft/min',
+   if(r.climb?.climbFpm>0)grid.append(number(spec.climbProjectionOnly?'Best climb rate (estimated)':'Best climb rate',fmt(r.climb.climbFpm,0)+' ft/min',
     'Vy '+speed(r.climb.easMph,'EAS')+' / '+speed(r.climb.tasMph,'TAS')));
-   if(r.level)grid.append(number('Maximum level speed',speed(r.level.tasMph,'TAS'),speed(r.level.easMph,'EAS')+' · steady equilibrium'));
+   if(r.level){
+    const outsideReport=r.altFt<spec.levelObservationFloorFt||r.altFt>spec.levelObservationCeilingFt;
+    grid.append(number('Maximum level speed',speed(r.level.tasMph,'TAS'),
+     speed(r.level.easMph,'EAS')+(outsideReport?' · estimate outside trial altitude range':' · steady equilibrium')));
+   }
    else if(r.climb?.climbFpm>0)box.append(text('p','Level speed is unavailable at this altitude and rating.','bench-note'));
    if(Number.isFinite(r.stallEasMph)){
     const band=spec.stallWeightRangeLb,w=r.loading.weightLb;
@@ -108,7 +112,7 @@
    }
    if(grid.childElementCount)result.append(grid);
    if(Number.isFinite(r.manualClimb?.climbFpm))result.append(text('p','At the scheduled climb speed of '+
-    speed(r.manualClimb.iasMph,'IAS≈CAS')+', the climb rate is '+fmt(r.manualClimb.climbFpm,0)+' ft/min.','bench-note'));
+    speed(r.manualClimb.iasMph,spec.climbTAS?'IAS':'IAS≈CAS')+', the climb rate is '+fmt(r.manualClimb.climbFpm,0)+' ft/min.','bench-note'));
    return;
   }
   const metric=turnUnit(),peak=r[metric.peak];
@@ -382,15 +386,22 @@
   for(const check of aircraft){
    const details=text('details');
    details.append(text('summary',check.label),text('p',check.scope,'bench-note'),
-    text('p','Mean absolute error excluding fit points is '+fmt(check.levelMaeMph,1)+' mph TAS for level speed and '+
-     fmt(check.climbMaeFpm,0)+' ft/min for climb.','bench-note'));
-   for(const [metric,rows,unit] of [['Level speed',check.level,'mph TAS'],['Climb rate',check.climb,'ft/min']]){
+    text('p','Mean absolute level-speed error outside the fit is '+fmt(check.levelMaeMph,1)+' mph TAS.'+
+     (check.climbMaeFpm===null?'':' Mean absolute climb-rate error is '+fmt(check.climbMaeFpm,0)+' ft/min.'),'bench-note'));
+   if(check.ceiling){
+    const c=check.ceiling;
+    details.append(text('p','Reported ceiling '+heightLabel(c.observedAltFt)+'. At that altitude the model gives '+
+     fmt(c.modeledRateAtObservedFpm,0)+' ft/min. Its 100 ft/min ceiling is '+heightLabel(c.modeled100FpmAltFt)+'.','bench-note'));
+   }
+   for(const [metric,rows,unit] of [['Level speed',check.level,'mph TAS'],['Climb rate',check.climb,'ft/min'],
+    ['Climb elapsed time',check.elapsed,'s']]){
+    if(!rows?.length)continue;
     details.append(text('h4',metric));
     const alternate=rows.some(row=>Number.isFinite(row.alternateRateFpm));
     appendTable(details,['Altitude','Weight (lb)','Observed ('+unit+')','Modeled','Residual','Test condition',
      ...(alternate?['Scan rate altitude','Alternate (ft/min)']:[])],
     rows.map(row=>[heightLabel(row.altFt),fmt(row.weightLb,0),fmt(row.observed),fmt(row.predicted),fmt(row.error),
-     [row.mode,row.role].filter(Boolean).join(' · '),
+     [row.mode,row.gear,row.role,row.configuration].filter(Boolean).join(' · '),
      ...(alternate?[heightLabel(row.rateAltitudeFt),fmt(row.alternateRateFpm)]:[])]));
    }
    target.append(details);

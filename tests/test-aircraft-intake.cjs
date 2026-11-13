@@ -6,7 +6,7 @@ const M = require('../src/physics.js');
 const B = require('../src/operating-benchmark.js');
 const T = require('../src/turn-lift.js');
 const L = require('../references/p51-turn-lift-tn1044.json');
-const { addAircraftBatch, stallReferences, HF, G2, D } = require('../scripts/aircraft-batch.cjs');
+const { addAircraftBatch, stallReferences, HF, G2, D, FIX, G6 } = require('../scripts/aircraft-batch.cjs');
 const { buildCatalog } = require('../scripts/research-layer.cjs');
 const { browserData } = require('../validation/diagnostics/shared_flight_climb.cjs');
 const { scorecard } = require('../validation/diagnostics/operating_benchmark_v410.cjs');
@@ -15,10 +15,19 @@ const { sourceChecks } = require('../validation/diagnostics/aircraft_intake.cjs'
 const base = browserData();
 const catalog = buildCatalog();
 const data = addAircraftBatch(base, catalog);
+const secondPack = 'ww2_g6trop_and_f_ix_2026-11-13';
+assert.equal(catalog.observations.filter(row => row.pack_id === secondPack).length, 101);
+assert.equal(catalog.sources.filter(row => row.pack_id === secondPack).length, 3);
 const { models, specification } = data;
 const { aircraft, policy } = specification;
-const ids = [HF, G2, D];
-assert.deepEqual(Object.keys(models).slice(-3), ids);
+const ids = [HF, G2, D, FIX, G6];
+assert.deepEqual(Object.keys(models).slice(-5), ids);
+const preceding = scorecard({ models, specification: {
+  ...specification, aircraft: Object.fromEntries(Object.entries(aircraft).filter(([id]) => id !== FIX && id !== G6)),
+} });
+assert.equal(preceding.length, 10);
+assert.equal(createHash('sha256').update(JSON.stringify(preceding)).digest('hex'),
+  '36363ce6659d1de1aabccecd3b4b11fa33b1f388425a29c16ddd9fe6665285c4');
 const existing = scorecard({ models, specification: {
   ...specification, aircraft: Object.fromEntries(Object.keys(base.models).map(id => [id, aircraft[id]])),
 } });
@@ -53,10 +62,30 @@ const replay = sourceChecks(base, catalog);
 assert.deepEqual(replay.crossover.map(row => row.observedDifferenceMph), [-5, -7, -7, 18]);
 assert.ok(replay.crossover.slice(0, 3).every(row => row.modeledDifferenceMph < 0));
 assert.ok(replay.crossover[3].modeledDifferenceMph > 0);
-for (const [i, check] of replay.aircraft.entries()) {
+assert.deepEqual(replay.aircraft.map(row => row.id), ids);
+for (const [i, check] of replay.aircraft.slice(0, 3).entries()) {
   assert.equal(check.id, ids[i]);
   assert.deepEqual(check.level.filter(row => row.role === 'fit').map(row => row.error), [0]);
   assert.ok([...check.level, ...check.climb].every(row => Number.isFinite(row.error)));
   assert.ok(check.levelMaeMph < 8 && check.climbMaeFpm < 300);
 }
 assert.ok(replay.aircraft[1].climb.every(row => Number.isFinite(row.alternateRateFpm) && row.speedId));
+const [, , , fix, g6] = replay.aircraft;
+assert.equal(fix.level.find(row => row.role === 'fit').error, 0);
+assert.equal(fix.level.length, 16);
+assert.equal(fix.climb.length, 34);
+assert.ok(fix.climb.every(row => Number.isFinite(row.error)));
+assert.equal(fix.elapsed.length, 8);
+assert.ok(fix.elapsed.every(row => Number.isFinite(row.error)));
+assert.equal(fix.level.find(row => row.altFt === 20000 && row.gear === 'high').observed, 368);
+assert.equal(aircraft[FIX].climbTAS.find(row => row[0] === 10000)[1], 188);
+assert.equal(aircraft[FIX].combat.seconds, 300);
+assert.equal(g6.level.find(row => row.role === 'fit').error, 0);
+assert.equal(g6.level.filter(row => Number.isFinite(row.error)).length, 3);
+assert.equal(g6.climbMaeFpm, null);
+assert.equal(g6.ceiling.observedAltFt, 36515.75);
+assert.ok(g6.ceiling.modeled100FpmAltFt > 33000 && g6.ceiling.modeledRateAtObservedFpm < 0);
+assert.ok(g6.level.filter(row => row.role.startsWith('attachment')).every(row => row.predicted === null));
+assert.ok(aircraft[G6].climbProjectionOnly);
+assert.equal(aircraft[G6].combat.map, 1.3);
+assert.equal(aircraft[G6].combat.seconds, 1800);

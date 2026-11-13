@@ -16,7 +16,7 @@ A local build produces these JSON files. See the [Greg drag reference and usage 
 
 ## Suggested aircraft
 
-The Normal / Combat benchmark has ten profiles. The original seven are the Bf 109 F-4, Fw 190 A-4, Spitfire LF Mk IX, P-47B, P-51B, P-38G and F4U-4. **HF Mk IX BS.551**, **G-2 MT-215** and **P-51D-15-NA 44-15342** are the speed-and-climb intake. [Source conditions and results](V413_AIRCRAFT_INTAKE.md). The [aircraft roster decision](DECISIONS.md#aircraft-roster-expansion) gives the full order and the stall evidence for each family. The coverage columns refer to the scored research roster. [Current benchmark profiles](../references/benchmark-operating-profiles.json)
+The Normal / Combat benchmark has twelve profiles. The second intake adds **G-6/Trop WNr 16476** and **F Mk IX BF.274**. Their source tables are in the research catalog and their Greg-style drag estimates are in the validation replay. [Second intake and evidence limits](V414_AIRCRAFT_INTAKE.md). The original seven are the Bf 109 F-4, Fw 190 A-4, Spitfire LF Mk IX, P-47B, P-51B, P-38G and F4U-4. **HF Mk IX BS.551**, **G-2 MT-215** and **P-51D-15-NA 44-15342** are the speed-and-climb intake. [Source conditions and results](V413_AIRCRAFT_INTAKE.md). The [aircraft roster decision](DECISIONS.md#aircraft-roster-expansion) gives the full order and the stall evidence for each family. The coverage columns refer to the scored research roster. [Current benchmark profiles](../references/benchmark-operating-profiles.json)
 
 | Candidate and reference aircraft | Primary | With calculations | Best-supported starting point and remaining data gap |
 | --- | ---: | ---: | --- |

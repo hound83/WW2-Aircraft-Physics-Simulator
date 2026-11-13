@@ -1,0 +1,272 @@
+{
+  "schema": "ww2-fighter-evidence-pack/v1",
+  "pack_version": "1.0.0",
+  "as_of": "2026-11-13",
+  "sources": [
+    {
+      "id": "BF274",
+      "aircraft": "Spitfire F Mk IX BF.274",
+      "report": "A&AEE Spitfire F Mk IX BF.274, August–September 1942",
+      "source": "https://wwiiaircraftperformance.com/org/spitcom/mk9/spitFmkIX_BF274.html"
+    },
+    {
+      "id": "G6-16476",
+      "aircraft": "Bf 109 G-6/Trop WNr 16476",
+      "report": "Messerschmitt Versuchs-Bericht 109 10 L 43, 16 June 1943",
+      "source": "https://www.wwiiaircraftperformance.org/me109/me109g-16476german.html",
+      "transcription": "https://wwiiaircraftperformance.com/org/me109/g/me109g-16476.html"
+    },
+    {
+      "id": "G6-16476-COWL",
+      "aircraft": "Bf 109 G-6/Trop WNr 16476",
+      "report": "Messerschmitt Versuchs-Bericht 109 06 L 43, 22 April 1943",
+      "source": "https://www.wwiiaircraftperformance.com/org/me109/g/me109g-16476-b.html"
+    }
+  ],
+  "series": [
+    {
+      "id": "bf274-level-clean",
+      "source_id": "BF274",
+      "aircraft": "Spitfire F Mk IX BF.274",
+      "quantity": "level_speed",
+      "speed_basis": "TAS",
+      "source_location": "Table IV",
+      "source_class": "original-report-table",
+      "conditions": {"takeoff_weight_lb":7480,"external_tank_imperial_gal":0,"cooling":"closed"},
+      "columns": ["alt_ft","tas_mph","ias_mph","pec_mph","comp_mph","rpm","boost_psi","gear"],
+      "rows": [
+        [6000,338,317,-6.2,-1.4,3000,15.2,"low"],
+        [8000,347.5,315.5,-6.1,-1.9,3000,15.2,"low"],
+        [10000,356.5,314.5,-6.1,-2.4,3000,15.2,"low"],
+        [13000,370,312,-6,-3.3,3000,15.2,"low"],
+        [15400,380.5,309.5,-5.9,-4,3000,15.8,"low"],
+        [16500,380.5,304,-5.7,-4.2,3000,14,"low"],
+        [18000,380.5,297,-5.5,-4.6,3000,12.4,"low"],
+        [20000,380,287.5,-5.2,-4.8,3000,10.4,"low"],
+        [23000,377.5,271.5,-4.3,-5.2,3000,7.8,"low"],
+        [20000,368,277.5,-4.7,-4.4,2980,15.2,"high"],
+        [23000,382,274,-4.6,-5.2,2980,15.2,"high"],
+        [25000,391.5,272.5,-4.5,-6,2980,15.2,"high"],
+        [27400,403,270,-4.4,-6.7,2980,15.2,"high"],
+        [30000,402,257,-3.6,-6.8,2980,12.2,"high"],
+        [33000,398,239.5,-2.7,-6.9,2980,9,"high"],
+        [36000,386,218.5,-1.5,-6.4,2980,5.9,"high"]
+      ]
+    },
+    {
+      "id": "bf274-level-tank",
+      "source_id": "BF274",
+      "aircraft": "Spitfire F Mk IX BF.274",
+      "quantity": "level_speed",
+      "speed_basis": "TAS",
+      "source_location": "Table V",
+      "source_class": "original-report-table",
+      "conditions": {"takeoff_weight_lb":7775,"external_tank_imperial_gal":30,"cooling":"closed"},
+      "columns": ["alt_ft","tas_mph","ias_mph","pec_mph","comp_mph","rpm","boost_psi","gear"],
+      "rows": [
+        [6000,328,307,-5.8,-1.3,3000,15.2,"low"],
+        [8000,336.5,306,-5.8,-1.8,3000,15.2,"low"],
+        [10000,345,304,-5.7,-2.2,3000,15.2,"low"],
+        [13000,357,301,-5.6,-3.1,3000,15.2,"low"],
+        [15400,366,297.5,-5.5,-3.7,3000,15.8,"low"],
+        [16500,366,292.5,-5.3,-3.9,3000,14,"low"],
+        [18000,366,285,-5,-4.1,3000,12.4,"low"],
+        [20000,365,275.5,-4.5,-4.3,3000,10.4,"low"],
+        [23000,363,260,-3.8,-4.6,3000,7.8,"low"],
+        [20000,358,270,-4.3,-4.1,2980,15.2,"high"],
+        [23000,370,266,-4.1,-4.9,2980,15.2,"high"],
+        [25000,378,265,-4.1,-5.6,2980,15.2,"high"],
+        [27400,389,260.5,-3.9,-6.2,2980,15.2,"high"],
+        [30000,384.5,244,-2.9,-6.1,2980,12.2,"high"],
+        [33000,374.5,224.5,-1.8,-5.9,2980,9,"high"],
+        [35000,363,208.5,-1,-5.55,2980,5.9,"high"]
+      ]
+    },
+    {
+      "id": "bf274-climb-normal",
+      "source_id": "BF274",
+      "aircraft": "Spitfire F Mk IX BF.274",
+      "quantity": "climb_rate",
+      "speed_basis": "TAS",
+      "source_location": "Table I",
+      "source_class": "original-report-table",
+      "conditions": {"takeoff_weight_lb":7480,"external_tank_imperial_gal":0,"cooling":"fully open","shift_ft":18700},
+      "columns": ["alt_ft","elapsed_min","roc_fpm","tas_mph","ias_mph","pec_mph","comp_mph","rpm","boost_psi","gear"],
+      "rows": [
+        [2000,0.6,3200,166.5,160,2,-0.1,2850,12,"low"],
+        [5000,1.6,3200,174.5,160,2,-0.2,2850,12,"low"],
+        [6500,2,3200,178,160,2,-0.2,2850,12,"low"],
+        [10000,3.1,3200,188,160,2,-0.5,2850,12,"low"],
+        [13500,4.2,3200,198.5,160,2,-0.7,2850,12,"low"],
+        [15000,4.7,2960,203.5,160,2,-0.7,2850,10.7,"low"],
+        [16500,5.2,2810,208,160,2,-0.8,2850,9.4,"low"],
+        [18000,5.8,2630,213.5,160,2,-0.8,2850,8.1,"low"],
+        [20000,6.5,2540,221,160,2,-1.1,2850,12,"high"],
+        [23000,7.7,2540,231,160,2,-1.3,2850,12,"high"],
+        [25900,8.9,2540,238.5,157,2.3,-1.6,2850,12,"high"],
+        [28000,9.7,2240,240,151,2.8,-1.6,2850,10,"high"],
+        [30000,10.7,1950,240,145,3.2,-1.7,2850,8.1,"high"],
+        [33000,12.4,1520,239.5,136,4,-1.6,2850,5.6,"high"],
+        [36000,14.7,1090,238,127,4.8,-1.8,2850,3,"high"],
+        [38000,16.9,760,238.5,121,5.3,-2,2850,1.4,"high"],
+        [40000,20.2,440,239.5,115,5.7,-1.8,2850,-0.2,"high"]
+      ]
+    },
+    {
+      "id": "bf274-climb-combat",
+      "source_id": "BF274",
+      "aircraft": "Spitfire F Mk IX BF.274",
+      "quantity": "climb_rate",
+      "speed_basis": "TAS",
+      "source_location": "Table II",
+      "source_class": "original-report-table",
+      "conditions": {"takeoff_weight_lb":7480,"external_tank_imperial_gal":0,"cooling":"fully open","shift_ft":18500,"note":"Full climb used trial concession. Table header says Normal, but boost/RPM and test summary identify Combat."},
+      "columns": ["alt_ft","elapsed_min","roc_fpm","tas_mph","ias_mph","pec_mph","comp_mph","rpm","boost_psi","gear"],
+      "rows": [
+        [2000,0.5,3690,166.5,160,2,-0.1,3000,15.2,"low"],
+        [5000,1.4,3740,174.5,160,2,-0.2,3000,15.2,"low"],
+        [6500,1.8,3760,178,160,2,-0.2,3000,15.2,"low"],
+        [10000,2.7,3820,188,160,2,-0.5,3000,15.2,"low"],
+        [12600,3.3,3860,196,160,2,-0.6,3000,15.2,"low"],
+        [15000,4,3470,203.5,160,2,-0.7,3000,12.7,"low"],
+        [16500,4.5,3230,208,160,2,-0.8,3000,11.3,"low"],
+        [18000,5,2980,213.5,160,2,-0.8,3000,9.9,"low"],
+        [20000,5.6,2930,221,160,2,-1.1,3000,15.2,"high"],
+        [23000,6.6,2980,231,160,2,-1.3,3000,15.2,"high"],
+        [25200,7.4,3020,239,159,2.1,-1.6,3000,15.2,"high"],
+        [28000,8.4,2590,240,151,2.8,-1.6,3000,11.7,"high"],
+        [30000,9.2,2280,240,145,3.2,-1.7,3000,9.5,"high"],
+        [33000,10.7,1830,239.5,136,4,-1.6,3000,6.7,"high"],
+        [36000,12.6,1360,238,127,4.8,-1.8,3000,4,"high"],
+        [38000,14.3,1020,238.5,121,5.3,-2,3000,2.4,"high"],
+        [40000,16.6,680,239.5,115,5.7,-1.8,3000,0.8,"high"],
+        [42000,20.7,350,239.5,109,6.2,-1.8,3000,-0.8,"high"]
+      ]
+    },
+    {
+      "id": "bf274-climb-tank",
+      "source_id": "BF274",
+      "aircraft": "Spitfire F Mk IX BF.274",
+      "quantity": "climb_rate",
+      "speed_basis": "TAS",
+      "source_location": "Table III",
+      "source_class": "original-report-table",
+      "conditions": {"takeoff_weight_lb":7775,"external_tank_imperial_gal":30,"cooling":"fully open","shift_ft":18000,"note":"30,000 ft reports both RPM conditions. 3,000 rpm above it."},
+      "columns": ["alt_ft","elapsed_min","roc_fpm","tas_mph","ias_mph","pec_mph","comp_mph","rpm","boost_psi","gear"],
+      "rows": [
+        [2000,0.7,3020,166.5,160,2,-0.1,2850,12,"low"],
+        [5000,1.7,3020,174.5,160,2,-0.2,2850,12,"low"],
+        [6500,2.2,3020,178,160,2,-0.2,2850,12,"low"],
+        [10000,3.3,3020,188,160,2,-0.5,2850,12,"low"],
+        [13500,4.5,3020,198.5,160,2,-0.7,2850,12,"low"],
+        [15000,5,2820,203.5,160,2,-0.7,2850,10.7,"low"],
+        [16500,5.5,2640,208,160,2,-0.8,2850,9.4,"low"],
+        [18000,6.1,2450,213.5,160,2,-1.1,2850,8.1,"low"],
+        [20000,7,2360,221,160,2,-1.3,2850,12,"high"],
+        [23000,8.2,2360,231,160,2,-1.3,2850,12,"high"],
+        [25900,9.5,2360,238.5,157,2.3,-1.6,2850,12,"high"],
+        [28000,10.4,2059,240,151,2.8,-1.7,2850,10,"high"],
+        [30000,11.5,1780,240,145,3.2,-1.6,2850,8.1,"high"],
+        [30000,11.5,2000,240,145,3.2,-1.6,3000,9.5,"high"],
+        [33000,13.2,1570,239.5,136,4,-1.6,3000,5.7,"high"],
+        [36000,15.4,1140,238,127,4.8,-1.8,3000,3,"high"],
+        [38000,17.4,810,238.5,121,5.3,-2,3000,1.4,"high"],
+        [40000,20.6,480,239.5,115,5.7,-1.8,3000,-0.19999999999999996,"high"]
+      ]
+    },
+    {
+      "id": "g6-level-attachments",
+      "source_id": "G6-16476",
+      "aircraft": "Bf 109 G-6/Trop WNr 16476",
+      "quantity": "level_speed",
+      "speed_basis": "TAS",
+      "source_location": "Tafel I and Einzelheiten §1",
+      "source_class": "original-report-table",
+      "conditions": {"normalized_alt_m":0,"ata":1.3,"rpm":2600,"cooling":"manually closed, pushed open 45 mm","fuselage_guns":"removed on timed runs"},
+      "columns": ["run","date","takeoff_kg","tas_kmh","filter","gun_pods","wheel_covers","racks","bombs_kg"],
+      "rows": [
+        ["1","1943-04-23",3210,482,true,true,true,true,100],
+        ["2","1943-04-23",3110,489,true,true,true,true,0],
+        ["3a","1943-04-22",3100,489,true,true,true,false,0],
+        ["3b","1943-05-14",3260,492,true,true,true,false,0],
+        ["4","1943-05-05",3100,501,false,true,true,false,0],
+        ["5","1943-05-05",3100,490,false,true,false,false,0],
+        ["6","1943-05-07",2960,502,false,false,false,false,0],
+        ["7","1943-05-09",2960,511,false,false,true,false,0]
+      ]
+    },
+    {
+      "id": "g6-level-fth",
+      "source_id": "G6-16476",
+      "aircraft": "Bf 109 G-6/Trop WNr 16476",
+      "quantity": "level_speed",
+      "speed_basis": "TAS",
+      "source_location": "Ergebnis §3",
+      "source_class": "original-report-table",
+      "conditions": {"config":"fully equipped, sand filter","rpm":2600,"ata":1.3},
+      "columns": ["alt_m","tas_kmh"],
+      "rows": [
+        [6420,610]
+      ]
+    },
+    {
+      "id": "g6-fth-unfiltered",
+      "source_id": "G6-16476",
+      "aircraft": "Bf 109 G-6/Trop WNr 16476",
+      "quantity": "critical_altitude",
+      "speed_basis": "TAS",
+      "source_location": "Ergebnis §3",
+      "source_class": "original-report-table",
+      "conditions": {"config":"no filter, no wing pods, wheel covers","note":"511 km/h is sea-level Vno, corroborated by Tafel I run 7. It is not TAS at 6,600 m."},
+      "columns": ["fth_m","sea_level_vno_kmh"],
+      "rows": [
+        [6600,511]
+      ]
+    },
+    {
+      "id": "g6-climb-ceiling",
+      "source_id": "G6-16476",
+      "aircraft": "Bf 109 G-6/Trop WNr 16476",
+      "quantity": "climb_ceiling",
+      "speed_basis": "IAS",
+      "source_location": "Ergebnis §2, Steigleistungen §2",
+      "source_class": "original-report-table",
+      "conditions": {"filter":true,"cooling":"manually adjusted near 100 °C","ceiling_basis":"Gipfelhöhe; exact climb-rate threshold not printed in summary"},
+      "columns": ["takeoff_kg","indicated_kmh","ceiling_m","rpm","commanded_ata"],
+      "rows": [
+        [3260,260,11130,2600,1.3]
+      ]
+    },
+    {
+      "id": "g6-cowl",
+      "source_id": "G6-16476-COWL",
+      "aircraft": "Bf 109 G-6/Trop WNr 16476",
+      "quantity": "level_speed",
+      "speed_basis": "TAS",
+      "source_location": "Ergebnis and Durchführung",
+      "source_class": "original-report-table",
+      "conditions": {"config":"filter, wing pods, wheel covers and two ETC 50. Fuselage weapons removed. Radiators fully closed. Converted to sea level and normal temperature."},
+      "columns": ["cowl","takeoff_kg_approx","tas_kmh","ata","rpm"],
+      "rows": [
+        ["standard",3100,492,1.3,2600],
+        ["MG 131 bulges",3100,483,1.3,2600],
+        ["smooth fairing",3100,489,1.3,2600]
+      ]
+    },
+    {
+      "id": "g6-field-runs",
+      "source_id": "G6-16476",
+      "aircraft": "Bf 109 G-6/Trop WNr 16476",
+      "quantity": "field_performance",
+      "speed_basis": "unestablished",
+      "source_location": "Ergebnis §4",
+      "source_class": "original-report-table",
+      "conditions": {"surface":"dry short grass and sandy spots","wind":"not reduced to zero wind","takeoff_kg":3310,"runs":7},
+      "columns": ["phase","flaps_deg","ground_run_m","obstacle_20m_m"],
+      "rows": [
+        ["takeoff",20,429,685],
+        ["landing",40,504,1143]
+      ]
+    }
+  ]
+}

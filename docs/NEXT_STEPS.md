@@ -2,9 +2,9 @@
 
 The [simulator model roadmap](SIMULATOR_ROADMAP.md) sets the order for propulsion, input handling, turn validation, aircraft intake and future handling features.
 
-## After v4.13 aircraft intake
+## After v4.14 aircraft intake
 
-The HF IX, G-2 and P-51D are available in the benchmark for level speed and climb. The turn-drag follow-up quantifies the Mustang–Spitfire crossover sensitivity and the limits of the Mk I glide data. [Turn-drag results](V413_TURN_DRAG.md). The roster queues G-6/Trop WNr 16476 and F Mk IX BF.274 after this batch. [Source replay](V413_AIRCRAFT_INTAKE.md) · [Roster decision](DECISIONS.md#aircraft-roster-expansion)
+The HF IX, G-2 and P-51D are available in the benchmark for level speed and climb. The turn-drag follow-up quantifies the Mustang–Spitfire crossover sensitivity and the limits of the Mk I glide data. [Turn-drag results](V413_TURN_DRAG.md). The second intake delivered G-6/Trop WNr 16476 and F Mk IX BF.274. The roster next queues Bf 109 E WNr 1304 and Spitfire Va X.4922, followed by Mk I N.3171. [Second intake results](V414_AIRCRAFT_INTAKE.md). [Source replay](V413_AIRCRAFT_INTAKE.md) · [Roster decision](DECISIONS.md#aircraft-roster-expansion)
 
 ## After v4.10 propeller integration
 

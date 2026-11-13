@@ -51,7 +51,7 @@
   else if(transferred&&rating==='combat')shaft=M.evaluated(ac,at,tas,{...model.options,polar:model.benchmarkPolar,rating,weightLb:ac.weightLb,engineModel:'inlet-transfer'}).engine;
   else {
    const shift=climbRating&&model.climbGearChangesFt?.[rating];
-   shaft=M.shaftPower(ac,at,rating,shift?(at<shift?'low':'high'):'auto');
+   shaft=M.shaftPower(ac,at,rating,phase.gear??(shift?(at<shift?'low':'high'):'auto'));
   }
   if(!shaft&&supplemental){const node=nodeAt(supplemental.nodes,at)??(phase.nativeRating==='normal'&&at<supplemental.nodes[0].altFt?supplemental.nodes[0]:null);if(node)shaft={...node,rating,gear:supplemental.gear,engineRpm:supplemental.engineRpm};}
   // P-38 report's level chart begins at 5000 ft; its climb power covers sea level.
@@ -240,9 +240,10 @@
    };
   }
   out.climb=bestClimb(M,T,L,model,spec,s,alt,loading.weightLb,phase,1);
-  const ias=interpolate(spec.climbIAS,alt,1),tas=M.tasFrom(ias,'CAS',alt),eas=M.airspeeds(tas,alt).eas;
+  const ias=interpolate(spec.climbIAS,alt,1),tas=spec.climbTAS?interpolate(spec.climbTAS,alt,1):M.tasFrom(ias,'CAS',alt);
+  const eas=M.airspeeds(tas,alt).eas;
   const manual=evaluate(M,T,L,model,spec,s,alt,eas,loading.weightLb,phase,true);
-  out.manualClimb={iasMph:ias,climbFpm:manual.power?.climbFpm??null,qualification:spec.speedQualification+' IAS=CAS engineering approximation; not a newly measured calibration.'};
+  out.manualClimb={iasMph:ias,climbFpm:manual.power?.climbFpm??null,qualification:spec.speedQualification+(spec.climbTAS?'':' IAS=CAS engineering approximation; not a newly measured calibration.')};
   out.status=out.sustained||(spec.performanceIntake&&(out.level||out.climb?.status==='modelled'))?'modelled':
    engineSeen?'cannot-sustain-level-flight':'source-power-unavailable';return out;
  }
@@ -393,6 +394,7 @@
   const fuelPerHpSecond=source?0:policy.bsfcLbPerHpHour/3600;
   const plannedPhase=accountForTasChange&&s.mode==='combat'?phaseFor(spec,s,0,0,initial.injectionLb):null;
   function manualTas(alt){
+   if(spec.climbTAS)return interpolate(spec.climbTAS,alt,1);
    const ias=interpolate(spec.climbIAS,alt,1);
    return ias===null?null:M.tasFrom(ias,'CAS',alt);
   }
@@ -466,7 +468,8 @@
   }
   if(source)return {...replay(s.mode==='combat'?from:Infinity,options.trace),policy:'Recorded climb TAS at report takeoff weight and rating schedule.'};
   if(s.mode==='normal')return {...replay(Infinity,options.trace),policy:accountForTasChange?
-   'Manual Normal climb schedule with IAS approximated as CAS and signed TAS energy.':
+   (spec.climbTAS?'Recorded Normal climb TAS schedule and signed TAS energy.':
+    'Manual Normal climb schedule with IAS approximated as CAS and signed TAS energy.'):
    'Manual normal-climb schedule; IAS approximately CAS; no time budget reset.'};
   const starts=[from];for(let h=from+1000;h<to;h+=1000)starts.push(h);starts.push(to);
   const candidates=starts.map(start=>replay(start)),valid=candidates.filter(r=>r.status==='reached');

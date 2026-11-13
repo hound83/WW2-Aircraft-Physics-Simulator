@@ -141,7 +141,8 @@ function run(data = addAircraftBatch(browserData(),buildCatalog())) {
   const current = scorecard(data);
   const previous = new Map(frozen.scorecard.map(r => [r.id,r]));
   const earlierAircraft = current.filter(r => previous.has(r.id));
-  const intakeAircraft = current.filter(r => !previous.has(r.id));
+  const intakeIds = new Set(intakeFrozen.scorecard.map(r => r.id));
+  const intakeAircraft = current.filter(r => intakeIds.has(r.id));
   return {
     schema:'ww2-turn-drag/v1', version:require('../../package.json').version,
     baselineCommit:frozen.commit, inputPack:frozen.inputPack, case:frozen.case, fixedColumns:frozen.fixedColumns,
