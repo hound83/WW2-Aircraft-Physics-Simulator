@@ -14,7 +14,7 @@ assert.equal(c.summary.observation_count,2747);
 assert.equal(c.summary.stall_count,288);
 assert.equal(c.summary.source_count,341);
 assert.equal(c.calibration_curves.length,22,'Three P-38G report tables extend the 19 existing curves');
-assert.equal(c.document_lineage.length,63);
+assert.equal(c.document_lineage.length,67);
 assert.equal(c.calibration_reviews.length,29);
 assert.ok(sources.every(x=>x.primary_url),'All new source records retain a browsable canonical citation');
 assert.ok(pack.series.every(x=>x.source_location&&x.conditions&&x.source_class&&x.evidence_kind));
