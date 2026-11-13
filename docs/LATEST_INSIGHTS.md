@@ -4,6 +4,10 @@ Pointer file for agents starting a new milestone. Not a second model of record. 
 
 ## Shared research / implementation roadmap (2026-11-12)
 
+### Delivered in v4.14.0-rc.2
+
+The benchmark plots the restored P-51D's transcribed endpoints and the dotted replay. The nominal elapsed-time residual is −39.7 s with unresolved installed power and IAS calibration. The wartime comparison uses the P-51D Normal level test and calculated Spitfire LF IX energy from recorded climb. [Report and scorecard](V414_LEVEL_ACCELERATION_REPLAY.md)
+
 ### Delivered in v4.14.0-rc.1
 
 The benchmark adds G-6/Trop WNr 16476 and F Mk IX BF.274. The source replay shows the G-6 attachment cases and ceiling, and BF.274’s clean level, climb-rate and elapsed-time results. The roster next queues Bf 109 E WNr 1304 and Spitfire Va X.4922, followed by Mk I N.3171. [Second aircraft intake](V414_AIRCRAFT_INTAKE.md)
@@ -54,10 +58,10 @@ Grok’s expanded stall draft and 21-variant extract are available as research i
 
 ## Next simulator milestone
 
-**Replay a recorded level-acceleration run.** Recover a constant-altitude speed–time trace for the Mustang or Spitfire with known load, rating, RPM, configuration and airspeed basis. Replay the speed endpoints with the shared solver and reserve an interval or another run for a check. A straight-flight run can test the installed energy budget at the speeds used for the turn comparison. Keep the search for matched high-lift or powered-turn evidence open. [Timed comparison evidence](V49_TIMED_MATCHUPS.md#historical-checks) · [Turn-drag results](V413_TURN_DRAG.md)
+**Replay a powered turn at a recorded load.** Start with Ellis and Wheal Figures 9 and 10 at 10,000 ft METO and look for a wartime Mustang or Spitfire check at a known weight, speed, rating and cooling state. Recover the primary curves and reserve speeds before comparing. Use \(g\sqrt{n^2-1}/V\) for a coordinated level turn and report the residual in G and degrees per second where TAS is supported. Retain indicated-speed results as provisional when calibration is open. [Turn-test lead](https://www.wwiiaircraftperformance.com/com/others/endingtheargument.html) · [Current turn-drag results](V413_TURN_DRAG.md)
 
 ## Current research candidate
-- Simulator research candidate [v4.13.0-rc.2](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/). [Release verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/publish-simulator.yml)
+- Simulator research candidate [v4.14.0-rc.2](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/). [Release verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/publish-simulator.yml)
 - Input pack · [Fighter Sim Inputs v1.11.0](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 - Status: research candidate. Exact corrected stall, sustained-turn accuracy and historical 5:1 remain unresolved.
 

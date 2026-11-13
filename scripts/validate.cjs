@@ -61,7 +61,15 @@ try{
  const intakeBase=require('../validation/diagnostics/shared_flight_climb.cjs').browserData();
  const intake=require('./aircraft-batch.cjs');
  const activeBenchmark=intake.addAircraftBatch(intakeBase,catalog);
- write('validation/current/aircraft-intake.json',require('../validation/diagnostics/aircraft_intake.cjs').sourceChecks(intakeBase,catalog));
+ const intakeChecks=require('../validation/diagnostics/aircraft_intake.cjs').sourceChecks(intakeBase,catalog);
+ write('validation/current/aircraft-intake.json',intakeChecks);
+ const acceleration=require('../validation/diagnostics/level_acceleration.cjs').run(activeBenchmark,intakeChecks);
+ write('validation/current/level-acceleration.json',acceleration);
+ if(buildInfo.version==='4.14.0-rc.2'&&(!acceleration.regression.exactScorecardParity||!acceleration.regression.exactFixedProbeParity))
+  throw Error('Level-acceleration milestone changed an operating scorecard or fixed-speed probe');
+ console.log('Restored P-51D acceleration: '+(acceleration.nominal.seconds?.toFixed(2)??acceleration.nominal.status)+' s modeled, '+
+  acceleration.observation.endpoints.elapsedSeconds+' s transcribed.');
+
  const turnDrag=require('../validation/diagnostics/turn_drag.cjs').run(activeBenchmark);
  write('validation/current/turn-drag.json',turnDrag);
  if(!turnDrag.regression.exactScorecardParity||!turnDrag.regression.exactFixedProbeParity||!turnDrag.regression.exactIntakeParity)
@@ -70,6 +78,8 @@ try{
  require('./write-v42-report.cjs');
  const md=[
  '# Current validation',
+ '',
+ 'v4.14-rc.2 [Recorded P-51D level-acceleration replay](V414_LEVEL_ACCELERATION_REPLAY.md). [Numerical replay](../validation/current/level-acceleration.json).',
  '',
  'v4.14-rc.1 [G-6/Trop and F Mk IX aircraft intake](V414_AIRCRAFT_INTAKE.md). The source replay is included in the Physics regression artifact.',
  '',

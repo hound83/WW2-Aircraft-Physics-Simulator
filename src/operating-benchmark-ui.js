@@ -369,17 +369,17 @@
   const speedCheck=data.spitfireBestSpeedSensitivity;
   target.append(text('p','Spitfire sensitivity at each model’s own best climb speed. Mean error '+fmt(speedCheck.beforeMae,0)+' → '+fmt(speedCheck.afterMae,0)+' ft/min. Largest increase '+fmt(speedCheck.largestRegression,0)+' ft/min.','bench-note'));
  }
+ function appendTable(parent,labels,rows){
+  const {table,body}=makeTable(labels);
+  for(const values of rows){
+   const tr=text('tr');
+   for(const value of values)tr.append(text('td',value));
+   body.append(tr);
+  }
+  const scroll=text('div',undefined,'bench-table-scroll');scroll.append(table);parent.append(scroll);
+ }
  function renderIntakeChecks(){
   const target=$('bench-intake-check-results'),{crossover,aircraft}=data.intakeChecks;
-  function appendTable(parent,labels,rows){
-   const {table,body}=makeTable(labels);
-   for(const values of rows){
-    const tr=text('tr');
-    for(const value of values)tr.append(text('td',value));
-    body.append(tr);
-   }
-   const scroll=text('div',undefined,'bench-table-scroll');scroll.append(table);parent.append(scroll);
-  }
   target.append(text('p','Spitfire HF IX versus LF IX. A positive difference favors the HF. Table VI sea level is the HF drag fit.','bench-note'));
   appendTable(target,['Altitude','Observed HF − LF (mph TAS)','Modeled HF − LF (mph TAS)'],
    crossover.map(row=>[heightLabel(row.altFt),fmt(row.observedDifferenceMph,1),fmt(row.modeledDifferenceMph,1)]));
@@ -501,6 +501,61 @@
   });
   Chart.timedTrace($(id),series,{low,high,label});
  }
+ function renderAccelerationEvidence(){
+  const {observation,nominal,scenarioRangeSeconds,scenarios,scenarioInputs,wartime,spitfire}=data.accelerationEvidence;
+  const {aircraft,conditions,endpoints,source}=observation;
+  const result=$('bench-acceleration-evidence-result'),context=$('bench-acceleration-evidence-context');
+  const link=(label,url)=>{
+   const a=text('a',label);
+   a.href=url;a.target='_blank';a.rel='noopener';
+   return a;
+  };
+  const signed=(value,digits)=>Number.isFinite(value)?(value>0?'+':'')+fmt(value,digits):'Unavailable';
+  result.append(text('p',aircraft+' · '+heightLabel(conditions.altitudeFtMsl)+' MSL · '+conditions.outsideAirTempF+
+   ' °F · '+conditions.rating+' in low blower · '+endpoints.startKnots+'–'+endpoints.endKnots+' KIAS.'));
+  appendTable(result,['Transcribed time','Calculated time','Calculated minus transcribed'],[[
+   fmt(endpoints.elapsedSeconds,0)+' s',
+   nominal.seconds===null?'Target not reached':fmt(nominal.seconds,1)+' s',
+   nominal.residualSeconds===null?'Unavailable':signed(nominal.residualSeconds,1)+' s ('+signed(nominal.residualPct,1)+'%)'
+  ]]);
+  const observedEndpoints=[
+   {seconds:0,value:endpoints.startKnots,label:'Transcribed start · '+endpoints.startKnots+' KIAS'},
+   {seconds:endpoints.elapsedSeconds,value:endpoints.endKnots,label:'Transcribed finish · '+endpoints.endKnots+' KIAS at '+endpoints.elapsedSeconds+' s'}
+  ];
+  Chart.timedTrace($('bench-acceleration-evidence-trace'),[
+   {side:'replay',name:'Calculated replay',color:'var(--bench-a)',trace:nominal.trace}
+  ],{low:endpoints.startKnots-8,high:endpoints.endKnots+8,label:'Indicated knots (calculated IAS proxy)',observedEndpoints});
+  const references=text('p','Open circles show the two transcribed observations. The dotted curve uses the 44-15342 power and drag model. ',
+   'bench-note');
+  references.append(link('Flight report',source.url),document.createTextNode(' · '),
+   link('Figure 8',source.figure),document.createTextNode(' · '),link('Endpoint transcription',endpoints.transcription));
+  context.append(references,text('p','The replay assumes '+fmt(nominal.weightLb,0)+' lb, '+fmt(nominal.shaftBhp,0)+' BHP at '+
+   fmt(nominal.rpm,0)+' RPM, and treats IAS as CAS. Actual run weight, power, rack fit, cooling and IAS correction remain unknown.','bench-note'));
+  if(scenarioRangeSeconds){
+   const incomplete=scenarios.filter(row=>row.status!=='reached').length;
+   const weightRange=[scenarioInputs.weightLb[0],scenarioInputs.weightLb.at(-1)].map(weight=>fmt(weight,0)).join('–');
+   const powerVariation=fmt(100*(scenarioInputs.shaftPowerFactors.at(-1)-1),0);
+   const speedVariation=fmt(scenarioInputs.commonCasMinusIasKnots.at(-1),0);
+   context.append(text('p','Completed scenarios span '+scenarioRangeSeconds.map(value=>fmt(value,1)).join('–')+
+    ' s with '+weightRange+' lb, ±'+powerVariation+'% shaft power and ±'+speedVariation+
+    ' kt common CAS–IAS offset. The range illustrates input sensitivity.'+
+    (incomplete?' '+incomplete+' scenarios did not reach the target.':''),'bench-note'));
+  }
+  const related=text('details');
+  related.append(text('summary','Wartime power-balance checks'));
+  const level=text('p','P-51D 44-15342 at '+heightLabel(wartime.point.altFt)+' and Normal power reached '+
+   fmt(wartime.point.tasMph,0)+' mph TAS. The calculated equilibrium is '+fmt(wartime.equilibriumTasMph,2)+
+   ' mph TAS. ', 'bench-note');
+  level.append(link('Wright Field B.4',wartime.url));
+  const climb=text('p','Spitfire LF Mk IX BS.543, open radiators and 3,000 RPM. Table II climb rate and TAS give a calculated level-equivalent acceleration in mph TAS/s. ',
+   'bench-note');
+  climb.append(link('A&AEE Table II',spitfire.url));
+  related.append(level,climb);
+  appendTable(related,['Altitude','Role','From report climb','From modeled climb','Residual'],
+   spitfire.rows.map(row=>[heightLabel(row.altFt),row.role==='fit'?'Fit':'Reserved',
+    fmt(row.verticalOnly.observed,2),fmt(row.verticalOnly.modeled,2),signed(row.verticalOnly.residual,2)]));
+  context.append(related);
+ }
  function showAccelerationInputs(){
   const unit=$('bench-speed-unit').value,factor=Chart.speedFactor(unit);
   for(const [i,input] of accelerationInputs.entries()){
@@ -556,7 +611,7 @@
  $('bench-tie-margins').textContent='Effective ties use '+tolerances.sustained_turn_rate.spread+'°/s, '+
   tolerances.climb_rate.spread+'% climb rate and '+tolerances.level_speed.spread+' km/h TAS. In G view the peak tie margin uses the two peaks’ mean TAS. * includes estimated power.';
  render();
- renderFlightChecks();renderIntakeChecks();
+ renderFlightChecks();renderIntakeChecks();renderAccelerationEvidence();
  OperatingTurnComparison.evidence($('bench-turn-evidence'),data.turnEvidence,data.turnLiftChecks,
   data.turnEvidence.sensitivity,data.turnEvidence.directTurns,data.turnDrag);
 })();

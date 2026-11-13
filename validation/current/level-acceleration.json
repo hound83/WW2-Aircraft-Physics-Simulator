@@ -1,0 +1,1297 @@
+{
+  "schema": "ww2-level-acceleration-replay/v1",
+  "version": "4.14.0-rc.2",
+  "baselineCommit": "9e73e0b07110bd1161fd61697dce943d25eb2084",
+  "inputPack": "1.11.0",
+  "condition": {
+    "altFt": 10000,
+    "mode": "combat",
+    "fuelFraction": 0.5,
+    "injection": false,
+    "openCooling": false,
+    "probeEasMph": 200,
+    "accelerationEasMph": [
+      180,
+      300
+    ],
+    "timedClimbFt": [
+      0,
+      10000
+    ]
+  },
+  "probeColumns": [
+    "id",
+    "status",
+    "tasMph",
+    "shaftHp",
+    "propulsiveHp",
+    "requiredHp",
+    "tasMphPerSecond"
+  ],
+  "probe": [
+    [
+      "spitfire_lfix_bs543",
+      "modelled",
+      232.734565,
+      1705,
+      1494.318,
+      465.300167,
+      5.066618
+    ],
+    [
+      "bf109f4",
+      "modelled",
+      232.734565,
+      1331.532,
+      1171.162872,
+      364.507056,
+      4.709678
+    ],
+    [
+      "p47b",
+      "modelled",
+      232.734565,
+      2000,
+      1760.588708,
+      643.036399,
+      3.374746
+    ],
+    [
+      "p51b",
+      "modelled",
+      232.734565,
+      1691.37931,
+      1488.628657,
+      394.234961,
+      4.334211
+    ],
+    [
+      "fw190a4",
+      "modelled",
+      232.734565,
+      1481.816127,
+      1268.194817,
+      472.83366,
+      3.463657
+    ],
+    [
+      "p38g",
+      "modelled",
+      232.734565,
+      2420,
+      2097.642069,
+      726.199091,
+      3.382091
+    ],
+    [
+      "f4u4",
+      "modelled",
+      232.734565,
+      1885,
+      1666.535596,
+      595.039548,
+      3.183181
+    ],
+    [
+      "spitfire_hfix_bs551",
+      "modelled",
+      232.734565,
+      1692.727273,
+      1484.113914,
+      435.289284,
+      5.174954
+    ],
+    [
+      "bf109g2_db605a",
+      "modelled",
+      232.734565,
+      1260.9796,
+      1112.004645,
+      395.893337,
+      3.95061
+    ],
+    [
+      "p51d15_4415342",
+      "modelled",
+      232.734565,
+      1700,
+      1495.846876,
+      401.6686,
+      4.15282
+    ],
+    [
+      "spitfire_fix_bf274",
+      "modelled",
+      232.734565,
+      1533.478261,
+      1351.07919,
+      451.378321,
+      4.432982
+    ],
+    [
+      "bf109g6trop_16476",
+      "modelled",
+      232.734565,
+      1261.068387,
+      1112.07927,
+      469.713386,
+      3.304961
+    ]
+  ],
+  "observation": {
+    "id": "setp-p51d-4511586-level-acceleration-figure-8",
+    "aircraft": "North American P-51D 45-11586",
+    "engine": "V-1650-9 Merlin",
+    "propeller": "Four-blade Hamilton Standard Hydromatic",
+    "installation": "Restored aircraft. Rear 65 US gal tank removed and a jumpseat and modern avionics installed. Mid CG.",
+    "source": {
+      "title": "John M. Ellis III and Christopher A. Wheal, Ending the Argument, Sport Aviation, June 1990",
+      "url": "https://www.wwiiaircraftperformance.com/com/others/endingtheargument.html",
+      "figure": "https://www.wwiiaircraftperformance.com/com/others/endingtheargument_files/figure8.jpg",
+      "locator": "Aircraft, Flight Test Rules, Table I and Level Accelerations, Figure 8"
+    },
+    "conditions": {
+      "altitudeFtMsl": 10000,
+      "outsideAirTempF": 50,
+      "rating": "METO",
+      "gear": "low",
+      "takeoffWeightLb": 8900,
+      "runWeightLb": null,
+      "rpm": null,
+      "mapInHg": null,
+      "shaftBhp": null,
+      "pressureAltitudeFt": null,
+      "coolingFlapAngle": null,
+      "rackFit": null,
+      "airspeedCalibration": null
+    },
+    "endpoints": {
+      "evidence": "secondary transcription of flight-test endpoints",
+      "transcription": "https://ww2aircraft.net/forum/threads/captured-aircraft-equipment-report-14.65811/?post=2043798",
+      "locator": "Post 2043798, level-acceleration summary",
+      "speedBasis": "KIAS",
+      "startKnots": 110,
+      "endKnots": 242,
+      "elapsedSeconds": 133,
+      "verification": "The primary report confirms the test and conditions. The numerical endpoints are available in a secondary transcription. Copies of the same summary count as one lineage.",
+      "intermediateSamples": null,
+      "independentReservedIntervals": 0
+    }
+  },
+  "nominal": {
+    "status": "reached",
+    "seconds": 93.32229,
+    "residualSeconds": -39.67771,
+    "residualPct": -29.832865,
+    "pressureAltitudeFt": 10000,
+    "outsideAirTempF": 50,
+    "densityAltitudeFt": 11699.17482,
+    "temperatureFactor": 1.027229,
+    "weightLb": 8900,
+    "shaftBhp": 1140,
+    "rpm": 2700,
+    "mapInHg": 46,
+    "gear": "low",
+    "commonCasMinusIasKnots": 0,
+    "endpointsEasMph": [
+      126.389491,
+      276.493408
+    ],
+    "endpointsTasMph": [
+      151.080722,
+      330.508678
+    ],
+    "observedEquivalentMeanExcessHp": 351.455091,
+    "modeledMeanExcessHp": 500.88277,
+    "maxTipMach": 0.836828,
+    "tipLossOnset": 0.92,
+    "trace": [
+      {
+        "seconds": 0,
+        "value": 110,
+        "covered": false
+      },
+      {
+        "seconds": 2,
+        "value": 115.702523,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 4,
+        "value": 121.232465,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 6,
+        "value": 126.584502,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 8,
+        "value": 131.75732,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 10,
+        "value": 136.752271,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 12,
+        "value": 141.572454,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 14,
+        "value": 146.222076,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 16,
+        "value": 150.706012,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 18,
+        "value": 155.029508,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 20,
+        "value": 159.197982,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 22,
+        "value": 163.216887,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 24,
+        "value": 167.091621,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 26,
+        "value": 170.827473,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 28,
+        "value": 174.429582,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 30,
+        "value": 177.90292,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 32,
+        "value": 181.252281,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 34,
+        "value": 184.482274,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 36,
+        "value": 187.597327,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 38,
+        "value": 190.601688,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 40,
+        "value": 193.499433,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 42,
+        "value": 196.29447,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 44,
+        "value": 198.990529,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 46,
+        "value": 201.591015,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 48,
+        "value": 204.099126,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 50,
+        "value": 206.517964,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 52,
+        "value": 208.85054,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 54,
+        "value": 211.099776,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 56,
+        "value": 213.268503,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 58,
+        "value": 215.359465,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 60,
+        "value": 217.375322,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 62,
+        "value": 219.318649,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 64,
+        "value": 221.191942,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 66,
+        "value": 222.997616,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 68,
+        "value": 224.738009,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 70,
+        "value": 226.415386,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 72,
+        "value": 228.031938,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 74,
+        "value": 229.589785,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 76,
+        "value": 231.090977,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 78,
+        "value": 232.537501,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 80,
+        "value": 233.931275,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 82,
+        "value": 235.274156,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 84,
+        "value": 236.567939,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 86,
+        "value": 237.81436,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 88,
+        "value": 239.015097,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 90,
+        "value": 240.171773,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 92,
+        "value": 241.285956,
+        "phase": "normal",
+        "covered": false
+      },
+      {
+        "seconds": 93.32229,
+        "value": 242,
+        "phase": "normal",
+        "covered": false
+      }
+    ],
+    "timerCheck": {
+      "stepSeconds": 0.5,
+      "fineStepSeconds": 0.125,
+      "fineSeconds": 93.321108,
+      "speedQuadratureSeconds": 93.320847
+    }
+  },
+  "scenarios": [
+    {
+      "weightLb": 8700,
+      "shaftBhp": 1026,
+      "commonCasMinusIasKnots": -4,
+      "status": "reached",
+      "seconds": 106.899053
+    },
+    {
+      "weightLb": 8700,
+      "shaftBhp": 1026,
+      "commonCasMinusIasKnots": 0,
+      "status": "reached",
+      "seconds": 116.08141
+    },
+    {
+      "weightLb": 8700,
+      "shaftBhp": 1026,
+      "commonCasMinusIasKnots": 4,
+      "status": "reached",
+      "seconds": 127.868861
+    },
+    {
+      "weightLb": 8700,
+      "shaftBhp": 1140,
+      "commonCasMinusIasKnots": -4,
+      "status": "reached",
+      "seconds": 84.680978
+    },
+    {
+      "weightLb": 8700,
+      "shaftBhp": 1140,
+      "commonCasMinusIasKnots": 0,
+      "status": "reached",
+      "seconds": 90.107947
+    },
+    {
+      "weightLb": 8700,
+      "shaftBhp": 1140,
+      "commonCasMinusIasKnots": 4,
+      "status": "reached",
+      "seconds": 96.517075
+    },
+    {
+      "weightLb": 8700,
+      "shaftBhp": 1254,
+      "commonCasMinusIasKnots": -4,
+      "status": "reached",
+      "seconds": 70.671655
+    },
+    {
+      "weightLb": 8700,
+      "shaftBhp": 1254,
+      "commonCasMinusIasKnots": 0,
+      "status": "reached",
+      "seconds": 74.433852
+    },
+    {
+      "weightLb": 8700,
+      "shaftBhp": 1254,
+      "commonCasMinusIasKnots": 4,
+      "status": "reached",
+      "seconds": 78.715561
+    },
+    {
+      "weightLb": 8900,
+      "shaftBhp": 1026,
+      "commonCasMinusIasKnots": -4,
+      "status": "reached",
+      "seconds": 111.070164
+    },
+    {
+      "weightLb": 8900,
+      "shaftBhp": 1026,
+      "commonCasMinusIasKnots": 0,
+      "status": "reached",
+      "seconds": 120.735066
+    },
+    {
+      "weightLb": 8900,
+      "shaftBhp": 1026,
+      "commonCasMinusIasKnots": 4,
+      "status": "reached",
+      "seconds": 133.220667
+    },
+    {
+      "weightLb": 8900,
+      "shaftBhp": 1140,
+      "commonCasMinusIasKnots": -4,
+      "status": "reached",
+      "seconds": 87.674253
+    },
+    {
+      "weightLb": 8900,
+      "shaftBhp": 1140,
+      "commonCasMinusIasKnots": 0,
+      "status": "reached",
+      "seconds": 93.32229
+    },
+    {
+      "weightLb": 8900,
+      "shaftBhp": 1140,
+      "commonCasMinusIasKnots": 4,
+      "status": "reached",
+      "seconds": 100.009125
+    },
+    {
+      "weightLb": 8900,
+      "shaftBhp": 1254,
+      "commonCasMinusIasKnots": -4,
+      "status": "reached",
+      "seconds": 73.019861
+    },
+    {
+      "weightLb": 8900,
+      "shaftBhp": 1254,
+      "commonCasMinusIasKnots": 0,
+      "status": "reached",
+      "seconds": 76.914293
+    },
+    {
+      "weightLb": 8900,
+      "shaftBhp": 1254,
+      "commonCasMinusIasKnots": 4,
+      "status": "reached",
+      "seconds": 81.352952
+    }
+  ],
+  "scenarioRangeSeconds": [
+    70.671655,
+    133.220667
+  ],
+  "scenarioInputs": {
+    "weightLb": [
+      8700,
+      8900
+    ],
+    "shaftPowerFactors": [
+      0.9,
+      1,
+      1.1
+    ],
+    "commonCasMinusIasKnots": [
+      -4,
+      0,
+      4
+    ]
+  },
+  "assumptions": [
+    "Use reported MSL as pressure altitude and account for 50°F with the corresponding density and TAS. The ISA solver runs at equivalent density altitude, with power held at the pressure-altitude input.",
+    "Use the wartime V-1650-7 Normal chart's 1,140 BHP at 46 inHg and 2,700 RPM as a V-1650-9 METO proxy. The restored specimen's actual manifold pressure, RPM and shaft power are unknown.",
+    "Carry the wartime wing-rack drag polar and shared propeller model. The restored run's rack fit, cooling opening and installed propeller efficiency are unknown.",
+    "Assume 8,900 lb throughout the nominal replay. The 8,700–8,900 lb scenarios explore fuel burned after takeoff. Test constant CAS–IAS offsets to show sensitivity. Specimen calibration remains unavailable.",
+    "Ranges are illustrative scenarios, with no fit or statistical confidence attached."
+  ],
+  "wartime": {
+    "aircraft": "North American P-51D-15-NA 44-15342",
+    "engine": "Packard V-1650-7 Merlin",
+    "title": "Wright Field TSCEP5E-1908, B.4 Normal-rated power level flight",
+    "url": "https://www.wwiiaircraftperformance.org/mustang/p51d-15342.html",
+    "role": "Same-report level-speed check outside the sea-level WEP polar fit. BHP from the wartime chart is a model input.",
+    "conditions": {
+      "rpm": 2700,
+      "mapInHg": 46,
+      "gear": "low",
+      "cooling": "Automatic coolant flaps",
+      "installation": "Trial wing racks fitted, no external load"
+    },
+    "point": {
+      "altFt": 10000,
+      "tasMph": 362,
+      "shaftBhp": 1140,
+      "weightLb": 9660
+    },
+    "observationId": "ww2_priority_aircraft_2026-11-13:p51d-4415342-level-normal:0003",
+    "equilibriumTasMph": 360.34,
+    "equilibriumErrorMph": -1.66,
+    "propulsiveHp": 1028.767604,
+    "requiredHp": 1041.621998,
+    "excessHp": -12.854394,
+    "tasAccelerationMphPerSecond": -0.030239
+  },
+  "spitfire": {
+    "aircraft": "Spitfire LF Mk IX BS.543",
+    "engine": "Merlin 66",
+    "title": "A&AEE BS.543 Table II, Combat climb",
+    "url": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html",
+    "conditions": {
+      "takeoffWeightLb": 7485,
+      "rpm": 3000,
+      "gear": "low",
+      "gearChangeAltFt": 13000,
+      "cooling": "Radiator flaps fully open"
+    },
+    "qualification": "Rates and TAS use the existing Table II transcription. A&AEE reduced the data to standard atmosphere via Res/170. The rate reduction's treatment of TAS energy is unresolved.",
+    "rows": [
+      {
+        "altFt": 7000,
+        "boostPsi": 18,
+        "role": "check",
+        "tasMph": 190,
+        "easMph": 171.068081,
+        "observedFpm": 4700,
+        "modeledFpm": 4724.352991,
+        "tasMphPerKft": 3,
+        "slopeFromFt": 6000,
+        "slopeToFt": 8000,
+        "verticalOnly": {
+          "observed": 6.166459,
+          "modeled": 6.198411,
+          "residual": 0.031951
+        },
+        "withScheduleEnergy": {
+          "observed": 6.401459,
+          "modeled": 6.434628,
+          "residual": 0.033169
+        }
+      },
+      {
+        "altFt": 8000,
+        "boostPsi": 17,
+        "role": "check",
+        "tasMph": 193,
+        "easMph": 171.109096,
+        "observedFpm": 4560,
+        "modeledFpm": 4551.823353,
+        "tasMphPerKft": 3,
+        "slopeFromFt": 7000,
+        "slopeToFt": 10000,
+        "verticalOnly": {
+          "observed": 5.889781,
+          "modeled": 5.87922,
+          "residual": -0.010561
+        },
+        "withScheduleEnergy": {
+          "observed": 6.117781,
+          "modeled": 6.106811,
+          "residual": -0.01097
+        }
+      },
+      {
+        "altFt": 10000,
+        "boostPsi": 15.1,
+        "role": "fit",
+        "tasMph": 199,
+        "easMph": 171.010267,
+        "observedFpm": 4280,
+        "modeledFpm": 4215.559244,
+        "tasMphPerKft": 3,
+        "slopeFromFt": 8000,
+        "slopeToFt": 12000,
+        "verticalOnly": {
+          "observed": 5.361451,
+          "modeled": 5.280727,
+          "residual": -0.080723
+        },
+        "withScheduleEnergy": {
+          "observed": 5.575451,
+          "modeled": 5.491505,
+          "residual": -0.083945
+        }
+      },
+      {
+        "altFt": 12000,
+        "boostPsi": 13.4,
+        "role": "check",
+        "tasMph": 205,
+        "easMph": 170.676905,
+        "observedFpm": 4000,
+        "modeledFpm": 3839.836356,
+        "tasMphPerKft": 3,
+        "slopeFromFt": 10000,
+        "slopeToFt": 12000,
+        "verticalOnly": {
+          "observed": 4.864047,
+          "modeled": 4.669286,
+          "residual": -0.194761
+        },
+        "withScheduleEnergy": {
+          "observed": 5.064047,
+          "modeled": 4.861278,
+          "residual": -0.202769
+        }
+      }
+    ]
+  },
+  "standardAtmosphereSensitivity": {
+    "status": "reached",
+    "seconds": 85.627789,
+    "residualSeconds": -47.372211,
+    "residualPct": -35.618203,
+    "pressureAltitudeFt": 10000,
+    "outsideAirTempF": 23.33839999999998,
+    "densityAltitudeFt": 10000,
+    "temperatureFactor": 1,
+    "weightLb": 8900,
+    "shaftBhp": 1140,
+    "rpm": 2700,
+    "mapInHg": 46,
+    "gear": "low",
+    "commonCasMinusIasKnots": 0,
+    "endpointsEasMph": [
+      126.389491,
+      276.493408
+    ],
+    "endpointsTasMph": [
+      147.076016,
+      321.747864
+    ],
+    "observedEquivalentMeanExcessHp": 333.06995,
+    "modeledMeanExcessHp": 517.335594,
+    "maxTipMach": 0.825171,
+    "tipLossOnset": 0.92
+  },
+  "related": [
+    {
+      "title": "NACA CB 5H31, P-51B-1 high-speed dives",
+      "url": "https://ntrs.nasa.gov/citations/19930093566",
+      "scope": "Propeller-off dives include acceleration and flight-path evidence. Powered level-flight timing requires a separate record."
+    },
+    {
+      "title": "A&AEE Mustang III FX.858",
+      "url": "https://www.wwiiaircraftperformance.org/mustang/fx858.html",
+      "scope": "Climb, level speed and position-error evidence belongs to a different Mustang installation."
+    },
+    {
+      "title": "Ellis and Wheal Figure 8, other transcribed level runs",
+      "url": "https://ww2aircraft.net/forum/threads/captured-aircraft-equipment-report-14.65811/?post=2043798",
+      "scope": "Discovery only. Aircraft restorations, configurations and speed intervals differ. Each run shares the same secondary transcription lineage.",
+      "observations": [
+        {
+          "aircraft": "Republic P-47D 45-49181",
+          "startKias": 105,
+          "endKias": 223,
+          "elapsedSeconds": 130
+        },
+        {
+          "aircraft": "Grumman F6F-5 BuNo 79683",
+          "startKias": 100,
+          "endKias": 220,
+          "elapsedSeconds": 115
+        },
+        {
+          "aircraft": "Goodyear FG-1D BuNo 92509",
+          "startKias": 100,
+          "endKias": 230,
+          "elapsedSeconds": 162
+        }
+      ]
+    },
+    {
+      "title": "Ellis and Wheal, Figures 9 and 10",
+      "url": "https://www.wwiiaircraftperformance.com/com/others/endingtheargument.html",
+      "scope": "Separate powered sustained-turn and wind-up test at 10,000 ft. The restored P-51D and METO limitations still apply."
+    }
+  ],
+  "formulaCheck": {
+    "checkedForceBalancePoints": 36,
+    "maxDifferenceMphPerSecond": 5.120615043097132e-11
+  },
+  "regression": {
+    "exactScorecardParity": true,
+    "exactFixedProbeParity": true,
+    "steadyPoints": 144,
+    "timedAccelerations": 72,
+    "timedClimbs": 24,
+    "aircraft": [
+      {
+        "aircraft": "spitfire_lfix_bs543",
+        "stallEasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "levelTasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "climbFpm": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "sustainedDegSec": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "instantaneousDegSec": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "accelerationSeconds": {
+          "mode": "normal",
+          "altFt": 10000,
+          "delta": 0
+        },
+        "timedClimbSeconds": {
+          "mode": "normal",
+          "altFt": null,
+          "delta": 0
+        },
+        "changedStatus": []
+      },
+      {
+        "aircraft": "bf109f4",
+        "stallEasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "levelTasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "climbFpm": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "sustainedDegSec": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "instantaneousDegSec": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "accelerationSeconds": {
+          "mode": "normal",
+          "altFt": 10000,
+          "delta": 0
+        },
+        "timedClimbSeconds": {
+          "mode": "normal",
+          "altFt": null,
+          "delta": 0
+        },
+        "changedStatus": []
+      },
+      {
+        "aircraft": "p47b",
+        "stallEasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "levelTasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "climbFpm": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "sustainedDegSec": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "instantaneousDegSec": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "accelerationSeconds": {
+          "mode": "combat",
+          "altFt": 10000,
+          "delta": 0
+        },
+        "timedClimbSeconds": {
+          "mode": "normal",
+          "altFt": null,
+          "delta": 0
+        },
+        "changedStatus": []
+      },
+      {
+        "aircraft": "p51b",
+        "stallEasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "levelTasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "climbFpm": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "sustainedDegSec": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "instantaneousDegSec": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "accelerationSeconds": {
+          "mode": "normal",
+          "altFt": 10000,
+          "delta": 0
+        },
+        "timedClimbSeconds": {
+          "mode": "normal",
+          "altFt": null,
+          "delta": 0
+        },
+        "changedStatus": []
+      },
+      {
+        "aircraft": "fw190a4",
+        "stallEasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "levelTasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "climbFpm": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "sustainedDegSec": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "instantaneousDegSec": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "accelerationSeconds": {
+          "mode": "normal",
+          "altFt": 10000,
+          "delta": 0
+        },
+        "timedClimbSeconds": {
+          "mode": "normal",
+          "altFt": null,
+          "delta": 0
+        },
+        "changedStatus": []
+      },
+      {
+        "aircraft": "p38g",
+        "stallEasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "levelTasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "climbFpm": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "sustainedDegSec": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "instantaneousDegSec": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "accelerationSeconds": {
+          "mode": "combat",
+          "altFt": 10000,
+          "delta": 0
+        },
+        "timedClimbSeconds": {
+          "mode": "normal",
+          "altFt": null,
+          "delta": 0
+        },
+        "changedStatus": []
+      },
+      {
+        "aircraft": "f4u4",
+        "stallEasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "levelTasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "climbFpm": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "sustainedDegSec": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "instantaneousDegSec": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "accelerationSeconds": {
+          "mode": "normal",
+          "altFt": 10000,
+          "delta": 0
+        },
+        "timedClimbSeconds": {
+          "mode": "normal",
+          "altFt": null,
+          "delta": 0
+        },
+        "changedStatus": []
+      },
+      {
+        "aircraft": "spitfire_hfix_bs551",
+        "stallEasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "levelTasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "climbFpm": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "sustainedDegSec": null,
+        "instantaneousDegSec": null,
+        "accelerationSeconds": {
+          "mode": "combat",
+          "altFt": 10000,
+          "delta": 0
+        },
+        "timedClimbSeconds": {
+          "mode": "normal",
+          "altFt": null,
+          "delta": 0
+        },
+        "changedStatus": []
+      },
+      {
+        "aircraft": "bf109g2_db605a",
+        "stallEasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "levelTasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "climbFpm": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "sustainedDegSec": null,
+        "instantaneousDegSec": null,
+        "accelerationSeconds": {
+          "mode": "combat",
+          "altFt": 10000,
+          "delta": 0
+        },
+        "timedClimbSeconds": {
+          "mode": "normal",
+          "altFt": null,
+          "delta": 0
+        },
+        "changedStatus": []
+      },
+      {
+        "aircraft": "p51d15_4415342",
+        "stallEasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "levelTasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "climbFpm": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "sustainedDegSec": null,
+        "instantaneousDegSec": null,
+        "accelerationSeconds": {
+          "mode": "normal",
+          "altFt": 10000,
+          "delta": 0
+        },
+        "timedClimbSeconds": {
+          "mode": "normal",
+          "altFt": null,
+          "delta": 0
+        },
+        "changedStatus": []
+      },
+      {
+        "aircraft": "spitfire_fix_bf274",
+        "stallEasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "levelTasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "climbFpm": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "sustainedDegSec": null,
+        "instantaneousDegSec": null,
+        "accelerationSeconds": {
+          "mode": "combat",
+          "altFt": 10000,
+          "delta": 0
+        },
+        "timedClimbSeconds": {
+          "mode": "normal",
+          "altFt": null,
+          "delta": 0
+        },
+        "changedStatus": []
+      },
+      {
+        "aircraft": "bf109g6trop_16476",
+        "stallEasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "levelTasMph": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "climbFpm": {
+          "mode": "normal",
+          "altFt": 0,
+          "delta": 0
+        },
+        "sustainedDegSec": null,
+        "instantaneousDegSec": null,
+        "accelerationSeconds": null,
+        "timedClimbSeconds": {
+          "mode": "normal",
+          "altFt": null,
+          "delta": 0
+        },
+        "changedStatus": []
+      }
+    ]
+  }
+}
