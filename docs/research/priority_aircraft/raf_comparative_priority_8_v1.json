@@ -1,0 +1,32 @@
+{
+  "version": "2026-11-13-v1",
+  "description": "RAF / A&AEE / RAE comparative and performance data for the priority 8",
+  "notes": "Drawn from Boscombe Down (A&AEE), RAE Farnborough, and spitfireperformance.com / wwiiaircraftperformance.org transcriptions",
+  "aircraft": {
+    "Spitfire_I": {
+      "level_speed_examples": "A&AEE: ~354-367 mph at rated altitude on early marks. RAE comparative: faster than Bf 109E in acceleration and level flight without +12 boost.",
+      "source": "A&AEE Boscombe Down and RAE trials (e.g. N.3171)"
+    },
+    "Spitfire_V": {
+      "level_speed_examples": "Direct comparisons vs Fw 190: inferior in speed and climb. Out-turns Fw 190.",
+      "source": "AFDU and A&AEE comparative trials"
+    },
+    "P-51_Mustang": {
+      "level_speed_examples": "A&AEE Mustang I: 30-35 mph faster than Spitfire VB up to 15,000 ft. Mustang III AFDU: roughly equal to Spitfire IX at many heights, inferior climb to Spitfire XIV.",
+      "stall_notes": "A&AEE: 92 mph IAS clean / 80 mph flaps down at ~8600 lb",
+      "source": "A&AEE Boscombe Down and AFDU 1942-44"
+    },
+    "P-47D": {
+      "notes": "Limited RAF comparative notes. Dive advantage clear; climb and turn inferior to Spitfire.",
+      "source": "Some joint or AFDU-adjacent comparisons"
+    },
+    "Bf_109_E": {
+      "notes": "RAE/AFDU captured trials already covered in AFDU pack. Out-turned by Spitfire.",
+      "source": "RAE Morgan report and AFDU 1940"
+    },
+    "Fw_190_A": {
+      "notes": "A&AEE and AFDU on captured aircraft: 20-35 mph faster than Spitfire V, superior climb and roll, inferior turn.",
+      "source": "AFDU / A&AEE on MP499 and others"
+    }
+  }
+}
