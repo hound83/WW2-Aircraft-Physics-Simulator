@@ -2,11 +2,9 @@
   "aircraft": "Fw 190 D-9",
   "grade_overall": "partial",
   "ready_for_first_pass": true,
-  "level_speed_notes": "MW50 figures up to ~606 km/h SL in some reports; dry lower",
-  "power_curve": "Partial - dry vs MW50 separation incomplete",
-  "prop_efficiency": 0.80,
-  "stall_ias_kmh": "174-197",
-  "stall_grade": "secondary",
-  "source": "Focke-Wulf and Rechlin transcriptions",
+  "level_speed_notes": {"value": "MW50 figures up to ~606 km/h SL in some reports; dry lower", "grade": "observed/partial", "source": "Focke-Wulf flight reports and Rechlin transcriptions on wwiiaircraftperformance.org"},
+  "power_curve": {"status": "partial", "grade": "partial", "source": "Focke-Wulf / Rechlin; dry vs MW50 separation incomplete"},
+  "prop_efficiency": {"value": 0.80, "grade": "estimated", "source": "Default"},
+  "stall_ias_kmh": {"value": "174-197", "grade": "secondary", "source": "Secondary / IL-2"},
   "notes": "Thinner than A-series. Usable first-pass with clear gaps."
 }
