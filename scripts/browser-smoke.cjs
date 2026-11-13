@@ -490,6 +490,16 @@ async function run(){
   assert.match(await evaluate('document.getElementById("bench-advantage-readout").textContent'),/Spitfire.*\+6\.5°\/s.*has a clear lead across tested inputs/s);
   assert.ok(await evaluate('document.querySelectorAll("#bench-advantage-plot [data-turn-range]").length>0'));
   assert.equal(await evaluate('document.querySelectorAll("#bench-turn-evidence [data-lift-check]").length'),5);
+  const beforeTurnReplay=await probe();
+  await evaluate('document.querySelector("#bench-powered-turn summary").click()');
+  assert.equal(await evaluate('document.getElementById("bench-powered-turn").open'),true);
+  const poweredReplay=await evaluate('document.getElementById("bench-powered-turn-result").textContent');
+  assert.match(poweredReplay,/MT-215.*1,000 m.*360 km\/h IAS.*22.*16\.36.*≈3.*24\.0.*15\.00.*2\.97.*26\.2/s);
+  assert.match(poweredReplay,/70° bank implies 2\.92 G and 24\.4 s.*time implies 3\.21 G/s);
+  assert.equal(await evaluate('document.querySelectorAll("#bench-powered-turn a").length'),2);
+  await evaluate('document.querySelector("#bench-powered-turn summary").click()');
+  assert.deepEqual(await probe(),beforeTurnReplay);
+  checks.push('v4.14 MT-215 powered-turn timing, load discrepancy and source links appear without moving the live probe');
   assert.match(await evaluate('document.getElementById("bench-turn-limits").textContent'),/Lift.*Available power.*hp for level flight.*TN 1044|TN 1044.*hp for level flight/s);
   await setProbe(200);
   assert.match(await evaluate('document.getElementById("bench-advantage-readout").textContent'),/Effectively tied.*Outcome depends on tested inputs/s);

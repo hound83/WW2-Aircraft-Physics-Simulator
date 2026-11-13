@@ -132,7 +132,8 @@ function build(){
  const intakeChecks=require('../validation/diagnostics/aircraft_intake.cjs').sourceChecks(baseBenchmark,researchCatalog);
  const turnDrag=require('../validation/diagnostics/turn_drag.cjs').browserEvidence(benchmark.models);
  const accelerationEvidence=require('../validation/diagnostics/level_acceleration.cjs').browserEvidence(benchmark,intakeChecks);
- const benchmarkData=JSON.stringify({...benchmark,stallReferences,intakeChecks,turnDrag,accelerationEvidence,
+ const poweredTurn=require('../validation/diagnostics/powered_turn.cjs').browserEvidence(benchmark);
+ const benchmarkData=JSON.stringify({...benchmark,stallReferences,intakeChecks,turnDrag,accelerationEvidence,poweredTurn,
   sourceGrades:{cases:inputs.cases,coverage,observations,sources,tolerances:inputs.tolerances}});
  const turnPerformance=read('src/turn-performance.js');
  const matchup=read('src/benchmark-matchup.js');
@@ -160,7 +161,7 @@ function build(){
  const efficiencyData=read(propeller.path);
  if(sha256(efficiencyData)!==propeller.sha256)throw Error('Propeller efficiency data and input pack disagree');
  fs.writeFileSync(path.join(root,'dist',propeller.build_file),efficiencyData);
- const metadata={version,researchStatus:'Provisional P-51D level-acceleration replay and wartime power checks',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,gregDragModelsFile:dragFile,gregDragModelsSha256:sha256(dragData),researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
+ const metadata={version,researchStatus:'Recorded Bf 109 G-2 powered-turn replay and turn power-balance checks',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,gregDragModelsFile:dragFile,gregDragModelsSha256:sha256(dragData),researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
  fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify(metadata,null,2)+'\n');
  return metadata;
 }

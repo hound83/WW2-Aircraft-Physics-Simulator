@@ -4,6 +4,10 @@ Pointer file for agents starting a new milestone. Not a second model of record. 
 
 ## Shared research / implementation roadmap (2026-11-12)
 
+### Delivered in v4.14.0-rc.3
+
+The benchmark displays the Finnish MT-215 turn transcription and the calculated replay at the reported speed. Clean-cooling time is 24.0 s versus 22 s transcribed. The model’s 2.97 G is close to the rounded 3 G in the source, while the timing at assumed TAS implies 3.21 G. [Powered-turn results](V414_POWERED_TURN_REPLAY.md)
+
 ### Delivered in v4.14.0-rc.2
 
 The benchmark plots the restored P-51D's transcribed endpoints and the dotted replay. The nominal elapsed-time residual is −39.7 s with unresolved installed power and IAS calibration. The wartime comparison uses the P-51D Normal level test and calculated Spitfire LF IX energy from recorded climb. [Report and scorecard](V414_LEVEL_ACCELERATION_REPLAY.md)
@@ -58,10 +62,10 @@ Grok’s expanded stall draft and 21-variant extract are available as research i
 
 ## Next simulator milestone
 
-**Replay a powered turn at a recorded load.** Start with Ellis and Wheal Figures 9 and 10 at 10,000 ft METO and look for a wartime Mustang or Spitfire check at a known weight, speed, rating and cooling state. Recover the primary curves and reserve speeds before comparing. Use \(g\sqrt{n^2-1}/V\) for a coordinated level turn and report the residual in G and degrees per second where TAS is supported. Retain indicated-speed results as provisional when calibration is open. [Turn-test lead](https://www.wwiiaircraftperformance.com/com/others/endingtheargument.html) · [Current turn-drag results](V413_TURN_DRAG.md)
+**Compare straight-flight and turn energy on one aircraft.** Recover the original MT-215 maneuver sheet and the altitude, rating, loading and airspeed basis for its timed acceleration runs. A straight-flight acceleration at the turn’s speed and power can constrain the extra drag above 1 G. Keep the Mustang–Spitfire crossover open while their matched powered-turn evidence is recovered. [Turn and acceleration leads](V414_POWERED_TURN_REPLAY.md)
 
 ## Current research candidate
-- Simulator research candidate [v4.14.0-rc.2](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/). [Release verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/publish-simulator.yml)
+- Simulator research candidate [v4.14.0-rc.3](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/). [Release verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/publish-simulator.yml)
 - Input pack · [Fighter Sim Inputs v1.11.0](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 - Status: research candidate. Exact corrected stall, sustained-turn accuracy and historical 5:1 remain unresolved.
 

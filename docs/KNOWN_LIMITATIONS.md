@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.14-rc.3 powered-turn replay
+
+The 22 s MT-215 turn is transcribed from a wartime test. The original sheet, calibration, exact load and settings remain open. At the nominal IAS proxy, the reported bank and timed heading change imply different load factors. The open-cooling equivalent area is a model sensitivity. The G-2 case gives one comparison point and the P-51B–Spitfire sustained-turn ranking still lacks a matched powered test. [Replay limits](V414_POWERED_TURN_REPLAY.md)
+
 ## v4.14-rc.2 level-acceleration replay
 
 The restored P-51D's time and speed endpoints use a secondary transcription. The run's actual weight, IAS calibration, pressure altitude, power, cooling and rack fit remain open. The wartime V-1650-7 chart and rack-on model provide a proxy for the restored V-1650-9 installation. Tested scenarios illustrate input sensitivity. Matched wartime timing and powered-turn accuracy remain open. [Source limits and residuals](V414_LEVEL_ACCELERATION_REPLAY.md)

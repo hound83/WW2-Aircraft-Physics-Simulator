@@ -4,7 +4,9 @@ The shared steady-flight solver calculates stall, speed, climb, acceleration, an
 
 ## Next implementation milestone
 
-**Replay a powered turn at a recorded load.** Start with Ellis and Wheal Figures 9 and 10 at 10,000 ft METO and look for a wartime Mustang or Spitfire check at a known weight, speed, rating and cooling state. Recover the primary curves and reserve speeds before comparing. Use \(g\sqrt{n^2-1}/V\) for a coordinated level turn and report the residual in G and degrees per second where TAS is supported. Retain indicated-speed results as provisional when calibration is open. [Turn-test lead](https://www.wwiiaircraftperformance.com/com/others/endingtheargument.html) · [Current turn-drag results](V413_TURN_DRAG.md)
+**Compare straight-flight and turn energy on one aircraft.** Recover the original MT-215 maneuver sheet and the altitude, rating, loading and airspeed basis for its timed acceleration runs. A straight-flight acceleration at the turn’s speed and power can constrain the extra drag above 1 G. Keep the Mustang–Spitfire crossover open while their matched powered-turn evidence is recovered. [Turn and acceleration leads](V414_POWERED_TURN_REPLAY.md)
+
+**Delivered · Recorded powered-turn replay.** The Bf 109 G-2 MT-215 case compares 22 s transcribed with 24.0 s modeled under the clean-cooling assumptions. The published timing, bank and speed imply different loads. [Replay and fleet regression](V414_POWERED_TURN_REPLAY.md)
 
 **Delivered · Provisional level-acceleration replay.** The restored P-51D report and secondary timing endpoints give a 93.3 s nominal calculation versus 133 s transcribed. Wartime P-51D level speed and Spitfire climb provide separate power-balance checks. The original Figure 8 ordinates, a matched wartime speed-time record and an independent timed interval remain open. [Replay and twelve-profile regression](V414_LEVEL_ACCELERATION_REPLAY.md)
 
