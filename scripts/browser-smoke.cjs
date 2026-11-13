@@ -851,6 +851,28 @@ async function run(){
   assert.ok(cleanCorsair.some(t=>t.includes('84.6 kt CAS')&&t.includes('power on')));
   assert.ok(cleanCorsair.some(t=>t.includes('105 mph CAS')&&t.includes('glide')));
   checks.push('Continuous stall graph joins dotted lift-dependent and solid power segments, converts units and shows distinct report checks');
+  await select('bench-aircraft-filter','all');
+  await select('bench-altitude','10000');
+  await select('bench-power-a','combat');
+  for(const [id,pattern] of [['spitfire_hfix_bs551',/BS\.551/],['bf109g2_db605a',/F-4 lift prior/],['p51d15_4415342',/97 mph IAS/]]){
+   await select('bench-aircraft-a',id);
+   const summary=await evaluate('document.getElementById("bench-result-a").textContent');
+   assert.match(summary,/Best climb rate.*Maximum level speed.*Provisional clean stall/s);
+   assert.match(summary,pattern);
+   assert.match(await evaluate('document.getElementById("bench-comparison").textContent'),/awaits drag-under-load/);
+   assert.equal(await evaluate('document.querySelectorAll("#bench-turn-plot svg,#bench-advantage-plot svg").length'),0);
+   assert.ok(await evaluate('!!document.querySelector("#bench-climb-plot svg")'));
+  }
+  await select('bench-fuel-a','0.75');
+  assert.match(await evaluate('document.getElementById("bench-result-a").textContent'),/outside the handbook weight range/);
+  await select('bench-aircraft-b','bf109g2_db605a');
+  await select('bench-climb-from','0');await select('bench-climb-to','10000');
+  await evaluate('document.getElementById("bench-climb-calculate").click()');
+  const intakeClimbs=(await benchmark()).climbs;
+  assert.equal(intakeClimbs.a.status,'reached');assert.equal(intakeClimbs.b.status,'reached');
+  assert.equal(await evaluate('document.querySelectorAll("#bench-intake-check-results details").length'),3);
+  assert.match(await evaluate('document.getElementById("bench-intake-check-results").textContent'),/30,000 ft.*18\.0.*29\.7/s);
+  checks.push('HF IX, G-2 and P-51D are selectable with shared level and climb output, provisional stall, source residuals and turn comparisons withheld');
   await send('Page.navigate',{url:'http://127.0.0.1:'+server.address().port+'/fighter-evidence-curves.html'});
   await until(()=>evaluate('!!document.querySelector("#plot .curve-segment")'),'fighter evidence explorer startup');
   const joined=await evaluate('(()=>{const a=[...document.querySelectorAll(".curve-segment")].filter(e=>e.dataset.series==="0"),i=a.findIndex(e=>e.dataset.style==="dotted"),p=a[i-1],n=a[i];return i>0&&p.dataset.style==="solid"&&p.getAttribute("x2")===n.getAttribute("x1")&&p.getAttribute("y2")===n.getAttribute("y1");})()');
