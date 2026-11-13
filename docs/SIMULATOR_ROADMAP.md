@@ -44,7 +44,7 @@ Make the comparison say which aircraft leads across the supported input range an
 
 ## 4. Prove the approach with one new aircraft
 
-The Bf 109 G-2 is the first intake candidate. Use the Finnish MT-215 installation, its recorded power settings, and the reviewed DB 605 A anchors. Start with speed and climb at supported conditions, and document the effect of any remaining uncertainty in run weight. Use the same case and validation flow used for the seven current aircraft. Consider the Fw 190 D-9 once this process has worked for one new profile. [G-2 handoff](SIMULATOR_DATA_HANDOFF.md#suggested-aircraft) · [Aircraft intake](../references/aircraft-intake.json)
+The Bf 109 G-2 is the first intake candidate. Use the Finnish MT-215 installation, its recorded power settings, and the reviewed DB 605 A anchors. Start with speed and climb at supported conditions, and document the effect of any remaining uncertainty in run weight. Use the same case and validation flow used for the seven current aircraft. Prepare the P-51D-15-NA 44-15342 data in parallel. F6F-3 BuAer 04776 is the first alternate when its stall and installation evidence support the intended comparison. [G-2 handoff](SIMULATOR_DATA_HANDOFF.md#suggested-aircraft) · [Aircraft intake](../references/aircraft-intake.json) · [Minimum input data](research/MINIMUM_VIABLE_SIM_DATA.md)
 
 ## 5. Add handling features when the evidence supports them
 

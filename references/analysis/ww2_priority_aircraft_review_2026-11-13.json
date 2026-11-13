@@ -1,0 +1,786 @@
+{
+  "schema": "ww2-priority-aircraft-disposition/v1",
+  "source_commit": "0d8ada72ced97a8f3e5c75832543a223b21c8c04",
+  "evidence_pack": "references/research/ww2_priority_aircraft_2026-11-13.json",
+  "candidate_artifact": {
+    "path": "docs/research/priority_aircraft/all_8_aircraft_primary_secondary_v1.json",
+    "git_blob_sha": "2afd488d0944a6888a6be98942e712c1fac18b42",
+    "structured_claim_count": 31,
+    "claim_dispositions": {
+      "added": 8,
+      "unresolved": 7,
+      "existing": 10,
+      "added_with_qualification": 6
+    }
+  },
+  "review_method": "Count each explicit structured mass, performance point or stall range as one lead. Prose, simulator agreement and unqualified ranges earn no automatic evidence grade. Check the period report or its traceable summary, match exact specimen, installation and conditions, and reuse catalog identifiers. Expand usable sources to full tables. Identical P-51D WEP and military lines above critical altitude share one observation.",
+  "series": [
+    {
+      "series_id": "p51d-4415342-level-wep",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 9
+    },
+    {
+      "series_id": "p51d-4415342-level-mil",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 8
+    },
+    {
+      "series_id": "p51d-4415342-level-normal",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 11
+    },
+    {
+      "series_id": "p51d-4415342-climb-wep",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 13
+    },
+    {
+      "series_id": "p51d-4415342-stores-5000-two-110-gal-tanks",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 6
+    },
+    {
+      "series_id": "p51d-4415342-stores-5000-two-500-lb-bombs",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 6
+    },
+    {
+      "series_id": "p51d-4415342-stores-5000-two-250-lb-bombs",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 6
+    },
+    {
+      "series_id": "p51d-4415342-stores-25000-two-110-gal-tanks",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 5
+    },
+    {
+      "series_id": "p51d-4415342-stores-25000-two-500-lb-bombs",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 5
+    },
+    {
+      "series_id": "p51d-4415342-stores-25000-two-250-lb-bombs",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 5
+    },
+    {
+      "series_id": "p51d-4415342-test-loading",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 1
+    },
+    {
+      "series_id": "p51d-representative-wing-geometry",
+      "roster_id": null,
+      "application": "source-context",
+      "row_count": 1
+    },
+    {
+      "series_id": "p51d-an0160je1-stall-racks",
+      "roster_id": null,
+      "application": "variant-handbook",
+      "row_count": 6
+    },
+    {
+      "series_id": "p51d-an0160je1-stall-stores",
+      "roster_id": null,
+      "application": "variant-handbook",
+      "row_count": 6
+    },
+    {
+      "series_id": "spitfire1-n3171-level",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 11
+    },
+    {
+      "series_id": "spitfire1-n3171-climb",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 16
+    },
+    {
+      "series_id": "spitfire1-n3171-loading",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 1
+    },
+    {
+      "series_id": "spitfire1-n3171-stall",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 2
+    },
+    {
+      "series_id": "spitfire1-n3171-sea-level-summary",
+      "roster_id": null,
+      "application": "source-context",
+      "row_count": 1
+    },
+    {
+      "series_id": "spitfire-va-x4922-level",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 9
+    },
+    {
+      "series_id": "spitfire-va-x4922-climb",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 19
+    },
+    {
+      "series_id": "spitfire-va-x4922-loading",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 1
+    },
+    {
+      "series_id": "fw190a8-1944-10-25-level",
+      "roster_id": null,
+      "application": "source-context",
+      "row_count": 2
+    },
+    {
+      "series_id": "fw190a8-1944-10-25-rack",
+      "roster_id": null,
+      "application": "source-context",
+      "row_count": 2
+    },
+    {
+      "series_id": "fw190a8-1943-11-13-climb",
+      "roster_id": null,
+      "application": "source-context",
+      "row_count": 2
+    },
+    {
+      "series_id": "fw190a8-733705-level",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 4
+    },
+    {
+      "series_id": "fw190a8-733705-loading",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 1
+    },
+    {
+      "series_id": "bf109e-v15a-1774-level",
+      "roster_id": null,
+      "application": "source-context",
+      "row_count": 2
+    },
+    {
+      "series_id": "bf109e3-1792-level",
+      "roster_id": null,
+      "application": "source-context",
+      "row_count": 1
+    },
+    {
+      "series_id": "bf109e3-wright-level",
+      "roster_id": null,
+      "application": "source-context",
+      "row_count": 2
+    }
+  ],
+  "reviewed_artifacts": [
+    {
+      "candidate_id": "p51d",
+      "label": "P-51D-15-NA 44-15342",
+      "status": "new-source-dossier",
+      "roster_id": null,
+      "match": "Wright Field 44-15342. The P-51D/K stall table and representative geometry have their own provenance.",
+      "gap": "A near-stall calibration and matched stall or glide at the test configuration are open. The manual IAS gives a weight-indexed cockpit reference.",
+      "checked_sources": [
+        "https://wwiiaircraftperformance.com/org/p-51/p51d-15342.html",
+        "https://data.ntsb.gov/Docket/Document/docBLOB?FileExtension=.PDF&FileName=P51D+Normal+Operating+Instructions-Master.PDF&ID=40206631",
+        "https://www.aopa.org/news-and-media/all-news/2007/august/pilot/north-american-aviation-p-51d-mustang",
+        "https://ntrs.nasa.gov/citations/19930092575"
+      ],
+      "catalog_series_ids": [
+        "p51d-4415342-level-wep",
+        "p51d-4415342-level-mil",
+        "p51d-4415342-level-normal",
+        "p51d-4415342-climb-wep",
+        "p51d-4415342-stores-5000-two-110-gal-tanks",
+        "p51d-4415342-stores-5000-two-500-lb-bombs",
+        "p51d-4415342-stores-5000-two-250-lb-bombs",
+        "p51d-4415342-stores-25000-two-110-gal-tanks",
+        "p51d-4415342-stores-25000-two-500-lb-bombs",
+        "p51d-4415342-stores-25000-two-250-lb-bombs",
+        "p51d-4415342-test-loading",
+        "p51d-representative-wing-geometry",
+        "p51d-an0160je1-stall-racks",
+        "p51d-an0160je1-stall-stores"
+      ],
+      "catalog_rows": 88,
+      "claims": [
+        {
+          "field": "weight_lb",
+          "value": 9760,
+          "disposition": "added",
+          "observation_ids": [
+            "ww2_priority_aircraft_2026-11-13:p51d-4415342-test-loading:0001"
+          ],
+          "note": "9,760 lb is takeoff gross weight. Carry the approximate weight at altitude for performance runs."
+        },
+        {
+          "field": "level_speed_wep[0]",
+          "value": {
+            "alt_ft": 0,
+            "tas_mph": 375
+          },
+          "disposition": "added",
+          "observation_ids": [
+            "ww2_priority_aircraft_2026-11-13:p51d-4415342-level-wep:0001"
+          ]
+        },
+        {
+          "field": "level_speed_wep[1]",
+          "value": {
+            "alt_ft": 10000,
+            "tas_mph": 417
+          },
+          "disposition": "added",
+          "observation_ids": [
+            "ww2_priority_aircraft_2026-11-13:p51d-4415342-level-wep:0003"
+          ]
+        },
+        {
+          "field": "level_speed_wep[2]",
+          "value": {
+            "alt_ft": 26000,
+            "tas_mph": 442
+          },
+          "disposition": "added",
+          "observation_ids": [
+            "ww2_priority_aircraft_2026-11-13:p51d-4415342-level-wep:0007"
+          ]
+        },
+        {
+          "field": "climb_wep[0]",
+          "value": {
+            "alt_ft": 0,
+            "roc_fpm": 3600
+          },
+          "disposition": "added",
+          "observation_ids": [
+            "ww2_priority_aircraft_2026-11-13:p51d-4415342-climb-wep:0001"
+          ]
+        },
+        {
+          "field": "climb_wep[1]",
+          "value": {
+            "alt_ft": 19000,
+            "roc_fpm": 3200
+          },
+          "disposition": "added",
+          "observation_ids": [
+            "ww2_priority_aircraft_2026-11-13:p51d-4415342-climb-wep:0007"
+          ]
+        },
+        {
+          "field": "stall_ias_mph",
+          "value": "95-103",
+          "disposition": "unresolved",
+          "observation_ids": [],
+          "note": "95–103 mph lacks the matching weight and configuration. AN 01-60JE-1 gives 91, 97 and 103 mph IAS at 7,500, 8,500 and 9,500 lb with gear and flaps up and no external load, racks optional."
+        }
+      ],
+      "existing_observation_ids": [
+        "stall_us_2026-11-10:US03:0001"
+      ],
+      "stall_followup": "AN 01-60JE-1 excerpt confirms the clean and loaded IAS schedules in v2–v4. All 12 cells from the four configurations are in the new dossier. NACA L-566 tested an XP-51, so use its lift coefficients as separate prototype context."
+    },
+    {
+      "candidate_id": "p47d",
+      "label": "P-47D 42-26167 / P-47D-30 43-3441",
+      "status": "existing-distinct-cases",
+      "roster_id": "p47d30_433441",
+      "match": "ENG-47-1774-A 42-26167 with 44-1 fuel. L8A06 is 43-3441 with its own configuration and stall evidence.",
+      "gap": "P-47D-30 near-stall calibration and installed propulsion remain open. The high-power 42-26167 trials are a separate 44-1 fuel and water schedule.",
+      "checked_sources": [
+        "https://wwiiaircraftperformance.com/org/p-47/p47-26167.html",
+        "https://ntrs.nasa.gov/citations/20090022749"
+      ],
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "claims": [
+        {
+          "field": "level_speed[0]",
+          "value": {
+            "rating": "70in water",
+            "tas_mph": 444,
+            "alt_ft": 23200
+          },
+          "disposition": "existing",
+          "observation_ids": [
+            "balanced-2026-11-10:BS08:0001"
+          ],
+          "note": "70 inHg manifold pressure, with water injection."
+        },
+        {
+          "field": "level_speed[1]",
+          "value": {
+            "rating": "65in water",
+            "tas_mph": 439,
+            "alt_ft": 25200
+          },
+          "disposition": "existing",
+          "observation_ids": [
+            "balanced-2026-11-10:BS08:0002"
+          ],
+          "note": "65 inHg manifold pressure, with water injection."
+        },
+        {
+          "field": "climb[0]",
+          "value": {
+            "rating": "65in water",
+            "roc_fpm": 3260,
+            "alt_ft": 10000
+          },
+          "disposition": "existing",
+          "observation_ids": [
+            "balanced-2026-11-10:BS09:0001"
+          ],
+          "note": "65 inHg manifold pressure, with water injection. The trial report gives no 70 inHg climb."
+        },
+        {
+          "field": "stall_ias_mph",
+          "value": "105-116",
+          "disposition": "unresolved",
+          "observation_ids": [],
+          "note": "105 mph IAS is a half-flap gear-down idle point on 42-26167. Clean idle is 116 mph IAS on that report. L8A06 separately reports a clean glide for 43-3441."
+        }
+      ],
+      "existing_observation_ids": [
+        "balanced-2026-11-10:BS10:0001",
+        "balanced-2026-11-10:BS10:0005",
+        "ww2_fighter_flight_tests_2026-11-11:p47d30-433441-stall-traces:0002",
+        "balanced-2026-11-10:BS08:0001",
+        "balanced-2026-11-10:BS08:0002",
+        "balanced-2026-11-10:BS09:0001"
+      ],
+      "stall_followup": "The 115 mph typical value combines reports and conditions. Use the existing clean 116 mph IAS for each distinct specimen with its own mass and qualifications. Existing propeller maps and NACA L8A06 warning margins remain in the catalog."
+    },
+    {
+      "candidate_id": "bf109g2",
+      "label": "Bf 109 G-2 MT-215 / WNr 14783",
+      "status": "existing-cases-with-condition-notes",
+      "roster_id": "bf109g2_db605a",
+      "match": "The Finnish speed and climb series is already present. Existing G-2/Trop stall evidence is a separate installation.",
+      "gap": "Seek Finnish run loading, installed DB 605 A shaft power at actual rpm, airspeed calibration and a matched near-stall observation.",
+      "checked_sources": [
+        "https://wwiiaircraftperformance.com/org/me109/g/g_files/me-109g2-finn.pdf",
+        "https://kurfurst.org/Performance_tests/109G_MT215/109G2_MT215_en.html"
+      ],
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "claims": [
+        {
+          "field": "weight_kg",
+          "value": 3050,
+          "disposition": "unresolved",
+          "observation_ids": [],
+          "note": "3,050 kg cannot yet be assigned as a Finnish run weight."
+        },
+        {
+          "field": "level_speed_kmh[0]",
+          "value": {
+            "alt_m": 0,
+            "tas": 522
+          },
+          "disposition": "existing",
+          "observation_ids": [
+            "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-speed-power-table:0001"
+          ],
+          "note": "Keep the source altitude columns. The corrected altitudes are 140, 6,420 and 10,100 m."
+        },
+        {
+          "field": "level_speed_kmh[1]",
+          "value": {
+            "alt_m": 6300,
+            "tas": 636
+          },
+          "disposition": "existing",
+          "observation_ids": [
+            "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-speed-power-table:0008"
+          ],
+          "note": "Keep the source altitude columns. The corrected altitudes are 140, 6,420 and 10,100 m."
+        },
+        {
+          "field": "level_speed_kmh[2]",
+          "value": {
+            "alt_m": 10000,
+            "tas": 552
+          },
+          "disposition": "existing",
+          "observation_ids": [
+            "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-speed-power-table:0012"
+          ],
+          "note": "Keep the source altitude columns. The corrected altitudes are 140, 6,420 and 10,100 m."
+        },
+        {
+          "field": "climb_ms[0]",
+          "value": {
+            "alt_m": 0,
+            "roc": 21.6
+          },
+          "disposition": "existing",
+          "observation_ids": [
+            "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-cina-climb:0001"
+          ],
+          "note": "CINA-standard climb table."
+        },
+        {
+          "field": "climb_ms[1]",
+          "value": {
+            "alt_m": 1000,
+            "roc": 23.5
+          },
+          "disposition": "existing",
+          "observation_ids": [
+            "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-cina-climb:0002"
+          ],
+          "note": "CINA-standard climb table."
+        },
+        {
+          "field": "stall_ias_kmh",
+          "value": "158-174",
+          "disposition": "unresolved",
+          "observation_ids": [],
+          "note": "158–174 km/h lacks a condition and source locator. Existing captured G-2/Trop clean value is 112 mph IAS with mass unreported."
+        }
+      ],
+      "existing_observation_ids": [
+        "stall_global_2026-11-10:BF109-G2-trop-1",
+        "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-speed-power-table:0001",
+        "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-speed-power-table:0008",
+        "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-speed-power-table:0012",
+        "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-cina-climb:0001",
+        "ww2_thirteen_fighter_source_recovery_2026-11-11:g2-mt215-cina-climb:0002"
+      ],
+      "stall_followup": "158–180 km/h as a mixed manual and game range is a lead. The captured G-2/Trop source provides 112 mph IAS as a variant reference with uncertain loading."
+    },
+    {
+      "candidate_id": "fw190a8",
+      "label": "Fw 190 A-8 factory sheets / WNr 733705",
+      "status": "new-reference-and-flight-test-dossier",
+      "roster_id": null,
+      "match": "Split the 1943 factory climb and 1944 factory speed context. Separate the 733705 measured speed series.",
+      "gap": "Confirm original factory sheet loading, boost/rpm and measured-versus-calculated basis. Seek matched 733705 climb, installed power and stall.",
+      "checked_sources": [
+        "https://www.wwiiaircraftperformance.com/org/fw190/a8/fw190a8.html",
+        "https://www.wwiiaircraftperformance.com/org/fw190/a8/a8_files/fw190-a8-25oct44.jpg",
+        "https://www.wwiiaircraftperformance.com/org/fw190/a8/a8_files/fw190-a8-climb-13nov43.jpg",
+        "https://wwiiaircraftperformance.com/org/fw190/a8/fw190a8-733705-2.html",
+        "https://erenow.org/ww/flying-limit-testing-world-war-ii-single-engined-fighter-aircraft/9.php"
+      ],
+      "catalog_series_ids": [
+        "fw190a8-1944-10-25-level",
+        "fw190a8-1944-10-25-rack",
+        "fw190a8-1943-11-13-climb",
+        "fw190a8-733705-level",
+        "fw190a8-733705-loading"
+      ],
+      "catalog_rows": 11,
+      "claims": [
+        {
+          "field": "weight_kg",
+          "value": 4300,
+          "disposition": "unresolved",
+          "observation_ids": [],
+          "note": "No common weight is established across these sheets and test runs. 733705 has a dated 4,224 kg takeoff loading."
+        },
+        {
+          "field": "level_speed_kmh[0]",
+          "value": {
+            "alt_m": 0,
+            "tas": 566
+          },
+          "disposition": "added_with_qualification",
+          "observation_ids": [
+            "ww2_priority_aircraft_2026-11-13:fw190a8-1944-10-25-level:0001"
+          ],
+          "note": "25 October 1944 factory sheet as summarized by archive. Retain series classification."
+        },
+        {
+          "field": "level_speed_kmh[1]",
+          "value": {
+            "alt_m": 5500,
+            "tas": 652
+          },
+          "disposition": "added_with_qualification",
+          "observation_ids": [
+            "ww2_priority_aircraft_2026-11-13:fw190a8-1944-10-25-level:0002"
+          ],
+          "note": "25 October 1944 factory sheet as summarized by archive. Retain series classification."
+        },
+        {
+          "field": "climb_ms[0]",
+          "value": {
+            "alt_m": 0,
+            "roc": 13.4
+          },
+          "disposition": "added_with_qualification",
+          "observation_ids": [
+            "ww2_priority_aircraft_2026-11-13:fw190a8-1943-11-13-climb:0001"
+          ],
+          "note": "13 November 1943 factory climb sheet as summarized by archive. Separate configuration and lineage."
+        }
+      ],
+      "existing_observation_ids": [
+        "stall_global_2026-11-10:FW190-A3-RAF-1"
+      ],
+      "stall_followup": "The 110 mph figure comes from the captured Fw 190 A-3 MP499 and has unestablished speed basis. The A-8 range lacks a matched report."
+    },
+    {
+      "candidate_id": "fw190d9",
+      "label": "Fw 190 D-9 WNr 210001 / 210002",
+      "status": "existing-distinct-cases",
+      "roster_id": "fw190d9_210002",
+      "match": "330 mph combat at sea level is WNr 210002, and 398 mph at 19,357 ft is WNr 210001 in the existing catalog. Existing records carry distinct cooling and load conditions.",
+      "gap": "Match the installed Jumo 213 A dry and MW 50 curves and recover clean low-speed calibration. Ceiling and 20° radiator require a named run.",
+      "checked_sources": [
+        "https://www.wwiiaircraftperformance.org/fw190/fw190d9test.html",
+        "https://www.wwiiaircraftperformance.com/org/fw190/d9/d9_files/Fw_190_D-9_210001_FB_Nr1.pdf",
+        "https://www.wwiiaircraftperformance.com/org/fw190/d9/d9_files/Fw_190_D-9_210002_FB_Nr1.pdf"
+      ],
+      "catalog_series_ids": [],
+      "catalog_rows": 0,
+      "claims": [
+        {
+          "field": "weight_kg",
+          "value": 4070,
+          "disposition": "unresolved",
+          "observation_ids": [],
+          "note": "The imported summary does not establish 4,070 kg for these runs. The WNr 210002 original has 4,100 kg level and 4,300 kg climb conditions."
+        },
+        {
+          "field": "level_speed_mph[0]",
+          "value": {
+            "alt_ft": 0,
+            "tas": 330,
+            "rating": "combat"
+          },
+          "disposition": "existing",
+          "observation_ids": [
+            "balanced-2026-11-10:BS28:0003"
+          ],
+          "note": "WNr 210002 at combat power with no ETC and movable wheel doors."
+        },
+        {
+          "field": "level_speed_mph[1]",
+          "value": {
+            "alt_ft": 19357,
+            "tas": 398
+          },
+          "disposition": "existing",
+          "observation_ids": [
+            "balanced-2026-11-10:BS27:0002"
+          ],
+          "note": "WNr 210001 combat power with its separate configuration."
+        }
+      ],
+      "existing_observation_ids": [
+        "ww2_german_fighter_archive_2026-11-11:d9-210002-load-by-trial:0002",
+        "balanced-2026-11-10:BS28:0003",
+        "balanced-2026-11-10:BS27:0002"
+      ],
+      "stall_followup": "The 174–197 km/h range lacks a matched trial. The existing WNr 210002 dossier carries a 185 km/h EAS calculated estimate at a 4,300 kg reference loading."
+    },
+    {
+      "candidate_id": "spitfire1",
+      "label": "Spitfire I N.3171",
+      "status": "new-source-dossier",
+      "roster_id": null,
+      "match": "A&AEE N.3171 Rotol and Merlin III test. Distinguish the 87-octane conditions and the test windscreen from other early Spitfires.",
+      "gap": "Resolve gear, power, mass and airspeed basis for the reported stall. Recover a separate +12 lb, 100-octane case for operational Battle of Britain comparisons.",
+      "checked_sources": [
+        "https://www.wwiiaircraftperformance.com/org/spitcom/mk1/spitmk1_N.3171.html",
+        "https://wwiiaircraftperformance.com/org/spitcom/mk1/mk1-109e.html"
+      ],
+      "catalog_series_ids": [
+        "spitfire1-n3171-level",
+        "spitfire1-n3171-climb",
+        "spitfire1-n3171-loading",
+        "spitfire1-n3171-stall",
+        "spitfire1-n3171-sea-level-summary"
+      ],
+      "catalog_rows": 31,
+      "claims": [
+        {
+          "field": "weight_lb",
+          "value": 6050,
+          "disposition": "added",
+          "observation_ids": [
+            "ww2_priority_aircraft_2026-11-13:spitfire1-n3171-loading:0001"
+          ],
+          "note": "6,050 lb flying weight on trials."
+        },
+        {
+          "field": "level_speed_mph[0]",
+          "value": {
+            "alt_ft": 0,
+            "tas": 283
+          },
+          "disposition": "added_with_qualification",
+          "observation_ids": [
+            "ww2_priority_aircraft_2026-11-13:spitfire1-n3171-sea-level-summary:0001"
+          ],
+          "note": "Archive summary attributes 283 mph at sea level to N.3171. Original speed table leaves sea level blank. Verify on Figure 2 for a direct point."
+        },
+        {
+          "field": "level_speed_mph[1]",
+          "value": {
+            "alt_ft": 18900,
+            "tas": 354
+          },
+          "disposition": "added",
+          "observation_ids": [
+            "ww2_priority_aircraft_2026-11-13:spitfire1-n3171-level:0011"
+          ],
+          "note": "354 mph TAS at 18,900 ft, detailed Speed Trials table."
+        }
+      ],
+      "existing_observation_ids": [],
+      "stall_followup": "The proposed 64–73 mph clean IAS range has no precise trial locator. N.3171 reports 78 mph flaps up and 68 mph flaps down. The source leaves speed basis, gear, power and actual stall-run weight open."
+    },
+    {
+      "candidate_id": "spitfire5",
+      "label": "Spitfire Va X.4922",
+      "status": "replacement-source-dossier",
+      "roster_id": null,
+      "match": "A&AEE Spitfire Va X.4922, Merlin XLV with de Havilland propeller. The Grok AB.488 lead is a separate open case and contained no structured performance point.",
+      "gap": "Add matched clean stall and near-stall correction, the engine schedule and further original trial corroboration.",
+      "checked_sources": [
+        "https://www.wwiiaircraftperformance.com/org/spitcom/mk5/spitmkVa_X4922.html",
+        "https://ntrs.nasa.gov/citations/19930092581"
+      ],
+      "catalog_series_ids": [
+        "spitfire-va-x4922-level",
+        "spitfire-va-x4922-climb",
+        "spitfire-va-x4922-loading"
+      ],
+      "catalog_rows": 29,
+      "claims": [],
+      "existing_observation_ids": [
+        "stall_four_track_followup_2026-11-10:spitfire-va-reported-stalls-and-clmax:0001",
+        "stall_four_track_followup_2026-11-10:spitfire-va-reported-stalls-and-clmax:0002"
+      ],
+      "stall_followup": "NACA WR L-353 already supplies separate Spitfire Va W.3119 90 and 91 mph reported glide stalls and source CLmax at about 6,184 lb. These are donor data for the X.4922 dossier and require an explicit transfer."
+    },
+    {
+      "candidate_id": "bf109e",
+      "label": "Bf 109 E-3 WNr 1792 / development WNr 1774",
+      "status": "new-qualified-speed-references",
+      "roster_id": null,
+      "match": "290 mph at sea level occurs for WNr 1792 at 1.30 ata and in a US E-3 trial. 348 mph at 16,240 ft is WNr 1774 V15a at 1.33 ata. CEMA WNr 1304 is a separate source.",
+      "gap": "Inspect original measurement protocols and CEMA 371, including the speed correction, before using a matched climb and speed series. Captured WNr 1304 has cataloged stall IAS.",
+      "checked_sources": [
+        "https://wwiiaircraftperformance.com/org/spitcom/mk1/mk1-109e.html",
+        "https://wwiiaircraftperformance.com/org/me109/e4/e4_files/me109e-1774chart.jpg",
+        "https://wwiiaircraftperformance.com/org/me109/e4/e4_files/me109e3-1792.jpg",
+        "https://wwiiaircraftperformance.com/org/me109/e4/e4_files/Me-109E3-US.jpg",
+        "https://www.wwiiaircraftperformance.org/me109/me109e.html"
+      ],
+      "catalog_series_ids": [
+        "bf109e-v15a-1774-level",
+        "bf109e3-1792-level",
+        "bf109e3-wright-level"
+      ],
+      "catalog_rows": 5,
+      "claims": [
+        {
+          "field": "level_speed_mph[0]",
+          "value": {
+            "alt_ft": 0,
+            "tas": 290
+          },
+          "disposition": "added_with_qualification",
+          "observation_ids": [
+            "ww2_priority_aircraft_2026-11-13:bf109e3-1792-level:0001",
+            "ww2_priority_aircraft_2026-11-13:bf109e3-wright-level:0001"
+          ],
+          "note": "Two separate trials give 290 mph sea-level at 1.30 ata, according to the archive synthesis."
+        },
+        {
+          "field": "level_speed_mph[1]",
+          "value": {
+            "alt_ft": 16240,
+            "tas": 348
+          },
+          "disposition": "added_with_qualification",
+          "observation_ids": [
+            "ww2_priority_aircraft_2026-11-13:bf109e-v15a-1774-level:0002"
+          ],
+          "note": "WNr 1774 V15a, 1.33 ata. Keep its own 301 mph sea-level point."
+        },
+        {
+          "field": "stall_ias_kmh",
+          "value": "152-159",
+          "disposition": "unresolved",
+          "observation_ids": [],
+          "note": "152–159 km/h lacks a matched source condition. WNr 1304 captured trial is already cataloged at 75 mph IAS clean glide with unspecified mass."
+        }
+      ],
+      "existing_observation_ids": [
+        "stall_global_2026-11-10:BF109-E-RAE-1",
+        "stall_global_2026-11-10:BF109-E-RAE-2"
+      ],
+      "stall_followup": "The revised 75 and 61 mph IAS are already indexed for captured WNr 1304. The supplied CLmax values lack a reproducible mass and calibration, and the 105 mph from v1 remains unconfirmed."
+    }
+  ],
+  "coverage_assessment": {
+    "roster_count": 13,
+    "credits": [],
+    "reason": "New rows apply to new candidate specimens, type-level handbook or geometry, and separately qualified reference sources. Matching points on the three scored variants were already indexed or lack matching conditions."
+  },
+  "concurrent_followups": {
+    "source_commit": "b77c085ef34d8baa4f4fdc98d22ccfb620dc86be",
+    "artifacts": [
+      {
+        "path": "docs/research/priority_aircraft/all_8_aircraft_prop_stall_v1.json",
+        "git_blob_sha": "782020a89abba08d0c9bddde31997f1c30758d89"
+      },
+      {
+        "path": "docs/research/priority_aircraft/all_8_aircraft_prop_stall_v2.json",
+        "git_blob_sha": "5ff210d763e8e626965dfc55a88c6dabedbfb5f7"
+      },
+      {
+        "path": "docs/research/priority_aircraft/all_8_aircraft_prop_stall_v3.json",
+        "git_blob_sha": "38921984cdec41fcb90458983949bc38d4045cee"
+      },
+      {
+        "path": "docs/research/priority_aircraft/all_8_aircraft_stall_speeds_v4.json",
+        "git_blob_sha": "ba657db30e12806161c67c458444108208ecea56"
+      },
+      {
+        "path": "docs/research/priority_aircraft/luftwaffe_performance_priority_aircraft_v1.json",
+        "git_blob_sha": "30693fdc58fb3d0b97b802014db29b65a7c8624c",
+        "source_commit": "b71863a851d262304320830732f24d20bd29a744"
+      }
+    ],
+    "note": "Four stall/propeller iterations and one German performance summary were reviewed. Repeated numbers link to the manual or existing observation IDs. Propeller efficiency remains an explicit scenario assumption where direct data are missing.",
+    "german_summary_disposition": {
+      "status": "reviewed-source-context",
+      "bf109_g1_g2": "The May 1942 manufacturer G-1/G-2 sheet is a calculated schedule and uses a representative loading. Keep that separate from the Rechlin G-1, Soviet gun-pod and Finnish MT-215 flight trials. The available prior transcripts retain the factory and Erla values.",
+      "bf109_e": "The rounded 493/572 km/h V15a pair differs from the linked archive synthesis's 301/348 mph points at 0/16,240 ft. Treat it as an open branch or reduction question. The 75 mph IAS repeats WNr 1304 and the lift coefficient lacks a reproducible calculation.",
+      "fw190_a8": "The speed and climb ranges combine different factory sheets and ratings. The import links the two exact dated sheets and a separate measured WNr 733705 case.",
+      "fw190_d9": "The approximate sea-level maximum combines reports. The existing WNr 210002 records identify the 595 and 608 km/h special-emergency readings with different engine gap states. Preserve separate dry, increased-emergency and special-emergency conditions."
+    }
+  }
+}
