@@ -25,7 +25,20 @@ for (const [id, ref] of Object.entries(pack.observations)) {
 }
 
 const byId = id => pack.cases.find(row => row.id === id);
-assert.equal(pack.version, '1.10.0');
+assert.equal(pack.version, '1.11.0');
+const comparative = pack.priority_comparative_reference;
+assert.equal(comparative.observation_count, 21);
+assert.equal(comparative.coverage_assessment.roster_count, 19);
+assert.equal(comparative.coverage_assessment.crosswalk.length, 8);
+assert.equal(comparative.coverage_assessment.dossiers.length, 6);
+assert.deepEqual(comparative.coverage_assessment.dossiers.map(row => row.with_calculations_percent),
+  [51, 46, 35, 44, 32, 24]);
+assert.ok(comparative.coverage_assessment.dossiers.every(row =>
+  row.evidence_ids.every(id => pack.observations[id])));
+const a8LowSpeed = comparative.series.find(row => row.id === 'a8-733705-fb1-low-speed');
+assert.equal(a8LowSpeed.speed_basis, 'unestablished');
+assert.equal(a8LowSpeed.quantity, 'low_speed_nose_drop');
+assert.deepEqual(a8LowSpeed.rows[0], [190, 200, 'retracted']);
 const priority = pack.priority_aircraft_reference;
 assert.equal(priority.observation_count, 164);
 assert.equal(priority.reviewed_artifact_count, 8);

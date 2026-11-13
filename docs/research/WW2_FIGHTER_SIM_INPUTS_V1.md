@@ -1,6 +1,6 @@
-# Fighter sim inputs v1.10.0
+# Fighter sim inputs v1.11.0
 
-The data pack scores 13 variants, carries separate priority-aircraft dossiers and includes 24 evidence plots. It carries preferred readings and uncertainty for reviewed cases, pointers to the original observations, and the support level of each curve segment. The simulator can use it to look up a specific test case and draw the evidence behind it. [Versioned JSON](../../references/analysis/fighter-sim-inputs-v1.json) · [Underlying calculations and source checks](WW2_FIGHTER_CALCULATED_EVIDENCE_2026-11-11.md)
+The data pack scores 13 reference variants and six additional priority dossiers and includes 24 evidence plots. It carries preferred readings and uncertainty for reviewed cases, pointers to the original observations, and the support level of each curve segment. The simulator can use it to look up a specific test case and draw the evidence behind it. [Versioned JSON](../../references/analysis/fighter-sim-inputs-v1.json) · [Underlying calculations and source checks](WW2_FIGHTER_CALCULATED_EVIDENCE_2026-11-11.md)
 
 v1.2 links 67 new propeller-test readings, source-conditioned replays, and a seven-aircraft efficiency-only sweep. The new companion is available as `dist/fighter-propeller-efficiency.json`. The table shows the 13-variant coverage and GOLD scorecard, with a v1.2 delta of zero in each column. [Propeller report and data contract](WW2_PROPELLER_EFFICIENCY_2026-11-11.md)
 
@@ -19,6 +19,8 @@ v1.8.0 adds `batch_reference` with 15 source-linked series from the Grok review.
 v1.9.0 recovers 5,801 candidate records from Grok’s archive run and adds 552 reviewed records to the catalog. The `pdf_reference` section records applicability, source locators and unresolved readings. [Release and before/after matrix](WW2_PDF_INPUT_DATA_V1_9.md)
 
 v1.10.0 adds 164 catalog records and links the eight candidate reviews in `priority_aircraft_reference`. [Priority aircraft release and review](WW2_PRIORITY_AIRCRAFT_INPUTS_V1_10.md)
+
+v1.11.0 adds 21 catalog records from the AFDU, RAF and Luftwaffe comparison review and publishes the six priority dossier assessments in `priority_comparative_reference.coverage_assessment`. [All 19 scores and the eight-aircraft crosswalk](WW2_PRIORITY_COMPARATIVE_COVERAGE_2026-11-13.md)
 
 ## Coverage by aircraft
 

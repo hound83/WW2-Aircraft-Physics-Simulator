@@ -1,0 +1,386 @@
+{
+  "schema": "ww2-fighter-evidence-pack/v1",
+  "pack_version": "1.0.0",
+  "as_of": "2026-11-13",
+  "scope": "Source-checked extractions and bounded estimates from Grok’s priority-aircraft comparative review.",
+  "sources": [
+    {
+      "id": "AFDU-55",
+      "aircraft": "Captured Fw 190 A-3 vs operational Spitfire Vb",
+      "report": "AFDU Report 55, Tactical Trials – Fw 190",
+      "location": "§§47–57",
+      "source": "https://wwiiaircraftperformance.com/com/gb/documents/fw190a3_RAE-Test-Jul42-new.html",
+      "notes": "Captured A-3; engine rough and regarded as de-rated. The +16 lb Vb trial was cancelled."
+    },
+    {
+      "id": "FW-A8-733705-FB1",
+      "aircraft": "Fw 190 A-8 WNr 733705",
+      "report": "Focke-Wulf Flugbericht Fw 190 A-8/733705 Nr. 1, 23 October 1944",
+      "location": "Condition and Results §§1–3",
+      "source": "https://www.wwiiaircraftperformance.org/fw190/fw190a8-733705-1.html",
+      "notes": "Separate the as-delivered performance and Panzerblitz mock-up handling runs."
+    },
+    {
+      "id": "WF-P47D-1774A",
+      "aircraft": "P-47D-22-RE AAF 42-26167",
+      "report": "Wright Field Eng-47-1774-A, 15 July 1944",
+      "location": "Sections I, III and V",
+      "source": "https://wwiiaircraftperformance.com/org/p-47/p47-26167.html",
+      "notes": "44-1 fuel; existing speed, climb and IAS tables share this report lineage."
+    },
+    {
+      "id": "WF-P51D-1908",
+      "aircraft": "P-51D-15-NA AAF 44-15342",
+      "report": "Wright Field TSCEP5E-1908, 15 June 1945",
+      "location": "Sections III–IV, figures 1, 4 and 8",
+      "source": "https://wwiiaircraftperformance.com/org/p-51/p51d-15342.html",
+      "notes": "Same report lineage as level, climb and stores observations."
+    },
+    {
+      "id": "RAE-1304-LECTURE",
+      "aircraft": "Bf 109 E WNr 1304 (RAF AE479)",
+      "report": "Morgan and Smelt, The Aerodynamic Features of German Aircraft, 1944 lecture reproduction",
+      "location": "Further Comments",
+      "source": "https://www.pilotfriend.com/flight_reports/reports/33.htm",
+      "notes": "Reported approximate radius without timed-run metadata."
+    }
+  ],
+  "series": [
+    {
+      "id": "afdu55-a3-vb-relative-speed",
+      "source_id": "AFDU-55",
+      "aircraft": "Captured Fw 190 A-3 vs operational Spitfire Vb",
+      "quantity": "comparative_level_speed_difference",
+      "source_location": "§48",
+      "source_class": "original-report-tactical-comparison",
+      "conditions": {
+        "delta_direction": "A-3 minus Vb",
+        "approximate": true,
+        "configuration": "Full war loads; exact masses and power unavailable; Vb +16 lb trials cancelled"
+      },
+      "columns": [
+        "altitude_ft",
+        "speed_gain_low_mph",
+        "speed_gain_high_mph"
+      ],
+      "rows": [
+        [
+          1000,
+          25,
+          30
+        ],
+        [
+          3000,
+          30,
+          35
+        ],
+        [
+          5000,
+          25,
+          25
+        ],
+        [
+          9000,
+          25,
+          30
+        ],
+        [
+          15000,
+          20,
+          20
+        ],
+        [
+          18000,
+          20,
+          20
+        ],
+        [
+          21000,
+          25,
+          25
+        ],
+        [
+          25000,
+          20,
+          25
+        ]
+      ],
+      "speed_basis": "unestablished"
+    },
+    {
+      "id": "afdu55-a3-vb-relative-climb",
+      "source_id": "AFDU-55",
+      "aircraft": "Captured Fw 190 A-3 vs operational Spitfire Vb",
+      "quantity": "comparative_climb_rate_difference",
+      "source_location": "§49",
+      "source_class": "original-report-tactical-comparison",
+      "conditions": {
+        "delta_direction": "A-3 minus Vb",
+        "power": "maximum continuous climb",
+        "approximate": true,
+        "configuration": "Full war loads; exact masses unavailable"
+      },
+      "columns": [
+        "upper_altitude_ft",
+        "climb_rate_gain_fpm"
+      ],
+      "rows": [
+        [
+          25000,
+          450
+        ]
+      ],
+      "speed_basis": "unestablished"
+    },
+    {
+      "id": "a8-733705-fb1-level",
+      "source_id": "FW-A8-733705-FB1",
+      "aircraft": "Fw 190 A-8 WNr 733705",
+      "quantity": "level_flight_speed",
+      "source_location": "Results §2",
+      "source_class": "original-report-transcription",
+      "conditions": {
+        "engine": "BMW 801 D-2 WNr 328909",
+        "configuration": "Pre-modification, as delivered, no outer wing guns, ETC 501 and fixed wheel panels",
+        "speed_definition": "VwKC, corrected by the report’s test-course calibration with compressibility"
+      },
+      "columns": [
+        "altitude_m",
+        "vwkc_kmh",
+        "rpm",
+        "rating",
+        "full_throttle_height"
+      ],
+      "rows": [
+        [
+          0,
+          512,
+          2400,
+          "combat",
+          false
+        ],
+        [
+          5600,
+          582,
+          2400,
+          "combat",
+          true
+        ],
+        [
+          0,
+          526,
+          2700,
+          "takeoff",
+          false
+        ],
+        [
+          6150,
+          605,
+          2700,
+          "takeoff",
+          true
+        ]
+      ],
+      "speed_basis": "unestablished"
+    },
+    {
+      "id": "a8-733705-fb1-low-speed",
+      "source_id": "FW-A8-733705-FB1",
+      "aircraft": "Fw 190 A-8 WNr 733705",
+      "quantity": "low_speed_nose_drop",
+      "source_location": "Results §3",
+      "source_class": "original-report-transcription",
+      "conditions": {
+        "configuration": "Panzerblitz mock-up trial; exact stores state, mass, altitude and low-speed Va correction unestablished",
+        "power": "idle",
+        "maneuver": "Horizontal flight; onset of nose drop"
+      },
+      "columns": [
+        "speed_low_kmh",
+        "speed_high_kmh",
+        "flaps_and_gear"
+      ],
+      "rows": [
+        [
+          190,
+          200,
+          "retracted"
+        ],
+        [
+          172,
+          172,
+          "extended"
+        ]
+      ],
+      "speed_basis": "unestablished"
+    },
+    {
+      "id": "p47d22-4226167-loading",
+      "source_id": "WF-P47D-1774A",
+      "aircraft": "P-47D-22-RE AAF 42-26167",
+      "quantity": "flight_test_loading",
+      "source_location": "§III.A–B",
+      "source_class": "original-report-transcription",
+      "conditions": {
+        "configuration": "Full internal fuel, water and ammunition ballast; wing racks and gun blast tubes; level cowl flaps closed, climb cooling fully open. Takeoff weight for performance trials. Stall-run mass remains open."
+      },
+      "columns": [
+        "takeoff_weight_lb",
+        "cg_pct_mac_gear_up",
+        "water_us_gal",
+        "ammo_ballast_rounds_per_gun"
+      ],
+      "rows": [
+        [
+          13230,
+          29.9,
+          15,
+          300
+        ]
+      ],
+      "speed_basis": "unestablished"
+    },
+    {
+      "id": "p51d-4415342-installation",
+      "source_id": "WF-P51D-1908",
+      "aircraft": "P-51D-15-NA AAF 44-15342",
+      "quantity": "propeller_installation",
+      "source_location": "§III",
+      "source_class": "original-report-transcription",
+      "conditions": {
+        "configuration": "Wright Field performance trial; blade drawing and measured efficiency remain open"
+      },
+      "columns": [
+        "engine",
+        "propeller",
+        "propeller_assembly_drawing",
+        "blade_count"
+      ],
+      "rows": [
+        [
+          "Packard V-1650-7",
+          "Hamilton Standard Hydromatic constant speed",
+          "K6523A-24",
+          4
+        ]
+      ],
+      "speed_basis": "unestablished"
+    },
+    {
+      "id": "p51d-4415342-sea-level-first-polar",
+      "source_id": "WF-P51D-1908",
+      "aircraft": "P-51D-15-NA AAF 44-15342",
+      "quantity": "estimated_level_drag_polar",
+      "source_location": "§IV.B.2 and AOPA type geometry",
+      "source_class": "engineering-calculation",
+      "conditions": {
+        "model": "q=0.5*rho*V^2; CL=W/(q*S); k=1/(pi*e*AR); D=eta*Pshaft/V; CD0=D/(q*S)-k*CL^2",
+        "scenario": "Rack-on WEP; standard sea-level density; zero separate exhaust thrust. Single-anchor sensitivity with no high-lift or independent validation.",
+        "density_kg_m3": 1.225,
+        "weight_lb": 9700,
+        "shaft_power_bhp_from_chart": 1630,
+        "tas_mph": 375,
+        "wing_area_ft2": 235,
+        "span_ft": 37,
+        "geometry_source": "https://www.aopa.org/news-and-media/all-news/2007/august/pilot/north-american-aviation-p-51d-mustang",
+        "input_observation_id": "ww2_priority_aircraft_2026-11-13:p51d-4415342-level-wep:0001"
+      },
+      "columns": [
+        "eta_assumed",
+        "oswald_e_assumed",
+        "total_drag_n",
+        "induced_k",
+        "cd0"
+      ],
+      "rows": [
+        [
+          0.8,
+          0.8,
+          5800.48099,
+          0.0683,
+          0.01453
+        ],
+        [
+          0.75,
+          0.7,
+          5437.95092,
+          0.07806,
+          0.01344
+        ],
+        [
+          0.85,
+          0.9,
+          6163.01105,
+          0.06071,
+          0.0156
+        ]
+      ],
+      "speed_basis": "TAS"
+    },
+    {
+      "id": "rae-e1304-turn-estimate",
+      "source_id": "RAE-1304-LECTURE",
+      "aircraft": "Bf 109 E WNr 1304 (RAF AE479)",
+      "quantity": "published_level_turn_radius_estimate",
+      "source_location": "Further Comments",
+      "source_class": "secondary-transcription-qualified",
+      "conditions": {
+        "power": "full throttle",
+        "altitude_ft": 12000,
+        "wing_loading_lb_ft2": 32,
+        "source_limit": "Approximate radius. The reproduction supplies no speed, bank, run record or calculation method."
+      },
+      "columns": [
+        "radius_ft"
+      ],
+      "rows": [
+        [
+          890
+        ]
+      ],
+      "speed_basis": "unestablished"
+    }
+  ],
+  "document_lineage": [
+    {
+      "id": "afdu-55",
+      "members": [
+        "AFDU-55",
+        "stall_global_2026-11-10:UK-FW-A3"
+      ],
+      "relationship": "same_original_report",
+      "independent_test_groups": 1,
+      "note": "The tactical comparisons and the captured A-3 stall values use the same AFDU campaign."
+    },
+    {
+      "id": "p47d-44-1",
+      "members": [
+        "WF-P47D-1774A",
+        "balanced-2026-11-10:B05"
+      ],
+      "relationship": "same_original_report",
+      "independent_test_groups": 1,
+      "note": "Loading and performance come from the same Wright Field campaign."
+    },
+    {
+      "id": "p51d-wright-field",
+      "members": [
+        "WF-P51D-1908",
+        "ww2_priority_aircraft_2026-11-13:WF-TSCEP5E-1908"
+      ],
+      "relationship": "same_original_report",
+      "independent_test_groups": 1,
+      "note": "The installation, performance and derived drag scenarios share one campaign."
+    },
+    {
+      "id": "bf109e-rae-lecture",
+      "members": [
+        "RAE-1304-LECTURE",
+        "stall_global_2026-11-10:UK-BFE-RAE"
+      ],
+      "relationship": "same_original_report",
+      "independent_test_groups": 1,
+      "note": "The same lecture reproduction supplies handling context, glide stall and the approximate turn radius."
+    }
+  ]
+}

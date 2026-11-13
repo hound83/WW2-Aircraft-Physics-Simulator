@@ -1,6 +1,6 @@
 # Simulator data handoff
 
-**Fighter Sim Inputs v1.10.0** adds 164 catalog records from the priority-aircraft review and scores 13 reference variants. The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md) · [Priority-aircraft import](research/WW2_PRIORITY_AIRCRAFT_INPUTS_V1_10.md)
+**Fighter Sim Inputs v1.11.0** adds 21 records and coverage for six new priority dossiers alongside the 13 existing reference variants. [All 19 scores and the eight-aircraft crosswalk](research/WW2_PRIORITY_COMPARATIVE_COVERAGE_2026-11-13.md). The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md) · [Priority-aircraft import](research/WW2_PRIORITY_AIRCRAFT_INPUTS_V1_10.md)
 
 [Data milestones and original-source research priorities](research/WW2_FIGHTER_DATA_ROADMAP.md)
 
@@ -20,7 +20,7 @@ The Normal / Combat benchmark currently has seven modeled aircraft. They are the
 | Candidate and reference aircraft | Primary | With calculations | Best-supported starting point and remaining data gap |
 | --- | ---: | ---: | --- |
 | **Bf 109 G-2, MT-215 / WNr 14783** | **65%** | **69%** | **Suggested first addition.** The Finnish level-speed and climb trials give a starting point. Installed DB 605 A power by altitude and actual run loading are the most useful leads. |
-| P-51D-15-NA 44-15342 | Unscored | Unscored | Prepare in parallel. Wright Field provides three level ratings, WEP climb and stores runs. The D/K manual has weight-indexed IAS. Seek matched near-stall correction and propeller constraints. |
+| P-51D-15-NA 44-15342 | 48% | 51% | Prepare in parallel. Wright Field provides three level ratings, WEP climb and stores runs. The D/K manual has weight-indexed IAS. Seek matched near-stall correction and propeller constraints. |
 | **F6F-3, BuAer 04776** | **79%** | **82%** | **Strongest remaining candidate by coverage.** NACA provides detailed low-speed and lift evidence. The correction and mass at stall need clarification, alongside configuration-matched power and performance. |
 | Fw 190 D-9, WNr 210002 | 61% | 65% | Original speed and climb records cover distinct dry and MW 50 cases. Installed power and clean low-speed data would help a German follow-up. |
 | P-47D-30, 43-3441 | 66% | 68% | The block handbook supplies operating settings and climb schedules. NACA traces give maneuver and stall references for 43-3441. The installed power curve and exact low-speed calibration are open. |

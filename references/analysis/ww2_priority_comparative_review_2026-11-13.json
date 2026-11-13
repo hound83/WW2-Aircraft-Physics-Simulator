@@ -1,0 +1,456 @@
+{
+  "schema": "ww2-priority-comparative-review/v1",
+  "source_commit": "a03239669c322c29a13bf56d0344ad029900ff1f",
+  "evidence_pack": "references/research/ww2_priority_comparative_2026-11-13.json",
+  "review_method": "Dossier assessment uses the existing six coverage weights and evidence tiers. Each axis is a documented judgment. A report reproduction or chart from the same campaign gives no independence bonus. Recorded configuration, source scope and actual applicable evidence determine points. Unbounded assumptions and game comparisons earn zero.",
+  "series": [
+    {
+      "series_id": "afdu55-a3-vb-relative-speed",
+      "roster_id": null,
+      "application": "comparison",
+      "row_count": 8
+    },
+    {
+      "series_id": "afdu55-a3-vb-relative-climb",
+      "roster_id": null,
+      "application": "comparison",
+      "row_count": 1
+    },
+    {
+      "series_id": "a8-733705-fb1-level",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 4
+    },
+    {
+      "series_id": "a8-733705-fb1-low-speed",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 2
+    },
+    {
+      "series_id": "p47d22-4226167-loading",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 1
+    },
+    {
+      "series_id": "p51d-4415342-installation",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 1
+    },
+    {
+      "series_id": "p51d-4415342-sea-level-first-polar",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 3
+    },
+    {
+      "series_id": "rae-e1304-turn-estimate",
+      "roster_id": null,
+      "application": "candidate-specimen",
+      "row_count": 1
+    }
+  ],
+  "reviewed_artifacts": [
+    {
+      "path": "docs/research/priority_aircraft/afdu_coverage_priority_8_v1.json",
+      "disposition": "Report 55 corroborates A-3 versus Vb comparisons; reuse the WNr 1304 and captured A-3 stall observations. Mustang III FZ.107, captured F-2 ES906 and G-series context cannot be transferred to P-51D, F-4 or MT-215. The D-9 and P-47D statements lack test-level support in this file.",
+      "existing_observation_ids": [
+        "stall_global_2026-11-10:BF109-E-RAE-1",
+        "stall_global_2026-11-10:BF109-E-RAE-2",
+        "stall_global_2026-11-10:FW190-A3-RAF-1",
+        "stall_global_2026-11-10:FW190-A3-RAF-2"
+      ]
+    },
+    {
+      "path": "docs/research/priority_aircraft/raf_comparative_priority_8_v1.json",
+      "disposition": "Same AFDU Report 55 campaign for A-3 versus Vb. Keep the N.3171 table and other Mk I examples separate. Mustang I/III and their handling estimates are separate from P-51D. The generic P-47D comparison remains a lead."
+    },
+    {
+      "path": "docs/research/priority_aircraft/luftwaffe_reports_priority_8_v1.json",
+      "disposition": "G-2 535/660 km/h and 5.7 min mix factory, production and comparison cases. Keep them away from MT-215 pending exact chart/rating attribution. A-8 557/644 and 578/652 are different factory sheets; retain separately as context. D-9 Nr. 4 describes a sealed, methanol-equipped installation and calculated curves; the secondary 606/650 summary earns no extra measured credit. F-4 versus A-2 is a secondary comparison lead."
+    },
+    {
+      "path": "docs/research/priority_aircraft/mvp_packs",
+      "disposition": "Reviewed all eight packs as leads. The P-51D takeoff test mass is 9760 lb; 8500 lb is a handbook stall row. P-47D-22 takeoff test mass is 13230 lb. Spitfire Va W.3119 stall remains separate from X.4922. Default propeller efficiency and provisional grades do not establish readiness."
+    }
+  ],
+  "coverage_assessment": {
+    "reference_roster_count": 13,
+    "priority_candidate_count": 8,
+    "overlap_count": 2,
+    "additional_dossier_count": 6,
+    "roster_count": 19,
+    "credits": [],
+    "crosswalk": [
+      {
+        "candidate": "P-51D",
+        "dossier_id": "p51d15_4415342",
+        "relationship": "new_dossier"
+      },
+      {
+        "candidate": "P-47D",
+        "dossier_id": "p47d22_4226167",
+        "relationship": "distinct_specimen_same_family"
+      },
+      {
+        "candidate": "Bf 109 G-2",
+        "dossier_id": "bf109g2_db605a",
+        "relationship": "existing_reference"
+      },
+      {
+        "candidate": "Fw 190 A-8",
+        "dossier_id": "fw190a8_733705",
+        "relationship": "new_dossier"
+      },
+      {
+        "candidate": "Fw 190 D-9",
+        "dossier_id": "fw190d9_210002",
+        "relationship": "existing_reference"
+      },
+      {
+        "candidate": "Spitfire I",
+        "dossier_id": "spitfire_i_n3171",
+        "relationship": "new_dossier"
+      },
+      {
+        "candidate": "Spitfire V",
+        "dossier_id": "spitfire_va_x4922",
+        "relationship": "new_dossier"
+      },
+      {
+        "candidate": "Bf 109 E",
+        "dossier_id": "bf109e_1304",
+        "relationship": "new_dossier"
+      }
+    ],
+    "dossiers": [
+      {
+        "id": "p51d15_4415342",
+        "label": "P-51D-15-NA 44-15342",
+        "evidence_ids": [
+          "ww2_priority_aircraft_2026-11-13:p51d-4415342-level-wep:0001",
+          "ww2_priority_aircraft_2026-11-13:p51d-4415342-climb-wep:0002",
+          "ww2_priority_aircraft_2026-11-13:p51d-an0160je1-stall-racks:0003",
+          "ww2_priority_comparative_2026-11-13:p51d-4415342-installation:0001",
+          "ww2_priority_comparative_2026-11-13:p51d-4415342-sea-level-first-polar:0001"
+        ],
+        "dimensions": [
+          {
+            "id": "variant_identity",
+            "primary": 10,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Exact serial, installed V-1650-7, racks and trial loading."
+          },
+          {
+            "id": "stall_and_actual_mass",
+            "primary": 7,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Weight-indexed D/K handbook IAS gives block-level support. No stall-run mass for 44-15342."
+          },
+          {
+            "id": "near_stall_calibration",
+            "primary": 5,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "The report provides Figure 1 for the installed system. Near-stall range and low-speed applicability need inspection."
+          },
+          {
+            "id": "installed_engine_prop_cooling",
+            "primary": 12,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "K6523A-24, chart BHP at altitude, boost/RPM, blower and automatic flap state. Blade efficiency remains open."
+          },
+          {
+            "id": "independent_speed_climb",
+            "primary": 7,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Multiple level and climb points and check climbs from one report."
+          },
+          {
+            "id": "sustained_turn_drag",
+            "primary": 7,
+            "secondary": 0,
+            "calculated": 3,
+            "rationale": "Report power-required and drag figures plus stores sweeps constrain part of the drag envelope. Calculated credit is a one-anchor bounded polar."
+          }
+        ]
+      },
+      {
+        "id": "p47d22_4226167",
+        "label": "P-47D-22-RE 42-26167",
+        "evidence_ids": [
+          "balanced-2026-11-10:BS08:0001",
+          "balanced-2026-11-10:BS09:0001",
+          "balanced-2026-11-10:BS10:0001",
+          "ww2_priority_comparative_2026-11-13:p47d22-4226167-loading:0001"
+        ],
+        "dimensions": [
+          {
+            "id": "variant_identity",
+            "primary": 10,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Exact serial, R-2800-63, Curtiss blade 836-2C2-18, 44-1 fuel and test load."
+          },
+          {
+            "id": "stall_and_actual_mass",
+            "primary": 13,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Clean, landing and powered IAS matrix. Stall-run mass and calibration remain open."
+          },
+          {
+            "id": "near_stall_calibration",
+            "primary": 4,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Report identifies a position-correction figure; the stall table explicitly uses raw ship IAS."
+          },
+          {
+            "id": "installed_engine_prop_cooling",
+            "primary": 10,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Rated branch power curves and known cooling states; propeller efficiency unresolved for the exact installation."
+          },
+          {
+            "id": "independent_speed_climb",
+            "primary": 7,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "One campaign with water-on/off level and climb branches."
+          },
+          {
+            "id": "sustained_turn_drag",
+            "primary": 2,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Multiple propulsion settings and matched level conditions give an indirect drag constraint."
+          }
+        ]
+      },
+      {
+        "id": "fw190a8_733705",
+        "label": "Fw 190 A-8 WNr 733705",
+        "evidence_ids": [
+          "ww2_priority_aircraft_2026-11-13:fw190a8-733705-loading:0001",
+          "ww2_priority_aircraft_2026-11-13:fw190a8-733705-level:0001",
+          "ww2_priority_comparative_2026-11-13:a8-733705-fb1-level:0001",
+          "ww2_priority_comparative_2026-11-13:a8-733705-fb1-low-speed:0001"
+        ],
+        "dimensions": [
+          {
+            "id": "variant_identity",
+            "primary": 10,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Exact serial, BMW engine swaps, equipment and Nr. 2 takeoff load."
+          },
+          {
+            "id": "stall_and_actual_mass",
+            "primary": 5,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Nr. 1 gives mock-up nose-drop ranges for two gear/flap states with unknown exact loading."
+          },
+          {
+            "id": "near_stall_calibration",
+            "primary": 4,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Test-course calibration is documented for level speed. Low-speed applicability remains open."
+          },
+          {
+            "id": "installed_engine_prop_cooling",
+            "primary": 9,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Documented engine, rpm branches and cooling pressure, with no installed shaft-power or efficiency curve."
+          },
+          {
+            "id": "independent_speed_climb",
+            "primary": 5,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Two engine-specific level branches; generic factory climb sheets are separate."
+          },
+          {
+            "id": "sustained_turn_drag",
+            "primary": 2,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Matched stores speed changes in Nr. 1 give a limited configuration-drag constraint."
+          }
+        ]
+      },
+      {
+        "id": "spitfire_i_n3171",
+        "label": "Spitfire I N.3171",
+        "evidence_ids": [
+          "ww2_priority_aircraft_2026-11-13:spitfire1-n3171-loading:0001",
+          "ww2_priority_aircraft_2026-11-13:spitfire1-n3171-stall:0001",
+          "ww2_priority_aircraft_2026-11-13:spitfire1-n3171-climb:0001",
+          "ww2_priority_aircraft_2026-11-13:spitfire1-n3171-level:0001",
+          "ww2_priority_aircraft_2026-11-13:spitfire1-n3171-sea-level-summary:0001"
+        ],
+        "dimensions": [
+          {
+            "id": "variant_identity",
+            "primary": 10,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Exact serial, Rotol propeller and armoured test condition."
+          },
+          {
+            "id": "stall_and_actual_mass",
+            "primary": 12,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Named flaps-up/down stall observations with trial loading; speed basis remains unresolved."
+          },
+          {
+            "id": "near_stall_calibration",
+            "primary": 6,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Report provides position corrections at climb/level speed; near-stall range remains open."
+          },
+          {
+            "id": "installed_engine_prop_cooling",
+            "primary": 8,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Propeller installation and RPM/boost schedule; installed shaft power and efficiency remain open."
+          },
+          {
+            "id": "independent_speed_climb",
+            "primary": 7,
+            "secondary": 1,
+            "calculated": 0,
+            "rationale": "Named climb and speed tables; the traceable secondary sea-level reading adds limited coverage from the same campaign."
+          },
+          {
+            "id": "sustained_turn_drag",
+            "primary": 0,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "No matched drag-under-load or sustained-turn measurement for N.3171."
+          }
+        ]
+      },
+      {
+        "id": "spitfire_va_x4922",
+        "label": "Spitfire Va X.4922",
+        "evidence_ids": [
+          "ww2_priority_aircraft_2026-11-13:spitfire-va-x4922-loading:0001",
+          "ww2_priority_aircraft_2026-11-13:spitfire-va-x4922-climb:0019",
+          "ww2_priority_aircraft_2026-11-13:spitfire-va-x4922-level:0001"
+        ],
+        "dimensions": [
+          {
+            "id": "variant_identity",
+            "primary": 10,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Exact serial, Merlin 45, de Havilland settings, Mk II radiator and trial weight."
+          },
+          {
+            "id": "stall_and_actual_mass",
+            "primary": 0,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Named stall remains open. NACA W.3119 is a separate specimen."
+          },
+          {
+            "id": "near_stall_calibration",
+            "primary": 7,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Climb position-error points reach 110 mph IAS; the stall branch is unresolved."
+          },
+          {
+            "id": "installed_engine_prop_cooling",
+            "primary": 8,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Installed power settings and radiator identified. Shaft power and efficiency remain open."
+          },
+          {
+            "id": "independent_speed_climb",
+            "primary": 7,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Named level and climb tables. K.9788 is a same-program comparison at different loading and cooling."
+          },
+          {
+            "id": "sustained_turn_drag",
+            "primary": 0,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "No matched drag-under-load or sustained-turn measurement for X.4922."
+          }
+        ]
+      },
+      {
+        "id": "bf109e_1304",
+        "label": "Bf 109 E WNr 1304 (AE479)",
+        "evidence_ids": [
+          "stall_global_2026-11-10:BF109-E-RAE-1",
+          "stall_global_2026-11-10:BF109-E-RAE-2",
+          "ww2_priority_comparative_2026-11-13:rae-e1304-turn-estimate:0001"
+        ],
+        "dimensions": [
+          {
+            "id": "variant_identity",
+            "primary": 9,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Identified captured airframe and engine family. Detailed installation and loading record remains open."
+          },
+          {
+            "id": "stall_and_actual_mass",
+            "primary": 10,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Two reported glide IAS values by flap/gear configuration with unconfirmed stall-run mass."
+          },
+          {
+            "id": "near_stall_calibration",
+            "primary": 0,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "No matched near-stall airspeed calibration."
+          },
+          {
+            "id": "installed_engine_prop_cooling",
+            "primary": 3,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Engine family and handling/rating context only."
+          },
+          {
+            "id": "independent_speed_climb",
+            "primary": 0,
+            "secondary": 0,
+            "calculated": 0,
+            "rationale": "Separate V15a, WNr 1792 and US E-3 speed leads cannot close this specimen’s speed/climb axis."
+          },
+          {
+            "id": "sustained_turn_drag",
+            "primary": 0,
+            "secondary": 2,
+            "calculated": 0,
+            "rationale": "Traceable approximate steady-turn radius carries limited secondary credit; speed, bank and test record missing."
+          }
+        ]
+      }
+    ]
+  }
+}

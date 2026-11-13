@@ -10,6 +10,8 @@ The shared timer now applies signed TAS energy, and the live Fw 190 WNr 783 clim
 
 ### Input-data milestones
 
+Fighter Sim Inputs **v1.11.0** reviews Grok’s comparative summaries, adds 21 catalog rows and scores 19 dossiers. The next intake remains MT-215 with 44-15342 in parallel. [Comparative intake and scores](research/WW2_PRIORITY_COMPARATIVE_COVERAGE_2026-11-13.md)
+
 Use the existing climb residual table as a starting scorecard. Confirm each baseline value against its source and keep the P-38G B.4 elapsed-time check at sea level to 20,000 ft. [Before-scorecard](../references/research/WW2_FLIGHT_CASE_CLIMB_RESIDUAL_TABLE_2026-11-12.md)
 
 Fighter Sim Inputs **v1.10.0** adds 164 records from the eight-aircraft candidate review, including full P-51D and Spitfire trial tables. The checklist now supports Greg's first drag polar from a matched anchor and a documented split. [Priority-aircraft release](research/WW2_PRIORITY_AIRCRAFT_INPUTS_V1_10.md) · [Minimum viable inputs](research/MINIMUM_VIABLE_SIM_DATA.md)
@@ -49,7 +51,7 @@ Grok can check source rows and calculation assumptions in a candidate. Codex ver
 
 ## Current research candidate
 - Simulator research candidate [v4.11.0-rc.1](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/). [Release verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/publish-simulator.yml)
-- Input pack on main · [Fighter Sim Inputs v1.10.0](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
+- Input pack · [Fighter Sim Inputs v1.11.0](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 - Status: research candidate. Exact corrected stall, sustained-turn accuracy and historical 5:1 remain unresolved.
 
 ## Open gaps to respect
