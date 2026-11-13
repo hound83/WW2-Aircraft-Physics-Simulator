@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.14-rc.2 level-acceleration replay
+
+The restored P-51D's time and speed endpoints use a secondary transcription. The run's actual weight, IAS calibration, pressure altitude, power, cooling and rack fit remain open. The wartime V-1650-7 chart and rack-on model provide a proxy for the restored V-1650-9 installation. Tested scenarios illustrate input sensitivity. Matched wartime timing and powered-turn accuracy remain open. [Source limits and residuals](V414_LEVEL_ACCELERATION_REPLAY.md)
+
 ## v4.14-rc.1 aircraft intake
 
 BF.274 level flight below 6,000 ft and the G-6/Trop climb are model estimates. The G-6 factory climb summary supplies a ceiling and operating conditions, while the numerical rate trace remains open. BF.274’s correction data stop at 130 mph IAS. Both stall estimates use family lift assumptions and have no calibrated stall checks or maneuver rankings. [Second intake residuals](V414_AIRCRAFT_INTAKE.md)

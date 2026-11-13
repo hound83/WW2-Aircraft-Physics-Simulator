@@ -660,8 +660,8 @@
   update(selectedEasMph??turning[0]?.aircraft.peakEasMph??climbing[0]?.aircraft.vyEasMph??maxEas/2);
  }
 
- function timedTrace(host,series,{low,high,label}){
-  const elapsed=Math.max(0,...series.map(a=>a.trace.at(-1)?.seconds??0));
+ function timedTrace(host,series,{low,high,label,observedEndpoints=[]}){
+  const elapsed=Math.max(0,...series.map(a=>a.trace.at(-1)?.seconds??0),...observedEndpoints.map(point=>point.seconds));
   host.replaceChildren();
   if(!(elapsed>0))return;
   const width=780,height=222,left=76,right=758,top=30,bottom=174;
@@ -709,6 +709,11 @@
     const node=draw('circle',{cx:x(point.seconds),cy:y(point.value),r:4.5,fill:color,'data-bench-time-phase':point.phase},undefined,group);
     draw('title',{},name+' · '+(next?'Power changes at ':'Run ends at ')+format(point.seconds,1)+' s',node);
    }
+  }
+  for(const point of observedEndpoints){
+   const marker=draw('circle',{cx:x(point.seconds),cy:y(point.value),r:5.5,
+    fill:'#142b37',stroke:'currentColor','stroke-width':2,'data-bench-observed-endpoint':point.seconds});
+   draw('title',{},point.label,marker);
   }
   host.append(svg);
  }

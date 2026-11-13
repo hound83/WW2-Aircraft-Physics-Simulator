@@ -1,0 +1,177 @@
+{
+  "schema": "ww2-level-acceleration-evidence/v1",
+  "restoredMustang": {
+    "id": "setp-p51d-4511586-level-acceleration-figure-8",
+    "aircraft": "North American P-51D 45-11586",
+    "engine": "V-1650-9 Merlin",
+    "propeller": "Four-blade Hamilton Standard Hydromatic",
+    "installation": "Restored aircraft. Rear 65 US gal tank removed and a jumpseat and modern avionics installed. Mid CG.",
+    "source": {
+      "title": "John M. Ellis III and Christopher A. Wheal, Ending the Argument, Sport Aviation, June 1990",
+      "url": "https://www.wwiiaircraftperformance.com/com/others/endingtheargument.html",
+      "figure": "https://www.wwiiaircraftperformance.com/com/others/endingtheargument_files/figure8.jpg",
+      "locator": "Aircraft, Flight Test Rules, Table I and Level Accelerations, Figure 8"
+    },
+    "conditions": {
+      "altitudeFtMsl": 10000,
+      "outsideAirTempF": 50,
+      "rating": "METO",
+      "gear": "low",
+      "takeoffWeightLb": 8900,
+      "runWeightLb": null,
+      "rpm": null,
+      "mapInHg": null,
+      "shaftBhp": null,
+      "pressureAltitudeFt": null,
+      "coolingFlapAngle": null,
+      "rackFit": null,
+      "airspeedCalibration": null
+    },
+    "endpoints": {
+      "evidence": "secondary transcription of flight-test endpoints",
+      "transcription": "https://ww2aircraft.net/forum/threads/captured-aircraft-equipment-report-14.65811/?post=2043798",
+      "locator": "Post 2043798, level-acceleration summary",
+      "speedBasis": "KIAS",
+      "startKnots": 110,
+      "endKnots": 242,
+      "elapsedSeconds": 133,
+      "verification": "The primary report confirms the test and conditions. The numerical endpoints are available in a secondary transcription. Copies of the same summary count as one lineage.",
+      "intermediateSamples": null,
+      "independentReservedIntervals": 0
+    }
+  },
+  "wartimeMustang": {
+    "modelId": "p51d15_4415342",
+    "aircraft": "North American P-51D-15-NA 44-15342",
+    "engine": "Packard V-1650-7 Merlin",
+    "title": "Wright Field TSCEP5E-1908, B.4 Normal-rated power level flight",
+    "url": "https://www.wwiiaircraftperformance.org/mustang/p51d-15342.html",
+    "conditions": {
+      "rpm": 2700,
+      "mapInHg": 46,
+      "gear": "low",
+      "cooling": "Automatic coolant flaps",
+      "installation": "Trial wing racks fitted, no external load"
+    },
+    "point": {
+      "altFt": 10000,
+      "tasMph": 362,
+      "shaftBhp": 1140,
+      "weightLb": 9660
+    },
+    "role": "Same-report level-speed check outside the sea-level WEP polar fit. BHP from the wartime chart is a model input."
+  },
+  "spitfire": {
+    "modelId": "spitfire_lfix_bs543",
+    "aircraft": "Spitfire LF Mk IX BS.543",
+    "engine": "Merlin 66",
+    "title": "A&AEE BS.543 Table II, Combat climb",
+    "url": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html",
+    "conditions": {
+      "takeoffWeightLb": 7485,
+      "rpm": 3000,
+      "gear": "low",
+      "gearChangeAltFt": 13000,
+      "cooling": "Radiator flaps fully open"
+    },
+    "rows": [
+      {
+        "altFt": 7000,
+        "boostPsi": 18,
+        "slopeFromFt": 6000,
+        "slopeToFt": 8000
+      },
+      {
+        "altFt": 8000,
+        "boostPsi": 17,
+        "slopeFromFt": 7000,
+        "slopeToFt": 10000
+      },
+      {
+        "altFt": 10000,
+        "boostPsi": 15.1,
+        "slopeFromFt": 8000,
+        "slopeToFt": 12000
+      },
+      {
+        "altFt": 12000,
+        "boostPsi": 13.4,
+        "slopeFromFt": 10000,
+        "slopeToFt": 12000
+      }
+    ],
+    "qualification": "Rates and TAS use the existing Table II transcription. A&AEE reduced the data to standard atmosphere via Res/170. The rate reduction's treatment of TAS energy is unresolved."
+  },
+  "proxy": {
+    "nominal": {
+      "pressureAltitudeFt": 10000,
+      "weightLb": 8900,
+      "commonCasMinusIasKnots": 0
+    },
+    "scenarios": {
+      "weightLb": [
+        8700,
+        8900
+      ],
+      "shaftPowerFactors": [
+        0.9,
+        1,
+        1.1
+      ],
+      "commonCasMinusIasKnots": [
+        -4,
+        0,
+        4
+      ]
+    },
+    "assumptions": [
+      "Use reported MSL as pressure altitude and account for 50°F with the corresponding density and TAS. The ISA solver runs at equivalent density altitude, with power held at the pressure-altitude input.",
+      "Use the wartime V-1650-7 Normal chart's 1,140 BHP at 46 inHg and 2,700 RPM as a V-1650-9 METO proxy. The restored specimen's actual manifold pressure, RPM and shaft power are unknown.",
+      "Carry the wartime wing-rack drag polar and shared propeller model. The restored run's rack fit, cooling opening and installed propeller efficiency are unknown.",
+      "Assume 8,900 lb throughout the nominal replay. The 8,700–8,900 lb scenarios explore fuel burned after takeoff. Test constant CAS–IAS offsets to show sensitivity. Specimen calibration remains unavailable.",
+      "Ranges are illustrative scenarios, with no fit or statistical confidence attached."
+    ]
+  },
+  "related": [
+    {
+      "title": "NACA CB 5H31, P-51B-1 high-speed dives",
+      "url": "https://ntrs.nasa.gov/citations/19930093566",
+      "scope": "Propeller-off dives include acceleration and flight-path evidence. Powered level-flight timing requires a separate record."
+    },
+    {
+      "title": "A&AEE Mustang III FX.858",
+      "url": "https://www.wwiiaircraftperformance.org/mustang/fx858.html",
+      "scope": "Climb, level speed and position-error evidence belongs to a different Mustang installation."
+    },
+    {
+      "title": "Ellis and Wheal Figure 8, other transcribed level runs",
+      "url": "https://ww2aircraft.net/forum/threads/captured-aircraft-equipment-report-14.65811/?post=2043798",
+      "scope": "Discovery only. Aircraft restorations, configurations and speed intervals differ. Each run shares the same secondary transcription lineage.",
+      "observations": [
+        {
+          "aircraft": "Republic P-47D 45-49181",
+          "startKias": 105,
+          "endKias": 223,
+          "elapsedSeconds": 130
+        },
+        {
+          "aircraft": "Grumman F6F-5 BuNo 79683",
+          "startKias": 100,
+          "endKias": 220,
+          "elapsedSeconds": 115
+        },
+        {
+          "aircraft": "Goodyear FG-1D BuNo 92509",
+          "startKias": 100,
+          "endKias": 230,
+          "elapsedSeconds": 162
+        }
+      ]
+    },
+    {
+      "title": "Ellis and Wheal, Figures 9 and 10",
+      "url": "https://www.wwiiaircraftperformance.com/com/others/endingtheargument.html",
+      "scope": "Separate powered sustained-turn and wind-up test at 10,000 ft. The restored P-51D and METO limitations still apply."
+    }
+  ]
+}

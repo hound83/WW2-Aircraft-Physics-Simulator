@@ -397,6 +397,26 @@ async function run(){
   assert.equal(await evaluate('document.getElementById("bench-climb-run").open'),true);
   await evaluate('document.getElementById("bench-acceleration-calculate").click()');
   const accelRun=await evaluate('OperatingBenchmarkUI.accelerations');
+  await evaluate('document.querySelector("#bench-acceleration-evidence summary").click()');
+  assert.match(await evaluate('document.getElementById("bench-acceleration-evidence-result").textContent'),/110–242 KIAS.*133 s.*93\.3 s.*-39\.7 s/s);
+  const replayStyle=await evaluate(`(() => {
+   const graph=document.querySelector('#bench-acceleration-evidence-trace svg');
+   return {
+    open:document.getElementById('bench-acceleration-evidence').open,
+    marks:[...graph.querySelectorAll('[data-bench-observed-endpoint]')].map(e=>e.dataset.benchObservedEndpoint),
+    traces:[...graph.querySelectorAll('[data-bench-time-trace]')].map(e=>e.dataset.benchTimeTrace),
+    styles:[...graph.querySelectorAll('path')].map(e=>e.dataset.benchStyle),
+    primary:document.querySelector('#bench-acceleration-evidence-context a').href
+   };
+  })()`);
+  assert.equal(replayStyle.open,true);
+  assert.deepEqual(replayStyle.marks,['0','133']);
+  assert.deepEqual(replayStyle.traces,['replay']);
+  assert.deepEqual(replayStyle.styles,['dotted']);
+  assert.match(replayStyle.primary,/endingtheargument\.html$/);
+  await evaluate('document.querySelector("#bench-acceleration-evidence summary").click()');
+  assert.deepEqual(await evaluate('OperatingBenchmarkUI.accelerations'),accelRun);
+  checks.push('v4.14 the recorded P-51D replay shows two transcribed endpoints and a dotted calculation without affecting the operating run');
   assert.equal(accelRun.a.altFt,10000);assert.equal(accelRun.b.reachedEasMph,300);
   assert.ok(Math.abs(accelRun.a.seconds-49.53)<.02&&Math.abs(accelRun.b.seconds-49.34)<.02);
   assert.match(await evaluate('document.getElementById("bench-acceleration-result").textContent'),/Effectively tied.*49\.53 s.*49\.34 s/s);

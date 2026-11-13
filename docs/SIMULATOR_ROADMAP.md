@@ -4,7 +4,9 @@ The shared steady-flight solver calculates stall, speed, climb, acceleration, an
 
 ## Next implementation milestone
 
-**Replay a recorded level-acceleration run.** Recover a constant-altitude speed–time trace for the Mustang or Spitfire with known load, rating, RPM, configuration and airspeed basis. Replay the speed endpoints with the shared solver and reserve an interval or another run for a check. A straight-flight run can test the installed energy budget at the speeds used for the turn comparison. Keep the search for matched high-lift or powered-turn evidence open. [Timed comparison evidence](V49_TIMED_MATCHUPS.md#historical-checks) · [Turn-drag results](V413_TURN_DRAG.md)
+**Replay a powered turn at a recorded load.** Start with Ellis and Wheal Figures 9 and 10 at 10,000 ft METO and look for a wartime Mustang or Spitfire check at a known weight, speed, rating and cooling state. Recover the primary curves and reserve speeds before comparing. Use \(g\sqrt{n^2-1}/V\) for a coordinated level turn and report the residual in G and degrees per second where TAS is supported. Retain indicated-speed results as provisional when calibration is open. [Turn-test lead](https://www.wwiiaircraftperformance.com/com/others/endingtheargument.html) · [Current turn-drag results](V413_TURN_DRAG.md)
+
+**Delivered · Provisional level-acceleration replay.** The restored P-51D report and secondary timing endpoints give a 93.3 s nominal calculation versus 133 s transcribed. Wartime P-51D level speed and Spitfire climb provide separate power-balance checks. The original Figure 8 ordinates, a matched wartime speed-time record and an independent timed interval remain open. [Replay and twelve-profile regression](V414_LEVEL_ACCELERATION_REPLAY.md)
 
 **Delivered · Drag above 1 G.** The matchup reports the drag-only range and the drag change needed to reach parity. The Mk I glide fit provides a provisional scenario with a measured lift boundary. The matched historical turn ranking remains open. [Results](V413_TURN_DRAG.md)
 

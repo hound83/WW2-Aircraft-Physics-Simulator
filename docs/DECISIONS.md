@@ -14,6 +14,10 @@
 
 The target family roster includes **E, F-4, G-2 and G-6** for the Bf 109 and **I, Va, F IX, LF IX and HF IX** for the Spitfire. Model full-span and clipped wings as distinct configurations. Use weight-only scaling in EAS for clean, power-off, 1g stall once wing area, effective lift, trim and loading distribution are supported. This roster order sets aircraft intake priorities. The [simulator milestone](LATEST_INSIGHTS.md#next-simulator-milestone) tracks work on the shared flight model. [Weight-transfer audit](../references/research/STALL_WEIGHT_TRANSFER_2026-11-13.md)
 
+## v4.14-rc.2 level-acceleration replay
+
+Expose the restored P-51D run as two transcribed endpoints and a dotted calculation at the reported altitude and temperature. Use the wartime P-51D Normal chart as a scoped power proxy and document the range of airspeed and weight assumptions. Keep the timing external to the model. Use BS.543 climb evidence for a calculated energy equivalent with the same fit and reserved roles. [Replay, numerical checks and comparison bounds](V414_LEVEL_ACCELERATION_REPLAY.md)
+
 ## v4.14-rc.1 aircraft intake
 
 Use the clean BF.274 with Merlin 61 and the WNr 16476 filtered, gun-pod and wheel-cover configuration from run 3b. Record BF.274 tank runs and the G-6 attachment changes at their own source conditions. BF.274 uses measured climb TAS for Normal. G-6 climb remains an estimated DB 605 A transfer with a reported-ceiling check. Stall remains provisional and the two new profiles have no turn rankings. [Results and source conditions](V414_AIRCRAFT_INTAKE.md)
