@@ -2,10 +2,8 @@
   "aircraft": "Spitfire V",
   "grade_overall": "borderline",
   "ready_for_first_pass": true,
-  "stall_notes": "Good buffet warning several mph above minimum speed. Wing tips stall first. Motions not violent.",
-  "stall_source": "NACA WR L-353 (Vensel & Phillips, 1942)",
-  "stall_grade": "observed",
-  "prop_efficiency": 0.80,
-  "power_and_speed": "Partial - A&AEE and RAE data available but needs matching",
+  "stall_notes": {"value": "Good buffet warning several mph above minimum speed. Wing tips stall first. Motions not violent.", "grade": "observed", "source": "NACA WR L-353 Stalling Characteristics of the Supermarine Spitfire VA (Vensel & Phillips, 1942)"},
+  "prop_efficiency": {"value": 0.80, "grade": "estimated", "source": "Default"},
+  "power_and_speed": {"status": "partial", "grade": "partial", "source": "A&AEE and RAE data; needs mass matching"},
   "notes": "Stall characteristics well documented by NACA. Absolute IAS table sparse."
 }
