@@ -1,47 +1,46 @@
 # Fighter Sim Inputs roadmap
 
-Review date 12 November 2026. The baseline is Fighter Sim Inputs v1.5.0 at `67ba5573`. The pack covers 13 research variants and seven current simulator profiles. PR #70 added 126 original-source records, including the two WNr 783 intake curves and the 62 NACA L7D10 Table III points. The evidence score remains 63.62% primary and 67.15% with secondary evidence and calculations. The pack records zero GOLD and five qualified GOLD* agreements across 156 planned checks. A new release should close a named evidence gap or improve a source-conditioned replay. [v1.5 data and checks](WW2_FLEET_PROPELLER_INPUTS_2026-11-12.md) · [Coverage and evidence rules](WW2_FIGHTER_SIM_INPUTS_V1.md) · [Simulator roadmap](../SIMULATOR_ROADMAP.md)
+Review date 13 November 2026. The input roadmap covers 13 scored research variants and seven simulator profiles. The priority list also includes airframes with their own unscored source dossiers. [Current data and coverage](WW2_FIGHTER_SIM_INPUTS_V1.md) · [Minimum viable input data](MINIMUM_VIABLE_SIM_DATA.md) · [Simulator roadmap](../SIMULATOR_ROADMAP.md)
 
 ## Variant priority list (2026-11-13)
 
-Sorted by data and sim priority. Yes / Improve at top, Later in the middle, Never / very low at the bottom.
+The research priority reflects the historical scope and the next useful evidence to recover. See the dossier work below for readiness and the intended comparison.
 
 | Variant | Force | In sim | Data | Add to dataset | Add to sim | Remarks |
 |---------|-------|--------|------|----------------|------------|---------|
-| Bf 109 G-2 | Luftwaffe | — | Medium | Yes (near-term) | Yes (next) | Roadmap’s suggested first addition |
-| P-51D | USAAF | — | Strong (local) | Yes (near-term) | Yes (next) | Most numerous late-war US fighter |
-| P-47D | USAAF | — | Strong (local) | Yes (near-term) | Yes (next) | Strong local data; still common late-war |
-| Spitfire I | RAF | — | Partial | Yes (targeted) | Later | Early-war / BoB baseline |
-| Spitfire V | RAF | — | Partial | Yes | Later | Dominant RAF fighter 1941–early 1943 |
-| Bf 109 E | Luftwaffe | — | Partial | Yes (targeted) | Later | Main Luftwaffe fighter in BoB |
+| Bf 109 G-2 MT-215 | Luftwaffe | — | 65% primary / 69% total | Next | First bounded intake | Installed power, run mass and airspeed corrections |
+| P-51D-15-NA 44-15342 | USAAF | — | Wright Field level and climb tables | Prepare in parallel | Intake candidate | Match near-stall data and bound propeller efficiency and drag |
+| P-47D-30 43-3441 | USAAF | — | 66% primary / 68% total | Targeted | Intake candidate | Resolve NACA low-speed channels. Keep Wright Field 42-26167 as a separate powerplant and performance dossier |
+| F6F-3 BuAer 04776 | US Navy | — | 79% primary / 82% total | Targeted | First alternate | Match NACA stall speed, calibration and test mass |
+| Spitfire I N.3171 | RAF | — | Named flight-test dossier | Targeted | Early-war pair | Match level power and low-speed basis; track propeller and fuel standard |
+| Spitfire Va X.4922 | RAF | — | Named flight-test dossier | Targeted | Later | Match Merlin 45 rating and cooling to its Rotol installation |
+| Bf 109 E | Luftwaffe | — | Several period trials | Targeted | Early-war pair | Use an exact E-series trial; retain differences between captured and factory airframes |
 | Bf 109 G-6/G-14 | Luftwaffe | — | Medium | Yes (near-term) | Later | Most numerous late G |
 | Fw 190 A-8 | Luftwaffe | — | Medium | Yes (near-term) | Later | Most common late A-series |
-| Fw 190 D-9 | Luftwaffe | — | Medium | Yes (near-term) | Later | Distinct late-war type |
+| Fw 190 D-9 WNr 210002 | Luftwaffe | — | 61% primary / 65% total | Targeted | Later | Match installed Jumo 213 A power to the dry and MW 50 cases |
 | Spitfire LF IX | RAF | Yes | Strong | Improve (near-term) | Already in | Core; improve stall |
 | Bf 109 F-4 | Luftwaffe | Yes | Strong | Improve (near-term) | Already in | Core; improve power curve |
 | Fw 190 A-4 | Luftwaffe | Yes | Strong | Improve (near-term) | Already in | Core; improve cooling & power |
 | P-51B | USAAF | Yes | Strong | Improve (near-term) | Already in | Core; improve stall |
 | P-47B | USAAF | Yes | Strong | Improve (near-term) | Already in | Core |
 | P-38G | USAAF | Yes | Medium | Improve (near-term) | Already in | Core |
-| F4U-4 | USAAF/Navy | Yes | Medium | Improve (near-term) | Already in | Core |
+| F4U-4 | US Navy | Yes | Medium | Improve (near-term) | Already in | Core |
 | Spitfire XIV | RAF | — | Weak | Later | Later | Late-war high-altitude |
 | Tempest V | RAF | — | Weak | Later | Later | Good 1944–45 candidate |
 | Typhoon IB | RAF | — | Weak | Later | Later | Secondary to Tempest |
 | Bf 109 K-4 | Luftwaffe | — | Weak | Later | Later | Lower priority than G |
 | Me 262 | Luftwaffe | — | Weak | Later | Later | Different performance class |
-| P-40 (Tomahawk/Kittyhawk) | USAAF | — | Weak | Later | Later | Important in North Africa / MTO |
+| P-40F 41-13635 | USAAF | — | 49% primary / 53% total | Targeted | Later | Use the existing F dossier for its documented installation; track other P-40 variants separately |
 | Yak-1 | Soviet | — | Weak | Later | Later | Early Eastern Front |
 | Yak-9 / Yak-3 | Soviet | — | Weak | Later | Later | Major Eastern Front |
 | La-5 / La-5FN / La-7 | Soviet | — | Partial (local) | Later | Later | Major Eastern Front |
 | Mosquito (fighter variants) | RAF | — | Weak | Later | Later | Iconic but different role |
 | P-39 | USAAF/Soviet | — | Weak | Later | Later | More relevant on Eastern Front |
-| Hurricane I/II | RAF | — | Weak | Never / very low | Never / very low | Critical in 1940, lower priority for energy work |
+| Hurricane I | RAF | — | Source search | With 1940 scope | Early-war follow-up | Include in a Battle of Britain milestone with a named Merlin and propeller installation |
 | Bf 110 | Luftwaffe | — | Weak | Never / very low | Never / very low | Early heavy fighter, quickly outclassed |
 | Il-2 | Soviet | — | Weak | Never / very low | Never / very low | Ground-attack, not a day fighter |
 
-**Near-term focus (top of the list)**  
-- **Data + Sim next:** Bf 109 G-2, P-51D, P-47D  
-- **Data now, sim later:** Spitfire I & V, Bf 109 E, Bf 109 G-6/G-14, Fw 190 A-8, Fw 190 D-9
+Keep improving the seven modeled aircraft and the remaining scored dossiers while preparing MT-215 and 44-15342. Pair an exact Spitfire I with an exact Bf 109 E for the early-war comparison. Include the Hurricane I when Battle of Britain coverage becomes the milestone. [Dossier readiness](../SIMULATOR_DATA_HANDOFF.md#suggested-aircraft)
 
 ## Review of the supplied Google AI files
 
@@ -91,17 +90,19 @@ The v1.9.0 follow-up recovered the full 5,801-entry candidate archive and added 
 
 ### Next · Corrected stall and drag under load
 
+Use the [minimum viable drag method](MINIMUM_VIABLE_SIM_DATA.md#calculating-drag-from-sparse-evidence) to calculate first-pass drag polars where a matched drag or power anchor and a credible split or bounded Oswald efficiency are available. Reserve a lower-speed or higher-lift observation when possible to check the inferred induced term.
+
 - Prioritize the P-51B-15 43-24777 and Spitfire LF IX BS.543 cases used in the existing sustained-turn comparison. Recover a near-stall position and instrument correction in the relevant range, plus weight at the stall or a qualified corrected stall observation. Use the reported airspeed basis and configuration when deriving clean `CLmax`. Make the remaining gap explicit where only a takeoff weight or an uncorrected IAS is available. [Original-source gaps by aircraft](WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md#recovered-material-and-remaining-work)
 - Use P-51B Figure 5 and the 4K02/916 drag reports to bound the one-G drag check with their recorded specimen and propeller treatment. Seek a second measured constraint for drag under load: a matched high-lift drag polar or a level powered turn with speed and altitude retention, known load factor, power and mass. This is the input needed before changing induced drag or a sustained-turn ranking. Keep a configuration transfer as a bounded estimate. [Mustang power-required audit](../P51_PROPELLER_EFFICIENCY_AUDIT.md) · [Turn comparison](../V44_TURN_PERFORMANCE.md)
 - The clearest near-term digitization candidate is **F6F-3 04776**, using the Part I instrumentation and Part III first-stall traces with the associated fuel and normal-force record. Verify the service-indicated speed basis before deriving CAS/EAS. The two parts share a test campaign. For **P-47D-30 43-3441**, use **L8A06 Figures 28–32 and 47–59** to resolve the maneuver and stall channels. Classify the maneuver traces by the recorded conditions before using them to evaluate sustained turns. TN 2899 is a later publication of the same experiment. [F6F-3 Part I](https://ntrs.nasa.gov/citations/19930092600) · [F6F-3 Part III](https://ntrs.nasa.gov/citations/19930092602) · [P-47D-30 original](https://ntrs.nasa.gov/citations/20090022749) · [Prior stall evidence](WW2_STALL_FOUR_TRACK_FOLLOWUP_2026-11-10.md)
 
 Release the first case whose airspeed, mass, configuration and uncertainty are defensible. Retain measured, transcribed and derived values with their provenance. The existing research goals are ±2 km/h for clean stall, ±3 km/h for level TAS and ±3% for matched climb or time. Publish actual residuals and the source allowance. [Evidence rules](WW2_FIGHTER_SIM_INPUTS_V1.md#selection-and-gold)
 
-### v1.9 · First new-aircraft input dossier
+### Next · First bounded new-aircraft input dossier
 
 Prepare **Bf 109 G-2 MT-215 / WNr 14783** for a bounded speed-and-climb comparison. The Finnish test ran near 2,540 actual rpm and 1.30–1.32 ata on the documented level branch. The DB 605 A factory 1.30 ata / 2,600 rpm points are a reference schedule. Recover the original run mass or loading sheet, exact installed power and propeller drawing, and verify the airspeed corrections. Use the Finnish trial for its supported branches, and keep the WNF production and NII VVS gun-pod tests as separate cases. The Finnish Aviation Museum catalog describes aircraft logs and technical archives as a further retrieval route. [G-2 data handoff](../SIMULATOR_DATA_HANDOFF.md#suggested-aircraft) · [German source register](WW2_GERMAN_FIGHTER_ARCHIVE_2026-11-11.md#bf-109-g-2) · [Finnish Aviation Museum archives](https://ilmailumuseo.fi/en/kirjasto-arkisto/)
 
-Follow with F6F-3 if the stall basis and matching power/performance evidence are ready. The Fw 190 D-9 follows when a Jumo 213 A power curve can be matched to the separate dry and MW 50 flight branches. Keep Ki-84 speed and climb open until an original measured trial with engine settings, fuel and loading can be found. The current T-2 record provides handling data. [Existing candidate priorities](../SIMULATOR_DATA_HANDOFF.md#suggested-aircraft) · [Thirteen-variant source recovery](WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md)
+Prepare **P-51D-15-NA 44-15342** in parallel using the Wright Field level and climb tests. Keep the wing racks, per-run weight, installed V-1650-7, blower and radiator state in the case. Find a matching near-stall correction and propeller constraint. **F6F-3 BuAer 04776** is the first alternate if a usable stall calibration and mass and matched power/performance evidence come together first. Advance **P-47D-30 43-3441** with its NACA low-speed and maneuver records. For **Fw 190 D-9**, match a Jumo 213 A power schedule to each dry and MW 50 branch. For **Ki-84-I**, seek measured speed and climb with engine settings, fuel and loading. [Wright Field 44-15342](https://wwiiaircraftperformance.com/org/p-51/p51d-15342.html) · [Candidate priorities](../SIMULATOR_DATA_HANDOFF.md#suggested-aircraft) · [Source recovery](WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md)
 
 ### Later · Roll and high-speed drag
 
