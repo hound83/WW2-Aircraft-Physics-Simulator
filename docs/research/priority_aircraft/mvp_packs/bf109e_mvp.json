@@ -1,0 +1,13 @@
+{
+  "aircraft": "Bf 109 E",
+  "grade_overall": "good",
+  "ready_for_first_pass": true,
+  "stall_ias_mph_clean": 75,
+  "stall_flaps_down_mph": 61,
+  "CLmax_approx": {"flaps_up": 1.4, "flaps_down": 1.9},
+  "stall_source": "British RAE/AFDU captured trials",
+  "stall_grade": "observed",
+  "prop_efficiency": 0.80,
+  "level_speed_notes": "V15a prototype ~493 km/h corrected SL, 572 km/h at 4800 m",
+  "notes": "Captured trials give solid stall and handling anchors."
+}
