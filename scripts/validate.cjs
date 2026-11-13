@@ -65,8 +65,16 @@ try{
  write('validation/current/aircraft-intake.json',intakeChecks);
  const acceleration=require('../validation/diagnostics/level_acceleration.cjs').run(activeBenchmark,intakeChecks);
  write('validation/current/level-acceleration.json',acceleration);
- if(buildInfo.version==='4.14.0-rc.2'&&(!acceleration.regression.exactScorecardParity||!acceleration.regression.exactFixedProbeParity))
-  throw Error('Level-acceleration milestone changed an operating scorecard or fixed-speed probe');
+ const frozenTurn=require('../references/analysis/v414-powered-turn-before.json');
+ if((buildInfo.version==='4.14.0-rc.2'||buildInfo.version===frozenTurn.candidateVersion)&&
+   (!acceleration.regression.exactScorecardParity||!acceleration.regression.exactFixedProbeParity))
+  throw Error('Recorded replay changed an operating scorecard or fixed-speed probe');
+ const poweredTurn=require('../validation/diagnostics/powered_turn.cjs').browserEvidence(activeBenchmark);
+ write('validation/current/powered-turn.json',{
+  version:buildInfo.version,baseline:frozenTurn,regression:acceleration.regression,...poweredTurn
+ });
+ console.log('MT-215 continuous turn: '+poweredTurn.observation.conditions.elapsedSeconds+' s transcribed, '+
+  poweredTurn.clean.seconds.toFixed(2)+' s modeled with clean cooling.');
  console.log('Restored P-51D acceleration: '+(acceleration.nominal.seconds?.toFixed(2)??acceleration.nominal.status)+' s modeled, '+
   acceleration.observation.endpoints.elapsedSeconds+' s transcribed.');
 
@@ -78,6 +86,8 @@ try{
  require('./write-v42-report.cjs');
  const md=[
  '# Current validation',
+ '',
+ 'v4.14-rc.3 [Recorded Bf 109 G-2 powered-turn replay](V414_POWERED_TURN_REPLAY.md). The numerical replay is included in the Physics regression artifact.',
  '',
  'v4.14-rc.2 [Recorded P-51D level-acceleration replay](V414_LEVEL_ACCELERATION_REPLAY.md). [Numerical replay](../validation/current/level-acceleration.json).',
  '',

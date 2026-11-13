@@ -14,6 +14,10 @@
 
 The target family roster includes **E, F-4, G-2 and G-6** for the Bf 109 and **I, Va, F IX, LF IX and HF IX** for the Spitfire. Model full-span and clipped wings as distinct configurations. Use weight-only scaling in EAS for clean, power-off, 1g stall once wing area, effective lift, trim and loading distribution are supported. This roster order sets aircraft intake priorities. The [simulator milestone](LATEST_INSIGHTS.md#next-simulator-milestone) tracks work on the shared flight model. [Weight-transfer audit](../references/research/STALL_WEIGHT_TRANSFER_2026-11-13.md)
 
+## v4.14-rc.3 powered-turn replay
+
+Use the MT-215 timed turn as an out-of-fit comparison at the transcribed speed. Show the 22 s timing and rounded 3 G with their source grade. The shared solver evaluates the fixed case using the existing drag, lift and power assumptions. The recorded bank, speed and timing constrain different parts of the replay. An original trace and a repeat turn would improve that comparison. [Replay and power residuals](V414_POWERED_TURN_REPLAY.md)
+
 ## v4.14-rc.2 level-acceleration replay
 
 Expose the restored P-51D run as two transcribed endpoints and a dotted calculation at the reported altitude and temperature. Use the wartime P-51D Normal chart as a scoped power proxy and document the range of airspeed and weight assumptions. Keep the timing external to the model. Use BS.543 climb evidence for a calculated energy equivalent with the same fit and reserved roles. [Replay, numerical checks and comparison bounds](V414_LEVEL_ACCELERATION_REPLAY.md)

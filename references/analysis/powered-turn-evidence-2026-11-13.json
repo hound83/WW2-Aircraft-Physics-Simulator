@@ -1,0 +1,150 @@
+{
+  "schema": "ww2-powered-turn-evidence/v1",
+  "finnish": {
+    "id": "fiaf-mt215-horizontal-turn-360-continuous",
+    "modelId": "bf109g2_db605a",
+    "aircraft": "Bf 109 G-2 MT-215 (WNr 14783)",
+    "pilot": "Pekka Kokko",
+    "grade": "secondary transcriptions of one wartime flight test",
+    "transcriptions": [
+      {
+        "title": "Finnish turn table transcription",
+        "url": "https://forum.il2sturmovik.com/topic/6315-bf109g-2-turn-and-accelerationdeceleration-data/",
+        "locator": "LLv34_Flanker, 8 May 2014, Horizontal turns table"
+      },
+      {
+        "title": "Finnish Virtual Pilots Association summary",
+        "url": "https://www.virtualpilots.fi/feature/articles/109myths/",
+        "locator": "Case: Me 109 G-2 and the preceding turning discussion"
+      }
+    ],
+    "sourceContext": "The Virtual Pilots summary dates the trial to 6 May 1943. The forum transcription mentions March 1943. Both attribute the run to Kokko and report the same continuous turn. The original maneuver sheet has not been verified.",
+    "aircraftContext": "Full fuel and ammunition at departure, no external stores in the turn account. The intake profile records the fixed tailwheel and uses the same specimen's separate level and climb data.",
+    "conditions": {
+      "altitudeM": 1000,
+      "headingChangeDeg": 360,
+      "elapsedSeconds": 22,
+      "startKmh": 360,
+      "endKmh": 360,
+      "speedBasis": "IAS",
+      "speedBasisLocator": "Virtual Pilots turning discussion gives IAS. The turn-table column does not state the basis.",
+      "bankDeg": 70,
+      "reportedG": 3,
+      "reportedGQualification": "Rounded load in the Virtual Pilots summary. Measurement method unspecified.",
+      "power": "Maximum power",
+      "flightPath": "Horizontal, continuous turn according to the table. Entry and exit speeds match.",
+      "runMassKg": null,
+      "manifoldAta": null,
+      "engineRpm": null,
+      "flaps": null,
+      "radiatorAngle": null,
+      "airspeedCalibration": null,
+      "altitudeTrace": null,
+      "speedTrace": null
+    },
+    "relatedTurns": [
+      {
+        "headingChangeDeg": 180,
+        "elapsedSeconds": 10,
+        "startKmh": 450,
+        "endKmh": 380,
+        "bankDeg": 90,
+        "role": "Speed-losing turn"
+      },
+      {
+        "headingChangeDeg": 360,
+        "elapsedSeconds": 18,
+        "startKmh": 450,
+        "endKmh": 330,
+        "bankDeg": 90,
+        "role": "Speed-losing turn"
+      }
+    ],
+    "replay": {
+      "nominal": {
+        "pressureAltitudeM": 1000,
+        "massKg": 3050,
+        "engineRpm": 2540,
+        "manifoldAta": 1.3,
+        "casMinusIasKmh": 0
+      },
+      "massRangeKg": [
+        2900,
+        3235
+      ],
+      "casOffsetsKmh": [
+        -10,
+        0,
+        10
+      ],
+      "assumptions": [
+        "The stated altitude is treated as pressure altitude in ISA. IAS is treated as CAS in the nominal run.",
+        "Use 3,050 kg and the clean-flap, fixed-tailwheel intake polar. The run mass, flap state and IAS calibration remain open.",
+        "Maximum power uses the 1.30 ata Combat chart with the same specimen's separately reported 2,540 RPM and the existing linear RPM scaling. The turn's actual boost, shaft power and RPM remain open.",
+        "Compare the benchmark's clean-cooling state and its existing 0.12 m² open-cooling drag estimate. The test's radiator angle remains open.",
+        "Mass bounds follow the existing Greg-method G-2 sensitivity. The speed offsets illustrate engineering sensitivity and have no specimen calibration behind them.",
+        "The alternate 360 km/h TAS case tests the effect of a different speed basis. IAS is the best documented interpretation."
+      ],
+      "fitPoints": 0,
+      "reservedTimedTurns": 1,
+      "independentRepeatRuns": 0
+    },
+    "relatedAcceleration": {
+      "basis": "Reported speed in km/h, calibration open. Same specimen and transcription. Altitude and exact shaft power unresolved for these runs.",
+      "rows": [
+        {
+          "fromKmh": 300,
+          "toKmh": 440,
+          "seconds": 27,
+          "rating": "Maximum"
+        },
+        {
+          "fromKmh": 440,
+          "toKmh": 510,
+          "seconds": 35,
+          "rating": "Maximum"
+        },
+        {
+          "fromKmh": 510,
+          "toKmh": 440,
+          "seconds": 9,
+          "rating": "Idle"
+        },
+        {
+          "fromKmh": 440,
+          "toKmh": 300,
+          "seconds": 33,
+          "rating": "Idle"
+        }
+      ]
+    }
+  },
+  "related": [
+    {
+      "title": "Ellis and Wheal, Ending the Argument, Figures 9 and 10",
+      "url": "https://www.wwiiaircraftperformance.com/com/others/endingtheargument.html",
+      "figureUrl": "https://www.wwiiaircraftperformance.com/com/others/endingtheargument_files/figure9-10.jpg",
+      "finding": "Restored fighters at 10,000 ft MSL and METO. The report distinguishes sustained and wind-up turns. It reports scatter among the P-51D, P-47D and FG-1D. The numerical curves and speed basis still need a direct figure read."
+    },
+    {
+      "title": "NACA WR L-334, Spitfire Va flight handling",
+      "url": "https://ntrs.nasa.gov/citations/19930092582",
+      "finding": "Figures 15–20 show rapid turns and accelerated maneuvers with gun ports covered. The traces give normal acceleration and control response. They do not establish a maximum sustained level-turn point."
+    },
+    {
+      "title": "AFDU Mustang III FZ.107 tactical trials",
+      "url": "https://www.wwiiaircraftperformance.org/mustang/mustang-tactical.html",
+      "finding": "A 10,100 lb V-1650-3 Mustang III was compared with Spitfire IX BS.552 and JL.359. The tactical turn result is qualitative at different installations from the benchmark pair."
+    },
+    {
+      "title": "NACA WR W-6, F2A-3 turning measurements",
+      "url": "https://ntrs.nasa.gov/citations/19930092640",
+      "finding": "Figures 22–27 plot flight-test points and calculated curves for horizontal turns with three flap settings. Primary comparison for a separate aircraft outside the current roster."
+    },
+    {
+      "title": "RAE B.A.1640 / ARC R&M 2361, Spitfire and Bf 109E",
+      "url": "https://www.aerosociety.com/media/4953/the-aerodynamics-of-the-spitfire.pdf",
+      "finding": "Ackroyd Table 4 traces the published 696 ft and 885 ft radii to Morgan and Morris's calculations. Keep them as wartime calculated references."
+    }
+  ]
+}
