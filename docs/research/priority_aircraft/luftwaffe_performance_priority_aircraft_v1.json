@@ -1,0 +1,53 @@
+{
+  "version": "2026-11-13-v1",
+  "description": "Luftwaffe performance data for priority German aircraft (Bf 109 E/G-2, Fw 190 A-8/D-9) drawn from Kurfürst, wwiiaircraftperformance.org, and Rechlin/Messerschmitt transcriptions. All numbers graded.",
+  "sources_main": [
+    "kurfurst.org (Messerschmitt Datenblatt May 1942, Rechlin Kennblatt 1943, Erla averages)",
+    "wwiiaircraftperformance.org (Fw 190 A-5/A-8 sheets, Focke-Wulf Flugberichte)",
+    "British RAE/AFDU captured aircraft reports"
+  ],
+  "bf109_g1_g2": {
+    "grade": "observed/derived",
+    "configuration": "Steig- und Kampfleistung (1.3 ata / 2600 rpm), clean fighter",
+    "level_speed_kmh": {
+      "0_m": 535,
+      "2000_m": 583,
+      "4000_m": 624,
+      "6000_m": 647,
+      "7000_m": 660
+    },
+    "notes": "Messerschmitt AG Datenblatt May 1942. Rechlin G-1 trial: 650 km/h at 6400 m (fixed tailwheel, ~12 km/h penalty). Soviet NII VVS G-2: 666 km/h at 7000 m. Erla average of 13 production aircraft: 652 km/h at ~6700 m.",
+    "climb_time_to_6km_min": 5.7,
+    "service_ceiling_km": 12.2,
+    "weight_kg_approx": 3042
+  },
+  "bf109_e": {
+    "grade": "observed",
+    "source": "British RAE/AFDU captured trials + Messerschmitt V15a protocol",
+    "level_speed_notes": "V15a (prototype E-1): ~493 km/h corrected at SL, 572 km/h at 4800 m. Captured trials confirm competitive low-medium altitude performance.",
+    "stall_ias_mph": 75,
+    "notes": "Flaps and undercarriage up. CLmax ~1.4 flaps up."
+  },
+  "fw190_a5_a8": {
+    "grade": "observed",
+    "configuration": "Normaljäger, Steig- und Kampfleistung",
+    "level_speed_kmh_a8_example": {
+      "0_m": "557-578",
+      "5500_m": "644-652"
+    },
+    "climb_ms_sl": "13.4-15.0",
+    "notes": "Multiple Focke-Wulf sheets (Oct 1943–Oct 1944). A-5 typical ~567 km/h SL / 656 km/h at 6.3 km. A-8 sheets show 557–578 km/h SL and ~644–652 km/h at rated altitude. Cooling flaps and armament affect numbers.",
+    "source": "wwiiaircraftperformance.org Focke-Wulf Flugleistungen sheets"
+  },
+  "fw190_d9": {
+    "grade": "observed/partial",
+    "source": "Focke-Wulf flight reports and Rechlin trials (wwiiaircraftperformance.org)",
+    "level_speed_notes": "With MW50 / Sondernotleistung: up to ~606 km/h SL and higher at altitude. Dry figures lower. Early reports note drag from ETC and wheel covers.",
+    "notes": "Data thinner than A-series. Primary reports exist but full matched-mass tables less consistently transcribed."
+  },
+  "gaps": [
+    "Full altitude-by-altitude power and cooling state for every point still incomplete",
+    "Stall CAS/EAS at matched mass for G-2 and 190 still missing",
+    "D-9 dry vs MW50 separation needs more precise primary tables"
+  ]
+}
