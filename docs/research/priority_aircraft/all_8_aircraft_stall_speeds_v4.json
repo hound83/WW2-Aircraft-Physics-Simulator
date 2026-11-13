@@ -1,0 +1,91 @@
+{
+  "version": "2026-11-13-v4",
+  "description": "Stall-speed data pack for the 8 priority aircraft. Best available primary and high-quality secondary sources. All numbers graded. CAS/EAS still rare.",
+  "notes": "Primary German factory stall tables (Rechlin Kennblätter with full numbers) remain scarce in open sources. British captured-aircraft reports and US pilot’s notes are the strongest available anchors.",
+  "stall_speeds": {
+    "p51d": {
+      "grade": "observed",
+      "source": "AN 01-60JE-1 Pilot’s Flight Operating Instructions (P-51D/K)",
+      "configuration": "gear and flaps up, no external load",
+      "clean_power_off_ias_mph": {
+        "7500_lb": 91,
+        "8500_lb": 97,
+        "9500_lb": 103
+      },
+      "gear_flaps_down_ias_mph": {
+        "7500_lb": 85,
+        "8500_lb": 90.5,
+        "9500_lb": 96
+      },
+      "with_external_gear_flaps_up_ias_mph": {
+        "9000_lb": 102,
+        "10000_lb": 107.5,
+        "11000_lb": 113
+      },
+      "notes": "Mild stall. Elevator buffet warning 3-4 mph above stall. Recovery normal."
+    },
+    "p47d": {
+      "grade": "observed",
+      "source": "Pilot’s notes + NACA RM L8A06 (P-47D-30 flying qualities)",
+      "typical_clean_ias_mph": 115,
+      "range_ias_mph": "105-116",
+      "buffet_warning_mph_above_stall": "3-5",
+      "notes": "Satisfactory in clean/glide/landing. Approach and wave-off weaker. Tested around 12500-13200 lb."
+    },
+    "spitfire5": {
+      "grade": "observed",
+      "source": "NACA WR L-353 Stalling Characteristics of the Supermarine Spitfire VA (Vensel & Phillips, 1942)",
+      "notes": "Good buffet warning several mph above minimum speed. Wing tips stall first. Motions not violent. Absolute IAS table not published in open extract."
+    },
+    "spitfire1": {
+      "grade": "partial",
+      "source": "A&AEE handling trials / Pilot’s Notes",
+      "clean_ias_mph": "64-73",
+      "weight_lb": "~6250",
+      "notes": "Flaps and undercarriage up. Early production weights."
+    },
+    "bf109e": {
+      "grade": "observed",
+      "source": "British RAE/AFDU captured Bf 109E trials",
+      "clean_ias_mph": 75,
+      "flaps_down_ias_mph": 61,
+      "CLmax_approx": {
+        "flaps_up": 1.4,
+        "flaps_down": 1.9
+      },
+      "notes": "Flaps and undercarriage up for 75 mph figure. Slats open ~20 mph above stall."
+    },
+    "bf109g2": {
+      "grade": "secondary",
+      "source": "IL-2 / pilot manuals / secondary summaries",
+      "clean_ias_kmh": "158-180",
+      "notes": "IAS only. No primary Rechlin CAS table located in open sources."
+    },
+    "fw190a8": {
+      "grade": "secondary",
+      "source": "AFDU captured Fw 190 notes (approx. 110 mph clean) + secondary",
+      "clean_ias_mph": "~110",
+      "clean_ias_kmh": "177-208",
+      "notes": "Sudden stall with little warning in clean configuration. Controls effective until stall."
+    },
+    "fw190d9": {
+      "grade": "secondary",
+      "source": "secondary / IL-2",
+      "clean_ias_kmh": "174-197",
+      "notes": "Similar behavior to A-8. Thin primary data."
+    }
+  },
+  "naca_and_primary_reports": [
+    "NACA WR L-566 - XP-51 flying qualities and stalling characteristics (CLmax 1.5-1.9)",
+    "NACA RM L8A06 - P-47D-30 longitudinal stability and stalling characteristics",
+    "NACA WR L-353 - Spitfire VA stalling characteristics",
+    "AN 01-60JE-1 - P-51D Pilot’s Flight Operating Instructions",
+    "RAE/AFDU captured Bf 109E and Fw 190 reports"
+  ],
+  "remaining_gaps": [
+    "No clean CAS/EAS at matched mass for most aircraft",
+    "German primary stall tables (Rechlin Kennblätter with full numbers) not located in open sources",
+    "Spitfire V absolute IAS table still sparse",
+    "No full P-51D NACA stall report equivalent to the XP-51 one"
+  ]
+}
