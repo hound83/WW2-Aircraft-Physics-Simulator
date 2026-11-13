@@ -4,18 +4,21 @@ Review date 13 November 2026. The input roadmap covers 13 scored reference varia
 
 ## Variant priority list (2026-11-13)
 
-The research priority reflects the historical scope and the next useful evidence to recover. See the dossier work below for readiness and the intended comparison.
+The [accepted aircraft roster decision](../DECISIONS.md#aircraft-roster-expansion) gives the intake order and donor evidence. Start with HF Mk IX BS.551 and prepare G-2 MT-215 and P-51D-15-NA 44-15342 in the next batch.
 
 | Variant | Force | In sim | Data | Add to dataset | Add to sim | Remarks |
 |---------|-------|--------|------|----------------|------------|---------|
-| Bf 109 G-2 MT-215 | Luftwaffe | — | 65% primary / 69% total for the G-2 research dossier | Next | First bounded intake | Installed power, run mass and airspeed corrections |
-| P-51D-15-NA 44-15342 | USAAF | — | 48% primary / 51% total | Prepare in parallel | Intake candidate | Match near-stall data and bound propeller efficiency and drag |
+| Spitfire HF Mk IX BS.551 | RAF | — | Paired A&AEE speed and climb, dossier score pending | Next | First profile to qualify | Merlin 70, matched wing and CG with BS.543 |
+| Bf 109 G-2 MT-215 | Luftwaffe | — | 65% primary / 69% total for the G-2 research dossier | Next | Next batch | Installed power, run mass and airspeed corrections |
+| P-51D-15-NA 44-15342 | USAAF | — | 48% primary / 51% total | Prepare in parallel | Next batch | Exact Wright Field tests and D/K handbook IAS schedule |
 | P-47D-30 43-3441 | USAAF | — | 66% primary / 68% total | Targeted | Intake candidate | Resolve NACA low-speed channels. Keep D-22 42-26167 as a separate dossier, 46% primary / 46% total |
 | F6F-3 BuAer 04776 | US Navy | — | 79% primary / 82% total | Targeted | First alternate | Match NACA stall speed, calibration and test mass |
-| Spitfire I N.3171 | RAF | — | 43% primary / 44% total | Targeted | Early-war pair | Match level power and low-speed basis; track propeller and fuel standard |
-| Spitfire Va X.4922 | RAF | — | 32% primary / 32% total | Targeted | Later | Match Merlin 45 rating and cooling to its de Havilland installation |
-| Bf 109 E WNr 1304 | Luftwaffe | — | 22% primary / 24% total | Targeted | Early-war pair | Use an exact E-series trial; retain differences between captured and factory airframes |
-| Bf 109 G-6/G-14 | Luftwaffe | — | Medium | Yes (near-term) | Later | Most numerous late G |
+| Bf 109 G-6/Trop WNr 16476 | Luftwaffe | — | Factory speed and climb, dossier score pending | Second wave | Second wave | DB 605 A, retain exact attachments and cooling state |
+| Spitfire F Mk IX BF.274 | RAF | — | A&AEE speed, climb and position-error trials, dossier score pending | Second wave | Second wave | Merlin 61, qualify the clean stall reference |
+| Spitfire Va X.4922 | RAF | — | 32% primary / 32% total | Third wave | Before Mk I | Match W.3119 stall evidence to the Va configuration |
+| Spitfire I N.3171 | RAF | — | 43% primary / 44% total | Third wave | Early-war pair | Use its own stall reference, match level power and airspeed basis |
+| Bf 109 E WNr 1304 | Luftwaffe | — | 22% primary / 24% total | Third wave | Early-war pair | Qualify the E's own performance and stall evidence |
+| Bf 109 G-14 | Luftwaffe | — | Medium | Yes (near-term) | Later | Qualify an exact late-G installation |
 | Fw 190 A-8 WNr 733705 | Luftwaffe | — | 35% primary / 35% total | Yes (near-term) | Later | Most common late A-series |
 | Fw 190 D-9 WNr 210002 | Luftwaffe | — | 61% primary / 65% total | Targeted | Later | Match installed Jumo 213 A power to the dry and MW 50 cases |
 | Spitfire LF IX | RAF | Yes | Strong | Improve (near-term) | Already in | Core; improve stall |
@@ -40,7 +43,7 @@ The research priority reflects the historical scope and the next useful evidence
 | Bf 110 | Luftwaffe | — | Weak | Never / very low | Never / very low | Early heavy fighter, quickly outclassed |
 | Il-2 | Soviet | — | Weak | Never / very low | Never / very low | Ground-attack, not a day fighter |
 
-Keep improving the seven modeled aircraft and the remaining scored dossiers while preparing MT-215 and 44-15342. Pair an exact Spitfire I with an exact Bf 109 E for the early-war comparison. Include the Hurricane I when Battle of Britain coverage becomes the milestone. [Dossier readiness](../SIMULATOR_DATA_HANDOFF.md#suggested-aircraft)
+The existing F-4 and LF IX anchor the planned family comparisons. Pair the Spitfire I with the Bf 109 E for the early-war comparison. Include the Hurricane I when Battle of Britain coverage becomes the milestone. [Dossier readiness](../SIMULATOR_DATA_HANDOFF.md#suggested-aircraft)
 
 ## Review of the supplied Google AI files
 
@@ -104,7 +107,9 @@ The [independent stall donor shortlist](../../references/research/STALL_DONOR_SH
 
 Release the first case whose airspeed, mass, configuration and uncertainty are defensible. Retain measured, transcribed and derived values with their provenance. The existing research goals are ±2 km/h for clean stall, ±3 km/h for level TAS and ±3% for matched climb or time. Publish actual residuals and the source allowance. [Evidence rules](WW2_FIGHTER_SIM_INPUTS_V1.md#selection-and-gold)
 
-### Next · First bounded new-aircraft input dossier
+### Next · First bounded aircraft profiles
+
+Start with **Spitfire HF Mk IX BS.551**. Use the already indexed A&AEE speed and climb series and check the Merlin 70 and Rotol installation against the paired LF IX report. Keep the test mass, wing and CG match with BS.543, and mark the stall reference provisional until corrected evidence supports it. [Aircraft roster decision](../DECISIONS.md#aircraft-roster-expansion) · [Paired A&AEE trials](https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html)
 
 Prepare **Bf 109 G-2 MT-215 / WNr 14783** for a bounded speed-and-climb comparison. The Finnish test ran near 2,540 actual rpm and 1.30–1.32 ata on the documented level branch. The DB 605 A factory 1.30 ata / 2,600 rpm points are a reference schedule. Recover the original run mass or loading sheet, exact installed power and propeller drawing, and verify the airspeed corrections. Use the Finnish trial for its supported branches, and keep the WNF production and NII VVS gun-pod tests as separate cases. The Finnish Aviation Museum catalog describes aircraft logs and technical archives as a further retrieval route. [G-2 data handoff](../SIMULATOR_DATA_HANDOFF.md#suggested-aircraft) · [German source register](WW2_GERMAN_FIGHTER_ARCHIVE_2026-11-11.md#bf-109-g-2) · [Finnish Aviation Museum archives](https://ilmailumuseo.fi/en/kirjasto-arkisto/)
 
