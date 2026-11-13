@@ -1,0 +1,1459 @@
+{
+  "schema": "ww2-continuous-stall-before/v1",
+  "commit": "7a025624c13666864f5851861f588838404bc30f",
+  "version": "4.11.0-rc.1",
+  "inputPack": "1.11.0",
+  "scorecard": [
+    {
+      "id": "spitfire_lfix_bs543",
+      "cases": [
+        [
+          "normal",
+          0,
+          "modelled",
+          85.16,
+          319.582,
+          4020.323,
+          21.897,
+          38.646
+        ],
+        [
+          "normal",
+          10000,
+          "modelled",
+          85.16,
+          353.773,
+          3879.898,
+          17.535,
+          33.211
+        ],
+        [
+          "normal",
+          20000,
+          "modelled",
+          85.16,
+          371.125,
+          3334.054,
+          13.161,
+          28.209
+        ],
+        [
+          "normal",
+          30000,
+          "modelled",
+          85.16,
+          386.719,
+          2418.876,
+          8.906,
+          23.639
+        ],
+        [
+          "normal",
+          35000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "normal",
+          40000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "combat",
+          0,
+          "modelled",
+          85.16,
+          335.904,
+          4747.801,
+          23.281,
+          38.646
+        ],
+        [
+          "combat",
+          10000,
+          "modelled",
+          85.16,
+          380.316,
+          4704.584,
+          19.256,
+          33.211
+        ],
+        [
+          "combat",
+          20000,
+          "modelled",
+          85.16,
+          399.415,
+          4117.699,
+          14.635,
+          28.209
+        ],
+        [
+          "combat",
+          30000,
+          "modelled",
+          85.16,
+          394.442,
+          2236.669,
+          9.25,
+          23.639
+        ],
+        [
+          "combat",
+          35000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "combat",
+          40000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "timed": [
+        [
+          "normal",
+          10000,
+          "reached",
+          107.521,
+          300
+        ],
+        [
+          "normal",
+          20000,
+          "fuel-exhausted",
+          null,
+          271.639
+        ],
+        [
+          "normal",
+          30000,
+          "fuel-exhausted",
+          null,
+          237.634
+        ],
+        [
+          "combat",
+          10000,
+          "reached",
+          49.345,
+          300
+        ],
+        [
+          "combat",
+          20000,
+          "power-limited",
+          null,
+          291.646
+        ],
+        [
+          "combat",
+          30000,
+          "power-limited",
+          null,
+          241.254
+        ]
+      ],
+      "climb": [
+        [
+          "normal",
+          "reached",
+          163.898
+        ],
+        [
+          "combat",
+          "reached",
+          117.267
+        ]
+      ]
+    },
+    {
+      "id": "bf109f4",
+      "cases": [
+        [
+          "normal",
+          0,
+          "modelled",
+          95.594,
+          325.515,
+          4257.212,
+          22.137,
+          34.427
+        ],
+        [
+          "normal",
+          10000,
+          "modelled",
+          95.594,
+          357.669,
+          4142.984,
+          17.857,
+          29.585
+        ],
+        [
+          "normal",
+          20000,
+          "modelled",
+          95.594,
+          394.007,
+          3543.53,
+          13.527,
+          25.13
+        ],
+        [
+          "normal",
+          30000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "normal",
+          35000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "normal",
+          40000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "combat",
+          0,
+          "modelled",
+          95.594,
+          339.555,
+          4873.721,
+          23.209,
+          34.427
+        ],
+        [
+          "combat",
+          10000,
+          "modelled",
+          95.594,
+          373.55,
+          4762.772,
+          18.761,
+          29.585
+        ],
+        [
+          "combat",
+          20000,
+          "modelled",
+          95.594,
+          411.455,
+          4122.83,
+          14.298,
+          25.13
+        ],
+        [
+          "combat",
+          30000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "combat",
+          35000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "combat",
+          40000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "timed": [
+        [
+          "normal",
+          10000,
+          "reached",
+          88.302,
+          300
+        ],
+        [
+          "normal",
+          20000,
+          "power-limited",
+          null,
+          288.27
+        ],
+        [
+          "normal",
+          30000,
+          "source-power-unavailable",
+          null,
+          180
+        ],
+        [
+          "combat",
+          10000,
+          "reached",
+          56.894,
+          300
+        ],
+        [
+          "combat",
+          20000,
+          "power-limited",
+          null,
+          288.273
+        ],
+        [
+          "combat",
+          30000,
+          "source-power-unavailable",
+          null,
+          180
+        ]
+      ],
+      "climb": [
+        [
+          "normal",
+          "reached",
+          146.182
+        ],
+        [
+          "combat",
+          "reached",
+          136.854
+        ]
+      ]
+    },
+    {
+      "id": "p47b",
+      "cases": [
+        [
+          "normal",
+          0,
+          "modelled",
+          108.351,
+          312.496,
+          2336.214,
+          15.425,
+          30.374
+        ],
+        [
+          "normal",
+          10000,
+          "modelled",
+          108.351,
+          342.624,
+          2161.271,
+          12.238,
+          26.102
+        ],
+        [
+          "normal",
+          20000,
+          "modelled",
+          108.351,
+          376.476,
+          1848.958,
+          9.441,
+          22.171
+        ],
+        [
+          "normal",
+          30000,
+          "modelled",
+          108.351,
+          411.398,
+          1572.532,
+          7.001,
+          18.579
+        ],
+        [
+          "normal",
+          35000,
+          "modelled",
+          108.351,
+          398.063,
+          865.822,
+          4.956,
+          16.908
+        ],
+        [
+          "normal",
+          40000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "combat",
+          0,
+          "modelled",
+          108.351,
+          337.376,
+          2952.827,
+          17.034,
+          30.374
+        ],
+        [
+          "combat",
+          10000,
+          "modelled",
+          108.351,
+          371.074,
+          2797.588,
+          13.63,
+          26.102
+        ],
+        [
+          "combat",
+          20000,
+          "modelled",
+          108.351,
+          405.948,
+          2727.222,
+          10.651,
+          22.171
+        ],
+        [
+          "combat",
+          30000,
+          "modelled",
+          108.351,
+          431.38,
+          2107.09,
+          7.659,
+          18.579
+        ],
+        [
+          "combat",
+          35000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "combat",
+          40000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "timed": [
+        [
+          "normal",
+          10000,
+          "fuel-exhausted",
+          null,
+          296.166
+        ],
+        [
+          "normal",
+          20000,
+          "fuel-exhausted",
+          null,
+          276.877
+        ],
+        [
+          "normal",
+          30000,
+          "fuel-exhausted",
+          null,
+          254.182
+        ],
+        [
+          "combat",
+          10000,
+          "reached",
+          85.7,
+          300
+        ],
+        [
+          "combat",
+          20000,
+          "power-limited",
+          null,
+          296.064
+        ],
+        [
+          "combat",
+          30000,
+          "power-limited",
+          null,
+          262.062
+        ]
+      ],
+      "climb": [
+        [
+          "normal",
+          "reached",
+          282.433
+        ],
+        [
+          "combat",
+          "reached",
+          207.235
+        ]
+      ]
+    },
+    {
+      "id": "p51b",
+      "cases": [
+        [
+          "normal",
+          0,
+          "modelled",
+          96.771,
+          315.159,
+          2495.309,
+          18.366,
+          34.009
+        ],
+        [
+          "normal",
+          10000,
+          "modelled",
+          96.771,
+          355.518,
+          2608.28,
+          13.914,
+          25.557
+        ],
+        [
+          "normal",
+          20000,
+          "modelled",
+          96.771,
+          359.752,
+          1851.532,
+          9.911,
+          24.824
+        ],
+        [
+          "normal",
+          30000,
+          "modelled",
+          96.771,
+          384.848,
+          1546.449,
+          7.593,
+          20.802
+        ],
+        [
+          "normal",
+          35000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "normal",
+          40000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "combat",
+          0,
+          "modelled",
+          96.771,
+          361.863,
+          3980.456,
+          21.755,
+          34.009
+        ],
+        [
+          "combat",
+          10000,
+          "modelled",
+          96.771,
+          408.071,
+          4203.326,
+          16.079,
+          25.557
+        ],
+        [
+          "combat",
+          20000,
+          "modelled",
+          96.771,
+          414.827,
+          3184.083,
+          11.618,
+          24.824
+        ],
+        [
+          "combat",
+          30000,
+          "modelled",
+          96.771,
+          416.442,
+          2188.391,
+          7.887,
+          20.802
+        ],
+        [
+          "combat",
+          35000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "combat",
+          40000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "timed": [
+        [
+          "normal",
+          10000,
+          "reached",
+          149.958,
+          300
+        ],
+        [
+          "normal",
+          20000,
+          "fuel-exhausted",
+          null,
+          264.758
+        ],
+        [
+          "normal",
+          30000,
+          "fuel-exhausted",
+          null,
+          238.22
+        ],
+        [
+          "combat",
+          10000,
+          "reached",
+          49.528,
+          300
+        ],
+        [
+          "combat",
+          20000,
+          "reached",
+          197.107,
+          300
+        ],
+        [
+          "combat",
+          30000,
+          "power-limited",
+          null,
+          253.724
+        ]
+      ],
+      "climb": [
+        [
+          "normal",
+          "reached",
+          248.027
+        ],
+        [
+          "combat",
+          "reached",
+          150.794
+        ]
+      ]
+    },
+    {
+      "id": "fw190a4",
+      "cases": [
+        [
+          "normal",
+          0,
+          "modelled",
+          107.298,
+          325.644,
+          3608.7,
+          18.378,
+          30.673
+        ],
+        [
+          "normal",
+          10000,
+          "modelled",
+          107.298,
+          360.597,
+          2835.879,
+          13.824,
+          26.359
+        ],
+        [
+          "normal",
+          20000,
+          "modelled",
+          107.298,
+          396.112,
+          2506.044,
+          10.659,
+          22.389
+        ],
+        [
+          "normal",
+          30000,
+          "modelled",
+          107.298,
+          384.468,
+          976.679,
+          5.656,
+          18.761
+        ],
+        [
+          "normal",
+          35000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "normal",
+          40000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "combat",
+          0,
+          "modelled",
+          107.298,
+          341.732,
+          4382.979,
+          19.406,
+          30.673
+        ],
+        [
+          "combat",
+          10000,
+          "modelled",
+          107.298,
+          379.554,
+          3568.955,
+          14.693,
+          26.359
+        ],
+        [
+          "combat",
+          20000,
+          "modelled",
+          107.298,
+          416.809,
+          3276.606,
+          11.431,
+          22.389
+        ],
+        [
+          "combat",
+          30000,
+          "modelled",
+          107.298,
+          407.136,
+          1473.755,
+          6.463,
+          18.761
+        ],
+        [
+          "combat",
+          35000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "combat",
+          40000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "timed": [
+        [
+          "normal",
+          10000,
+          "reached",
+          116.821,
+          300
+        ],
+        [
+          "normal",
+          20000,
+          "power-limited",
+          null,
+          289.929
+        ],
+        [
+          "normal",
+          30000,
+          "power-limited",
+          null,
+          236.44
+        ],
+        [
+          "combat",
+          10000,
+          "reached",
+          73.815,
+          300
+        ],
+        [
+          "combat",
+          20000,
+          "reached",
+          160.956,
+          300
+        ],
+        [
+          "combat",
+          30000,
+          "power-limited",
+          null,
+          242.002
+        ]
+      ],
+      "climb": [
+        [
+          "normal",
+          "reached",
+          199.987
+        ],
+        [
+          "combat",
+          "reached",
+          154.44
+        ]
+      ]
+    },
+    {
+      "id": "p38g",
+      "cases": [
+        [
+          "normal",
+          0,
+          "modelled",
+          110.58,
+          295.878,
+          2519.393,
+          16.911,
+          29.762
+        ],
+        [
+          "normal",
+          10000,
+          "modelled",
+          110.58,
+          326.008,
+          2430.496,
+          13.6,
+          25.576
+        ],
+        [
+          "normal",
+          20000,
+          "modelled",
+          110.58,
+          357.754,
+          2239.377,
+          10.576,
+          21.725
+        ],
+        [
+          "normal",
+          30000,
+          "modelled",
+          110.58,
+          386.789,
+          1875.272,
+          7.774,
+          18.204
+        ],
+        [
+          "normal",
+          35000,
+          "modelled",
+          110.58,
+          346.855,
+          798.757,
+          4.854,
+          16.567
+        ],
+        [
+          "normal",
+          40000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "combat",
+          0,
+          "modelled",
+          110.58,
+          327.961,
+          3573.053,
+          19.1,
+          29.762
+        ],
+        [
+          "combat",
+          10000,
+          "modelled",
+          110.58,
+          362.256,
+          3499.411,
+          15.461,
+          25.576
+        ],
+        [
+          "combat",
+          20000,
+          "modelled",
+          110.58,
+          394.723,
+          3303.785,
+          12.152,
+          21.725
+        ],
+        [
+          "combat",
+          30000,
+          "modelled",
+          110.58,
+          394.609,
+          2341.456,
+          8.423,
+          18.204
+        ],
+        [
+          "combat",
+          35000,
+          "modelled",
+          110.58,
+          365.603,
+          1119.436,
+          5.563,
+          16.567
+        ],
+        [
+          "combat",
+          40000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "timed": [
+        [
+          "normal",
+          10000,
+          "fuel-exhausted",
+          null,
+          281.208
+        ],
+        [
+          "normal",
+          20000,
+          "fuel-exhausted",
+          null,
+          262.419
+        ],
+        [
+          "normal",
+          30000,
+          "fuel-exhausted",
+          null,
+          238.242
+        ],
+        [
+          "combat",
+          10000,
+          "reached",
+          93.121,
+          300
+        ],
+        [
+          "combat",
+          20000,
+          "power-limited",
+          null,
+          288.098
+        ],
+        [
+          "combat",
+          30000,
+          "power-limited",
+          null,
+          241.078
+        ]
+      ],
+      "climb": [
+        [
+          "normal",
+          "reached",
+          253.376
+        ],
+        [
+          "combat",
+          "reached",
+          172.395
+        ]
+      ]
+    },
+    {
+      "id": "f4u4",
+      "cases": [
+        [
+          "normal",
+          0,
+          "modelled",
+          100.372,
+          323.254,
+          3109.822,
+          17.664,
+          32.79
+        ],
+        [
+          "normal",
+          10000,
+          "modelled",
+          100.372,
+          355.135,
+          2916.051,
+          14.067,
+          28.178
+        ],
+        [
+          "normal",
+          20000,
+          "modelled",
+          100.372,
+          385.538,
+          2521.111,
+          10.611,
+          23.935
+        ],
+        [
+          "normal",
+          30000,
+          "modelled",
+          100.372,
+          417.944,
+          1697.829,
+          6.985,
+          20.056
+        ],
+        [
+          "normal",
+          35000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "normal",
+          40000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "combat",
+          0,
+          "modelled",
+          100.372,
+          349.415,
+          4025.964,
+          19.428,
+          32.79
+        ],
+        [
+          "combat",
+          10000,
+          "modelled",
+          100.372,
+          369.398,
+          3399.688,
+          14.895,
+          28.178
+        ],
+        [
+          "combat",
+          20000,
+          "modelled",
+          100.372,
+          408.494,
+          2983.986,
+          11.326,
+          23.935
+        ],
+        [
+          "combat",
+          30000,
+          "modelled",
+          100.372,
+          424.95,
+          1838.084,
+          7.23,
+          20.056
+        ],
+        [
+          "combat",
+          35000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "combat",
+          40000,
+          "source-power-unavailable",
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "timed": [
+        [
+          "normal",
+          10000,
+          "reached",
+          159.703,
+          300
+        ],
+        [
+          "normal",
+          20000,
+          "fuel-exhausted",
+          null,
+          283.123
+        ],
+        [
+          "normal",
+          30000,
+          "fuel-exhausted",
+          null,
+          257.946
+        ],
+        [
+          "combat",
+          10000,
+          "reached",
+          96.159,
+          300
+        ],
+        [
+          "combat",
+          20000,
+          "power-limited",
+          null,
+          297.39
+        ],
+        [
+          "combat",
+          30000,
+          "power-limited",
+          null,
+          258.412
+        ]
+      ],
+      "climb": [
+        [
+          "normal",
+          "reached",
+          203.833
+        ],
+        [
+          "combat",
+          "reached",
+          159.599
+        ]
+      ]
+    }
+  ],
+  "fixed": [
+    {
+      "id": "spitfire_lfix_bs543",
+      "altFt": 10000,
+      "easMph": 200,
+      "weightLb": 7178.76,
+      "stallEasMph": 85.16004,
+      "liftG": 5.515543,
+      "sustainedG": 3.068153,
+      "sustainedDegSec": 15.664842
+    },
+    {
+      "id": "bf109f4",
+      "altFt": 10000,
+      "easMph": 200,
+      "weightLb": 6053.99,
+      "stallEasMph": 95.594186,
+      "liftG": 4.377206,
+      "sustainedG": 3.226876,
+      "sustainedDegSec": 16.568904
+    },
+    {
+      "id": "p47b",
+      "altFt": 10000,
+      "easMph": 200,
+      "weightLb": 11705,
+      "stallEasMph": 108.350824,
+      "liftG": 3.407184,
+      "sustainedG": 2.431662,
+      "sustainedDegSec": 11.970395
+    },
+    {
+      "id": "p51b",
+      "altFt": 10000,
+      "easMph": 200,
+      "weightLb": 8925,
+      "stallEasMph": 96.770943,
+      "liftG": 3.125501,
+      "sustainedG": 3.125501,
+      "sustainedDegSec": 15.992084
+    },
+    {
+      "id": "fw190a4",
+      "altFt": 10000,
+      "easMph": 200,
+      "weightLb": 8116.599546554761,
+      "stallEasMph": 107.297913,
+      "liftG": 3.474381,
+      "sustainedG": 2.606018,
+      "sustainedDegSec": 12.996462
+    },
+    {
+      "id": "p38g",
+      "altFt": 10000,
+      "easMph": 200,
+      "weightLb": 14333,
+      "stallEasMph": 110.580282,
+      "liftG": 3.271181,
+      "sustainedG": 2.878944,
+      "sustainedDegSec": 14.57974
+    },
+    {
+      "id": "f4u4",
+      "altFt": 10000,
+      "easMph": 200,
+      "weightLb": 11898,
+      "stallEasMph": 100.371773,
+      "liftG": 3.970423,
+      "sustainedG": 2.472283,
+      "sustainedDegSec": 12.210664
+    },
+    {
+      "id": "p51b",
+      "altFt": 8000,
+      "easMph": 170,
+      "weightLb": 9270,
+      "stallEasMph": 103.554841,
+      "liftG": 2.400049,
+      "sustainedG": 2.400049,
+      "sustainedDegSec": 14.301379
+    },
+    {
+      "id": "p51b",
+      "altFt": 8000,
+      "easMph": 200,
+      "weightLb": 9270,
+      "stallEasMph": 103.554841,
+      "liftG": 3.122812,
+      "sustainedG": 3.067891,
+      "sustainedDegSec": 16.159621
+    }
+  ],
+  "edges": [
+    {
+      "id": "p51b",
+      "altFt": 5099,
+      "easMph": 170,
+      "weightLb": 9270,
+      "stallEasMph": 98.623572,
+      "liftG": 2.971231,
+      "sustainedG": 2.935696,
+      "sustainedDegSec": 18.914562
+    },
+    {
+      "id": "p51b",
+      "altFt": 5100,
+      "easMph": 170,
+      "weightLb": 9270,
+      "stallEasMph": 103.554841,
+      "liftG": 2.438621,
+      "sustainedG": 2.438621,
+      "sustainedDegSec": 15.241433
+    },
+    {
+      "id": "p51b",
+      "altFt": 5101,
+      "easMph": 170,
+      "weightLb": 9270,
+      "stallEasMph": 103.554841,
+      "liftG": 2.438609,
+      "sustainedG": 2.438609,
+      "sustainedDegSec": 15.241106
+    },
+    {
+      "id": "p51b",
+      "altFt": 5750,
+      "easMph": 170,
+      "weightLb": 9270,
+      "stallEasMph": 103.554841,
+      "liftG": 2.430228,
+      "sustainedG": 2.430228,
+      "sustainedDegSec": 15.029143
+    },
+    {
+      "id": "p51b",
+      "altFt": 8000,
+      "easMph": 170,
+      "weightLb": 9270,
+      "stallEasMph": 103.554841,
+      "liftG": 2.400049,
+      "sustainedG": 2.400049,
+      "sustainedDegSec": 14.301379
+    },
+    {
+      "id": "p51b",
+      "altFt": 8650,
+      "easMph": 170,
+      "weightLb": 9270,
+      "stallEasMph": 103.554841,
+      "liftG": 2.38989,
+      "sustainedG": 2.38989,
+      "sustainedDegSec": 14.08529
+    },
+    {
+      "id": "p51b",
+      "altFt": 9299,
+      "easMph": 170,
+      "weightLb": 9270,
+      "stallEasMph": 103.554841,
+      "liftG": 2.379157,
+      "sustainedG": 2.379157,
+      "sustainedDegSec": 13.867525
+    },
+    {
+      "id": "p51b",
+      "altFt": 9300,
+      "easMph": 170,
+      "weightLb": 9270,
+      "stallEasMph": 103.554841,
+      "liftG": 2.379141,
+      "sustainedG": 2.379141,
+      "sustainedDegSec": 13.86719
+    },
+    {
+      "id": "p51b",
+      "altFt": 9301,
+      "easMph": 170,
+      "weightLb": 9270,
+      "stallEasMph": 98.623572,
+      "liftG": 2.970224,
+      "sustainedG": 2.881814,
+      "sustainedDegSec": 17.361209
+    }
+  ]
+}

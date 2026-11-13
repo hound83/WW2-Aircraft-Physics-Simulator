@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.12-rc.1 continuous stall
+
+The Mustang taper and its transfer of pooled TN 1044 readings are engineering assumptions. The exact 43-24777 near-stall IAS correction remains open. The Corsair Navy stall-run serial, altitude and powered setting are unspecified. The separate Ames glide comparison has a −3.69 mph EAS residual at approximate loading. The lift ceiling and the power-supported turn remain steady calculations. [Stall and lift results](V412_CONTINUOUS_STALL.md)
+
 ## v4.11-rc.1 shared climb
 
 The WNr 783 equivalent cooling area comes from one open/closed fit with modeled TAS. The 7,000 m residual worsens and the derived 6,000 m time remains below the factory read band. The P-38G time check uses the same report’s TAS and chart BHP at fixed takeoff weight. Timing of the operational runs also depends on the assumed fuel flow and the planned speed schedule. The P-47B and Spitfire report-conditioned fits restore reference speed energy inside their supported calibration. Historical sustained turn, exact corrected stall and 5:1 evidence remain open. [Source residuals and scorecard](V411_SHARED_FLIGHT_CLIMB.md)

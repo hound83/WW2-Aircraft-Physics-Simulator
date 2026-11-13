@@ -56,6 +56,26 @@
    extension:$('bench-extension').checked,openCooling:cooling.value==='open'}};
  }
  function number(label,value,detail){const e=document.createElement('div');e.className='bench-number';e.append(text('span',label),text('strong',value),text('small',detail));return e;}
+ function stallReferences(side){
+  const id=api.settings[side].id;
+  const rows=data.stallReferences[id];
+  if(!rows.length)return null;
+  const group=text('details',undefined,'bench-note');
+  group.append(text('summary','Stall references'));
+  for(const row of rows){
+   const {value,unit,basis}=row.speed;
+   const condition=[row.power==='on'?'power on':row.power==='off'?'power off':row.power,
+    Number.isFinite(row.weightLb)?fmt(row.weightLb,0)+' lb':null,
+    Number.isFinite(row.altFt)?heightLabel(row.altFt):null].filter(Boolean).join(', ');
+   const note=text('p',(row.grade==='calculated'?'Calculated clean stall':row.role)+' · '+row.aircraft+' · '+
+    value+' '+unit+' '+basis+' · '+condition+'. '+row.qualification+' ');
+   note.dataset.stallObservation=row.id;
+   const link=text('a',row.source.title);
+   link.href=row.source.url;link.target='_blank';link.rel='noopener';
+   note.append(link);group.append(note);
+  }
+  return group;
+ }
  function renderSide(side){
   const chosen=api.settings[side],spec=specs.aircraft[chosen.id],r=api.rows[side];
   const context=service.aircraft[chosen.id];
@@ -66,6 +86,8 @@
   box.append(text('p',r.phase.label+' · '+(r.phase.seconds?fmt(r.phase.seconds/60,1)+' min limit':'no timed limit in selected profile')));
   box.append(text('p',fmt(r.loading.weightLb,0)+' lb · '+fmt(r.loading.fuelUSGal,1)+' US gal internal · '+spec.armament,'bench-note'));
   box.append(text('p',spec.ratingEvidence??'Source-based settings; installed-power and load reconstruction remain model estimates.','bench-note'));
+  const stallDetails=stallReferences(side);
+  if(stallDetails)result.append(stallDetails);
   if(r.status==='source-power-unavailable'){box.append(text('p','Power source does not cover this altitude. Enable labelled estimates to inspect a pressure-lapse scenario.','bench-warning'));return;}
   if(r.status!=='modelled')box.append(text('p','This model cannot sustain level flight at this load, power and altitude.','bench-warning'));
   if(r.sustained?.estimatedPower||r.level?.estimatedPower||r.climb?.estimatedPower)box.append(text('p','High-altitude power estimate beyond the last source node.','bench-warning'));
@@ -99,6 +121,14 @@
     color:colors[side],evidence,turnPolicy:evidence.turnSensitivity?data.turnEvidence.sensitivity:null,
     range:row.turnRange,
     stallEasMph:row.stallEasMph,
+    provisionalStallBand:row.stallEasRange?{
+     minEasMph:row.stallEasRange[0],maxEasMph:row.stallEasRange[1],
+     limitation:'NACA TN 1044 lift transfer at the selected weight. Wright Field IAS has no matched low-speed correction.'
+    }:null,
+    stallChecks:data.stallReferences[api.settings[side].id].filter(ref=>
+     ref.altFt===alt&&(ref.role==='Reserved sister-airframe check'||ref.role==='Separate NACA configuration check')).map(ref=>({
+      ...ref,eas:BenchmarkStallReferences.referenceEas(M,ref)
+     })),
     levelEasMph:row.level?.easMph??null,
     peakEasMph:row.sustained?.easMph,
     peakRate:row.sustained?.rateDegSec,
@@ -311,7 +341,10 @@
   const alt=Number(height.value),label=heightLabel(alt);
   for(const control of altitudeControls){control.value=alt;control.setAttribute('aria-valuetext',label);}
   for(const output of altitudeReadouts)output.value=label;
-  const current=api.altitudeRows.find(row=>row.altFt===alt);
+  const current=api.altitudeRows.find(row=>row.altFt===alt)??Object.fromEntries(sides.map(side=>{
+   const chosen=api.settings[side];
+   return [side,B.metrics(M,T,L,models[chosen.id],specs.aircraft[chosen.id],specs.policy,chosen.settings,alt)];
+  }));
   for(const side of sides){api.rows[side]=current[side];renderSide(side);}
   plot(alt);renderAltitudeOverview(alt);
   const turn=turnUnit(),a=api.rows.a[turn.peak],b=api.rows.b[turn.peak],verdict=peakVerdict(a,b,turn);

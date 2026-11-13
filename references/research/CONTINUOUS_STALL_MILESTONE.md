@@ -1,22 +1,3 @@
-# Continuous stall and usable maneuver lift (research path)
+# Continuous stall and usable maneuver lift
 
-Research helper at `src/continuous-stall.js`.
-
-## What it does
-- Attaches the existing provisional stall band to an evaluation result when one exists.
-- Reports whether the modeled stall EAS falls inside the provisional band (continuity check).
-- Does not change the default CLmax-based stall calculation or any frozen baseline.
-
-## Named starting cases
-- p51b
-- p38g
-- f4u4
-
-## Usage
-```js
-const { attachProvisional, continuityCheck } = require('./continuous-stall');
-const annotated = attachProvisional('f4u4', result);
-const check = continuityCheck('f4u4', result);
-```
-
-The chart already draws a dotted band when `provisionalStallBand` is present on the aircraft object. No solver change.
+The current implementation is described in the [v4.12 scorecard](../../docs/V412_CONTINUOUS_STALL.md). The original range-membership helper supplied a prototype. The normal solver now tapers the Mustang lift transfer inside its source window. The benchmark exposes a provisional stall range, condition-specific reference points and per-segment evidence.

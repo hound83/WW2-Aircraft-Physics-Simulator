@@ -5,6 +5,8 @@
   "excerptPage": 5,
   "sourceAreaFt2": 233.2,
   "altitudeWindowFt": [5100, 9300],
+  "altitudeFadeFt": 650,
+  "machFade": 0.01,
   "cleanStallMachWindow": [0.14, 0.18],
   "cleanStallClMax": 1.45,
   "cleanStallBracket": [1.4, 1.48],

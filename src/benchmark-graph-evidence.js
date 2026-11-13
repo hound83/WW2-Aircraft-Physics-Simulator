@@ -75,11 +75,15 @@
   const cleanTurn=inDomain&&kind==='turn'&&state.cooling==='clean';
   const lift=cleanTurn&&limiting==='lift'&&state.maneuverLift&&sourceBacked(record.maneuverLift?.input)&&record.maneuverLift;
   const power=inDomain&&(kind==='acceleration'||cleanTurn&&limiting==='power')&&operatingPower(record,flight);
+  const stallTransfer=Boolean(state?.stallLift&&flight.air?.eas<state.stallLift.range[1]);
+  const lowSpeedLift=cleanTurn&&limiting==='lift'&&state.stallLift?.maneuver&&!state.maneuverLift;
+  const provisionalLift=inDomain&&(stallTransfer||lowSpeedLift);
   const supportedFit=fit&&sourceBacked(fit.input);
-  const source=fit?.source||lift||power?.source||
+  const source=provisionalLift?record.maneuverLift:fit?.source||lift||power?.source||
    (kind==='turn'&&state?.maneuverLift?record.maneuverLift:record.source);
   let label='Calculated · provisional operating input';
-  if(supportedFit)label='Calculated · near flight-test schedule';
+  if(provisionalLift)label='Calculated · provisional NACA stall or lift transfer';
+  else if(supportedFit)label='Calculated · near flight-test schedule';
   else if(fit)label='Calculated · near flight-test schedule, boost-derived power';
   else if(lift)label='Calculated · NACA maneuver-lift data';
   else if(power)label='Calculated · table-supported power';
@@ -89,7 +93,7 @@
   else if(record.calculatedPower)label='Calculated · '+record.calculatedPower;
   const propeller=state?.propellerReference;
   if(propeller)label+=propeller.tipMachLoss?' · clean-flight propeller and shaft-power reference':' · clean-flight propeller and drag fit';
-  return {covered:Boolean(supportedFit||lift||power),label,source,related:record.related,
+  return {covered:!provisionalLift&&Boolean(supportedFit||lift||power),provisionalLift,label,source,related:record.related,
    ...(propeller?{propellerSource:propeller.source}:{}),reference:climbReference(fit,flight)};
  }
 

@@ -380,7 +380,7 @@ async function run(){
   assert.match(await evaluate('document.getElementById("bench-flight-checks").textContent'),/41-5902.*BS\.543.*41-5942.*WNr 783/s);
   checks.push('v4.3 service-era groups, contemporaries filter, shared altitude matrix, independent cooling and original-flight checks');
   let bm=await benchmark();assert.equal(bm.rows.a.altFt,10000);assert.equal(bm.rows.b.altFt,10000);
-  assert.deepEqual(await evaluate('(()=>{const e=document.getElementById("bench-altitude");return [e.type,+e.min,+e.max,+e.step];})()'),['range',0,40000,5000]);
+  assert.deepEqual(await evaluate('(()=>{const e=document.getElementById("bench-altitude");return [e.type,+e.min,+e.max,+e.step];})()'),['range',0,40000,1000]);
   await evaluate('(()=>{const e=document.getElementById("bench-altitude");e.value="15000";e.dispatchEvent(new Event("input",{bubbles:true}));})()');
   const midAltitude=await benchmark();
   assert.equal(midAltitude.rows.a.altFt,15000);
@@ -818,6 +818,39 @@ async function run(){
   await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
   const benchmarkMobile=await evaluate('(()=>{const p=document.getElementById("operating-benchmark"),w=p.getBoundingClientRect().width;return {w,controls:[...p.querySelectorAll("input,select,button")].every(e=>e.getBoundingClientRect().width<=w)};})()');assert.ok(benchmarkMobile.w<=390);assert.equal(benchmarkMobile.controls,true);checks.push('v4.2 desktop and mobile comparison layout');
   await send('Emulation.setDeviceMetricsOverride',{width:1280,height:980,deviceScaleFactor:1,mobile:false});
+  await select('bench-aircraft-a','p51b');await select('bench-aircraft-b','p38g');
+  await select('bench-power-a','combat');await select('bench-fuel-a','0.5');
+  await select('bench-turn-focus','full');await select('bench-altitude','8000');
+  const stallPlot=()=>evaluate(`(()=>{
+    const svg=document.querySelector('#bench-turn-plot svg');
+    const line=[...svg.querySelectorAll('[data-bench-curve=a] path')];
+    const dotted=line.find(path=>path.dataset.benchStyle==='dotted');
+    const solid=line.find(path=>path.dataset.benchStyle==='solid');
+    const end=dotted?.getPointAtLength(dotted.getTotalLength());
+    const start=solid?.getPointAtLength(0);
+    const band=svg.querySelector('rect[data-bench-provisional-stall=a]');
+    return {band:band?.textContent,clipped:band?.parentElement.getAttribute('clip-path'),
+     solid:!!solid,dotted:!!dotted,joins:!!start&&!!end&&Math.hypot(start.x-end.x,start.y-end.y)<.1};
+  })()`);
+  let stallView=await stallPlot();
+  assert.ok(stallView.solid&&stallView.dotted&&stallView.joins);
+  assert.match(stallView.band,/mph EAS.*NACA TN 1044.*Wright Field IAS/);
+  assert.equal(stallView.clipped,'url(#bench-speed-window-turn)');
+  assert.match(await evaluate('document.getElementById("bench-probe-results").textContent'),/Lift ceiling/);
+  await select('bench-speed-unit','knots');
+  assert.match((await stallPlot()).band,/kn EAS/);
+  await select('bench-speed-unit','mph');
+  await select('bench-altitude','10000');
+  assert.equal((await stallPlot()).band,undefined);
+  assert.match(await evaluate('document.querySelector("#bench-turn-plot [data-bench-stall-check] title").textContent'),/42-12690.*112 mph CAS/);
+  await select('bench-aircraft-a','f4u4');await select('bench-altitude','8000');
+  assert.equal(await evaluate('document.querySelectorAll("#bench-turn-plot [data-bench-stall-check]").length'),2);
+  const cleanCorsair=await evaluate('[...document.querySelectorAll("#bench-result-a [data-stall-observation]")].map(el=>el.textContent)');
+  assert.equal(cleanCorsair.length,4);
+  assert.ok(cleanCorsair.some(t=>t.includes('89.4 kt CAS')&&t.includes('power off')));
+  assert.ok(cleanCorsair.some(t=>t.includes('84.6 kt CAS')&&t.includes('power on')));
+  assert.ok(cleanCorsair.some(t=>t.includes('105 mph CAS')&&t.includes('glide')));
+  checks.push('Continuous stall graph joins dotted lift-dependent and solid power segments, converts units and shows distinct report checks');
   await send('Page.navigate',{url:'http://127.0.0.1:'+server.address().port+'/fighter-evidence-curves.html'});
   await until(()=>evaluate('!!document.querySelector("#plot .curve-segment")'),'fighter evidence explorer startup');
   const joined=await evaluate('(()=>{const a=[...document.querySelectorAll(".curve-segment")].filter(e=>e.dataset.series==="0"),i=a.findIndex(e=>e.dataset.style==="dotted"),p=a[i-1],n=a[i];return i>0&&p.dataset.style==="solid"&&p.getAttribute("x2")===n.getAttribute("x1")&&p.getAttribute("y2")===n.getAttribute("y1");})()');

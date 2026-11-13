@@ -5,13 +5,16 @@ const airframe = require('../../aircraft/f4u4.json');
 const audit = require('../../references/v4-source-audit.json');
 const archive = require('../../references/research/ww2_multiaxis_propulsion_trials_2026-11-10.json');
 const stalls = require('../../references/research/stall_us_2026-11-10.json');
+const { observations: reviewedStalls } = require('../../references/research/ww2_fleet_stall_2026-11-12.json');
 const MPH_PER_KNOT = 1.150779448;
 const series = id => archive.series.find(item => item.id === id).rows;
 const cleanStalls = stalls.series.find(item => item.id === 'US20').rows.filter(row => row[0] === 'clean');
-const anchor = cleanStalls.map(([, power, knotsCas]) => {
+const poweredTrial = reviewedStalls.find(row => row.id === 'f4u4-clean-powered');
+const anchor = cleanStalls.map(([, power, originalKnots]) => {
+  const knotsCas = power === 'on' ? poweredTrial.values.speed_kt : originalKnots;
   const eas = M.airspeeds(M.tasFrom(knotsCas * MPH_PER_KNOT, 'CAS', 0), 0).eas;
   const unitClEas = Stall.eas(airframe.weightLb, airframe.wingAreaM2 / 0.09290304, 1);
-  return {power, knotsCas, clMax: (unitClEas / eas) ** 2, role: 'lift anchor'};
+  return {power, knotsCas, easMph:eas, clMax: (unitClEas / eas) ** 2, role: 'lift anchor'};
 });
 const control = {...airframe, clMaxAssumed: anchor.find(row => row.power === 'off').clMax};
 const powered = anchor.find(row => row.power === 'on').clMax;
@@ -59,4 +62,4 @@ function run() {
   return {stall, speed, chartConditioned, climb, installedEfficiency: ac.propGeometry.installedEfficiency, status: 'source-conditioned research profile',
     limitations: 'Clean one-g stall anchors at reported 12,500 lb; reference atmosphere assumed. Stall power-on setting is unspecified. One normal sea-level climb fits an equivalent low-J propulsion adjustment. Nominal engine ratings, assumed inlet recovery and gear schedule transfer to the 1948 airplane. Chart critical heights are diagnostic. Climb uses model-best speed, report gross weight and a clean polar; instantaneous mass and cooling drag are unverified.'};
 }
-module.exports = {ac, powered, options, run};
+module.exports = {ac, powered, options, run, stallAnchors:anchor};

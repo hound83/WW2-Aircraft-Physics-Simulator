@@ -150,6 +150,7 @@
    ...(coolingShare>0?{coolingFit:{...matchedCooling,appliedAreaM2:coolingArea}}:{}),
    ...(installed&&model.climbRateTas?.[phase.key]?{climbRateShare:installed.fraction}:{}),
    ...(maneuverLift?{maneuverLift}:{}),
+   ...(!installed&&turnOptions.stallLiftEvidence?{stallLift:turnOptions.stallLiftEvidence}:{}),
    ...(r.prop?.levelReference?{propellerReference:r.prop.levelReference}:{})}};
  }
  function levelAccelerationMphPerSecond(flight){
@@ -191,7 +192,10 @@
   const maxEas=M.airspeeds(590,alt).eas;
   for(let eas=65;eas<=maxEas;eas+=1){const r=atSpeed(eas);
    if(r.benchmark)engineSeen=true;
-   if(Number.isFinite(r.stallEasMph))out.stallEasMph??=r.stallEasMph;
+   if(Number.isFinite(r.stallEasMph)&&out.stallEasMph===null){
+    out.stallEasMph=r.stallEasMph;
+    if(r.benchmark?.stallLift)out.stallEasRange=r.benchmark.stallLift.range;
+   }
    if(r.status!=='modelled'||!r.power){last=null;continue;}
    if(last&&last.r.power.excessHp>=0&&r.power.excessHp<0)crossing=[last.eas,eas];last={eas,r};
    if(Number.isFinite(r.limits.nSust)){
