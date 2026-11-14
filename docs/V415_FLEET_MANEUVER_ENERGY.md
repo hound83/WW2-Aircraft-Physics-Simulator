@@ -32,7 +32,7 @@ The operating comparison uses 10,000 ft, initial Combat rating, 50% internal fue
 | Level acceleration | 12/12 | 1/12 | 3/12 |
 | Maneuverability | 12/12 | 2/12 | 3/12 |
 
-The numerical source column includes qualified historical comparisons, curve fit consistency and separate-airframe transfers. Every source group identifies its scope and count. Agreement is $100 - \mathrm{MAPE}$. Signed errors are model minus observed, and fitted observations remain separate from reserved observations. Shared-report, shared-start and shared-figure rows are correlated. The maneuver comparisons are P-51B usable lift and the provisional MT-215 360° case. The restored P-51D acceleration comparison uses a wartime profile as a proxy. [Fleet validation table](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/#bench-fleet-validation) · [Full calculations](../validation/current/fleet-validation.json).
+The numerical source column includes qualified historical comparisons, curve fit consistency and separate-airframe transfers. Every source group identifies its scope and count. Agreement is $100 - \mathrm{MAPE}$. Signed errors are model minus observed, and fitted observations remain separate from reserved observations. Shared-report, shared-start and shared-figure rows are correlated. The maneuver comparisons are P-51B usable lift and the provisional MT-215 360° case. The restored P-51D acceleration comparison uses a wartime profile as a proxy. [Fleet validation table](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/#bench-fleet-validation) · [Full calculations in the verified build artifact](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/runs/43602800017/artifacts/14117122442).
 
 ## Historical agreement by aircraft
 
