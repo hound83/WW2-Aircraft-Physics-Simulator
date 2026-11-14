@@ -76,7 +76,8 @@
   const nominal=state(flight);
   const evidence=flight.benchmark?.maneuverLift;
   if(!nominal||!policy)return {nominal,range:null,evidence};
-  const [lowLift,highLift]=policy.maneuverLiftFraction,[lowPower,highPower]=policy.usefulPowerFraction;
+  const [minLift,maxLift]=liftBounds(flight,policy.maneuverLiftFraction);
+  const [lowPower,highPower]=policy.usefulPowerFraction;
   const [lowDrag,highDrag]=policy.incrementalDragFraction;
   return {nominal,evidence,range:{
    lower:state(flight,{liftFraction:minLift,powerFraction:lowPower,dragFraction:highDrag}).turn,

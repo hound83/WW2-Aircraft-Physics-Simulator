@@ -34,6 +34,25 @@ The operating comparison uses 10,000 ft, initial Combat rating, 50% internal fue
 
 The numerical source column includes qualified historical comparisons, curve fit consistency and separate-airframe transfers. Every source group identifies its scope and count. Agreement is $100 - \mathrm{MAPE}$. Signed errors are model minus observed, and fitted observations remain separate from reserved observations. Shared-report, shared-start and shared-figure rows are correlated. The maneuver comparisons are P-51B usable lift and the provisional MT-215 360° case. The restored P-51D acceleration comparison uses a wartime profile as a proxy. [Fleet validation table](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/#bench-fleet-validation) · [Full calculations](../validation/current/fleet-validation.json).
 
+## Historical agreement by aircraft
+
+Each cell shows the first numerical comparison in that scorecard entry with its sample count and basis. Select the entry in the simulator for additional comparisons, signed errors and source conditions.
+
+| Aircraft | Level speed | Climb rate | Time to climb | Clean 1 G stall | Level acceleration | Maneuverability |
+| --- | --- | --- | --- | --- | --- | --- |
+| Spitfire LF Mk IXc | 99.7% (17, fit consistency) | 97.8% (10, reserved) | 99.9% (1, report inputs) | Source reference | Source reference | Model only |
+| Bf 109 F-4 | 98.9% (1, conditional) | Model only | 90.5% (3, conditional) | Source reference | Model only | Model only |
+| P-47B Thunderbolt | 99.6% (5, reserved) | 95.7% (5, reserved) | 99.3% (2, report inputs) | Source reference | Model only | Model only |
+| P-51B-15 Mustang | 99.9% (8, fit consistency) | 94.5% (3, conditional) | 99.7% (2, conditional) | Source reference | Model only | 98.9% (5, lift only) |
+| Fw 190 A-4 | 98.0% (7, reserved) | 90.4% (8, reserved) | 96.2% (3, conditional) | Source reference | Model only | Source reference |
+| P-38G-1 Lightning | 99.8% (3, reserved) | 93.0% (7, reserved) | 98.9% (7, report inputs) | 99.5% (1, transfer) | Model only | Model only |
+| F4U-4 Corsair | 98.0% (7, conditional) | 94.5% (7, conditional) | 93.2% (2, conditional) | 96.5% (1, transfer) | Model only | Model only |
+| Spitfire HF Mk IXc | 98.1% (18, report inputs) | 92.2% (21, report inputs) | 98.7% (3, report inputs) | Model only | Model only | Model only |
+| Bf 109 G-2 | 98.2% (11, report inputs) | 87.2% (6, report inputs) | 84.7% (5, conditional) | Source reference | Source reference | 90.9% (1, 360° proxy) |
+| P-51D-15 Mustang | 99.0% (26, report inputs) | 92.6% (12, report inputs) | 96.4% (3, conditional) | Source reference | 70.2% (1, restored proxy) | Model only |
+| Spitfire F Mk IXc | 98.6% (15, report inputs) | 92.4% (34, report inputs) | 97.3% (4, report inputs) | Model only | Model only | Model only |
+| Bf 109 G-6/Trop | 98.2% (2, report inputs) | Source reference | Model only | Model only | Model only | Model only |
+
 ## Timed-climb evidence
 
 The replay integrates the signed TAS energy change along the report schedule. BS.551 uses retained Table III TAS and the elapsed column transcribed for this milestone. Wright Field P-51D uses recorded instrument-corrected IAS as a CAS proxy and fixed takeoff mass. The Corsair comparison uses the Vought detail specification at 12,405 lb and modeled climb TAS. Existing matched flight tests and the Normal/Combat operating timer use their respective rating schedules. [Timing supplement](../references/analysis/fleet-timing-supplement-v1.json) · [Climb integration](V411_SHARED_FLIGHT_CLIMB.md).
