@@ -135,6 +135,18 @@
       "title": "Canadian Warplane Heritage CASPIR, Spitfire Va W3119 serial history",
       "url": "https://caspir.warplane.com/aircraft/serial-search/aircraft-no/200001558/group/W3109_W3970",
       "type": "secondary-serial-register"
+    },
+    {
+      "id": "usaf-ae479-photo",
+      "title": "National Museum of the U.S. Air Force photo caption, AE479 at Wright Field on 14 May 1942",
+      "url": "https://www.nationalmuseum.af.mil/Upcoming/Photos/igphoto/2000571943/",
+      "type": "secondary-museum"
+    },
+    {
+      "id": "ae479-serial-history",
+      "title": "Joe Baugher, Captured Axis Aircraft, AE479 / WNr 1304",
+      "url": "https://www.joebaugher.com/usaf_serials/captured_axis_aircraft.html",
+      "type": "secondary-serial-register"
     }
   ],
   "series": [
@@ -2318,11 +2330,15 @@
       "aircraft": "Bf 109 E comparison specimens",
       "locator": "Level Speed and refs. 2d–7",
       "conditions": {
-        "note": "Donor/check scope. Keep identities, engine versions and conditions separate.",
+        "note": "Donor/check scope. Keep identities, engine versions and conditions separate. AE479 itself was tested at Wright Field in 1942, following repair with the tail unit from WNr 1480 in 1941. FS-M-19-1501-A may therefore refer to later testing of AE479. Its specimen attribution and test configuration are unverified from the chart, so it cannot establish an independent airframe result.",
         "chart_references": [
           "factory1792",
           "usa-e3",
           "cema"
+        ],
+        "identity_references": [
+          "usaf-ae479-photo",
+          "ae479-serial-history"
         ]
       },
       "columns": [
@@ -2366,14 +2382,14 @@
           0,
           290,
           1.3,
-          "separate specimen"
+          "serial unverified, possible post-repair AE479"
         ],
         [
           "U.S. AAF E-3 FS-M-19-1501-A",
           17500,
           339,
           1.3,
-          "separate specimen"
+          "serial unverified, possible post-repair AE479"
         ],
         [
           "Swiss DB 601 Aa J-347",
