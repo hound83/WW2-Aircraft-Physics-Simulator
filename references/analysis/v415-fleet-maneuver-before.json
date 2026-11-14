@@ -1,0 +1,10 @@
+{
+  "commit": "f40ff121963cf8fb17f656e388b0ce66f84d95f4",
+  "version": "4.14.0-rc.3",
+  "inputPack": "1.11.0",
+  "verifiedAgainst": "references/analysis/v414-level-acceleration-before.json",
+  "verification": "validation/current/powered-turn.json",
+  "physicsRegressionRun": 43515752289,
+  "publishedRun": 43515752309,
+  "candidateVersion": "4.15.0-rc.1"
+}

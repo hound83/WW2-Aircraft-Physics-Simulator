@@ -432,6 +432,49 @@ async function run(){
   assert.deepEqual(await evaluate('[...document.querySelectorAll("#bench-altitude-overview [data-altitude=\\"10000\\"] [data-lead]")].map(e=>e.dataset.lead)'),['b','b','a']);
   assert.equal(await evaluate('document.querySelector("#bench-altitude-overview [data-altitude=\\"40000\\"] td:nth-child(3) [data-lead]").dataset.lead'),'tie');
   checks.push('v4.9 synchronized vertical sliders, timed acceleration traces and practical tie margins');
+  assert.equal(await evaluate('document.querySelectorAll("#bench-fleet-validation-result tbody tr").length'),12);
+  assert.match(await evaluate('document.getElementById("bench-fleet-validation-result").textContent'),/Same-report|same-report/);
+  assert.match(await evaluate('document.getElementById("bench-fleet-validation-result").textContent'),/lift cap.*sustained at entry/s);
+  await evaluate('document.getElementById("bench-maneuver-run").click()');
+  const maneuver=await evaluate(`(() => {
+    const {a,b}=OperatingBenchmarkUI.maneuvers;
+    return {results:[a.nominal,b.nominal].map(r=>[r.status,r.headingDeg,r.entryEasMph,r.altFt,r.recoverySeconds]),
+      traces:document.querySelectorAll('#bench-maneuver-trace [data-bench-time-trace]').length,
+      markers:document.querySelectorAll('#bench-maneuver-trace [data-bench-time-segment=turn]').length,
+      dotted:document.querySelectorAll('#bench-maneuver-trace [data-bench-style=dotted]').length,
+      observations:document.querySelectorAll('#bench-maneuver-trace [data-bench-observed-endpoint]').length};
+  })()`);
+  assert.ok(maneuver.results.every(([status,heading,eas,alt,recovery])=>status==='reached'&&heading===180&&eas===210&&alt===10000&&recovery>0));
+  assert.equal(maneuver.traces,2);
+  assert.equal(maneuver.markers,2);
+  assert.ok(maneuver.dotted>=2);
+  assert.equal(maneuver.observations,0);
+  assert.match(await evaluate('document.getElementById("bench-maneuver-result").textContent'),/8\/8 combinations completed/);
+  await evaluate('document.getElementById("bench-maneuver-sweep").click()');
+  assert.equal(await evaluate('document.querySelectorAll("#bench-maneuver-sweep-result tbody tr").length'),9);
+  await select('bench-speed-unit','kph');
+  assert.equal(await evaluate('document.getElementById("bench-maneuver-entry").value'),'338');
+  assert.equal(await evaluate('OperatingBenchmarkUI.maneuvers.a.nominal.entryEasMph'),210);
+  await select('bench-speed-unit','mph');
+  await select('bench-altitude','15000');
+  assert.equal(await evaluate('OperatingBenchmarkUI.maneuvers'),null);
+  await select('bench-altitude','10000');
+  await select('bench-aircraft-b','bf109g2_db605a');
+  await evaluate('document.getElementById("bench-maneuver-run").click()');
+  assert.equal(await evaluate('OperatingBenchmarkUI.maneuvers.b.nominal.status'),'reached');
+  assert.equal(await evaluate('OperatingBenchmarkUI.maneuvers.b.nominal.intake'),true);
+  assert.match(await evaluate('document.getElementById("bench-maneuver-result").textContent'),/Provisional maneuver estimate/);
+  await select('bench-aircraft-b','spitfire_lfix_bs543');
+  const intervalStyles=await evaluate(`(() => {
+   const host=document.createElement('div');
+   OperatingBenchmarkChart.timedTrace(host,[{side:'a',name:'Test',color:'blue',trace:[
+    {seconds:0,value:210},{seconds:1,value:200,covered:false,segment:'turn',phase:'combat'},
+    {seconds:2,value:210,covered:true,segment:'recovery',phase:'combat'}
+   ]}],{low:190,high:220,label:'Speed',intervalEvidence:true});
+   return [...host.querySelectorAll('path')].map(p=>p.dataset.benchStyle);
+  })()`);
+  assert.deepEqual(intervalStyles,['dotted','solid']);
+  checks.push('v4.15 fleet scorecard, equal-start turn and recovery, provisional intake, nine-case grid and interval-local evidence styling');
   const curveEnds=()=>evaluate(`['a','b'].map(side=>{
     const plot=document.getElementById('bench-turn-plot');
     const paths=[...plot.querySelectorAll('[data-bench-curve="'+side+'"] path')];

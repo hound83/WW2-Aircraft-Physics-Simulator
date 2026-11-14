@@ -660,7 +660,7 @@
   update(selectedEasMph??turning[0]?.aircraft.peakEasMph??climbing[0]?.aircraft.vyEasMph??maxEas/2);
  }
 
- function timedTrace(host,series,{low,high,label,observedEndpoints=[]}){
+ function timedTrace(host,series,{low,high,label,observedEndpoints=[],intervalEvidence=false}){
   const elapsed=Math.max(0,...series.map(a=>a.trace.at(-1)?.seconds??0),...observedEndpoints.map(point=>point.seconds));
   host.replaceChildren();
   if(!(elapsed>0))return;
@@ -696,18 +696,27 @@
    const {side,color,name,trace}=aircraft;
    if(trace.length<2)continue;
    const group=draw('g',{'data-bench-time-trace':side});
-   for(const segment of Evidence.lineSegments(trace.map((point,i)=>({
-    eas:point.seconds,rate:point.value,covered:i===0?trace[1].covered:point.covered
-   })))){
+   // Timed maneuvers qualify each interval using its own flight states.
+   const points=trace.flatMap((point,i)=>{
+    const shown={eas:point.seconds,rate:point.value,covered:i===0?trace[1].covered:point.covered};
+    if(!intervalEvidence||i<=1||Boolean(trace[i-1].covered)===Boolean(point.covered))return [shown];
+    const previous=trace[i-1];
+    return [{...shown,eas:previous.seconds,rate:previous.value},shown];
+   });
+   for(const segment of Evidence.lineSegments(points)){
+    if(segment.points.length===2&&segment.points[0].eas===segment.points[1].eas)continue;
     const d=segment.points.map((point,i)=>(i?'L':'M')+x(point.eas)+','+y(point.rate)).join('');
     draw('path',{d,fill:'none',stroke:color,'stroke-width':3,'stroke-linecap':'round',
      'data-bench-style':segment.solid?'solid':'dotted',...(segment.solid?{}:{'stroke-dasharray':'1 6'})},undefined,group);
    }
    for(let i=1;i<trace.length;i++){
     const point=trace[i],next=trace[i+1];
-    if(next&&next.phase===point.phase)continue;
+    if(next&&next.phase===point.phase&&next.segment===point.segment)continue;
     const node=draw('circle',{cx:x(point.seconds),cy:y(point.value),r:4.5,fill:color,'data-bench-time-phase':point.phase},undefined,group);
-    draw('title',{},name+' · '+(next?'Power changes at ':'Run ends at ')+format(point.seconds,1)+' s',node);
+    if(point.segment)node.setAttribute('data-bench-time-segment',point.segment);
+    const event=point.segment==='turn'&&next?.segment==='recovery'?'Recovery starts at ':
+     next?'Power changes at ':'Run ends at ';
+    draw('title',{},name+' · '+event+format(point.seconds,1)+' s',node);
    }
   }
   for(const point of observedEndpoints){

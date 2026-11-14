@@ -4,6 +4,10 @@ Pointer file for agents starting a new milestone. Not a second model of record. 
 
 ## Shared research / implementation roadmap (2026-11-12)
 
+### Delivered in v4.15.0-rc.1
+
+The scorecard calculates all six metrics for all twelve profiles. Eleven have at least one numerical elapsed-climb comparison. The 180° turn and recovery shows exit speed, recovery time and timing sensitivity across the fleet. The P-51B can lose less energy in a slower turn than the LF IX at the example start, with overlapping total-time ranges under the tested inputs. [Fleet report](V415_FLEET_MANEUVER_ENERGY.md)
+
 ### Delivered in v4.14.0-rc.3
 
 The benchmark displays the Finnish MT-215 turn transcription and the calculated replay at the reported speed. Clean-cooling time is 24.0 s versus 22 s transcribed. The model’s 2.97 G is close to the rounded 3 G in the source, while the timing at assumed TAS implies 3.21 G. [Powered-turn results](V414_POWERED_TURN_REPLAY.md)
@@ -62,10 +66,10 @@ Grok’s expanded stall draft and 21-variant extract are available as research i
 
 ## Next simulator milestone
 
-**Compare straight-flight and turn energy on one aircraft.** Recover the original MT-215 maneuver sheet and the altitude, rating, loading and airspeed basis for its timed acceleration runs. A straight-flight acceleration at the turn’s speed and power can constrain the extra drag above 1 G. Keep the Mustang–Spitfire crossover open while their matched powered-turn evidence is recovered. [Turn and acceleration leads](V414_POWERED_TURN_REPLAY.md)
+**Check energy retention across aircraft families.** Recover the MT-215 original and a paired UK or US speed/time and turn record. Compare loaded and straight-flight energy at common mass, altitude, speed and power. Hold a source interval or separate trial for evaluating added turn drag. [Fleet report](V415_FLEET_MANEUVER_ENERGY.md#next-milestone)
 
 ## Current research candidate
-- Simulator research candidate [v4.14.0-rc.3](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/). [Release verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/publish-simulator.yml)
+- Simulator research candidate [v4.15.0-rc.1](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/). [Release verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/publish-simulator.yml)
 - Input pack · [Fighter Sim Inputs v1.11.0](research/WW2_FIGHTER_SIM_INPUTS_V1.md)
 - Status: research candidate. Exact corrected stall, sustained-turn accuracy and historical 5:1 remain unresolved.
 

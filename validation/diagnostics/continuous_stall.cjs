@@ -69,4 +69,4 @@ function run(catalog) {
   interpretation:'Steady lift limit, including the applicable Mach correction. Historical stall airspeed and powered sustained turn retain their separate evidence limits.'};
 }
 
-module.exports={evaluate,run};
+module.exports={evaluate,sourceChecks,run};

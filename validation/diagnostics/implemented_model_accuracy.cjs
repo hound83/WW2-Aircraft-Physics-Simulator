@@ -116,7 +116,7 @@ function levelGroups(data, previous, lightning) {
 }
 
 function climbGroups(data, previous, lightning) {
-  const groups = data.flightChecks.filter(entry => entry.id !== 'p47b-41-5942').map(entry =>
+  const groups = data.flightChecks.filter(entry => ['p47b','spitfire_lfix_bs543'].includes(entry.id)).map(entry =>
     group(entry.id === 'p47b' ? 'p47-climb' : 'spitfire-climb', entry.id, 'climb rate', 'ft/min',
       'same-report reserved', entry.url, entry.condition, entry.rows.filter(row => row.role === 'check').map(row => {
         const { altFt, tasMph, weightLb, mode, bhp } = row;
@@ -296,6 +296,10 @@ function fwInstallationGroups(data) {
   ];
 }
 
+function historicalGroups(data, previous, lightning) {
+  return [...levelGroups(data, previous, lightning), ...climbGroups(data, previous, lightning), stallGroups(data)[0], maneuverLift(data)];
+}
+
 function run() {
   const data = latest.browserData(), previous = propeller.run(), lightning = latest.run();
   return {
@@ -309,4 +313,4 @@ function run() {
 }
 
 if (require.main === module) console.log(JSON.stringify(run(), null, 2));
-module.exports = { run };
+module.exports = { historicalGroups, run };

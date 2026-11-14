@@ -1,5 +1,9 @@
 # Known limitations
 
+## v4.15-rc.1 fleet maneuver and energy
+
+The level turn assumes instantaneous bank and rollout. Loaded-turn drag uses the shared induced-drag equation, with the larger uncertainty shown in the tested timing ranges. Intake lift limits use stored family or handbook priors. None of the twelve profiles has a matched historical 180° turn plus recovery trace. The 360° MT-215 time and P-51B lift checks cover parts of the model. Clean stall accuracy still rests on the P-38G sister-airframe check and the conditional F4U-4 transfers. [Fleet scorecard and evidence gaps](V415_FLEET_MANEUVER_ENERGY.md)
+
 ## v4.14-rc.3 powered-turn replay
 
 The 22 s MT-215 turn is transcribed from a wartime test. The original sheet, calibration, exact load and settings remain open. At the nominal IAS proxy, the reported bank and timed heading change imply different load factors. The open-cooling equivalent area is a model sensitivity. The G-2 case gives one comparison point and the P-51B–Spitfire sustained-turn ranking still lacks a matched powered test. [Replay limits](V414_POWERED_TURN_REPLAY.md)
