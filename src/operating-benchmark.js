@@ -117,7 +117,7 @@
    }
   };
  }
- function evaluate(M,turn,lift,model,spec,s,altFt,eas,weightLb,phase,climbing=false){
+ function evaluate(M,turn,lift,model,spec,s,altFt,eas,weightLb,phase,climbing=false,{allowProvisionalManeuver=false}={}){
   if(!(altFt>=0&&altFt<=40000&&eas>0&&weightLb>0))return {status:'invalid-benchmark-input'};
   phase=phase??phaseFor(spec,s);
   if(!phase)return {status:'rating-time-exhausted'};
@@ -150,7 +150,7 @@
   }else{
    r=M.evaluated(ac,altFt,tas,maneuverLift?{...turnOptions,maneuverClMax:maneuverLift.clMax}:turnOptions);
   }
-  const limits=spec.performanceIntake&&r.limits?{...r.limits,nLift:null,nPower:null,nInst:null,nSust:null,instantDegSec:null,sustDegSec:null}:r.limits;
+  const limits=spec.performanceIntake&&!allowProvisionalManeuver&&r.limits?{...r.limits,nLift:null,nPower:null,nInst:null,nSust:null,instantDegSec:null,sustDegSec:null}:r.limits;
   return {...r,limits,benchmark:{phase:phase.key??s.mode,label:phase.label,estimated:p.estimated,sourceMaxFt:p.sourceMaxFt,
    rpm:phase.rpm,map:phase.map,mapUnit:spec.mapUnit,cooling:installed||coolingShare>0?'report-conditioned':open?'climb-estimate':'clean',
    ...(coolingShare>0?{coolingFit:{...matchedCooling,appliedAreaM2:coolingArea}}:{}),
@@ -250,14 +250,33 @@
  function traceInputs(flight){
   return {status:flight.status,altFt:flight.altFt,tasMph:flight.tasMph,benchmark:flight.benchmark,engine:{gear:flight.engine?.gear}};
  }
+ function levelFlightCase(M,T,L,model,spec,policy,settings,alt,{allowProvisionalManeuver=false}={}){
+  const s=validateSettings(spec,settings,model);
+  return {
+   settings:s,
+   initial:load(spec,policy,s),
+   easPerTas:M.airspeeds(1,alt).eas,
+   maxEasMph:M.airspeeds(590,alt).eas,
+   evaluate:(speed,weight,phase)=>evaluate(M,T,L,model,spec,s,alt,speed,weight,phase,false,{allowProvisionalManeuver}),
+   fuelFlow:flight=>policy.bsfcLbPerHpHour*flight.power.shaftHp/3600
+  };
+ }
+ function powerStep(spec,phase,seconds,combatSeconds,fluid){
+  const boosting=phase.key==='combat'||phase.key==='injection';
+  const injectionRate=phase.key==='injection'?(spec.injection.fluidLbPerMinute??0)/60:0;
+  let remaining=boosting?(spec.combat.seconds??Infinity)-combatSeconds:
+   phase.key==='normal'?(spec.normal.seconds??Infinity)-seconds:Infinity;
+  if(phase.key==='injection')remaining=Math.min(remaining,(spec.injection.seconds??Infinity)-combatSeconds);
+  if(injectionRate>0)remaining=Math.min(remaining,fluid/injectionRate);
+  return {boosting,injectionRate,remaining};
+ }
  function accelerate(M,T,L,model,spec,policy,settings,alt,from,to,options={}){
   if(![alt,from,to].every(Number.isFinite)||alt<0||alt>40000||from<=0||to<=from){
    throw Error('Choose increasing positive EAS endpoints and an altitude from sea level to 40,000 ft.');
   }
   const step=options.stepSeconds??.5;
   if(!(step>0&&step<=1))throw Error('Acceleration integration step must be greater than zero and at most one second.');
-  const s=validateSettings(spec,settings,model),initial=load(spec,policy,s);
-  const easToTasRatio=M.airspeeds(1,alt).eas,domainEnd=M.airspeeds(590,alt).eas;
+  const {settings:s,initial,easPerTas,maxEasMph,evaluate:at,fuelFlow}=levelFlightCase(M,T,L,model,spec,policy,settings,alt);
   let eas=from,seconds=0,combatSeconds=0,fuel=initial.fuelLb,fluid=initial.injectionLb,estimatedPower=false;
   const schedule=[],trace=[{seconds,easMph:eas}];
   const result=status=>({
@@ -265,14 +284,11 @@
    combatSeconds,combatRemainingSeconds:Math.max(0,(spec.combat.seconds??0)-combatSeconds),
    fuelUsedLb:initial.fuelLb-fuel,injectionRemainingLb:fluid,endWeightLb:initial.dryLb+fuel+fluid,estimatedPower,schedule,trace
   });
-  if(to>domainEnd)return result('speed-domain-unavailable');
-
-  const at=(speed,weight,phase)=>evaluate(M,T,L,model,spec,s,alt,speed,weight,phase);
+  if(to>maxEasMph)return result('speed-domain-unavailable');
   const rate=flight=>{
    const acceleration=levelAccelerationMphPerSecond(flight);
-   return acceleration===null?null:acceleration*easToTasRatio;
+   return acceleration===null?null:acceleration*easPerTas;
   };
-  const fuelFlow=flight=>policy.bsfcLbPerHpHour*flight.power.shaftHp/3600;
   while(seconds<7200&&eas<to-1e-8){
    const phase=phaseFor(spec,s,seconds,combatSeconds,fluid);
    if(!phase)return result('rating-time-exhausted');
@@ -280,12 +296,7 @@
    if(initialRate===null)return result(start.status);
    if(initialRate<=1e-6)return result('power-limited');
 
-   const boosting=phase.key==='combat'||phase.key==='injection';
-   const injectionRate=phase.key==='injection'?(spec.injection.fluidLbPerMinute??0)/60:0;
-   let remaining=boosting?(spec.combat.seconds??Infinity)-combatSeconds:
-    phase.key==='normal'?(spec.normal.seconds??Infinity)-seconds:Infinity;
-   if(phase.key==='injection')remaining=Math.min(remaining,(spec.injection.seconds??Infinity)-combatSeconds);
-   if(injectionRate>0)remaining=Math.min(remaining,fluid/injectionRate);
+   const {boosting,injectionRate,remaining}=powerStep(spec,phase,seconds,combatSeconds,fluid);
    let dt=Math.min(step,remaining,7200-seconds);
    if(!(dt>1e-8))return result('integration-limit');
    const startFlow=fuelFlow(start);
@@ -481,5 +492,5 @@
    'Quickest tested contiguous boost window on one planned Combat speed schedule. Timed steps include signed TAS energy and changing fuel mass.':
    'Quickest tested contiguous boost window, 1000-ft grid plus local 500-ft refinement; shared-solver midpoint mass replay. Not a proof of global optimal control; no thermal or speed-change acceleration model.'};
  }
- return Object.freeze({validateSettings,fittedInjection,load,phaseFor,nativePower,evaluate,levelAccelerationMphPerSecond,bestClimb,metrics,climb,accelerate,interpolate});
+ return Object.freeze({validateSettings,fittedInjection,load,phaseFor,nativePower,evaluate,levelFlightCase,powerStep,levelAccelerationMphPerSecond,bestClimb,metrics,climb,accelerate,interpolate});
 });

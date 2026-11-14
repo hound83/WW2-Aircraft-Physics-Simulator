@@ -18,6 +18,7 @@
  toHeight.value='10000';
  const turnUnit=()=>Chart.turnUnits[$('bench-turn-unit').value];
  const api=globalThis.OperatingBenchmarkUI={data,settings:{},rows:{},altitudeRows:[],climbs:null,accelerations:null,probe:null,probeLocked:false,probeLock:null};
+ const maneuver=BenchmarkManeuverUI.setup({M,T,L,data,api});
  const speed=(value,kind)=>Chart.speed(value,$('bench-speed-unit').value,kind);
  const accelerationInputs=[$('bench-acceleration-from'),$('bench-acceleration-to')],accelerationSpeeds=[180,300];
  const text=(tag,value,className)=>{const e=document.createElement(tag);if(value!==undefined)e.textContent=value;if(className)e.className=className;return e;};
@@ -462,6 +463,7 @@
    'Turn comparison awaits drag-under-load and lift evidence.':'A sustained-turn comparison is unavailable for one or both selected states.';
   if(api.accelerations&&api.accelerations.a.altFt!==alt)invalidateAcceleration('Altitude changed. Recalculate both runs.');
   $('bench-acceleration-altitude').textContent='Shared altitude '+label;
+  maneuver.setAltitude(alt,label);
  }
  function render(){
   for(const side of sides){const chosen=read(side);api.settings[side]=chosen;readAltitudes(side,chosen);}
@@ -470,6 +472,7 @@
   $('bench-matchup').textContent=History.compare(service.aircraft[api.settings.a.id],service.aircraft[api.settings.b.id]);
   invalidateClimbs('Calculate both climbs for the current aircraft and settings.');
   invalidateAcceleration('Calculate both runs for the current aircraft and settings.');
+  maneuver.clear();
  }
  function changeHeight(event){
   height.value=event.currentTarget.value;
@@ -492,6 +495,7 @@
   const alt=Number($('bench-altitude').value);
   plot(alt);renderAltitudeOverview(alt);showAccelerationInputs();
   if(api.accelerations)renderAcceleration();
+  maneuver.render();
  });
  for(const input of [fromHeight,toHeight])input.addEventListener('change',()=>invalidateClimbs('Climb altitude changed. Recalculate both climbs.'));
  $('bench-climb-calculate').addEventListener('click',()=>{const from=Number(fromHeight.value),to=Number(toHeight.value),box=$('bench-climb-result');box.replaceChildren();if(to<=from){box.append(text('p','Choose a target altitude above the climb start.'));return;}
@@ -644,6 +648,7 @@
   tolerances.climb_rate.spread+'% climb rate and '+tolerances.level_speed.spread+' km/h TAS. In G view the peak tie margin uses the two peaks’ mean TAS. * includes estimated power.';
  render();
  renderFlightChecks();renderIntakeChecks();renderAccelerationEvidence();renderPoweredTurn();
+ BenchmarkManeuverUI.scorecard($('bench-fleet-validation-result'),data.fleetValidation);
  OperatingTurnComparison.evidence($('bench-turn-evidence'),data.turnEvidence,data.turnLiftChecks,
   data.turnEvidence.sensitivity,data.turnEvidence.directTurns,data.turnDrag);
 })();

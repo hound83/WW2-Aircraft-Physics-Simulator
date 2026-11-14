@@ -1,5 +1,9 @@
 # Current decisions
 
+## Fleet maneuver reference case
+
+**Accepted scope, 14 November 2026.** Use a constant-altitude coordinated 180° turn and straight recovery at the same entry EAS as the comparative case. G is commanded and bounded by usable lift and the G cap. Speed changes follow signed excess power, with one continuous fuel and rating schedule across turn and recovery. Display the existing evidence bounds and leave the loaded turn provisional across all aircraft. The common model case uses service-load presets and appears beside separately labeled historical replays. [Fleet maneuver benchmark](V415_FLEET_MANEUVER_ENERGY.md)
+
 ## Aircraft roster expansion
 
 **Accepted 13 November 2026.** Prioritize exact-aircraft speed and climb tests and transferable clean-stall evidence when choosing the next Bf 109 and Spitfire variants. Start with **Spitfire HF Mk IX BS.551** as the first new profile to qualify. The next intake also includes **Bf 109 G-2 MT-215** and **P-51D-15-NA 44-15342**.

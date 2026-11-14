@@ -2,6 +2,10 @@
 
 The [simulator model roadmap](SIMULATOR_ROADMAP.md) sets the order for propulsion, input handling, turn validation, aircraft intake and future handling features.
 
+## After v4.15 fleet maneuver and energy
+
+The common 180° turn and recovery now covers the full operating roster. Next, find matched straight and loaded-turn energy measurements across two independent airframe families, starting with MT-215 and a US or UK test. Reuse the speed history, load, altitude and rating in both replays to isolate added drag. Keep independent intervals for evaluation. [Fleet scorecard and evidence gaps](V415_FLEET_MANEUVER_ENERGY.md)
+
 ## After v4.14 aircraft intake
 
 The HF IX, G-2 and P-51D are available in the benchmark for level speed and climb. The turn-drag follow-up quantifies the Mustang–Spitfire crossover sensitivity and the limits of the Mk I glide data. [Turn-drag results](V413_TURN_DRAG.md). The second intake delivered G-6/Trop WNr 16476 and F Mk IX BF.274. The roster next queues Bf 109 E WNr 1304 and Spitfire Va X.4922, followed by Mk I N.3171. [Second intake results](V414_AIRCRAFT_INTAKE.md). [Source replay](V413_AIRCRAFT_INTAKE.md) · [Roster decision](DECISIONS.md#aircraft-roster-expansion)

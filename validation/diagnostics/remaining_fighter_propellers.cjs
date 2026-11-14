@@ -143,6 +143,10 @@ function matchupSensitivity(data, before, after) {
     qualification: 'Engineering sensitivity with level chart BHP varied 2% and tip loss and drag held fixed.' };
 }
 
+function reportChecks(before,after) {
+  return {lightningLevel:lightningLevel(before,after),lightningClimb:lightningClimb(before,after)};
+}
+
 function run() {
   const before = previous.browserData(), after = browserData(before);
   const actual = previous.scorecard(after);
@@ -156,8 +160,7 @@ function run() {
       const { summary_mph, low_blower_mph } = working.level.find(group => group.aircraft === aircraft);
       return { aircraft, level: summary_mph, lowBlower: low_blower_mph ?? null };
     }),
-    lightningLevel: lightningLevel(before, after),
-    lightningClimb: lightningClimb(before, after),
+    ...reportChecks(before,after),
     lightningPartPower: lightningPartPower(before.models.p38g),
     lightningSpitfireMatchup: matchupSensitivity(after, frozen.aircraft, actual),
     spitfireUpperBlower: fleet.spitfire_lfix_bs543,
@@ -166,5 +169,5 @@ function run() {
   };
 }
 
-module.exports = { browserData, run };
+module.exports = { browserData, reportChecks, run };
 if (require.main === module) console.log(JSON.stringify(run(), null, 2));

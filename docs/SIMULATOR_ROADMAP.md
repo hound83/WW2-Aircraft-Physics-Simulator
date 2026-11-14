@@ -4,7 +4,9 @@ The shared steady-flight solver calculates stall, speed, climb, acceleration, an
 
 ## Next implementation milestone
 
-**Compare straight-flight and turn energy on one aircraft.** Recover the original MT-215 maneuver sheet and the altitude, rating, loading and airspeed basis for its timed acceleration runs. A straight-flight acceleration at the turn’s speed and power can constrain the extra drag above 1 G. Keep the Mustang–Spitfire crossover open while their matched powered-turn evidence is recovered. [Turn and acceleration leads](V414_POWERED_TURN_REPLAY.md)
+**Check energy retention across aircraft families.** Recover MT-215's original maneuver sheet and one British or US source with paired timed straight-flight and loaded-turn measurements. Compare speed change at matched mass, altitude, airspeed basis and rating. Reserve an interval or independent trial for checking the result. Use corrected, weight-matched stall observations to constrain the near-stall boundary. [Turn and acceleration leads](V414_POWERED_TURN_REPLAY.md)
+
+**Delivered · Fleet turn and recovery.** A shared flight case now runs the 180° maneuver and straight recovery for both aircraft across the roster. The scorecard gives six calculated metrics per profile and attaches available historical comparisons with signed residuals and qualifications. [Fleet report](V415_FLEET_MANEUVER_ENERGY.md)
 
 **Delivered · Recorded powered-turn replay.** The Bf 109 G-2 MT-215 case compares 22 s transcribed with 24.0 s modeled under the clean-cooling assumptions. The published timing, bank and speed imply different loads. [Replay and fleet regression](V414_POWERED_TURN_REPLAY.md)
 

@@ -211,21 +211,25 @@ function sensitivity({ models, specification }) {
     interpretation: 'Engineering sensitivity with reference drag fixed. The efficiency offsets are scenarios.' };
 }
 
+function reportChecks(before,after) {
+  const speedChecks=['f4u4','p47b'].map(id => historicalGroup(before,after,id,
+    working.level.find(row=>row.aircraft===id).rows));
+  speedChecks.push(historicalGroup(before,after,'p47b',working.p47b_independent_level.rows,true));
+  return {speedChecks,corsairClimb:corsairClimb(before,after)};
+}
+
 function run() {
   const before = baseline.browserData(), after = browserData(before);
   const actual = scorecard(after);
-  const changed = ['f4u4', 'p47b'].map(id => historicalGroup(before, after, id,
-    working.level.find(row => row.aircraft === id).rows));
   return {
     schema: 'ww2-propeller-milestone/v1',
     baselineCommit: frozen.commit, baselineVersion: frozen.version, dataVersion: frozen.data,
     before: frozen.aircraft, after: actual,
     differences: actual.map((row, i) => caseSummary(frozen.aircraft[i], row)),
-    speedChecks: [...changed, historicalGroup(before, after, 'p47b', working.p47b_independent_level.rows, true)],
-    corsairClimb: corsairClimb(before, after),
+    ...reportChecks(before,after),
     comparisonSensitivity: sensitivity(after),
   };
 }
 
-module.exports = { browserData, run, scorecard, caseSummary, fixedShaftReplay, nativePowerReplay };
+module.exports = { browserData, reportChecks, run, scorecard, caseSummary, fixedShaftReplay, nativePowerReplay };
 if (require.main === module) console.log(JSON.stringify(run(), null, 2));

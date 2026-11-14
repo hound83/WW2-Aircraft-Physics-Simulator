@@ -66,9 +66,10 @@ try{
  const acceleration=require('../validation/diagnostics/level_acceleration.cjs').run(activeBenchmark,intakeChecks);
  write('validation/current/level-acceleration.json',acceleration);
  const frozenTurn=require('../references/analysis/v414-powered-turn-before.json');
- if((buildInfo.version==='4.14.0-rc.2'||buildInfo.version===frozenTurn.candidateVersion)&&
+ const frozenFleet=require('../references/analysis/v415-fleet-maneuver-before.json');
+ if((buildInfo.version==='4.14.0-rc.2'||buildInfo.version===frozenTurn.candidateVersion||buildInfo.version===frozenFleet.candidateVersion)&&
    (!acceleration.regression.exactScorecardParity||!acceleration.regression.exactFixedProbeParity))
-  throw Error('Recorded replay changed an operating scorecard or fixed-speed probe');
+  throw Error('Replay changed a frozen operating scorecard or fixed-speed probe');
  const poweredTurn=require('../validation/diagnostics/powered_turn.cjs').browserEvidence(activeBenchmark);
  write('validation/current/powered-turn.json',{
   version:buildInfo.version,baseline:frozenTurn,regression:acceleration.regression,...poweredTurn
@@ -78,6 +79,17 @@ try{
  console.log('Restored P-51D acceleration: '+(acceleration.nominal.seconds?.toFixed(2)??acceleration.nominal.status)+' s modeled, '+
   acceleration.observation.endpoints.elapsedSeconds+' s transcribed.');
 
+ const fleet=require('../dist/fleet-validation.json');
+ write('validation/current/fleet-validation.json',{...fleet,baseline:frozenFleet,regression:acceleration.regression});
+ for(const row of fleet.aircraft){
+  const f=row.formulas;
+  if(!(f.oneGAccelerationErrorMphPerSecond<1e-9&&f.turnRateErrorDegSec<1e-9&&f.powerEquilibriumErrorHp!==null&&
+    f.powerEquilibriumErrorHp<1e-8&&f.kineticIntegrationResidualJPerKg<1&&
+    f.halfStepTotalTimeDifferenceSeconds!==null&&f.halfStepTotalTimeDifferenceSeconds<.02))
+   throw Error('Fleet maneuver formula or convergence check failed for '+row.id);
+ }
+ console.log('Fleet validation modeled coverage: '+Object.entries(fleet.coverage).map(([id,c])=>id+' '+c.modeled+'/'+fleet.aircraft.length).join(', '));
+
  const turnDrag=require('../validation/diagnostics/turn_drag.cjs').run(activeBenchmark);
  write('validation/current/turn-drag.json',turnDrag);
  if(!turnDrag.regression.exactScorecardParity||!turnDrag.regression.exactFixedProbeParity||!turnDrag.regression.exactIntakeParity)
@@ -86,6 +98,8 @@ try{
  require('./write-v42-report.cjs');
  const md=[
  '# Current validation',
+ '',
+ 'v4.15-rc.1 [Fleet maneuver and energy report](V415_FLEET_MANEUVER_ENERGY.md). [Numerical scorecard](../validation/current/fleet-validation.json).',
  '',
  'v4.14-rc.3 [Recorded Bf 109 G-2 powered-turn replay](V414_POWERED_TURN_REPLAY.md). [Numerical replay](../validation/current/powered-turn.json).',
  '',

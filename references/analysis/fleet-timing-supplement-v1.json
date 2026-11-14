@@ -1,0 +1,49 @@
+{
+  "schema": "ww2-fleet-timing-supplement/v1",
+  "hfSpitfire": {
+    "report": "A&AEE, Spitfire IX BS.543 and BS.551, Table III",
+    "source": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html",
+    "conditions": "BS.551, 7,470 lb takeoff, open radiator flaps, 2,980 RPM, gear change at 18,600 ft. Each interval starts at the first tabulated TAS (2,000 ft).",
+    "columns": [
+      "altFt",
+      "timeFromStartMin"
+    ],
+    "rows": [
+      [
+        2000,
+        0.45
+      ],
+      [
+        10000,
+        2.2
+      ],
+      [
+        20000,
+        4.75
+      ],
+      [
+        30000,
+        7.8
+      ]
+    ]
+  },
+  "corsair": {
+    "report": "Chance Vought Report 7289, 21 May 1947, fighter loading column",
+    "source": "https://www.wwiiaircraftperformance.org/f4u/f4u.html",
+    "conditions": "F4U-4 detail specification, 12,405 lb, 234 US gal, no bomb, Normal rated power. This is manufacturer performance, with test derivation unspecified on the summary.",
+    "columns": [
+      "altFt",
+      "timeFromSeaLevelMin"
+    ],
+    "rows": [
+      [
+        10000,
+        3.9
+      ],
+      [
+        20000,
+        8
+      ]
+    ]
+  }
+}

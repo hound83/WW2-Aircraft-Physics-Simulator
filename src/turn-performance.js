@@ -45,20 +45,31 @@
    bankDeg:Math.acos(1/n)*180/Math.PI};
  }
 
+ function availableHp(flight,powerFraction){
+  return Math.min(flight.power.shaftHp,flight.power.propulsiveHp*powerFraction);
+ }
+ function addedDragHp(flight,n,dragFraction){
+  return flight.drag.inducedHp*dragFraction*(n*n-1);
+ }
+ function liftBounds(flight,[low,high]){
+  const evidence=flight.benchmark?.maneuverLift;
+  return evidence?[Math.min(low,evidence.bracket[0]/evidence.clMax),Math.max(high,evidence.bracket[1]/evidence.clMax)]:[low,high];
+ }
+
  // Separate the power needed for level flight from the additional drag above 1 G.
  // A multiplier on the latter preserves the one-g drag anchor at this speed.
  function state(flight,{liftFraction=1,powerFraction=1,dragFraction=1}={}){
   if(flight.status!=='modelled'||!flight.power||!flight.limits)return null;
   const {limits,drag,power,tasMph}=flight;
-  const availableHp=Math.min(power.shaftHp,power.propulsiveHp*powerFraction);
-  const marginHp=availableHp-power.requiredHp;
+  const available=availableHp(flight,powerFraction);
+  const marginHp=available-power.requiredHp;
   const nLift=limits.nLift*liftFraction;
   const nPower=marginHp>=0?Math.sqrt(1+marginHp/Math.max(1e-9,drag.inducedHp*dragFraction)):null;
   const g=nPower===null||nLift<1?null:Math.min(nLift,nPower,limits.structG);
   const limiting=g===null?null:g===nPower?'power':g===nLift?'lift':'structure';
   const turn=g===null?null:turnFromLoad(g,tasMph);
-  return {turn,limiting,nLift,nPower,nStructure:limits.structG,availableHp,levelHp:power.requiredHp,marginHp,
-   turnDragHp:g===null?null:drag.inducedHp*dragFraction*(g*g-1)};
+  return {turn,limiting,nLift,nPower,nStructure:limits.structG,availableHp:available,levelHp:power.requiredHp,marginHp,
+   turnDragHp:g===null?null:addedDragHp(flight,g,dragFraction)};
  }
 
  function assessment(flight,policy){
@@ -67,8 +78,6 @@
   if(!nominal||!policy)return {nominal,range:null,evidence};
   const [lowLift,highLift]=policy.maneuverLiftFraction,[lowPower,highPower]=policy.usefulPowerFraction;
   const [lowDrag,highDrag]=policy.incrementalDragFraction;
-  const minLift=Math.min(lowLift,evidence?evidence.bracket[0]/evidence.clMax:1);
-  const maxLift=Math.max(highLift,evidence?evidence.bracket[1]/evidence.clMax:1);
   return {nominal,evidence,range:{
    lower:state(flight,{liftFraction:minLift,powerFraction:lowPower,dragFraction:highDrag}).turn,
    upper:state(flight,{liftFraction:maxLift,powerFraction:highPower,dragFraction:lowDrag}).turn
@@ -118,5 +127,5 @@
    range,side:range?(range[0]>.001?'a':range[1]<-.001?'b':'uncertain'):null};
  }
 
- return Object.freeze({liftRead,maneuverLift,turnFromLoad,state,assessment,dragSensitivity,boundedDragTurn,difference});
+ return Object.freeze({liftRead,maneuverLift,turnFromLoad,availableHp,addedDragHp,liftBounds,state,assessment,dragSensitivity,boundedDragTurn,difference});
 });
