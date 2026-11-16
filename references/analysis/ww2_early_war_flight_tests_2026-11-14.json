@@ -30,7 +30,8 @@
     },
     {
       "id": "naca534",
-      "title": "NACA WR L-534, Phillips and Vensel",
+      "title": "NACA WR L-334, Phillips and Vensel",
+      "note": "The existing source ID naca534 is retained for compatibility.",
       "url": "https://ntrs.nasa.gov/api/citations/19930092582/downloads/19930092582.pdf",
       "type": "period-report"
     },
@@ -2858,7 +2859,7 @@
       "id": "w3119-stall-donor",
       "source": "naca353",
       "aircraft": "Spitfire Va X.4922 as a transfer scenario",
-      "locator": "L-353 clean glide CLmax + L-534 wing area and X.4922 trial weight",
+      "locator": "L-353 clean glide CLmax + L-334 wing area and X.4922 trial weight",
       "conditions": {
         "status": "engineering scenario",
         "other_sources": [
@@ -3825,7 +3826,7 @@
       "id": "w3119-roll-fig27",
       "source": "naca534",
       "aircraft": "Spitfire Va W.3119",
-      "locator": "L-534 Fig. 27 (PDF p. 46), maximum practical deflection symbol reads",
+      "locator": "L-334 Fig. 27 (PDF p. 46), maximum practical deflection symbol reads",
       "conditions": {
         "configuration": "Gear and flaps up, metal-covered ailerons.",
         "speed_basis": "Report axis: correct indicated airspeed.",
@@ -3930,7 +3931,7 @@
       "id": "w3119-roll-report",
       "source": "naca534",
       "aircraft": "Spitfire Va W.3119",
-      "locator": "L-534 pp. 12–14, roll discussion and Fig. 28",
+      "locator": "L-334 pp. 12–14, roll discussion and Fig. 28",
       "conditions": {
         "configuration": "Gear and flaps up, metal-covered ailerons.",
         "note": "Narrative speed and force thresholds are approximate. The 300 mph row is a practical deflection limit in the test, not an unrestricted model roll rate."
@@ -3984,7 +3985,7 @@
       "aircraft": "NACA test Spitfire; no serial in comparison table",
       "locator": "Phillips, August 1942, p. 2 comparison table",
       "conditions": {
-        "note": "Compare to the L-534 report in its own altitude case. These NACA summaries may share original measurements."
+        "note": "Compare to the L-334 report in its own altitude case. These NACA summaries may share original measurements."
       },
       "columns": [
         "indicated_mph",
