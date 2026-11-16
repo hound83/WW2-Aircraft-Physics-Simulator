@@ -30,7 +30,8 @@
     },
     {
       "id": "naca534",
-      "title": "NACA WR L-534, Phillips and Vensel",
+      "title": "NACA WR L-334, Phillips and Vensel",
+      "note": "The existing source ID naca534 is retained for compatibility.",
       "url": "https://ntrs.nasa.gov/api/citations/19930092582/downloads/19930092582.pdf",
       "type": "period-report"
     },
@@ -147,6 +148,102 @@
       "title": "Joe Baugher, Captured Axis Aircraft, AE479 / WNr 1304",
       "url": "https://www.joebaugher.com/usaf_serials/captured_axis_aircraft.html",
       "type": "secondary-serial-register"
+    },
+    {
+      "id": "cema-p4",
+      "title": "CEMA 371, WNr 1304, original report p. 4",
+      "url": "https://www.wwiiaircraftperformance.org/me109/Me-109E3-French-3.jpg",
+      "type": "original-report-scan"
+    },
+    {
+      "id": "rae-spit-v-19410825",
+      "title": "RAE Merlin 45 Spitfire V performance chart, 25 August 1941",
+      "url": "https://wwiiaircraftperformance.com/org/spitcom/mk5/spitmkV_files/Spitfire_V_Level_Speed_RAE.jpg",
+      "type": "original-chart-scan"
+    },
+    {
+      "id": "merlin45-1941-limits",
+      "title": "Merlin XLV operational limitations, Res./Eng./618, AVIA 15/814",
+      "url": "https://wwiiaircraftperformance.com/org/spitcom/mk5/spitmkV_files/merlin-45-limitations.jpg",
+      "type": "period-limitations-scan"
+    },
+    {
+      "id": "merlin-map83",
+      "title": "MAP 83 engine ratings, 3 January 1942, p. 2",
+      "url": "https://wwiiaircraftperformance.com/org/spitcom/mk5/spitmkV_files/merlin-ratings_3jan42.jpg",
+      "type": "period-rating-memo"
+    },
+    {
+      "id": "ap1565e-spit-v",
+      "title": "Air Ministry A.P.1565E Pilot's Notes for Spitfire Va, Vb and Vc, reissued with A.L.28/3",
+      "url": "https://stephentaylorhistorian.com/wp-content/uploads/2020/04/spitfire-va-vb-and-vc.pdf",
+      "type": "period-manual-scan"
+    },
+    {
+      "id": "naca-aileron-comparison",
+      "title": "Phillips, NACA comparison of P-36, P-40, Spitfire and Hurricane ailerons, August 1942",
+      "url": "https://ntrs.nasa.gov/citations/20150015694",
+      "type": "period-report"
+    },
+    {
+      "id": "emil-narrow-margin",
+      "title": "Wood and Dempster, The Narrow Margin, appendix 1, Bf 109 E-3 specifications",
+      "url": "https://erenow.org/ww/narrow-margin-battle-britain-rise-air-power-1930-1940/21.php",
+      "type": "secondary-compilation"
+    },
+    {
+      "id": "emil-e-handbook-sheet",
+      "title": "Bf 109 E-1 and E-3 Flugzeugdatenblatt, Anlage 4 Blatt 1",
+      "url": "https://www.wwiiaircraftperformance.org/me109/Me-109e-flugzeugdatenblatt.jpg",
+      "type": "period-data-sheet"
+    },
+    {
+      "id": "aaee-aa873",
+      "title": "A&AEE Spitfire Vc AA.873 performance and handling, 8 March 1942",
+      "url": "https://wwiiaircraftperformance.com/org/spitcom/mk5/spitmkVc_AA873.html",
+      "type": "period-report-transcription"
+    },
+    {
+      "id": "aaee-aa878",
+      "title": "A&AEE Spitfire Vc AA.878 performance and cooling, 25 November 1942",
+      "url": "https://wwiiaircraftperformance.com/org/spitcom/mk5/spitmkV_AA878.html",
+      "type": "period-report-transcription"
+    },
+    {
+      "id": "aaee-ab320",
+      "title": "A&AEE Spitfire Vb Trop AB.320 tank comparison, 15 April 1942",
+      "url": "https://wwiiaircraftperformance.com/org/spitcom/mk5/spitmkVbTrop_AB320.html",
+      "type": "period-report-transcription"
+    },
+    {
+      "id": "emil-handbook-p18",
+      "title": "Bf 109 E Flugzeughandbuch, 16 December 1939, p. 18",
+      "url": "https://www.wwiiaircraftperformance.org/me109/me109e-enginelimits.jpg",
+      "type": "period-manual-scan"
+    },
+    {
+      "id": "db601-oct40-p47",
+      "title": "DB 601 A und B Betriebsvorschrift, October 1940, p. 47",
+      "url": "https://www.wwiiaircraftperformance.org/me109/db601-oct40-operation-maintenance-manual-p47.jpg",
+      "type": "period-manual-scan"
+    },
+    {
+      "id": "emil-design-turn-360",
+      "title": "Messerschmitt design office, Bf 109 E 360° turn times, archive index dated 26 August 1940",
+      "url": "https://www.wwiiaircraftperformance.org/me109/me109e-wendezeiten.jpg",
+      "type": "period-design-chart-scan"
+    },
+    {
+      "id": "emil-design-turn-radii",
+      "title": "Messerschmitt design office, Bf 109 E turn radii, archive index dated 26 August 1940",
+      "url": "https://www.wwiiaircraftperformance.org/me109/me109e-kurvenradien.jpg",
+      "type": "period-design-chart-scan"
+    },
+    {
+      "id": "emil-design-turn-times",
+      "title": "Messerschmitt design office, Bf 109 E turn times by flap angle, archive index dated 26 August 1940",
+      "url": "https://www.wwiiaircraftperformance.org/me109/me109e-kurvenzeiten.jpg",
+      "type": "period-design-chart-scan"
     }
   ],
   "series": [
@@ -2062,7 +2159,9 @@
       "locator": "French tests, climb times",
       "conditions": {
         "note": "Secondary transcription. A quoted CEAM report also gives 380 s to 5,000 m. Both publications may rely on a common period timing. Start convention, run mass, power and climb IAS/TAS are open. The first derived band assumes timing starts at 0 m and 0 s.",
-        "period_reference": "cema"
+        "period_reference": "cema",
+        "status": "Use 1304-cema-rae-climb as the stronger period reproduction. Secondary elapsed times differ at 6000 and 7000 m.",
+        "period_reproduction": "cema-rae"
       },
       "columns": [
         "altitude_m",
@@ -2128,7 +2227,9 @@
       "locator": "French tests, radiator conditions",
       "conditions": {
         "note": "Secondary chart reads. Altitude reference, power and airspeed reduction are unverified. Keep both radiator states and preserve the 5,000 m difference as an observed split across reported runs. The secondary account notes an estimated 15 km/h airspeed uncertainty and a short closed-radiator window. Both require original verification.",
-        "period_reference": "cema-chart"
+        "period_reference": "cema-chart",
+        "status": "Superseded by 1304-cema-p4-level for simulator intake. Retained to reproduce the 14 November audit.",
+        "discrepancy": "Secondary transcription gives 5500 m for the second closed-radiator 570 km/h point. The original p. 4 table gives 5300 m and adds an open-radiator point at 5500 m."
       },
       "columns": [
         "altitude_m",
@@ -2758,7 +2859,7 @@
       "id": "w3119-stall-donor",
       "source": "naca353",
       "aircraft": "Spitfire Va X.4922 as a transfer scenario",
-      "locator": "L-353 clean glide CLmax + L-534 wing area and X.4922 trial weight",
+      "locator": "L-353 clean glide CLmax + L-334 wing area and X.4922 trial weight",
       "conditions": {
         "status": "engineering scenario",
         "other_sources": [
@@ -2889,6 +2990,3217 @@
           "date printed is invalid and serial is unreported"
         ]
       ]
+    },
+    {
+      "id": "1304-cema-p4-level",
+      "source": "cema-p4",
+      "aircraft": "Bf 109 E-3 WNr 1304 / AE479",
+      "locator": "p. 4, radiator-open and radiator-closed tables",
+      "conditions": {
+        "weight_lb_period_rae_summary": 5600,
+        "mass_reference": "cema-rae",
+        "speed_basis": "Level speed as reduced by CEMA with unity antenna/position factor assumed and no speed-course calibration. Uncertainty 2–3%; report gives ±15 km/h at peak.",
+        "pressure_basis": "CEMA admission/manifold pressure column in mm; retain original pressure readout.",
+        "note": "Separate radiator-state runs. At 5000 m the pressure readings differ by 10 mm. No exact cooling drag or closed-run duration follows from the table."
+      },
+      "columns": [
+        "altitude_m",
+        "speed_kmh",
+        "rpm",
+        "manifold_pressure_mm",
+        "radiator"
+      ],
+      "rows": [
+        [
+          2500,
+          490,
+          2400,
+          960,
+          "open"
+        ],
+        [
+          3000,
+          500,
+          2400,
+          960,
+          "open"
+        ],
+        [
+          3500,
+          512,
+          2400,
+          960,
+          "open"
+        ],
+        [
+          4000,
+          520,
+          2400,
+          960,
+          "open"
+        ],
+        [
+          4500,
+          530,
+          2400,
+          920,
+          "open"
+        ],
+        [
+          5000,
+          520,
+          2400,
+          870,
+          "open"
+        ],
+        [
+          5500,
+          512,
+          2400,
+          840,
+          "open"
+        ],
+        [
+          5000,
+          570,
+          2400,
+          880,
+          "closed"
+        ],
+        [
+          5300,
+          570,
+          2400,
+          850,
+          "closed"
+        ],
+        [
+          6000,
+          565,
+          2400,
+          800,
+          "closed"
+        ],
+        [
+          6500,
+          560,
+          2400,
+          750,
+          "closed"
+        ],
+        [
+          7000,
+          545,
+          2400,
+          700,
+          "closed"
+        ]
+      ]
+    },
+    {
+      "id": "1304-cema-rae-climb",
+      "source": "cema-rae",
+      "aircraft": "Bf 109 E-3 WNr 1304 / AE479",
+      "locator": "RAE p. 2 §2.2, French rate of climb and time to height",
+      "conditions": {
+        "trial_weight_lb": 5600,
+        "radiators": "Open to 13,000 ft, then progressively closed to 26,000 ft.",
+        "clock_start": "Not specified on this page.",
+        "climb_speed": "Not given.",
+        "lineage": "Period British reproduction of the French trial, not an independent flight.",
+        "comparator": "German published times in the final column have no aircraft configuration on this page.",
+        "note": "Rate of climb is a point value in the RAE table. Do not compare it directly with the secondary band means."
+      },
+      "columns": [
+        "altitude_ft",
+        "rpm",
+        "boost_gauge_psi",
+        "point_roc_fpm",
+        "french_elapsed_s",
+        "german_published_elapsed_s"
+      ],
+      "rows": [
+        [
+          3280,
+          2430,
+          3.9,
+          2740,
+          76,
+          60
+        ],
+        [
+          6560,
+          2430,
+          3.7,
+          2530,
+          151,
+          114
+        ],
+        [
+          9850,
+          2430,
+          3.6,
+          2900,
+          230,
+          180
+        ],
+        [
+          13150,
+          2430,
+          3.5,
+          2990,
+          303,
+          228
+        ],
+        [
+          16450,
+          2430,
+          2.0,
+          2600,
+          380,
+          294
+        ],
+        [
+          19750,
+          2400,
+          0.2,
+          1860,
+          481,
+          378
+        ],
+        [
+          23000,
+          2400,
+          -1.8,
+          1450,
+          602,
+          null
+        ],
+        [
+          26300,
+          2400,
+          -3.6,
+          820,
+          815,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "1304-cema-rae-summary",
+      "source": "cema-rae",
+      "aircraft": "Bf 109 E-3 WNr 1304 / AE479",
+      "locator": "RAE p. 2 §2.2, French peaks and absolute ceiling",
+      "conditions": {
+        "trial_weight_lb": 5600,
+        "lineage": "Same French trials. Use CEMA p. 4 for original level data.",
+        "top_speed_uncertainty_mph": 9
+      },
+      "columns": [
+        "quantity",
+        "value",
+        "unit",
+        "altitude_ft",
+        "radiator",
+        "rpm",
+        "boost_gauge_psi"
+      ],
+      "rows": [
+        [
+          "reported peak level speed",
+          355,
+          "mph",
+          16400,
+          "closed",
+          2400,
+          2.3
+        ],
+        [
+          "reported peak level speed",
+          330,
+          "mph",
+          14800,
+          "open",
+          2400,
+          2.1
+        ],
+        [
+          "absolute ceiling",
+          32000,
+          "ft",
+          null,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "1304-cema-chart-level",
+      "source": "cema-chart",
+      "aircraft": "Bf 109 E-3 WNr 1304 / AE479",
+      "locator": "Plot labeled No. 1304, right-hand level-speed axis and solid/dashed trace",
+      "conditions": {
+        "method": "Visual axis reads of drawn trend near major altitude lines. Approximate ±3 km/h reading error, separate from unknown reduction or calibration.",
+        "rpm": 2400,
+        "radiator": "Unresolved for this trace. Do not merge it with either p. 4 series.",
+        "note": "Chart peaks around 550 km/h and differs from the p. 4 closed-radiator peak."
+      },
+      "columns": [
+        "altitude_m",
+        "estimated_speed_kmh"
+      ],
+      "rows": [
+        [
+          500,
+          494
+        ],
+        [
+          1500,
+          515
+        ],
+        [
+          3500,
+          538
+        ],
+        [
+          4500,
+          545
+        ],
+        [
+          5000,
+          550
+        ],
+        [
+          6500,
+          522
+        ]
+      ]
+    },
+    {
+      "id": "1304-cema-endurance",
+      "source": "cema-p4",
+      "aircraft": "Bf 109 E-3 WNr 1304 / AE479",
+      "locator": "p. 4, commandes test dated 23 December 1939",
+      "conditions": {
+        "note": "Total fuel reported for combined sequence. Neither total time nor level segment is a steady consumption denominator for the entire burn."
+      },
+      "columns": [
+        "flight_min",
+        "climb_min",
+        "level_segment_min",
+        "level_altitude_m",
+        "manifold_pressure_mm",
+        "rpm",
+        "total_fuel_l"
+      ],
+      "rows": [
+        [
+          50,
+          5,
+          40,
+          3700,
+          840,
+          2200,
+          230
+        ]
+      ]
+    },
+    {
+      "id": "1304-aaee-stall",
+      "source": "aaee-e",
+      "aircraft": "Bf 109 E-3 WNr 1304 / AE479",
+      "locator": "A&AEE/755 part 1, printed p. 4 §2.5 (PDF p. 5)",
+      "conditions": {
+        "weight_lb": null,
+        "power": null,
+        "altitude": null,
+        "airspeed_basis": "A.S.I.R., raw indicated; calibration unavailable.",
+        "note": "Separate British trial from the RAE glide account. Do not use the French trial weight as the British stall-run weight."
+      },
+      "columns": [
+        "flaps",
+        "gear",
+        "asir_kmh",
+        "asir_mph_source"
+      ],
+      "rows": [
+        [
+          "up",
+          "up",
+          130,
+          81
+        ],
+        [
+          "down",
+          "down",
+          100,
+          62
+        ]
+      ]
+    },
+    {
+      "id": "1304-aaee-handling",
+      "source": "aaee-e",
+      "aircraft": "Bf 109 E-3 WNr 1304 / AE479",
+      "locator": "A&AEE/755 part 1, printed pp. 2–6 §§1.5, 2.2–2.6, 3.2 and 4",
+      "conditions": {
+        "note": "Pilot observations. The report labels flap retraction speed A.S.I.R.; other handling speeds preserve the reported units without assuming a corrected basis."
+      },
+      "columns": [
+        "observation",
+        "value",
+        "unit"
+      ],
+      "rows": [
+        [
+          "tailplane trim full travel",
+          18,
+          "s"
+        ],
+        [
+          "full flap travel",
+          40,
+          "deg"
+        ],
+        [
+          "gear retraction approximate",
+          8,
+          "s"
+        ],
+        [
+          "best flap retraction speed A.S.I.R.",
+          125,
+          "mph"
+        ],
+        [
+          "controls become rapidly heavier above about",
+          250,
+          "mph"
+        ],
+        [
+          "approach glide reference",
+          93,
+          "mph"
+        ],
+        [
+          "tight rolls reported up to",
+          190,
+          "mph"
+        ],
+        [
+          "aileron snatch lower end",
+          185,
+          "km/h"
+        ],
+        [
+          "aileron snatch upper end",
+          220,
+          "km/h"
+        ],
+        [
+          "difficult dive recovery at",
+          400,
+          "mph"
+        ]
+      ]
+    },
+    {
+      "id": "1792-factory-level",
+      "source": "factory1792",
+      "aircraft": "Bf 109 E-3 WNr 1792",
+      "locator": "Messprotokoll vom 16.2.39, results 1–4",
+      "conditions": {
+        "engine": "DB 601/A WNr 60179",
+        "manifold_pressure_kg_cm2": 1.3,
+        "propeller": "3.10 m, three-blade VDM 9-11081A WNr 27209",
+        "radiators": "Three quarters closed (55 mm open)",
+        "gear": "Retracted",
+        "tailwheel": "Extended",
+        "altitude_m": 0,
+        "datum": "Graphically reduced to sea level; standard temperature and correct regulator setting, no correction to guaranteed engine output.",
+        "note": "Gun-fit runs used two MG FF mock-ups. Other runs had the openings capped. Suitability as a 1304 check depends on its radiator setting and installed power."
+      },
+      "columns": [
+        "date",
+        "wing_installation",
+        "timed_course",
+        "speed_kmh"
+      ],
+      "rows": [
+        [
+          "1939-01-31",
+          "ports capped",
+          "old",
+          467
+        ],
+        [
+          "1939-02-08",
+          "two MG FF mock-ups",
+          "old",
+          467
+        ],
+        [
+          "1939-02-15",
+          "ports capped",
+          "new",
+          467
+        ],
+        [
+          "1939-02-16",
+          "two MG FF mock-ups",
+          "new",
+          466
+        ]
+      ]
+    },
+    {
+      "id": "emil-sheet-load",
+      "source": "emil-e-handbook-sheet",
+      "aircraft": "Bf 109 E-1 and E-3 type data",
+      "locator": "Flugzeugdatenblatt load table",
+      "conditions": {
+        "note": "Type-level load schedule. French WNr 1304 has its own trial weight."
+      },
+      "columns": [
+        "item",
+        "e1_kg",
+        "e3_kg"
+      ],
+      "rows": [
+        [
+          "equipped weight",
+          2023,
+          2053
+        ],
+        [
+          "crew",
+          100,
+          100
+        ],
+        [
+          "ammunition",
+          88,
+          99
+        ],
+        [
+          "fuel",
+          304,
+          304
+        ],
+        [
+          "lubricant",
+          27,
+          27
+        ],
+        [
+          "ballast",
+          25,
+          25
+        ],
+        [
+          "flight weight",
+          2573,
+          2608
+        ]
+      ]
+    },
+    {
+      "id": "emil-e1-sheet-level",
+      "source": "emil-e-handbook-sheet",
+      "aircraft": "Bf 109 E-1 type data",
+      "locator": "Flugzeugdatenblatt maximum-speed table, E-1 column",
+      "conditions": {
+        "note": "E-3 speed column is blank. Published values are type context with rating and cooling state unresolved."
+      },
+      "columns": [
+        "altitude_km",
+        "speed_kmh"
+      ],
+      "rows": [
+        [
+          0,
+          460
+        ],
+        [
+          1,
+          480
+        ],
+        [
+          2,
+          500
+        ],
+        [
+          3,
+          520
+        ],
+        [
+          4,
+          540
+        ],
+        [
+          5,
+          555
+        ],
+        [
+          6,
+          555
+        ],
+        [
+          7,
+          550
+        ]
+      ]
+    },
+    {
+      "id": "emil-secondary-narrow-margin",
+      "source": "emil-narrow-margin",
+      "aircraft": "Bf 109 E-3, serial unspecified",
+      "locator": "Appendix 1, Bf 109 E-3",
+      "conditions": {
+        "engine": "DB 601 Aa as reported",
+        "loaded_weight_lb": 5520,
+        "empty_weight_lb": 4421,
+        "use": "Secondary type-level context only. The book gives no report ID or settings tying these values to WNr 1304 and contains variant-description inconsistencies."
+      },
+      "columns": [
+        "quantity",
+        "value",
+        "unit",
+        "altitude_ft"
+      ],
+      "rows": [
+        [
+          "peak level speed",
+          354,
+          "mph",
+          12300
+        ],
+        [
+          "initial rate of climb",
+          3100,
+          "ft/min",
+          null
+        ],
+        [
+          "climb time",
+          372,
+          "s",
+          16500
+        ],
+        [
+          "service ceiling",
+          36000,
+          "ft",
+          null
+        ],
+        [
+          "cruise speed",
+          298,
+          "mph",
+          null
+        ]
+      ]
+    },
+    {
+      "id": "mk-v-rae-speeds",
+      "source": "rae-spit-v-19410825",
+      "aircraft": "Spitfire V Merlin 45, airframe unspecified",
+      "locator": "25.8.41 chart, handwritten curve labels",
+      "conditions": {
+        "level_rating": "+9 lb/in² on solid all-out line",
+        "speed_basis": "TAS, separate horizontal scale for best-climb TAS",
+        "level_series": "Solid line attributed to Boscombe overall. Low-altitude segment is drawn without a named measured point. Separate dashed chart curve is labeled calculated.",
+        "weak_mixture_series": "Calculated by RAE.",
+        "note": "Family-level checks only. Airframe, weight and provenance of individual speed points are unspecified."
+      },
+      "columns": [
+        "altitude_ft",
+        "all_out_solid_tas_mph",
+        "weak_mixture_calculated_tas_mph",
+        "best_climb_tas_mph"
+      ],
+      "rows": [
+        [
+          0,
+          289,
+          243,
+          171
+        ],
+        [
+          5000,
+          310,
+          261,
+          177
+        ],
+        [
+          10000,
+          330,
+          280,
+          185
+        ],
+        [
+          15000,
+          351,
+          298,
+          194
+        ],
+        [
+          20000,
+          372,
+          316,
+          204
+        ],
+        [
+          25000,
+          364,
+          304,
+          210
+        ],
+        [
+          30000,
+          343,
+          282,
+          216
+        ]
+      ]
+    },
+    {
+      "id": "merlin45-1941-ratings",
+      "source": "merlin45-1941-limits",
+      "aircraft": "Merlin XLV",
+      "locator": "Res./Eng./618 §§2–5 and 8",
+      "conditions": {
+        "fuel_octane": 100,
+        "note": "Printed period limits for this rating state. Keep later Mk V combat clearance separate."
+      },
+      "columns": [
+        "condition",
+        "rpm",
+        "boost_gauge_psi",
+        "time_limit_min",
+        "altitude_limit_ft"
+      ],
+      "rows": [
+        [
+          "take-off",
+          3000,
+          12,
+          3,
+          1000
+        ],
+        [
+          "take-off minimum rpm at maximum boost",
+          2200,
+          12,
+          null,
+          null
+        ],
+        [
+          "climb",
+          2850,
+          9,
+          30,
+          null
+        ],
+        [
+          "level all-out",
+          3000,
+          9,
+          5,
+          null
+        ],
+        [
+          "rich cruise",
+          2650,
+          7,
+          null,
+          null
+        ],
+        [
+          "economical cruise",
+          2650,
+          4,
+          null,
+          null
+        ],
+        [
+          "dive",
+          3600,
+          9,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "merlin45-1941-cooling",
+      "source": "merlin45-1941-limits",
+      "aircraft": "Merlin XLV",
+      "locator": "Res./Eng./618 §§6–8",
+      "conditions": {},
+      "columns": [
+        "condition",
+        "temperature_c"
+      ],
+      "rows": [
+        [
+          "oil inlet minimum for take-off",
+          15
+        ],
+        [
+          "oil inlet maximum cruising",
+          90
+        ],
+        [
+          "oil inlet maximum climb",
+          90
+        ],
+        [
+          "oil inlet emergency maximum (5 min)",
+          95
+        ],
+        [
+          "coolant outlet minimum for take-off",
+          60
+        ],
+        [
+          "coolant outlet maximum cruise",
+          100
+        ],
+        [
+          "coolant outlet maximum climb and level",
+          120
+        ]
+      ]
+    },
+    {
+      "id": "merlin45-map83",
+      "source": "merlin-map83",
+      "aircraft": "Merlin 45/46/47",
+      "locator": "MAP 83 p. 2, D",
+      "conditions": {
+        "fuel_octane": 100
+      },
+      "columns": [
+        "earlier_emergency_boost_inHg_abs",
+        "increased_emergency_boost_inHg_abs"
+      ],
+      "rows": [
+        [
+          54.5,
+          60.5
+        ]
+      ]
+    },
+    {
+      "id": "mk-v-handbook-stall",
+      "source": "ap1565e-spit-v",
+      "aircraft": "Spitfire Va/Vb/Vc type guidance",
+      "locator": "Pilot notes §12(iii)",
+      "conditions": {
+        "weight_lb_approx": 6400,
+        "speed_basis": "IAS",
+        "power": null,
+        "note": "The type handbook has no serial or ASI calibration for this case. Keep separate from W.3119 and the derived X.4922 EAS."
+      },
+      "columns": [
+        "flaps",
+        "gear",
+        "ias_mph"
+      ],
+      "rows": [
+        [
+          "up",
+          "up",
+          73
+        ],
+        [
+          "down",
+          "down",
+          64
+        ]
+      ]
+    },
+    {
+      "id": "w3119-roll-fig27",
+      "source": "naca534",
+      "aircraft": "Spitfire Va W.3119",
+      "locator": "L-334 Fig. 27 (PDF p. 46), maximum practical deflection symbol reads",
+      "conditions": {
+        "configuration": "Gear and flaps up, metal-covered ailerons.",
+        "speed_basis": "Report axis: correct indicated airspeed.",
+        "method": "Approximate symbol reads, grouped by paired speed to nearest mph. Read precision ±2 mph, ±1.5° aileron, ±2 lb force, ±0.003 helix angle.",
+        "conversion": "p = (2 V_TAS / b) × (pb/2V). Use actual TAS and b = 443 in for this airplane. Fig. 27 does not identify the flight altitude."
+      },
+      "columns": [
+        "correct_indicated_mph",
+        "direction",
+        "total_aileron_deg",
+        "stick_force_lb",
+        "pb_over_2v_rad"
+      ],
+      "rows": [
+        [
+          109,
+          "left",
+          43,
+          33,
+          0.092
+        ],
+        [
+          109,
+          "right",
+          41,
+          25,
+          0.079
+        ],
+        [
+          146,
+          "left",
+          39,
+          42,
+          0.083
+        ],
+        [
+          146,
+          "right",
+          39,
+          49,
+          0.077
+        ],
+        [
+          182,
+          "left",
+          31,
+          38,
+          0.067
+        ],
+        [
+          182,
+          "right",
+          31,
+          40,
+          0.064
+        ],
+        [
+          218,
+          "left",
+          22,
+          41,
+          0.056
+        ],
+        [
+          220,
+          "right",
+          25,
+          39,
+          0.055
+        ],
+        [
+          250,
+          "left",
+          22,
+          40,
+          0.047
+        ],
+        [
+          250,
+          "right",
+          22,
+          44,
+          0.049
+        ],
+        [
+          297,
+          "left",
+          19,
+          40,
+          0.038
+        ],
+        [
+          295,
+          "right",
+          20,
+          40,
+          0.04
+        ]
+      ]
+    },
+    {
+      "id": "w3119-roll-report",
+      "source": "naca534",
+      "aircraft": "Spitfire Va W.3119",
+      "locator": "L-334 pp. 12–14, roll discussion and Fig. 28",
+      "conditions": {
+        "configuration": "Gear and flaps up, metal-covered ailerons.",
+        "note": "Narrative speed and force thresholds are approximate. The 300 mph row is a practical deflection limit in the test, not an unrestricted model roll rate."
+      },
+      "columns": [
+        "reported_indicated_mph",
+        "altitude_ft",
+        "stick_force_lb",
+        "rolling_deg_s",
+        "pb_over_2v_rad",
+        "condition"
+      ],
+      "rows": [
+        [
+          110,
+          null,
+          30,
+          null,
+          null,
+          "approximate upper speed for full deflection at this force"
+        ],
+        [
+          130,
+          null,
+          40,
+          null,
+          null,
+          "approximate upper speed for full deflection at this force"
+        ],
+        [
+          230,
+          6000,
+          30,
+          59,
+          0.051,
+          "report 30-lb reference"
+        ],
+        [
+          300,
+          null,
+          40,
+          null,
+          0.04,
+          "approximately half full deflection"
+        ]
+      ]
+    },
+    {
+      "id": "spitfire-naca-comparison-roll",
+      "source": "naca-aileron-comparison",
+      "aircraft": "NACA test Spitfire; no serial in comparison table",
+      "locator": "Phillips, August 1942, p. 2 comparison table",
+      "conditions": {
+        "note": "Compare to the L-334 report in its own altitude case. These NACA summaries may share original measurements."
+      },
+      "columns": [
+        "indicated_mph",
+        "altitude_ft",
+        "stick_force_lb",
+        "rolling_deg_s",
+        "pb_over_2v_rad"
+      ],
+      "rows": [
+        [
+          230,
+          10000,
+          5,
+          15,
+          0.012
+        ],
+        [
+          230,
+          10000,
+          30,
+          63,
+          0.05
+        ]
+      ]
+    },
+    {
+      "id": "aa873-climb",
+      "source": "aaee-aa873",
+      "aircraft": "Spitfire Vc AA.873",
+      "locator": "Table I",
+      "conditions": {
+        "weight_lb": 6917,
+        "cg_aft_of_datum_in": 7.4,
+        "engine": "Merlin 45",
+        "configuration": "Universal wing with four 20 mm cannon; no snowguard; triple ejectors without fishtails.",
+        "note": "The Table I 5,000-ft elapsed clock is inconsistent with its neighboring intervals and local point climb rates. Retained as printed."
+      },
+      "columns": [
+        "altitude_ft",
+        "elapsed_min",
+        "roc_fpm",
+        "tas_mph",
+        "asi_mph",
+        "pec_mph",
+        "compressibility_correction_mph",
+        "rpm",
+        "boost_gauge_psi",
+        "mixture",
+        "source_fth_marker"
+      ],
+      "rows": [
+        [
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          9.3,
+          "Rich",
+          false
+        ],
+        [
+          1000,
+          0.35,
+          2900,
+          168.5,
+          167.5,
+          -1.7,
+          null,
+          2850,
+          9.3,
+          "Rich",
+          false
+        ],
+        [
+          2000,
+          0.7,
+          2900,
+          171,
+          167.5,
+          -1.7,
+          null,
+          2850,
+          9.3,
+          "Rich",
+          false
+        ],
+        [
+          3000,
+          1,
+          2900,
+          173,
+          167.5,
+          -1.7,
+          -0.1,
+          2850,
+          9.3,
+          "Rich",
+          false
+        ],
+        [
+          5000,
+          1.4,
+          2900,
+          178.5,
+          167.5,
+          -1.7,
+          -0.2,
+          2850,
+          9.3,
+          "Rich",
+          false
+        ],
+        [
+          6500,
+          2.25,
+          2900,
+          182,
+          167.5,
+          -1.7,
+          -0.3,
+          2850,
+          9.3,
+          "Rich",
+          false
+        ],
+        [
+          10000,
+          3.5,
+          2900,
+          183,
+          158,
+          -0.2,
+          -0.3,
+          2850,
+          9.3,
+          "Rich",
+          false
+        ],
+        [
+          13000,
+          4.5,
+          2900,
+          187.5,
+          153.5,
+          0.5,
+          -0.5,
+          2850,
+          9.3,
+          "Rich",
+          false
+        ],
+        [
+          13400,
+          4.6,
+          2900,
+          188,
+          153,
+          0.6,
+          -0.5,
+          2850,
+          9.3,
+          "Rich",
+          true
+        ],
+        [
+          15000,
+          5.2,
+          2690,
+          191,
+          151,
+          1,
+          -0.5,
+          2850,
+          8,
+          "Rich",
+          false
+        ],
+        [
+          16500,
+          5.8,
+          2475,
+          194.5,
+          150,
+          1.2,
+          -0.6,
+          2850,
+          6.9,
+          "Rich",
+          false
+        ],
+        [
+          18000,
+          6.4,
+          2250,
+          197,
+          148,
+          1.5,
+          -0.7,
+          2850,
+          5.8,
+          "Rich",
+          false
+        ],
+        [
+          20000,
+          7.35,
+          2300,
+          201.5,
+          146,
+          1.9,
+          -0.8,
+          3000,
+          5.8,
+          "Rich",
+          false
+        ],
+        [
+          23000,
+          8.8,
+          1910,
+          205,
+          140,
+          3,
+          -0.8,
+          3000,
+          3.6,
+          "Rich",
+          false
+        ],
+        [
+          26000,
+          10.55,
+          1520,
+          208.5,
+          134,
+          4,
+          -0.9,
+          3000,
+          1.6,
+          "Rich",
+          false
+        ],
+        [
+          28000,
+          12,
+          1240,
+          211,
+          130,
+          4.9,
+          -1,
+          3000,
+          0.4,
+          "Rich",
+          false
+        ],
+        [
+          30000,
+          13.8,
+          980,
+          214.5,
+          126,
+          5.7,
+          -1,
+          3000,
+          -0.6,
+          "Rich",
+          false
+        ],
+        [
+          32000,
+          16.2,
+          720,
+          216.5,
+          122,
+          6.5,
+          -1,
+          3000,
+          -1.8,
+          "Rich",
+          false
+        ],
+        [
+          34000,
+          19.7,
+          440,
+          219.5,
+          118,
+          7.3,
+          -1,
+          3000,
+          -2.8,
+          "Rich",
+          false
+        ],
+        [
+          36000,
+          27.3,
+          180,
+          220.5,
+          113,
+          8.3,
+          -1,
+          3000,
+          -4,
+          "Rich",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "aa873-level",
+      "source": "aaee-aa873",
+      "aircraft": "Spitfire Vc AA.873",
+      "locator": "Table II",
+      "conditions": {
+        "weight_lb": 6917,
+        "cg_aft_of_datum_in": 7.4,
+        "engine": "Merlin 45",
+        "configuration": "Universal wing with four 20 mm cannon; no snowguard; triple ejectors without fishtails.",
+        "note": "The Table I 5,000-ft elapsed clock is inconsistent with its neighboring intervals and local point climb rates. Retained as printed."
+      },
+      "columns": [
+        "altitude_ft",
+        "tas_mph",
+        "asi_mph",
+        "pec_mph",
+        "compressibility_correction_mph",
+        "rpm",
+        "boost_gauge_psi",
+        "source_fth_marker"
+      ],
+      "rows": [
+        [
+          16500,
+          363,
+          294,
+          -8.5,
+          -4.4,
+          3000,
+          9.3,
+          false
+        ],
+        [
+          18000,
+          370,
+          292.5,
+          -8.5,
+          -4.9,
+          3000,
+          9.3,
+          false
+        ],
+        [
+          19000,
+          374,
+          291.5,
+          -8.5,
+          -5.1,
+          3000,
+          9.3,
+          true
+        ],
+        [
+          20000,
+          371.5,
+          284,
+          -8.5,
+          -4.6,
+          3000,
+          8.35,
+          false
+        ],
+        [
+          23000,
+          359.5,
+          263,
+          -8.5,
+          -5.1,
+          3000,
+          5.6,
+          false
+        ],
+        [
+          25000,
+          349,
+          247,
+          -8.2,
+          -5,
+          3000,
+          3.7,
+          false
+        ]
+      ]
+    },
+    {
+      "id": "aa873-handling",
+      "source": "aaee-aa873",
+      "aircraft": "Spitfire Vc AA.873",
+      "locator": "Handling, stall/dive/landing sections",
+      "conditions": {
+        "weight_lb": 6917,
+        "configuration": "Four cannon, universal wing.",
+        "basis": "ASI; no stall power setting supplied in handling section."
+      },
+      "columns": [
+        "observation",
+        "mph_asi"
+      ],
+      "rows": [
+        [
+          "clean buffet onset approximate",
+          90
+        ],
+        [
+          "clean pitching limit",
+          81
+        ],
+        [
+          "flaps down, gear up stall",
+          71
+        ],
+        [
+          "approach glide approximate",
+          90
+        ],
+        [
+          "noticeably tail-heavy in dive above",
+          360
+        ],
+        [
+          "dive operational limit at ≥1/3 throttle",
+          465
+        ]
+      ]
+    },
+    {
+      "id": "k9787-aa873-reference",
+      "source": "aaee-aa873",
+      "aircraft": "Spitfire K.9787",
+      "locator": "Handling, comparison quoted by AA.873 report",
+      "conditions": {
+        "trial_weight_lb": 5819,
+        "comparison_weight_lb": 6917,
+        "configuration": "K.9787 used the two-blade fixed-pitch propeller.",
+        "note": "Corrected column is the period report’s weight projection on its reported ASI scale. It does not establish a common lift coefficient."
+      },
+      "columns": [
+        "flaps",
+        "gear",
+        "source_asi_mph",
+        "period_projected_asi_mph"
+      ],
+      "rows": [
+        [
+          "up",
+          "up",
+          64,
+          70
+        ],
+        [
+          "down",
+          "down",
+          58,
+          63
+        ]
+      ]
+    },
+    {
+      "id": "aa878-combat-climb",
+      "source": "aaee-aa878",
+      "aircraft": "Spitfire Vc AA.878",
+      "locator": "Table I",
+      "conditions": {
+        "weight_lb": 6965,
+        "cg_aft_of_datum_in": 7.3,
+        "engine": "Merlin 45",
+        "configuration": "Two 20 mm cannon and four .303 guns, with ballast to four-cannon loading. No snowguard/stoneguard. de Havilland 5/39 constant-speed propeller.",
+        "radiator": "Full open",
+        "scope_note": "Combat power has a three-minute limit. Report extends Tables I and III as aerodynamic trial references. Combat climb measured to 24,500 ft and extended above that."
+      },
+      "columns": [
+        "altitude_ft",
+        "elapsed_min",
+        "roc_fpm",
+        "tas_mph",
+        "asi_mph",
+        "pec_mph",
+        "compressibility_correction_mph",
+        "rpm",
+        "boost_gauge_psi",
+        "source_fth_marker"
+      ],
+      "rows": [
+        [
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          false
+        ],
+        [
+          2000,
+          0.55,
+          3700,
+          175.5,
+          170,
+          0.7,
+          -0.1,
+          3000,
+          16,
+          false
+        ],
+        [
+          4000,
+          1.1,
+          3700,
+          181,
+          170,
+          0.7,
+          -0.2,
+          3000,
+          16,
+          false
+        ],
+        [
+          6000,
+          1.65,
+          3700,
+          186,
+          170,
+          0.7,
+          -0.3,
+          3000,
+          16,
+          false
+        ],
+        [
+          8000,
+          2.15,
+          3710,
+          192,
+          170,
+          0.7,
+          -0.4,
+          3000,
+          16,
+          false
+        ],
+        [
+          8800,
+          2.4,
+          3710,
+          194.25,
+          170,
+          0.7,
+          -0.4,
+          3000,
+          16,
+          true
+        ],
+        [
+          10000,
+          2.7,
+          3570,
+          187.5,
+          160,
+          1.4,
+          -0.4,
+          3000,
+          15,
+          false
+        ],
+        [
+          12000,
+          3.3,
+          3320,
+          191,
+          158,
+          1.5,
+          -0.5,
+          3000,
+          13.2,
+          false
+        ],
+        [
+          14000,
+          3.9,
+          3060,
+          193.5,
+          155,
+          1.7,
+          -0.6,
+          3000,
+          11.5,
+          false
+        ],
+        [
+          16000,
+          4.6,
+          2800,
+          196.5,
+          152,
+          2,
+          -0.7,
+          3000,
+          9.8,
+          false
+        ],
+        [
+          18000,
+          5.35,
+          2540,
+          200.5,
+          150,
+          2.1,
+          -0.8,
+          3000,
+          8.2,
+          false
+        ],
+        [
+          20000,
+          6.15,
+          2290,
+          204.5,
+          148,
+          2.3,
+          -0.9,
+          3000,
+          6.7,
+          false
+        ],
+        [
+          22000,
+          7.1,
+          2040,
+          206.5,
+          144,
+          2.6,
+          -0.9,
+          3000,
+          5.2,
+          false
+        ],
+        [
+          24000,
+          8.15,
+          1780,
+          208,
+          140,
+          2.9,
+          -1,
+          3000,
+          3.8,
+          false
+        ],
+        [
+          26000,
+          9.35,
+          1530,
+          210,
+          136,
+          3.2,
+          -1.1,
+          3000,
+          2.5,
+          false
+        ],
+        [
+          28000,
+          10.75,
+          1280,
+          212,
+          132,
+          3.5,
+          -1.1,
+          3000,
+          1.2,
+          false
+        ],
+        [
+          30000,
+          12.5,
+          1030,
+          214,
+          128,
+          3.8,
+          -1.2,
+          3000,
+          -0.1,
+          false
+        ],
+        [
+          32000,
+          14.75,
+          770,
+          215,
+          124,
+          4.1,
+          -1.3,
+          3000,
+          -1.2,
+          false
+        ],
+        [
+          34000,
+          17.9,
+          520,
+          217,
+          120,
+          4.5,
+          -1.4,
+          3000,
+          -2.3,
+          false
+        ],
+        [
+          36000,
+          23.2,
+          260,
+          218.5,
+          116,
+          4.8,
+          -1.4,
+          3000,
+          -3.4,
+          false
+        ],
+        [
+          37000,
+          28.55,
+          130,
+          220.5,
+          114,
+          4.9,
+          -1.4,
+          3000,
+          -3.9,
+          false
+        ]
+      ]
+    },
+    {
+      "id": "aa878-normal-climb",
+      "source": "aaee-aa878",
+      "aircraft": "Spitfire Vc AA.878",
+      "locator": "Table II",
+      "conditions": {
+        "weight_lb": 6965,
+        "cg_aft_of_datum_in": 7.3,
+        "engine": "Merlin 45",
+        "configuration": "Two 20 mm cannon and four .303 guns, with ballast to four-cannon loading. No snowguard/stoneguard. de Havilland 5/39 constant-speed propeller.",
+        "radiator": "Full open",
+        "scope_note": "Combat power has a three-minute limit. Report extends Tables I and III as aerodynamic trial references. Combat climb measured to 24,500 ft and extended above that."
+      },
+      "columns": [
+        "altitude_ft",
+        "elapsed_min",
+        "roc_fpm",
+        "tas_mph",
+        "asi_mph",
+        "pec_mph",
+        "compressibility_correction_mph",
+        "rpm",
+        "boost_gauge_psi",
+        "source_fth_marker"
+      ],
+      "rows": [
+        [
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          false
+        ],
+        [
+          2000,
+          0.75,
+          2610,
+          175.5,
+          170,
+          0.7,
+          -0.1,
+          2850,
+          9,
+          false
+        ],
+        [
+          4000,
+          1.55,
+          2620,
+          181,
+          170,
+          0.7,
+          -0.2,
+          2850,
+          9,
+          false
+        ],
+        [
+          6000,
+          2.3,
+          2620,
+          186,
+          170,
+          0.7,
+          -0.3,
+          2850,
+          9,
+          false
+        ],
+        [
+          8000,
+          3.05,
+          2630,
+          192,
+          170,
+          0.7,
+          -0.4,
+          2850,
+          9,
+          false
+        ],
+        [
+          10000,
+          3.8,
+          2640,
+          187.5,
+          160,
+          1.4,
+          -0.4,
+          2850,
+          9,
+          false
+        ],
+        [
+          12000,
+          4.55,
+          2640,
+          191,
+          158,
+          1.5,
+          -0.5,
+          2850,
+          9,
+          false
+        ],
+        [
+          14000,
+          5.3,
+          2650,
+          193.5,
+          155,
+          1.7,
+          -0.6,
+          2850,
+          9,
+          false
+        ],
+        [
+          14900,
+          5.7,
+          2650,
+          195,
+          154,
+          1.8,
+          -0.6,
+          2850,
+          9,
+          true
+        ],
+        [
+          16000,
+          6.1,
+          2500,
+          196.5,
+          152,
+          2,
+          -0.7,
+          2850,
+          8.2,
+          false
+        ],
+        [
+          18000,
+          6.95,
+          2240,
+          200.5,
+          150,
+          2.1,
+          -0.8,
+          2850,
+          6.6,
+          false
+        ],
+        [
+          20000,
+          7.9,
+          1980,
+          204.5,
+          148,
+          2.3,
+          -0.9,
+          2850,
+          5.1,
+          false
+        ],
+        [
+          22000,
+          9,
+          1720,
+          206.5,
+          144,
+          2.6,
+          -0.9,
+          2850,
+          3.6,
+          false
+        ],
+        [
+          24000,
+          10.25,
+          1450,
+          208,
+          140,
+          2.9,
+          -1,
+          2850,
+          2.2,
+          false
+        ],
+        [
+          26000,
+          11.6,
+          1530,
+          210,
+          136,
+          3.2,
+          -1.1,
+          3000,
+          2.5,
+          false
+        ],
+        [
+          28000,
+          13.05,
+          1280,
+          212,
+          132,
+          3.5,
+          -1.1,
+          3000,
+          1.2,
+          false
+        ],
+        [
+          30000,
+          14.8,
+          1030,
+          214,
+          128,
+          3.8,
+          -1.2,
+          3000,
+          -0.1,
+          false
+        ],
+        [
+          32000,
+          17,
+          770,
+          215,
+          124,
+          4.1,
+          -1.3,
+          3000,
+          -1.2,
+          false
+        ],
+        [
+          34000,
+          20.15,
+          520,
+          217,
+          120,
+          4.5,
+          -1.4,
+          3000,
+          -2.3,
+          false
+        ],
+        [
+          36000,
+          25.45,
+          260,
+          218.5,
+          116,
+          4.8,
+          -1.4,
+          3000,
+          -3.4,
+          false
+        ],
+        [
+          37000,
+          30.8,
+          130,
+          220.5,
+          114,
+          4.9,
+          -1.4,
+          3000,
+          -3.9,
+          false
+        ]
+      ]
+    },
+    {
+      "id": "aa878-combat-level",
+      "source": "aaee-aa878",
+      "aircraft": "Spitfire Vc AA.878",
+      "locator": "Table III",
+      "conditions": {
+        "weight_lb": 6965,
+        "cg_aft_of_datum_in": 7.3,
+        "engine": "Merlin 45",
+        "configuration": "Two 20 mm cannon and four .303 guns, with ballast to four-cannon loading. No snowguard/stoneguard. de Havilland 5/39 constant-speed propeller.",
+        "radiator": "Minimum drag position",
+        "scope_note": "Combat power has a three-minute limit. Report extends Tables I and III as aerodynamic trial references. Combat climb measured to 24,500 ft and extended above that.",
+        "transcription_note": "Table III heading says normal. +16 boost and test scope identify combat. Preserve 13,000-ft table FTH. Report §4 summary has 13,800 ft."
+      },
+      "columns": [
+        "altitude_ft",
+        "tas_mph",
+        "asi_mph",
+        "pec_mph",
+        "compressibility_correction_mph",
+        "rpm",
+        "boost_gauge_psi",
+        "source_fth_marker"
+      ],
+      "rows": [
+        [
+          8000,
+          349,
+          320.5,
+          -9.6,
+          -1.9,
+          3000,
+          16,
+          false
+        ],
+        [
+          10000,
+          357,
+          318.5,
+          -9.5,
+          -2.4,
+          3000,
+          16,
+          false
+        ],
+        [
+          12000,
+          365,
+          316,
+          -9.3,
+          -3,
+          3000,
+          16,
+          false
+        ],
+        [
+          13000,
+          369,
+          314.5,
+          -9.2,
+          -3.3,
+          3000,
+          16,
+          true
+        ],
+        [
+          14000,
+          368,
+          309,
+          -8.9,
+          -3.4,
+          3000,
+          14.8,
+          false
+        ],
+        [
+          16000,
+          365,
+          296.5,
+          -8,
+          -3.7,
+          3000,
+          12.7,
+          false
+        ],
+        [
+          18000,
+          362.5,
+          285,
+          -7.2,
+          -3.9,
+          3000,
+          10.7,
+          false
+        ]
+      ]
+    },
+    {
+      "id": "aa878-normal-level",
+      "source": "aaee-aa878",
+      "aircraft": "Spitfire Vc AA.878",
+      "locator": "Table IV",
+      "conditions": {
+        "weight_lb": 6965,
+        "cg_aft_of_datum_in": 7.3,
+        "engine": "Merlin 45",
+        "configuration": "Two 20 mm cannon and four .303 guns, with ballast to four-cannon loading. No snowguard/stoneguard. de Havilland 5/39 constant-speed propeller.",
+        "radiator": "Minimum drag position",
+        "scope_note": "Combat power has a three-minute limit. Report extends Tables I and III as aerodynamic trial references. Combat climb measured to 24,500 ft and extended above that."
+      },
+      "columns": [
+        "altitude_ft",
+        "tas_mph",
+        "asi_mph",
+        "pec_mph",
+        "compressibility_correction_mph",
+        "rpm",
+        "boost_gauge_psi",
+        "source_fth_marker"
+      ],
+      "rows": [
+        [
+          16000,
+          344,
+          278,
+          -6.8,
+          -3,
+          3000,
+          9,
+          false
+        ],
+        [
+          18000,
+          352,
+          276,
+          -6.6,
+          -3.6,
+          3000,
+          9,
+          false
+        ],
+        [
+          19900,
+          359.5,
+          273,
+          -6.4,
+          -4,
+          3000,
+          9,
+          true
+        ],
+        [
+          20000,
+          359,
+          272.5,
+          -6.4,
+          -4,
+          3000,
+          8.9,
+          false
+        ],
+        [
+          22000,
+          356,
+          261,
+          -5.6,
+          -4.2,
+          3000,
+          7.2,
+          false
+        ],
+        [
+          24000,
+          353,
+          250,
+          -4.8,
+          -4.3,
+          3000,
+          5.6,
+          false
+        ],
+        [
+          26000,
+          349,
+          238,
+          -4,
+          -4.3,
+          3000,
+          4,
+          false
+        ]
+      ]
+    },
+    {
+      "id": "aa878-cooling",
+      "source": "aaee-aa878",
+      "aircraft": "Spitfire Vc AA.878",
+      "locator": "§4 engine cooling tests",
+      "conditions": {
+        "mode": "Combat, 3000 rpm, +16 lb/in² nominal; full-open radiator in climb, minimum drag in level.",
+        "level_asi_mph": 308,
+        "level_air_temp_c": 5,
+        "level_oil_pressure_psi": 74,
+        "level_coolant_outlet_c": 124,
+        "level_oil_inlet_measured_c": 78,
+        "level_duration_min": 3,
+        "note": "Oil temperatures and suitability are reported reductions; climb high-altitude points exceed authorized combat time."
+      },
+      "columns": [
+        "phase",
+        "altitude_ft",
+        "temperate_oil_inlet_c",
+        "tropical_oil_inlet_c",
+        "temperate_radiator_suitability",
+        "tropical_radiator_suitability"
+      ],
+      "rows": [
+        [
+          "climb",
+          24000,
+          95,
+          105,
+          null,
+          null
+        ],
+        [
+          "climb",
+          15000,
+          null,
+          null,
+          0.985,
+          0.865
+        ],
+        [
+          "level",
+          12000,
+          76,
+          86,
+          1.025,
+          0.905
+        ]
+      ]
+    },
+    {
+      "id": "ab320-climb-no-tank",
+      "source": "aaee-ab320",
+      "aircraft": "Spitfire Vb Trop AB.320",
+      "locator": "Table I",
+      "conditions": {
+        "weight_lb": 6695,
+        "cg_aft_of_datum_in": 8.5,
+        "tank": "None fitted",
+        "configuration": "Tropical filter, Merlin 45. Attachment comparison combines drag, mass and CG differences.",
+        "note": "Keep original climb clock digits. Some increments do not match neighboring point rates."
+      },
+      "columns": [
+        "altitude_ft",
+        "elapsed_min",
+        "roc_fpm",
+        "tas_mph",
+        "asi_mph",
+        "pec_mph",
+        "compressibility_correction_mph",
+        "rpm",
+        "boost_gauge_psi",
+        "source_fth_marker"
+      ],
+      "rows": [
+        [
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          false
+        ],
+        [
+          1000,
+          0.4,
+          2590,
+          175,
+          173,
+          -0.3,
+          0,
+          2850,
+          9,
+          false
+        ],
+        [
+          2000,
+          0.75,
+          2595,
+          178,
+          173,
+          -0.3,
+          -0.1,
+          2850,
+          9,
+          false
+        ],
+        [
+          3000,
+          1.15,
+          2600,
+          180,
+          172,
+          -0.2,
+          -0.1,
+          2850,
+          9,
+          false
+        ],
+        [
+          5000,
+          1.9,
+          2610,
+          183,
+          170,
+          0,
+          -0.2,
+          2850,
+          9,
+          false
+        ],
+        [
+          6500,
+          2.5,
+          2615,
+          185,
+          168,
+          0.1,
+          -0.3,
+          2850,
+          9,
+          false
+        ],
+        [
+          10000,
+          3.85,
+          2640,
+          190,
+          163,
+          0.5,
+          -0.4,
+          2850,
+          9,
+          false
+        ],
+        [
+          12000,
+          4.6,
+          2650,
+          194,
+          161,
+          0.7,
+          -0.5,
+          2850,
+          9,
+          false
+        ],
+        [
+          14000,
+          5.35,
+          2660,
+          196,
+          158,
+          0.9,
+          -0.6,
+          2850,
+          9,
+          true
+        ],
+        [
+          15000,
+          5.74,
+          2540,
+          199,
+          157,
+          1,
+          -0.6,
+          2850,
+          8.2,
+          false
+        ],
+        [
+          16500,
+          6.35,
+          2350,
+          200,
+          155,
+          1.2,
+          -0.7,
+          2850,
+          6.9,
+          false
+        ],
+        [
+          18000,
+          7,
+          2150,
+          203,
+          153,
+          1.3,
+          -0.7,
+          2850,
+          5.7,
+          false
+        ],
+        [
+          20000,
+          8,
+          1900,
+          208,
+          151,
+          1.5,
+          -0.8,
+          2850,
+          4.2,
+          false
+        ],
+        [
+          23000,
+          9.7,
+          1780,
+          211,
+          145,
+          2,
+          -1,
+          3000,
+          3.6,
+          false
+        ],
+        [
+          26000,
+          11.55,
+          1400,
+          214,
+          139,
+          2.5,
+          -1.1,
+          3000,
+          1.5,
+          false
+        ],
+        [
+          28000,
+          13.15,
+          1140,
+          216,
+          135,
+          2.8,
+          -1.1,
+          3000,
+          0.1,
+          false
+        ],
+        [
+          30000,
+          15.1,
+          890,
+          218,
+          131,
+          3.1,
+          -1.2,
+          3000,
+          -1.1,
+          false
+        ],
+        [
+          33000,
+          19.45,
+          520,
+          222,
+          126,
+          3.5,
+          -1.3,
+          3000,
+          -2.7,
+          false
+        ],
+        [
+          35000,
+          21.4,
+          270,
+          227,
+          124,
+          3.7,
+          -1.4,
+          3000,
+          -3.7,
+          false
+        ]
+      ]
+    },
+    {
+      "id": "ab320-climb-tank",
+      "source": "aaee-ab320",
+      "aircraft": "Spitfire Vb Trop AB.320",
+      "locator": "Table II",
+      "conditions": {
+        "weight_lb": 7485,
+        "cg_aft_of_datum_in": 9,
+        "tank": "90 Imperial gal external tank",
+        "configuration": "Tropical filter, Merlin 45. Attachment comparison combines drag, mass and CG differences.",
+        "note": "Keep original climb clock digits. Some increments do not match neighboring point rates."
+      },
+      "columns": [
+        "altitude_ft",
+        "elapsed_min",
+        "roc_fpm",
+        "tas_mph",
+        "asi_mph",
+        "pec_mph",
+        "compressibility_correction_mph",
+        "rpm",
+        "boost_gauge_psi",
+        "source_fth_marker"
+      ],
+      "rows": [
+        [
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          false
+        ],
+        [
+          1000,
+          0.45,
+          2115,
+          176,
+          173,
+          0.6,
+          0,
+          2850,
+          9,
+          false
+        ],
+        [
+          2000,
+          0.95,
+          2120,
+          179,
+          173,
+          0.6,
+          -0.1,
+          2850,
+          9,
+          false
+        ],
+        [
+          3000,
+          1.4,
+          2120,
+          181,
+          172,
+          0.7,
+          -0.1,
+          2850,
+          9,
+          false
+        ],
+        [
+          5000,
+          2.35,
+          2125,
+          184,
+          170,
+          0.8,
+          -0.2,
+          2850,
+          9,
+          false
+        ],
+        [
+          6500,
+          3,
+          2125,
+          186,
+          168,
+          1,
+          -0.3,
+          2850,
+          9,
+          false
+        ],
+        [
+          10000,
+          4.7,
+          2135,
+          191,
+          163,
+          1.4,
+          -0.4,
+          2850,
+          9,
+          false
+        ],
+        [
+          12000,
+          5.65,
+          2140,
+          195,
+          161,
+          1.6,
+          -0.5,
+          2850,
+          9,
+          false
+        ],
+        [
+          14000,
+          6.6,
+          2145,
+          197,
+          158,
+          1.7,
+          -0.6,
+          2850,
+          9,
+          true
+        ],
+        [
+          15000,
+          7.05,
+          2020,
+          200,
+          157,
+          1.8,
+          -0.6,
+          2850,
+          8.2,
+          false
+        ],
+        [
+          16500,
+          7.85,
+          1850,
+          202,
+          155,
+          2,
+          -0.7,
+          2850,
+          6.9,
+          false
+        ],
+        [
+          18000,
+          8.7,
+          1670,
+          205,
+          153,
+          2.2,
+          -0.8,
+          2850,
+          5.7,
+          false
+        ],
+        [
+          20000,
+          10,
+          1440,
+          209,
+          151,
+          2.3,
+          -0.8,
+          2850,
+          4.2,
+          false
+        ],
+        [
+          23000,
+          12.2,
+          1450,
+          212,
+          145,
+          2.8,
+          -1,
+          3000,
+          3.6,
+          false
+        ],
+        [
+          26000,
+          14.55,
+          1090,
+          215,
+          139,
+          3.3,
+          -1.1,
+          3000,
+          1.5,
+          false
+        ],
+        [
+          28000,
+          16.6,
+          860,
+          217,
+          135,
+          3.6,
+          -1.1,
+          3000,
+          0.1,
+          false
+        ],
+        [
+          30000,
+          19.3,
+          620,
+          219,
+          131,
+          3.9,
+          -1.2,
+          3000,
+          -1.1,
+          false
+        ],
+        [
+          33000,
+          26.4,
+          270,
+          224,
+          126,
+          4.4,
+          -1.3,
+          3000,
+          -2.7,
+          false
+        ]
+      ]
+    },
+    {
+      "id": "ab320-level-no-tank",
+      "source": "aaee-ab320",
+      "aircraft": "Spitfire Vb Trop AB.320",
+      "locator": "Table III",
+      "conditions": {
+        "weight_lb": 6695,
+        "cg_aft_of_datum_in": 8.5,
+        "tank": "None fitted",
+        "configuration": "Tropical filter, Merlin 45. Attachment comparison combines drag, mass and CG differences.",
+        "note": "Keep original climb clock digits. Some increments do not match neighboring point rates."
+      },
+      "columns": [
+        "altitude_ft",
+        "tas_mph",
+        "asi_mph",
+        "pec_mph",
+        "compressibility_correction_mph",
+        "rpm",
+        "boost_gauge_psi",
+        "source_fth_marker"
+      ],
+      "rows": [
+        [
+          13000,
+          334.5,
+          284,
+          -7.5,
+          -2.7,
+          3000,
+          9,
+          false
+        ],
+        [
+          15000,
+          343,
+          282.5,
+          -7.4,
+          -3.2,
+          3000,
+          9,
+          false
+        ],
+        [
+          16500,
+          350,
+          281.5,
+          -7.3,
+          -3.5,
+          3000,
+          9,
+          false
+        ],
+        [
+          17400,
+          354,
+          281,
+          -7.3,
+          -3.8,
+          3000,
+          9,
+          true
+        ],
+        [
+          18000,
+          353.5,
+          277.5,
+          -7.2,
+          -3.9,
+          3000,
+          8.5,
+          false
+        ],
+        [
+          20000,
+          352,
+          267.5,
+          -6.6,
+          -4.1,
+          3000,
+          7,
+          false
+        ],
+        [
+          23000,
+          347.5,
+          250.5,
+          -5.5,
+          -4.2,
+          3000,
+          4.7,
+          false
+        ],
+        [
+          26000,
+          341,
+          233,
+          -4.4,
+          -4.2,
+          3000,
+          2.3,
+          false
+        ]
+      ]
+    },
+    {
+      "id": "ab320-level-tank",
+      "source": "aaee-ab320",
+      "aircraft": "Spitfire Vb Trop AB.320",
+      "locator": "Table IV",
+      "conditions": {
+        "weight_lb": 7485,
+        "cg_aft_of_datum_in": 9,
+        "tank": "90 Imperial gal external tank",
+        "configuration": "Tropical filter, Merlin 45. Attachment comparison combines drag, mass and CG differences.",
+        "note": "Keep original climb clock digits. Some increments do not match neighboring point rates."
+      },
+      "columns": [
+        "altitude_ft",
+        "tas_mph",
+        "asi_mph",
+        "pec_mph",
+        "compressibility_correction_mph",
+        "rpm",
+        "boost_gauge_psi",
+        "source_fth_marker"
+      ],
+      "rows": [
+        [
+          13000,
+          319,
+          269.5,
+          -6.2,
+          -2.3,
+          3000,
+          9,
+          false
+        ],
+        [
+          15000,
+          327,
+          268,
+          -6.1,
+          -2.8,
+          3000,
+          9,
+          false
+        ],
+        [
+          16500,
+          333.5,
+          267,
+          -6,
+          -3.1,
+          3000,
+          9,
+          false
+        ],
+        [
+          17400,
+          337.5,
+          266.5,
+          -6,
+          -3.3,
+          3000,
+          9,
+          true
+        ],
+        [
+          18000,
+          337,
+          263.5,
+          -5.8,
+          -3.4,
+          3000,
+          8.5,
+          false
+        ],
+        [
+          20000,
+          335,
+          253,
+          -5.1,
+          -3.5,
+          3000,
+          7,
+          false
+        ],
+        [
+          23000,
+          330,
+          236,
+          -4,
+          -3.6,
+          3000,
+          4.7,
+          false
+        ],
+        [
+          26000,
+          322.5,
+          218.5,
+          -2.7,
+          -3.5,
+          3000,
+          2.3,
+          false
+        ]
+      ]
+    },
+    {
+      "id": "emil-handbook-climb-asi",
+      "source": "emil-handbook-p18",
+      "aircraft": "Bf 109 E type guidance",
+      "locator": "p. 18 §IV B",
+      "conditions": {
+        "note": "Recommended indicated speed, not a measured WNr 1304 schedule. Use only in a separate replay sensitivity case."
+      },
+      "columns": [
+        "altitude_m",
+        "indicated_kmh"
+      ],
+      "rows": [
+        [
+          0,
+          250
+        ],
+        [
+          1000,
+          243
+        ],
+        [
+          2000,
+          236
+        ],
+        [
+          3000,
+          229
+        ],
+        [
+          4000,
+          222
+        ],
+        [
+          5000,
+          215
+        ],
+        [
+          6000,
+          208
+        ],
+        [
+          7000,
+          200
+        ]
+      ]
+    },
+    {
+      "id": "emil-handbook-ratings",
+      "source": "emil-handbook-p18",
+      "aircraft": "Bf 109 E type guidance",
+      "locator": "p. 18 §IV C",
+      "conditions": {
+        "note": "The below-5 km ratings come from the airframe handbook. The October 1940 engine handbook separately gives 1.23 ata at 2,300 rpm for 30 minutes."
+      },
+      "columns": [
+        "condition",
+        "rpm",
+        "manifold_ata",
+        "time_limit_min"
+      ],
+      "rows": [
+        [
+          "short (full throttle)",
+          2400,
+          1.3,
+          5
+        ],
+        [
+          "increased continuous",
+          2300,
+          1.2,
+          30
+        ],
+        [
+          "continuous cruise",
+          2200,
+          1.15,
+          null
+        ],
+        [
+          "full throttle above about 5 km",
+          2400,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "emil-handbook-airframe-limits",
+      "source": "emil-handbook-p18",
+      "aircraft": "Bf 109 E type guidance",
+      "locator": "p. 18 §IV A",
+      "conditions": {},
+      "columns": [
+        "condition",
+        "speed_kmh",
+        "rpm",
+        "time_limit_s"
+      ],
+      "rows": [
+        [
+          "flap movement or fully extended flaps",
+          250,
+          null,
+          null
+        ],
+        [
+          "gear operation",
+          350,
+          null,
+          null
+        ],
+        [
+          "maximum dive speed",
+          750,
+          null,
+          null
+        ],
+        [
+          "maximum dive engine speed",
+          null,
+          3000,
+          30
+        ]
+      ]
+    },
+    {
+      "id": "db601-oct40-rated-settings",
+      "source": "db601-oct40-p47",
+      "aircraft": "DB 601 A/B",
+      "locator": "p. 47 §E.1",
+      "conditions": {
+        "note": "Engine manual operating limits for October 1940. The separate airframe handbook shows 1.20 ata for the 2,300-rpm 30-minute case."
+      },
+      "columns": [
+        "region",
+        "rpm",
+        "manifold_limit_ata",
+        "time_limit_min",
+        "new_supercharger_from_km",
+        "old_supercharger_from_km"
+      ],
+      "rows": [
+        [
+          "sea level to full-pressure height",
+          2400,
+          1.3,
+          5,
+          null,
+          null
+        ],
+        [
+          "sea level to full-pressure height",
+          2300,
+          1.23,
+          30,
+          null,
+          null
+        ],
+        [
+          "sea level to full-pressure height",
+          2200,
+          1.15,
+          null,
+          null,
+          null
+        ],
+        [
+          "high altitude",
+          2400,
+          1.3,
+          5,
+          4.5,
+          4.0
+        ],
+        [
+          "high altitude",
+          2400,
+          1.23,
+          30,
+          5.6,
+          4.5
+        ],
+        [
+          "high altitude",
+          2200,
+          1.15,
+          null,
+          4.9,
+          5.2
+        ],
+        [
+          "recommended cruise",
+          2200,
+          1.1,
+          null,
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "1304-ceam-other-trials",
+      "source": "rocher",
+      "aircraft": "Bf 109 E-3 WNr 1304 / AE479",
+      "locator": "Le Fana pp. 23 and 26, CEAM comparative trial extracts",
+      "conditions": {
+        "note": "Secondary reporting of period comparisons. The 700 km/h is a raw airspeed indication with known cross-aircraft calibration concerns, not an approved limit or TAS."
+      },
+      "columns": [
+        "observation",
+        "value",
+        "unit"
+      ],
+      "rows": [
+        [
+          "D.520 dive comparison observed ASI",
+          700,
+          "km/h"
+        ],
+        [
+          "Bloch 152 relative level test altitude, high point",
+          5000,
+          "m"
+        ],
+        [
+          "Bloch 152 relative level comparison course length",
+          15,
+          "km"
+        ]
+      ]
     }
-  ]
+  ],
+  "updated_as_of": "2026-11-16"
 }
