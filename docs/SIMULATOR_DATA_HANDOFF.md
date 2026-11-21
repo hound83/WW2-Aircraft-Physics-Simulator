@@ -2,7 +2,7 @@
 
 **Fighter Sim Inputs v1.11.0** adds 21 records and coverage for six new priority dossiers alongside the 13 existing reference variants. [All 19 scores and the eight-aircraft crosswalk](research/WW2_PRIORITY_COMPARATIVE_COVERAGE_2026-11-13.md). The JSON's `version` field identifies the pack on each branch. [Canonical data pack](../references/analysis/fighter-sim-inputs-v1.json) · [Coverage and data contract](research/WW2_FIGHTER_SIM_INPUTS_V1.md) · [Priority-aircraft import](research/WW2_PRIORITY_AIRCRAFT_INPUTS_V1_10.md)
 
-[Data milestones and original-source research priorities](research/WW2_FIGHTER_DATA_ROADMAP.md)
+The [21 November data review and second-sweep roadmap](research/WW2_FIGHTER_DATA_SECOND_SWEEP_2026-11-21.md) compares the 12 operating profiles and prioritizes G-6/Trop climb and cooling, the Bf 109 E and Spitfire Va handoff, calibrated stall data and recorded maneuver energy. [Earlier data milestones](research/WW2_FIGHTER_DATA_ROADMAP.md)
 
 | File in the build | Use |
 | --- | --- |
