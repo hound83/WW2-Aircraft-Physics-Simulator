@@ -1,10 +1,12 @@
 # Fighter Sim Inputs roadmap
 
-Review date 13 November 2026. The input roadmap covers 13 scored reference variants, six additional scored dossiers and seven simulator profiles. [Coverage and crosswalk](WW2_PRIORITY_COMPARATIVE_COVERAGE_2026-11-13.md). [Current data and coverage](WW2_FIGHTER_SIM_INPUTS_V1.md) · [Minimum viable input data](MINIMUM_VIABLE_SIM_DATA.md) · [Simulator roadmap](../SIMULATOR_ROADMAP.md)
+The [21 November data review and second-sweep roadmap](WW2_FIGHTER_DATA_SECOND_SWEEP_2026-11-21.md) gives the current 12-profile evidence baseline, the Bf 109 and Spitfire source priorities, and the next research milestones.
 
-## Variant priority list (2026-11-13)
+The 13 November snapshot below covered 13 scored reference variants, six additional scored dossiers and seven simulator profiles. [Coverage and crosswalk](WW2_PRIORITY_COMPARATIVE_COVERAGE_2026-11-13.md). [Current data and coverage](WW2_FIGHTER_SIM_INPUTS_V1.md) · [Minimum viable input data](MINIMUM_VIABLE_SIM_DATA.md) · [Simulator roadmap](../SIMULATOR_ROADMAP.md)
 
-The [accepted aircraft roster decision](../DECISIONS.md#aircraft-roster-expansion) gives the intake order and donor evidence. Start with HF Mk IX BS.551 and prepare G-2 MT-215 and P-51D-15-NA 44-15342 in the next batch.
+## Variant priority list at 13 November 2026
+
+The [accepted aircraft roster decision](../DECISIONS.md#aircraft-roster-expansion) gives the intake order and donor evidence. At that date, the first planned profiles were HF Mk IX BS.551, G-2 MT-215 and P-51D-15-NA 44-15342.
 
 | Variant | Force | In sim | Data | Add to dataset | Add to sim | Remarks |
 |---------|-------|--------|------|----------------|------------|---------|
