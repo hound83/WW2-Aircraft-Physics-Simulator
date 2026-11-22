@@ -1,0 +1,605 @@
+{
+  "schema": "ww2-combined-flight-comparison-sources/v1",
+  "spitfireElapsed": {
+    "url": "https://www.wwiiaircraftperformance.com/org/spitcom/mk9/spitLF-HF-mkIX.html",
+    "columns": [
+      "altFt",
+      "minutesFromReportStart"
+    ],
+    "bs543": {
+      "table": "II, LF IX BS.543 at 7,485 lb, 3,000 rpm, open radiators. Gear change 13,000 ft.",
+      "rows": [
+        [0, 0],
+        [2000, 0.45],
+        [4000, 0.85],
+        [6000, 1.3],
+        [7000, 1.5],
+        [8000, 1.7],
+        [10000, 2.15],
+        [12000, 2.65],
+        [14000, 3.15],
+        [16000, 3.7],
+        [18000, 4.2],
+        [20000, 4.75],
+        [22000, 5.35],
+        [24000, 5.95],
+        [26000, 6.7],
+        [28000, 7.5],
+        [30000, 8.4],
+        [32000, 9.4],
+        [34000, 10.6],
+        [36000, 12],
+        [38000, 13.95],
+        [40000, 17.55]
+      ]
+    },
+    "bs551": {
+      "table": "III, HF IX BS.551 at 7,470 lb, 2,980 rpm, open radiators. Gear change 18,600 ft.",
+      "rows": [
+        [0, 0],
+        [2000, 0.45],
+        [4000, 0.9],
+        [6000, 1.35],
+        [8000, 1.8],
+        [10000, 2.2],
+        [11400, 2.55],
+        [12000, 2.65],
+        [14000, 3.1],
+        [16000, 3.6],
+        [18000, 4.15],
+        [20000, 4.75],
+        [22000, 5.3],
+        [24400, 5.95],
+        [26000, 6.45],
+        [28000, 7.05],
+        [30000, 7.8],
+        [32000, 8.6],
+        [34000, 9.6],
+        [36000, 10.1],
+        [38000, 12.25],
+        [40000, 15.3]
+      ]
+    },
+    "lineage": "Companion columns to archival-2026-11-10:S03 and S06. The clock rows share the original climb and overlap existing elapsed replays."
+  },
+  "hfTransfer": {
+    "aircraft": "Spitfire HF IX EN.524, Merlin 70",
+    "url": "https://wwiiaircraftperformance.com/org/spitcom/mk9/spitHFmkIX_EN524.html",
+    "scope": "Different specimen, standard 0.477:1 reduction gear and 10 ft 9 in four-blade propeller. A&AEE describes a modified carburettor setting as understood to be fitted. Analysis used the BS.551 climb speed schedule and the BF.274 position-error correction. Other two propeller/gear combinations have only a summary in the online text.",
+    "climb": {
+      "locator": "Table I; 7,470 lb, fully open, Combat rating for entire test",
+      "columns": [
+        "altFt",
+        "elapsedMin",
+        "rateFpm",
+        "asiMph",
+        "rpm",
+        "boostPsi",
+        "gear"
+      ],
+      "rows": [
+        [0, 0, null, null, null, null, null],
+        [
+          2000,
+          0.45,
+          4310,
+          160,
+          3000,
+          18.3,
+          "MS"
+        ],
+        [
+          4000,
+          0.95,
+          4310,
+          160,
+          3000,
+          18.3,
+          "MS"
+        ],
+        [
+          6000,
+          1.4,
+          4310,
+          160,
+          3000,
+          18.3,
+          "MS"
+        ],
+        [
+          8000,
+          1.85,
+          4310,
+          160,
+          3000,
+          18.3,
+          "MS"
+        ],
+        [
+          10000,
+          2.3,
+          4310,
+          160,
+          3000,
+          18.3,
+          "MS"
+        ],
+        [
+          11300,
+          2.65,
+          4310,
+          160,
+          3000,
+          18.3,
+          "MS"
+        ],
+        [
+          14000,
+          3.3,
+          3915,
+          160,
+          3000,
+          15.6,
+          "MS"
+        ],
+        [
+          16000,
+          3.8,
+          3615,
+          160,
+          3000,
+          13.5,
+          "MS"
+        ],
+        [
+          18000,
+          4.4,
+          3315,
+          160,
+          3000,
+          11.5,
+          "MS"
+        ],
+        [
+          20000,
+          5,
+          3220,
+          160,
+          3000,
+          18.3,
+          "FS"
+        ],
+        [
+          22000,
+          5.6,
+          3220,
+          160,
+          3000,
+          18.3,
+          "FS"
+        ],
+        [
+          23900,
+          6.2,
+          3220,
+          160,
+          3000,
+          18.3,
+          "FS"
+        ],
+        [
+          26000,
+          6.9,
+          2900,
+          157,
+          3000,
+          15.5,
+          "FS"
+        ],
+        [
+          28000,
+          7.65,
+          2595,
+          151,
+          3000,
+          13.2,
+          "FS"
+        ],
+        [
+          30000,
+          8.45,
+          2275,
+          145,
+          3000,
+          11.2,
+          "FS"
+        ],
+        [
+          32000,
+          9.4,
+          1965,
+          139,
+          3000,
+          9.3,
+          "FS"
+        ],
+        [
+          34000,
+          10.5,
+          1655,
+          133,
+          3000,
+          7.5,
+          "FS"
+        ],
+        [
+          36000,
+          11.85,
+          1350,
+          127,
+          3000,
+          5.5,
+          "FS"
+        ],
+        [
+          38000,
+          13.55,
+          1005,
+          121,
+          3000,
+          3.7,
+          "FS"
+        ],
+        [
+          40000,
+          16,
+          665,
+          115,
+          3000,
+          2,
+          "FS"
+        ],
+        [
+          42000,
+          20.25,
+          310,
+          109,
+          3000,
+          0.2,
+          "FS"
+        ]
+      ]
+    },
+    "level": {
+      "locator": "Table IV; 7,090 lb corrected, radiator flaps closed",
+      "columns": [
+        "altFt",
+        "tasMph",
+        "asiMph",
+        "pecMph",
+        "compressibilityMph",
+        "strutMph",
+        "boostPsi",
+        "rpm",
+        "gear"
+      ],
+      "rows": [
+        [
+          0,
+          328,
+          334,
+          -6.8,
+          0.5,
+          0,
+          18.3,
+          3000,
+          "MS"
+        ],
+        [
+          3000,
+          341,
+          334,
+          -6.8,
+          -0.5,
+          0.1,
+          18.3,
+          3000,
+          "MS"
+        ],
+        [
+          6000,
+          354,
+          332,
+          -6.7,
+          -1.7,
+          0.2,
+          18.3,
+          3000,
+          "MS"
+        ],
+        [
+          9000,
+          367,
+          330,
+          -6.6,
+          -2.8,
+          0.2,
+          18.3,
+          3000,
+          "MS"
+        ],
+        [
+          12000,
+          381,
+          327,
+          -6.5,
+          -4.1,
+          0.4,
+          18.3,
+          3000,
+          "MS"
+        ],
+        [
+          15100,
+          394,
+          323,
+          -6.5,
+          -5.3,
+          0.6,
+          18.3,
+          3000,
+          "MS"
+        ],
+        [
+          18000,
+          394,
+          309,
+          -5.8,
+          -6.1,
+          0.6,
+          15.1,
+          3000,
+          "MS"
+        ],
+        [
+          21000,
+          391,
+          291,
+          -5.1,
+          -6.3,
+          0.7,
+          11.8,
+          3000,
+          "MS"
+        ],
+        [
+          23000,
+          387,
+          278,
+          -4.6,
+          -6.4,
+          0.6,
+          9.6,
+          3000,
+          "MS"
+        ],
+        [
+          19000,
+          381,
+          294,
+          -5.2,
+          -5.7,
+          0.5,
+          18.3,
+          3000,
+          "FS"
+        ],
+        [
+          21000,
+          390,
+          290,
+          -5.1,
+          -6.3,
+          0.7,
+          18.3,
+          3000,
+          "FS"
+        ],
+        [
+          24000,
+          402,
+          285,
+          -5,
+          -7.4,
+          0.9,
+          18.3,
+          3000,
+          "FS"
+        ],
+        [
+          26600,
+          413,
+          280,
+          -4.7,
+          -8.4,
+          1.2,
+          18.3,
+          3000,
+          "FS"
+        ],
+        [
+          30000,
+          408,
+          261,
+          -3.9,
+          -8.5,
+          1.1,
+          14,
+          3000,
+          "FS"
+        ],
+        [
+          33000,
+          399,
+          241,
+          -2.9,
+          -8.3,
+          1,
+          10.6,
+          3000,
+          "FS"
+        ],
+        [
+          36000,
+          386,
+          220,
+          -1.7,
+          -8.1,
+          0.9,
+          7.3,
+          3000,
+          "FS"
+        ],
+        [
+          39000,
+          369,
+          194,
+          -0.2,
+          -7.2,
+          0.5,
+          4,
+          3000,
+          "FS"
+        ]
+      ]
+    },
+    "conflict": {
+      "altFt": 30000,
+      "summaryTasMph": 407,
+      "tableTasMph": 408,
+      "summaryElapsedMin": 8.4,
+      "tableElapsedMin": 8.45
+    },
+    "propellerSpread": "A&AEE §5.2 reports up to 3 mph difference between the three combinations below 27,000 ft and a maximum 18 mph at 39,000 ft. No 30,000-ft attribution to propeller alone is tabulated in this reproduction."
+  },
+  "restored": {
+    "study": "Ellis and Wheal, Sport Aviation, June 1990",
+    "paper": "https://www.wwiiaircraftperformance.com/com/others/endingtheargument.html",
+    "printedFig8": "https://ww2aircraft.net/forum/attachments/eta-6-jpg.469533/",
+    "locator": "Table I takeoff weights; Table II cruise power-off and decelerating 3g stall; printed Fig. 8 p. 52, Figure 8 caption and Level Accelerations; Table VI level 180° heading change.",
+    "conditions": "Restored aircraft. Figure 8 level accelerations used METO at 10,000 ft MSL and 50 °F. The horizontal axis is time to maximum speed and the vertical axis is indicated speed at 60 seconds. Table VI separately began straight and level at 220 knots, 10,000 ft MSL, METO. No tabulated turn exit or subsequent recovery speed history. Table II speed unit is knots as reported. Takeoff weights are not event weights.",
+    "figurePrecision": "Bracketing the printed marker footprint and grid, including manual reading uncertainty. Maximum speed is labelled KIAS. The primary Mustang marker is labelled 255; the secondary 242 KIAS endpoint is retained at its own definition.",
+    "columns": [
+      "aircraft",
+      "serial",
+      "takeoffLb",
+      "fig8KiasAt60Low",
+      "fig8KiasAt60High",
+      "fig8SecondsToMaxLow",
+      "fig8SecondsToMaxHigh",
+      "tableVISeconds180",
+      "tableIICruiseOffStallKt",
+      "tableII3gDecayingStallKt"
+    ],
+    "rows": [
+      [
+        "P-47D-40",
+        "45-49181",
+        11535,
+        169,
+        175,
+        125,
+        145,
+        9.7,
+        97,
+        109
+      ],
+      [
+        "FG-1D",
+        "Bu 92509",
+        11055,
+        167,
+        172,
+        125,
+        145,
+        8.5,
+        85,
+        98
+      ],
+      [
+        "F6F-5",
+        "Bu 79683",
+        10681,
+        177,
+        183,
+        390,
+        420,
+        9.9,
+        68,
+        95
+      ],
+      [
+        "P-51D",
+        "45-11586",
+        8900,
+        195,
+        200,
+        125,
+        145,
+        10,
+        87,
+        122
+      ]
+    ],
+    "qualifications": [
+      "P-47D exhaust turbocharger removed; both P-47D and FG-1D had underwing pylons.",
+      "P-51D V-1650-9, rear tank removed. The existing wartime replay is a V-1650-7 proxy.",
+      "No instrument calibration or event weight for the individual stall observations. The tests on four aircraft count as one study, with four specimens."
+    ]
+  },
+  "mt215": {
+    "input": "powered-turn-evidence-2026-11-13.json#finnish",
+    "firstAccount": "https://forum.il2sturmovik.com/topic/6315-bf109g-2-turn-and-accelerationdeceleration-data/",
+    "secondAccount": "https://www.virtualpilots.fi/feature/articles/109myths/",
+    "archive": "https://ilmailumuseo.fi/en/kirjasto-arkisto/",
+    "role": "Two transcriptions share Kokko and MT-215, WNr 14783. The March/May date conflict persists. Horizontal turns are attributed to 1,000 m. The acceleration table gives maximum or idle power but does not state altitude, calibration, mass or exact rating. Straight intervals are a mathematical illustration only; the stopwatch did not continue from the reported turn."
+  },
+  "p47Glide": {
+    "aircraft": "P-47D-30 43-3441",
+    "url": "https://ntrs.nasa.gov/api/citations/20090022749/downloads/20090022749.pdf",
+    "instrumentCompanion": "https://ntrs.nasa.gov/api/citations/19930083825/downloads/19930083825.pdf",
+    "conditions": "RM L8A06, Figs. 49 and 50, PDF pp. 72–73. Glide condition at 5,000 ft, 12,400 lb and 26.3% MAC. The plotted airspeed channel is labelled service indicated airspeed in mph. TN 2675 documents a wing-boom system and low-speed position calibration in the related lateral/directional program. Applying that calibration numerically to the stall channel would require its transfer curve or an explicit equivalence.",
+    "readPrecision": "Approximate centreline values from the speed panel at marked seconds, ±3 mph. Fig. 49 shows the first conspicuous roll/pitch motion around 18–19 s. Fig. 50 includes control inputs and repeated speed troughs. Minima can occur after the first stall.",
+    "columns": [
+      "timeSec",
+      "serviceIndicatedMph"
+    ],
+    "figure49": [
+      [0, 121],
+      [2, 120],
+      [4, 120],
+      [6, 118],
+      [8, 118],
+      [10, 118],
+      [12, 118],
+      [14, 118],
+      [16, 117],
+      [18, 116],
+      [19, 114],
+      [20, 114]
+    ],
+    "figure50": [
+      [0, 116],
+      [2, 113],
+      [4, 113],
+      [6, 119],
+      [8, 109],
+      [9, 105],
+      [10, 109],
+      [12, 103],
+      [14, 118],
+      [16, 121],
+      [18, 128]
+    ]
+  }
+}

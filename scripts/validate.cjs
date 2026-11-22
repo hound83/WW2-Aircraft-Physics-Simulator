@@ -80,6 +80,10 @@ try{
   acceleration.observation.endpoints.elapsedSeconds+' s transcribed.');
 
  const fleet=require('../dist/fleet-validation.json');
+ const comparisons=require('../validation/diagnostics/historical_flight_comparison.cjs');
+ const flightComparison=comparisons.build(catalog,fleet,intakeChecks,acceleration);
+ write('validation/current/flight-data-comparison.json',flightComparison);
+ fs.writeFileSync(path.join(root,'validation/current/flight-data-comparison.csv'),comparisons.comparisonCsv(flightComparison));
  write('validation/current/fleet-validation.json',{...fleet,baseline:frozenFleet,regression:acceleration.regression});
  for(const row of fleet.aircraft){
   const f=row.formulas;
