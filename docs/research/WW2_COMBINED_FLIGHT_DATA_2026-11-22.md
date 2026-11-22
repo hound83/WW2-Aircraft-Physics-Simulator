@@ -40,6 +40,8 @@ The G-6 level value is the fully equipped report anchor. The three Spitfire spee
 
 ## What the G-6 replay checks
 
+The [high-altitude climb investigation](BF109G6_HIGH_ALTITUDE_CLIMB_2026-11-22.md) replays the G-6 manifold-pressure trace, tests the conflicting departure weights and compares a separate G-1 test. It localizes the largest error to the last kilometre.
+
 The German report prose calls the charts pages 6 and 7. Their printed headings and PDF positions are Blatt 7 and 8. The first chart has a nonuniform height grid. Its speed line is labelled true climb speed. The report separately specifies 260 km/h indicated. The falling pressure curves use a separate scale. The 3,260 kg trial used the sand filter, 1.30 ata and 2,600 rpm. The source file records the PDF hash, rendering size, grid calibration, curve readings, five visible climb-rate symbols, 23 coolant-temperature symbols and 11 radiator-opening readings. The plotted openings range from about 55 to 270 mm. The symbols and curves come from one campaign. [Original plates, PDF pp. 7–8](https://wwiiaircraftperformance.com/org/me109/g/g_files/VB-109-10-L-43.pdf#page=7) · [Chart coordinates and uncertainties](../../references/analysis/g6-16476-climb-charts.json)
 
 | Height | Source time | Model time | Model minus source | Source rate | Model rate |

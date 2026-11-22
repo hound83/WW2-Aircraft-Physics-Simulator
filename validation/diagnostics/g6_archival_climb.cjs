@@ -35,15 +35,20 @@ function observations() {
   return { rows, symbols, temperature, opening };
 }
 
-function evidence(data) {
+function chartReplay(data, model = data.models[id], weightKg = plate.conditions.weightKg) {
   const readings = observations().rows.filter(row => row.tasKmh !== null);
   const schedule = readings.map(row => [1000 * row.altKm * ftPerM, row.tasKmh / 1.609344]);
-  const top = schedule.at(-1)[0];
   const spec = data.specification.aircraft[id];
   const asTested = { ...spec, combat: { ...spec.combat, seconds: null } };
-  const climb = (from, to) => B.climb(M, T, lift, data.models[id], asTested, data.specification.policy,
-    { mode: 'combat', fuelFraction: 0.5 }, from, to, { stepFt: 100, accountForTasChange: true,
-      flightCase: { weightLb: plate.conditions.weightKg / 0.45359237, tasSchedule: schedule } });
+  const climb = (from, to, stepFt = 100) => B.climb(M, T, lift, model, asTested, data.specification.policy,
+    { mode: 'combat', fuelFraction: 0.5 }, from, to, { stepFt, accountForTasChange: true,
+      flightCase: { weightLb: weightKg / 0.45359237, tasSchedule: schedule } });
+  return { readings, schedule, climb };
+}
+
+function evidence(data) {
+  const { readings, schedule, climb } = chartReplay(data);
+  const top = schedule.at(-1)[0];
   const rate = [], elapsed = [];
   for (const [i, row] of readings.entries()) {
     const altFt = schedule[i][0];
@@ -66,4 +71,4 @@ function evidence(data) {
   return { climb: { ...common, rows: rate }, elapsed: { ...common, rows: elapsed } };
 }
 
-module.exports = { id, observations, evidence };
+module.exports = { id, observations, chartReplay, evidence };
