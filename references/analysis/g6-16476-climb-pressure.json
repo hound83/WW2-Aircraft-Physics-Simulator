@@ -1,0 +1,41 @@
+{
+  "g6": {
+    "report": "Messerschmitt 109 10 L 43, WNr 16476, DB 605 A WNr 27177, filtered climb at 2600 rpm. The original shows distinct Ladedruck (manifold) and Gebläsedruck (blower discharge) traces.",
+    "url": "https://www.wwiiaircraftperformance.org/me109/VB-109-10-L-43.pdf#page=7",
+    "plateFile": "g6-16476-climb-charts.json",
+    "locator": "Blatt 7, rendered 1694 × 1800 using the parameters and hash in plateFile. At each horizontal height grid follow the left pressure curve with open circles into the flat regulated segment. Absolute pressure axis above the lower border. The independent reading allowance covers printed line, symbol width and grid skew.",
+    "calibration": { "referenceX": 1188, "referenceAta": 1.0, "pixelsPerAta": 590, "readAllowanceAta": 0.02 },
+    "controlTicks": [[834, 0.4], [1188, 1.0], [1542, 1.6]],
+    "columns": ["altKm", "yPx", "manifoldXPx"],
+    "rows": [[0,1690,1383],[1,1488,1382],[2,1298,1382],[3,1122,1381],[4,958,1382],[5,805,1382],[5.5,737,1382],[6,669,1344],[7,539,1261],[8,420,1186],[9,317,1118],[10,222,1058],[11,132,1004]],
+    "weightKg": { "reportProse": 3260, "plateAnnotation": 3250, "locator": "Blatt 3, bottom, and Blatt 7, centre. Both are departure weights. The chart annotation reads G Start = 3250 kg." }
+  },
+  "g1": {
+    "report": "Messerschmitt 109 19 L 42, 19 September 1942. G-1 WNr 14026, DB 605 A WNr 76098. Climb flight 17 August. At 260 km/h indicated and 2600 rpm. Different installation, propeller variant and thermostatic radiator. A separate pressure cross-check, excluded from the G-6 replay.",
+    "url": "https://www.wwiiaircraftperformance.org/me109/VB-109-19-L-42.pdf#page=6",
+    "sha256": "a14753051c9e175bb44f9a94f138b2423a1833ec77bcce1a086ebeee035cd995",
+    "locator": "Blatt 6, DB 605 A. pdftoppm -f 6 -l 6 -scale-to 1800 -jpeg. Left pressure trace labelled Ladedruck, with a near-vertical regulated segment below the knee. Pressure scale below the horizontal axis. Left scale gives altitude in km; grid spacing is nonuniform.",
+    "calibration": { "referenceX": 418, "referenceAta": 1.0, "pixelsPerAta": 585, "readAllowanceAta": 0.03 },
+    "columns": ["altKm", "yPx", "manifoldXPx"],
+    "rows": [[8,450,391],[9,345,324],[10,253,274]],
+    "coolingComparison": {
+      "locator": "Blatt 9, 2050 m, uncorrected high-speed runs with nonstandard radiators. Rotate the 1550-pixel-long-side page clockwise. The two DB 601 E / 605 A trend lines are retained separately in vertical order. This corroborates the sign of a loss with opening. It cannot supply an absolute G-6 climb drag area.",
+      "axis": "x 245 = 0 mm, 2.52 px/mm; y 564 = 500 km/h, −5.05 px per km/h. Approximate reading allowance ±3 km/h per point.",
+      "columns": ["openingMm", "upperYPx", "lowerYPx", "upperKmh", "lowerKmh"],
+      "rows": [[100,279,334,556,546], [300,489,554,515,502]]
+    }
+  },
+  "engine": {
+    "report": "Daimler-Benz DB 605 A–B, B4 Leistungsblatt, issue 601/LII 4.43, PDF p. 12.",
+    "url": "https://www.degnans.com/markd/DB605.pdf#page=12",
+    "sha256": "d95185ced34031e27e3c23ca73544ce34be85369ffd51aac2a45ecc3b5ad2d8f",
+    "catalogRatingSeries": "ww2_engine_ratings_and_propeller_2026-11-12:db605a-rated-power",
+    "climbSpecificFuelGPerPsHour": 220,
+    "printedPlusAllowanceGPerPsHour": 10,
+    "fuelUseScope": "220 + 10 g/(PS h) applies at sea level and 5.8 km. Continuing 220 or 230 above 5.8 km is a sensitivity. At 10 km the sheet lists 790 PS at 2800 rpm and 0.85 ata, an emergency rating. It gives no shaft-power anchor at the G-6 climb's 2600 rpm there."
+  },
+  "secondary": {
+    "url": "https://forum.il2sturmovik.com/topic/60714-bf-109-g-db605a-and-am-engine-full-throttle-height-volldruckh%C3%B6he/",
+    "use": "April 2020 discussion locates the two distinct factory climb plates. January 1944 report 109 20 L 43 includes comparative DB 605 A figures, but its flown installation is a DB 605 AS in WNr 26108. Neither the discussion nor the latter sortie supplies a repeat G-6/Trop run."
+  }
+}

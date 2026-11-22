@@ -83,6 +83,7 @@ try{
  const comparisons=require('../validation/diagnostics/historical_flight_comparison.cjs');
  const flightComparison=comparisons.build(catalog,fleet,intakeChecks,acceleration);
  write('validation/current/flight-data-comparison.json',flightComparison);
+ write('validation/current/g6-high-altitude-climb.json',require('../validation/diagnostics/g6_high_altitude_climb.cjs').run(activeBenchmark));
  fs.writeFileSync(path.join(root,'validation/current/flight-data-comparison.csv'),comparisons.comparisonCsv(flightComparison));
  write('validation/current/fleet-validation.json',{...fleet,baseline:frozenFleet,regression:acceleration.regression});
  for(const row of fleet.aircraft){
