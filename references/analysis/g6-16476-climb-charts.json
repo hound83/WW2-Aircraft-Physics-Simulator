@@ -1,0 +1,134 @@
+{
+  "schema": "ww2-g6-16476-chart-reads/v1",
+  "source": {
+    "report": "Messerschmitt Augsburg 109 10 L 43, 16 June 1943. Plates dated 15 June.",
+    "url": "https://wwiiaircraftperformance.com/org/me109/g/g_files/VB-109-10-L-43.pdf",
+    "pdfSha256": "5a5fe8d9d8d1b7c3d321b76cba4a758f40fdedd3e0b00a842117fbcf177470bf",
+    "translation": "https://wwiiaircraftperformance.com/org/me109/g/me109g-16476.html",
+    "climbJpeg": "https://wwiiaircraftperformance.com/org/me109/g/g_files/me-109g6-16476-pg7-1400.jpg",
+    "locator": "PDF pp. 7–8, printed Blatt 7 (climb) and 8 (cooling). The prose refers to pages 6–7. The grid and open circles are visible in both reproductions of the climb plate.",
+    "lineage": "one reported climb campaign; 13 and 14 May flight dates. Individual traces are not assigned to a specific sortie."
+  },
+  "conditions": {
+    "aircraft": "Bf 109 G-6/Trop WNr 16476",
+    "engine": "DB 605 A WNr 27177",
+    "weightKg": 3260,
+    "commandedAta": 1.3,
+    "rpm": 2600,
+    "nominalIndicatedKmh": 260,
+    "cooling": "Sand filter installed, radiator manually adjusted for roughly 100 °C coolant. The plotted temperature is corrected to standard outside air temperature. The report's conditioned benchmark uses the run 3b configuration and transferred engine/cooling inputs.",
+    "role": "Graphical checks outside the level-speed fit. The rates, elapsed times, airspeeds and cooling observations belong to the same campaign. Zero independent repeat climbs identified."
+  },
+  "calibration": {
+    "render": "pdftoppm -f 7 -l 8 -scale-to 1800 -jpeg VB-109-10-L-43.pdf g6-report",
+    "pixels": "Top-left origin; PDF p. 7 renders at 1694 × 1800 and p. 8 at 1235 × 1800. Use the actual horizontal altitude grid line at each nominal height; the p. 7 ordinate is nonuniform.",
+    "zeroX": 130,
+    "pixelsPerMps": 58.9,
+    "pixelsPerMinute": 29.45,
+    "tasReference": {
+      "x": 190,
+      "kmh": 260,
+      "pixelsPerKmh": 5.89
+    },
+    "coolant": {
+      "xAt80C": 246,
+      "pixelsPerC": 11.85
+    },
+    "flap": {
+      "xAt100mm": 720,
+      "pixelsPerMm": 2.37
+    },
+    "coolingAltitude": {
+      "yAt0": 1605,
+      "pixelsPerKm": 120.5
+    },
+    "uncertainty": "Estimated read precision, not an instrument or atmospheric error model. Through 10 km: ±0.2 m/s, ±0.2 min (±0.4 min at 10 km), ±3 km/h TAS. At 11 km the elapsed trace is nearly horizontal and the speed trace is unavailable; only an approximate rate is retained (±0.3 m/s). Cooling ±1 °C, ±5 mm and ±0.05 km away from steps. For a symbol's altitude on Blatt 7 interpolate only between its two adjacent labelled grid lines. Slight paper skew shifts the origin a few pixels."
+  },
+  "climb": {
+    "kind": "centre of printed curves at labelled heights; the zero-time origin is a convention, not a scored timing observation",
+    "columns": [
+      "altKm",
+      "y",
+      "timeX",
+      "rateX",
+      "tasX"
+    ],
+    "rows": [
+      [0, 1690, 130, 1071, 190],
+      [1, 1488, 157, 1053, 266],
+      [2, 1298, 189, 1032, 346],
+      [3, 1122, 220, 960, 431],
+      [4, 958, 256, 897, 526],
+      [5, 805, 295, 858, 626],
+      [6, 669, 338, 803, 734],
+      [7, 539, 382, 702, 863],
+      [8, 420, 441, 578, 1000],
+      [9, 317, 517, 458, 1136],
+      [10, 222, 634, 313, 1292],
+      [11, 132, null, 151, null]
+    ]
+  },
+  "rateSymbols": {
+    "kind": "Selected centres of visible open-circle rate observations. Some differ visibly from the smoothed curve. Same evidence lineage; excluded from aggregate scoring.",
+    "columns": [
+      "x",
+      "y"
+    ],
+    "rows": [
+      [1007, 1205],
+      [934, 1066],
+      [880, 818],
+      [825, 722],
+      [675, 505]
+    ]
+  },
+  "cooling": {
+    "kind": "Coolant shows original circular observations. Radiator opening is read inside each plotted step. Neither series is fitted or converted into drag.",
+    "temperatureColumns": [
+      "x",
+      "y"
+    ],
+    "temperatureSymbols": [
+      [424, 1531],
+      [422, 1361],
+      [542, 1256],
+      [421, 1053],
+      [481, 965],
+      [489, 890],
+      [506, 821],
+      [466, 761],
+      [469, 694],
+      [482, 638],
+      [499, 591],
+      [507, 549],
+      [512, 511],
+      [460, 474],
+      [400, 441],
+      [405, 415],
+      [464, 389],
+      [502, 367],
+      [411, 346],
+      [405, 324],
+      [406, 309],
+      [431, 292],
+      [465, 280]
+    ],
+    "openingColumns": [
+      "altKm",
+      "x"
+    ],
+    "openingPlateaus": [
+      [1, 675],
+      [3, 743],
+      [4.8, 886],
+      [5.75, 720],
+      [6.75, 1126],
+      [7.5, 770],
+      [8.45, 702],
+      [8.9, 655],
+      [9.35, 816],
+      [9.95, 611],
+      [10.4, 810]
+    ]
+  }
+}
