@@ -10,6 +10,7 @@ const Stall = require('../../src/provisional-stall-loader.js');
 const { historicalGroups } = require('./implemented_model_accuracy.cjs');
 const propeller = require('./operating_benchmark_v410.cjs');
 const remaining = require('./remaining_fighter_propellers.cjs');
+const g6Climb = require('./g6_archival_climb.cjs');
 const { timedGroups } = require('./fleet_source_timing.cjs');
 const { sourceChecks:stallChecks } = require('./continuous_stall.cjs');
 
@@ -143,9 +144,12 @@ function historicalEvidence(inputs) {
   if (fwTurn.length)add('fw190a4','maneuver',{ qualifier:'Captured A-4 timed turn',grade:'reference',source:sourceLink(fwTurn[0].id),
     reference:'Reported clean turn of 23–24 s at 1,000 m and 3,989 kg takeoff. Entry/exit speed, power and turn profile remain open.',
     rows:fwTurn });
+  const chart = g6Climb.evidence(data);
+  add(g6Climb.id, 'climb', chart.climb);
+  add(g6Climb.id, 'elapsed', chart.elapsed);
   const ceiling = intake.aircraft.find(row => row.id==='bf109g6trop_16476').ceiling;
   add('bf109g6trop_16476','climb',{ qualifier:'Reported ceiling reference',grade:'reference',source:sourceLink(ceiling.id),
-    reference:'Observed ceiling '+Math.round(ceiling.observedAltFt)+' ft. The climb-rate criterion and complete climb-rate schedule remain open.',
+    reference:'Observed ceiling '+Math.round(ceiling.observedAltFt)+' ft. The ceiling criterion and independent repeat climb remain open.',
     rows:[ceiling] });
   return evidence;
 }
@@ -169,9 +173,9 @@ function makeGaps(id) {
   return {
     level:id==='bf109g6trop_16476'?'Independent installed-power and matched-configuration flight speeds remain open.':null,
     climb:id==='bf109f4'?'Pointwise measured rate, boost and climb speed are open. See measured elapsed intervals.':
-      id==='bf109g6trop_16476'?'Recover climb TAS, temperatures, boost and rate by altitude.':null,
+      id==='bf109g6trop_16476'?'The chart constrains vertical rate through 10 km. Installed shaft power and drag versus radiator opening remain open.':null,
     elapsed:id==='f4u4'?'Recover the BuNo 80765 elapsed record and its climb-speed schedule.':
-      id==='bf109g6trop_16476'?'Recover elapsed checkpoints. The source supplies a ceiling and IAS.':null,
+      id==='bf109g6trop_16476'?'One campaign supplies elapsed checkpoints through 10 km. An independent climb and the event mass history remain open.':null,
     stall:stallGaps[id],
     acceleration:'Recover calibrated speed-versus-time in level flight with mass, altitude and engine setting.',
     maneuver:'Recover a powered turn with heading, load and calibrated speed through rollout and recovery.',

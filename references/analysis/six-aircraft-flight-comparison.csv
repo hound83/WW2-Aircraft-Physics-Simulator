@@ -1,0 +1,89 @@
+group,altitude_ft,altitude_m,metric,unit,condition,E3_1304,Va_X4922,G6_16476,F_IX_BF274,LF_IX_BS543,HF_IX_BS551,Va_minus_E,F_minus_G6,LF_minus_G6,HF_minus_G6,HF_minus_LF,interpolated_aircraft
+early,8202.1,2500,level,mph TAS,E radiator open 960 mm,304.5,,,,,,,,,,,
+early,9842.5,3000,level,mph TAS,E radiator open 960 mm,310.7,,,,,,,,,,,
+early,11482.9,3500,level,mph TAS,E radiator open 960 mm,318.1,342.2,,,,,24,,,,,Va
+early,13123.4,4000,level,mph TAS,E radiator open 960 mm,323.1,348,,,,,24.8,,,,,Va
+early,14763.8,4500,level,mph TAS,E radiator open 920 mm,329.3,354.1,,,,,24.8,,,,,Va
+early,16404.2,5000,level,mph TAS,E radiator open 870 mm,323.1,359.7,,,,,36.6,,,,,Va
+early,18044.6,5500,level,mph TAS,E radiator open 840 mm,318.1,363.2,,,,,45.1,,,,,Va
+early,16404.2,5000,level,mph TAS,E radiator closed 880 mm,354.2,359.7,,,,,5.5,,,,,Va
+early,17388.5,5300,level,mph TAS,E radiator closed 850 mm,354.2,361.8,,,,,7.6,,,,,Va
+early,19685,6000,level,mph TAS,E radiator closed 800 mm,351.1,371,,,,,19.9,,,,,Va
+early,21325.5,6500,level,mph TAS,E radiator closed 750 mm,348,373.8,,,,,25.8,,,,,Va
+early,22965.9,7000,level,mph TAS,E radiator closed 700 mm,338.6,370.1,,,,,31.4,,,,,Va
+early,3280,999.7,climb rate,ft/min,as tested,2740,2803.4,,,,,63.4,,,,,Va
+early,3280,999.7,elapsed from 3280 ft,s,as tested,0,0,,,,,0,,,,,Va
+early,6560,1999.5,climb rate,ft/min,as tested,2530,2901.9,,,,,371.9,,,,,Va
+early,6560,1999.5,elapsed from 3280 ft,s,as tested,75,67.4,,,,,-7.6,,,,,Va
+early,9850,3002.3,climb rate,ft/min,as tested,2900,3005.3,,,,,105.3,,,,,Va
+early,9850,3002.3,elapsed from 3280 ft,s,as tested,154,135.1,,,,,-18.9,,,,,Va
+early,13150,4008.1,climb rate,ft/min,as tested,2990,3099.8,,,,,109.8,,,,,Va
+early,13150,4008.1,elapsed from 3280 ft,s,as tested,227,200,,,,,-27,,,,,Va
+early,16450,5014,climb rate,ft/min,as tested,2600,2822.7,,,,,222.7,,,,,Va
+early,16450,5014,elapsed from 3280 ft,s,as tested,304,263.1,,,,,-40.9,,,,,Va
+early,19750,6019.8,climb rate,ft/min,as tested,1860,2318.8,,,,,458.8,,,,,Va
+early,19750,6019.8,elapsed from 3280 ft,s,as tested,405,341.3,,,,,-63.7,,,,,Va
+early,23000,7010.4,climb rate,ft/min,as tested,1450,1820,,,,,370,,,,,
+early,23000,7010.4,elapsed from 3280 ft,s,as tested,526,444.1,,,,,-81.9,,,,,Va
+early,26300,8016.2,climb rate,ft/min,as tested,820,1769.5,,,,,949.5,,,,,Va
+early,26300,8016.2,elapsed from 3280 ft,s,as tested,739,544.9,,,,,-194.1,,,,,Va
+later,0,0,level,mph TAS,fastest bracketed gear,,,305.7,,336,331,,,30.3,25.3,-5,
+later,0,0,climb rate,ft/min,as tested,,,3149.6,,,,,,,,,
+later,0,0,time from chart start,s,as tested,,,0,,0,0,,,0,0,0,
+later,2000,609.6,level,mph TAS,fastest bracketed gear,,,,,345,339,,,,,-6,
+later,2000,609.6,climb rate,ft/min,as tested,,,3113.6,3690,4640,4470,,576.4,1526.4,1356.4,-170,g6
+later,2000,609.6,time from chart start,s,as tested,,,32.9,30,27,27,,-2.9,-5.9,-5.9,0,g6
+later,4000,1219.2,level,mph TAS,fastest bracketed gear,,,,,353,348,,,,,-5,
+later,4000,1219.2,climb rate,ft/min,as tested,,,3073.3,3723.3,4660,4500,,650,1586.7,1426.7,-160,f g6
+later,4000,1219.2,time from chart start,s,as tested,,,68.5,66,51,54,,-2.5,-17.5,-14.5,3,f g6
+later,6000,1828.8,level,mph TAS,fastest bracketed gear,,,,338,363,356,,,,,-7,
+later,6000,1828.8,climb rate,ft/min,as tested,,,3025.3,3753.3,4690,4520,,728,1664.7,1494.7,-170,f g6
+later,6000,1828.8,time from chart start,s,as tested,,,108.7,100,78,81,,-8.7,-30.7,-27.7,3,f g6
+later,8000,2438.4,level,mph TAS,fastest bracketed gear,,,,347.5,372,364.5,,,,,-7.5,
+later,8000,2438.4,climb rate,ft/min,as tested,,,2908.3,3785.7,4560,4550,,877.5,1651.7,1641.7,-10,f g6
+later,8000,2438.4,time from chart start,s,as tested,,,148.9,131.1,102,108,,-17.8,-46.9,-40.9,6,f g6
+later,10000,3048,level,mph TAS,fastest bracketed gear,,,,356.5,380,373,,,,,-7,
+later,10000,3048,climb rate,ft/min,as tested,,,2765.2,3820,4280,4570,,1054.8,1514.8,1804.8,290,g6
+later,10000,3048,time from chart start,s,as tested,,,189.5,162,129,132,,-27.5,-60.5,-57.5,3,g6
+later,12000,3657.6,level,mph TAS,fastest bracketed gear,,,,365.5,384,381,,,,,-3,f
+later,12000,3657.6,climb rate,ft/min,as tested,,,2633.2,3850.8,4000,4500,,1217.6,1366.8,1866.8,500,f g6
+later,12000,3657.6,time from chart start,s,as tested,,,233.3,189.7,159,159,,-43.7,-74.3,-74.3,0,f g6
+later,14000,4267.2,level,mph TAS,fastest bracketed gear,,,,374.4,383.5,390,,,,,6.5,f
+later,14000,4267.2,climb rate,ft/min,as tested,,,2527.5,3632.5,3860,4180,,1105,1332.5,1652.5,320,f g6
+later,14000,4267.2,time from chart start,s,as tested,,,278.8,222.5,189,186,,-56.3,-89.8,-92.8,-3,f g6
+later,16000,4876.8,level,mph TAS,fastest bracketed gear,,,,380.5,383,395.5,,,,,12.5,f hf
+later,16000,4876.8,climb rate,ft/min,as tested,,,2455.5,3310,3860,3880,,854.5,1404.5,1424.5,20,f g6
+later,16000,4876.8,time from chart start,s,as tested,,,326.4,260,222,216,,-66.4,-104.4,-110.4,-6,f g6
+later,18000,5486.4,level,mph TAS,fastest bracketed gear,,,,380.5,390.5,394,,,,,3.5,
+later,18000,5486.4,climb rate,ft/min,as tested,,,2345.2,2980,3860,3780,,634.8,1514.8,1434.8,-80,g6
+later,18000,5486.4,time from chart start,s,as tested,,,379.8,300,252,249,,-79.8,-127.8,-130.8,-3,g6
+later,20000,6096,level,mph TAS,fastest bracketed gear,,,,380,399,392,,,,,-7,
+later,20000,6096,climb rate,ft/min,as tested,,,2212,2930,3560,3500,,718,1348,1288,-60,g6
+later,20000,6096,time from chart start,s,as tested,,,434.6,336,285,285,,-98.6,-149.6,-149.6,0,g6
+later,21062.99,6420,level,mph TAS,fastest bracketed gear,,,379,379.1,403.3,393.7,,0.1,24.2,14.7,-9.5,f lf hf
+later,21062.99,6420,climb rate,ft/min,as tested,,,2103.5,2947.7,3405.9,3510.6,,844.2,1302.3,1407.1,104.8,f lf hf g6
+later,21062.99,6420,time from chart start,s,as tested,,,463.8,357.3,304.1,302.5,,-106.5,-159.7,-161.3,-1.6,f lf hf g6
+later,22000,6705.6,level,mph TAS,fastest bracketed gear,,,,378.3,407,397,,,,,-10,f
+later,22000,6705.6,climb rate,ft/min,as tested,,,2008,2963.3,3270,3520,,955.4,1262,1512,250,f g6
+later,22000,6705.6,time from chart start,s,as tested,,,489.5,376,321,318,,-113.5,-168.5,-171.5,-3,f g6
+later,24000,7315.2,level,mph TAS,fastest bracketed gear,,,,386.8,406,404,,,,,-2,f
+later,24000,7315.2,climb rate,ft/min,as tested,,,1779.2,2998.2,2970,3536.7,,1219,1190.8,1757.5,566.7,f hf g6
+later,24000,7315.2,time from chart start,s,as tested,,,553.8,417.8,357,350.5,,-136,-196.8,-203.3,-6.5,f hf g6
+later,26000,7924.8,level,mph TAS,fastest bracketed gear,,,,396.3,403,411,,,,,8,f
+later,26000,7924.8,climb rate,ft/min,as tested,,,1527.2,2897.1,2700,3270,,1370,1172.8,1742.8,570,f g6
+later,26000,7924.8,time from chart start,s,as tested,,,627,461.1,402,387,,-165.8,-225,-240,-15,f g6
+later,28000,8534.4,level,mph TAS,fastest bracketed gear,,,,402.8,399.5,415.3,,,,,15.8,f hf
+later,28000,8534.4,climb rate,ft/min,as tested,,,1285.7,2590,2400,2920,,1304.3,1114.3,1634.3,520,g6
+later,28000,8534.4,time from chart start,s,as tested,,,716.2,504,450,423,,-212.2,-266.2,-293.2,-27,g6
+later,30000,9144,level,mph TAS,fastest bracketed gear,,,,402,395,413,,,,,18,
+later,30000,9144,climb rate,ft/min,as tested,,,1031.5,2280,2120,2600,,1248.5,1088.5,1568.5,480,g6
+later,30000,9144,time from chart start,s,as tested,,,820.6,552,504,468,,-268.6,-316.6,-352.6,-36,g6
+later,32000,9753.6,level,mph TAS,fastest bracketed gear,,,,399.3,389,409,,,,,20,f
+later,32000,9753.6,climb rate,ft/min,as tested,,,731.5,1980,1830,2260,,1248.5,1098.5,1528.5,430,f g6
+later,32000,9753.6,time from chart start,s,as tested,,,966.9,612,564,516,,-354.9,-402.9,-450.9,-48,f g6
+later,34000,10363.2,level,mph TAS,fastest bracketed gear,,,,394,381,402,,,,,21,f
+later,34000,10363.2,climb rate,ft/min,as tested,,,417.2,1673.3,1550,1920,,1256.1,1132.8,1502.8,370,f g6
+later,34000,10363.2,time from chart start,s,as tested,,,,680,636,576,,,,,-60,f
+later,36000,10972.8,level,mph TAS,fastest bracketed gear,,,,386,,390,,,,,,
+later,36000,10972.8,climb rate,ft/min,as tested,,,93.2,1360,1260,1600,,1266.8,1166.8,1506.8,340,g6
+later,36000,10972.8,time from chart start,s,as tested,,,,756,720,606,,,,,-114,
