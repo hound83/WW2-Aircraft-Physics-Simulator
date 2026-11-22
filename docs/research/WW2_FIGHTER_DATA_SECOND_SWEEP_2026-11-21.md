@@ -25,7 +25,7 @@ All twelve profiles produce all six modeled outputs. The table counts the profil
 2. **Track what each comparison can actually use.** Keep the existing primary/secondary/calculated dossier percentages as an inventory. Add a per-aircraft, per-metric view with the best applicable trial, the speed/altitude range, the number of independent trials, and the missing condition that would change the verdict. Distinguish fitted, reserved within the same trial, separate trial, transferred and model-only evidence. The catalog already has 67 document-lineage groups. Extend them to trial and run where identifiable. Two scans of one sheet and two time intervals from one climb each share a parent. Reserve an entire different run or specimen before fitting whenever possible. [Evidence intake contract](MINIMUM_VIABLE_SIM_DATA.md) · [Current coverage weights](WW2_FIGHTER_SIM_INPUTS_V1.md)
 3. **Keep the reported value alongside every conversion or transfer.** In the catalog's 288 stall-speed rows, 171 are labeled reported IAS, 85 have an unresolved speed basis, 16 are reported CAS and 16 carry provisional corrections. For a stall, record speed channel, calibration range, mass at the event, configuration and power. For a plotted trace, add the figure, axis calibration, trace identity and read-off uncertainty. Show only the segments that depend on a donor or extrapolation as provisional. Keep unknown fields explicit. A handbook value or a secondary transcription can support an indicated-speed comparison while a corrected lift estimate awaits evidence. [Stall donors and worked transfers](../../references/research/STALL_DONOR_SHORTLIST_2026-11-13.md)
 
-## Milestone 1 – Bf 109 and Spitfire speed and climb by altitude
+## Combined milestone, altitude performance
 
 Where does each aircraft have a measured speed or climb advantage, and how does that change with altitude, engine rating and cooling? Compare E-3 WNr 1304 with Va X.4922, then compare G-6/Trop WNr 16476 with F IX BF.274, LF IX BS.543 and HF IX BS.551. The LF/HF trial also tests a change of engine and propeller within the Spitfire family. Four aircraft already have operating profiles. The E-3 and Va have research dossiers ready for their first speed and climb comparisons.
 
@@ -38,7 +38,7 @@ Where does each aircraft have a measured speed or climb advantage, and how does 
 
 Reconcile all 78 early-war series and retain the original observation IDs for the 28 matching X.4922 rows. Count independent trials for each metric. Give the simulator the same G-6 source rows for its replay, and show how the numerical climb-rate and elapsed-climb coverage changes on the original 12-profile denominator. [Simulator replay proposal](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/pull/112)
 
-## Milestone 2 – From turn entry to recovered speed
+## Combined milestone, turn entry through speed recovery
 
 How much speed does the aircraft lose in the turn, and how long does it take to get it back? Combine the clean-stall and usable-lift records, drag under load and straight-line acceleration in one assessment. Start with the Mustang, full-span Spitfire IX and Bf 109 G-2 families. Use the P-47D-30 as a further low-speed check. Keep each donor, restored specimen and wartime airframe tied to its own trial.
 

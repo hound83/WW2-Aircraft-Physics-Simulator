@@ -116,6 +116,7 @@ function laterComparison(catalog) {
   const reversals = [];
   let previous;
   for (const row of rows.filter(r => r.level.hf?.kind === 'source' && r.level.lf?.kind === 'source')) {
+    if (row.deltas.tasMph.hfMinusLf === 0) continue;
     if (previous && Math.sign(row.deltas.tasMph.hfMinusLf) !== Math.sign(previous.deltas.tasMph.hfMinusLf))
       reversals.push([previous.altFt, row.altFt]);
     previous = row;
@@ -204,4 +205,4 @@ function comparisonCsv(report) {
   return csv.map(row => row.map(v => v ?? '').join(',')).join('\n') + '\n';
 }
 
-module.exports = { build, comparisonCsv, earlyComparison, laterComparison };
+module.exports = { build, comparisonCsv, earlyComparison, laterComparison, dynamicComparison };

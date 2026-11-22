@@ -39,3 +39,14 @@ assert.equal(later.rows.find(r=>r.altFt === 10000).level.g6, null);
 assert.equal(later.rows.find(r=>r.altFt === 30000).deltas.tasMph.hfMinusLf, 18);
 assert.equal(compare.comparisonCsv({early,later}),
   fs.readFileSync(path.join(root,'references/analysis/six-aircraft-flight-comparison.csv'),'utf8').replace(/\r\n/g,'\n'));
+
+const replay = require('../validation/current/level-acceleration.json');
+const dynamic = compare.dynamicComparison(replay);
+assert.equal(dynamic.mt215[0].speedLostKmh, 70);
+assert.equal(dynamic.mt215[0].separateStraightSegmentEstimateSeconds, 16.6);
+assert.ok(dynamic.mt215.every(run => run.measuredRecoverySeconds === null));
+assert.equal(dynamic.restoredTrials.length, 4);
+assert.ok(dynamic.restoredTrials.every(run => run.turnExitKt === null && run.measuredRecoverySeconds === null));
+assert.equal(dynamic.restoredMustang.recordedFigureLabelMaxKias, 255);
+assert.equal(dynamic.restoredMustang.secondaryTargetKias, 242);
+assert.equal(dynamic.recordedComplete180AndRecoveryTrials, 0);
