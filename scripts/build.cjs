@@ -121,22 +121,24 @@ function build(){
  html=html.replace('</body>','<script>'+source+'</script><script type="application/json" id="robustness-data">'+audit+'</script><script>'+ui+'</script>'+conditionEmbed+measuredEmbed+stallEmbed+comparisonEmbed+'<script type="application/json" id="historical-research-data">'+researchData+'</script><script>'+researchUI+'</script>'+maneuverEmbed+'</body>');
  const baseBenchmark=require('../validation/diagnostics/shared_flight_climb.cjs').browserData();
  const intake=require('./aircraft-batch.cjs');
- const benchmark=intake.addAircraftBatch(baseBenchmark,researchCatalog);
+ const benchmark=intake.addAircraftBatch(baseBenchmark,researchCatalog,{earlyWar:true});
  const inputs=JSON.parse(read('references/analysis/fighter-sim-inputs-v1.json'));
  const observationIds=new Set(inputs.cases.flatMap(item=>item.candidates.flatMap(row=>row.observation_ids)));
  const observations=Object.fromEntries([...observationIds].map(id=>[id,inputs.observations[id]]));
  const sources=Object.fromEntries([...new Set(Object.values(observations).map(row=>row.source))].map(id=>[id,inputs.sources[id]]));
  const coverage=inputs.coverage.rows.map(({id,gold_count,gold_qualified_count,planned_count})=>({id,gold_count,gold_qualified_count,planned_count}));
  const stallReferences={...require('../src/provisional-stall-loader.js').referencesFor(inputs,researchCatalog),
-  ...intake.stallReferences(researchCatalog)};
+  ...intake.stallReferences(researchCatalog),bf109e3_1304:[],spitfire_va_x4922:[]};
  const intakeChecks=require('../validation/diagnostics/aircraft_intake.cjs').sourceChecks(baseBenchmark,researchCatalog);
  const turnDrag=require('../validation/diagnostics/turn_drag.cjs').browserEvidence(benchmark.models);
  const accelerationEvidence=require('../validation/diagnostics/level_acceleration.cjs').browserEvidence(benchmark,intakeChecks);
  const poweredTurn=require('../validation/diagnostics/powered_turn.cjs').browserEvidence(benchmark);
+ intakeChecks.aircraft.push(...require('../validation/diagnostics/early_war_replay.cjs').dataChecks(benchmark));
  const fleet=require('../validation/diagnostics/fleet_validation.cjs');
  const fleetReport=fleet.report({data:benchmark,catalog:researchCatalog,intake:intakeChecks,
   stallReferences,acceleration:accelerationEvidence,poweredTurn});
- const benchmarkData=JSON.stringify({...benchmark,stallReferences,intakeChecks,turnDrag,accelerationEvidence,poweredTurn,
+ const historical=require('../validation/diagnostics/benchmark_history.cjs').build(benchmark,researchCatalog,fleetReport,intakeChecks,accelerationEvidence);
+ const benchmarkData=JSON.stringify({...benchmark,stallReferences,intakeChecks,turnDrag,accelerationEvidence,poweredTurn,historical,
   fleetValidation:fleet.browserData(fleetReport),
   sourceGrades:{cases:inputs.cases,coverage,observations,sources,tolerances:inputs.tolerances}});
  const turnPerformance=read('src/turn-performance.js');
@@ -146,7 +148,7 @@ function build(){
  const graphEvidence=read('src/benchmark-graph-evidence.js');
  const benchmarkChart=read('src/operating-benchmark-chart.js');
  const benchmarkService=read('src/benchmark-service-context.js');
- const benchmarkUI=read('src/operating-benchmark-ui.js');
+ const benchmarkUI=read('src/benchmark-history-ui.js')+'\n'+read('src/operating-benchmark-ui.js');
  const stallReferencesUI=read('src/provisional-stall-loader.js');
  const maneuver=read('src/benchmark-maneuver.js'),maneuverUI=read('src/benchmark-maneuver-ui.js');
  if([benchmarkData,turnPerformance,matchup,turnComparison,benchmarkSource,graphEvidence,benchmarkChart,benchmarkService,benchmarkUI,stallReferencesUI,maneuver,maneuverUI].some(text=>/<\/script/i.test(text)))throw Error('Unsafe operating benchmark embed');
@@ -166,7 +168,7 @@ function build(){
  const efficiencyData=read(propeller.path);
  if(sha256(efficiencyData)!==propeller.sha256)throw Error('Propeller efficiency data and input pack disagree');
  fs.writeFileSync(path.join(root,'dist',propeller.build_file),efficiencyData);
- const metadata={version,researchStatus:'Fleet turn and speed recovery with a twelve-profile validation scorecard',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,gregDragModelsFile:dragFile,gregDragModelsSha256:sha256(dragData),researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
+ const metadata={version,researchStatus:'Fourteen-aircraft benchmark with flight-test residuals and measured maneuver phases',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,gregDragModelsFile:dragFile,gregDragModelsSha256:sha256(dragData),researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
  fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify(metadata,null,2)+'\n');
  fs.writeFileSync(path.join(root,'dist/fleet-validation.json'),JSON.stringify(fleetReport,null,2)+'\n');
  return metadata;

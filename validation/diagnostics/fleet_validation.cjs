@@ -78,11 +78,13 @@ function historicalEvidence(inputs) {
       const outsideFit = rows.filter(row => row.role!=='fit'&&finite(row.predicted));
       const refs = rows.filter(row=>row.role!=='fit'&&!finite(row.predicted));
       if (outsideFit.length)add(a.id,metric,{ qualifier:'Report-conditioned comparison',grade:'report-conditioned',
-        source:sourceLink(outsideFit[0].id),reference:a.scope,rows:outsideFit });
+        source:outsideFit[0].source??sourceLink(outsideFit[0].id),reference:a.scope,rows:outsideFit });
       if (refs.length)add(a.id,metric,{ qualifier:'Other source conditions',grade:'reference',
         source:sourceLink(refs[0].id),reference:'The listed conditions require a separate configuration or a wider modeled envelope.',rows:refs });
       if (fits.length)add(a.id,metric,{ qualifier:'Fit consistency',grade:'fit-consistency',
-        source:sourceLink(fits[0].id),reference:'These observations set the model inputs.',rows:fits });
+        source:fits[0].source??sourceLink(fits[0].id),reference:'These observations set the model inputs.',rows:fits });
+      if(metric==='climb'&&a.elapsed?.some(row=>row.source)) add(a.id,'elapsed',{qualifier:'Same-trial clock intervals',grade:'report-conditioned',
+        source:a.elapsed[0].source,reference:a.scope,rows:a.elapsed.filter(row=>row.observed>0)});
     }
   }
 
@@ -155,6 +157,8 @@ function historicalEvidence(inputs) {
 }
 
 const stallGaps = {
+  bf109e3_1304:'E-wing clean stall uses an engineering lift assumption. Recover the low-speed correction and matching run weight.',
+  spitfire_va_x4922:'W.3119 lift transfer. Confirm X.4922 configuration, CG and installed propeller effects.',
   p51b:'Wright Field IAS is available. Recover low-speed position error and takeoff/instantaneous mass.',
   p38g:'Sister-airframe CAS check at approximate weight and height.',
   f4u4:'Identify the original stall-run serial and mass for a same-airframe check.',

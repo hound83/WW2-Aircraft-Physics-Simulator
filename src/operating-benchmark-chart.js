@@ -561,7 +561,7 @@
   lockButton.disabled=!hasCurves;
   if(!hasCurves){
    chart.replaceChildren(element('p', 'Sustained turn is unavailable for both selected configurations.', 'bench-warning'));
-   climbChart.replaceChildren();
+   climbChart.replaceChildren(element('p','Climb is unavailable for both selected configurations at this altitude and rating.','bench-note'));
    accelerationChart.replaceChildren(element('p','Level acceleration is unavailable.','bench-note'));
    slider.disabled = true;
    slider.removeAttribute('aria-valuetext');
@@ -581,7 +581,8 @@
   const maxStep=Math.floor((maxEas+1e-9)/probeStepMph)*probeStepMph;
   const visibleTurns=focus?focusCurves(turning,pointAt,3):[];
   const focused=visibleTurns.length>0;
-  rangeStatus.textContent=series.some(a=>a.turnComparisonUnavailable)?'Turn comparison awaits drag-under-load and lift evidence.':
+  const missingTurns=series.filter(a=>!a.range).map(a=>a.name);
+  rangeStatus.textContent=missingTurns.length?'No sustained-turn curve for '+missingTurns.join(' and ')+'. See the provisional 180° maneuver below.':
    focused?'Turn curves shown at 3°/s and above.':
    focus?'Neither aircraft reaches 3°/s. Showing the full turn envelope.':'Turn curves show the full flight envelope.';
   const asTurn=point=>turnUnit.key==='g'?

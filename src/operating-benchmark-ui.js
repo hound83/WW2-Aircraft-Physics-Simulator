@@ -142,8 +142,8 @@
     side,
     name:'Aircraft '+(side==='a'?'1':'2')+' · '+names[side],
     color:colors[side],evidence,turnPolicy:evidence.turnSensitivity?data.turnEvidence.sensitivity:null,
-    range:includesIntake?null:row.turnRange,
-    turnComparisonUnavailable:includesIntake,
+    range:row.turnRange,
+    turnComparisonUnavailable:Boolean(specs.aircraft[id].performanceIntake),
     stallEasMph:row.stallEasMph,
     provisionalStallBand:row.stallEasRange?{
      minEasMph:row.stallEasRange[0],maxEasMph:row.stallEasRange[1],
@@ -175,11 +175,15 @@
   }:null;
   $('bench-advantage-key').hidden=!policy;
   $('bench-solo-key').hidden=true;
-  $('bench-plot-note').textContent=includesIntake?'Turn curves require drag-under-load and lift evidence for both aircraft.':
+  $('bench-plot-note').textContent=includesIntake?'A sustained-turn curve needs drag-under-load and lift evidence for that aircraft.':
    turnUnit().key==='g'?
    'Squares mark peak sustained G and best climb speed (Vy). The grey guide shows the load needed for 3°/s at each speed.':
    'Squares mark peak turn rate and best climb speed (Vy). The grey guide shows 3°/s.';
   const samples=new Map();
+  if(includesIntake){
+   const maneuverLink=text('a','Inspect the provisional 180° maneuver.');
+   maneuverLink.href='#bench-maneuver';$('bench-plot-note').append(' ',maneuverLink);
+  }
   function evaluateAt(side,eas,climbing){
    const key=side+':'+eas+':'+Boolean(climbing);
    if(!samples.has(key)){
@@ -200,7 +204,7 @@
    onLock(anchor){api.probeLock=anchor;api.probeLocked=Boolean(anchor);},
    evaluateAt,
    makeAdvantage(domain){
-    if(includesIntake)return null;
+    if(!series.every(s=>s.range)||Math.max(...series.map(s=>s.range.minEasMph))>=Math.min(...series.map(s=>s.range.maxEasMph)))return null;
     return OperatingTurnComparison.advantage({...domain,host:advantage,readout,limits,names,colors,policy,dragProbe,
      soloKey:$('bench-solo-key'),turnUnit:turnUnit(),unit:$('bench-speed-unit').value,tolerances});
    },
@@ -648,6 +652,7 @@
   tolerances.climb_rate.spread+'% climb rate and '+tolerances.level_speed.spread+' km/h TAS. In G view the peak tie margin uses the two peaks’ mean TAS. * includes estimated power.';
  render();
  renderFlightChecks();renderIntakeChecks();renderAccelerationEvidence();renderPoweredTurn();
+ BenchmarkHistoryUI.render(data);
  BenchmarkManeuverUI.scorecard($('bench-fleet-validation-result'),data.fleetValidation);
  OperatingTurnComparison.evidence($('bench-turn-evidence'),data.turnEvidence,data.turnLiftChecks,
   data.turnEvidence.sensitivity,data.turnEvidence.directTurns,data.turnDrag);

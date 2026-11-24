@@ -177,4 +177,4 @@ function sourceChecks(base, catalog) {
     climbMaeFpm: meanAbsoluteError(a.climb) })) };
 }
 
-module.exports = { sourceChecks };
+module.exports = { sourceChecks, levelSpeed };

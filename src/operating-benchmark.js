@@ -132,6 +132,7 @@
    propGeometry:{...model.ac.propGeometry,...(model.benchmarkReductionRatio?{reductionRatioEnginePerProp:model.benchmarkReductionRatio}:{}),engineRpmByRating:{...model.ac.propGeometry.engineRpmByRating,[rating]:phase.rpm}}};
   const opts={...model.options,profile:'P',polar:model.benchmarkPolar,rating,gear,weightLb,
    cleanLevelPropeller:reference};
+  if(climbing&&model.climbPowerFit)opts.propulsivePowerScale=model.climbPowerFit.factor;
   delete opts.engineModel;delete opts.flightCooling;
   const coolingCase=model.climbCoolingCase;
   const matchedCooling=open&&coolingCase&&phase.map===coolingCase.map&&phase.rpm===coolingCase.rpm&&
