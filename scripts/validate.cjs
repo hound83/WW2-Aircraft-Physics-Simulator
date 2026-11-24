@@ -60,8 +60,9 @@ try{
  write('validation/current/continuous-stall.json',require('../validation/diagnostics/continuous_stall.cjs').run(catalog));
  const intakeBase=require('../validation/diagnostics/shared_flight_climb.cjs').browserData();
  const intake=require('./aircraft-batch.cjs');
- const activeBenchmark=intake.addAircraftBatch(intakeBase,catalog);
+ const activeBenchmark=intake.addAircraftBatch(intakeBase,catalog,{earlyWar:true});
  const intakeChecks=require('../validation/diagnostics/aircraft_intake.cjs').sourceChecks(intakeBase,catalog);
+ intakeChecks.aircraft.push(...require('../validation/diagnostics/early_war_replay.cjs').dataChecks(activeBenchmark));
  write('validation/current/aircraft-intake.json',intakeChecks);
  const acceleration=require('../validation/diagnostics/level_acceleration.cjs').run(activeBenchmark,intakeChecks);
  write('validation/current/level-acceleration.json',acceleration);
@@ -104,6 +105,7 @@ try{
  const md=[
  '# Current validation',
  '',
+ 'v4.16-rc.1 [Fourteen-aircraft performance benchmark](V416_PERFORMANCE_BENCHMARK.md).',
  'v4.15-rc.1 [Fleet maneuver and energy report](V415_FLEET_MANEUVER_ENERGY.md). [Numerical scorecard](../validation/current/fleet-validation.json).',
  '',
  'v4.14-rc.3 [Recorded Bf 109 G-2 powered-turn replay](V414_POWERED_TURN_REPLAY.md). [Numerical replay](../validation/current/powered-turn.json).',

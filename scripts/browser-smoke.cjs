@@ -432,7 +432,7 @@ async function run(){
   assert.deepEqual(await evaluate('[...document.querySelectorAll("#bench-altitude-overview [data-altitude=\\"10000\\"] [data-lead]")].map(e=>e.dataset.lead)'),['b','b','a']);
   assert.equal(await evaluate('document.querySelector("#bench-altitude-overview [data-altitude=\\"40000\\"] td:nth-child(3) [data-lead]").dataset.lead'),'tie');
   checks.push('v4.9 synchronized vertical sliders, timed acceleration traces and practical tie margins');
-  assert.equal(await evaluate('document.querySelectorAll("#bench-fleet-validation-result tbody tr").length'),12);
+  assert.equal(await evaluate('document.querySelectorAll("#bench-fleet-validation-result tbody tr").length'),14);
   assert.match(await evaluate('document.getElementById("bench-fleet-validation-result").textContent'),/Same-report|same-report/);
   assert.match(await evaluate('document.getElementById("bench-fleet-validation-result").textContent'),/lift cap.*sustained at entry/s);
   await evaluate('document.getElementById("bench-maneuver-run").click()');
@@ -963,11 +963,13 @@ async function run(){
   await select('bench-power-a','combat');
   for(const [id,pattern] of [['spitfire_hfix_bs551',/BS\.551/],['bf109g2_db605a',/F-4 lift prior/],['p51d15_4415342',/97 mph IAS/]]){
    await select('bench-aircraft-a',id);
+   await select('bench-aircraft-b','p47b');
    const summary=await evaluate('document.getElementById("bench-result-a").textContent');
    assert.match(summary,/Best climb rate.*Maximum level speed.*Provisional clean stall/s);
    assert.match(summary,pattern);
    assert.match(await evaluate('document.getElementById("bench-comparison").textContent'),/awaits drag-under-load/);
-   assert.equal(await evaluate('document.querySelectorAll("#bench-turn-plot svg,#bench-advantage-plot svg").length'),0);
+   assert.equal(await evaluate('document.querySelectorAll("#bench-turn-plot [data-bench-curve=b]").length'),1);
+   assert.equal(await evaluate('document.querySelectorAll("#bench-advantage-plot svg").length'),0);
    assert.ok(await evaluate('!!document.querySelector("#bench-climb-plot svg")'));
    assert.ok(await evaluate('document.getElementById("bench-turn-drag").hidden'));
   }
@@ -978,7 +980,7 @@ async function run(){
   await evaluate('document.getElementById("bench-climb-calculate").click()');
   const intakeClimbs=(await benchmark()).climbs;
   assert.equal(intakeClimbs.a.status,'reached');assert.equal(intakeClimbs.b.status,'reached');
-  assert.equal(await evaluate('document.querySelectorAll("#bench-intake-check-results details").length'),5);
+  assert.equal(await evaluate('document.querySelectorAll("#bench-intake-check-results details").length'),7);
   assert.match(await evaluate('document.getElementById("bench-intake-check-results").textContent'),/30,000 ft.*18\.0.*29\.7/s);
   checks.push('HF IX, G-2 and P-51D are selectable with shared level and climb output, provisional stall, source residuals and turn comparisons withheld');
   await select('bench-aircraft-a','spitfire_fix_bf274');await select('bench-aircraft-b','bf109g6trop_16476');
@@ -992,6 +994,28 @@ async function run(){
   const secondBatchClimbs=(await benchmark()).climbs;
   assert.equal(secondBatchClimbs.a.status,'reached');assert.equal(secondBatchClimbs.b.status,'reached');
   checks.push('BF.274 and WNr 16476 are selectable, expose matched source checks, and calculate timed climbs');
+  await select('bench-archive-group','later');
+  assert.match(await evaluate('document.getElementById("bench-archive-results").textContent'),/30,000\+18\+29.7\+11.7/);
+  assert.match(await evaluate('document.getElementById("bench-factory-results").textContent'),/\+167/);
+  assert.equal(await evaluate('document.querySelectorAll("#bench-phase-data svg").length'),3);
+  const fleetIds=await evaluate('Object.keys(OperatingBenchmarkUI.data.models)');
+  const matrix=[];
+  for(const id of fleetIds)matrix.push(...await evaluate('('+require('./browser-fleet-matrix.cjs').toString()+')('+JSON.stringify(id)+')'));
+  const countByTurns=rows=>[0,1,2].map(n=>rows.filter(r=>r.turn===n).length);
+  const additions=['bf109e3_1304','spitfire_va_x4922'];
+  assert.equal(fleetIds.length,14);assert.equal(matrix.length,182);
+  assert.deepEqual(countByTurns(matrix),[42,98,42]);
+  assert.deepEqual(countByTurns(matrix.filter(r=>![r.left,r.right].some(id=>additions.includes(id)))),[20,70,42]);
+  await select('bench-aircraft-a',additions[0]);await select('bench-aircraft-b',additions[1]);
+  await select('bench-speed-unit','kph');await select('bench-altitude','40000');
+  assert.equal(await probe(),null);
+  assert.match(await evaluate('document.getElementById("bench-climb-plot").textContent'),/unavailable/);
+  await select('bench-altitude','10000');
+  assert.ok(Number.isFinite((await probe()).easMph));
+  assert.equal(await evaluate('document.querySelectorAll("#bench-climb-plot [data-bench-climb-curve]").length'),2);
+  assert.equal(await evaluate('document.getElementById("bench-archive-group").value'),'early');
+  await select('bench-speed-unit','mph');
+  checks.push('All 91 distinct aircraft pairs in both orders preserve each supported curve and the original 66-pair matrix');
   await send('Page.navigate',{url:'http://127.0.0.1:'+server.address().port+'/fighter-evidence-curves.html'});
   await until(()=>evaluate('!!document.querySelector("#plot .curve-segment")'),'fighter evidence explorer startup');
   const joined=await evaluate('(()=>{const a=[...document.querySelectorAll(".curve-segment")].filter(e=>e.dataset.series==="0"),i=a.findIndex(e=>e.dataset.style==="dotted"),p=a[i-1],n=a[i];return i>0&&p.dataset.style==="solid"&&p.getAttribute("x2")===n.getAttribute("x1")&&p.getAttribute("y2")===n.getAttribute("y1");})()');

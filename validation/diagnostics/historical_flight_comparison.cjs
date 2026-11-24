@@ -170,8 +170,8 @@ function build(catalog, fleet, intake, acceleration) {
     sourceFiles:['references/analysis/ww2_early_war_flight_tests_2026-11-14.json','references/analysis/combined-flight-comparison-sources.json','references/analysis/g6-16476-climb-charts.json'],
     early:earlyComparison(),later:laterComparison(catalog),g6:g6.observations(),modelMinusSource:comparison,
     hfTransfer:extra.hfTransfer, researchConditions:{
-      e3:'French campaign, 5,600 lb in the RAE climb reproduction. CEMA level calibration is approximate. No operating profile.',
-      va:'A&AEE X.4922, 6,450 lb, de Havilland, nominal +9 psi. 3,000 rpm level, climb mostly 2,850 rpm. No operating profile.',
+      e3:'French campaign, 5,600 lb in the RAE climb reproduction. CEMA level calibration is approximate.',
+      va:'A&AEE X.4922, 6,450 lb, de Havilland, nominal +9 psi. 3,000 rpm level, climb mostly 2,850 rpm.',
       g6:'One Messerschmitt climb campaign on WNr 16476. Fit uses sea-level run 3b. No independently repeated matched climb.',
       f:'BF.274, clean 7,480 lb, Merlin 61. Level and full-rating climb from the same A&AEE report. Normal climb remains separately identified in modelMinusSource.',
       lf:'BS.543 Merlin 66. Level 7,110 lb corrected, climb 7,485 lb. Level points were used in fitting. Reserved climb points belong to the same campaign.',

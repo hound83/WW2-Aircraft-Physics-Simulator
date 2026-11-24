@@ -375,19 +375,22 @@ function profiles(base, catalog) {
     [FIX]: fIxProfile(base, catalog), [G6]: g6Profile(base, catalog) };
 }
 
-function addAircraftBatch(base, catalog) {
+function addAircraftBatch(base, catalog, {earlyWar = false} = {}) {
   const data = profiles(base, catalog);
+  const early = require('./early-war-batch.cjs');
+  const evidenceSources = earlyWar ? { ...sources, ...early.sources } : sources;
+  if (earlyWar) Object.assign(data, early.make(base, { aircraft, prop, phase, levelPolar }));
   const models = { ...base.models };
-  const aircraft = { ...base.specification.aircraft };
+  const roster = { ...base.specification.aircraft };
   const service = { ...base.service, aircraft: { ...base.service.aircraft } };
   const graphEvidence = { ...base.graphEvidence };
   for (const [id, { model, spec, service: context }] of Object.entries(data)) {
     models[id] = model;
-    aircraft[id] = { ...spec, performanceIntake: true };
+    roster[id] = { ...spec, performanceIntake: true };
     service.aircraft[id] = context;
-    graphEvidence[id] = { source: sources[spec.sources[0]], calculatedPower: 'source-bounded intake estimate' };
+    graphEvidence[id] = { source: evidenceSources[spec.sources[0]], calculatedPower: 'source-bounded intake estimate' };
   }
-  return { ...base, models, service, graphEvidence, specification: { ...base.specification, aircraft, sources: { ...base.specification.sources, ...sources } } };
+  return { ...base, models, service, graphEvidence, specification: { ...base.specification, aircraft:roster, sources: { ...base.specification.sources, ...evidenceSources } } };
 }
 
 function stallReferences(catalog) {
