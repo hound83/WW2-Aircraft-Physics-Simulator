@@ -1,5 +1,7 @@
 # Fighter simulator data review and second-sweep roadmap
 
+> **Source correction, 25 November 2026.** The printed Figure 8 gives continuous speed versus time. The Mustang reads about 213 KIAS at 60 seconds. The 242 KIAS / 133 s transcription has separate provenance. See the [corrected chart readings and replay](M3_STALL_ACCELERATION_CLIMB.md#timed-level-acceleration) when using the historical results below.
+
 21 November 2026 · [Reviewed revision 1bc5e4d](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/commit/1bc5e4d8ef061a30f1f9085ba5ca0199e72c0089) · Simulator 4.15.0-rc.1 · Fighter Sim Inputs 1.11.0
 
 **The two research tracks now share one milestone.** The six-aircraft altitude comparison and the turn and recovery assessment use the same evidence rules. The 22 November results include a source-linked comparison file, the G-6 climb replay and the measurements available for each maneuver phase. [Combined milestone results](WW2_COMBINED_FLIGHT_DATA_2026-11-22.md) · [Six-aircraft CSV](../../references/analysis/six-aircraft-flight-comparison.csv)

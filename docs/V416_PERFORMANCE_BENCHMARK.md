@@ -1,5 +1,7 @@
 # Fourteen-aircraft performance benchmark
 
+> **Source correction, 25 November 2026.** The printed Figure 8 gives continuous speed versus time. The Mustang reads about 213 KIAS at 60 seconds. The 242 KIAS / 133 s transcription has separate provenance. See the [corrected chart readings and replay](research/M3_STALL_ACCELERATION_CLIMB.md#timed-level-acceleration) when using the historical results below.
+
 Research candidate 4.16.0-rc.1 builds on simulator 4.15.0-rc.1 and the merged flight-test comparison. From **Compare flight performance**, select either aircraft, open **Compare flight tests by altitude** for the measured data, or download the same self-contained simulator. The original twelve operating profiles retain their numerical results.
 
 ## What changes in a comparison

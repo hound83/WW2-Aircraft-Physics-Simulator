@@ -1,5 +1,7 @@
 # Six-aircraft flight performance and measured maneuver recovery
 
+> **Source correction, 25 November 2026.** The printed Figure 8 gives continuous speed versus time. The Mustang reads about 213 KIAS at 60 seconds. The 242 KIAS / 133 s transcription has separate provenance. See the [corrected chart readings and replay](M3_STALL_ACCELERATION_CLIMB.md#timed-level-acceleration) when using the historical results below.
+
 22 November 2026 · Research against simulator 4.15.0-rc.1 and Fighter Sim Inputs 1.11.0 · [Starting revision](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/commit/9a2177e439de10e9cdf4f498cb8e86bb824e0476)
 
 The G-6 climb chart fills the last elapsed-climb gap in the 12-profile fleet scorecard. It also exposes a sign change in the model error. The LF and HF Spitfires exchange the lead three times in the measured level-speed tables. For turn and recovery, five families now have an explicit account of the phases measured. A continuous 180° turn, exit speed and timed recovery to the entry speed remain open in all five. [Six-aircraft comparison CSV](../../references/analysis/six-aircraft-flight-comparison.csv) · [Additional source transcriptions](../../references/analysis/combined-flight-comparison-sources.json)
