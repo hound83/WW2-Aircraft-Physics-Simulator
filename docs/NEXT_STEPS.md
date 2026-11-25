@@ -1,6 +1,6 @@
 # Next steps
 
-[4.17 delivered the evidence sweep and speed/climb validation](V417_EVIDENCE_AND_PERFORMANCE.md). Next: clean-stall and timed level-acceleration comparisons. The following entries record earlier decisions.
+[4.17 delivered the evidence sweep and speed/climb validation](V417_EVIDENCE_AND_PERFORMANCE.md). [Milestone 3 combines clean stall, timed level acceleration and the E-3/Va climb checks](SIMULATOR_ROADMAP.md). The [first source readings and climb-band results](research/M3_STALL_ACCELERATION_CLIMB.md) accompany the plan. The following entries record earlier decisions.
 
 See the [current simulator roadmap](SIMULATOR_ROADMAP.md) for the next acceptance checks.
 

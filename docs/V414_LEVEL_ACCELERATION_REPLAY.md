@@ -1,5 +1,7 @@
 # v4.14.0-rc.2 recorded level-acceleration replay
 
+> **Source correction, 25 November 2026.** The printed Figure 8 gives continuous speed versus time. The Mustang reads about 213 KIAS at 60 seconds. The 242 KIAS / 133 s transcription has separate provenance. See the [corrected chart readings and replay](research/M3_STALL_ACCELERATION_CLIMB.md#timed-level-acceleration) when using the historical results below.
+
 The provisional P-51D replay reaches 242 KIAS in **93.3 s** from 110 KIAS. The transcribed flight time is **133 s**. The calculated minus transcribed residual is **−39.7 s (−29.8%)**. This comparison uses a restored specimen and estimated installed power, mass and airspeed conversion. The full range of tested scenarios is **70.7–133.2 s**. [Flight report, Figure 8](https://www.wwiiaircraftperformance.com/com/others/endingtheargument.html) · [Endpoint transcription](https://ww2aircraft.net/forum/threads/captured-aircraft-equipment-report-14.65811/?post=2043798) · [Numerical replay](../validation/current/level-acceleration.json)
 
 Open **P-51D level-acceleration flight test** beneath **Time to accelerate**. The two open circles show the transcribed endpoints. The dotted line shows the calculated trajectory. The horizontal axis extends through the transcribed finish. The fixed replay uses its own test conditions while the two-aircraft timer follows the selected settings. [Live benchmark](https://hound83.github.io/WW2-Aircraft-Physics-Simulator/#bench-acceleration-evidence)
