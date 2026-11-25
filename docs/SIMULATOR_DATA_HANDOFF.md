@@ -16,9 +16,11 @@ The [21 November data review and second-sweep roadmap](research/WW2_FIGHTER_DATA
 
 A local build produces these JSON files. See the [Greg drag reference and usage notes](research/WW2_GREG_DRAG_MODELS_2026-11-13.md) for the calculation, conditions and source quality. The **physics-validation** artifact from a successful `main` run also includes the standalone viewer. [Physics regression builds](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/workflows/regression.yml)
 
-## Suggested aircraft
+## Current aircraft and research priorities
 
-The Normal / Combat benchmark has twelve profiles. The second intake adds **G-6/Trop WNr 16476** and **F Mk IX BF.274**. Their source tables are in the research catalog and their Greg-style drag estimates are in the validation replay. [Second intake and evidence limits](V414_AIRCRAFT_INTAKE.md). The original seven are the Bf 109 F-4, Fw 190 A-4, Spitfire LF Mk IX, P-47B, P-51B, P-38G and F4U-4. **HF Mk IX BS.551**, **G-2 MT-215** and **P-51D-15-NA 44-15342** are the speed-and-climb intake. [Source conditions and results](V413_AIRCRAFT_INTAKE.md). The [aircraft roster decision](DECISIONS.md#aircraft-roster-expansion) gives the full order and the stall evidence for each family. The coverage columns refer to the scored research roster. [Current benchmark profiles](../references/benchmark-operating-profiles.json)
+The Normal / Combat benchmark has **14 operating profiles**. The latest additions were **Bf 109 E-3 WNr 1304 / AE479** and **Spitfire Va X.4922**. The active roster also includes Bf 109 F-4, G-2 and G-6/Trop, Spitfire F IX, LF IX and HF IX, P-51B-15 and P-51D-15, P-47B, P-38G-1, F4U-4 and Fw 190 A-4. [14-aircraft benchmark](V416_PERFORMANCE_BENCHMARK.md) · [4.17 evidence register](V417_EVIDENCE_AND_PERFORMANCE.md)
+
+The [aircraft data research roadmap](research/WW2_AIRCRAFT_INPUT_RESEARCH_ROADMAP_2026-11-25.md) identifies the next source search for each operating aircraft and ranks eight candidates. Start with current-aircraft stall, timed acceleration and climb. The Spitfire I and F6F-3 lead the subsequent intake for an early-war comparison and a new family, respectively. The table below preserves the earlier intake scores and their source conditions. [19-dossier scoring crosswalk](research/WW2_PRIORITY_COMPARATIVE_COVERAGE_2026-11-13.md)
 
 | Candidate and reference aircraft | Primary | With calculations | Best-supported starting point and remaining data gap |
 | --- | ---: | ---: | --- |
