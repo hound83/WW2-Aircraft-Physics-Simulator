@@ -1,5 +1,7 @@
 # Current validation
 
+4.17-rc.1 [Fourteen-aircraft evidence register and level-speed and climb validation](V417_EVIDENCE_AND_PERFORMANCE.md).
+
 v4.15-rc.1 [Fleet maneuver and energy report](V415_FLEET_MANEUVER_ENERGY.md). [Numerical scorecard artifact](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/runs/43602800017/artifacts/14117122442) · [Publication verification](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/runs/43602800011).
 
 v4.14-rc.3 [Recorded Bf 109 G-2 powered-turn replay](V414_POWERED_TURN_REPLAY.md). [Numerical replay](../validation/current/powered-turn.json).

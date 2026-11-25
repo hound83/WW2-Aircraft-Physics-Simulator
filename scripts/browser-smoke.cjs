@@ -981,7 +981,7 @@ async function run(){
   const intakeClimbs=(await benchmark()).climbs;
   assert.equal(intakeClimbs.a.status,'reached');assert.equal(intakeClimbs.b.status,'reached');
   assert.equal(await evaluate('document.querySelectorAll("#bench-intake-check-results details").length'),7);
-  assert.match(await evaluate('document.getElementById("bench-intake-check-results").textContent'),/30,000 ft.*18\.0.*29\.7/s);
+  assert.match(await evaluate('document.getElementById("bench-intake-check-results").textContent'),/30,000 ft18\.018\.0/);
   checks.push('HF IX, G-2 and P-51D are selectable with shared level and climb output, provisional stall, source residuals and turn comparisons withheld');
   await select('bench-aircraft-a','spitfire_fix_bf274');await select('bench-aircraft-b','bf109g6trop_16476');
   await select('bench-altitude','10000');

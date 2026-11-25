@@ -1,5 +1,10 @@
 # Current decisions
 
+## 4.17 · Speed and climb on the current roster
+
+The BS.551 sea-level and high-gear full-throttle-height observations set separate effective level-power/drag constraints. The 30,000-ft comparison and separate EN.524 flight remain outside those fits. Filtered G-6 Combat climb uses measured manifold pressure from the actual aircraft, with the old transfer retained as a scenario. Treat test force as roll-source metadata. The next milestone concerns clean stall and timed level acceleration. [Measurements and limitations](V417_EVIDENCE_AND_PERFORMANCE.md)
+
+
 ## Fleet maneuver reference case
 
 **Accepted scope, 14 November 2026.** Use a constant-altitude coordinated 180° turn and straight recovery at the same entry EAS as the comparative case. G is commanded and bounded by usable lift and the G cap. Speed changes follow signed excess power, with one continuous fuel and rating schedule across turn and recovery. Display the existing evidence bounds and leave the loaded turn provisional across all aircraft. The common model case uses service-load presets and appears beside separately labeled historical replays. [Fleet maneuver benchmark](V415_FLEET_MANEUVER_ENERGY.md)

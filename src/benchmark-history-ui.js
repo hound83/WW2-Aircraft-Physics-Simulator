@@ -44,7 +44,8 @@ globalThis.BenchmarkHistoryUI=(()=>{
    for(const k of sweep.metrics){
     const c=a.cells[k],d=section(detail,labels[k]);d.open=k==='level';
     for(const g of c.groups){
-     const p=el('p',g.grade+' · '+g.qualifier+'. '+g.reference+' ');link(p,'Source',g.source);d.append(p);
+     const count=k==='roll' ? g.count+' reported rate point(s)' : g.count+' comparable / '+g.available+' recorded';
+     const p=el('p',g.grade+' · '+g.qualifier+' · '+count+'. '+g.reference+' ');link(p,'Source',g.source);d.append(p);
     }
     d.append(el('p','Next evidence: '+c.next));
     if(a.bands[k]?.length)table(d,['Altitude band','Test group','Rows','Mean model − observed','Mean absolute error','Unit'],

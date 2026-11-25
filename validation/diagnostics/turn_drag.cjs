@@ -143,6 +143,14 @@ function run(data = addAircraftBatch(browserData(),buildCatalog())) {
   const earlierAircraft = current.filter(r => previous.has(r.id));
   const intakeIds = new Set(intakeFrozen.scorecard.map(r => r.id));
   const intakeAircraft = current.filter(r => intakeIds.has(r.id));
+  const hfId = 'spitfire_hfix_bs551';
+  let earlierPowerIntake = intakeAircraft;
+  if (data.models[hfId]?.hfLevelFit) {
+    const { previousHFModel } = require('./fleet_evidence.cjs');
+    const previousHF = scorecard({ models: { [hfId]: previousHFModel(data.models[hfId]) },
+      specification: { ...data.specification, aircraft: { [hfId]: data.specification.aircraft[hfId] } } })[0];
+    earlierPowerIntake = intakeAircraft.map(row => row.id === hfId ? previousHF : row);
+  }
   return {
     schema:'ww2-turn-drag/v1', version:require('../../package.json').version,
     baselineCommit:frozen.commit, inputPack:frozen.inputPack, case:frozen.case, fixedColumns:frozen.fixedColumns,
@@ -152,6 +160,7 @@ function run(data = addAircraftBatch(browserData(),buildCatalog())) {
       exactScorecardParity:sameNumbers(earlierAircraft,frozen.scorecard),
       exactFixedProbeParity:sameNumbers(sweeps.map(r => [r.easMph,...r.probes]),frozen.fixed),
       exactIntakeParity:sameNumbers(intakeAircraft,intakeFrozen.scorecard),
+      priorHighGearIntakeParity:sameNumbers(earlierPowerIntake,intakeFrozen.scorecard),
       intakeBaselineCommit:intakeFrozen.commit,
       aircraft:earlierAircraft.map(row => caseSummary(previous.get(row.id),row)),
       intakeAircraft:intakeAircraft.map(row => caseSummary(intakeFrozen.scorecard.find(r => r.id === row.id),row))

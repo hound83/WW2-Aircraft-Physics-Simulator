@@ -98,13 +98,14 @@ try{
 
  const turnDrag=require('../validation/diagnostics/turn_drag.cjs').run(activeBenchmark);
  write('validation/current/turn-drag.json',turnDrag);
- if(!turnDrag.regression.exactScorecardParity||!turnDrag.regression.exactFixedProbeParity||!turnDrag.regression.exactIntakeParity)
+ if(!turnDrag.regression.exactScorecardParity||!turnDrag.regression.exactFixedProbeParity||!turnDrag.regression.priorHighGearIntakeParity)
   throw Error('Turn-drag milestone changed a nominal scorecard or crossover probe');
  console.log('Spitfire Mk I glide checks: sink-rate MAE '+turnDrag.glide.checks.controlMaeFpm.toFixed(1)+' -> '+turnDrag.glide.checks.candidateMaeFpm.toFixed(1)+' ft/min across '+turnDrag.glide.checkCount+' reserved rows.');
  require('./write-v42-report.cjs');
  const md=[
  '# Current validation',
  '',
+ 'v4.17-rc.1 [Fleet flight-test evidence, roll observations and altitude-banded speed/climb checks](V417_EVIDENCE_AND_PERFORMANCE.md).',
  'v4.16-rc.1 [Fourteen-aircraft performance benchmark](V416_PERFORMANCE_BENCHMARK.md).',
  'v4.15-rc.1 [Fleet maneuver and energy report](V415_FLEET_MANEUVER_ENERGY.md). [Numerical scorecard](../validation/current/fleet-validation.json).',
  '',
