@@ -2,7 +2,11 @@
 
 Pointer file for agents starting a new milestone. Not a second model of record. Prefer the merged state on `main` plus any open PRs.
 
-## Shared research / implementation roadmap (2026-11-12)
+## Current priorities after 4.16
+
+The [simulator roadmap](SIMULATOR_ROADMAP.md) places the flight-test evidence sweep first, followed by speed and climb, clean stall and level acceleration, then sustained turn. The sweep includes directly measured roll performance. [Released benchmark](V416_PERFORMANCE_BENCHMARK.md)
+
+## Earlier research and implementation notes (2026-11-12)
 
 ### Delivered in v4.15.0-rc.1
 
