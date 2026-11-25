@@ -2,6 +2,29 @@
 
 25 November 2026 · [Combined milestone and acceptance criteria](../SIMULATOR_ROADMAP.md) · [4.17 starting revision](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/commit/17461d9ac7a6eee7452a83af5c3ff82845764536)
 
+## 4.17 baseline for all 14 aircraft
+
+The three passes start from the same 14 profiles. Each row shows what the comparison screen and numerical report can check before M3. The last column counts individual elapsed-climb comparisons in the numerical report. Several heights can come from the same flight. [4.17 build and downloadable report](https://github.com/hound83/WW2-Aircraft-Physics-Simulator/actions/runs/45619856038) · [Evidence register and coverage definitions](WW2_AIRCRAFT_INPUT_RESEARCH_ROADMAP_2026-11-25.md#what-the-simulator-can-check-today)
+
+| Operating profile | Clean-stall evidence | Timed level acceleration | Climb-clock comparisons |
+| --- | --- | --- | ---: |
+| Bf 109 E-3 | Indicated only | No linked run | 7 |
+| Bf 109 F-4 | Weight-scaled reference | No linked run | 3 |
+| Bf 109 G-2 | Related and indicated records | Timed segments, secondary accounts | 5 |
+| Bf 109 G-6/Trop | No linked stall group | No linked run | 10 |
+| F4U-4 Corsair | Scored, NACA transfer | No linked run | 2 |
+| Fw 190 A-4 | Weight-scaled reference | No linked run | 3 |
+| P-38G-1 Lightning | Scored, sister aircraft | No linked run | 7 |
+| P-47B Thunderbolt | Uncorrected IAS | No linked run | 2 |
+| P-51B-15 Mustang | Uncorrected IAS | No linked run | 2 |
+| P-51D-15 Mustang | Handbook IAS | Scored, restored Mustang proxy | 3 |
+| Spitfire F Mk IXc | No linked stall group | No linked run | 8 |
+| Spitfire HF Mk IXc | No linked stall group | No linked run | 3 |
+| Spitfire LF Mk IXc | Uncorrected IAS | Derived from climb | 1 |
+| Spitfire Va | Sister-aircraft lift reference | No linked run | 19 |
+
+The 75 climb-clock comparisons give an immediate fleet check. For stall and acceleration, pursue the corrections or test series that can turn several existing records into comparable observations. The case studies below identify source readings and discrepancies to include in that batch. The additional Figure 8 readings have yet to enter the 4.17 numerical scorecard.
+
 ## Timed level acceleration
 
 Ellis and Wheal's printed Figure 8 plots **elapsed seconds horizontally and indicated knots vertically**. On the restored P-51D, downward triangles give about **213 KIAS at 60 s**. The round P-47D marker at that time is about 198 KIAS. The earlier 195–200 KIAS reading in the 4.16 report misidentified the Mustang point. The final visible Mustang marker is about **238 KIAS at 130 s**. Figure 8 does not label a 255 KIAS maximum. The separately transcribed 110–242 KIAS in 133 s remains a lower-confidence account. [Printed magazine page 52](https://ww2aircraft.net/forum/attachments/eta-6-jpg.469533/) · [Second copy of Figure 8](https://www.wwiiaircraftperformance.com/com/others/endingtheargument_files/figure8.jpg) · [Authors' test conditions](https://www.wwiiaircraftperformance.com/com/others/endingtheargument.html) · [Secondary endpoint](https://ww2aircraft.net/forum/threads/captured-aircraft-equipment-report-14.65811/?post=2043798)

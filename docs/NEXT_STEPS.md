@@ -1,6 +1,6 @@
 # Next steps
 
-[4.17 delivered the evidence sweep and speed/climb validation](V417_EVIDENCE_AND_PERFORMANCE.md). [Milestone 3 combines clean stall, timed level acceleration and the E-3/Va climb checks](SIMULATOR_ROADMAP.md). The [first source readings and climb-band results](research/M3_STALL_ACCELERATION_CLIMB.md) accompany the plan. The following entries record earlier decisions.
+[4.17 delivered the evidence sweep and speed/climb validation](V417_EVIDENCE_AND_PERFORMANCE.md). [Milestone 3 checks clean stall, timed level acceleration and climb time across all 14 operating profiles in one fleet update](SIMULATOR_ROADMAP.md). The [14-aircraft baseline and first source readings](research/M3_STALL_ACCELERATION_CLIMB.md) accompany the plan. The following entries record earlier decisions.
 
 See the [current simulator roadmap](SIMULATOR_ROADMAP.md) for the next acceptance checks.
 
