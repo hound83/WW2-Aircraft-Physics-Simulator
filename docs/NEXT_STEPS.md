@@ -1,10 +1,12 @@
 # Next steps
 
-The [simulator model roadmap](SIMULATOR_ROADMAP.md) sets the order for propulsion, input handling, turn validation, aircraft intake and future handling features.
+Start with the [current simulator roadmap](SIMULATOR_ROADMAP.md). The next milestone is a flight-test evidence sweep for the 14 aircraft in 4.16, followed by level-speed and climb validation. Collect roll measurements in parallel.
+
+The dated entries below preserve earlier priorities and results.
 
 ## After v4.15 fleet maneuver and energy
 
-The common 180° turn and recovery now covers the full operating roster. Next, find matched straight and loaded-turn energy measurements across two independent airframe families, starting with MT-215 and a US or UK test. Reuse the speed history, load, altitude and rating in both replays to isolate added drag. Keep independent intervals for evaluation. [Fleet scorecard and evidence gaps](V415_FLEET_MANEUVER_ENERGY.md)
+The common 180° turn and recovery now covers the full operating roster. The follow-up identified at that point was to find matched straight and loaded-turn energy measurements across two independent airframe families, starting with MT-215 and a US or UK test. Reuse the speed history, load, altitude and rating in both replays to isolate added drag. Keep independent intervals for evaluation. [Fleet scorecard and evidence gaps](V415_FLEET_MANEUVER_ENERGY.md)
 
 ## After v4.14 aircraft intake
 
