@@ -1,7 +1,6 @@
 'use strict';
-const M=require('../../src/physics.js'), B=require('../../src/operating-benchmark.js');
 const {levelSpeed}=require('./aircraft_intake.cjs');
-const {E3,VA,rows,germanPower,mmPerAta,sources,climbFlight}=require('../../scripts/early-war-batch.cjs');
+const {E3,VA,rows,germanPower,mmPerAta,sources,climbFlight,scheduledTas,energyHeightFactor}=require('../../scripts/early-war-batch.cjs');
 const ft=.3048, kmh=1.609344;
 const round=n=>Number.isFinite(n)?Number(n.toFixed(2)):null;
 const error=(pred,obs)=>Number.isFinite(pred)&&Number.isFinite(obs)?round(pred-obs):null;
@@ -27,7 +26,7 @@ function run(data,id) {
   });
   const series=rows(german?'1304-cema-rae-climb':'x4922-climb').sort((a,b)=>a.altitude_ft-b.altitude_ft);
   const height=r=>r.altitude_ft;
-  const tasAt=h=>german?M.tasFrom(155,'CAS',h):B.interpolate(spec.climbTAS,h,1);
+  const tasAt=h=>scheduledTas(id,spec,h);
   const clockRow=series[0];
   let seconds=0,previous;
   const climb=[],elapsed=[];
@@ -37,7 +36,7 @@ function run(data,id) {
       'A&AEE cooling climb, '+r.rpm+' rpm; reported TAS or within-schedule interpolation';
     const src=sources[german?'cema-rae':'aaee-va'].url;
     const obs=german?r.point_roc_fpm:r.roc_ft_min;
-    if(Number.isFinite(obs))climb.push(check(r,h,weightLb,obs,roc,r.id===model.climbPowerFit.source?'fit':'same-report climb check',condition,src));
+    if(Number.isFinite(obs))climb.push(check(r,h,weightLb,obs,roc/energyHeightFactor(id,spec,h),r.id===model.climbPowerFit.source?'fit':'same-report climb check',condition,src));
     if(previous){
       const energyFt=(h-previous.h)+(tas*tas-previous.tas*previous.tas)*.44704**2/(2*9.80665*ft);
       seconds=Number.isFinite(seconds)&&roc>0&&previous.roc>0?seconds+energyFt*30*(1/roc+1/previous.roc):null;

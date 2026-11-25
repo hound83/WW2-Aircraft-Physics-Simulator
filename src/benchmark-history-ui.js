@@ -27,7 +27,43 @@ globalThis.BenchmarkHistoryUI=(()=>{
   for(const p of observed)g.append(svg('circle',{cx:x(p[0]),cy:y(p[1]),r:4,fill:'#e68b44',stroke:'currentColor','data-flight-test-point':'true'}));
   host.append(g);
  }
+ function fleetEvidence(data) {
+  const sweep=data.sweep, host=$('bench-sweep-results');
+  const labels={level:'Level speed',climb:'Climb rate',elapsed:'Time to altitude',stall:'Clean stall',acceleration:'Level acceleration',roll:'Roll rate'};
+  table(host,['Aircraft',...sweep.metrics.map(k=>labels[k])],sweep.aircraft.map(a=>[a.name,...sweep.metrics.map(k=>{
+   const groups=a.cells[k].groups;
+   return groups.length?[...new Set(groups.map(g=>g.grade))].join(', '):'Evidence sought';
+  })]));
+  const label=el('label','Aircraft evidence '), select=el('select'), detail=el('div');
+  select.id='bench-sweep-aircraft';
+  for(const a of sweep.aircraft){const o=el('option',a.name);o.value=a.id;select.append(o);}
+  label.append(select);host.append(label,detail);
+  function show(){
+   detail.replaceChildren();
+   const a=sweep.aircraft.find(r=>r.id===select.value);
+   for(const k of sweep.metrics){
+    const c=a.cells[k],d=section(detail,labels[k]);d.open=k==='level';
+    for(const g of c.groups){
+     const p=el('p',g.grade+' · '+g.qualifier+'. '+g.reference+' ');link(p,'Source',g.source);d.append(p);
+    }
+    d.append(el('p','Next evidence: '+c.next));
+    if(a.bands[k]?.length)table(d,['Altitude band','Test group','Rows','Mean model − observed','Mean absolute error','Unit'],
+     a.bands[k].map(r=>[r.band,r.qualifier,r.count,signed(r.signedMean),fmt(r.absoluteMean),r.unit]));
+   }
+  }
+  select.addEventListener('change',show);show();
+  const rolls=section(host,'Reported roll rates');rolls.open=true;
+  table(rolls,['Aircraft','Achieved °/s','Test condition'],sweep.roll.flatMap(r=>r.points.map(p=>[p.aircraft,p.rateDegS,r.condition])));
+  for(const r of sweep.roll){const p=el('p',r.aircraft+' · '+r.grade+'. ');link(p,r.locator,r.source);rolls.append(p);}
+  const en=sweep.holdout,d=section(host,'Separate Spitfire HF IX test · EN.524');
+  const p=el('p',en.conditions+' ');link(p,'A&AEE Tables I and IV',en.source);d.append(p);
+  table(d,['Height (ft)','Gear','Observed TAS (mph)','4.16 prediction','4.17 prediction','4.17 − observed'],
+   en.level.map(r=>[fmt(r.altFt),r.gear,fmt(r.observed),fmt(r.before),fmt(r.after),signed(r.error)]));
+  table(d,['Height (ft)','Observed ft/min','Modeled ft/min','Error (ft/min)','Observed s','Modeled s','Error (s)'],
+   en.climb.map(r=>[fmt(r.altFt),fmt(r.observedRate),fmt(r.rate),signed(r.rateError),fmt(r.observedSeconds),fmt(r.seconds),signed(r.secondsError)]));
+ }
  function render(data){
+  fleetEvidence(data);
   const h=data.historical, select=$('bench-archive-group'),name=key=>data.service.aircraft[h.ids[key]].displayName;
   function archives(){
    const out=$('bench-archive-results'),early=select.value==='early',keys=early?['e3','va']:['g6','f','lf','hf'];
@@ -76,7 +112,7 @@ globalThis.BenchmarkHistoryUI=(()=>{
   f.append(el('p','WNr 16476, DB 605 A, 3,260 kg fixed, 260 km/h indicated, 2,600 rpm, 1.30 ata commanded. All three replays use the same timed factory climb, TAS schedule and modeled cooling drag.'));
   table(f,['Altitude interval','Factory (s)','Chart allowance (s)','Replay','Modeled (s)','Model − factory (s)'],
    Object.entries(h.factory.scenarios).flatMap(([key,rows])=>rows.map(r=>[r.fromKm+'–'+r.toKm+' km',fmt(r.observedS), '±'+fmt(r.endpointReadAllowanceS),
-    ({baseline:'Operating baseline',pressureOnly:'Measured pressure',pressureAlignedToCommand:'Plateau aligned to command'})[key],fmt(r.modeledS),signed(r.errorS)])));
+    ({baseline:'4.16 G-2 transfer',pressureOnly:'Current G-6 measured pressure',pressureAlignedToCommand:'Plateau aligned to command'})[key],fmt(r.modeledS),signed(r.errorS)])));
   f.append(el('p','The factory chart constrains manifold pressure. Installed shaft power, cooling drag and the plateau alignment remain uncertain.'));
   link(f,'G-6 factory plate',h.factory.sources.g6);link(f,'G-1 comparison',h.factory.sources.g1);link(f,'DB 605 engine sheet',h.factory.sources.engine);
   const target=$('bench-phase-data');

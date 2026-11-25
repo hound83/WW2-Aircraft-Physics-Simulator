@@ -4,7 +4,7 @@ const M = require('../../src/physics.js');
 const B = require('../../src/operating-benchmark.js');
 const T = require('../../src/turn-lift.js');
 const lift = require('../../references/p51-turn-lift-tn1044.json');
-const sources = require('../../references/analysis/g6-16476-climb-pressure.json');
+const { readPressure, withMeasuredPressure, sources } = require('../../scripts/g6-climb-pressure.cjs');
 const { FT, KMH, LB_PER_KG } = require('../../scripts/aircraft-batch.cjs');
 const { id, chartReplay, observations } = require('./g6_archival_climb.cjs');
 
@@ -15,31 +15,6 @@ const round = (x, places = 1) => Number(x.toFixed(places));
 const feet = km => 1000 * km * (1 / FT);
 const checkpoints = [5, 8, 9, 10];
 const bands = [[0, 5], [0, 8], [8, 9], [9, 10], [8, 10], [0, 10]];
-
-function readPressure(source) {
-  const scale = source.calibration;
-  return source.rows.map(([altKm, , x]) => ({
-    altKm, ata: round(scale.referenceAta + (x - scale.referenceX) / scale.pixelsPerAta, 3),
-    readAllowanceAta: scale.readAllowanceAta,
-  }));
-}
-
-// Only the manifold-pressure input changes. Preserve the baseline power at its
-// own pressure, the DB rating, pressure exponent, RPM, propeller, polar and cooling.
-function withMeasuredPressure(model, spec, readings, offsetAta) {
-  const old = model.climbPowerRatings.combat.gears.hydraulic;
-  const pressure = readings.map(r => [feet(r.altKm), r.ata + offsetAta]);
-  const top = pressure.at(-1)[0];
-  const heights = new Set([...old.map(n => n.altFt).filter(h => h <= top), ...pressure.map(p => p[0])]);
-  const curve = [...heights].sort((a, b) => a - b).map(altFt => {
-    const measuredAta = B.interpolate(pressure, altFt, 1);
-    const previous = M.shaftPower({ powerRatings: { combat: model.climbPowerRatings.combat } }, altFt, 'combat', 'hydraulic');
-    const ata = Math.min(spec.combat.map, measuredAta);
-    return { altFt, mapInHg: ata, engineRpm: spec.combat.rpm,
-      bhp: previous.bhp * (ata / previous.mapInHg) ** spec.pressureExponent };
-  });
-  return { ...model, climbPowerRatings: { ...model.climbPowerRatings, combat: { gears: { hydraulic: curve } } } };
-}
 
 function reached(run) {
   if (run.status !== 'reached') throw Error('G-6 chart replay failed at ' + run.targetFt + ' ft: ' + run.status);
@@ -117,12 +92,13 @@ function powerBudgets(data, base, chart, kg, reads) {
 }
 
 function run(data) {
-  const base = data.models[id], spec = data.specification.aircraft[id];
+  const current = data.models[id], spec = data.specification.aircraft[id];
+  const base = { ...current, climbPowerRatings: { ...current.climbPowerRatings, combat: current.previousCombatClimbRating } };
   const reads = observations().rows.filter(row => row.tasKmh !== null);
   const kg = sources.g6.weightKg.reportProse;
   const primary = readPressure(sources.g6), crossCheck = readPressure(sources.g1);
   const chartModel = offset => withMeasuredPressure(base, spec, primary, offset);
-  const chart = chartModel(0), tolerance = sources.g6.calibration.readAllowanceAta;
+  const chart = current, tolerance = sources.g6.calibration.readAllowanceAta;
   const regulated = primary.filter(row => row.altKm <= 5);
   const plateauOffset = spec.combat.map - regulated.reduce((sum, row) => sum + row.ata, 0) / regulated.length;
   const nominalBurn = sources.engine.climbSpecificFuelGPerPsHour;
@@ -137,7 +113,7 @@ function run(data) {
   });
   return {
     schema: 'ww2-g6-high-altitude-climb/v1', aircraft: id, simulatorVersion: require('../../package.json').version,
-    role: 'Diagnostic pressure substitution from the same G-6 trial. The G-1 pressure readings are an independent installation check only. Rates and times from each plate share a flight lineage.',
+    role: 'Operating combat climb uses measured pressure from this G-6 trial. Baseline retains the earlier G-2 transfer. The G-1 pressure readings are an independent installation check only. Rates and times from each plate share a flight lineage.',
     sources: { g6: sources.g6.url, g1: sources.g1.url, engine: sources.engine.url },
     manifoldPressure: { g6: primary, g1: crossCheck },
     plateauAlignmentOffsetAta: round(plateauOffset, 3),

@@ -22,7 +22,9 @@ const { models, specification } = data;
 const { aircraft, policy } = specification;
 const ids = [HF, G2, D, FIX, G6];
 assert.deepEqual(Object.keys(models).slice(-5), ids);
-const preceding = scorecard({ models, specification: {
+// Reconstruct the frozen 4.16 high-gear branch for the original ten-aircraft hash.
+const legacyHF = require('../validation/diagnostics/fleet_evidence.cjs').previousHFModel(models[HF]);
+const preceding = scorecard({ models: { ...models, [HF]: legacyHF }, specification: {
   ...specification, aircraft: Object.fromEntries(Object.entries(aircraft).filter(([id]) => id !== FIX && id !== G6)),
 } });
 assert.equal(preceding.length, 10);
@@ -65,7 +67,7 @@ assert.ok(replay.crossover[3].modeledDifferenceMph > 0);
 assert.deepEqual(replay.aircraft.map(row => row.id), ids);
 for (const [i, check] of replay.aircraft.slice(0, 3).entries()) {
   assert.equal(check.id, ids[i]);
-  assert.deepEqual(check.level.filter(row => row.role === 'fit').map(row => row.error), [0]);
+  assert.deepEqual(check.level.filter(row => row.role === 'fit').map(row => row.error), check.id === HF ? [0, 0] : [0]);
   assert.ok([...check.level, ...check.climb].every(row => Number.isFinite(row.error)));
   assert.ok(check.levelMaeMph < 8 && check.climbMaeFpm < 300);
 }
@@ -84,7 +86,8 @@ assert.equal(g6.level.find(row => row.role === 'fit').error, 0);
 assert.equal(g6.level.filter(row => Number.isFinite(row.error)).length, 3);
 assert.equal(g6.climbMaeFpm, null);
 assert.equal(g6.ceiling.observedAltFt, 36515.75);
-assert.ok(g6.ceiling.modeled100FpmAltFt > 33000 && g6.ceiling.modeledRateAtObservedFpm < 0);
+assert.ok(Math.abs(g6.ceiling.modeled100FpmAltFt - g6.ceiling.observedAltFt) < 400);
+assert.ok(g6.ceiling.modeledRateAtObservedFpm > 100 && g6.ceiling.modeledRateAtObservedFpm < 170);
 assert.ok(g6.level.filter(row => row.role.startsWith('attachment')).every(row => row.predicted === null));
 assert.ok(aircraft[G6].climbProjectionOnly);
 assert.equal(aircraft[G6].combat.map, 1.3);

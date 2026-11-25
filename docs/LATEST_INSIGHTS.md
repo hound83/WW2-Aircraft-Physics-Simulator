@@ -1,8 +1,10 @@
 # Latest insights
 
+[4.17 delivered the evidence sweep and speed/climb validation](V417_EVIDENCE_AND_PERFORMANCE.md). Next: clean-stall and timed level-acceleration comparisons. The following entries record earlier decisions.
+
 Pointer file for agents starting a new milestone. Not a second model of record. Prefer the merged state on `main` plus any open PRs.
 
-## Current priorities after 4.16
+## Previous priorities after 4.16
 
 The [simulator roadmap](SIMULATOR_ROADMAP.md) places the flight-test evidence sweep first, followed by speed and climb, clean stall and level acceleration, then sustained turn. The sweep includes directly measured roll performance. [Released benchmark](V416_PERFORMANCE_BENCHMARK.md)
 

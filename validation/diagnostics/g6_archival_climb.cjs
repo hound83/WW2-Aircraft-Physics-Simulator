@@ -67,7 +67,7 @@ function evidence(data) {
   }
   const common = { qualifier: 'Messerschmitt WNr 16476 climb chart', grade: 'report-conditioned',
     source: plate.source.url + '#page=7',
-    reference: 'One climb campaign, 3,260 kg takeoff held fixed, 1.3 ata and 2,600 rpm. Uses the plotted true climb speed and the existing estimated power and cooling. Model minus curve read. Rate and time share one trial.' };
+    reference: 'One climb campaign, 3,260 kg takeoff held fixed, 1.3 ata and 2,600 rpm. Uses the plotted true speed and same-trial manifold pressure. Shaft power and cooling drag are estimated. Model minus curve read. Rate and time share one trial.' };
   return { climb: { ...common, rows: rate }, elapsed: { ...common, rows: elapsed } };
 }
 

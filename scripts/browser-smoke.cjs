@@ -995,9 +995,13 @@ async function run(){
   assert.equal(secondBatchClimbs.a.status,'reached');assert.equal(secondBatchClimbs.b.status,'reached');
   checks.push('BF.274 and WNr 16476 are selectable, expose matched source checks, and calculate timed climbs');
   await select('bench-archive-group','later');
-  assert.match(await evaluate('document.getElementById("bench-archive-results").textContent'),/30,000\+18\+29.7\+11.7/);
+  assert.match(await evaluate('document.getElementById("bench-archive-results").textContent'),/30,000\+18\+18(?:-0|0)/);
   assert.match(await evaluate('document.getElementById("bench-factory-results").textContent'),/\+167/);
   assert.equal(await evaluate('document.querySelectorAll("#bench-phase-data svg").length'),3);
+  assert.equal(await evaluate('document.querySelectorAll("#bench-sweep-results > div:first-child tbody tr").length'),14);
+  await select('bench-sweep-aircraft','spitfire_hfix_bs551');
+  assert.match(await evaluate('document.getElementById("bench-sweep-results").textContent'),/EN.524/);
+  assert.match(await evaluate('document.getElementById("bench-sweep-results").textContent'),/P-47B81/);
   const fleetIds=await evaluate('Object.keys(OperatingBenchmarkUI.data.models)');
   const matrix=[];
   for(const id of fleetIds)matrix.push(...await evaluate('('+require('./browser-fleet-matrix.cjs').toString()+')('+JSON.stringify(id)+')'));

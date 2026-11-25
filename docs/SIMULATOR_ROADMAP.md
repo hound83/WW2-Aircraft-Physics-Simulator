@@ -2,7 +2,7 @@
 
 25 November 2026 · Starting point: [4.16 fourteen-aircraft benchmark](V416_PERFORMANCE_BENCHMARK.md)
 
-**Next milestone: establish what we can trust about the 14 aircraft already in the simulator.** First collect missing measurements. Then use them to check level speed and climb across altitude. Start collecting roll rate in the same sweep. Aircraft comparisons should tell the reader how large the observed difference is, at which speeds or altitudes it holds, and whether the model reproduces it.
+**Milestones 1 and 2 delivered together in [4.17](V417_EVIDENCE_AND_PERFORMANCE.md). Next is clean stall and straight-line acceleration (milestone 3).** The original scope was to establish what we can trust about the 14 aircraft already in the simulator. First collect missing measurements. Then use them to check level speed and climb across altitude. Start collecting roll rate in the same sweep. Aircraft comparisons should tell the reader how large the observed difference is, at which speeds or altitudes it holds, and whether the model reproduces it.
 
 ## Milestones in delivery order
 

@@ -31,3 +31,31 @@ assert.equal(h.maneuvers[1].exit,null);
 assert.equal(h.maneuvers[1].figure.recordedFigureLabelMaxKias,255);
 assert.equal(h.maneuvers[1].figure.secondaryTargetKias,242);
 for(const m of h.maneuvers)assert.ok(m.model.trace.every(p=>p.every(Number.isFinite)));
+
+const sweep=data.sweep;
+assert.equal(sweep.aircraft.length,14);
+assert.deepEqual(sweep.metrics,['level','climb','elapsed','stall','acceleration','roll']);
+for(const aircraft of sweep.aircraft){
+ for(const metric of sweep.metrics){
+  const cell=aircraft.cells[metric];
+  assert.ok(Array.isArray(cell.groups)&&cell.next.length>0,aircraft.id+' '+metric);
+ }
+ for(const groups of Object.values(aircraft.bands)){
+  assert.ok(groups.every(b=>b.count>0&&Number.isFinite(b.signedMean)&&b.absoluteMean>=Math.abs(b.signedMean)));
+ }
+}
+const hf=data.intakeChecks.aircraft.find(r=>r.id===h.ids.hf);
+assert.deepEqual(hf.level.filter(r=>r.role==='fit').map(r=>r.altFt),[0,27400]);
+assert.ok(Math.abs(h.crossover.at(-1).modeledDifferenceMph-18)<.1);
+const en=sweep.holdout;
+assert.equal(en.level.length,17);
+const comparable=en.level.filter(r=>r.after!==null);
+assert.equal(comparable.length,13);
+const mae=field=>comparable.reduce((n,r)=>n+Math.abs(r[field]-r.observed),0)/comparable.length;
+assert.ok(mae('before')>9&&mae('after')<4.5);
+assert.ok(en.level.filter(r=>r.gear==='low').every(r=>r.after===r.before));
+assert.equal(en.climb.at(-1).observedSeconds,1215);
+assert.equal(en.climb.at(-1).seconds,null);
+const rollPair=sweep.roll.find(r=>r.ids.includes('p51b'));
+assert.deepEqual(rollPair.points.map(r=>r.rateDegS),[81,71]);
+assert.ok(sweep.roll.find(r=>r.ids.includes('p38g')).grade.includes('variant'));

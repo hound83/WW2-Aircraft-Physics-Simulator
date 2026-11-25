@@ -1,5 +1,7 @@
 # Known limitations
 
+[4.17 speed and climb](V417_EVIDENCE_AND_PERFORMANCE.md) documents the two early-aircraft climb-clock errors, the G-6 lower-altitude shortfall, the HF IX high-altitude residual and the domain of the roll observations.
+
 ## v4.15-rc.1 fleet maneuver and energy
 
 The level turn assumes instantaneous bank and rollout. Loaded-turn drag uses the shared induced-drag equation, with the larger uncertainty shown in the tested timing ranges. Intake lift limits use stored family or handbook priors. None of the twelve profiles has a matched historical 180° turn plus recovery trace. The 360° MT-215 time and P-51B lift checks cover parts of the model. Clean stall accuracy still rests on the P-38G sister-airframe check and the conditional F4U-4 transfers. [Fleet scorecard and evidence gaps](V415_FLEET_MANEUVER_ENERGY.md)
