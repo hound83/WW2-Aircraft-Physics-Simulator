@@ -108,7 +108,7 @@ function secondBatchChecks(selected) {
     { id: FIX, label: 'Spitfire F Mk IX BF.274', level: fLevel, climb: fClimb, elapsed: fElapsed, dragReference: dragReference(fix),
       scope: 'Clean Tables I, II and IV. Level fit at 6,000 ft. The original trial was allowed to climb continuously at Combat power. The operating timer enforces the five-minute allowance.' },
     { id: G6, label: 'Bf 109 G-6/Trop WNr 16476', level: gLevel, climb: [], ceiling, dragReference: dragReference(g6),
-      scope: 'Run 3b sets the level polar with pods, filter and covers. Other attachments stay at their source states. The climb ceiling is the available report check. Climb rates use transferred boost and estimated cooling.' },
+      scope: 'Run 3b sets the level polar with pods, filter and covers. Other attachments stay at their source states. The separate climb chart provides pressure, rates and elapsed times. Combat climb uses measured G-6 pressure, estimated shaft power and cooling. The reported ceiling has an unspecified rate criterion.' },
   ];
 }
 
@@ -118,7 +118,7 @@ function sourceChecks(base, catalog) {
   const hfLevel = hf.level.filter((r, i, rows) => !rows.some(x => x.alt_ft === r.alt_ft && x.speed > r.speed)).map(row => {
     const state = { altFt: row.alt_ft, weightLb: 7090, rpm: 2960, scaleForRpm: false };
     return result(row, state.altFt, row.speed, levelSpeed(hf.model, hf.spec, state),
-      row.alt_ft === 0 ? 'fit' : 'same-report speed check; boost used as power input', state.weightLb);
+      row.alt_ft === 0 || row.id === hf.model.hfLevelFit.source ? 'fit' : 'same-report speed check; boost used as power input', state.weightLb);
   });
   const hfClimb = hf.climbs.map(row => {
     const state = { altFt: row.alt_ft, weightLb: 7470, rpm: 2980, climbing: true };
@@ -166,7 +166,7 @@ function sourceChecks(base, catalog) {
   });
   const aircraft = [
     { id: HF, label: 'Spitfire HF Mk IX BS.551', level: hfLevel, climb: hfClimb,
-      scope: 'A&AEE Table VI and Table III at their respective weights. The sea-level Table VI row is fitted. The rest of the speed and climb observations are outside that fit.' },
+      scope: 'A&AEE Table VI and Table III at their respective weights. Table VI sea level sets the polar and 27,400 ft sets the high-gear level power factor. Other speed rows and the separate climb table are outside those fits.' },
     { id: G2, label: 'Bf 109 G-2 MT-215', level: g2Level, climb: g2Climb,
       scope: 'Finnish speeds and upper-climb scan, nominal 3,050 kg. The scan and transcription report different upper-climb rates. Both remain visible. The original run mass and installed shaft power remain open.' },
     { id: D, label: 'P-51D-15 44-15342', level: dLevel, climb: dClimb,

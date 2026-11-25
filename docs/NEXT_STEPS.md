@@ -1,6 +1,8 @@
 # Next steps
 
-Start with the [current simulator roadmap](SIMULATOR_ROADMAP.md). The next milestone is a flight-test evidence sweep for the 14 aircraft in 4.16, followed by level-speed and climb validation. Collect roll measurements in parallel.
+[4.17 delivered the evidence sweep and speed/climb validation](V417_EVIDENCE_AND_PERFORMANCE.md). Next: clean-stall and timed level-acceleration comparisons. The following entries record earlier decisions.
+
+See the [current simulator roadmap](SIMULATOR_ROADMAP.md) for the next acceptance checks.
 
 The dated entries below preserve earlier priorities and results.
 

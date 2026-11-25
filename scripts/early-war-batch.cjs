@@ -29,9 +29,22 @@ function germanPower(condition,altFt,measuredAta) {
   const map=measuredAta??sea.boost_ata*Math.min(1,M.isa(altFt).p/M.isa(peak.altitude_m/ft).p);
   return (sea.power_ps+(peak.power_ps-sea.power_ps)*fraction)*psToHp*map/sea.boost_ata;
 }
+function scheduledTas(id, spec, altFt) {
+  return id === E3 ? M.tasFrom(155, 'CAS', altFt) : B.interpolate(spec.climbTAS, altFt, 1);
+}
+
+// Height rate = specific excess power / (1 + V/g * dV/dh).
+// Use a centered local gradient inside the schedule and one-sided endpoint gradients.
+function energyHeightFactor(id, spec, altFt) {
+  const minFt = id === E3 ? spec.climbIAS[0][0] : spec.climbTAS[0][0];
+  const maxFt = id === E3 ? spec.climbIAS.at(-1)[0] : spec.climbTAS.at(-1)[0];
+  const low = Math.max(minFt, altFt - 10), high = Math.min(maxFt, altFt + 10);
+  const a = scheduledTas(id, spec, low), b = scheduledTas(id, spec, high);
+  return 1 + (b * b - a * a) * .44704 ** 2 / (2 * 9.80665 * ft * (high - low));
+}
 function climbFlight(id,model,spec,row) {
   const german=id===E3,altFt=row.altitude_ft,rpm=row.rpm,mode=german?'combat':'normal';
-  const tas=german?M.tasFrom(155,'CAS',altFt):B.interpolate(spec.climbTAS,altFt,1);
+  const tas=scheduledTas(id,spec,altFt);
   let trial=model;
   if(german){
     const ata=(pressurePsi+row.boost_gauge_psi)/14.22334;
@@ -45,7 +58,7 @@ function climbFlight(id,model,spec,row) {
 }
 function fitClimb(id,model,spec,row) {
   const test=climbFlight(id,model,spec,row),rate=row.point_roc_fpm??row.roc_ft_min;
-  const requiredHp=test.power.requiredHp+rate*.3048/60*model.ac.weightLb*4.4482216153/745.6998716;
+  const requiredHp=test.power.requiredHp+rate*energyHeightFactor(id,spec,row.altitude_ft)*.3048/60*model.ac.weightLb*4.4482216153/745.6998716;
   const requestedFactor=requiredHp/test.power.propulsiveHp;
   if(!(requestedFactor>0&&requestedFactor<=1))throw Error('Unsupported climb power correction for '+row.id);
   const factor=Math.max(.90,requestedFactor); // Lower limit of the shared propulsive-power scenario.
@@ -119,4 +132,4 @@ function make(base, helpers) {
   return {[E3]:{model:eModel,spec:eSpec,service:service(eAc,'germany',[1939,1941],sources['cema-p4'])},
     [VA]:{model:vaModel,spec:vaSpec,service:service(vaAc,'uk',[1941,1943],sources['aaee-va'])}};
 }
-module.exports={make,rows,sources,E3,VA,germanPower,mmPerAta,climbFlight};
+module.exports={make,rows,sources,E3,VA,germanPower,mmPerAta,climbFlight,scheduledTas,energyHeightFactor};

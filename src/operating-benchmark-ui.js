@@ -417,7 +417,7 @@
  }
  function renderIntakeChecks(){
   const target=$('bench-intake-check-results'),{crossover,aircraft}=data.intakeChecks;
-  target.append(text('p','Spitfire HF IX versus LF IX. A positive difference favors the HF. Table VI sea level is the HF drag fit.','bench-note'));
+  target.append(text('p','Spitfire HF IX versus LF IX. A positive difference favors the HF. Table VI sea level sets the HF drag fit and 27,400 ft sets the high-gear level-power estimate.','bench-note'));
   appendTable(target,['Altitude','Observed HF − LF (mph TAS)','Modeled HF − LF (mph TAS)'],
    crossover.map(row=>[heightLabel(row.altFt),fmt(row.observedDifferenceMph,1),fmt(row.modeledDifferenceMph,1)]));
   for(const check of aircraft){

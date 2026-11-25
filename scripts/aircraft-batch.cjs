@@ -165,6 +165,27 @@ function hfProfile(base, catalog) {
     ratingEvidence: 'Merlin 70 power uses published rating anchors, a sea-level estimate, and flight boost lapse. The Rotol efficiency and open-radiator drag area are estimates.',
     stallQualification: 'Provisional full-span BS.543 lift assumption at BS.551 loading. A&AEE matched wing and CG; BS.551 has no corrected stall run.',
   };
+  // The sea-level drag anchor constrains low gear. Estimate an effective
+  // high-gear power from its separate full-throttle-height level run. Hold the
+  // polar, RPM and propeller model fixed; horsepower is inferred, not measured.
+  const fullThrottle = high.find(row => row.alt_ft === 27400);
+  const polar = model.benchmarkPolar;
+  const drag = M.dragBreakdown(ac, fullThrottle.alt_ft, fullThrottle.speed, ac.weightLb, polar.cd0, polar.e);
+  const requiredW = drag.totalLbf * 4.4482216153 * fullThrottle.speed * .44704;
+  const originalHp = M.shaftPower(ac, fullThrottle.alt_ft, 'combat', 'high').bhp;
+  const asTested = { ...ac, propGeometry: { ...ac.propGeometry, engineRpmByRating: { combat: 2960 } } };
+  const powerW = hp => M.propEta(asTested, fullThrottle.alt_ft, fullThrottle.speed, hp, 'P', 'combat').eta * hp * 745.6998716;
+  let lower = 0.75 * originalHp, upper = 1.25 * originalHp;
+  if (!(powerW(lower) < requiredW && powerW(upper) > requiredW)) throw Error('HF high-gear anchor outside bounded power bracket');
+  for (let i = 0; i < 32; i++) {
+    const hp = (lower + upper) / 2;
+    if (powerW(hp) < requiredW) lower = hp;
+    else upper = hp;
+  }
+  const factor = (lower + upper) / (2 * originalHp);
+  model.hfLevelFit = { source: fullThrottle.id, altFt: fullThrottle.alt_ft, originalHp, factor };
+  levels.combat.gears.high = levels.combat.gears.high.map(row => ({ ...row, bhp: row.bhp * factor }));
+  spec.ratingEvidence += ' The BS.551 high-gear level run at 27,400 ft sets an effective installed-power factor. It does not identify engine torque separately from propeller efficiency or drag.';
   return { model, spec, level: [...low.map(row => ({ ...row, gear: 'low' })), ...high.map(row => ({ ...row, gear: 'high' }))], climbs,
     service: { group: 'mid', years: [1943, 1945], theatres: ['Western Europe'], displayName: ac.name, country: 'uk', source: sources.hf.url } };
 }
@@ -353,10 +374,13 @@ function g6Profile(base, catalog) {
     loadQualification: 'WNr 16476 run 3b and climb departure use 3,260 kg. Planning assumes 400 L at that loading. Stores and filter stay fixed.',
     climbProjectionOnly: true, levelObservationCeilingFt: critical.alt_m / FT,
     speedQualification: 'The report prescribes 260 km/h IAS in climb. Planning treats IAS as CAS. The source climb check is the reported ceiling.',
-    ratingEvidence: 'Level power uses the filtered critical height. Climb power uses a DB 605 A boost schedule transferred from the Finnish G-2 and an estimated cooling area.',
+    ratingEvidence: 'Level power uses the filtered critical height. Combat climb uses WNr 16476 manifold pressure at 2,600 rpm through 11 km, then an atmospheric pressure extrapolation. Normal climb retains a G-2 transfer. Installed shaft power and radiator drag remain estimated.',
     stallQualification: 'Provisional F-4 lift prior at G-6/Trop loading and G-wing geometry. The gun pods and tropical installation have no matched clean stall test.',
   };
-  return { model, spec, level, critical, climb,
+  const { readPressure, withMeasuredPressure, sources: pressureRecords } = require('./g6-climb-pressure.cjs');
+  const matched = withMeasuredPressure(model, spec, readPressure(pressureRecords.g6), 0);
+  matched.previousCombatClimbRating = model.climbPowerRatings.combat;
+  return { model: matched, spec, level, critical, climb,
     service: { group: 'mid', years: [1943, 1945], theatres: ['Mediterranean', 'Western Europe', 'Eastern Front'],
       displayName: ac.name, country: 'germany', source: sources.g6.url } };
 }

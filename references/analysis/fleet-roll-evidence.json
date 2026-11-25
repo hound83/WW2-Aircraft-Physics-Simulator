@@ -1,0 +1,80 @@
+[
+  {
+    "ids": [
+      "p47b",
+      "p51b"
+    ],
+    "aircraft": "P-47B / P-51B",
+    "grade": "Wartime type comparison",
+    "source": "https://www.wwiiaircraftperformance.org/mustang/Performance_Data_on_Fighter_Aircraft.pdf",
+    "locator": "USAAF, 25 July 1944, paragraph 2 and Table I",
+    "condition": "10,000 ft density altitude, 400 mph (basis unspecified in memo), 50 lb stick force, representative gross weights. Direction and P-51B block unspecified.",
+    "points": [
+      {
+        "aircraft": "P-47B",
+        "weightLb": 13350,
+        "rateDegS": 81
+      },
+      {
+        "aircraft": "P-51B",
+        "weightLb": 9500,
+        "rateDegS": 71
+      }
+    ]
+  },
+  {
+    "ids": [
+      "p38g"
+    ],
+    "aircraft": "P-38J",
+    "grade": "Related variant",
+    "source": "https://www.wwiiaircraftperformance.org/mustang/Performance_Data_on_Fighter_Aircraft.pdf",
+    "locator": "USAAF, 25 July 1944, paragraph 2 and Table I",
+    "condition": "400 mph at 10,000 ft density altitude, 80 lb wheel force, 17,360 lb. The unboosted J result is test-based. The 150°/s boosted figure is a period estimate. Neither is a P-38G observation.",
+    "points": [
+      {
+        "aircraft": "P-38J unboosted",
+        "weightLb": 17360,
+        "rateDegS": 70
+      }
+    ]
+  },
+  {
+    "ids": [
+      "spitfire_va_x4922"
+    ],
+    "aircraft": "Va W.3119",
+    "grade": "Sister aircraft",
+    "source": "https://ntrs.nasa.gov/citations/19930092582",
+    "locator": "NACA L-334, lateral control and Fig. 27; existing W.3119 register",
+    "condition": "230 mph indicated, 6,000 ft, 30 lb. W.3119 had a Rotol propeller. Figure 27 supplies 12 direction-specific helix-angle observations; its ordinates use pb/2V.",
+    "points": [
+      {
+        "aircraft": "Va W.3119",
+        "rateDegS": 59
+      }
+    ]
+  },
+  {
+    "ids": [
+      "p47b"
+    ],
+    "aircraft": "P-47C-1-RE",
+    "grade": "Related variant",
+    "source": "https://ntrs.nasa.gov/citations/19930092577",
+    "locator": "NACA L-525, Fig. 6",
+    "condition": "150–405 mph indicated at about 4,000 ft. The chart reports rolling effectiveness. Its C-model aileron nose differs from the B.",
+    "points": []
+  },
+  {
+    "ids": [
+      "fw190a4"
+    ],
+    "aircraft": "Fw 190 A-3",
+    "grade": "Qualitative family evidence",
+    "source": "https://www.wwiiaircraftperformance.com/com/gb/documents/fw190a3_RAE-Test-Jul42-new.html",
+    "locator": "British comparative trials, July 1942",
+    "condition": "The qualitative comparisons concern a captured A-3. Recover an A-4 speed-indexed instrumented trial to score the modeled aircraft.",
+    "points": []
+  }
+]

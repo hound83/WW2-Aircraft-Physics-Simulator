@@ -138,7 +138,8 @@ function build(){
  const fleetReport=fleet.report({data:benchmark,catalog:researchCatalog,intake:intakeChecks,
   stallReferences,acceleration:accelerationEvidence,poweredTurn});
  const historical=require('../validation/diagnostics/benchmark_history.cjs').build(benchmark,researchCatalog,fleetReport,intakeChecks,accelerationEvidence);
- const benchmarkData=JSON.stringify({...benchmark,stallReferences,intakeChecks,turnDrag,accelerationEvidence,poweredTurn,historical,
+ const sweep=require('../validation/diagnostics/fleet_evidence.cjs').build(benchmark,fleetReport);
+ const benchmarkData=JSON.stringify({...benchmark,stallReferences,intakeChecks,turnDrag,accelerationEvidence,poweredTurn,historical,sweep,
   fleetValidation:fleet.browserData(fleetReport),
   sourceGrades:{cases:inputs.cases,coverage,observations,sources,tolerances:inputs.tolerances}});
  const turnPerformance=read('src/turn-performance.js');
@@ -168,7 +169,7 @@ function build(){
  const efficiencyData=read(propeller.path);
  if(sha256(efficiencyData)!==propeller.sha256)throw Error('Propeller efficiency data and input pack disagree');
  fs.writeFileSync(path.join(root,'dist',propeller.build_file),efficiencyData);
- const metadata={version,researchStatus:'Fourteen-aircraft benchmark with flight-test residuals and measured maneuver phases',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,gregDragModelsFile:dragFile,gregDragModelsSha256:sha256(dragData),researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
+ const metadata={version,researchStatus:'Fourteen-aircraft flight-test evidence, roll observations and altitude-banded speed and climb validation',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,gregDragModelsFile:dragFile,gregDragModelsSha256:sha256(dragData),researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
  fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify(metadata,null,2)+'\n');
  fs.writeFileSync(path.join(root,'dist/fleet-validation.json'),JSON.stringify(fleetReport,null,2)+'\n');
  return metadata;

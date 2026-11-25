@@ -12,7 +12,7 @@ const { baseline, pressureOnly, pressureHigh, pressureLow, pressureAlignedToComm
 const band = (scenario, from, to) => scenario.bands.find(r => r.fromKm === from && r.toKm === to);
 
 for (const row of archived.elapsed.rows.filter(r => [5, 8, 10].includes(r.altKm))) {
-  assert.equal(band(baseline, 0, row.altKm).modeledS, row.predicted);
+  assert.equal(band(pressureOnly, 0, row.altKm).modeledS, row.predicted);
 }
 assert.equal(band(baseline, 8, 10).observedS, 390);
 assert.equal(band(baseline, 8, 10).endpointReadAllowanceS, 36);
