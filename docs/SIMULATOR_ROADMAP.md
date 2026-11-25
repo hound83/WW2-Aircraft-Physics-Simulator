@@ -26,6 +26,6 @@ Publish all 42 aircraft/metric results, showing model values and identifying dir
 
 ## After M3
 
-Roll rate versus airspeed and the comparison display each have one session outside the eight-session milestone. Preserve test force alongside roll measurements when supplied. Further work on pilot strength can wait. Sustained level turn is the next major milestone once the clean lift boundary and straight-flight power balance support one well-documented pair. [Existing maneuver evidence](V415_FLEET_MANEUVER_ENERGY.md)
+Roll rate versus airspeed and the comparison display each have one session outside the eight-session milestone. Preserve test force alongside roll measurements when supplied. Further work on pilot strength can wait. Use the same fleet approach for sustained level turn. Once M3 establishes the usable lift and power ranges, run the turn comparison across the roster and check it against every suitably documented pair. [Existing maneuver evidence](V415_FLEET_MANEUVER_ENERGY.md)
 
 Add an aircraft or revisit propeller efficiency, radiator drag or engine power when a matched test identifies a comparison the change can improve. Full turn-to-recovery modeling needs a continuous timed record.
