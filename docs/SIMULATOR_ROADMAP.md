@@ -19,7 +19,7 @@ These are comparisons at the respective test conditions. The G-2 and G-6 trials 
 
 ### Sim Data Input handoff
 
-Sim Data Input owns source discovery, transcription and grading. Its current work covers the fleet climb records, full-span Spitfire IX stall and Finnish G-2 timed acceleration. The simulator consumes each supplied observation with its aircraft configuration, test conditions, units, source and uncertainty. A traceable secondary observation can appear immediately with its provisional grade and primary-source follow-up. A later source revision updates the same observation. M3 incorporates the reviewed fleet-climb, Spitfire IX stall and Finnish G-2 batch. [Sim Data Input research roadmap](research/WW2_AIRCRAFT_INPUT_RESEARCH_ROADMAP_2026-11-25.md)
+Sim Data Input owns source discovery, transcription and grading. The simulator consumes each supplied observation with its aircraft configuration, test conditions, units, source and uncertainty. A traceable secondary observation can appear immediately with its provisional grade and primary-source follow-up. A later source revision updates the same observation. M3 incorporates the reviewed fleet-climb, Spitfire IX stall and Finnish G-2 batch. The subsequent comparative intake adds 332 source rows covering the current roster, with the original trials, secondary compilations and profile matches available together. [Comparative flight data](research/FLEET_COMPARATIVE_DATA_2026-11-27.md) · [Sim Data Input research roadmap](research/WW2_AIRCRAFT_INPUT_RESEARCH_ROADMAP_2026-11-25.md)
 
 ### Fleet release check
 
