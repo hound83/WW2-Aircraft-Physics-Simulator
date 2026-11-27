@@ -24,6 +24,7 @@
  const accelerationInputs=[$('bench-acceleration-from'),$('bench-acceleration-to')],accelerationSpeeds=[180,300];
  const text=(tag,value,className)=>{const e=document.createElement(tag);if(value!==undefined)e.textContent=value;if(className)e.className=className;return e;};
  const shortName=id=>service.aircraft[id].displayName;
+ const steadyUI=FleetSteadyTurnUI.setup({M,T,L,data,api,text,appendTable,shortName,fmt});
  const fleetUI=FleetComparisonUI.setup({api,data,text,appendTable,shortName,fmt,speed,fromHeight,toHeight});
  let allAircraftChoice='spitfire_lfix_bs543';
  function aircraftOptions(select,ids,preferred){
@@ -183,6 +184,8 @@
    'Squares mark peak turn rate and best climb speed (Vy). The grey guide shows 3°/s.';
   const samples=new Map();
   if(includesIntake){
+   const steadyLink=text('a','Compare sustained rates at a fixed speed.');
+   steadyLink.href='#bench-steady-turn';$('bench-plot-note').append(' ',steadyLink);
    const maneuverLink=text('a','Inspect the provisional 180° maneuver.');
    maneuverLink.href='#bench-maneuver';$('bench-plot-note').append(' ',maneuverLink);
   }
@@ -460,7 +463,7 @@
    return [side,B.metrics(M,T,L,models[chosen.id],specs.aircraft[chosen.id],specs.policy,chosen.settings,alt)];
   }));
   for(const side of sides){api.rows[side]=current[side];renderSide(side);}
-  fleetUI.stall();
+  fleetUI.stall();steadyUI.render();
   plot(alt);renderAltitudeOverview(alt);
   const turn=turnUnit(),a=api.rows.a[turn.peak],b=api.rows.b[turn.peak],verdict=peakVerdict(a,b,turn);
   const comparison=$('bench-comparison');comparison.replaceChildren();
@@ -501,7 +504,7 @@
  $('bench-speed-unit').addEventListener('change',()=>{
   for(const side of ['a','b'])renderSide(side);
   const alt=Number($('bench-altitude').value);
-  plot(alt);renderAltitudeOverview(alt);showAccelerationInputs();fleetUI.stall();
+  plot(alt);renderAltitudeOverview(alt);showAccelerationInputs();fleetUI.stall();steadyUI.render();
   if(api.accelerations)renderAcceleration();
   maneuver.render();
  });

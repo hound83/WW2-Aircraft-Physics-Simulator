@@ -1,5 +1,9 @@
 # Latest insights
 
+## M4 fleet sustained turns · 4.19.0-rc.1
+
+At 210 mph EAS and 10,000 ft, 13 of 91 pairings keep a clear modeled lead across the tested input ranges. Figure 9 supplies a direct check on the restored Mustang proxy, which is 0.94 g low at 130 KIAS. [Sustained-turn evidence and 14-aircraft results](V419_FLEET_STEADY_TURN.md)
+
 ## M3 fleet comparison · 4.18.0-rc.1
 
 The selected-pair screen now shows how much the simulator understates the two reference climb gaps, by 58 s and 37 s. The restored Mustang accelerates through the two matched speed bands 7 s and 10 s more slowly than its wartime proxy. Those differences survive the interval and chart corrections. [Fleet scorecard](V418_FLEET_COMPARISON.md)

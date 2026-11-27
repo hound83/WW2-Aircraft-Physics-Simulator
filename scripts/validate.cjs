@@ -105,6 +105,8 @@ try{
  const md=[
  '# Current validation',
  '',
+ 'v4.19-rc.1 [Fleet sustained turn, matched conditions and evidence](V419_FLEET_STEADY_TURN.md).',
+ '',
  'v4.17-rc.1 [Fleet flight-test evidence, roll observations and altitude-banded speed/climb checks](V417_EVIDENCE_AND_PERFORMANCE.md).',
  'v4.16-rc.1 [Fourteen-aircraft performance benchmark](V416_PERFORMANCE_BENCHMARK.md).',
  'v4.15-rc.1 [Fleet maneuver and energy report](V415_FLEET_MANEUVER_ENERGY.md). [Numerical scorecard](../validation/current/fleet-validation.json).',

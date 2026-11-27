@@ -1,5 +1,9 @@
 # Simulator development roadmap
 
+## M4 · Fleet sustained level turns
+
+4.19.0-rc.1 compares all 14 profiles at a shared speed, altitude and rating. It also compares equal gross weights when both profiles support the selected mass. Primary restored-aircraft measurements, a secondary wartime turn record and external simulation results retain their test conditions and source grades. M5 is the next roster-intake milestone. [M4 fleet scorecard](V419_FLEET_STEADY_TURN.md)
+
 ## M3 · One fleet-wide comparison milestone
 
 4.18.0-rc.1 combines common-height climb, clean stall at selected weight, common-speed level acceleration, measured lead and uncertainty, and achieved roll rate. One release covers all 14 profiles. The earlier ten-session estimate described the relative effort. Implementation, evidence intake, browser testing, integration and publication belong to the same assignment. [Fleet results, before/after scorecard and sources](V418_FLEET_COMPARISON.md)
@@ -21,7 +25,6 @@ Sim Data Input owns source discovery, transcription and grading. Its current wor
 
 The [release scorecard](V418_FLEET_COMPARISON.md) covers **14 aircraft × 3 performance metrics**. Include predictions, measured errors where available, changes to aircraft ordering and material regressions. Run the four reference speed/climb checks and test accepted physics changes against observations reserved from fitting. If the evidence cannot distinguish a cause, ship the replay and its measured discrepancy. Confirm that the comparison screen and numerical report agree on the two examples above.
 
-## After M3
+## After M4
 
-- **M4 · Sustained level turn.** Use the accepted lift and power calculations to compare steady turn rate or time at a common speed, altitude, weight and rating. Run it across the roster and show which differences hold up against suitable steady-turn measurements. [Existing turn model and evidence](V415_FLEET_MANEUVER_ENERGY.md)
 - **M5 · New profiles through the same comparison workflow.** When Sim Data Input supplies suitable configurations, integrate the best-supported batch, starting with the Spitfire I/E-3 comparison and F6F-3 candidate. Require each new profile to work with the same controls, comparisons and fleet regression. [Candidate readiness criteria](research/WW2_AIRCRAFT_INPUT_RESEARCH_ROADMAP_2026-11-25.md)

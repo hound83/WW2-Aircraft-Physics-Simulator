@@ -144,7 +144,9 @@ function build(){
  const stallChecks=Object.fromEntries(fleetReport.aircraft.map(a=>[a.id,a.evidence.stall.flatMap(g=>
   g.checks.filter(r=>Number.isFinite(r.error)).map(r=>({grade:g.grade,weightLb:r.weightLb,
    observed:r.observed,predicted:r.predicted,unit:g.unit,source:g.source}))) ]));
- const benchmarkData=JSON.stringify({...benchmark,stallChecks,restoredAcceleration:fleetReport.restoredAcceleration,earlyStall:require('../validation/diagnostics/historical_flight_comparison.cjs').earlyStallReferences(),trialClocks,stallReferences,intakeChecks,turnDrag,accelerationEvidence,poweredTurn,historical,sweep,
+ const steadyTurn=require('../validation/diagnostics/fleet_steady_turn.cjs').build(benchmark,poweredTurn,inputs.tolerances);
+ const steadyEvidence={ellis:steadyTurn.ellis,finnish:steadyTurn.finnish,simulation:steadyTurn.simulation};
+ const benchmarkData=JSON.stringify({...benchmark,steadyEvidence,stallChecks,restoredAcceleration:fleetReport.restoredAcceleration,earlyStall:require('../validation/diagnostics/historical_flight_comparison.cjs').earlyStallReferences(),trialClocks,stallReferences,intakeChecks,turnDrag,accelerationEvidence,poweredTurn,historical,sweep,
   fleetValidation:fleet.browserData(fleetReport),
   sourceGrades:{cases:inputs.cases,coverage,observations,sources,tolerances:inputs.tolerances}});
  const turnPerformance=read('src/turn-performance.js');
@@ -154,7 +156,7 @@ function build(){
  const graphEvidence=read('src/benchmark-graph-evidence.js');
  const benchmarkChart=read('src/operating-benchmark-chart.js');
  const benchmarkService=read('src/benchmark-service-context.js');
- const benchmarkUI=read('src/fleet-comparison.js')+'\n'+read('src/fleet-comparison-ui.js')+'\n'+read('src/benchmark-history-ui.js')+'\n'+read('src/operating-benchmark-ui.js');
+ const benchmarkUI=read('src/fleet-steady-turn.js')+'\n'+read('src/fleet-steady-turn-ui.js')+'\n'+read('src/fleet-comparison.js')+'\n'+read('src/fleet-comparison-ui.js')+'\n'+read('src/benchmark-history-ui.js')+'\n'+read('src/operating-benchmark-ui.js');
  const stallReferencesUI=read('src/provisional-stall-loader.js');
  const maneuver=read('src/benchmark-maneuver.js'),maneuverUI=read('src/benchmark-maneuver-ui.js');
  if([benchmarkData,turnPerformance,matchup,turnComparison,benchmarkSource,graphEvidence,benchmarkChart,benchmarkService,benchmarkUI,stallReferencesUI,maneuver,maneuverUI].some(text=>/<\/script/i.test(text)))throw Error('Unsafe operating benchmark embed');
@@ -176,7 +178,7 @@ function build(){
  fs.writeFileSync(path.join(root,'dist',propeller.build_file),efficiencyData);
  const metadata={version,researchStatus:'Fourteen-aircraft flight-test evidence, roll observations and altitude-banded speed and climb validation',workingCalibration:'2.8.0',climbConditionCalibration:'3.1.0',sourceConfigurationCalibration:'3.4.0',releaseStage:'research-candidate',workingProfile:'P',legacyProfile:'C',template:'releases/baseline-v2.5.html',researchSchema:researchCatalog.schema,researchFingerprint:researchCatalog.fingerprint,researchObservations:researchCatalog.summary.observation_count,gregDragModelsFile:dragFile,gregDragModelsSha256:sha256(dragData),researchSources:researchCatalog.summary.source_count,flightEnvelopeSha256:sha256(flightEnvelope),physicsSha256:sha256(engine),casesSha256:sha256(cases),storesSha256:sha256(stores),htmlSha256:sha256(html),bytes:Buffer.byteLength(html),browserInteractionTested:false};
  fs.writeFileSync(path.join(root,'dist/build.json'),JSON.stringify(metadata,null,2)+'\n');
- fs.writeFileSync(path.join(root,'dist/fleet-validation.json'),JSON.stringify(fleetReport,null,2)+'\n');
+ fs.writeFileSync(path.join(root,'dist/fleet-validation.json'),JSON.stringify({...fleetReport,steadyTurn},null,2)+'\n');
  return metadata;
 }
 if(require.main===module)console.log(JSON.stringify(build(),null,2));
