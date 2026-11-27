@@ -28,7 +28,8 @@ assert.equal(Math.round(h.factory.scenarios.pressureOnly[1].errorS),14);
 assert.equal(Math.round(h.factory.scenarios.pressureAlignedToCommand[1].errorS),60);
 assert.equal(h.maneuvers[0].estimate,16.6);
 assert.equal(h.maneuvers[1].exit,null);
-assert.equal(h.maneuvers[1].figure.recordedFigureLabelMaxKias,255);
+assert.deepEqual(h.maneuvers[1].figure.observed60sKias,[211,215]);
+assert.equal(h.maneuvers[1].figure.points.at(-1).value,238);
 assert.equal(h.maneuvers[1].figure.secondaryTargetKias,242);
 for(const m of h.maneuvers)assert.ok(m.model.trace.every(p=>p.every(Number.isFinite)));
 

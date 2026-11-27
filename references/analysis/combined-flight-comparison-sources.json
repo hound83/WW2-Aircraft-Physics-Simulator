@@ -485,71 +485,16 @@
   "restored": {
     "study": "Ellis and Wheal, Sport Aviation, June 1990",
     "paper": "https://www.wwiiaircraftperformance.com/com/others/endingtheargument.html",
-    "printedFig8": "https://ww2aircraft.net/forum/attachments/eta-6-jpg.469533/",
+    "printedFig8": "https://www.wwiiaircraftperformance.com/com/others/endingtheargument_files/figure8.jpg",
     "locator": "Table I takeoff weights; Table II cruise power-off and decelerating 3g stall; printed Fig. 8 p. 52, Figure 8 caption and Level Accelerations; Table VI level 180° heading change.",
-    "conditions": "Restored aircraft. Figure 8 level accelerations used METO at 10,000 ft MSL and 50 °F. The horizontal axis is time to maximum speed and the vertical axis is indicated speed at 60 seconds. Table VI separately began straight and level at 220 knots, 10,000 ft MSL, METO. No tabulated turn exit or subsequent recovery speed history. Table II speed unit is knots as reported. Takeoff weights are not event weights.",
-    "figurePrecision": "Bracketing the printed marker footprint and grid, including manual reading uncertainty. Maximum speed is labelled KIAS. The primary Mustang marker is labelled 255; the secondary 242 KIAS endpoint is retained at its own definition.",
-    "columns": [
-      "aircraft",
-      "serial",
-      "takeoffLb",
-      "fig8KiasAt60Low",
-      "fig8KiasAt60High",
-      "fig8SecondsToMaxLow",
-      "fig8SecondsToMaxHigh",
-      "tableVISeconds180",
-      "tableIICruiseOffStallKt",
-      "tableII3gDecayingStallKt"
-    ],
+    "conditions": "Restored aircraft. Figure 8 level accelerations used METO at 10,000 ft MSL and 50 °F. Figure 8 plots airspeed in KIAS against elapsed time in seconds. Table VI separately began straight and level at 220 knots, 10,000 ft MSL, METO. No tabulated turn exit or subsequent recovery speed history. Table II speed unit is knots as reported. Takeoff weights are not event weights.",
+    "figurePrecision": "Corrected marker series and reading allowance are in m3-figure8-readings.csv. The plotted record does not establish a maximum speed or time to maximum.",
+    "columns": ["aircraft", "serial", "takeoffLb", "tableVISeconds180", "tableIICruiseOffStallKt", "tableII3gDecayingStallKt"],
     "rows": [
-      [
-        "P-47D-40",
-        "45-49181",
-        11535,
-        169,
-        175,
-        125,
-        145,
-        9.7,
-        97,
-        109
-      ],
-      [
-        "FG-1D",
-        "Bu 92509",
-        11055,
-        167,
-        172,
-        125,
-        145,
-        8.5,
-        85,
-        98
-      ],
-      [
-        "F6F-5",
-        "Bu 79683",
-        10681,
-        177,
-        183,
-        390,
-        420,
-        9.9,
-        68,
-        95
-      ],
-      [
-        "P-51D",
-        "45-11586",
-        8900,
-        195,
-        200,
-        125,
-        145,
-        10,
-        87,
-        122
-      ]
+      ["P-47D-40", "45-49181", 11535, 9.7, 97, 109],
+      ["FG-1D", "Bu 92509", 11055, 8.5, 85, 98],
+      ["F6F-5", "Bu 79683", 10681, 9.9, 68, 95],
+      ["P-51D", "45-11586", 8900, 10, 87, 122]
     ],
     "qualifications": [
       "P-47D exhaust turbocharger removed; both P-47D and FG-1D had underwing pylons.",

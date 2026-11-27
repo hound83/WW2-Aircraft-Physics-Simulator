@@ -47,6 +47,7 @@ assert.equal(dynamic.mt215[0].separateStraightSegmentEstimateSeconds, 16.6);
 assert.ok(dynamic.mt215.every(run => run.measuredRecoverySeconds === null));
 assert.equal(dynamic.restoredTrials.length, 4);
 assert.ok(dynamic.restoredTrials.every(run => run.turnExitKt === null && run.measuredRecoverySeconds === null));
-assert.equal(dynamic.restoredMustang.recordedFigureLabelMaxKias, 255);
+assert.deepEqual(dynamic.restoredMustang.observed60sKias,[211,215]);
+assert.equal(dynamic.restoredMustang.points.at(-1).value,238);
 assert.equal(dynamic.restoredMustang.secondaryTargetKias, 242);
 assert.equal(dynamic.recordedComplete180AndRecoveryTrials, 0);

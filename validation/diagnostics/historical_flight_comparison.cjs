@@ -125,6 +125,20 @@ function laterComparison(catalog) {
     caution:'Speeds use the higher supported gear-specific value at each height. Interpolate within a gear only. G-6 level speeds are native anchors, with no interpolation across the 6,420 m gap. Rate and elapsed sources are the aircraft-specific full-rating test climbs. G-6 values at English heights interpolate the printed curves. Missing entries retain their original domain or condition.' };
 }
 
+function earlyStallReferences() {
+  const result = {};
+  for (const [id, seriesId] of [['bf109e3_1304','1304-aaee-stall'],['spitfire_va_x4922','w3119-naca-stall']]) {
+    const series = early.series.find(s => s.id === seriesId);
+    const source = early.sources.find(s => s.id === series.source).url;
+    result[id] = earlyRows(seriesId).filter(r => r.flaps === 'up' && r.gear === 'up' && (!r.case || r.case === 'glide')).map(r => ({
+      source, description:r.case ? series.aircraft+' · sister aircraft, glide, ports '+r.gun_ports+' · '+
+        r.reported_indicated_mph+' mph indicated · approximately '+series.conditions.weight_lb_approx+' lb.' :
+        series.aircraft+' · '+r.asir_mph_source+' mph ASIR · event weight, power and airspeed correction unknown.'
+    }));
+  }
+  return result;
+}
+
 function dynamicComparison(acceleration) {
   const maxSegments = finn.relatedAcceleration.rows.filter(r => r.rating === 'Maximum');
   const turns = finn.relatedTurns.map(r => {
@@ -138,18 +152,18 @@ function dynamicComparison(acceleration) {
       speedLostKmh:r.startKmh-r.endKmh, measuredRecoverySeconds:null,
       separateStraightSegmentEstimateSeconds:span === r.startKmh-r.endKmh ? round(seconds) : null };
   });
-  const row = extra.restored.rows.find(r => r[1] === '45-11586');
+  const {mustang,figurePoints,low,high}=require('./restored_acceleration.cjs').chart();
   const simulated = acceleration.nominal.trace.find(r => r.seconds === 60).value;
   return { mt215:turns, accelerationSegments:maxSegments,
     reconstruction:'Overlapping speed span divided by total span times segment duration, summed over the two distinct level acceleration intervals. Assumes uniform acceleration inside each interval and compatible power, altitude and loading. It is not a recorded post-turn time or an independent validation.',
-    restoredMustang:{ observed60sKias:[row[3],row[4]], modeled60sProxyKias:round(simulated,2),
-      residualKias:[round(simulated-row[4]),round(simulated-row[3])],
-      recordedFigureLabelMaxKias:255, secondaryTargetKias:acceleration.observation.endpoints.endKnots,
+    restoredMustang:{ points:mustang, comparison60s:figurePoints.filter(p=>p.seconds===60), observed60sKias:[low,high], modeled60sProxyKias:round(simulated,2),
+      residualKias:[round(simulated-high),round(simulated-low)],
+      secondaryTargetKias:acceleration.observation.endpoints.endKnots,
       secondaryElapsedSeconds:acceleration.observation.endpoints.elapsedSeconds,
       modeledSecondsToSecondaryTarget:round(acceleration.nominal.seconds,2),
       residualSeconds:round(acceleration.nominal.residualSeconds,2) },
-    restoredTrials:extra.restored.rows.map(([aircraft,serial,takeoffLb,kLow,kHigh,tLow,tHigh,turn180Seconds,cleanStallKt,decelerating3gStallKt]) =>
-      ({aircraft,serial,takeoffLb,fig8KiasAt60s:[kLow,kHigh],fig8SecondsToMax:[tLow,tHigh],
+    restoredTrials:extra.restored.rows.map(([aircraft,serial,takeoffLb,turn180Seconds,cleanStallKt,decelerating3gStallKt]) =>
+      ({aircraft,serial,takeoffLb,
         turn180Seconds,turnExitKt:null,measuredRecoverySeconds:null,cleanStallKt,decelerating3gStallKt})),
     restoredFigure:extra.restored.printedFig8,restoredTables:extra.restored.paper,p47Glide:extra.p47Glide,
     recordedComplete180AndRecoveryTrials:0, testFamilies:['Bf 109','Mustang','Thunderbolt','Corsair','Hellcat'] };
@@ -205,4 +219,4 @@ function comparisonCsv(report) {
   return csv.map(row => row.map(v => v ?? '').join(',')).join('\n') + '\n';
 }
 
-module.exports = { build, comparisonCsv, earlyComparison, laterComparison, dynamicComparison };
+module.exports = { earlyStallReferences, build, comparisonCsv, earlyComparison, laterComparison, dynamicComparison };

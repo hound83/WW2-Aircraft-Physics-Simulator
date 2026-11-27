@@ -14,6 +14,8 @@ These instructions apply to `hound83/WW2-Aircraft-Physics-Simulator`, the **scie
 
 ## Effort and collaboration
 
+- Treat each accepted simulator milestone as one assignment through implementation, evidence intake, fleet regression, integration and verified publication. An effort estimate describes internal work. Continue across its checkpoints without waiting for the owner to dispatch each step. Request a decision only for a material scope change, an authorization boundary or a blocker that needs the owner.
+
 - Use the research, tools, and verification needed to complete the assignment. Follow promising leads when they can improve the result, resolve an important uncertainty, or verify a requirement.
 - Build on relevant work already available, including Grok's findings and PRs. Verify what you rely on and repeat checks when independent verification adds value.
 - When searches keep turning up the same evidence or a line of inquiry is unlikely to affect the outcome, record the useful findings and any material gap, then return to the assignment.

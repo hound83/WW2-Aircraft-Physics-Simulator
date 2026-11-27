@@ -11,9 +11,10 @@
  const altitudeReadouts=[...document.querySelectorAll('[data-bench-altitude-value]')];
  const altitudes=Array.from({length:9},(_,i)=>i*5000);
  const heightLabel=alt=>alt===0?'Sea level':fmt(alt,0)+' ft';
- for(const alt of altitudes){
+ const trialHeights=Object.values(data.trialClocks).flat().flatMap(t=>t.points.map(p=>Math.round(p.height)));
+ for(const alt of [...new Set([...altitudes,...trialHeights])].sort((a,b)=>a-b)){
   if(alt<40000)fromHeight.add(new Option(heightLabel(alt),alt));
-  if(alt>0)toHeight.add(new Option(heightLabel(alt),alt));
+  if(alt>0&&alt<=40000)toHeight.add(new Option(heightLabel(alt),alt));
  }
  toHeight.value='10000';
  const turnUnit=()=>Chart.turnUnits[$('bench-turn-unit').value];
@@ -23,6 +24,7 @@
  const accelerationInputs=[$('bench-acceleration-from'),$('bench-acceleration-to')],accelerationSpeeds=[180,300];
  const text=(tag,value,className)=>{const e=document.createElement(tag);if(value!==undefined)e.textContent=value;if(className)e.className=className;return e;};
  const shortName=id=>service.aircraft[id].displayName;
+ const fleetUI=FleetComparisonUI.setup({api,data,text,appendTable,shortName,fmt,speed,fromHeight,toHeight});
  let allAircraftChoice='spitfire_lfix_bs543';
  function aircraftOptions(select,ids,preferred){
   select.replaceChildren();
@@ -458,6 +460,7 @@
    return [side,B.metrics(M,T,L,models[chosen.id],specs.aircraft[chosen.id],specs.policy,chosen.settings,alt)];
   }));
   for(const side of sides){api.rows[side]=current[side];renderSide(side);}
+  fleetUI.stall();
   plot(alt);renderAltitudeOverview(alt);
   const turn=turnUnit(),a=api.rows.a[turn.peak],b=api.rows.b[turn.peak],verdict=peakVerdict(a,b,turn);
   const comparison=$('bench-comparison');comparison.replaceChildren();
@@ -473,6 +476,7 @@
   for(const side of sides){const chosen=read(side);api.settings[side]=chosen;readAltitudes(side,chosen);}
   api.altitudeRows=altitudes.map((altFt,i)=>({altFt,a:altitudeCache.a.rows[i],b:altitudeCache.b.rows[i]}));
   renderAltitude();sourceDetails();renderSourceGrades();
+  fleetUI.climb();fleetUI.acceleration();fleetUI.roll();
   $('bench-matchup').textContent=History.compare(service.aircraft[api.settings.a.id],service.aircraft[api.settings.b.id]);
   invalidateClimbs('Calculate both climbs for the current aircraft and settings.');
   invalidateAcceleration('Calculate both runs for the current aircraft and settings.');
@@ -497,11 +501,11 @@
  $('bench-speed-unit').addEventListener('change',()=>{
   for(const side of ['a','b'])renderSide(side);
   const alt=Number($('bench-altitude').value);
-  plot(alt);renderAltitudeOverview(alt);showAccelerationInputs();
+  plot(alt);renderAltitudeOverview(alt);showAccelerationInputs();fleetUI.stall();
   if(api.accelerations)renderAcceleration();
   maneuver.render();
  });
- for(const input of [fromHeight,toHeight])input.addEventListener('change',()=>invalidateClimbs('Climb altitude changed. Recalculate both climbs.'));
+ for(const input of [fromHeight,toHeight])input.addEventListener('change',()=>{invalidateClimbs('Climb altitude changed. Recalculate both climbs.');fleetUI.climb();});
  $('bench-climb-calculate').addEventListener('click',()=>{const from=Number(fromHeight.value),to=Number(toHeight.value),box=$('bench-climb-result');box.replaceChildren();if(to<=from){box.append(text('p','Choose a target altitude above the climb start.'));return;}
   const results={};for(const side of ['a','b']){const c=api.settings[side];results[side]=B.climb(M,T,L,models[c.id],specs.aircraft[c.id],specs.policy,c.settings,from,to,{trace:true});const r=results[side];
    box.append(text('h3','Aircraft '+(side==='a'?'1':'2')+' · '+shortName(c.id)),text('p',r.status==='reached'?heightLabel(from)+' to '+heightLabel(to)+': '+fmt(r.seconds/60,2)+' min':'Target not reached: '+r.status+' at '+fmt(r.reachedFt,0)+' ft'),text('p','Combat used '+fmt(r.combatSeconds/60,2)+' min · remaining '+fmt(r.combatRemainingSeconds/60,2)+' min · fuel used '+fmt(r.fuelUsedLb,1)+' lb · arrival mass '+fmt(r.endWeightLb,0)+' lb · injection fluid remaining '+fmt(r.injectionRemainingLb,1)+' lb'));

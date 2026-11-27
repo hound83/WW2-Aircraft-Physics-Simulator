@@ -2,6 +2,7 @@
  <style>
  #operating-benchmark{--bench-a:#75dbff;--bench-b:#ffc077}#operating-benchmark h2{margin-bottom:.4rem}
  #operating-benchmark .bench-toolbar{display:flex;gap:1rem;flex-wrap:wrap;align-items:end;margin:1.2rem 0}
+ #operating-benchmark .bench-toolbar>label{min-width:0;max-width:100%}
  #operating-benchmark label{display:flex;flex-direction:column;gap:.4rem}#operating-benchmark select,#operating-benchmark button{font:inherit;padding:.65rem;border:1px solid #526c7c;border-radius:8px;max-width:100%}
  #operating-benchmark .bench-sides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
  #operating-benchmark .bench-side{padding:1rem;border:1px solid #486272;border-top:4px solid var(--bench-a);border-radius:10px;background:#142b37}
@@ -189,16 +190,18 @@
  <div class="bench-plot-row"><label class="bench-plot-height">Altitude<output data-bench-altitude-value>10,000 ft</output><input id="bench-altitude-acceleration" data-bench-altitude type="range" min="0" max="40000" step="1000" value="10000" aria-valuetext="10,000 ft"></label><div id="bench-acceleration-plot" class="bench-chart"></div></div>
  <div id="bench-acceleration-at-speed" class="bench-probe-cards bench-live-probe"></div>
  <p class="bench-note">Modeled change in true airspeed per second in straight, level flight. Each ring marks maximum level speed. Negative values indicate deceleration.</p>
+ <details open><summary>Clean stall at selected weight</summary><div id="bench-selected-stall"></div></details>
+ <details><summary>Achieved roll rate at recorded speeds</summary><div id="bench-selected-roll"></div></details>
  <h3>Performance across altitude</h3>
  <p id="bench-tie-margins" class="bench-note"></p>
  <div id="bench-altitude-overview" class="bench-table-scroll"></div>
- <details open id="bench-climb-run"><summary>Time to climb</summary><p>Start already airborne at the chosen start height. Normal follows the recorded routine climb-speed schedule. Combat searches where a single permitted higher-power window saves the most time, then replays fuel and injection use. No allowance resets at intermediate altitudes.</p><div class="bench-toolbar"><label>Start altitude<select id="bench-climb-from"></select></label><label>Target altitude<select id="bench-climb-to"></select></label><button id="bench-climb-calculate" type="button">Calculate both climbs</button></div><div id="bench-climb-trace" class="bench-chart"></div><div id="bench-climb-result" aria-live="polite">Calculate a climb with the current settings.</div><p class="bench-note">Climb fuel flow uses a shared illustrative 0.50 lb/shaft-hp-hour. The optimized window is the quickest tested schedule under this model, not a reconstruction of a pilot's tactical choices. Acceleration during speed changes and a dynamic thermal model are not included.</p></details>
+ <details open id="bench-climb-run"><summary>Time to climb</summary><p>Start already airborne at the chosen start height. Normal follows the recorded routine climb-speed schedule. Combat searches where a single permitted higher-power window saves the most time, then replays fuel and injection use. No allowance resets at intermediate altitudes.</p><div class="bench-toolbar"><label>Start altitude<select id="bench-climb-from"></select></label><label>Target altitude<select id="bench-climb-to"></select></label><button id="bench-climb-calculate" type="button">Calculate both climbs</button></div><h4>Flight tests over the selected heights</h4><div class="bench-toolbar"><label>Aircraft 1 trial<select id="bench-trial-a"></select></label><label>Aircraft 2 trial<select id="bench-trial-b"></select></label></div><div id="bench-trial-results" aria-live="polite"></div><h4>Simulation at selected settings</h4><div id="bench-climb-trace" class="bench-chart"></div><div id="bench-climb-result" aria-live="polite">Calculate a climb with the current settings.</div><p class="bench-note">Climb fuel flow uses a shared illustrative 0.50 lb/shaft-hp-hour. The optimized window is the quickest tested schedule under this model, not a reconstruction of a pilot's tactical choices. Acceleration during speed changes and a dynamic thermal model are not included.</p></details>
 
  <details open id="bench-acceleration-run"><summary>Time to accelerate</summary>
   <p class="bench-note">Straight, level flight from the same starting speed. Combat power starts immediately and returns to the next available rating when its allowance runs out.</p>
   <p class="bench-note"><span id="bench-acceleration-altitude"></span> · <span id="bench-acceleration-unit">mph EAS</span></p>
   <div class="bench-toolbar"><label>Start airspeed<input id="bench-acceleration-from" type="number" min="1" step="any" value="180"></label><label>Target airspeed<input id="bench-acceleration-to" type="number" min="1" step="any" value="300"></label><button id="bench-acceleration-calculate" type="button">Calculate both runs</button></div>
-  <div id="bench-acceleration-trace" class="bench-chart"></div><div id="bench-acceleration-result" aria-live="polite"></div>
+  <h4>Matched flight-test intervals</h4><div id="bench-selected-acceleration"></div><h4>Simulation at selected settings</h4><div id="bench-acceleration-trace" class="bench-chart"></div><div id="bench-acceleration-result" aria-live="polite"></div>
  </details>
  <details id="bench-acceleration-evidence"><summary>P-51D level-acceleration flight test</summary>
   <div id="bench-acceleration-evidence-result"></div>
