@@ -1,8 +1,10 @@
 # Simulator development roadmap
 
+**Fleet accuracy · 4.20.0-rc.1.** Across 15 campaigns and 95 climb intervals, the largest remaining deviations concentrate at altitude. The next 80/20 milestone is the shared power-versus-altitude and cooling schedule. Recover shaft power, blower state and climb TAS for the large residuals, fit only on development flights, and reuse the whole-report reserve and acceleration checks. [Results and acceptance criteria](V420_FLEET_ACCURACY.md)
+
 ## M4 · Fleet sustained level turns
 
-4.19.0-rc.1 compares all 14 profiles at a shared speed, altitude and rating. It also compares equal gross weights when both profiles support the selected mass. Primary restored-aircraft measurements, a secondary wartime turn record and external simulation results retain their test conditions and source grades. M5 is the next roster-intake milestone. [M4 fleet scorecard](V419_FLEET_STEADY_TURN.md)
+4.19.0-rc.1 compares all 14 profiles at a shared speed, altitude and rating. It also compares equal gross weights when both profiles support the selected mass. Primary restored-aircraft measurements, a secondary wartime turn record and external simulation results retain their test conditions and source grades. Roster expansion follows validation of the current fleet. [M4 fleet scorecard](V419_FLEET_STEADY_TURN.md)
 
 ## M3 · One fleet-wide comparison milestone
 

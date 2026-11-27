@@ -112,8 +112,11 @@ function secondBatchChecks(selected) {
   ];
 }
 
-function sourceChecks(base, catalog) {
+function sourceChecks(base, catalog, replayModels) {
   const selected = profiles(base, catalog);
+  if (replayModels) {
+    for (const [id, trial] of Object.entries(selected)) trial.model = replayModels[id];
+  }
   const hf = selected[HF], g2 = selected[G2], d = selected[D];
   const hfLevel = hf.level.filter((r, i, rows) => !rows.some(x => x.alt_ft === r.alt_ft && x.speed > r.speed)).map(row => {
     const state = { altFt: row.alt_ft, weightLb: 7090, rpm: 2960, scaleForRpm: false };

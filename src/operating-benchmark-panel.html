@@ -215,12 +215,21 @@
   <p class="bench-note">Straight, level flight from the same starting speed. Combat power starts immediately and returns to the next available rating when its allowance runs out.</p>
   <p class="bench-note"><span id="bench-acceleration-altitude"></span> · <span id="bench-acceleration-unit">mph EAS</span></p>
   <div class="bench-toolbar"><label>Start airspeed<input id="bench-acceleration-from" type="number" min="1" step="any" value="180"></label><label>Target airspeed<input id="bench-acceleration-to" type="number" min="1" step="any" value="300"></label><button id="bench-acceleration-calculate" type="button">Calculate both runs</button></div>
-  <h4>Matched flight-test intervals</h4><div id="bench-selected-acceleration"></div><h4>Simulation at selected settings</h4><div id="bench-acceleration-trace" class="bench-chart"></div><div id="bench-acceleration-result" aria-live="polite"></div>
+  <h4>Matched flight-test intervals</h4><p><a href="#bench-measured-acceleration">Compare the four restored aircraft at the same indicated speeds</a></p><div id="bench-selected-acceleration"></div><h4>Simulation at selected settings</h4><div id="bench-acceleration-trace" class="bench-chart"></div><div id="bench-acceleration-result" aria-live="polite"></div>
  </details>
  <details id="bench-acceleration-evidence"><summary>P-51D level-acceleration flight test</summary>
   <div id="bench-acceleration-evidence-result"></div>
   <div id="bench-acceleration-evidence-trace" class="bench-chart"></div>
   <div id="bench-acceleration-evidence-context"></div>
+ </details>
+ <details open id="bench-measured-acceleration"><summary>Compare measured acceleration across four aircraft</summary>
+  <p>Ellis and Wheal flew four restored aircraft at maximum except takeoff (METO) power, 10,000 ft MSL and 50 °F. Pick two indicated speeds to compare elapsed time within each recorded trace.</p>
+  <div class="bench-toolbar"><label>Start (KIAS)<input id="bench-chart-low" type="number" step="any" min="1" value="160"></label><label>Target (KIAS)<input id="bench-chart-high" type="number" step="any" min="1" value="200"></label></div>
+  <div id="bench-chart-times" aria-live="polite"></div><p class="bench-note">Ranges propagate the ±2 kt reading allowance at both ends of each interval. Actual run weight and airspeed calibration add uncertainty. <a href="https://www.wwiiaircraftperformance.com/com/others/endingtheargument_files/figure8.jpg" target="_blank" rel="noopener">Original Figure 8</a></p>
+ </details>
+ <details id="bench-fleet-accuracy"><summary>How accurately does the fleet reproduce flight-test times?</summary>
+  <div id="bench-accuracy-summary"></div><details><summary>Climb error by flight report</summary><div id="bench-accuracy-campaigns"></div></details>
+  <details><summary>Operating results for all 14 aircraft</summary><div id="bench-accuracy-fleet"></div></details>
  </details>
  <details id="bench-fleet-validation"><summary>Fleet validation scorecard</summary><div id="bench-fleet-validation-result"></div></details>
  <details id="bench-source-grades"><summary>Historical source agreement (GOLD)</summary><div id="bench-source-grade-results"></div></details>

@@ -113,4 +113,4 @@ function build(data, fleet) {
   });
   return { metrics, aircraft, roll, holdout, climbIntervals:fleet.climbIntervals, finnishAcceleration:fleet.finnishAcceleration };
 }
-module.exports = { build, previousHFModel };
+module.exports = { build, previousHFModel, replayEN524 };

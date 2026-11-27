@@ -1,5 +1,9 @@
 # Latest insights
 
+## Fleet accuracy · 4.20.0-rc.1
+
+The fleet-wide propeller loss experiment reduced reserved climb error from 4.59 to 4.28 seconds per interval. Its effect on the two comparison gaps was about one second or less, and both turn checks moved away from their observations. The operating calibration stays at 4.19. The simulator now compares all four restored acceleration traces at user-selected speeds and offers the separate EN.524 climb in the flight-test selector. [Aircraft results, sources and next research](V420_FLEET_ACCURACY.md)
+
 ## M4 fleet sustained turns · 4.19.0-rc.1
 
 At 210 mph EAS and 10,000 ft, 13 of 91 pairings keep a clear modeled lead across the tested input ranges. Figure 9 supplies a direct check on the restored Mustang proxy, which is 0.94 g low at 130 KIAS. [Sustained-turn evidence and 14-aircraft results](V419_FLEET_STEADY_TURN.md)
