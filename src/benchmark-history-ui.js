@@ -34,6 +34,24 @@ globalThis.BenchmarkHistoryUI=(()=>{
    const groups=a.cells[k].groups;
    return groups.length?[...new Set(groups.map(g=>g.grade))].join(', '):'Evidence sought';
   })]));
+  const climbs=sweep.climbIntervals;
+  const comparison=section(host,'Climb between common heights');
+  function pairTable(parent,rows){
+   table(parent,['Aircraft and test ratings','From–to (ft)','Trial lead (s)','Model lead (s)','Gap error (s)'],rows.map(r=>{
+    const left=climbs.series[r.left],right=climbs.series[r.right];
+    const lead=gap=>gap===0?'Tie':(gap>0?left.aircraft:right.aircraft)+' by '+fmt(Math.abs(gap),2);
+    return [left.aircraft+' ('+left.mode+') / '+right.aircraft+' ('+right.mode+')',
+     fmt(r.fromFt,0)+'–'+fmt(r.toFt,0)+(r.a.interpolated||r.b.interpolated?' *':''),lead(r.observedGap),lead(r.modeledGap),signed(r.gapError,2)];
+   }));
+  }
+  comparison.append(el('p','Times use each aircraft’s recorded trial or specification conditions. The gap error uses the first aircraft as the reference. An asterisk marks interpolation inside a recorded clock series.'));
+  pairTable(comparison,climbs.focus);
+  const reversals=climbs.pairs.filter(r=>r.reversed);
+  const orders=section(comparison,'Order changes ('+reversals.length+' of '+climbs.pairs.length+' exact common-height comparisons)');
+  orders.append(el('p','Small gaps can change sign within reading or loading uncertainty. Several comparisons reuse the same flight.'));
+  pairTable(orders,reversals);
+  const remaining=section(comparison,'All common-height comparisons, largest gap errors first');
+  pairTable(remaining,climbs.pairs);
   const label=el('label','Aircraft evidence '), select=el('select'), detail=el('div');
   select.id='bench-sweep-aircraft';
   for(const a of sweep.aircraft){const o=el('option',a.name);o.value=a.id;select.append(o);}
@@ -48,6 +66,21 @@ globalThis.BenchmarkHistoryUI=(()=>{
      const p=el('p',g.grade+' · '+g.qualifier+' · '+count+'. '+g.reference+' ');link(p,'Source',g.source);d.append(p);
     }
     d.append(el('p','Next evidence: '+c.next));
+    if(k==='elapsed'){
+     for(const trial of climbs.series.filter(t=>t.aircraftId===a.id)){
+      const p=el('p',trial.trial+' · '+trial.mode+' · '+(trial.weightLb?fmt(trial.weightLb,0)+' lb':'weight unspecified')+'. ');link(p,'Clock source',trial.source);d.append(p);
+      table(d,['From (ft)','To (ft)','Trial (s)','Model (s)','Model − trial (s)'],
+       trial.bands.map(b=>[fmt(b.fromFt,0),fmt(b.toFt,0),fmt(b.observed,1),fmt(b.predicted,1),signed(b.error,1)]));
+     }
+    }
+    if(k==='acceleration'&&a.id==='bf109g2_db605a'){
+     const finn=sweep.finnishAcceleration;
+     table(d,['Rating','From (km/h)','To (km/h)','Reported (s)','Mean speed change (m/s²)'],
+      finn.intervals.map(r=>[r.rating,r.fromKmh,r.toKmh,r.seconds,signed(r.meanSpeedChangeMps2,2)]));
+     d.append(el('p',finn.assumptions.note+' The maximum-power scenarios below use the reported speed endpoints. The idle intervals are observations only.'));
+     table(d,['Assumed height (m)','Speed basis','Radiators','300–440 km/h (s)','440–510 km/h (s)'],
+      finn.scenarios.map(s=>[s.altitudeM,s.speedBasis,s.openCooling?'Open':'Clean setting',...s.runs.map(r=>r.seconds===null?r.status:fmt(r.seconds,1))]));
+    }
     if(a.bands[k]?.length)table(d,['Altitude band','Test group','Rows','Mean model − observed','Mean absolute error','Unit'],
      a.bands[k].map(r=>[r.band,r.qualifier,r.count,signed(r.signedMean),fmt(r.absoluteMean),r.unit]));
    }

@@ -111,6 +111,6 @@ function build(data, fleet) {
     }
     return { id: a.id, name: a.name, cells, bands: Object.fromEntries(['level','climb','elapsed'].map(k => [k,bandResults(a.evidence[k])])) };
   });
-  return { metrics, aircraft, roll, holdout };
+  return { metrics, aircraft, roll, holdout, climbIntervals:fleet.climbIntervals, finnishAcceleration:fleet.finnishAcceleration };
 }
 module.exports = { build, previousHFModel };

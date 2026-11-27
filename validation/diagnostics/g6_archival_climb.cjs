@@ -61,7 +61,7 @@ function evidence(data) {
       observedMps: row.rateMps, readUncertaintyFpm: round(0.2 * 60 * ftPerM, 1), status: local.status });
     if (i === 0) continue;
     const run = climb(0, altFt);
-    elapsed.push({ ...fields, observed: round(row.elapsedMin * 60, 1),
+    elapsed.push({ ...fields, fromFt:0, toFt:altFt, mode:'combat', weightLb:plate.conditions.weightKg / 0.45359237, observed: round(row.elapsedMin * 60, 1),
       predicted: run.status === 'reached' ? round(run.seconds, 1) : null,
       observedMin: row.elapsedMin, readUncertaintySeconds: row.altKm === 10 ? 24 : 12, status: run.status });
   }

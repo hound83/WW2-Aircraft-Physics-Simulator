@@ -35,6 +35,8 @@ The [aircraft data research roadmap](research/WW2_AIRCRAFT_INPUT_RESEARCH_ROADMA
 
 Coverage measures available evidence for the research dossier. The source conditions and supported metrics give a better guide to the initial comparison range. [Full coverage table](research/WW2_FIGHTER_SIM_INPUTS_V1.md#coverage-by-aircraft) · [Variant dossiers and retrieval targets](research/WW2_THIRTEEN_FIGHTER_DATA_2026-11-11.md)
 
+The November research batch adds all 75 climb intervals, the source-qualified stall evidence shared by the three Spitfire IX profiles, and four timed MT-215 straight-flight intervals. [Results, source grades and open primary searches](research/FLEET_CLIMB_SPITFIRE_STALL_MT215_2026-11-27.md)
+
 ## Notes for Simulator Work
 
 - Read `pdf_reference.series` for the 552 reviewed PDF records. Use the roster link, application and source conditions to select a comparison. [PDF input release](research/WW2_PDF_INPUT_DATA_V1_9.md)

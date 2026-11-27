@@ -14,8 +14,8 @@
     "edition": 3,
     "date": "1946-09",
     "url": "https://zenoswarbirdvideos.com/Images/spit/SPIT9MANUAL.pdf",
-    "access": "PDF extracted text inspected; no original page pixels verified",
-    "scanVerified": false,
+    "access": "Page images checked against the scan, including the loading and wing note in §42 and the lower limit in §53.",
+    "scanVerified": true,
     "paragraph": "42(i)",
     "printedPage": 24,
     "pdfPage": 16,
@@ -47,7 +47,7 @@
         3,
         6
       ],
-      "use": "Qualitative manual guidance only; do not create measured endpoints, CAS/EAS or a BS.543 correction from this note"
+      "use": "Use for a derived standard-wing IAS range at the matching loading. Endpoints are approximate handbook estimates. A BS.543 corrected measurement requires its own test and calibration."
     },
     "positionCorrection": {
       "paragraph": 53,
@@ -56,7 +56,7 @@
       "minimumIasMph": 120,
       "nearStallVerified": false,
       "points": [],
-      "note": "Extracted table layout is ambiguous for individual signed corrections; no nodes digitized. Its lowest listed IAS exceeds both stall rows."
+      "note": "The scanned table begins at 120 mph IAS. No correction applies to the reported stalls at 90 and 93 mph."
     }
   },
   "targetReport": {
@@ -85,5 +85,52 @@
     "Power-off to accelerated powered-turn applicability and uncertainty"
   ],
   "derivedHistoricalClMax": null,
-  "conclusion": "Correct inherited clipped-wing/stores provenance; preserve numerical inputs and do not calibrate from manual IAS."
+  "conclusion": "Correct inherited clipped-wing/stores provenance; preserve numerical inputs and do not calibrate from manual IAS.",
+  "followupDate": "2026-11-27",
+  "wartimeManual": {
+    "reference": "Air Ministry A.P. 1565J–P.N., second edition, June 1943",
+    "url": "https://www.docdroid.com/file/download/HRosRhd/supermarine-spitfire-fix-pilots-notes-pdf.pdf",
+    "locator": "§40 printed p. 17 (PDF p. 11), §51 printed p. 22 (PDF p. 14)",
+    "grade": "primary handbook",
+    "aircraft": "Spitfire F.IX; manual covers Merlin 61, 63, 66 and 70",
+    "referenceWeightLb": 7445,
+    "weightBasis": "published normal all-up weight",
+    "power": "engine off",
+    "speedBasis": "IAS",
+    "wingTips": null,
+    "specimen": null,
+    "actualStallRunMassLb": null,
+    "rows": [
+      {
+        "gear": "up",
+        "flaps": "up",
+        "mph": 86
+      },
+      {
+        "gear": "down",
+        "flaps": "down",
+        "mph": 76
+      }
+    ],
+    "minimumCorrectionIasMph": 120,
+    "scanVerified": true,
+    "use": "Family operating reference. The stall paragraph does not identify a wingtip, serial, run weight or a low-speed position correction."
+  },
+  "restoredSource": {
+    "reference": "UK Defence Safety Authority, DSA DG/SI/01/24, §1.3.A.6 and Table 1.3.A.1, annex p. 2",
+    "url": "https://assets.publishing.service.gov.uk/media/6abb7d80fceb6fb3a6501316/Service_Inquiry_into_the_death_of_a_service_person_in_an_air_accident_near_RAF_Coningsby_on_25_May_2024.pdf",
+    "grade": "secondary for stall performance, official inquiry quoting type particulars",
+    "aircraft": "BBMF Spitfire IX MK356",
+    "wing": "full-span E wing, traditional spine",
+    "referenceWeightLb": 6816,
+    "weightBasis": "all-up weight in the same particulars table",
+    "actualStallRunMassLb": null,
+    "speedBasis": "knots, instrument correction not stated in the table",
+    "power": null,
+    "cleanKnots": 65,
+    "gearFlapsDownKnots": 56,
+    "publishedPlusMinusKnots": 3,
+    "use": "Modern full-span E-wing comparator. The wartime F/LF/HF roster uses C wings. The table gives no individual stall run or calibration."
+  },
+  "followup": "Recover the wartime full-span C-wing stall sheet with tips, event weight, power, altitude and pitot/static correction through the indicated stall. For MK356 seek the underlying BBMF aircrew/flight-test record identifying the test loading and speed channel."
 }

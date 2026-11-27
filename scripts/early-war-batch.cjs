@@ -30,7 +30,7 @@ function germanPower(condition,altFt,measuredAta) {
   return (sea.power_ps+(peak.power_ps-sea.power_ps)*fraction)*psToHp*map/sea.boost_ata;
 }
 function scheduledTas(id, spec, altFt) {
-  return id === E3 ? M.tasFrom(155, 'CAS', altFt) : B.interpolate(spec.climbTAS, altFt, 1);
+  return id === E3 ? M.tasFrom(B.interpolate(spec.climbIAS,altFt,1), 'CAS', altFt) : B.interpolate(spec.climbTAS, altFt, 1);
 }
 
 // Height rate = specific excess power / (1 + V/g * dV/dh).

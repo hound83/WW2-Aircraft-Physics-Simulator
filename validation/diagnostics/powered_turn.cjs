@@ -88,8 +88,36 @@ function replay(data, record = source.finnish) {
   };
 }
 
+function straightAcceleration(data, record) {
+  const observation = record.relatedAcceleration;
+  const intervals = observation.rows.map(row => ({...row,
+    meanSpeedChangeMps2:Number(((row.toKmh-row.fromKmh)/3.6/row.seconds).toFixed(3))}));
+  const {massKg,engineRpm,manifoldAta} = record.replay.nominal;
+  const base = data.specification.aircraft[record.modelId];
+  const spec = {...base,referenceWeightLb:massKg/KG_PER_LB,referenceFuelUSGal:base.fuelCapacityUSGal/2,serviceLoadDeltaLb:0,
+    combat:{...base.combat,rpm:engineRpm,map:manifoldAta,powerFactor:base.combat.powerFactor*engineRpm/base.combat.rpm}};
+  const policy = {...data.specification.policy,bsfcLbPerHpHour:0};
+  const powered = intervals.filter(row=>row.rating==='Maximum');
+  function scenario(altitudeM, speedBasis, openCooling) {
+    const altFt = altitudeM/FT, settings = {mode:'combat',fuelFraction:.5,openCooling};
+    const eas = kmh => M.airspeeds(M.tasFrom(kmh/KMH_PER_MPH,speedBasis,altFt),altFt).eas;
+    const runs = powered.map(row=>{
+      const run = B.accelerate(M,T,lift,data.models[record.modelId],spec,policy,settings,altFt,eas(row.fromKmh),eas(row.toKmh));
+      return {fromKmh:row.fromKmh,toKmh:row.toKmh,status:run.status,
+        seconds:run.seconds===null?null:Number(run.seconds.toFixed(2)),
+        differenceSeconds:run.seconds===null?null:Number((run.seconds-row.seconds).toFixed(2))};
+    });
+    return {altitudeM,speedBasis,openCooling,runs};
+  }
+  return {intervals,source:observation.sourceUrl,grade:observation.grade,primaryFollowup:observation.primaryFollowup,
+    assumptions:{massKg,engineRpm,manifoldAta,constantMass:true,
+      note:'Illustrative cases with 3,050 kg, 1.30 ata and 2,540 rpm. The 3,050 kg is an assumed load. Boost and RPM come from separate performance records. The straight-run height, speed basis and radiator opening are unreported.'},
+    scenarios:[scenario(0,'CAS',false),scenario(1000,'CAS',false),scenario(2000,'CAS',false),
+      scenario(1000,'TAS',false),scenario(1000,'CAS',true)]};
+}
+
 function browserEvidence(data) {
-  return { ...replay(data), related:source.related };
+  return { ...replay(data), related:source.related, straight:straightAcceleration(data,source.finnish) };
 }
 
 module.exports = { replay, browserEvidence };
