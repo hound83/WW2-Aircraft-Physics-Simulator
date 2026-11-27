@@ -314,12 +314,20 @@ function propEta(ac,alt,tasMph,bhp,profile='C',rating=ac.defaultRating,options={
        Number.isFinite(fit.machPenalty)&&fit.machPenalty>=0&&Number.isFinite(fit.advanceLoss)&&fit.advanceLoss>=0&&
        Number.isFinite(fit.machOnset)&&fit.machOnset>0&&propRpm>0&&p.diameterFt>0&&bhp>0&&v>0))return null;
   const n=propRpm/60,diameter=p.diameterFt*FT,area=Math.PI*diameter*diameter/4,power=fit.retainedPowerFraction*bhp*HP;
+  const inducedFactor=fit.inducedPowerFactor??1;
+  if(!Number.isFinite(inducedFactor)||inducedFactor<1)return null;
   let lo=0,hi=Math.cbrt(power/(2*at.rho*area));
-  for(let i=0;i<35;i++){const mid=(lo+hi)/2;if(2*at.rho*area*mid*(v+mid)**2>power)hi=mid;else lo=mid;}
+  for(let i=0;i<35;i++){
+   const mid=(lo+hi)/2;
+   // Thrust = 2 rho A vi (V + vi). Keep the control evaluation identical.
+   const work=inducedFactor===1?2*at.rho*area*mid*(v+mid)**2:
+    2*at.rho*area*mid*(v+mid)*(v+inducedFactor*mid);
+   if(work>power)hi=mid;else lo=mid;
+  }
   const vi=(lo+hi)/2,J=propellerAdvanceRatio(tasMph,propRpm,p.diameterFt),tipMach=Math.hypot(v,Math.PI*n*diameter)/at.a;
   const machFactor=Math.exp(-fit.machPenalty*Math.max(0,tipMach-fit.machOnset)**2);
   const advanceFactor=Math.exp(-fit.advanceLoss*Math.max(0,J-1.65)**2);
-  eta=fit.retainedPowerFraction*v/(v+vi)*machFactor*advanceFactor;
+  eta=fit.retainedPowerFraction*v/(v+inducedFactor*vi)*machFactor*advanceFactor;
   const installed=p.installedEfficiency;
   if(installed){
    const finite=['minFt','maxFt','minJ','climbJ','levelJ','maxJ','climbDeltaEta','levelDeltaEta'];

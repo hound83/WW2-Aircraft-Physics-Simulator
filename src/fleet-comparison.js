@@ -47,5 +47,12 @@
     return high>low && start!==null && finish!==null && finish>=start ? finish-start : null;
   }
 
-  return {interval,speedInterval};
+  function speedWindow(trace, low, high, allowance) {
+    const seconds=speedInterval(trace,low,high);
+    if(seconds===null || !Number.isFinite(allowance) || allowance<0) return {seconds,lower:null,upper:null};
+    const lower=high-low<=2*allowance ? 0 : speedInterval(trace,low+allowance,high-allowance);
+    return {seconds,lower,upper:speedInterval(trace,low-allowance,high+allowance)};
+  }
+
+  return {interval,speedInterval,speedWindow};
 });

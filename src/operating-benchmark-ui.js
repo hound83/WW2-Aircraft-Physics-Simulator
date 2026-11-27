@@ -660,6 +660,7 @@
  render();
  renderFlightChecks();renderIntakeChecks();renderAccelerationEvidence();renderPoweredTurn();
  BenchmarkHistoryUI.render(data);
+ FleetAccuracyUI.setup({data,text,appendTable,shortName,fmt});
  BenchmarkManeuverUI.scorecard($('bench-fleet-validation-result'),data.fleetValidation);
  OperatingTurnComparison.evidence($('bench-turn-evidence'),data.turnEvidence,data.turnLiftChecks,
   data.turnEvidence.sensitivity,data.turnEvidence.directTurns,data.turnDrag);
