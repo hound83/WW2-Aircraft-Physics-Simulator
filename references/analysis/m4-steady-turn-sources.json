@@ -1,0 +1,325 @@
+{
+  "ellis": {
+    "source": "https://www.wwiiaircraftperformance.com/com/others/endingtheargument_files/figure9-10.jpg",
+    "report": "https://www.wwiiaircraftperformance.com/com/others/endingtheargument.html",
+    "figure": 9,
+    "altFtMsl": 10000,
+    "rating": "METO",
+    "axis": "KIAS",
+    "readingAllowance": {
+      "knots": 2,
+      "g": 0.1
+    },
+    "note": "Selected distinct loaded markers on Figure 9. Reading allowance is a digitization judgment. Figure 10 is a wind-up test. Test-day mass and IAS correction are unknown. All four specimens belong to one restored-aircraft study.",
+    "specimens": [
+      {
+        "name": "P-47D-40",
+        "serial": "45-49181",
+        "profile": "p47b",
+        "relation": "different variant; turbocharger removed and pylons fitted",
+        "marker": "open circle",
+        "points": [
+          [
+            130,
+            2.8
+          ],
+          [
+            180,
+            2.2
+          ],
+          [
+            200,
+            2.0
+          ]
+        ]
+      },
+      {
+        "name": "FG-1D",
+        "serial": "Bu 92509",
+        "profile": "f4u4",
+        "relation": "different Corsair variant; pylons fitted",
+        "marker": "open square",
+        "points": [
+          [
+            150,
+            2.4
+          ],
+          [
+            210,
+            2.7
+          ]
+        ]
+      },
+      {
+        "name": "F6F-5",
+        "serial": "Bu 79683",
+        "profile": null,
+        "relation": "outside operating roster",
+        "marker": "up triangle",
+        "points": [
+          [
+            150,
+            3.5
+          ]
+        ]
+      },
+      {
+        "name": "P-51D",
+        "serial": "45-11586",
+        "profile": "p51d15_4415342",
+        "relation": "related restored D, V-1650-9; wartime profile uses V-1650-7",
+        "marker": "down triangle",
+        "points": [
+          [
+            130,
+            3.1
+          ]
+        ]
+      }
+    ]
+  },
+  "simulation": [
+    {
+      "profile": "bf109f4",
+      "aircraft": "Bf 109 F-4",
+      "relation": "same variant; an existing F-4 assumption uses game evidence",
+      "source": "https://il2sturmovik.com/museum/fighters/bf-109-f-4/",
+      "rating": "Emergency",
+      "loading": "standard aircraft mass",
+      "points": [
+        [
+          0,
+          270.0,
+          20.3
+        ],
+        [
+          3000,
+          270.0,
+          26.1
+        ]
+      ],
+      "standardKg": 2890
+    },
+    {
+      "profile": "bf109g2_db605a",
+      "aircraft": "Bf 109 G-2",
+      "relation": "same variant; aircraft settings may differ",
+      "source": "https://il2sturmovik.com/museum/fighters/bf-109-g-2/",
+      "rating": "Combat",
+      "loading": "standard aircraft mass",
+      "points": [
+        [
+          0,
+          270.0,
+          22.2
+        ],
+        [
+          3000,
+          270.0,
+          28.3
+        ]
+      ],
+      "standardKg": 2994
+    },
+    {
+      "profile": "bf109g6trop_16476",
+      "aircraft": "Bf 109 G-6",
+      "relation": "different equipment from G-6/Trop",
+      "source": "https://il2sturmovik.com/museum/fighters/bf-109-g-6/",
+      "rating": "Combat",
+      "loading": "standard aircraft mass",
+      "points": [
+        [
+          0,
+          270.0,
+          21.5
+        ],
+        [
+          3000,
+          270.0,
+          28.0
+        ]
+      ]
+    },
+    {
+      "profile": "bf109e3_1304",
+      "aircraft": "Bf 109 E-7",
+      "relation": "related E variant",
+      "source": "https://il2sturmovik.com/museum/fighters/bf-109-e-7/",
+      "rating": "Boosted",
+      "loading": "standard aircraft mass",
+      "points": [
+        [
+          0,
+          270.0,
+          20.5
+        ],
+        [
+          3000,
+          270.0,
+          25.5
+        ]
+      ]
+    },
+    {
+      "profile": "fw190a4",
+      "aircraft": "Fw 190 A-3",
+      "relation": "related A variant",
+      "source": "https://il2sturmovik.com/museum/fighters/fw-190-3/",
+      "rating": "Emergency",
+      "loading": "standard aircraft mass",
+      "points": [
+        [
+          0,
+          280.0,
+          23.0
+        ],
+        [
+          3000,
+          280.0,
+          28.0
+        ]
+      ]
+    },
+    {
+      "profile": "p38g",
+      "aircraft": "P-38J-25",
+      "relation": "different Lightning variant",
+      "source": "https://il2sturmovik.com/museum/fighters/p-38j-25/",
+      "rating": "WEP",
+      "loading": "standard aircraft mass and 70% of fuel",
+      "points": [
+        [
+          0,
+          310.0,
+          20.0
+        ],
+        [
+          3000,
+          320.0,
+          28.3
+        ]
+      ]
+    },
+    {
+      "profile": "p47b",
+      "aircraft": "P-47D-22",
+      "relation": "different Thunderbolt variant",
+      "source": "https://il2sturmovik.com/museum/fighters/p-47d-22/",
+      "rating": "WEP",
+      "loading": "standard aircraft mass and 50% of fuel",
+      "points": [
+        [
+          0,
+          322.0,
+          27.0
+        ],
+        [
+          3000,
+          330.0,
+          30.0
+        ]
+      ]
+    },
+    {
+      "profile": "p51d15_4415342",
+      "aircraft": "P-51D-15",
+      "relation": "same block; loading and power installation may differ",
+      "source": "https://il2sturmovik.com/museum/fighters/p-51d-15/",
+      "rating": "WEP",
+      "loading": "standard aircraft mass and 68% of fuel",
+      "points": [
+        [
+          0,
+          290.0,
+          20.0
+        ],
+        [
+          3000,
+          295.0,
+          29.5
+        ]
+      ]
+    },
+    {
+      "profile": "p51b",
+      "aircraft": "P-51B-5, V-1650-7 option",
+      "relation": "different Mustang block",
+      "source": "https://il2sturmovik.com/museum/fighters/p-51b-5/",
+      "rating": "WEP",
+      "loading": "standard mass and 68% fuel",
+      "points": [
+        [
+          0,
+          290,
+          19
+        ],
+        [
+          3000,
+          295,
+          28
+        ]
+      ]
+    },
+    {
+      "profile": "spitfire_va_x4922",
+      "aircraft": "Spitfire Vb, Merlin 45",
+      "relation": "different wing and installation",
+      "source": "https://il2sturmovik.com/museum/fighters/spitfire-mkvb/",
+      "rating": "3,000 rpm, +9 lb boost",
+      "loading": "standard mass",
+      "points": [
+        [
+          0,
+          270,
+          22
+        ],
+        [
+          3000,
+          260,
+          28.2
+        ]
+      ]
+    },
+    {
+      "profile": "spitfire_lfix_bs543",
+      "aircraft": "Spitfire IXe, Merlin 66",
+      "relation": "related engine, different wing and specimen, community mirror",
+      "source": "https://aergistal.github.io/il2/planes/spitfiremkixe.html",
+      "rating": "3,000 rpm, +18 lb boost",
+      "loading": "standard mass",
+      "points": [
+        [
+          0,
+          270,
+          17.7
+        ],
+        [
+          3000,
+          260,
+          20.5
+        ]
+      ]
+    },
+    {
+      "profile": "spitfire_hfix_bs551",
+      "aircraft": "Spitfire IXe, Merlin 70",
+      "relation": "related engine, different wing and specimen, community mirror",
+      "source": "https://aergistal.github.io/il2/planes/spitfiremkixe.html",
+      "rating": "3,000 rpm, +18 lb boost",
+      "loading": "standard mass",
+      "points": [
+        [
+          0,
+          270,
+          17.8
+        ],
+        [
+          3000,
+          260,
+          20.7
+        ]
+      ]
+    }
+  ]
+}

@@ -2,6 +2,7 @@
  <style>
  #operating-benchmark{--bench-a:#75dbff;--bench-b:#ffc077}#operating-benchmark h2{margin-bottom:.4rem}
  #operating-benchmark .bench-toolbar{display:flex;gap:1rem;flex-wrap:wrap;align-items:end;margin:1.2rem 0}
+ #operating-benchmark #steady-weight-control[hidden]{display:none}
  #operating-benchmark .bench-toolbar>label{min-width:0;max-width:100%}
  #operating-benchmark label{display:flex;flex-direction:column;gap:.4rem}#operating-benchmark select,#operating-benchmark button{font:inherit;padding:.65rem;border:1px solid #526c7c;border-radius:8px;max-width:100%}
  #operating-benchmark .bench-sides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
@@ -137,6 +138,19 @@
   <article class="bench-side"><div class="bench-title" id="bench-title-a">Aircraft 1</div><label>Aircraft<select id="bench-aircraft-a"></select></label><p class="bench-note" id="bench-service-a"></p><div class="bench-controls"><label>Power<select id="bench-power-a"><option value="normal">Normal</option><option value="combat" selected>Combat</option></select></label><label>Internal fuel<select id="bench-fuel-a"><option value="0.25">25%</option><option value="0.5" selected>50%</option><option value="0.75">75%</option></select></label></div><label class="bench-injection" style="flex-direction:row"><input id="bench-injection-a" type="checkbox"><span id="bench-injection-label-a">Injection</span></label><label>Turn and level cooling<select id="bench-cooling-a"><option value="clean">Clean</option><option value="open">Climb cooling scenario</option></select></label><p id="bench-setting-a" class="bench-setting"></p><div id="bench-result-a" class="bench-result"></div></article>
   <article class="bench-side"><div class="bench-title" id="bench-title-b">Aircraft 2</div><label>Aircraft<select id="bench-aircraft-b"></select></label><p class="bench-note" id="bench-service-b"></p><div class="bench-controls"><label>Power<select id="bench-power-b"><option value="normal">Normal</option><option value="combat" selected>Combat</option></select></label><label>Internal fuel<select id="bench-fuel-b"><option value="0.25">25%</option><option value="0.5" selected>50%</option><option value="0.75">75%</option></select></label></div><label class="bench-injection" style="flex-direction:row"><input id="bench-injection-b" type="checkbox"><span id="bench-injection-label-b">Injection</span></label><label>Turn and level cooling<select id="bench-cooling-b"><option value="clean">Clean</option><option value="open">Climb cooling scenario</option></select></label><p id="bench-setting-b" class="bench-setting"></p><div id="bench-result-b" class="bench-result"></div></article>
  </div>
+ <details open id="bench-steady-turn"><summary>Sustained level turn at a common speed</summary>
+  <div class="bench-toolbar">
+   <label><span id="steady-speed-label">Common speed (mph EAS)</span><input id="steady-speed" type="number" step="any" min="1" value="210"></label>
+   <label>Power rating<select id="steady-rating"><option value="combat">Both Combat, dry</option><option value="normal">Both Normal, dry</option><option value="selected">Use selected settings</option></select></label>
+   <label>Aircraft loading<select id="steady-loading"><option value="selected">Selected fuel loads</option><option value="equal">Same gross weight</option></select></label>
+   <label id="steady-weight-control" hidden>Common gross weight (lb)<input id="steady-weight" type="number" step="any"></label>
+   <label>Shared altitude<output data-bench-altitude-value>10,000 ft</output><input id="steady-altitude" data-bench-altitude type="range" min="0" max="40000" step="1000" value="10000"></label>
+  </div>
+  <p id="steady-weight-note" class="bench-note"></p><div id="steady-results" aria-live="polite"></div>
+  <p class="bench-note">Equivalent 360° time holds speed and weight fixed. The rating supplies the available power ceiling. The range varies lift, useful power and added drag independently for each aircraft.</p>
+  <div id="steady-evidence"></div>
+  <details id="steady-fleet"><summary>Compare all 14 aircraft at this speed and altitude</summary><div id="steady-fleet-table"></div></details>
+ </details>
  <p id="bench-matchup" aria-live="polite"></p>
  <p class="bench-note">Approximate WWII service windows. Contemporaries filters by years of main service.</p>
  <p id="bench-comparison" aria-live="polite"></p>
