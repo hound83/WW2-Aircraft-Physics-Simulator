@@ -139,7 +139,12 @@ function build(){
   stallReferences,acceleration:accelerationEvidence,poweredTurn});
  const historical=require('../validation/diagnostics/benchmark_history.cjs').build(benchmark,researchCatalog,fleetReport,intakeChecks,accelerationEvidence);
  const sweep=require('../validation/diagnostics/fleet_evidence.cjs').build(benchmark,fleetReport);
- const benchmarkData=JSON.stringify({...benchmark,stallReferences,intakeChecks,turnDrag,accelerationEvidence,poweredTurn,historical,sweep,
+ const clocks=require('../validation/diagnostics/fleet_climb_intervals.cjs').clockSeries(fleetReport.aircraft,true);
+ const trialClocks=Object.fromEntries(fleetReport.aircraft.map(a=>[a.id,clocks.filter(t=>t.aircraftId===a.id)]));
+ const stallChecks=Object.fromEntries(fleetReport.aircraft.map(a=>[a.id,a.evidence.stall.flatMap(g=>
+  g.checks.filter(r=>Number.isFinite(r.error)).map(r=>({grade:g.grade,weightLb:r.weightLb,
+   observed:r.observed,predicted:r.predicted,unit:g.unit,source:g.source}))) ]));
+ const benchmarkData=JSON.stringify({...benchmark,stallChecks,restoredAcceleration:fleetReport.restoredAcceleration,earlyStall:require('../validation/diagnostics/historical_flight_comparison.cjs').earlyStallReferences(),trialClocks,stallReferences,intakeChecks,turnDrag,accelerationEvidence,poweredTurn,historical,sweep,
   fleetValidation:fleet.browserData(fleetReport),
   sourceGrades:{cases:inputs.cases,coverage,observations,sources,tolerances:inputs.tolerances}});
  const turnPerformance=read('src/turn-performance.js');
@@ -149,7 +154,7 @@ function build(){
  const graphEvidence=read('src/benchmark-graph-evidence.js');
  const benchmarkChart=read('src/operating-benchmark-chart.js');
  const benchmarkService=read('src/benchmark-service-context.js');
- const benchmarkUI=read('src/benchmark-history-ui.js')+'\n'+read('src/operating-benchmark-ui.js');
+ const benchmarkUI=read('src/fleet-comparison.js')+'\n'+read('src/fleet-comparison-ui.js')+'\n'+read('src/benchmark-history-ui.js')+'\n'+read('src/operating-benchmark-ui.js');
  const stallReferencesUI=read('src/provisional-stall-loader.js');
  const maneuver=read('src/benchmark-maneuver.js'),maneuverUI=read('src/benchmark-maneuver-ui.js');
  if([benchmarkData,turnPerformance,matchup,turnComparison,benchmarkSource,graphEvidence,benchmarkChart,benchmarkService,benchmarkUI,stallReferencesUI,maneuver,maneuverUI].some(text=>/<\/script/i.test(text)))throw Error('Unsafe operating benchmark embed');

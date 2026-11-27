@@ -1,5 +1,10 @@
 # Latest insights
 
+## M3 fleet comparison · 4.18.0-rc.1
+
+The selected-pair screen now shows how much the simulator understates the two reference climb gaps, by 58 s and 37 s. The restored Mustang accelerates through the two matched speed bands 7 s and 10 s more slowly than its wartime proxy. Those differences survive the interval and chart corrections. [Fleet scorecard](V418_FLEET_COMPARISON.md)
+
+
 [4.17 delivered the evidence sweep and speed/climb validation](V417_EVIDENCE_AND_PERFORMANCE.md). [Milestone 3 checks clean stall, timed level acceleration and climb time across all 14 operating profiles in one fleet update](SIMULATOR_ROADMAP.md). The [14-aircraft baseline and first source readings](research/M3_STALL_ACCELERATION_CLIMB.md) accompany the plan. The following entries record earlier decisions.
 
 Pointer file for agents starting a new milestone. Not a second model of record. Prefer the merged state on `main` plus any open PRs.

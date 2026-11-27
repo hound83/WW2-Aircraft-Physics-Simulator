@@ -167,9 +167,9 @@ globalThis.BenchmarkHistoryUI=(()=>{
     const a=r.figure;d.append(el('h4','Separate straight acceleration at METO'));
     table(d,['Event','Observed','Modeled proxy','Proxy − source'],[
      ['Speed at 60 s',a.observed60sKias.join('–')+' KIAS',fmt(a.modeled60sProxyKias,2)+' proxy KIAS',a.residualKias.map(v=>signed(v,2)).join(' to ')+' kt'],
-     ['Printed maximum',a.recordedFigureLabelMaxKias+' KIAS','—','—'],
+     ['Last plotted Mustang point',a.points.at(-1).value+' KIAS at '+a.points.at(-1).seconds+' s','—','—'],
      ['Time to secondary '+a.secondaryTargetKias+' KIAS endpoint',fmt(a.secondaryElapsedSeconds)+' s',fmt(a.modeledSecondsToSecondaryTarget)+' s',signed(a.residualSeconds)+' s']]);
-    trace(d,r.straightTrace,a.observed60sKias.map(v=>[60,v]),'Mustang separate straight acceleration; markers bound the 60-second reading','KIAS proxy');
+    trace(d,r.straightTrace,a.points.map(p=>[p.seconds,p.value]),'Mustang straight acceleration with Figure 8 markers','KIAS proxy');
    }
    r.sources.forEach((url,i)=>link(d,(r.secondary?'Transcription ':'Test source ')+(i+1),url));
   }

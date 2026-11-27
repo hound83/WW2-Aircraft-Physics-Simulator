@@ -281,6 +281,7 @@ function report(inputs) {
   }]));
   return { schema:'ww2-fleet-maneuver-validation/v1',version:require('../../package.json').version,
     inputPack:require('../../references/analysis/fighter-sim-inputs-v1.json').version,condition,metrics,aircraft,coverage,
+    restoredAcceleration:require('./restored_acceleration.cjs').intervals(inputs.acceleration),
     climbIntervals:{...climbIntervals.build(aircraft),sensitivity:require('./fleet_climb_sensitivity.cjs').run(data,inputs.catalog)},finnishAcceleration:inputs.poweredTurn.straight,
     interpretation:'Agreement is 100 minus MAPE over the indicated observations. Report-conditioned checks may supply shaft power, boost or speed. Fit consistency, transfers, proxy cases and separate aircraft remain explicitly identified. Historical maneuver observations do not match the new 180 degree turn plus recovery run.' };
 }

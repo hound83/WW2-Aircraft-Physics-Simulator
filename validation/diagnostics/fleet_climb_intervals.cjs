@@ -1,15 +1,17 @@
 'use strict';
 
 // Clocks from different flights, ratings or start heights cannot be subtracted.
-function clockSeries(aircraft) {
+function clockSeries(aircraft, includeUnscored = false) {
   const series = [];
   for (const plane of aircraft) {
     for (const group of plane.evidence.elapsed) {
       const byCondition = new Map();
       for (const row of group.checks) {
-        if (!Number.isFinite(row.error)) continue;
+        const scored = Number.isFinite(row.error);
+        if (!scored && (!includeUnscored || !Number.isFinite(row.observed))) continue;
         const { fromFt, toFt, observed, predicted } = row;
         if (!(Number.isFinite(fromFt) && Number.isFinite(toFt) && toFt > fromFt)) {
+          if (!scored) continue;
           throw Error('Missing clock boundaries for ' + plane.id + ', ' + group.qualifier);
         }
         const source = row.source || group.source;
@@ -17,11 +19,13 @@ function clockSeries(aircraft) {
         if (!byCondition.has(key)) {
           const entry = { aircraftId: plane.id, aircraft: plane.name, trial: group.qualifier,
             mode: row.mode ?? null, weightLb: row.weightLb ?? null, source, grade: group.grade,
-            conditions: group.reference, points: [{ height: fromFt, observed: 0, predicted: 0, readUncertaintySeconds:0 }] };
+            conditions: group.reference, points: [{ height: fromFt, observed: 0, predicted: 0, readUncertaintySeconds:0, bounds:[0,0] }] };
           byCondition.set(key, entry);
           series.push(entry);
         }
-        byCondition.get(key).points.push({ height: toFt, observed, predicted, readUncertaintySeconds:row.readUncertaintySeconds });
+        byCondition.get(key).points.push({ height: toFt, observed, predicted, readUncertaintySeconds:row.readUncertaintySeconds,
+          bounds:row.readBandSeconds ?? (Number.isFinite(row.readUncertaintySeconds) ?
+            [observed-row.readUncertaintySeconds,observed+row.readUncertaintySeconds] : null) });
       }
     }
   }
@@ -119,4 +123,4 @@ if (require.main===module) {
   process.stdout.write(asCsv(report.climbIntervals.series));
 }
 
-module.exports = { build, asCsv };
+module.exports = { build, asCsv, clockSeries };

@@ -13,14 +13,18 @@
       {
         "aircraft": "P-47B",
         "weightLb": 13350,
-        "rateDegS": 81
+        "rateDegS": 81,
+        "profileId": "p47b"
       },
       {
         "aircraft": "P-51B",
         "weightLb": 9500,
-        "rateDegS": 71
+        "rateDegS": 71,
+        "profileId": "p51b"
       }
-    ]
+    ],
+    "speedMph": 400,
+    "speedBasis": "basis unreported"
   },
   {
     "ids": [
@@ -35,9 +39,12 @@
       {
         "aircraft": "P-38J unboosted",
         "weightLb": 17360,
-        "rateDegS": 70
+        "rateDegS": 70,
+        "profileId": "p38g"
       }
-    ]
+    ],
+    "speedMph": 400,
+    "speedBasis": "basis unreported"
   },
   {
     "ids": [
@@ -51,9 +58,12 @@
     "points": [
       {
         "aircraft": "Va W.3119",
-        "rateDegS": 59
+        "rateDegS": 59,
+        "profileId": "spitfire_va_x4922"
       }
-    ]
+    ],
+    "speedMph": 230,
+    "speedBasis": "IAS"
   },
   {
     "ids": [
