@@ -30,8 +30,8 @@ All four aircraft have been reviewed. Default numerical predictions are unchange
 
 ### spitfire_lfix_bs543
 
-- **spit-7150** (primary-manual-text; scan verified: false): specimen-identity-not-established; aircraft-variant-or-specimen-not-matched; configuration-wingTips-not-matched; matched-stall-weight-missing; matched-wing-area-source-missing; original-observation-not-verified; test-altitude-missing-or-outside-atmosphere; ias-instrument-correction-state-unknown; low-speed-calibration-missing.
-- **spit-7800** (primary-manual-text; scan verified: false): specimen-identity-not-established; aircraft-variant-or-specimen-not-matched; configuration-wingTips-not-matched; configuration-externalStores-not-matched; matched-stall-weight-missing; matched-wing-area-source-missing; original-observation-not-verified; test-altitude-missing-or-outside-atmosphere; ias-instrument-correction-state-unknown; low-speed-calibration-missing.
+- **spit-7150** (primary-manual-text; scan verified: true): specimen-identity-not-established; aircraft-variant-or-specimen-not-matched; configuration-wingTips-not-matched; matched-stall-weight-missing; matched-wing-area-source-missing; original-observation-not-verified; test-altitude-missing-or-outside-atmosphere; ias-instrument-correction-state-unknown; low-speed-calibration-missing.
+- **spit-7800** (primary-manual-text; scan verified: true): specimen-identity-not-established; aircraft-variant-or-specimen-not-matched; configuration-wingTips-not-matched; configuration-externalStores-not-matched; matched-stall-weight-missing; matched-wing-area-source-missing; original-observation-not-verified; test-altitude-missing-or-outside-atmosphere; ias-instrument-correction-state-unknown; low-speed-calibration-missing.
 
 ## External evidence kept separate
 

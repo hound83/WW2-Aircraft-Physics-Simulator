@@ -11,6 +11,8 @@ const { historicalGroups } = require('./implemented_model_accuracy.cjs');
 const propeller = require('./operating_benchmark_v410.cjs');
 const remaining = require('./remaining_fighter_propellers.cjs');
 const g6Climb = require('./g6_archival_climb.cjs');
+const climbIntervals = require('./fleet_climb_intervals.cjs');
+const spitStall = require('../../references/spitfire-ix-stall-audit.json');
 const { timedGroups } = require('./fleet_source_timing.cjs');
 const { sourceChecks:stallChecks } = require('./continuous_stall.cjs');
 
@@ -83,8 +85,13 @@ function historicalEvidence(inputs) {
         source:sourceLink(refs[0].id),reference:'The listed conditions require a separate configuration or a wider modeled envelope.',rows:refs });
       if (fits.length)add(a.id,metric,{ qualifier:'Fit consistency',grade:'fit-consistency',
         source:fits[0].source??sourceLink(fits[0].id),reference:'These observations set the model inputs.',rows:fits });
-      if(metric==='climb'&&a.elapsed?.some(row=>row.source)) add(a.id,'elapsed',{qualifier:'Same-trial clock intervals',grade:'report-conditioned',
-        source:a.elapsed[0].source,reference:a.scope,rows:a.elapsed.filter(row=>row.observed>0)});
+      if (metric==='climb' && a.elapsed?.some(row=>row.source)) {
+        const datum = a.elapsed.find(row=>row.role==='clock datum');
+        add(a.id,'elapsed',{qualifier:'Same-trial clock intervals',grade:'report-conditioned',
+          source:datum.source,reference:a.scope,rows:a.elapsed.filter(row=>row.observed>0).map(row=>({
+            ...row,fromFt:datum.altFt,toFt:row.altFt,mode:a.id==='spitfire_va_x4922'?'normal':'combat'
+          }))});
+      }
     }
   }
 
@@ -104,6 +111,8 @@ function historicalEvidence(inputs) {
   for (const [id,refs] of Object.entries(stallReferences)) {
     for (const ref of refs) {
       if (['Reserved sister-airframe check','Separate NACA configuration check'].includes(ref.role))continue;
+      // A single June 1943 handbook entry is shared across the three IX profiles below.
+      if (ref.source.url===spitStall.wartimeManual.url && id==='spitfire_lfix_bs543') continue;
       const spec = data.specification.aircraft[id];
       const sourceSpeed = ref.speed.value+' '+ref.speed.unit+' '+ref.speed.basis;
       const observed = Stall.referenceEas(M,ref);
@@ -116,6 +125,23 @@ function historicalEvidence(inputs) {
         reference:[ref.qualification,comparison].filter(Boolean).join(' '),
         rows:[{ ...ref,observedEasMph:observed,predicted:round(modeled),originalSpeed:ref.speed }] });
     }
+  }
+
+  const {wartimeManual,manual,restoredSource} = spitStall;
+  const clean = wartimeManual.rows.find(row=>row.gear==='up'&&row.flaps==='up');
+  const standard = manual.rows.find(row=>row.externalStores==='none');
+  const [minReduction,maxReduction] = manual.fullSpanNote.approximateReductionMph;
+  const lower = standard.iasMph-maxReduction, upper = standard.iasMph-minReduction;
+  for (const id of ['spitfire_fix_bf274','spitfire_lfix_bs543','spitfire_hfix_bs551']) {
+    add(id,'stall',{qualifier:'June 1943 Mk IX handbook',grade:'primary handbook',unit:'mph IAS',
+      source:wartimeManual.url+'#page=11',reference:clean.mph+' mph IAS, engine off, gear and flaps up at a published normal weight of '+wartimeManual.referenceWeightLb+' lb. Wingtip and individual run weight are unspecified. Position correction begins at 120 mph IAS.',
+      rows:[{observed:clean.mph,predicted:null,referenceWeightLb:wartimeManual.referenceWeightLb,speedBasis:'IAS'}]});
+    add(id,'stall',{qualifier:'Standard-wing estimate from September 1946 pilot notes',grade:'derived from primary handbook',unit:'mph IAS',
+      source:manual.url+'#page=16',reference:lower+'–'+upper+' mph IAS, 7,150 lb, full main tanks, gear and flaps up, no ammunition or external stores. The manual gives '+standard.iasMph+' mph clipped and an approximate '+minReduction+'–'+maxReduction+' mph standard-wing reduction.',
+      rows:[{rangeMph:[lower,upper],referenceWeightLb:standard.referenceWeightLb,speedBasis:'IAS',predicted:null}]});
+    add(id,'stall',{qualifier:'Restored full-span E-wing MK356',grade:'secondary type particulars',unit:'reported knots',
+      source:restoredSource.url,reference:'UK service inquiry lists '+restoredSource.cleanKnots+' ± '+restoredSource.publishedPlusMinusKnots+' kt clean. It gives '+restoredSource.referenceWeightLb+' lb all-up in the same table. Stall-run weight and speed correction are unspecified. Different wing from the wartime C-wing aircraft.',
+      rows:[{observed:restoredSource.cleanKnots,publishedPlusMinus:restoredSource.publishedPlusMinusKnots,predicted:null,referenceWeightLb:restoredSource.referenceWeightLb}]});
   }
 
   const restored = acceleration.observation, endpoints = restored.endpoints;
@@ -134,10 +160,10 @@ function historicalEvidence(inputs) {
     reference:'Separate test. Assumed IAS correction, mass and cooling. The reported bank and timing imply different loads. Recovery was unrecorded.',
     rows:[{ observed:observedTurn.conditions.elapsedSeconds,predicted:poweredTurn.clean.seconds,
       conditions:observedTurn.conditions,scenariosSeconds:poweredTurn.scenarioRanges.seconds }] });
-  add(observedTurn.modelId,'acceleration',{ qualifier:'Finnish elapsed segments',grade:'reference',
-    source:observedTurn.transcriptions[0].url,
-    reference:'Maximum-power 300–440 km/h in 27 s and 440–510 km/h in 35 s. Altitude, RPM, exact mass and speed calibration remain open.',
-    rows:observedTurn.relatedAcceleration.rows.filter(row => row.rating==='Maximum'),
+  add(observedTurn.modelId,'acceleration',{ qualifier:'MT-215 horizontal acceleration and deceleration',grade:'secondary transcription',
+    source:observedTurn.relatedAcceleration.sourceUrl,
+    reference:'One Finnish account gives two maximum-power and two idle intervals. Only the turn section supplies 1,000 m. The straight-run speed basis, mass and engine settings remain open.',
+    rows:poweredTurn.straight.intervals.map(row=>({...row,observed:row.seconds,predicted:null})),
   });
   const f4 = catalog.observations.filter(row => row.id.includes(':f4-rechlin-matched-climb:'));
   if (f4.length)add('bf109f4','elapsed',{ qualifier:'Rechlin comparative climb',grade:'reference',source:sourceLink(f4[0].id),
@@ -162,16 +188,18 @@ const stallGaps = {
   p51b:'Wright Field IAS is available. Recover low-speed position error and takeoff/instantaneous mass.',
   p38g:'Sister-airframe CAS check at approximate weight and height.',
   f4u4:'Identify the original stall-run serial and mass for a same-airframe check.',
-  spitfire_lfix_bs543:'Clean 86 mph IAS is available. Recover the stall-speed position correction.',
+  spitfire_lfix_bs543:'Recover a full-span C-wing stall run at measured mass and the low-speed pressure correction for BS.543.',
   p47b:'Clean 105 mph IAS is available. Recover the stall-speed position correction.',
   fw190a4:'Weight-scaled stall estimate. Recover WNr 783 clean corrected power-off stall.',
   bf109f4:'Weight-scaled stall estimate. Recover F-4 clean corrected stall at measured mass.',
   spitfire_hfix_bs551:'Full-span Spitfire lift transfer. Recover BS.551 clean corrected stall and mass.',
   bf109g2_db605a:'G-2/Trop IAS and separate glide minimum-control source. Recover MT-215 clean CAS and mass.',
   p51d15_4415342:'Handbook IAS and loading are available. Recover rack-on position error and stall test conditions.',
-  spitfire_fix_bf274:'Shared full-span lift estimate. BF.274’s position-error curve stops above stall.',
+  spitfire_fix_bf274:'BF.274’s documented correction begins at 130 mph. Seek its stall sheet and a correction at stall speed.',
   bf109g6trop_16476:'F-4 lift transfer. Recover clean stall CAS at the modeled pods and sand-filter state.',
 };
+
+const inputsForFinnishRun = 'Seek Kokko’s MT-215 horizontal acceleration sheet with height, IAS or TAS, load, RPM, boost and radiator setting.';
 
 function makeGaps(id) {
   return {
@@ -181,7 +209,7 @@ function makeGaps(id) {
     elapsed:id==='f4u4'?'Recover the BuNo 80765 elapsed record and its climb-speed schedule.':
       id==='bf109g6trop_16476'?'One campaign supplies elapsed checkpoints through 10 km. An independent climb and the event mass history remain open.':null,
     stall:stallGaps[id],
-    acceleration:'Recover calibrated speed-versus-time in level flight with mass, altitude and engine setting.',
+    acceleration:id==='bf109g2_db605a'?inputsForFinnishRun:'Recover calibrated speed-versus-time in level flight with mass, altitude and engine setting.',
     maneuver:'Recover a powered turn with heading, load and calibrated speed through rollout and recovery.',
   };
 }
@@ -253,6 +281,7 @@ function report(inputs) {
   }]));
   return { schema:'ww2-fleet-maneuver-validation/v1',version:require('../../package.json').version,
     inputPack:require('../../references/analysis/fighter-sim-inputs-v1.json').version,condition,metrics,aircraft,coverage,
+    climbIntervals:{...climbIntervals.build(aircraft),sensitivity:require('./fleet_climb_sensitivity.cjs').run(data,inputs.catalog)},finnishAcceleration:inputs.poweredTurn.straight,
     interpretation:'Agreement is 100 minus MAPE over the indicated observations. Report-conditioned checks may supply shaft power, boost or speed. Fit consistency, transfers, proxy cases and separate aircraft remain explicitly identified. Historical maneuver observations do not match the new 180 degree turn plus recovery run.' };
 }
 

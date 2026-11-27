@@ -5,7 +5,7 @@ const raw=data.records.find(r=>r.id==='spit-7150'),other=data.records.find(r=>r.
 assert.equal(raw.configurationState.wingTips,'clipped');assert.equal(raw.configurationState.externalStores,'none');
 assert.equal(other.configurationState.externalStores,'45-gallon-blister-drop-tank');assert.equal(other.speed.mph,93);
 assert.equal(raw.wingAreaM2,null,'target full-span reference area must not be assigned to clipped manual row');
-assert.equal(raw.source.scanVerified,false);assert.equal(raw.source.textVerified,true);assert.equal(raw.source.date,'1946-09');
+assert.equal(raw.source.scanVerified,true);assert.equal(raw.source.textVerified,true);assert.equal(raw.source.date,'1946-09');
 assert.equal(audit.manual.positionCorrection.minimumIasMph,120);assert.deepEqual(audit.manual.positionCorrection.points,[]);
 // Synthetic fixture is expressly not BS.543 evidence. Hold the ID constant while
 // changing actual configuration fields: matching strings alone are insufficient.

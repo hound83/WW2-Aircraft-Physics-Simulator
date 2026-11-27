@@ -1002,6 +1002,13 @@ async function run(){
   await select('bench-sweep-aircraft','spitfire_hfix_bs551');
   assert.match(await evaluate('document.getElementById("bench-sweep-results").textContent'),/EN.524/);
   assert.match(await evaluate('document.getElementById("bench-sweep-results").textContent'),/P-47B81/);
+  const sweepText=()=>evaluate('document.getElementById("bench-sweep-results").textContent');
+  assert.match(await sweepText(),/84–87 mph IAS/);
+  assert.match(await sweepText(),/Climb between common heights/);
+  await select('bench-sweep-aircraft','bf109g2_db605a');
+  assert.match(await sweepText(),/440–510 km.h/);
+  assert.match(await sweepText(),/power-limited/);
+  assert.match(await sweepText(),/Finnish scan elapsed replay/);
   const fleetIds=await evaluate('Object.keys(OperatingBenchmarkUI.data.models)');
   const matrix=[];
   for(const id of fleetIds)matrix.push(...await evaluate('('+require('./browser-fleet-matrix.cjs').toString()+')('+JSON.stringify(id)+')'));
